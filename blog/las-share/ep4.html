@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>บทที่ 1.4 — Deadlock เมื่อบริษัทไปต่อไม่ได้ | LAS Share Series</title>
+<meta name="description" content="เมื่อผู้ถือหุ้น 50:50 ตกลงกันไม่ได้ บริษัทจะเกิดอะไรขึ้น? รู้จัก Deadlock, Exit Mechanism และทางออกที่กฎหมายไทยให้ไว้ — LAS Legal">
+<meta name="author" content="Dr. Thundthornthep Yamoutai">
+<meta name="keywords" content="Deadlock, Exit Mechanism, Texas Shoot-Out, Drag-Along, Tag-Along, Shotgun Clause, ป.พ.พ. 1237, ป.พ.พ. 1264, SHA, LAS Share">
+<link rel="canonical" href="https://thundthornthep-ai.github.io/blog/las-share/ep4.html">
+<meta property="og:title" content="บทที่ 1.4 — Deadlock เมื่อบริษัทไปต่อไม่ได้ | LAS Share Series">
+<meta property="og:description" content="รู้จัก Deadlock, Exit Mechanism และทางออกที่กฎหมายไทยให้ไว้ — LAS Legal">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://thundthornthep-ai.github.io/blog/las-share/ep4.html">
+<meta property="article:author" content="Dr. Thundthornthep Yamoutai">
+<meta property="article:published_time" content="2026-03-30">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="บทที่ 1.4 — Deadlock เมื่อบริษัทไปต่อไม่ได้">
+<meta name="twitter:description" content="รู้จัก Deadlock, Exit Mechanism และทางออกที่กฎหมายไทยให้ไว้ — LAS Legal">
+<style>
+:root{--wiki-blue:#0645ad;--wiki-visited:#0b0080;--wiki-border:#a2a9b1;--wiki-bg:#f8f9fa;--wiki-header-border:#a7d7f9;--wiki-card-bg:#fff;--wiki-text:#202122;--wiki-muted:#54595d;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Georgia","Noto Serif Thai",serif;color:var(--wiki-text);background:#fff;line-height:1.7;font-size:16px;}
+a{color:var(--wiki-blue);text-decoration:none;}a:hover{text-decoration:underline;}a:visited{color:var(--wiki-visited);}
+.wiki-wrapper{max-width:960px;margin:0 auto;padding:20px 24px;}
+.wiki-header{border-bottom:3px solid var(--wiki-header-border);padding-bottom:12px;margin-bottom:24px;}
+.wiki-header h1{font-size:1.7em;font-weight:normal;color:var(--wiki-text);}
+.wiki-header .subtitle{color:var(--wiki-muted);font-size:0.9em;margin-top:4px;}
+.breadcrumb{font-size:0.85em;color:var(--wiki-muted);margin-bottom:16px;}
+.breadcrumb a{color:var(--wiki-blue);}
+.lang-toggle{margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap;}
+.lang-btn{background:var(--wiki-bg);border:1px solid var(--wiki-border);padding:6px 14px;border-radius:3px;cursor:pointer;font-size:0.88em;font-family:inherit;color:var(--wiki-text);transition:all .2s;}
+.lang-btn:hover,.lang-btn.active{background:var(--wiki-header-border);border-color:var(--wiki-blue);color:var(--wiki-blue);}
+.section-box{border:1px solid var(--wiki-border);border-radius:4px;padding:20px 24px;margin-bottom:20px;background:var(--wiki-card-bg);}
+.section-box h2{font-size:1.25em;margin-bottom:12px;border-bottom:1px solid var(--wiki-border);padding-bottom:8px;}
+.section-box h3{font-size:1.05em;margin:14px 0 8px;}
+.section-box p{margin-bottom:10px;}
+.section-box ul,.section-box ol{margin:8px 0 12px 24px;}
+.section-box li{margin-bottom:4px;}
+blockquote{border-left:4px solid var(--wiki-header-border);padding:12px 16px;margin:12px 0;background:var(--wiki-bg);font-style:italic;}
+.fb-post{background:#f0f2f5;border:1px solid #dadde1;border-radius:8px;padding:20px;margin:20px 0;font-family:Arial,sans-serif;line-height:1.6;}
+.fb-post .fb-label{font-weight:bold;color:#1877f2;margin-bottom:8px;font-size:0.9em;}
+.checklist-box{background:var(--wiki-bg);border:1px solid var(--wiki-border);border-radius:4px;padding:20px;margin:20px 0;}
+.checklist-box h3{margin-bottom:12px;}
+.checklist-box label{display:block;padding:6px 0;cursor:pointer;font-size:0.95em;}
+.checklist-box input[type="checkbox"]{margin-right:8px;transform:scale(1.15);}
+.ep-nav{display:flex;justify-content:space-between;margin:28px 0;padding:16px 0;border-top:1px solid var(--wiki-border);}
+.ep-nav a{color:var(--wiki-blue);font-size:0.95em;}
+.cta-btn{display:inline-block;background:var(--wiki-blue);color:#fff!important;padding:12px 28px;border-radius:4px;font-size:1em;margin:16px 0;text-decoration:none!important;font-family:inherit;}
+.cta-btn:hover{background:#0b0080;}
+.cta-btn:visited{color:#fff!important;}
+.disclaimer{background:var(--wiki-bg);border:1px solid var(--wiki-border);border-radius:4px;padding:14px 18px;font-size:0.85em;color:var(--wiki-muted);margin-top:24px;}
+.wiki-footer{border-top:1px solid var(--wiki-border);margin-top:24px;padding-top:16px;font-size:0.85em;color:var(--wiki-muted);text-align:center;}
+.wiki-footer a{color:var(--wiki-blue);}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0;}
+.tags span{background:var(--wiki-bg);border:1px solid var(--wiki-border);padding:2px 8px;border-radius:3px;font-size:0.8em;color:var(--wiki-muted);}
+@media(max-width:640px){.wiki-wrapper{padding:14px 16px;}.wiki-header h1{font-size:1.3em;}.section-box{padding:14px 16px;}.ep-nav{flex-direction:column;gap:8px;}}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"บทที่ 1.4 — Deadlock เมื่อบริษัทไปต่อไม่ได้ | Corporate Deadlock When the Business Cannot Move Forward",
+  "author":{"@type":"Person","name":"Dr. Thundthornthep Yamoutai","url":"https://thundthornthep-ai.github.io/"},
+  "publisher":{"@type":"Organization","name":"Legal Advance Solution","url":"https://laslegal.co.th"},
+  "datePublished":"2026-03-30",
+  "url":"https://thundthornthep-ai.github.io/blog/las-share/ep4.html",
+  "description":"เมื่อผู้ถือหุ้น 50:50 ตกลงกันไม่ได้ บริษัทจะเกิดอะไรขึ้น? รู้จัก Deadlock และ Exit Mechanism",
+  "citation":["ป.พ.พ. มาตรา 1237","ป.พ.พ. มาตรา 1264"],
+  "isPartOf":{"@type":"CreativeWorkSeries","name":"LAS Share Series","url":"https://thundthornthep-ai.github.io/blog/las-share/"},
+  "breadcrumb":{
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://thundthornthep-ai.github.io/"},
+      {"@type":"ListItem","position":2,"name":"Knowledge Hub","item":"https://thundthornthep-ai.github.io/knowledge-hub.html"},
+      {"@type":"ListItem","position":3,"name":"LAS Share Series","item":"https://thundthornthep-ai.github.io/blog/las-share/"},
+      {"@type":"ListItem","position":4,"name":"Episode 4"}
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Deadlock คืออะไร และเกิดขึ้นได้อย่างไร?","acceptedAnswer":{"@type":"Answer","text":"Deadlock คือสถานการณ์ที่ผู้ถือหุ้นไม่สามารถตกลงกันได้ในเรื่องสำคัญ โดยเฉพาะเมื่อถือหุ้น 50:50 ทำให้บริษัทไม่สามารถอนุมัติงบประมาณ จ้างพนักงาน หรือต่อสัญญาสำคัญได้ กฎหมายไทยไม่มีบทบัญญัติเรื่อง Deadlock โดยตรง"}},
+    {"@type":"Question","name":"มีทางออกอะไรบ้างเมื่อเกิด Deadlock?","acceptedAnswer":{"@type":"Answer","text":"มี 4 Exit Mechanisms ที่ควรกำหนดไว้ใน SHA: (1) Buy-Sell Provision (Texas Shoot-Out) (2) Drag-Along Rights (3) Tag-Along Rights (4) Shotgun Clause นอกจากนี้ยังสามารถร้องศาลขอเลิกบริษัทได้ตาม ป.พ.พ. มาตรา 1237 แต่เป็นทางเลือกสุดท้าย"}},
+    {"@type":"Question","name":"Texas Shoot-Out คืออะไร?","acceptedAnswer":{"@type":"Answer","text":"Texas Shoot-Out หรือ Buy-Sell Provision คือกลไกที่ฝ่ายใดฝ่ายหนึ่งเสนอราคาซื้อหุ้นของอีกฝ่าย อีกฝ่ายต้องเลือก: ขายหุ้นในราคานั้น หรือซื้อหุ้นของผู้เสนอในราคาเดียวกัน กลไกนี้บังคับให้ผู้เสนอต้องให้ราคาที่ยุติธรรม"}}
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wiki-wrapper">
+<nav class="breadcrumb">
+<a href="https://thundthornthep-ai.github.io/">Home</a> &gt; <a href="https://thundthornthep-ai.github.io/knowledge-hub.html">Knowledge Hub</a> &gt; <a href="index.html">LAS Share Series</a> &gt; <strong>Episode 4</strong>
+</nav>
+
+<header class="wiki-header">
+<h1>บทที่ 1.4 &mdash; Deadlock เมื่อบริษัทไปต่อไม่ได้</h1>
+<div class="subtitle">LAS Share Series | กฎหมายอ้างอิง: ป.พ.พ. มาตรา 1237, 1264 | โดย <a href="https://thundthornthep-ai.github.io/">ดร. ธันย์ธรณ์เทพ แย้มอุทัย</a></div>
+</header>
+
+<div class="lang-toggle">
+<button class="lang-btn active" data-lang="th">ภาษาไทย</button>
+<button class="lang-btn" data-lang="en">English</button>
+<button class="lang-btn" data-lang="both">ทั้งสองภาษา</button>
+</div>
+
+<div class="tags">
+<span>Deadlock</span><span>Exit Mechanism</span><span>Texas Shoot-Out</span><span>Drag-Along</span><span>Tag-Along</span><span>Shotgun Clause</span><span>ป.พ.พ. 1237</span><span>ป.พ.พ. 1264</span>
+</div>
+
+<!-- THAI CONTENT -->
+<div id="content-th">
+<div class="section-box">
+<h2>Deadlock เมื่อบริษัทไปต่อไม่ได้</h2>
+<p>บริษัทมีกรรมการ 2 คน ถือหุ้นคนละ 50% ทุกการตัดสินใจสำคัญ ทั้งคู่โหวตตรงกันข้ามเสมอ บริษัทไม่สามารถอนุมัติงบประมาณ ไม่สามารถจ้างพนักงาน ไม่สามารถต่อสัญญาสำคัญได้</p>
+<p>ธุรกิจหยุดนิ่ง ในขณะที่โลกหมุนต่อ</p>
+<p><strong>นี่คือ Deadlock</strong></p>
+</div>
+
+<div class="section-box">
+<h2>กฎหมายไทยกับ Deadlock</h2>
+<p>กฎหมายไทยไม่มีบทบัญญัติเรื่อง "Deadlock" โดยตรง แต่มีกลไกที่เกี่ยวข้อง:</p>
+<ul>
+<li><strong>ป.พ.พ. มาตรา 1237</strong> &mdash; ผู้ถือหุ้นสามารถร้องศาลขอให้เลิกบริษัทได้ ถ้าบริษัทไม่สามารถดำเนินกิจการต่อไปได้ตามวัตถุประสงค์</li>
+<li><strong>ป.พ.พ. มาตรา 1264</strong> &mdash; ศาลมีอำนาจสั่งเลิกบริษัทถ้ามีเหตุอันสมควร</li>
+</ul>
+<p>แต่การเลิกบริษัทคือ "ทางเลือกสุดท้าย" ที่แพงและเสียเวลา มีทางออกที่ดีกว่า</p>
+</div>
+
+<div class="section-box">
+<h2>4 Exit Mechanisms ที่ควรกำหนดล่วงหน้าใน SHA</h2>
+<h3>1. Buy-Sell Provision (Texas Shoot-Out)</h3>
+<p>ฝ่ายใดฝ่ายหนึ่งเสนอราคาซื้อหุ้นของอีกฝ่าย อีกฝ่ายต้องเลือก: ขายหุ้นในราคานั้น หรือซื้อหุ้นของผู้เสนอในราคาเดียวกัน กลไกนี้บังคับให้ผู้เสนอต้องให้ราคาที่ยุติธรรม</p>
+<h3>2. Drag-Along Rights</h3>
+<p>ถ้าผู้ถือหุ้นใหญ่ตกลงขายบริษัท ผู้ถือหุ้นรายย่อยต้องขายด้วยในราคาเดียวกัน</p>
+<h3>3. Tag-Along Rights</h3>
+<p>ถ้าผู้ถือหุ้นใหญ่ขายหุ้น ผู้ถือหุ้นรายย่อยมีสิทธิ์ขายพร้อมกันในราคาเดียวกัน</p>
+<h3>4. Shotgun Clause</h3>
+<p>กำหนดราคาและเวลาที่ต้องตัดสินใจ Exit เมื่อ Deadlock เกินกำหนดเวลา</p>
+</div>
+</div>
+
+<!-- ENGLISH CONTENT -->
+<div id="content-en" style="display:none;">
+<div class="section-box">
+<h2>Corporate Deadlock: When the Business Cannot Move Forward</h2>
+<p>Two shareholders. Two directors. Each holding exactly 50%. Every significant decision &mdash; budget approvals, hiring, major contracts &mdash; produces the same result: a tied vote. The business stalls. Opportunities pass. Relationships deteriorate.</p>
+<p>This is corporate deadlock. And Thai law has no direct statutory mechanism to resolve it efficiently.</p>
+</div>
+
+<div class="section-box">
+<h2>The Statutory Position</h2>
+<p><strong>CCC Section 1237</strong> permits shareholders to petition the court for dissolution where the company is unable to achieve the objectives for which it was incorporated.</p>
+<p><strong>CCC Section 1264</strong> grants the court authority to order dissolution where just cause exists.</p>
+<p>Court-ordered dissolution is slow, commercially destructive, and final. It should be a remedy of absolute last resort &mdash; not a planning tool.</p>
+</div>
+
+<div class="section-box">
+<h2>Four Exit Mechanisms to Define in Advance</h2>
+<h3>1. Buy-Sell Provision (Texas Shoot-Out)</h3>
+<p>One party offers to purchase the other's shares at a stated price. The receiving party must either accept or buy the offeror's shares at the same price. This incentivises fair pricing, as the offeror risks becoming the seller.</p>
+<h3>2. Drag-Along Rights</h3>
+<p>Where a majority shareholder agrees to sell the company, minority shareholders are obligated to sell on the same terms.</p>
+<h3>3. Tag-Along Rights</h3>
+<p>Where a majority shareholder sells shares, minority shareholders have the right to sell on the same terms.</p>
+<h3>4. Shotgun Clause</h3>
+<p>A time-bound mechanism triggering a mandatory buy-sell process if deadlock persists beyond a defined period.</p>
+</div>
+</div>
+
+<!-- CHECKLIST -->
+<div class="checklist-box">
+<h3>LAS Checklist &mdash; ป้องกัน Deadlock / Preventing Deadlock</h3>
+<label><input type="checkbox"> กำหนด Deadlock Definition ใน SHA ว่าต้องติดขัดนานแค่ไหนจึงเรียกว่า Deadlock / Define "Deadlock" in the SHA</label>
+<label><input type="checkbox"> เลือก Exit Mechanism ที่เหมาะกับโครงสร้างบริษัท / Select an exit mechanism appropriate to the company's structure</label>
+<label><input type="checkbox"> กำหนดขั้นตอน Mediation/Arbitration ก่อนใช้ Exit Mechanism / Specify mediation or arbitration steps before exit mechanisms activate</label>
+<label><input type="checkbox"> กำหนดวิธีประเมินมูลค่าหุ้นใน SHA / Agree on a share valuation methodology in advance</label>
+</div>
+
+<!-- FACEBOOK POST -->
+<div class="fb-post">
+<div class="fb-label">Facebook Post</div>
+<p>&#x1F512; Deadlock: เมื่อผู้ถือหุ้น 50:50 ไม่ยอมกัน</p>
+<p>ประชุมทีไร โหวตตรงข้ามทุกที<br>
+บริษัทตัดสินใจเรื่องสำคัญไม่ได้</p>
+<p>ทางออกตามกฎหมาย: ร้องศาลขอเลิกบริษัท (ป.พ.พ. ม.1237)<br>
+แต่นั่นคือการทำลายสิ่งที่สร้างมา</p>
+<p>ทางออกที่ดีกว่า: กำหนด Exit Mechanism ล่วงหน้าใน SHA<br>
+&#x1F3AF; Buy-Sell | Drag-along | Shotgun Clause</p>
+<p>อ่านครบ &#x27A1;&#xFE0F; laslegal.co.th/LawKnowledge</p>
+<p>#LASShare #Deadlock #ExitMechanism #กฎหมายหุ้น #LASLegal</p>
+</div>
+
+<!-- CTA -->
+<p style="text-align:center;">
+<a href="mailto:info@laslegal.co.th" class="cta-btn">&#x1F4E9; ปรึกษา LAS &mdash; Contact LAS Legal</a>
+</p>
+
+<!-- NAVIGATION -->
+<nav class="ep-nav">
+<a href="ep3.html">&larr; บทที่ 1.3 &mdash; เพื่อนจะเพิ่มทุน แต่เราไม่มีเงิน</a>
+<a href="ep5.html">บทที่ 1.5 &mdash; SHA เกราะที่ควรมีตั้งแต่วันแรก &rarr;</a>
+</nav>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+<strong>Disclaimer:</strong> บทความทั้งหมดใน Series นี้เป็นข้อมูลทั่วไปเพื่อการศึกษา ไม่ใช่คำแนะนำทางกฎหมายเฉพาะราย หากมีข้อสงสัยหรือต้องการคำปรึกษา กรุณาติดต่อ <a href="https://laslegal.co.th">LAS Legal Advance Solution</a> โดยตรง
+</div>
+
+<footer class="wiki-footer">
+<p><a href="https://laslegal.co.th">LAS / Legal Advance Solution</a> | <a href="https://thundthornthep-ai.github.io/">Dr. Thundthornthep Yamoutai</a></p>
+<p>Contact: <a href="mailto:info@laslegal.co.th">info@laslegal.co.th</a> | <a href="https://laslegal.co.th">laslegal.co.th</a></p>
+<p><a href="index.html">&larr; กลับสู่ LAS Share Series</a> | <a href="https://thundthornthep-ai.github.io/knowledge-hub.html">Knowledge Hub</a></p>
+</footer>
+</div>
+
+<script>
+document.querySelectorAll('.lang-btn').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+    this.classList.add('active');
+    const lang=this.dataset.lang;
+    const th=document.getElementById('content-th');
+    const en=document.getElementById('content-en');
+    if(lang==='th'){th.style.display='';en.style.display='none';}
+    else if(lang==='en'){th.style.display='none';en.style.display='';}
+    else{th.style.display='';en.style.display='';}
+  });
+});
+</script>
+</body>
+</html>
