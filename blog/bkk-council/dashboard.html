@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard ข้อบัญญัติ กทม. 311 ฉบับ — Bangkok Possible | ดร.ธันย์ธรณ์เทพ แย้มอุทัย</title>
+<meta name="description" content="Interactive Dashboard วิเคราะห์ข้อบัญญัติกรุงเทพมหานคร 311 ฉบับ ด้วย AI LegalTech — 43% ล้าสมัยวิกฤต พร้อมข้อเสนอปฏิรูป Roadmap สำหรับ ส.ก. ชุดใหม่ 2569">
+<meta name="keywords" content="ข้อบัญญัติกรุงเทพมหานคร, dashboard, กฎหมายเมือง, ส.ก. 2569, ปฏิรูป, Bangkok Possible, ดร.ธันย์ธรณ์เทพ แย้มอุทัย, LAS, AI LegalTech, นวัตกรรมนิติบัญญัติชิงรุก">
+<meta name="author" content="ดร.ธันย์ธรณ์เทพ แย้มอุทัย">
+<link rel="canonical" href="https://thundthornthep-ai.github.io/blog/bkk-council/dashboard.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dashboard ข้อบัญญัติ กทม. 311 ฉบับ — Bangkok Possible">
+<meta property="og:description" content="AI LegalTech วิเคราะห์ข้อบัญญัติ กทม. ทั้ง 311 ฉบับ — 43% ล้าสมัยวิกฤต พร้อม Roadmap ปฏิรูป">
+<meta property="og:locale" content="th_TH">
+<meta property="og:image" content="https://thundthornthep-ai.github.io/blog/bkk-council/img/ep7-seminar-panel.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#0F1A2E;--navy2:#1B2A4A;--gold:#C9A96E;--gold-light:#E8D5B0;
+  --green:#2D6A4F;--accent:#4ECDC4;--accent2:#44A08D;
+  --red:#E74C3C;--red-soft:#FF6B6B;--orange:#F39C12;--yellow:#F1C40F;
+  --blue:#3498DB;--green-ok:#2ECC71;--purple:#9B59B6;
+  --bg:#0a0f1a;--card:rgba(255,255,255,0.04);--card-border:rgba(255,255,255,0.08);
+  --glass:rgba(255,255,255,0.06);--glass-border:rgba(255,255,255,0.12);
+  --text:#E8E8E8;--text2:#8A94A6;--text3:#5A6478;
+  --radius:16px;--radius-sm:10px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans Thai','Sarabun',sans-serif;font-size:15px;line-height:1.7;color:var(--text);background:var(--bg);overflow-x:hidden}
+
+/* === SCROLL PROGRESS === */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--gold),var(--accent2));z-index:1000;transition:width .1s;width:0}
+
+/* === STICKY NAV === */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;transition:all .3s;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);background:rgba(15,26,46,0.7);border-bottom:1px solid rgba(255,255,255,0.05)}
+.nav.scrolled{background:rgba(15,26,46,0.95);box-shadow:0 4px 30px rgba(0,0,0,.3)}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-logo{width:32px;height:32px;background:linear-gradient(135deg,var(--gold),var(--accent));border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:var(--navy)}
+.nav-title{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;color:#fff;letter-spacing:-.3px}
+.nav-title span{color:var(--gold)}
+.nav-links{display:flex;gap:6px}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:12px;padding:6px 12px;border-radius:20px;transition:all .2s;border:1px solid transparent}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);border-color:rgba(201,169,110,.3);background:rgba(201,169,110,.08)}
+
+/* === HERO === */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:80px 24px 60px}
+.hero-bg{position:absolute;inset:0;overflow:hidden}
+.hero-bg::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(78,205,196,.12) 0%,transparent 70%);top:-200px;right:-100px;animation:float 20s ease-in-out infinite}
+.hero-bg::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,110,.1) 0%,transparent 70%);bottom:-100px;left:-100px;animation:float 25s ease-in-out infinite reverse}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-30px)}}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,#000 30%,transparent 100%)}
+.hero-content{position:relative;max-width:900px;text-align:center;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(78,205,196,.1);border:1px solid rgba(78,205,196,.2);color:var(--accent);padding:6px 16px;border-radius:20px;font-size:12px;font-weight:500;margin-bottom:20px;letter-spacing:.5px}
+.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,6vw,64px);font-weight:700;line-height:1.1;margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,var(--gold-light) 50%,var(--accent) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:18px;color:var(--text2);max-width:600px;margin:0 auto 32px;line-height:1.6}
+.hero-stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+.hero-stat{text-align:center}
+.hero-stat .hs-num{font-family:'Space Grotesk',sans-serif;font-size:48px;font-weight:700;line-height:1;margin-bottom:4px}
+.hero-stat .hs-label{font-size:12px;color:var(--text2);text-transform:uppercase;letter-spacing:1px}
+.hero-stat.critical .hs-num{color:var(--red-soft)}
+.hero-stat.total .hs-num{color:var(--gold)}
+.hero-stat.action .hs-num{color:var(--accent)}
+.hero-scroll{margin-top:48px;animation:bounce 2s ease-in-out infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+.hero-scroll a{color:var(--text3);text-decoration:none;font-size:12px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.hero-scroll svg{width:20px;height:20px;stroke:var(--text3)}
+
+/* === CONTAINER === */
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* === SECTION === */
+.section{padding:80px 0;position:relative}
+.section-label{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.section-label .line{width:24px;height:1px;background:var(--accent)}
+.section h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,4vw,36px);font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-.5px}
+.section .section-desc{font-size:15px;color:var(--text2);max-width:560px;margin-bottom:36px}
+
+/* === GLASS CARDS === */
+.glass{background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--glass-border);border-radius:var(--radius);transition:all .3s}
+.glass:hover{border-color:rgba(255,255,255,.18);box-shadow:0 8px 32px rgba(0,0,0,.2)}
+
+/* === KPI STRIP === */
+.kpi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:48px}
+.kpi{padding:24px;text-align:center;position:relative;overflow:hidden}
+.kpi::before{content:'';position:absolute;top:0;left:20%;right:20%;height:2px;border-radius:1px}
+.kpi.k-total::before{background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.kpi.k-crit::before{background:linear-gradient(90deg,transparent,var(--red),transparent)}
+.kpi.k-high::before{background:linear-gradient(90deg,transparent,var(--orange),transparent)}
+.kpi.k-med::before{background:linear-gradient(90deg,transparent,var(--yellow),transparent)}
+.kpi.k-low::before{background:linear-gradient(90deg,transparent,var(--green-ok),transparent)}
+.kpi .kpi-num{font-family:'Space Grotesk',sans-serif;font-size:42px;font-weight:700;line-height:1}
+.kpi.k-total .kpi-num{color:var(--gold)}
+.kpi.k-crit .kpi-num{color:var(--red-soft)}
+.kpi.k-high .kpi-num{color:var(--orange)}
+.kpi.k-med .kpi-num{color:var(--yellow)}
+.kpi.k-low .kpi-num{color:var(--green-ok)}
+.kpi .kpi-label{font-size:12px;color:var(--text2);margin-top:4px}
+.kpi .kpi-pct{font-size:18px;font-weight:600;opacity:.5;margin-top:2px}
+
+/* === ACTION CARDS === */
+.action-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.act-card{padding:20px;text-align:center;cursor:pointer;transition:all .25s;position:relative;overflow:hidden}
+.act-card::after{content:'';position:absolute;inset:0;border-radius:var(--radius);opacity:0;transition:opacity .3s}
+.act-card:hover::after{opacity:1}
+.act-card.active{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.act-card .ac-icon{font-size:32px;display:block;margin-bottom:8px;position:relative;z-index:1}
+.act-card .ac-num{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;display:block;position:relative;z-index:1}
+.act-card .ac-label{font-size:12px;display:block;margin-top:4px;position:relative;z-index:1;font-weight:500}
+.act-repeal{border-color:rgba(231,76,60,.2)!important}.act-repeal .ac-num{color:var(--red-soft)}.act-repeal::after{background:radial-gradient(circle at center,rgba(231,76,60,.08),transparent)}
+.act-repeal.active{border-color:rgba(231,76,60,.5)!important;box-shadow:0 12px 40px rgba(231,76,60,.15)}
+.act-modern{border-color:rgba(78,205,196,.2)!important}.act-modern .ac-num{color:var(--accent)}.act-modern::after{background:radial-gradient(circle at center,rgba(78,205,196,.08),transparent)}
+.act-modern.active{border-color:rgba(78,205,196,.5)!important;box-shadow:0 12px 40px rgba(78,205,196,.15)}
+.act-amend{border-color:rgba(241,196,15,.2)!important}.act-amend .ac-num{color:var(--yellow)}.act-amend::after{background:radial-gradient(circle at center,rgba(241,196,15,.08),transparent)}
+.act-amend.active{border-color:rgba(241,196,15,.5)!important;box-shadow:0 12px 40px rgba(241,196,15,.15)}
+.act-consol{border-color:rgba(155,89,182,.2)!important}.act-consol .ac-num{color:var(--purple)}.act-consol::after{background:radial-gradient(circle at center,rgba(155,89,182,.08),transparent)}
+.act-consol.active{border-color:rgba(155,89,182,.5)!important;box-shadow:0 12px 40px rgba(155,89,182,.15)}
+.act-keep{border-color:rgba(46,204,113,.2)!important}.act-keep .ac-num{color:var(--green-ok)}.act-keep::after{background:radial-gradient(circle at center,rgba(46,204,113,.08),transparent)}
+.act-keep.active{border-color:rgba(46,204,113,.5)!important;box-shadow:0 12px 40px rgba(46,204,113,.15)}
+
+/* === BAR CHART === */
+.bars{margin:16px 0}
+.bar-row{display:flex;align-items:center;margin:8px 0;gap:12px;opacity:0;transform:translateX(-20px);transition:all .5s ease}
+.bar-row.visible{opacity:1;transform:translateX(0)}
+.bar-label{width:180px;font-size:13px;text-align:right;color:var(--text2);flex-shrink:0}
+.bar-track{flex:1;height:32px;background:rgba(255,255,255,.04);border-radius:6px;overflow:hidden;position:relative}
+.bar-fill{height:100%;border-radius:6px;display:flex;align-items:center;padding:0 12px;font-size:12px;font-weight:600;color:#fff;min-width:32px;width:0;transition:width 1s cubic-bezier(.25,.46,.45,.94)}
+.bar-fill.grown{/* width set by JS */}
+.bar-meta{width:80px;font-size:12px;color:var(--text2);flex-shrink:0;text-align:right}
+.bar-meta b{color:var(--red-soft)}
+
+/* === TIMELINE === */
+.tl-container{position:relative;padding:16px 0}
+.tl-bars{display:flex;align-items:flex-end;gap:3px;height:200px}
+.tl-bar{flex:1;min-width:16px;border-radius:6px 6px 0 0;position:relative;cursor:pointer;transition:all .3s;opacity:0;transform:translateY(20px)}
+.tl-bar.visible{opacity:1;transform:translateY(0)}
+.tl-bar:hover{filter:brightness(1.3);transform:translateY(-4px)!important}
+.tl-bar .tl-tip{display:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--navy2);color:#fff;padding:8px 14px;border-radius:10px;font-size:12px;white-space:nowrap;z-index:10;box-shadow:0 4px 20px rgba(0,0,0,.4);border:1px solid var(--glass-border)}
+.tl-bar .tl-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--navy2)}
+.tl-bar:hover .tl-tip{display:block}
+.tl-axis{display:flex;gap:3px;margin-top:8px}
+.tl-axis span{flex:1;min-width:16px;text-align:center;font-size:10px;color:var(--text3)}
+
+/* === DATA TABLE === */
+.table-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--glass-border)}
+.dtable{width:100%;border-collapse:collapse;font-size:13px}
+.dtable thead{position:sticky;top:0;z-index:2}
+.dtable th{background:var(--navy2);color:var(--gold);padding:14px 12px;text-align:left;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid var(--gold)}
+.dtable th.ctr{text-align:center}
+.dtable td{padding:14px 12px;border-bottom:1px solid rgba(255,255,255,.04);vertical-align:top}
+.dtable td.ctr{text-align:center;font-weight:600;font-family:'Space Grotesk',sans-serif}
+.dtable tbody tr{transition:background .2s}
+.dtable tbody tr:hover{background:rgba(255,255,255,.03)}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;letter-spacing:.3px}
+.b-repeal{background:rgba(231,76,60,.12);color:var(--red-soft);border:1px solid rgba(231,76,60,.2)}
+.b-modern{background:rgba(78,205,196,.12);color:var(--accent);border:1px solid rgba(78,205,196,.2)}
+.b-amend{background:rgba(241,196,15,.12);color:var(--yellow);border:1px solid rgba(241,196,15,.2)}
+.b-consol{background:rgba(155,89,182,.12);color:var(--purple);border:1px solid rgba(155,89,182,.2)}
+.b-keep{background:rgba(46,204,113,.12);color:var(--green-ok);border:1px solid rgba(46,204,113,.2)}
+.link-btn{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--text2);text-decoration:none;font-size:14px;transition:all .2s}
+.link-btn:hover{background:rgba(201,169,110,.15);border-color:var(--gold);color:var(--gold)}
+
+/* === FILTER BAR === */
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px;align-items:center}
+.filter-bar select{padding:8px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;font-size:13px;font-family:inherit;color:var(--text);appearance:none;cursor:pointer;transition:border-color .2s;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238A94A6' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:30px}
+.filter-bar select:focus{outline:none;border-color:var(--accent)}
+.filter-bar select option{background:var(--navy);color:var(--text)}
+.reset-btn{background:transparent;color:var(--text2);border:1px solid rgba(255,255,255,.1);padding:8px 16px;border-radius:10px;font-size:12px;cursor:pointer;font-family:inherit;transition:all .2s}
+.reset-btn:hover{border-color:var(--accent);color:var(--accent)}
+.filter-count{font-size:12px;color:var(--text3);margin-left:auto}
+
+/* === ROADMAP === */
+.roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
+.roadmap::before{content:'';position:absolute;top:50%;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--red),var(--orange),var(--blue),var(--green-ok));opacity:.2;z-index:0}
+.rm-card{position:relative;z-index:1;padding:24px;border-radius:var(--radius)}
+.rm-card .rm-phase{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+.rm-card .rm-num{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;line-height:1;margin-bottom:4px}
+.rm-card .rm-label{font-size:13px;font-weight:600;margin-bottom:12px}
+.rm-card ul{font-size:12px;padding-left:16px;color:var(--text2);margin:0}
+.rm-card ul li{margin:4px 0}
+.rm-1{border-color:rgba(231,76,60,.3)!important}.rm-1 .rm-phase{color:var(--red-soft)}.rm-1 .rm-num{color:var(--red-soft)}
+.rm-2{border-color:rgba(243,156,18,.3)!important}.rm-2 .rm-phase{color:var(--orange)}.rm-2 .rm-num{color:var(--orange)}
+.rm-3{border-color:rgba(52,152,219,.3)!important}.rm-3 .rm-phase{color:var(--blue)}.rm-3 .rm-num{color:var(--blue)}
+.rm-4{border-color:rgba(46,204,113,.3)!important}.rm-4 .rm-phase{color:var(--green-ok)}.rm-4 .rm-num{color:var(--green-ok)}
+
+/* === RINGS === */
+.ring-grid{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin:24px 0}
+.ring-item{text-align:center}
+.ring-item .ring-label{font-size:12px;color:var(--text2);margin-top:8px}
+svg.ring{width:110px;height:110px}
+.ring-bg{fill:none;stroke:rgba(255,255,255,.06);stroke-width:6}
+.ring-fg{fill:none;stroke-width:6;stroke-linecap:round}
+.ring-text{font-family:'Space Grotesk',sans-serif;font-weight:700}
+
+/* === INSIGHT BOX === */
+.insight{display:flex;gap:20px;align-items:flex-start;padding:24px;margin:40px 0}
+.insight-icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.insight-body h3{font-size:16px;font-weight:600;color:#fff;margin-bottom:4px}
+.insight-body p{font-size:13px;color:var(--text2);margin:0}
+
+/* === CTA === */
+.cta-section{text-align:center;padding:80px 24px;position:relative}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(78,205,196,.06),transparent 70%)}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--navy);font-weight:600;font-size:15px;border-radius:12px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(78,205,196,.3)}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(78,205,196,.4)}
+
+/* === FOOTER === */
+.dash-footer{text-align:center;padding:40px 24px;border-top:1px solid rgba(255,255,255,.06);font-size:12px;color:var(--text3)}
+.dash-footer a{color:var(--gold);text-decoration:none}
+.dash-footer a:hover{text-decoration:underline}
+.footer-tags{margin-top:8px;color:var(--text3);font-size:11px}
+
+/* === DIVIDER === */
+.divider{width:60px;height:2px;background:linear-gradient(90deg,var(--gold),var(--accent));border-radius:1px;margin:24px 0}
+
+/* === RESPONSIVE === */
+@media(max-width:900px){
+  .kpi-grid{grid-template-columns:repeat(3,1fr)}
+  .action-grid{grid-template-columns:repeat(3,1fr)}
+  .roadmap{grid-template-columns:repeat(2,1fr)}
+  .bar-label{width:120px;font-size:11px}
+}
+@media(max-width:600px){
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .action-grid{grid-template-columns:repeat(2,1fr)}
+  .roadmap{grid-template-columns:1fr}
+  .hero h1{font-size:28px}
+  .hero-stats{gap:20px}
+  .hero-stat .hs-num{font-size:36px}
+  .nav-links{display:none}
+  .ring-grid{gap:16px}
+  .bar-label{width:80px;font-size:10px}
+}
+</style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-brand">
+    <div class="nav-logo">BP</div>
+    <div class="nav-title"><span>Bangkok</span> Possible</div>
+  </div>
+  <div class="nav-links">
+    <a href="#overview">ภาพรวม</a>
+    <a href="#actions">ข้อเสนอ</a>
+    <a href="#categories">หมวดหมู่</a>
+    <a href="#timeline-sec">Timeline</a>
+    <a href="#data">ข้อมูล</a>
+    <a href="#roadmap-sec">Roadmap</a>
+    <a href="ep7.html">บทความ</a>
+    <a href="./">หน้าหลัก</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="dot"></span> AI LegalTech Analysis &mdash; April 2569</div>
+    <h1>311 ข้อบัญญัติ กทม.<br>ถึงเวลาปฏิรูป</h1>
+    <p class="hero-sub">วิเคราะห์ข้อบัญญัติกรุงเทพมหานครทั้งหมดด้วย AI &mdash; พบ 43% ล้าสมัยเกิน 30 ปี กฎหมายเมืองที่เก่าแก่กว่าอายุคนส่วนใหญ่ที่ใช้มัน</p>
+    <div class="hero-stats">
+      <div class="hero-stat total"><div class="hs-num" data-target="311">0</div><div class="hs-label">ข้อบัญญัติ</div></div>
+      <div class="hero-stat critical"><div class="hs-num" data-target="135">0</div><div class="hs-label">วิกฤต 30+ ปี</div></div>
+      <div class="hero-stat"><div class="hs-num" data-target="19" style="color:var(--purple)">0</div><div class="hs-label">หมวดหมู่</div></div>
+      <div class="hero-stat action"><div class="hs-num" data-target="255">0</div><div class="hs-label">ต้องดำเนินการ</div></div>
+    </div>
+    <div class="hero-scroll">
+      <a href="#overview">
+        <span>เลื่อนลงเพื่อดูข้อมูล</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW KPI -->
+<section class="section" id="overview">
+  <div class="container">
+    <div class="section-label"><span class="line"></span> OVERVIEW</div>
+    <h2>ระดับความล้าสมัย</h2>
+    <p class="section-desc">ข้อบัญญัติ กทม. จำแนกตามอายุ &mdash; ยิ่งเก่ายิ่งเสี่ยงที่จะไม่สอดคล้องกับสภาพเมืองปัจจุบัน</p>
+
+    <div class="kpi-grid">
+      <div class="kpi glass k-total"><div class="kpi-num" data-target="311">0</div><div class="kpi-label">ทั้งหมด</div></div>
+      <div class="kpi glass k-crit"><div class="kpi-num" data-target="135">0</div><div class="kpi-label">วิกฤต (30+ ปี)</div><div class="kpi-pct">43%</div></div>
+      <div class="kpi glass k-high"><div class="kpi-num" data-target="81">0</div><div class="kpi-label">สูง (20-29 ปี)</div><div class="kpi-pct">26%</div></div>
+      <div class="kpi glass k-med"><div class="kpi-num" data-target="36">0</div><div class="kpi-label">กลาง (10-19 ปี)</div><div class="kpi-pct">12%</div></div>
+      <div class="kpi glass k-low"><div class="kpi-num" data-target="59">0</div><div class="kpi-label">ต่ำ + ใหม่</div><div class="kpi-pct">19%</div></div>
+    </div>
+
+    <!-- Rings -->
+    <div class="ring-grid">
+      <div class="ring-item">
+        <svg class="ring" viewBox="0 0 40 40">
+          <circle class="ring-bg" cx="20" cy="20" r="16"/>
+          <circle class="ring-fg" cx="20" cy="20" r="16" stroke="#FF6B6B" stroke-dasharray="100.5" stroke-dashoffset="100.5" data-offset="57" transform="rotate(-90 20 20)"/>
+          <text class="ring-text" x="20" y="21" text-anchor="middle" font-size="8" fill="#FF6B6B">43%</text>
+        </svg>
+        <div class="ring-label">วิกฤต</div>
+      </div>
+      <div class="ring-item">
+        <svg class="ring" viewBox="0 0 40 40">
+          <circle class="ring-bg" cx="20" cy="20" r="16"/>
+          <circle class="ring-fg" cx="20" cy="20" r="16" stroke="#F39C12" stroke-dasharray="100.5" stroke-dashoffset="100.5" data-offset="74.4" transform="rotate(-90 20 20)"/>
+          <text class="ring-text" x="20" y="21" text-anchor="middle" font-size="8" fill="#F39C12">26%</text>
+        </svg>
+        <div class="ring-label">สูง</div>
+      </div>
+      <div class="ring-item">
+        <svg class="ring" viewBox="0 0 40 40">
+          <circle class="ring-bg" cx="20" cy="20" r="16"/>
+          <circle class="ring-fg" cx="20" cy="20" r="16" stroke="#F1C40F" stroke-dasharray="100.5" stroke-dashoffset="100.5" data-offset="88.4" transform="rotate(-90 20 20)"/>
+          <text class="ring-text" x="20" y="21" text-anchor="middle" font-size="8" fill="#F1C40F">12%</text>
+        </svg>
+        <div class="ring-label">กลาง</div>
+      </div>
+      <div class="ring-item">
+        <svg class="ring" viewBox="0 0 40 40">
+          <circle class="ring-bg" cx="20" cy="20" r="16"/>
+          <circle class="ring-fg" cx="20" cy="20" r="16" stroke="#2ECC71" stroke-dasharray="100.5" stroke-dashoffset="100.5" data-offset="81.4" transform="rotate(-90 20 20)"/>
+          <text class="ring-text" x="20" y="21" text-anchor="middle" font-size="8" fill="#2ECC71">19%</text>
+        </svg>
+        <div class="ring-label">ต่ำ/ใหม่</div>
+      </div>
+    </div>
+
+    <div class="insight glass">
+      <div class="insight-icon">!</div>
+      <div class="insight-body">
+        <h3>69% ของข้อบัญญัติมีอายุเกิน 20 ปี</h3>
+        <p>กฎหมายเมืองส่วนใหญ่ถูกเขียนก่อนยุค BTS, MRT, Food Delivery, PM2.5 และ Digital Economy &mdash; ขณะที่กรุงเทพฯ เปลี่ยนไปแล้วทั้งเมือง กฎหมายที่ควบคุมเมืองกลับยังอยู่ในยุค 2530</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIONS -->
+<section class="section" id="actions" style="border-top:1px solid rgba(255,255,255,.04)">
+  <div class="container">
+    <div class="section-label"><span class="line"></span> RECOMMENDATIONS</div>
+    <h2>ข้อเสนอ 5 แนวทาง</h2>
+    <p class="section-desc">คลิกเพื่อ filter ข้อมูลในตารางด้านล่าง</p>
+
+    <div class="action-grid" id="actionGrid">
+      <div class="act-card glass act-repeal" data-action="repeal" onclick="toggleAction('repeal')">
+        <span class="ac-icon">&#x1F6AB;</span><span class="ac-num">47</span><span class="ac-label">ยกเลิก</span>
+      </div>
+      <div class="act-card glass act-modern" data-action="modernize" onclick="toggleAction('modernize')">
+        <span class="ac-icon">&#x1F680;</span><span class="ac-num">89</span><span class="ac-label">ปรับให้ทันสมัย</span>
+      </div>
+      <div class="act-card glass act-amend" data-action="amend" onclick="toggleAction('amend')">
+        <span class="ac-icon">&#x270F;&#xFE0F;</span><span class="ac-num">68</span><span class="ac-label">แก้ไขบางส่วน</span>
+      </div>
+      <div class="act-card glass act-consol" data-action="consolidate" onclick="toggleAction('consolidate')">
+        <span class="ac-icon">&#x1F4E6;</span><span class="ac-num">51</span><span class="ac-label">รวมฉบับ</span>
+      </div>
+      <div class="act-card glass act-keep" data-action="keep" onclick="toggleAction('keep')">
+        <span class="ac-icon">&#x2705;</span><span class="ac-num">56</span><span class="ac-label">ใช้ได้ / ติดตาม</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES BAR CHART -->
+<section class="section" id="categories" style="border-top:1px solid rgba(255,255,255,.04)">
+  <div class="container">
+    <div class="section-label"><span class="line"></span> CATEGORIES</div>
+    <h2>19 หมวดหมู่</h2>
+    <p class="section-desc">เรียงตามจำนวน &mdash; สีแดงยิ่งเข้ม ยิ่งมีสัดส่วน "วิกฤต" สูง</p>
+    <div class="bars" id="barChart"></div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section" id="timeline-sec" style="border-top:1px solid rgba(255,255,255,.04)">
+  <div class="container">
+    <div class="section-label"><span class="line"></span> TIMELINE</div>
+    <h2>ข้อบัญญัติแยกตามช่วงเวลา</h2>
+    <p class="section-desc">Hover เพื่อดูจำนวน &mdash; สีแสดงระดับความล้าสมัย ณ ปัจจุบัน</p>
+    <div class="tl-container">
+      <div class="tl-bars" id="tlBars"></div>
+      <div class="tl-axis" id="tlAxis"></div>
+    </div>
+  </div>
+</section>
+
+<!-- DATA TABLE -->
+<section class="section" id="data" style="border-top:1px solid rgba(255,255,255,.04)">
+  <div class="container">
+    <div class="section-label"><span class="line"></span> DATA</div>
+    <h2>ตารางวิเคราะห์รายหมวด</h2>
+    <p class="section-desc">พร้อมข้อเสนอปฏิรูปและเหตุผลประกอบ</p>
+
+    <div class="filter-bar">
+      <select id="fRisk" onchange="applyFilters()">
+        <option value="">ทุกระดับ</option>
+        <option value="critical">วิกฤต</option>
+        <option value="high">สูง</option>
+        <option value="medium">กลาง</option>
+        <option value="low">ต่ำ/ใหม่</option>
+      </select>
+      <select id="fAction" onchange="applyFilters()">
+        <option value="">ทุกข้อเสนอ</option>
+        <option value="repeal">ยกเลิก</option>
+        <option value="modernize">ปรับให้ทันสมัย</option>
+        <option value="amend">แก้ไขบางส่วน</option>
+        <option value="consolidate">รวมฉบับ</option>
+        <option value="keep">ใช้ได้</option>
+      </select>
+      <button class="reset-btn" onclick="resetFilters()">Reset</button>
+      <span class="filter-count" id="fCount"></span>
+    </div>
+
+    <div class="table-wrap">
+      <table class="dtable">
+        <thead>
+          <tr>
+            <th style="width:36px">#</th>
+            <th>หมวดหมู่</th>
+            <th class="ctr">รวม</th>
+            <th class="ctr">วิกฤต</th>
+            <th class="ctr">สูง</th>
+            <th class="ctr">กลาง</th>
+            <th class="ctr">ต่ำ</th>
+            <th>ข้อเสนอ</th>
+            <th>เหตุผล</th>
+            <th class="ctr">ลิงก์</th>
+          </tr>
+        </thead>
+        <tbody id="tBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="section" id="roadmap-sec" style="border-top:1px solid rgba(255,255,255,.04)">
+  <div class="container">
+    <div class="section-label"><span class="line"></span> ROADMAP</div>
+    <h2>ส.ก. ชุดใหม่ &mdash; แผน 4 ระยะ</h2>
+    <p class="section-desc">ลำดับความเร่งด่วนสำหรับการปฏิรูปกฎหมายเมือง</p>
+
+    <div class="roadmap">
+      <div class="rm-card glass rm-1">
+        <div class="rm-phase">Phase 1 &mdash; เดือน 1-2</div>
+        <div class="rm-num">47</div>
+        <div class="rm-label">เร่งด่วน &mdash; ยกเลิก</div>
+        <ul>
+          <li>ยกเลิกข้อบัญญัติที่ไม่มีผลบังคับใช้จริง</li>
+          <li>สาธารณสุข/อาหาร กระทบประชาชนทุกวัน</li>
+          <li>ตั้งคณะกรรมการทบทวนกฎหมายเมือง</li>
+        </ul>
+      </div>
+      <div class="rm-card glass rm-2">
+        <div class="rm-phase">Phase 2 &mdash; เดือน 3-6</div>
+        <div class="rm-num">89</div>
+        <div class="rm-label">สำคัญ &mdash; ปรับให้ทันสมัย</div>
+        <ul>
+          <li>Modernize ผังเมือง/อาคาร/จราจร</li>
+          <li>ปรับอัตราค่าธรรมเนียม</li>
+          <li>รองรับ Digital Economy</li>
+        </ul>
+      </div>
+      <div class="rm-card glass rm-3">
+        <div class="rm-phase">Phase 3 &mdash; เดือน 7-12</div>
+        <div class="rm-num">119</div>
+        <div class="rm-label">ระยะกลาง &mdash; แก้ไข + รวม</div>
+        <ul>
+          <li>รวมฉบับข้อบัญญัติซ้ำซ้อน</li>
+          <li>แก้ไขบุคลากร/สวัสดิการ</li>
+          <li>ออกข้อบัญญัติใหม่ (Smart City)</li>
+        </ul>
+      </div>
+      <div class="rm-card glass rm-4">
+        <div class="rm-phase">Phase 4 &mdash; เดือน 13+</div>
+        <div class="rm-num">56</div>
+        <div class="rm-label">ต่อเนื่อง &mdash; ติดตาม</div>
+        <ul>
+          <li>ติดตามผลบังคับใช้ข้อบัญญัติใหม่</li>
+          <li>ตั้งระบบ Sunset Review ทุก 5 ปี</li>
+          <li>AI LegalTech ติดตามอัตโนมัติ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container" style="position:relative;z-index:1">
+    <h2 style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:#fff;margin-bottom:8px">ข้อมูลนี้ คือจุดเริ่มต้นของการเปลี่ยนแปลง</h2>
+    <p style="color:var(--text2);margin-bottom:24px;max-width:500px;display:inline-block">เลือก ส.ก. ที่กล้าหยิบข้อบัญญัติอายุ 50 ปีขึ้นมาวางบนโต๊ะ แล้วพูดว่า "เราต้องเปลี่ยนแล้ว"</p><br>
+    <a class="cta-btn" href="ep7.html">อ่านบทความฉบับเต็ม &rarr;</a>
+    &nbsp;&nbsp;
+    <a class="cta-btn" href="https://bmc.go.th/common-local-law/" target="_blank" style="background:transparent;color:var(--accent);border:1px solid var(--accent);box-shadow:none">ดูข้อมูลต้นทาง</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="dash-footer">
+  <b style="color:var(--gold)">ดร.ธันย์ธรณ์เทพ แย้มอุทัย</b> &mdash;
+  <a href="https://thundthornthep-ai.github.io/">Profile</a> |
+  <a href="https://laslegal.co.th" target="_blank">LAS Legal</a> |
+  <a href="https://www.facebook.com/Bangkok.Possible" target="_blank">Bangkok Possible</a><br>
+  แหล่งข้อมูล: <a href="https://bmc.go.th/common-local-law/" target="_blank">สภากรุงเทพมหานคร</a> | วิเคราะห์ด้วย AI LegalTech โดย LAS<br>
+  <div class="footer-tags">#BangkokPossible #สก #ข้อบัญญัติกทม #กฎหมายเมือง #AILegalTech #นวัตกรรมนิติบัญญัติชิงรุก</div>
+  &copy; 2026 Legal Advance Solution Co., Ltd.
+</footer>
+
+<script>
+// ===== DATA =====
+var DATA=[
+  {cat:"ผังเมือง/อาคาร/ควบคุมพื้นที่",total:74,critical:52,high:15,medium:5,low:2,action:"consolidate",reason:"74 ฉบับซ้อนทับ — ต้องรวมเป็นข้อบัญญัติผังเมืองฉบับเดียว"},
+  {cat:"บุคลากร/สวัสดิการ/ค่าตอบแทน",total:50,critical:18,high:20,medium:8,low:4,action:"amend",reason:"อัตราค่าตอบแทนไม่สอดคล้องค่าครองชีพ — แก้ไขตัวเลขให้เป็นปัจจุบัน"},
+  {cat:"สาธารณสุข/อาหาร/การค้า",total:35,critical:25,high:6,medium:3,low:1,action:"modernize",reason:"เก่า 40-50 ปี ไม่รองรับ Food Delivery, Cloud Kitchen — เขียนใหม่ทั้งหมวด"},
+  {cat:"การเงิน/งบประมาณ/ค่าธรรมเนียม",total:32,critical:10,high:12,medium:6,low:4,action:"amend",reason:"อัตราค่าธรรมเนียมไม่ได้ปรับมา 20-30 ปี"},
+  {cat:"สวัสดิการสังคม/ชุมชน",total:22,critical:4,high:8,medium:5,low:5,action:"modernize",reason:"ไม่ตอบโจทย์สังคมสูงวัย ครอบครัวยุคใหม่"},
+  {cat:"จราจร/การจอดรถ",total:18,critical:12,high:4,medium:1,low:1,action:"modernize",reason:"เขียนก่อนมี BTS/MRT/แอปเรียกรถ — ปรับรองรับ Smart Mobility"},
+  {cat:"กิจการพาณิชย์/รัฐวิสาหกิจ",total:14,critical:4,high:5,medium:2,low:3,action:"amend",reason:"โครงสร้างกิจการเปลี่ยน — ปรับให้สอดคล้องธุรกิจปัจจุบัน"},
+  {cat:"การเมือง/สภา กทม.",total:12,critical:1,high:3,medium:3,low:5,action:"keep",reason:"ส่วนใหญ่ปรับปรุงแล้วตาม พ.ร.บ. กทม."},
+  {cat:"พัสดุ/ทรัพย์สิน/จัดซื้อจัดจ้าง",total:10,critical:3,high:3,medium:2,low:2,action:"amend",reason:"ระบบเปลี่ยนเป็น e-GP — ปรับให้สอดคล้องระบบอิเล็กทรอนิกส์"},
+  {cat:"สิ่งแวดล้อม/ความสะอาด",total:9,critical:3,high:2,medium:2,low:2,action:"modernize",reason:"ไม่รองรับ Waste Separation, PM2.5, Circular Economy"},
+  {cat:"การศึกษา/วิจัย",total:8,critical:1,high:2,medium:3,low:2,action:"keep",reason:"ปรับปรุงในช่วง 10 ปี — เพิ่มเติม Digital Literacy"},
+  {cat:"ความรับผิด/ละเมิด",total:6,critical:2,high:1,medium:1,low:2,action:"amend",reason:"หลักกฎหมายใช้ได้ แต่อัตราค่าเสียหายต้องปรับ"},
+  {cat:"สุสาน/ฌาปนสถาน",total:4,critical:3,high:1,medium:0,low:0,action:"repeal",reason:"ซ้ำซ้อนกับ พ.ร.บ. สุสาน — ยกเลิกใช้กฎหมายแม่บทแทน"},
+  {cat:"ขนส่งมวลชน",total:3,critical:0,high:1,medium:1,low:1,action:"modernize",reason:"ต้องเพิ่มรองรับ MaaS, EV Bus, Multimodal Transit"},
+  {cat:"สัตว์เลี้ยง/สัตว์",total:3,critical:0,high:1,medium:1,low:1,action:"amend",reason:"ปรับให้สอดคล้อง พ.ร.บ. ป้องกันการทารุณกรรมสัตว์"},
+  {cat:"ความปลอดภัย/สาธารณภัย",total:3,critical:0,high:0,medium:1,low:2,action:"keep",reason:"ออกใหม่ค่อนข้างทันสมัย"},
+  {cat:"ยกเลิกข้อบัญญัติ",total:5,critical:0,high:0,medium:0,low:5,action:"keep",reason:"ทำหน้าที่ยกเลิกฉบับเก่าสำเร็จแล้ว"},
+  {cat:"อื่นๆ",total:3,critical:1,high:1,medium:0,low:1,action:"repeal",reason:"ทบทวนรายฉบับ"}
+];
+
+var DECADES=[
+  {label:"2516-19",full:"พ.ศ. 2516-2519",count:12,risk:"critical"},
+  {label:"2520-24",full:"พ.ศ. 2520-2524",count:18,risk:"critical"},
+  {label:"2525-29",full:"พ.ศ. 2525-2529",count:35,risk:"critical"},
+  {label:"2530-34",full:"พ.ศ. 2530-2534",count:38,risk:"critical"},
+  {label:"2535-39",full:"พ.ศ. 2535-2539",count:32,risk:"critical"},
+  {label:"2540-44",full:"พ.ศ. 2540-2544",count:22,risk:"high"},
+  {label:"2545-49",full:"พ.ศ. 2545-2549",count:27,risk:"high"},
+  {label:"2550-54",full:"พ.ศ. 2550-2554",count:24,risk:"high"},
+  {label:"2555-59",full:"พ.ศ. 2555-2559",count:36,risk:"medium"},
+  {label:"2560-64",full:"พ.ศ. 2560-2564",count:32,risk:"low"},
+  {label:"2565-69",full:"พ.ศ. 2565-2569",count:35,risk:"low"}
+];
+
+var BADGE_MAP={
+  repeal:{label:"ยกเลิก",cls:"b-repeal"},
+  modernize:{label:"ปรับให้ทันสมัย",cls:"b-modern"},
+  amend:{label:"แก้ไขบางส่วน",cls:"b-amend"},
+  consolidate:{label:"รวมฉบับ",cls:"b-consol"},
+  keep:{label:"ใช้ได้ / ติดตาม",cls:"b-keep"}
+};
+
+var RISK_COLORS={critical:"#FF6B6B",high:"#F39C12",medium:"#F1C40F",low:"#2ECC71"};
+var activeAction='';
+
+// ===== COUNTER ANIMATION =====
+function animateCounters(els){
+  for(var i=0;i<els.length;i++){
+    (function(el){
+      var target=parseInt(el.getAttribute('data-target'),10);
+      var duration=1200;
+      var start=null;
+      function step(ts){
+        if(!start)start=ts;
+        var progress=Math.min((ts-start)/duration,1);
+        var ease=1-Math.pow(1-progress,3);
+        el.textContent=Math.round(target*ease);
+        if(progress<1)requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    })(els[i]);
+  }
+}
+
+// ===== SCROLL OBSERVER =====
+function setupObserver(){
+  if(!('IntersectionObserver' in window))return;
+  var obs=new IntersectionObserver(function(entries){
+    for(var i=0;i<entries.length;i++){
+      if(entries[i].isIntersecting){
+        var el=entries[i].target;
+        // Counter animation
+        var counters=el.querySelectorAll('[data-target]');
+        if(counters.length)animateCounters(counters);
+        // Bar animation
+        var bars=el.querySelectorAll('.bar-row');
+        for(var j=0;j<bars.length;j++){
+          (function(b,delay){
+            setTimeout(function(){b.classList.add('visible')},delay);
+          })(bars[j],j*60);
+        }
+        // Bar fill animation
+        var fills=el.querySelectorAll('.bar-fill[data-width]');
+        for(var j=0;j<fills.length;j++){
+          (function(f){
+            setTimeout(function(){f.style.width=f.getAttribute('data-width')+'%'},100);
+          })(fills[j]);
+        }
+        // Timeline bars
+        var tlb=el.querySelectorAll('.tl-bar');
+        for(var j=0;j<tlb.length;j++){
+          (function(b,delay){
+            setTimeout(function(){b.classList.add('visible')},delay);
+          })(tlb[j],j*80);
+        }
+        // Ring animation
+        var rings=el.querySelectorAll('.ring-fg[data-offset]');
+        for(var j=0;j<rings.length;j++){
+          (function(r){
+            setTimeout(function(){
+              r.style.transition='stroke-dashoffset 1.2s cubic-bezier(.25,.46,.45,.94)';
+              r.style.strokeDashoffset=r.getAttribute('data-offset');
+            },200);
+          })(rings[j]);
+        }
+        obs.unobserve(el);
+      }
+    }
+  },{threshold:0.15});
+  var sections=document.querySelectorAll('.section,.hero');
+  for(var i=0;i<sections.length;i++) obs.observe(sections[i]);
+}
+
+// ===== SCROLL PROGRESS =====
+function updateScroll(){
+  var winH=document.documentElement.scrollHeight-window.innerHeight;
+  var pct=winH>0?(window.scrollY/winH*100):0;
+  document.getElementById('scrollProgress').style.width=pct+'%';
+  var nav=document.getElementById('nav');
+  if(window.scrollY>50)nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+}
+
+// ===== BUILD BAR CHART =====
+function buildBars(){
+  var el=document.getElementById('barChart');
+  while(el.firstChild)el.removeChild(el.firstChild);
+  var maxV=0;
+  for(var i=0;i<DATA.length;i++)if(DATA[i].total>maxV)maxV=DATA[i].total;
+  var sorted=DATA.slice().sort(function(a,b){return b.total-a.total});
+  for(var i=0;i<sorted.length;i++){
+    var d=sorted[i];
+    var pct=(d.total/maxV*100).toFixed(0);
+    var critR=d.critical/d.total;
+    var color=critR>.5?'linear-gradient(90deg,#E74C3C,#FF6B6B)':critR>.3?'linear-gradient(90deg,#E67E22,#F39C12)':'linear-gradient(90deg,#2D6A4F,#4ECDC4)';
+
+    var row=document.createElement('div');row.className='bar-row';
+
+    var lbl=document.createElement('div');lbl.className='bar-label';
+    lbl.textContent=d.cat;row.appendChild(lbl);
+
+    var track=document.createElement('div');track.className='bar-track';
+    var fill=document.createElement('div');fill.className='bar-fill';
+    fill.setAttribute('data-width',pct);
+    fill.style.background=color;fill.textContent=d.total;
+    track.appendChild(fill);row.appendChild(track);
+
+    var meta=document.createElement('div');meta.className='bar-meta';
+    var b=document.createElement('b');b.textContent=Math.round(critR*100)+'%';
+    meta.appendChild(b);
+    meta.appendChild(document.createTextNode(' วิกฤต'));
+    row.appendChild(meta);
+
+    el.appendChild(row);
+  }
+}
+
+// ===== BUILD TIMELINE =====
+function buildTimeline(){
+  var bars=document.getElementById('tlBars');
+  var axis=document.getElementById('tlAxis');
+  while(bars.firstChild)bars.removeChild(bars.firstChild);
+  while(axis.firstChild)axis.removeChild(axis.firstChild);
+  var maxC=0;
+  for(var i=0;i<DECADES.length;i++)if(DECADES[i].count>maxC)maxC=DECADES[i].count;
+  for(var i=0;i<DECADES.length;i++){
+    var d=DECADES[i];
+    var h=(d.count/maxC*180);
+    var bar=document.createElement('div');bar.className='tl-bar';
+    bar.style.height=h+'px';
+    bar.style.background='linear-gradient(180deg,'+RISK_COLORS[d.risk]+','+RISK_COLORS[d.risk]+'88)';
+    var tip=document.createElement('div');tip.className='tl-tip';
+    tip.textContent=d.full+': '+d.count+' ฉบับ';
+    bar.appendChild(tip);bars.appendChild(bar);
+
+    var sp=document.createElement('span');sp.textContent=d.label;
+    axis.appendChild(sp);
+  }
+}
+
+// ===== BUILD TABLE =====
+function buildTable(data){
+  var tbody=document.getElementById('tBody');
+  while(tbody.firstChild)tbody.removeChild(tbody.firstChild);
+  var totalShown=0;
+  for(var i=0;i<data.length;i++){
+    var d=data[i];var a=BADGE_MAP[d.action];totalShown+=d.total;
+
+    var tr=document.createElement('tr');
+
+    var td0=document.createElement('td');td0.textContent=i+1;tr.appendChild(td0);
+
+    var td1=document.createElement('td');
+    var strong=document.createElement('strong');strong.textContent=d.cat;
+    td1.appendChild(strong);tr.appendChild(td1);
+
+    var td2=document.createElement('td');td2.className='ctr';td2.textContent=d.total;tr.appendChild(td2);
+
+    var td3=document.createElement('td');td3.className='ctr';td3.style.color='#FF6B6B';
+    td3.textContent=d.critical||'-';tr.appendChild(td3);
+
+    var td4=document.createElement('td');td4.className='ctr';td4.style.color='#F39C12';
+    td4.textContent=d.high||'-';tr.appendChild(td4);
+
+    var td5=document.createElement('td');td5.className='ctr';td5.style.color='#F1C40F';
+    td5.textContent=d.medium||'-';tr.appendChild(td5);
+
+    var td6=document.createElement('td');td6.className='ctr';td6.style.color='#2ECC71';
+    td6.textContent=d.low||'-';tr.appendChild(td6);
+
+    var td7=document.createElement('td');
+    var badge=document.createElement('span');badge.className='badge '+a.cls;badge.textContent=a.label;
+    td7.appendChild(badge);tr.appendChild(td7);
+
+    var td8=document.createElement('td');td8.style.fontSize='12px';td8.style.color=getComputedStyle(document.documentElement).getPropertyValue('--text2');
+    td8.textContent=d.reason;tr.appendChild(td8);
+
+    var td9=document.createElement('td');td9.className='ctr';
+    var lnk=document.createElement('a');lnk.className='link-btn';
+    lnk.href='https://bmc.go.th/common-local-law/';lnk.target='_blank';
+    lnk.title='ดูที่สภา กทม.';lnk.textContent='\u2197';
+    td9.appendChild(lnk);tr.appendChild(td9);
+
+    tbody.appendChild(tr);
+  }
+  document.getElementById('fCount').textContent='แสดง '+data.length+'/'+DATA.length+' หมวด ('+totalShown+' ฉบับ)';
+}
+
+// ===== FILTERS =====
+function toggleAction(action){
+  var cards=document.querySelectorAll('.act-card');
+  if(activeAction===action){
+    activeAction='';
+    for(var i=0;i<cards.length;i++)cards[i].classList.remove('active');
+    document.getElementById('fAction').value='';
+  }else{
+    activeAction=action;
+    for(var i=0;i<cards.length;i++){
+      if(cards[i].getAttribute('data-action')===action)cards[i].classList.add('active');
+      else cards[i].classList.remove('active');
+    }
+    document.getElementById('fAction').value=action;
+  }
+  applyFilters();
+}
+function applyFilters(){
+  var risk=document.getElementById('fRisk').value;
+  var action=document.getElementById('fAction').value;
+  var filtered=[];
+  for(var i=0;i<DATA.length;i++){
+    var d=DATA[i];
+    if(action&&d.action!==action)continue;
+    if(risk==='critical'&&d.critical===0)continue;
+    if(risk==='high'&&d.high===0)continue;
+    if(risk==='medium'&&d.medium===0)continue;
+    if(risk==='low'&&d.low===0)continue;
+    filtered.push(d);
+  }
+  buildTable(filtered);
+}
+function resetFilters(){
+  document.getElementById('fRisk').value='';
+  document.getElementById('fAction').value='';
+  var cards=document.querySelectorAll('.act-card');
+  for(var i=0;i<cards.length;i++)cards[i].classList.remove('active');
+  activeAction='';
+  buildTable(DATA);
+}
+
+// ===== INIT =====
+window.addEventListener('scroll',updateScroll);
+updateScroll();
+buildBars();
+buildTimeline();
+buildTable(DATA);
+setupObserver();
+</script>
+</body>
+</html>
