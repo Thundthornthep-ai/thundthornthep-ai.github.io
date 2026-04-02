@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ฝากหุ้นชื่อคนอื่น: ความเสี่ยงทางกฎหมายที่ผู้ประกอบการไทยต้องรู้ — LAS Legal Research</title>
+<meta name="description" content="บทความวิชาการวิเคราะห์ปัญหากฎหมายของการฝากถือหุ้นแทน (Nominee Shareholding) ในบริษัทจำกัดตามกฎหมายไทย พร้อมอ้างอิงตัวบท ปพพ. และแนวคำพิพากษาฎีกา">
+<meta name="author" content="ธันย์ธรณ์เทพ ยมอุทัย, Ph.D.">
+<meta name="keywords" content="ฝากหุ้น, ถือหุ้นแทน, nominee, ทะเบียนผู้ถือหุ้น, บริษัทจำกัด, กฎหมายธุรกิจ, ปพพ, มาตรา 1129, LAS">
+<link rel="canonical" href="https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article1.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ฝากหุ้นชื่อคนอื่น: ความเสี่ยงทางกฎหมายที่ผู้ประกอบการไทยต้องรู้">
+<meta property="og:description" content="วิเคราะห์ปัญหาการฝากถือหุ้นแทนตามกฎหมายไทย พร้อมแนวคำพิพากษาฎีกา — LAS Legal Research">
+<meta property="og:locale" content="th_TH">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F1A2E;--navy2:#1B2A4A;--gold:#C9A96E;--gold-light:#E8D5B0;
+  --accent:#4ECDC4;--accent2:#44A08D;
+  --red:#E74C3C;--orange:#F39C12;--green:#2ECC71;
+  --bg:#0a0f1a;--card:rgba(255,255,255,0.04);--card-border:rgba(255,255,255,0.08);
+  --text:#E8E8E8;--text2:#8A94A6;--text3:#5A6478;
+  --radius:16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans Thai','Sarabun',sans-serif;font-size:16px;line-height:1.85;color:var(--text);background:var(--bg)}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+.container{max-width:780px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(20px);background:rgba(15,26,46,0.85);border-bottom:1px solid rgba(255,255,255,0.05)}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo{width:32px;height:32px;background:linear-gradient(135deg,var(--gold),var(--accent));border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:var(--navy)}
+.nav-title{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;color:#fff;letter-spacing:-.3px}
+.nav-title span{color:var(--gold)}
+
+/* HERO */
+.hero{padding:120px 24px 60px;text-align:center}
+.hero-label{display:inline-block;padding:4px 14px;border-radius:20px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,169,110,.3);background:rgba(201,169,110,.06);margin-bottom:16px}
+.hero h1{font-family:'Space Grotesk','IBM Plex Sans Thai',sans-serif;font-size:clamp(26px,4vw,38px);font-weight:700;color:#fff;line-height:1.3;margin-bottom:16px}
+.hero .subtitle{color:var(--text2);font-size:15px;max-width:600px;margin:0 auto 24px}
+.meta{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--text3)}
+
+/* ARTICLE */
+article{padding:40px 0 80px}
+article h2{font-family:'Space Grotesk','IBM Plex Sans Thai',sans-serif;font-size:22px;font-weight:700;color:#fff;margin:48px 0 16px;padding-left:16px;border-left:3px solid var(--gold)}
+article h3{font-size:18px;font-weight:600;color:var(--gold-light);margin:32px 0 12px}
+article p{margin-bottom:16px;color:var(--text)}
+article ul,article ol{margin:0 0 16px 24px}
+article li{margin-bottom:8px}
+
+/* BLOCKQUOTE - for legal text */
+.law-text{background:rgba(201,169,110,.06);border-left:3px solid var(--gold);padding:16px 20px;margin:16px 0 24px;border-radius:0 var(--radius) var(--radius) 0;font-size:14px;line-height:1.9;color:var(--gold-light)}
+.law-text .cite{display:block;margin-top:8px;font-size:12px;color:var(--text3);font-style:normal}
+
+/* WARNING BOX */
+.warn-box{background:rgba(231,76,60,.08);border:1px solid rgba(231,76,60,.2);border-radius:var(--radius);padding:16px 20px;margin:20px 0;font-size:14px}
+.warn-box strong{color:var(--red)}
+
+/* INFO BOX */
+.info-box{background:rgba(78,205,196,.06);border:1px solid rgba(78,205,196,.15);border-radius:var(--radius);padding:16px 20px;margin:20px 0;font-size:14px}
+.info-box strong{color:var(--accent)}
+
+/* TABLE */
+.article-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
+.article-table th{background:rgba(201,169,110,.1);color:var(--gold-light);padding:10px 14px;text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.article-table td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.04)}
+.article-table tr:hover td{background:rgba(255,255,255,.02)}
+
+/* SCENARIO */
+.scenario{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);padding:20px 24px;margin:24px 0}
+.scenario-title{font-weight:600;color:var(--accent);margin-bottom:8px;font-size:15px}
+
+/* FOOTER */
+footer{padding:40px 24px;text-align:center;font-size:13px;color:var(--text3);border-top:1px solid rgba(255,255,255,.04)}
+footer a{color:var(--gold)}
+footer b{color:var(--gold)}
+
+/* REFERENCES */
+.references{font-size:13px;line-height:1.8;color:var(--text2)}
+.references li{margin-bottom:6px}
+
+@media(max-width:600px){
+  .hero h1{font-size:24px}
+  article h2{font-size:19px}
+  .meta{flex-direction:column;gap:6px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="./">
+    <div class="nav-logo">LR</div>
+    <div class="nav-title"><span>LAS</span> Legal Research</div>
+  </a>
+</nav>
+
+<header class="hero">
+  <div class="hero-label">LAS Legal Research Series</div>
+  <h1>ฝากหุ้นชื่อคนอื่น:<br>ความเสี่ยงทางกฎหมายที่ผู้ประกอบการไทยต้องรู้</h1>
+  <p class="subtitle">วิเคราะห์ปัญหาทางกฎหมายของการฝากถือหุ้นแทน (Nominee Shareholding) ในบริษัทจำกัดตามประมวลกฎหมายแพ่งและพาณิชย์ พร้อมแนวคำพิพากษาฎีกาและข้อเสนอเชิงป้องกัน</p>
+  <div class="meta">
+    <span>ธันย์ธรณ์เทพ ยมอุทัย, Ph.D.</span>
+    <span>Legal Advance Solution Co., Ltd.</span>
+    <span>เมษายน 2569</span>
+  </div>
+</header>
+
+<article>
+  <div class="container">
+
+    <!-- 1. บทนำ -->
+    <h2>1. บทนำ</h2>
+    <p>ในทางปฏิบัติของการประกอบธุรกิจในประเทศไทย การให้บุคคลอื่นถือหุ้นแทนตน (Nominee Shareholding) เป็นปรากฏการณ์ที่พบได้บ่อยครั้ง ไม่ว่าจะเกิดจากเหตุผลทางธุรกิจ เหตุผลส่วนตัว หรือเหตุผลทางกฎหมาย เช่น การหลีกเลี่ยงข้อจำกัดด้านสัดส่วนการถือหุ้นของคนต่างด้าว</p>
+    <p>ปัญหาที่เกิดขึ้นบ่อยครั้งคือ เมื่อ<strong>ผู้ฝากหุ้น (Beneficial Owner)</strong> ต้องการเรียกหุ้นคืนจาก<strong>ผู้ถือหุ้นแทน (Nominee)</strong> กลับพบว่าตนไม่มีสิทธิตามกฎหมายเพียงพอที่จะบังคับให้โอนหุ้นคืนได้ เนื่องจากทะเบียนผู้ถือหุ้นระบุชื่อของผู้ถือหุ้นแทนเป็นเจ้าของโดยชอบด้วยกฎหมาย</p>
+    <p>บทความฉบับนี้มุ่งวิเคราะห์กรอบกฎหมายที่เกี่ยวข้อง ความเสี่ยงทางกฎหมายที่เกิดขึ้น และข้อเสนอเชิงป้องกันสำหรับผู้ประกอบการ โดยอ้างอิงตัวบทกฎหมายและแนวคำพิพากษาฎีกาเป็นสำคัญ</p>
+
+    <!-- 2. กรอบกฎหมาย -->
+    <h2>2. กรอบกฎหมายที่เกี่ยวข้อง</h2>
+
+    <h3>2.1 ทะเบียนผู้ถือหุ้นเป็นหลักฐานสำคัญ</h3>
+    <p>ประมวลกฎหมายแพ่งและพาณิชย์ (ปพพ.) กำหนดหลักการสำคัญเกี่ยวกับการโอนหุ้นและทะเบียนผู้ถือหุ้นไว้ในมาตรา 1129 ดังนี้:</p>
+
+    <blockquote class="law-text">
+      "อันว่าหุ้นนั้นย่อมโอนกันได้โดยมิต้องได้รับความยินยอมของบริษัท เว้นแต่เมื่อเป็นหุ้นชนิดระบุชื่อลงในใบหุ้น ซึ่งมีข้อบังคับของบริษัทกำหนดไว้เป็นอย่างอื่น<br><br>
+      การโอนหุ้นชนิดระบุชื่อลงในใบหุ้นนั้น ถ้ามิได้ทำเป็นหนังสือและลงลายมือชื่อของผู้โอนกับผู้รับโอน มีพยานคนหนึ่งเป็นอย่างน้อยลงชื่อรับรองลายมือนั้น ๆ ด้วยแล้ว ท่านว่าเป็นโมฆะ อนึ่ง ตราสารอันนั้นต้องแถลงเลขหมายของหุ้นซึ่งโอนกันนั้นด้วย<br><br>
+      การโอนเช่นนี้จะนำมาใช้แก่บริษัทหรือบุคคลภายนอกไม่ได้ จนกว่าจะได้จดแจ้งการโอนทั้งชื่อและสำนักของผู้รับโอนนั้นลงในทะเบียนผู้ถือหุ้น"
+      <span class="cite">ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 1129</span>
+    </blockquote>
+
+    <div class="warn-box">
+      <strong>หลักกฎหมายสำคัญ:</strong> การโอนหุ้นจะใช้ยันบริษัทและบุคคลภายนอกได้ก็ต่อเมื่อมีการ<strong>จดแจ้งลงในทะเบียนผู้ถือหุ้น</strong>แล้วเท่านั้น ดังนั้น ผู้ที่มีชื่อในทะเบียนผู้ถือหุ้นย่อมเป็น "ผู้ถือหุ้น" โดยชอบด้วยกฎหมาย
+    </div>
+
+    <h3>2.2 แบบของการโอนหุ้น</h3>
+    <p>ปพพ. มาตรา 1129 วรรคสอง กำหนดแบบของการโอนหุ้นชนิดระบุชื่อไว้อย่างชัดเจน กล่าวคือต้อง:</p>
+    <ol>
+      <li>ทำเป็น<strong>หนังสือ</strong></li>
+      <li>ลงลายมือชื่อ<strong>ผู้โอน</strong>และ<strong>ผู้รับโอน</strong></li>
+      <li>มี<strong>พยานอย่างน้อย 1 คน</strong>ลงชื่อรับรอง</li>
+      <li>ระบุ<strong>เลขหมายหุ้น</strong>ที่โอน</li>
+    </ol>
+    <p>หากไม่ทำตามแบบดังกล่าว การโอนหุ้นย่อมตกเป็น<strong>โมฆะ</strong> (ปพพ. มาตรา 1129 วรรคสอง)</p>
+
+    <h3>2.3 หลักความรับผิดของกรรมการ</h3>
+    <p>สำหรับกรณีที่ผู้รับฝากหุ้นเป็นกรรมการของบริษัทด้วย กฎหมายกำหนดหน้าที่ความระมัดระวัง (Duty of Care) ไว้ดังนี้:</p>
+
+    <blockquote class="law-text">
+      "กรรมการต้องใช้ความเอื้อเฟื้อสอดส่องอย่างบุคคลค้าขายผู้ประกอบด้วยความระมัดระวัง"
+      <span class="cite">ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 1168 วรรคหนึ่ง</span>
+    </blockquote>
+
+    <p>และหากกรรมการทำให้บริษัทเสียหาย ผู้ถือหุ้นมีสิทธิฟ้องคดีแทนบริษัท (Derivative Action) ตามมาตรา 1169:</p>
+
+    <blockquote class="law-text">
+      "ถ้ากรรมการทำให้เกิดเสียหายแก่บริษัท บริษัทจะฟ้องร้องเรียกเอาสินไหมทดแทนแก่กรรมการก็ได้ หรือในกรณีที่บริษัทไม่ยอมฟ้องร้อง ผู้ถือหุ้นคนหนึ่งคนใดจะเอาคดีขึ้นว่ากล่าวก็ได้"
+      <span class="cite">ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 1169 วรรคหนึ่ง</span>
+    </blockquote>
+
+    <h3>2.4 เจตนาลวงและนิติกรรมอำพราง</h3>
+    <p>การฝากถือหุ้นแทนอาจเข้าข่ายนิติกรรมอำพรางตามมาตรา 155 แห่ง ปพพ.:</p>
+
+    <blockquote class="law-text">
+      "การแสดงเจตนาลวงโดยสมรู้กับคู่กรณีอีกฝ่ายหนึ่งเป็นโมฆะ แต่จะยกขึ้นเป็นข้อต่อสู้บุคคลภายนอกผู้กระทำการโดยสุจริต และต้องเสียหายจากการแสดงเจตนาลวงนั้นมิได้<br><br>
+      ถ้าการแสดงเจตนาลวงตามวรรคหนึ่งทำขึ้นเพื่ออำพรางนิติกรรมอื่น ให้นำบทบัญญัติของกฎหมายอันเกี่ยวกับนิติกรรมที่ถูกอำพรางมาใช้บังคับ"
+      <span class="cite">ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 155</span>
+    </blockquote>
+
+    <!-- 3. สถานการณ์สมมติ -->
+    <h2>3. การวิเคราะห์ปัญหาทางกฎหมาย</h2>
+
+    <h3>3.1 สถานการณ์สมมติ</h3>
+    <div class="scenario">
+      <div class="scenario-title">สถานการณ์สมมติ: กรณี A ฝากหุ้นกับ B</div>
+      <p><strong>นาย A</strong> เป็นผู้ก่อตั้งบริษัท X จำกัด ประกอบกิจการให้บริการด้านความงาม มีรายได้ดี ต่อมา A ประสบปัญหาส่วนตัวบางประการ จึง<strong>โอนหุ้นทั้งหมด</strong>ของตนในบริษัท X ไปลงชื่อ<strong>นาง B</strong> ซึ่งเป็นเพื่อนสนิทและผู้ร่วมก่อตั้ง โดยตกลงด้วยวาจาว่า B จะถือหุ้นแทน A ไปก่อนชั่วคราว</p>
+      <p>เมื่อ A แก้ไขปัญหาส่วนตัวเรียบร้อยแล้ว ขอให้ B โอนหุ้นคืน แต่ B ปฏิเสธ โดยอ้างว่าตนเป็นผู้ถือหุ้นโดยชอบด้วยกฎหมาย มีชื่อในทะเบียนผู้ถือหุ้น และข้อตกลงด้วยวาจาไม่มีผลผูกพัน</p>
+    </div>
+
+    <h3>3.2 ประเด็นกฎหมาย (Issues)</h3>
+    <table class="article-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>ประเด็น</th>
+          <th>หลักกฎหมาย</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>A ยังเป็นผู้ถือหุ้นในบริษัท X หรือไม่?</td>
+          <td>ปพพ. ม.1129 (ทะเบียนผู้ถือหุ้น)</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>ข้อตกลงด้วยวาจาให้ถือหุ้นแทนมีผลบังคับได้หรือไม่?</td>
+          <td>ปพพ. ม.155 (เจตนาลวง/นิติกรรมอำพราง)</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>A จะฟ้องเรียกหุ้นคืนจาก B ได้หรือไม่ และต้องพิสูจน์อะไร?</td>
+          <td>ปพพ. ม.155, หลักฐานเป็นหนังสือ</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>หาก B ดำเนินกิจการบริษัทต่อแล้วทำให้เสียหาย A มีสิทธิอย่างไร?</td>
+          <td>ปพพ. ม.1169 (Derivative Action)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>3.3 การวิเคราะห์ตามหลัก IRAC</h3>
+
+    <p><strong>ประเด็นที่ 1: สถานะทางกฎหมายของ A</strong></p>
+    <p>ตามหลักกฎหมาย ผู้ที่มีชื่อในทะเบียนผู้ถือหุ้นย่อมเป็นผู้ถือหุ้นโดยชอบด้วยกฎหมาย (ปพพ. มาตรา 1129 วรรคสาม) เมื่อ A ได้โอนหุ้นให้ B โดยชอบด้วยแบบ และมีการจดแจ้งลงในทะเบียนผู้ถือหุ้นแล้ว B ย่อมเป็นผู้ถือหุ้นที่ชอบด้วยกฎหมาย A จึง<strong>สิ้นสถานะการเป็นผู้ถือหุ้น</strong>ตามกฎหมาย</p>
+
+    <p><strong>ประเด็นที่ 2: ผลของข้อตกลงด้วยวาจา</strong></p>
+    <p>การตกลงด้วยวาจาว่า B จะถือหุ้นแทน A อาจเป็นนิติกรรมอำพราง (ปพพ. มาตรา 155 วรรคสอง) กล่าวคือ นิติกรรมที่ปรากฏภายนอกคือ "การโอนขายหุ้น" แต่นิติกรรมที่แท้จริงคือ "การฝากถือหุ้นแทน" ซึ่งต้องบังคับตามนิติกรรมที่ถูกอำพราง</p>
+    <p>อย่างไรก็ตาม ปัญหาสำคัญคือ <strong>ภาระการพิสูจน์</strong> ตกแก่ A ที่ต้องแสดงให้ศาลเห็นว่ามีข้อตกลงฝากถือหุ้นแทนจริง ซึ่งหากมีเพียงข้อตกลงด้วยวาจาโดยไม่มีหลักฐานเป็นหนังสือ จะทำให้การพิสูจน์เป็นไปได้ยาก</p>
+
+    <div class="warn-box">
+      <strong>ความเสี่ยงสำคัญ:</strong> เมื่อไม่มีหลักฐานเป็นหนังสือ A ต้องอาศัยพยานบุคคล พยานแวดล้อม หรือหลักฐานทางอิเล็กทรอนิกส์ (เช่น ข้อความ LINE, อีเมล) เพื่อพิสูจน์ว่ามีข้อตกลงฝากถือหุ้นแทนจริง ซึ่งศาลจะพิจารณาน้ำหนักพยานเป็นรายกรณี
+    </div>
+
+    <p><strong>ประเด็นที่ 3: สิทธิเรียกหุ้นคืน</strong></p>
+    <p>หาก A สามารถพิสูจน์ได้ว่าการโอนหุ้นเป็นนิติกรรมอำพราง A อาจฟ้องขอให้ศาลบังคับให้ B โอนหุ้นคืน โดยอาศัยหลักกฎหมายดังนี้:</p>
+    <ul>
+      <li>ฟ้องให้บังคับตามสัญญาตัวแทน (ปพพ. มาตรา 797 ประกอบ มาตรา 810)</li>
+      <li>ฟ้องเรียกทรัพย์คืนจากการครอบครองโดยไม่มีสิทธิ (ปพพ. มาตรา 1336)</li>
+      <li>ฟ้องให้เพิกถอนนิติกรรมที่ทำโดยเจตนาลวง (ปพพ. มาตรา 155)</li>
+    </ul>
+
+    <h3>3.4 แนวคำพิพากษาฎีกาที่เกี่ยวข้อง</h3>
+
+    <div class="info-box">
+      <strong>หมายเหตุ:</strong> แนวคำพิพากษาต่อไปนี้อ้างอิงจากฐานข้อมูลศาลฎีกาและแหล่งวิชาการ ผู้อ่านควรตรวจสอบเลขที่คำพิพากษาจากฐานข้อมูลศาลฎีกา (deka.supremecourt.or.th) ก่อนนำไปอ้างอิงในทางคดี
+    </div>
+
+    <table class="article-table">
+      <thead>
+        <tr>
+          <th>ฎีกา</th>
+          <th>หลักกฎหมาย</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ฎ. 1376/2565</td>
+          <td>ผู้ถือหุ้นมีสิทธิฟ้องคดีแทนบริษัทตาม ม.1169 ได้ตราบเท่าที่ยังคงเป็นผู้ถือหุ้น หากโอนหุ้นออกไปแล้ว ย่อมหมดสิทธิ</td>
+          <td>&#9989;</td>
+        </tr>
+        <tr>
+          <td>ฎ. 8455/2563</td>
+          <td>ข้อตกลงระหว่างผู้ถือหุ้นไม่ระงับสิทธิเรียกร้องค่าสินไหมทดแทนเพื่อความเสียหายที่เกิดแก่บริษัทซึ่งเป็นนิติบุคคลแยกต่างหาก</td>
+          <td>&#9989;</td>
+        </tr>
+        <tr>
+          <td>ฎ. 3280/2564</td>
+          <td>กรรมการที่บริหารจนบริษัทเสียหาย ผู้ถือหุ้นอาจขอให้ศาลสั่งเลิกบริษัทตาม ม.1237</td>
+          <td>&#9989;</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;color:var(--text3)">&#9989; = อ้างอิงจาก Legardy.com ซึ่งรวบรวมจากฐานข้อมูลศาลฎีกา</p>
+
+    <!-- 4. ตารางสรุปความเสี่ยง -->
+    <h2>4. สรุปความเสี่ยงจากการฝากถือหุ้นแทน</h2>
+
+    <table class="article-table">
+      <thead>
+        <tr>
+          <th>ระดับ</th>
+          <th>ความเสี่ยง</th>
+          <th>รายละเอียด</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="color:#FF6B6B;font-weight:600">สูง</td>
+          <td>สูญเสียความเป็นเจ้าของ</td>
+          <td>ผู้ฝากหุ้นไม่มีชื่อในทะเบียนผู้ถือหุ้น จึงไม่มีสิทธิใด ๆ ตามกฎหมายบริษัท</td>
+        </tr>
+        <tr>
+          <td style="color:#FF6B6B;font-weight:600">สูง</td>
+          <td>ภาระการพิสูจน์ตกแก่ผู้ฝากหุ้น</td>
+          <td>ต้องพิสูจน์ว่ามีข้อตกลงฝากถือหุ้นแทน ซึ่งยากหากไม่มีหลักฐานเป็นหนังสือ</td>
+        </tr>
+        <tr>
+          <td style="color:#FF6B6B;font-weight:600">สูง</td>
+          <td>ผู้ถือหุ้นแทนโอนหุ้นต่อให้บุคคลภายนอก</td>
+          <td>บุคคลภายนอกผู้กระทำการโดยสุจริตได้รับความคุ้มครอง (ปพพ. ม.155 วรรคหนึ่ง)</td>
+        </tr>
+        <tr>
+          <td style="color:#F39C12;font-weight:600">กลาง</td>
+          <td>ผู้ถือหุ้นแทนลงมติเปลี่ยนแปลงบริษัท</td>
+          <td>เปลี่ยนกรรมการ เพิ่มทุน แก้ไขข้อบังคับ โดยผู้ฝากหุ้นไม่มีสิทธิคัดค้าน</td>
+        </tr>
+        <tr>
+          <td style="color:#F39C12;font-weight:600">กลาง</td>
+          <td>ถูกเจือจางหุ้น (Dilution)</td>
+          <td>ผู้ถือหุ้นแทนออกเสียงเพิ่มทุน (ม.1220) ให้บุคคลภายนอก ทำให้สัดส่วนหุ้นเดิมลดลง</td>
+        </tr>
+        <tr>
+          <td style="color:#F39C12;font-weight:600">กลาง</td>
+          <td>คดีใช้เวลานาน</td>
+          <td>การฟ้องร้องเพื่อเรียกหุ้นคืนอาจใช้เวลาหลายปี ระหว่างนี้ผู้ฝากหุ้นไม่มีอำนาจบริหาร</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 5. ข้อเสนอเชิงป้องกัน -->
+    <h2>5. ข้อเสนอเชิงป้องกันสำหรับผู้ประกอบการ</h2>
+
+    <h3>5.1 หลีกเลี่ยงการฝากถือหุ้นแทนโดยไม่มีสัญญา</h3>
+    <p>หากจำเป็นต้องให้บุคคลอื่นถือหุ้นแทน ควรดำเนินการดังนี้:</p>
+    <ol>
+      <li><strong>ทำสัญญาฝากถือหุ้นแทน (Nominee Agreement) เป็นลายลักษณ์อักษร</strong> ระบุรายละเอียดหุ้น เงื่อนไขการโอนคืน และเหตุผลของการฝาก</li>
+      <li><strong>จัดทำหนังสือโอนหุ้นล่วงหน้า (Undated Transfer Instrument)</strong> ซึ่งผู้ถือหุ้นแทนลงนามไว้ล่วงหน้า เพื่อให้ผู้ฝากหุ้นสามารถจดทะเบียนโอนคืนได้ทันทีเมื่อต้องการ</li>
+      <li><strong>จัดทำหนังสือมอบอำนาจออกเสียง (Proxy)</strong> เพื่อให้ผู้ฝากหุ้นยังคงมีสิทธิออกเสียงในที่ประชุมผู้ถือหุ้น</li>
+      <li><strong>เก็บหลักฐานการสื่อสารทุกช่องทาง</strong> รวมถึงข้อความอิเล็กทรอนิกส์ อีเมล บันทึกการประชุม</li>
+    </ol>
+
+    <h3>5.2 โครงสร้างทางเลือกที่ปลอดภัยกว่า</h3>
+    <table class="article-table">
+      <thead>
+        <tr>
+          <th>ทางเลือก</th>
+          <th>ข้อดี</th>
+          <th>ข้อจำกัด</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>สัญญาระหว่างผู้ถือหุ้น (Shareholders' Agreement)</td>
+          <td>กำหนดสิทธิ หน้าที่ เงื่อนไขการโอนหุ้น ได้ชัดเจน</td>
+          <td>ผูกพันเฉพาะคู่สัญญา ไม่ผูกพันบุคคลภายนอก</td>
+        </tr>
+        <tr>
+          <td>ข้อจำกัดการโอนหุ้นในข้อบังคับบริษัท</td>
+          <td>ผูกพันผู้ถือหุ้นทุกคน ป้องกันการโอนหุ้นโดยไม่ได้รับอนุญาต</td>
+          <td>ต้องจดทะเบียนกับกรมพัฒนาธุรกิจการค้า</td>
+        </tr>
+        <tr>
+          <td>สิทธิซื้อคืน (Call Option)</td>
+          <td>ให้สิทธิผู้ฝากหุ้นซื้อหุ้นคืนในราคาที่กำหนดไว้ล่วงหน้า</td>
+          <td>ต้องมีสัญญาเป็นลายลักษณ์อักษร</td>
+        </tr>
+        <tr>
+          <td>การจำนำหุ้น (Share Pledge)</td>
+          <td>ผู้ฝากหุ้นมีสิทธิเหนือหุ้นในฐานะผู้รับจำนำ</td>
+          <td>ไม่ให้สิทธิออกเสียงในที่ประชุม</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>5.3 สิ่งที่ไม่ควรทำ</h3>
+    <div class="warn-box">
+      <strong>ข้อควรระวัง:</strong>
+      <ul style="margin-top:8px">
+        <li>ห้ามตกลงด้วยวาจาเพียงอย่างเดียว — ไม่มีหลักฐานเป็นหนังสือ = ภาระพิสูจน์ตกแก่ตน</li>
+        <li>ห้ามไว้วางใจโดยไม่มีกลไกคุ้มครอง — ความสัมพันธ์ส่วนตัวไม่ใช่หลักประกันทางกฎหมาย</li>
+        <li>ห้ามโอนหุ้น 100% ให้บุคคลเดียว — ควรกระจายความเสี่ยง หรือคงหุ้นส่วนหนึ่งไว้ในชื่อตน</li>
+        <li>หากเป็นการฝากถือหุ้นแทนคนต่างด้าว อาจมีความผิดตามพระราชบัญญัติการประกอบธุรกิจของคนต่างด้าว พ.ศ. 2542 มาตรา 36 ซึ่งมีโทษจำคุกไม่เกิน 3 ปี หรือปรับ 100,000 ถึง 1,000,000 บาท หรือทั้งจำทั้งปรับ</li>
+      </ul>
+    </div>
+
+    <!-- 6. บทสรุป -->
+    <h2>6. บทสรุป</h2>
+    <p>การฝากถือหุ้นแทนโดยไม่มีสัญญาเป็นลายลักษณ์อักษร เป็นความเสี่ยงทางกฎหมายที่ร้ายแรงที่สุดประการหนึ่งสำหรับผู้ประกอบการไทย เพราะกฎหมายให้ความสำคัญกับ<strong>ทะเบียนผู้ถือหุ้น</strong>เป็นหลัก ผู้ที่ไม่มีชื่อในทะเบียนย่อมไม่มีสิทธิตามกฎหมายบริษัท ไม่ว่าจะเป็นเจ้าของที่แท้จริงหรือไม่ก็ตาม</p>
+    <p>ในทางปฏิบัติ หากจำเป็นต้องมีการจัดโครงสร้างการถือหุ้นโดยให้บุคคลอื่นเข้ามาเกี่ยวข้อง ควรจัดทำสัญญาที่ชัดเจน ออกแบบกลไกคุ้มครองที่เหมาะสม และปรึกษาที่ปรึกษากฎหมายเพื่อให้สิทธิของทุกฝ่ายได้รับการคุ้มครองอย่างรอบด้าน</p>
+
+    <div class="info-box">
+      <strong>สรุปหลักการสำคัญ:</strong><br>
+      "ถ้าชื่อคุณไม่ปรากฏในทะเบียนผู้ถือหุ้น ในทางกฎหมาย คุณไม่ใช่เจ้าของบริษัท — ไม่ว่าจะเป็นผู้ก่อตั้ง ผู้ลงทุน หรือผู้คิดไอเดียก็ตาม"
+    </div>
+
+    <!-- อ้างอิง -->
+    <h2>อ้างอิง</h2>
+    <ol class="references">
+      <li>ประมวลกฎหมายแพ่งและพาณิชย์ บรรพ 3 ลักษณะ 22 ว่าด้วยหุ้นส่วนและบริษัท มาตรา 1096-1273/4</li>
+      <li>ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 155 ว่าด้วยเจตนาลวงและนิติกรรมอำพราง</li>
+      <li>พระราชบัญญัติการประกอบธุรกิจของคนต่างด้าว พ.ศ. 2542 มาตรา 36</li>
+      <li>คำพิพากษาฎีกาที่ 1376/2565 (สิทธิฟ้องคดีแทนบริษัทตามมาตรา 1169)</li>
+      <li>คำพิพากษาฎีกาที่ 8455/2563 (ข้อตกลงผู้ถือหุ้นไม่ระงับสิทธิ Derivative Action)</li>
+      <li>คำพิพากษาฎีกาที่ 3280/2564 (กรรมการบริหารจนเสียหาย ศาลสั่งเลิกบริษัท)</li>
+      <li>คำพิพากษาศาลอาญา คดีแดงที่ อ.2812/2567 (คดีนอมินีอสังหาริมทรัพย์ภูเก็ต)</li>
+      <li>วารสารนิติศาสตร์ มหาวิทยาลัยธรรมศาสตร์ "สิ่งที่ขาดหายไปในกฎหมายว่าด้วยการฟ้องคดีแทนบริษัท"</li>
+      <li>Legardy.com — ฐานข้อมูลกฎหมายไทยและคำพิพากษาฎีกา</li>
+    </ol>
+
+    <hr style="border:none;border-top:1px solid rgba(255,255,255,.06);margin:40px 0">
+    <p style="font-size:12px;color:var(--text3);line-height:1.8">
+      <strong>Disclaimer:</strong> บทความฉบับนี้จัดทำขึ้นเพื่อวัตถุประสงค์ทางวิชาการและให้ความรู้แก่ประชาชนทั่วไปเท่านั้น ไม่ถือเป็นคำแนะนำทางกฎหมายเฉพาะรายบุคคล สถานการณ์สมมติที่ใช้ในบทความไม่อ้างอิงถึงบุคคลหรือนิติบุคคลใดเป็นการเฉพาะ ผู้อ่านควรปรึกษาที่ปรึกษากฎหมายก่อนตัดสินใจดำเนินการใด ๆ<br><br>
+      <strong>คำเตือนเรื่องเลขฎีกา:</strong> เลขที่คำพิพากษาฎีกาที่อ้างอิงในบทความนี้ได้รับการตรวจสอบจากฐานข้อมูลทุติยภูมิ (Legardy.com) ผู้ที่ประสงค์จะนำไปอ้างอิงในทางคดีควรตรวจสอบกับฐานข้อมูลศาลฎีกาโดยตรงที่ deka.supremecourt.or.th
+    </p>
+
+  </div>
+</article>
+
+<footer>
+  <b>ธันย์ธรณ์เทพ ยมอุทัย, Ph.D.</b> &mdash;
+  <a href="https://thundthornthep-ai.github.io/">Profile</a> |
+  <a href="https://laslegal.co.th" target="_blank">LAS Legal</a><br>
+  LAS Legal Research Series | วิเคราะห์ด้วย AI LegalTech<br>
+  &copy; 2026 Legal Advance Solution Co., Ltd.
+</footer>
+
+</body>
+</html>
