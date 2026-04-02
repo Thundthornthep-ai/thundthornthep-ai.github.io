@@ -1,14 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SITEMAP — thundthornthep-ai.github.io
+       ดร.ธันย์ธรณ์เทพ แย้มอุทัย | Legal Advance Solution (LAS)
+       อัปเดตล่าสุด: 2026-04-03
+       ═══════════════════════════════════════════════════════════ -->
+
+  <!-- ─── HOMEPAGE ─── -->
   <url>
     <loc>https://thundthornthep-ai.github.io/</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/"/>
+  </url>
+
+  <!-- ─── KNOWLEDGE HUB ─── -->
+  <url>
+    <loc>https://thundthornthep-ai.github.io/knowledge-hub.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/knowledge-hub.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/th/knowledge-hub.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/knowledge-hub.html"/>
   </url>
   <url>
-    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/</loc>
+    <loc>https://thundthornthep-ai.github.io/all-content.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://thundthornthep-ai.github.io/th/knowledge-hub.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/th/knowledge-hub.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/knowledge-hub.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/knowledge-hub.html"/>
+  </url>
+
+  <!-- ─── PDPA ADVISORY ─── -->
+  <url>
+    <loc>https://thundthornthep-ai.github.io/pdpa-advisory.html</loc>
     <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ─── MEDIA COVERAGE ─── -->
+  <url>
+    <loc>https://thundthornthep-ai.github.io/media-coverage.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ─── ARTICLES (English — SEO International) ─── -->
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/ai-legal-tech-thailand.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/business-lawyer-thailand-guide.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/pdpa-compliance-guide-thailand.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/due-diligence-checklist-thailand.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/ip-law-business-marketing.html</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/social-media-marketing-law.html</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/marketing-business-contracts.html</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/business-tax-essentials.html</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/company-registration-guide.html</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/consumer-protection-marketing.html</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/contract-document-review.html</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ─── BLOG: Bangkok Possible (ส.ก. กทม.) ─── -->
+  <url>
+    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/</loc>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -58,180 +181,87 @@
     <loc>https://thundthornthep-ai.github.io/blog/bkk-council/dashboard.html</loc>
     <lastmod>2026-04-02</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article1.html</loc>
-    <lastmod>2026-04-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article1.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/blog/bkk-council/shareholding-article1.html"/>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/blog/bkk-council/shareholding-article1.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/blog/bkk-council/shareholding-article1.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article1.html"/>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article2.html</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article2.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/blog/bkk-council/shareholding-article2.html"/>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/blog/bkk-council/shareholding-article2.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/blog/bkk-council/shareholding-article2.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article2.html"/>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ─── BLOG: Bangkok Possible (English version) ─── -->
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/bkk-council/</loc>
     <lastmod>2026-04-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/pdpa-advisory.html</loc>
-    <lastmod>2026-04-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/bkk-council/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/blog/bkk-council/"/>
   </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/knowledge-hub.html</loc>
-    <lastmod>2026-03-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/ip-law-business-marketing.html</loc>
-    <lastmod>2026-03-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/social-media-marketing-law.html</loc>
-    <lastmod>2026-03-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/marketing-business-contracts.html</loc>
-    <lastmod>2026-03-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/business-tax-essentials.html</loc>
-    <lastmod>2026-03-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/company-registration-guide.html</loc>
-    <lastmod>2026-03-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/consumer-protection-marketing.html</loc>
-    <lastmod>2026-03-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/contract-document-review.html</loc>
-    <lastmod>2026-03-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
+  <!-- ─── BLOG: LAS Share ─── -->
   <url>
     <loc>https://thundthornthep-ai.github.io/blog/las-share/</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://thundthornthep-ai.github.io/blog/las-share/ep1.html</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://thundthornthep-ai.github.io/blog/las-share/ep2.html</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://thundthornthep-ai.github.io/blog/las-share/ep3.html</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://thundthornthep-ai.github.io/blog/las-share/ep4.html</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://thundthornthep-ai.github.io/blog/las-share/ep5.html</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/ai-legal-tech-thailand.html</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/media-coverage.html</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/pdpa-compliance-guide-thailand.html</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/due-diligence-checklist-thailand.html</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/business-lawyer-thailand-guide.html</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/en/bkk-council/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/bid-rigging-thailand.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/asset-declaration-thailand.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/civil-recovery-corruption-thailand.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/ai-replacing-lawyers.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/deep-legal-analytics.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/solo-practitioner-ai-advantage.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+
 </urlset>
