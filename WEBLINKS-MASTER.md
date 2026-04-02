@@ -95,15 +95,32 @@
 
 ---
 
-## สรุปสถิติ
+## สรุปสถิติ (อัปเดต: 3 เมษายน 2569)
 
 | รายการ | จำนวน |
 |---|---|
 | HTML Pages ทั้งหมด | 35 หน้า |
 | URLs ใน Sitemap | 34 URLs (ไม่รวม 404.html) |
 | บทความ Articles | 11 บทความ |
-| บล็อก Bangkok Possible | 10 หน้า |
+| บล็อก Bangkok Possible | 10 หน้า (TH) + 1 หน้า (EN) |
 | บล็อก LAS Share | 6 หน้า |
 | หน้าภาษาไทยล้วน | 1 หน้า (/th/knowledge-hub.html) |
 | หน้าภาษาอังกฤษ | 1 หน้า (/en/bkk-council/) |
-| สถานะ Live | ✅ 100% (39/39 URLs) |
+| สถานะ Live | ✅ 100% — ตรวจสอบ 3 เม.ย. 2569 |
+
+---
+
+## SEO Technical Status
+
+| รายการ | สถานะ |
+|---|---|
+| Sitemap XML | ✅ 34 URLs + Image Sitemap + hreflang crosslinks |
+| robots.txt | ✅ Allow all crawlers (Google, Bing, GPT, Claude, Perplexity) |
+| IndexNow (Bing/Yandex) | ✅ Key verified |
+| Google Site Verification | ✅ Meta tag installed |
+| Bing Site Verification | ✅ BingSiteAuth.xml |
+| JSON-LD Structured Data | ✅ Person, Organization, FAQ, Article, Service |
+| hreflang Tags | ✅ All pages (fixed 3 เม.ย. 2569) |
+| Canonical URLs | ✅ All pages |
+| OG / Twitter Cards | ✅ All pages |
+| Image Optimization | ✅ All images < 200KB |
