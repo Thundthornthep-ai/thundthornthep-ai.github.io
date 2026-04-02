@@ -25,13 +25,13 @@
 <meta property="og:url" content="https://thundthornthep-ai.github.io/profile.html">
 <meta property="og:site_name" content="Dr. Thundthornthep Yamoutai — Legal Advance Solution">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://thundthornthep-ai.github.io/las-banner.png">
+<meta property="og:image" content="https://thundthornthep-ai.github.io/las-nia-banner.webp">
 <meta property="profile:first_name" content="Thundthornthep">
 <meta property="profile:last_name" content="Yamoutai">
 
 <!-- TWITTER CARD -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://thundthornthep-ai.github.io/las-banner.png">
+<meta name="twitter:image" content="https://thundthornthep-ai.github.io/las-nia-banner.webp">
 <meta name="twitter:title" content="Dr. Thundthornthep Yamoutai | AI Legal Tech Pioneer">
 <meta name="twitter:description" content="Founder of Legal Advance Solution. NIA-funded AI Legal Research System. Business Lawyer with 20+ years experience.">
 
@@ -48,88 +48,138 @@
 <style>
   /* ── Reset & Base ── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  
+
   body {
-    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-    background: #f0f2f5;
-    color: #1a1a2e;
-    line-height: 1.6;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: #fafafa;
+    color: #2d2d2d;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
 
-  a { color: #0645ad; text-decoration: none; }
-  a:hover { text-decoration: underline; }
+  a { color: #5a5a5a; text-decoration: none; }
+  a:hover { color: #C5A55A; }
 
-  /* ── Hero Section ── */
-  .hero {
-    background: linear-gradient(135deg, #0a1628 0%, #1a365d 40%, #2c5282 70%, #2b6cb0 100%);
-    color: #fff;
-    padding: 60px 20px 50px;
+  /* ── Top Bar with Logos ── */
+  .top-bar {
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 12px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .top-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .top-bar-left img { height: 44px; }
+  .top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .top-bar-right a {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 13px;
+    color: #5a5a5a;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .top-bar-right a:hover { color: #C5A55A; }
+  .lang-switch {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 12px;
+    color: #999;
+    border: 1px solid #ddd;
+    padding: 4px 12px;
+    border-radius: 3px;
+  }
+  .lang-switch:hover { border-color: #C5A55A; color: #C5A55A; }
+
+  /* ── Hero Banner ── */
+  .hero-banner {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ── Profile Header ── */
+  .profile-header {
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 0 0 40px;
     text-align: center;
     position: relative;
-    overflow: hidden;
   }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(circle at 30% 50%, rgba(66,153,225,0.15) 0%, transparent 60%),
-                radial-gradient(circle at 70% 80%, rgba(49,130,206,0.1) 0%, transparent 50%);
-  }
-  .hero-inner { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; }
-  
-  .hero-photo {
-    width: 160px; height: 160px;
-    border-radius: 50%;
-    border: 4px solid rgba(255,255,255,0.3);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    object-fit: cover;
+  .profile-photo-wrap {
+    margin-top: -70px;
     margin-bottom: 20px;
   }
-  .hero h1 {
-    font-size: 32px;
+  .profile-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    object-fit: cover;
+  }
+  .profile-header h1 {
+    font-size: 30px;
     font-weight: 700;
+    color: #2d2d2d;
+    letter-spacing: -0.3px;
     margin-bottom: 6px;
-    letter-spacing: -0.5px;
   }
-  .hero .subtitle {
-    font-size: 16px;
-    color: #bee3f8;
-    margin-bottom: 4px;
-    font-weight: 300;
+  .profile-header .subtitle {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 15px;
+    color: #C5A55A;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
   }
-  .hero .tagline {
+  .profile-header .tagline {
     font-size: 14px;
-    color: #90cdf4;
+    color: #888;
     font-style: italic;
+    max-width: 600px;
+    margin: 0 auto 20px;
+  }
+  .profile-header .org {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 13px;
+    color: #666;
     margin-bottom: 24px;
   }
 
-  /* ── Stats Bar ── */
-  .stats-bar {
+  /* ── Stats ── */
+  .stats-row {
     display: flex;
     justify-content: center;
-    gap: 32px;
+    gap: 48px;
     flex-wrap: wrap;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
-  .stat-item {
-    text-align: center;
-  }
+  .stat-item { text-align: center; }
   .stat-number {
     font-size: 28px;
     font-weight: 700;
-    color: #fff;
+    color: #2d2d2d;
     display: block;
   }
   .stat-label {
-    font-size: 11px;
-    color: #a0c4e8;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 10px;
+    color: #999;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
   }
 
-  /* ── CTA Buttons ── */
+  /* ── CTA ── */
   .cta-group {
     display: flex;
     justify-content: center;
@@ -137,219 +187,245 @@
     flex-wrap: wrap;
   }
   .cta-btn {
+    font-family: 'Segoe UI', Arial, sans-serif;
     display: inline-block;
-    padding: 10px 24px;
-    border-radius: 6px;
-    font-size: 14px;
+    padding: 10px 28px;
+    font-size: 13px;
     font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
     text-decoration: none;
-    transition: all 0.2s;
+    transition: all 0.25s;
   }
-  .cta-btn:hover { text-decoration: none; transform: translateY(-1px); }
-  .cta-primary { background: #fff; color: #1a365d; }
-  .cta-primary:hover { background: #e2e8f0; }
-  .cta-secondary { background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
-  .cta-secondary:hover { background: rgba(255,255,255,0.25); }
+  .cta-btn:hover { text-decoration: none; }
+  .cta-primary {
+    background: #C5A55A;
+    color: #fff;
+    border: 1px solid #C5A55A;
+  }
+  .cta-primary:hover { background: #b8963f; border-color: #b8963f; color: #fff; }
+  .cta-outline {
+    background: transparent;
+    color: #5a5a5a;
+    border: 1px solid #ccc;
+  }
+  .cta-outline:hover { border-color: #C5A55A; color: #C5A55A; }
 
   /* ── Container ── */
-  .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
+  .container { max-width: 920px; margin: 0 auto; padding: 0 24px; }
 
   /* ── Section ── */
-  .section {
-    padding: 40px 0;
+  .section { padding: 48px 0; }
+  .section-divider {
+    width: 60px;
+    height: 2px;
+    background: #C5A55A;
+    margin: 0 auto 12px;
   }
   .section-title {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
-    color: #1a365d;
-    margin-bottom: 8px;
+    color: #2d2d2d;
     text-align: center;
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
   }
   .section-subtitle {
-    font-size: 14px;
-    color: #718096;
-    text-align: center;
-    margin-bottom: 32px;
-  }
-
-  /* ── Strength Cards ── */
-  .strength-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-bottom: 20px;
-  }
-  .strength-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 28px 24px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    border-left: 4px solid #2b6cb0;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .strength-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-  }
-  .strength-icon {
-    font-size: 32px;
-    margin-bottom: 12px;
-    display: block;
-  }
-  .strength-card h3 {
-    font-size: 17px;
-    font-weight: 700;
-    color: #1a365d;
-    margin-bottom: 8px;
-  }
-  .strength-card p {
+    font-family: 'Segoe UI', Arial, sans-serif;
     font-size: 13px;
-    color: #4a5568;
-    line-height: 1.6;
-  }
-  .strength-card .badge {
-    display: inline-block;
-    background: #ebf8ff;
-    color: #2b6cb0;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 3px 10px;
-    border-radius: 12px;
-    margin-top: 10px;
+    color: #999;
+    text-align: center;
+    margin-bottom: 36px;
+    letter-spacing: 0.3px;
   }
 
   /* ── Featured Card (AI Legal Tech) ── */
   .featured-card {
-    background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
-    border-radius: 12px;
-    padding: 36px 32px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d3250 100%);
+    border-radius: 2px;
+    padding: 40px 36px;
     color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 32px;
     position: relative;
     overflow: hidden;
+    border-left: 4px solid #C5A55A;
   }
   .featured-card::after {
     content: '';
     position: absolute;
-    top: -50%; right: -20%;
-    width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(66,153,225,0.2) 0%, transparent 70%);
+    top: -30%; right: -10%;
+    width: 250px; height: 250px;
+    background: radial-gradient(circle, rgba(197,165,90,0.08) 0%, transparent 70%);
     border-radius: 50%;
   }
   .featured-card h3 {
     font-size: 20px;
     font-weight: 700;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     position: relative; z-index: 1;
+    letter-spacing: -0.3px;
   }
   .featured-card p {
     font-size: 14px;
-    line-height: 1.7;
-    color: #bee3f8;
+    line-height: 1.8;
+    color: #ccc;
     position: relative; z-index: 1;
   }
   .featured-card .nia-badge {
-    display: inline-block;
-    background: rgba(255,255,255,0.2);
-    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(197,165,90,0.2);
+    color: #C5A55A;
+    font-family: 'Segoe UI', Arial, sans-serif;
     font-size: 12px;
     font-weight: 600;
-    padding: 4px 14px;
-    border-radius: 16px;
-    margin-top: 14px;
+    padding: 6px 16px;
+    margin-top: 16px;
     position: relative; z-index: 1;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .featured-card .nia-badge img { height: 20px; }
+
+  /* ── Strength Cards ── */
+  .strength-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 20px;
+  }
+  .strength-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    padding: 28px 24px;
+    transition: all 0.25s;
+    border-top: 3px solid transparent;
+  }
+  .strength-card:hover {
+    border-top-color: #C5A55A;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+  .strength-number {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #C5A55A;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .strength-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2d2d2d;
+    margin-bottom: 8px;
+  }
+  .strength-card p {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.65;
+  }
+  .strength-card .badge {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: inline-block;
+    background: #f7f3e8;
+    color: #C5A55A;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 12px;
+    margin-top: 12px;
+    letter-spacing: 0.3px;
   }
 
   /* ── Practice Areas ── */
   .practice-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 12px;
+    gap: 10px;
   }
   .practice-tag {
+    font-family: 'Segoe UI', Arial, sans-serif;
     background: #fff;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
+    border: 1px solid #e8e8e8;
     padding: 14px 16px;
     font-size: 13px;
-    font-weight: 600;
-    color: #2d3748;
+    font-weight: 500;
+    color: #444;
     text-align: center;
-    transition: all 0.2s;
+    transition: all 0.25s;
+    display: block;
   }
   .practice-tag:hover {
-    border-color: #2b6cb0;
-    color: #2b6cb0;
-    box-shadow: 0 2px 8px rgba(43,108,176,0.1);
+    border-color: #C5A55A;
+    color: #C5A55A;
   }
 
   /* ── Government Timeline ── */
-  .gov-highlight {
+  .gov-list {
     background: #fff;
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid #e8e8e8;
+    padding: 28px;
   }
   .gov-item {
     display: flex;
     align-items: flex-start;
-    gap: 14px;
-    padding: 12px 0;
+    gap: 16px;
+    padding: 14px 0;
     border-bottom: 1px solid #f0f0f0;
   }
   .gov-item:last-child { border-bottom: none; }
   .gov-dot {
-    width: 10px; height: 10px;
+    width: 8px; height: 8px;
     border-radius: 50%;
     margin-top: 6px;
     flex-shrink: 0;
   }
-  .gov-dot.active { background: #38a169; }
-  .gov-dot.completed { background: #a0aec0; }
+  .gov-dot.active { background: #C5A55A; }
+  .gov-dot.completed { background: #ccc; }
   .gov-item-title {
+    font-family: 'Segoe UI', Arial, sans-serif;
     font-size: 13px;
     font-weight: 600;
-    color: #2d3748;
+    color: #333;
   }
   .gov-item-org {
+    font-family: 'Segoe UI', Arial, sans-serif;
     font-size: 12px;
-    color: #718096;
+    color: #999;
   }
 
   /* ── Education ── */
   .edu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 16px;
+    gap: 14px;
   }
   .edu-card {
     background: #fff;
-    border-radius: 10px;
+    border: 1px solid #e8e8e8;
     padding: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     text-align: center;
+    transition: all 0.25s;
   }
+  .edu-card:hover { border-top: 3px solid #C5A55A; }
   .edu-degree {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
-    color: #1a365d;
+    color: #2d2d2d;
     margin-bottom: 4px;
   }
   .edu-school {
+    font-family: 'Segoe UI', Arial, sans-serif;
     font-size: 12px;
-    color: #718096;
+    color: #999;
   }
 
   /* ── Publications ── */
   .pub-list {
     background: #fff;
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1px solid #e8e8e8;
+    padding: 28px;
   }
   .pub-entry {
     padding: 14px 0;
@@ -359,200 +435,232 @@
   .pub-entry-title {
     font-size: 14px;
     font-weight: 600;
-    color: #2d3748;
+    color: #333;
     margin-bottom: 4px;
   }
   .pub-entry-meta {
+    font-family: 'Segoe UI', Arial, sans-serif;
     font-size: 12px;
-    color: #718096;
+    color: #999;
   }
   .pub-badge {
+    font-family: 'Segoe UI', Arial, sans-serif;
     display: inline-block;
     font-size: 10px;
     font-weight: 600;
     padding: 2px 8px;
-    border-radius: 10px;
     margin-right: 6px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
   }
-  .pub-badge.aci { background: #c6f6d5; color: #276749; }
-  .pub-badge.award { background: #fefcbf; color: #975a16; }
-  .pub-badge.media { background: #fed7e2; color: #97266d; }
+  .pub-badge.aci { background: #f0f7f0; color: #3a7a3a; }
+  .pub-badge.award { background: #fdf8ec; color: #8a6d1b; }
+  .pub-badge.media { background: #f5f0f5; color: #7a3a7a; }
 
   /* ── Contact Section ── */
   .contact-section {
-    background: #1a365d;
+    background: #1a1a2e;
     color: #fff;
-    padding: 48px 20px;
+    padding: 56px 24px;
     text-align: center;
   }
   .contact-section h2 {
-    font-size: 24px;
-    margin-bottom: 8px;
+    font-size: 22px;
+    margin-bottom: 6px;
   }
   .contact-section .sub {
-    color: #a0c4e8;
-    font-size: 14px;
-    margin-bottom: 28px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 32px;
+    letter-spacing: 0.5px;
   }
   .contact-grid {
     display: flex;
     justify-content: center;
-    gap: 32px;
+    gap: 40px;
     flex-wrap: wrap;
     max-width: 700px;
-    margin: 0 auto 24px;
+    margin: 0 auto 28px;
   }
-  .contact-item {
-    text-align: center;
-  }
+  .contact-item { text-align: center; }
   .contact-item .label {
-    font-size: 11px;
-    color: #a0c4e8;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 10px;
+    color: #777;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     margin-bottom: 4px;
   }
   .contact-item .value {
+    font-family: 'Segoe UI', Arial, sans-serif;
     font-size: 14px;
-    color: #fff;
+    color: #ddd;
   }
-  .contact-item .value a { color: #90cdf4; }
+  .contact-item .value a { color: #C5A55A; }
+  .contact-item .value a:hover { color: #e0c070; }
 
   /* ── Footer ── */
   .page-footer {
-    background: #0a1628;
-    color: #718096;
+    background: #111;
+    color: #777;
     text-align: center;
-    padding: 24px 20px;
+    padding: 28px 24px;
+    font-family: 'Segoe UI', Arial, sans-serif;
     font-size: 12px;
   }
-  .page-footer a { color: #90cdf4; }
-  .footer-links {
-    margin-top: 8px;
-  }
-  .footer-links a {
-    margin: 0 8px;
-  }
+  .page-footer a { color: #C5A55A; }
+  .page-footer a:hover { color: #e0c070; }
+  .footer-links { margin-top: 10px; }
+  .footer-links a { margin: 0 10px; }
 
   /* ── Responsive ── */
-  @media (max-width: 640px) {
-    .hero { padding: 40px 16px 36px; }
-    .hero h1 { font-size: 24px; }
-    .hero-photo { width: 120px; height: 120px; }
-    .stats-bar { gap: 20px; }
+  @media (max-width: 768px) {
+    .top-bar { padding: 10px 16px; flex-wrap: wrap; gap: 8px; }
+    .top-bar-left img { height: 32px; }
+    .top-bar-right { gap: 12px; }
+    .top-bar-right a { font-size: 11px; }
+    .hero-banner { max-height: 140px; }
+    .profile-photo-wrap { margin-top: -50px; }
+    .profile-photo { width: 100px; height: 100px; }
+    .profile-header h1 { font-size: 24px; }
+    .stats-row { gap: 24px; }
     .stat-number { font-size: 22px; }
     .strength-grid { grid-template-columns: 1fr; }
     .practice-grid { grid-template-columns: 1fr 1fr; }
     .contact-grid { gap: 20px; }
   }
+  @media (max-width: 480px) {
+    .top-bar-right a { display: none; }
+    .practice-grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
-<div class="hero">
-  <div class="hero-inner">
-    <img src="dr-thundthornthep-photo.jpg" alt="Dr. Thundthornthep Yamoutai — Founder of LAS, Business Lawyer, AI Legal Tech Pioneer" class="hero-photo">
-    <h1>Dr. Thundthornthep Yamoutai</h1>
-    <div class="subtitle">Business Lawyer &amp; AI LegalTech Strategist</div>
-    <div class="tagline">Designing Legal Frameworks to Protect, Structure &amp; Scale Businesses — Sustainably</div>
-    <div style="font-size:13px; color:#a0c4e8; margin-bottom:4px;">Founder &amp; Managing Director, Legal Advance Solution Co., Ltd. (LAS)</div>
-
-    <div class="stats-bar">
-      <div class="stat-item">
-        <span class="stat-number">20+</span>
-        <span class="stat-label">Years Experience</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">20+</span>
-        <span class="stat-label">Government Positions</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">3</span>
-        <span class="stat-label">Universities</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">NIA</span>
-        <span class="stat-label">R&amp;D Funded</span>
-      </div>
-    </div>
-
-    <div class="cta-group">
-      <a href="mailto:thund@laslegal.co.th" class="cta-btn cta-primary">Contact LAS</a>
-      <a href="index.html" class="cta-btn cta-secondary">Full Biography</a>
-      <a href="all-content.html" class="cta-btn cta-secondary">All Articles</a>
-      <a href="knowledge-hub.html" class="cta-btn cta-secondary">Knowledge Hub</a>
-    </div>
+<!-- ═══════════════════ TOP BAR ═══════════════════ -->
+<div class="top-bar">
+  <div class="top-bar-left">
+    <img src="las-logo.webp" alt="LAS — Legal Advance Solution">
+    <img src="nia-logo.png" alt="NIA — National Innovation Agency" style="height:36px;">
+  </div>
+  <div class="top-bar-right">
+    <a href="index.html">Biography</a>
+    <a href="all-content.html">Articles</a>
+    <a href="knowledge-hub.html">Knowledge Hub</a>
+    <a href="th/profile.html" class="lang-switch">TH</a>
   </div>
 </div>
 
-<!-- ═══════════════════════════ AI LEGAL TECH FEATURED ═══════════════════════════ -->
+<!-- ═══════════════════ BANNER ═══════════════════ -->
+<img src="las-nia-banner.webp" alt="Legal Advance Solution — NIA Innovation Partner" class="hero-banner">
+
+<!-- ═══════════════════ PROFILE HEADER ═══════════════════ -->
+<div class="profile-header">
+  <div class="profile-photo-wrap">
+    <img src="dr-thundthornthep-photo.jpg" alt="Dr. Thundthornthep Yamoutai — Founder of LAS, Business Lawyer, AI Legal Tech Pioneer" class="profile-photo">
+  </div>
+  <h1>Dr. Thundthornthep Yamoutai</h1>
+  <div class="subtitle">Business Lawyer &amp; AI LegalTech Strategist</div>
+  <div class="tagline">Designing Legal Frameworks to Protect, Structure &amp; Scale Businesses — Sustainably</div>
+  <div class="org">Founder &amp; Managing Director, Legal Advance Solution Co., Ltd. (LAS)</div>
+
+  <div class="stats-row">
+    <div class="stat-item">
+      <span class="stat-number">20+</span>
+      <span class="stat-label">Years Experience</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">20+</span>
+      <span class="stat-label">Government Positions</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">3</span>
+      <span class="stat-label">Universities</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">NIA</span>
+      <span class="stat-label">R&amp;D Funded</span>
+    </div>
+  </div>
+
+  <div class="cta-group">
+    <a href="mailto:thund@laslegal.co.th" class="cta-btn cta-primary">Contact LAS</a>
+    <a href="index.html" class="cta-btn cta-outline">Full Biography</a>
+    <a href="all-content.html" class="cta-btn cta-outline">All Articles</a>
+  </div>
+</div>
+
+<!-- ═══════════════════ AI LEGAL TECH FEATURED ═══════════════════ -->
 <div class="container">
   <div class="section">
     <div class="featured-card">
       <h3>LAS AI-Powered Legal Research System</h3>
       <p>A nationally significant innovation in Thai legal technology. This proprietary AI-powered legal research platform, developed by Dr. Thundthornthep and Legal Advance Solution (LAS), has been awarded R&amp;D funding by Thailand's National Innovation Agency (NIA). The system combines over 20 years of legal domain expertise with cutting-edge AI technology to systematically analyse Thai statutory law, Supreme Court decisions, and regulatory guidance.</p>
-      <span class="nia-badge">Funded by National Innovation Agency (NIA)</span>
+      <span class="nia-badge"><img src="nia-logo.png" alt="NIA"> Funded by National Innovation Agency (NIA)</span>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════ CORE STRENGTHS ═══════════════════════════ -->
+<!-- ═══════════════════ CORE STRENGTHS ═══════════════════ -->
+<div style="background:#fff; border-top:1px solid #e8e8e8; border-bottom:1px solid #e8e8e8;">
 <div class="container">
-  <div class="section" style="padding-top:0;">
+  <div class="section">
+    <div class="section-divider"></div>
     <div class="section-title">Core Strengths</div>
     <div class="section-subtitle">What makes Dr. Thundthornthep stand out in the Thai legal landscape</div>
 
     <div class="strength-grid">
-      <div class="strength-card" style="border-left-color:#2b6cb0;">
-        <span class="strength-icon">&#x1F916;</span>
+      <div class="strength-card">
+        <div class="strength-number">01 &mdash; Innovation</div>
         <h3>AI Legal Tech Pioneer</h3>
         <p>One of the first Thai lawyers to develop a proprietary AI-powered legal research system. Not just using AI — building AI specifically for Thai law. Awarded R&amp;D funding by the National Innovation Agency (NIA).</p>
         <span class="badge">NIA-Funded Innovation</span>
       </div>
 
-      <div class="strength-card" style="border-left-color:#38a169;">
-        <span class="strength-icon">&#x1F3DB;</span>
+      <div class="strength-card">
+        <div class="strength-number">02 &mdash; Public Service</div>
         <h3>Government Advisory Expert</h3>
         <p>Over 20 advisory positions across Thai government ministries, state enterprises, and national commissions — including the Rice Department, IEAT, TISTR, Ministry of Energy, Ministry of Industry, and Parliament.</p>
         <span class="badge">20+ Government Positions</span>
       </div>
 
-      <div class="strength-card" style="border-left-color:#805ad5;">
-        <span class="strength-icon">&#x1F393;</span>
-        <h3>Academic &amp; Published Researcher</h3>
+      <div class="strength-card">
+        <div class="strength-number">03 &mdash; Academia</div>
+        <h3>Published Researcher</h3>
         <p>University lecturer at Kasetsart University, Bangkokthonburi University, and Suan Sunandha Rajabhat University. Published researcher in the ASEAN Citation Index (ACI). Award-winning conference paper on mixed-use real estate law.</p>
         <span class="badge">ASEAN Citation Index</span>
       </div>
 
-      <div class="strength-card" style="border-left-color:#d69e2e;">
-        <span class="strength-icon">&#x1F3D7;</span>
-        <h3>Landmark Project Experience</h3>
+      <div class="strength-card">
+        <div class="strength-number">04 &mdash; Landmark Projects</div>
+        <h3>Iconic Development Experience</h3>
         <p>Led legal work on Thailand's most iconic developments: MahaNakhon (The Ritz-Carlton Residences), Laguna Resorts (Banyan Tree Residences), and multiple condominium projects in Bangkok and Phuket.</p>
         <span class="badge">MahaNakhon &amp; Ritz-Carlton</span>
       </div>
 
-      <div class="strength-card" style="border-left-color:#e53e3e;">
-        <span class="strength-icon">&#x1F50D;</span>
+      <div class="strength-card">
+        <div class="strength-number">05 &mdash; Methodology</div>
         <h3>Due Diligence &amp; CP Specialist</h3>
         <p>LAS Signature Methodology: designing multi-layered due diligence and Conditions Precedent (CP) frameworks that systematically screen counterparties, protect investments, and ensure compliance throughout complex transactions.</p>
         <span class="badge">LAS Signature Method</span>
       </div>
 
-      <div class="strength-card" style="border-left-color:#319795;">
-        <span class="strength-icon">&#x1F4C4;</span>
-        <h3>Contract Design Expert</h3>
-        <p>Expert in business legal planning, designing contracts and business agreements through a structured thinking process tailored for entrepreneurs. From joint ventures to franchise agreements, hotel management to PDPA compliance.</p>
+      <div class="strength-card">
+        <div class="strength-number">06 &mdash; Contract Design</div>
+        <h3>Business Legal Planning</h3>
+        <p>Expert in designing contracts and business agreements through a structured thinking process tailored for entrepreneurs. From joint ventures to franchise agreements, hotel management to PDPA compliance.</p>
         <span class="badge">Contract &amp; PDPA</span>
       </div>
     </div>
   </div>
 </div>
+</div>
 
-<!-- ═══════════════════════════ PRACTICE AREAS ═══════════════════════════ -->
-<div style="background:#fff; padding:1px 0;">
+<!-- ═══════════════════ PRACTICE AREAS ═══════════════════ -->
 <div class="container">
   <div class="section">
+    <div class="section-divider"></div>
     <div class="section-title">Practice Areas</div>
     <div class="section-subtitle">Comprehensive legal advisory across key business sectors</div>
 
@@ -572,15 +680,16 @@
     </div>
   </div>
 </div>
-</div>
 
-<!-- ═══════════════════════════ GOVERNMENT SERVICE ═══════════════════════════ -->
+<!-- ═══════════════════ GOVERNMENT SERVICE ═══════════════════ -->
+<div style="background:#fff; border-top:1px solid #e8e8e8; border-bottom:1px solid #e8e8e8;">
 <div class="container">
   <div class="section">
+    <div class="section-divider"></div>
     <div class="section-title">Government &amp; Public Service</div>
     <div class="section-subtitle">Selected active and completed advisory positions</div>
 
-    <div class="gov-highlight">
+    <div class="gov-list">
       <div class="gov-item">
         <div class="gov-dot active"></div>
         <div>
@@ -645,16 +754,17 @@
         </div>
       </div>
     </div>
-    <p style="text-align:center; margin-top:16px; font-size:13px; color:#718096;">
+    <p style="text-align:center; margin-top:20px; font-family:'Segoe UI',Arial,sans-serif; font-size:13px; color:#999;">
       <a href="index.html#government">View all 20+ government positions &rarr;</a>
     </p>
   </div>
 </div>
+</div>
 
-<!-- ═══════════════════════════ EDUCATION ═══════════════════════════ -->
-<div style="background:#fff; padding:1px 0;">
+<!-- ═══════════════════ EDUCATION ═══════════════════ -->
 <div class="container">
   <div class="section">
+    <div class="section-divider"></div>
     <div class="section-title">Education &amp; Credentials</div>
     <div class="section-subtitle">Academic qualifications and professional certifications</div>
 
@@ -686,11 +796,12 @@
     </div>
   </div>
 </div>
-</div>
 
-<!-- ═══════════════════════════ PUBLICATIONS ═══════════════════════════ -->
+<!-- ═══════════════════ PUBLICATIONS ═══════════════════ -->
+<div style="background:#fff; border-top:1px solid #e8e8e8; border-bottom:1px solid #e8e8e8;">
 <div class="container">
   <div class="section">
+    <div class="section-divider"></div>
     <div class="section-title">Selected Publications &amp; Media</div>
     <div class="section-subtitle">Peer-reviewed research, legal articles, and national press coverage</div>
 
@@ -720,14 +831,15 @@
         <div class="pub-entry-meta"><span class="pub-badge media">LINE TODAY</span> <a href="https://today.line.me/th/v3/article/Nv222WP" target="_blank">LINE TODAY / THE POINT</a></div>
       </div>
     </div>
-    <p style="text-align:center; margin-top:16px; font-size:13px; color:#718096;">
+    <p style="text-align:center; margin-top:20px; font-family:'Segoe UI',Arial,sans-serif; font-size:13px; color:#999;">
       <a href="index.html#publications">View all publications &rarr;</a> &middot;
       <a href="media-coverage.html">Media coverage &rarr;</a>
     </p>
   </div>
 </div>
+</div>
 
-<!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
+<!-- ═══════════════════ CONTACT ═══════════════════ -->
 <div class="contact-section">
   <h2>Get in Touch</h2>
   <div class="sub">Legal Advance Solution Co., Ltd. (LAS)</div>
@@ -755,13 +867,13 @@
     </div>
   </div>
 
-  <a href="mailto:thund@laslegal.co.th" class="cta-btn cta-primary" style="font-size:15px; padding:12px 32px;">Contact Dr. Thundthornthep</a>
+  <a href="mailto:thund@laslegal.co.th" class="cta-btn cta-primary" style="font-size:14px; padding:12px 36px;">Contact Dr. Thundthornthep</a>
 </div>
 
-<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
 <div class="page-footer">
-  Dr. Thundthornthep Yamoutai | Founder &amp; Managing Director, Legal Advance Solution Co., Ltd. (LAS)<br>
-  AI Legal Tech | Business Lawyer Thailand | PDPA | Corporate Law | Real Estate | Due Diligence<br>
+  Dr. Thundthornthep Yamoutai &nbsp;|&nbsp; Founder &amp; Managing Director, Legal Advance Solution Co., Ltd. (LAS)<br>
+  AI Legal Tech &nbsp;|&nbsp; Business Lawyer Thailand &nbsp;|&nbsp; PDPA &nbsp;|&nbsp; Corporate Law &nbsp;|&nbsp; Real Estate &nbsp;|&nbsp; Due Diligence
   <div class="footer-links">
     <a href="index.html">Full Biography</a>
     <a href="all-content.html">All Articles</a>
@@ -770,7 +882,7 @@
     <a href="pdpa-advisory.html">PDPA Advisory</a>
     <a href="blog/bkk-council/">Bangkok Possible</a>
   </div>
-  <div style="margin-top:8px;">Last updated: April 2026</div>
+  <div style="margin-top:10px; color:#555;">Last updated: April 2026</div>
 </div>
 
 <!-- SEO: AI-Friendly Summary Block -->
