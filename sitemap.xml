@@ -329,4 +329,63 @@
     <priority>0.1</priority>
   </url>
 
+  <!-- ═══════ NEW BILINGUAL ARTICLES (2026-04-03) ═══════ -->
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/why-lawyers-read-contracts-differently.html</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/why-lawyers-read-contracts-differently.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/why-lawyers-read-contracts-differently.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/en/articles/why-lawyers-read-contracts-differently.html" />
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/why-lawyers-read-contracts-differently.html</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/why-lawyers-read-contracts-differently.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/why-lawyers-read-contracts-differently.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/en/articles/why-lawyers-read-contracts-differently.html" />
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/pdpa-essentials-entrepreneurs.html</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/pdpa-essentials-entrepreneurs.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/pdpa-essentials-entrepreneurs.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/en/articles/pdpa-essentials-entrepreneurs.html" />
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/pdpa-essentials-entrepreneurs.html</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/pdpa-essentials-entrepreneurs.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/pdpa-essentials-entrepreneurs.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/en/articles/pdpa-essentials-entrepreneurs.html" />
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/contract-reading-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/contract-reading-guide.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/contract-reading-guide.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/en/articles/contract-reading-guide.html" />
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/contract-reading-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/contract-reading-guide.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/contract-reading-guide.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/en/articles/contract-reading-guide.html" />
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
 </urlset>
