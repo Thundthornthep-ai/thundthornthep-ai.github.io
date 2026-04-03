@@ -2,495 +2,1154 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- ═══════════════════════════════════════════════════════════
-       SITEMAP — thundthornthep-ai.github.io
-       ธันย์ธรณ์เทพ ยมอุทัย, Ph.D. | Legal Advance Solution (LAS)
-       Updated: 2026-04-03
-       Format: Google xhtml:link hreflang specification
-       ═══════════════════════════════════════════════════════════ -->
-
-  <!-- ─── HOMEPAGE (English only — no Thai homepage) ─── -->
   <url>
-    <loc>https://thundthornthep-ai.github.io/</loc>
-    <lastmod>2026-04-03</lastmod>
+    <loc>https://thundthornthep-ai.github.io/index.html</loc>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>1.00</priority>
   </url>
 
-  <!-- ─── PROFILE (en ↔ th pair) ─── -->
-  <url>
-    <loc>https://thundthornthep-ai.github.io/profile.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/profile.html" />
-    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/th/profile.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/profile.html" />
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/th/profile.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/profile.html" />
-    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/th/profile.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/profile.html" />
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- ─── KNOWLEDGE HUB (both Thai — NOT a valid en/th pair, no xhtml:link) ─── -->
   <url>
     <loc>https://thundthornthep-ai.github.io/knowledge-hub.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/th/knowledge-hub.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/knowledge-hub.html"/>
+    <xhtml:link rel="alternate" hreflang="th-TH" href="https://thundthornthep-ai.github.io/th/knowledge-hub.html"/>
   </url>
 
-  <!-- ─── ALL CONTENT (Thai only) ─── -->
+  <url>
+    <loc>https://thundthornthep-ai.github.io/profile.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/profile.html"/>
+    <xhtml:link rel="alternate" hreflang="th-TH" href="https://thundthornthep-ai.github.io/th/profile.html"/>
+  </url>
+
   <url>
     <loc>https://thundthornthep-ai.github.io/all-content.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.90</priority>
   </url>
 
-  <!-- ─── PDPA ADVISORY (English only) ─── -->
   <url>
     <loc>https://thundthornthep-ai.github.io/pdpa-advisory.html</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
 
-  <!-- ─── ARTICLES (single language — no xhtml:link) ─── -->
+  <url>
+    <loc>https://thundthornthep-ai.github.io/media-coverage.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/404.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.10</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/_archived-media-coverage-20260403.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.10</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/th/knowledge-hub.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="th-TH" href="https://thundthornthep-ai.github.io/th/knowledge-hub.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/knowledge-hub.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/th/profile.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="th-TH" href="https://thundthornthep-ai.github.io/th/profile.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/profile.html"/>
+  </url>
+
   <url>
     <loc>https://thundthornthep-ai.github.io/articles/ai-legal-tech-thailand.html</loc>
     <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.80</priority>
   </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/business-lawyer-thailand-guide.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/pdpa-compliance-guide-thailand.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/due-diligence-checklist-thailand.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/ip-law-business-marketing.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/social-media-marketing-law.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/marketing-business-contracts.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/business-tax-essentials.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/company-registration-guide.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/consumer-protection-marketing.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/contract-document-review.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/bid-rigging-thailand.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/asset-declaration-thailand.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/civil-recovery-corruption-thailand.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
+
   <url>
     <loc>https://thundthornthep-ai.github.io/articles/ai-replacing-lawyers.html</loc>
     <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/deep-legal-analytics.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/solo-practitioner-ai-advantage.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- ─── BLOG: Bangkok Possible — index (th ↔ en pair) ─── -->
-  <url>
-    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/blog/bkk-council/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/bkk-council/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/blog/bkk-council/" />
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/en/bkk-council/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/blog/bkk-council/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/bkk-council/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/blog/bkk-council/" />
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ─── BLOG: Bangkok Possible — episodes (Thai only) ─── -->
-  <url>
-    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/ep1.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/ep2.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/ep3.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/ep4.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/ep5.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/ep6.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/ep7.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ─── BLOG: Bangkok Possible — dashboard (Thai only) ─── -->
-  <url>
-    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/dashboard.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ─── BLOG: Bangkok Possible — shareholding article 1 (th ↔ en pair) ─── -->
-  <url>
-    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article1.html</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article1.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/blog/bkk-council/shareholding-article1.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article1.html" />
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/en/blog/bkk-council/shareholding-article1.html</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article1.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/blog/bkk-council/shareholding-article1.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article1.html" />
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- ─── BLOG: Bangkok Possible — shareholding article 2 (th ↔ en pair) ─── -->
-  <url>
-    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article2.html</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article2.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/blog/bkk-council/shareholding-article2.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article2.html" />
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/en/blog/bkk-council/shareholding-article2.html</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article2.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/blog/bkk-council/shareholding-article2.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article2.html" />
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- ─── BLOG: LAS Share (Thai only) ─── -->
-  <url>
-    <loc>https://thundthornthep-ai.github.io/blog/las-share/</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/blog/las-share/ep1.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/blog/las-share/ep2.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/blog/las-share/ep3.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/blog/las-share/ep4.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/blog/las-share/ep5.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ─── 404 ─── -->
-  <url>
-    <loc>https://thundthornthep-ai.github.io/404.html</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.1</priority>
-  </url>
-
-  <!-- ═══════ NEW BILINGUAL ARTICLES (2026-04-03) ═══════ -->
-
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/why-lawyers-read-contracts-differently.html</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/why-lawyers-read-contracts-differently.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/why-lawyers-read-contracts-differently.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/en/articles/why-lawyers-read-contracts-differently.html" />
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/en/articles/why-lawyers-read-contracts-differently.html</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/why-lawyers-read-contracts-differently.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/why-lawyers-read-contracts-differently.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/en/articles/why-lawyers-read-contracts-differently.html" />
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://thundthornthep-ai.github.io/articles/pdpa-essentials-entrepreneurs.html</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/pdpa-essentials-entrepreneurs.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/pdpa-essentials-entrepreneurs.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/en/articles/pdpa-essentials-entrepreneurs.html" />
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://thundthornthep-ai.github.io/en/articles/pdpa-essentials-entrepreneurs.html</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/pdpa-essentials-entrepreneurs.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/pdpa-essentials-entrepreneurs.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/en/articles/pdpa-essentials-entrepreneurs.html" />
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://thundthornthep-ai.github.io/articles/art-of-ancient-contract-drafting.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/art-of-ancient-contract-drafting.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/art-of-ancient-contract-drafting.html"/>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://thundthornthep-ai.github.io/en/articles/art-of-ancient-contract-drafting.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/art-of-ancient-contract-drafting.html"/>
-    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/art-of-ancient-contract-drafting.html"/>
+    <loc>https://thundthornthep-ai.github.io/articles/asset-declaration-thailand.html</loc>
     <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/bid-rigging-thailand.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/business-lawyer-thailand-guide.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/business-tax-essentials.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/civil-recovery-corruption-thailand.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/company-registration-guide.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/consumer-protection-marketing.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/contract-document-review.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://thundthornthep-ai.github.io/articles/contract-reading-guide.html</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/contract-reading-guide.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/contract-reading-guide.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/en/articles/contract-reading-guide.html" />
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/contract-reading-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/contract-reading-guide.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/deep-legal-analytics.html</loc>
     <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.80</priority>
   </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/due-diligence-checklist-thailand.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/ip-law-business-marketing.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/marketing-business-contracts.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/pdpa-compliance-guide-thailand.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/pdpa-essentials-entrepreneurs.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/pdpa-essentials-entrepreneurs.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/pdpa-essentials-entrepreneurs.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/social-media-marketing-law.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/solo-practitioner-ai-advantage.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/why-lawyers-read-contracts-differently.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/why-lawyers-read-contracts-differently.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/why-lawyers-read-contracts-differently.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-cc-index.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-cc-01.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-01.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-01.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-cc-02.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-02.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-02.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-cc-03.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-03.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-03.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-cc-04.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-04.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-04.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-cc-05.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-05.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-05.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-cc-06.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-06.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-06.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-cc-07.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-07.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-07.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-cc-08.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-08.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-08.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-cc-09.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-09.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-09.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-cc-10.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-10.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-10.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-share-01.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-01.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-01.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-share-02.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-02.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-02.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-share-03.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-03.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-03.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-share-04.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-04.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-04.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-share-05.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-05.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-05.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-share-06.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-06.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-06.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-share-07.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-07.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-07.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-share-08.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-08.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-08.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-share-09.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-09.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-09.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-share-10.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-10.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-10.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-shield-index.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-shield-01.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-01.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-01.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-shield-02.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-02.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-02.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-shield-03.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-03.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-03.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-shield-04.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-04.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-04.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-shield-05.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-05.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-05.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-shield-06.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-06.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-06.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-shield-07.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-07.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-07.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-shield-08.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-08.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-08.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-shield-09.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-09.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-09.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-shield-10.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-10.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-10.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-upsize-index.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-upsize-01.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-01.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-01.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-upsize-02.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-02.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-02.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-upsize-03.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-03.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-03.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-upsize-04.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-04.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-04.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-upsize-05.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-05.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-05.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-upsize-06.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-06.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-06.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-upsize-07.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-07.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-07.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-upsize-08.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-08.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-08.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-upsize-09.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-09.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-09.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-upsize-10.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-10.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-10.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/art-of-ancient-contract-drafting.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/art-of-ancient-contract-drafting.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/art-of-ancient-contract-drafting.html"/>
+  </url>
+
   <url>
     <loc>https://thundthornthep-ai.github.io/en/articles/contract-reading-guide.html</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/contract-reading-guide.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/contract-reading-guide.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/en/articles/contract-reading-guide.html" />
     <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/contract-reading-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/contract-reading-guide.html"/>
   </url>
 
-  <!-- ═══════ LAS SHARE SERIES (10 pairs) ═══════ -->
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-share-01.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-01.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-01.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-share-01.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-01.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-01.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-share-02.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-02.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-02.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-share-02.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-02.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-02.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-share-03.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-03.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-03.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-share-03.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-03.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-03.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-share-04.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-04.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-04.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-share-04.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-04.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-04.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-share-05.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-05.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-05.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-share-05.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-05.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-05.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-share-06.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-06.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-06.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-share-06.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-06.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-06.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-share-07.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-07.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-07.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-share-07.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-07.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-07.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-share-08.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-08.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-08.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-share-08.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-08.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-08.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-share-09.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-09.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-09.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-share-09.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-09.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-09.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-share-10.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-10.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-10.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-share-10.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-10.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-10.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/pdpa-essentials-entrepreneurs.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/pdpa-essentials-entrepreneurs.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/pdpa-essentials-entrepreneurs.html"/>
+  </url>
 
-  <!-- ═══════ LAS SHIELD SERIES (10 pairs) ═══════ -->
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-shield-01.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-01.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-01.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-shield-01.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-01.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-01.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-shield-02.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-02.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-02.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-shield-02.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-02.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-02.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-shield-03.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-03.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-03.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-shield-03.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-03.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-03.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-shield-04.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-04.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-04.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-shield-04.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-04.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-04.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-shield-05.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-05.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-05.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-shield-05.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-05.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-05.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-shield-06.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-06.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-06.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-shield-06.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-06.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-06.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-shield-07.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-07.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-07.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-shield-07.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-07.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-07.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-shield-08.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-08.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-08.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-shield-08.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-08.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-08.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-shield-09.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-09.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-09.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-shield-09.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-09.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-09.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-shield-10.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-10.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-10.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-shield-10.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-10.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-10.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/why-lawyers-read-contracts-differently.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/why-lawyers-read-contracts-differently.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/why-lawyers-read-contracts-differently.html"/>
+  </url>
 
-  <!-- ═══════ LAS C&C SERIES (10 pairs) ═══════ -->
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-cc-01.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-01.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-01.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-cc-01.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-01.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-01.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-cc-02.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-02.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-02.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-cc-02.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-02.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-02.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-cc-03.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-03.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-03.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-cc-03.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-03.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-03.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-cc-04.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-04.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-04.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-cc-04.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-04.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-04.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-cc-05.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-05.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-05.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-cc-05.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-05.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-05.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-cc-06.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-06.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-06.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-cc-06.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-06.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-06.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-cc-07.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-07.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-07.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-cc-07.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-07.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-07.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-cc-08.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-08.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-08.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-cc-08.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-08.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-08.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-cc-09.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-09.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-09.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-cc-09.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-09.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-09.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-cc-10.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-10.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-10.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-cc-10.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-10.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-10.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-cc-01.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-01.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-01.html"/>
+  </url>
 
-  <!-- ═══════ LAS UPSIZE SERIES (10 pairs) ═══════ -->
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-upsize-01.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-01.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-01.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-upsize-01.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-01.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-01.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-upsize-02.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-02.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-02.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-upsize-02.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-02.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-02.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-upsize-03.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-03.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-03.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-upsize-03.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-03.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-03.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-upsize-04.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-04.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-04.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-upsize-04.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-04.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-04.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-upsize-05.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-05.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-05.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-upsize-05.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-05.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-05.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-upsize-06.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-06.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-06.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-upsize-06.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-06.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-06.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-upsize-07.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-07.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-07.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-upsize-07.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-07.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-07.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-upsize-08.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-08.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-08.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-upsize-08.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-08.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-08.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-upsize-09.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-09.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-09.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-upsize-09.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-09.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-09.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/articles/las-upsize-10.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-10.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-10.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://thundthornthep-ai.github.io/en/articles/las-upsize-10.html</loc><xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-10.html"/><xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-10.html"/><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-cc-02.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-02.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-02.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-cc-03.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-03.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-03.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-cc-04.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-04.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-04.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-cc-05.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-05.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-05.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-cc-06.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-06.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-06.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-cc-07.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-07.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-07.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-cc-08.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-08.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-08.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-cc-09.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-09.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-09.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-cc-10.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-10.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-10.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-share-01.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-01.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-01.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-share-02.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-02.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-02.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-share-03.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-03.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-03.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-share-04.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-04.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-04.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-share-05.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-05.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-05.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-share-06.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-06.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-06.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-share-07.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-07.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-07.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-share-08.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-08.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-08.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-share-09.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-09.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-09.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-share-10.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-share-10.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-share-10.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-shield-01.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-01.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-01.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-shield-02.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-02.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-02.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-shield-03.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-03.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-03.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-shield-04.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-04.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-04.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-shield-05.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-05.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-05.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-shield-06.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-06.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-06.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-shield-07.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-07.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-07.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-shield-08.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-08.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-08.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-shield-09.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-09.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-09.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-shield-10.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-shield-10.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-shield-10.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-upsize-01.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-01.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-01.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-upsize-02.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-02.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-02.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-upsize-03.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-03.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-03.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-upsize-04.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-04.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-04.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-upsize-05.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-05.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-05.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-upsize-06.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-06.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-06.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-upsize-07.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-07.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-07.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-upsize-08.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-08.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-08.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-upsize-09.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-09.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-09.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/las-upsize-10.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-upsize-10.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-upsize-10.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/bkk-council/index.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/blog/bkk-council/shareholding-article1.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/blog/bkk-council/shareholding-article2.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/index.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/dashboard.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/ep1.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/ep2.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/ep3.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/ep4.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/ep5.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/ep6.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/ep7.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article1.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article2.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/blog/las-share/index.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/blog/las-share/ep1.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/blog/las-share/ep2.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/blog/las-share/ep3.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/blog/las-share/ep4.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/blog/las-share/ep5.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
 
 </urlset>

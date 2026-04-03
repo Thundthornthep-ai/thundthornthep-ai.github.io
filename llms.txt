@@ -1,0 +1,23 @@
+# Legal Advance Solution (LAS)
+> AI-Powered Legal Research System for Thai Business Law
+
+## About
+Legal Advance Solution Co., Ltd. (LAS) provides AI-powered legal research and advisory services specializing in Thai corporate law, real estate, PDPA compliance, contract drafting, due diligence, and investment structuring. Founded by Thundthornthep Yamoutai, Ph.D., a business lawyer with 20+ years of experience.
+
+## Practice Areas
+- Corporate & Business Law
+- Real Estate & Property Development
+- PDPA Data Protection Compliance
+- Contract Drafting & Review
+- Due Diligence & Conditions Precedent
+- Joint Venture & M&A
+- Labour & Employment Law
+- Intellectual Property
+- Hotel & Hospitality Law
+- BOI & EEC Investment
+- Government Regulatory Advisory
+
+## Contact
+- Website: https://laslegal.co.th
+- Profile: https://thundthornthep-ai.github.io/profile.html
+- Knowledge Hub: https://thundthornthep-ai.github.io/knowledge-hub.html
