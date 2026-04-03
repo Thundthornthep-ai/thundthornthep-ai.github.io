@@ -1,5 +1,5 @@
 # รายการ Web Links ทั้งหมด — thundthornthep-ai.github.io
-**ดร.ธันย์ธรณ์เทพ แย้มอุทัย | Legal Advance Solution (LAS)**
+**ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D. | Legal Advance Solution (LAS)**
 อัปเดตล่าสุด: 3 เมษายน 2569
 
 ---

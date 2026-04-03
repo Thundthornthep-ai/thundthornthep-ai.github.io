@@ -370,6 +370,23 @@
   </url>
 
   <url>
+    <loc>https://thundthornthep-ai.github.io/articles/art-of-ancient-contract-drafting.html</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/art-of-ancient-contract-drafting.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/art-of-ancient-contract-drafting.html"/>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/art-of-ancient-contract-drafting.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/art-of-ancient-contract-drafting.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/art-of-ancient-contract-drafting.html"/>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://thundthornthep-ai.github.io/articles/contract-reading-guide.html</loc>
     <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/contract-reading-guide.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/contract-reading-guide.html" />
