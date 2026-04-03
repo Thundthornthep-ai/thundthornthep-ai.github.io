@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/webp" href="/las-logo.webp">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="คู่มือ PDPA Compliance เชิงลึกสำหรับ B2B — Data Controller, DPA, Cross-Border Transfer, บทลงโทษ และ Checklist 30 ข้อ โดยทนายความธุรกิจ LAS">
+<meta name="keywords" content="PDPA, คุ้มครองข้อมูลส่วนบุคคล, PDPA compliance, DPA, data protection Thailand, พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล, B2B PDPA, Data Processing Agreement, DPIA, DPO Thailand">
+<meta name="author" content="Thundthornthep Yamoutai, Ph.D.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://thundthornthep-ai.github.io/articles/pdpa-compliance-guide-business.html">
+
+<title>PDPA Compliance สำหรับธุรกิจ B2B ในไทย — คู่มือ C-Suite | LAS</title>
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="PDPA Compliance สำหรับธุรกิจ B2B — คู่มือระดับ C-Suite โดย LAS">
+<meta property="og:description" content="คู่มือ PDPA Compliance เชิงลึกสำหรับธุรกิจ B2B ในไทย ครอบคลุม Data Controller vs Processor, DPA, Cross-Border Transfer, บทลงโทษ และ Checklist พร้อมใช้">
+<meta property="og:url" content="https://thundthornthep-ai.github.io/articles/pdpa-compliance-guide-business.html">
+<meta property="og:image" content="https://thundthornthep-ai.github.io/banner-las-nia.jpg">
+<meta property="og:locale" content="th_TH">
+<meta property="article:author" content="Thundthornthep Yamoutai, Ph.D.">
+<meta property="article:published_time" content="2026-04-04">
+<meta property="article:section" content="Thai Legal Knowledge">
+<meta property="article:tag" content="PDPA">
+<meta property="article:tag" content="คุ้มครองข้อมูลส่วนบุคคล">
+<meta property="article:tag" content="data protection Thailand">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDPA Compliance สำหรับธุรกิจ B2B ในประเทศไทย">
+<meta name="twitter:description" content="คู่มือเชิงลึก PDPA สำหรับ B2B — DPA, Cross-Border Transfer, บทลงโทษ และ Checklist 30 ข้อ">
+<meta name="twitter:image" content="https://thundthornthep-ai.github.io/banner-las-nia.jpg">
+
+<!-- JSON-LD Article Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "PDPA Compliance สำหรับธุรกิจ B2B ในประเทศไทย — คู่มือระดับ C-Suite",
+  "description": "คู่มือ PDPA Compliance เชิงลึกสำหรับธุรกิจ B2B ในไทย ครอบคลุม Data Controller vs Data Processor, ฐานทางกฎหมาย 7 ฐาน, DPA, Cross-Border Transfer, บทลงโทษ และ Checklist 30 ข้อ",
+  "author": {
+    "@type": "Person",
+    "name": "Thundthornthep Yamoutai, Ph.D.",
+    "url": "https://thundthornthep-ai.github.io/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Legal Advance Solution Co., Ltd.",
+    "alternateName": "LAS",
+    "url": "https://laslegal.co.th"
+  },
+  "datePublished": "2026-04-04",
+  "dateModified": "2026-04-04",
+  "mainEntityOfPage": "https://thundthornthep-ai.github.io/articles/pdpa-compliance-guide-business.html",
+  "image": "https://thundthornthep-ai.github.io/banner-las-nia.jpg",
+  "inLanguage": "th",
+  "keywords": ["PDPA", "คุ้มครองข้อมูลส่วนบุคคล", "PDPA compliance", "DPA", "data protection Thailand", "Data Processing Agreement", "DPIA", "DPO", "B2B Thailand", "Cross-Border Transfer"],
+  "articleSection": "Thai Legal Knowledge"
+}
+</script>
+
+<!-- JSON-LD FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ธุรกิจ B2B ที่ไม่ได้เก็บข้อมูลผู้บริโภคโดยตรง ต้องทำ PDPA Compliance หรือไม่?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ต้องทำ เพราะธุรกิจ B2B ยังคงประมวลผลข้อมูลส่วนบุคคลของพนักงาน กรรมการ และผู้ติดต่อของบริษัทคู่ค้า ซึ่งล้วนเป็นข้อมูลส่วนบุคคลตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 6 และอาจทำหน้าที่เป็น Data Processor ให้แก่ลูกค้าในฐานะ Data Controller อีกด้วย"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Data Processing Agreement (DPA) คืออะไร และต้องทำในกรณีใดบ้าง?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Data Processing Agreement (DPA) คือสัญญาที่กำหนดหน้าที่และความรับผิดชอบระหว่าง Data Controller และ Data Processor ในการประมวลผลข้อมูลส่วนบุคคล ต้องทำทุกครั้งที่ธุรกิจ B2B รับจ้างประมวลผลข้อมูลให้ลูกค้า เช่น ผู้ให้บริการ SaaS, Cloud, Payroll, HR Outsourcing ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 40"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "โทษสูงสุดของการฝ่าฝืน PDPA คือเท่าไร?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "โทษสูงสุดมี 3 ประเภท ได้แก่ (1) โทษทางปกครอง: ปรับสูงสุด 5,000,000 บาทต่อกรรม (2) โทษทางแพ่ง: ชดใช้ค่าสินไหมทดแทนพร้อมค่าสินไหมเพื่อการลงโทษสูงสุด 2 เท่าของค่าเสียหายจริง (3) โทษอาญา: จำคุกสูงสุด 1 ปี และ/หรือปรับสูงสุด 1,000,000 บาท ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 82, 86, 90"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ธุรกิจ B2B ที่ส่งข้อมูลพนักงานลูกค้าออกต่างประเทศต้องทำอะไรบ้าง?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ต้องปฏิบัติตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 28 โดยตรวจสอบว่าประเทศปลายทางมีมาตรฐานคุ้มครองข้อมูลเพียงพอ หากไม่มี ต้องดำเนินการตาม Adequacy Decision ของ PDPC หรือใช้ Standard Contractual Clauses (SCC) หรือ Binding Corporate Rules (BCR) และในบางกรณีต้องขอความยินยอมอย่างชัดแจ้งจากเจ้าของข้อมูล"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ธุรกิจขนาดกลางต้องแต่งตั้ง DPO หรือไม่?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ธุรกิจต้องแต่งตั้งเจ้าหน้าที่คุ้มครองข้อมูลส่วนบุคคล (DPO) ในกรณีที่ (1) เป็นหน่วยงานของรัฐ (2) ประมวลผลข้อมูลในกิจกรรมหลักที่ต้องติดตามตรวจสอบขนาดใหญ่ หรือ (3) ประมวลผลข้อมูลอ่อนไหวเป็นกิจกรรมหลัก ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 41 ธุรกิจ B2B ขนาดกลางส่วนใหญ่ไม่บังคับ แต่แนะนำให้มีเพื่อลดความเสี่ยง"
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --navy: #0F1A2E;
+    --navy2: #1B2A4A;
+    --gold: #C9A96E;
+    --gold-light: #E8D5B0;
+    --accent: #4ECDC4;
+    --red: #E74C3C;
+    --bg: #0a0f1a;
+    --text: #E8E8E8;
+    --text2: #8A94A6;
+    --text3: #5A6478;
+    --radius: 16px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', 'Noto Sans Thai', 'Tahoma', sans-serif;
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Header */
+  .site-header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+    border-bottom: 3px solid var(--gold);
+    padding: 18px 24px;
+    text-align: center;
+  }
+  .site-header .brand {
+    color: var(--gold);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .site-header .author-name {
+    color: var(--gold-light);
+    font-size: 12px;
+    margin-top: 4px;
+    opacity: 0.85;
+  }
+  .site-header nav {
+    margin-top: 10px;
+  }
+  .site-header nav a {
+    color: var(--text2);
+    text-decoration: none;
+    font-size: 13px;
+    margin: 0 12px;
+    transition: color 0.2s;
+  }
+  .site-header nav a:hover {
+    color: var(--gold);
+  }
+
+  /* Hero */
+  .article-hero {
+    background: linear-gradient(180deg, var(--navy2) 0%, var(--bg) 100%);
+    padding: 60px 24px 40px;
+    text-align: center;
+  }
+  .article-hero .category-badge {
+    display: inline-block;
+    background: rgba(201, 169, 110, 0.15);
+    color: var(--gold);
+    border: 1px solid rgba(201, 169, 110, 0.3);
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .article-hero h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #fff;
+    max-width: 800px;
+    margin: 0 auto 12px;
+    line-height: 1.3;
+  }
+  .article-hero .subtitle {
+    font-size: 1.1rem;
+    color: var(--text2);
+    max-width: 650px;
+    margin: 0 auto 20px;
+  }
+  .article-hero .meta {
+    font-size: 13px;
+    color: var(--text3);
+  }
+  .article-hero .meta span {
+    margin: 0 8px;
+  }
+
+  /* Main content */
+  .article-container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+  }
+
+  /* Table of Contents */
+  .toc {
+    background: rgba(27, 42, 74, 0.6);
+    border: 1px solid rgba(201, 169, 110, 0.2);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-bottom: 40px;
+  }
+  .toc h2 {
+    color: var(--gold);
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    border: none;
+    padding: 0;
+  }
+  .toc ol {
+    list-style: none;
+    counter-reset: toc-counter;
+    padding-left: 0;
+  }
+  .toc ol li {
+    counter-increment: toc-counter;
+    margin: 6px 0;
+  }
+  .toc ol li::before {
+    content: counter(toc-counter) ".";
+    color: var(--gold);
+    font-weight: 700;
+    margin-right: 8px;
+  }
+  .toc ol li a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .toc ol li a:hover {
+    color: var(--gold);
+  }
+
+  /* Sections */
+  .section-block {
+    margin-bottom: 48px;
+  }
+
+  h2.section-heading {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--gold);
+    border-bottom: 2px solid rgba(201, 169, 110, 0.3);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  h2.section-heading .en {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text3);
+    font-weight: 400;
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  h3.sub-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+
+  p {
+    margin-bottom: 16px;
+    text-align: justify;
+  }
+
+  /* Law citation highlight */
+  .law-cite {
+    background: rgba(201, 169, 110, 0.1);
+    border-left: 3px solid var(--gold);
+    padding: 16px 20px;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 20px 0;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .law-cite strong {
+    color: var(--gold);
+  }
+
+  /* Definition grid */
+  .def-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  @media (max-width: 640px) {
+    .def-grid { grid-template-columns: 1fr; }
+    .article-hero h1 { font-size: 1.6rem; }
+    .step-grid { grid-template-columns: 1fr; }
+    .penalty-grid { grid-template-columns: 1fr; }
+  }
+
+  .def-card {
+    background: rgba(27, 42, 74, 0.5);
+    border: 1px solid rgba(201, 169, 110, 0.15);
+    border-radius: var(--radius);
+    padding: 20px;
+    transition: border-color 0.2s;
+  }
+  .def-card:hover {
+    border-color: var(--gold);
+  }
+  .def-card .label-en {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 2px 12px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .def-card h4 {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+  .def-card p {
+    font-size: 14px;
+    color: var(--text2);
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  /* Step cards */
+  .step-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 24px 0;
+  }
+  .step-card {
+    background: rgba(27, 42, 74, 0.5);
+    border: 1px solid rgba(78, 205, 196, 0.2);
+    border-radius: var(--radius);
+    padding: 20px;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+  .step-card:hover {
+    border-color: var(--accent);
+  }
+  .step-card .step-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--accent), #2eaaa0);
+    color: var(--navy);
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  .step-card h4 {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+  .step-card .en-sub {
+    color: var(--text3);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+  .step-card p {
+    font-size: 14px;
+    color: var(--text2);
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  /* Penalty table */
+  .penalty-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+  }
+  .penalty-table thead {
+    background: var(--navy2);
+  }
+  .penalty-table th {
+    color: var(--gold);
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid var(--gold);
+  }
+  .penalty-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(138, 148, 166, 0.15);
+    color: var(--text);
+    vertical-align: top;
+  }
+  .penalty-table tr:hover td {
+    background: rgba(27, 42, 74, 0.4);
+  }
+
+  /* Risk badges */
+  .risk-high {
+    display: inline-block;
+    background: #FADBD8;
+    color: #C0392B;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .risk-medium {
+    display: inline-block;
+    background: #FDEBD0;
+    color: #E67E22;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .risk-low {
+    display: inline-block;
+    background: #D5F5E3;
+    color: #27AE60;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  /* Numbered list */
+  .content-list {
+    padding-left: 24px;
+    margin: 16px 0;
+  }
+  .content-list li {
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  .content-list li strong {
+    color: var(--gold-light);
+  }
+
+  /* Checklist */
+  .checklist {
+    list-style: none;
+    padding-left: 0;
+    margin: 16px 0;
+  }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: var(--text);
+    font-size: 15px;
+  }
+  .checklist li::before {
+    content: "☐";
+    color: var(--gold);
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .checklist li strong {
+    color: var(--gold-light);
+  }
+
+  /* Key insight box */
+  .insight-box {
+    background: rgba(78, 205, 196, 0.08);
+    border: 1px solid rgba(78, 205, 196, 0.25);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .insight-box .label {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  /* Warning box */
+  .warning-box {
+    background: rgba(231, 76, 60, 0.08);
+    border: 1px solid rgba(231, 76, 60, 0.25);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .warning-box .label {
+    color: var(--red);
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  /* Gold box */
+  .gold-box {
+    background: rgba(201, 169, 110, 0.07);
+    border: 1px solid rgba(201, 169, 110, 0.3);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .gold-box .label {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  /* Legal basis table */
+  .basis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .basis-card {
+    background: rgba(27, 42, 74, 0.4);
+    border: 1px solid rgba(201, 169, 110, 0.12);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .basis-card .basis-num {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .basis-card .basis-name {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .basis-card .basis-en {
+    color: var(--text3);
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+  .basis-card .basis-desc {
+    color: var(--text2);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  /* Rights grid */
+  .rights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+  }
+  .right-item {
+    background: rgba(27, 42, 74, 0.4);
+    border: 1px solid rgba(78, 205, 196, 0.15);
+    border-radius: 8px;
+    padding: 12px 14px;
+    text-align: center;
+  }
+  .right-item .right-num {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+  .right-item .right-name {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .right-item .right-en {
+    color: var(--text3);
+    font-size: 10px;
+  }
+
+  /* Case study block */
+  .case-block {
+    background: rgba(27, 42, 74, 0.35);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .case-block .case-label {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .case-block h4 {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  .case-block p {
+    font-size: 14px;
+    color: var(--text2);
+    margin-bottom: 8px;
+    text-align: left;
+  }
+  .case-block .outcome {
+    display: inline-block;
+    background: #FADBD8;
+    color: #C0392B;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 4px;
+  }
+  .case-block .lesson {
+    background: rgba(78, 205, 196, 0.1);
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--accent);
+  }
+
+  /* Disclaimer */
+  .disclaimer {
+    background: rgba(27, 42, 74, 0.4);
+    border: 1px solid rgba(138, 148, 166, 0.2);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-top: 48px;
+    font-size: 13px;
+    color: var(--text3);
+    line-height: 1.7;
+  }
+  .disclaimer h3 {
+    color: var(--text2);
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  /* References */
+  .references {
+    margin-top: 40px;
+  }
+  .references h2 {
+    color: var(--gold);
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(201, 169, 110, 0.2);
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+  }
+  .references ol {
+    padding-left: 24px;
+    font-size: 14px;
+    color: var(--text2);
+  }
+  .references ol li {
+    margin-bottom: 8px;
+  }
+
+  /* Footer */
+  .site-footer {
+    background: var(--navy);
+    border-top: 2px solid var(--gold);
+    padding: 28px 24px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--text3);
+  }
+  .site-footer .footer-author {
+    color: var(--gold);
+    font-weight: 600;
+  }
+  .site-footer a {
+    color: var(--text2);
+    text-decoration: none;
+  }
+  .site-footer a:hover {
+    color: var(--gold);
+  }
+
+  /* Back to top */
+  .back-top {
+    display: inline-block;
+    margin-top: 32px;
+    padding: 10px 24px;
+    background: rgba(201, 169, 110, 0.12);
+    border: 1px solid rgba(201, 169, 110, 0.3);
+    border-radius: 8px;
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.2s;
+  }
+  .back-top:hover {
+    background: rgba(201, 169, 110, 0.25);
+  }
+
+  /* FAQ section */
+  .faq-item {
+    background: rgba(27, 42, 74, 0.35);
+    border: 1px solid rgba(201, 169, 110, 0.12);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 14px;
+  }
+  .faq-item .faq-q {
+    color: var(--gold-light);
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .faq-item .faq-a {
+    color: var(--text2);
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 0;
+  }
+</style>
+</head>
+<body>
+<div class="lang-switch" style="position:fixed;top:12px;right:12px;z-index:9999;font-size:13px;background:#1B2A4A;padding:6px 14px;border-radius:20px;border:1px solid #C9A96E;">
+  <span style="color:#C9A96E;font-weight:bold;">TH</span>
+  <span style="color:#888;margin:0 4px;">|</span>
+  <a href="https://thundthornthep-ai.github.io/knowledge-hub.html" style="color:#aaa;text-decoration:none;">EN</a>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="brand">Legal Advance Solution &mdash; Knowledge Hub</div>
+  <div class="author-name">by Thundthornthep Yamoutai, Ph.D.</div>
+  <nav>
+    <a href="https://thundthornthep-ai.github.io/">Home</a>
+    <a href="https://thundthornthep-ai.github.io/knowledge-hub.html">Knowledge Hub</a>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="article-hero">
+  <div class="category-badge">Data Protection &amp; PDPA Compliance</div>
+  <h1>PDPA Compliance สำหรับธุรกิจ B2B:<br>คู่มือระดับ C-Suite</h1>
+  <p class="subtitle">วิเคราะห์เชิงลึก พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 สำหรับภาคธุรกิจ B2B — Data Controller, DPA, Cross-Border Transfer, บทลงโทษ และ Checklist 30 ข้อ</p>
+  <div class="meta">
+    <span>Thundthornthep Yamoutai, Ph.D.</span> |
+    <span>4 เมษายน 2569</span> |
+    <span>Legal Compliance Guide</span>
+  </div>
+</section>
+
+<!-- ============ MAIN CONTENT ============ -->
+<main class="article-container">
+
+  <!-- TOC -->
+  <div class="toc">
+    <h2>Table of Contents / สารบัญ</h2>
+    <ol>
+      <li><a href="#sec1">บทนำ &mdash; PDPA กับธุรกิจ B2B: ทำไมต้องให้ความสำคัญ</a></li>
+      <li><a href="#sec2">กรอบกฎหมาย &mdash; พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562</a></li>
+      <li><a href="#sec3">PDPA สำหรับธุรกิจ B2B &mdash; ประเด็นที่แตกต่างจาก B2C</a></li>
+      <li><a href="#sec4">ขั้นตอนการทำ PDPA Compliance 6 Steps</a></li>
+      <li><a href="#sec5">บทลงโทษ (Penalties) &mdash; ทั้งทางแพ่ง อาญา ปกครอง</a></li>
+      <li><a href="#sec6">กรณีศึกษา &mdash; ตัวอย่างการบังคับใช้ในไทย</a></li>
+      <li><a href="#sec7">Checklist: PDPA Compliance สำหรับธุรกิจ B2B</a></li>
+      <li><a href="#sec8">บทสรุป</a></li>
+      <li><a href="#ref">เอกสารอ้างอิง (References)</a></li>
+    </ol>
+  </div>
+
+  <!-- ============ SECTION 1 ============ -->
+  <div class="section-block" id="sec1">
+    <h2 class="section-heading">
+      1. บทนำ &mdash; PDPA กับธุรกิจ B2B: ทำไมต้องให้ความสำคัญ
+      <span class="en">Introduction &mdash; Why B2B Must Prioritize PDPA</span>
+    </h2>
+
+    <p>เมื่อพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (Personal Data Protection Act — PDPA) มีผลบังคับใช้เต็มรูปแบบในวันที่ 1 มิถุนายน 2565 ภาคธุรกิจไทยส่วนใหญ่มุ่งความสนใจไปที่การเก็บข้อมูลผู้บริโภค (B2C) เช่น การจัดการ Cookie บนเว็บไซต์ หรือการขอความยินยอมทางการตลาด อย่างไรก็ตาม บริษัทที่ดำเนินธุรกิจแบบ Business-to-Business (B2B) มักประเมินความเสี่ยงด้าน PDPA ต่ำเกินจริง โดยเข้าใจผิดว่ากฎหมายนี้ใช้กับการค้าปลีกหรือ E-Commerce เป็นหลัก</p>
+
+    <p>ในความเป็นจริง ธุรกิจ B2B ต้องประมวลผลข้อมูลส่วนบุคคลในเกือบทุกขั้นตอนของการดำเนินธุรกิจ ไม่ว่าจะเป็นข้อมูลของพนักงานลูกค้าที่ติดต่อประสานงาน ข้อมูลผู้มีอำนาจลงนามของบริษัทคู่ค้า ข้อมูล HR ที่ได้รับมาในงาน Outsourcing หรือข้อมูลของผู้ใช้งานระบบในฐานะผู้ให้บริการ Software-as-a-Service (SaaS) และ Cloud Computing ทั้งหมดนี้ล้วนอยู่ในขอบเขตของพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562</p>
+
+    <p>ยิ่งไปกว่านั้น ธุรกิจ B2B มักมีบทบาทซับซ้อนกว่า B2C ในระบบนิเวศของ PDPA กล่าวคือ บริษัทหนึ่งอาจทำหน้าที่เป็น <strong>ผู้ควบคุมข้อมูลส่วนบุคคล (Data Controller)</strong> สำหรับข้อมูลพนักงานตนเอง และในเวลาเดียวกันก็ทำหน้าที่เป็น <strong>ผู้ประมวลผลข้อมูลส่วนบุคคล (Data Processor)</strong> ให้แก่ลูกค้าองค์กร ความซับซ้อนเชิงบทบาทนี้ทำให้การจัดทำ PDPA Compliance สำหรับ B2B มีความละเอียดและต้องการความเชี่ยวชาญเชิงกฎหมายสูงกว่า B2C อย่างมีนัยสำคัญ</p>
+
+    <div class="insight-box">
+      <div class="label">C-Suite Insight</div>
+      <p style="margin-bottom:0;">จากการบังคับใช้ PDPA นับตั้งแต่ปี 2565 สำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (PDPC) ได้รับเรื่องร้องเรียนเพิ่มขึ้นอย่างต่อเนื่อง และเริ่มมีการออกคำสั่งทางปกครองในหลายกรณี ธุรกิจ B2B ที่ยังไม่มี PDPA Framework ที่ชัดเจนถือว่ากำลังแบกรับความเสี่ยงทางกฎหมายที่ไม่จำเป็น</p>
+    </div>
+
+    <p>บทความนี้จัดทำขึ้นเพื่อผู้บริหารระดับ C-Suite และทีมกฎหมายองค์กรที่ต้องการเข้าใจกรอบกฎหมาย PDPA ในบริบทของธุรกิจ B2B อย่างครอบคลุม ครอบคลุมตั้งแต่นิยามสำคัญ ฐานทางกฎหมาย บทบาทของ Data Processing Agreement (DPA) ในห่วงโซ่อุปทาน ประเด็นการโอนข้อมูลข้ามพรมแดน บทลงโทษ กรณีศึกษา และ Checklist 30 ข้อที่ทีมงานสามารถนำไปใช้ได้ทันที</p>
+  </div>
+
+  <!-- ============ SECTION 2 ============ -->
+  <div class="section-block" id="sec2">
+    <h2 class="section-heading">
+      2. กรอบกฎหมาย &mdash; พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562
+      <span class="en">Legal Framework &mdash; Personal Data Protection Act B.E. 2562 (2019)</span>
+    </h2>
+
+    <p>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 ประกาศใช้ในราชกิจจานุเบกษาเมื่อวันที่ 27 พฤษภาคม 2562 และมีผลบังคับใช้เต็มรูปแบบเมื่อวันที่ 1 มิถุนายน 2565 กฎหมายนี้มีวัตถุประสงค์เพื่อคุ้มครองสิทธิของบุคคลธรรมดา (Natural Person) ในฐานะเจ้าของข้อมูล และกำหนดหน้าที่ให้แก่ผู้ควบคุมและผู้ประมวลผลข้อมูล โดยได้รับอิทธิพลเชิงโครงสร้างจาก General Data Protection Regulation (GDPR) ของสหภาพยุโรป</p>
+
+    <h3 class="sub-heading">2.1 นิยามสำคัญ: Data Controller vs Data Processor</h3>
+
+    <p>ความเข้าใจในนิยามของ Data Controller และ Data Processor เป็นรากฐานที่สำคัญที่สุดของการทำ PDPA Compliance สำหรับ B2B เพราะหน้าที่และความรับผิดตามกฎหมายของสองบทบาทนี้แตกต่างกันอย่างมีนัยสำคัญ</p>
+
+    <div class="def-grid">
+      <div class="def-card">
+        <span class="label-en">Data Controller</span>
+        <h4>ผู้ควบคุมข้อมูลส่วนบุคคล</h4>
+        <p>บุคคลหรือนิติบุคคลที่มีอำนาจหน้าที่ตัดสินใจเกี่ยวกับการเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคล (พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 6) กำหนดวัตถุประสงค์และวิธีการประมวลผลข้อมูล มีหน้าที่รับผิดชอบโดยตรงต่อเจ้าของข้อมูล</p>
+      </div>
+      <div class="def-card">
+        <span class="label-en">Data Processor</span>
+        <h4>ผู้ประมวลผลข้อมูลส่วนบุคคล</h4>
+        <p>บุคคลหรือนิติบุคคลที่ดำเนินการเกี่ยวกับการเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคล ตามคำสั่งหรือในนามของผู้ควบคุมข้อมูลส่วนบุคคล (พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 6) ไม่มีอำนาจตัดสินใจในวัตถุประสงค์ของการประมวลผล</p>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <div class="label">⚠ ข้อควรระวังสำหรับ B2B</div>
+      <p style="margin-bottom:0;">ธุรกิจ B2B หลายประเภท เช่น ผู้ให้บริการ Payroll, HR Software, Cloud Infrastructure, หรือ Outsourced Accounting มักทำหน้าที่เป็น <strong>Data Processor</strong> ให้ลูกค้า แต่ก็เป็น <strong>Data Controller</strong> สำหรับข้อมูลพนักงานตนเองพร้อมกัน การผสมปนเประหว่างสองบทบาทโดยไม่มี Data Processing Agreement (DPA) ที่ชัดเจน ถือเป็นความเสี่ยงทางกฎหมายระดับ <span class="risk-high">🔴 High</span></p>
+    </div>
+
+    <h3 class="sub-heading">2.2 ฐานทางกฎหมาย 7 ฐาน (Legal Basis)</h3>
+
+    <p>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 24 กำหนดฐานทางกฎหมาย (Legal Basis) ที่อนุญาตให้ Data Controller ประมวลผลข้อมูลส่วนบุคคลโดยไม่ต้องขอความยินยอมจากเจ้าของข้อมูลได้ 6 ฐาน รวมกับฐานความยินยอมในมาตรา 19 รวมทั้งสิ้น 7 ฐาน ดังนี้:</p>
+
+    <div class="basis-grid">
+      <div class="basis-card">
+        <div class="basis-num">①</div>
+        <div class="basis-name">ความยินยอม</div>
+        <div class="basis-en">Consent</div>
+        <div class="basis-desc">เจ้าของข้อมูลให้ความยินยอมอย่างชัดแจ้ง (พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 19)</div>
+      </div>
+      <div class="basis-card">
+        <div class="basis-num">②</div>
+        <div class="basis-name">การปฏิบัติตามสัญญา</div>
+        <div class="basis-en">Contract Performance</div>
+        <div class="basis-desc">จำเป็นเพื่อปฏิบัติตามสัญญาที่เจ้าของข้อมูลเป็นคู่สัญญา (มาตรา 24 (1))</div>
+      </div>
+      <div class="basis-card">
+        <div class="basis-num">③</div>
+        <div class="basis-name">หน้าที่ตามกฎหมาย</div>
+        <div class="basis-en">Legal Obligation</div>
+        <div class="basis-desc">จำเป็นเพื่อปฏิบัติตามกฎหมาย เช่น การจัดทำรายงานภาษี (มาตรา 24 (2))</div>
+      </div>
+      <div class="basis-card">
+        <div class="basis-num">④</div>
+        <div class="basis-name">ประโยชน์สำคัญ</div>
+        <div class="basis-en">Vital Interests</div>
+        <div class="basis-desc">จำเป็นเพื่อป้องกันอันตรายต่อชีวิต ร่างกาย หรือสุขภาพ (มาตรา 24 (3))</div>
+      </div>
+      <div class="basis-card">
+        <div class="basis-num">⑤</div>
+        <div class="basis-name">ภารกิจสาธารณะ</div>
+        <div class="basis-en">Public Task</div>
+        <div class="basis-desc">จำเป็นเพื่อการดำเนินภารกิจเพื่อสาธารณะประโยชน์ (มาตรา 24 (4))</div>
+      </div>
+      <div class="basis-card">
+        <div class="basis-num">⑥</div>
+        <div class="basis-name">ประโยชน์อันชอบธรรม</div>
+        <div class="basis-en">Legitimate Interests</div>
+        <div class="basis-desc">จำเป็นเพื่อประโยชน์อันชอบด้วยกฎหมาย โดยไม่เกินสมควร (มาตรา 24 (5)) — ใช้บ่อยใน B2B</div>
+      </div>
+      <div class="basis-card">
+        <div class="basis-num">⑦</div>
+        <div class="basis-name">การวิจัยและสถิติ</div>
+        <div class="basis-en">Research &amp; Statistics</div>
+        <div class="basis-desc">เพื่อการศึกษาวิจัย จัดทำสถิติ หรือประโยชน์สาธารณะ (มาตรา 24 (6))</div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="label">B2B Practice Note</div>
+      <p style="margin-bottom:0;">ในบริบท B2B ฐาน <strong>ประโยชน์อันชอบธรรม (Legitimate Interests)</strong> และ <strong>การปฏิบัติตามสัญญา (Contract Performance)</strong> เป็นฐานที่ใช้บ่อยที่สุด เช่น การเก็บข้อมูล Contact Person ของคู่ค้าเพื่อการสื่อสารทางธุรกิจ หรือการเก็บข้อมูลพนักงานลูกค้าในงาน HR Outsourcing อย่างไรก็ดี ต้องทำ Legitimate Interests Assessment (LIA) เพื่อยืนยันว่าการประมวลผลนั้นสมสัดส่วนและไม่กระทบสิทธิเจ้าของข้อมูลเกินสมควร</p>
+    </div>
+
+    <h3 class="sub-heading">2.3 สิทธิเจ้าของข้อมูล 8 ประการ</h3>
+
+    <p>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 หมวด 3 (มาตรา 30–43) กำหนดสิทธิของเจ้าของข้อมูลส่วนบุคคลไว้ 8 ประการ ซึ่ง Data Controller ต้องจัดให้มีกลไกรองรับการใช้สิทธิเหล่านี้:</p>
+
+    <div class="rights-grid">
+      <div class="right-item">
+        <div class="right-num">①</div>
+        <div class="right-name">สิทธิรับทราบ</div>
+        <div class="right-en">Right to be Informed</div>
+      </div>
+      <div class="right-item">
+        <div class="right-num">②</div>
+        <div class="right-name">สิทธิเข้าถึง</div>
+        <div class="right-en">Right of Access</div>
+      </div>
+      <div class="right-item">
+        <div class="right-num">③</div>
+        <div class="right-name">สิทธิแก้ไข</div>
+        <div class="right-en">Right to Rectification</div>
+      </div>
+      <div class="right-item">
+        <div class="right-num">④</div>
+        <div class="right-name">สิทธิลบข้อมูล</div>
+        <div class="right-en">Right to Erasure</div>
+      </div>
+      <div class="right-item">
+        <div class="right-num">⑤</div>
+        <div class="right-name">สิทธิระงับ</div>
+        <div class="right-en">Right to Restrict</div>
+      </div>
+      <div class="right-item">
+        <div class="right-num">⑥</div>
+        <div class="right-name">สิทธิพกพา</div>
+        <div class="right-en">Right to Portability</div>
+      </div>
+      <div class="right-item">
+        <div class="right-num">⑦</div>
+        <div class="right-name">สิทธิคัดค้าน</div>
+        <div class="right-en">Right to Object</div>
+      </div>
+      <div class="right-item">
+        <div class="right-num">⑧</div>
+        <div class="right-name">สิทธิถอนความยินยอม</div>
+        <div class="right-en">Right to Withdraw Consent</div>
+      </div>
+    </div>
+
+    <div class="law-cite">
+      <strong>มาตราสำคัญ:</strong> สิทธิลบข้อมูล (Right to Erasure) กำหนดไว้ใน พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 33 | สิทธิพกพาข้อมูล (Right to Data Portability) กำหนดไว้ใน มาตรา 35 | สิทธิคัดค้าน (Right to Object) กำหนดไว้ใน มาตรา 36 | Data Controller ต้องตอบสนองคำขอใช้สิทธิภายใน 30 วัน นับจากวันที่รับคำขอ (มาตรา 41)
+    </div>
+  </div>
+
+  <!-- ============ SECTION 3 ============ -->
+  <div class="section-block" id="sec3">
+    <h2 class="section-heading">
+      3. PDPA สำหรับธุรกิจ B2B &mdash; ประเด็นที่แตกต่างจาก B2C
+      <span class="en">PDPA for B2B &mdash; Key Differences from B2C Compliance</span>
+    </h2>
+
+    <p>การทำ PDPA Compliance สำหรับธุรกิจ B2B มีความซับซ้อนและมีประเด็นเฉพาะที่แตกต่างจาก B2C อย่างมีนัยสำคัญ ดังจะวิเคราะห์ในหัวข้อต่อไปนี้:</p>
+
+    <h3 class="sub-heading">3.1 ข้อมูลพนักงานลูกค้า vs ข้อมูลผู้บริโภค</h3>
+
+    <p>ในสภาพแวดล้อม B2B บริษัทมักเก็บและประมวลผลข้อมูลส่วนบุคคลของ "บุคลากรของนิติบุคคลอื่น" ซึ่งได้แก่ กรรมการผู้จัดการ ผู้จัดการฝ่าย พนักงานฝ่าย Procurement หรือ IT ของบริษัทลูกค้า บุคคลเหล่านี้ล้วนเป็น "เจ้าของข้อมูลส่วนบุคคล" ตามกฎหมาย แม้ว่าการติดต่อจะเกิดขึ้นในบริบทเชิงธุรกิจระหว่างองค์กร</p>
+
+    <p>ต่างจาก B2C ที่เจ้าของข้อมูลเป็นผู้บริโภคสุดท้าย ใน B2B เจ้าของข้อมูลมักไม่รับรู้ว่าข้อมูลตนเองถูกแบ่งปันในห่วงโซ่อุปทาน (Supply Chain) ข้อมูลหนึ่งชุดอาจถูกส่งต่อจากบริษัทแม่สู่ผู้ให้บริการ IT สู่ Data Center ในต่างประเทศ โดยที่พนักงานเจ้าของข้อมูลไม่เคยรับทราบ ความซับซ้อนนี้เพิ่มความเสี่ยงด้าน Transparency และ Notice อย่างมาก</p>
+
+    <div class="gold-box">
+      <div class="label">B2B-Specific Risk</div>
+      <p style="margin-bottom:8px;"><strong>ตัวอย่างที่พบบ่อยใน B2B:</strong></p>
+      <ol class="content-list" style="margin-top:0;">
+        <li>บริษัท SaaS เก็บข้อมูลผู้ใช้งานระบบของลูกค้าองค์กร (ซึ่งเป็นพนักงานของลูกค้า)</li>
+        <li>ผู้ให้บริการ Payroll เก็บข้อมูลเงินเดือน วันเกิด เลขบัตรประชาชน และบัญชีธนาคารของพนักงานลูกค้า</li>
+        <li>บริษัท Logistics เก็บข้อมูลรับส่งสินค้าที่ระบุชื่อ-ที่อยู่บุคคลของลูกค้า</li>
+        <li>ที่ปรึกษาการจัดการ (Management Consultant) เข้าถึงข้อมูล HR และประเมินผลพนักงานของลูกค้า</li>
+      </ol>
+    </div>
+
+    <h3 class="sub-heading">3.2 การโอนข้อมูลข้ามแดน (Cross-Border Transfer)</h3>
+
+    <p>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 28 กำหนดข้อจำกัดในการส่งหรือโอนข้อมูลส่วนบุคคลไปยังต่างประเทศ โดยประเทศปลายทางหรือองค์กรระหว่างประเทศที่รับข้อมูลต้องมีมาตรฐานการคุ้มครองข้อมูลส่วนบุคคลที่เพียงพอ ซึ่งเป็นประเด็นสำคัญมากสำหรับ B2B ที่ใช้ระบบ Cloud หรือ SaaS ของต่างประเทศ</p>
+
+    <p>สำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (PDPC) ได้ออกประกาศว่าด้วยการส่งหรือโอนข้อมูลส่วนบุคคลไปยังต่างประเทศ ซึ่งกำหนดกลไกในการโอนข้อมูลข้ามแดนที่ถูกกฎหมาย ได้แก่:</p>
+
+    <ol class="content-list">
+      <li><strong>Adequacy Decision:</strong> ประเทศปลายทางได้รับการรับรองว่ามีมาตรฐานคุ้มครองข้อมูลเพียงพอ โดย PDPC (ปัจจุบันยังอยู่ระหว่างการกำหนดรายชื่อประเทศ)</li>
+      <li><strong>Standard Contractual Clauses (SCC):</strong> ทำสัญญาโอนข้อมูลโดยใช้แบบสัญญามาตรฐานที่ PDPC กำหนด ซึ่งรับรองระดับการคุ้มครองเทียบเท่ากฎหมายไทย</li>
+      <li><strong>Binding Corporate Rules (BCR):</strong> สำหรับกลุ่มบริษัทในเครือเดียวกัน สามารถใช้กฎภายในกลุ่มที่ได้รับการอนุมัติจาก PDPC แทนการทำ SCC ทีละคู่</li>
+      <li><strong>Explicit Consent:</strong> ในบางกรณี อาจอาศัยความยินยอมอย่างชัดแจ้งของเจ้าของข้อมูล แต่ต้องแจ้งล่วงหน้าว่าประเทศปลายทางอาจไม่มีมาตรฐานคุ้มครองเพียงพอ</li>
+    </ol>
+
+    <div class="warning-box">
+      <div class="label">⚠ ความเสี่ยงระดับ High สำหรับ B2B</div>
+      <p style="margin-bottom:0;">บริษัท B2B ที่ใช้ <strong>AWS, Google Cloud, Microsoft Azure, Salesforce, Workday หรือ SAP</strong> ซึ่งตั้ง Server ต่างประเทศ มีความเสี่ยงว่าการโอนข้อมูลส่วนบุคคลของพนักงานลูกค้าอาจไม่ได้รับการคุ้มครองตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 28 หากไม่มีกลไกถ่ายโอนที่ถูกกฎหมาย ความเสี่ยงนี้อยู่ระดับ <span class="risk-high">🔴 High</span></p>
+    </div>
+
+    <h3 class="sub-heading">3.3 Data Processing Agreement (DPA) ระหว่างคู่ค้า</h3>
+
+    <p>Data Processing Agreement (DPA) หรือ สัญญาประมวลผลข้อมูลส่วนบุคคล คือสัญญาที่กำหนดหน้าที่ ความรับผิดชอบ และมาตรการรักษาความปลอดภัยระหว่าง Data Controller (ลูกค้า) และ Data Processor (ผู้ให้บริการ B2B) พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 40 กำหนดให้ Data Controller ใช้ Data Processor ที่มีมาตรการคุ้มครองข้อมูลเพียงพอ และต้องมีสัญญาเป็นลายลักษณ์อักษรกำกับ</p>
+
+    <p>DPA ที่สมบูรณ์ในบริบท B2B ไทย ควรประกอบด้วยข้อกำหนดสำคัญต่อไปนี้:</p>
+
+    <ol class="content-list">
+      <li><strong>ขอบเขตและวัตถุประสงค์ของการประมวลผล:</strong> ระบุชัดเจนว่า Data Processor ได้รับอนุญาตให้ประมวลผลข้อมูลใด เพื่อวัตถุประสงค์ใด และห้ามนำข้อมูลไปใช้เพื่อวัตถุประสงค์อื่น</li>
+      <li><strong>ประเภทข้อมูลส่วนบุคคลและประเภทเจ้าของข้อมูล:</strong> ระบุประเภทข้อมูล (เช่น ชื่อ อีเมล เลขบัตรประชาชน) และประเภทเจ้าของข้อมูล (เช่น พนักงาน ลูกค้า) อย่างชัดเจน</li>
+      <li><strong>มาตรการรักษาความปลอดภัย (Technical &amp; Organizational Measures):</strong> กำหนดมาตรการขั้นต่ำ เช่น การเข้ารหัสข้อมูล (Encryption), การควบคุมการเข้าถึง (Access Control), การ Backup และ Recovery</li>
+      <li><strong>การแต่งตั้ง Sub-Processor:</strong> กำหนดเงื่อนไขและข้อจำกัดในการมอบหมายงานประมวลผลข้อมูลต่อให้แก่บุคคลที่สาม (Sub-processor)</li>
+      <li><strong>การแจ้งเหตุละเมิด (Breach Notification):</strong> กำหนดกรอบเวลาและกระบวนการแจ้งเหตุ Data Breach ระหว่าง Processor และ Controller</li>
+      <li><strong>สิทธิตรวจสอบ (Audit Rights):</strong> Data Controller มีสิทธิตรวจสอบว่า Data Processor ปฏิบัติตาม DPA และกฎหมาย PDPA หรือไม่</li>
+      <li><strong>การส่งคืนหรือลบข้อมูล:</strong> เมื่อสิ้นสุดสัญญา Data Processor ต้องส่งคืนหรือลบข้อมูลทั้งหมดตามคำสั่งของ Data Controller</li>
+    </ol>
+
+    <div class="insight-box">
+      <div class="label">Strategic Recommendation</div>
+      <p style="margin-bottom:0;">ในสภาพแวดล้อม B2B ปัจจุบัน DPA กำลังกลายเป็น "ข้อกำหนดมาตรฐาน" ในสัญญา Master Service Agreement (MSA) หรือสัญญาจ้างบริการ ลูกค้าองค์กรขนาดใหญ่ โดยเฉพาะบริษัทที่มีธุรกรรมกับ GDPR จะกำหนดให้ผู้ให้บริการ B2B ต้องลงนาม DPA ก่อนเริ่มให้บริการ บริษัทที่ยังไม่มี DPA Template พร้อมใช้ อาจสูญเสียโอกาสทางธุรกิจและเสียเปรียบในการแข่งขัน</p>
+    </div>
+  </div>
+
+  <!-- ============ SECTION 4 ============ -->
+  <div class="section-block" id="sec4">
+    <h2 class="section-heading">
+      4. ขั้นตอนการทำ PDPA Compliance (6 Steps)
+      <span class="en">6-Step PDPA Compliance Roadmap for B2B</span>
+    </h2>
+
+    <p>การจัดทำ PDPA Compliance Framework สำหรับธุรกิจ B2B ควรดำเนินการตามลำดับขั้นตอน 6 ขั้นตอนต่อไปนี้ โดยแต่ละขั้นตอนมีผลลัพธ์ (Deliverable) ที่ชัดเจนและวัดได้:</p>
+
+    <div class="step-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h4>Data Mapping / Data Inventory</h4>
+        <div class="en-sub">Record of Processing Activities (RoPA)</div>
+        <p>สำรวจและจัดทำบันทึกกิจกรรมการประมวลผลข้อมูลส่วนบุคคลทั้งหมด (Record of Processing Activities — RoPA) ตามที่กำหนดใน พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 39 ระบุแหล่งที่มา ประเภทข้อมูล วัตถุประสงค์ ฐานทางกฎหมาย ระยะเวลาเก็บ และผู้รับข้อมูล</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h4>Privacy Policy &amp; Notice</h4>
+        <div class="en-sub">Privacy Notice Design</div>
+        <p>จัดทำนโยบายความเป็นส่วนตัว (Privacy Policy) และหนังสือแจ้ง (Privacy Notice) ที่ครอบคลุมข้อมูลตาม พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 23 รวมถึง Notice เฉพาะสำหรับพนักงาน ลูกค้า และคู่ค้าแยกต่างหาก</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h4>Consent Management</h4>
+        <div class="en-sub">Lawful Basis Documentation</div>
+        <p>กำหนด Legal Basis ที่เหมาะสมสำหรับแต่ละกิจกรรมการประมวลผล และออกแบบระบบจัดการความยินยอม (Consent Management) สำหรับกรณีที่ต้องใช้ฐานความยินยอม ตาม พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 19</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h4>DPIA Assessment</h4>
+        <div class="en-sub">Data Protection Impact Assessment</div>
+        <p>ดำเนินการประเมินผลกระทบด้านการคุ้มครองข้อมูลส่วนบุคคล (DPIA) ตาม พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 37 สำหรับกิจกรรมที่มีความเสี่ยงสูง เช่น การประมวลผลข้อมูลอ่อนไหว (Sensitive Data) หรือการประมวลผลในปริมาณมาก</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">5</div>
+        <h4>Incident Response Plan</h4>
+        <div class="en-sub">Data Breach Response SOP</div>
+        <p>จัดทำแผนรองรับเหตุละเมิดข้อมูลส่วนบุคคล (Data Breach Response Plan) โดยกำหนดกระบวนการตรวจจับ ประเมิน แจ้ง PDPC ภายใน 72 ชั่วโมง (กรณีมีความเสี่ยงสูง) และแจ้งเจ้าของข้อมูล ตาม พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 37/1 [ต้องยืนยันมาตรา]</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">6</div>
+        <h4>DPO Appointment</h4>
+        <div class="en-sub">Data Protection Officer</div>
+        <p>พิจารณาแต่งตั้งเจ้าหน้าที่คุ้มครองข้อมูลส่วนบุคคล (Data Protection Officer — DPO) ตาม พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 41–43 โดยเฉพาะสำหรับบริษัทที่ประมวลผลข้อมูลอ่อนไหวเป็นกิจกรรมหลัก หรือมีการประมวลผลขนาดใหญ่</p>
+      </div>
+    </div>
+
+    <h3 class="sub-heading">4.1 Data Mapping — จุดเริ่มต้นที่ขาดไม่ได้</h3>
+
+    <p>Data Mapping หรือการสำรวจแผนที่ข้อมูล เป็นขั้นตอนแรกที่สำคัญที่สุด โดยต้องระบุว่าองค์กรเก็บข้อมูลส่วนบุคคลอะไรบ้าง จากแหล่งใด เก็บไว้ที่ใด ส่งต่อให้ใคร และเก็บนานเท่าไร สำหรับธุรกิจ B2B แนะนำให้ทำ Data Mapping แยกตามหมวดหมู่ดังนี้:</p>
+
+    <ol class="content-list">
+      <li><strong>ข้อมูลพนักงาน (Employee Data):</strong> ชื่อ ที่อยู่ เลขบัตรประชาชน ข้อมูลธนาคาร ประวัติสุขภาพ (ถ้ามี) ซึ่งเป็นข้อมูลอ่อนไหว (Sensitive Data) ตาม มาตรา 26</li>
+      <li><strong>ข้อมูลคู่ค้าและลูกค้าองค์กร (B2B Contact Data):</strong> ชื่อ ตำแหน่ง อีเมล เบอร์โทรศัพท์ของผู้ติดต่อ (Contact Person) ซึ่งเป็นข้อมูลส่วนบุคคลตาม มาตรา 6</li>
+      <li><strong>ข้อมูลที่ประมวลผลในนามลูกค้า (Data Processed as Processor):</strong> ข้อมูลที่ได้รับมอบหมายจากลูกค้าในฐานะ Data Controller เพื่อให้บริการ</li>
+      <li><strong>ข้อมูลจากระบบ Digital:</strong> Log Files, IP Addresses, Cookies, User Behavior Data จากระบบดิจิทัลขององค์กร</li>
+    </ol>
+
+    <h3 class="sub-heading">4.2 DPIA — เมื่อใดต้องทำ</h3>
+
+    <p>การประเมินผลกระทบด้านการคุ้มครองข้อมูลส่วนบุคคล (Data Protection Impact Assessment — DPIA) บังคับสำหรับกิจกรรมที่มีความเสี่ยงสูงต่อสิทธิและเสรีภาพของบุคคล ซึ่งในบริบท B2B ได้แก่:</p>
+
+    <ol class="content-list">
+      <li>การประมวลผลข้อมูลอ่อนไหว (Sensitive Personal Data) ตาม มาตรา 26 เช่น ข้อมูลสุขภาพ ข้อมูลชีวมิติ (Biometric) ข้อมูลศาสนา ในปริมาณมาก</li>
+      <li>การประมวลผลโดยระบบอัตโนมัติ (Automated Processing) ที่ส่งผลกระทบต่อสิทธิของบุคคล รวมถึง Profiling</li>
+      <li>การประมวลผลข้อมูลของบุคคลกลุ่มเปราะบาง เช่น เด็ก ผู้สูงอายุ</li>
+      <li>การนำข้อมูลชุดใหม่มาใช้ร่วมกันในลักษณะที่อาจระบุตัวตนได้</li>
+      <li>การส่งข้อมูลข้ามพรมแดนในปริมาณมาก</li>
+    </ol>
+
+    <h3 class="sub-heading">4.3 DPO — หน้าที่และคุณสมบัติ</h3>
+
+    <p>เจ้าหน้าที่คุ้มครองข้อมูลส่วนบุคคล (Data Protection Officer — DPO) ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 41 มีหน้าที่หลัก ได้แก่ ให้คำแนะนำด้าน PDPA แก่องค์กร ตรวจสอบการปฏิบัติตามกฎหมาย ประสานงานกับ PDPC และเป็นจุดติดต่อสำหรับเจ้าของข้อมูลที่ต้องการใช้สิทธิ</p>
+
+    <p>DPO ไม่จำเป็นต้องเป็นพนักงานประจำ สามารถเป็นที่ปรึกษาภายนอก (External DPO) ได้ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 41 วรรคสอง ซึ่งเป็นทางเลือกที่คุ้มค่าสำหรับ SME B2B ที่ไม่มีทรัพยากรพอสำหรับการจ้างพนักงานประจำ</p>
+  </div>
+
+  <!-- ============ SECTION 5 ============ -->
+  <div class="section-block" id="sec5">
+    <h2 class="section-heading">
+      5. บทลงโทษ (Penalties) &mdash; ทั้งทางแพ่ง อาญา ปกครอง
+      <span class="en">Penalties — Civil, Criminal &amp; Administrative</span>
+    </h2>
+
+    <p>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 กำหนดบทลงโทษใน 3 ระดับ ซึ่งอาจใช้บังคับพร้อมกันในคดีเดียวกัน ทำให้ความเสี่ยงทางกฎหมายรวมสูงมาก ดังนี้:</p>
+
+    <table class="penalty-table">
+      <thead>
+        <tr>
+          <th>ประเภทโทษ</th>
+          <th>ความผิด</th>
+          <th>บทลงโทษสูงสุด</th>
+          <th>มาตรา</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="risk-high">🔴 อาญา</span></td>
+          <td>เก็บข้อมูลอ่อนไหวโดยไม่ชอบด้วยกฎหมาย หรือนำไปใช้หาผลประโยชน์ส่วนตัว</td>
+          <td>จำคุก 1 ปี และ/หรือ ปรับ 1,000,000 บาท</td>
+          <td>มาตรา 90</td>
+        </tr>
+        <tr>
+          <td><span class="risk-high">🔴 อาญา</span></td>
+          <td>ล่วงละเมิดสิทธิเจ้าของข้อมูลโดยเจตนา เปิดเผยข้อมูลที่รู้ว่าเป็นความลับ</td>
+          <td>จำคุก 6 เดือน และ/หรือ ปรับ 500,000 บาท</td>
+          <td>มาตรา 89</td>
+        </tr>
+        <tr>
+          <td><span class="risk-medium">🟡 แพ่ง</span></td>
+          <td>ประมวลผลข้อมูลโดยไม่ชอบด้วยกฎหมาย ก่อให้เกิดความเสียหาย</td>
+          <td>ค่าสินไหมทดแทนจริง + ค่าสินไหมเพื่อการลงโทษสูงสุด 2 เท่า</td>
+          <td>มาตรา 86</td>
+        </tr>
+        <tr>
+          <td><span class="risk-medium">🟡 ปกครอง</span></td>
+          <td>ไม่จัดให้มีมาตรการรักษาความปลอดภัยที่เหมาะสม</td>
+          <td>ปรับ 1,000,000 บาท</td>
+          <td>มาตรา 83</td>
+        </tr>
+        <tr>
+          <td><span class="risk-medium">🟡 ปกครอง</span></td>
+          <td>ไม่จัดทำ RoPA หรือไม่แต่งตั้ง DPO ในกรณีบังคับ</td>
+          <td>ปรับ 1,000,000 บาท</td>
+          <td>มาตรา 82</td>
+        </tr>
+        <tr>
+          <td><span class="risk-high">🔴 ปกครอง</span></td>
+          <td>เก็บ ใช้ เปิดเผยข้อมูลอ่อนไหวโดยไม่มีฐานทางกฎหมาย</td>
+          <td>ปรับ 5,000,000 บาท</td>
+          <td>มาตรา 84</td>
+        </tr>
+        <tr>
+          <td><span class="risk-high">🔴 ปกครอง</span></td>
+          <td>โอนข้อมูลข้ามแดนโดยไม่ชอบด้วยกฎหมาย</td>
+          <td>ปรับ 5,000,000 บาท</td>
+          <td>มาตรา 85</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="warning-box">
+      <div class="label">⚠ ความเสี่ยงสะสม (Cumulative Risk)</div>
+      <p style="margin-bottom:0;">กรณีเดียวกันอาจถูกลงโทษทั้งทางปกครอง ทางแพ่ง และทางอาญาพร้อมกัน ตัวอย่างเช่น บริษัท SaaS ที่ประสบ Data Breach แล้วไม่มีมาตรการรักษาความปลอดภัยที่เหมาะสม อาจต้องรับผิดทางปกครองสูงสุด 1,000,000 บาท (มาตรา 83) + ชดใช้ค่าเสียหายทางแพ่งพร้อมค่าสินไหมลงโทษอีก 2 เท่า (มาตรา 86) + อาจมีโทษอาญาหากมีเจตนา (มาตรา 89–90) รวมความเสี่ยงทางการเงินอาจสูงถึงหลายสิบล้านบาท</p>
+    </div>
+
+    <h3 class="sub-heading">5.1 กรณีความรับผิดของกรรมการและผู้บริหาร</h3>
+
+    <p>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 91 กำหนดให้ในกรณีที่นิติบุคคลกระทำผิด หากมูลเหตุมาจากการสั่งการหรือการกระทำของกรรมการ ผู้จัดการ หรือบุคคลที่รับผิดชอบในการดำเนินกิจการของนิติบุคคลนั้น บุคคลดังกล่าวต้องรับโทษตามที่กำหนดไว้สำหรับความผิดนั้นด้วย</p>
+
+    <p>ซึ่งหมายความว่า CEO, CFO หรือ CTO ของบริษัท B2B อาจต้องรับผิดทางอาญาเป็นการส่วนตัวหากพิสูจน์ได้ว่าการละเมิด PDPA เกิดจากการสั่งการหรือการละเลยในการดูแลของตน นี่คือเหตุผลสำคัญที่ผู้บริหารระดับสูงต้องให้ความสำคัญกับ PDPA Compliance อย่างจริงจัง</p>
+  </div>
+
+  <!-- ============ SECTION 6 ============ -->
+  <div class="section-block" id="sec6">
+    <h2 class="section-heading">
+      6. กรณีศึกษา &mdash; ตัวอย่างการบังคับใช้ในไทย
+      <span class="en">Case Studies &mdash; PDPA Enforcement Scenarios in Thailand (Anonymized)</span>
+    </h2>
+
+    <p>เพื่อรักษาหลักการ Client Confidentiality กรณีศึกษาต่อไปนี้ได้รับการ Anonymize โดยแทนชื่อบริษัทด้วยตัวอักษร A, B, C, D ตามมาตรฐาน LAS และนำเสนอในลักษณะ Composite Case เพื่อการศึกษา</p>
+
+    <div class="case-block">
+      <div class="case-label">Case Study 1 — B2B SaaS Provider</div>
+      <h4>บริษัท A (SaaS HR Platform) ประมวลผลข้อมูลพนักงานลูกค้าโดยไม่มี DPA</h4>
+      <p><strong>ข้อเท็จจริง:</strong> บริษัท A ให้บริการระบบ HR ออนไลน์แก่ลูกค้าองค์กร (บริษัท B) โดยไม่มี Data Processing Agreement ลงนาม เมื่อเกิดเหตุ Data Breach ข้อมูลพนักงานของบริษัท B กว่า 3,000 รายถูกเข้าถึงโดยไม่ได้รับอนุญาต</p>
+      <p><strong>ประเด็นกฎหมาย:</strong> บริษัท A (ในฐานะ Data Processor) ไม่มีมาตรการรักษาความปลอดภัยที่เหมาะสม และไม่มีสัญญา DPA ตามที่กำหนดใน พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 40 บริษัท B (Data Controller) อาจถูกร้องเรียนโดยพนักงานเจ้าของข้อมูลด้วย</p>
+      <span class="outcome">ผลที่เกิดขึ้น: ความเสี่ยงทางปกครองสูงสุด 1,000,000 บาท + ความเสี่ยงทางแพ่ง</span>
+      <div class="lesson">บทเรียน: ผู้ให้บริการ B2B SaaS ทุกรายต้องมี DPA Template พร้อมใช้ และต้องลงนามก่อนเริ่มบริการทุกครั้ง</div>
+    </div>
+
+    <div class="case-block">
+      <div class="case-label">Case Study 2 — Cross-Border Data Transfer</div>
+      <h4>บริษัท C (ผู้นำเข้า-ส่งออก) ส่งข้อมูลลูกค้าไปยัง Server ต่างประเทศโดยไม่มีกลไก SCC</h4>
+      <p><strong>ข้อเท็จจริง:</strong> บริษัท C ใช้ระบบ ERP ของต่างประเทศที่ตั้ง Server ในสหรัฐอเมริกา โดยข้อมูลสั่งซื้อและข้อมูลส่วนบุคคลของผู้ติดต่อฝ่าย Procurement ของคู่ค้าไทยถูกจัดเก็บและประมวลผลใน Server ดังกล่าว โดยไม่มีการจัดทำ Standard Contractual Clauses (SCC) หรือกลไกคุ้มครองข้ามแดนอื่นใด</p>
+      <p><strong>ประเด็นกฎหมาย:</strong> การโอนข้อมูลไปยังประเทศที่อาจไม่มีมาตรฐานคุ้มครองข้อมูลเพียงพอ โดยไม่มีกลไกรองรับ อาจฝ่าฝืน พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 28</p>
+      <span class="outcome">ผลที่เกิดขึ้น: ความเสี่ยงทางปกครองสูงสุด 5,000,000 บาท ตาม มาตรา 85</span>
+      <div class="lesson">บทเรียน: ก่อนเลือก Cloud / ERP ต่างประเทศ ต้องตรวจสอบว่า Vendor มี Data Processing Agreement และกลไก Cross-Border Transfer ที่รองรับ PDPA ไทยพร้อมหรือไม่</div>
+    </div>
+
+    <div class="case-block">
+      <div class="case-label">Case Study 3 — Marketing B2B</div>
+      <h4>บริษัท D (Marketing Agency B2B) ส่ง Email Marketing โดยไม่มีฐานทางกฎหมาย</h4>
+      <p><strong>ข้อเท็จจริง:</strong> บริษัท D รวบรวมรายชื่อและอีเมลของ Marketing Manager และ Procurement Manager จากบริษัทต่างๆ ผ่านการค้นหาจากเว็บไซต์และ LinkedIn แล้วส่ง Email Marketing เพื่อเสนอบริการ B2B โดยไม่มีความยินยอมและไม่มีฐานทางกฎหมายอื่นรองรับ</p>
+      <p><strong>ประเด็นกฎหมาย:</strong> แม้จะเป็นบริบท B2B แต่บุคคลที่รับอีเมลยังคงเป็นเจ้าของข้อมูลส่วนบุคคล การเก็บและใช้ข้อมูลเพื่อการตลาดโดยตรงต้องมีฐาน Legitimate Interests หรือความยินยอม พร้อมสิทธิ Opt-Out ที่ชัดเจน</p>
+      <span class="outcome">ผลที่เกิดขึ้น: ความเสี่ยงทางปกครองและอาจถูกร้องเรียนต่อ PDPC</span>
+      <div class="lesson">บทเรียน: B2B Email Marketing ต้องมี Legitimate Interests Assessment + Opt-Out Mechanism ที่ชัดเจนในทุกอีเมล</div>
+    </div>
+  </div>
+
+  <!-- ============ SECTION 7 ============ -->
+  <div class="section-block" id="sec7">
+    <h2 class="section-heading">
+      7. Checklist: PDPA Compliance สำหรับธุรกิจ B2B
+      <span class="en">B2B PDPA Compliance Checklist — 30 Action Items</span>
+    </h2>
+
+    <p>Checklist ต่อไปนี้ครอบคลุม 30 รายการที่ธุรกิจ B2B ควรดำเนินการเพื่อสร้าง PDPA Compliance Framework ที่แข็งแกร่ง แบ่งเป็น 5 หมวด:</p>
+
+    <h3 class="sub-heading">หมวด A — Data Governance Foundation</h3>
+    <ul class="checklist">
+      <li><strong>A1.</strong> จัดทำ Record of Processing Activities (RoPA) ครอบคลุมทุกกิจกรรมการประมวลผลข้อมูล</li>
+      <li><strong>A2.</strong> กำหนด Data Owner และ Data Steward สำหรับแต่ละหมวดข้อมูลชัดเจน</li>
+      <li><strong>A3.</strong> จัดทำนโยบายการเก็บรักษาข้อมูล (Data Retention Policy) ระบุระยะเวลาเก็บข้อมูลแต่ละประเภท</li>
+      <li><strong>A4.</strong> ประกาศ Privacy Policy ที่เป็นปัจจุบันบนเว็บไซต์และช่องทางติดต่อทั้งหมด</li>
+      <li><strong>A5.</strong> จัดทำ Privacy Notice แยกสำหรับ พนักงาน / ลูกค้า / คู่ค้า / Vendor</li>
+      <li><strong>A6.</strong> กำหนด Legal Basis ที่ชัดเจนสำหรับแต่ละกิจกรรมการประมวลผลและบันทึกไว้</li>
+    </ul>
+
+    <h3 class="sub-heading">หมวด B — Vendor &amp; Partner Management</h3>
+    <ul class="checklist">
+      <li><strong>B1.</strong> สำรวจ Vendor และ Sub-Processor ทั้งหมดที่เข้าถึงข้อมูลส่วนบุคคลในนามองค์กร</li>
+      <li><strong>B2.</strong> ลงนาม Data Processing Agreement (DPA) กับ Vendor ทุกรายที่เป็น Data Processor</li>
+      <li><strong>B3.</strong> ตรวจสอบว่า DPA ของ Vendor ครอบคลุมมาตรการรักษาความปลอดภัยขั้นต่ำที่กำหนด</li>
+      <li><strong>B4.</strong> กำหนดนโยบายการอนุมัติ Sub-Processor และต้องได้รับการยินยอมจาก Controller ก่อน</li>
+      <li><strong>B5.</strong> ตรวจสอบว่า Cloud / SaaS Provider ต่างประเทศมีกลไก Cross-Border Transfer ที่ถูกกฎหมาย</li>
+      <li><strong>B6.</strong> จัดทำ Vendor PDPA Assessment Form สำหรับ Vendor ใหม่ทุกราย</li>
+    </ul>
+
+    <h3 class="sub-heading">หมวด C — Technical Security Measures</h3>
+    <ul class="checklist">
+      <li><strong>C1.</strong> เข้ารหัสข้อมูลส่วนบุคคล (Encryption) ทั้งระหว่างส่ง (In-Transit) และขณะพัก (At-Rest)</li>
+      <li><strong>C2.</strong> ใช้หลัก Least Privilege สำหรับการควบคุมการเข้าถึงข้อมูล (Access Control)</li>
+      <li><strong>C3.</strong> จัดให้มีระบบ Audit Log สำหรับการเข้าถึงและประมวลผลข้อมูลอ่อนไหว</li>
+      <li><strong>C4.</strong> ทดสอบ Penetration Testing และ Vulnerability Assessment อย่างน้อยปีละครั้ง</li>
+      <li><strong>C5.</strong> จัดทำ Data Breach Detection System และกำหนด Alert Threshold</li>
+      <li><strong>C6.</strong> ใช้หลัก Privacy by Design ในการพัฒนาระบบใหม่ทุกครั้ง</li>
+    </ul>
+
+    <h3 class="sub-heading">หมวด D — People &amp; Process</h3>
+    <ul class="checklist">
+      <li><strong>D1.</strong> อบรม PDPA ให้พนักงานทุกคนที่เกี่ยวข้องกับการประมวลผลข้อมูล อย่างน้อยปีละครั้ง</li>
+      <li><strong>D2.</strong> จัดทำ SOP สำหรับการรองรับคำขอใช้สิทธิของเจ้าของข้อมูล (DSR Workflow)</li>
+      <li><strong>D3.</strong> กำหนดกระบวนการ Consent Management สำหรับกรณีที่ต้องใช้ฐานความยินยอม</li>
+      <li><strong>D4.</strong> จัดทำแผนรองรับเหตุ Data Breach (Incident Response Plan) พร้อมซักซ้อมปีละครั้ง</li>
+      <li><strong>D5.</strong> ดำเนินการ DPIA สำหรับกิจกรรมการประมวลผลที่มีความเสี่ยงสูงทุกครั้ง</li>
+      <li><strong>D6.</strong> แต่งตั้ง DPO (หรือ Privacy Officer) พร้อมกำหนดหน้าที่และช่องทางติดต่อชัดเจน</li>
+    </ul>
+
+    <h3 class="sub-heading">หมวด E — Monitoring &amp; Governance</h3>
+    <ul class="checklist">
+      <li><strong>E1.</strong> ทบทวนและอัปเดต RoPA, Privacy Policy และ DPA เมื่อมีการเปลี่ยนแปลงกิจกรรมการประมวลผล</li>
+      <li><strong>E2.</strong> ดำเนินการ PDPA Compliance Audit ภายในองค์กรอย่างน้อยปีละครั้ง</li>
+      <li><strong>E3.</strong> ติดตามความเปลี่ยนแปลงในกฎหมาย ประกาศ และแนวปฏิบัติของ PDPC อย่างสม่ำเสมอ</li>
+      <li><strong>E4.</strong> รายงาน PDPA Compliance Status ต่อคณะกรรมการบริษัทหรือ Board อย่างน้อยปีละครั้ง</li>
+      <li><strong>E5.</strong> จัดทำ Privacy Impact Assessment สำหรับโปรเจกต์หรือผลิตภัณฑ์ใหม่ทุกครั้ง</li>
+      <li><strong>E6.</strong> สร้างวัฒนธรรม Privacy-First ภายในองค์กร โดยให้ผู้บริหารระดับสูงเป็นแบบอย่าง</li>
+    </ul>
+
+    <div class="gold-box">
+      <div class="label">การให้คะแนน Compliance Level</div>
+      <p>ประเมินระดับ PDPA Compliance ขององค์กร:</p>
+      <ol class="content-list" style="margin-top:8px;">
+        <li><span class="risk-low">🟢 Level 3 (ดี)</span>: ผ่าน 25–30 ข้อ — PDPA Compliant พร้อมรองรับการตรวจสอบ</li>
+        <li><span class="risk-medium">🟡 Level 2 (กลาง)</span>: ผ่าน 15–24 ข้อ — ต้องเร่งดำเนินการส่วนที่ขาด โดยเฉพาะหมวด B และ C</li>
+        <li><span class="risk-high">🔴 Level 1 (ต่ำ)</span>: ผ่านน้อยกว่า 15 ข้อ — ความเสี่ยงสูง ควรจ้างที่ปรึกษา PDPA ทันที</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ============ SECTION 8 ============ -->
+  <div class="section-block" id="sec8">
+    <h2 class="section-heading">
+      8. บทสรุป
+      <span class="en">Conclusion</span>
+    </h2>
+
+    <p>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 ไม่ได้เป็นเพียงภาระผูกพันทางกฎหมายสำหรับธุรกิจ B2B แต่เป็นโอกาสในการสร้างความไว้วางใจ (Trust) กับลูกค้าและคู่ค้า บริษัทที่มี PDPA Framework ที่แข็งแกร่งจะมีความได้เปรียบในการแข่งขัน โดยเฉพาะในตลาดที่ลูกค้าองค์กรให้ความสำคัญกับ Data Governance มากขึ้น</p>
+
+    <p>ประเด็นที่ผู้บริหาร B2B ต้องจดจำมี 5 ข้อหลัก ได้แก่ (1) ทำความเข้าใจบทบาทตนเองว่าเป็น Data Controller, Data Processor หรือทั้งสอง (2) ลงนาม DPA กับ Vendor และลูกค้าทุกราย (3) จัดการ Cross-Border Transfer ให้ถูกต้อง (4) มีแผนรองรับ Data Breach ที่ชัดเจน และ (5) ทบทวน Compliance อย่างสม่ำเสมอ</p>
+
+    <p>สำหรับธุรกิจ B2B ที่ยังอยู่ในขั้นเริ่มต้นของ PDPA Compliance แนะนำให้เริ่มจาก Data Mapping และการจัดทำ DPA Template ก่อน เพราะสองสิ่งนี้เป็นรากฐานที่จะทำให้ขั้นตอนอื่นๆ ง่ายและมีประสิทธิภาพยิ่งขึ้น การลงทุนใน PDPA Compliance วันนี้ คือการลงทุนในความยั่งยืนทางธุรกิจและการปกป้องชื่อเสียงขององค์กรในระยะยาว</p>
+
+    <div class="insight-box">
+      <div class="label">LAS B2B PDPA Services</div>
+      <p style="margin-bottom:0;">Legal Advance Solution Co., Ltd. (LAS) ให้บริการที่ปรึกษา PDPA Compliance ครบวงจรสำหรับธุรกิจ B2B ประกอบด้วย PDPA Gap Analysis, Data Mapping Workshop, DPA Template (Thai/English), Privacy Policy Drafting, DPO-as-a-Service และ PDPA Audit ประจำปี สอบถามรายละเอียดได้ที่ <a href="https://laslegal.co.th" target="_blank" rel="noopener" style="color:var(--accent);">laslegal.co.th</a></p>
+    </div>
+
+    <!-- FAQ Section -->
+    <h3 class="sub-heading" style="margin-top:40px;">FAQ — คำถามที่พบบ่อย</h3>
+
+    <div class="faq-item">
+      <div class="faq-q">Q1: ธุรกิจ B2B ที่ไม่ได้เก็บข้อมูลผู้บริโภคโดยตรง ต้องทำ PDPA Compliance หรือไม่?</div>
+      <p class="faq-a">ต้องทำ เพราะธุรกิจ B2B ยังคงประมวลผลข้อมูลส่วนบุคคลของพนักงาน กรรมการ และผู้ติดต่อของบริษัทคู่ค้า ซึ่งล้วนเป็นข้อมูลส่วนบุคคลตาม พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 6 และอาจทำหน้าที่เป็น Data Processor ให้แก่ลูกค้าในฐานะ Data Controller อีกด้วย</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q2: Data Processing Agreement (DPA) คืออะไร และต้องทำในกรณีใดบ้าง?</div>
+      <p class="faq-a">DPA คือสัญญาที่กำหนดหน้าที่และความรับผิดชอบระหว่าง Data Controller และ Data Processor ต้องทำทุกครั้งที่ธุรกิจ B2B รับจ้างประมวลผลข้อมูลให้ลูกค้า เช่น ผู้ให้บริการ SaaS, Cloud, Payroll, HR Outsourcing ตาม พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 40</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q3: โทษสูงสุดของการฝ่าฝืน PDPA คือเท่าไร?</div>
+      <p class="faq-a">โทษสูงสุดมี 3 ประเภทพร้อมกัน: (1) โทษทางปกครอง: ปรับสูงสุด 5,000,000 บาทต่อกรรม (มาตรา 84–85) (2) โทษทางแพ่ง: ชดใช้ค่าสินไหมทดแทน + ค่าสินไหมลงโทษสูงสุด 2 เท่า (มาตรา 86) (3) โทษอาญา: จำคุกสูงสุด 1 ปี และ/หรือปรับสูงสุด 1,000,000 บาท (มาตรา 90)</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q4: ธุรกิจ B2B ที่ส่งข้อมูลพนักงานลูกค้าออกต่างประเทศต้องทำอะไรบ้าง?</div>
+      <p class="faq-a">ต้องปฏิบัติตาม พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 28 โดยตรวจสอบมาตรฐานของประเทศปลายทาง หากไม่เพียงพอต้องใช้ Standard Contractual Clauses (SCC), Binding Corporate Rules (BCR) หรือความยินยอมอย่างชัดแจ้ง</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q5: ธุรกิจขนาดกลางต้องแต่งตั้ง DPO หรือไม่?</div>
+      <p class="faq-a">บังคับเฉพาะกรณี: (1) เป็นหน่วยงานของรัฐ (2) ประมวลผลข้อมูลในกิจกรรมหลักที่ต้องติดตามขนาดใหญ่ หรือ (3) ประมวลผลข้อมูลอ่อนไหวเป็นกิจกรรมหลัก ตาม พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 41 B2B SME ส่วนใหญ่ไม่บังคับ แต่แนะนำให้มี Privacy Officer ไว้เพื่อลดความเสี่ยง</p>
+    </div>
+  </div>
+
+  <!-- ============ REFERENCES ============ -->
+  <div class="references" id="ref">
+    <h2>เอกสารอ้างอิง / References</h2>
+    <ol>
+      <li>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (Personal Data Protection Act B.E. 2562 (2019)) — ราชกิจจานุเบกษา เล่ม 136 ตอนที่ 69 ก วันที่ 27 พฤษภาคม 2562</li>
+      <li>สำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (PDPC) — <a href="https://www.pdpc.or.th" target="_blank" rel="noopener" style="color:var(--accent);">www.pdpc.or.th</a></li>
+      <li>ประกาศคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล เรื่อง การส่งหรือโอนข้อมูลส่วนบุคคลไปยังต่างประเทศ (ออกตามความในมาตรา 28)</li>
+      <li>ประกาศคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล เรื่อง มาตรการรักษาความมั่นคงปลอดภัยที่เหมาะสมของผู้ควบคุมข้อมูลส่วนบุคคล</li>
+      <li>กฎกระทรวง การรักษาความมั่นคงปลอดภัยของข้อมูลส่วนบุคคล พ.ศ. 2565</li>
+      <li>European Commission, <em>General Data Protection Regulation (GDPR) — Regulation 2016/679</em></li>
+      <li>สำนักงานพัฒนาธุรกรรมทางอิเล็กทรอนิกส์ (ETDA) — แนวปฏิบัติด้านการคุ้มครองข้อมูลส่วนบุคคล <a href="https://www.etda.or.th" target="_blank" rel="noopener" style="color:var(--accent);">www.etda.or.th</a></li>
+      <li>International Association of Privacy Professionals (IAPP), <em>APAC Privacy Guidance — Thailand PDPA Overview</em> (2023)</li>
+    </ol>
+  </div>
+
+  <div class="legal-tags" style="margin-top:32px;padding:18px 20px;background:#0d1b2a;border:1px solid #1e3a5f;border-radius:10px;">
+    <div style="font-size:12px;color:#C9A96E;font-weight:bold;margin-bottom:10px;letter-spacing:1px;">กฎหมายที่เกี่ยวข้อง</div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;">
+      <span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #27AE60;border-radius:6px;font-size:11px;color:#8ab4d8;">PDPA 2562</span>
+      <span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #27AE60;border-radius:6px;font-size:11px;color:#8ab4d8;">Data Protection</span>
+      <span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #C9A96E;border-radius:6px;font-size:11px;color:#8ab4d8;">พ.ร.บ. คุ้มครองข้อมูลฯ ม.6</span>
+      <span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #C9A96E;border-radius:6px;font-size:11px;color:#8ab4d8;">ม.19 (Consent)</span>
+      <span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #C9A96E;border-radius:6px;font-size:11px;color:#8ab4d8;">ม.24 (Legal Basis)</span>
+      <span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #4a9eff;border-radius:6px;font-size:11px;color:#8ab4d8;">ม.26 (Sensitive Data)</span>
+      <span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #4a9eff;border-radius:6px;font-size:11px;color:#8ab4d8;">ม.28 (Cross-Border)</span>
+      <span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #4a9eff;border-radius:6px;font-size:11px;color:#8ab4d8;">ม.40 (DPA)</span>
+      <span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #4a9eff;border-radius:6px;font-size:11px;color:#8ab4d8;">ม.41 (DPO)</span>
+      <span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #E74C3C;border-radius:6px;font-size:11px;color:#8ab4d8;">ม.82–91 (Penalties)</span>
+    </div>
+  </div>
+
+  <!-- ============ DISCLAIMER ============ -->
+  <div class="disclaimer">
+    <h3>Disclaimer / ข้อจำกัดความรับผิด</h3>
+    <p><strong>ภาษาไทย:</strong> บทความนี้จัดทำขึ้นเพื่อวัตถุประสงค์ทางวิชาการและให้ความรู้ทั่วไปเท่านั้น มิใช่ความเห็นทางกฎหมายเฉพาะเรื่องสำหรับกรณีใดกรณีหนึ่ง เนื้อหาสะท้อนสถานะของกฎหมายและแนวปฏิบัติ ณ วันที่ 4 เมษายน 2569 ซึ่งอาจมีการเปลี่ยนแปลงได้ ผู้อ่านควรปรึกษาทนายความหรือที่ปรึกษา PDPA ที่มีความเชี่ยวชาญก่อนนำข้อมูลไปใช้ประกอบการตัดสินใจ ผู้เขียนและ Legal Advance Solution Co., Ltd. ไม่รับผิดชอบต่อความเสียหายใดๆ ที่อาจเกิดขึ้นจากการนำเนื้อหาในบทความนี้ไปใช้โดยไม่ได้ปรึกษาผู้เชี่ยวชาญ</p>
+    <p style="margin-top:8px;"><strong>English:</strong> This article is prepared solely for academic and general informational purposes. It does not constitute legal advice for any specific matter. The content reflects the state of law and practice as of 4 April 2026, which may be subject to change. Readers should consult qualified legal counsel or a PDPA specialist before acting on any information contained herein. The author and Legal Advance Solution Co., Ltd. disclaim all liability for any loss or damage arising from reliance on the contents of this article without professional consultation.</p>
+    <p style="margin-top:12px;color:var(--text3);">&copy; 2026 Thundthornthep Yamoutai, Ph.D. &mdash; Legal Advance Solution Co., Ltd. (LAS) &mdash; All Rights Reserved.</p>
+  </div>
+
+  <div style="text-align:center;">
+    <a href="https://thundthornthep-ai.github.io/knowledge-hub.html" class="back-top">Back to Knowledge Hub</a>
+  </div>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <p><span class="footer-author">Thundthornthep Yamoutai, Ph.D.</span> &mdash; Legal Advance Solution Co., Ltd.</p>
+  <p style="margin-top:6px;">
+    <a href="https://thundthornthep-ai.github.io/">Home</a> &middot;
+    <a href="https://thundthornthep-ai.github.io/knowledge-hub.html">Knowledge Hub</a> &middot;
+    <a href="https://laslegal.co.th" target="_blank" rel="noopener">LAS Legal</a>
+  </p>
+  <p style="margin-top:8px;">&copy; 2026 Legal Advance Solution Co., Ltd. All Rights Reserved.</p>
+</footer>
+
+<div style="text-align:center;padding:16px 20px;margin:20px auto;max-width:800px;">
+  <a href="../all-content.html" style="color:#0645ad;font-weight:bold;text-decoration:none;">ดูบทความและบล็อกทั้งหมด / View All Content &rarr;</a>
+</div>
+</body>
+</html>
