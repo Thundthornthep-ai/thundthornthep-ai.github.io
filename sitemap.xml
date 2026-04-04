@@ -566,6 +566,8 @@
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/hotel-management-agreement-thailand.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/hotel-management-agreement-thailand.html"/>
   </url>
 
   <url>
@@ -580,6 +582,8 @@
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/due-diligence-conditions-precedent-thailand.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/due-diligence-conditions-precedent-thailand.html"/>
   </url>
 
   <url>
@@ -587,6 +591,8 @@
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/company-registration-thailand-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/company-registration-thailand-guide.html"/>
   </url>
 
   <url>
@@ -601,6 +607,8 @@
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/foreigner-buy-condo-thailand.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/foreigner-buy-condo-thailand.html"/>
   </url>
 
   <url>
@@ -621,6 +629,8 @@
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/boi-investment-thailand-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/boi-investment-thailand-guide.html"/>
   </url>
   <url>
     <loc>https://thundthornthep-ai.github.io/articles/anti-nominee-thailand-legal-guide.html</loc>
@@ -654,6 +664,56 @@
     <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/company-registration-thailand-guide.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/company-registration-thailand-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/company-registration-thailand-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/en/articles/company-registration-thailand-guide.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/foreigner-buy-condo-thailand.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/foreigner-buy-condo-thailand.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/foreigner-buy-condo-thailand.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/en/articles/foreigner-buy-condo-thailand.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/boi-investment-thailand-guide.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/boi-investment-thailand-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/boi-investment-thailand-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/en/articles/boi-investment-thailand-guide.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/due-diligence-conditions-precedent-thailand.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/due-diligence-conditions-precedent-thailand.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/due-diligence-conditions-precedent-thailand.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/en/articles/due-diligence-conditions-precedent-thailand.html"/>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/hotel-management-agreement-thailand.html</loc>
+    <lastmod>2026-04-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/hotel-management-agreement-thailand.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/hotel-management-agreement-thailand.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/en/articles/hotel-management-agreement-thailand.html"/>
   </url>
 
 </urlset>
