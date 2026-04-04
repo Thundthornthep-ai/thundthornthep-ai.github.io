@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/webp" href="/las-logo.webp">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard ข้อบัญญัติ กทม. 311 ฉบับ — Bangkok Possible | LAS</title>
-<meta name="description" content="Interactive Dashboard วิเคราะห์ข้อบัญญัติกรุงเทพมหานคร 311 ฉบับ ด้วย AI LegalTech — 43% ล้าสมัยวิกฤต พร้อมข้อเสนอปฏิรูป Roadmap สำหรับ ส.ก. ชุดใหม่ 2569">
-<meta name="keywords" content="ข้อบัญญัติกรุงเทพมหานคร, dashboard, กฎหมายเมือง, ส.ก. 2569, ปฏิรูป, Bangkok Possible, ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D., LAS, AI LegalTech, นวัตกรรมนิติบัญญัติชิงรุก">
+<title>Dashboard ข้อบัญญัติ กทม. 311 ฉบับ | LAS Legal Research</title>
+<meta name="description" content="Interactive Dashboard วิเคราะห์ข้อบัญญัติกรุงเทพมหานคร 311 ฉบับ ด้วย AI LegalTech — 43% ล้าสมัยวิกฤต พร้อมข้อเสนอปฏิรูป Roadmap สำหรับ ส.ก. ชุดใหม่ 2569 — งานวิจัยสนับสนุนโดย NIA">
+<meta name="keywords" content="ข้อบัญญัติกรุงเทพมหานคร, dashboard, กฎหมายเมือง, ส.ก. 2569, ปฏิรูป, ธันย์ธรณ์เทพ แย้มอุทัย Ph.D., LAS, AI LegalTech, นวัตกรรมนิติบัญญัติชิงรุก, NIA">
 <meta name="author" content="ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://thundthornthep-ai.github.io/blog/bkk-council/dashboard.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dashboard ข้อบัญญัติ กทม. 311 ฉบับ — Bangkok Possible">
-<meta property="og:description" content="AI LegalTech วิเคราะห์ข้อบัญญัติ กทม. ทั้ง 311 ฉบับ — 43% ล้าสมัยวิกฤต พร้อม Roadmap ปฏิรูป">
+<meta property="og:title" content="Dashboard ข้อบัญญัติ กทม. 311 ฉบับ | LAS Legal Research">
+<meta property="og:description" content="AI LegalTech วิเคราะห์ข้อบัญญัติ กทม. ทั้ง 311 ฉบับ — 43% ล้าสมัยวิกฤต พร้อม Roadmap ปฏิรูป (สนับสนุนโดย NIA)">
 <meta property="og:locale" content="th_TH">
 <meta property="og:image" content="https://thundthornthep-ai.github.io/las-nia-research-banner.jpg">
 <meta property="og:image:alt" content="Legal Advance Solution (LAS) — สนับสนุนงานวิจัยโดย สำนักงานนวัตกรรมแห่งชาติ (องค์การมหาชน)">
@@ -276,8 +276,12 @@ svg.ring{width:110px;height:110px}
 <!-- NAV -->
 <nav class="nav" id="nav">
   <div class="nav-brand">
-    <div class="nav-logo">BP</div>
-    <div class="nav-title"><span>Bangkok</span> Possible</div>
+    <img src="/las-logo-full.png" alt="LAS" height="50" style="margin-right:6px">
+    <img src="/nia-logo-full.png" alt="NIA" height="35" style="margin-right:12px">
+    <div style="display:flex;flex-direction:column;justify-content:center">
+      <div class="nav-title" style="margin-bottom:2px;font-size:13px">บริษัท Legal Advance Solution จำกัด (LAS)</div>
+      <div style="font-size:10px;color:var(--text2)">เพื่อการวิจัย สนับสนุนทุนวิจัยโดย สำนักงานนวัตกรรมแห่งชาติ (องค์การมหาชน) NIA</div>
+    </div>
   </div>
   <div class="nav-links">
     <a href="#overview">ภาพรวม</a>
@@ -292,8 +296,35 @@ svg.ring{width:110px;height:110px}
   </div>
 </nav>
 
+<!-- ELECTION COUNTDOWN BANNER -->
+<div id="electionBanner" style="position:fixed;top:80px;left:0;right:0;background:linear-gradient(135deg,#1B2A4A,#0F1A2E);padding:16px 24px;text-align:center;z-index:50;border-bottom:2px solid #C9A96E">
+  <div style="color:#C9A96E;font-weight:600;margin-bottom:8px;font-size:13px">📅 วันเลือกตั้ง สภาจังหวัร กรุงเทพมหานคร</div>
+  <div style="color:#E8E8E8;font-size:14px;margin-bottom:10px">วันอาทิตย์ที่ 5 กรกฎาคม พ.ศ. 2569</div>
+  <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap">
+    <div style="text-align:center;color:#C9A96E">
+      <div style="font-size:20px;font-weight:700" id="countdownDays">0</div>
+      <div style="font-size:11px;color:#8A94A6">วัน</div>
+    </div>
+    <div style="color:#5A6478">:</div>
+    <div style="text-align:center;color:#C9A96E">
+      <div style="font-size:20px;font-weight:700" id="countdownHours">0</div>
+      <div style="font-size:11px;color:#8A94A6">ชม.</div>
+    </div>
+    <div style="color:#5A6478">:</div>
+    <div style="text-align:center;color:#C9A96E">
+      <div style="font-size:20px;font-weight:700" id="countdownMinutes">0</div>
+      <div style="font-size:11px;color:#8A94A6">นาที</div>
+    </div>
+    <div style="color:#5A6478">:</div>
+    <div style="text-align:center;color:#C9A96E">
+      <div style="font-size:20px;font-weight:700" id="countdownSeconds">0</div>
+      <div style="font-size:11px;color:#8A94A6">วินาที</div>
+    </div>
+  </div>
+</div>
+
 <!-- HERO -->
-<section class="hero" id="top">
+<section class="hero" id="top" style="padding-top:160px">
   <div class="hero-bg">
     <div class="hero-grid"></div>
   </div>
@@ -565,12 +596,21 @@ svg.ring{width:110px;height:110px}
 
 <!-- FOOTER -->
 <footer class="dash-footer">
+  <div style="margin-bottom:12px;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:12px">
+    <img src="/las-logo-full.png" alt="LAS" height="30" style="margin-right:8px;vertical-align:middle">
+    <img src="/nia-logo-full.png" alt="NIA" height="25" style="vertical-align:middle">
+  </div>
   <b style="color:var(--gold)">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</b> &mdash;
   <a href="https://thundthornthep-ai.github.io/">Profile</a> |
-  <a href="https://laslegal.co.th" target="_blank">LAS Legal</a> |
-  <a href="https://www.facebook.com/Bangkok.Possible" target="_blank">Bangkok Possible</a><br>
-  แหล่งข้อมูล: <a href="https://bmc.go.th/common-local-law/" target="_blank">สภากรุงเทพมหานคร</a> | วิเคราะห์ด้วย AI LegalTech โดย LAS<br>
-  <div class="footer-tags">#BangkokPossible #สก #ข้อบัญญัติกทม #กฎหมายเมือง #AILegalTech #นวัตกรรมนิติบัญญัติชิงรุก</div>
+  <a href="https://laslegal.co.th" target="_blank">LAS Legal</a><br>
+  <div style="font-size:11px;color:var(--text2);margin-top:8px">
+    <a href="https://bmc.go.th/common-local-law/" target="_blank" style="color:var(--text2)">สภากรุงเทพมหานคร</a> |
+    วิเคราะห์ด้วย AI LegalTech โดย
+    <a href="https://laslegal.co.th" target="_blank" style="color:var(--text2)">Legal Advance Solution Co., Ltd.</a><br>
+    สนับสนุนทุนวิจัยโดย
+    <a href="https://www.nia.or.th" target="_blank" style="color:var(--text2)">สำนักงานนวัตกรรมแห่งชาติ (องค์การมหาชน)</a>
+  </div>
+  <div class="footer-tags">#ข้อบัญญัติกทม #กฎหมายเมือง #AILegalTech #นวัตกรรมนิติบัญญัติชิงรุก #LAS #NIA</div>
   &copy; 2026 Legal Advance Solution Co., Ltd.
 </footer>
 
@@ -891,6 +931,34 @@ function filterOrds(){
 }
 
 buildOrds(ORDS.map(function(o,i){return{n:o.n,u:o.u,_idx:i+1}}));
+
+// ===== ELECTION COUNTDOWN TIMER =====
+function updateCountdown(){
+  var now=new Date().getTime();
+  var target=new Date(2026,6,5,8,0,0,0).getTime();
+  var diff=target-now;
+
+  if(diff<=0){
+    document.getElementById('countdownDays').textContent='0';
+    document.getElementById('countdownHours').textContent='0';
+    document.getElementById('countdownMinutes').textContent='0';
+    document.getElementById('countdownSeconds').textContent='0';
+    return;
+  }
+
+  var days=Math.floor(diff/(1000*60*60*24));
+  var hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  var minutes=Math.floor((diff%(1000*60*60))/(1000*60));
+  var seconds=Math.floor((diff%(1000*60))/1000);
+
+  document.getElementById('countdownDays').textContent=days;
+  document.getElementById('countdownHours').textContent=String(hours).padStart(2,'0');
+  document.getElementById('countdownMinutes').textContent=String(minutes).padStart(2,'0');
+  document.getElementById('countdownSeconds').textContent=String(seconds).padStart(2,'0');
+}
+
+updateCountdown();
+setInterval(updateCountdown,1000);
 
 </script>
 <div style="text-align:center;padding:16px 20px;margin:20px auto;">
