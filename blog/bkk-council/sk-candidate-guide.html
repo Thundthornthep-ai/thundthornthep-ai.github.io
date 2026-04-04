@@ -83,87 +83,93 @@
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* ============================================================
+   FIX 1: LIGHT PROFESSIONAL THEME
+   ============================================================ */
 :root{
-  --navy:#1a3a5c;--navy-dark:#0d1f33;--navy2:#1B2A4A;
-  --gold:#f39c12;--gold-light:#f5c842;--gold-accent:#C9A96E;
+  --navy:#1B2A4A;--navy-dark:#0d1f33;--navy2:#1B2A4A;
+  --gold:#C9A96E;--gold-light:#d4b07a;--gold-accent:#C9A96E;
   --green:#27ae60;--green-light:#2ecc71;
-  --red:#e74c3c;--red-soft:#ff6b6b;
-  --orange:#e67e22;--yellow:#f1c40f;
-  --blue:#3498db;--purple:#9b59b6;
-  --bg:#0a0f1a;--bg2:#0f1824;--card:rgba(255,255,255,0.04);
-  --card-border:rgba(255,255,255,0.08);
-  --glass:rgba(255,255,255,0.05);--glass-border:rgba(255,255,255,0.10);
-  --text:#e8e8e8;--text2:#9aa5b4;--text3:#5a6478;
+  --red:#e74c3c;--red-soft:#c0392b;
+  --orange:#e67e22;--yellow:#856404;
+  --blue:#2563eb;--purple:#9b59b6;
+  /* LIGHT THEME BACKGROUNDS */
+  --bg:#ffffff;--bg2:#f5f7fa;
+  --card:rgba(255,255,255,1);
+  --card-border:#dee2e6;
+  --glass:rgba(255,255,255,1);--glass-border:#dee2e6;
+  --text:#333333;--text2:#555555;--text3:#888888;
   --radius:16px;--radius-sm:10px;
   --risk-high:#C0392B;--risk-high-bg:#FADBD8;
   --risk-mid:#E67E22;--risk-mid-bg:#FDEBD0;
   --risk-low:#27AE60;--risk-low-bg:#D5F5E3;
+  --shadow:0 2px 12px rgba(0,0,0,0.08);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Sarabun','IBM Plex Sans Thai',sans-serif;font-size:16px;line-height:1.8;color:var(--text);background:var(--bg);overflow-x:hidden}
 
-/* DARK MODE */
-@media(prefers-color-scheme:light){
-  :root{
-    --bg:#f0f4f8;--bg2:#e8ecf0;--text:#1a2a3a;--text2:#4a5a6a;--text3:#8a9aaa;
-    --glass:rgba(255,255,255,0.85);--glass-border:rgba(0,0,0,0.12);
-    --card:rgba(255,255,255,0.9);--card-border:rgba(0,0,0,0.1);
-    --navy:#1a3a5c;--navy-dark:#0d1f33;
-  }
-  .nav{background:rgba(240,244,248,0.95)!important}
-  .hero{background:linear-gradient(135deg,#1a3a5c,#0d2540)!important}
-  .hero h1,.hero-sub,.hero-author{color:#fff!important}
-  .hero .hero-badge{color:#f39c12!important}
+/* FIX 4: MATRA LINKS — visible + styled */
+a.matra-link{
+  color:#2563eb;
+  background:#eef2ff;
+  padding:2px 6px;
+  border-radius:4px;
+  text-decoration:none;
+  font-weight:600;
+  cursor:pointer;
+  transition:background .2s,text-decoration .2s;
+  display:inline;
 }
+a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
 
 /* SCROLL PROGRESS */
 .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--green),var(--navy));z-index:1000;transition:width .1s;width:0}
 
-/* STICKY NAV */
-.nav{position:fixed;top:3px;left:0;right:0;z-index:100;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);background:rgba(10,15,26,0.85);border-bottom:1px solid rgba(255,255,255,0.06);transition:all .3s}
-.nav.scrolled{box-shadow:0 4px 30px rgba(0,0,0,.3)}
+/* STICKY NAV — keep dark for contrast strip */
+.nav{position:fixed;top:3px;left:0;right:0;z-index:100;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;background:rgba(27,42,74,0.97);border-bottom:2px solid var(--gold);transition:all .3s}
+.nav.scrolled{box-shadow:0 4px 30px rgba(0,0,0,.2)}
 .nav-brand{display:flex;align-items:center;gap:10px}
 .nav-logos{display:flex;align-items:center;gap:8px}
-.nav-logos img{height:28px;width:auto;object-fit:contain}
+/* FIX 2: NAV LOGO SIZE */
+.nav-logos img{height:42px;width:auto;object-fit:contain}
+.nav-logos img:last-child{height:32px}
 .nav-title{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:#fff;letter-spacing:-.3px}
 .nav-title span{color:var(--gold)}
 .nav-links{display:flex;gap:3px;flex-wrap:wrap}
-.nav-links a{color:var(--text2);text-decoration:none;font-size:11px;padding:5px 9px;border-radius:20px;transition:all .2s;border:1px solid transparent}
-.nav-links a:hover{color:var(--gold);border-color:rgba(243,156,18,.3);background:rgba(243,156,18,.08)}
+.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:11px;padding:5px 9px;border-radius:20px;transition:all .2s;border:1px solid transparent}
+.nav-links a:hover{color:var(--gold);border-color:rgba(201,169,110,.4);background:rgba(201,169,110,.15)}
 
 /* CONTAINER */
 .container{max-width:1100px;margin:0 auto;padding:0 24px}
 
-/* SECTION */
-.section{padding:70px 0;position:relative}
+/* SECTION — light backgrounds */
+.section{padding:70px 0;position:relative;background:var(--bg)}
+.section:nth-child(even){background:var(--bg2)}
 .section-label{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
-.section-label .line{width:24px;height:1px;background:var(--gold)}
-.section h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,3.5vw,32px);font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-.5px}
+.section-label .line{width:24px;height:2px;background:var(--gold)}
+.section h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,3.5vw,32px);font-weight:700;color:var(--navy);margin-bottom:8px;letter-spacing:-.5px}
 .section .section-desc{font-size:15px;color:var(--text2);max-width:700px;margin-bottom:36px;line-height:1.8}
 
 /* FLASH HIGHLIGHT */
-@keyframes sectionFlash{0%{background:rgba(243,156,18,0.25)}100%{background:transparent}}
+@keyframes sectionFlash{0%{background:rgba(201,169,110,0.18)}100%{background:transparent}}
 .section-highlight{animation:sectionFlash 2s ease-out}
 
-/* GLASS CARDS */
-.glass{background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--glass-border);border-radius:var(--radius);transition:all .3s}
-.glass:hover{border-color:rgba(255,255,255,.15);box-shadow:0 8px 32px rgba(0,0,0,.2)}
+/* GLASS CARDS — white with shadow */
+.glass{background:#fff;border:1px solid var(--glass-border);border-radius:var(--radius);box-shadow:var(--shadow);transition:all .3s}
+.glass:hover{border-color:#C9A96E;box-shadow:0 4px 20px rgba(0,0,0,.12)}
 
-/* ============ ELECTION DATE BANNER ============ */
-.election-banner{background:linear-gradient(90deg,#0d1f33 0%,#1a3a5c 50%,#0d2848 100%);border-bottom:2px solid var(--gold);padding:10px 24px 8px;text-align:center;position:relative;overflow:hidden}
-.election-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 100%,rgba(243,156,18,.12),transparent);pointer-events:none}
-.election-banner-label{font-size:11px;color:rgba(255,255,255,0.6);margin-bottom:2px;letter-spacing:1px;font-family:'Space Grotesk',sans-serif}
+/* ============ ELECTION DATE BANNER — keep dark ============ */
+.election-banner{background:linear-gradient(90deg,#0d1f33 0%,#1B2A4A 50%,#0d2848 100%);border-bottom:2px solid var(--gold);padding:10px 24px 8px;text-align:center;position:relative;overflow:hidden}
+.election-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 100%,rgba(201,169,110,.12),transparent);pointer-events:none}
+.election-banner-label{font-size:11px;color:rgba(255,255,255,0.7);margin-bottom:2px;letter-spacing:1px;font-family:'Space Grotesk',sans-serif}
 .election-date-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(12px,2vw,16px);font-weight:600;color:var(--gold);margin-bottom:2px;display:none}
-.election-date-sub{font-size:clamp(13px,2.5vw,18px);font-weight:700;color:#fff}
-.election-date-sub{font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,4vw,34px);font-weight:700;color:#fff;margin-bottom:20px;text-shadow:0 0 30px rgba(243,156,18,.3)}
+.election-date-sub{font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,4vw,34px);font-weight:700;color:#fff;margin-bottom:20px;text-shadow:0 0 30px rgba(201,169,110,.3)}
 
 /* COUNTDOWN */
-.countdown-wrapper{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}
-.cd-box{background:rgba(255,255,255,0.06);border:1px solid rgba(243,156,18,0.25);border-radius:8px;padding:4px 12px;min-width:60px;text-align:center;display:inline-block}
-.cd-num{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;line-height:1.2;color:var(--gold);display:block}
-.cd-label{font-size:9px;color:rgba(255,255,255,0.5)}
 .countdown-wrapper{display:inline-flex;gap:6px;margin-left:12px;vertical-align:middle}
+.cd-box{background:rgba(255,255,255,0.10);border:1px solid rgba(201,169,110,0.35);border-radius:8px;padding:4px 12px;min-width:60px;text-align:center;display:inline-block}
+.cd-num{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;line-height:1.2;color:var(--gold);display:block}
 .cd-label{font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px;text-transform:uppercase;letter-spacing:1px;display:block}
 .cd-done{font-size:clamp(18px,3vw,26px);font-weight:700;color:var(--gold);padding:10px;animation:pulse 1.5s infinite}
 @media(max-width:480px){
@@ -172,264 +178,338 @@ body{font-family:'Sarabun','IBM Plex Sans Thai',sans-serif;font-size:16px;line-h
   .cd-num{font-size:2.8rem}
 }
 
-/* HERO */
-.hero{min-height:55vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:110px 24px 50px;background:linear-gradient(160deg,#0a0f1a 0%,#0d1f33 50%,#0a0f1a 100%)}
-.hero-bg::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(243,156,18,.08) 0%,transparent 70%);top:-100px;right:-50px;animation:float 18s ease-in-out infinite}
+/* HERO — dark with light content */
+.hero{min-height:55vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:110px 24px 50px;background:linear-gradient(160deg,#0a0f1a 0%,#1B2A4A 50%,#0a0f1a 100%)}
+.hero-bg::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,110,.08) 0%,transparent 70%);top:-100px;right:-50px;animation:float 18s ease-in-out infinite}
 .hero-bg::after{content:'';position:absolute;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(39,174,96,.06) 0%,transparent 70%);bottom:-80px;left:-50px;animation:float 22s ease-in-out infinite reverse}
 @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-20px)}}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.012) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.012) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,#000 30%,transparent 100%)}
 .hero-content{position:relative;max-width:860px;text-align:center;z-index:1}
-.hero-logos{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:20px;flex-wrap:wrap}
-.hero-logos img{height:50px;width:auto;object-fit:contain}
-.hero-logos .logo-divider{width:1px;height:40px;background:rgba(255,255,255,0.2)}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(243,156,18,.1);border:1px solid rgba(243,156,18,.25);color:var(--gold);padding:6px 16px;border-radius:20px;font-size:12px;font-weight:500;margin-bottom:16px;letter-spacing:.5px}
+/* FIX 2: HERO LOGOS */
+.hero-logos{display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:24px;flex-wrap:wrap}
+.hero-logos img:first-child{height:160px;width:auto;max-width:320px;object-fit:contain}
+.hero-logos img:last-child{height:100px;width:auto;max-width:220px;object-fit:contain}
+.hero-logos .logo-divider{width:1px;height:70px;background:rgba(255,255,255,0.25)}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(201,169,110,.12);border:1px solid rgba(201,169,110,.3);color:var(--gold);padding:6px 16px;border-radius:20px;font-size:12px;font-weight:500;margin-bottom:16px;letter-spacing:.5px}
 .hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 .hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,4.5vw,48px);font-weight:700;line-height:1.15;margin-bottom:14px;background:linear-gradient(135deg,#fff 0%,var(--gold-light) 60%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:15px;color:var(--text2);max-width:600px;margin:0 auto 12px;line-height:1.8}
-.hero-org{font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:6px}
+.hero-sub{font-size:15px;color:rgba(255,255,255,.75);max-width:600px;margin:0 auto 12px;line-height:1.8}
+.hero-org{font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:6px}
 .hero-org span{color:var(--gold)}
-.hero-author{font-size:13px;color:var(--text3);margin-bottom:24px}
+.hero-author{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:24px}
 .hero-author span{color:var(--gold)}
 .hero-stats{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:16px}
-.hero-stat{text-align:center;padding:14px 22px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm)}
+.hero-stat{text-align:center;padding:14px 22px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-sm)}
 .hero-stat .hs-num{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;line-height:1;margin-bottom:4px}
-.hero-stat .hs-label{font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:1px}
-.hero-stat.s-qual .hs-num{color:var(--green)}
-.hero-stat.s-prohibit .hs-num{color:var(--red-soft)}
+.hero-stat .hs-label{font-size:11px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1px}
+.hero-stat.s-qual .hs-num{color:#4ecdc4}
+.hero-stat.s-prohibit .hs-num{color:#ff6b6b}
 .hero-stat.s-fee .hs-num{color:var(--gold)}
 .hero-stat.s-days .hs-num{color:#4ecdc4}
 
 /* DISCLAIMER CRITICAL */
-.disclaimer-critical{background:linear-gradient(135deg,rgba(192,57,43,.15),rgba(231,76,60,.08));border:2px solid rgba(231,76,60,.5);border-radius:var(--radius);padding:24px 28px;margin:32px 0}
+.disclaimer-critical{background:#FADBD8;border:2px solid #C0392B;border-radius:var(--radius);padding:24px 28px;margin:32px 0}
 .disclaimer-critical .dc-icon{font-size:28px;margin-bottom:12px;display:block}
-.disclaimer-critical h3{color:var(--red-soft);font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;margin-bottom:10px}
-.disclaimer-critical p{color:var(--text);font-size:14px;line-height:1.8}
-.disclaimer-critical strong{color:var(--red-soft)}
+.disclaimer-critical h3{color:#C0392B;font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;margin-bottom:10px}
+.disclaimer-critical p{color:#5a0a04;font-size:14px;line-height:1.8}
+.disclaimer-critical strong{color:#C0392B}
 
 /* TABLE OF CONTENTS */
-.toc{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);padding:28px 32px;margin-bottom:48px}
-.toc h3{font-family:'Space Grotesk',sans-serif;color:var(--gold);font-size:16px;margin-bottom:16px;font-weight:600}
+.toc{background:#fff;border:1px solid #dee2e6;border-radius:var(--radius);padding:28px 32px;margin-bottom:48px;box-shadow:var(--shadow)}
+.toc h3{font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px;font-weight:700}
 .toc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:4px}
 .toc-item{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--text2);font-size:13px;transition:all .2s}
-.toc-item:hover{background:rgba(243,156,18,.08);color:var(--gold)}
+.toc-item:hover{background:#eef2ff;color:#2563eb}
 .toc-item .toc-num{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;color:var(--gold);min-width:22px}
 
-/* CHECKLIST */
+/* ============================================================
+   FIX 5: PROHIBITIONS — VISIBLE CHECKBOX BUTTONS
+   ============================================================ */
+.prohibited-instruction{
+  background:#fff3cd;
+  border:1px solid #ffc107;
+  border-radius:var(--radius-sm);
+  padding:14px 18px;
+  margin-bottom:20px;
+  font-size:14px;
+  color:#856404;
+  font-weight:600;
+}
+
+/* Prohibition items */
+.prohibit-interactive{display:grid;gap:10px;margin-bottom:24px}
+.prohibited-item{
+  background:#fff5f5;
+  border:2px solid #f5c6cb;
+  border-radius:var(--radius-sm);
+  padding:14px 18px;
+  transition:all .3s;
+  cursor:pointer;
+}
+.prohibited-item:hover{border-color:#C0392B;background:#fdecea}
+.prohibited-item.confirmed{
+  background:#d4edda;
+  border-color:#c3e6cb;
+}
+.check-label{display:flex;align-items:flex-start;gap:12px;cursor:pointer;width:100%}
+.check-box{
+  width:22px;height:22px;min-width:22px;
+  accent-color:#27AE60;
+  cursor:pointer;
+  margin-top:3px;
+}
+.check-custom{
+  font-size:22px;
+  line-height:1;
+  min-width:28px;
+  color:#C0392B;
+  transition:color .2s;
+}
+.prohibited-item.confirmed .check-custom{color:#27AE60}
+.check-text{
+  font-size:14px;
+  color:#721c24;
+  line-height:1.7;
+  flex:1;
+  transition:all .3s;
+}
+.prohibited-item.confirmed .check-text{color:#155724;text-decoration:line-through;opacity:.7}
+.check-hint{font-size:11px;color:#999;margin-top:4px;margin-left:40px}
+.prohibited-item.confirmed .check-hint{display:none}
+.pi-num{font-family:'Space Grotesk',sans-serif;font-weight:700;color:#C0392B;font-size:14px;min-width:28px;margin-top:3px}
+.prohibited-item.confirmed .pi-num{color:#155724}
+
+/* CHECKLIST (qualifications) */
 .checklist-grid{display:grid;gap:10px}
-.check-item{display:flex;align-items:flex-start;gap:14px;padding:16px 20px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm);cursor:pointer;transition:all .2s;min-height:44px}
-.check-item:hover{border-color:rgba(39,174,96,.3);background:rgba(39,174,96,.04)}
+.check-item{display:flex;align-items:flex-start;gap:14px;padding:16px 20px;background:#fff;border:2px solid #dee2e6;border-radius:var(--radius-sm);cursor:pointer;transition:all .2s;box-shadow:var(--shadow)}
+.check-item:hover{border-color:#C9A96E;background:#fffdf5}
 .check-item input[type="checkbox"]{width:20px;height:20px;min-width:20px;accent-color:var(--green);cursor:pointer;margin-top:2px}
 .check-item label{cursor:pointer;font-size:14px;color:var(--text);line-height:1.7}
-.check-item label .cite{font-size:12px;color:var(--gold);margin-left:6px}
-.check-item label strong{color:var(--gold-light)}
-.check-item.checked{border-color:rgba(39,174,96,.4);background:rgba(39,174,96,.06)}
-.checklist-progress{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:16px 20px;margin-bottom:20px}
-.cp-bar{height:8px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden;margin:8px 0}
+.check-item label .cite{font-size:12px;color:#2563eb;margin-left:6px}
+.check-item label strong{color:var(--navy)}
+.check-item.checked{border-color:#27AE60;background:#d4edda}
+.checklist-progress{background:#f5f7fa;border:1px solid #dee2e6;border-radius:var(--radius-sm);padding:16px 20px;margin-bottom:20px;box-shadow:var(--shadow)}
+.cp-bar{height:8px;background:#dee2e6;border-radius:4px;overflow:hidden;margin:8px 0}
 .cp-fill{height:100%;background:linear-gradient(90deg,var(--green),#4ecdc4);border-radius:4px;transition:width .4s ease}
 .cp-text{font-size:13px;color:var(--text2)}
 .cp-text strong{color:var(--green)}
-.all-pass{text-align:center;padding:12px;background:rgba(39,174,96,.1);border:1px solid rgba(39,174,96,.3);border-radius:var(--radius-sm);font-size:15px;color:var(--green);font-weight:600;display:none;margin-top:8px}
+.all-pass{text-align:center;padding:12px;background:#d4edda;border:1px solid #c3e6cb;border-radius:var(--radius-sm);font-size:15px;color:#155724;font-weight:600;display:none;margin-top:8px}
 
-/* INTERACTIVE PROHIBITIONS */
-.prohibit-interactive{display:grid;gap:8px;margin-bottom:24px}
-.pi-item{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm);cursor:pointer;transition:all .3s;min-height:44px}
-.pi-item:hover{border-color:rgba(231,76,60,.3);background:rgba(231,76,60,.05)}
-.pi-item.confirmed{border-color:rgba(39,174,96,.4);background:rgba(39,174,96,.06)}
-.pi-item .pi-toggle{font-size:20px;min-width:28px;transition:all .3s;user-select:none}
-.pi-item.confirmed .pi-toggle::after{content:'✅'}
-.pi-item:not(.confirmed) .pi-toggle::after{content:'🔴'}
-.pi-item .pi-text{font-size:13px;color:var(--text);line-height:1.7;flex:1}
-.pi-item.confirmed .pi-text{color:rgba(255,255,255,0.5)}
-.pi-item .pi-confirm{font-size:11px;color:var(--green);font-weight:600;display:none;margin-top:2px}
-.pi-item.confirmed .pi-confirm{display:block}
-.pi-num{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--red-soft);font-size:14px;min-width:28px}
-.pi-item.confirmed .pi-num{color:var(--green)}
-.prohibit-counter{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:16px 20px;margin-bottom:16px}
-.prohibit-all-pass{text-align:center;padding:14px;background:rgba(39,174,96,.1);border:1px solid rgba(39,174,96,.3);border-radius:var(--radius-sm);font-size:16px;color:var(--green);font-weight:700;display:none;margin-top:10px}
+/* COMBINED PROGRESS */
+.prohibit-counter{background:#f5f7fa;border:1px solid #dee2e6;border-radius:var(--radius-sm);padding:16px 20px;margin-bottom:16px;box-shadow:var(--shadow)}
+.prohibit-all-pass{text-align:center;padding:14px;background:#d4edda;border:1px solid #c3e6cb;border-radius:var(--radius-sm);font-size:16px;color:#155724;font-weight:700;display:none;margin-top:10px}
 
 /* WARN BOX */
-.warn-box{background:linear-gradient(135deg,rgba(192,57,43,.12),rgba(231,76,60,.06));border:1px solid rgba(231,76,60,.4);border-radius:var(--radius-sm);padding:18px 22px;margin:20px 0}
-.warn-box.yellow{background:linear-gradient(135deg,rgba(241,196,15,.12),rgba(243,156,18,.06));border-color:rgba(241,196,15,.4)}
-.warn-box h4{color:var(--red-soft);font-size:14px;font-weight:700;margin-bottom:8px}
-.warn-box.yellow h4{color:var(--yellow)}
-.warn-box p{font-size:13px;color:var(--text);line-height:1.8}
-.warn-box strong{color:var(--red-soft)}
-.warn-box.yellow strong{color:var(--yellow)}
+.warn-box{background:#FADBD8;border:2px solid #f5c6cb;border-radius:var(--radius-sm);padding:18px 22px;margin:20px 0}
+.warn-box.yellow{background:#fff3cd;border-color:#ffc107}
+.warn-box h4{color:#721c24;font-size:14px;font-weight:700;margin-bottom:8px}
+.warn-box.yellow h4{color:#856404}
+.warn-box p{font-size:13px;color:#555;line-height:1.8}
+.warn-box strong{color:#721c24}
+.warn-box.yellow strong{color:#856404}
 
 /* TIMELINE */
 .timeline{position:relative;padding:10px 0}
-.timeline::before{content:'';position:absolute;left:28px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--gold),var(--green),rgba(255,255,255,.1))}
+.timeline::before{content:'';position:absolute;left:28px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--gold),var(--green),#dee2e6)}
 .tl-item{display:flex;gap:24px;margin-bottom:24px;position:relative}
 .tl-icon{width:56px;height:56px;min-width:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;position:relative;z-index:1}
-.tl-icon.tl-start{background:linear-gradient(135deg,#4ecdc4,#44a08d);border:2px solid rgba(78,205,196,.4)}
-.tl-icon.tl-reg{background:linear-gradient(135deg,var(--gold),#c87f0a);border:2px solid rgba(243,156,18,.4)}
-.tl-icon.tl-vote{background:linear-gradient(135deg,var(--green),#1a7a40);border:2px solid rgba(39,174,96,.4)}
-.tl-icon.tl-warn{background:linear-gradient(135deg,var(--orange),#c87f0a);border:2px solid rgba(230,126,34,.4)}
-.tl-icon.tl-post{background:linear-gradient(135deg,var(--purple),#7d3c98);border:2px solid rgba(155,89,182,.4)}
-.tl-icon.tl-star{background:linear-gradient(135deg,#e74c3c,#c0392b);border:3px solid rgba(231,76,60,.5);box-shadow:0 0 20px rgba(231,76,60,.3)}
-.tl-icon.tl-launch{background:linear-gradient(135deg,#f39c12,#e67e22);border:2px solid rgba(243,156,18,.4)}
-.tl-body{flex:1;padding:16px 20px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm)}
-.tl-body.tl-main-event{border-color:rgba(231,76,60,.4);background:rgba(231,76,60,.06)}
-.tl-body h4{color:#fff;font-weight:600;font-size:15px;margin-bottom:4px}
-.tl-body .tl-date{font-family:'Space Grotesk',sans-serif;font-size:12px;color:var(--gold);margin-bottom:6px;font-weight:500}
-.tl-body .tl-cite{font-size:12px;color:#4ecdc4;margin-top:6px}
+.tl-icon.tl-start{background:linear-gradient(135deg,#4ecdc4,#44a08d);border:2px solid #4ecdc4}
+.tl-icon.tl-reg{background:linear-gradient(135deg,var(--gold),#b8893a);border:2px solid var(--gold)}
+.tl-icon.tl-vote{background:linear-gradient(135deg,var(--green),#1a7a40);border:2px solid var(--green)}
+.tl-icon.tl-warn{background:linear-gradient(135deg,#E67E22,#c87f0a);border:2px solid #E67E22}
+.tl-icon.tl-post{background:linear-gradient(135deg,var(--purple),#7d3c98);border:2px solid var(--purple)}
+.tl-icon.tl-star{background:linear-gradient(135deg,#e74c3c,#c0392b);border:3px solid #e74c3c;box-shadow:0 0 20px rgba(231,76,60,.3)}
+.tl-icon.tl-launch{background:linear-gradient(135deg,var(--gold),#b8893a);border:2px solid var(--gold)}
+.tl-body{flex:1;padding:16px 20px;background:#fff;border:1px solid #dee2e6;border-radius:var(--radius-sm);box-shadow:var(--shadow)}
+.tl-body.tl-main-event{border-color:#f5c6cb;background:#fff5f5}
+.tl-body h4{color:var(--navy);font-weight:600;font-size:15px;margin-bottom:4px}
+.tl-body .tl-date{font-family:'Space Grotesk',sans-serif;font-size:12px;color:var(--gold);margin-bottom:6px;font-weight:600}
+.tl-body .tl-cite{font-size:12px;color:#2563eb;margin-top:6px}
 .tl-body p{font-size:13px;color:var(--text2);line-height:1.7}
-.tl-body.tl-hypothetical{border-style:dashed;border-color:rgba(155,89,182,.5);background:rgba(155,89,182,.05)}
-.tl-body.tl-hypothetical h4{color:var(--purple)}
-.tl-body.tl-hypothetical .tl-date{color:var(--purple)}
+.tl-body.tl-hypothetical{border-style:dashed;border-color:#9b59b6;background:#f9f0ff}
+.tl-body.tl-hypothetical h4{color:#7d3c98}
+.tl-body.tl-hypothetical .tl-date{color:#7d3c98}
 .tl-main-vote{font-size:clamp(22px,3vw,30px)!important}
 
 /* DO/DONT */
 .do-dont-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
-.do-section h3{color:var(--green);font-family:'Space Grotesk',sans-serif;font-size:16px;margin-bottom:16px;display:flex;align-items:center;gap:8px}
-.dont-section h3{color:var(--red-soft);font-family:'Space Grotesk',sans-serif;font-size:16px;margin-bottom:16px;display:flex;align-items:center;gap:8px}
-.do-card{padding:14px 18px;background:rgba(39,174,96,.06);border:1px solid rgba(39,174,96,.2);border-radius:var(--radius-sm);margin-bottom:10px;transition:all .2s}
-.do-card:hover{border-color:rgba(39,174,96,.4);background:rgba(39,174,96,.1)}
-.do-card .cite{font-size:11px;color:#4ecdc4;margin-top:4px;display:block}
-.dont-card{padding:14px 18px;background:rgba(231,76,60,.06);border:1px solid rgba(231,76,60,.2);border-radius:var(--radius-sm);margin-bottom:10px;transition:all .2s}
-.dont-card:hover{border-color:rgba(231,76,60,.4);background:rgba(231,76,60,.1)}
-.dont-card .cite{font-size:11px;color:#4ecdc4;margin-top:4px;display:block}
-.dont-card .penalty{font-size:11px;color:var(--red-soft);margin-top:4px;display:block;font-weight:600}
-.card-title{font-size:13px;color:var(--text);font-weight:500}
+.do-section h3{color:#155724;font-family:'Space Grotesk',sans-serif;font-size:16px;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.dont-section h3{color:#721c24;font-family:'Space Grotesk',sans-serif;font-size:16px;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+/* FIX 1: DO/DONT cards light */
+.do-card{padding:14px 18px;background:#d4edda;border:1px solid #c3e6cb;border-radius:var(--radius-sm);margin-bottom:10px;transition:all .2s}
+.do-card:hover{border-color:#27AE60;background:#c3e6cb}
+.do-card .cite{font-size:11px;color:#155724;margin-top:4px;display:block}
+.dont-card{padding:14px 18px;background:#f8d7da;border:1px solid #f5c6cb;border-radius:var(--radius-sm);margin-bottom:10px;transition:all .2s}
+.dont-card:hover{border-color:#C0392B;background:#f5c6cb}
+.dont-card .cite{font-size:11px;color:#721c24;margin-top:4px;display:block}
+.dont-card .penalty{font-size:11px;color:#721c24;margin-top:4px;display:block;font-weight:600}
+.card-title{font-size:13px;color:#155724;font-weight:500}
+.dont-card .card-title{color:#721c24}
 
 /* CARD BAND */
 .card-band{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin:16px 0}
-.band-card{padding:20px;border-radius:var(--radius-sm);border:1px solid var(--glass-border);background:var(--glass)}
-.band-card.red-band{border-color:rgba(231,76,60,.25);background:rgba(231,76,60,.05)}
-.band-card.yellow-band{border-color:rgba(241,196,15,.25);background:rgba(241,196,15,.04)}
-.band-card.green-band{border-color:rgba(39,174,96,.25);background:rgba(39,174,96,.04)}
+.band-card{padding:20px;border-radius:var(--radius-sm);border:1px solid #dee2e6;background:#fff;box-shadow:var(--shadow)}
+.band-card.red-band{border-color:#f5c6cb;background:#f8d7da}
+.band-card.yellow-band{border-color:#ffc107;background:#fff3cd}
+.band-card.green-band{border-color:#c3e6cb;background:#d4edda}
 .band-card h4{font-size:14px;font-weight:700;margin-bottom:8px}
-.band-card.red-band h4{color:var(--red-soft)}
-.band-card.yellow-band h4{color:var(--yellow)}
-.band-card.green-band h4{color:var(--green)}
+.band-card.red-band h4{color:#721c24}
+.band-card.yellow-band h4{color:#856404}
+.band-card.green-band h4{color:#155724}
 .band-card p{font-size:13px;color:var(--text2);line-height:1.7}
 .band-card .icon{font-size:24px;margin-bottom:10px;display:block}
 
 /* INFO TABLE */
-.info-table{width:100%;border-collapse:collapse}
-.info-table th{text-align:left;padding:10px 14px;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--text3);border-bottom:1px solid var(--card-border);background:rgba(255,255,255,.02)}
-.info-table td{padding:11px 14px;border-bottom:1px solid rgba(255,255,255,.04);font-size:13px;vertical-align:top;line-height:1.7}
-.info-table tr:hover td{background:rgba(243,156,18,.04)}
-.info-table td:first-child{color:var(--gold-light);font-weight:600;min-width:160px}
-.table-wrap{overflow-x:auto;border:1px solid var(--card-border);border-radius:var(--radius)}
+.info-table{width:100%;border-collapse:collapse;background:#fff}
+.info-table th{text-align:left;padding:10px 14px;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--text3);border-bottom:2px solid #dee2e6;background:#f8f9fa}
+.info-table td{padding:11px 14px;border-bottom:1px solid #dee2e6;font-size:13px;vertical-align:top;line-height:1.7;color:var(--text)}
+.info-table tr:hover td{background:#f5f7fa}
+.info-table td:first-child{color:var(--navy);font-weight:600;min-width:160px}
+.table-wrap{overflow-x:auto;border:1px solid #dee2e6;border-radius:var(--radius)}
 
 /* ETHICS GRID */
 .ethics-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.ethics-card{padding:20px 22px;border-radius:var(--radius-sm);border:1px solid var(--glass-border);background:var(--glass)}
+.ethics-card{padding:20px 22px;border-radius:var(--radius-sm);border:1px solid #dee2e6;background:#fff;box-shadow:var(--shadow)}
 .ethics-card h4{font-size:14px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.ethics-card.do-card-eth h4{color:var(--green)}
-.ethics-card.dont-card-eth h4{color:var(--red-soft)}
+.ethics-card.do-card-eth{background:#d4edda;border-color:#c3e6cb}
+.ethics-card.dont-card-eth{background:#f8d7da;border-color:#f5c6cb}
+.ethics-card.do-card-eth h4{color:#155724}
+.ethics-card.dont-card-eth h4{color:#721c24}
 .ethics-item{display:flex;gap:8px;margin-bottom:8px;font-size:13px;line-height:1.7;color:var(--text2)}
 .ethics-item::before{content:'';min-width:6px;height:6px;border-radius:50%;margin-top:8px;flex-shrink:0}
-.ethics-card.do-card-eth .ethics-item::before{background:var(--green)}
-.ethics-card.dont-card-eth .ethics-item::before{background:var(--red-soft)}
+.ethics-card.do-card-eth .ethics-item::before{background:#27AE60}
+.ethics-card.dont-card-eth .ethics-item::before{background:#C0392B}
 
 /* LAW DOWNLOAD CARDS */
 .law-download-grid{display:grid;gap:14px;margin:20px 0}
-.law-dl-card{padding:20px 24px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm);display:flex;gap:16px;align-items:flex-start;transition:all .2s}
-.law-dl-card:hover{border-color:rgba(243,156,18,.3);background:rgba(243,156,18,.04)}
+.law-dl-card{padding:20px 24px;background:#fff;border:1px solid #dee2e6;border-radius:var(--radius-sm);box-shadow:var(--shadow);display:flex;gap:16px;align-items:flex-start;transition:all .2s}
+.law-dl-card:hover{border-color:var(--gold);box-shadow:0 4px 20px rgba(201,169,110,.15)}
 .law-dl-num{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:var(--gold);min-width:38px;line-height:1}
-.law-dl-body h4{font-size:14px;color:#fff;font-weight:600;margin-bottom:6px}
+.law-dl-body h4{font-size:14px;color:var(--navy);font-weight:700;margin-bottom:6px}
 .law-dl-body p{font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:8px}
-.law-dl-body .dl-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--gold);text-decoration:none;padding:5px 12px;border:1px solid rgba(243,156,18,.4);border-radius:6px;transition:all .2s;font-weight:500}
-.law-dl-body .dl-btn:hover{background:rgba(243,156,18,.1);color:#fff}
+.law-dl-body .dl-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#2563eb;text-decoration:none;padding:5px 12px;border:1px solid #2563eb;border-radius:6px;transition:all .2s;font-weight:600}
+.law-dl-body .dl-btn:hover{background:#2563eb;color:#fff}
 
 /* LAW FULL TEXT */
-.law-text-box{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:20px 24px;margin-bottom:16px}
-.law-text-box h4{font-family:'Space Grotesk',sans-serif;color:var(--gold);font-size:15px;font-weight:700;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--glass-border)}
+.law-text-box{background:#fff;border:2px solid #dee2e6;border-radius:var(--radius-sm);padding:20px 24px;margin-bottom:16px;box-shadow:var(--shadow)}
+.law-text-box h4{font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:15px;font-weight:700;margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid var(--gold)}
 .law-text-box p{font-size:14px;color:var(--text);line-height:2.0;margin-bottom:8px}
-.law-text-box .law-art{color:var(--gold-light);font-weight:600;display:block;margin-bottom:4px}
-.law-text-box .law-content{color:var(--text);line-height:2.0;border-left:3px solid var(--navy);padding-left:14px;margin:8px 0}
-.law-text-box .law-penalty{color:var(--red-soft);font-size:13px;margin-top:8px}
+.law-text-box .law-art{color:var(--navy);font-weight:700;display:block;margin-bottom:4px}
+.law-text-box .law-content{color:var(--text);line-height:2.0;border-left:4px solid var(--gold);padding-left:16px;margin:8px 0;background:#f5f7fa;padding:12px 16px;border-radius:0 8px 8px 0}
+.law-text-box .law-penalty{color:#721c24;font-size:13px;margin-top:8px;background:#f8d7da;padding:8px 12px;border-radius:6px;border:1px solid #f5c6cb}
 
 /* LINK CARDS */
 .link-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:20px 0}
-.link-card{padding:18px 20px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm);text-decoration:none;transition:all .2s;display:block}
-.link-card:hover{border-color:rgba(243,156,18,.4);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.2)}
+.link-card{padding:18px 20px;background:#fff;border:1px solid #dee2e6;border-radius:var(--radius-sm);box-shadow:var(--shadow);text-decoration:none;transition:all .2s;display:block}
+.link-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 6px 24px rgba(201,169,110,.15)}
 .link-card .lc-icon{font-size:26px;margin-bottom:8px;display:block}
-.link-card .lc-title{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px}
+.link-card .lc-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px}
 .link-card .lc-desc{font-size:12px;color:var(--text2)}
 
 /* KNOWLEDGE / ARTICLE CARDS */
 .knowledge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin:20px 0}
-.article-card{padding:20px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm);transition:all .2s}
-.article-card:hover{border-color:rgba(243,156,18,.3);background:rgba(243,156,18,.04)}
-.article-card .ac-tag{display:inline-block;font-size:10px;padding:3px 8px;border-radius:4px;font-weight:600;letter-spacing:.5px;margin-bottom:10px;text-transform:uppercase}
-.ac-tag.tag-law{background:rgba(39,174,96,.15);color:var(--green)}
-.ac-tag.tag-policy{background:rgba(243,156,18,.15);color:var(--gold)}
-.ac-tag.tag-data{background:rgba(52,152,219,.15);color:var(--blue)}
-.article-card h4{font-size:14px;color:#fff;font-weight:600;margin-bottom:8px;line-height:1.5}
+.article-card{padding:20px;background:#fff;border:1px solid #dee2e6;border-radius:var(--radius-sm);box-shadow:var(--shadow);transition:all .2s}
+.article-card:hover{border-color:var(--gold);background:#fffdf5}
+.article-card .ac-tag{display:inline-block;font-size:10px;padding:3px 8px;border-radius:4px;font-weight:700;letter-spacing:.5px;margin-bottom:10px;text-transform:uppercase}
+.ac-tag.tag-law{background:#d4edda;color:#155724}
+.ac-tag.tag-policy{background:#fff3cd;color:#856404}
+.ac-tag.tag-data{background:#cce5ff;color:#004085}
+.article-card h4{font-size:14px;color:var(--navy);font-weight:700;margin-bottom:8px;line-height:1.5}
 .article-card p{font-size:13px;color:var(--text2);line-height:1.7}
 
 /* COMPARISON TABLE */
-.compare-table{width:100%;border-collapse:collapse;margin:16px 0}
-.compare-table th{text-align:left;padding:10px 14px;font-size:12px;color:var(--gold);border-bottom:2px solid rgba(243,156,18,.3);background:rgba(243,156,18,.05)}
-.compare-table td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.04);font-size:13px;line-height:1.7;vertical-align:top}
-.compare-table tr:hover td{background:rgba(255,255,255,.02)}
+.compare-table{width:100%;border-collapse:collapse;margin:16px 0;background:#fff}
+.compare-table th{text-align:left;padding:10px 14px;font-size:12px;color:var(--navy);border-bottom:2px solid var(--gold);background:#f5f7fa;font-weight:700}
+.compare-table td{padding:10px 14px;border-bottom:1px solid #dee2e6;font-size:13px;line-height:1.7;vertical-align:top;color:var(--text)}
+.compare-table tr:hover td{background:#f5f7fa}
 .compare-table td:first-child{color:var(--text2);font-weight:500}
-.compare-table td:nth-child(2){color:var(--gold-light)}
-.compare-table td:nth-child(3){color:#4ecdc4}
+.compare-table td:nth-child(2){color:var(--navy)}
+.compare-table td:nth-child(3){color:#155724}
 
 /* RISK BAND */
 .risk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
-.risk-card{padding:20px;border-radius:var(--radius-sm);border:2px solid}
-.risk-card.risk-high{border-color:var(--risk-high);background:rgba(192,57,43,.08)}
-.risk-card.risk-mid{border-color:var(--risk-mid);background:rgba(230,126,34,.08)}
-.risk-card.risk-low{border-color:var(--risk-low);background:rgba(39,174,96,.08)}
+.risk-card{padding:20px;border-radius:var(--radius-sm);border:2px solid;box-shadow:var(--shadow)}
+.risk-card.risk-high{border-color:var(--risk-high);background:var(--risk-high-bg)}
+.risk-card.risk-mid{border-color:var(--risk-mid);background:var(--risk-mid-bg)}
+.risk-card.risk-low{border-color:var(--risk-low);background:var(--risk-low-bg)}
 .risk-card h4{font-size:14px;font-weight:700;margin-bottom:12px}
-.risk-card.risk-high h4{color:#ff7b7b}
-.risk-card.risk-mid h4{color:#ffaa55}
-.risk-card.risk-low h4{color:var(--green)}
+.risk-card.risk-high h4{color:#721c24}
+.risk-card.risk-mid h4{color:#7a3f0a}
+.risk-card.risk-low h4{color:#155724}
 .risk-item{display:flex;gap:8px;margin-bottom:8px;font-size:13px;color:var(--text2);line-height:1.7}
 
 /* BACK TO TOP */
-.back-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:linear-gradient(135deg,var(--gold),var(--green));border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;color:#000;font-size:18px;z-index:90;opacity:0;transition:all .3s;box-shadow:0 4px 20px rgba(0,0,0,.3)}
+.back-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:2px solid var(--gold);color:var(--gold);font-size:18px;z-index:90;opacity:0;transition:all .3s;box-shadow:0 4px 20px rgba(0,0,0,.2)}
 .back-top.visible{opacity:1}
-.back-top:hover{transform:scale(1.1)}
+.back-top:hover{background:var(--gold);color:var(--navy)}
 
 /* DISCLAIMER FOOTER */
-.disclaimer-footer{background:rgba(255,255,255,.02);border:1px solid var(--glass-border);border-radius:var(--radius);padding:28px 32px;margin-top:48px}
-.disclaimer-footer h3{font-family:'Space Grotesk',sans-serif;font-size:15px;color:var(--gold);margin-bottom:12px;font-weight:600}
+.disclaimer-footer{background:#fff;border:2px solid #dee2e6;border-radius:var(--radius);padding:28px 32px;margin-top:48px;box-shadow:var(--shadow)}
+.disclaimer-footer h3{font-family:'Space Grotesk',sans-serif;font-size:15px;color:var(--navy);margin-bottom:12px;font-weight:700}
 .disclaimer-footer p{font-size:13px;color:var(--text2);line-height:1.8;margin-bottom:10px}
 
-/* FOOTER */
-.site-footer{background:var(--navy-dark);border-top:1px solid var(--glass-border);padding:32px 24px;text-align:center}
+/* FOOTER — keep dark */
+.site-footer{background:var(--navy-dark);border-top:2px solid var(--gold);padding:32px 24px;text-align:center}
+/* FIX 2: FOOTER LOGOS */
 .footer-logos{display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:16px;flex-wrap:wrap}
-.footer-logos img{height:40px;width:auto;object-fit:contain;opacity:.9}
-.footer-text{font-size:13px;color:var(--text3);line-height:1.8}
+.footer-logos img:first-child{height:80px;width:auto;object-fit:contain;opacity:.95}
+.footer-logos img:nth-child(2){height:55px;width:auto;object-fit:contain;opacity:.95}
+.footer-logos img:nth-child(3){height:36px;border-radius:4px;opacity:.9}
+.footer-text{font-size:13px;color:rgba(255,255,255,.6);line-height:1.8}
 .footer-text span{color:var(--gold)}
 
 /* DIVIDER */
-.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);margin:16px 0}
-
-/* MATRA LINKS */
-a.matra-link{color:var(--gold);text-decoration:underline;text-decoration-style:dotted;cursor:pointer;transition:color .2s}
-a.matra-link:hover{color:var(--gold-light)}
+.divider{height:1px;background:linear-gradient(90deg,transparent,#dee2e6,transparent);margin:16px 0}
 
 /* STATS BOX */
 .stats-box{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
-.stat-box{text-align:center;padding:16px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm)}
-.stat-box .sb-num{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--gold)}
+.stat-box{text-align:center;padding:16px;background:#fff;border:1px solid #dee2e6;border-radius:var(--radius-sm);box-shadow:var(--shadow)}
+.stat-box .sb-num{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:var(--navy)}
 .stat-box .sb-label{font-size:12px;color:var(--text2)}
+
+/* กกต. DOWNLOAD SECTION */
+.ect-section{background:#f5f7fa;border:2px solid var(--gold);border-radius:var(--radius);padding:28px 32px;margin:24px 0;box-shadow:var(--shadow)}
+.ect-section h3{font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:18px;font-weight:700;margin-bottom:8px}
+.ect-section-sub{font-size:13px;color:var(--text2);margin-bottom:20px}
+.ect-category{margin-bottom:24px}
+.ect-category h4{font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:14px;font-weight:700;margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--gold)}
+.ect-dl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+.ect-dl-card{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:12px 16px;
+  background:#fff;
+  border:1px solid #dee2e6;
+  border-radius:8px;
+  box-shadow:0 1px 4px rgba(0,0,0,.06);
+  transition:all .2s;
+  text-decoration:none;
+}
+.ect-dl-card:hover{border-color:var(--gold);background:#fffdf5;box-shadow:0 3px 12px rgba(201,169,110,.12)}
+.ect-dl-icon{font-size:22px;min-width:30px}
+.ect-dl-info h5{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:2px;line-height:1.4}
+.ect-dl-info span{font-size:11px;color:#2563eb;font-weight:600}
+.ect-dl-card.no-link{opacity:.7;cursor:default}
+.ect-dl-card.no-link:hover{border-color:#dee2e6;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.06)}
 
 /* PRINT */
 @media print{
   body{background:#fff;color:#000;font-family:'Sarabun',sans-serif}
-  .nav,.scroll-progress,.back-top,.election-banner,.countdown-wrapper,.cd-done{display:none!important}
+  .nav,.scroll-progress,.back-top,.election-banner{display:none!important}
   .hero{min-height:auto;padding:20px 0 10px;background:#fff!important}
-  .hero h1{font-size:26px;-webkit-text-fill-color:#000;color:#1a3a5c;background:none}
-  .section{padding:16px 0;break-inside:avoid}
-  .glass{background:#f8f8f8;border:1px solid #ddd}
-  .law-text-box{border:1px solid #ddd;background:#f9f9f9}
-  .pi-item,.check-item{background:#f9f9f9;border:1px solid #ddd}
-  .do-card{background:#f0fff4;border:1px solid #27ae60}
-  .dont-card{background:#fff5f5;border:1px solid #e74c3c}
+  .hero h1{font-size:26px;-webkit-text-fill-color:#1B2A4A;color:#1B2A4A;background:none}
+  .section{padding:16px 0;break-inside:avoid;background:#fff!important}
+  .glass,.law-text-box,.check-item,.tl-body{background:#f9f9f9;border:1px solid #ccc;box-shadow:none}
+  .do-card{background:#d4edda;border:1px solid #27ae60}
+  .dont-card{background:#f8d7da;border:1px solid #e74c3c}
+  .prohibited-item{background:#fff5f5;border:1px solid #ccc}
+  .prohibited-item.confirmed{background:#d4edda;border-color:#27ae60}
   .timeline::before{background:#ccc}
   table{border-collapse:collapse}
   th,td{border:1px solid #ccc!important}
   .disclaimer-critical{background:#fff5f5;border:2px solid #c0392b}
   a[href^="http"]::after{content:" (" attr(href) ")";font-size:10px;color:#666}
+  .ect-section{background:#f5f5f5;border:1px solid #ccc}
 }
 
 /* RESPONSIVE */
@@ -442,11 +522,14 @@ a.matra-link:hover{color:var(--gold-light)}
   .timeline::before{left:22px}
   .tl-icon{width:44px;height:44px;min-width:44px;font-size:16px}
   .stats-box{grid-template-columns:1fr 1fr}
+  .ect-dl-grid{grid-template-columns:1fr}
 }
 @media(max-width:480px){
   .knowledge-grid{grid-template-columns:1fr}
   .risk-grid{grid-template-columns:1fr}
   .stats-box{grid-template-columns:1fr}
+  .hero-logos img:first-child{height:110px}
+  .hero-logos img:last-child{height:70px}
 }
 </style>
 </head>
@@ -454,10 +537,9 @@ a.matra-link:hover{color:var(--gold-light)}
 
 <div class="scroll-progress" id="scrollProgress"></div>
 
-<!-- ============ TASK 1: ELECTION DATE BANNER + COUNTDOWN ============ -->
+<!-- ============ ELECTION DATE BANNER + COUNTDOWN ============ -->
 <div class="election-banner" id="top">
   <div class="election-banner-label">📅 วันเลือกตั้งสมาชิกสภากรุงเทพมหานคร (ส.ก.)</div>
-  <div class="election-date-title">การเลือกตั้งสมาชิกสภากรุงเทพมหานคร พ.ศ. 2569</div>
   <div class="election-date-sub">วันอาทิตย์ที่ 5 กรกฎาคม พ.ศ. 2569</div>
   <div id="countdownDisplay">
     <div class="countdown-wrapper">
@@ -468,15 +550,15 @@ a.matra-link:hover{color:var(--gold-light)}
     </div>
   </div>
   <div id="electionDoneMsg" class="cd-done" style="display:none">🗳️ วันนี้คือวันเลือกตั้ง!</div>
-  <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:8px">[ต้องยืนยัน] — วันเลือกตั้งที่แน่นอนจะประกาศโดย กกต. อย่างเป็นทางการก่อนการเลือกตั้ง</div>
+  <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:8px">[ต้องยืนยัน] — วันเลือกตั้งที่แน่นอนจะประกาศโดย กกต. อย่างเป็นทางการก่อนการเลือกตั้ง</div>
 </div>
 
 <!-- STICKY NAV -->
 <nav class="nav" id="mainNav">
   <div class="nav-brand">
     <div class="nav-logos">
-      <img src="/las-logo-full.png" alt="LAS Logo" height="36" onerror="this.style.display='none'">
-      <img src="/nia-logo-full.png" alt="NIA Logo" height="28" style="opacity:.9" onerror="this.style.display='none'">
+      <img src="/las-logo-full.png" alt="LAS Logo" onerror="this.style.display='none'">
+      <img src="/nia-logo-full.png" alt="NIA Logo" style="opacity:.9" onerror="this.style.display='none'">
     </div>
     <div class="nav-title">LAS <span>Research</span></div>
   </div>
@@ -489,6 +571,7 @@ a.matra-link:hover{color:var(--gold-light)}
     <a href="#registration">สมัคร</a>
     <a href="#ethics-section">จรรยาบรรณ</a>
     <a href="#law-full-section">กฎหมาย</a>
+    <a href="#ect-resources">กกต. Resources</a>
     <a href="#knowledge-section">บทความ</a>
   </div>
 </nav>
@@ -499,9 +582,9 @@ a.matra-link:hover{color:var(--gold-light)}
   <div class="hero-grid"></div>
   <div class="hero-content">
     <div class="hero-logos">
-      <img src="/las-logo-full.png" alt="LAS — Legal Advance Solution" height="120" style="max-width:280px;object-fit:contain" onerror="this.alt='LAS';this.style.cssText='font-size:36px;font-weight:700;color:#f39c12'">
+      <img src="/las-logo-full.png" alt="LAS — Legal Advance Solution" style="max-width:320px;object-fit:contain" onerror="this.alt='LAS';this.style.cssText='font-size:36px;font-weight:700;color:#C9A96E'">
       <div class="logo-divider"></div>
-      <img src="/nia-logo-full.png" alt="NIA — National Innovation Agency" height="80" style="max-width:180px;object-fit:contain" onerror="this.alt='NIA';this.style.cssText='font-size:24px;font-weight:700;color:#4ECDC4'">
+      <img src="/nia-logo-full.png" alt="NIA — National Innovation Agency" style="max-width:220px;object-fit:contain" onerror="this.alt='NIA';this.style.cssText='font-size:24px;font-weight:700;color:#4ECDC4'">
     </div>
     <div class="hero-badge"><span class="dot"></span> LAS Legal Research × NIA</div>
     <h1>คู่มือผู้สมัคร<br>สมาชิกสภากรุงเทพมหานคร (ส.ก.)<br>พ.ศ. 2569</h1>
@@ -531,18 +614,19 @@ a.matra-link:hover{color:var(--gold-light)}
   <div class="toc">
     <h3>สารบัญ / Table of Contents</h3>
     <div class="toc-grid">
-      <a href="#checklist-5" class="toc-item"><span class="toc-num">01</span> คุณสมบัติผู้มีสิทธิสมัคร (ม.49)</a>
-      <a href="#prohibited-26" class="toc-item"><span class="toc-num">02</span> ลักษณะต้องห้าม 26 ข้อ (ม.50)</a>
+      <a href="#checklist-5" class="toc-item"><span class="toc-num">01</span> คุณสมบัติผู้มีสิทธิสมัคร (<a class="matra-link" href="#law-m49" style="background:transparent;padding:0">ม.49</a>)</a>
+      <a href="#prohibited-26" class="toc-item"><span class="toc-num">02</span> ลักษณะต้องห้าม 26 ข้อ (<a class="matra-link" href="#law-m50" style="background:transparent;padding:0">ม.50</a>)</a>
       <a href="#timeline-section" class="toc-item"><span class="toc-num">03</span> Timeline เลือกตั้ง ส.ก. 2569</a>
       <a href="#do-section" class="toc-item"><span class="toc-num">04</span> DO — สิ่งที่ทำได้</a>
       <a href="#dont-section" class="toc-item"><span class="toc-num">05</span> DON'T — สิ่งที่ห้ามทำ</a>
-      <a href="#finance" class="toc-item"><span class="toc-num">06</span> การเงินและบัญชี (ม.60-62)</a>
+      <a href="#finance" class="toc-item"><span class="toc-num">06</span> การเงินและบัญชี (<a class="matra-link" href="#law-m60" style="background:transparent;padding:0">ม.60-62</a>)</a>
       <a href="#registration" class="toc-item"><span class="toc-num">07</span> ขั้นตอนการสมัคร</a>
       <a href="#ethics-section" class="toc-item"><span class="toc-num">08</span> จรรยาบรรณ ส.ก.</a>
       <a href="#risk" class="toc-item"><span class="toc-num">09</span> Risk Assessment สรุป</a>
       <a href="#law-full-section" class="toc-item"><span class="toc-num">10</span> ตัวบทกฎหมาย + ดาวน์โหลด</a>
-      <a href="#knowledge-section" class="toc-item"><span class="toc-num">11</span> บทความและข้อมูลเพิ่มเติม</a>
-      <a href="#disclaimer-final" class="toc-item"><span class="toc-num">12</span> Disclaimer (TH + EN)</a>
+      <a href="#ect-resources" class="toc-item"><span class="toc-num">11</span> เอกสาร กกต. ครบชุด</a>
+      <a href="#knowledge-section" class="toc-item"><span class="toc-num">12</span> บทความและข้อมูลเพิ่มเติม</a>
+      <a href="#disclaimer-final" class="toc-item"><span class="toc-num">13</span> Disclaimer (TH + EN)</a>
     </div>
   </div>
 </div>
@@ -552,7 +636,7 @@ a.matra-link:hover{color:var(--gold-light)}
   <div class="container">
     <div class="section-label"><span class="line"></span> PART 1 — ELIGIBILITY</div>
     <h2>✅ คุณสมบัติผู้มีสิทธิสมัคร ส.ก. — <a class="matra-link" href="#law-m49">มาตรา 49</a></h2>
-    <p class="section-desc">ตรวจสอบคุณสมบัติทุกข้อก่อนสมัคร — อ้างอิง <strong>มาตรา 49 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</strong> และ ชุดความรู้เลือกตั้ง ส.ก.65 หน้า 4-5<br>คลิกแต่ละข้อเพื่อทำเครื่องหมายตรวจสอบ</p>
+    <p class="section-desc">ตรวจสอบคุณสมบัติทุกข้อก่อนสมัคร — อ้างอิง <strong>มาตรา 49 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</strong> และ ชุดความรู้เลือกตั้ง ส.ก.65 หน้า 4-5<br><strong>📌 กดที่ช่อง ☐ หน้าแต่ละข้อเพื่อยืนยันว่าท่านมีคุณสมบัตินั้น</strong></p>
 
     <div class="checklist-progress">
       <div class="cp-text">ความคืบหน้า: <strong id="qualCount">0</strong> / <strong id="qualTotal">5</strong> ข้อ</div>
@@ -599,12 +683,12 @@ a.matra-link:hover{color:var(--gold-light)}
       </div>
     </div>
 
-    <div style="margin-top:20px;padding:16px 20px;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-sm)">
+    <div style="margin-top:20px;padding:16px 20px;background:#fff;border:2px solid var(--gold);border-radius:var(--radius-sm);box-shadow:var(--shadow)">
       <p style="font-size:13px;color:var(--text2)">
-        <strong style="color:var(--gold)">ส.ก. vs ผวก.:</strong>
-        ผู้ว่าราชการ กทม. ต้องอายุ ≥ 35 ปี และมีวุฒิปริญญาตรีขึ้นไป — ส่วน <strong style="color:#fff">ส.ก. ต้องอายุ ≥ 25 ปี และไม่มีข้อกำหนดวุฒิการศึกษา</strong>
+        <strong style="color:var(--navy)">ส.ก. vs ผวก.:</strong>
+        ผู้ว่าราชการ กทม. ต้องอายุ ≥ 35 ปี และมีวุฒิปริญญาตรีขึ้นไป — ส่วน <strong style="color:var(--navy)">ส.ก. ต้องอายุ ≥ 25 ปี และไม่มีข้อกำหนดวุฒิการศึกษา</strong>
         <br><br>
-        <strong style="color:var(--gold)">เขตเลือกตั้ง ส.ก.:</strong>
+        <strong style="color:var(--navy)">เขตเลือกตั้ง ส.ก.:</strong>
         ใช้เขตปกครอง กทม. เป็นเขตเลือกตั้ง เขตละ 1 คน หากเขตใดมีราษฎรเกิน 150,000 คน มี ส.ก. เพิ่มขึ้น 1 คน ต่อ 150,000 คน (เศษเกิน 75,000 คน เพิ่มอีก 1 คน)
         — พระราชบัญญัติระเบียบบริหารราชการกรุงเทพมหานคร พ.ศ. 2528 มาตรา 102
       </p>
@@ -613,11 +697,16 @@ a.matra-link:hover{color:var(--gold-light)}
 </section>
 
 <!-- ============ SECTION 2: PROHIBITIONS 26 (INTERACTIVE) ============ -->
-<section class="section" id="prohibited-26" style="padding-top:0">
+<section class="section" id="prohibited-26" style="background:var(--bg2)">
   <div class="container">
     <div class="section-label"><span class="line"></span> PART 2 — PROHIBITIONS</div>
     <h2>❌ ลักษณะต้องห้าม 26 ข้อ — <a class="matra-link" href="#law-m50">มาตรา 50</a></h2>
-    <p class="section-desc">อ้างอิง <strong>มาตรา 50 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</strong> — ห้ามพลาดแม้แต่ข้อเดียว<br>คลิกแต่ละข้อเพื่อยืนยัน "ฉันไม่มีลักษณะนี้"</p>
+    <p class="section-desc">อ้างอิง <strong>มาตรา 50 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</strong> — ห้ามพลาดแม้แต่ข้อเดียว</p>
+
+    <!-- FIX 5: INSTRUCTION -->
+    <div class="prohibited-instruction">
+      📌 กดที่ช่อง ☐ หน้าแต่ละข้อเพื่อยืนยันว่าท่านไม่มีลักษณะต้องห้ามดังกล่าว — เมื่อกดแล้วกล่องจะเปลี่ยนเป็นสีเขียว ✅
+    </div>
 
     <div class="warn-box" style="margin-bottom:20px">
       <h4>⚠️ <a class="matra-link" href="#law-m120">มาตรา 120</a> — โทษหนักที่สุด</h4>
@@ -632,227 +721,228 @@ a.matra-link:hover{color:var(--gold-light)}
 
     <div class="prohibit-counter">
       <div class="cp-text">ตรวจสอบลักษณะต้องห้ามแล้ว: <strong id="piCount">0</strong> / 26 ข้อ</div>
-      <div class="cp-bar"><div class="cp-fill" id="piBar" style="width:0%;background:linear-gradient(90deg,var(--red),var(--orange))"></div></div>
+      <div class="cp-bar"><div class="cp-fill" id="piBar" style="width:0%;background:linear-gradient(90deg,#C0392B,#E67E22)"></div></div>
       <div class="prohibit-all-pass" id="prohibitAllPass">🎉 ผ่านการตรวจสอบครบ 26 ข้อ — ไม่มีลักษณะต้องห้าม!</div>
     </div>
 
+    <!-- FIX 5: 26 prohibition items with visible checkbox -->
     <div class="prohibit-interactive">
-      <!-- 26 prohibition items -->
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(1)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          <strong>ติดยาเสพติดให้โทษ</strong> — ตรวจจากใบรับรองแพทย์
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(1)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text"><strong>ติดยาเสพติดให้โทษ</strong> — ตรวจจากใบรับรองแพทย์</span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(2)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          <strong>เป็นบุคคลล้มละลาย</strong> หรือเคยเป็นบุคคลล้มละลายทุจริต
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(2)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text"><strong>เป็นบุคคลล้มละลาย</strong> หรือเคยเป็นบุคคลล้มละลายทุจริต</span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(3)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          <strong>เป็นเจ้าของหรือผู้ถือหุ้นในกิจการหนังสือพิมพ์หรือสื่อมวลชนใดๆ</strong> ⚠️ ต้องโอนหุ้นก่อนสมัคร
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(3)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text"><strong>เป็นเจ้าของหรือผู้ถือหุ้นในกิจการหนังสือพิมพ์หรือสื่อมวลชนใดๆ</strong> ⚠️ ต้องโอนหุ้นก่อนสมัคร</span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(4)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          เป็น<strong>ภิกษุ สามเณร นักพรต นักบวช</strong> หรืออยู่ระหว่างถูกเพิกถอนสิทธิเลือกตั้ง หรือวิกลจริต (ตามมาตรา 39 (1)(2)(4))
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(4)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text">เป็น<strong>ภิกษุ สามเณร นักพรต นักบวช</strong> หรืออยู่ระหว่างถูกเพิกถอนสิทธิเลือกตั้ง หรือวิกลจริต (ตามมาตรา 39 (1)(2)(4))</span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(5)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          <strong>อยู่ระหว่างถูกระงับหรือถูกเพิกถอนสิทธิสมัครรับเลือกตั้ง</strong> ⚠️ ความเสี่ยงสูง
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(5)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text"><strong>อยู่ระหว่างถูกระงับหรือถูกเพิกถอนสิทธิสมัครรับเลือกตั้ง</strong> ⚠️ ความเสี่ยงสูง</span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(6)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          <strong>ต้องคำพิพากษาให้จำคุกและถูกคุมขังอยู่โดยหมายของศาล</strong>
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(6)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text"><strong>ต้องคำพิพากษาให้จำคุกและถูกคุมขังอยู่โดยหมายของศาล</strong></span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(7)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          เคยได้รับโทษจำคุก — <strong>พ้นโทษมายังไม่ถึง 5 ปี</strong> นับถึงวันเลือกตั้ง (ยกเว้นความผิดประมาทหรือลหุโทษ)
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(7)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text">เคยได้รับโทษจำคุก — <strong>พ้นโทษมายังไม่ถึง 5 ปี</strong> นับถึงวันเลือกตั้ง (ยกเว้นความผิดประมาทหรือลหุโทษ)</span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(8)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          เคยถูกสั่งให้พ้นจากราชการ/รัฐวิสาหกิจ <strong>เพราะทุจริต</strong>
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(8)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text">เคยถูกสั่งให้พ้นจากราชการ/รัฐวิสาหกิจ <strong>เพราะทุจริต</strong></span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(9)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          เคยถูกศาลสั่งให้ทรัพย์ตกเป็นแผ่นดิน (ร่ำรวยผิดปกติ) หรือเคยถูกจำคุกเพราะทุจริต (ป.ป.ช.)
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(9)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text">เคยถูกศาลสั่งให้ทรัพย์ตกเป็นแผ่นดิน (ร่ำรวยผิดปกติ) หรือเคยถูกจำคุกเพราะทุจริต (ป.ป.ช.)</span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(10)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          เคยถูกจำคุกเพราะความผิดต่อตำแหน่งหน้าที่ราชการ / ยาเสพติด (ผลิต/ค้า) / การพนัน (เจ้ามือ) / ค้ามนุษย์ / ฟอกเงิน
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(10)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text">เคยถูกจำคุกเพราะความผิดต่อตำแหน่งหน้าที่ราชการ / ยาเสพติด (ผลิต/ค้า) / การพนัน (เจ้ามือ) / ค้ามนุษย์ / ฟอกเงิน</span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(11)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          <strong>เคยถูกพิพากษาว่าทุจริตในการเลือกตั้ง</strong>
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(11)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text"><strong>เคยถูกพิพากษาว่าทุจริตในการเลือกตั้ง</strong></span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(12)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          <strong>เป็นข้าราชการซึ่งมีตำแหน่งหรือเงินเดือนประจำ</strong> ⚠️ ต้องลาออกก่อนสมัคร
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <!-- FIX 3: EXPAND "ต้องลาออกก่อน" -->
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(12)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text"><strong>เป็นข้าราชการซึ่งมีตำแหน่งหรือเงินเดือนประจำ</strong> ⚠️ ต้องลาออกจากราชการก่อนวันสมัครรับเลือกตั้ง</span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(13)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          <strong>เป็น สส. / สว. / สมาชิกสภาท้องถิ่น / ผู้บริหารท้องถิ่น</strong> ⚠️ ต้องลาออกก่อน
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(13)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text"><strong>เป็น สส. / สว. / สมาชิกสภาท้องถิ่น / ผู้บริหารท้องถิ่น</strong> ⚠️ ต้องลาออกจากตำแหน่ง สส./สว./สมาชิกสภาท้องถิ่น/ผู้บริหารท้องถิ่น ก่อนวันสมัครรับเลือกตั้ง</span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(14)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          <strong>เป็นพนักงานหรือลูกจ้างของหน่วยราชการ / รัฐวิสาหกิจ / ราชการส่วนท้องถิ่น</strong> ⚠️ ต้องลาออกก่อน
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(14)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text"><strong>เป็นพนักงานหรือลูกจ้างของหน่วยราชการ / รัฐวิสาหกิจ / ราชการส่วนท้องถิ่น</strong> ⚠️ ต้องลาออกจากการเป็นพนักงาน/ลูกจ้างของหน่วยราชการ/รัฐวิสาหกิจ/ราชการส่วนท้องถิ่น ก่อนวันสมัครรับเลือกตั้ง</span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(15)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          เป็นตุลาการศาลรัฐธรรมนูญหรือผู้ดำรงตำแหน่งในองค์กรอิสระ
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(15)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text">เป็นตุลาการศาลรัฐธรรมนูญหรือผู้ดำรงตำแหน่งในองค์กรอิสระ</span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(16)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          อยู่ในระหว่างต้องห้ามมิให้ดำรงตำแหน่งทางการเมือง
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(16)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text">อยู่ในระหว่างต้องห้ามมิให้ดำรงตำแหน่งทางการเมือง</span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(17)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          เคยพ้นจากตำแหน่งเพราะศาลฎีกาพิพากษาว่าร่ำรวยผิดปกติ / ทุจริต / ฝ่าฝืนมาตรฐานจริยธรรม
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(17)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text">เคยพ้นจากตำแหน่งเพราะศาลฎีกาพิพากษาว่าร่ำรวยผิดปกติ / ทุจริต / ฝ่าฝืนมาตรฐานจริยธรรม</span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(18)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          ต้องคำพิพากษาถึงที่สุดว่ากระทำความผิดตาม พ.ร.บ.นี้ — <strong>พ้นโทษหรือถูกพิพากษามายังไม่ถึง 5 ปี</strong>
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(18)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text">ต้องคำพิพากษาถึงที่สุดว่ากระทำความผิดตาม พ.ร.บ.นี้ — <strong>พ้นโทษหรือถูกพิพากษามายังไม่ถึง 5 ปี</strong></span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(19)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          เคยถูกถอดถอนจาก สส. / สว. / สมาชิกสภาท้องถิ่น / ผู้บริหารท้องถิ่น <strong>มายังไม่ถึง 5 ปี</strong>
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(19)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text">เคยถูกถอดถอนจาก สส. / สว. / สมาชิกสภาท้องถิ่น / ผู้บริหารท้องถิ่น <strong>มายังไม่ถึง 5 ปี</strong></span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(20)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          อยู่ระหว่างถูกจำกัดสิทธิสมัครรับเลือกตั้ง (ตามมาตรา 42 หรือกฎหมาย สส.)
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(20)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text">อยู่ระหว่างถูกจำกัดสิทธิสมัครรับเลือกตั้ง (ตามมาตรา 42 หรือกฎหมาย สส.)</span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(21)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          เคยถูกเพิกถอนสิทธิเลือกตั้งและ<strong>ยังไม่พ้น 5 ปี</strong> นับแต่วันที่พ้นจากการถูกเพิกถอน
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(21)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text">เคยถูกเพิกถอนสิทธิเลือกตั้งและ<strong>ยังไม่พ้น 5 ปี</strong> นับแต่วันที่พ้นจากการถูกเพิกถอน</span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(22)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          <strong>เป็นผู้สมัครรับเลือกตั้ง สส. / สว. / สมาชิกสภาท้องถิ่น / ผู้บริหารท้องถิ่น (ทุกองค์กร)</strong> ในเวลาเดียวกัน — ห้ามสมัครซ้อน
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(22)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text"><strong>เป็นผู้สมัครรับเลือกตั้ง สส. / สว. / สมาชิกสภาท้องถิ่น / ผู้บริหารท้องถิ่น (ทุกองค์กร)</strong> ในเวลาเดียวกัน — ห้ามสมัครซ้อน</span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(23)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          เคยพ้นจากตำแหน่งใน อปท. เพราะมีส่วนได้เสียในสัญญา <strong>ยังไม่พ้น 5 ปี</strong>
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(23)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text">เคยพ้นจากตำแหน่งใน อปท. เพราะมีส่วนได้เสียในสัญญา <strong>ยังไม่พ้น 5 ปี</strong></span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(24)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          เคยถูกสั่งพ้นจากตำแหน่งใน อปท. เพราะจงใจไม่ปฏิบัติตามกฎหมาย <strong>ยังไม่พ้น 5 ปี</strong>
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(24)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text">เคยถูกสั่งพ้นจากตำแหน่งใน อปท. เพราะจงใจไม่ปฏิบัติตามกฎหมาย <strong>ยังไม่พ้น 5 ปี</strong></span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(25)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          เคยถูกสั่งพ้นเพราะทอดทิ้งหน้าที่ / ประพฤติมิชอบ <strong>ยังไม่พ้น 5 ปี</strong>
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(25)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text">เคยถูกสั่งพ้นเพราะทอดทิ้งหน้าที่ / ประพฤติมิชอบ <strong>ยังไม่พ้น 5 ปี</strong></span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
-      <div class="pi-item" onclick="togglePI(this)">
-        <span class="pi-num">(26)</span>
-        <span class="pi-toggle"></span>
-        <div class="pi-text">
-          ลักษณะอื่นตามกฎหมายว่าด้วยการจัดตั้งองค์กรปกครองส่วนท้องถิ่น (พระราชบัญญัติระเบียบบริหารราชการกรุงเทพมหานคร พ.ศ. 2528)
-          <span class="pi-confirm">✅ ฉันไม่มีลักษณะนี้</span>
-        </div>
+      <div class="prohibited-item" onclick="togglePI(this)">
+        <label class="check-label">
+          <span class="pi-num">(26)</span>
+          <span class="check-custom">☐</span>
+          <span class="check-text">ลักษณะอื่นตามกฎหมายว่าด้วยการจัดตั้งองค์กรปกครองส่วนท้องถิ่น (พระราชบัญญัติระเบียบบริหารราชการกรุงเทพมหานคร พ.ศ. 2528)</span>
+        </label>
+        <div class="check-hint">👆 กดเพื่อยืนยันว่าไม่มีลักษณะนี้</div>
       </div>
     </div>
 
     <!-- ใบแดง ใบเหลือง -->
     <div style="margin-top:32px">
       <div class="section-label"><span class="line"></span> INFORMAL TERMS</div>
-      <h3 style="font-family:'Space Grotesk',sans-serif;font-size:18px;color:#fff;margin-bottom:16px">"ใบแดง" และ "ใบเหลือง" — สาธารณชนใช้อ้างอิง</h3>
-      <p style="font-size:13px;color:var(--text2);margin-bottom:20px">หมายเหตุ: พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นฯ พ.ศ. 2562 <strong style="color:#fff">ไม่ได้ใช้คำว่า "ใบแดง" หรือ "ใบเหลือง" ในตัวบท</strong> แต่สาธารณชนใช้คำเหล่านี้อย่างไม่เป็นทางการ</p>
+      <h3 style="font-family:'Space Grotesk',sans-serif;font-size:18px;color:var(--navy);margin-bottom:16px">"ใบแดง" และ "ใบเหลือง" — สาธารณชนใช้อ้างอิง</h3>
+      <p style="font-size:13px;color:var(--text2);margin-bottom:20px">หมายเหตุ: พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นฯ พ.ศ. 2562 <strong style="color:var(--navy)">ไม่ได้ใช้คำว่า "ใบแดง" หรือ "ใบเหลือง" ในตัวบท</strong> แต่สาธารณชนใช้คำเหล่านี้อย่างไม่เป็นทางการ</p>
       <div class="card-band">
         <div class="band-card red-band">
           <span class="icon">🟥</span>
@@ -870,24 +960,22 @@ a.matra-link:hover{color:var(--gold-light)}
 </section>
 
 <!-- ============ SECTION 3: TIMELINE ============ -->
-<section class="section" id="timeline-section" style="padding-top:0">
+<section class="section" id="timeline-section">
   <div class="container">
     <div class="section-label"><span class="line"></span> PART 3 — TIMELINE 2569</div>
     <h2>📅 Timeline เลือกตั้ง ส.ก. 2569</h2>
-    <p class="section-desc">ปฏิทินกระบวนการเลือกตั้งจากต้นจนจบ — อ้างอิง มาตรา 12, 17, 40, 43, 56, 58, 62, 70, 78 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562<br><span style="color:var(--red-soft)">[ต้องยืนยัน]</span> — วันที่แน่นอนจะประกาศโดย กกต. อย่างเป็นทางการ</p>
+    <p class="section-desc">ปฏิทินกระบวนการเลือกตั้งจากต้นจนจบ — อ้างอิง มาตรา 12, 17, 40, 43, 56, 58, 62, 70, 78 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562<br><span style="color:#C0392B">[ต้องยืนยัน]</span> — วันที่แน่นอนจะประกาศโดย กกต. อย่างเป็นทางการ</p>
 
     <div class="timeline">
-      <!-- NEW EVENT: งานเปิดตัว -->
       <div class="tl-item">
         <div class="tl-icon tl-launch">🎤</div>
         <div class="tl-body">
           <div class="tl-date">1 พฤษภาคม 2569</div>
           <h4>🎤 งานเปิดตัว — 1 พฤษภาคม 2569 ณ สยามพารากอน</h4>
           <p>งานเปิดตัวก่อนการเลือกตั้งอย่างเป็นทางการ — เริ่มสร้างการรับรู้แก่ประชาชนในเขตเลือกตั้ง</p>
-          <p class="tl-cite">⚠️ การหาเสียงต้องปฏิบัติตาม มาตรา 64, 65 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
+          <p class="tl-cite">⚠️ การหาเสียงต้องปฏิบัติตาม <a class="matra-link" href="#law-m65">มาตรา 64, 65</a> พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
         </div>
       </div>
-
       <div class="tl-item">
         <div class="tl-icon tl-start">🏛️</div>
         <div class="tl-body">
@@ -897,7 +985,6 @@ a.matra-link:hover{color:var(--gold-light)}
           <p class="tl-cite">มาตรา 142 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
         </div>
       </div>
-
       <div class="tl-item">
         <div class="tl-icon tl-start">📢</div>
         <div class="tl-body">
@@ -907,7 +994,6 @@ a.matra-link:hover{color:var(--gold-light)}
           <p class="tl-cite">มาตรา 12 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
         </div>
       </div>
-
       <div class="tl-item">
         <div class="tl-icon tl-reg">📝</div>
         <div class="tl-body">
@@ -917,7 +1003,6 @@ a.matra-link:hover{color:var(--gold-light)}
           <p class="tl-cite">มาตรา 12 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
         </div>
       </div>
-
       <div class="tl-item">
         <div class="tl-icon tl-reg">📋</div>
         <div class="tl-body">
@@ -927,7 +1012,6 @@ a.matra-link:hover{color:var(--gold-light)}
           <p class="tl-cite">มาตรา 12 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
         </div>
       </div>
-
       <div class="tl-item">
         <div class="tl-icon tl-reg">📣</div>
         <div class="tl-body">
@@ -937,17 +1021,15 @@ a.matra-link:hover{color:var(--gold-light)}
           <p class="tl-cite">มาตรา 43 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
         </div>
       </div>
-
       <div class="tl-item">
         <div class="tl-icon tl-warn">📣</div>
         <div class="tl-body">
           <div class="tl-date">ช่วงหาเสียง [ต้องยืนยัน]</div>
           <h4>ช่วงหาเสียงอย่างเป็นทางการ</h4>
-          <p>หาเสียงได้ตาม มาตรา 64 — ปราศรัย แจกเอกสาร ติดป้ายตามสถานที่ที่กำหนด ใช้ Social Media — <strong>หยุด 18.00 น. วันก่อนเลือกตั้ง</strong></p>
-          <p class="tl-cite">มาตรา 64, 70 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
+          <p>หาเสียงได้ตาม <a class="matra-link" href="#law-m65">มาตรา 64</a> — ปราศรัย แจกเอกสาร ติดป้ายตามสถานที่ที่กำหนด ใช้ Social Media — <strong>หยุด 18.00 น. วันก่อนเลือกตั้ง</strong></p>
+          <p class="tl-cite"><a class="matra-link" href="#law-m65">มาตรา 64, 70</a> พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
         </div>
       </div>
-
       <div class="tl-item">
         <div class="tl-icon tl-vote">🗳️</div>
         <div class="tl-body">
@@ -957,18 +1039,15 @@ a.matra-link:hover{color:var(--gold-light)}
           <p class="tl-cite">มาตรา 78 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
         </div>
       </div>
-
-      <!-- MAIN VOTE DAY — emphasized -->
       <div class="tl-item">
         <div class="tl-icon tl-star" style="width:64px;height:64px;min-width:64px;font-size:26px">🗳️</div>
         <div class="tl-body tl-main-event">
-          <div class="tl-date" style="color:var(--red-soft);font-size:14px;font-weight:700">วันอาทิตย์ที่ 5 กรกฎาคม พ.ศ. 2569</div>
-          <h4 class="tl-main-vote" style="color:#fff;font-size:clamp(18px,2.5vw,26px)">🗳️ วันเลือกตั้ง ส.ก. กทม. 2569 — เวลา 08.00-17.00 น.</h4>
-          <p style="color:var(--text)">ไปใช้สิทธิเลือกตั้ง ณ หน่วยเลือกตั้งในเขตที่มีชื่ออยู่ — ห้ามหาเสียงหลัง 18.00 น. วันก่อน และตลอดวันเลือกตั้ง</p>
+          <div class="tl-date" style="color:#C0392B;font-size:14px;font-weight:700">วันอาทิตย์ที่ 5 กรกฎาคม พ.ศ. 2569</div>
+          <h4 class="tl-main-vote" style="color:var(--navy);font-size:clamp(18px,2.5vw,26px)">🗳️ วันเลือกตั้ง ส.ก. กทม. 2569 — เวลา 08.00-17.00 น.</h4>
+          <p>ไปใช้สิทธิเลือกตั้ง ณ หน่วยเลือกตั้งในเขตที่มีชื่ออยู่ — ห้ามหาเสียงหลัง 18.00 น. วันก่อน และตลอดวันเลือกตั้ง</p>
           <p class="tl-cite">[ต้องยืนยัน] วันที่แน่นอน — มาตรา 78 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
         </div>
       </div>
-
       <div class="tl-item">
         <div class="tl-icon tl-post">📊</div>
         <div class="tl-body">
@@ -978,32 +1057,30 @@ a.matra-link:hover{color:var(--gold-light)}
           <p class="tl-cite">มาตรา 17 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
         </div>
       </div>
-
       <div class="tl-item">
         <div class="tl-icon tl-post">📁</div>
         <div class="tl-body">
           <div class="tl-date">ภายใน 90 วันหลังเลือกตั้ง</div>
           <h4>ยื่นบัญชีรายรับรายจ่าย — บังคับ</h4>
           <p>ยื่นต่อผู้อำนวยการการเลือกตั้งประจำจังหวัด — ฝ่าฝืน: จำคุกไม่เกิน 2 ปี + เพิกถอนสิทธิ 5 ปี</p>
-          <p class="tl-cite">มาตรา 62, 128 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
+          <p class="tl-cite"><a class="matra-link" href="#law-m60">มาตรา 62, 128</a> พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
         </div>
       </div>
     </div>
 
-    <!-- HYPOTHETICAL SCENARIO -->
     <div style="margin-top:32px">
       <div class="section-label"><span class="line"></span> HYPOTHETICAL SCENARIO</div>
       <div class="tl-body tl-hypothetical" style="border-radius:var(--radius-sm);padding:20px 24px;margin-top:8px">
         <div class="tl-date">⚠️ สมมติฐาน — ไม่ใช่ข้อเท็จจริงปัจจุบัน</div>
         <h4>สมมติ: ผวก.กทม. ลาออก 2 พ.ค. 2569</h4>
-        <p style="font-size:13px;color:var(--text2);line-height:1.8">หาก ผู้ว่าราชการกรุงเทพมหานคร ลาออกในวันที่ 2 พฤษภาคม 2569 → <strong style="color:var(--purple)">กกต. ต้องจัดการเลือกตั้งผู้ว่าราชการ กทม. ภายใน 45 วัน</strong> นับแต่วันที่ตำแหน่งว่างลง → กำหนดเลือกตั้งไม่เกินวันที่ 16 มิถุนายน 2569 — การเลือกตั้ง ส.ก. จะจัดพร้อมหรือแยกกัน ขึ้นอยู่กับประกาศ กกต.<br><span style="color:var(--purple);font-size:12px">อ้างอิง: มาตรา 11 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562 (45 วัน) | มาตรา 49 พระราชบัญญัติระเบียบบริหารราชการกรุงเทพมหานคร พ.ศ. 2528</span></p>
+        <p style="font-size:13px;color:var(--text2);line-height:1.8">หาก ผู้ว่าราชการกรุงเทพมหานคร ลาออกในวันที่ 2 พฤษภาคม 2569 → <strong style="color:#7d3c98">กกต. ต้องจัดการเลือกตั้งผู้ว่าราชการ กทม. ภายใน 45 วัน</strong> นับแต่วันที่ตำแหน่งว่างลง → กำหนดเลือกตั้งไม่เกินวันที่ 16 มิถุนายน 2569 — การเลือกตั้ง ส.ก. จะจัดพร้อมหรือแยกกัน ขึ้นอยู่กับประกาศ กกต.<br><span style="color:#7d3c98;font-size:12px">อ้างอิง: มาตรา 11 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562 (45 วัน) | มาตรา 49 พระราชบัญญัติระเบียบบริหารราชการกรุงเทพมหานคร พ.ศ. 2528</span></p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ SECTION 4: DO ============ -->
-<section class="section" id="do-section" style="padding-top:0">
+<section class="section" id="do-section" style="background:var(--bg2)">
   <div class="container">
     <div class="section-label"><span class="line"></span> PART 4 — DO</div>
     <h2>✅ สิ่งที่ทำได้ (DO)</h2>
@@ -1047,7 +1124,7 @@ a.matra-link:hover{color:var(--gold-light)}
 </section>
 
 <!-- ============ SECTION 5: DON'T ============ -->
-<section class="section" id="dont-section" style="padding-top:0">
+<section class="section" id="dont-section">
   <div class="container">
     <div class="section-label"><span class="line"></span> PART 5 — DON'T</div>
     <h2>⛔ สิ่งที่ห้ามทำ (DON'T)</h2>
@@ -1119,7 +1196,7 @@ a.matra-link:hover{color:var(--gold-light)}
 </section>
 
 <!-- ============ SECTION 6: FINANCE ============ -->
-<section class="section" id="finance" style="padding-top:0">
+<section class="section" id="finance" style="background:var(--bg2)">
   <div class="container">
     <div class="section-label"><span class="line"></span> PART 6 — FINANCE</div>
     <h2>💰 การเงินและบัญชี — <a class="matra-link" href="#law-m60">มาตรา 60-62</a></h2>
@@ -1152,7 +1229,7 @@ a.matra-link:hover{color:var(--gold-light)}
     </div>
 
     <div style="margin-top:20px">
-      <h3 style="font-family:'Space Grotesk',sans-serif;color:#fff;font-size:16px;margin-bottom:12px">สิ่งที่บุคคลอื่นจ่ายแทน</h3>
+      <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:12px">สิ่งที่บุคคลอื่นจ่ายแทน</h3>
       <div class="table-wrap">
         <table class="info-table">
           <thead><tr><th>กรณี</th><th>ผล</th><th>อ้างอิง</th></tr></thead>
@@ -1168,13 +1245,13 @@ a.matra-link:hover{color:var(--gold-light)}
 </section>
 
 <!-- ============ SECTION 7: REGISTRATION ============ -->
-<section class="section" id="registration" style="padding-top:0">
+<section class="section" id="registration">
   <div class="container">
     <div class="section-label"><span class="line"></span> PART 7 — REGISTRATION</div>
     <h2>📝 ขั้นตอนการสมัคร</h2>
     <p class="section-desc">อ้างอิง ชุดความรู้เลือกตั้ง ส.ก.65 หน้า 7 / ขั้นตอนการรับสมัครฯ — [ต้องยืนยัน] สถานที่ ผ่านประกาศ ผอ.กต.ท้องถิ่น กทม. ก่อนเลือกตั้งแต่ละครั้ง</p>
 
-    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--gold);font-size:16px;margin-bottom:16px">เอกสารที่ต้องเตรียม</h3>
+    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">เอกสารที่ต้องเตรียม</h3>
     <div class="table-wrap" style="margin-bottom:24px">
       <table class="info-table">
         <thead><tr><th>#</th><th>เอกสาร</th><th>รายละเอียด</th></tr></thead>
@@ -1191,42 +1268,42 @@ a.matra-link:hover{color:var(--gold-light)}
       </table>
     </div>
 
-    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--gold);font-size:16px;margin-bottom:12px">ขั้นตอนในวันสมัคร</h3>
+    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:12px">ขั้นตอนในวันสมัคร</h3>
     <div class="checklist-grid">
       <div class="check-item" style="cursor:default">
-        <div style="width:28px;height:28px;min-width:28px;background:rgba(243,156,18,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--gold);font-size:13px">1</div>
+        <div style="width:28px;height:28px;min-width:28px;background:#fff3cd;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--navy);font-size:13px">1</div>
         <label style="cursor:default">ลงทะเบียนเวลา ณ จุดรับลงทะเบียน <strong>ก่อน 08.30 น.</strong></label>
       </div>
       <div class="check-item" style="cursor:default">
-        <div style="width:28px;height:28px;min-width:28px;background:rgba(243,156,18,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--gold);font-size:13px">2</div>
+        <div style="width:28px;height:28px;min-width:28px;background:#fff3cd;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--navy);font-size:13px">2</div>
         <label style="cursor:default"><strong>จับสลากลำดับยื่นใบสมัคร</strong> (2 ครั้ง — ครั้งที่ 1 จับชื่อ ครั้งที่ 2 จับหมายเลขลำดับ)</label>
       </div>
       <div class="check-item" style="cursor:default">
-        <div style="width:28px;height:28px;min-width:28px;background:rgba(243,156,18,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--gold);font-size:13px">3</div>
+        <div style="width:28px;height:28px;min-width:28px;background:#fff3cd;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--navy);font-size:13px">3</div>
         <label style="cursor:default"><strong>ยื่นใบสมัคร</strong> พร้อมเอกสารทุกรายการตามลำดับที่จับสลากได้</label>
       </div>
       <div class="check-item" style="cursor:default">
-        <div style="width:28px;height:28px;min-width:28px;background:rgba(243,156,18,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--gold);font-size:13px">4</div>
+        <div style="width:28px;height:28px;min-width:28px;background:#fff3cd;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--navy);font-size:13px">4</div>
         <label style="cursor:default"><strong>ชำระค่าธรรมเนียม 10,000 บาท</strong> ณ โต๊ะรับชำระ</label>
       </div>
       <div class="check-item" style="cursor:default">
-        <div style="width:28px;height:28px;min-width:28px;background:rgba(243,156,18,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--gold);font-size:13px">5</div>
+        <div style="width:28px;height:28px;min-width:28px;background:#fff3cd;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--navy);font-size:13px">5</div>
         <label style="cursor:default">รับ <strong>ใบรับใบสมัคร</strong> (ส.ถ. 4/3 หรือ ผ.ถ. 4/3) + ใบเสร็จรับเงิน + เอกสารข้อมูลเลือกตั้ง</label>
       </div>
     </div>
 
-    <div style="margin-top:20px;padding:16px 20px;background:var(--glass);border:1px solid rgba(243,156,18,.3);border-radius:var(--radius-sm)">
+    <div style="margin-top:20px;padding:16px 20px;background:#fff;border:2px solid var(--gold);border-radius:var(--radius-sm);box-shadow:var(--shadow)">
       <p style="font-size:13px;color:var(--text2)">
-        <strong style="color:var(--gold)">เขตเลือกตั้ง ส.ก.:</strong> ผู้สมัคร ส.ก. ต้องสมัครในเขตที่ตนมีทะเบียนบ้านอยู่ — มาตรา 19(1) พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562<br>
-        <strong style="color:var(--gold)">สก. ไม่ต้องยื่นหลักฐานการศึกษา</strong> — เฉพาะ ผวก. กทม. ต้องปริญญาตรีขึ้นไป<br>
-        <strong style="color:var(--gold)">สถานที่สมัคร:</strong> [ต้องยืนยัน] จะประกาศในประกาศ ผอ.กต.ท้องถิ่น กทม. ก่อนการเลือกตั้งแต่ละครั้ง
+        <strong style="color:var(--navy)">เขตเลือกตั้ง ส.ก.:</strong> ผู้สมัคร ส.ก. ต้องสมัครในเขตที่ตนมีทะเบียนบ้านอยู่ — มาตรา 19(1) พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562<br>
+        <strong style="color:var(--navy)">สก. ไม่ต้องยื่นหลักฐานการศึกษา</strong> — เฉพาะ ผวก. กทม. ต้องปริญญาตรีขึ้นไป<br>
+        <strong style="color:var(--navy)">สถานที่สมัคร:</strong> [ต้องยืนยัน] จะประกาศในประกาศ ผอ.กต.ท้องถิ่น กทม. ก่อนการเลือกตั้งแต่ละครั้ง
       </p>
     </div>
   </div>
 </section>
 
 <!-- ============ SECTION 8: ETHICS ============ -->
-<section class="section" id="ethics-section" style="padding-top:0">
+<section class="section" id="ethics-section" style="background:var(--bg2)">
   <div class="container">
     <div class="section-label"><span class="line"></span> PART 8 — ETHICS</div>
     <h2>⚖️ จรรยาบรรณ ส.ก.</h2>
@@ -1261,7 +1338,7 @@ a.matra-link:hover{color:var(--gold-light)}
 </section>
 
 <!-- ============ SECTION 9: RISK ASSESSMENT ============ -->
-<section class="section" id="risk" style="padding-top:0">
+<section class="section" id="risk">
   <div class="container">
     <div class="section-label"><span class="line"></span> PART 9 — RISK ASSESSMENT</div>
     <h2>🚨 Risk Assessment สรุป</h2>
@@ -1297,14 +1374,14 @@ a.matra-link:hover{color:var(--gold-light)}
 </section>
 
 <!-- ============ SECTION 10: LAW FULL TEXT + DOWNLOADS ============ -->
-<section class="section" id="law-full-section" style="padding-top:0">
+<section class="section" id="law-full-section" style="background:var(--bg2)">
   <div class="container">
     <div class="section-label"><span class="line"></span> PART 10 — LAW TEXT + DOWNLOADS</div>
     <h2>📚 ตัวบทกฎหมายสำคัญ + ดาวน์โหลด</h2>
-    <p class="section-desc">ตัวบทกฎหมายที่อ้างอิงในคู่มือนี้ — คลิก มาตรา ใดๆ ในเอกสารเพื่อข้ามมาอ่านที่นี่</p>
+    <p class="section-desc">ตัวบทกฎหมายที่อ้างอิงในคู่มือนี้ — คลิก <a class="matra-link" href="#law-m49">ม.XX</a> ใดๆ ในเอกสารเพื่อข้ามมาอ่านที่นี่</p>
 
     <!-- DOWNLOAD CARDS -->
-    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--gold);font-size:16px;margin-bottom:16px">ดาวน์โหลดกฎหมาย</h3>
+    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">ดาวน์โหลดกฎหมาย</h3>
     <div class="law-download-grid">
       <div class="law-dl-card">
         <div class="law-dl-num">01</div>
@@ -1335,7 +1412,7 @@ a.matra-link:hover{color:var(--gold-light)}
     <div class="divider"></div>
 
     <!-- LAW TEXT FULL -->
-    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--gold);font-size:16px;margin:24px 0 16px">ตัวบทกฎหมายฉบับเต็ม</h3>
+    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin:24px 0 16px">ตัวบทกฎหมายฉบับเต็ม</h3>
 
     <!-- มาตรา 49 -->
     <div class="law-text-box" id="law-m49">
@@ -1367,9 +1444,9 @@ a.matra-link:hover{color:var(--gold-light)}
         <p>(9) เคยต้องคำพิพากษาหรือคำสั่งของศาลอันถึงที่สุดให้ทรัพย์สินตกเป็นของแผ่นดิน เพราะร่ำรวยผิดปกติ หรือเคยต้องคำพิพากษาอันถึงที่สุดให้ลงโทษจำคุก เพราะกระทำความผิดตามกฎหมายว่าด้วยการป้องกันและปราบปรามการทุจริต</p>
         <p>(10) เคยต้องคำพิพากษาถึงที่สุดว่ากระทำความผิดต่อตำแหน่งหน้าที่ราชการหรือต่อตำแหน่งหน้าที่ในการยุติธรรม หรือกระทำความผิดตามกฎหมายว่าด้วยความผิดของพนักงานในองค์การหรือหน่วยงานของรัฐ หรือความผิดเกี่ยวกับยาเสพติดในฐานะเป็นผู้ผลิต นำเข้า ส่งออก หรือผู้ค้า หรือความผิดตามกฎหมายว่าด้วยการพนันในฐานะเป็นเจ้ามือหรือเจ้าสำนัก หรือความผิดตามกฎหมายว่าด้วยการป้องกันและปราบปรามการค้ามนุษย์ หรือกระทำความผิดตามกฎหมายว่าด้วยการป้องกันและปราบปรามการฟอกเงิน</p>
         <p>(11) เคยถูกพิพากษาว่ากระทำการทุจริตในการเลือกตั้ง</p>
-        <p>(12) เป็นข้าราชการซึ่งมีตำแหน่งหรือเงินเดือนประจำ</p>
-        <p>(13) เป็นสมาชิกสภาผู้แทนราษฎร สมาชิกวุฒิสภา สมาชิกสภาท้องถิ่น หรือผู้บริหารท้องถิ่น</p>
-        <p>(14) เป็นพนักงานหรือลูกจ้างของหน่วยราชการ หน่วยงานของรัฐ หรือรัฐวิสาหกิจ หรือเป็นเจ้าหน้าที่อื่นของรัฐ</p>
+        <p>(12) เป็นข้าราชการซึ่งมีตำแหน่งหรือเงินเดือนประจำ — <strong>ต้องลาออกจากราชการก่อนวันสมัครรับเลือกตั้ง</strong></p>
+        <p>(13) เป็นสมาชิกสภาผู้แทนราษฎร สมาชิกวุฒิสภา สมาชิกสภาท้องถิ่น หรือผู้บริหารท้องถิ่น — <strong>ต้องลาออกจากตำแหน่ง สส./สว./สมาชิกสภาท้องถิ่น/ผู้บริหารท้องถิ่น ก่อนวันสมัครรับเลือกตั้ง</strong></p>
+        <p>(14) เป็นพนักงานหรือลูกจ้างของหน่วยราชการ หน่วยงานของรัฐ หรือรัฐวิสาหกิจ หรือเป็นเจ้าหน้าที่อื่นของรัฐ — <strong>ต้องลาออกจากการเป็นพนักงาน/ลูกจ้างของหน่วยราชการ/รัฐวิสาหกิจ/ราชการส่วนท้องถิ่น ก่อนวันสมัครรับเลือกตั้ง</strong></p>
         <p>(15) เป็นตุลาการศาลรัฐธรรมนูญ หรือผู้ดำรงตำแหน่งในองค์กรอิสระ</p>
         <p>(16) อยู่ในระหว่างต้องห้ามมิให้ดำรงตำแหน่งทางการเมือง</p>
         <p>(17) เคยพ้นจากตำแหน่งเพราะเหตุที่ถูกวินิจฉัยโดยศาลฎีกา ศาลรัฐธรรมนูญ หรือองค์กรอิสระว่ากระทำการร่ำรวยผิดปกติ ทุจริตต่อหน้าที่ หรือจงใจฝ่าฝืนมาตรฐานทางจริยธรรม</p>
@@ -1428,7 +1505,7 @@ a.matra-link:hover{color:var(--gold-light)}
     </div>
 
     <!-- LINK CARDS -->
-    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--gold);font-size:16px;margin:24px 0 12px">แหล่งข้อมูลและค้นกฎหมาย</h3>
+    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin:24px 0 12px">แหล่งข้อมูลและค้นกฎหมาย</h3>
     <div class="link-cards">
       <a href="https://gdcatalog.go.th" target="_blank" class="link-card">
         <span class="lc-icon">🏛️</span>
@@ -1454,14 +1531,201 @@ a.matra-link:hover{color:var(--gold-light)}
   </div>
 </section>
 
-<!-- ============ SECTION 11: KNOWLEDGE & ARTICLES ============ -->
-<section class="section" id="knowledge-section" style="padding-top:0">
+<!-- ============ FIX 6: SECTION 11 — กกต. RESOURCES ============ -->
+<section class="section" id="ect-resources">
   <div class="container">
-    <div class="section-label"><span class="line"></span> PART 11 — KNOWLEDGE BASE</div>
+    <div class="section-label"><span class="line"></span> PART 11 — กกต. RESOURCES</div>
+    <h2>📋 เอกสาร กกต. ครบชุด — ดาวน์โหลดและลิงก์</h2>
+    <p class="section-desc">รวมพระราชบัญญัติ ระเบียบ ประกาศ กกต. คู่มือ และแบบฟอร์มที่เกี่ยวข้องกับการเลือกตั้ง ส.ก. กทม. ครบในที่เดียว</p>
+
+    <div class="ect-section">
+
+      <!-- พ.ร.บ. -->
+      <div class="ect-category">
+        <h4>📖 พระราชบัญญัติ (พ.ร.บ.)</h4>
+        <div class="ect-dl-grid">
+          <a href="https://www.ect.go.th/ect_th/th/db_119_ect_th_6/2977" target="_blank" class="ect-dl-card">
+            <span class="ect-dl-icon">📗</span>
+            <div class="ect-dl-info">
+              <h5>พ.ร.บ.เลือกตั้งท้องถิ่น พ.ศ. 2562</h5>
+              <span>ect.go.th — กฎหมายหลัก มาตรา 49, 50, 60-128</span>
+            </div>
+          </a>
+          <a href="https://www.ect.go.th/ect_th/th/db_119_ect_th_6/2977" target="_blank" class="ect-dl-card">
+            <span class="ect-dl-icon">📘</span>
+            <div class="ect-dl-info">
+              <h5>พ.ร.บ.ระเบียบบริหาร กทม. พ.ศ. 2528</h5>
+              <span>ect.go.th — อำนาจหน้าที่ ส.ก. มาตรา 102</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- ระเบียบ กกต. -->
+      <div class="ect-category">
+        <h4>📋 ระเบียบ กกต. (5 ฉบับ)</h4>
+        <div class="ect-dl-grid">
+          <a href="https://www.ect.go.th/ect_th/" target="_blank" class="ect-dl-card">
+            <span class="ect-dl-icon">📄</span>
+            <div class="ect-dl-info">
+              <h5>ระเบียบ กกต. การเลือกตั้งท้องถิ่น พ.ศ. 2562</h5>
+              <span>ect.go.th — ระเบียบหลักการเลือกตั้ง</span>
+            </div>
+          </a>
+          <a href="https://www.ect.go.th/ect_th/" target="_blank" class="ect-dl-card">
+            <span class="ect-dl-icon">📄</span>
+            <div class="ect-dl-info">
+              <h5>ระเบียบ กกต. (ฉบับที่ 2) พ.ศ. 2563</h5>
+              <span>ect.go.th — แก้ไขเพิ่มเติมระเบียบหลัก</span>
+            </div>
+          </a>
+          <a href="https://www.ect.go.th/ect_th/" target="_blank" class="ect-dl-card">
+            <span class="ect-dl-icon">📄</span>
+            <div class="ect-dl-info">
+              <h5>ระเบียบ กกต. (ฉบับที่ 3) พ.ศ. 2564</h5>
+              <span>ect.go.th — แก้ไขเพิ่มเติม ฉบับที่ 3</span>
+            </div>
+          </a>
+          <a href="https://www.ect.go.th/ect_th/" target="_blank" class="ect-dl-card">
+            <span class="ect-dl-icon">📄</span>
+            <div class="ect-dl-info">
+              <h5>ระเบียบ กกต. วิธีการหาเสียง พ.ศ. 2563</h5>
+              <span>ect.go.th — กฎการหาเสียง ป้าย ออนไลน์</span>
+            </div>
+          </a>
+          <a href="https://www.ect.go.th/ect_th/" target="_blank" class="ect-dl-card">
+            <span class="ect-dl-icon">📄</span>
+            <div class="ect-dl-info">
+              <h5>ระเบียบ กกต. วิธีการหาเสียง (ฉบับที่ 2) พ.ศ. 2563</h5>
+              <span>ect.go.th — แก้ไขวิธีการหาเสียง</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- ประกาศ กกต. -->
+      <div class="ect-category">
+        <h4>📢 ประกาศ กกต.</h4>
+        <div class="ect-dl-grid">
+          <a href="https://www.ect.go.th/ect_th/" target="_blank" class="ect-dl-card">
+            <span class="ect-dl-icon">📑</span>
+            <div class="ect-dl-info">
+              <h5>ประกาศเรื่องประเภทค่าใช้จ่ายในการเลือกตั้ง พ.ศ. 2563</h5>
+              <span>ect.go.th — ประเภทค่าใช้จ่ายที่นับรวม</span>
+            </div>
+          </a>
+          <a href="https://www.ect.go.th/ect_th/" target="_blank" class="ect-dl-card">
+            <span class="ect-dl-icon">📑</span>
+            <div class="ect-dl-info">
+              <h5>ประกาศสถานที่ปิดประกาศ/แผ่นป้าย (สมาชิกสภา)</h5>
+              <span>ect.go.th — กำหนดสถานที่ติดป้ายหาเสียง</span>
+            </div>
+          </a>
+          <a href="https://www.ect.go.th/ect_th/" target="_blank" class="ect-dl-card">
+            <span class="ect-dl-icon">📑</span>
+            <div class="ect-dl-info">
+              <h5>ประกาศสถานที่ปิดประกาศ/แผ่นป้าย (ผู้ว่า กทม.)</h5>
+              <span>ect.go.th — กำหนดสถานที่ติดป้ายผู้ว่าฯ</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- คู่มือ -->
+      <div class="ect-category">
+        <h4>📚 คู่มือ กกต.</h4>
+        <div class="ect-dl-grid">
+          <a href="https://www.ect.go.th/ect_th/download/article/article_20190717171153.pdf" target="_blank" class="ect-dl-card">
+            <span class="ect-dl-icon">📒</span>
+            <div class="ect-dl-info">
+              <h5>คู่มือการรับสมัครรับเลือกตั้ง</h5>
+              <span>ect.go.th — ขั้นตอนการรับสมัครครบถ้วน</span>
+            </div>
+          </a>
+          <a href="https://www.ect.go.th/ect_th/" target="_blank" class="ect-dl-card">
+            <span class="ect-dl-icon">📒</span>
+            <div class="ect-dl-info">
+              <h5>คู่มือประชาชน เลือกตั้ง กทม.</h5>
+              <span>ect.go.th — คู่มือสำหรับผู้มีสิทธิเลือกตั้ง</span>
+            </div>
+          </a>
+          <a href="https://www.ect.go.th/ect_th/download/article/article_20220404153725.pdf" target="_blank" class="ect-dl-card">
+            <span class="ect-dl-icon">📕</span>
+            <div class="ect-dl-info">
+              <h5>ชุดความรู้เลือกตั้ง กทม. (ส.ก.65)</h5>
+              <span>ect.go.th — ข้อมูลอ้างอิงจากการเลือกตั้ง ส.ก.65</span>
+            </div>
+          </a>
+          <a href="https://www.ect.go.th/ect_th/download/article/article_20211029160903.pdf" target="_blank" class="ect-dl-card">
+            <span class="ect-dl-icon">📙</span>
+            <div class="ect-dl-info">
+              <h5>คู่มือ กปน. (กรรมการประจำหน่วยเลือกตั้ง)</h5>
+              <span>ect.go.th — คู่มือสำหรับเจ้าหน้าที่ประจำหน่วย</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- แบบฟอร์ม -->
+      <div class="ect-category">
+        <h4>📝 แบบฟอร์มสำหรับผู้สมัคร</h4>
+        <div class="ect-dl-grid">
+          <a href="https://www.ect.go.th/ect_th/" target="_blank" class="ect-dl-card">
+            <span class="ect-dl-icon">📃</span>
+            <div class="ect-dl-info">
+              <h5>ใบสมัคร แบบ ส.ถ./ผ.ถ. 4/1</h5>
+              <span>ect.go.th — ใบสมัครรับเลือกตั้ง ส.ก.</span>
+            </div>
+          </a>
+          <a href="https://www.ect.go.th/ect_th/" target="_blank" class="ect-dl-card">
+            <span class="ect-dl-icon">📃</span>
+            <div class="ect-dl-info">
+              <h5>แบบ ส.ถ./ผ.ถ. 4/2 — ยืนยันไม่เสียภาษี</h5>
+              <span>ect.go.th — หนังสือยืนยันกรณีไม่ต้องเสียภาษีเงินได้</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- ลิงก์หลัก กกต. -->
+      <div class="ect-category">
+        <h4>🔗 ลิงก์หลัก กกต.</h4>
+        <div class="ect-dl-grid">
+          <a href="https://www.ect.go.th/ect_th/th/db_119_ect_th_6/2977" target="_blank" class="ect-dl-card">
+            <span class="ect-dl-icon">🏛️</span>
+            <div class="ect-dl-info">
+              <h5>กกต. หน้าเลือกตั้ง กทม.</h5>
+              <span>ect.go.th — ข้อมูลการเลือกตั้ง กทม. ครบถ้วน</span>
+            </div>
+          </a>
+          <a href="https://stat.bora.dopa.go.th/Election/absvote/#/" target="_blank" class="ect-dl-card">
+            <span class="ect-dl-icon">🔍</span>
+            <div class="ect-dl-info">
+              <h5>ตรวจสอบสิทธิเลือกตั้ง</h5>
+              <span>stat.bora.dopa.go.th — ตรวจสถานะเสียสิทธิ</span>
+            </div>
+          </a>
+          <a href="https://www.ect.go.th/ect_th/" target="_blank" class="ect-dl-card">
+            <span class="ect-dl-icon">🗳️</span>
+            <div class="ect-dl-info">
+              <h5>สำนักงาน กกต. หลัก</h5>
+              <span>ect.go.th — เว็บไซต์ กกต. อย่างเป็นทางการ</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 12: KNOWLEDGE & ARTICLES ============ -->
+<section class="section" id="knowledge-section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="section-label"><span class="line"></span> PART 12 — KNOWLEDGE BASE</div>
     <h2>📖 บทความและข้อมูลเพิ่มเติม</h2>
     <p class="section-desc">ข้อมูลเชิงลึกเกี่ยวกับการเลือกตั้ง ส.ก. กทม. — จากการวิจัยของ LAS</p>
 
-    <!-- KNOWLEDGE ARTICLE CARDS -->
     <div class="knowledge-grid">
       <div class="article-card">
         <span class="ac-tag tag-law">กฎหมาย</span>
@@ -1500,8 +1764,7 @@ a.matra-link:hover{color:var(--gold-light)}
       </div>
     </div>
 
-    <!-- COMPARISON TABLE: ส.ก. vs สส. -->
-    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--gold);font-size:16px;margin:28px 0 14px">ตารางเปรียบเทียบความโปร่งใส: ส.ก. vs สส.</h3>
+    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin:28px 0 14px">ตารางเปรียบเทียบความโปร่งใส: ส.ก. vs สส.</h3>
     <div class="table-wrap">
       <table class="compare-table">
         <thead>
@@ -1541,27 +1804,26 @@ a.matra-link:hover{color:var(--gold-light)}
       </table>
     </div>
 
-    <!-- 311 ข้อบัญญัติ stats -->
-    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--gold);font-size:16px;margin:28px 0 14px">สถิติข้อบัญญัติกรุงเทพมหานคร</h3>
+    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin:28px 0 14px">สถิติข้อบัญญัติกรุงเทพมหานคร</h3>
     <div class="stats-box">
       <div class="stat-box">
         <div class="sb-num">311</div>
         <div class="sb-label">ข้อบัญญัติ กทม. ทั้งหมด<br><span style="font-size:10px;color:var(--text3)">[ต้องยืนยัน]</span></div>
       </div>
       <div class="stat-box">
-        <div class="sb-num" style="color:var(--red-soft)">~43%</div>
+        <div class="sb-num" style="color:#C0392B">~43%</div>
         <div class="sb-label">ล้าสมัย ต้องแก้ไข<br><span style="font-size:10px;color:var(--text3)">[ต้องยืนยัน]</span></div>
       </div>
       <div class="stat-box">
-        <div class="sb-num" style="color:var(--green)">50</div>
+        <div class="sb-num" style="color:#27AE60">50</div>
         <div class="sb-label">เขตเลือกตั้ง ส.ก.<br><span style="font-size:10px;color:var(--text3)">50 เขต กทม.</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ SECTION 12: DISCLAIMER FINAL ============ -->
-<section class="section" id="disclaimer-final" style="padding-top:0">
+<!-- ============ SECTION 13: DISCLAIMER FINAL ============ -->
+<section class="section" id="disclaimer-final">
   <div class="container">
     <div class="disclaimer-footer">
       <h3>⚠️ ข้อจำกัดความรับผิดชอบ (Disclaimer)</h3>
@@ -1572,7 +1834,7 @@ a.matra-link:hover{color:var(--gold-light)}
       <p style="font-size:12px;color:var(--text3)">
         จัดทำโดย: Thundthornthep Yamoutai, Ph.D. | Legal Advance Solution Co., Ltd. (LAS)<br>
         สนับสนุนโดย: สำนักงานนวัตกรรมแห่งชาติ (องค์การมหาชน) NIA<br>
-        วันที่จัดทำ: เมษายน 2569 | เวอร์ชัน: 2.0<br>
+        วันที่จัดทำ: เมษายน 2569 | เวอร์ชัน: 3.0<br>
         อ้างอิง: พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562 | พระราชบัญญัติระเบียบบริหารราชการกรุงเทพมหานคร พ.ศ. 2528 | ชุดความรู้เลือกตั้ง ส.ก.65
       </p>
     </div>
@@ -1582,15 +1844,15 @@ a.matra-link:hover{color:var(--gold-light)}
 <!-- SITE FOOTER -->
 <footer class="site-footer">
   <div class="footer-logos">
-    <img src="/las-logo-full.png" alt="Legal Advance Solution (LAS)" height="60" style="max-width:200px;object-fit:contain" onerror="this.style.display='none'">
-    <img src="/nia-logo-full.png" alt="NIA — National Innovation Agency" height="45" style="max-width:120px;object-fit:contain" onerror="this.style.display='none'">
-    <img src="/las-nia-research-banner.jpg" alt="LAS × NIA Research" height="32" style="border-radius:4px" onerror="this.style.display='none'">
+    <img src="/las-logo-full.png" alt="Legal Advance Solution (LAS)" style="max-width:220px;object-fit:contain" onerror="this.style.display='none'">
+    <img src="/nia-logo-full.png" alt="NIA — National Innovation Agency" style="max-width:140px;object-fit:contain" onerror="this.style.display='none'">
+    <img src="/las-nia-research-banner.jpg" alt="LAS × NIA Research" style="border-radius:4px" onerror="this.style.display='none'">
   </div>
   <div class="footer-text">
     <span>Legal Advance Solution Co., Ltd. (LAS)</span> — AI Legal Research<br>
     เพื่อการวิจัย สนับสนุนทุนวิจัยโดย <span>สำนักงานนวัตกรรมแห่งชาติ (องค์การมหาชน) NIA</span><br>
     ผู้เขียน: <span>Thundthornthep Yamoutai, Ph.D.</span><br>
-    <span style="color:var(--text3);font-size:12px">คู่มือนี้เพื่อการวิจัยเท่านั้น — ยืนยันข้อมูลกับ กกต. กทม. ก่อนสมัครเสมอ</span>
+    <span style="color:rgba(255,255,255,.4);font-size:12px">คู่มือนี้เพื่อการวิจัยเท่านั้น — ยืนยันข้อมูลกับ กกต. กทม. ก่อนสมัครเสมอ</span>
   </div>
 </footer>
 
@@ -1664,15 +1926,15 @@ function updateQual(){
 }
 function toggleQual(el){
   var cb = el.querySelector('input[type="checkbox"]');
-  cb.checked = !cb.checked;
-  el.classList.toggle('checked', cb.checked);
+  if(cb){ cb.checked = !cb.checked; }
+  el.classList.toggle('checked', cb && cb.checked);
   updateQual();
 }
 
-// PROHIBITIONS INTERACTIVE (26 items)
+// PROHIBITIONS INTERACTIVE (26 items) — FIX 5: checkbox + visual state
 var piTotal = 26;
 function updatePI(){
-  var confirmed = document.querySelectorAll('.pi-item.confirmed').length;
+  var confirmed = document.querySelectorAll('.prohibited-item.confirmed').length;
   document.getElementById('piCount').textContent = confirmed;
   document.getElementById('piBar').style.width = (confirmed/piTotal*100)+'%';
   var msg = document.getElementById('prohibitAllPass');
@@ -1681,13 +1943,17 @@ function updatePI(){
 }
 function togglePI(el){
   el.classList.toggle('confirmed');
+  var icon = el.querySelector('.check-custom');
+  if(icon){
+    icon.textContent = el.classList.contains('confirmed') ? '☑' : '☐';
+  }
   updatePI();
 }
 
 // COMBINED PROGRESS (31 total: 5 qual + 26 prohibit)
 function updateCombined(){
   var qualC = document.querySelectorAll('#checklist-5 input[type="checkbox"]:checked').length;
-  var piC = document.querySelectorAll('.pi-item.confirmed').length;
+  var piC = document.querySelectorAll('.prohibited-item.confirmed').length;
   var total = qualC + piC;
   document.getElementById('combinedCount').textContent = total;
   var pct = Math.round(total/31*100);
