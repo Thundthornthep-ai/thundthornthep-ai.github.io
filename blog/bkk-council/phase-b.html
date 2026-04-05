@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/webp" href="/las-logo.webp">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase B: ระหว่างเลือกตั้ง — ส.ก. Navigator</title>
+<meta name="description" content="Phase B: ระหว่างเลือกตั้ง — หาเสียง DO/DON'T การเงินและบัญชี ยุติการหาเสียง วันเลือกตั้ง สำหรับผู้สมัคร ส.ก. กทม. 2569">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ส.ก. NAVIGATOR — PHASE B
+   ============================================================ */
+:root {
+  --bg: #FAFAFA;
+  --bg-alt: #F5F5F5;
+  --card: #FFFFFF;
+  --text: #1A1A2E;
+  --text-secondary: #6B7280;
+  --text-muted: #9CA3AF;
+  --navy: #1B2A4A;
+  --navy-dark: #0d1f33;
+  --gold: #C9A96E;
+  --gold-light: #d4b07a;
+  --teal: #0D9488;
+  --green: #22C55E;
+  --green-dark: #14532D;
+  --red: #EF4444;
+  --red-dark: #991B1B;
+  --blue: #2563EB;
+  --purple: #9b59b6;
+  --border: #E5E7EB;
+  --border-light: #F3F4F6;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.04);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --sidebar-w: 260px;
+  --transition: 0.2s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+body {
+  font-family: 'Sarabun', sans-serif;
+  font-size: 16px; line-height: 1.8;
+  color: var(--text); background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a.matra-link {
+  color: var(--blue); background: #eef2ff; padding: 2px 8px; border-radius: 5px;
+  text-decoration: none; font-weight: 600; transition: all .2s; font-size: inherit;
+}
+a.matra-link:hover { background: #c7d2fe; text-decoration: underline; }
+
+/* ============ TOP BAR ============ */
+.top-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px;
+  background: var(--navy);
+  border-bottom: 1px solid rgba(201,169,110,0.2);
+  font-size: 13px;
+}
+.top-bar-left {
+  font-family: 'Space Grotesk', sans-serif;
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+}
+.top-bar-right {
+  color: rgba(255,255,255,0.5);
+  font-size: 12px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+.top-bar-right span { color: var(--gold); }
+
+/* ============ SIDEBAR (Desktop) ============ */
+.sidebar {
+  position: fixed;
+  top: 48px; left: 0;
+  width: var(--sidebar-w);
+  height: calc(100vh - 48px);
+  background: var(--card);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  padding: 20px 0;
+  z-index: 50;
+}
+.sidebar-back {
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 20px;
+  font-size: 13px; color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.sidebar-back:hover { color: var(--navy); }
+
+.sidebar-phase {
+  padding: 12px 20px;
+  margin: 8px 14px;
+  background: linear-gradient(135deg, rgba(27,42,74,0.06), rgba(27,42,74,0.02));
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--navy);
+}
+.sidebar-phase-letter {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px; font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.sidebar-phase-name {
+  font-size: 15px; font-weight: 700;
+  color: var(--navy); margin-top: 2px;
+}
+
+.sidebar-topics { padding: 8px 0; }
+.sidebar-link {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 20px;
+  font-size: 13px; color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--transition);
+  border-left: 3px solid transparent;
+}
+.sidebar-link:hover {
+  color: var(--navy);
+  background: rgba(27,42,74,0.04);
+  border-left-color: var(--gold);
+}
+.sidebar-link.active {
+  color: var(--navy);
+  font-weight: 600;
+  background: rgba(27,42,74,0.06);
+  border-left-color: var(--navy);
+}
+.sidebar-link .num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px; font-weight: 700;
+  color: var(--text-muted);
+  min-width: 24px;
+}
+
+.sidebar-divider {
+  height: 1px; background: var(--border);
+  margin: 12px 20px;
+}
+
+.sidebar-other-label {
+  padding: 8px 20px;
+  font-size: 11px; font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.sidebar-other-link {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 20px;
+  font-size: 12px; color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.sidebar-other-link:hover { color: var(--text-secondary); }
+.sidebar-other-link .badge {
+  font-size: 9px; background: var(--bg-alt);
+  color: var(--text-muted); padding: 1px 6px;
+  border-radius: 3px; font-weight: 600;
+}
+
+/* ============ HAMBURGER (Mobile) ============ */
+.hamburger {
+  display: none; flex-direction: column; gap: 4px;
+  cursor: pointer; padding: 8px; border: none; background: none; z-index: 200;
+}
+.hamburger span { display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px; transition: all .3s; }
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4px,4px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px,-4px); }
+
+.mobile-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+  z-index: 40; display: none; opacity: 0; transition: opacity .3s;
+}
+.mobile-overlay.show { display: block; opacity: 1; }
+
+/* ============ CONTENT AREA ============ */
+.content {
+  margin-left: var(--sidebar-w);
+  padding: 68px 32px 64px;
+  max-width: calc(var(--sidebar-w) + 780px + 64px);
+}
+.content-inner {
+  max-width: 780px;
+}
+
+/* Phase header */
+.phase-header {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+.phase-header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px; font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.phase-header-badge .dot {
+  width: 8px; height: 8px; border-radius: 2px;
+  background: var(--navy);
+}
+.phase-header h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(24px, 3.5vw, 34px);
+  font-weight: 700; color: var(--navy);
+  letter-spacing: -0.5px; margin-bottom: 8px;
+}
+.phase-header-sub {
+  font-size: 15px; color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* ============ TOPIC SECTIONS ============ */
+.topic-section {
+  margin-bottom: 56px;
+  scroll-margin-top: 64px;
+}
+.topic-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 700; color: var(--gold);
+  text-transform: uppercase; letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+.topic-label .line { width: 24px; height: 2px; background: var(--gold); border-radius: 1px; }
+
+.topic-section h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.4rem; font-weight: 700;
+  color: var(--navy); margin-bottom: 8px;
+  letter-spacing: -0.3px; line-height: 1.3;
+}
+.topic-section .section-desc {
+  font-size: 14px; color: var(--text-secondary);
+  max-width: 680px; margin-bottom: 28px; line-height: 1.85;
+}
+
+/* ============ CHECKLIST ============ */
+.checklist-progress {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 14px 18px;
+  margin-bottom: 16px; box-shadow: var(--shadow-sm);
+}
+.cp-bar { height: 6px; background: #E5E7EB; border-radius: 3px; overflow: hidden; margin: 6px 0; }
+.cp-fill { height: 100%; background: linear-gradient(90deg, var(--green), #4ecdc4); border-radius: 3px; transition: width .4s ease; }
+.cp-text { font-size: 13px; color: var(--text-secondary); }
+.cp-text strong { color: var(--green); }
+.all-pass {
+  text-align: center; padding: 10px; background: #F0FDF4;
+  border: 1px solid #BBF7D0; border-radius: var(--radius-sm);
+  font-size: 14px; color: var(--green-dark); font-weight: 600;
+  display: none; margin-top: 8px;
+}
+
+.checklist-grid { display: grid; gap: 8px; }
+.check-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 14px 18px;
+  background: var(--card); border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer; transition: all .2s; box-shadow: var(--shadow-sm);
+}
+.check-item:hover { border-color: var(--gold); background: #FFFDF5; }
+.check-item input[type="checkbox"] {
+  width: 18px; height: 18px; min-width: 18px;
+  accent-color: var(--green); cursor: pointer; margin-top: 2px;
+}
+.check-item label { cursor: pointer; font-size: 14px; color: var(--text); line-height: 1.7; }
+.check-item label .cite { font-size: 12px; color: var(--blue); margin-left: 4px; }
+.check-item label strong { color: var(--navy); }
+.check-item.checked { border-color: var(--green); background: #F0FDF4; }
+
+/* Number items (non-clickable) */
+.num-circle {
+  width: 26px; height: 26px; min-width: 26px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 12px; margin-top: 1px;
+}
+.num-gold { background: #FFFBEB; border: 2px solid var(--gold); color: var(--navy); }
+.num-blue { background: #EFF6FF; border: 2px solid var(--blue); color: var(--blue); }
+.num-red { background: #FEE2E2; border: 2px solid var(--red); color: var(--red-dark); }
+
+/* ============ WARN BOX ============ */
+.warn-box {
+  background: #FEF2F2; border: 1.5px solid #FECACA;
+  border-radius: var(--radius-sm); padding: 16px 20px; margin: 16px 0;
+}
+.warn-box.yellow { background: #FFFBEB; border-color: #FCD34D; }
+.warn-box h4 { color: var(--red-dark); font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.warn-box.yellow h4 { color: #92400E; }
+.warn-box p { font-size: 13px; color: var(--text-secondary); line-height: 1.85; }
+.warn-box strong { color: var(--red-dark); }
+.warn-box.yellow strong { color: #92400E; }
+
+/* ============ LAW TEXT BOX ============ */
+.law-text-box {
+  background: var(--card); border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm); padding: 20px 24px;
+  margin-bottom: 16px; box-shadow: var(--shadow-sm);
+}
+.law-text-box h4 {
+  font-family: 'Space Grotesk', sans-serif; color: var(--navy);
+  font-size: 14px; font-weight: 700; margin-bottom: 12px;
+  padding-bottom: 10px; border-bottom: 2px solid var(--gold);
+}
+.law-text-box p { font-size: 14px; color: var(--text); line-height: 1.9; margin-bottom: 6px; }
+.law-content {
+  color: var(--text); line-height: 1.9;
+  border-left: 3px solid var(--gold); padding-left: 14px;
+  margin: 8px 0; background: #FAFAF9; padding: 12px 16px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+/* ============ TABLE ============ */
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 20px; }
+.info-table { width: 100%; border-collapse: collapse; background: var(--card); }
+.info-table th {
+  text-align: left; padding: 10px 14px; font-size: 11px;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: var(--text-muted); border-bottom: 2px solid var(--border); background: var(--bg-alt);
+}
+.info-table td {
+  padding: 10px 14px; border-bottom: 1px solid var(--border-light);
+  font-size: 13px; vertical-align: top; line-height: 1.75; color: var(--text);
+}
+.info-table tr:hover td { background: var(--bg-alt); }
+.info-table td:first-child { color: var(--navy); font-weight: 600; min-width: 140px; }
+
+/* ============ CARD BAND ============ */
+.card-band { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; margin: 16px 0; }
+.band-card { padding: 18px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--card); box-shadow: var(--shadow-sm); }
+.band-card.red-band { border-color: #FECACA; background: #FEF2F2; }
+.band-card.yellow-band { border-color: #FCD34D; background: #FFFBEB; }
+.band-card.green-band { border-color: #BBF7D0; background: #F0FDF4; }
+.band-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.band-card.red-band h4 { color: var(--red-dark); }
+.band-card.yellow-band h4 { color: #92400E; }
+.band-card.green-band h4 { color: var(--green-dark); }
+.band-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.75; }
+.band-card .icon { font-size: 22px; margin-bottom: 8px; display: block; }
+
+/* ============ DO/DON'T CARDS ============ */
+.do-card {
+  padding: 16px 20px;
+  background: #F0FDF4; border: 1.5px solid #BBF7D0;
+  border-radius: var(--radius-sm); margin-bottom: 8px;
+  box-shadow: var(--shadow-sm);
+}
+.do-card .card-title { font-size: 14px; color: var(--text); line-height: 1.7; margin-bottom: 4px; }
+.do-card .card-title strong { color: var(--green-dark); }
+.do-card .cite { font-size: 12px; color: var(--text-muted); display: block; }
+
+.dont-card {
+  padding: 16px 20px;
+  background: #FEF2F2; border: 1.5px solid #FECACA;
+  border-radius: var(--radius-sm); margin-bottom: 8px;
+  box-shadow: var(--shadow-sm);
+}
+.dont-card .card-title { font-size: 14px; color: var(--text); line-height: 1.7; margin-bottom: 4px; }
+.dont-card .card-title strong { color: var(--red-dark); }
+.dont-card .cite { font-size: 12px; color: var(--text-muted); display: block; }
+.dont-card .penalty { font-size: 12px; color: var(--red); display: block; margin-top: 4px; font-weight: 600; }
+
+/* ============ RISK CARDS ============ */
+.risk-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
+.risk-card { padding: 18px; border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); }
+.risk-card.risk-high { background: #FEF2F2; border: 1.5px solid #FECACA; }
+.risk-card h4 { font-size: 14px; font-weight: 700; color: var(--red-dark); margin-bottom: 10px; }
+.risk-item { font-size: 13px; color: var(--text-secondary); line-height: 1.85; padding: 2px 0; }
+.risk-item strong { color: var(--red-dark); }
+
+/* ============ INFO BOX ============ */
+.info-box {
+  margin-top: 16px; padding: 16px 20px;
+  background: var(--card); border: 1.5px solid var(--gold);
+  border-radius: var(--radius-sm); box-shadow: var(--shadow-sm);
+}
+.info-box p { font-size: 13px; color: var(--text-secondary); line-height: 1.85; }
+.info-box strong { color: var(--navy); }
+
+/* ============ DOWNLOAD ============ */
+.law-dl-card {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 18px 22px; background: var(--card);
+  border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+.law-dl-num { font-size: 28px; min-width: 40px; text-align: center; }
+.law-dl-body h4 { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 4px; }
+.law-dl-body p { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 8px; }
+.dl-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 16px; background: var(--navy); color: #fff;
+  border-radius: var(--radius-sm); font-size: 13px; font-weight: 600;
+  text-decoration: none; transition: all .2s;
+}
+.dl-btn:hover { background: var(--navy-dark); }
+
+/* ============ BOTTOM NAV ============ */
+.bottom-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+}
+.bottom-nav a {
+  display: flex; align-items: center; gap: 6px;
+  padding: 10px 18px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  text-decoration: none; color: var(--navy);
+  font-size: 14px; font-weight: 600;
+  transition: all var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.bottom-nav a:hover {
+  border-color: var(--gold);
+  box-shadow: var(--shadow);
+}
+.bottom-nav a.disabled {
+  opacity: 0.4; pointer-events: none;
+}
+
+/* ============ FOOTER ============ */
+.site-footer {
+  margin-left: var(--sidebar-w);
+  background: var(--navy-dark);
+  border-top: 1px solid rgba(201,169,110,0.2);
+  padding: 28px 32px;
+  text-align: center;
+}
+.footer-text {
+  font-size: 12px; color: rgba(255,255,255,0.4);
+  line-height: 1.8;
+}
+.footer-text span { color: var(--gold); }
+.footer-text a { color: rgba(255,255,255,0.5); text-decoration: none; }
+.footer-text a:hover { color: var(--gold); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 900px) {
+  .sidebar { display: none; }
+  .sidebar.mobile-open { display: block; z-index: 60; }
+  .hamburger { display: flex; }
+  .content { margin-left: 0; padding: 68px 20px 48px; }
+  .site-footer { margin-left: 0; }
+  .card-band { grid-template-columns: 1fr; }
+  .risk-grid { grid-template-columns: 1fr; }
+}
+@media (min-width: 901px) {
+  .hamburger { display: none; }
+  .mobile-overlay { display: none !important; }
+}
+
+/* ============ FADE IN ============ */
+.fade-in {
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div style="display:flex;align-items:center;gap:12px">
+    <button class="hamburger" id="hamburgerBtn" aria-label="เปิดเมนู">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="top-bar-left">คู่มือเลือกตั้ง ส.ก. กทม. 2569</div>
+  </div>
+  <div class="top-bar-right"><span>LAS</span> Research × <span>NIA</span></div>
+</div>
+
+<!-- MOBILE OVERLAY -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sidebar">
+  <a href="index.html" class="sidebar-back">← กลับ Dashboard</a>
+
+  <div class="sidebar-phase">
+    <div class="sidebar-phase-letter">Phase B</div>
+    <div class="sidebar-phase-name">ระหว่างเลือกตั้ง</div>
+  </div>
+
+  <div class="sidebar-topics">
+    <a href="#do-section" class="sidebar-link" data-section="do-section">
+      <span class="num">2.6</span> หาเสียง (DO/DON'T)
+    </a>
+    <a href="#campaign-end" class="sidebar-link" data-section="campaign-end">
+      <span class="num">2.7</span> ยุติการหาเสียง
+    </a>
+    <a href="#election-day" class="sidebar-link" data-section="election-day">
+      <span class="num">2.8</span> วันเลือกตั้ง
+    </a>
+    <a href="#finance" class="sidebar-link" data-section="finance">
+      <span class="num">💰</span> การเงินและบัญชี
+    </a>
+  </div>
+
+  <div class="sidebar-divider"></div>
+  <div class="sidebar-other-label">Other Phases</div>
+  <a href="phase-a.html" class="sidebar-other-link">Phase A — ก่อนเลือกตั้ง</a>
+  <a href="phase-c.html" class="sidebar-other-link">Phase C — หลังเลือกตั้ง</a>
+  <a href="phase-d-e.html" class="sidebar-other-link">Phase D — ปฏิบัติหน้าที่</a>
+  <a href="phase-d-e.html#sk-benefits" class="sidebar-other-link">Phase E — คลังข้อมูล</a>
+</nav>
+
+<!-- CONTENT -->
+<div class="content">
+<div class="content-inner">
+
+<!-- PHASE HEADER -->
+<div class="phase-header fade-in">
+  <div class="phase-header-badge"><span class="dot"></span> Phase B — Campaign</div>
+  <h1>ระหว่างเลือกตั้ง</h1>
+  <p class="phase-header-sub">ครอบคลุมเนื้อหาสิ่งที่ทำได้/ห้ามทำ ระหว่างหาเสียง การเงินและบัญชี การยุติการหาเสียง และสิ่งที่ต้องรู้ในวันเลือกตั้ง — อ้างอิงมาตรากฎหมายครบถ้วน</p>
+</div>
+
+<!-- ============ TOPIC 2.6: DO ============ -->
+<section class="topic-section fade-in" id="do-section">
+  <div class="topic-label"><span class="line"></span> TOPIC 2.6 — CAMPAIGN DO</div>
+  <h2>✅ สิ่งที่ทำได้ (DO)</h2>
+  <p class="section-desc">กิจกรรมที่ผู้สมัครสามารถดำเนินการได้ตามกฎหมาย — อ้างอิง มาตรา 34, 64, 66, 71, 73 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
+
+  <div class="checklist-grid">
+    <div class="do-card">
+      <div class="card-title"><strong>หาเสียงด้วยตนเอง</strong> — ปราศรัย แนะนำตัวและนโยบายในขอบอำนาจ ส.ก.</div>
+      <span class="cite">มาตรา 64 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+    </div>
+    <div class="do-card">
+      <div class="card-title"><strong>แจกเอกสาร / ใบปลิว</strong> — ต้องไม่เกินขนาดและจำนวนที่ กกต. กำหนด</div>
+      <span class="cite">มาตรา 64 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+    </div>
+    <div class="do-card">
+      <div class="card-title"><strong>ติดป้ายหาเสียง</strong> ตามสถานที่ ขนาด จำนวนที่ กกต. กำหนด — ห้ามติดในบริเวณที่เลือกตั้ง</div>
+      <span class="cite">มาตรา 71 พ.ร.บ.เลือกตั้งท้องถิ่น 2562 — ขนาดและจำนวนจากระเบียบ กกต.</span>
+    </div>
+    <div class="do-card">
+      <div class="card-title"><strong>หาเสียงทาง Social Media / Online</strong> — ต้องไม่ฝ่าฝืนระเบียบ กกต. และไม่เผยแพร่ข้อมูลเท็จ</div>
+      <span class="cite">มาตรา 73 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+    </div>
+    <div class="do-card">
+      <div class="card-title"><strong>แต่งตั้งผู้ช่วยหาเสียง</strong> — แจ้ง สำนักงาน กกต. ประจำจังหวัด ชื่อ หน้าที่ ค่าตอบแทน (รวมในค่าใช้จ่ายเลือกตั้ง)</div>
+      <span class="cite">มาตรา 66 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+    </div>
+    <div class="do-card">
+      <div class="card-title"><strong>รับการสนับสนุนจาก สส. / สว. / ข้าราชการการเมือง</strong> — ทำได้ แต่ต้องไม่ใช้อำนาจโดยมิชอบ</div>
+      <span class="cite">มาตรา 34 (แก้ไขโดย พ.ร.บ.เลือกตั้งท้องถิ่น ฉบับที่ 2 พ.ศ. 2566)</span>
+    </div>
+    <div class="do-card">
+      <div class="card-title"><strong>ตั้งตัวแทนผู้สมัครประจำหน่วยเลือกตั้ง</strong> — แจ้งภายในกำหนด มีสิทธิร้องทักท้วง</div>
+      <span class="cite">มาตรา 58 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+    </div>
+    <div class="do-card">
+      <div class="card-title"><strong>ลงพื้นที่พบประชาชน</strong> — ทำได้ตลอดในช่วงเวลาที่อนุญาต จนถึง 18.00 น. วันก่อนเลือกตั้ง</div>
+      <span class="cite">มาตรา 64, 70 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOPIC 2.6b: DON'T ============ -->
+<section class="topic-section fade-in" id="dont-section">
+  <div class="topic-label"><span class="line"></span> TOPIC 2.6 — CAMPAIGN DON'T</div>
+  <h2>⛔ สิ่งที่ห้ามทำ (DON'T)</h2>
+  <p class="section-desc">ข้อห้ามสำคัญ — ฝ่าฝืนมีโทษหนัก ทั้งจำคุก ปรับ และเพิกถอนสิทธิเลือกตั้ง — อ้างอิง มาตรา 65-70, 120, 123, 124, 126-128 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</p>
+
+  <div class="checklist-grid">
+    <div class="dont-card">
+      <div class="card-title"><strong>ห้ามให้ เสนอให้ หรือสัญญาจะให้ทรัพย์สิน/ประโยชน์</strong> เพื่อจูงใจให้เลือก</div>
+      <span class="cite"><a class="matra-link" href="sk-candidate-guide.html#law-m65">มาตรา 65(1)</a> พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+      <span class="penalty">โทษ: จำคุก 1-10 ปี + ปรับ 20,000-200,000 บาท + เพิกถอนสิทธิเลือกตั้ง 20 ปี (มาตรา 126)</span>
+    </div>
+    <div class="dont-card">
+      <div class="card-title"><strong>ห้ามให้เงิน/ทรัพย์แก่ชุมชน/สมาคม/วัด/สถานศึกษา</strong> เพื่อจูงใจ</div>
+      <span class="cite"><a class="matra-link" href="sk-candidate-guide.html#law-m65">มาตรา 65(2)</a> พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+      <span class="penalty">โทษ: จำคุก 1-10 ปี + ปรับ + เพิกถอนสิทธิ 20 ปี</span>
+    </div>
+    <div class="dont-card">
+      <div class="card-title"><strong>ห้ามจัดมหรสพหรือการรื่นเริง</strong> เพื่อหาเสียง</div>
+      <span class="cite"><a class="matra-link" href="sk-candidate-guide.html#law-m65">มาตรา 65(3)</a> พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+      <span class="penalty">โทษ: จำคุก 1-10 ปี + ปรับ + เพิกถอนสิทธิ 20 ปี</span>
+    </div>
+    <div class="dont-card">
+      <div class="card-title"><strong>ห้ามเลี้ยงอาหาร</strong> ผู้มีสิทธิเลือกตั้ง</div>
+      <span class="cite"><a class="matra-link" href="sk-candidate-guide.html#law-m65">มาตรา 65(4)</a> พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+      <span class="penalty">โทษ: จำคุก 1-10 ปี + ปรับ + เพิกถอนสิทธิ 20 ปี</span>
+    </div>
+    <div class="dont-card">
+      <div class="card-title"><strong>ห้ามหลอกลวง บังคับ ขู่เข็ญ ใส่ร้าย</strong> ผู้สมัครอื่น</div>
+      <span class="cite"><a class="matra-link" href="sk-candidate-guide.html#law-m65">มาตรา 65(5)</a> พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+      <span class="penalty">โทษ: จำคุก 1-10 ปี + ปรับ + เพิกถอนสิทธิ 20 ปี</span>
+    </div>
+    <div class="dont-card">
+      <div class="card-title"><strong>ห้ามหาเสียงหลัง 18.00 น.</strong> ของวันก่อนวันเลือกตั้ง — ตลอดวันเลือกตั้ง</div>
+      <span class="cite">มาตรา 70 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+      <span class="penalty">รวมถึงการหาเสียงทาง Social Media ด้วย</span>
+    </div>
+    <div class="dont-card">
+      <div class="card-title"><strong>ห้ามจัดยานพาหนะพาผู้ออกเสียงไปหน่วยเลือกตั้งฟรี</strong></div>
+      <span class="cite">มาตรา 67 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+      <span class="penalty">โทษตามมาตรา 126</span>
+    </div>
+    <div class="dont-card">
+      <div class="card-title"><strong>ห้ามใช้จ่ายเกินวงเงินที่ กกต. กำหนด</strong></div>
+      <span class="cite">มาตรา 60 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+      <span class="penalty">โทษ: จำคุก 1-5 ปี + ปรับ 3 เท่า + เพิกถอนสิทธิเลือกตั้ง 10 ปี (มาตรา 127)</span>
+    </div>
+    <div class="dont-card">
+      <div class="card-title"><strong>ห้ามไม่ยื่นบัญชีรายรับรายจ่ายภายใน 90 วัน</strong></div>
+      <span class="cite">มาตรา 62 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+      <span class="penalty">โทษ: จำคุกไม่เกิน 2 ปี + ปรับไม่เกิน 40,000 บาท + เพิกถอนสิทธิเลือกตั้ง 5 ปี (มาตรา 128)</span>
+    </div>
+    <div class="dont-card">
+      <div class="card-title"><strong>ห้ามปิดป้ายผิดสถานที่/ขนาด/จำนวน</strong> — ตำรวจ/กรรมการมีอำนาจทำลาย/ปกปิด/นำออก</div>
+      <span class="cite">มาตรา 71, 74 พ.ร.บ.เลือกตั้งท้องถิ่น 2562 / มาตรา 132</span>
+      <span class="penalty">มีโทษตามมาตรา 132</span>
+    </div>
+    <div class="dont-card">
+      <div class="card-title"><strong>ห้ามขาย/จ่ายสุรา</strong> ตั้งแต่ 18.00 น. วันก่อนเลือกตั้ง ถึง 18.00 น. วันเลือกตั้ง</div>
+      <span class="cite">มาตรา 123 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+      <span class="penalty">โทษ: จำคุกไม่เกิน 6 เดือน + ปรับไม่เกิน 10,000 บาท</span>
+    </div>
+    <div class="dont-card">
+      <div class="card-title"><strong>ห้ามเล่น/จัดการพนันเกี่ยวกับผลเลือกตั้ง</strong></div>
+      <span class="cite">มาตรา 124 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+      <span class="penalty">โทษ: จำคุก 1-10 ปี (กรณีผู้สมัคร) + ปรับ + เพิกถอนสิทธิสมัคร</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOPIC 2.7: CAMPAIGN END ============ -->
+<section class="topic-section fade-in" id="campaign-end">
+  <div class="topic-label"><span class="line"></span> TOPIC 2.7 — CAMPAIGN END</div>
+  <h2>🛑 วันยุติการหาเสียง — <a class="matra-link" href="sk-candidate-guide.html#law-m65">มาตรา 64</a></h2>
+  <p class="section-desc">ผู้สมัครต้องยุติการหาเสียงทั้งหมดเมื่อเวลา 18.00 น. ของวันก่อนวันเลือกตั้ง — อ้างอิง มาตรา 64, 65, 70, 126 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</p>
+
+  <!-- กฎหมาย -->
+  <div class="law-text-box" style="margin-bottom:28px">
+    <h4>ระยะเวลาหาเสียง — <a class="matra-link" href="sk-candidate-guide.html#law-m65">มาตรา 64</a></h4>
+    <div class="law-content">
+      <p><strong>ยุติการหาเสียงเวลา 18.00 น. ของวันก่อนวันเลือกตั้ง</strong> — ห้ามหาเสียงด้วยวิธีการใดๆ จนสิ้นสุดวันเลือกตั้ง</p>
+    </div>
+  </div>
+
+  <div class="card-band" style="margin-bottom:28px">
+    <div class="band-card yellow-band">
+      <span class="icon">📅</span>
+      <h4>กรณีครบวาระ</h4>
+      <p>หาเสียงได้ตั้งแต่ <strong>180 วันก่อนครบวาระ</strong> ถึง <strong>18.00 น. วันก่อนวันเลือกตั้ง</strong><br><span style="font-size:12px;color:var(--text-muted)">มาตรา 64 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span></p>
+    </div>
+    <div class="band-card yellow-band">
+      <span class="icon">⚡</span>
+      <h4>กรณียุบสภา</h4>
+      <p>หาเสียงได้ตั้งแต่ <strong>วันยุบสภา</strong> ถึง <strong>18.00 น. วันก่อนวันเลือกตั้ง</strong><br><span style="font-size:12px;color:var(--text-muted)">มาตรา 64 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span></p>
+    </div>
+  </div>
+
+  <!-- สิ่งที่ต้องทำก่อน 18.00 น. -->
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">📌 สิ่งที่ต้องทำก่อน 18.00 น. วันก่อนเลือกตั้ง</h3>
+  <div class="checklist-grid" style="margin-bottom:28px">
+    <div class="dont-card">
+      <div class="card-title"><strong>เก็บป้ายหาเสียง</strong> — ตรวจสอบจากระเบียบ กกต. ว่าต้องเก็บก่อนหรือหลังเลือกตั้ง</div>
+      <span class="cite">ระเบียบ กกต. ว่าด้วยวิธีการหาเสียง พ.ศ. 2563</span>
+    </div>
+    <div class="dont-card">
+      <div class="card-title"><strong>หยุดโพสต์โซเชียลมีเดีย</strong> — ห้ามโพสต์ข้อความ รูปภาพ วิดีโอ ที่เป็นการหาเสียงทุกช่องทาง</div>
+      <span class="cite"><a class="matra-link" href="sk-candidate-guide.html#law-m65">มาตรา 70</a> พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+    </div>
+    <div class="dont-card">
+      <div class="card-title"><strong>ห้ามแจกสิ่งของ/เลี้ยงอาหาร</strong> — ห้ามจูงใจผู้มีสิทธิเลือกตั้งด้วยวิธีการใดๆ</div>
+      <span class="cite"><a class="matra-link" href="sk-candidate-guide.html#law-m65">มาตรา 65</a> พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+      <span class="penalty">โทษ: จำคุก 1-10 ปี + ปรับ 20,000-200,000 + เพิกถอนสิทธิ 20 ปี (ม.126)</span>
+    </div>
+  </div>
+
+  <!-- โทษฝ่าฝืน -->
+  <div class="warn-box" style="margin-bottom:28px">
+    <h4>⚠️ โทษถ้าฝ่าฝืน — <a class="matra-link" href="sk-candidate-guide.html#law-m120">มาตรา 126</a></h4>
+    <p>ผู้ใดฝ่าฝืนข้อห้ามในการหาเสียง → <strong>จำคุก 1-10 ปี / ปรับ 20,000-200,000 บาท / เพิกถอนสิทธิเลือกตั้ง 20 ปี</strong><br>รวมถึงการหาเสียงหลัง 18.00 น. วันก่อนเลือกตั้ง และตลอดวันเลือกตั้ง</p>
+  </div>
+
+  <!-- Checklist ก่อนยุติหาเสียง -->
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">✅ Checklist ก่อนยุติหาเสียง</h3>
+  <div class="checklist-grid">
+    <div class="check-item" onclick="toggleGenericCheck(this)">
+      <input type="checkbox" onclick="event.stopPropagation()">
+      <label><strong>ตรวจสอบว่าเก็บป้ายครบหรือยัง</strong> — ตรวจจุดติดป้ายทุกจุดในเขตเลือกตั้ง</label>
+    </div>
+    <div class="check-item" onclick="toggleGenericCheck(this)">
+      <input type="checkbox" onclick="event.stopPropagation()">
+      <label><strong>หยุดโพสต์โซเชียลมีเดีย</strong> — Facebook, LINE, TikTok, X (Twitter), Instagram ทุกแพลตฟอร์ม</label>
+    </div>
+    <div class="check-item" onclick="toggleGenericCheck(this)">
+      <input type="checkbox" onclick="event.stopPropagation()">
+      <label><strong>แจ้งทีมงานยุติกิจกรรมหาเสียง</strong> — แจ้งผู้ช่วยหาเสียง อาสาสมัคร ทีมโซเชียลมีเดีย ทุกคน</label>
+    </div>
+    <div class="check-item" onclick="toggleGenericCheck(this)">
+      <input type="checkbox" onclick="event.stopPropagation()">
+      <label><strong>ตรวจสอบบัญชีค่าใช้จ่ายเบื้องต้น</strong> — สรุปยอดค่าใช้จ่ายทั้งหมดที่เกิดขึ้นแล้ว ก่อนวันเลือกตั้ง</label>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOPIC 2.8: ELECTION DAY ============ -->
+<section class="topic-section fade-in" id="election-day">
+  <div class="topic-label"><span class="line"></span> TOPIC 2.8 — ELECTION DAY</div>
+  <h2>🗳️ วันเลือกตั้ง</h2>
+  <p class="section-desc">สิ่งที่ผู้สมัคร ส.ก. ต้องรู้และเตรียมพร้อมสำหรับวันเลือกตั้ง — อ้างอิง มาตรา 58, 64, 65, 75-79, 126 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</p>
+
+  <!-- เวลาเปิด-ปิด -->
+  <div style="margin-bottom:28px;padding:22px 28px;background:linear-gradient(135deg,#0d1f33 0%,#1B2A4A 100%);border-radius:var(--radius);text-align:center;border:2px solid var(--gold)">
+    <p style="font-size:12px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;font-family:'Space Grotesk',sans-serif">เวลาเปิด-ปิดลงคะแนน</p>
+    <p style="font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,4vw,42px);font-weight:700;color:var(--gold);margin-bottom:4px">08.00 — 17.00 น.</p>
+    <p style="font-size:13px;color:rgba(255,255,255,0.6)">อ้างอิง: การเลือกตั้ง ส.ก. 65 (BangkokBizNews)</p>
+  </div>
+
+  <!-- ข้อมูลบัตรเลือกตั้ง -->
+  <div class="card-band" style="margin-bottom:28px">
+    <div class="band-card" style="border-color:#F9A8D4;background:#FDF2F8">
+      <span class="icon">🗳️</span>
+      <h4 style="color:#9D174D">บัตร ส.ก. = สีชมพู</h4>
+      <p style="color:#831843">บัตรเลือกตั้งสมาชิกสภากรุงเทพมหานคร (ส.ก.) ใช้บัตรสีชมพู — ข้อมูลจากการเลือกตั้ง ส.ก. 65</p>
+    </div>
+    <div class="band-card" style="border-color:#D2B48C;background:#FFF8F0">
+      <span class="icon">🗳️</span>
+      <h4 style="color:#78350F">บัตร ผวก. = สีน้ำตาล</h4>
+      <p style="color:#78350F">บัตรเลือกตั้งผู้ว่าราชการกรุงเทพมหานคร (ผวก.) ใช้บัตรสีน้ำตาล — ข้อมูลจากการเลือกตั้ง ส.ก. 65</p>
+    </div>
+  </div>
+
+  <!-- ขั้นตอนสำหรับผู้สมัคร -->
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">📌 ขั้นตอนสำหรับผู้สมัคร ส.ก. ในวันเลือกตั้ง</h3>
+  <div class="checklist-grid" style="margin-bottom:28px">
+    <div class="check-item" style="cursor:default;border-color:#FECACA;background:#FEF2F2">
+      <div style="width:28px;height:28px;min-width:28px;background:#FEE2E2;border:2px solid #EF4444;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#991B1B;font-size:13px">1</div>
+      <label style="cursor:default">
+        <strong style="color:#991B1B">ห้ามหาเสียงในวันเลือกตั้ง</strong> — ห้ามหาเสียงด้วยวิธีการใดๆ ตลอดทั้งวัน
+        <span class="cite"><a class="matra-link" href="sk-candidate-guide.html#law-m65">มาตรา 64, 65, 70</a> พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+      </label>
+    </div>
+    <div class="check-item" style="cursor:default">
+      <div style="width:28px;height:28px;min-width:28px;background:#FFFBEB;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--navy);font-size:13px">2</div>
+      <label style="cursor:default">
+        <strong>แต่งตั้งตัวแทนผู้สมัครประจำหน่วยเลือกตั้ง</strong> — ใช้แบบ ส.ถ./ผ.ถ. 2/6 แจ้งต่อคณะกรรมการการเลือกตั้งประจำ อปท.
+        <span class="cite">มาตรา 58 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+      </label>
+    </div>
+    <div class="check-item" style="cursor:default">
+      <div style="width:28px;height:28px;min-width:28px;background:#FFFBEB;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--navy);font-size:13px">3</div>
+      <label style="cursor:default">
+        <strong>สังเกตการณ์</strong> — ผู้สมัครมีสิทธิส่งตัวแทนเข้าสังเกตการณ์การลงคะแนนและการนับคะแนน
+        <span class="cite">มาตรา 58 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+      </label>
+    </div>
+    <div class="check-item" style="cursor:default">
+      <div style="width:28px;height:28px;min-width:28px;background:#FFFBEB;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--navy);font-size:13px">4</div>
+      <label style="cursor:default">
+        <strong>รอผลนับคะแนน</strong> — การนับคะแนนดำเนินการ ณ หน่วยเลือกตั้ง เมื่อปิดลงคะแนนแล้ว
+        <span class="cite">มาตรา 80-88 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- ห้ามทำ -->
+  <div class="warn-box">
+    <h4>⚠️ ห้ามทำในวันเลือกตั้ง — <a class="matra-link" href="sk-candidate-guide.html#law-m65">มาตรา 65</a></h4>
+    <p>ห้ามจูงใจ/ให้เงิน/ข่มขู่ผู้มีสิทธิเลือกตั้ง → <strong>โทษตามมาตรา 126: จำคุก 1-10 ปี / ปรับ 20,000-200,000 บาท / เพิกถอนสิทธิเลือกตั้ง 20 ปี</strong><br>รวมถึงห้ามขาย/จ่ายสุรา ตั้งแต่ 18.00 น. วันก่อนเลือกตั้ง ถึง 18.00 น. วันเลือกตั้ง (มาตรา 123)</p>
+  </div>
+</section>
+
+<!-- ============ FINANCE SECTION ============ -->
+<section class="topic-section fade-in" id="finance">
+  <div class="topic-label"><span class="line"></span> FINANCE — CAMPAIGN FINANCE</div>
+  <h2>💰 การเงินและบัญชี — <a class="matra-link" href="sk-candidate-guide.html#law-m60">มาตรา 60-62</a></h2>
+  <p class="section-desc">อ้างอิง มาตรา 60, 61, 62, 63, 127, 128 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</p>
+
+  <div class="card-band">
+    <div class="band-card yellow-band">
+      <span class="icon">💰</span>
+      <h4>วงเงินค่าใช้จ่ายสูงสุด</h4>
+      <p><strong>(สมมติฐาน: วันเลือกตั้ง 5 ก.ค. 2569)</strong> จำนวนเงินสูงสุดกำหนดโดย ผอ.กต.ประจำจังหวัดประกาศก่อนเลือกตั้งแต่ละครั้ง — นับตั้งแต่ <strong>180 วันก่อนวันครบวาระ</strong><br><span style="font-size:12px;color:var(--text-muted)">มาตรา 60-61</span></p>
+    </div>
+    <div class="band-card red-band">
+      <span class="icon">📋</span>
+      <h4>บัญชีรายรับรายจ่าย</h4>
+      <p>ยื่นภายใน <strong>90 วัน</strong> นับจากวันเลือกตั้ง ต่อ ผอ.กต.ประจำจังหวัด — รวมเงินที่บุคคลอื่นจ่ายแทนด้วย (หากรู้และไม่ปฏิเสธภายใน 3 วัน)<br><span style="font-size:12px;color:var(--text-muted)">มาตรา 62</span></p>
+    </div>
+    <div class="band-card green-band">
+      <span class="icon">✅</span>
+      <h4>ค่าธรรมเนียมสมัคร</h4>
+      <p><strong>10,000 บาท</strong> สำหรับ ส.ก. (ผู้ว่าราชการ กทม. 50,000 บาท) ชำระ ณ จุดรับสมัครในวันยื่นใบสมัคร</p>
+    </div>
+  </div>
+
+  <div class="warn-box" style="margin-top:20px">
+    <h4>⚠️ โทษฝ่าฝืนกฎการเงิน</h4>
+    <p>
+      <strong>ใช้จ่ายเกินวงเงิน (มาตรา 127):</strong> จำคุก 1-5 ปี + ปรับ 3 เท่าของเงินที่เกิน + เพิกถอนสิทธิเลือกตั้ง 10 ปี<br>
+      <strong>ไม่ยื่นบัญชีหรือยื่นเท็จ (มาตรา 128):</strong> จำคุกไม่เกิน 2 ปี + ปรับไม่เกิน 40,000 บาท + เพิกถอนสิทธิเลือกตั้ง 5 ปี
+    </p>
+  </div>
+
+  <div style="margin-top:20px">
+    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:12px">สิ่งที่บุคคลอื่นจ่ายแทน</h3>
+    <div class="table-wrap">
+      <table class="info-table">
+        <thead><tr><th>กรณี</th><th>ผล</th><th>อ้างอิง</th></tr></thead>
+        <tbody>
+          <tr><td>บุคคลอื่นจ่ายแทน — ผู้สมัครรู้และยินยอม</td><td>ถือเป็นค่าใช้จ่ายผู้สมัคร</td><td>มาตรา 60, 61</td></tr>
+          <tr><td>บุคคลอื่นจ่ายแทน — ผู้สมัครไม่รู้</td><td>ไม่ถือเป็นค่าใช้จ่าย</td><td>มาตรา 61 วรรคสอง</td></tr>
+          <tr><td>บุคคลอื่นจ่ายแทน — ผู้สมัครรู้แต่ไม่ยินยอม + แจ้ง ผอ.กต.ภายใน 3 วัน</td><td>ไม่ถือเป็นค่าใช้จ่าย</td><td>มาตรา 61 วรรคสอง</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ค่าใช้จ่าย 13 ประเภท -->
+  <div style="margin-top:28px">
+    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">📋 ค่าใช้จ่ายในการเลือกตั้ง 13 ประเภท</h3>
+    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px">อ้างอิง กกต. EP:214 — ค่าใช้จ่ายที่ผู้สมัครต้องนับรวมในบัญชีรายรับ-รายจ่าย</p>
+    <div class="table-wrap" style="margin-bottom:20px">
+      <table class="info-table">
+        <thead><tr><th>#</th><th>ประเภทค่าใช้จ่าย</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>ค่าจ้างทำป้ายหาเสียง / แผ่นพับ / ใบปลิว / เอกสาร</td></tr>
+          <tr><td>2</td><td>ค่าจ้างทำสื่อโฆษณาทางอิเล็กทรอนิกส์ / Social Media</td></tr>
+          <tr><td>3</td><td>ค่าเช่าสถานที่ปราศรัย / สถานที่หาเสียง</td></tr>
+          <tr><td>4</td><td>ค่าเช่ายานพาหนะ / ค่าน้ำมันรถ</td></tr>
+          <tr><td>5</td><td>ค่าตอบแทนผู้ช่วยหาเสียง / ทีมงาน</td></tr>
+          <tr><td>6</td><td>ค่าเช่าเครื่องเสียง / อุปกรณ์หาเสียง</td></tr>
+          <tr><td>7</td><td>ค่าจ้างพิมพ์เอกสาร / นามบัตร / สติกเกอร์</td></tr>
+          <tr><td>8</td><td>ค่าโทรศัพท์ / ค่าอินเทอร์เน็ต (เฉพาะที่ใช้หาเสียง)</td></tr>
+          <tr><td>9</td><td>ค่าอาหาร/เครื่องดื่มสำหรับทีมงาน (ไม่ใช่ผู้มีสิทธิเลือกตั้ง)</td></tr>
+          <tr><td>10</td><td>ค่าจ้างทำเว็บไซต์ / แอปพลิเคชัน</td></tr>
+          <tr><td>11</td><td>ค่าเช่าสำนักงานหาเสียง</td></tr>
+          <tr><td>12</td><td>ค่าถ่ายรูป / ค่าออกแบบกราฟิก</td></tr>
+          <tr><td>13</td><td>ค่าใช้จ่ายอื่นๆ ที่เกี่ยวข้องกับการหาเสียง</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- การเก็บหลักฐาน -->
+  <div style="margin-top:20px">
+    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">🧾 การเก็บหลักฐานรายรับ-รายจ่าย</h3>
+    <div class="card-band">
+      <div class="band-card green-band">
+        <span class="icon">🧾</span>
+        <h4>ต้องเก็บใบเสร็จทุกรายการ</h4>
+        <p>ใบเสร็จรับเงิน ใบกำกับภาษี สำเนาสัญญาจ้าง หลักฐานการโอนเงิน — เก็บไว้จนกว่าจะยื่นบัญชีและผ่านการตรวจสอบ</p>
+      </div>
+      <div class="band-card yellow-band">
+        <span class="icon">📝</span>
+        <h4>กรณีไม่มีใบเสร็จ</h4>
+        <p>ทำหลักฐานรับรองการจ่ายเงินเอง โดยระบุ <strong>วันที่ รายการ จำนวนเงิน ผู้รับเงิน</strong> พร้อมลงลายมือชื่อผู้จ่ายและผู้รับ (ถ้ามี)</p>
+      </div>
+      <div class="band-card yellow-band">
+        <span class="icon">🤝</span>
+        <h4>กรณีใช้จ่ายร่วมกับผู้สมัครอื่น</h4>
+        <p>หากใช้จ่ายร่วมกันกับผู้สมัครคนอื่น (เช่น ค่าเช่าสถานที่ปราศรัยร่วม) → <strong>หารเฉลี่ยตามจำนวนผู้สมัคร</strong> แต่ละคนนับเฉพาะส่วนของตน</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ดาวน์โหลดเพิ่มเติม -->
+  <div style="margin-top:20px">
+    <div class="law-dl-card">
+      <div class="law-dl-num">📑</div>
+      <div class="law-dl-body">
+        <h4>ลักษณะต้องห้ามในการหาเสียง (ข่าว กกต. 2568)</h4>
+        <p>เอกสารจาก กกต. สรุปลักษณะต้องห้ามในการหาเสียงเลือกตั้งท้องถิ่น — อ่านประกอบกับระเบียบ กกต. ว่าด้วยวิธีการหาเสียง พ.ศ. 2563</p>
+        <a href="downloads/ect-news-campaign-rules-2568.pdf" target="_blank" class="dl-btn">⬇️ ดาวน์โหลด PDF (572 KB)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <a href="phase-a.html">← Phase A</a>
+  <a href="phase-c.html">Phase C →</a>
+</div>
+
+</div><!-- end .content-inner -->
+</div><!-- end .content -->
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-text">
+    <span>Legal Advance Solution Co., Ltd. (LAS)</span> × <span>National Innovation Agency (NIA)</span><br>
+    ผู้เขียน: <span>Thundthornthep Yamoutai, Ph.D.</span> · อัปเดต: เมษายน 2569<br>
+    <a href="index.html">Dashboard</a> · <a href="sk-candidate-guide.html">คู่มือฉบับเต็ม</a>
+  </div>
+</footer>
+
+<script>
+// GENERIC CHECKLIST
+function toggleGenericCheck(el){
+  var cb = el.querySelector('input[type="checkbox"]');
+  if(cb){ cb.checked = !cb.checked; }
+  el.classList.toggle('checked', cb && cb.checked);
+}
+
+// Prevent matra-links and other links inside interactive items from triggering parent onclick
+document.addEventListener('click', function(e) {
+  var link = e.target.closest('.check-item a, .dont-card a, .do-card a');
+  if (link) {
+    e.stopPropagation();
+  }
+});
+
+// SIDEBAR ACTIVE LINK
+(function(){
+  var sections = ['do-section','dont-section','campaign-end','election-day','finance'];
+  var links = document.querySelectorAll('.sidebar-link');
+
+  window.addEventListener('scroll', function(){
+    var current = '';
+    for(var i = 0; i < sections.length; i++){
+      var el = document.getElementById(sections[i]);
+      if(el && el.getBoundingClientRect().top <= 100) current = sections[i];
+    }
+    links.forEach(function(a){
+      var sec = a.getAttribute('data-section');
+      if(sec === current || (sec === 'do-section' && current === 'dont-section')) a.classList.add('active');
+      else a.classList.remove('active');
+    });
+  });
+})();
+
+// HAMBURGER
+(function(){
+  var btn = document.getElementById('hamburgerBtn');
+  var sidebar = document.getElementById('sidebar');
+  var overlay = document.getElementById('mobileOverlay');
+
+  function toggleMenu(){
+    btn.classList.toggle('open');
+    sidebar.classList.toggle('mobile-open');
+    overlay.classList.toggle('show');
+    document.body.style.overflow = sidebar.classList.contains('mobile-open') ? 'hidden' : '';
+  }
+  function closeMenu(){
+    btn.classList.remove('open');
+    sidebar.classList.remove('mobile-open');
+    overlay.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+  btn.addEventListener('click', toggleMenu);
+  overlay.addEventListener('click', closeMenu);
+  sidebar.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', closeMenu);
+  });
+})();
+
+// FADE-IN OBSERVER
+(function(){
+  if('IntersectionObserver' in window){
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    document.querySelectorAll('.fade-in').forEach(function(el){
+      observer.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.fade-in').forEach(function(el){
+      el.classList.add('visible');
+    });
+  }
+})();
+</script>
+</body>
+</html>

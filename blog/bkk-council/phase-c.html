@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/webp" href="/las-logo.webp">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase C: หลังเลือกตั้ง — ส.ก. Navigator</title>
+<meta name="description" content="Phase C: หลังเลือกตั้ง — ประกาศผล ระบบใบสี รายงานตัว ปฏิบัติหน้าที่ ยื่นบัญชีทรัพย์สิน ป.ป.ช. สำหรับผู้สมัคร ส.ก. กทม. 2569">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ส.ก. NAVIGATOR — PHASE C
+   ============================================================ */
+:root {
+  --bg: #FAFAFA;
+  --bg-alt: #F5F5F5;
+  --card: #FFFFFF;
+  --text: #1A1A2E;
+  --text-secondary: #6B7280;
+  --text-muted: #9CA3AF;
+  --navy: #1B2A4A;
+  --navy-dark: #0d1f33;
+  --gold: #C9A96E;
+  --gold-light: #d4b07a;
+  --teal: #0D9488;
+  --green: #22C55E;
+  --green-dark: #14532D;
+  --red: #EF4444;
+  --red-dark: #991B1B;
+  --blue: #2563EB;
+  --purple: #9b59b6;
+  --border: #E5E7EB;
+  --border-light: #F3F4F6;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.04);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --sidebar-w: 260px;
+  --transition: 0.2s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+body {
+  font-family: 'Sarabun', sans-serif;
+  font-size: 16px; line-height: 1.8;
+  color: var(--text); background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a.matra-link {
+  color: var(--blue); background: #eef2ff; padding: 2px 8px; border-radius: 5px;
+  text-decoration: none; font-weight: 600; transition: all .2s; font-size: inherit;
+}
+a.matra-link:hover { background: #c7d2fe; text-decoration: underline; }
+
+/* ============ TOP BAR ============ */
+.top-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px;
+  background: var(--navy);
+  border-bottom: 1px solid rgba(201,169,110,0.2);
+  font-size: 13px;
+}
+.top-bar-left {
+  font-family: 'Space Grotesk', sans-serif;
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+}
+.top-bar-right {
+  color: rgba(255,255,255,0.5);
+  font-size: 12px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+.top-bar-right span { color: var(--gold); }
+
+/* ============ SIDEBAR (Desktop) ============ */
+.sidebar {
+  position: fixed;
+  top: 48px; left: 0;
+  width: var(--sidebar-w);
+  height: calc(100vh - 48px);
+  background: var(--card);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  padding: 20px 0;
+  z-index: 50;
+}
+.sidebar-back {
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 20px;
+  font-size: 13px; color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.sidebar-back:hover { color: var(--navy); }
+
+.sidebar-phase {
+  padding: 12px 20px;
+  margin: 8px 14px;
+  background: linear-gradient(135deg, rgba(27,42,74,0.06), rgba(27,42,74,0.02));
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--navy);
+}
+.sidebar-phase-letter {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px; font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.sidebar-phase-name {
+  font-size: 15px; font-weight: 700;
+  color: var(--navy); margin-top: 2px;
+}
+
+.sidebar-topics { padding: 8px 0; }
+.sidebar-link {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 20px;
+  font-size: 13px; color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--transition);
+  border-left: 3px solid transparent;
+}
+.sidebar-link:hover {
+  color: var(--navy);
+  background: rgba(27,42,74,0.04);
+  border-left-color: var(--gold);
+}
+.sidebar-link.active {
+  color: var(--navy);
+  font-weight: 600;
+  background: rgba(27,42,74,0.06);
+  border-left-color: var(--navy);
+}
+.sidebar-link .num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px; font-weight: 700;
+  color: var(--text-muted);
+  min-width: 24px;
+}
+
+.sidebar-divider {
+  height: 1px; background: var(--border);
+  margin: 12px 20px;
+}
+
+.sidebar-other-label {
+  padding: 8px 20px;
+  font-size: 11px; font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.sidebar-other-link {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 20px;
+  font-size: 12px; color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.sidebar-other-link:hover { color: var(--text-secondary); }
+.sidebar-other-link .badge {
+  font-size: 9px; background: var(--bg-alt);
+  color: var(--text-muted); padding: 1px 6px;
+  border-radius: 3px; font-weight: 600;
+}
+
+/* ============ HAMBURGER (Mobile) ============ */
+.hamburger {
+  display: none; flex-direction: column; gap: 4px;
+  cursor: pointer; padding: 8px; border: none; background: none; z-index: 200;
+}
+.hamburger span { display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px; transition: all .3s; }
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4px,4px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px,-4px); }
+
+.mobile-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+  z-index: 40; display: none; opacity: 0; transition: opacity .3s;
+}
+.mobile-overlay.show { display: block; opacity: 1; }
+
+/* ============ CONTENT AREA ============ */
+.content {
+  margin-left: var(--sidebar-w);
+  padding: 68px 32px 64px;
+  max-width: calc(var(--sidebar-w) + 780px + 64px);
+}
+.content-inner {
+  max-width: 780px;
+}
+
+/* Phase header */
+.phase-header {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+.phase-header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px; font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.phase-header-badge .dot {
+  width: 8px; height: 8px; border-radius: 2px;
+  background: var(--navy);
+}
+.phase-header h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(24px, 3.5vw, 34px);
+  font-weight: 700; color: var(--navy);
+  letter-spacing: -0.5px; margin-bottom: 8px;
+}
+.phase-header-sub {
+  font-size: 15px; color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* ============ TOPIC SECTIONS ============ */
+.topic-section {
+  margin-bottom: 56px;
+  scroll-margin-top: 64px;
+}
+.topic-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 700; color: var(--gold);
+  text-transform: uppercase; letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+.topic-label .line { width: 24px; height: 2px; background: var(--gold); border-radius: 1px; }
+
+.topic-section h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.4rem; font-weight: 700;
+  color: var(--navy); margin-bottom: 8px;
+  letter-spacing: -0.3px; line-height: 1.3;
+}
+.topic-section .section-desc {
+  font-size: 14px; color: var(--text-secondary);
+  max-width: 680px; margin-bottom: 28px; line-height: 1.85;
+}
+
+/* ============ CHECKLIST ============ */
+.checklist-grid { display: grid; gap: 8px; }
+.check-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 14px 18px;
+  background: var(--card); border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer; transition: all .2s; box-shadow: var(--shadow-sm);
+}
+.check-item:hover { border-color: var(--gold); background: #FFFDF5; }
+.check-item label { cursor: pointer; font-size: 14px; color: var(--text); line-height: 1.7; }
+.check-item label .cite { font-size: 12px; color: var(--blue); margin-left: 4px; }
+.check-item label strong { color: var(--navy); }
+
+/* ============ WARN BOX ============ */
+.warn-box {
+  background: #FEF2F2; border: 1.5px solid #FECACA;
+  border-radius: var(--radius-sm); padding: 16px 20px; margin: 16px 0;
+}
+.warn-box.yellow { background: #FFFBEB; border-color: #FCD34D; }
+.warn-box h4 { color: var(--red-dark); font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.warn-box.yellow h4 { color: #92400E; }
+.warn-box p { font-size: 13px; color: var(--text-secondary); line-height: 1.85; }
+.warn-box strong { color: var(--red-dark); }
+.warn-box.yellow strong { color: #92400E; }
+
+/* ============ LAW TEXT BOX ============ */
+.law-text-box {
+  background: var(--card); border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm); padding: 20px 24px;
+  margin-bottom: 16px; box-shadow: var(--shadow-sm);
+}
+.law-text-box h4 {
+  font-family: 'Space Grotesk', sans-serif; color: var(--navy);
+  font-size: 14px; font-weight: 700; margin-bottom: 12px;
+  padding-bottom: 10px; border-bottom: 2px solid var(--gold);
+}
+.law-text-box p { font-size: 14px; color: var(--text); line-height: 1.9; margin-bottom: 6px; }
+.law-content {
+  color: var(--text); line-height: 1.9;
+  border-left: 3px solid var(--gold); padding-left: 14px;
+  margin: 8px 0; background: #FAFAF9; padding: 12px 16px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+/* ============ TABLE ============ */
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 20px; }
+.info-table { width: 100%; border-collapse: collapse; background: var(--card); }
+.info-table th {
+  text-align: left; padding: 10px 14px; font-size: 11px;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: var(--text-muted); border-bottom: 2px solid var(--border); background: var(--bg-alt);
+}
+.info-table td {
+  padding: 10px 14px; border-bottom: 1px solid var(--border-light);
+  font-size: 13px; vertical-align: top; line-height: 1.75; color: var(--text);
+}
+.info-table tr:hover td { background: var(--bg-alt); }
+.info-table td:first-child { color: var(--navy); font-weight: 600; min-width: 140px; }
+
+/* ============ CARD BAND ============ */
+.card-band { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; margin: 16px 0; }
+.band-card { padding: 18px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--card); box-shadow: var(--shadow-sm); }
+.band-card.red-band { border-color: #FECACA; background: #FEF2F2; }
+.band-card.yellow-band { border-color: #FCD34D; background: #FFFBEB; }
+.band-card.green-band { border-color: #BBF7D0; background: #F0FDF4; }
+.band-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.band-card.red-band h4 { color: var(--red-dark); }
+.band-card.yellow-band h4 { color: #92400E; }
+.band-card.green-band h4 { color: var(--green-dark); }
+.band-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.75; }
+.band-card .icon { font-size: 22px; margin-bottom: 8px; display: block; }
+
+/* ============ COLOR CARD GRID ============ */
+.card-color-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+/* ============ RISK CARDS ============ */
+.risk-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
+.risk-card { padding: 18px; border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); }
+.risk-card.risk-high { background: #FEF2F2; border: 1.5px solid #FECACA; }
+.risk-card h4 { font-size: 14px; font-weight: 700; color: var(--red-dark); margin-bottom: 10px; }
+.risk-item { font-size: 13px; color: var(--text-secondary); line-height: 1.85; padding: 2px 0; }
+.risk-item strong { color: var(--red-dark); }
+
+/* ============ INFO BOX ============ */
+.info-box {
+  margin-top: 16px; padding: 16px 20px;
+  background: var(--card); border: 1.5px solid var(--gold);
+  border-radius: var(--radius-sm); box-shadow: var(--shadow-sm);
+}
+.info-box p { font-size: 13px; color: var(--text-secondary); line-height: 1.85; }
+.info-box strong { color: var(--navy); }
+
+/* ============ BOTTOM NAV ============ */
+.bottom-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+}
+.bottom-nav a {
+  display: flex; align-items: center; gap: 6px;
+  padding: 10px 18px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  text-decoration: none; color: var(--navy);
+  font-size: 14px; font-weight: 600;
+  transition: all var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.bottom-nav a:hover {
+  border-color: var(--gold);
+  box-shadow: var(--shadow);
+}
+.bottom-nav a.disabled {
+  opacity: 0.4; pointer-events: none;
+}
+
+/* ============ FOOTER ============ */
+.site-footer {
+  margin-left: var(--sidebar-w);
+  background: var(--navy-dark);
+  border-top: 1px solid rgba(201,169,110,0.2);
+  padding: 28px 32px;
+  text-align: center;
+}
+.footer-text {
+  font-size: 12px; color: rgba(255,255,255,0.4);
+  line-height: 1.8;
+}
+.footer-text span { color: var(--gold); }
+.footer-text a { color: rgba(255,255,255,0.5); text-decoration: none; }
+.footer-text a:hover { color: var(--gold); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 900px) {
+  .sidebar { display: none; }
+  .sidebar.mobile-open { display: block; z-index: 60; }
+  .hamburger { display: flex; }
+  .content { margin-left: 0; padding: 68px 20px 48px; }
+  .site-footer { margin-left: 0; }
+  .card-band { grid-template-columns: 1fr; }
+  .risk-grid { grid-template-columns: 1fr; }
+  .card-color-grid { grid-template-columns: 1fr; }
+}
+@media (min-width: 901px) {
+  .hamburger { display: none; }
+  .mobile-overlay { display: none !important; }
+}
+
+/* ============ FADE IN ============ */
+.fade-in {
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div style="display:flex;align-items:center;gap:12px">
+    <button class="hamburger" id="hamburgerBtn" aria-label="เปิดเมนู">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="top-bar-left">คู่มือเลือกตั้ง ส.ก. กทม. 2569</div>
+  </div>
+  <div class="top-bar-right"><span>LAS</span> Research × <span>NIA</span></div>
+</div>
+
+<!-- MOBILE OVERLAY -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sidebar">
+  <a href="index.html" class="sidebar-back">← กลับ Dashboard</a>
+
+  <div class="sidebar-phase">
+    <div class="sidebar-phase-letter">Phase C</div>
+    <div class="sidebar-phase-name">หลังเลือกตั้ง</div>
+  </div>
+
+  <div class="sidebar-topics">
+    <a href="#post-election" class="sidebar-link" data-section="post-election">
+      <span class="num">2.9</span> หลังเลือกตั้ง
+    </a>
+    <a href="#report-day" class="sidebar-link" data-section="report-day">
+      <span class="num">2.10</span> รายงานตัว
+    </a>
+    <a href="#first-day" class="sidebar-link" data-section="first-day">
+      <span class="num">2.11</span> ปฏิบัติหน้าที่
+    </a>
+    <a href="#asset-declaration" class="sidebar-link" data-section="asset-declaration">
+      <span class="num">2.12</span> ทรัพย์สิน ป.ป.ช.
+    </a>
+  </div>
+
+  <div class="sidebar-divider"></div>
+  <div class="sidebar-other-label">Other Phases</div>
+  <a href="phase-a.html" class="sidebar-other-link">Phase A — ก่อนเลือกตั้ง</a>
+  <a href="phase-b.html" class="sidebar-other-link">Phase B — ระหว่างเลือกตั้ง</a>
+  <a href="phase-d-e.html" class="sidebar-other-link">Phase D — ปฏิบัติหน้าที่</a>
+  <a href="phase-d-e.html#sk-benefits" class="sidebar-other-link">Phase E — คลังข้อมูล</a>
+</nav>
+
+<!-- CONTENT -->
+<div class="content">
+<div class="content-inner">
+
+<!-- PHASE HEADER -->
+<div class="phase-header fade-in">
+  <div class="phase-header-badge"><span class="dot"></span> Phase C — Post-Election</div>
+  <h1>หลังเลือกตั้ง</h1>
+  <p class="phase-header-sub">ครอบคลุมเนื้อหาตั้งแต่การประกาศผล ระบบใบสี บัญชีรายรับ-รายจ่าย การรายงานตัว วันปฏิบัติหน้าที่ จนถึงการยื่นบัญชีทรัพย์สินต่อ ป.ป.ช. — อ้างอิงมาตรากฎหมายครบถ้วน</p>
+</div>
+
+<!-- ============ TOPIC 2.9: POST ELECTION ============ -->
+<section class="topic-section fade-in" id="post-election">
+  <div class="topic-label"><span class="line"></span> TOPIC 2.9 — POST ELECTION</div>
+  <h2>📊 หลังวันเลือกตั้ง</h2>
+  <p class="section-desc">กระบวนการหลังวันเลือกตั้ง — การประกาศผล ระบบใบสี และสิ่งที่ผู้สมัครต้องดำเนินการ — อ้างอิง มาตรา 62, 106-109, 127, 128 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</p>
+
+  <!-- ม.106 ประกาศผล -->
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">📣 การประกาศผลการเลือกตั้ง — <a class="matra-link" href="sk-candidate-guide.html#law-m49">มาตรา 106, 109</a></h3>
+  <div class="card-band" style="margin-bottom:28px">
+    <div class="band-card green-band">
+      <span class="icon">✅</span>
+      <h4>กรณีสุจริต — ภายใน 30 วัน</h4>
+      <p>กกต. ตรวจสอบเบื้องต้น → มีเหตุอันควรเชื่อว่าสุจริต → <strong>ประกาศผลการเลือกตั้งภายใน 30 วัน</strong> นับจากวันเลือกตั้ง<br><span style="font-size:12px;color:var(--text-muted)">มาตรา 109 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span></p>
+    </div>
+    <div class="band-card red-band">
+      <span class="icon">🔍</span>
+      <h4>กรณีไม่สุจริต — ภายใน 60 วัน</h4>
+      <p>กกต. มีเหตุสงสัยว่าไม่สุจริต → สืบสวน/ไต่สวน → <strong>ต้องดำเนินการให้แล้วเสร็จภายใน 60 วัน</strong> นับจากวันเลือกตั้ง<br><span style="font-size:12px;color:var(--text-muted)">มาตรา 106-107 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span></p>
+    </div>
+  </div>
+
+  <!-- ระบบใบสี -->
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">🃏 ระบบใบสี — ผลทางกฎหมายหลังเลือกตั้ง</h3>
+  <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px">คำว่า "ใบเหลือง" "ใบส้ม" "ใบแดง" "ใบดำ" <strong style="color:var(--navy)">ไม่ปรากฏในตัวบทกฎหมาย</strong> แต่สาธารณชนใช้อ้างอิงกันอย่างแพร่หลาย</p>
+  <div class="card-color-grid" style="margin-bottom:28px">
+    <div style="border-left:4px solid #FFD600;background:#FFFDE7;border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:6px">
+      <h4 style="color:#92400E;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;margin:0">ใบเหลือง</h4>
+      <span style="font-size:12px;color:var(--text-muted)">มาตรา 106-107</span>
+      <p style="font-size:13px;color:#78350F;line-height:1.7;margin:0"><strong>ผลลัพธ์:</strong> สั่งเลือกตั้งใหม่</p>
+      <p style="font-size:13px;color:#78350F;line-height:1.7;margin:0">กกต. สั่งให้เลือกตั้งใหม่ในหน่วย/เขตเลือกตั้ง — <strong>ยังลงสมัครใหม่ได้</strong></p>
+    </div>
+    <div style="border-left:4px solid #FF9100;background:#FFF8E1;border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:6px">
+      <h4 style="color:#9A3412;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;margin:0">ใบส้ม</h4>
+      <span style="font-size:12px;color:var(--text-muted)">มาตรา 107</span>
+      <p style="font-size:13px;color:#7C2D12;line-height:1.7;margin:0"><strong>ผลลัพธ์:</strong> เลือกตั้งใหม่ + ห้ามลง</p>
+      <p style="font-size:13px;color:#7C2D12;line-height:1.7;margin:0">กกต. สั่งให้เลือกตั้งใหม่ + <strong>ห้ามผู้ถูกสั่งลงสมัครในครั้งนั้น</strong></p>
+    </div>
+    <div style="border-left:4px solid #D50000;background:#FEF2F2;border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:6px">
+      <h4 style="color:#991B1B;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;margin:0">ใบแดง</h4>
+      <span style="font-size:12px;color:var(--text-muted)">มาตรา 108</span>
+      <p style="font-size:13px;color:#7F1D1D;line-height:1.7;margin:0"><strong>ผลลัพธ์:</strong> เพิกถอนสิทธิเลือกตั้ง</p>
+      <p style="font-size:13px;color:#7F1D1D;line-height:1.7;margin:0">ศาลสั่ง <strong>เพิกถอนสิทธิเลือกตั้ง</strong> — ไม่สามารถสมัครได้ตามระยะเวลาที่ศาลกำหนด</p>
+    </div>
+    <div style="border-left:4px solid #212121;background:#F5F5F5;border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:6px">
+      <h4 style="color:#111827;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;margin:0">ใบดำ</h4>
+      <span style="font-size:12px;color:var(--text-muted)">กรณีทุจริตร้ายแรง</span>
+      <p style="font-size:13px;color:#374151;line-height:1.7;margin:0"><strong>ผลลัพธ์:</strong> ห้ามลงเลือกตั้งตลอดชีวิต</p>
+      <p style="font-size:13px;color:#374151;line-height:1.7;margin:0">ศาลสั่งเพิกถอนสิทธิ + <strong>ห้ามลงเลือกตั้งตลอดชีวิต</strong></p>
+    </div>
+  </div>
+
+  <!-- สิ่งที่ต้องทำหลังเลือกตั้ง -->
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">📌 สิ่งที่ต้องทำหลังเลือกตั้ง — บังคับตามกฎหมาย</h3>
+  <div class="checklist-grid" style="margin-bottom:28px">
+    <div class="check-item" style="cursor:default;border-color:var(--gold);background:#FFFDF5">
+      <div style="width:28px;height:28px;min-width:28px;background:linear-gradient(135deg,var(--gold),#b8893a);border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:13px">1</div>
+      <label style="cursor:default">
+        <strong>ยื่นบัญชีรายรับ-รายจ่ายภายใน 90 วัน</strong> นับจากวันเลือกตั้ง — ยื่นต่อ ผู้อำนวยการการเลือกตั้งประจำจังหวัด (ผอ.กต.จังหวัด)
+        <span class="cite"><a class="matra-link" href="sk-candidate-guide.html#law-m60">มาตรา 62</a> พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- โทษ -->
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">⚠️ บทลงโทษเกี่ยวกับบัญชีรายรับ-รายจ่าย</h3>
+  <div class="risk-grid" style="margin-bottom:20px">
+    <div class="risk-card risk-high">
+      <h4>🔴 ไม่ยื่นบัญชี / ยื่นไม่ครบ — <a class="matra-link" href="sk-candidate-guide.html#law-m120">มาตรา 128 วรรค 1</a></h4>
+      <div class="risk-item">📌 จำคุกไม่เกิน <strong>2 ปี</strong></div>
+      <div class="risk-item">📌 ปรับไม่เกิน <strong>40,000 บาท</strong></div>
+      <div class="risk-item">📌 เพิกถอนสิทธิเลือกตั้ง <strong>5 ปี</strong></div>
+    </div>
+    <div class="risk-card risk-high">
+      <h4>🔴 ยื่นบัญชีเท็จ — <a class="matra-link" href="sk-candidate-guide.html#law-m120">มาตรา 128 วรรค 2</a></h4>
+      <div class="risk-item">📌 จำคุก <strong>1-5 ปี</strong></div>
+      <div class="risk-item">📌 ปรับ <strong>20,000-100,000 บาท</strong></div>
+      <div class="risk-item">📌 เพิกถอนสิทธิเลือกตั้ง <strong>10 ปี</strong></div>
+    </div>
+    <div class="risk-card risk-high">
+      <h4>🔴 ใช้จ่ายเกินวงเงิน — <a class="matra-link" href="sk-candidate-guide.html#law-m120">มาตรา 127</a></h4>
+      <div class="risk-item">📌 จำคุก <strong>1-5 ปี</strong></div>
+      <div class="risk-item">📌 ปรับ <strong>3 เท่าของจำนวนเงินที่เกิน</strong></div>
+      <div class="risk-item">📌 เพิกถอนสิทธิเลือกตั้ง <strong>10 ปี</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOPIC 2.10: REPORT DAY ============ -->
+<section class="topic-section fade-in" id="report-day">
+  <div class="topic-label"><span class="line"></span> TOPIC 2.10 — REPORT DAY</div>
+  <h2>📋 วันรายงานตัว</h2>
+  <p class="section-desc">เมื่อ กกต. ประกาศผลการเลือกตั้งอย่างเป็นทางการ ผู้ได้รับเลือกตั้งจะได้รับหนังสือรับรองและต้องรายงานตัวต่อสำนักงานเลขาธิการสภา กทม. — อ้างอิง <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 21 พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528</a> และ มาตรา 109 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</p>
+
+  <div class="law-text-box" style="margin-bottom:28px">
+    <h4>สมาชิกภาพเริ่มตั้งแต่เมื่อใด? — <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 21</a></h4>
+    <div class="law-content">
+      <p><strong>สมาชิกภาพของสมาชิกสภากรุงเทพมหานครเริ่มตั้งแต่วันเลือกตั้ง</strong> และอยู่ในตำแหน่งตามอายุของสภากรุงเทพมหานคร</p>
+      <p style="font-size:13px;color:var(--text-secondary);margin-top:8px">อ้างอิง: <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 21 พ.ร.บ.ระเบียบบริหารราชการกรุงเทพมหานคร พ.ศ. 2528 (แก้ไข ฉบับที่ 6)</a></p>
+    </div>
+  </div>
+
+  <div class="card-band" style="margin-bottom:28px">
+    <div class="band-card green-band">
+      <span class="icon">📣</span>
+      <h4>กกต. ประกาศผลภายใน 30 วัน</h4>
+      <p>กกต. ตรวจสอบเบื้องต้นว่าการเลือกตั้งสุจริต → ประกาศผลภายใน 30 วันนับจากวันเลือกตั้ง → ผู้ได้รับเลือกตั้งได้รับหนังสือรับรอง<br><span style="font-size:12px;color:var(--text-muted)">มาตรา 109 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span></p>
+    </div>
+    <div class="band-card" style="border-color:#0D9488;background:#F0FDFA">
+      <span class="icon">🏛️</span>
+      <h4>รายงานตัวต่อสำนักงานเลขาธิการสภา กทม.</h4>
+      <p>ส.ก. ที่ได้รับเลือกตั้งต้องไปรายงานตัวต่อสำนักงานเลขาธิการสภากรุงเทพมหานคร เพื่อเตรียมเข้าร่วมประชุมสภาครั้งแรก</p>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">📌 Checklist วันรายงานตัว</h3>
+  <div class="checklist-grid">
+    <div class="check-item" style="cursor:default;border-color:#0D9488;background:#F0FDFA">
+      <div style="width:28px;height:28px;min-width:28px;background:linear-gradient(135deg,#0D9488,#0F766E);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:13px">1</div>
+      <label style="cursor:default"><strong>รับหนังสือรับรองจาก กกต.</strong> — ยืนยันผลการเลือกตั้งอย่างเป็นทางการ</label>
+    </div>
+    <div class="check-item" style="cursor:default;border-color:#0D9488;background:#F0FDFA">
+      <div style="width:28px;height:28px;min-width:28px;background:linear-gradient(135deg,#0D9488,#0F766E);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:13px">2</div>
+      <label style="cursor:default"><strong>รายงานตัวต่อสำนักงานเลขาธิการสภา กทม.</strong> — นำหนังสือรับรองและเอกสารประจำตัวไปแสดง</label>
+    </div>
+    <div class="check-item" style="cursor:default;border-color:#0D9488;background:#F0FDFA">
+      <div style="width:28px;height:28px;min-width:28px;background:linear-gradient(135deg,#0D9488,#0F766E);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:13px">3</div>
+      <label style="cursor:default"><strong>เตรียมเข้าประชุมสภาครั้งแรก</strong> — ศึกษาข้อบังคับการประชุมสภา กทม. และระเบียบวาระการประชุม</label>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOPIC 2.11: FIRST DAY ============ -->
+<section class="topic-section fade-in" id="first-day">
+  <div class="topic-label"><span class="line"></span> TOPIC 2.11 — FIRST DAY</div>
+  <h2>🏛️ วันปฏิบัติหน้าที่</h2>
+  <p class="section-desc">การประชุมสภา กทม. ครั้งแรก — เลือกประธานสภาและรองประธาน เริ่มรับเงินเดือนย้อนหลัง — อ้างอิง <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 25, 30, 31 พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528</a></p>
+
+  <div class="law-text-box" style="margin-bottom:28px">
+    <h4>ประชุมสภาครั้งแรก: เลือกประธาน + รองประธาน — <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 25</a></h4>
+    <div class="law-content">
+      <p>ให้สภากรุงเทพมหานครเลือกสมาชิกเป็น <strong>ประธานสภา 1 คน</strong> และ <strong>รองประธานสภาไม่เกิน 2 คน</strong> มีวาระ <strong>2 ปี</strong></p>
+      <p style="font-size:13px;color:var(--text-secondary);margin-top:8px">อ้างอิง: <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 25 พ.ร.บ.ระเบียบบริหารราชการกรุงเทพมหานคร พ.ศ. 2528</a></p>
+    </div>
+  </div>
+
+  <div class="card-band" style="margin-bottom:28px">
+    <div class="band-card green-band">
+      <span class="icon">💰</span>
+      <h4>เริ่มรับเงินเดือน</h4>
+      <p>ส.ก. เริ่มรับเงินเดือน<strong>ย้อนหลังถึงวันเลือกตั้ง</strong> เนื่องจากสมาชิกภาพเริ่มตั้งแต่วันเลือกตั้ง ตาม <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 21</a></p>
+    </div>
+    <div class="band-card" style="border-color:#0D9488;background:#F0FDFA">
+      <span class="icon">📅</span>
+      <h4>สมัยประชุมสามัญ</h4>
+      <p>ไม่น้อยกว่า <strong>2 สมัย</strong> แต่ไม่เกิน <strong>4 สมัยต่อปี</strong><br><span style="font-size:12px;color:var(--text-muted)"><a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 30</a> พ.ร.บ.ระเบียบบริหาร กทม. 2528</span></p>
+    </div>
+    <div class="band-card yellow-band">
+      <span class="icon">⚡</span>
+      <h4>สมัยวิสามัญ</h4>
+      <p>เมื่อมีกรณีจำเป็น — ผู้ว่า กทม. หรือสมาชิกไม่น้อยกว่า 1/3 ร้องขอ → ประธานสภากำหนดวันประชุมภายใน 15 วัน<br><span style="font-size:12px;color:var(--text-muted)"><a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 31</a> พ.ร.บ.ระเบียบบริหาร กทม. 2528</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOPIC 2.12: ASSET DECLARATION ============ -->
+<section class="topic-section fade-in" id="asset-declaration">
+  <div class="topic-label"><span class="line"></span> TOPIC 2.12 — ASSET DECLARATION</div>
+  <h2>📑 การยื่นบัญชีทรัพย์สิน</h2>
+  <p class="section-desc">ส.ก. ต้องยื่นบัญชีทรัพย์สินและหนี้สินต่อ ป.ป.ช. ภายใน 60 วัน นับจากวันเข้ารับตำแหน่ง — อ้างอิง มาตรา 102 พระราชบัญญัติประกอบรัฐธรรมนูญว่าด้วยการป้องกันและปราบปรามการทุจริต พ.ศ. 2561 (พ.ร.ป.ป.ป.ช. 2561)</p>
+
+  <div class="warn-box" style="margin-bottom:24px;border-color:#DC2626">
+    <h4>⚠️ โทษหนัก — ไม่ยื่นหรือยื่นเท็จ</h4>
+    <p><strong>พ้นจากตำแหน่ง + ห้ามดำรงตำแหน่งทางการเมือง 5 ปี</strong> — การไม่ยื่นบัญชีทรัพย์สิน ยื่นไม่ครบ หรือยื่นข้อมูลเท็จ มีโทษตาม พ.ร.ป.ป.ป.ช. 2561</p>
+  </div>
+
+  <div class="table-wrap" style="margin-bottom:28px">
+    <table class="info-table">
+      <thead>
+        <tr><th>กรณี</th><th>กำหนดยื่น</th><th>อ้างอิง</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>เข้ารับตำแหน่ง</strong></td>
+          <td>ภายใน <strong>60 วัน</strong> นับจากวันเข้ารับตำแหน่ง</td>
+          <td>มาตรา 102 พ.ร.ป.ป.ป.ช. 2561</td>
+        </tr>
+        <tr>
+          <td><strong>พ้นจากตำแหน่ง</strong></td>
+          <td>ภายใน <strong>60 วัน</strong> นับจากวันพ้นตำแหน่ง</td>
+          <td>มาตรา 102 พ.ร.ป.ป.ป.ช. 2561</td>
+        </tr>
+        <tr>
+          <td><strong>ทุกปี</strong></td>
+          <td>ยื่นบัญชีทรัพย์สินทุกปีตลอดระยะเวลาดำรงตำแหน่ง</td>
+          <td>มาตรา 102 พ.ร.ป.ป.ป.ช. 2561</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card-band" style="margin-bottom:20px">
+    <div class="band-card" style="border-color:#0D9488;background:#F0FDFA">
+      <span class="icon">💻</span>
+      <h4>ยื่นผ่านระบบอิเล็กทรอนิกส์</h4>
+      <p>ยื่นผ่านระบบอิเล็กทรอนิกส์ (nacc.go.th) — ระบบเปิดใช้ตั้งแต่ 1 ตุลาคม 2565<br>
+      <a href="https://asset.nacc.go.th/dcs-app/" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:var(--navy);color:#fff;border-radius:var(--radius-sm);font-size:13px;font-weight:600;text-decoration:none;transition:all .2s;margin-top:12px">🔗 ระบบยื่นบัญชีทรัพย์สิน ป.ป.ช. (nacc.go.th)</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <a href="phase-b.html">← Phase B</a>
+  <a href="phase-d-e.html">Phase D+E ปฏิบัติหน้าที่ + คลังข้อมูล →</a>
+</div>
+
+</div><!-- end .content-inner -->
+</div><!-- end .content -->
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-text">
+    <span>Legal Advance Solution Co., Ltd. (LAS)</span> × <span>National Innovation Agency (NIA)</span><br>
+    ผู้เขียน: <span>Thundthornthep Yamoutai, Ph.D.</span> · อัปเดต: เมษายน 2569<br>
+    <a href="index.html">Dashboard</a> · <a href="sk-candidate-guide.html">คู่มือฉบับเต็ม</a>
+  </div>
+</footer>
+
+<script>
+// SIDEBAR ACTIVE LINK
+(function(){
+  var sections = ['post-election','report-day','first-day','asset-declaration'];
+  var links = document.querySelectorAll('.sidebar-link');
+
+  window.addEventListener('scroll', function(){
+    var current = '';
+    for(var i = 0; i < sections.length; i++){
+      var el = document.getElementById(sections[i]);
+      if(el && el.getBoundingClientRect().top <= 100) current = sections[i];
+    }
+    links.forEach(function(a){
+      var sec = a.getAttribute('data-section');
+      if(sec === current) a.classList.add('active');
+      else a.classList.remove('active');
+    });
+  });
+})();
+
+// HAMBURGER
+(function(){
+  var btn = document.getElementById('hamburgerBtn');
+  var sidebar = document.getElementById('sidebar');
+  var overlay = document.getElementById('mobileOverlay');
+
+  function toggleMenu(){
+    btn.classList.toggle('open');
+    sidebar.classList.toggle('mobile-open');
+    overlay.classList.toggle('show');
+    document.body.style.overflow = sidebar.classList.contains('mobile-open') ? 'hidden' : '';
+  }
+  function closeMenu(){
+    btn.classList.remove('open');
+    sidebar.classList.remove('mobile-open');
+    overlay.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+  btn.addEventListener('click', toggleMenu);
+  overlay.addEventListener('click', closeMenu);
+  sidebar.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', closeMenu);
+  });
+})();
+
+// FADE-IN OBSERVER
+(function(){
+  if('IntersectionObserver' in window){
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    document.querySelectorAll('.fade-in').forEach(function(el){
+      observer.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.fade-in').forEach(function(el){
+      el.classList.add('visible');
+    });
+  }
+})();
+</script>
+</body>
+</html>

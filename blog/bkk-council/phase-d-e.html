@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/webp" href="/las-logo.webp">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase D+E: ปฏิบัติหน้าที่ + คลังข้อมูล — ส.ก. Navigator</title>
+<meta name="description" content="Phase D+E: ปฏิบัติหน้าที่ในสภา + คลังข้อมูลอ้างอิง — ข้อบังคับสภา อำนาจหน้าที่ ส.ก. กรรมการสามัญ/วิสามัญ ข้อบัญญัติ กระทู้ถาม งบประมาณ รวมกฎหมาย แบบฟอร์ม สิทธิประโยชน์ — ส.ก. กทม. 2569">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ส.ก. NAVIGATOR — PHASE D+E
+   ============================================================ */
+:root {
+  --bg: #FAFAFA;
+  --bg-alt: #F5F5F5;
+  --card: #FFFFFF;
+  --text: #1A1A2E;
+  --text-secondary: #6B7280;
+  --text-muted: #9CA3AF;
+  --navy: #1B2A4A;
+  --navy-dark: #0d1f33;
+  --gold: #C9A96E;
+  --gold-light: #d4b07a;
+  --teal: #0D9488;
+  --green: #22C55E;
+  --green-dark: #14532D;
+  --red: #EF4444;
+  --red-dark: #991B1B;
+  --blue: #2563EB;
+  --purple: #9b59b6;
+  --border: #E5E7EB;
+  --border-light: #F3F4F6;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.04);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --sidebar-w: 260px;
+  --transition: 0.2s ease;
+  /* Phase D warm accent */
+  --warm: #D97706;
+  --warm-bg: #FFFBEB;
+  --warm-border: #FCD34D;
+  /* Phase E burgundy accent */
+  --burgundy: #9F1239;
+  --burgundy-bg: #FFF1F2;
+  --burgundy-border: #FECDD3;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+body {
+  font-family: 'Sarabun', sans-serif;
+  font-size: 16px; line-height: 1.8;
+  color: var(--text); background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a.matra-link {
+  color: var(--blue); background: #eef2ff; padding: 2px 8px; border-radius: 5px;
+  text-decoration: none; font-weight: 600; transition: all .2s; font-size: inherit;
+}
+a.matra-link:hover { background: #c7d2fe; text-decoration: underline; }
+
+/* ============ TOP BAR ============ */
+.top-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px;
+  background: var(--navy);
+  border-bottom: 1px solid rgba(201,169,110,0.2);
+  font-size: 13px;
+}
+.top-bar-left {
+  font-family: 'Space Grotesk', sans-serif;
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+}
+.top-bar-right {
+  color: rgba(255,255,255,0.5);
+  font-size: 12px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+.top-bar-right span { color: var(--gold); }
+
+/* ============ SIDEBAR (Desktop) ============ */
+.sidebar {
+  position: fixed;
+  top: 48px; left: 0;
+  width: var(--sidebar-w);
+  height: calc(100vh - 48px);
+  background: var(--card);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  padding: 20px 0;
+  z-index: 50;
+}
+.sidebar-back {
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 20px;
+  font-size: 13px; color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.sidebar-back:hover { color: var(--navy); }
+
+.sidebar-phase {
+  padding: 12px 20px;
+  margin: 8px 14px;
+  background: linear-gradient(135deg, rgba(217,119,6,0.08), rgba(217,119,6,0.02));
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--warm);
+}
+.sidebar-phase-letter {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px; font-weight: 700;
+  color: var(--warm);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.sidebar-phase-name {
+  font-size: 15px; font-weight: 700;
+  color: var(--navy); margin-top: 2px;
+}
+
+.sidebar-phase-e {
+  padding: 12px 20px;
+  margin: 8px 14px;
+  background: linear-gradient(135deg, rgba(159,18,57,0.06), rgba(159,18,57,0.02));
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--burgundy);
+}
+.sidebar-phase-e .sidebar-phase-letter { color: var(--burgundy); }
+
+.sidebar-topics { padding: 8px 0; }
+.sidebar-link {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 20px;
+  font-size: 13px; color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--transition);
+  border-left: 3px solid transparent;
+}
+.sidebar-link:hover {
+  color: var(--navy);
+  background: rgba(27,42,74,0.04);
+  border-left-color: var(--gold);
+}
+.sidebar-link.active {
+  color: var(--navy);
+  font-weight: 600;
+  background: rgba(27,42,74,0.06);
+  border-left-color: var(--navy);
+}
+.sidebar-link .num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px; font-weight: 700;
+  color: var(--text-muted);
+  min-width: 24px;
+}
+
+.sidebar-divider {
+  height: 1px; background: var(--border);
+  margin: 12px 20px;
+}
+
+.sidebar-other-label {
+  padding: 8px 20px;
+  font-size: 11px; font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.sidebar-other-link {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 20px;
+  font-size: 12px; color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.sidebar-other-link:hover { color: var(--text-secondary); }
+.sidebar-other-link .badge {
+  font-size: 9px; background: var(--bg-alt);
+  color: var(--text-muted); padding: 1px 6px;
+  border-radius: 3px; font-weight: 600;
+}
+
+/* ============ HAMBURGER (Mobile) ============ */
+.hamburger {
+  display: none; flex-direction: column; gap: 4px;
+  cursor: pointer; padding: 8px; border: none; background: none; z-index: 200;
+}
+.hamburger span { display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px; transition: all .3s; }
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4px,4px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px,-4px); }
+
+.mobile-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+  z-index: 40; display: none; opacity: 0; transition: opacity .3s;
+}
+.mobile-overlay.show { display: block; opacity: 1; }
+
+/* ============ CONTENT AREA ============ */
+.content {
+  margin-left: var(--sidebar-w);
+  padding: 68px 32px 64px;
+  max-width: calc(var(--sidebar-w) + 780px + 64px);
+}
+.content-inner {
+  max-width: 780px;
+}
+
+/* Phase header */
+.phase-header {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+.phase-header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px; font-weight: 700;
+  color: var(--warm);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.phase-header-badge .dot {
+  width: 8px; height: 8px; border-radius: 2px;
+  background: var(--warm);
+}
+.phase-header h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(24px, 3.5vw, 34px);
+  font-weight: 700; color: var(--navy);
+  letter-spacing: -0.5px; margin-bottom: 8px;
+}
+.phase-header-sub {
+  font-size: 15px; color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* ============ TOPIC SECTIONS ============ */
+.topic-section {
+  margin-bottom: 56px;
+  scroll-margin-top: 64px;
+}
+.topic-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 700; color: var(--warm);
+  text-transform: uppercase; letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+.topic-label .line { width: 24px; height: 2px; background: var(--warm); border-radius: 1px; }
+.topic-label.phase-e-label { color: var(--burgundy); }
+.topic-label.phase-e-label .line { background: var(--burgundy); }
+
+.topic-section h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.4rem; font-weight: 700;
+  color: var(--navy); margin-bottom: 8px;
+  letter-spacing: -0.3px; line-height: 1.3;
+}
+.topic-section .section-desc {
+  font-size: 14px; color: var(--text-secondary);
+  max-width: 680px; margin-bottom: 28px; line-height: 1.85;
+}
+
+/* ============ PHASE BADGE ============ */
+.phase-badge {
+  display: inline-block; font-size: 11px; font-weight: 700;
+  padding: 4px 12px; border-radius: 6px; margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+.phase-badge.phase-d { background: #FEF3C7; color: #D97706; border: 1px solid #FCD34D; }
+.phase-badge.phase-e { background: #FFE4E6; color: #9F1239; border: 1px solid #FECDD3; }
+
+/* ============ CHECKLIST GRID ============ */
+.checklist-grid { display: grid; gap: 8px; }
+.check-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 14px 18px;
+  background: var(--card); border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: default; box-shadow: var(--shadow-sm);
+}
+
+/* ============ CARD BAND ============ */
+.card-band { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; margin: 16px 0; }
+.band-card { padding: 18px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--card); box-shadow: var(--shadow-sm); }
+.band-card.red-band { border-color: #FECACA; background: #FEF2F2; }
+.band-card.yellow-band { border-color: #FCD34D; background: #FFFBEB; }
+.band-card.green-band { border-color: #BBF7D0; background: #F0FDF4; }
+.band-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.band-card.red-band h4 { color: var(--red-dark); }
+.band-card.yellow-band h4 { color: #92400E; }
+.band-card.green-band h4 { color: var(--green-dark); }
+.band-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.75; }
+.band-card .icon { font-size: 22px; margin-bottom: 8px; display: block; }
+
+/* ============ LAW TEXT BOX ============ */
+.law-text-box {
+  background: var(--card); border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm); padding: 20px 24px;
+  margin-bottom: 16px; box-shadow: var(--shadow-sm);
+}
+.law-text-box h4 {
+  font-family: 'Space Grotesk', sans-serif; color: var(--navy);
+  font-size: 14px; font-weight: 700; margin-bottom: 12px;
+  padding-bottom: 10px; border-bottom: 2px solid var(--gold);
+}
+.law-text-box p { font-size: 14px; color: var(--text); line-height: 1.9; margin-bottom: 6px; }
+.law-content {
+  color: var(--text); line-height: 1.9;
+  border-left: 3px solid var(--gold); padding-left: 14px;
+  margin: 8px 0; background: #FAFAF9; padding: 12px 16px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.law-penalty { font-size: 13px; color: var(--red); margin-top: 8px; font-weight: 600; }
+
+/* ============ TABLE ============ */
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 20px; }
+.info-table { width: 100%; border-collapse: collapse; background: var(--card); }
+.info-table th {
+  text-align: left; padding: 10px 14px; font-size: 11px;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: var(--text-muted); border-bottom: 2px solid var(--border); background: var(--bg-alt);
+}
+.info-table td {
+  padding: 10px 14px; border-bottom: 1px solid var(--border-light);
+  font-size: 13px; vertical-align: top; line-height: 1.75; color: var(--text);
+}
+.info-table tr:hover td { background: var(--bg-alt); }
+.info-table td:first-child { color: var(--navy); font-weight: 600; min-width: 140px; }
+
+/* ============ POWER GRID ============ */
+.power-grid { display: grid; gap: 12px; margin: 16px 0; }
+.power-card {
+  display: flex; gap: 14px; padding: 18px 20px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); transition: all .2s;
+}
+.power-card:hover { border-color: var(--gold); box-shadow: var(--shadow-md); }
+.power-num { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; color: var(--gold); min-width: 32px; line-height: 1.2; }
+.power-body h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.power-body p { font-size: 13px; color: var(--text-secondary); line-height: 1.75; }
+
+/* ============ BKK 27 GRID ============ */
+.bkk27-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 20px 0; }
+.bkk27-card {
+  display: flex; gap: 12px; padding: 14px 18px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); transition: all .2s;
+}
+.bkk27-card:hover { border-color: var(--gold); box-shadow: var(--shadow-md); }
+.bkk27-num {
+  font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700;
+  color: #fff; background: var(--gold);
+  width: 28px; height: 28px; min-width: 28px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; margin-top: 2px;
+}
+.bkk27-text { font-size: 13px; color: var(--text); line-height: 1.7; flex: 1; }
+
+/* ============ COMMITTEE 13 GRID ============ */
+.comm13-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 20px 0; }
+.comm13-card {
+  display: flex; gap: 12px; padding: 16px 20px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); box-shadow: var(--shadow-sm);
+  transition: all .2s; border-left: 3px solid #20808D;
+}
+.comm13-card:hover { border-color: #20808D; box-shadow: var(--shadow-md); background: #F0FDFA; }
+.comm13-num {
+  font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700;
+  color: #fff; background: #20808D;
+  width: 28px; height: 28px; min-width: 28px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; margin-top: 2px;
+}
+.comm13-text { font-size: 14px; color: var(--navy); line-height: 1.7; flex: 1; font-weight: 600; }
+.comm13-explain {
+  background: #F0FDFA; border: 1px solid #99F6E4; border-radius: var(--radius-sm);
+  padding: 16px 20px; margin-bottom: 20px; font-size: 14px; color: #0D9488; line-height: 1.85;
+}
+
+/* ============ DO-DONT GRID ============ */
+.do-dont-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+.do-section h3 { color: #14532D; font-family: 'Space Grotesk', sans-serif; font-size: 16px; margin-bottom: 16px; }
+.do-card {
+  padding: 14px 18px; background: #F0FDF4; border: 1px solid #BBF7D0;
+  border-radius: var(--radius-sm); margin-bottom: 10px; transition: all .2s;
+}
+.do-card:hover { border-color: #22C55E; background: #DCFCE7; }
+.do-card .card-title { font-size: 14px; color: var(--text); line-height: 1.7; }
+.do-card .cite { font-size: 11px; color: #14532D; margin-top: 4px; display: block; }
+
+/* ============ FLOW STEPS ============ */
+.flow-steps { position: relative; padding: 0; margin: 24px 0; }
+.flow-step { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 0; position: relative; padding-bottom: 24px; }
+.flow-step:last-child { padding-bottom: 0; }
+.flow-step::before { content: ''; position: absolute; left: 19px; top: 40px; bottom: 0; width: 2px; background: #E5E7EB; }
+.flow-step:last-child::before { display: none; }
+.flow-num {
+  width: 40px; height: 40px; min-width: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700;
+  color: #fff; position: relative; z-index: 1;
+}
+.flow-num.fn-warm { background: linear-gradient(135deg, #D97706, #B45309); }
+.flow-num.fn-green { background: linear-gradient(135deg, var(--green), #1a7a40); }
+.flow-num.fn-red { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+.flow-body {
+  flex: 1; padding: 10px 18px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); box-shadow: var(--shadow-sm);
+}
+.flow-body h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.flow-body p { font-size: 13px; color: var(--text-secondary); line-height: 1.75; }
+
+.flow-branch { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0 12px 56px; }
+.flow-branch-card { padding: 14px 18px; border-radius: var(--radius-sm); font-size: 13px; line-height: 1.75; }
+.flow-branch-card.branch-yes { background: #F0FDF4; border: 1px solid #BBF7D0; color: #14532D; }
+.flow-branch-card.branch-no { background: #FEF2F2; border: 1px solid #FECACA; color: #991B1B; }
+
+/* ============ SALARY GRID ============ */
+.salary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; margin: 16px 0; }
+.salary-card {
+  text-align: center; padding: 22px 18px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); transition: all .2s;
+}
+.salary-card:hover { border-color: var(--gold); }
+.salary-card .sal-amount { font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; line-height: 1.2; margin-bottom: 4px; }
+.salary-card .sal-label { font-size: 13px; color: var(--text-secondary); }
+.salary-card .sal-detail { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+
+/* ============ TERMINATION LIST ============ */
+.term-list { display: grid; gap: 8px; margin: 16px 0; }
+.term-item {
+  display: flex; gap: 12px; padding: 14px 18px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); transition: all .2s;
+}
+.term-item:hover { border-color: #F87171; background: #FEF2F2; }
+.term-num { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #DC2626; min-width: 28px; font-size: 14px; margin-top: 2px; }
+.term-text { font-size: 13px; color: var(--text); line-height: 1.75; }
+
+/* ============ STATS BOX ============ */
+.stats-box { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 16px 0; }
+.stat-box {
+  text-align: center; padding: 18px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); box-shadow: var(--shadow-sm);
+}
+.stat-box .sb-num { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: var(--navy); }
+.stat-box .sb-label { font-size: 12px; color: var(--text-secondary); }
+
+/* ============ LAW DOWNLOAD ============ */
+.law-download-grid { display: grid; gap: 14px; margin: 16px 0; }
+.law-dl-card {
+  padding: 20px 24px; background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); box-shadow: var(--shadow-sm);
+  display: flex; gap: 16px; align-items: flex-start; transition: all .2s;
+}
+.law-dl-card:hover { border-color: var(--gold); box-shadow: var(--shadow-md); }
+.law-dl-num { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: var(--gold); min-width: 38px; line-height: 1; }
+.law-dl-body h4 { font-size: 14px; color: var(--navy); font-weight: 700; margin-bottom: 6px; }
+.law-dl-body p { font-size: 13px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 8px; }
+.dl-btn {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 12px;
+  color: var(--blue); text-decoration: none; padding: 5px 14px;
+  border: 1px solid var(--blue); border-radius: 6px; transition: all .2s; font-weight: 600;
+}
+.dl-btn:hover { background: var(--blue); color: #fff; }
+.dl-btn-inline {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px; background: var(--navy); color: #fff;
+  border-radius: 8px; text-decoration: none; font-size: 13px;
+  font-weight: 600; transition: all .2s; border: 2px solid var(--gold); margin: 10px 0;
+}
+.dl-btn-inline:hover { background: var(--gold); color: var(--navy); }
+
+/* ============ ECT SECTION ============ */
+.ect-section {
+  background: var(--card); border: 2px solid var(--gold); border-radius: var(--radius);
+  padding: 30px 32px; margin: 24px 0; box-shadow: var(--shadow);
+}
+.ect-category { margin-bottom: 28px; }
+.ect-category:last-child { margin-bottom: 0; }
+.ect-category h4 {
+  font-family: 'Space Grotesk', sans-serif; font-size: 14px;
+  color: var(--navy); font-weight: 700; margin-bottom: 12px;
+  padding-bottom: 8px; border-bottom: 1px solid var(--border);
+}
+.ect-dl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
+.ect-dl-card {
+  display: flex; align-items: center; gap: 12px; padding: 14px 16px;
+  background: #FAFAF9; border: 1px solid var(--border); border-radius: var(--radius-sm);
+  text-decoration: none; transition: all .2s; box-shadow: var(--shadow-sm);
+}
+.ect-dl-card:hover { border-color: var(--gold); background: #FFFDF5; box-shadow: var(--shadow); }
+.ect-dl-icon { font-size: 24px; min-width: 32px; line-height: 1.2; }
+.ect-dl-info h5 { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 3px; line-height: 1.4; }
+.ect-dl-info span { font-size: 11px; color: var(--blue); font-weight: 600; }
+
+/* ============ LINK CARDS ============ */
+.link-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; margin: 20px 0; }
+.link-card {
+  padding: 18px 20px; background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); box-shadow: var(--shadow-sm);
+  text-decoration: none; transition: all .25s; display: block;
+}
+.link-card:hover { border-color: var(--gold); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.link-card .lc-icon { font-size: 26px; margin-bottom: 8px; display: block; }
+.link-card .lc-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.link-card .lc-desc { font-size: 12px; color: var(--text-secondary); }
+
+/* ============ SECTION SOURCE ============ */
+.section-source { font-size: 12px; color: var(--text-muted); margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border); }
+
+/* ============ DIVIDER ============ */
+.divider { height: 1px; background: linear-gradient(90deg, transparent, #E5E7EB, transparent); margin: 20px 0; }
+
+/* ============ DISCLAIMER ============ */
+.disclaimer-footer {
+  background: var(--card); border: 2px solid var(--border); border-radius: var(--radius);
+  padding: 28px 32px; margin-top: 48px; box-shadow: var(--shadow);
+}
+.disclaimer-footer h3 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; color: var(--navy); margin-bottom: 14px; font-weight: 700; }
+.disclaimer-footer p { font-size: 13px; color: var(--text-secondary); line-height: 1.85; margin-bottom: 12px; }
+
+/* ============ WARN BOX ============ */
+.warn-box {
+  background: #FEF2F2; border: 1.5px solid #FECACA;
+  border-radius: var(--radius-sm); padding: 16px 20px; margin: 16px 0;
+}
+.warn-box.yellow { background: #FFFBEB; border-color: #FCD34D; }
+.warn-box h4 { color: var(--red-dark); font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.warn-box.yellow h4 { color: #92400E; }
+.warn-box p { font-size: 13px; color: var(--text-secondary); line-height: 1.85; }
+
+/* ============ INFO BOX ============ */
+.info-box {
+  margin-top: 16px; padding: 16px 20px;
+  background: var(--card); border: 1.5px solid var(--gold);
+  border-radius: var(--radius-sm); box-shadow: var(--shadow-sm);
+}
+.info-box p { font-size: 13px; color: var(--text-secondary); line-height: 1.85; }
+.info-box strong { color: var(--navy); }
+
+/* ============ BOTTOM NAV ============ */
+.bottom-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+}
+.bottom-nav a {
+  display: flex; align-items: center; gap: 6px;
+  padding: 10px 18px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  text-decoration: none; color: var(--navy);
+  font-size: 14px; font-weight: 600;
+  transition: all var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.bottom-nav a:hover {
+  border-color: var(--gold);
+  box-shadow: var(--shadow);
+}
+.bottom-nav a.disabled {
+  opacity: 0.4; pointer-events: none;
+}
+
+/* ============ FOOTER ============ */
+.site-footer {
+  margin-left: var(--sidebar-w);
+  background: var(--navy-dark);
+  border-top: 1px solid rgba(201,169,110,0.2);
+  padding: 28px 32px;
+  text-align: center;
+}
+.footer-text {
+  font-size: 12px; color: rgba(255,255,255,0.4);
+  line-height: 1.8;
+}
+.footer-text span { color: var(--gold); }
+.footer-text a { color: rgba(255,255,255,0.5); text-decoration: none; }
+.footer-text a:hover { color: var(--gold); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 900px) {
+  .sidebar { display: none; }
+  .sidebar.mobile-open { display: block; z-index: 60; }
+  .hamburger { display: flex; }
+  .content { margin-left: 0; padding: 68px 20px 48px; }
+  .site-footer { margin-left: 0; }
+  .card-band { grid-template-columns: 1fr; }
+  .do-dont-grid { grid-template-columns: 1fr; }
+  .bkk27-grid { grid-template-columns: 1fr; }
+  .comm13-grid { grid-template-columns: 1fr; }
+  .stats-box { grid-template-columns: 1fr; }
+  .salary-grid { grid-template-columns: 1fr; }
+  .flow-branch { grid-template-columns: 1fr; margin-left: 0; }
+  .ect-dl-grid { grid-template-columns: 1fr; }
+  .link-cards { grid-template-columns: 1fr; }
+}
+@media (min-width: 901px) {
+  .hamburger { display: none; }
+  .mobile-overlay { display: none !important; }
+}
+
+/* ============ FADE IN ============ */
+.fade-in {
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div style="display:flex;align-items:center;gap:12px">
+    <button class="hamburger" id="hamburgerBtn" aria-label="เปิดเมนู">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="top-bar-left">คู่มือเลือกตั้ง ส.ก. กทม. 2569</div>
+  </div>
+  <div class="top-bar-right"><span>LAS</span> Research × <span>NIA</span></div>
+</div>
+
+<!-- MOBILE OVERLAY -->
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sidebar">
+  <a href="index.html" class="sidebar-back">← กลับ Dashboard</a>
+
+  <div class="sidebar-phase">
+    <div class="sidebar-phase-letter">Phase D</div>
+    <div class="sidebar-phase-name">ปฏิบัติหน้าที่</div>
+  </div>
+
+  <div class="sidebar-topics">
+    <a href="#council-rules" class="sidebar-link" data-section="council-rules">
+      <span class="num">2.13</span> ข้อบังคับสภา
+    </a>
+    <a href="#sk-powers" class="sidebar-link" data-section="sk-powers">
+      <span class="num">2.14</span> อำนาจหน้าที่ ส.ก.
+    </a>
+    <a href="#committees" class="sidebar-link" data-section="committees">
+      <span class="num">2.15</span> กรรมการสามัญ/วิสามัญ
+    </a>
+    <a href="#ordinance-process" class="sidebar-link" data-section="ordinance-process">
+      <span class="num">2.16</span> กระบวนการข้อบัญญัติ
+    </a>
+    <a href="#questions-motions" class="sidebar-link" data-section="questions-motions">
+      <span class="num">2.17</span> กระทู้ถาม/ญัตติ
+    </a>
+    <a href="#session-work" class="sidebar-link" data-section="session-work">
+      <span class="num">2.18</span> สมัยประชุม
+    </a>
+    <a href="#budget-review" class="sidebar-link" data-section="budget-review">
+      <span class="num">2.19</span> งบประมาณ
+    </a>
+  </div>
+
+  <div class="sidebar-divider"></div>
+
+  <div class="sidebar-phase-e">
+    <div class="sidebar-phase-letter">Phase E</div>
+    <div class="sidebar-phase-name">คลังข้อมูลอ้างอิง</div>
+  </div>
+
+  <div class="sidebar-topics">
+    <a href="#bkk-powers-27" class="sidebar-link" data-section="bkk-powers-27">
+      <span class="num">📋</span> อำนาจหน้าที่ กทม. 27 ข้อ
+    </a>
+    <a href="#committees-13" class="sidebar-link" data-section="committees-13">
+      <span class="num">👥</span> 13 คณะกรรมการสามัญ
+    </a>
+    <a href="#law-full-section" class="sidebar-link" data-section="law-full-section">
+      <span class="num">2.20</span> รวมกฎหมาย
+    </a>
+    <a href="#forms-timeline" class="sidebar-link" data-section="forms-timeline">
+      <span class="num">2.21</span> แบบฟอร์ม
+    </a>
+    <a href="#sk-benefits" class="sidebar-link" data-section="sk-benefits">
+      <span class="num">2.22</span> สิทธิประโยชน์
+    </a>
+    <a href="#termination" class="sidebar-link" data-section="termination">
+      <span class="num">2.23</span> สิ้นสมาชิกภาพ
+    </a>
+    <a href="#new-election" class="sidebar-link" data-section="new-election">
+      <span class="num">2.24</span> เลือกตั้งใหม่
+    </a>
+    <a href="#ect-resources" class="sidebar-link" data-section="ect-resources">
+      <span class="num">📋</span> กกต. Download
+    </a>
+    <a href="#disclaimer-final" class="sidebar-link" data-section="disclaimer-final">
+      <span class="num">—</span> Disclaimer
+    </a>
+  </div>
+
+  <div class="sidebar-divider"></div>
+  <div class="sidebar-other-label">Other Phases</div>
+  <a href="phase-a.html" class="sidebar-other-link">Phase A — ก่อนเลือกตั้ง</a>
+  <a href="phase-b.html" class="sidebar-other-link">Phase B — ระหว่างเลือกตั้ง</a>
+  <a href="phase-c.html" class="sidebar-other-link">Phase C — หลังเลือกตั้ง</a>
+</nav>
+
+<!-- CONTENT -->
+<div class="content">
+<div class="content-inner">
+
+<!-- PHASE HEADER -->
+<div class="phase-header fade-in">
+  <div class="phase-header-badge"><span class="dot"></span> Phase D + E</div>
+  <h1>ปฏิบัติหน้าที่ในสภา + คลังข้อมูลอ้างอิง</h1>
+  <p class="phase-header-sub">ครอบคลุมเนื้อหาตั้งแต่ข้อบังคับสภา อำนาจหน้าที่ ส.ก. กรรมการสามัญ/วิสามัญ กระบวนการออกข้อบัญญัติ การพิจารณางบประมาณ จนถึงคลังข้อมูลอ้างอิง — รวมกฎหมาย แบบฟอร์ม สิทธิประโยชน์ และเหตุสิ้นสมาชิกภาพ</p>
+</div>
+
+<!-- ============================================================
+     PHASE D — ปฏิบัติหน้าที่ในสภา
+     ============================================================ -->
+
+<!-- ============ TOPIC 2.13: ข้อบังคับในสภา ============ -->
+<section class="topic-section fade-in" id="council-rules">
+  <span class="phase-badge phase-d">Phase D — ปฏิบัติหน้าที่ในสภา</span>
+  <div class="topic-label"><span class="line"></span> TOPIC 2.13 — COUNCIL RULES</div>
+  <h2>📜 ข้อบังคับในสภา</h2>
+  <p class="section-desc">ข้อบังคับการประชุมสภากรุงเทพมหานคร พ.ศ. 2562 (ฉบับหลัก) และแก้ไขเพิ่มเติม 3 ครั้ง — หลักเกณฑ์สำคัญที่ ส.ก. ต้องปฏิบัติตาม — อ้างอิง <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 33, 35 พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528</a></p>
+
+  <div style="margin-bottom:24px">
+    <h4 style="font-family:'Space Grotesk',sans-serif;font-size:14px;color:var(--navy);margin-bottom:12px">ข้อบังคับการประชุมสภากรุงเทพมหานคร — ฉบับที่ใช้อยู่ปัจจุบัน</h4>
+    <div style="display:grid;gap:8px">
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;background:#F8FAFC;border:1px solid var(--border);border-radius:8px">
+        <span style="font-size:14px;font-weight:700;color:var(--navy);min-width:24px">1</span>
+        <span style="flex:1;font-size:14px;color:var(--text)">ข้อบังคับการประชุมสภากรุงเทพมหานคร พ.ศ. 2562 <strong>(ฉบับหลัก)</strong></span>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap">รอ upload</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;background:#F8FAFC;border:1px solid var(--border);border-radius:8px">
+        <span style="font-size:14px;font-weight:700;color:var(--navy);min-width:24px">2</span>
+        <span style="flex:1;font-size:14px;color:var(--text)">แก้ไขเพิ่มเติม <strong>ฉบับที่ 2 พ.ศ. 2563</strong></span>
+        <a href="downloads/bmc-rules-2563-v2.pdf" target="_blank" class="dl-btn" style="font-size:12px;padding:4px 12px">📄 ดาวน์โหลด (117KB)</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;background:#F8FAFC;border:1px solid var(--border);border-radius:8px">
+        <span style="font-size:14px;font-weight:700;color:var(--navy);min-width:24px">3</span>
+        <span style="flex:1;font-size:14px;color:var(--text)">แก้ไขเพิ่มเติม <strong>ฉบับที่ 3 พ.ศ. 2565</strong></span>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap">รอ upload</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;background:#F8FAFC;border:1px solid var(--border);border-radius:8px">
+        <span style="font-size:14px;font-weight:700;color:var(--navy);min-width:24px">4</span>
+        <span style="flex:1;font-size:14px;color:var(--text)">แก้ไขเพิ่มเติม <strong>ฉบับที่ 4 พ.ศ. 2566</strong></span>
+        <span style="font-size:12px;color:var(--text-muted);white-space:nowrap">รอ upload</span>
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--text-muted);margin-top:8px">หมายเหตุ: ไฟล์ PDF ฉบับหลัก ฉบับที่ 3 และฉบับที่ 4 อยู่ระหว่างการจัดเตรียม</p>
+  </div>
+
+  <div class="card-band" style="margin-bottom:28px">
+    <div class="band-card" style="border-color:#D97706;background:#FFFBEB">
+      <span class="icon">⚖️</span>
+      <h4>องค์ประชุม</h4>
+      <p>ไม่น้อยกว่า<strong>กึ่งหนึ่ง</strong>ของจำนวนสมาชิกทั้งหมดที่มีอยู่<br><span style="font-size:12px;color:var(--text-muted)"><a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 33</a> พ.ร.บ.ระเบียบบริหาร กทม. 2528</span></p>
+    </div>
+    <div class="band-card" style="border-color:#D97706;background:#FFFBEB">
+      <span class="icon">🗳️</span>
+      <h4>การลงมติ</h4>
+      <p>ใช้<strong>เสียงข้างมาก</strong>เป็นมติของที่ประชุม<br><span style="font-size:12px;color:var(--text-muted)"><a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 33</a> พ.ร.บ.ระเบียบบริหาร กทม. 2528</span></p>
+    </div>
+    <div class="band-card green-band">
+      <span class="icon">👁️</span>
+      <h4>การประชุมเปิดเผย</h4>
+      <p>การประชุมเป็นไปโดย<strong>เปิดเผย</strong> ตามปกติ<br><span style="font-size:12px;color:var(--text-muted)"><a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 35</a> พ.ร.บ.ระเบียบบริหาร กทม. 2528</span></p>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">ข้อบังคับครอบคลุมเรื่องสำคัญ</h3>
+  <div class="checklist-grid">
+    <div class="check-item"><div style="width:8px;height:8px;min-width:8px;border-radius:50%;background:#D97706;margin-top:8px"></div><label style="cursor:default">การเปิดประชุมและปิดประชุม</label></div>
+    <div class="check-item"><div style="width:8px;height:8px;min-width:8px;border-radius:50%;background:#D97706;margin-top:8px"></div><label style="cursor:default">ระเบียบวาระการประชุม</label></div>
+    <div class="check-item"><div style="width:8px;height:8px;min-width:8px;border-radius:50%;background:#D97706;margin-top:8px"></div><label style="cursor:default">การอภิปราย และการรักษาระเบียบในที่ประชุม</label></div>
+    <div class="check-item"><div style="width:8px;height:8px;min-width:8px;border-radius:50%;background:#D97706;margin-top:8px"></div><label style="cursor:default">การลงมติ และการบันทึกมติ</label></div>
+    <div class="check-item"><div style="width:8px;height:8px;min-width:8px;border-radius:50%;background:#D97706;margin-top:8px"></div><label style="cursor:default">การเสนอญัตติ กระทู้ถาม และข้อบัญญัติ</label></div>
+    <div class="check-item"><div style="width:8px;height:8px;min-width:8px;border-radius:50%;background:#D97706;margin-top:8px"></div><label style="cursor:default">การตั้งและการทำงานของคณะกรรมการสามัญ/วิสามัญ</label></div>
+  </div>
+</section>
+
+<!-- ============ TOPIC 2.14: อำนาจหน้าที่ ส.ก. ============ -->
+<section class="topic-section fade-in" id="sk-powers">
+  <span class="phase-badge phase-d">Phase D — ปฏิบัติหน้าที่ในสภา</span>
+  <div class="topic-label"><span class="line"></span> TOPIC 2.14 — SK POWERS</div>
+  <h2>⚡ อำนาจหน้าที่ ส.ก. ในสภา</h2>
+  <p class="section-desc">อำนาจหน้าที่ 6 ด้านของสมาชิกสภากรุงเทพมหานคร — อ้างอิง สถาบันพระปกเกล้า (wiki.kpi.ac.th) และ พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528</p>
+
+  <div class="power-grid">
+    <div class="power-card">
+      <div class="power-num">1</div>
+      <div class="power-body">
+        <h4>เสนอ + พิจารณาให้ความเห็นชอบตราข้อบัญญัติ กทม.</h4>
+        <p>ส.ก. มีอำนาจเสนอร่างข้อบัญญัติ กทม. (จำนวนไม่น้อยกว่า 1/5) และพิจารณาให้ความเห็นชอบร่างข้อบัญญัติต่างๆ ที่เสนอเข้าสู่สภา — <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 97-98</a></p>
+      </div>
+    </div>
+    <div class="power-card">
+      <div class="power-num">2</div>
+      <div class="power-body">
+        <h4>พิจารณาให้ความเห็นชอบร่างข้อบัญญัติงบประมาณรายจ่ายประจำปี</h4>
+        <p>อำนาจสำคัญที่สุดอย่างหนึ่ง — พิจารณางบประมาณประจำปีของ กทม. ผ่าน 3 วาระ — <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 39</a></p>
+      </div>
+    </div>
+    <div class="power-card">
+      <div class="power-num">3</div>
+      <div class="power-body">
+        <h4>ควบคุม ตรวจสอบ ติดตามการบริหารของฝ่ายบริหาร</h4>
+        <p>ตั้งกระทู้ถามผู้ว่า กทม. (<a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 36</a>) | เปิดอภิปรายทั่วไป (<a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 37</a>)</p>
+      </div>
+    </div>
+    <div class="power-card">
+      <div class="power-num">4</div>
+      <div class="power-body">
+        <h4>พิจารณาให้ความเห็นชอบในกิจการที่กฎหมายกำหนด</h4>
+        <p>เรื่องที่กฎหมายกำหนดให้ต้องได้รับความเห็นชอบจากสภา กทม. ก่อนดำเนินการ</p>
+      </div>
+    </div>
+    <div class="power-card">
+      <div class="power-num">5</div>
+      <div class="power-body">
+        <h4>อำนาจอนุมัติ</h4>
+        <p>อนุมัติข้อกำหนด กทม. | ขยายเวลาคณะกรรมการ | และเรื่องอื่นๆ ตามที่กฎหมายกำหนด</p>
+      </div>
+    </div>
+    <div class="power-card">
+      <div class="power-num">6</div>
+      <div class="power-body">
+        <h4>วินิจฉัย</h4>
+        <p>ให้สมาชิกพ้นสมาชิกภาพ (ต้องใช้เสียง 2/3) | อนุมัติการลาประชุม | ตีความข้อบังคับการประชุม</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ อำนาจหน้าที่ กทม. 27 ข้อ ============ -->
+<section class="topic-section fade-in" id="bkk-powers-27">
+  <span class="phase-badge phase-d">Phase D — ปฏิบัติหน้าที่ในสภา</span>
+  <div class="topic-label"><span class="line"></span> อำนาจหน้าที่ กทม. 27 ข้อ</div>
+  <h2>📜 อำนาจหน้าที่ของกรุงเทพมหานคร 27 ข้อ</h2>
+  <p class="section-desc">มาตรา 89 พ.ร.บ.ระเบียบบริหารราชการ กทม. พ.ศ. 2528 — กำหนดอำนาจหน้าที่ของ กทม. ที่สมาชิกสภา กทม. ต้องรู้เพื่อตรวจสอบฝ่ายบริหาร</p>
+
+  <div class="bkk27-grid">
+    <div class="bkk27-card"><div class="bkk27-num">1</div><div class="bkk27-text">การรักษาความสงบเรียบร้อยของประชาชน</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">2</div><div class="bkk27-text">การทะเบียนตามที่กฎหมายกำหนด</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">3</div><div class="bkk27-text">การป้องกันและบรรเทาสาธารณภัย</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">4</div><div class="bkk27-text">การรักษาความสะอาดและความเป็นระเบียบเรียบร้อยของบ้านเมือง</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">5</div><div class="bkk27-text">การผังเมือง</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">6</div><div class="bkk27-text">การจัดให้มีและบำรุงรักษาทางบก ทางน้ำ และทางระบายน้ำ</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">7</div><div class="bkk27-text">การจัดการจราจรและการวิศวกรรมจราจร <small>(แก้ไข ฉบับที่ 6)</small></div></div>
+    <div class="bkk27-card"><div class="bkk27-num">8</div><div class="bkk27-text">การขนส่ง</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">9</div><div class="bkk27-text">การจัดให้มีและควบคุมตลาด ท่าเทียบเรือ ท่าข้าม และที่จอดรถ</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">10</div><div class="bkk27-text">การดูแลรักษาที่สาธารณะ</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">11</div><div class="bkk27-text">การควบคุมอาคาร</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">12</div><div class="bkk27-text">การปรับปรุงแหล่งชุมชนแออัดและการจัดการเกี่ยวกับที่อยู่อาศัย</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">13</div><div class="bkk27-text">การจัดให้มีและบำรุงรักษาสถานที่พักผ่อนหย่อนใจ</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">14</div><div class="bkk27-text">การพัฒนาและอนุรักษ์สิ่งแวดล้อม</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">15</div><div class="bkk27-text">การสาธารณูปโภค</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">16</div><div class="bkk27-text">การสาธารณสุข การอนามัยครอบครัว และการรักษาพยาบาล</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">17</div><div class="bkk27-text">การจัดให้มีและควบคุมสุสานและฌาปนสถาน</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">18</div><div class="bkk27-text">การควบคุมการเลี้ยงสัตว์</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">19</div><div class="bkk27-text">การจัดให้มีและควบคุมการฆ่าสัตว์</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">20</div><div class="bkk27-text">การควบคุมความปลอดภัย ความเป็นระเบียบเรียบร้อย และอนามัยในโรงมหรสพและสาธารณสถานอื่นๆ</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">21</div><div class="bkk27-text">การจัดการศึกษา</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">22</div><div class="bkk27-text">การสาธารณูปการ</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">23</div><div class="bkk27-text">การสังคมสงเคราะห์</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">24</div><div class="bkk27-text">การส่งเสริมการกีฬา</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">25</div><div class="bkk27-text">การส่งเสริมการประกอบอาชีพ</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">26</div><div class="bkk27-text">การพาณิชย์ของกรุงเทพมหานคร</div></div>
+    <div class="bkk27-card"><div class="bkk27-num">27</div><div class="bkk27-text">หน้าที่อื่นๆ ตามที่กฎหมายระบุ</div></div>
+  </div>
+
+  <div class="section-source">ที่มา: สถาบันพระปกเกล้า (<a href="https://wiki.kpi.ac.th" target="_blank" rel="noopener" style="color:var(--blue)">wiki.kpi.ac.th</a>)</div>
+</section>
+
+<!-- ============ 13 คณะกรรมการสามัญ ============ -->
+<section class="topic-section fade-in" id="committees-13">
+  <span class="phase-badge phase-d">Phase D — ปฏิบัติหน้าที่ในสภา</span>
+  <div class="topic-label"><span class="line"></span> 13 คณะกรรมการสามัญ</div>
+  <h2>👥 13 คณะกรรมการสามัญประจำสภากรุงเทพมหานคร</h2>
+  <p class="section-desc">ตาม ม.38 พ.ร.บ.กทม. 2528 + ข้อบังคับการประชุมสภา กทม. พ.ศ. 2562</p>
+
+  <div class="comm13-explain">
+    คณะกรรมการสามัญ คือ คณะกรรมการที่สภา กทม. แต่งตั้งจากสมาชิกสภา คณะหนึ่งมีจำนวน 5-9 คน มีหน้าที่ตรวจสอบและติดตามการปฏิบัติงานของฝ่ายบริหารในแต่ละด้าน
+  </div>
+
+  <div class="comm13-grid">
+    <div class="comm13-card"><div class="comm13-num">1</div><div class="comm13-text">คณะกรรมการกิจการสภา</div></div>
+    <div class="comm13-card"><div class="comm13-num">2</div><div class="comm13-text">คณะกรรมการตรวจรายงานการประชุม</div></div>
+    <div class="comm13-card"><div class="comm13-num">3</div><div class="comm13-text">คณะกรรมการการศึกษา</div></div>
+    <div class="comm13-card"><div class="comm13-num">4</div><div class="comm13-text">คณะกรรมการการโยธาและผังเมือง</div></div>
+    <div class="comm13-card"><div class="comm13-num">5</div><div class="comm13-text">คณะกรรมการการสาธารณสุข</div></div>
+    <div class="comm13-card"><div class="comm13-num">6</div><div class="comm13-text">คณะกรรมการการรักษาความสะอาดและสิ่งแวดล้อม</div></div>
+    <div class="comm13-card"><div class="comm13-num">7</div><div class="comm13-text">คณะกรรมการการเศรษฐกิจ การเงิน การคลังและการงบประมาณ</div></div>
+    <div class="comm13-card"><div class="comm13-num">8</div><div class="comm13-text">คณะกรรมการการปกครองและรักษาความสงบเรียบร้อย</div></div>
+    <div class="comm13-card"><div class="comm13-num">9</div><div class="comm13-text">คณะกรรมการการพัฒนาชุมชนและสวัสดิการสังคม</div></div>
+    <div class="comm13-card"><div class="comm13-num">10</div><div class="comm13-text">คณะกรรมการการจราจรและการขนส่ง</div></div>
+    <div class="comm13-card"><div class="comm13-num">11</div><div class="comm13-text">คณะกรรมการการระบายน้ำ</div></div>
+    <div class="comm13-card"><div class="comm13-num">12</div><div class="comm13-text">คณะกรรมการการวัฒนธรรม การท่องเที่ยวและการกีฬา</div></div>
+    <div class="comm13-card"><div class="comm13-num">13</div><div class="comm13-text">คณะกรรมการการยุทธศาสตร์และเทคโนโลยีดิจิทัล</div></div>
+  </div>
+
+  <div class="section-source">ที่มา: สภากรุงเทพมหานคร (<a href="https://bmc.go.th" target="_blank" rel="noopener" style="color:var(--blue)">bmc.go.th</a>) — สภา กทม. ชุดที่ 13</div>
+</section>
+
+<!-- ============ TOPIC 2.15: กรรมการสามัญวิสามัญ ============ -->
+<section class="topic-section fade-in" id="committees">
+  <span class="phase-badge phase-d">Phase D — ปฏิบัติหน้าที่ในสภา</span>
+  <div class="topic-label"><span class="line"></span> TOPIC 2.15 — COMMITTEES</div>
+  <h2>👥 คณะกรรมการสามัญ และวิสามัญ</h2>
+  <p class="section-desc">สภา กทม. มีอำนาจเลือกคณะกรรมการสามัญ และคณะกรรมการวิสามัญ เพื่อดำเนินงานตามอำนาจหน้าที่ — อ้างอิง <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 38 พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528</a></p>
+
+  <div class="do-dont-grid" style="margin-bottom:28px">
+    <div class="do-section">
+      <h3>📋 คณะกรรมการสามัญ</h3>
+      <div class="do-card"><div class="card-title">ตั้งจาก<strong>สมาชิกสภา กทม.</strong></div></div>
+      <div class="do-card"><div class="card-title">ทำหน้าที่<strong>ถาวร</strong>ตลอดอายุสภา</div></div>
+      <div class="do-card"><div class="card-title">เช่น คณะกรรมการสามัญด้านงบประมาณ ด้านกฎหมาย ฯลฯ</div></div>
+    </div>
+    <div style="color:var(--navy)">
+      <h3 style="color:var(--navy);font-family:'Space Grotesk',sans-serif;font-size:16px;margin-bottom:16px">📋 คณะกรรมการวิสามัญ</h3>
+      <div class="band-card yellow-band" style="margin-bottom:10px"><div class="card-title" style="color:#92400E">ตั้งจาก<strong>สมาชิก + บุคคลภายนอก</strong></div></div>
+      <div class="band-card yellow-band" style="margin-bottom:10px"><div class="card-title" style="color:#92400E">ทำหน้าที่<strong>เฉพาะเรื่อง</strong>ตามที่สภามอบหมาย</div></div>
+      <div class="band-card yellow-band" style="margin-bottom:10px"><div class="card-title" style="color:#92400E">เช่น คณะกรรมการวิสามัญพิจารณาร่างข้อบัญญัติ</div></div>
+    </div>
+  </div>
+
+  <div class="law-text-box">
+    <h4>องค์ประชุมคณะกรรมการ — <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 38</a></h4>
+    <div class="law-content">
+      <p>องค์ประชุมคณะกรรมการ: <strong>ไม่น้อยกว่ากึ่งหนึ่ง</strong> ของจำนวนกรรมการทั้งหมด — ใช้ข้อบังคับสภา กทม. โดยอนุโลม</p>
+      <p style="margin-top:8px"><strong>หน้าที่:</strong> สอบสวน ศึกษา พิจารณา เรื่องที่อยู่ในอำนาจหน้าที่ แล้วรายงานต่อสภา</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOPIC 2.16: กระบวนการออกข้อบัญญัติ ============ -->
+<section class="topic-section fade-in" id="ordinance-process">
+  <span class="phase-badge phase-d">Phase D — ปฏิบัติหน้าที่ในสภา</span>
+  <div class="topic-label"><span class="line"></span> TOPIC 2.16 — ORDINANCE PROCESS</div>
+  <h2>📝 กระบวนการออกข้อบัญญัติ กทม.</h2>
+  <p class="section-desc">ขั้นตอนการตราข้อบัญญัติกรุงเทพมหานคร — ตั้งแต่เสนอร่างจนถึงประกาศใช้ — อ้างอิง <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 97, 98, 100, 101, 102 พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528</a></p>
+
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">ผู้มีสิทธิเสนอร่างข้อบัญญัติ — <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 98</a></h3>
+  <div class="card-band" style="margin-bottom:28px">
+    <div class="band-card" style="border-color:#D97706;background:#FFFBEB">
+      <span class="icon">👤</span>
+      <h4>1. ผู้ว่าราชการ กทม.</h4>
+      <p>เสนอร่างข้อบัญญัติได้โดยตรง</p>
+    </div>
+    <div class="band-card" style="border-color:#D97706;background:#FFFBEB">
+      <span class="icon">👥</span>
+      <h4>2. สมาชิกไม่น้อยกว่า 1/5</h4>
+      <p>สมาชิกสภา กทม. ลงชื่อร่วมกันไม่น้อยกว่า 1/5 ของจำนวนสมาชิกทั้งหมด</p>
+    </div>
+    <div class="band-card green-band">
+      <span class="icon">🏘️</span>
+      <h4>3. ราษฎรเข้าชื่อ</h4>
+      <p>ประชาชนเข้าชื่อตามกฎหมาย (พ.ร.บ.ระเบียบบริหาร กทม. ฉบับที่ 5)</p>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">📊 Flowchart: กระบวนการออกข้อบัญญัติ</h3>
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="flow-num fn-warm">1</div>
+      <div class="flow-body">
+        <h4>เสนอร่างข้อบัญญัติ</h4>
+        <p>ผู้ว่า กทม. / ส.ก. ไม่น้อยกว่า 1/5 / ราษฎรเข้าชื่อ → เสนอร่างเข้าสภา — <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 98</a></p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num fn-warm">2</div>
+      <div class="flow-body">
+        <h4>สภาพิจารณา</h4>
+        <p>สภา กทม. พิจารณาร่างข้อบัญญัติ — อภิปราย แปรญัตติ ลงมติ — <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 97</a></p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num fn-green">3</div>
+      <div class="flow-body">
+        <h4>สภาเห็นชอบ → ส่งผู้ว่า กทม. ลงนาม</h4>
+        <p>เมื่อสภาเห็นชอบ ส่งผู้ว่า กทม. ลงนามประกาศใช้ — <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 100</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-branch">
+    <div class="flow-branch-card branch-yes">
+      <strong>✅ ผู้ว่าเห็นชอบ</strong><br>
+      ลงนามประกาศใช้ → <strong>ข้อบัญญัติมีผลบังคับ</strong>
+    </div>
+    <div class="flow-branch-card branch-no">
+      <strong>❌ ผู้ว่าไม่เห็นชอบ</strong><br>
+      ส่งคืนสภาพิจารณาใหม่ — <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 101</a>
+    </div>
+  </div>
+
+  <div class="flow-steps" style="margin-top:16px">
+    <div class="flow-step">
+      <div class="flow-num fn-red">4</div>
+      <div class="flow-body">
+        <h4>สภายืนยันด้วยเสียง 3/4</h4>
+        <p>หากผู้ว่าไม่เห็นชอบ → สภาลงมติยืนยันด้วยคะแนนไม่น้อยกว่า <strong>3 ใน 4</strong> → ผู้ว่าต้องลงนามประกาศ — <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 101</a></p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num fn-red">5</div>
+      <div class="flow-body" style="border-color:#FECACA;background:#FEF2F2">
+        <h4 style="color:#991B1B">สภาไม่เห็นชอบ → ร่างตกไป</h4>
+        <p>หากสภาไม่ยืนยัน หรือไม่เห็นชอบร่างตั้งแต่ต้น → ร่างข้อบัญญัตินั้นตกไป — <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 102</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOPIC 2.17: กระทู้ถาม ญัตติ ============ -->
+<section class="topic-section fade-in" id="questions-motions">
+  <span class="phase-badge phase-d">Phase D — ปฏิบัติหน้าที่ในสภา</span>
+  <div class="topic-label"><span class="line"></span> TOPIC 2.17 — QUESTIONS & MOTIONS</div>
+  <h2>❓ กระทู้ถาม และ ญัตติ</h2>
+  <p class="section-desc">เครื่องมือสำคัญของ ส.ก. ในการตรวจสอบฝ่ายบริหารและเสนอเรื่องต่อสภา — อ้างอิง <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 36, 37 พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528 (แก้ไข ฉบับที่ 6)</a></p>
+
+  <div class="do-dont-grid" style="margin-bottom:28px">
+    <div class="do-section">
+      <h3>📌 กระทู้ถาม — <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 36</a></h3>
+      <div class="do-card">
+        <div class="card-title">สมาชิกมีสิทธิตั้ง<strong>กระทู้ถามผู้ว่าราชการ กทม.</strong></div>
+        <span class="cite">สมาชิกทุกคนมีสิทธิตั้งกระทู้ถาม — ม.36 พ.ร.บ.ระเบียบบริหาร กทม. 2528</span>
+      </div>
+      <div class="do-card">
+        <div class="card-title">ใช้เป็นเครื่องมือ<strong>ตรวจสอบการทำงาน</strong>ของฝ่ายบริหาร</div>
+      </div>
+    </div>
+    <div class="do-section">
+      <h3>📌 ญัตติเปิดอภิปราย — <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 37</a></h3>
+      <div class="band-card yellow-band" style="margin-bottom:10px">
+        <div class="card-title" style="color:#92400E">สมาชิกไม่น้อยกว่า <strong>2/5</strong> เข้าชื่อเสนอญัตติเปิดอภิปรายทั่วไป</div>
+        <span style="font-size:11px;color:#92400E;display:block;margin-top:4px">⚠️ แก้ไข ฉบับที่ 6 พ.ศ. 2562 — จาก 1/3 เป็น 2/5</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">ประเภทญัตติ</h3>
+  <div class="card-band" style="margin-bottom:20px">
+    <div class="band-card" style="border-color:#D97706;background:#FFFBEB">
+      <span class="icon">📋</span>
+      <h4>ญัตติทั่วไป</h4>
+      <p>เสนอเรื่องทั่วไปเพื่อให้สภาพิจารณาลงมติ — ข้อบังคับ ข้อ 37</p>
+    </div>
+    <div class="band-card red-band">
+      <span class="icon">🎤</span>
+      <h4>ญัตติเปิดอภิปรายทั่วไป</h4>
+      <p>ใช้ตรวจสอบฝ่ายบริหาร — ต้องใช้เสียง 2/5 — <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 37</a></p>
+    </div>
+    <div class="band-card" style="border-color:#D97706;background:#FFFBEB">
+      <span class="icon">⚡</span>
+      <h4>ญัตติด่วน</h4>
+      <p>เรื่องด่วนที่ไม่ต้องเสนอล่วงหน้า — ข้อบังคับ ข้อ 38</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOPIC 2.18: สมัยประชุม ============ -->
+<section class="topic-section fade-in" id="session-work">
+  <span class="phase-badge phase-d">Phase D — ปฏิบัติหน้าที่ในสภา</span>
+  <div class="topic-label"><span class="line"></span> TOPIC 2.18 — SESSION WORK</div>
+  <h2>📅 เรื่องราวในสมัยประชุม</h2>
+  <p class="section-desc">สมัยประชุมสามัญ วิสามัญ และเรื่องที่พิจารณาในสภา — อ้างอิง <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 30, 31 พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528</a></p>
+
+  <div class="table-wrap" style="margin-bottom:28px">
+    <table class="info-table">
+      <thead><tr><th>ประเภทสมัยประชุม</th><th>จำนวน/เงื่อนไข</th><th>อ้างอิง</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>สมัยสามัญ</strong></td>
+          <td>ไม่น้อยกว่า <strong>2 สมัย</strong> แต่ไม่เกิน <strong>4 สมัย/ปี</strong></td>
+          <td><a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 30</a></td>
+        </tr>
+        <tr>
+          <td><strong>สมัยวิสามัญ</strong></td>
+          <td>ผู้ว่า กทม. หรือสมาชิก 1/3 ร้องขอ → ประธานสภากำหนดภายใน <strong>15 วัน</strong></td>
+          <td><a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 31</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">เรื่องที่พิจารณาในสมัยประชุม</h3>
+  <div class="card-band" style="margin-bottom:28px">
+    <div class="band-card" style="border-color:#D97706;background:#FFFBEB"><span class="icon">📝</span><h4>ร่างข้อบัญญัติ</h4><p>พิจารณาร่างข้อบัญญัติที่เสนอเข้าสู่สภา</p></div>
+    <div class="band-card" style="border-color:#D97706;background:#FFFBEB"><span class="icon">💰</span><h4>งบประมาณ</h4><p>พิจารณาร่างข้อบัญญัติงบประมาณรายจ่ายประจำปี</p></div>
+    <div class="band-card" style="border-color:#D97706;background:#FFFBEB"><span class="icon">❓</span><h4>กระทู้ถาม</h4><p>ตั้งกระทู้ถามผู้ว่า กทม. เกี่ยวกับการบริหาร</p></div>
+    <div class="band-card" style="border-color:#D97706;background:#FFFBEB"><span class="icon">📋</span><h4>ญัตติ</h4><p>เสนอญัตติทั่วไป ญัตติด่วน ญัตติเปิดอภิปราย</p></div>
+    <div class="band-card" style="border-color:#D97706;background:#FFFBEB"><span class="icon">📊</span><h4>รายงานกรรมการ</h4><p>รับทราบรายงานจากคณะกรรมการสามัญ/วิสามัญ</p></div>
+  </div>
+
+  <div class="law-text-box">
+    <h4>เบี้ยประชุมกรรมาธิการ</h4>
+    <div class="law-content">
+      <p>กรรมการ: <strong>1,500 บาท/ครั้ง</strong> | อนุกรรมการ: <strong>800 บาท/ครั้ง</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOPIC 2.19: งบประมาณ ============ -->
+<section class="topic-section fade-in" id="budget-review">
+  <span class="phase-badge phase-d">Phase D — ปฏิบัติหน้าที่ในสภา</span>
+  <div class="topic-label"><span class="line"></span> TOPIC 2.19 — BUDGET REVIEW</div>
+  <h2>💰 การพิจารณางบประมาณ</h2>
+  <p class="section-desc">สภา กทม. พิจารณาร่างข้อบัญญัติงบประมาณรายจ่ายประจำปี — กระบวนการ 3 วาระ — อ้างอิง <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 39 พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528</a></p>
+
+  <div class="flow-steps" style="margin-bottom:28px">
+    <div class="flow-step">
+      <div class="flow-num fn-warm">1</div>
+      <div class="flow-body"><h4>ผู้ว่า กทม. เสนอร่างข้อบัญญัติงบประมาณ</h4><p>ผู้ว่าราชการ กทม. จัดทำและเสนอร่างข้อบัญญัติงบประมาณรายจ่ายประจำปีเข้าสู่สภา</p></div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num fn-warm">2</div>
+      <div class="flow-body" style="border-color:#D97706;background:#FFFBEB"><h4>วาระที่ 1 — รับหลักการ</h4><p>ผู้ว่า กทม. แถลงหลักการและเหตุผลของร่างงบประมาณ → สภาลงมติ<strong>รับหลักการ</strong></p></div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num fn-warm">3</div>
+      <div class="flow-body" style="border-color:#D97706;background:#FFFBEB"><h4>วาระที่ 2 — คณะกรรมาธิการพิจารณารายละเอียด</h4><p>ตั้งคณะกรรมาธิการพิจารณาร่างงบประมาณทีละรายการ — เรียกหน่วยงานชี้แจง — แปรญัตติ</p></div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num fn-green">4</div>
+      <div class="flow-body"><h4>วาระที่ 3 — ลงมติเห็นชอบ</h4><p>สภาลงมติ<strong>เห็นชอบหรือไม่เห็นชอบ</strong>ร่างงบประมาณทั้งฉบับ (การเพิ่มรายจ่ายต้องได้รับความเห็นชอบจากผู้ว่า กทม.) — <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 39</a></p></div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num fn-green">5</div>
+      <div class="flow-body" style="border-color:#22C55E;background:#F0FDF4"><h4>ประกาศใช้งบประมาณ</h4><p>ผู้ว่า กทม. ลงนามประกาศใช้ → ข้อบัญญัติงบประมาณมีผลบังคับ</p></div>
+    </div>
+  </div>
+
+  <div class="stats-box">
+    <div class="stat-box">
+      <div class="sb-num" style="color:#D97706">~90,000</div>
+      <div class="sb-label">ล้านบาท<br><span style="font-size:10px;color:var(--text-muted)">งบประมาณ กทม. ปี 2569 (สมมติฐาน)</span></div>
+    </div>
+    <div class="stat-box">
+      <div class="sb-num">3</div>
+      <div class="sb-label">วาระพิจารณา<br><span style="font-size:10px;color:var(--text-muted)">รับหลักการ → กมธ. → ลงมติ</span></div>
+    </div>
+    <div class="stat-box">
+      <div class="sb-num" style="color:#22C55E">50</div>
+      <div class="sb-label">เขตเลือกตั้ง ส.ก.<br><span style="font-size:10px;color:var(--text-muted)">50 เขต กทม.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PHASE E — คลังข้อมูลอ้างอิง
+     ============================================================ -->
+
+<!-- ============ TOPIC 2.20: รวมกฎหมาย ============ -->
+<section class="topic-section fade-in" id="law-full-section">
+  <span class="phase-badge phase-e">Phase E — คลังข้อมูลอ้างอิง</span>
+  <div class="topic-label phase-e-label"><span class="line"></span> TOPIC 2.20 — LAW TEXT + DOWNLOADS</div>
+  <h2>📚 ตัวบทกฎหมายสำคัญ + ดาวน์โหลด</h2>
+  <p class="section-desc">ตัวบทกฎหมายที่อ้างอิงในคู่มือนี้ — คลิก <a class="matra-link" href="sk-candidate-guide.html#law-m49">ม.XX</a> ใดๆ ในเอกสารเพื่อข้ามไปอ่านที่คู่มือฉบับเต็ม</p>
+
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">ดาวน์โหลดกฎหมาย</h3>
+  <div class="law-download-grid">
+    <div class="law-dl-card">
+      <div class="law-dl-num">01</div>
+      <div class="law-dl-body">
+        <h4>พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562 (และฉบับที่ 2 พ.ศ. 2566)</h4>
+        <p>กฎหมายหลักสำหรับการเลือกตั้ง ส.ก. — มาตรา 49, 50, 60-62, 64-73, 120, 126-128</p>
+        <a href="downloads/pra-local-election-2562.pdf" target="_blank" class="dl-btn">⬇️ ดาวน์โหลด PDF</a>
+      </div>
+    </div>
+    <div class="law-dl-card">
+      <div class="law-dl-num">02</div>
+      <div class="law-dl-body">
+        <h4>พระราชบัญญัติระเบียบบริหารราชการกรุงเทพมหานคร พ.ศ. 2528</h4>
+        <p>กฎหมายการจัดตั้งและอำนาจหน้าที่ กทม. — มาตรา 102 (จำนวน ส.ก.) มาตรา 124</p>
+        <a href="downloads/prb-bma-2528.pdf" target="_blank" class="dl-btn">⬇️ ดาวน์โหลด PDF</a>
+      </div>
+    </div>
+    <div class="law-dl-card">
+      <div class="law-dl-num">03</div>
+      <div class="law-dl-body">
+        <h4>ระเบียบ กกต. ว่าด้วยวิธีการหาเสียงและลักษณะต้องห้าม พ.ศ. 2563 (และฉบับที่ 2)</h4>
+        <p>รายละเอียดป้ายหาเสียง ขนาด จำนวน สถานที่</p>
+        <a href="https://www.ect.go.th/ect_th/" target="_blank" class="dl-btn">🔗 เว็บไซต์ กกต.</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin:24px 0 16px">แหล่งข้อมูลและค้นกฎหมาย</h3>
+  <div class="link-cards">
+    <a href="https://gdcatalog.go.th" target="_blank" class="link-card">
+      <span class="lc-icon">🏛️</span>
+      <div class="lc-title">GD Catalog</div>
+      <div class="lc-desc">gdcatalog.go.th — ค้นกฎหมายท้องถิ่น</div>
+    </a>
+    <a href="https://krisdika.go.th" target="_blank" class="link-card">
+      <span class="lc-icon">📜</span>
+      <div class="lc-title">Krisdika</div>
+      <div class="lc-desc">krisdika.go.th — ตัวบทกฎหมายฉบับเต็ม</div>
+    </a>
+    <a href="https://www.ect.go.th/ect_th/" target="_blank" class="link-card">
+      <span class="lc-icon">🗳️</span>
+      <div class="lc-title">กกต.</div>
+      <div class="lc-desc">ect.go.th — ระเบียบ กกต. และข้อมูลเลือกตั้ง</div>
+    </a>
+    <a href="https://stat.bora.dopa.go.th/Election/absvote/#/" target="_blank" class="link-card">
+      <span class="lc-icon">🔍</span>
+      <div class="lc-title">ตรวจสิทธิเลือกตั้ง</div>
+      <div class="lc-desc">stat.bora.dopa.go.th — ตรวจสถานะเสียสิทธิ</div>
+    </a>
+  </div>
+</section>
+
+<!-- ============ TOPIC 2.21: แบบฟอร์ม ============ -->
+<section class="topic-section fade-in" id="forms-timeline">
+  <span class="phase-badge phase-e">Phase E — คลังข้อมูลอ้างอิง</span>
+  <div class="topic-label phase-e-label"><span class="line"></span> TOPIC 2.21 — FORMS & DOCUMENTS</div>
+  <h2>📄 รวมประกาศ และแบบฟอร์มทุกประเภทตามช่วงเวลา</h2>
+  <p class="section-desc">รวมเอกสาร/แบบฟอร์ม/ประกาศที่ต้องใช้ในแต่ละช่วงของการเลือกตั้ง ส.ก. กทม. — จัดเรียงตามลำดับเวลาตั้งแต่ก่อนประกาศจนหลังเข้ารับตำแหน่ง</p>
+
+  <div class="table-wrap" style="margin-bottom:32px">
+    <table class="info-table">
+      <thead>
+        <tr><th>ช่วงเวลา</th><th>เอกสาร/แบบฟอร์ม</th><th>หน่วยงาน</th><th>สถานะ</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>ก่อนประกาศเลือกตั้ง</td><td><strong>พ.ร.ฎ.กำหนดให้มีการเลือกตั้ง</strong> (กรณีครบวาระ)</td><td>คณะรัฐมนตรี</td><td>⏳ รอ</td></tr>
+        <tr><td>วันประกาศเลือกตั้ง</td><td><strong>ประกาศ ผอ.กต. ให้มีการเลือกตั้ง ส.ก.</strong> (<a class="matra-link" href="sk-candidate-guide.html#ect-announcement">มาตรา 12</a>)</td><td>กกต.</td><td>⏳ รอ</td></tr>
+        <tr><td>วันรับสมัคร</td><td><strong>ใบสมัคร แบบ ส.ถ./ผ.ถ. 4/1</strong></td><td>กกต. / สำนักงานเขต</td><td>🔗 รับที่ กกต.</td></tr>
+        <tr><td>วันรับสมัคร</td><td><strong>หนังสือยืนยันภาษี แบบ ส.ถ./ผ.ถ. 4/2</strong></td><td>กกต. / สำนักงานเขต</td><td>🔗 รับที่ กกต.</td></tr>
+        <tr><td>วันรับสมัคร</td><td><strong>บัตรประจำตัวประชาชน</strong> (สำเนา)</td><td>ผู้สมัคร</td><td>✅ เตรียมเอง</td></tr>
+        <tr><td>วันรับสมัคร</td><td><strong>ค่าธรรมเนียมสมัคร</strong> (เงินสด 10,000 บาท)</td><td>ผู้สมัคร</td><td>✅ เตรียมเอง</td></tr>
+        <tr><td>วันรับสมัคร</td><td><strong>รูปถ่ายผู้สมัคร</strong> (10 รูป ขนาด 8.5 x 13.5 ซม.)</td><td>ผู้สมัคร</td><td>✅ เตรียมเอง</td></tr>
+        <tr><td>หลังรับสมัคร</td><td><strong>ประกาศบัญชีรายชื่อผู้สมัคร</strong> (<a class="matra-link" href="sk-candidate-guide.html#law-m50">มาตรา 54</a>)</td><td>กกต.</td><td>⏳ รอ</td></tr>
+        <tr><td>หลังรับสมัคร</td><td><strong>ประกาศหมายเลขผู้สมัคร</strong> (<a class="matra-link" href="sk-candidate-guide.html#law-m50">มาตรา 55</a>)</td><td>กกต.</td><td>⏳ รอ</td></tr>
+        <tr><td>หลังจับเบอร์</td><td><strong>ประกาศกำหนดจำนวนป้ายหาเสียง</strong></td><td>กกต.</td><td>⏳ รอ</td></tr>
+        <tr><td>หลังจับเบอร์</td><td><strong>ประกาศจำนวนเงินค่าใช้จ่ายเลือกตั้ง</strong></td><td>ผอ.กต.</td><td>⏳ รอ</td></tr>
+        <tr><td>ระหว่างหาเสียง</td><td><strong>บัญชีรายรับ-รายจ่ายค่าใช้จ่ายเลือกตั้ง</strong> (<a class="matra-link" href="sk-candidate-guide.html#law-m60">มาตรา 66</a>)</td><td>ผู้สมัคร</td><td>✅ เตรียมเอง</td></tr>
+        <tr><td>วันเลือกตั้ง</td><td><strong>บัตรเลือกตั้ง ส.ก.</strong> (สีชมพู ปี 65)</td><td>กกต.</td><td>⏳ รอ</td></tr>
+        <tr><td>หลังเลือกตั้ง 30 วัน</td><td><strong>ประกาศผลการเลือกตั้ง</strong> (<a class="matra-link" href="sk-candidate-guide.html#law-m49">มาตรา 109</a>)</td><td>กกต.</td><td>⏳ รอ</td></tr>
+        <tr><td>หลังเลือกตั้ง 90 วัน</td><td><strong>บัญชีรายรับ-รายจ่าย</strong> ยื่นต่อ ผอ.กต.ประจำจังหวัด (<a class="matra-link" href="sk-candidate-guide.html#law-m60">มาตรา 62</a>)</td><td>ผู้สมัคร</td><td>✅ เตรียมเอง</td></tr>
+        <tr><td>หลังประกาศผล 90 วัน</td><td><strong>แบบยื่นบัญชีทรัพย์สิน ป.ป.ช.</strong></td><td>ป.ป.ช.</td><td>🔗 ดาวน์โหลดจาก ป.ป.ช.</td></tr>
+        <tr><td>หลังเข้ารับตำแหน่ง</td><td><strong>รายงานตัวต่อสภา กทม.</strong></td><td>สภา กทม.</td><td>⏳</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ TOPIC 2.22: สิทธิประโยชน์ ============ -->
+<section class="topic-section fade-in" id="sk-benefits">
+  <span class="phase-badge phase-e">Phase E — คลังข้อมูลอ้างอิง</span>
+  <div class="topic-label phase-e-label"><span class="line"></span> TOPIC 2.22 — SK BENEFITS</div>
+  <h2>💼 สิทธิประโยชน์ ส.ก.</h2>
+  <p class="section-desc">เงินเดือน เบี้ยประชุม และสวัสดิการของสมาชิกสภากรุงเทพมหานคร — อ้างอิง พระราชกฤษฎีกากำหนดเงินประจำตำแหน่งฯ ส.ก. (ฉบับที่ 8) พ.ศ. 2555</p>
+
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">เงินเดือนประจำตำแหน่ง</h3>
+  <div class="salary-grid" style="margin-bottom:28px">
+    <div class="salary-card">
+      <div class="sal-amount" style="color:var(--navy)">48,450</div>
+      <div class="sal-label">บาท/เดือน</div>
+      <div class="sal-detail"><strong>ส.ก.</strong><br>(เงินประจำตำแหน่ง 44,700 + เงินตอบแทน 3,750)</div>
+    </div>
+    <div class="salary-card" style="border-color:var(--gold);background:#FFFDF5">
+      <div class="sal-amount" style="color:var(--gold)">73,560</div>
+      <div class="sal-label">บาท/เดือน</div>
+      <div class="sal-detail"><strong>ประธานสภา</strong></div>
+    </div>
+    <div class="salary-card">
+      <div class="sal-amount" style="color:var(--navy)">61,140</div>
+      <div class="sal-label">บาท/เดือน</div>
+      <div class="sal-detail"><strong>รองประธานสภา</strong></div>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">เบี้ยประชุม</h3>
+  <div class="table-wrap" style="margin-bottom:28px">
+    <table class="info-table">
+      <thead><tr><th>ประเภท</th><th>อัตรา</th></tr></thead>
+      <tbody>
+        <tr><td><strong>เบี้ยประชุมกรรมการ</strong></td><td><strong>1,500 บาท/ครั้ง</strong></td></tr>
+        <tr><td><strong>เบี้ยประชุมอนุกรรมการ</strong></td><td><strong>800 บาท/ครั้ง</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card-band">
+    <div class="band-card" style="border-color:#9F1239;background:#FFF1F2">
+      <span class="icon">📊</span>
+      <h4 style="color:#9F1239">รวม 4 ปี — ส.ก.</h4>
+      <p>ส.ก. ≈ <strong>2,325,600 บาท</strong> (เงินเดือน 48,450 × 48 เดือน) ยังไม่รวมเบี้ยประชุมกรรมการและสวัสดิการอื่นๆ</p>
+    </div>
+    <div class="band-card green-band">
+      <span class="icon">🏥</span>
+      <h4>สวัสดิการ</h4>
+      <p>ค่ารักษาพยาบาล | ค่าเดินทาง | สิทธิประโยชน์อื่นๆ ตามระเบียบ กทม.</p>
+    </div>
+  </div>
+
+  <p style="font-size:12px;color:var(--text-muted);margin-top:16px">อ้างอิง: พระราชกฤษฎีกากำหนดเงินประจำตำแหน่ง เงินค่าเบี้ยประชุม และประโยชน์ตอบแทนอื่นของสมาชิกสภากรุงเทพมหานคร เลขานุการประธานสภากรุงเทพมหานคร เลขานุการรองประธานสภากรุงเทพมหานคร ผู้ช่วยเลขานุการประธานสภากรุงเทพมหานคร ผู้ช่วยเลขานุการรองประธานสภากรุงเทพมหานคร ที่ปรึกษา เลขานุการ และผู้ช่วยเลขานุการของสมาชิกสภากรุงเทพมหานคร (ฉบับที่ 8) พ.ศ. 2555</p>
+</section>
+
+<!-- ============ TOPIC 2.23: สิ้นสมาชิกภาพ ============ -->
+<section class="topic-section fade-in" id="termination">
+  <span class="phase-badge phase-e">Phase E — คลังข้อมูลอ้างอิง</span>
+  <div class="topic-label phase-e-label"><span class="line"></span> TOPIC 2.23 — TERMINATION</div>
+  <h2>🚫 การสิ้นสมาชิกภาพของ ส.ก.</h2>
+  <p class="section-desc">เหตุที่ทำให้สมาชิกภาพของ ส.ก. สิ้นสุดลง — อ้างอิง <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 23, 24 พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528 (แก้ไขถึง ฉบับที่ 6 พ.ศ. 2562)</a></p>
+
+  <div class="law-text-box" style="margin-bottom:28px">
+    <h4>มาตรา 23 — เหตุสิ้นสมาชิกภาพ</h4>
+    <div class="law-content">
+      <p>สมาชิกภาพของสมาชิกสภากรุงเทพมหานครสิ้นสุดลงด้วยเหตุดังต่อไปนี้:</p>
+    </div>
+  </div>
+
+  <div class="term-list">
+    <div class="term-item"><div class="term-num">(1)</div><div class="term-text"><strong>ครบวาระ 4 ปี หรือยุบสภา</strong> — ถึงคราวออกตามอายุของสภากรุงเทพมหานคร หรือมีการยุบสภา</div></div>
+    <div class="term-item"><div class="term-num">(2)</div><div class="term-text"><strong>ตาย</strong></div></div>
+    <div class="term-item"><div class="term-num">(3)</div><div class="term-text"><strong>ลาออก</strong> — ยื่นหนังสือลาออกต่อประธานสภา มีผลในวันถัดไป</div></div>
+    <div class="term-item"><div class="term-num">(4)</div><div class="term-text"><strong>ขาดคุณสมบัติ หรือมีลักษณะต้องห้าม</strong> — ตามกฎหมายที่เกี่ยวข้อง</div></div>
+    <div class="term-item"><div class="term-num">(5)</div><div class="term-text"><strong>สภามีมติให้พ้นสมาชิกภาพ</strong> — ด้วยคะแนนไม่น้อยกว่า <strong>2 ใน 3</strong> ของจำนวนสมาชิกทั้งหมดที่มีอยู่</div></div>
+    <div class="term-item"><div class="term-num">(6)</div><div class="term-text"><strong>รัฐมนตรีว่าการกระทรวงมหาดไทยสั่งให้พ้น</strong> — ตาม <a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 24</a> กระบวนการสอบสวน</div></div>
+    <div class="term-item"><div class="term-num">(7)</div><div class="term-text"><strong>ขาดประชุมสภาตลอดสมัยประชุม</strong> — โดยไม่ได้รับอนุญาตจากสภา</div></div>
+    <div class="term-item"><div class="term-num">(8)</div><div class="term-text"><strong>สภาวินิจฉัยให้ออก</strong> — ด้วยเสียง <strong>2 ใน 3</strong> (กรณีเสื่อมเสียเกียรติศักดิ์)</div></div>
+    <div class="term-item"><div class="term-num">(9)</div><div class="term-text"><strong>ราษฎรลงคะแนนให้พ้นตำแหน่ง</strong> — ตามกฎหมายว่าด้วยการลงคะแนนเสียงเพื่อถอดถอนสมาชิกสภาท้องถิ่น (พ.ร.บ.ระเบียบบริหาร กทม. ฉบับที่ 5)</div></div>
+  </div>
+
+  <div class="law-text-box" style="margin-top:24px">
+    <h4>มาตรา 24 — กระบวนการสอบสวน</h4>
+    <div class="law-content">
+      <p>เมื่อรัฐมนตรีว่าการกระทรวงมหาดไทยเห็นว่ามีเหตุอันควรสงสัยว่าสมาชิกผู้ใดมีพฤติการณ์ร่ำรวยผิดปกติ หรือมีพฤติการณ์ส่อไปในทางทุจริต → ตั้งคณะกรรมการสอบสวน → ถ้าพบว่ามีมูล → สั่งให้พ้นจากตำแหน่งได้</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOPIC 2.24: เลือกตั้งใหม่ ============ -->
+<section class="topic-section fade-in" id="new-election">
+  <span class="phase-badge phase-e">Phase E — คลังข้อมูลอ้างอิง</span>
+  <div class="topic-label phase-e-label"><span class="line"></span> TOPIC 2.24 — NEW ELECTION</div>
+  <h2>🔄 การเลือกตั้งใหม่</h2>
+  <p class="section-desc">กรณีต่างๆ ที่ต้องจัดเลือกตั้ง ส.ก. ใหม่ และระบบใบสี — อ้างอิง พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528 และ พ.ร.บ.เลือกตั้งท้องถิ่น 2562</p>
+
+  <div class="table-wrap" style="margin-bottom:28px">
+    <table class="info-table">
+      <thead><tr><th>กรณี</th><th>อ้างอิง</th><th>กำหนดเลือกตั้ง</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>ครบวาระ 4 ปี</strong></td>
+          <td><a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 17</a></td>
+          <td>เลือกตั้งทั่วไปภายใน <strong>45 วัน</strong> — <a class="matra-link" href="sk-candidate-guide.html#law-m49">มาตรา 11</a></td>
+        </tr>
+        <tr>
+          <td><strong>ยุบสภา</strong></td>
+          <td><a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 18-19</a></td>
+          <td>เลือกตั้งภายใน <strong>60 วัน</strong></td>
+        </tr>
+        <tr>
+          <td><strong>ตำแหน่งว่าง</strong> (ตาย/ลาออก/ขาดคุณสมบัติ)</td>
+          <td><a class="matra-link" href="sk-candidate-guide.html#law-other">มาตรา 21</a></td>
+          <td>เลือกตั้งเฉพาะเขตภายใน <strong>90 วัน</strong> (เว้นแต่เหลือวาระ &lt;180 วัน)</td>
+        </tr>
+        <tr>
+          <td><strong>กกต. สั่งเลือกตั้งใหม่</strong></td>
+          <td>มาตรา 16 พ.ร.บ.เลือกตั้งท้องถิ่น</td>
+          <td>กกต. มีอำนาจ<strong>ย่นหรือขยาย</strong>ระยะเวลาได้ตามความจำเป็น</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">🃏 ระบบใบสี — ผลต่อการลงสมัครใหม่</h3>
+  <div class="card-band" style="margin-bottom:28px">
+    <div class="band-card" style="border-color:#FCD34D;background:#FFFBEB">
+      <span class="icon">🟡</span>
+      <h4 style="color:#92400E">ใบเหลือง</h4>
+      <p style="color:#78350F"><strong>ลงสมัครใหม่ได้</strong> — กกต. สั่งเลือกตั้งใหม่ แต่ไม่ตัดสิทธิผู้สมัคร</p>
+    </div>
+    <div class="band-card" style="border-color:#FB923C;background:#FFF7ED">
+      <span class="icon">🟠</span>
+      <h4 style="color:#9A3412">ใบส้ม</h4>
+      <p style="color:#7C2D12"><strong>ห้ามลงสมัครในครั้งนั้น</strong> — กกต. สั่งเลือกตั้งใหม่ + ห้ามผู้ถูกสั่งลงสมัคร</p>
+    </div>
+    <div class="band-card" style="border-color:#EF4444;background:#FEF2F2">
+      <span class="icon">🔴</span>
+      <h4 style="color:#991B1B">ใบแดง</h4>
+      <p style="color:#7F1D1D"><strong>เพิกถอนสิทธิเลือกตั้ง</strong> — ศาลสั่งเพิกถอนสิทธิ มีกำหนดระยะเวลาตามที่ศาลกำหนด</p>
+    </div>
+  </div>
+
+  <div class="law-text-box" style="margin-bottom:20px">
+    <h4>📎 ย้อนกลับ: เตรียมตัวเลือกตั้งใหม่</h4>
+    <div class="law-content">
+      <p>หากต้องเลือกตั้งใหม่ ผู้สมัครต้องเริ่มกระบวนการตั้งแต่ต้น — ตรวจคุณสมบัติ เตรียมเอกสาร สมัครรับเลือกตั้ง →</p>
+      <p style="margin-top:8px"><a href="phase-a.html#checklist-5" class="dl-btn-inline" style="margin:0">🔄 กลับไป Phase A — คุณสมบัติผู้สมัคร (เริ่มต้นใหม่)</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ กกต. DOWNLOAD CENTER ============ -->
+<section class="topic-section fade-in" id="ect-resources">
+  <span class="phase-badge phase-e">Phase E — คลังข้อมูลอ้างอิง</span>
+  <div class="topic-label phase-e-label"><span class="line"></span> กกต. DOWNLOAD CENTER</div>
+  <h2>📋 กกต. Download Center — เอกสารครบชุด</h2>
+  <p class="section-desc">รวมพระราชบัญญัติ คู่มือ ระเบียบ ประกาศ กกต. และแบบฟอร์มที่เกี่ยวข้องกับการเลือกตั้ง ส.ก. กทม. ครบในที่เดียว พร้อมลิงก์ดาวน์โหลดตรง</p>
+
+  <div class="ect-section">
+    <div class="ect-category">
+      <h4>📗 พระราชบัญญัติ (Laws)</h4>
+      <div class="ect-dl-grid">
+        <a href="downloads/pra-local-election-2562.pdf" target="_blank" class="ect-dl-card"><span class="ect-dl-icon">📗</span><div class="ect-dl-info"><h5>พ.ร.บ.เลือกตั้งท้องถิ่น พ.ศ. 2562</h5><span>⬇️ ดาวน์โหลด PDF (392 KB)</span></div></a>
+        <a href="downloads/prb-bma-2528.pdf" target="_blank" class="ect-dl-card"><span class="ect-dl-icon">📗</span><div class="ect-dl-info"><h5>พ.ร.บ.ระเบียบบริหาร กทม. พ.ศ. 2528</h5><span>bangkok.go.th — เว็บไซต์ กทม.</span></div></a>
+      </div>
+    </div>
+    <div class="ect-category">
+      <h4>📒 คู่มือ กกต. (Guides)</h4>
+      <div class="ect-dl-grid">
+        <a href="downloads/manual-registration.pdf" target="_blank" class="ect-dl-card"><span class="ect-dl-icon">📒</span><div class="ect-dl-info"><h5>คู่มือการรับสมัครรับเลือกตั้ง</h5><span>⬇️ ดาวน์โหลด PDF (2.8 MB)</span></div></a>
+        <a href="downloads/local-election-guide.pdf" target="_blank" class="ect-dl-card"><span class="ect-dl-icon">📒</span><div class="ect-dl-info"><h5>คู่มือเลือกตั้งท้องถิ่น (รวม กทม.)</h5><span>⬇️ ดาวน์โหลด PDF (9.1 MB)</span></div></a>
+        <a href="downloads/citizen-guide.pdf" target="_blank" class="ect-dl-card"><span class="ect-dl-icon">📒</span><div class="ect-dl-info"><h5>คู่มือประชาชน เลือกตั้งท้องถิ่น</h5><span>⬇️ ดาวน์โหลด PDF (2.5 MB)</span></div></a>
+      </div>
+    </div>
+    <div class="ect-category">
+      <h4>📋 ระเบียบ กกต. (5 ฉบับ)</h4>
+      <div class="ect-dl-grid">
+        <a href="downloads/reg-campaign-method-2563-combined.pdf" target="_blank" class="ect-dl-card"><span class="ect-dl-icon">📋</span><div class="ect-dl-info"><h5>ระเบียบ กกต. การเลือกตั้งท้องถิ่น (รวมฉบับ)</h5><span>⬇️ ดาวน์โหลด PDF (7.3 MB)</span></div></a>
+        <a href="downloads/election-law-basics.pdf" target="_blank" class="ect-dl-card"><span class="ect-dl-icon">📋</span><div class="ect-dl-info"><h5>ความรู้เบื้องต้น พ.ร.บ.เลือกตั้งท้องถิ่น 2562</h5><span>⬇️ ดาวน์โหลด PDF (176 KB)</span></div></a>
+        <a href="downloads/election-offenses.pdf" target="_blank" class="ect-dl-card"><span class="ect-dl-icon">📋</span><div class="ect-dl-info"><h5>ฐานความผิดตามกฎหมายเลือกตั้งท้องถิ่น</h5><span>⬇️ ดาวน์โหลด PDF (2.2 MB)</span></div></a>
+        <a href="downloads/reg-campaign-method-2563.pdf" target="_blank" class="ect-dl-card"><span class="ect-dl-icon">📋</span><div class="ect-dl-info"><h5>ระเบียบ กกต. วิธีการหาเสียง พ.ศ. 2563</h5><span>⬇️ ดาวน์โหลด PDF (336 KB)</span></div></a>
+        <a href="downloads/reg-campaign-method-2563-v2.pdf" target="_blank" class="ect-dl-card"><span class="ect-dl-icon">📋</span><div class="ect-dl-info"><h5>ระเบียบ กกต. วิธีการหาเสียง (ฉบับที่ 2) พ.ศ. 2563</h5><span>⬇️ ดาวน์โหลด PDF (76 KB)</span></div></a>
+      </div>
+    </div>
+    <div class="ect-category">
+      <h4>📑 ประกาศ กกต. (Announcements)</h4>
+      <div class="ect-dl-grid">
+        <a href="downloads/ect-news-campaign-rules-2568.pdf" target="_blank" class="ect-dl-card"><span class="ect-dl-icon">📑</span><div class="ect-dl-info"><h5>ลักษณะต้องห้ามในการหาเสียง (ข่าว กกต. 2568)</h5><span>⬇️ ดาวน์โหลด PDF (572 KB)</span></div></a>
+        <a href="downloads/reg-campaign-method-2563-bangkrachao.pdf" target="_blank" class="ect-dl-card"><span class="ect-dl-icon">📑</span><div class="ect-dl-info"><h5>ระเบียบ กกต. วิธีการหาเสียง (ฉบับรวม)</h5><span>⬇️ ดาวน์โหลด PDF (336 KB)</span></div></a>
+      </div>
+    </div>
+    <div class="ect-category">
+      <h4>🔗 ลิงก์หลัก กกต. (Main Links)</h4>
+      <div class="ect-dl-grid">
+        <a href="https://www.ect.go.th/ect_th/th/db_119_ect_th_6/2977" target="_blank" class="ect-dl-card"><span class="ect-dl-icon">🏛️</span><div class="ect-dl-info"><h5>กกต. หน้าเลือกตั้ง กทม.</h5><span>ect.go.th — ข้อมูลการเลือกตั้ง กทม. ครบถ้วน</span></div></a>
+        <a href="https://stat.bora.dopa.go.th/Election/absvote/#/" target="_blank" class="ect-dl-card"><span class="ect-dl-icon">🔍</span><div class="ect-dl-info"><h5>ตรวจสอบสิทธิเลือกตั้ง</h5><span>stat.bora.dopa.go.th — ตรวจสถานะเสียสิทธิ</span></div></a>
+        <a href="https://www.ect.go.th/ect_th/" target="_blank" class="ect-dl-card"><span class="ect-dl-icon">🗳️</span><div class="ect-dl-info"><h5>สำนักงาน กกต. หลัก</h5><span>ect.go.th — เว็บไซต์ กกต. อย่างเป็นทางการ</span></div></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DISCLAIMER ============ -->
+<section class="topic-section fade-in" id="disclaimer-final">
+  <div class="disclaimer-footer">
+    <h3>⚠️ ข้อจำกัดความรับผิดชอบ (Disclaimer)</h3>
+    <p><strong>ภาษาไทย:</strong> คู่มือนี้จัดทำโดย Legal Advance Solution Co., Ltd. (LAS) เพื่อวัตถุประสงค์ด้านการวิจัยและการให้ข้อมูลเบื้องต้นแก่สาธารณชน สนับสนุนทุนวิจัยโดย สำนักงานนวัตกรรมแห่งชาติ (องค์การมหาชน) NIA ข้อมูลในคู่มือนี้อ้างอิงจากตัวบทกฎหมายที่มีผลบังคับใช้ ณ วันที่จัดทำ และเป็นเพียง Reference ขั้นต้นเท่านั้น ไม่ใช่คำปรึกษาทางกฎหมาย ผู้ใช้ต้องยืนยันข้อมูลทั้งหมดกับ สำนักงาน กกต. กรุงเทพมหานคร และหน่วยงานราชการที่เกี่ยวข้องก่อนดำเนินการใดๆ LAS และ NIA ไม่รับผิดชอบต่อความเสียหายที่เกิดจากการนำข้อมูลในคู่มือนี้ไปใช้โดยไม่ยืนยันกับแหล่งข้อมูลทางการ</p>
+    <div class="divider"></div>
+    <p><strong>English:</strong> This guide is prepared by Legal Advance Solution Co., Ltd. (LAS) for research and general information purposes, with research funding support from the National Innovation Agency (NIA) of Thailand. The information contained herein is based on statutory provisions in effect at the time of preparation and constitutes preliminary reference material only, not legal advice. Users must verify all information with the Bangkok Metropolitan Election Commission (ECT Bangkok Office) and relevant government agencies before taking any action. LAS and NIA assume no liability for damages arising from use of this guide without verification against official sources.</p>
+    <div class="divider"></div>
+    <p style="font-size:12px;color:var(--text-muted)">
+      จัดทำโดย: Thundthornthep Yamoutai, Ph.D. | Legal Advance Solution Co., Ltd. (LAS)<br>
+      สนับสนุนโดย: สำนักงานนวัตกรรมแห่งชาติ (องค์การมหาชน) NIA<br>
+      วันที่จัดทำ: เมษายน 2569 | เวอร์ชัน: 3.0<br>
+      อ้างอิง: พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562 | พระราชบัญญัติระเบียบบริหารราชการกรุงเทพมหานคร พ.ศ. 2528 | ชุดความรู้เลือกตั้ง ส.ก.65
+    </p>
+  </div>
+</section>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <a href="phase-c.html">← Phase C หลังเลือกตั้ง</a>
+  <a href="index.html">กลับ Dashboard →</a>
+</div>
+
+</div><!-- /content-inner -->
+</div><!-- /content -->
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-text">
+    <span>Legal Advance Solution Co., Ltd. (LAS)</span> — AI Legal Research<br>
+    เพื่อการวิจัย สนับสนุนทุนวิจัยโดย <span>สำนักงานนวัตกรรมแห่งชาติ (องค์การมหาชน) NIA</span><br>
+    ผู้เขียน: <span>Thundthornthep Yamoutai, Ph.D.</span><br>
+    <span style="color:rgba(255,255,255,.35);font-size:12px">คู่มือนี้เพื่อการวิจัยเท่านั้น — ยืนยันข้อมูลกับ กกต. กทม. ก่อนสมัครเสมอ</span>
+  </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+// HAMBURGER MENU
+(function(){
+  var btn = document.getElementById('hamburgerBtn');
+  var sidebar = document.getElementById('sidebar');
+  var overlay = document.getElementById('mobileOverlay');
+
+  function toggleMenu(){
+    btn.classList.toggle('open');
+    sidebar.classList.toggle('mobile-open');
+    overlay.classList.toggle('show');
+    document.body.style.overflow = sidebar.classList.contains('mobile-open') ? 'hidden' : '';
+  }
+  function closeMenu(){
+    btn.classList.remove('open');
+    sidebar.classList.remove('mobile-open');
+    overlay.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+  btn.addEventListener('click', toggleMenu);
+  overlay.addEventListener('click', closeMenu);
+  sidebar.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', closeMenu);
+  });
+})();
+
+// ACTIVE SIDEBAR LINK
+(function(){
+  var links = document.querySelectorAll('.sidebar-link[data-section]');
+  var sections = [];
+  links.forEach(function(a){
+    var id = a.getAttribute('data-section');
+    if(id) sections.push(id);
+  });
+
+  window.addEventListener('scroll', function(){
+    var current = '';
+    for(var i = 0; i < sections.length; i++){
+      var el = document.getElementById(sections[i]);
+      if(el && el.getBoundingClientRect().top <= 100){
+        current = sections[i];
+      }
+    }
+    links.forEach(function(a){
+      if(a.getAttribute('data-section') === current) a.classList.add('active');
+      else a.classList.remove('active');
+    });
+  });
+})();
+
+// FADE-IN SCROLL
+(function(){
+  if('IntersectionObserver' in window){
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(function(el){
+      observer.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.fade-in').forEach(function(el){
+      el.classList.add('visible');
+    });
+  }
+})();
+</script>
+</body>
+</html>
