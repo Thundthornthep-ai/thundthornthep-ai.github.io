@@ -9,6 +9,15 @@
 <meta property="og:title" content="ส.ก. Navigator — คู่มือเลือกตั้ง ส.ก. กทม. 2569">
 <meta property="og:description" content="ครบ 24 หัวข้อ — ก่อนสมัครถึงปฏิบัติหน้าที่ในสภา">
 <meta property="og:locale" content="th_TH">
+<meta property="og:image" content="https://thundthornthep-ai.github.io/banner-las-nia.jpg">
+<meta property="og:url" content="https://thundthornthep-ai.github.io/blog/bkk-council/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ส.ก. Navigator — คู่มือเลือกตั้ง ส.ก. กทม. 2569">
+<meta name="twitter:description" content="ครบ 24 หัวข้อ — ก่อนสมัครถึงปฏิบัติหน้าที่ในสภา">
+<meta name="twitter:image" content="https://thundthornthep-ai.github.io/banner-las-nia.jpg">
+<link rel="canonical" href="https://thundthornthep-ai.github.io/blog/bkk-council/">
+<meta name="author" content="ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -394,6 +403,9 @@ body {
   gap: 10px;
   margin-bottom: 40px;
 }
+@media (min-width: 640px) {
+  .phase-grid { grid-template-columns: 1fr 1fr; }
+}
 .phase-card {
   display: flex; align-items: center; gap: 16px;
   padding: 20px 24px;
@@ -546,6 +558,9 @@ body {
 }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"ส.ก. Navigator — คู่มือเลือกตั้ง ส.ก. กทม. 2569","description":"คู่มือครบวงจรสำหรับผู้สมัครสมาชิกสภากรุงเทพมหานคร (ส.ก.) — ครบ 24 หัวข้อ ก่อนสมัครถึงปฏิบัติหน้าที่ในสภา","url":"https://thundthornthep-ai.github.io/blog/bkk-council/","author":{"@type":"Person","name":"ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.","url":"https://thundthornthep-ai.github.io/"},"publisher":{"@type":"LegalService","name":"Legal Advance Solution Co., Ltd.","url":"https://laslegal.co.th"},"dateModified":"2026-04-05","inLanguage":"th","about":["เลือกตั้ง ส.ก. กทม. 2569","สมาชิกสภากรุงเทพมหานคร","คู่มือผู้สมัคร ส.ก."]}
+</script>
 </head>
 <body>
 
@@ -656,7 +671,7 @@ body {
       <option value="ห้วยขวาง">ห้วยขวาง</option>
     </select>
     <div class="traffy-buttons">
-      <button class="traffy-btn traffy-btn-primary" onclick="window.open('https://bangkok.traffy.in.th/','_blank')">ดูปัญหาในเขต</button>
+      <button class="traffy-btn traffy-btn-primary" onclick="var d=document.getElementById('traffyDistrict').value; if(d){window.open('https://bangkok.traffy.in.th/?district='+encodeURIComponent(d),'_blank')}else{window.open('https://bangkok.traffy.in.th/','_blank')}">ดูปัญหาในเขต</button>
       <button class="traffy-btn traffy-btn-secondary" onclick="window.open('https://bangkok.traffy.in.th/top','_blank')">ดูสถิติเขต</button>
     </div>
     <p class="traffy-info">Traffy Fondue = ระบบแจ้งปัญหาเมือง กทม. มีเรื่องร้องเรียนกว่า 1.26 ล้านเรื่อง</p>
@@ -797,6 +812,17 @@ body {
         <span>สิทธิและหน้าที่ผู้มีสิทธิเลือกตั้ง</span>
       </div>
     </a>
+  </div>
+
+  <!-- 8.5 VERIFIED BADGE -->
+  <div class="verified-badge fade-in" style="margin-top:40px;padding:20px 24px;background:linear-gradient(135deg,#F0FDF4,#ECFDF5);border:1px solid #BBF7D0;border-radius:12px;text-align:center;">
+    <div style="font-size:15px;font-weight:600;color:#166534;margin-bottom:6px;">
+      <span style="font-size:18px;">&#x2705;</span> ตรวจสอบแล้ว — 110+ มาตรากฎหมาย ผ่านการ Verify จากตัวบทจริง
+    </div>
+    <div style="font-size:12px;color:#4B5563;line-height:1.6;">
+      อ้างอิง พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528 (ฉบับที่ 6) &middot; พ.ร.บ.เลือกตั้งท้องถิ่น 2562 (และฉบั��ที่ 2 พ.ศ. 2566)<br>
+      ตรวจโดย LAS Legal AI &middot; อัปเดตล่าสุด: 5 เมษายน 2569
+    </div>
   </div>
 
 </div><!-- end .main -->
