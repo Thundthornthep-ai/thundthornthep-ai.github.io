@@ -2,970 +2,1002 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/webp" href="/las-logo.webp">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard ข้อบัญญัติ กทม. 311 ฉบับ | LAS Legal Research</title>
-<meta name="description" content="Interactive Dashboard วิเคราะห์ข้อบัญญัติกรุงเทพมหานคร 311 ฉบับ ด้วย AI LegalTech — 43% ล้าสมัยวิกฤต พร้อมข้อเสนอปฏิรูป Roadmap สำหรับ ส.ก. ชุดใหม่ 2569 — งานวิจัยสนับสนุนโดย NIA">
-<meta name="keywords" content="ข้อบัญญัติกรุงเทพมหานคร, dashboard, กฎหมายเมือง, ส.ก. 2569, ปฏิรูป, ธันย์ธรณ์เทพ แย้มอุทัย Ph.D., LAS, AI LegalTech, นวัตกรรมนิติบัญญัติชิงรุก, NIA">
-<meta name="author" content="ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-<link rel="canonical" href="https://thundthornthep-ai.github.io/blog/bkk-council/dashboard.html">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Dashboard ข้อบัญญัติ กทม. 311 ฉบับ | LAS Legal Research">
-<meta property="og:description" content="AI LegalTech วิเคราะห์ข้อบัญญัติ กทม. ทั้ง 311 ฉบับ — 43% ล้าสมัยวิกฤต พร้อม Roadmap ปฏิรูป (สนับสนุนโดย NIA)">
-<meta property="og:locale" content="th_TH">
-<meta property="og:image" content="https://thundthornthep-ai.github.io/las-nia-research-banner.jpg">
-<meta property="og:image:alt" content="Legal Advance Solution (LAS) — สนับสนุนงานวิจัยโดย สำนักงานนวัตกรรมแห่งชาติ (องค์การมหาชน)">
-<meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">
-[{"@context":"https://schema.org","@type":"Dataset","inLanguage":"th","name":"ข้อบัญญัติกรุงเทพมหานคร 311 ฉบับ (Bangkok Metropolitan Ordinances Dataset)","description":"ฐานข้อมูลข้อบัญญัติกรุงเทพมหานครครบ 311 ฉบับ พ.ศ. 2516-2569 พร้อม Risk Assessment และข้อเสนอปฏิรูป วิเคราะห์ด้วย AI Legal Research ได้รับทุนจากสำนักงานนวัตกรรมแห่งชาติ (NIA)","creator":{"@type":"Person","name":"Thundthornthep Yamoutai","url":"https://thundthornthep-ai.github.io/"},"funder":{"@type":"GovernmentOrganization","name":"National Innovation Agency (NIA)","url":"https://www.nia.or.th"},"license":"https://creativecommons.org/licenses/by-nc/4.0/","temporalCoverage":"1973/2026","spatialCoverage":{"@type":"Place","name":"Bangkok, Thailand"},"distribution":{"@type":"DataDownload","contentUrl":"https://thundthornthep-ai.github.io/blog/bkk-council/dashboard.html","encodingFormat":"text/html"}},{"@context":"https://schema.org","@type":"WebApplication","inLanguage":"th","name":"Dashboard ข้อบัญญัติ กทม. 311 ฉบับ","description":"Interactive dashboard วิเคราะห์ข้อบัญญัติกรุงเทพมหานคร 311 ฉบับ พร้อมค้นหา กรองข้อมูล และดาวน์โหลด PDF แต่ละฉบับ","url":"https://thundthornthep-ai.github.io/blog/bkk-council/dashboard.html","applicationCategory":"Legal Technology","creator":{"@type":"Person","name":"Thundthornthep Yamoutai"},"provider":{"@type":"LegalService","name":"Legal Advance Solution Co., Ltd.","url":"https://laslegal.co.th"}}]
-</script>
+<meta name="description" content="Dashboard เตรียมตัวเลือกตั้ง สก. ชุดที่ 14 กรุงเทพมหานคร 5 ก.ค. 2569 — Countdown, คุณสมบัติผู้สมัคร, แผนแคมเปญ, ผลเลือกตั้ง 50 เขต โดย ธันย์ธรณ์เทพ ยมอุทัย, Ph.D.">
+<meta name="author" content="Thundthornthep Yamoutai, Ph.D. — Legal Advance Solution Co., Ltd.">
+<meta property="og:title" content="BKK Election Dashboard — เลือกตั้ง สก. ชุดที่ 14">
+<meta property="og:description" content="Dashboard เตรียมตัวเลือกตั้ง สก. กรุงเทพ 5 ก.ค. 2569 — Countdown, คุณสมบัติ, แผน 16 สัปดาห์, 50 เขต">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://thundthornthep-ai.github.io/blog/bkk-council/img/og-dashboard.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230A1628'/><text x='16' y='22' text-anchor='middle' font-family='serif' font-size='16' font-weight='bold' fill='%23C9A96E'>B</text></svg>">
+<title>BKK Election Dashboard — สก. ชุดที่ 14</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --navy:#0F1A2E;--navy2:#1B2A4A;--gold:#C9A96E;--gold-light:#E8D5B0;
-  --green:#2D6A4F;--accent:#4ECDC4;--accent2:#44A08D;
-  --red:#E74C3C;--red-soft:#FF6B6B;--orange:#F39C12;--yellow:#F1C40F;
-  --blue:#3498DB;--green-ok:#2ECC71;--purple:#9B59B6;
-  --bg:#0a0f1a;--card:rgba(255,255,255,0.04);--card-border:rgba(255,255,255,0.08);
-  --glass:rgba(255,255,255,0.06);--glass-border:rgba(255,255,255,0.12);
-  --text:#E8E8E8;--text2:#8A94A6;--text3:#5A6478;
-  --radius:16px;--radius-sm:10px;
+:root {
+  --navy: #0A1628;
+  --navy-mid: #152238;
+  --navy-light: #1E3050;
+  --gold: #C9A96E;
+  --gold-bright: #E8C878;
+  --gold-dim: #8B7644;
+  --white: #F0EDE8;
+  --cream: #FAF8F5;
+  --red: #E74C3C;
+  --red-bg: rgba(231,76,60,0.12);
+  --orange: #F39C12;
+  --orange-bg: rgba(243,156,18,0.12);
+  --green: #27AE60;
+  --green-bg: rgba(39,174,96,0.12);
+  --blue: #3498DB;
+  --blue-bg: rgba(52,152,219,0.12);
+  --text: #E8E4DE;
+  --text-dim: #8B8680;
+  --border: rgba(201,169,110,0.15);
+  --glow: rgba(201,169,110,0.3);
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'IBM Plex Sans Thai','Sarabun',sans-serif;font-size:15px;line-height:1.7;color:var(--text);background:var(--bg);overflow-x:hidden}
 
-/* === SCROLL PROGRESS === */
-.scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--gold),var(--accent2));z-index:1000;transition:width .1s;width:0}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* === STICKY NAV === */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;transition:all .3s;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);background:rgba(15,26,46,0.7);border-bottom:1px solid rgba(255,255,255,0.05)}
-.nav.scrolled{background:rgba(15,26,46,0.95);box-shadow:0 4px 30px rgba(0,0,0,.3)}
-.nav-brand{display:flex;align-items:center;gap:10px}
-.nav-logo{width:32px;height:32px;background:linear-gradient(135deg,var(--gold),var(--accent));border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:var(--navy)}
-.nav-title{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;color:#fff;letter-spacing:-.3px}
-.nav-title span{color:var(--gold)}
-.nav-links{display:flex;gap:6px}
-.nav-links a{color:var(--text2);text-decoration:none;font-size:12px;padding:6px 12px;border-radius:20px;transition:all .2s;border:1px solid transparent}
-.nav-links a:hover,.nav-links a.active{color:var(--gold);border-color:rgba(201,169,110,.3);background:rgba(201,169,110,.08)}
-
-
-/* === ORDS FULL TABLE === */
-.ords-search{width:100%;padding:12px 18px;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:14px;margin-bottom:16px;outline:none;transition:border .2s}
-.ords-search:focus{border-color:var(--gold)}
-.ords-stats{font-size:13px;color:var(--text2);margin-bottom:12px}
-.ords-table{width:100%;border-collapse:collapse}
-.ords-table th{text-align:left;padding:10px 12px;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--text3);border-bottom:1px solid var(--card-border);position:sticky;top:0;background:var(--bg);z-index:2}
-.ords-table td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.03);font-size:13px;vertical-align:top}
-.ords-table tr:hover td{background:rgba(201,169,110,.04)}
-.ords-table .ord-num{color:var(--text3);font-size:12px;min-width:36px}
-.ords-table .ord-name{color:var(--text);line-height:1.5}
-.ords-table .dl-btn{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;font-size:11px;color:var(--accent);border:1px solid rgba(78,205,196,.3);border-radius:6px;text-decoration:none;transition:all .2s;white-space:nowrap}
-.ords-table .dl-btn:hover{background:rgba(78,205,196,.1);color:#fff;border-color:var(--accent)}
-.ords-wrap{max-height:70vh;overflow-y:auto;border:1px solid var(--card-border);border-radius:var(--radius);background:var(--card)}
-.ords-wrap::-webkit-scrollbar{width:6px}
-.ords-wrap::-webkit-scrollbar-track{background:transparent}
-.ords-wrap::-webkit-scrollbar-thumb{background:var(--text3);border-radius:3px}
-
-/* === HERO === */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:80px 24px 60px}
-.hero-bg{position:absolute;inset:0;overflow:hidden}
-.hero-bg::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(78,205,196,.12) 0%,transparent 70%);top:-200px;right:-100px;animation:float 20s ease-in-out infinite}
-.hero-bg::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,110,.1) 0%,transparent 70%);bottom:-100px;left:-100px;animation:float 25s ease-in-out infinite reverse}
-@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-30px)}}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 60% at 50% 40%,#000 30%,transparent 100%)}
-.hero-content{position:relative;max-width:900px;text-align:center;z-index:1}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(78,205,196,.1);border:1px solid rgba(78,205,196,.2);color:var(--accent);padding:6px 16px;border-radius:20px;font-size:12px;font-weight:500;margin-bottom:20px;letter-spacing:.5px}
-.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,6vw,64px);font-weight:700;line-height:1.1;margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,var(--gold-light) 50%,var(--accent) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:18px;color:var(--text2);max-width:600px;margin:0 auto 32px;line-height:1.6}
-.hero-stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
-.hero-stat{text-align:center}
-.hero-stat .hs-num{font-family:'Space Grotesk',sans-serif;font-size:48px;font-weight:700;line-height:1;margin-bottom:4px}
-.hero-stat .hs-label{font-size:12px;color:var(--text2);text-transform:uppercase;letter-spacing:1px}
-.hero-stat.critical .hs-num{color:var(--red-soft)}
-.hero-stat.total .hs-num{color:var(--gold)}
-.hero-stat.action .hs-num{color:var(--accent)}
-.hero-scroll{margin-top:48px;animation:bounce 2s ease-in-out infinite}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
-.hero-scroll a{color:var(--text3);text-decoration:none;font-size:12px;display:flex;flex-direction:column;align-items:center;gap:4px}
-.hero-scroll svg{width:20px;height:20px;stroke:var(--text3)}
-
-/* === CONTAINER === */
-.container{max-width:1200px;margin:0 auto;padding:0 24px}
-
-/* === SECTION === */
-.section{padding:80px 0;position:relative}
-.section-label{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
-.section-label .line{width:24px;height:1px;background:var(--accent)}
-.section h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,4vw,36px);font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-.5px}
-.section .section-desc{font-size:15px;color:var(--text2);max-width:560px;margin-bottom:36px}
-
-/* === GLASS CARDS === */
-.glass{background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--glass-border);border-radius:var(--radius);transition:all .3s}
-.glass:hover{border-color:rgba(255,255,255,.18);box-shadow:0 8px 32px rgba(0,0,0,.2)}
-
-/* === KPI STRIP === */
-.kpi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:48px}
-.kpi{padding:24px;text-align:center;position:relative;overflow:hidden}
-.kpi::before{content:'';position:absolute;top:0;left:20%;right:20%;height:2px;border-radius:1px}
-.kpi.k-total::before{background:linear-gradient(90deg,transparent,var(--gold),transparent)}
-.kpi.k-crit::before{background:linear-gradient(90deg,transparent,var(--red),transparent)}
-.kpi.k-high::before{background:linear-gradient(90deg,transparent,var(--orange),transparent)}
-.kpi.k-med::before{background:linear-gradient(90deg,transparent,var(--yellow),transparent)}
-.kpi.k-low::before{background:linear-gradient(90deg,transparent,var(--green-ok),transparent)}
-.kpi .kpi-num{font-family:'Space Grotesk',sans-serif;font-size:42px;font-weight:700;line-height:1}
-.kpi.k-total .kpi-num{color:var(--gold)}
-.kpi.k-crit .kpi-num{color:var(--red-soft)}
-.kpi.k-high .kpi-num{color:var(--orange)}
-.kpi.k-med .kpi-num{color:var(--yellow)}
-.kpi.k-low .kpi-num{color:var(--green-ok)}
-.kpi .kpi-label{font-size:12px;color:var(--text2);margin-top:4px}
-.kpi .kpi-pct{font-size:18px;font-weight:600;opacity:.5;margin-top:2px}
-
-/* === ACTION CARDS === */
-.action-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.act-card{padding:20px;text-align:center;cursor:pointer;transition:all .25s;position:relative;overflow:hidden}
-.act-card::after{content:'';position:absolute;inset:0;border-radius:var(--radius);opacity:0;transition:opacity .3s}
-.act-card:hover::after{opacity:1}
-.act-card.active{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
-.act-card .ac-icon{font-size:32px;display:block;margin-bottom:8px;position:relative;z-index:1}
-.act-card .ac-num{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;display:block;position:relative;z-index:1}
-.act-card .ac-label{font-size:12px;display:block;margin-top:4px;position:relative;z-index:1;font-weight:500}
-.act-repeal{border-color:rgba(231,76,60,.2)!important}.act-repeal .ac-num{color:var(--red-soft)}.act-repeal::after{background:radial-gradient(circle at center,rgba(231,76,60,.08),transparent)}
-.act-repeal.active{border-color:rgba(231,76,60,.5)!important;box-shadow:0 12px 40px rgba(231,76,60,.15)}
-.act-modern{border-color:rgba(78,205,196,.2)!important}.act-modern .ac-num{color:var(--accent)}.act-modern::after{background:radial-gradient(circle at center,rgba(78,205,196,.08),transparent)}
-.act-modern.active{border-color:rgba(78,205,196,.5)!important;box-shadow:0 12px 40px rgba(78,205,196,.15)}
-.act-amend{border-color:rgba(241,196,15,.2)!important}.act-amend .ac-num{color:var(--yellow)}.act-amend::after{background:radial-gradient(circle at center,rgba(241,196,15,.08),transparent)}
-.act-amend.active{border-color:rgba(241,196,15,.5)!important;box-shadow:0 12px 40px rgba(241,196,15,.15)}
-.act-consol{border-color:rgba(155,89,182,.2)!important}.act-consol .ac-num{color:var(--purple)}.act-consol::after{background:radial-gradient(circle at center,rgba(155,89,182,.08),transparent)}
-.act-consol.active{border-color:rgba(155,89,182,.5)!important;box-shadow:0 12px 40px rgba(155,89,182,.15)}
-.act-keep{border-color:rgba(46,204,113,.2)!important}.act-keep .ac-num{color:var(--green-ok)}.act-keep::after{background:radial-gradient(circle at center,rgba(46,204,113,.08),transparent)}
-.act-keep.active{border-color:rgba(46,204,113,.5)!important;box-shadow:0 12px 40px rgba(46,204,113,.15)}
-
-/* === BAR CHART === */
-.bars{margin:16px 0}
-.bar-row{display:flex;align-items:center;margin:8px 0;gap:12px;opacity:0;transform:translateX(-20px);transition:all .5s ease}
-.bar-row.visible{opacity:1;transform:translateX(0)}
-.bar-label{width:180px;font-size:13px;text-align:right;color:var(--text2);flex-shrink:0}
-.bar-track{flex:1;height:32px;background:rgba(255,255,255,.04);border-radius:6px;overflow:hidden;position:relative}
-.bar-fill{height:100%;border-radius:6px;display:flex;align-items:center;padding:0 12px;font-size:12px;font-weight:600;color:#fff;min-width:32px;width:0;transition:width 1s cubic-bezier(.25,.46,.45,.94)}
-.bar-fill.grown{/* width set by JS */}
-.bar-meta{width:80px;font-size:12px;color:var(--text2);flex-shrink:0;text-align:right}
-.bar-meta b{color:var(--red-soft)}
-
-/* === TIMELINE === */
-.tl-container{position:relative;padding:16px 0}
-.tl-bars{display:flex;align-items:flex-end;gap:3px;height:200px}
-.tl-bar{flex:1;min-width:16px;border-radius:6px 6px 0 0;position:relative;cursor:pointer;transition:all .3s;opacity:0;transform:translateY(20px)}
-.tl-bar.visible{opacity:1;transform:translateY(0)}
-.tl-bar:hover{filter:brightness(1.3);transform:translateY(-4px)!important}
-.tl-bar .tl-tip{display:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--navy2);color:#fff;padding:8px 14px;border-radius:10px;font-size:12px;white-space:nowrap;z-index:10;box-shadow:0 4px 20px rgba(0,0,0,.4);border:1px solid var(--glass-border)}
-.tl-bar .tl-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--navy2)}
-.tl-bar:hover .tl-tip{display:block}
-.tl-axis{display:flex;gap:3px;margin-top:8px}
-.tl-axis span{flex:1;min-width:16px;text-align:center;font-size:10px;color:var(--text3)}
-
-/* === DATA TABLE === */
-.table-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--glass-border)}
-.dtable{width:100%;border-collapse:collapse;font-size:13px}
-.dtable thead{position:sticky;top:0;z-index:2}
-.dtable th{background:var(--navy2);color:var(--gold);padding:14px 12px;text-align:left;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid var(--gold)}
-.dtable th.ctr{text-align:center}
-.dtable td{padding:14px 12px;border-bottom:1px solid rgba(255,255,255,.04);vertical-align:top}
-.dtable td.ctr{text-align:center;font-weight:600;font-family:'Space Grotesk',sans-serif}
-.dtable tbody tr{transition:background .2s}
-.dtable tbody tr:hover{background:rgba(255,255,255,.03)}
-.badge{display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;letter-spacing:.3px}
-.b-repeal{background:rgba(231,76,60,.12);color:var(--red-soft);border:1px solid rgba(231,76,60,.2)}
-.b-modern{background:rgba(78,205,196,.12);color:var(--accent);border:1px solid rgba(78,205,196,.2)}
-.b-amend{background:rgba(241,196,15,.12);color:var(--yellow);border:1px solid rgba(241,196,15,.2)}
-.b-consol{background:rgba(155,89,182,.12);color:var(--purple);border:1px solid rgba(155,89,182,.2)}
-.b-keep{background:rgba(46,204,113,.12);color:var(--green-ok);border:1px solid rgba(46,204,113,.2)}
-.link-btn{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--text2);text-decoration:none;font-size:14px;transition:all .2s}
-.link-btn:hover{background:rgba(201,169,110,.15);border-color:var(--gold);color:var(--gold)}
-
-/* === FILTER BAR === */
-.filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px;align-items:center}
-.filter-bar select{padding:8px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;font-size:13px;font-family:inherit;color:var(--text);appearance:none;cursor:pointer;transition:border-color .2s;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238A94A6' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:30px}
-.filter-bar select:focus{outline:none;border-color:var(--accent)}
-.filter-bar select option{background:var(--navy);color:var(--text)}
-.reset-btn{background:transparent;color:var(--text2);border:1px solid rgba(255,255,255,.1);padding:8px 16px;border-radius:10px;font-size:12px;cursor:pointer;font-family:inherit;transition:all .2s}
-.reset-btn:hover{border-color:var(--accent);color:var(--accent)}
-.filter-count{font-size:12px;color:var(--text3);margin-left:auto}
-
-/* === ROADMAP === */
-.roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
-.roadmap::before{content:'';position:absolute;top:50%;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--red),var(--orange),var(--blue),var(--green-ok));opacity:.2;z-index:0}
-.rm-card{position:relative;z-index:1;padding:24px;border-radius:var(--radius)}
-.rm-card .rm-phase{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
-.rm-card .rm-num{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;line-height:1;margin-bottom:4px}
-.rm-card .rm-label{font-size:13px;font-weight:600;margin-bottom:12px}
-.rm-card ul{font-size:12px;padding-left:16px;color:var(--text2);margin:0}
-.rm-card ul li{margin:4px 0}
-.rm-1{border-color:rgba(231,76,60,.3)!important}.rm-1 .rm-phase{color:var(--red-soft)}.rm-1 .rm-num{color:var(--red-soft)}
-.rm-2{border-color:rgba(243,156,18,.3)!important}.rm-2 .rm-phase{color:var(--orange)}.rm-2 .rm-num{color:var(--orange)}
-.rm-3{border-color:rgba(52,152,219,.3)!important}.rm-3 .rm-phase{color:var(--blue)}.rm-3 .rm-num{color:var(--blue)}
-.rm-4{border-color:rgba(46,204,113,.3)!important}.rm-4 .rm-phase{color:var(--green-ok)}.rm-4 .rm-num{color:var(--green-ok)}
-
-/* === RINGS === */
-.ring-grid{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin:24px 0}
-.ring-item{text-align:center}
-.ring-item .ring-label{font-size:12px;color:var(--text2);margin-top:8px}
-svg.ring{width:110px;height:110px}
-.ring-bg{fill:none;stroke:rgba(255,255,255,.06);stroke-width:6}
-.ring-fg{fill:none;stroke-width:6;stroke-linecap:round}
-.ring-text{font-family:'Space Grotesk',sans-serif;font-weight:700}
-
-/* === INSIGHT BOX === */
-.insight{display:flex;gap:20px;align-items:flex-start;padding:24px;margin:40px 0}
-.insight-icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
-.insight-body h3{font-size:16px;font-weight:600;color:#fff;margin-bottom:4px}
-.insight-body p{font-size:13px;color:var(--text2);margin:0}
-
-/* === CTA === */
-.cta-section{text-align:center;padding:80px 24px;position:relative}
-.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(78,205,196,.06),transparent 70%)}
-.cta-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--navy);font-weight:600;font-size:15px;border-radius:12px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(78,205,196,.3)}
-.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(78,205,196,.4)}
-
-/* === FOOTER === */
-.dash-footer{text-align:center;padding:40px 24px;border-top:1px solid rgba(255,255,255,.06);font-size:12px;color:var(--text3)}
-.dash-footer a{color:var(--gold);text-decoration:none}
-.dash-footer a:hover{text-decoration:underline}
-.footer-tags{margin-top:8px;color:var(--text3);font-size:11px}
-
-/* === DIVIDER === */
-.divider{width:60px;height:2px;background:linear-gradient(90deg,var(--gold),var(--accent));border-radius:1px;margin:24px 0}
-
-/* === RESPONSIVE === */
-@media(max-width:900px){
-  .kpi-grid{grid-template-columns:repeat(3,1fr)}
-  .action-grid{grid-template-columns:repeat(3,1fr)}
-  .roadmap{grid-template-columns:repeat(2,1fr)}
-  .bar-label{width:120px;font-size:11px}
+body {
+  font-family: 'Noto Sans Thai', sans-serif;
+  background: var(--navy);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
-@media(max-width:600px){
-  .kpi-grid{grid-template-columns:repeat(2,1fr)}
-  .action-grid{grid-template-columns:repeat(2,1fr)}
-  .roadmap{grid-template-columns:1fr}
-  .hero h1{font-size:28px}
-  .hero-stats{gap:20px}
-  .hero-stat .hs-num{font-size:36px}
-  .nav-links{display:none}
-  .ring-grid{gap:16px}
-  .bar-label{width:80px;font-size:10px}
+
+/* Background pattern */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(201,169,110,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(52,152,219,0.04) 0%, transparent 60%),
+    repeating-linear-gradient(0deg, transparent, transparent 100px, rgba(201,169,110,0.02) 100px, rgba(201,169,110,0.02) 101px);
+  pointer-events: none;
+  z-index: 0;
 }
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ========== HEADER ========== */
+.hero {
+  padding: 48px 0 32px;
+  text-align: center;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.hero h1 span { color: var(--gold); }
+
+.hero .subtitle {
+  font-size: 18px;
+  color: var(--text-dim);
+  font-weight: 300;
+  margin-bottom: 28px;
+}
+
+/* ========== COUNTDOWN ========== */
+.countdown-section {
+  padding: 40px 0;
+}
+
+.countdown-bar {
+  background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.countdown-bar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--red), var(--orange), var(--gold), var(--green));
+}
+
+.countdown-label {
+  font-size: 14px;
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.countdown-digits {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.countdown-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+  text-shadow: 0 0 40px var(--glow);
+}
+
+.countdown-unit {
+  font-size: 16px;
+  color: var(--text-dim);
+  font-weight: 400;
+}
+
+.countdown-date {
+  text-align: right;
+}
+
+.countdown-date .date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--gold-bright);
+}
+
+.countdown-date .day {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+/* ========== PROGRESS BAR ========== */
+.progress-section {
+  padding: 0 0 40px;
+}
+
+.progress-wrap {
+  background: var(--navy-mid);
+  border-radius: 12px;
+  padding: 20px 28px;
+  border: 1px solid var(--border);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.progress-header span:first-child { color: var(--text-dim); }
+.progress-header span:last-child { color: var(--gold); font-weight: 600; }
+
+.progress-track {
+  width: 100%;
+  height: 8px;
+  background: rgba(201,169,110,0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--green), var(--gold), var(--orange));
+  transition: width 1.5s ease;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -2px;
+  width: 12px;
+  height: 12px;
+  background: var(--white);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--gold);
+}
+
+.progress-phases {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.progress-phases span.active { color: var(--gold); font-weight: 600; }
+
+/* ========== GRID ========== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  padding-bottom: 40px;
+}
+
+.grid-wide {
+  grid-template-columns: 1fr;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* ========== CARDS ========== */
+.card {
+  background: var(--navy-mid);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.card-icon.gold { background: rgba(201,169,110,0.15); }
+.card-icon.red { background: var(--red-bg); }
+.card-icon.green { background: var(--green-bg); }
+.card-icon.blue { background: var(--blue-bg); }
+.card-icon.orange { background: var(--orange-bg); }
+
+.card h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.card h2 small {
+  display: block;
+  font-size: 12px;
+  color: var(--text-dim);
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+/* ========== STAT CARDS ========== */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding-bottom: 24px;
+}
+
+.stat-card {
+  background: var(--navy-mid);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 24px;
+  text-align: center;
+}
+
+.stat-card .stat-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.1;
+}
+
+.stat-card .stat-value.gold { color: var(--gold); }
+.stat-card .stat-value.red { color: var(--red); }
+.stat-card .stat-value.green { color: var(--green); }
+
+.stat-card .stat-label {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+/* ========== CHECKLIST ========== */
+.checklist { list-style: none; }
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(201,169,110,0.08);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.checklist li:last-child { border-bottom: none; }
+
+.check {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid var(--gold-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.check.done {
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
+}
+
+.check.urgent {
+  border-color: var(--red);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(231,76,60,0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(231,76,60,0); }
+}
+
+.check-text { flex: 1; }
+.check-text .law { color: var(--gold-dim); font-size: 12px; font-family: 'JetBrains Mono', monospace; }
+.check-text .urgent-tag {
+  display: inline-block;
+  background: var(--red-bg);
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 6px;
+}
+
+/* ========== TIMELINE ========== */
+.timeline { position: relative; padding-left: 28px; }
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--gold), var(--blue), var(--green));
+}
+
+.tl-item {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.tl-item:last-child { padding-bottom: 0; }
+
+.tl-dot {
+  position: absolute;
+  left: -24px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 3px solid var(--navy-mid);
+}
+
+.tl-dot.active {
+  background: var(--gold);
+  box-shadow: 0 0 12px var(--glow);
+}
+
+.tl-dot.future { background: var(--navy-light); border-color: var(--gold-dim); }
+.tl-dot.past { background: var(--green); }
+
+.tl-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.tl-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  margin-top: 2px;
+}
+
+.tl-desc {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+/* ========== DISTRICT TABLE ========== */
+.district-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+}
+
+.district-table th {
+  text-align: left;
+  padding: 10px 12px;
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--border);
+}
+
+.district-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(201,169,110,0.06);
+  color: var(--text);
+}
+
+.district-table tr:hover td {
+  background: rgba(201,169,110,0.04);
+}
+
+.party-tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.party-pt { background: rgba(231,76,60,0.15); color: #E74C3C; }
+.party-mf { background: rgba(243,156,18,0.15); color: #F39C12; }
+.party-dp { background: rgba(52,152,219,0.15); color: #3498DB; }
+.party-tst { background: rgba(155,89,182,0.15); color: #9B59B6; }
+.party-other { background: rgba(149,165,166,0.15); color: #95A5A6; }
+
+/* ========== USP CARDS ========== */
+.usp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.usp-item {
+  background: rgba(201,169,110,0.05);
+  border: 1px solid rgba(201,169,110,0.1);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.usp-item:hover {
+  background: rgba(201,169,110,0.1);
+  border-color: var(--gold);
+}
+
+.usp-icon { font-size: 28px; margin-bottom: 8px; }
+.usp-title { font-size: 13px; font-weight: 700; color: var(--white); }
+.usp-desc { font-size: 11px; color: var(--text-dim); margin-top: 4px; }
+
+/* ========== FOOTER ========== */
+.footer {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 12px;
+  color: var(--text-dim);
+  border-top: 1px solid var(--border);
+  margin-top: 20px;
+}
+
+.footer .gold { color: var(--gold); }
+
+/* ========== SCROLLBAR ========== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+
+/* ========== DISTRICT SCROLL ========== */
+.district-scroll {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .grid-2 { grid-template-columns: 1fr; }
+  .countdown-bar { flex-direction: column; text-align: center; }
+  .countdown-date { text-align: center; }
+  .countdown-num { font-size: 48px; }
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate {
+  animation: fadeUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
 </style>
 </head>
 <body>
-<div class="lang-switch" style="position:fixed;top:12px;right:12px;z-index:9999;font-size:13px;background:#1B2A4A;padding:6px 14px;border-radius:20px;border:1px solid #C9A96E;">
-  <a href="https://thundthornthep-ai.github.io/" style="color:#aaa;text-decoration:none;">EN</a>
-  <span style="color:#888;margin:0 4px;">|</span>
-  <span style="color:#C9A96E;font-weight:bold;">TH</span>
-</div>
 
+<div class="container">
 
-<!-- SCROLL PROGRESS -->
-<div class="scroll-progress" id="scrollProgress"></div>
+  <!-- HERO -->
+  <section class="hero animate">
+    <div class="badge">Campaign Dashboard 2569</div>
+    <h1>เลือกตั้ง <span>สก.</span> ชุดที่ 14</h1>
+    <p class="subtitle">สมาชิกสภากรุงเทพมหานคร — 5 กรกฎาคม 2569</p>
+  </section>
 
-<!-- NAV -->
-<nav class="nav" id="nav">
-  <div class="nav-brand">
-    <img src="/las-logo-full.png" alt="LAS" height="50" style="margin-right:6px">
-    <img src="/nia-logo-full.png" alt="NIA" height="35" style="margin-right:12px">
-    <div style="display:flex;flex-direction:column;justify-content:center">
-      <div class="nav-title" style="margin-bottom:2px;font-size:13px">บริษัท Legal Advance Solution จำกัด (LAS)</div>
-      <div style="font-size:10px;color:var(--text2)">เพื่อการวิจัย สนับสนุนทุนวิจัยโดย สำนักงานนวัตกรรมแห่งชาติ (องค์การมหาชน) NIA</div>
+  <!-- COUNTDOWN -->
+  <section class="countdown-section animate delay-1">
+    <div class="countdown-bar">
+      <div>
+        <div class="countdown-label">นับถอยหลัง</div>
+        <div class="countdown-digits">
+          <span class="countdown-num" id="daysLeft">—</span>
+          <span class="countdown-unit">วัน</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:32px;flex-wrap:wrap;">
+        <div style="text-align:center;">
+          <div id="hoursLeft" style="font-family:'Playfair Display';font-size:32px;font-weight:900;color:var(--white);">—</div>
+          <div class="countdown-unit">ชั่วโมง</div>
+        </div>
+        <div style="text-align:center;">
+          <div id="minsLeft" style="font-family:'Playfair Display';font-size:32px;font-weight:900;color:var(--white);">—</div>
+          <div class="countdown-unit">นาที</div>
+        </div>
+        <div style="text-align:center;">
+          <div id="secsLeft" style="font-family:'Playfair Display';font-size:32px;font-weight:900;color:var(--white);">—</div>
+          <div class="countdown-unit">วินาที</div>
+        </div>
+      </div>
+      <div class="countdown-date">
+        <div class="date">5 ก.ค. 2569</div>
+        <div class="day">วันอาทิตย์ | 08:00-17:00 น.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRESS BAR -->
+  <section class="progress-section animate delay-2">
+    <div class="progress-wrap">
+      <div class="progress-header">
+        <span>ความคืบหน้าแคมเปญ</span>
+        <span id="progressPct">—%</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressBar" style="width:0%"></div>
+      </div>
+      <div class="progress-phases">
+        <span class="active">เตรียมตัว</span>
+        <span>ลงพื้นที่</span>
+        <span>สมัคร</span>
+        <span>หาเสียงเข้มข้น</span>
+        <span>เลือกตั้ง</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-row animate delay-2">
+    <div class="stat-card">
+      <div class="stat-value gold">50</div>
+      <div class="stat-label">เขตเลือกตั้ง</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">48,450</div>
+      <div class="stat-label">บ./เดือน เงินเดือน สก.</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value green">60.5%</div>
+      <div class="stat-label">Turnout 2565</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value red" id="weeksLeft">—</div>
+      <div class="stat-label">สัปดาห์ที่เหลือ</div>
     </div>
   </div>
-  <div class="nav-links">
-    <a href="#overview">ภาพรวม</a>
-    <a href="#actions">ข้อเสนอ</a>
-    <a href="#categories">หมวดหมู่</a>
-    <a href="#timeline-sec">Timeline</a>
-    <a href="#data">ข้อมูล</a>
-    <a href="#ords-sec">311 ฉบับ</a>
-    <a href="#roadmap-sec">Roadmap</a>
-    <a href="ep7.html">บทความ</a>
-    <a href="./">หน้าหลัก</a>
-  </div>
-</nav>
 
-<!-- ELECTION COUNTDOWN BANNER -->
-<div id="electionBanner" style="position:fixed;top:80px;left:0;right:0;background:linear-gradient(135deg,#1B2A4A,#0F1A2E);padding:16px 24px;text-align:center;z-index:50;border-bottom:2px solid #C9A96E">
-  <div style="color:#C9A96E;font-weight:600;margin-bottom:8px;font-size:13px">📅 วันเลือกตั้ง สภาจังหวัร กรุงเทพมหานคร</div>
-  <div style="color:#E8E8E8;font-size:14px;margin-bottom:10px">วันอาทิตย์ที่ 5 กรกฎาคม พ.ศ. 2569</div>
-  <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap">
-    <div style="text-align:center;color:#C9A96E">
-      <div style="font-size:20px;font-weight:700" id="countdownDays">0</div>
-      <div style="font-size:11px;color:#8A94A6">วัน</div>
-    </div>
-    <div style="color:#5A6478">:</div>
-    <div style="text-align:center;color:#C9A96E">
-      <div style="font-size:20px;font-weight:700" id="countdownHours">0</div>
-      <div style="font-size:11px;color:#8A94A6">ชม.</div>
-    </div>
-    <div style="color:#5A6478">:</div>
-    <div style="text-align:center;color:#C9A96E">
-      <div style="font-size:20px;font-weight:700" id="countdownMinutes">0</div>
-      <div style="font-size:11px;color:#8A94A6">นาที</div>
-    </div>
-    <div style="color:#5A6478">:</div>
-    <div style="text-align:center;color:#C9A96E">
-      <div style="font-size:20px;font-weight:700" id="countdownSeconds">0</div>
-      <div style="font-size:11px;color:#8A94A6">วินาที</div>
-    </div>
-  </div>
-</div>
+  <!-- MAIN GRID -->
+  <div class="grid grid-2">
 
-<!-- HERO -->
-<section class="hero" id="top" style="padding-top:160px">
-  <div class="hero-bg">
-    <div class="hero-grid"></div>
-  </div>
-  <div class="hero-content">
-    <div class="hero-badge"><span class="dot"></span> AI LegalTech Analysis &mdash; April 2569</div>
-    <h1>311 ข้อบัญญัติ กทม.<br>ถึงเวลาปฏิรูป</h1>
-    <p class="hero-sub">วิเคราะห์ข้อบัญญัติกรุงเทพมหานครทั้งหมดด้วย AI &mdash; พบ 43% ล้าสมัยเกิน 30 ปี กฎหมายเมืองที่เก่าแก่กว่าอายุคนส่วนใหญ่ที่ใช้มัน</p>
-    <div class="hero-stats">
-      <div class="hero-stat total"><div class="hs-num" data-target="311">0</div><div class="hs-label">ข้อบัญญัติ</div></div>
-      <div class="hero-stat critical"><div class="hs-num" data-target="135">0</div><div class="hs-label">วิกฤต 30+ ปี</div></div>
-      <div class="hero-stat"><div class="hs-num" data-target="19" style="color:var(--purple)">0</div><div class="hs-label">หมวดหมู่</div></div>
-      <div class="hero-stat action"><div class="hs-num" data-target="255">0</div><div class="hs-label">ต้องดำเนินการ</div></div>
-    </div>
-    <div class="hero-scroll">
-      <a href="#overview">
-        <span>เลื่อนลงเพื่อดูข้อมูล</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- OVERVIEW KPI -->
-<section class="section" id="overview">
-  <div class="container">
-    <div class="section-label"><span class="line"></span> OVERVIEW</div>
-    <h2>ระดับความล้าสมัย</h2>
-    <p class="section-desc">ข้อบัญญัติ กทม. จำแนกตามอายุ &mdash; ยิ่งเก่ายิ่งเสี่ยงที่จะไม่สอดคล้องกับสภาพเมืองปัจจุบัน</p>
-
-    <div class="kpi-grid">
-      <div class="kpi glass k-total"><div class="kpi-num" data-target="311">0</div><div class="kpi-label">ทั้งหมด</div></div>
-      <div class="kpi glass k-crit"><div class="kpi-num" data-target="135">0</div><div class="kpi-label">วิกฤต (30+ ปี)</div><div class="kpi-pct">43%</div></div>
-      <div class="kpi glass k-high"><div class="kpi-num" data-target="81">0</div><div class="kpi-label">สูง (20-29 ปี)</div><div class="kpi-pct">26%</div></div>
-      <div class="kpi glass k-med"><div class="kpi-num" data-target="36">0</div><div class="kpi-label">กลาง (10-19 ปี)</div><div class="kpi-pct">12%</div></div>
-      <div class="kpi glass k-low"><div class="kpi-num" data-target="59">0</div><div class="kpi-label">ต่ำ + ใหม่</div><div class="kpi-pct">19%</div></div>
-    </div>
-
-    <!-- Rings -->
-    <div class="ring-grid">
-      <div class="ring-item">
-        <svg class="ring" viewBox="0 0 40 40">
-          <circle class="ring-bg" cx="20" cy="20" r="16"/>
-          <circle class="ring-fg" cx="20" cy="20" r="16" stroke="#FF6B6B" stroke-dasharray="100.5" stroke-dashoffset="100.5" data-offset="57" transform="rotate(-90 20 20)"/>
-          <text class="ring-text" x="20" y="21" text-anchor="middle" font-size="8" fill="#FF6B6B">43%</text>
-        </svg>
-        <div class="ring-label">วิกฤต</div>
+    <!-- CHECKLIST -->
+    <div class="card animate delay-3">
+      <div class="card-header">
+        <div class="card-icon red">☑</div>
+        <h2>Candidate Checklist<small>คุณสมบัติผู้สมัคร — ม.49 + ม.50</small></h2>
       </div>
-      <div class="ring-item">
-        <svg class="ring" viewBox="0 0 40 40">
-          <circle class="ring-bg" cx="20" cy="20" r="16"/>
-          <circle class="ring-fg" cx="20" cy="20" r="16" stroke="#F39C12" stroke-dasharray="100.5" stroke-dashoffset="100.5" data-offset="74.4" transform="rotate(-90 20 20)"/>
-          <text class="ring-text" x="20" y="21" text-anchor="middle" font-size="8" fill="#F39C12">26%</text>
-        </svg>
-        <div class="ring-label">สูง</div>
-      </div>
-      <div class="ring-item">
-        <svg class="ring" viewBox="0 0 40 40">
-          <circle class="ring-bg" cx="20" cy="20" r="16"/>
-          <circle class="ring-fg" cx="20" cy="20" r="16" stroke="#F1C40F" stroke-dasharray="100.5" stroke-dashoffset="100.5" data-offset="88.4" transform="rotate(-90 20 20)"/>
-          <text class="ring-text" x="20" y="21" text-anchor="middle" font-size="8" fill="#F1C40F">12%</text>
-        </svg>
-        <div class="ring-label">กลาง</div>
-      </div>
-      <div class="ring-item">
-        <svg class="ring" viewBox="0 0 40 40">
-          <circle class="ring-bg" cx="20" cy="20" r="16"/>
-          <circle class="ring-fg" cx="20" cy="20" r="16" stroke="#2ECC71" stroke-dasharray="100.5" stroke-dashoffset="100.5" data-offset="81.4" transform="rotate(-90 20 20)"/>
-          <text class="ring-text" x="20" y="21" text-anchor="middle" font-size="8" fill="#2ECC71">19%</text>
-        </svg>
-        <div class="ring-label">ต่ำ/ใหม่</div>
-      </div>
+      <ul class="checklist">
+        <li>
+          <div class="check urgent" role="checkbox" tabindex="0" aria-checked="false" onclick="this.classList.toggle('done');this.classList.remove('urgent');this.setAttribute('aria-checked',this.classList.contains('done'))" onkeydown="if(event.key===' '||event.key==='Enter'){event.preventDefault();this.click()}">✓</div>
+          <div class="check-text">ทะเบียนบ้าน กทม. ≥ 1 ปี <span class="urgent-tag">เร่งด่วน</span><br><span class="law">ม.49(3) พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span></div>
+        </li>
+        <li>
+          <div class="check urgent" role="checkbox" tabindex="0" aria-checked="false" onclick="this.classList.toggle('done');this.classList.remove('urgent');this.setAttribute('aria-checked',this.classList.contains('done'))" onkeydown="if(event.key===' '||event.key==='Enter'){event.preventDefault();this.click()}">✓</div>
+          <div class="check-text">หลักฐานภาษีเงินได้ 3 ปี (2566-2568) <span class="urgent-tag">เร่งด่วน</span><br><span class="law">ม.51 — ภ.ง.ด.90/91</span></div>
+        </li>
+        <li>
+          <div class="check done" role="checkbox" tabindex="0" aria-checked="true" onclick="this.classList.toggle('done');this.setAttribute('aria-checked',this.classList.contains('done'))" onkeydown="if(event.key===' '||event.key==='Enter'){event.preventDefault();this.click()}">✓</div>
+          <div class="check-text">สัญชาติไทยโดยการเกิด<br><span class="law">ม.49(1)</span></div>
+        </li>
+        <li>
+          <div class="check done" role="checkbox" tabindex="0" aria-checked="true" onclick="this.classList.toggle('done');this.setAttribute('aria-checked',this.classList.contains('done'))" onkeydown="if(event.key===' '||event.key==='Enter'){event.preventDefault();this.click()}">✓</div>
+          <div class="check-text">อายุ ≥ 25 ปี (Ph.D. + 19 ปีประสบการณ์)<br><span class="law">ม.49(2)</span></div>
+        </li>
+        <li>
+          <div class="check done" role="checkbox" tabindex="0" aria-checked="true" onclick="this.classList.toggle('done');this.setAttribute('aria-checked',this.classList.contains('done'))" onkeydown="if(event.key===' '||event.key==='Enter'){event.preventDefault();this.click()}">✓</div>
+          <div class="check-text">ไม่มีลักษณะต้องห้าม 26 ข้อ<br><span class="law">ม.50 — ตรวจแล้ว 24/26 ข้อ ผ่าน</span></div>
+        </li>
+        <li>
+          <div class="check done" role="checkbox" tabindex="0" aria-checked="true" onclick="this.classList.toggle('done');this.setAttribute('aria-checked',this.classList.contains('done'))" onkeydown="if(event.key===' '||event.key==='Enter'){event.preventDefault();this.click()}">✓</div>
+          <div class="check-text">ไม่ดำรงตำแหน่งต้องห้าม (ทนายอิสระ/MD)<br><span class="law">ม.22 พ.ร.บ.กทม. 2528</span></div>
+        </li>
+        <li>
+          <div class="check" role="checkbox" tabindex="0" aria-checked="false" onclick="this.classList.toggle('done');this.setAttribute('aria-checked',this.classList.contains('done'))" onkeydown="if(event.key===' '||event.key==='Enter'){event.preventDefault();this.click()}">✓</div>
+          <div class="check-text">กำหนดเขตเลือกตั้งเป้าหมาย<br><span class="law">ตามทะเบียนบ้าน</span></div>
+        </li>
+        <li>
+          <div class="check" role="checkbox" tabindex="0" aria-checked="false" onclick="this.classList.toggle('done');this.setAttribute('aria-checked',this.classList.contains('done'))" onkeydown="if(event.key===' '||event.key==='Enter'){event.preventDefault();this.click()}">✓</div>
+          <div class="check-text">ตัดสินใจ: อิสระ หรือ สังกัดพรรค<br><span class="law">ม.51 — ถ้าสังกัดพรรคต้องมีหนังสือรับรอง</span></div>
+        </li>
+      </ul>
     </div>
 
-    <div class="insight glass">
-      <div class="insight-icon">!</div>
-      <div class="insight-body">
-        <h3>69% ของข้อบัญญัติมีอายุเกิน 20 ปี</h3>
-        <p>กฎหมายเมืองส่วนใหญ่ถูกเขียนก่อนยุค BTS, MRT, Food Delivery, PM2.5 และ Digital Economy &mdash; ขณะที่กรุงเทพฯ เปลี่ยนไปแล้วทั้งเมือง กฎหมายที่ควบคุมเมืองกลับยังอยู่ในยุค 2530</p>
+    <!-- TIMELINE -->
+    <div class="card animate delay-4">
+      <div class="card-header">
+        <div class="card-icon gold">📅</div>
+        <h2>Campaign Timeline<small>แผนงาน 16 สัปดาห์</small></h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot active"></div>
+          <div class="tl-date">17-30 มี.ค. 69</div>
+          <div class="tl-title">Phase 1: เตรียมตัว (W1-W2)</div>
+          <div class="tl-desc">ตรวจคุณสมบัติ + ทะเบียนบ้าน + ภาษี + กำหนดเขต</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot future"></div>
+          <div class="tl-date">31 มี.ค. — 20 เม.ย.</div>
+          <div class="tl-title">Phase 1: เตรียมตัว (W3-W5)</div>
+          <div class="tl-desc">Social Media + ทีมงาน + ป้ายหาเสียง + นโยบาย</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot future"></div>
+          <div class="tl-date">21 เม.ย. — 18 พ.ค.</div>
+          <div class="tl-title">Phase 2: ลงพื้นที่ (W6-W9)</div>
+          <div class="tl-desc">ลงพื้นที่ทุกวัน + เก็บปัญหาชาวบ้าน + FB Live</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot future"></div>
+          <div class="tl-date">22 พ.ค. 69</div>
+          <div class="tl-title">วาระ สก. ชุดที่ 13 ครบ</div>
+          <div class="tl-desc">รอ กกต. ประกาศให้มีการเลือกตั้ง</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot future"></div>
+          <div class="tl-date">~ปลาย พ.ค.</div>
+          <div class="tl-title">Phase 3: รับสมัคร</div>
+          <div class="tl-desc">ไปสมัครวันแรก + จับเบอร์ + อัพเดทป้าย</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot future"></div>
+          <div class="tl-date">มิ.ย. — 4 ก.ค.</div>
+          <div class="tl-title">Phase 3: หาเสียงเข้มข้น</div>
+          <div class="tl-desc">ลงพื้นที่ทุกวัน + ดีเบต + Social Push</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot future"></div>
+          <div class="tl-date" style="color:var(--red);font-weight:700;">5 ก.ค. 2569</div>
+          <div class="tl-title" style="color:var(--gold);font-size:16px;">วันเลือกตั้ง</div>
+          <div class="tl-desc">08:00-17:00 น. — ส่งผู้แทนดูแลทุกหน่วย</div>
+        </div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- ACTIONS -->
-<section class="section" id="actions" style="border-top:1px solid rgba(255,255,255,.04)">
-  <div class="container">
-    <div class="section-label"><span class="line"></span> RECOMMENDATIONS</div>
-    <h2>ข้อเสนอ 5 แนวทาง</h2>
-    <p class="section-desc">คลิกเพื่อ filter ข้อมูลในตารางด้านล่าง</p>
-
-    <div class="action-grid" id="actionGrid">
-      <div class="act-card glass act-repeal" data-action="repeal" onclick="toggleAction('repeal')">
-        <span class="ac-icon">&#x1F6AB;</span><span class="ac-num">47</span><span class="ac-label">ยกเลิก</span>
+  <!-- COMPETITIVE ADVANTAGES -->
+  <div class="card animate delay-4" style="margin-bottom:20px;">
+    <div class="card-header">
+      <div class="card-icon gold">⭐</div>
+      <h2>จุดแข็ง Khun Tae<small>7 Unique Selling Propositions</small></h2>
+    </div>
+    <div class="usp-grid">
+      <div class="usp-item">
+        <div class="usp-icon">⚖️</div>
+        <div class="usp-title">ทนายตัวจริง</div>
+        <div class="usp-desc">19+ ปี กฎหมายธุรกิจ<br>ใบอนุญาต 676/2551</div>
       </div>
-      <div class="act-card glass act-modern" data-action="modernize" onclick="toggleAction('modernize')">
-        <span class="ac-icon">&#x1F680;</span><span class="ac-num">89</span><span class="ac-label">ปรับให้ทันสมัย</span>
+      <div class="usp-item">
+        <div class="usp-icon">🎓</div>
+        <div class="usp-title">Ph.D. รัฐประศาสนศาสตร์</div>
+        <div class="usp-desc">เข้าใจระบบราชการ<br>+ บริหารท้องถิ่น</div>
       </div>
-      <div class="act-card glass act-amend" data-action="amend" onclick="toggleAction('amend')">
-        <span class="ac-icon">&#x270F;&#xFE0F;</span><span class="ac-num">68</span><span class="ac-label">แก้ไขบางส่วน</span>
+      <div class="usp-item">
+        <div class="usp-icon">🏗️</div>
+        <div class="usp-title">โครงการ Landmark</div>
+        <div class="usp-desc">MAHANAKHON<br>Banyan Tree, Laguna</div>
       </div>
-      <div class="act-card glass act-consol" data-action="consolidate" onclick="toggleAction('consolidate')">
-        <span class="ac-icon">&#x1F4E6;</span><span class="ac-num">51</span><span class="ac-label">รวมฉบับ</span>
+      <div class="usp-item">
+        <div class="usp-icon">🏛️</div>
+        <div class="usp-title">เครือข่ายรัฐ</div>
+        <div class="usp-desc">อดีตที่ปรึกษา<br>ระดับรัฐมนตรี</div>
       </div>
-      <div class="act-card glass act-keep" data-action="keep" onclick="toggleAction('keep')">
-        <span class="ac-icon">&#x2705;</span><span class="ac-num">56</span><span class="ac-label">ใช้ได้ / ติดตาม</span>
+      <div class="usp-item">
+        <div class="usp-icon">🤖</div>
+        <div class="usp-title">AI LegalTech</div>
+        <div class="usp-desc">ผู้บุกเบิก AI Legal<br>คนแรกของไทย</div>
+      </div>
+      <div class="usp-item">
+        <div class="usp-icon">💼</div>
+        <div class="usp-title">ผู้ประกอบการ</div>
+        <div class="usp-desc">MD บริษัทกฎหมาย<br>เข้าใจ SME</div>
+      </div>
+      <div class="usp-item">
+        <div class="usp-icon">🔥</div>
+        <div class="usp-title">New Gen + Experience</div>
+        <div class="usp-desc">ไม่ใช่นักการเมืองเก่า<br>ไม่ใช่เด็กไม่มีประสบการณ์</div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- CATEGORIES BAR CHART -->
-<section class="section" id="categories" style="border-top:1px solid rgba(255,255,255,.04)">
-  <div class="container">
-    <div class="section-label"><span class="line"></span> CATEGORIES</div>
-    <h2>19 หมวดหมู่</h2>
-    <p class="section-desc">เรียงตามจำนวน &mdash; สีแดงยิ่งเข้ม ยิ่งมีสัดส่วน "วิกฤต" สูง</p>
-    <div class="bars" id="barChart"></div>
-  </div>
-</section>
-
-<!-- TIMELINE -->
-<section class="section" id="timeline-sec" style="border-top:1px solid rgba(255,255,255,.04)">
-  <div class="container">
-    <div class="section-label"><span class="line"></span> TIMELINE</div>
-    <h2>ข้อบัญญัติแยกตามช่วงเวลา</h2>
-    <p class="section-desc">Hover เพื่อดูจำนวน &mdash; สีแสดงระดับความล้าสมัย ณ ปัจจุบัน</p>
-    <div class="tl-container">
-      <div class="tl-bars" id="tlBars"></div>
-      <div class="tl-axis" id="tlAxis"></div>
+  <!-- DISTRICT TABLE -->
+  <div class="card animate delay-5" style="margin-bottom:20px;">
+    <div class="card-header">
+      <div class="card-icon blue">🗺️</div>
+      <h2>ผลเลือกตั้ง สก. 2565 รายเขต<small>50 เขต — แนวโน้มสำหรับ 2569</small></h2>
     </div>
-  </div>
-</section>
-
-<!-- DATA TABLE -->
-<section class="section" id="data" style="border-top:1px solid rgba(255,255,255,.04)">
-  <div class="container">
-    <div class="section-label"><span class="line"></span> DATA</div>
-    <h2>ตารางวิเคราะห์รายหมวด</h2>
-    <p class="section-desc">พร้อมข้อเสนอปฏิรูปและเหตุผลประกอบ</p>
-
-    <div class="filter-bar">
-      <select id="fRisk" onchange="applyFilters()">
-        <option value="">ทุกระดับ</option>
-        <option value="critical">วิกฤต</option>
-        <option value="high">สูง</option>
-        <option value="medium">กลาง</option>
-        <option value="low">ต่ำ/ใหม่</option>
-      </select>
-      <select id="fAction" onchange="applyFilters()">
-        <option value="">ทุกข้อเสนอ</option>
-        <option value="repeal">ยกเลิก</option>
-        <option value="modernize">ปรับให้ทันสมัย</option>
-        <option value="amend">แก้ไขบางส่วน</option>
-        <option value="consolidate">รวมฉบับ</option>
-        <option value="keep">ใช้ได้</option>
-      </select>
-      <button class="reset-btn" onclick="resetFilters()">Reset</button>
-      <span class="filter-count" id="fCount"></span>
-    </div>
-
-    <div class="table-wrap">
-      <table class="dtable">
+    <div class="district-scroll">
+      <table class="district-table">
         <thead>
           <tr>
-            <th style="width:36px">#</th>
-            <th>หมวดหมู่</th>
-            <th class="ctr">รวม</th>
-            <th class="ctr">วิกฤต</th>
-            <th class="ctr">สูง</th>
-            <th class="ctr">กลาง</th>
-            <th class="ctr">ต่ำ</th>
-            <th>ข้อเสนอ</th>
-            <th>เหตุผล</th>
-            <th class="ctr">ลิงก์</th>
+            <th>#</th>
+            <th>เขต</th>
+            <th>พรรค (สก. 2565)</th>
+            <th>แนวโน้ม 2569</th>
           </tr>
         </thead>
-        <tbody id="tBody"></tbody>
+        <tbody id="districtBody"></tbody>
       </table>
     </div>
   </div>
-</section>
 
-
-<!-- 311 FULL LIST -->
-<section class="section" id="ords-sec" style="border-top:1px solid rgba(255,255,255,.04)">
-  <div class="container">
-    <div class="section-label"><span class="line"></span> FULL DATABASE</div>
-    <h2>ข้อบัญญัติ กทม. ครบ 311 ฉบับ</h2>
-    <p class="section-desc">ข้อมูลจาก <a href="https://bmc.go.th/common-local-law/" target="_blank" style="color:var(--accent)">สภากรุงเทพมหานคร</a> — คลิกดาวน์โหลด PDF แต่ละฉบับได้</p>
-    <input type="text" class="ords-search" id="ordsSearch" placeholder="🔍 ค้นหาข้อบัญญัติ... เช่น อาคาร, จอดรถ, สาธารณสุข" oninput="filterOrds()">
-    <div class="ords-stats" id="ordsStats"></div>
-    <div class="ords-wrap">
-      <table class="ords-table">
-        <thead>
-          <tr>
-            <th style="width:44px">#</th>
-            <th>ชื่อข้อบัญญัติ</th>
-            <th style="width:100px;text-align:center">PDF</th>
-          </tr>
-        </thead>
-        <tbody id="ordsBody"></tbody>
-      </table>
+  <!-- KEY LAWS -->
+  <div class="card animate delay-5" style="margin-bottom:20px;">
+    <div class="card-header">
+      <div class="card-icon orange">📜</div>
+      <h2>กฎหมายสำคัญ<small>Verified จากตัวบทจริง</small></h2>
     </div>
-  </div>
-</section>
-
-<!-- ROADMAP -->
-<section class="section" id="roadmap-sec" style="border-top:1px solid rgba(255,255,255,.04)">
-  <div class="container">
-    <div class="section-label"><span class="line"></span> ROADMAP</div>
-    <h2>ส.ก. ชุดใหม่ &mdash; แผน 4 ระยะ</h2>
-    <p class="section-desc">ลำดับความเร่งด่วนสำหรับการปฏิรูปกฎหมายเมือง</p>
-
-    <div class="roadmap">
-      <div class="rm-card glass rm-1">
-        <div class="rm-phase">Phase 1 &mdash; เดือน 1-2</div>
-        <div class="rm-num">47</div>
-        <div class="rm-label">เร่งด่วน &mdash; ยกเลิก</div>
-        <ul>
-          <li>ยกเลิกข้อบัญญัติที่ไม่มีผลบังคับใช้จริง</li>
-          <li>สาธารณสุข/อาหาร กระทบประชาชนทุกวัน</li>
-          <li>ตั้งคณะกรรมการทบทวนกฎหมายเมือง</li>
-        </ul>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;">
+      <div style="background:rgba(201,169,110,0.05);border-radius:10px;padding:16px;">
+        <div style="font-weight:700;color:var(--gold);font-size:13px;margin-bottom:8px;">พ.ร.บ.กทม. 2528</div>
+        <div style="font-size:12px;color:var(--text-dim);line-height:1.8;">
+          ม.10 จำนวน สก.<br>
+          ม.12 คุณสมบัติ → อ้างไป ม.49+50<br>
+          ม.17 วาระ 4 ปี<br>
+          ม.22 ข้อห้ามขณะดำรงตำแหน่ง<br>
+          ม.89 อำนาจ กทม. 27 ข้อ<br>
+          ม.97-106 ตราข้อบัญญัติ
+        </div>
       </div>
-      <div class="rm-card glass rm-2">
-        <div class="rm-phase">Phase 2 &mdash; เดือน 3-6</div>
-        <div class="rm-num">89</div>
-        <div class="rm-label">สำคัญ &mdash; ปรับให้ทันสมัย</div>
-        <ul>
-          <li>Modernize ผังเมือง/อาคาร/จราจร</li>
-          <li>ปรับอัตราค่าธรรมเนียม</li>
-          <li>รองรับ Digital Economy</li>
-        </ul>
+      <div style="background:rgba(52,152,219,0.05);border-radius:10px;padding:16px;">
+        <div style="font-weight:700;color:var(--blue);font-size:13px;margin-bottom:8px;">พ.ร.บ.เลือกตั้งท้องถิ่น 2562</div>
+        <div style="font-size:12px;color:var(--text-dim);line-height:1.8;">
+          ม.49 คุณสมบัติ 4 ข้อ<br>
+          ม.50 ลักษณะต้องห้าม 26 ข้อ<br>
+          ม.51 เอกสารสมัคร + ภาษี 3 ปี<br>
+          ม.64 เริ่มหาเสียง 180 วันก่อนครบวาระ<br>
+          ม.65 ห้ามซื้อเสียง (= ฟอกเงิน)<br>
+          ม.120-129 บทลงโทษ
+        </div>
       </div>
-      <div class="rm-card glass rm-3">
-        <div class="rm-phase">Phase 3 &mdash; เดือน 7-12</div>
-        <div class="rm-num">119</div>
-        <div class="rm-label">ระยะกลาง &mdash; แก้ไข + รวม</div>
-        <ul>
-          <li>รวมฉบับข้อบัญญัติซ้ำซ้อน</li>
-          <li>แก้ไขบุคลากร/สวัสดิการ</li>
-          <li>ออกข้อบัญญัติใหม่ (Smart City)</li>
-        </ul>
-      </div>
-      <div class="rm-card glass rm-4">
-        <div class="rm-phase">Phase 4 &mdash; เดือน 13+</div>
-        <div class="rm-num">56</div>
-        <div class="rm-label">ต่อเนื่อง &mdash; ติดตาม</div>
-        <ul>
-          <li>ติดตามผลบังคับใช้ข้อบัญญัติใหม่</li>
-          <li>ตั้งระบบ Sunset Review ทุก 5 ปี</li>
-          <li>AI LegalTech ติดตามอัตโนมัติ</li>
-        </ul>
+      <div style="background:rgba(231,76,60,0.05);border-radius:10px;padding:16px;">
+        <div style="font-weight:700;color:var(--red);font-size:13px;margin-bottom:8px;">⚠️ ข้อห้ามสำคัญ</div>
+        <div style="font-size:12px;color:var(--text-dim);line-height:1.8;">
+          ❌ ห้ามซื้อเสียง/จัดเลี้ยง/มหรสพ<br>
+          ❌ หยุดหาเสียง 18:00 วันก่อนเลือกตั้ง<br>
+          ❌ ป้ายต้องตามขนาด กกต. กำหนด<br>
+          ❌ ซื้อเสียง = ฟอกเงิน<br>
+          ⚡ โทษ: จำคุก 1-10 ปี + ปรับ 200K<br>
+          ⚡ เพิกถอนสิทธิ 20 ปี
+        </div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- CTA -->
-<section class="cta-section">
-  <div class="container" style="position:relative;z-index:1">
-    <h2 style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;color:#fff;margin-bottom:8px">ข้อมูลนี้ คือจุดเริ่มต้นของการเปลี่ยนแปลง</h2>
-    <p style="color:var(--text2);margin-bottom:24px;max-width:500px;display:inline-block">เลือก ส.ก. ที่กล้าหยิบข้อบัญญัติอายุ 50 ปีขึ้นมาวางบนโต๊ะ แล้วพูดว่า "เราต้องเปลี่ยนแล้ว"</p><br>
-    <a class="cta-btn" href="ep7.html">อ่านบทความฉบับเต็ม &rarr;</a>
-    &nbsp;&nbsp;
-    <a class="cta-btn" href="https://bmc.go.th/common-local-law/" target="_blank" style="background:transparent;color:var(--accent);border:1px solid var(--accent);box-shadow:none">ดูข้อมูลต้นทาง</a>
-  </div>
-</section>
+  <footer class="footer">
+    <span class="gold">LAS</span> Legal Advance Solution Co., Ltd. | BKK Election Dashboard<br>
+    อัพเดท: <span id="updateDate"></span> | ข้อมูล Verified จากตัวบทกฎหมาย
+  </footer>
 
-<!-- FOOTER -->
-<footer class="dash-footer">
-  <div style="margin-bottom:12px;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:12px">
-    <img src="/las-logo-full.png" alt="LAS" height="30" style="margin-right:8px;vertical-align:middle">
-    <img src="/nia-logo-full.png" alt="NIA" height="25" style="vertical-align:middle">
-  </div>
-  <b style="color:var(--gold)">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</b> &mdash;
-  <a href="https://thundthornthep-ai.github.io/">Profile</a> |
-  <a href="https://laslegal.co.th" target="_blank">LAS Legal</a><br>
-  <div style="font-size:11px;color:var(--text2);margin-top:8px">
-    <a href="https://bmc.go.th/common-local-law/" target="_blank" style="color:var(--text2)">สภากรุงเทพมหานคร</a> |
-    วิเคราะห์ด้วย AI LegalTech โดย
-    <a href="https://laslegal.co.th" target="_blank" style="color:var(--text2)">Legal Advance Solution Co., Ltd.</a><br>
-    สนับสนุนทุนวิจัยโดย
-    <a href="https://www.nia.or.th" target="_blank" style="color:var(--text2)">สำนักงานนวัตกรรมแห่งชาติ (องค์การมหาชน)</a>
-  </div>
-  <div class="footer-tags">#ข้อบัญญัติกทม #กฎหมายเมือง #AILegalTech #นวัตกรรมนิติบัญญัติชิงรุก #LAS #NIA</div>
-  &copy; 2026 Legal Advance Solution Co., Ltd.
-</footer>
+</div>
 
 <script>
-// ===== DATA =====
-var DATA=[
-  {cat:"ผังเมือง/อาคาร/ควบคุมพื้นที่",total:74,critical:52,high:15,medium:5,low:2,action:"consolidate",reason:"74 ฉบับซ้อนทับ — ต้องรวมเป็นข้อบัญญัติผังเมืองฉบับเดียว"},
-  {cat:"บุคลากร/สวัสดิการ/ค่าตอบแทน",total:50,critical:18,high:20,medium:8,low:4,action:"amend",reason:"อัตราค่าตอบแทนไม่สอดคล้องค่าครองชีพ — แก้ไขตัวเลขให้เป็นปัจจุบัน"},
-  {cat:"สาธารณสุข/อาหาร/การค้า",total:35,critical:25,high:6,medium:3,low:1,action:"modernize",reason:"เก่า 40-50 ปี ไม่รองรับ Food Delivery, Cloud Kitchen — เขียนใหม่ทั้งหมวด"},
-  {cat:"การเงิน/งบประมาณ/ค่าธรรมเนียม",total:32,critical:10,high:12,medium:6,low:4,action:"amend",reason:"อัตราค่าธรรมเนียมไม่ได้ปรับมา 20-30 ปี"},
-  {cat:"สวัสดิการสังคม/ชุมชน",total:22,critical:4,high:8,medium:5,low:5,action:"modernize",reason:"ไม่ตอบโจทย์สังคมสูงวัย ครอบครัวยุคใหม่"},
-  {cat:"จราจร/การจอดรถ",total:18,critical:12,high:4,medium:1,low:1,action:"modernize",reason:"เขียนก่อนมี BTS/MRT/แอปเรียกรถ — ปรับรองรับ Smart Mobility"},
-  {cat:"กิจการพาณิชย์/รัฐวิสาหกิจ",total:14,critical:4,high:5,medium:2,low:3,action:"amend",reason:"โครงสร้างกิจการเปลี่ยน — ปรับให้สอดคล้องธุรกิจปัจจุบัน"},
-  {cat:"การเมือง/สภา กทม.",total:12,critical:1,high:3,medium:3,low:5,action:"keep",reason:"ส่วนใหญ่ปรับปรุงแล้วตาม พ.ร.บ. กทม."},
-  {cat:"พัสดุ/ทรัพย์สิน/จัดซื้อจัดจ้าง",total:10,critical:3,high:3,medium:2,low:2,action:"amend",reason:"ระบบเปลี่ยนเป็น e-GP — ปรับให้สอดคล้องระบบอิเล็กทรอนิกส์"},
-  {cat:"สิ่งแวดล้อม/ความสะอาด",total:9,critical:3,high:2,medium:2,low:2,action:"modernize",reason:"ไม่รองรับ Waste Separation, PM2.5, Circular Economy"},
-  {cat:"การศึกษา/วิจัย",total:8,critical:1,high:2,medium:3,low:2,action:"keep",reason:"ปรับปรุงในช่วง 10 ปี — เพิ่มเติม Digital Literacy"},
-  {cat:"ความรับผิด/ละเมิด",total:6,critical:2,high:1,medium:1,low:2,action:"amend",reason:"หลักกฎหมายใช้ได้ แต่อัตราค่าเสียหายต้องปรับ"},
-  {cat:"สุสาน/ฌาปนสถาน",total:4,critical:3,high:1,medium:0,low:0,action:"repeal",reason:"ซ้ำซ้อนกับ พ.ร.บ. สุสาน — ยกเลิกใช้กฎหมายแม่บทแทน"},
-  {cat:"ขนส่งมวลชน",total:3,critical:0,high:1,medium:1,low:1,action:"modernize",reason:"ต้องเพิ่มรองรับ MaaS, EV Bus, Multimodal Transit"},
-  {cat:"สัตว์เลี้ยง/สัตว์",total:3,critical:0,high:1,medium:1,low:1,action:"amend",reason:"ปรับให้สอดคล้อง พ.ร.บ. ป้องกันการทารุณกรรมสัตว์"},
-  {cat:"ความปลอดภัย/สาธารณภัย",total:3,critical:0,high:0,medium:1,low:2,action:"keep",reason:"ออกใหม่ค่อนข้างทันสมัย"},
-  {cat:"ยกเลิกข้อบัญญัติ",total:5,critical:0,high:0,medium:0,low:5,action:"keep",reason:"ทำหน้าที่ยกเลิกฉบับเก่าสำเร็จแล้ว"},
-  {cat:"อื่นๆ",total:3,critical:1,high:1,medium:0,low:1,action:"repeal",reason:"ทบทวนรายฉบับ"}
-];
+// ========== COUNTDOWN ==========
+function updateCountdown() {
+  const election = new Date(2026, 6, 5, 8, 0, 0); // 5 July 2026
+  const now = new Date();
+  const diff = election - now;
 
-var DECADES=[
-  {label:"2516-19",full:"พ.ศ. 2516-2519",count:12,risk:"critical"},
-  {label:"2520-24",full:"พ.ศ. 2520-2524",count:18,risk:"critical"},
-  {label:"2525-29",full:"พ.ศ. 2525-2529",count:35,risk:"critical"},
-  {label:"2530-34",full:"พ.ศ. 2530-2534",count:38,risk:"critical"},
-  {label:"2535-39",full:"พ.ศ. 2535-2539",count:32,risk:"critical"},
-  {label:"2540-44",full:"พ.ศ. 2540-2544",count:22,risk:"high"},
-  {label:"2545-49",full:"พ.ศ. 2545-2549",count:27,risk:"high"},
-  {label:"2550-54",full:"พ.ศ. 2550-2554",count:24,risk:"high"},
-  {label:"2555-59",full:"พ.ศ. 2555-2559",count:36,risk:"medium"},
-  {label:"2560-64",full:"พ.ศ. 2560-2564",count:32,risk:"low"},
-  {label:"2565-69",full:"พ.ศ. 2565-2569",count:35,risk:"low"}
-];
-
-var BADGE_MAP={
-  repeal:{label:"ยกเลิก",cls:"b-repeal"},
-  modernize:{label:"ปรับให้ทันสมัย",cls:"b-modern"},
-  amend:{label:"แก้ไขบางส่วน",cls:"b-amend"},
-  consolidate:{label:"รวมฉบับ",cls:"b-consol"},
-  keep:{label:"ใช้ได้ / ติดตาม",cls:"b-keep"}
-};
-
-var RISK_COLORS={critical:"#FF6B6B",high:"#F39C12",medium:"#F1C40F",low:"#2ECC71"};
-var activeAction='';
-
-// ===== COUNTER ANIMATION =====
-function animateCounters(els){
-  for(var i=0;i<els.length;i++){
-    (function(el){
-      var target=parseInt(el.getAttribute('data-target'),10);
-      var duration=1200;
-      var start=null;
-      function step(ts){
-        if(!start)start=ts;
-        var progress=Math.min((ts-start)/duration,1);
-        var ease=1-Math.pow(1-progress,3);
-        el.textContent=Math.round(target*ease);
-        if(progress<1)requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-    })(els[i]);
-  }
-}
-
-// ===== SCROLL OBSERVER =====
-function setupObserver(){
-  if(!('IntersectionObserver' in window))return;
-  var obs=new IntersectionObserver(function(entries){
-    for(var i=0;i<entries.length;i++){
-      if(entries[i].isIntersecting){
-        var el=entries[i].target;
-        // Counter animation
-        var counters=el.querySelectorAll('[data-target]');
-        if(counters.length)animateCounters(counters);
-        // Bar animation
-        var bars=el.querySelectorAll('.bar-row');
-        for(var j=0;j<bars.length;j++){
-          (function(b,delay){
-            setTimeout(function(){b.classList.add('visible')},delay);
-          })(bars[j],j*60);
-        }
-        // Bar fill animation
-        var fills=el.querySelectorAll('.bar-fill[data-width]');
-        for(var j=0;j<fills.length;j++){
-          (function(f){
-            setTimeout(function(){f.style.width=f.getAttribute('data-width')+'%'},100);
-          })(fills[j]);
-        }
-        // Timeline bars
-        var tlb=el.querySelectorAll('.tl-bar');
-        for(var j=0;j<tlb.length;j++){
-          (function(b,delay){
-            setTimeout(function(){b.classList.add('visible')},delay);
-          })(tlb[j],j*80);
-        }
-        // Ring animation
-        var rings=el.querySelectorAll('.ring-fg[data-offset]');
-        for(var j=0;j<rings.length;j++){
-          (function(r){
-            setTimeout(function(){
-              r.style.transition='stroke-dashoffset 1.2s cubic-bezier(.25,.46,.45,.94)';
-              r.style.strokeDashoffset=r.getAttribute('data-offset');
-            },200);
-          })(rings[j]);
-        }
-        obs.unobserve(el);
-      }
-    }
-  },{threshold:0.15});
-  var sections=document.querySelectorAll('.section,.hero');
-  for(var i=0;i<sections.length;i++) obs.observe(sections[i]);
-}
-
-// ===== SCROLL PROGRESS =====
-function updateScroll(){
-  var winH=document.documentElement.scrollHeight-window.innerHeight;
-  var pct=winH>0?(window.scrollY/winH*100):0;
-  document.getElementById('scrollProgress').style.width=pct+'%';
-  var nav=document.getElementById('nav');
-  if(window.scrollY>50)nav.classList.add('scrolled');
-  else nav.classList.remove('scrolled');
-}
-
-// ===== BUILD BAR CHART =====
-function buildBars(){
-  var el=document.getElementById('barChart');
-  while(el.firstChild)el.removeChild(el.firstChild);
-  var maxV=0;
-  for(var i=0;i<DATA.length;i++)if(DATA[i].total>maxV)maxV=DATA[i].total;
-  var sorted=DATA.slice().sort(function(a,b){return b.total-a.total});
-  for(var i=0;i<sorted.length;i++){
-    var d=sorted[i];
-    var pct=(d.total/maxV*100).toFixed(0);
-    var critR=d.critical/d.total;
-    var color=critR>.5?'linear-gradient(90deg,#E74C3C,#FF6B6B)':critR>.3?'linear-gradient(90deg,#E67E22,#F39C12)':'linear-gradient(90deg,#2D6A4F,#4ECDC4)';
-
-    var row=document.createElement('div');row.className='bar-row';
-
-    var lbl=document.createElement('div');lbl.className='bar-label';
-    lbl.textContent=d.cat;row.appendChild(lbl);
-
-    var track=document.createElement('div');track.className='bar-track';
-    var fill=document.createElement('div');fill.className='bar-fill';
-    fill.setAttribute('data-width',pct);
-    fill.style.background=color;fill.textContent=d.total;
-    track.appendChild(fill);row.appendChild(track);
-
-    var meta=document.createElement('div');meta.className='bar-meta';
-    var b=document.createElement('b');b.textContent=Math.round(critR*100)+'%';
-    meta.appendChild(b);
-    meta.appendChild(document.createTextNode(' วิกฤต'));
-    row.appendChild(meta);
-
-    el.appendChild(row);
-  }
-}
-
-// ===== BUILD TIMELINE =====
-function buildTimeline(){
-  var bars=document.getElementById('tlBars');
-  var axis=document.getElementById('tlAxis');
-  while(bars.firstChild)bars.removeChild(bars.firstChild);
-  while(axis.firstChild)axis.removeChild(axis.firstChild);
-  var maxC=0;
-  for(var i=0;i<DECADES.length;i++)if(DECADES[i].count>maxC)maxC=DECADES[i].count;
-  for(var i=0;i<DECADES.length;i++){
-    var d=DECADES[i];
-    var h=(d.count/maxC*180);
-    var bar=document.createElement('div');bar.className='tl-bar';
-    bar.style.height=h+'px';
-    bar.style.background='linear-gradient(180deg,'+RISK_COLORS[d.risk]+','+RISK_COLORS[d.risk]+'88)';
-    var tip=document.createElement('div');tip.className='tl-tip';
-    tip.textContent=d.full+': '+d.count+' ฉบับ';
-    bar.appendChild(tip);bars.appendChild(bar);
-
-    var sp=document.createElement('span');sp.textContent=d.label;
-    axis.appendChild(sp);
-  }
-}
-
-// ===== BUILD TABLE =====
-function buildTable(data){
-  var tbody=document.getElementById('tBody');
-  while(tbody.firstChild)tbody.removeChild(tbody.firstChild);
-  var totalShown=0;
-  for(var i=0;i<data.length;i++){
-    var d=data[i];var a=BADGE_MAP[d.action];totalShown+=d.total;
-
-    var tr=document.createElement('tr');
-
-    var td0=document.createElement('td');td0.textContent=i+1;tr.appendChild(td0);
-
-    var td1=document.createElement('td');
-    var strong=document.createElement('strong');strong.textContent=d.cat;
-    td1.appendChild(strong);tr.appendChild(td1);
-
-    var td2=document.createElement('td');td2.className='ctr';td2.textContent=d.total;tr.appendChild(td2);
-
-    var td3=document.createElement('td');td3.className='ctr';td3.style.color='#FF6B6B';
-    td3.textContent=d.critical||'-';tr.appendChild(td3);
-
-    var td4=document.createElement('td');td4.className='ctr';td4.style.color='#F39C12';
-    td4.textContent=d.high||'-';tr.appendChild(td4);
-
-    var td5=document.createElement('td');td5.className='ctr';td5.style.color='#F1C40F';
-    td5.textContent=d.medium||'-';tr.appendChild(td5);
-
-    var td6=document.createElement('td');td6.className='ctr';td6.style.color='#2ECC71';
-    td6.textContent=d.low||'-';tr.appendChild(td6);
-
-    var td7=document.createElement('td');
-    var badge=document.createElement('span');badge.className='badge '+a.cls;badge.textContent=a.label;
-    td7.appendChild(badge);tr.appendChild(td7);
-
-    var td8=document.createElement('td');td8.style.fontSize='12px';td8.style.color=getComputedStyle(document.documentElement).getPropertyValue('--text2');
-    td8.textContent=d.reason;tr.appendChild(td8);
-
-    var td9=document.createElement('td');td9.className='ctr';
-    var lnk=document.createElement('a');lnk.className='link-btn';
-    lnk.href='https://bmc.go.th/common-local-law/';lnk.target='_blank';
-    lnk.title='ดูที่สภา กทม.';lnk.textContent='\u2197';
-    td9.appendChild(lnk);tr.appendChild(td9);
-
-    tbody.appendChild(tr);
-  }
-  document.getElementById('fCount').textContent='แสดง '+data.length+'/'+DATA.length+' หมวด ('+totalShown+' ฉบับ)';
-}
-
-// ===== FILTERS =====
-function toggleAction(action){
-  var cards=document.querySelectorAll('.act-card');
-  if(activeAction===action){
-    activeAction='';
-    for(var i=0;i<cards.length;i++)cards[i].classList.remove('active');
-    document.getElementById('fAction').value='';
-  }else{
-    activeAction=action;
-    for(var i=0;i<cards.length;i++){
-      if(cards[i].getAttribute('data-action')===action)cards[i].classList.add('active');
-      else cards[i].classList.remove('active');
-    }
-    document.getElementById('fAction').value=action;
-  }
-  applyFilters();
-}
-function applyFilters(){
-  var risk=document.getElementById('fRisk').value;
-  var action=document.getElementById('fAction').value;
-  var filtered=[];
-  for(var i=0;i<DATA.length;i++){
-    var d=DATA[i];
-    if(action&&d.action!==action)continue;
-    if(risk==='critical'&&d.critical===0)continue;
-    if(risk==='high'&&d.high===0)continue;
-    if(risk==='medium'&&d.medium===0)continue;
-    if(risk==='low'&&d.low===0)continue;
-    filtered.push(d);
-  }
-  buildTable(filtered);
-}
-function resetFilters(){
-  document.getElementById('fRisk').value='';
-  document.getElementById('fAction').value='';
-  var cards=document.querySelectorAll('.act-card');
-  for(var i=0;i<cards.length;i++)cards[i].classList.remove('active');
-  activeAction='';
-  buildTable(DATA);
-}
-
-// ===== INIT =====
-window.addEventListener('scroll',updateScroll);
-updateScroll();
-buildBars();
-buildTimeline();
-buildTable(DATA);
-setupObserver();
-
-// ===== 311 ORDS DATA =====
-var ORDS=[{"n": "ข้อบัญญัติกรุงเทพมหานคร ว่าด้วยการจัดระเบียบการจอดรถยนต์ พุทธศักราช ๒๕๑๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/%E0%B9%91.-%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3-%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%B1%E0%B8%94%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B5%E0%B8%A2%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%AD%E0%B8%94%E0%B8%A3%E0%B8%96%E0%B8%A2%E0%B8%99%E0%B8%95%E0%B9%8C-%E0%B8%9E%E0%B8%B8%E0%B8%97%E0%B8%98%E0%B8%A8%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%8A-%E0%B9%92%E0%B9%95%E0%B9%91%E0%B9%96.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร ว่าด้วยการจัดระเบียบการจอดยานยนต์ (ฉบับที่ ๒) พุทธศักราช ๒๕๑๗", "u": "https://bmc.go.th/wp-content/uploads/2020/05/%E0%B9%92.-%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3-%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%B1%E0%B8%94%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B5%E0%B8%A2%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%AD%E0%B8%94%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B8%A2%E0%B8%99%E0%B8%95%E0%B9%8C-%E0%B8%89%E0%B8%9A%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88-%E0%B9%92-%E0%B8%9E%E0%B8%B8%E0%B8%97%E0%B8%98%E0%B8%A8%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%8A-%E0%B9%92%E0%B9%95%E0%B9%91%E0%B9%97.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร ว่าด้วยการพาณิชย์ เรื่อง การจัดตั้งสำนักงานตลาดกรุงเทพมหานคร พ.ศ. ๒๕๑๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/3.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ตลาดเอกชน พ.ศ. ๒๕๑๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/%E0%B9%94.-%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B9%80%E0%B8%AD%E0%B8%81%E0%B8%8A%E0%B8%99-%E0%B8%9E.%E0%B8%A8.-%E0%B9%92%E0%B9%95%E0%B9%91%E0%B9%98.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ควบคุมการค้าอาหารหรือน้ำแข็งในสถานที่เอกชน พ.ศ. ๒๕๑๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/%E0%B9%95.-%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%84%E0%B8%A7%E0%B8%9A%E0%B8%84%E0%B8%B8%E0%B8%A1%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B9%89%E0%B8%B2%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%AB%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%81%E0%B8%82%E0%B9%87%E0%B8%87%E0%B9%83%E0%B8%99%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%AD%E0%B8%81%E0%B8%8A%E0%B8%99-%E0%B8%9E.%E0%B8%A8.-%E0%B9%92%E0%B9%95%E0%B9%91%E0%B9%98.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ควบคุมการแต่งผม พ.ศ. ๒๕๑๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/%E0%B9%96.-%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%84%E0%B8%A7%E0%B8%9A%E0%B8%84%E0%B8%B8%E0%B8%A1%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%81%E0%B8%95%E0%B9%88%E0%B8%87%E0%B8%9C%E0%B8%A1-%E0%B8%9E.%E0%B8%A8.-%E0%B9%92%E0%B9%95%E0%B9%91%E0%B9%98.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าตอบแทนการบริการแก่เอกชน องค์การของรัฐ หรือหน่วยราชการ พ.ศ. ๒๕๑๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/7.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ควบคุมผู้เร่ขาย พ.ศ. ๒๕๑๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/%E0%B9%98.-%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%84%E0%B8%A7%E0%B8%9A%E0%B8%84%E0%B8%B8%E0%B8%A1%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B9%80%E0%B8%A3%E0%B9%88%E0%B8%82%E0%B8%B2%E0%B8%A2-%E0%B8%9E.%E0%B8%A8.-%E0%B9%92%E0%B9%95%E0%B9%91%E0%B9%99.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ควบคุมแผงลอย พ.ศ. ๒๕๑๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/9.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ตลาดสาธารณะ พ.ศ. ๒๕๑๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/%E0%B9%91%E0%B9%90.-%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%AA%E0%B8%B2%E0%B8%98%E0%B8%B2%E0%B8%A3%E0%B8%93%E0%B8%B0-%E0%B8%9E.%E0%B8%A8.-%E0%B9%92%E0%B9%95%E0%B9%91%E0%B9%99.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ควบคุมความเป็นระเบียบเรียบร้อยและการอนามัยในโรงภาพยนตร์และรถยนต์ประจำทาง พ.ศ. ๒๕๑๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/11.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ควบคุมการค้าซื่งเป็นที่รังเกียจ หรืออาจเป็นอันตรายแก่สุขภาพ พ.ศ. ๒๕๑๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/12.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร ว่าด้วยการจัดระเบียบการจอดยานยนต์ (ฉบับที่ ๓) พุทธศักราช ๒๕๒๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/%E0%B9%91%E0%B9%93.-%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3-%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%B1%E0%B8%94%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B5%E0%B8%A2%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%AD%E0%B8%94%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B8%A2%E0%B8%99%E0%B8%95%E0%B9%8C-%E0%B8%89%E0%B8%9A%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88-%E0%B9%93-%E0%B8%9E%E0%B8%B8%E0%B8%97%E0%B8%98%E0%B8%A8%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%8A-%E0%B9%92%E0%B9%95%E0%B9%92%E0%B9%90.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร ว่าด้วยการจัดระเบียบการจอดยานยนต์ (ฉบับที่ ๔) พุทธศักราช ๒๕๒๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/%E0%B9%91%E0%B9%94.-%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3-%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%B1%E0%B8%94%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B5%E0%B8%A2%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%AD%E0%B8%94%E0%B8%A2%E0%B8%B2%E0%B8%99%E0%B8%A2%E0%B8%99%E0%B8%95%E0%B9%8C-%E0%B8%89%E0%B8%9A%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B5%E0%B9%88-%E0%B9%94-%E0%B8%9E%E0%B8%B8%E0%B8%97%E0%B8%98%E0%B8%A8%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%8A-%E0%B9%92%E0%B9%95%E0%B9%92%E0%B9%91.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ควบคุมสุสานและฌาปนสถาน พ.ศ. ๒๕๒๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/%E0%B9%91%E0%B9%95.-%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%84%E0%B8%A7%E0%B8%9A%E0%B8%84%E0%B8%B8%E0%B8%A1%E0%B8%AA%E0%B8%B8%E0%B8%AA%E0%B8%B2%E0%B8%99%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%8C%E0%B8%B2%E0%B8%9B%E0%B8%99%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99-%E0%B8%9E.%E0%B8%A8.-%E0%B9%92%E0%B9%95%E0%B9%92%E0%B9%91.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง อาคารจอดรถยนต์ พ.ศ. ๒๕๒๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/%E0%B9%91%E0%B9%96.-%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%AD%E0%B8%B2%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%AD%E0%B8%94%E0%B8%A3%E0%B8%96%E0%B8%A2%E0%B8%99%E0%B8%95%E0%B9%8C-%E0%B8%9E.%E0%B8%A8.-%E0%B9%92%E0%B9%95%E0%B9%92%E0%B9%91.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าตอบแทนการบริการแก่เอกชน องค์การของรัฐ หรือหน่วยราชการ (ฉบับที่ ๒) พ.ศ. ๒๕๒๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/17.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณซึ่งอาคารบางชนิดจะปลูกสร้างขึ้นมิได้ พ.ศ. ๒๕๒๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/18.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การกำจัดมูลฝอย สิ่งปฏิกูลและสิ่งเปรอะเปื้อน พ.ศ. ๒๕๒๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/%E0%B9%91%E0%B9%99.-%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%81%E0%B8%B3%E0%B8%88%E0%B8%B1%E0%B8%94%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%9D%E0%B8%AD%E0%B8%A2-%E0%B8%AA%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B8%9B%E0%B8%8F%E0%B8%B4%E0%B8%81%E0%B8%B9%E0%B8%A5%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%AA%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B9%80%E0%B8%9B%E0%B8%A3%E0%B8%AD%E0%B8%B0%E0%B9%80%E0%B8%9B%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%99-%E0%B8%9E.%E0%B8%A8.-%E0%B9%92%E0%B9%95%E0%B9%92%E0%B9%91.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณซึ่งอาคารบางชนิดจะปลูกสร้างขึ้นมิได้ (ฉบับที่ ๒) พ.ศ. ๒๕๒๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/20.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ควบคุมการก่อสร้างอาคาร พ.ศ. ๒๕๒๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/%E0%B9%92%E0%B9%91.-%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%84%E0%B8%A7%E0%B8%9A%E0%B8%84%E0%B8%B8%E0%B8%A1%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%81%E0%B9%88%E0%B8%AD%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B8%AD%E0%B8%B2%E0%B8%84%E0%B8%B2%E0%B8%A3-%E0%B8%9E.%E0%B8%A8.-%E0%B9%92%E0%B9%95%E0%B9%92%E0%B9%92.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การรักษาความสะอาดและความเป็นระเบียบเรียบร้อย ในเขตกรุงเทพมหานคร พ.ศ. ๒๕๒๓", "u": "https://bmc.go.th/wp-content/uploads/2020/05/22.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าตอบแทนการบริการแก่เอกชน องค์การของรัฐ หรือหน่วยราชการ (ฉบับที่ ๓) พ.ศ. ๒๕๒๓", "u": "https://bmc.go.th/wp-content/uploads/2020/05/23.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าตอบแทนการบริการแก่เอกชน องค์การของรัฐ หรือหน่วยราชการ (ฉบับที่ ๔) พ.ศ. ๒๕๒๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/24.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้างหรือดัดแปลงอาคารบางชนิดหรือบางประเภท พ.ศ. ๒๕๒๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/25.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร ว่าด้วยการจัดระเบียบการจอดยานยนต์ (ฉบับที่ ๕) พุทธศักราช ๒๕๒๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/26.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การลดหย่อนไม่ต้องเสียภาษีบำรุงท้องที่ พ.ศ. ๒๕๒๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/27.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท พ.ศ.๒๕๒๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/28.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าตอบแทนการบริการแก่เอกชน องค์การของรัฐ หรือหน่วยราชการ (ฉบับที่ ๕) พ.ศ.๒๕๒๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/29.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทในท้องที่เขตมีนบุรี แขวงคลองสิบแขวงคู้ฝั่งเหนือ เขตหนองจอก และแขวงคลองสามประเวศ แขวงลำปลาทิว แขวงลาดกระบังเขตลาดกระบัง กรุงเทพมหานคร พ.ศ. ๒๕๒๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/30.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ในท้องที่แขวงฉิมพลีแขวงบางระมาด แขวงบางเชือกหนัง และแขวงบางพรม เขตตลิ่งชัน กรุงเทพมหานคร พ.ศ.๒๕๒๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/31.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ในท้องที่แขวงบางไผ่แขวงบางแคเหนือ และแขวงคลองขวาง เขตภาษีเจริญ กรุงเทพมหานคร พ.ศ. ๒๕๒๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/32.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ควบคุมการค้าซึ่งเป็นที่รังเกียจหรืออาจเป็นอันตรายแก่สุขภาพ (ฉบับที่ ๒) พ.ศ. ๒๕๒๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/33.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทในท้องที่แขวงถนนนครไชยศรี แขวงวชิรพยาบาล แขวงดุสิต แขวงสวนจิตรลดาแขวงสี่แยกมหานาค เขตดุสิต แขวงทุ่งพญาไท แขวงสามเสนใน เขตพญาไท แขวงวัดโสมนัสเขตป้อมปราบศัตรูพ่าย และแขวงวัดสามพระยา แขวงบางขุนพรหม เขตพระนครกรุงเทพมหานคร พ.ศ. ๒๕๒๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/34.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร ว่าด้วยการพาณิชย์เกี่ยวกับการผลิตและการจำหน่ายปุ๋ย พ.ศ. ๒๕๒๗", "u": "https://bmc.go.th/wp-content/uploads/2020/05/35.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร ว่าด้วยการพาณิชย์เกี่ยวกับสถานธนานุบาล พ.ศ. ๒๕๒๗", "u": "https://bmc.go.th/wp-content/uploads/2020/05/36.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทริมถนนรัชดาภิเษกทั้งสองฟากในท้องที่แขวงสามเสนนอก แขวงห้วยขวาง เขตห้วยขวาง และ แขวงลาดยาว เขตบางเขนกรุงเทพมหานคร พ.ศ. ๒๕๒๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/37.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทภายในบริเวณกรุงรัตนโกสินทร์ชั้นในในท้องที่แขวงพระบรมมหาราชวัง เขตพระนคร กรุงเทพมหานคร พ.ศ. ๒๕๒๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/38.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ควบคุมการค้าซึ่งเป็นที่รังเกียจหรืออาจเป็นอันตรายแก่สุขภาพ (ฉบับที่ ๓) พ.ศ. ๒๕๒๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/39.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การเลือกตั้งสมาชิกสภาเขต พ.ศ. ๒๕๒๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/40.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ่ายเงินค่าอาหารทำการนอกเวลา พ.ศ. ๒๕๒๙", "u": "https://bmc.go.th/wp-content/uploads/2020/07/25.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง รถราชการ พ.ศ. ๒๕๒๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/42.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทริมถนนรัชดาภิเษกทั้งสองฟาก ในท้องที่แขวงวัดท่าพระ เขตบางกอกใหญ่และแขวงตลาดพลู แขวงบุคคโล เขตธนบุรี กรุงเทพมหานคร พ.ศ. ๒๕๒๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/43.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ่ายเงินทำขวัญข้าราชการและลูกจ้างซึ่งได้รับอันตรายหรือเจ็บป่วยเพราะการปฏิบัติงานในหน้าที่ พ.ศ. ๒๕๒๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/44.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง วิธีการงบประมาณ พ.ศ. ๒๕๒๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/45.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การทรัพย์สิน พ.ศ. ๒๕๒๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/46.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ่ายเงินสมนาคุณกรรมการสอบสวนทางวินัยข้าราชการและลูกจ้าง พ.ศ. ๒๕๒๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/47.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การเบิกค่าใช้จ่ายในการเดินทางไปราชการของสมาชิกสภากรุงเทพมหานครและสมาชิกสภาเขต พ.ศ. ๒๕๒๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/48.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การชดใช้ค่าเสียหายอันเกิดจากการละเมิด พ.ศ. ๒๕๒๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/49.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินบำรุงศูนย์เยาวชนและศูนย์ส่งเสริมกีฬา พ.ศ. ๒๕๒๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/50.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การพัสดุ พ.ศ. ๒๕๒๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/51.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ควบคุมการค้าซึ่งเป็นที่รังเกียจหรืออาจเป็นอันตรายแก่สุขภาพ (ฉบับที่ ๔) พ.ศ ๒๕๓๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/52.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทภายในบริเวณกรุงรัตนโกสินทร์ชั้นนอก ในท้องที่แขวงชนะสงคราม แขวงตลาดยอดแขวงศาลเจ้าพ่อเสือ แขวงบวรนิเวศ แขวงเสาชิงช้า แขวงราชบพิธ แขวงสำราญราษฎร์ และแขวงวังบูรพาภิรมย์ เขตพระนคร กรุงเทพมหานคร พ.ศ. ๒๕๓๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/53.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การช่วยเหลือข้าราชการหรือลูกจ้างที่ต้องหาคดีอาญา พ.ศ. ๒๕๓๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/54.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การช่วยเหลือในการรักษาพยาบาล พ.ศ. ๒๕๓๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/55.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทริมถนนรัชดาภิเษกทั้งสองฟาก ในท้องที่แขวงบางซื่อ เขตดุสิต กรุงเทพมหานคร พ.ศ.๒๕๓๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/56.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทริมถนนรัชดาภิเษกทั้งสองฟาก ในท้องที่แขวงคลองเตย เขตพระโขนง กรุงเทพมหานคร พ.ศ.๒๕๓๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/57.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทริมถนนศรีนครินทร์ทั้งสองฟาก ในท้องที่แขวงหัวหมาก เขตบางกะปิ และแขวงสวนหลวง แขวงหนองบอน แขวงบางจาก แขวงบางนา เขตพระโขนง กรุงเทพมหานคร พ.ศ. ๒๕๓๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/58.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนพระรามที่ ๙ทั้งสองฟาก ในท้องที่แขวงห้วยขวาง แขวงบางกะปิ เขตห้วยขวาง และ แขวงหัวหมากเขตบางกะปิ กรุงเทพมหานคร พ.ศ. ๒๕๓๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/59.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าบริการ พ.ศ. ๒๕๓๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/60.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าบริการในการจัดการบรรเลงดุริยางค์ของกรุงเทพมหานคร พ.ศ. ๒๕๓๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/61.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนรัชดาภิเษกทั้งสองฟากในท้องที่แขวงบางซื่อ เขตดุสิต และแขวงลาดยาว เขตบางเขน กรุงเทพมหานคร พ.ศ. ๒๕๓๐", "u": "https://bmc.go.th/wp-content/uploads/2020/07/28.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การชดใช้ค่าเสียหายแก่บุคคลภายนอกในกรณีละเมิด พ.ศ. ๒๕๓๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/63.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง สำนักงานปุ๋ย พ.ศ. ๒๕๓๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/64.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลงใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนรามคำแหงทั้งสองฟากในท้องที่แขวงหัวหมาก แขวงสะพานสูง เขตบางกะปิ และแขวงมีนบุรี แขวงแสนแสบเขตมีนบุรี กรุงเทพมหานคร พ.ศ. ๒๕๓๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/65.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนสุขาภิบาล ๑ ทั้งสองฟากในท้องที่แขวงคันนายาว แขวงจรเข้บัว แขวงคลองกุ่ม แขวงคลองจั่น และแขวงหัวหมากเขตบางกะปิ กรุงเทพมหานคร พ.ศ. ๒๕๓๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/66.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนแจ้งวัฒนะทั้งสองฟากในท้องที่แขวงอนุเสาวรีย์ แขวงตลาดบางเขน แขวงคลองถนน และ แขวงทุ่งสองห้องเขตบางเขน กรุงเทพมหานคร พ.ศ. ๒๕๓๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/67.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การรักษาความสะอาดและความเป็นระเบียบเรียบร้อยในเขตกรุงเทพมหานคร (ฉบับที่ ๒) พ.ศ. ๒๕๓๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/68.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนสุขาภิบาล ๒ ทั้งสองฟาก ในท้องที่แขวงคลองจั่น แขวงคลองกุ่มแขวงคันนายาว เขตบางกะปิ และแขวงมีนบุรี เขตมีนบุรี กรุงเทพมหานคร พ.ศ. ๒๕๓๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/69.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท บริเวณโดยรอบศูนย์วัฒนธรรมแห่งประเทศไทย ในท้องที่แขวงห้วยขวางเขตห้วยขวาง กรุงเทพมหานคร พ.ศ. ๒๕๓๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/70.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าบริการ (ฉบับที่ ๒) พ.ศ. ๒๕๓๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/71.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท บริเวณโดยรอบสวนหลวง ร. ๙ในท้องที่แขวงหนองบอน แขวงประเวศ เขตพระโขนง กรุงเทพมหานคร พ.ศ. ๒๕๓๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/72.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การพัสดุ พ.ศ. ๒๕๓๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/73.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินสะสม พ.ศ. ๒๕๓๓", "u": "https://bmc.go.th/wp-content/uploads/2020/05/74.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การเรียกเก็บค่าธรรมเนียมการจอดยานยนต์ในอาคารที่จอดยานยนต์ของกรุงเทพมหานคร พ.ศ. ๒๕๓๓", "u": "https://bmc.go.th/wp-content/uploads/2020/05/75.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง วิธีการงบประมาณ (ฉบับที่ ๒) พ.ศ. ๒๕๓๓", "u": "https://bmc.go.th/wp-content/uploads/2020/05/76.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ้างที่ปรึกษาเพื่อการศึกษา สำรวจ ออกแบบ และควบคุมงาน พ.ศ. ๒๕๓๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/77.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เบี้ยประชุมกรรมการ พ.ศ. ๒๕๓๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/78.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนสะพานกรุงธนบุรี – ตลิ่งชัน ทั้งสองฟากในท้องที่แขวงบางพลัด แขวงบางบำหรุ เขตบางพลัด และริมถนนบางกอกน้อย – นครชัยศรีทั้งสองฟาก ในท้องที่ แขวงบางบำหรุ เขตบางพลัด และแขวงตลิ่งชัน เขตตลิ่งชันกรุงเทพมหานคร พ.ศ. ๒๕๓๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/79.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนรามอินทราและถนนสุวินทวงศ์ทั้งสองฟาก ในท้องที่แขวงอนุสาวรีย์ แขวงท่าแร้ง เขตบางเขน และแขวงจระเข้บัว เขตลาดพร้าว แขวงคลองกุ่ม แขวงคันนายาว เขตบึงกุ่ม และแขวงบางชัน แขวงมีนบุรี แขวงแสนแสบ เขตมีนบุรี กรุงเทพมหานคร พ.ศ. ๒๕๓๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/80.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง สถานธนานุบาลกรุงเทพมหานคร พ.ศ. ๒๕๓๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/81.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนพระรามที่ ๒ ทั้งสองฟากในท้องที่แขวงบางปะกอก เขตราษฎร์บูรณะ แขวงจอมทอง แขวงบางมด เขตจอมทองและแขวงท่าข้าม แขวงแสมดำ เขตบางขุนเทียน กรุงเทพมหานคร พ.ศ. ๒๕๓๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/82.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ่ายเงินค่าเลี้ยงรับรอง พ.ศ. ๒๕๓๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/83.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การรักษาความสะอาดและความเป็นระเบียบเรียบร้อยในเขตกรุงเทพมหานคร (ฉบับที่ ๓) พ.ศ. ๒๕๓๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/84.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ควบคุมการระบายน้ำทิ้ง พ.ศ. ๒๕๓๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/85.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ควบคุมการค้าซึ่งเป็นที่รังเกียจหรืออาจเป็นอันตรายแก่สุขภาพ (ฉบับที ๕) พ.ศ. ๒๕๓๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/86.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ในท้องที่แขวงบางไผ่แขวงบางแคเหนือและแขวงคลองขวาง เขตภาษีเจริญ กรุงเทพมหานคร (ฉบับที่ ๒) พ.ศ.๒๕๓๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/87.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ในท้องที่แขวงฉิมพลีแขวงบางระมาด แขวงบางเชือกหนัง และแขวงบางพรม เขตตลิ่งชัน กรุงเทพมหานคร (ฉบับที่ ๒) พ.ศ. ๒๕๓๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/88.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง สำนักงานตลาด พ.ศ. ๒๕๓๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/89.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าตอบแทนแพทย์ ทันตแพทย์ เภสัชกร และบุคลากร ทางการสาธารณสุข ห้วงเวลา พ.ศ. ๒๕๓๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/90.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินสมนาคุณคณะกรรมการข้าราชการกรุงเทพมหานคร พ.ศ. ๒๕๓๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/91.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ควบคุมการขุดดิน การถมดิน พ.ศ. ๒๕๓๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/92.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ่ายเงินค่ารับรองชาวต่างประเทศ พ.ศ. ๒๕๓๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/93.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินสมนาคุณกรรมการผู้ทรงคุณวุฒิเฉพาะกิจในการตรวจและประเมินผลงานทางวิชาการ พ.ศ. ๒๕๓๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/94.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ควบคุมความเป็นระเบียบเรียบร้อยและการอนามัย พ.ศ. ๒๕๓๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/95.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ่ายเงินอุดหนุนการศึกษาแก่บุคคลภายนอกเพื่อศึกษาในหลักสูตรวิชาชีพที่ขาดแคลน พ.ศ. ๒๕๓๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/96.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ลูกจ้าง พ.ศ. ๒๕๓๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/97.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทริมถนนบรมราชชนนีทั้งสองฟากในท้องที่แขวงศาลาธรรมสพน์ เขตตลิ่งชัน กรุงเทพมหานคร พ.ศ. ๒๕๓๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/98.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ลูกจ้าง (ฉบับที่ ๒) พ.ศ. ๒๕๓๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/99.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนร่มเกล้าทั้งสองฟากในท้องที่แขวงมีนบุรี แขวงแสนแสบ เขตมีนบุรี และริมถนนร่มเกล้าฟากตะวันตกในท้องที่แขวงมีนบุรี เขตมีนบุรี และแขวงคลองสามประเวศ แขวงลาดกระบังเขตลาดกระบัง กรุงเทพมหานคร พ.ศ. ๒๕๓๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/100.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทริมถนนแหวนรอบนอกกรุงเทพมหานครทั้งสองฟาก ในท้องที่แขวงบางแคเหนือ แขวงบางแคเขตภาษีเจริญ แขวงหลักสอง เขตหนองแขม และแขวงบางบอน แขวงแสมดำ เขตบางขุนเทียนกรุงเทพมหานคร พ.ศ. ๒๕๓๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/101.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนสุขุมวิท ๗๗ (ซอยอ่อนนุช)ทั้งสองฟาก ในท้องที่แขวงสวนหลวง แขวงประเวศ เขตประเวศ และแขวงลาดกระบังเขตลาดกระบัง กรุงเทพมหานคร พ.ศ. ๒๕๓๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/102.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนสุวินทวงศ์ทั้งสองฟากในท้องที่แขวงโคกแฝด แขวงลำผักชี แขวงลำต้อยติ่ง และแขวงกระทุ่มราย เขตหนองจอกกรุงเทพมหานคร พ.ศ. ๒๕๓๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/103.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนฉลองกรุงทั้งสองฟากในท้องที่แขวงลำปลาทิว เขตลาดกระบัง และแขวงลำผักชี เขตหนองจอกและริมถนนเชื่อมสัมพันธ์ทั้งสองฟาก ในท้องที่แขวงลำผักชี แขวงโคกแฝดแขวงกระทุ่มราย เขตหนองจอก กรุงเทพมหานคร พ.ศ. ๒๕๓๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/104.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทภายในบริเวณฝั่งธนบุรีตรงข้ามบริเวณกรุงรัตนโกสินทร์ ในท้องที่แขวงบางยี่ขันเขตบางพลัด แขวงอรุณอมรินทร์ แขวงศิริราช เขตบางกอกน้อย แขวงวัดอรุณ เขตบางกอกใหญ่เเขวงวัดกัลยาณ์ เขตธนบุรี เขตธนบุรี และแขวงสมเด็จเจ้าพระยา เขตคลองสานกรุงเทพมหานค พ.ศ. ๒๕๓๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/105.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินรางวัลเกี่ยวกับการสอบ พ.ศ. ๒๕๓๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/106.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าใช้จ่ายเกี่ยวกับกิจกรรมส่งเสริมกีฬา ศูนย์เยาวชน ดนตรี และห้องสมุดประชาชน พ.ศ. ๒๕๓๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/107.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ในท้องที่แขวงถนนนครไชยศรีแขวงวชิรพยาบาล แขวงดุสิต แขวงสวนจิตรลดา แขวงสี่แยกมหานาค เขตดุสิตแขวงทุ่งพญาไท แขวงสามเสนใน เขตพญาไท แขวงวัดโสมนัส เขตป้อมปราบศัตรูพ่ายและแขวงวัดสามพระยา แขวงบางขุนพรหม เขตพระนคร กรุงเทพมหานคร (ฉบับที่ ๒) พ.ศ.๒๕๓๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/108.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนกรุงธนบุรีทั้งสองฟากในท้องที่แขวงบางยี่เรือ เขตธนบุรี แขวงคลองต้นไทร แขวงบางลำภูล่าง เขตคลองสานกรุงเทพมหานคร พ.ศ. ๒๕๓๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/109.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การเลือกตั้งสมาชิกสภาเขต พ.ศ. ๒๕๓๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/110.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ่ายค่าตอบแทนแก่บุคคลภายนอกที่ช่วยปฏิบัติราชการ พ.ศ. ๒๕๓๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/111.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การสงเคราะห์ผู้ประสบสาธารณภัย พ.ศ. ๒๕๓๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/112.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ่ายค่าตอบแทนแก่บุคลากรทางด้านการแพทย์และสาธารณสุขในสังกัดกรุงเทพมหานคร พ.ศ. ๒๕๓๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/113.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจัดระเบียบการจอดยานยนตร์ พ.ศ. ๒๕๓๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/114.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ยกเลิกข้อบัญญัติกรุงเทพมหานคร เรื่อง ควบคุมความเป็นระเบียบเรียบร้อยและการอนามัย พ.ศ. ๒๕๓๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/115.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าใช้จ่ายเกี่ยวกับการสนับสนุนการพัฒนาชุมชน พ.ศ. ๒๕๓๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/116.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง วิธีการงบประมาณ (ฉบับที่ ๓) พ.ศ. ๒๕๓๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/117.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง สถานธนานุบาลกรุงเทพมหานคร (ฉบับที่ ๒) พ.ศ. ๒๕๓๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/118.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง สำนักงานตลาด (ฉบับที่ ๒) พ.ศ. ๒๕๓๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/119.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานครเรื่อง ค่าใช้จ่ายเกี่ยวกับการพัฒนาทรัพย์สินที่ประชาชนทั่วไปใช้สอยร่วมกัน พ.ศ.๒๕๓๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/120.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การเบิกค่าใช้จ่ายในการเดินทางไปราชการของลูกจ้างกรุงเทพมหานคร พ.ศ. ๒๕๓๗", "u": "https://bmc.go.th/wp-content/uploads/2020/05/121.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าบริการ (ฉบับที่ ๓) พ.ศ. ๒๕๓๗", "u": "https://bmc.go.th/wp-content/uploads/2020/05/122.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าบริการ (ฉบับที่ ๔) พ.ศ ๒๕๓๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/123.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าตอบแทนคณะกรรมการการตรวจการจ้างและผู้ควบคุมงานก่อสร้าง พ.ศ ๒๕๓๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/124.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินสะสม (ฉบับที่ ๒) พ.ศ. ๒๕๓๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/125.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การทรัพย์สิน พ.ศ. ๒๕๓๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/126.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง รถราชการ (ฉบับที่ ๒) พ.ศ. ๒๕๓๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/127.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การพัสดุ พ.ศ. ๒๕๓๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/128.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลงอาคารบางชนิดหรือบางประเภทบริเวณโดยรอบอุทยานเฉลิมพระเกียรติสมเด็จพระศรีนครินทราบรมราชชนนีในท้องที่แขวงสมเด็จเจ้าพระยา เขตคลองสาน กรุงเทพมหานคร พ.ศ. ๒๕๓๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/129.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การได้รับเงินประจำตำแหน่งผู้บริหารในวิทยาลัย พ.ศ. ๒๕๓๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/130.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ่ายเงินค่ารับรองชาวต่างประเทศ พ.ศ. ๒๕๓๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/131.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าใช้จ่ายเกี่ยวกับการสนับสนุนการพัฒนาชุมชน (ฉบับที่ ๒) พ.ศ. ๒๕๓๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/132.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าใช้จ่ายในการฝึกอบรม พ.ศ. ๒๕๓๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/133.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลงอาคารบางชนิดหรือบางประเภทในท้องที่แขวงบางขุนศรี แขวงบ้านช่างหล่อ เขตบางกอกน้อย แขวงวัดอรุณ แขวงท่าพระเขต บางกอกใหญ่ และแขวงวัดกัลยาณ์ แขวงวัดหิรัญรูจี แขวงบางยี่เรือ เขตธนบุรีกรุงเทพมหานคร พ.ศ ๒๕๓๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/134.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจัดสวัสดิการและการสงเคราะห์ พ.ศ. ๒๕๓๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/135.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ่ายเงินสมนาคุณกรรมการสอบสวนทางวินัยข้าราชการและลูกจ้าง พ.ศ. ๒๕๓๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/136.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เบี้ยประชุมกรรมการ (ฉบับที่ ๒) พ.ศ. ๒๕๔๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/137.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินสมนาคุณกรรมการผู้ทรงคุณวุฒิเฉพาะกิจในการตรวจและประเมินผลงานทางวิชาการ (ฉบับที่ ๒) พ.ศ. ๒๕๔๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/138.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนสายเชื่อมต่อระหว่างถนนเพชรบุรีกับถนนพระราม ๙(ช่วงตอนปลายถนนเพชรบุรี) ทั้งสองฟาก ในท้องที่แขวงบางกะปิ เขตห้วยขวางกรุงเทพมหานคร พ.ศ. ๒๕๔๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/139.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ผู้ช่วยดำเนินงานของสมาชิกสภากรุงเทพมหานคร พ.ศ. ๒๕๔๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/140.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ที่ปรึกษาของประธานสภากรุงเทพมหานครและรองประธานสภากรุงเทพมหานคร พ.ศ. ๒๕๔๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/141.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง นักวิชาการประจำคณะกรรมการสามัญและเลขานุการประธานคณะกรรมการสามัญประจำสภากรุงเทพมหานคร พ.ศ. ๒๕๔๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/142.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทริมถนนเหนือ-ใต้ตั้งแต่ถนนสาธรใต้ไปจนจดถนนพระราม ๓ ทั้งสองฟากในท้องที่แขวงยานนาวาแขวงทุ่งวัดดอน เขตสาธรและแขวงบางโคล่ เขตบางคอแหลม กรุงเทพมหานคร พ.ศ. ๒๕๔๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/143.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ลูกจ้าง (ฉบับที่ ๓) พ.ศ. ๒๕๔๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/144.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ่ายเงินค่าสอนภาคพิเศษนอกเวลาและค่าตอบแทนในการปฏิบัติงานภาคพิเศษนอกเวลาสำหรับการสอนวิชาชีพ พ.ศ. ๒๕๔๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/145.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินทุนสนับสนุนการศึกษาแก่บุตรข้าราชการครูกรุงเทพมหานคร พ.ศ. ๒๕๔๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/146.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนคู่ขนานระบบทางด่วนสายรามอินทรา – ถนนสุขุมวิท ๖๓ (ถนนเอกมัย) ทั้งสองฟาก ในท้องที่แขวงจรเข้บัว แขวงลาดพร้าว เขตลาดพร้าว แขวงคลองกุ่ม เขตบึงกุ่ม แขวงคลองจั่น แขวงวังทองหลาง เขตบางกะปิ แขวงบางกะปิ เขตห้วยขวาง และแขวงคลองตันเหนือ เขตคลองเตย กรุงเทพมหานคร พ.ศ. ๒๕๔๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/147.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าตอบแทนแพทย์ ทันตแพทย์ เภสัชกร และ บุคลากรทางการสาธารณสุข ห้วงเวลา (ฉบับที่ ๒) พ.ศ. ๒๕๔๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/148.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนนราธิวาสราชนครินทร์ (ถนนเลียบคลองช่องนนทรี) ทั้งสองฟาก ในท้องที่แขวงสุรวงศ์ แขวงสีลม เขตบางรัก แขวงยานนาวา แขวงทุ่งมหาเมฆ แขวงทุ่งมหาเมฆ แขวงทุ่งวัดดอน เขตสาธร และแขวงช่องนนทรี เขตยานนาวา กรุงเทพมหานคร พ.ศ. ๒๕๔๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/149.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนทางหลวงสายกรุงเทพ – ชลบุรี (สายใหม่) ช่วงจากถนนรามคำแหงถึง ถนนศรีนครินทร์ (ทางหลวงหมายเลข ๓๓๔๔) ทั้งสองฟาก ในท้องที่แขวงหัวหมาก เขตบางกะปิ และแขวงสวนหลวง เขตสวนหลวง กรุงเทพมหานคร พ.ศ. ๒๕๔๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/150.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าตอบแทนแพทย์ ทันตแพทย์ เภสัชกรและบุคลากรทางการสาธารณสุข ห้วงเวลา (ฉบับที่ ๓) พ.ศ. ๒๕๔๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/151.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ยกเลิกข้อบัญญัติกรุงเทพมหานคร เรื่อง ควบคุมการระบายน้ำทิ้ง พ.ศ. ๒๕๓๔ พ.ศ. ๒๕๔๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/152.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กองทุนพัฒนาที่อยู่อาศัยกรุงเทพมหานคร พ.ศ. ๒๕๔๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/153.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การควบคุมกิจการรับทำการเก็บ ขน หรือกำจัดสิ่งปฏิกูล หรือมูลฝอย โดยได้รับประโยชน์ตอบแทนด้วยการคิดค่าบริการ พ.ศ. ๒๕๔๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/154.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลงอาคารบางชนิดหรือบางประเภทในท้องที่แขวงวัดสามพระยา แขวงบ้านพานถม เขตพระนคร แขวงวัดโสมนัส แขวงบ้านบาตรแขวงคลองมหานาค แขวงวัดเทพศิรินทร์ แขวงป้อมปราบศัตรูพ่าย เขตป้อมปราบศัตรูพ่ายและแขวงสัมพันธ์ แขวงจักรวรรดิ แขวงตลาดน้อย เขตสัมพันธวงค์ กรุงเทพมหานคร พ.ศ. ๒๕๔๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/155.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลงใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนพุทธมณฑลสาย ๓ ทั้งสองฟากในท้องที่แขวงศาลาธรรมสพน์ แขวงทวีวัฒนา เขตทวีวัฒนา แขวงบางไผ่ เขตบางแคและแขวงหนองค้างพลู เขตหนองแขม กรุงเทพมหานคร พ.ศ. ๒๕๔๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/156.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนงามวงศ์วานตัดใหม่ช่วงแยกเกษตรศาสตร์ – ถนนนวมินทร์ (ถนนสุขาภิบาล ๑) ทั้งสองฟาก ในท้องที่แขวงลาดยาว เขตจตุจักร แขวงจระเข้บัว แขวงลาดพร้าว เขตลาดพร้าว แขวงคลองกุ่ม เขตบึงกุ่ม กรุงเทพมหานคร พ.ศ. ๒๕๔๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/158.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง รถราชการ (ฉบับที่ ๓) พ.ศ. ๒๕๔๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/159.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินสนับสนุนการศึกษาแก่นักเรียนที่ไม่สามารถเข้าเรียนในโรงเรียนสังกัดกรุงเทพมหานครได้ พ.ศ. ๒๕๔๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/160.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลงอาคารบางชนิดหรือบางประเภท ริมฝั่งแม่น้ำเจ้าพระยาทั้งสองฝั่งในท้องที่แขวงบางซื่อ เขตบางซื่อ แขวงถนนนครไชยศรี แขวงวชิรพยาบาล เขตดุสิต แขวงวัดสามพระยา แขวงชนะสงคราม แขวงพระบรมมหาราชวัง แขวงวังบูรพาภิรมย์ เขตพระนคร แขวงจักรวรรดิ แขวงตลาดน้อย แขวงสัมพันธวงศ์ เขตสัมพันธวงศ์ แขวงบางรัก เขตบางรัก แขวงยานนาวา เขตสาธร แขวงวัดพระยาไกร แขวงบางคอแหลม แขวงบางโคล่ เขตบางคอแหลม แขวงบางโพงพาง แขวงช่องนนทรี เขตยานนาวา แขวงคลองเตย แขวงพระโขนง เขตคลองเตย แขวงบางจาก เขตพระโขนง แขวงบางนา เขตบางนา แขวงบางอ้อ แขวงบางพลัด แขวงบางยี่ขัน เขตบางพลัด แขวงอรุณอมรินทร์ แขวงศิริราช เขตบางกอกน้อย แขวงวัดอรุณ เขตบางกอกใหญ่ แขวงบุคคโล แขวงวัดกัลยาณ์ เขตธนบุรี แขวงสมเด็จเจ้าพระยา แขวงคลองสาน แขวงคลองต้นไทร แขวงบางลําภูล่าง เขตคลองสาน และแขวงราษฎร์บูรณะ แขวงบางปะกอก เขตราษฎร์บูรณะ กรุงเทพมหานคร พ.ศ. ๒๕๔๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/161.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินช่วยเหลือผู้ซึ่งลาออกจากราชการก่อนเกษียณอายุ พ.ศ. ๒๕๔๓", "u": "https://bmc.go.th/wp-content/uploads/2020/05/162.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การเก็บภาษีธุรกิจเฉพาะ ภาษีมูลค่าเพิ่มค่าธรรมเนียมใบอนุญาตขายสุราและค่าธรรมเนียมใบอนุญาตในการเล่นการพนัน พ.ศ. ๒๕๔๓", "u": "https://bmc.go.th/wp-content/uploads/2020/05/163.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าบริการ พ.ศ. ๒๕๔๓", "u": "https://bmc.go.th/wp-content/uploads/2020/05/164.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินทุนสนับสนุนการศึกษาแก่บุตรข้าราชการและลูกจ้างประจำของกรุงเทพมหานคร พ.ศ. ๒๕๔๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/165.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การเก็บ ขน และกำจัดสิ่งปฏิกูลหรือมูลฝอย พ.ศ. ๒๕๔๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/166.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ในท้องที่เขตมีนบุรีแขวงคลองสิบสอง แขวงคู้ฝั่งเหนือ เขตหนองจอก และแขวงคลองสามประเวศ แขวงลำปลาทิวแขวงลาดกระบัง กรุงเทพมหานคร (ฉบับที่ ๒) พ.ศ. ๒๕๔๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/167.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ในท้องที่บางส่วนในแขวงแสมดำแขวงท่าข้าม เขตบางขุนเทียน และแขวงทุ่งครุ เขตทุ่งครุ กรุงเทพมหานคร พ.ศ. ๒๕๔๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/168.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ควบคุมอาคาร พ.ศ. ๒๕๔๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/169.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ผู้ช่วยดำเนินงานของสมาชิกสภากรุงเทพมหานคร (ฉบับที่ ๒) พ.ศ. ๒๕๔๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/170.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การช่วยเหลือในการรักษาพยาบาล (ฉบับที่ ๒) พ.ศ. ๒๕๔๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/171.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินสะสม (ฉบับที่ ๓) พ.ศ. ๒๕๔๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/172.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง สถานที่จำหน่ายอาหารและสถานที่สะสมอาหาร พ.ศ. ๒๕๔๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/173.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้างหรือดัดแปลงอาคารบางชนิดหรือบางประเภท (ฉบับที่๒) พ.ศ. ๒๕๔๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/174.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจำหน่ายสินค้าในที่หรือทางสาธารณะ พ.ศ. ๒๕๔๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/175.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าบริการ (ฉบับที่ ๒) พ.ศ. ๒๕๔๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/176.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การบริหารการใช้น้ำจากบ่อบาดาล พ.ศ. ๒๕๔๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/177.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง สำนักงานพัฒนาที่อยู่อาศัย พ.ศ. ๒๕๔๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/178.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กิจการที่เป็นอันตราต่อสุขภาพ พ.ศ. ๒๕๔๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/179.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กิจการที่เป็นอันตรายต่อสุขภาพ (ฉบับที่ ๒) พ.ศ. ๒๕๔๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/180.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง สุสานและฌาปนสถาน พ.ศ. ๒๕๔๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/181.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้างดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนอุทยานทั้งสองฟากในท้องที่แขวงศาลาธรรมสพน์ และแขวงทวีวัฒนา เขตทวีวัฒนา กรุงเทพมหานคร พ.ศ. ๒๕๔๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/182.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ่ายเงินรางวัลจับสุนัข พ.ศ. ๒๕๔๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/183.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานครเรื่อง การเก็บเงินค่าบำรุงการศึกษา ค่าหอพัก ค่าอาหารและค่าธรรมเนียมของวิทยาลัยในสังกัดกรุงเทพมหานคร พ.ศ. ๒๕๔๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/184.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การควบคุมการเลี้ยงหรือปล่อยสัตว์ (ฉบับที่ ๒) พ.ศ. ๒๕๔๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/185.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การกู้เงินเพื่อใช้ในโครงการเงินกู้เพื่อพัฒนาคุณภาพบริการสาธารณสุขในสังกัดกรุงเทพมหานคร พ.ศ. ๒๕๔๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/186.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ตลาด พ.ศ. ๒๕๔๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/187.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าตอบแทนเจ้าหน้าที่เก็บขนสิ่งปฏิกูลหรือมูลฝอยและเอกชนที่รับชำระค่าธรรมเนียมเก็บขนสิ่งปฏิกูลหรือมูลฝอยแทนกรุงเทพมหานคร พ.ศ. ๒๕๔๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/188.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าธรรมเนียมการเก็บและขนสิ่งปฏิกูลหรือมูลฝอยตามกฎหมายว่าด้วยการสาธารณสุข พ.ศ. ๒๕๔๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/189.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทบริเวณโดยรอบสะพานพระราม ๘ในท้องที่แขวงบางยี่ขัน เขตบางพลัด และแขวงอรุณอมรินทร์แขวงศิริราช แขวงบ้านช่างหล่อ เขตบางกอกน้อยกรุงเทพมหานคร พ.ศ. ๒๕๔๗", "u": "https://bmc.go.th/wp-content/uploads/2020/05/190.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทบริเวณโดยรอบสวนหลวง ร. ๙ ในท้องที่แขวงหนองบอน แขวงประเวศ เขตพระโขนง กรุงเทพมหานคร (ฉบับที่ ๒) พ.ศ. ๒๕๔๗", "u": "https://bmc.go.th/wp-content/uploads/2020/05/191.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทในท้องที่บางส่วนของแขวงศาลาธรรมสพน์ เขตทวีวัฒนา กรุงเทพมหานคร พ.ศ. ๒๕๔๗", "u": "https://bmc.go.th/wp-content/uploads/2020/05/192.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง โครงการเงินช่วยเหลือผู้ซึ่งลาออกจากราชการก่อนเกษียณอายุ พ.ศ. ๒๕๔๗", "u": "https://bmc.go.th/wp-content/uploads/2020/05/193.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทในบริเวณสวนเบญจกิติและบริเวณโดยรอบในท้องที่แขวงคลองเตย เขตคลองเตย และแขวงลุมพินีเขตปทุมวัน กรุงเทพมหานคร พ.ศ. ๒๕๔๗", "u": "https://bmc.go.th/wp-content/uploads/2020/05/194.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจัดเก็บค่าธรรมเนียมบำบัดน้ำเสีย พ.ศ. ๒๕๔๗", "u": "https://bmc.go.th/wp-content/uploads/2020/05/195.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทริมถนนกัลปพฤกษ์ทั้งสองฟากในท้องที่แขวงบางหว้า แขวงปากคลองภาษีเจริญ เขตภาษีเจริญ แขวงบางค้อแขวงบางขุนเทียน เขตจอมทองแขวงบางบอน เขตบางบอน พ.ศ. ๒๕๔๗", "u": "https://bmc.go.th/wp-content/uploads/2020/05/196.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนราชพฤกษ์ทั้งสองฟากในท้องที่แขวงตลิ่งชัน แขวงฉิมพลี แขวงบางระมาด แขวงบางพรม แขวงบางเชือกหนังเขตตลิ่งชันและแขวงบางแวกแขวงบางจาก พ.ศ. ๒๕๔๗", "u": "https://bmc.go.th/wp-content/uploads/2020/05/197.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าธรรมเนียมสำหรับการดำเนินกิจการตามกฎหมายว่าด้วยการสาธารณสุข พ.ศ.๒๕๔๗", "u": "https://bmc.go.th/wp-content/uploads/2020/05/198.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าธรรมเนียมการเก็บและขนสิ่งปฏิกูลหรือมูลฝอยตามกฎหมายว่าด้วยการสาธารณสุข (ฉบับที่ ๒) พ.ศ. ๒๕๔๘", "u": "https://drive.google.com/file/d/13_q5Z-80sj-ITyEjLN39HqlMTOz2wDG2/view?usp=drive_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การพัสดุ (ฉบับที่ ๒) พ.ศ. ๒๕๔๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/200.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทในพื้นที่กรุงเทพมหานคร พ.ศ. ๒๕๔๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/201.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง โครงการเงินช่วยเหลือผู้ซึ่งลาออกจากราชการก่อนเกษียณอายุ (ฉบับที่ ๒) พ.ศ. ๒๕๔๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/202.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินเพิ่มพิเศษรายเดือนสำหรับผู้ปฏิบัติงานกู้ภัย พ.ศ. ๒๕๔๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/203.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทริมถนนสายเชื่อมต่อระหว่างถนนสาธุประดิษฐ์กับถนนพระรามที่ ๓ ทั้งสองฟากในท้องที่แขวงช่องนนทรี เขตยานนาวา กรุงเทพมหานคร พ.ศ. ๒๕๔๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/204.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กิจการที่เป็นอันตรายต่อสุขภาพ (ฉบับที่ ๓) พ.ศ. ๒๕๔๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/205.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าธรรมเนียมสำหรับการดำเนินกิจการตามกฎหมายว่าด้วยการสาธารณสุข (ฉบับที่ ๒) พ.ศ. ๒๕๔๘", "u": "https://drive.google.com/file/d/1-HCI3pDMl2DpBh9woVB0biU6yFaJv-Vd/view?usp=drive_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ่ายค่าตอบแทนแก่บุคลากรทางด้านการแพทย์และสาธารณสุขในสังกัดกรุงเทพมหานคร (ฉบับที่ ๒) พ.ศ. ๒๕๔๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/207.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ผู้ช่วยดำเนินงานของสมาชิกสภากรุงเทพมหานคร (ฉบับที่ ๓) พ.ศ. ๒๕๔๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/208.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การควบคุมการเลี้ยงหรือปล่อยสุนัข พ.ศ. ๒๕๔๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/209.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง รถราชการ (ฉบับที่ ๔) พ.ศ. ๒๕๔๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/210.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนหลวงแพ่งทั้งสองฟากในท้องที่แขวงทับยาว และแขวงขุมทอง เขตลาดกระบัง กรุงเทพมหานคร พ.ศ. ๒๕๔๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/211.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ริมถนนวงแหวนอุตสาหกรรมทั้งสองฟาก ในท้องที่แขวงช่องนนทรีแขวงบางโพงพาง เขตยานนาวา และแขวงราษฎร์บูรณะ เขตราษฎร์บูรณะ กรุงเทพมหานคร พ.ศ. ๒๕๔๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/212.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้างดัดแปลงอาคารประเภทป้ายหรือสิ่งที่สร้างขึ้นสำหรับติดหรือตั้งป้ายในพื้นที่บางส่วนในท้องที่กรุงเทพมหานคร พ.ศ. ๒๕๔๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/213.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เบี้ยประชุมกรรมการ พ.ศ. ๒๕๔๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/214.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ่ายเงินค่าเลี้ยงรับรอง พ.ศ. ๒๕๔๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/215.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าใช้จ่ายเกี่ยวกับกิจกรรมศูนย์ฝึกกีฬาเยาวชน พ.ศ. ๒๕๔๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/216.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินสะสม (ฉบับที่ ๔) พ.ศ. ๒๕๔๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/217.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจัดสวัสดิการและการสงเคราะห์ (ฉบับที่ ๒) พ.ศ. ๒๕๔๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/218.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การเลือกตั้งสมาชิกสภาเขต (ฉบับที่ ๒) พ.ศ. ๒๕๔๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/219.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ผู้ช่วยดำเนินงานของสมาชิกสภากรุงเทพมหานคร (ฉบับที่ ๔) พ.ศ. ๒๕๕๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/220.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ลูกจ้าง (ฉบับที่ ๔) พ.ศ. ๒๕๕๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/221.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การหักเงินค่าธรรมเนียมการสอบแข่งขันบุคคลเป็นเจ้าหน้าที่ของกรุงเทพมหานคร พ.ศ. ๒๕๕๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/222.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ่ายเงินค่าตอบแทนเกี่ยวกับการสอบ พ.ศ. ๒๕๕๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/223.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินทุนสนับสนุนการศึกษาแก่บุตรข้าราชการและลูกจ้างประจำกรุงเทพมหานคร พ.ศ. ๒๕๕๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/224.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การให้เงินช่วยเหลือค่าครองชีพหรือเงินค่าตอบแทนแก่ข้าราชการและหรือลูกจ้างของกรุงเทพมหานคร พ.ศ. ๒๕๕๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/225.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การพัสดุ (ฉบับที่ ๓) พ.ศ. ๒๕๕๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/226.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าบริการระบบขนส่งมวลชนของกรุงเทพมหานคร พ.ศ. ๒๕๕๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/227.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าใช้จ่ายเกี่ยวกับการสนับสนุนกิจการอาสาสมัครป้องกันภัยฝ่ายพลเรือน พ.ศ. ๒๕๕๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/228.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง บริษัทที่กรุงเทพมหานครก่อตั้ง จัดตั้ง หรือถือหุ้น พ.ศ. ๒๕๕๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/229.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง สุสานและฌาปนสถาน (ฉบับที่ ๒) พ.ศ. ๒๕๕๓", "u": "https://bmc.go.th/wp-content/uploads/2020/05/230.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การทรัพย์สิน (ฉบับที่ ๒) พ.ศ. ๒๕๕๓", "u": "https://bmc.go.th/wp-content/uploads/2020/05/231.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การพัสดุ (ฉบับที่ ๔) พ.ศ. ๒๕๕๓", "u": "https://bmc.go.th/wp-content/uploads/2020/05/232.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การควบคุมการนำช้างมาหารายได้ในเขตกรุงเทพมหานคร พ.ศ. ๒๕๕๓", "u": "https://bmc.go.th/wp-content/uploads/2020/05/233.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าใช้จ่ายเกี่ยวกับการพัฒนาทรัพย์สินที่ประชาชนทั่วไปใช้สอยร่วมกัน (ฉบับที่ ๒) พ.ศ. ๒๕๕๔", "u": "https://bmc.go.th/wp-content/uploads/2020/05/234.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าบริการ (ฉบับที่ ๓) พ.ศ. ๒๕๕๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/235.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง วิธีการงบประมาณ (ฉบับที่ ๔) พ.ศ. ๒๕๕๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/236.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ่ายเงินค่าเลี้ยงรับรอง (ฉบับที่ ๒) พ.ศ. ๒๕๕๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/237.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การสงเคราะห์ผู้ประสบสาธารณภัย (ฉบับที่ ๒) พ.ศ. ๒๕๕๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/238.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ผู้ช่วยดำเนินงานของสมาชิกสภากรุงเทพมหานคร (ฉบับที่ ๕) พ.ศ. ๒๕๕๕", "u": "https://bmc.go.th/wp-content/uploads/2020/05/239.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าใช้จ่ายเกี่ยวกับการสนับสนุนการพัฒนาชุมชน (ฉบับที่ ๓) พ.ศ. ๒๕๕๖", "u": "https://bmc.go.th/wp-content/uploads/2020/05/240.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การให้เงินรางวัลประจำปีแก่ลูกจ้างกรุงเทพมหานคร พ.ศ. ๒๕๕๗", "u": "https://bmc.go.th/wp-content/uploads/2020/05/241.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจัดเก็บค่าตอบแทนรายปีตามประมวลกฎหมายที่ดิน พ.ศ. ๒๕๕๗", "u": "https://bmc.go.th/wp-content/uploads/2020/05/242.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทในบริเวณสวนเบญจกิติและบริเวณโดยรอบในท้องที่แขวงคลองเตย เขตคลองเตย และแขวงลุมพินี เขตปทุมวัน กรุงเทพมหานคร (ฉบับที่ ๒) พ.ศ. ๒๕๕๗", "u": "https://bmc.go.th/wp-content/uploads/2020/05/243.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ่ายเงินสมทบกองทุนสวัสดิการชุมชน พ.ศ. ๒๕๕๗", "u": "https://bmc.go.th/wp-content/uploads/2020/05/244.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง บำเหน็จและเงินช่วยเหลือลูกจ้างกรุงเทพมหานคร พ.ศ. ๒๕๕๗", "u": "https://bmc.go.th/wp-content/uploads/2020/05/245.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินช่วยค่าครองชีพผู้ได้รับบำนาญของกรุงเทพมหานคร พ.ศ. ๒๕๕๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/246.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินสมนาคุณกรรมการผู้ทรงคุณวุฒิเฉพาะกิจในการตรวจและประเมินผลงานทางวิชาการ (ฉบับที่ ๓) พ.ศ. ๒๕๕๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/247.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การมอบประกาศเกียรติคุณ เครื่องหมายเชิดชูเกียรติและการให้รางวัลข้าราชการกรุงเทพมหานครและบุคลากรกรุงเทพมหานครผู้ทำคุณประโยชน์ และอาคันตุกะของกรุงเทพมหานคร พ.ศ. ๒๕๕๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/248.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การเก็บภาษีบำรุงกรุงเทพมหานครสำหรับน้ำมันเบนซินและน้ำมันที่คล้ายกันน้ำมันดีเซลและน้ำมันที่คล้ายกันและก๊าซปิโตรเลียมจากสถานการค้าปลีก พ.ศ. ๒๕๕๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/249.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าตอบแทนในส่วนที่เกี่ยวกับเบี้ยประชุมกรรมการ อนุกรรมการ เลขานุการ และผู้ช่วยเลขานุการ พ.ศ. ๒๕๕๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/250.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เบี้ยประชุมกรรมการ (ฉบับที่ ๒) พ.ศ. ๒๕๕๘", "u": "https://bmc.go.th/wp-content/uploads/2020/05/251.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ่ายเงินทุนการศึกษาแก่บุคคล เพื่อศึกษาในระดับปริญญาตรีทางการศึกษา พ.ศ. ๒๕๕๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/252.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การให้เงินค่าครองชีพชั่วคราวแก่ลูกจ้างกรุงเทพมหานคร พ.ศ. ๒๕๕๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/253.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท บริเวณโดยรอบสวนหลวง ร. ๙ ในท้องที่แขวงหนองบอน แขวงประเวศ เขตพระโขนง กรุงเทพมหานคร (ฉบับที่ ๓) พ.ศ. ๒๕๕๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/254.pdf"}, {"n": "ข้อบังคับว่าด้วยจรรยาบรรณของสมาชิกสภากรุงเทพมหานคร พ.ศ. ๒๕๕๙", "u": "https://bmc.go.th/wp-content/uploads/2020/05/255.pdf"}, {"n": "ระเบียบว่าด้วยการรับเรื่องร้องเรียน การนำเรื่องเข้าสู่การพิจารณา วิธีพิจารณาการสอบข้อเท็จจริงของคณะกรรมการสอบข้อเท็จจริงและวิธีพิจารณาสอบสวนของคณะกรรมการจรรยาบรรณสภากรุงเทพมหานคร พ.ศ. ๒๕๖๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/256.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินอุดหนุนของกรุงเทพมหานคร พ.ศ. ๒๕๖๐", "u": "https://bmc.go.th/wp-content/uploads/2020/05/257.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ่ายเงินสมทบกองทุนหลักประกันสุขภาพกรุงเทพมหานคร พ.ศ. ๒๕๖๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/258.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กิจการที่เป็นอันตรายต่อสุขภาพ พ.ศ. ๒๕๖๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/259.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การกู้เงินเพื่อใช้ในการรับโอนทรัพย์สิน และหนี้สินของโครงการรถไฟฟ้าสายสีเขียว ช่วงหมอชิต – สะพานใหม่ – คูคต และช่วงแบริ่ง – สมุทรปราการ พ.ศ. ๒๕๖๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/260.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าบริการ (ฉบับที่ ๔) พ.ศ. ๒๕๖๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/261.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง มาตรการป้องกันและแก้ไขปัญหาความเดือดร้อนจากการจุดและปล่อยบั้งไฟ พลุ ตะไล โคมลอย โคมไฟ โคมควัน หรือวัตถุอื่นใดที่คล้ายคลึงกัน พ.ศ. ๒๕๖๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/262.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าธรรมเนียมสำหรับการดำเนินกิจการตามกฎหมายว่าด้วยการสาธารณสุข พ.ศ. ๒๕๖๑", "u": "https://bmc.go.th/wp-content/uploads/2020/05/263.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินสะสม ๒๕๖๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/264.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าตอบแทนพิเศษในกรณีที่เกิดสาธารณภัยในเขตกรุงเทพมหานคร พ.ศ. ๒๕๖๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/265.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าธรรมเนียมการให้บริการในการจัดการสิ่งปฏิกูลหรือมูลฝอยตามกฎหมายว่าด้วยการสาธารณสุข พ.ศ. ๒๕๖๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/266.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง สำนักงานตลาดกรุงเทพมหานคร พ.ศ. ๒๕๖๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/267.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เบี้ยประชุมกรรมการ (ฉบับที่ ๓) พ.ศ. ๒๕๖๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/268.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ่ายค่าตอบแทนแก่บุคคลที่ปฏิบัติงานการบริการทางการแพทย์รูปแบบพิเศษ ของสถานพยาบาลสังกัดกรุงเทพมหานคร พ.ศ. ๒๕๖๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/269.pdf"}, {"n": "ข้อบังคับการประชุมสภากรุงเทพมหานคร พ.ศ. ๒๕๖๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/270.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจัดเก็บค่าธรรมเนียมบำบัดน้ำเสีย (ฉบับที่ ๒) พ.ศ. ๒๕๖๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/271.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าธรรมเนียมการให้บริการในการจัดการสิ่งปฏิกูลหรือมูลฝอยตามกฎหมายว่าด้วยการสาธารณสุข (ฉบับที่ ๒) พ.ศ. ๒๕๖๒", "u": "https://bmc.go.th/wp-content/uploads/2020/05/272.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทภายในบริเวณฝั่งธนบุรีตรงข้ามบริเวณกรุงรัตนโกสินทร์ ในท้องที่แขวงบางยี่ขัน เขตบางพลัด แขวงอรุณอมรินทร์ แขวงศิริราช เขตบางกอกน้อย แขวงวัดอรุณ เขตบางกอกใหญ่ แขวงวัดกัลยาณ์ เขตธนบุรี และแขวงสมเด็จเจ้าพระยา เขตคลองสาน กรุงเทพมหานคร (ฉบับที่ ๒) พ.ศ. ๒๕๖๓", "u": "https://bmc.go.th/wp-content/uploads/2020/06/%E0%B9%92%E0%B9%97%E0%B9%93.-%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภทในพื้นที่บางส่วนในท้องที่เขตลาดกระบัง และเขตประเวศ กรุงเทพมหานคร พ.ศ. ๒๕๖๓", "u": "https://bmc.go.th/wp-content/uploads/2020/06/%E0%B9%92%E0%B9%97%E0%B9%94.-%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง วิธีการงบประมาณ พ.ศ. ๒๕๖๓", "u": "https://bmc.go.th/wp-content/uploads/2020/06/%E0%B9%92%E0%B9%97%E0%B9%95.-%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B8%A7%E0%B8%B4%E0%B8%98%E0%B8%B5%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%87%E0%B8%9A%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%B2%E0%B8%93-%E0%B8%9E.%E0%B8%A8.-%E0%B9%92%E0%B9%95%E0%B9%96%E0%B9%93.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินบำรุงและค่าใช้จ่ายของศูนย์บริการและกิจกรรมส่งเสริมการกีฬา การดนตรี สำนักวัฒนธรรม กีฬา และการท่องเที่ยว พ.ศ. ๒๕๖๓", "u": "https://bmc.go.th/wp-content/uploads/2020/06/T_0038.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง สำนักงานสถานธนานุบาลกรุงเทพมหานคร พ.ศ. ๒๕๖๓", "u": "https://bmc.go.th/wp-content/uploads/2020/06/T_0041.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินสะสม (ฉบับที่ ๒) พ.ศ. ๒๕๖๓", "u": "https://bmc.go.th/wp-content/uploads/2020/07/%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%9A%E0%B8%B1%E0%B8%8D%E0%B8%8D%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3-%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99%E0%B8%AA%E0%B8%B0%E0%B8%AA%E0%B8%A1-%E0%B8%89.pdf"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าธรรมเนียมการให้บริการในการจัดการสิ่งปฏิกูลหรือมูลฝอยตามกฎหมายว่าด้วยการสาธารณสุข (ฉบับที่ ๓) พ.ศ. ๒๕๖๓", "u": "https://drive.google.com/file/d/1r7UFQ82vFV1TrXgC1Y1GSF7UD6cdvcbz/view?usp=sharing"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินสะสม (ฉบับที่ ๓) พ.ศ. ๒๕๖๔", "u": "https://drive.google.com/file/d/1Epcs1-R2O3ikwID85EsT6HGfwxGDcf3s/view?usp=sharing"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าบริการและค่าตอบแทนกรรมการและบุคคลที่ได้รับมอบหมายในการพิจารณาโครงการวิจัย พ.ศ. ๒๕๖๔", "u": "https://drive.google.com/file/d/1BsKBCSfP_ucBF2nDakdHgZ-QJLpGA05t/view?usp=share_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าธรรมเนียมการให้บริการในการจัดการสิ่งปฏิกูลหรือมูลฝอยตามกฎหมายว่าด้วยการสาธารณสุข (ฉบับที่ ๔) พ.ศ. ๒๕๖๔", "u": "https://drive.google.com/file/d/13lnyOjf1deyDhMTNDmdb-tmqBp-DkQ4u/view?usp=share_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจัดระเบียบการจอดรถ พ.ศ. ๒๕๖๔", "u": "https://drive.google.com/file/d/1C7cC8pj-FdCsDOKoeLdne9HJrrggQuoe/view?usp=share_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าใช้จ่ายเกี่ยวกับการสนับสนุนการพัฒนาชุมชน (ฉบับที่ ๔) พ.ศ. ๒๕๖๕", "u": "https://drive.google.com/file/d/14CGchsrChHrEa5hmArqKe0-iIRXGLVVL/view?usp=share_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าบริการ (ฉบับที่ ๕) พ.ศ. ๒๕๖๕", "u": "https://drive.google.com/file/d/1exlC4JMkbueJ9Zxh4AqOaAXVBg51zXKM/view?usp=share_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลงอาคารบางชนิดหรือบางประเภท ในท้องที่แขวงวัดสามพระยา แขวงบ้านพานถม เขตพระนคร แขวงวัดโสมนัส แขวงบ้านบาตร แขวงคลองมหานาค แขวงวัดเทพศิรินทร์ แขวงป้อมปราบศัตรูพ่าย เขตป้อมปราบศัตรูพ่าย และแขวงสัมพันธวงศ์ แขวงจักรวรรดิ์ แขวงตลาดน้อย เขตสัมพันธวงศ์ กรุงเทพมหานคร (ฉบับที่ ๒) พ.ศ. ๒๕๖๕", "u": "https://drive.google.com/file/d/11HMY_dwcrAWcicjILOFwBWBZInfVptMi/view?usp=share_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลง ใช้หรือเปลี่ยนการใช้อาคารบางชนิดหรือบางประเภท ในท้องที่แขวงถนนนครไชยศรี แขวงวชิรพยาบาล แขวงดุสิต แขวงสวนจิตรลดา แขวงสี่แยกมหานาค เขตดุสิต แขวงทุ่งพญาไท แขวงสามเสนใน เขตพญาไท แขวงวัดโสมนัส เขตป้อมปราบศัตรูพ่ายและแขวงวัดสามพระยา แขวงบางขุนพรหม เขตพระนคร กรุงเทพมหานคร (ฉบับที่ ๓) พ.ศ. ๒๕๖๕", "u": "https://drive.google.com/file/d/17BZwx1kJCc6F5i49-ZZ1CTiNGE7eDTje/view?usp=share_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง สถานที่จำหน่ายอาหารและสถานที่สะสมอาหาร พ.ศ. ๒๕๖๕", "u": "https://drive.google.com/file/d/1Oyckb6Dj02MNPmrE46xSkghl589YIajL/view?usp=share_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ทุนส่งเสริมการศึกษาของนักเรียนสังกัดกรุงเทพมหานคร พ.ศ.๒๕๖๕", "u": "https://drive.google.com/file/d/10w3ylFWAyCVefxIQocX7zf36XHtllz56/view?usp=share_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การให้เงินรางวัลประจำปีแก่ข้าราชการกรุงเทพมหานครและลูกจ้างกรุงเทพมหานคร พ.ศ. ๒๕๖๕", "u": "https://drive.google.com/file/d/1HWnnv16Z1e6pbM1L-U9m7vBGWA6MYFzE/view?usp=share_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าธรรมเนียมการให้บริการในการจัดการสิ่งปฏิกูลหรือมูลฝอยตามกฎหมายว่าด้วยการสาธารณสุข (ฉบับที่ ๕) พ.ศ. ๒๕๖๕", "u": "https://drive.google.com/file/d/1pDUuN50s2UJ_ueghHnfV4LoJvOLGNa4w/view?usp=share_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ทุนส่งเสริมการวิจัยทางการแพทย์สาธารณสุข พ.ศ. ๒๕๖๕", "u": "https://drive.google.com/file/d/16h-Lxg038ipou0PGQhvWsOweM8uQI1Tm/view?usp=share_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง สำนักงานพัฒนาที่อยู่อาศัย พ.ศ. ๒๕๖๖", "u": "https://drive.google.com/file/d/1h22FSUZ5i61iICinZx7xmGpB5UkL0dvL/view?usp=share_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง รางวัลคุณภาพการให้บริการของกรุงเทพมหานคร พ.ศ. ๒๕๖๖", "u": "https://drive.google.com/file/d/1Q-T2rmOpYMNFS6-StUG_p3-bbhvd83c4/view?usp=share_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ยกเลิกเทศบัญญัติของเทศบาลนครกรุงเทพและข้อบัญญัติกรุงเทพมหานคร พ.ศ. ๒๕๖๖", "u": "https://drive.google.com/file/d/1-n1M7B_9HbhXE3-DaasprdoRP6FJMx7b/view?usp=share_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินนอกงบประมาณ พ.ศ. ๒๕๖๖", "u": "https://drive.google.com/file/d/1w-9luMhdy-fAOOlxd1TFDWSfhu0TLBpE/view?usp=sharing"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง เงินสนับสนุนกองทุนบำเหน็จบำนาญข้าราชการกรุงเทพมหานคร พ.ศ. ๒๕๖๖", "u": "https://drive.google.com/file/d/1EEWByonpg7uz1Q0NlfE8eYoSi0VTfJdl/view?usp=sharing"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าธรรมเนียมการให้บริการในการจัดการสิ่งปฏิกูลหรือมูลฝอย ตามกฎหมายว่าด้วยการสาธารณสุข (ฉบับที่ ๖) พ.ศ. ๒๕๖๖", "u": "https://drive.google.com/file/d/1u03eDTuyB5z4JCzKmfXqJFyYCzxoG2Js/view?usp=drive_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าใช้จ่ายในการจัดการเรียนการสอนแพทย์เฉพาะทาง พ.ศ. ๒๕๖๖", "u": "https://drive.google.com/file/d/1Jqvqbahx5o5C2fKbTiT9FcDHnfsitggd/view?usp=drive_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าใช้จ่ายในการเดินทางไปราชการ พ.ศ. ๒๕๖๗", "u": "https://drive.google.com/file/d/1vp0vr21szrV3uNvfpscY4F_bNPVav1rb/view?usp=sharing"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าจ้าง ค่าตอบแทน สิทธิหรือประโยชน์ตอบแทนอื่นใดของลูกจ้างกรุงเทพมหานคร พ.ศ. ๒๕๖๗", "u": "https://drive.google.com/file/d/1JSrq_kgSfrNfjncR68_E6IzrTlRpkNev/view?usp=drive_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าธรรมเนียมการให้บริการในการจัดการสิ่งปฏิกูลหรือมูลฝอยตามกฎหมายว่าด้วยการสาธารณสุข (ฉบับที่ ๗) พ.ศ. ๒๕๖๗", "u": "https://drive.google.com/file/d/1EVkhHVSga4GB1M1QsLklvOLnxL1ZA55N/view?usp=drive_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การสงเคราะห์ผู้ประสบสาธารณภัย (ฉบับที่ ๓) พ.ศ. ๒๕๖๗", "u": "https://drive.google.com/file/d/1dN979nRXUK52sghh5f6QuCb4Ty2cf6F4/view?usp=drive_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง กำหนดบริเวณห้ามก่อสร้าง ดัดแปลงอาคารประเภทป้ายหรือสิ่งที่สร้างขึ้นสำหรับติดหรือตั้งป้ายในพื้นที่บางส่วน ในท้องที่กรุงเทพมหานคร พ.ศ. ๒๕๖๗", "u": "https://drive.google.com/file/d/1Hn3VNHJJd18uqPEbTuDDSWE90FDupX_L/view?usp=drive_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การควบคุมการเลี้ยงหรือปล่อยสัตว์ พ.ศ. ๒๕๖๗", "u": "https://drive.google.com/file/d/15BEo-IdlRrS0WqySdFzgtdBzk85yCX8M/view?usp=drive_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าธรรมเนียมการให้บริการในการจัดการสิ่งปฏิกูลหรือมูลฝอยตามกฎหมายว่าด้วยการสาธารณสุข พ.ศ. ๒๕๖๘", "u": "https://drive.google.com/file/d/1qa3rAjYMAFOFQEYU6VyooU7aDTLCKf6R/view?usp=sharing"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าใช้จ่ายเกี่ยวกับการสนับสนุนกิจการอาสาสมัครป้องกันภัยฝ่ายพลเรือน พ.ศ. ๒๕๖๘", "u": "https://drive.google.com/file/d/1MMlu3bDsZYTjMyY-Kne3JlwjDkuoLWdY/view?usp=drive_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง รางวัลคุณภาพการให้บริการของกรุงเทพมหานคร (ฉบับที่ ๒) พ.ศ. ๒๕๖๘", "u": "https://drive.google.com/file/d/1FpQ2Y7aqqR0PorCCG9QAiU5vPPHCuy9D/view?usp=sharing"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การจ่ายเงินค่าเลี้ยงรับรอง (ฉบับที่ ๓) พ.ศ. ๒๕๖๘", "u": "https://drive.google.com/file/d/15cIc_SDdN_fpuyT2SobR-bnoIds1kVrT/view?usp=sharing"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง การควบคุมการเลี้ยงหรือปล่อยสัตว์ (ฉบับที่ ๒) พ.ศ. ๒๕๖๙", "u": "https://drive.google.com/file/d/1sc-LtAGssDwZo8dauQArF7h-u2n5XswP/view?usp=drive_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ค่าใช้จ่ายเกี่ยวกับการพัฒนาทรัพย์สินที่ประชาชนทั่วไปใช้สอยร่วมกัน (ฉบับที่ ๓) พ.ศ. ๒๕๖๙", "u": "https://drive.google.com/file/d/1pyya1zoQgKDNUJBYkL7Vnwmq0T2dPpvQ/view?usp=drive_link"}, {"n": "ข้อบัญญัติกรุงเทพมหานคร เรื่อง ให้ใช้บังคับผังเมืองรวมกรุงเทพมหานคร พ.ศ. ๒๕๖๙", "u": "https://drive.google.com/file/d/19UNkxPRKMyYwGJVqXhQ8SvF_SBYuz1vo/view?usp=drive_link"}];
-
-function buildOrds(list){
-  var tb=document.getElementById('ordsBody');
-  while(tb.firstChild)tb.removeChild(tb.firstChild);
-  for(var i=0;i<list.length;i++){
-    var o=list[i];
-    var tr=document.createElement('tr');
-    var td0=document.createElement('td');td0.className='ord-num';td0.textContent=o._idx||i+1;tr.appendChild(td0);
-    var td1=document.createElement('td');td1.className='ord-name';td1.textContent=o.n;tr.appendChild(td1);
-    var td2=document.createElement('td');td2.style.textAlign='center';
-    if(o.u){
-      var a=document.createElement('a');a.className='dl-btn';a.href=o.u;a.target='_blank';
-      a.rel='noopener';a.innerHTML='\u2B07 PDF';td2.appendChild(a);
-    }else{
-      td2.textContent='-';td2.style.color='var(--text3)';
-    }
-    tr.appendChild(td2);
-    tb.appendChild(tr);
-  }
-  document.getElementById('ordsStats').textContent='\ud83d\udccb'+' แสดง '+list.length+'/'+ORDS.length+' ฉบับ';
-}
-
-function filterOrds(){
-  var q=document.getElementById('ordsSearch').value.toLowerCase().trim();
-  if(!q){buildOrds(ORDS.map(function(o,i){return{n:o.n,u:o.u,_idx:i+1}}));return}
-  var res=[];
-  for(var i=0;i<ORDS.length;i++){
-    if(ORDS[i].n.toLowerCase().indexOf(q)!==-1){
-      res.push({n:ORDS[i].n,u:ORDS[i].u,_idx:i+1});
-    }
-  }
-  buildOrds(res);
-}
-
-buildOrds(ORDS.map(function(o,i){return{n:o.n,u:o.u,_idx:i+1}}));
-
-// ===== ELECTION COUNTDOWN TIMER =====
-function updateCountdown(){
-  var now=new Date().getTime();
-  var target=new Date('2026-07-05T08:00:00+07:00').getTime();
-  var diff=target-now;
-
-  if(diff<=0){
-    document.getElementById('countdownDays').textContent='0';
-    document.getElementById('countdownHours').textContent='0';
-    document.getElementById('countdownMinutes').textContent='0';
-    document.getElementById('countdownSeconds').textContent='0';
+  if (diff <= 0) {
+    ['daysLeft','hoursLeft','minsLeft','secsLeft','weeksLeft'].forEach(id =>
+      document.getElementById(id).textContent = '0');
+    document.getElementById('progressBar').style.width = '100%';
+    document.getElementById('progressPct').textContent = '100%';
+    clearInterval(countdownInterval);
     return;
   }
 
-  var days=Math.floor(diff/(1000*60*60*24));
-  var hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-  var minutes=Math.floor((diff%(1000*60*60))/(1000*60));
-  var seconds=Math.floor((diff%(1000*60))/1000);
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const secs = Math.floor((diff % (1000 * 60)) / 1000);
+  const weeks = Math.ceil(days / 7);
 
-  document.getElementById('countdownDays').textContent=days;
-  document.getElementById('countdownHours').textContent=String(hours).padStart(2,'0');
-  document.getElementById('countdownMinutes').textContent=String(minutes).padStart(2,'0');
-  document.getElementById('countdownSeconds').textContent=String(seconds).padStart(2,'0');
+  document.getElementById('daysLeft').textContent = days;
+  document.getElementById('hoursLeft').textContent = hours;
+  document.getElementById('minsLeft').textContent = mins;
+  document.getElementById('secsLeft').textContent = secs;
+  document.getElementById('weeksLeft').textContent = weeks;
+
+  // Progress: from 5 Jan 2569 (180 days before สก.ชุด 13 ครบวาระ 22 พ.ค. 2569) to election 5 Jul 2569
+  const CAMPAIGN_START = new Date(2026, 0, 5);
+  const start = CAMPAIGN_START;
+  const total = election - start;
+  const elapsed = now - start;
+  const pct = Math.min(100, Math.max(0, Math.round((elapsed / total) * 100)));
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
 }
 
 updateCountdown();
-setInterval(updateCountdown,1000);
+const countdownInterval = setInterval(updateCountdown, 1000);
 
+// ========== DISTRICTS ==========
+const districts = [
+  ['พระนคร','เพื่อไทย','แข่งขัน'],['ดุสิต','เพื่อไทย','แข่งขัน'],
+  ['หนองจอก','เพื่อไทย','เพื่อไทยแข็ง'],['บางรัก','ก้าวไกล','ประชาชนนำ'],
+  ['บางเขน','ก้าวไกล','ประชาชนนำ'],['บางกะปิ','เพื่อไทย','แข่งขัน'],
+  ['ปทุมวัน','ประชาธิปัตย์','แข่งขัน'],['ป้อมปราบฯ','เพื่อไทย','เพื่อไทยแข็ง'],
+  ['พระโขนง','ก้าวไกล','ประชาชนนำ'],['มีนบุรี','เพื่อไทย','แข่งขัน'],
+  ['ลาดกระบัง','เพื่อไทย','แข่งขัน'],['ยานนาวา','ก้าวไกล','ประชาชนนำ'],
+  ['สัมพันธวงศ์','เพื่อไทย','เพื่อไทยแข็ง'],['พญาไท','ก้าวไกล','ประชาชนนำ'],
+  ['ธนบุรี','เพื่อไทย','แข่งขัน'],['บางกอกใหญ่','เพื่อไทย','แข่งขัน'],
+  ['ห้วยขวาง','ก้าวไกล','ประชาชนนำ'],['คลองสาน','ประชาธิปัตย์','แข่งขัน'],
+  ['ตลิ่งชัน','ประชาธิปัตย์','แข่งขัน'],['บางกอกน้อย','ประชาธิปัตย์','แข่งขัน'],
+  ['บางขุนเทียน','เพื่อไทย','แข่งขัน'],['ภาษีเจริญ','เพื่อไทย','แข่งขัน'],
+  ['หนองแขม','เพื่อไทย','เพื่อไทยแข็ง'],['ราษฎร์บูรณะ','ประชาธิปัตย์','แข่งขัน'],
+  ['บางพลัด','ก้าวไกล','ประชาชนนำ'],['ดินแดง','ก้าวไกล','ประชาชนนำ'],
+  ['บึงกุ่ม','ก้าวไกล','ประชาชนนำ'],['สาทร','ก้าวไกล','ประชาชนนำ'],
+  ['บางซื่อ','ก้าวไกล','ประชาชนนำ'],['จตุจักร','ก้าวไกล','ประชาชนนำ'],
+  ['บางคอแหลม','ประชาธิปัตย์','แข่งขัน'],['ประเวศ','เพื่อไทย','แข่งขัน'],
+  ['คลองเตย','เพื่อไทย','แข่งขัน'],['สวนหลวง','เพื่อไทย','แข่งขัน'],
+  ['จอมทอง','ประชาธิปัตย์','แข่งขัน'],['ดอนเมือง','ไทยสร้างไทย','แข่งขัน'],
+  ['ราชเทวี','ก้าวไกล','ประชาชนนำ'],['ลาดพร้าว','เพื่อไทย','แข่งขัน'],
+  ['วัฒนา','ประชาธิปัตย์','แข่งขัน'],['บางแค','เพื่อไทย','เพื่อไทยแข็ง'],
+  ['หลักสี่','พลังประชารัฐ','แข่งขัน'],['สายไหม','พลังประชารัฐ','แข่งขัน'],
+  ['คันนายาว','เพื่อไทย','แข่งขัน'],['สะพานสูง','เพื่อไทย','แข่งขัน'],
+  ['วังทองหลาง','ไทยสร้างไทย','แข่งขัน'],['คลองสามวา','เพื่อไทย','เพื่อไทยแข็ง'],
+  ['บางนา','รักษ์กรุงเทพ','แข่งขัน'],['ทวีวัฒนา','ประชาธิปัตย์','แข่งขัน'],
+  ['ทุ่งครุ','รักษ์กรุงเทพ','แข่งขัน'],['บางบอน','เพื่อไทย','แข่งขัน'],
+];
+
+const partyClass = {
+  'เพื่อไทย': 'party-pt',
+  'ก้าวไกล': 'party-mf',
+  'ประชาธิปัตย์': 'party-dp',
+  'ไทยสร้างไทย': 'party-tst',
+  'พลังประชารัฐ': 'party-other',
+  'รักษ์กรุงเทพ': 'party-other',
+};
+
+// Build district table — data is hardcoded (safe, no user input)
+const tbody = document.getElementById('districtBody');
+const fragment = document.createDocumentFragment();
+districts.forEach((d, i) => {
+  const cls = partyClass[d[1]] || 'party-other';
+  const trend = d[2] === 'ประชาชนนำ' ? '🟠 ปชช.นำ' :
+                d[2] === 'เพื่อไทยแข็ง' ? '🔴 พท.แข็ง' : '⚪ แข่งขัน';
+  const tr = document.createElement('tr');
+  const td1 = document.createElement('td');
+  td1.style.color = 'var(--text-dim)';
+  td1.textContent = i + 1;
+  const td2 = document.createElement('td');
+  td2.textContent = d[0];
+  const td3 = document.createElement('td');
+  const span = document.createElement('span');
+  span.className = 'party-tag ' + cls;
+  span.textContent = d[1];
+  td3.appendChild(span);
+  const td4 = document.createElement('td');
+  td4.style.fontSize = '12px';
+  td4.textContent = trend;
+  tr.append(td1, td2, td3, td4);
+  fragment.appendChild(tr);
+});
+tbody.appendChild(fragment);
+
+// Update date
+document.getElementById('updateDate').textContent = new Date().toLocaleDateString('th-TH', {
+  year: 'numeric', month: 'long', day: 'numeric'
+});
 </script>
-<div style="text-align:center;padding:8px 20px;margin:8px auto;">
-  <p style="font-size:14px;margin-bottom:8px;"><a href="index.html" style="color:#0D9488;font-weight:600;text-decoration:none;">← กลับหน้าหลัก ส.ก. Navigator</a></p>
-</div>
-<div style="text-align:center;padding:16px 20px;margin:20px auto;">
-  <a href="../../all-content.html" style="color:#0645ad;font-weight:bold;text-decoration:none;">ดูบทความและบล็อกทั้งหมด &rarr;</a>
-</div>
+
 </body>
 </html>
