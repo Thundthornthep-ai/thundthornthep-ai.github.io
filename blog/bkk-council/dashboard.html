@@ -935,7 +935,7 @@ buildOrds(ORDS.map(function(o,i){return{n:o.n,u:o.u,_idx:i+1}}));
 // ===== ELECTION COUNTDOWN TIMER =====
 function updateCountdown(){
   var now=new Date().getTime();
-  var target=new Date(2026,6,5,8,0,0,0).getTime();
+  var target=new Date('2026-07-05T08:00:00+07:00').getTime();
   var diff=target-now;
 
   if(diff<=0){
