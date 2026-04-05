@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/webp" href="/las-logo.webp">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>District Intelligence — ส.ก. Navigator</title>
+<meta name="description" content="RED FLAG พื้นที่สำคัญ 50 เขต กทม. — ข้อมูลชุมชน วัด โรงเรียน ตลาด + ปักธง check-in + Traffy Fondue สำหรับผู้สมัคร ส.ก. 2569">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAFAFA;--bg-alt:#F5F5F5;--card:#FFF;--text:#1A1A2E;--text-secondary:#6B7280;--text-muted:#9CA3AF;--navy:#1B2A4A;--navy-dark:#0d1f33;--gold:#C9A96E;--teal:#0D9488;--green:#22C55E;--green-dark:#14532D;--red:#EF4444;--red-dark:#991B1B;--orange:#E67E22;--blue:#2563EB;--border:#E5E7EB;--border-light:#F3F4F6;--shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);--radius:12px;--radius-sm:8px;--max-w:900px;--transition:.2s ease}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.7;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+.top-bar{position:fixed;top:0;left:0;right:0;z-index:100;height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:var(--navy);border-bottom:1px solid rgba(201,169,110,.2);font-size:13px}
+.top-bar-left{font-family:'Space Grotesk',sans-serif;color:rgba(255,255,255,.9);font-weight:500}.top-bar-left a{color:rgba(255,255,255,.6);text-decoration:none;margin-right:8px}.top-bar-left a:hover{color:#fff}
+.top-bar-right{color:rgba(255,255,255,.5);font-size:12px;font-family:'Space Grotesk',sans-serif}.top-bar-right span{color:var(--gold)}
+.main{max-width:var(--max-w);margin:0 auto;padding:64px 16px 80px}
+.st{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--border)}
+.sd{font-size:13px;color:var(--text-secondary);margin-bottom:16px}
+.btn{padding:10px 20px;border:none;border-radius:var(--radius-sm);font-family:'Sarabun',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all var(--transition)}.btn-p{background:var(--navy);color:#fff}.btn-p:hover{background:var(--navy-dark)}.btn-g{background:var(--gold);color:#fff}.btn-g:hover{opacity:.85}.btn-o{background:none;border:1px solid var(--border);color:var(--text-secondary)}.btn-o:hover{border-color:var(--gold)}.btn-d{background:var(--red);color:#fff;padding:6px 12px;font-size:12px}
+.btn-teal{background:var(--teal);color:#fff}.btn-teal:hover{opacity:.85}
+.btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:16px}
+.fg{display:flex;flex-direction:column;gap:4px}.fg label{font-size:13px;font-weight:600;color:var(--text-secondary)}.fg input,.fg select,.fg textarea{padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'Sarabun',sans-serif;font-size:15px}.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--gold)}
+/* District selector */
+.district-select{width:100%;padding:14px 16px;border:2px solid var(--gold);border-radius:var(--radius);font-family:'Sarabun',sans-serif;font-size:16px;font-weight:600;background:var(--card);color:var(--navy);margin-bottom:24px;cursor:pointer}
+.district-select:focus{outline:none;border-color:var(--navy)}
+/* Link buttons */
+.link-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-bottom:24px}
+.link-card{display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);text-decoration:none;color:var(--text);transition:all var(--transition)}.link-card:hover{border-color:var(--gold);box-shadow:var(--shadow)}
+.link-card .lc-icon{font-size:20px}.link-card .lc-text{font-size:14px;font-weight:600}.link-card .lc-sub{font-size:11px;color:var(--text-muted)}
+/* POI categories */
+.poi-section{margin-bottom:24px}
+.poi-cat{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:8px;overflow:hidden}
+.poi-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;cursor:pointer;font-weight:600;font-size:14px;transition:background var(--transition)}.poi-header:hover{background:var(--bg-alt)}
+.poi-header .count{background:var(--bg-alt);padding:2px 10px;border-radius:12px;font-size:12px;color:var(--text-secondary)}
+.poi-body{padding:0 16px 12px;display:none}.poi-body.open{display:block}
+.poi-item{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border-light);font-size:14px}
+.poi-item:last-child{border-bottom:none}
+.poi-item .status{width:10px;height:10px;border-radius:50%;margin-right:8px;flex-shrink:0}
+.poi-item .status.visited{background:var(--green)}.poi-item .status.pending{background:var(--border)}
+/* Check-in card */
+.checkin-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:8px}
+.checkin-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.checkin-name{font-weight:600;font-size:15px}.checkin-date{font-size:12px;color:var(--text-muted)}
+.checkin-problem{font-size:13px;color:var(--text-secondary);padding:8px 12px;background:var(--bg-alt);border-radius:var(--radius-sm);margin-top:8px}
+/* Progress */
+.progress-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:24px}
+.progress-bar{height:12px;background:var(--bg-alt);border-radius:6px;overflow:hidden;margin-top:8px}
+.progress-fill{height:100%;background:var(--teal);border-radius:6px;transition:width .5s}
+/* Stats */
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+.stat-box{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-align:center}
+.stat-box .sv{font-size:24px;font-weight:700;font-family:'Space Grotesk',sans-serif;color:var(--teal)}
+.stat-box .sl{font-size:12px;color:var(--text-secondary);margin-top:2px}
+@media print{.top-bar,.btn-row,.no-print{display:none!important}.main{padding:0;max-width:100%}}
+@media(max-width:640px){.form-row{grid-template-columns:1fr}.link-grid{grid-template-columns:1fr}.stat-row{grid-template-columns:repeat(3,1fr);gap:6px}.stat-box{padding:10px}.stat-box .sv{font-size:20px}}
+.site-footer{background:var(--navy-dark);color:rgba(255,255,255,.6);text-align:center;padding:24px;font-size:12px;line-height:1.8}.site-footer a{color:var(--gold);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="top-bar"><div class="top-bar-left"><a href="index.html">← Dashboard</a> District Intelligence</div><div class="top-bar-right"><span>LAS</span> × <span>NIA</span></div></div>
+<div class="main">
+
+<!-- DISTRICT SELECTOR -->
+<div class="st">RED FLAG — พื้นที่สำคัญในเขต</div>
+<div class="sd">เลือกเขตเพื่อดูข้อมูลพื้นที่ ปักธง check-in สถานที่ บันทึกปัญหา และส่งรายงานผ่าน Traffy Fondue</div>
+
+<select class="district-select" id="districtPicker" onchange="selectDistrict(this.value)">
+  <option value="">— เลือกเขตที่จะลงสมัคร —</option>
+</select>
+
+<!-- Hidden until district selected -->
+<div id="districtContent" style="display:none">
+
+<!-- PROGRESS -->
+<div class="progress-wrap">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <div style="font-weight:600;font-size:14px">ปักธงแล้ว</div>
+    <div style="font-size:13px;color:var(--text-secondary)"><span id="visitedCount">0</span> / <span id="totalPoi">0</span> สถานที่</div>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+</div>
+
+<!-- STAT ROW -->
+<div class="stat-row">
+  <div class="stat-box"><div class="sv" id="sPoi">0</div><div class="sl">สถานที่ทั้งหมด</div></div>
+  <div class="stat-box"><div class="sv" id="sVisited">0</div><div class="sl">ปักธงแล้ว</div></div>
+  <div class="stat-box"><div class="sv" id="sProblems">0</div><div class="sl">ปัญหาที่พบ</div></div>
+</div>
+
+<!-- LINKS -->
+<div class="link-grid">
+  <a id="traffyLink" href="#" target="_blank" class="link-card">
+    <span class="lc-icon">📊</span>
+    <div><div class="lc-text">Traffy Fondue</div><div class="lc-sub">ดูปัญหาจริงในเขต</div></div>
+  </a>
+  <a id="districtOfficeLink" href="#" target="_blank" class="link-card">
+    <span class="lc-icon">🏛️</span>
+    <div><div class="lc-text">สำนักงานเขต</div><div class="lc-sub" id="districtOfficeName">webportal.bangkok.go.th</div></div>
+  </a>
+  <a href="https://www.traffy.in.th" target="_blank" class="link-card">
+    <span class="lc-icon">📱</span>
+    <div><div class="lc-text">รายงานปัญหา Traffy</div><div class="lc-sub">ส่งปัญหาไป กทม. ทันที</div></div>
+  </a>
+</div>
+
+<!-- ADD POI / CHECK-IN -->
+<div class="btn-row no-print">
+  <button class="btn btn-p" onclick="toggleEl('addPoiForm')">+ เพิ่มสถานที่</button>
+  <button class="btn btn-teal" onclick="toggleEl('checkinForm')">ปักธง / Check-in</button>
+  <button class="btn btn-o" onclick="doExportDI()">Export JSON</button>
+  <label class="btn btn-o" style="cursor:pointer"><input type="file" accept=".json" style="display:none" onchange="doImportDI(event)">Import</label>
+</div>
+
+<!-- ADD POI FORM -->
+<div id="addPoiForm" style="display:none;margin-bottom:16px;padding:16px;background:var(--card);border:1px solid var(--gold);border-radius:var(--radius)">
+  <div style="font-weight:600;margin-bottom:12px">เพิ่มสถานที่ใหม่</div>
+  <div class="form-row">
+    <div class="fg"><label>ชื่อสถานที่</label><input id="poiName" placeholder="เช่น วัดสุวรรณาราม"></div>
+    <div class="fg"><label>ประเภท</label><select id="poiCat"><option>วัด</option><option>ชุมชน</option><option>โรงเรียน</option><option>ตลาด</option><option>หมู่บ้าน/คอนโด</option><option>โรงพยาบาล</option><option>สวนสาธารณะ</option><option>สถานที่ราชการ</option><option>ท่าเรือ/สะพาน</option><option>สถานที่ท่องเที่ยว</option><option>อื่นๆ</option></select></div>
+  </div>
+  <div class="form-row">
+    <div class="fg"><label>ที่อยู่/ตำแหน่ง</label><input id="poiAddr" placeholder="ที่อยู่ หรือ Google Maps link"></div>
+    <div class="fg"><label>หมายเหตุ</label><input id="poiNote" placeholder=""></div>
+  </div>
+  <div class="btn-row" style="margin-top:12px"><button class="btn btn-g" onclick="addPoi()">บันทึก</button><button class="btn btn-o" onclick="toggleEl('addPoiForm')">ยกเลิก</button></div>
+</div>
+
+<!-- CHECK-IN FORM -->
+<div id="checkinForm" style="display:none;margin-bottom:16px;padding:16px;background:var(--card);border:1px solid var(--teal);border-radius:var(--radius)">
+  <div style="font-weight:600;margin-bottom:12px;color:var(--teal)">ปักธง / Check-in</div>
+  <div class="form-row">
+    <div class="fg"><label>สถานที่</label><select id="ciPlace"></select></div>
+    <div class="fg"><label>วันที่</label><input type="date" id="ciDate"></div>
+  </div>
+  <div class="form-row">
+    <div class="fg" style="grid-column:1/-1"><label>ปัญหาที่พบ</label><textarea id="ciProblem" rows="2" placeholder="เช่น ถนนชำรุด ไฟทางดับ น้ำท่วมขัง"></textarea></div>
+  </div>
+  <div class="form-row">
+    <div class="fg" style="grid-column:1/-1"><label>ความต้องการของชุมชน</label><textarea id="ciNeed" rows="2" placeholder="เช่น ต้องการสวนสาธารณะ ทางเท้าที่ดีขึ้น"></textarea></div>
+  </div>
+  <div class="btn-row" style="margin-top:12px"><button class="btn btn-teal" onclick="doCheckin()">ปักธง</button><button class="btn btn-o" onclick="toggleEl('checkinForm')">ยกเลิก</button></div>
+</div>
+
+<!-- POI LIST BY CATEGORY -->
+<div id="poiContainer"></div>
+
+<!-- CHECK-IN LOG -->
+<div style="margin-top:32px">
+  <div class="st">บันทึกการลงพื้นที่</div>
+  <div id="checkinLog"></div>
+</div>
+
+</div><!-- end districtContent -->
+</div><!-- end .main -->
+
+<footer class="site-footer"><span>Legal Advance Solution Co., Ltd. (LAS)</span> × <span>National Innovation Agency (NIA)</span><br><a href="index.html">Dashboard</a> · <a href="campaign-tracker.html">Campaign Tracker</a><br>Traffy Fondue: <a href="https://bangkok.traffy.in.th" target="_blank">bangkok.traffy.in.th</a></footer>
+
+<script>
+// === DATA ===
+var D={
+  g:function(k,d){try{return JSON.parse(localStorage.getItem('di_'+k))||d}catch(e){return d}},
+  s:function(k,v){localStorage.setItem('di_'+k,JSON.stringify(v))}
+};
+function E(s){if(!s)return'';var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+
+// 50 District office URLs
+var districtUrls={
+'คลองเตย':'khlongtoei','คลองสาน':'khlongsan','คลองสามวา':'khlongsamwa','คันนายาว':'khannayao','จตุจักร':'chatuchak','จอมทอง':'chomthong','ดอนเมือง':'donmuang','ดินแดง':'dindaeng','ดุสิต':'dusit','ตลิ่งชัน':'talingchan','ทวีวัฒนา':'thawiwatthana','ทุ่งครุ':'thungkru','ธนบุรี':'thonburi','บางกอกน้อย':'bangkoknoi','บางกอกใหญ่':'bangkokyai','บางกะปิ':'bangkapi','บางขุนเทียน':'bangkhunthian','บางเขน':'bangkhen','บางคอแหลม':'bangkholaem','บางซื่อ':'bangsue','บางนา':'bangna','บางบอน':'bangbon','บางพลัด':'bangphlat','บางแค':'bangkhae','บางรัก':'bangrak','บึงกุ่ม':'buengkum','ปทุมวัน':'pathumwan','ประเวศ':'prawet','ป้อมปราบศัตรูพ่าย':'pomprabsattruphai','พญาไท':'phayathai','พระโขนง':'phrakhanoung','พระนคร':'phranakhon','ภาษีเจริญ':'phasicharoen','มีนบุรี':'minburi','ยานนาวา':'yannawa','ราชเทวี':'ratchathewi','ราษฎร์บูรณะ':'ratburana','ลาดกระบัง':'latkrabang','ลาดพร้าว':'latphrao','วังทองหลาง':'wangthonglang','วัฒนา':'watthana','สวนหลวง':'suanluang','สะพานสูง':'saphansung','สาทร':'sathon','สายไหม':'saimai','หนองจอก':'nongchok','หนองแขม':'nongkhaem','หลักสี่':'laksi','ห้วยขวาง':'huaikhwang'
+};
+
+// POI categories
+var poiCategories = [
+  {key:'temples',icon:'🏛️',name:'วัด / สำนักสงฆ์'},
+  {key:'communities',icon:'🏘️',name:'ชุมชน / หมู่บ้าน'},
+  {key:'schools',icon:'🏫',name:'โรงเรียน'},
+  {key:'markets',icon:'🛒',name:'ตลาด / ตลาดนัด'},
+  {key:'housing',icon:'🏢',name:'หมู่บ้านจัดสรร / คอนโด'},
+  {key:'hospitals',icon:'🏥',name:'สถานพยาบาล'},
+  {key:'parks',icon:'🌳',name:'สวนสาธารณะ'},
+  {key:'government',icon:'🏛️',name:'สถานที่ราชการ'},
+  {key:'transport',icon:'⛴️',name:'ท่าเรือ / สะพาน'},
+  {key:'tourism',icon:'📸',name:'สถานที่ท่องเที่ยว'},
+  {key:'other',icon:'📍',name:'อื่นๆ'}
+];
+
+// Category map from Thai select
+var catMap={'วัด':'temples','ชุมชน':'communities','โรงเรียน':'schools','ตลาด':'markets','หมู่บ้าน/คอนโด':'housing','โรงพยาบาล':'hospitals','สวนสาธารณะ':'parks','สถานที่ราชการ':'government','ท่าเรือ/สะพาน':'transport','สถานที่ท่องเที่ยว':'tourism','อื่นๆ':'other'};
+
+// Default POI data for sample districts
+var defaultPois = {
+  'บางกอกน้อย': {temples:['วัดสุวรรณาราม','วัดศรีสุดาราม','วัดอมรินทราราม','วัดระฆังโฆสิตาราม','วัดเครือวัลย์'],communities:['ชุมชนบ้านบุ','ชุมชนวัดสุวรรณาราม','ชุมชนบ้านญวน','ชุมชนศิริราช'],schools:['ร.ร.วัดสุวรรณาราม','ร.ร.ศรีสุดาราม','ร.ร.ราชินี'],markets:['ตลาดศิริราช','ตลาดบ้านบุ'],hospitals:['โรงพยาบาลศิริราช'],transport:['ท่าเรือศิริราช','สะพานอรุณอมรินทร์'],tourism:['พิพิธภัณฑ์ศิริราช','บ้านเขมร']},
+  'พระนคร': {temples:['วัดพระศรีรัตนศาสดาราม','วัดพระเชตุพน','วัดสุทัศนเทพวราราม','วัดบวรนิเวศ','วัดราชนัดดาราม'],communities:['ชุมชนป้อมมหากาฬ','ชุมชนบ้านบาตร'],schools:['ร.ร.วัดราชบพิธ','ร.ร.สตรีวิทยา'],markets:['ตลาดท่าเตียน','ตลาดสะพานเหล็ก'],government:['ศาลาว่าการ กทม.','กระทรวงมหาดไทย'],tourism:['พระบรมมหาราชวัง','ถนนข้าวสาร','สนามหลวง']},
+  'จตุจักร': {temples:['วัดเสมียนนารี','วัดลาดพร้าว'],communities:['ชุมชนวัดเสมียนนารี','ชุมชนหมู่บ้านประชานิเวศน์'],schools:['ร.ร.หอวัง','ร.ร.เตรียมอุดมศึกษาพัฒนาการ'],markets:['ตลาดนัดจตุจักร','ตลาด อตก.'],parks:['สวนจตุจักร','สวนวชิรเบญจทัศ'],government:['สำนักงานเขตจตุจักร'],transport:['สถานี BTS หมอชิต','สถานี MRT จตุจักร']}
+};
+
+var currentDistrict = '';
+
+// === INIT DROPDOWN ===
+(function(){
+  var sel = document.getElementById('districtPicker');
+  Object.keys(districtUrls).sort().forEach(function(d){
+    var opt = document.createElement('option');
+    opt.value = d;
+    opt.textContent = d;
+    sel.appendChild(opt);
+  });
+  // Restore last selection
+  var last = D.g('lastDistrict','');
+  if(last){sel.value=last;selectDistrict(last)}
+  document.getElementById('ciDate').value = new Date().toISOString().slice(0,10);
+})();
+
+// === SELECT DISTRICT ===
+function selectDistrict(name){
+  if(!name){document.getElementById('districtContent').style.display='none';return}
+  currentDistrict = name;
+  D.s('lastDistrict',name);
+  document.getElementById('districtContent').style.display='block';
+  // Update links
+  var slug = districtUrls[name]||'';
+  document.getElementById('traffyLink').href='https://bangkok.traffy.in.th/?district='+encodeURIComponent(name);
+  document.getElementById('districtOfficeLink').href='https://webportal.bangkok.go.th/'+slug;
+  document.getElementById('districtOfficeName').textContent='สำนักงานเขต'+name;
+  renderDistrict();
+}
+
+// === RENDER ===
+function renderDistrict(){
+  var pois = D.g('pois_'+currentDistrict, null);
+  // First load: merge defaults
+  if(!pois){
+    pois = {};
+    var defaults = defaultPois[currentDistrict] || {};
+    poiCategories.forEach(function(cat){
+      var items = (defaults[cat.key]||[]).map(function(n){return {id:Date.now()+Math.random(),name:n,addr:'',note:'',visited:false}});
+      pois[cat.key] = items;
+    });
+    D.s('pois_'+currentDistrict, pois);
+  }
+
+  var checkins = D.g('checkins_'+currentDistrict, []);
+  var allPois = [];
+  poiCategories.forEach(function(cat){ allPois = allPois.concat(pois[cat.key]||[]); });
+  var visited = allPois.filter(function(p){return p.visited}).length;
+  var total = allPois.length;
+  var problems = checkins.length;
+
+  // Stats
+  document.getElementById('sPoi').textContent = total;
+  document.getElementById('sVisited').textContent = visited;
+  document.getElementById('sProblems').textContent = problems;
+  document.getElementById('visitedCount').textContent = visited;
+  document.getElementById('totalPoi').textContent = total;
+  var pct = total > 0 ? Math.round(visited/total*100) : 0;
+  document.getElementById('progressFill').style.width = pct+'%';
+
+  // POI categories
+  var container = document.getElementById('poiContainer');
+  container.textContent = '';
+  poiCategories.forEach(function(cat){
+    var items = pois[cat.key] || [];
+    if(!items.length) return;
+    var section = document.createElement('div');
+    section.className = 'poi-cat';
+    var header = document.createElement('div');
+    header.className = 'poi-header';
+    header.addEventListener('click', function(){ var body = this.nextElementSibling; body.classList.toggle('open'); });
+    var visitedInCat = items.filter(function(i){return i.visited}).length;
+    header.textContent = cat.icon + ' ' + cat.name;
+    var countBadge = document.createElement('span');
+    countBadge.className = 'count';
+    countBadge.textContent = visitedInCat + '/' + items.length;
+    header.appendChild(countBadge);
+    section.appendChild(header);
+
+    var body = document.createElement('div');
+    body.className = 'poi-body';
+    items.forEach(function(item){
+      var row = document.createElement('div');
+      row.className = 'poi-item';
+      var dot = document.createElement('span');
+      dot.className = 'status ' + (item.visited ? 'visited' : 'pending');
+      var nameSpan = document.createElement('span');
+      nameSpan.style.flex = '1';
+      nameSpan.textContent = item.name + (item.addr ? ' — '+item.addr : '');
+      var delBtn = document.createElement('button');
+      delBtn.className = 'btn-d no-print';
+      delBtn.textContent = 'ลบ';
+      delBtn.addEventListener('click', function(){ if(confirm('ลบ '+item.name+'?')){removePoi(cat.key, item.id)} });
+      row.appendChild(dot);
+      row.appendChild(nameSpan);
+      row.appendChild(delBtn);
+      body.appendChild(row);
+    });
+    section.appendChild(body);
+    container.appendChild(section);
+  });
+
+  // Check-in place dropdown
+  var ciSelect = document.getElementById('ciPlace');
+  ciSelect.textContent = '';
+  var defOpt = document.createElement('option');
+  defOpt.value = '';
+  defOpt.textContent = '— เลือกสถานที่ —';
+  ciSelect.appendChild(defOpt);
+  allPois.forEach(function(p){
+    var opt = document.createElement('option');
+    opt.value = p.id;
+    opt.textContent = p.name;
+    ciSelect.appendChild(opt);
+  });
+
+  // Check-in log
+  var logEl = document.getElementById('checkinLog');
+  logEl.textContent = '';
+  if(!checkins.length){
+    var empty = document.createElement('div');
+    empty.style.cssText = 'text-align:center;padding:32px;color:var(--text-muted);font-size:14px';
+    empty.textContent = 'ยังไม่มีบันทึกการลงพื้นที่ — กด "ปักธง / Check-in" เพื่อเริ่ม';
+    logEl.appendChild(empty);
+    return;
+  }
+  checkins.sort(function(a,b){return b.date>a.date?1:-1});
+  checkins.forEach(function(ci){
+    var card = document.createElement('div');
+    card.className = 'checkin-card';
+    var hdr = document.createElement('div');
+    hdr.className = 'checkin-header';
+    var nameEl = document.createElement('div');
+    nameEl.className = 'checkin-name';
+    nameEl.textContent = '📍 ' + (ci.placeName || 'ไม่ระบุ');
+    var dateEl = document.createElement('div');
+    dateEl.className = 'checkin-date';
+    dateEl.textContent = ci.date;
+    hdr.appendChild(nameEl);
+    hdr.appendChild(dateEl);
+    card.appendChild(hdr);
+    if(ci.problem){
+      var prob = document.createElement('div');
+      prob.className = 'checkin-problem';
+      prob.textContent = 'ปัญหา: ' + ci.problem;
+      card.appendChild(prob);
+    }
+    if(ci.need){
+      var need = document.createElement('div');
+      need.className = 'checkin-problem';
+      need.style.background = '#EFF6FF';
+      need.textContent = 'ต้องการ: ' + ci.need;
+      card.appendChild(need);
+    }
+    var delBtn = document.createElement('button');
+    delBtn.className = 'btn-d no-print';
+    delBtn.style.marginTop = '8px';
+    delBtn.textContent = 'ลบ';
+    delBtn.addEventListener('click', function(){ if(confirm('ลบบันทึกนี้?')){removeCheckin(ci.id)} });
+    card.appendChild(delBtn);
+    logEl.appendChild(card);
+  });
+}
+
+// === ADD POI ===
+function addPoi(){
+  var name = document.getElementById('poiName').value.trim();
+  if(!name){alert('กรุณากรอกชื่อสถานที่');return}
+  var cat = catMap[document.getElementById('poiCat').value] || 'other';
+  var pois = D.g('pois_'+currentDistrict, {});
+  if(!pois[cat]) pois[cat] = [];
+  pois[cat].push({
+    id: Date.now()+Math.random(),
+    name: name,
+    addr: document.getElementById('poiAddr').value.trim(),
+    note: document.getElementById('poiNote').value.trim(),
+    visited: false
+  });
+  D.s('pois_'+currentDistrict, pois);
+  document.getElementById('poiName').value='';
+  document.getElementById('poiAddr').value='';
+  document.getElementById('poiNote').value='';
+  toggleEl('addPoiForm');
+  renderDistrict();
+}
+function removePoi(catKey, id){
+  var pois = D.g('pois_'+currentDistrict, {});
+  pois[catKey] = (pois[catKey]||[]).filter(function(p){return p.id!==id});
+  D.s('pois_'+currentDistrict, pois);
+  renderDistrict();
+}
+
+// === CHECK-IN ===
+function doCheckin(){
+  var placeId = document.getElementById('ciPlace').value;
+  if(!placeId){alert('กรุณาเลือกสถานที่');return}
+  // Find place name
+  var pois = D.g('pois_'+currentDistrict, {});
+  var placeName = '';
+  poiCategories.forEach(function(cat){
+    (pois[cat.key]||[]).forEach(function(p){
+      if(String(p.id)===String(placeId)){placeName=p.name;p.visited=true}
+    });
+  });
+  D.s('pois_'+currentDistrict, pois);
+  // Save check-in
+  var checkins = D.g('checkins_'+currentDistrict, []);
+  checkins.push({
+    id: Date.now(),
+    placeId: placeId,
+    placeName: placeName,
+    date: document.getElementById('ciDate').value || new Date().toISOString().slice(0,10),
+    problem: document.getElementById('ciProblem').value.trim(),
+    need: document.getElementById('ciNeed').value.trim()
+  });
+  D.s('checkins_'+currentDistrict, checkins);
+  document.getElementById('ciProblem').value='';
+  document.getElementById('ciNeed').value='';
+  toggleEl('checkinForm');
+  renderDistrict();
+}
+function removeCheckin(id){
+  var checkins = D.g('checkins_'+currentDistrict, []);
+  D.s('checkins_'+currentDistrict, checkins.filter(function(c){return c.id!==id}));
+  renderDistrict();
+}
+
+// === EXPORT/IMPORT ===
+function doExportDI(){
+  var data = {v:'1.0',type:'district-intel',date:new Date().toISOString(),district:currentDistrict};
+  data.pois = D.g('pois_'+currentDistrict, {});
+  data.checkins = D.g('checkins_'+currentDistrict, []);
+  var blob = new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href=url; a.download='district-'+currentDistrict+'-'+new Date().toISOString().slice(0,10)+'.json';
+  a.click(); URL.revokeObjectURL(url);
+}
+function doImportDI(ev){
+  var f=ev.target.files[0];if(!f)return;
+  var r=new FileReader();r.onload=function(e){
+    try{var d=JSON.parse(e.target.result);
+    if(!d.v||d.type!=='district-intel'){alert('ไฟล์ไม่ถูกต้อง');return}
+    if(!confirm('Import ข้อมูลเขต '+d.district+'?'))return;
+    if(d.pois)D.s('pois_'+d.district,d.pois);
+    if(d.checkins)D.s('checkins_'+d.district,d.checkins);
+    if(d.district!==currentDistrict){document.getElementById('districtPicker').value=d.district;selectDistrict(d.district)}
+    else renderDistrict();
+    alert('Import สำเร็จ!')}catch(err){alert('Error: '+err.message)}};
+  r.readAsText(f);
+}
+
+function toggleEl(id){var el=document.getElementById(id);el.style.display=el.style.display==='none'?'block':'none'}
+</script>
+</body>
+</html>

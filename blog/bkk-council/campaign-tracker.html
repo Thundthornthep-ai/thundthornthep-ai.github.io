@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/webp" href="/las-logo.webp">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campaign Tracker — ส.ก. Navigator</title>
+<meta name="description" content="เครื่องมือบริหารทีมงาน ค่าใช้จ่ายหาเสียง บัญชีรายรับรายจ่ายสำหรับผู้สมัคร ส.ก. กทม. 2569 — แจ้งเตือนวงเงิน กกต. + พิมพ์ส่ง กกต.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAFAFA;--bg-alt:#F5F5F5;--card:#FFF;--text:#1A1A2E;--text-secondary:#6B7280;--text-muted:#9CA3AF;--navy:#1B2A4A;--navy-dark:#0d1f33;--gold:#C9A96E;--teal:#0D9488;--green:#22C55E;--red:#EF4444;--red-dark:#991B1B;--orange:#E67E22;--blue:#2563EB;--border:#E5E7EB;--border-light:#F3F4F6;--shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);--shadow-md:0 4px 12px rgba(0,0,0,.06);--radius:12px;--radius-sm:8px;--max-w:900px;--transition:.2s ease}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.7;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+.top-bar{position:fixed;top:0;left:0;right:0;z-index:100;height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:var(--navy);border-bottom:1px solid rgba(201,169,110,.2);font-size:13px}
+.top-bar-left{font-family:'Space Grotesk',sans-serif;color:rgba(255,255,255,.9);font-weight:500}.top-bar-left a{color:rgba(255,255,255,.6);text-decoration:none;margin-right:8px}.top-bar-left a:hover{color:#fff}
+.top-bar-right{color:rgba(255,255,255,.5);font-size:12px;font-family:'Space Grotesk',sans-serif}.top-bar-right span{color:var(--gold)}
+.main{max-width:var(--max-w);margin:0 auto;padding:64px 16px 80px}
+.tab-nav{display:flex;gap:4px;overflow-x:auto;padding:8px 0;margin-bottom:24px;border-bottom:2px solid var(--border)}
+.tab-btn{padding:10px 16px;border:none;background:none;font-family:'Sarabun',sans-serif;font-size:14px;font-weight:600;color:var(--text-secondary);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all var(--transition)}.tab-btn:hover{color:var(--navy)}.tab-btn.active{color:var(--navy);border-bottom-color:var(--gold)}
+.tab-panel{display:none}.tab-panel.active{display:block}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:24px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center}.stat-card .sv{font-size:28px;font-weight:700;font-family:'Space Grotesk',sans-serif;color:var(--navy)}.stat-card .sl{font-size:13px;color:var(--text-secondary);margin-top:4px}
+.bb-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:24px}
+.bb-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.bb-title{font-size:15px;font-weight:600}.bb-pct{font-size:24px;font-weight:700;font-family:'Space Grotesk',sans-serif}
+.bb-track{height:16px;background:var(--bg-alt);border-radius:8px;overflow:hidden}.bb-fill{height:100%;border-radius:8px;transition:width .5s ease}
+.bb-alert{margin-top:12px;padding:10px 14px;border-radius:var(--radius-sm);font-size:13px;font-weight:600;display:none}.bb-alert.show{display:flex;align-items:center;gap:8px}
+.form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:16px}
+.fg{display:flex;flex-direction:column;gap:4px}.fg label{font-size:13px;font-weight:600;color:var(--text-secondary)}.fg input,.fg select,.fg textarea{padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'Sarabun',sans-serif;font-size:15px;transition:border-color var(--transition)}.fg input:focus,.fg select:focus{outline:none;border-color:var(--gold)}
+.btn{padding:10px 20px;border:none;border-radius:var(--radius-sm);font-family:'Sarabun',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all var(--transition)}.btn-p{background:var(--navy);color:#fff}.btn-p:hover{background:var(--navy-dark)}.btn-g{background:var(--gold);color:#fff}.btn-g:hover{opacity:.85}.btn-o{background:none;border:1px solid var(--border);color:var(--text-secondary)}.btn-o:hover{border-color:var(--gold)}.btn-d{background:var(--red);color:#fff;padding:6px 12px;font-size:12px}.btn-d:hover{background:var(--red-dark)}
+.btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.dt{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:16px}.dt th{background:var(--bg-alt);padding:10px 12px;text-align:left;font-weight:600;color:var(--text-secondary);font-size:12px;border-bottom:2px solid var(--border)}.dt td{padding:10px 12px;border-bottom:1px solid var(--border-light)}.dt tr:hover{background:var(--bg-alt)}
+.empty{text-align:center;padding:32px;color:var(--text-muted);font-size:14px}
+.st{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--border)}.sd{font-size:13px;color:var(--text-secondary);margin-bottom:16px}
+.sr{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:8px}.sr label{font-size:14px;font-weight:600;min-width:140px}.sr input{flex:1;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'Sarabun',sans-serif;font-size:15px}
+.aw{padding:12px 16px;border-radius:var(--radius-sm);margin-bottom:16px;font-size:14px;display:flex;align-items:center;gap:8px;background:#FEF3C7;border:1px solid #F59E0B;color:#92400E}
+@media print{.top-bar,.tab-nav,.btn-row,.no-print{display:none!important}.main{padding:0;max-width:100%}.tab-panel{display:block!important}body{font-size:12px;line-height:1.4}}
+@media(max-width:640px){.stat-grid{grid-template-columns:repeat(2,1fr)}.form-row{grid-template-columns:1fr}.tab-btn{padding:8px 10px;font-size:13px}.dt{font-size:12px}.dt th,.dt td{padding:6px 8px}.sr{flex-direction:column;align-items:flex-start}}
+.site-footer{background:var(--navy-dark);color:rgba(255,255,255,.6);text-align:center;padding:24px;font-size:12px;line-height:1.8}.site-footer a{color:var(--gold);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="top-bar"><div class="top-bar-left"><a href="index.html">← Dashboard</a> Campaign Tracker</div><div class="top-bar-right"><span>LAS</span> × <span>NIA</span></div></div>
+<div class="main">
+
+<!-- BUDGET BAR -->
+<div class="bb-wrap">
+  <div class="bb-header"><div><div class="bb-title">วงเงินหาเสียง กกต.</div><div style="font-size:12px;color:var(--text-muted)">ใช้ไป <span id="S">0</span> / <span id="L">400,000</span> บาท</div></div><div class="bb-pct" id="P">0%</div></div>
+  <div class="bb-track"><div class="bb-fill" id="F" style="width:0%;background:var(--green)"></div></div>
+  <div class="bb-alert" id="A"></div>
+</div>
+
+<!-- STAT CARDS -->
+<div class="stat-grid">
+  <div class="stat-card"><div class="sv" id="sT">0</div><div class="sl">ทีมงาน</div></div>
+  <div class="stat-card"><div class="sv" id="sV">0</div><div class="sl">รถหาเสียง</div></div>
+  <div class="stat-card"><div class="sv" id="sS">0</div><div class="sl">ป้ายหาเสียง</div></div>
+  <div class="stat-card"><div class="sv" id="sX">0</div><div class="sl">รายการบัญชี</div></div>
+</div>
+
+<!-- TABS -->
+<div class="tab-nav no-print">
+  <button class="tab-btn active" onclick="showTab('team')">ทีมงาน</button>
+  <button class="tab-btn" onclick="showTab('vehicles')">รถ</button>
+  <button class="tab-btn" onclick="showTab('signs')">ป้าย</button>
+  <button class="tab-btn" onclick="showTab('ledger')">บัญชี</button>
+  <button class="tab-btn" onclick="showTab('print')">พิมพ์ กกต.</button>
+  <button class="tab-btn" onclick="showTab('settings')">ตั้งค่า</button>
+</div>
+
+<!-- TAB: TEAM -->
+<div class="tab-panel active" id="p-team">
+  <div class="st">ผู้ช่วยหาเสียง / ทีมงาน</div>
+  <div class="sd">ม.66 พ.ร.บ.เลือกตั้งท้องถิ่น 2562 — ต้องแจ้ง กกต. (ชื่อ, หน้าที่, ค่าตอบแทน)</div>
+  <div class="btn-row no-print"><button class="btn btn-p" onclick="toggleForm('tf')">+ เพิ่มทีมงาน</button></div>
+  <div id="tf" style="display:none;margin-bottom:16px;padding:16px;background:var(--card);border:1px solid var(--gold);border-radius:var(--radius)">
+    <div class="form-row"><div class="fg"><label>ชื่อ-สกุล</label><input id="tn"></div><div class="fg"><label>หน้าที่</label><input id="tr"></div></div>
+    <div class="form-row"><div class="fg"><label>ค่าตอบแทน/วัน</label><input type="number" id="tp"></div><div class="fg"><label>วันเริ่ม</label><input type="date" id="ts"></div></div>
+    <div class="btn-row" style="margin-top:12px"><button class="btn btn-g" onclick="addTeam()">บันทึก</button><button class="btn btn-o" onclick="toggleForm('tf')">ยกเลิก</button></div>
+  </div>
+  <div id="tT"></div>
+</div>
+
+<!-- TAB: VEHICLES -->
+<div class="tab-panel" id="p-vehicles">
+  <div class="st">รถหาเสียง</div>
+  <div class="sd">ม.67 — ห้ามจัดยานพาหนะให้ผู้มีสิทธิเลือกตั้ง ยกเว้นรถหาเสียงของผู้สมัคร</div>
+  <div class="btn-row no-print"><button class="btn btn-p" onclick="toggleForm('vf')">+ เพิ่มรถ</button></div>
+  <div id="vf" style="display:none;margin-bottom:16px;padding:16px;background:var(--card);border:1px solid var(--gold);border-radius:var(--radius)">
+    <div class="form-row"><div class="fg"><label>ทะเบียน</label><input id="vp"></div><div class="fg"><label>ประเภท</label><select id="vt"><option>รถเก๋ง</option><option>รถกระบะ</option><option>รถตู้</option><option>มอเตอร์ไซค์</option><option>อื่นๆ</option></select></div></div>
+    <div class="form-row"><div class="fg"><label>ค่าเช่า/วัน</label><input type="number" id="vc"></div><div class="fg"><label>หมายเหตุ</label><input id="vn"></div></div>
+    <div class="btn-row" style="margin-top:12px"><button class="btn btn-g" onclick="addVeh()">บันทึก</button><button class="btn btn-o" onclick="toggleForm('vf')">ยกเลิก</button></div>
+  </div>
+  <div id="vT"></div>
+</div>
+
+<!-- TAB: SIGNS -->
+<div class="tab-panel" id="p-signs">
+  <div class="st">ป้ายหาเสียง</div>
+  <div class="sd">ม.71 + ระเบียบ กกต. 2563 — ขนาด/จำนวนตามที่ กกต.กทม. กำหนด</div>
+  <div class="aw">ขนาด: แผ่นป้ายไม่เกิน 130×245 ซม. / ประกาศ A3 — จำนวน: ป้าย ≤5× หน่วยเลือกตั้ง / ประกาศ ≤10× หน่วย</div>
+  <div class="btn-row no-print"><button class="btn btn-p" onclick="toggleForm('sf')">+ เพิ่มป้าย</button></div>
+  <div id="sf" style="display:none;margin-bottom:16px;padding:16px;background:var(--card);border:1px solid var(--gold);border-radius:var(--radius)">
+    <div class="form-row"><div class="fg"><label>ประเภท</label><select id="st"><option>แผ่นป้าย (130×245)</option><option>ประกาศ A3</option><option>อื่นๆ</option></select></div><div class="fg"><label>จำนวน</label><input type="number" id="sq"></div></div>
+    <div class="form-row"><div class="fg"><label>สถานที่ติด</label><input id="sl"></div><div class="fg"><label>ราคารวม</label><input type="number" id="sc"></div></div>
+    <div class="btn-row" style="margin-top:12px"><button class="btn btn-g" onclick="addSign()">บันทึก</button><button class="btn btn-o" onclick="toggleForm('sf')">ยกเลิก</button></div>
+  </div>
+  <div id="sT2"></div>
+</div>
+
+<!-- TAB: LEDGER -->
+<div class="tab-panel" id="p-ledger">
+  <div class="st">บัญชีรายรับ-รายจ่าย</div>
+  <div class="sd">ม.60-62 — ยื่น กกต. ภายใน 90 วัน (โทษ ม.128: จำคุก ≤2 ปี / ปรับ ≤40,000 / เพิกถอน 5 ปี)</div>
+  <div class="btn-row no-print">
+    <button class="btn btn-p" onclick="toggleForm('xf')">+ เพิ่มรายการ</button>
+    <button class="btn btn-o" onclick="fTx='all';render()">ทั้งหมด</button>
+    <button class="btn btn-o" style="color:var(--green)" onclick="fTx='income';render()">รายรับ</button>
+    <button class="btn btn-o" style="color:var(--red)" onclick="fTx='expense';render()">รายจ่าย</button>
+  </div>
+  <div id="xf" style="display:none;margin-bottom:16px;padding:16px;background:var(--card);border:1px solid var(--gold);border-radius:var(--radius)">
+    <div class="form-row"><div class="fg"><label>ประเภท</label><select id="xt"><option value="expense">รายจ่าย</option><option value="income">รายรับ</option></select></div><div class="fg"><label>วันที่</label><input type="date" id="xd"></div></div>
+    <div class="form-row"><div class="fg"><label>หมวด</label><select id="xc"><option value="1">1. ค่าจ้างแรงงาน</option><option value="2">2. ค่าเช่ายานพาหนะ</option><option value="3">3. ค่าเช่าสถานที่</option><option value="4">4. ค่าจัดทำป้าย</option><option value="5">5. ค่าเอกสาร/พิมพ์</option><option value="6">6. ค่าโฆษณา/สื่อ</option><option value="7">7. ค่าอาหาร (ทีมงาน)</option><option value="8">8. ค่าสาธารณูปโภค</option><option value="9">9. ค่าเดินทาง</option><option value="10">10. ค่าจัดกิจกรรม</option><option value="11">11. ค่าวิจัย/สำรวจ</option><option value="12">12. ค่าสื่อออนไลน์</option><option value="13">13. อื่นๆ</option><option value="in">รายรับ</option></select></div><div class="fg"><label>จำนวนเงิน</label><input type="number" id="xa"></div></div>
+    <div class="form-row"><div class="fg" style="grid-column:1/-1"><label>รายละเอียด</label><input id="xm" placeholder="เช่น ค่าจ้างนาย A ติดป้าย"></div></div>
+    <div class="btn-row" style="margin-top:12px"><button class="btn btn-g" onclick="addTx()">บันทึก</button><button class="btn btn-o" onclick="toggleForm('xf')">ยกเลิก</button></div>
+  </div>
+  <div class="stat-grid" style="margin-bottom:16px">
+    <div class="stat-card" style="border-left:4px solid var(--green)"><div class="sv" style="color:var(--green)" id="xI">0</div><div class="sl">รายรับ (บาท)</div></div>
+    <div class="stat-card" style="border-left:4px solid var(--red)"><div class="sv" style="color:var(--red)" id="xE">0</div><div class="sl">รายจ่าย (บาท)</div></div>
+    <div class="stat-card" style="border-left:4px solid var(--blue)"><div class="sv" style="color:var(--blue)" id="xB">0</div><div class="sl">คงเหลือ (บาท)</div></div>
+  </div>
+  <div id="xT"></div>
+</div>
+
+<!-- TAB: PRINT -->
+<div class="tab-panel" id="p-print">
+  <div class="st">พิมพ์บัญชีรายรับ-รายจ่าย ส่ง กกต.</div>
+  <div class="aw">ใช้เป็น draft — ตรวจสอบกับแบบฟอร์ม กกต. จริงก่อนยื่น · <a href="downloads/form-campaign-finance-ect.pdf" target="_blank" style="color:var(--blue)">ดาวน์โหลดแบบฟอร์ม</a></div>
+  <div class="btn-row no-print">
+    <button class="btn btn-p" onclick="window.print()">พิมพ์ / Save PDF</button>
+    <button class="btn btn-o" onclick="doExport()">Export JSON</button>
+    <label class="btn btn-o" style="cursor:pointer"><input type="file" accept=".json" style="display:none" onchange="doImport(event)">Import JSON</label>
+  </div>
+  <div id="printArea" style="background:#fff;padding:24px;border:1px solid var(--border);border-radius:var(--radius);margin-top:16px"></div>
+</div>
+
+<!-- TAB: SETTINGS -->
+<div class="tab-panel" id="p-settings">
+  <div class="st">ตั้งค่า</div>
+  <div class="sr"><label>วงเงิน กกต. (บาท)</label><input type="number" id="cB" value="400000" onchange="D.set('b',+this.value);render()"></div>
+  <div class="sr"><label>ชื่อผู้สมัคร</label><input id="cN" onchange="D.set('n',this.value)"></div>
+  <div class="sr"><label>เขตที่สมัคร</label><input id="cD" onchange="D.set('d',this.value)"></div>
+  <div class="sr"><label>หมายเลข</label><input id="cNum" onchange="D.set('num',this.value)"></div>
+  <div class="btn-row" style="margin-top:24px">
+    <button class="btn btn-o" onclick="doExport()">Export ข้อมูล</button>
+    <label class="btn btn-o" style="cursor:pointer"><input type="file" accept=".json" style="display:none" onchange="doImport(event)">Import ข้อมูล</label>
+    <button class="btn btn-d" onclick="if(confirm('ลบข้อมูลทั้งหมด?'))clearAll()">ล้างข้อมูล</button>
+  </div>
+</div>
+
+</div>
+<footer class="site-footer"><span>Legal Advance Solution Co., Ltd. (LAS)</span> × <span>National Innovation Agency (NIA)</span><br><a href="index.html">Dashboard</a> · <a href="sk-candidate-guide.html">คู่มือฉบับเต็ม</a><br>อ้างอิง: ม.60-62 พ.ร.บ.เลือกตั้งท้องถิ่น 2562 · <a href="https://www.ect.go.th" target="_blank">กกต.</a></footer>
+
+<script>
+// === DATA LAYER (localStorage — เผื่อ Firebase migration) ===
+var D={
+  g:function(k,d){try{return JSON.parse(localStorage.getItem('sk_'+k))||d}catch(e){return d}},
+  s:function(k,v){localStorage.setItem('sk_'+k,JSON.stringify(v))},
+  get:function(k){return D.g(k,k==='b'?400000:k==='team'||k==='veh'||k==='sign'||k==='tx'?[]:{})},
+  set:function(k,v){D.s(k,v)}
+};
+var CN={'1':'ค่าจ้างแรงงาน','2':'ค่าเช่ายานพาหนะ','3':'ค่าเช่าสถานที่','4':'ค่าจัดทำป้าย','5':'ค่าเอกสาร','6':'ค่าโฆษณา','7':'ค่าอาหาร','8':'ค่าสาธารณูปโภค','9':'ค่าเดินทาง','10':'ค่าจัดกิจกรรม','11':'ค่าวิจัย','12':'ค่าสื่อออนไลน์','13':'อื่นๆ','in':'รายรับ'};
+var fTx='all';
+
+// === ESCAPE (XSS-safe for user's own localStorage data) ===
+function E(s){if(!s)return'';var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+function N(n){return(n||0).toLocaleString('th-TH')}
+
+// === TABS ===
+function showTab(n){
+  document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
+  var el=document.getElementById('p-'+n);if(el)el.classList.add('active');
+  var idx={team:0,vehicles:1,signs:2,ledger:3,print:4,settings:5}[n];
+  var btns=document.querySelectorAll('.tab-btn');if(btns[idx])btns[idx].classList.add('active');
+  if(n==='print')renderPrint();
+}
+function toggleForm(id){var el=document.getElementById(id);el.style.display=el.style.display==='none'?'block':'none'}
+
+// === CRUD ===
+function addTeam(){var n=document.getElementById('tn').value.trim();if(!n){alert('กรุณากรอกชื่อ');return}var a=D.get('team');a.push({id:Date.now(),n:n,r:document.getElementById('tr').value.trim(),p:+document.getElementById('tp').value||0,s:document.getElementById('ts').value});D.set('team',a);document.getElementById('tn').value='';document.getElementById('tr').value='';document.getElementById('tp').value='';toggleForm('tf');render()}
+function addVeh(){var p=document.getElementById('vp').value.trim();if(!p){alert('กรุณากรอกทะเบียน');return}var a=D.get('veh');a.push({id:Date.now(),p:p,t:document.getElementById('vt').value,c:+document.getElementById('vc').value||0,n:document.getElementById('vn').value.trim()});D.set('veh',a);document.getElementById('vp').value='';document.getElementById('vc').value='';document.getElementById('vn').value='';toggleForm('vf');render()}
+function addSign(){var q=+document.getElementById('sq').value;if(!q){alert('กรุณากรอกจำนวน');return}var a=D.get('sign');a.push({id:Date.now(),t:document.getElementById('st').value,q:q,l:document.getElementById('sl').value.trim(),c:+document.getElementById('sc').value||0});D.set('sign',a);document.getElementById('sq').value='';document.getElementById('sl').value='';document.getElementById('sc').value='';toggleForm('sf');render()}
+function addTx(){var amt=+document.getElementById('xa').value;if(!amt){alert('กรุณากรอกจำนวนเงิน');return}var a=D.get('tx');a.push({id:Date.now(),type:document.getElementById('xt').value,date:document.getElementById('xd').value||new Date().toISOString().slice(0,10),cat:document.getElementById('xc').value,amt:amt,memo:document.getElementById('xm').value.trim()});D.set('tx',a);document.getElementById('xa').value='';document.getElementById('xm').value='';toggleForm('xf');render()}
+function del(type,id){if(!confirm('ลบรายการนี้?'))return;D.set(type,D.get(type).filter(function(i){return i.id!==id}));render()}
+
+// === RENDER ===
+function render(){
+  var team=D.get('team'),veh=D.get('veh'),sign=D.get('sign'),tx=D.get('tx'),budget=D.get('b');
+  // Stats
+  document.getElementById('sT').textContent=team.length;
+  document.getElementById('sV').textContent=veh.length;
+  document.getElementById('sS').textContent=sign.reduce(function(s,i){return s+i.q},0);
+  document.getElementById('sX').textContent=tx.length;
+  // Budget
+  var spent=tx.filter(function(t){return t.type==='expense'}).reduce(function(s,t){return s+t.amt},0);
+  var pct=budget>0?Math.round(spent/budget*100):0;
+  document.getElementById('S').textContent=N(spent);document.getElementById('L').textContent=N(budget);
+  document.getElementById('P').textContent=pct+'%';
+  var f=document.getElementById('F');f.style.width=Math.min(pct,100)+'%';
+  f.style.background=pct>=100?'var(--red)':pct>=90?'var(--orange)':pct>=75?'#F1C40F':'var(--green)';
+  var al=document.getElementById('A');
+  if(pct>=100){al.className='bb-alert show';al.style.background='#FEE2E2';al.style.color='#991B1B';al.textContent='🚨 เกินวงเงิน กกต.! ('+pct+'%) — เสี่ยงถูกลงโทษ ม.127'}
+  else if(pct>=90){al.className='bb-alert show';al.style.background='#FEF3C7';al.style.color='#92400E';al.textContent='⚠️ ใช้ไป '+pct+'% — เหลืองบไม่ถึง 10%!'}
+  else{al.className='bb-alert'}
+  // Tables
+  renderTbl('tT',team,['#','ชื่อ','หน้าที่','ค่า/วัน','วันเริ่ม',''],function(t,i){return '<tr><td>'+(i+1)+'</td><td>'+E(t.n)+'</td><td>'+E(t.r)+'</td><td>'+N(t.p)+'</td><td>'+E(t.s)+'</td><td class="no-print"><button class="btn-d" onclick="del(\'team\','+t.id+')">ลบ</button></td></tr>'});
+  renderTbl('vT',veh,['#','ทะเบียน','ประเภท','ค่าเช่า/วัน','หมายเหตุ',''],function(v,i){return '<tr><td>'+(i+1)+'</td><td>'+E(v.p)+'</td><td>'+E(v.t)+'</td><td>'+N(v.c)+'</td><td>'+E(v.n)+'</td><td class="no-print"><button class="btn-d" onclick="del(\'veh\','+v.id+')">ลบ</button></td></tr>'});
+  renderTbl('sT2',sign,['#','ประเภท','จำนวน','สถานที่','ราคารวม',''],function(s,i){return '<tr><td>'+(i+1)+'</td><td>'+E(s.t)+'</td><td>'+s.q+'</td><td>'+E(s.l)+'</td><td>'+N(s.c)+'</td><td class="no-print"><button class="btn-d" onclick="del(\'sign\','+s.id+')">ลบ</button></td></tr>'});
+  // Tx
+  var ftx=fTx==='all'?tx:tx.filter(function(t){return t.type===fTx});
+  ftx.sort(function(a,b){return b.date>a.date?1:-1});
+  var inc=tx.filter(function(t){return t.type==='income'}).reduce(function(s,t){return s+t.amt},0);
+  document.getElementById('xI').textContent=N(inc);document.getElementById('xE').textContent=N(spent);document.getElementById('xB').textContent=N(inc-spent);
+  renderTbl('xT',ftx,['วันที่','ประเภท','หมวด','จำนวน','รายละเอียด',''],function(t){var tl=t.type==='income'?'<span style="color:var(--green)">รับ</span>':'<span style="color:var(--red)">จ่าย</span>';return '<tr><td>'+E(t.date)+'</td><td>'+tl+'</td><td>'+E(CN[t.cat]||t.cat)+'</td><td style="text-align:right;font-weight:600">'+N(t.amt)+'</td><td>'+E(t.memo)+'</td><td class="no-print"><button class="btn-d" onclick="del(\'tx\','+t.id+')">ลบ</button></td></tr>'});
+}
+// NOTE: innerHTML used here is safe — all values are escaped via E() and data comes from user's own localStorage
+function renderTbl(id,data,heads,rowFn){
+  var el=document.getElementById(id);
+  if(!data.length){el.textContent='';var p=document.createElement('div');p.className='empty';p.textContent='ยังไม่มีข้อมูล';el.appendChild(p);return}
+  var h='<table class="dt"><thead><tr>'+heads.map(function(h){return '<th>'+h+'</th>'}).join('')+'</tr></thead><tbody>'+data.map(rowFn).join('')+'</tbody></table>';
+  el.innerHTML=h;
+}
+
+// === PRINT PREVIEW ===
+function renderPrint(){
+  var s=D.get('settings')||{},tx=D.get('tx'),budget=D.get('b');
+  var inc=tx.filter(function(t){return t.type==='income'}),exp=tx.filter(function(t){return t.type==='expense'});
+  var tI=inc.reduce(function(s,t){return s+t.amt},0),tE=exp.reduce(function(s,t){return s+t.amt},0);
+  exp.sort(function(a,b){return(a.cat||'').localeCompare(b.cat||'')||(a.date||'').localeCompare(b.date||'')});
+  var h='<div style="text-align:center;margin-bottom:24px"><div style="font-size:18px;font-weight:700">บัญชีแสดงรายรับและรายจ่ายในการเลือกตั้ง</div><div style="font-size:14px;color:var(--text-secondary)">สมาชิกสภากรุงเทพมหานคร (ส.ก.) · เลือกตั้ง 5 กรกฎาคม 2569</div></div>';
+  h+='<div style="margin-bottom:16px;font-size:14px"><b>ผู้สมัคร:</b> '+E(s.n||'(ยังไม่ระบุ)')+' | <b>เขต:</b> '+E(s.d||'(ยังไม่ระบุ)')+' | <b>เบอร์:</b> '+E(s.num||'-')+'</div>';
+  h+='<div style="font-weight:700;margin:16px 0 8px">รายรับ</div><table style="width:100%;border-collapse:collapse;font-size:13px"><tr style="background:#f5f5f5"><th style="padding:6px;border:1px solid #ddd;text-align:left">วันที่</th><th style="padding:6px;border:1px solid #ddd;text-align:left">รายละเอียด</th><th style="padding:6px;border:1px solid #ddd;text-align:right">จำนวนเงิน</th></tr>';
+  inc.forEach(function(t){h+='<tr><td style="padding:6px;border:1px solid #ddd">'+E(t.date)+'</td><td style="padding:6px;border:1px solid #ddd">'+E(t.memo||'รายรับ')+'</td><td style="padding:6px;border:1px solid #ddd;text-align:right">'+N(t.amt)+'</td></tr>'});
+  h+='<tr style="font-weight:700;background:#D1FAE5"><td colspan="2" style="padding:6px;border:1px solid #ddd">รวมรายรับ</td><td style="padding:6px;border:1px solid #ddd;text-align:right">'+N(tI)+'</td></tr></table>';
+  h+='<div style="font-weight:700;margin:16px 0 8px">รายจ่าย</div><table style="width:100%;border-collapse:collapse;font-size:13px"><tr style="background:#f5f5f5"><th style="padding:6px;border:1px solid #ddd;text-align:left">วันที่</th><th style="padding:6px;border:1px solid #ddd;text-align:left">หมวด</th><th style="padding:6px;border:1px solid #ddd;text-align:left">รายละเอียด</th><th style="padding:6px;border:1px solid #ddd;text-align:right">จำนวนเงิน</th></tr>';
+  exp.forEach(function(t){h+='<tr><td style="padding:6px;border:1px solid #ddd">'+E(t.date)+'</td><td style="padding:6px;border:1px solid #ddd">'+E(CN[t.cat]||t.cat)+'</td><td style="padding:6px;border:1px solid #ddd">'+E(t.memo)+'</td><td style="padding:6px;border:1px solid #ddd;text-align:right">'+N(t.amt)+'</td></tr>'});
+  h+='<tr style="font-weight:700;background:#FEE2E2"><td colspan="3" style="padding:6px;border:1px solid #ddd">รวมรายจ่าย</td><td style="padding:6px;border:1px solid #ddd;text-align:right">'+N(tE)+'</td></tr></table>';
+  h+='<div style="margin-top:16px;padding:12px;background:var(--bg-alt);border-radius:8px;font-size:14px"><b>วงเงิน กกต.:</b> '+N(budget)+' บาท | <b>ใช้ไป:</b> '+N(tE)+' ('+(budget>0?Math.round(tE/budget*100):0)+'%)</div>';
+  h+='<div style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:32px;font-size:13px"><div style="text-align:center;border-top:1px solid #000;padding-top:8px">ลงชื่อ .........................<br>(ผู้สมัคร)</div><div style="text-align:center;border-top:1px solid #000;padding-top:8px">ลงชื่อ .........................<br>(ผู้จัดทำบัญชี)</div></div>';
+  h+='<div style="margin-top:24px;font-size:11px;color:var(--text-muted);border-top:1px solid var(--border);padding-top:8px">สร้างจาก ส.ก. Navigator Campaign Tracker · LAS × NIA · อ้างอิง ม.60-62 พ.ร.บ.เลือกตั้งท้องถิ่น 2562<br><b>หมายเหตุ:</b> เอกสารนี้เป็น draft — กรุณาตรวจสอบกับแบบฟอร์ม กกต. จริงก่อนลงนามยื่น</div>';
+  document.getElementById('printArea').innerHTML=h;
+}
+
+// === EXPORT/IMPORT ===
+function doExport(){var d={v:'1.0',date:new Date().toISOString(),b:D.get('b'),settings:D.get('settings'),team:D.get('team'),veh:D.get('veh'),sign:D.get('sign'),tx:D.get('tx')};var blob=new Blob([JSON.stringify(d,null,2)],{type:'application/json'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download='campaign-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url)}
+function doImport(ev){var f=ev.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(e){try{var d=JSON.parse(e.target.result);if(!d.v){alert('ไฟล์ไม่ถูกต้อง');return}if(!confirm('Import จะทับข้อมูลเดิม?'))return;if(d.b)D.set('b',d.b);if(d.settings)D.set('settings',d.settings);if(d.team)D.set('team',d.team);if(d.veh)D.set('veh',d.veh);if(d.sign)D.set('sign',d.sign);if(d.tx)D.set('tx',d.tx);loadSettings();render();alert('Import สำเร็จ!')}catch(err){alert('Error: '+err.message)}};r.readAsText(f)}
+function clearAll(){['sk_b','sk_settings','sk_team','sk_veh','sk_sign','sk_tx'].forEach(function(k){localStorage.removeItem(k)});loadSettings();render()}
+
+// === SETTINGS ===
+function loadSettings(){var s=D.get('settings')||{};document.getElementById('cB').value=D.get('b');document.getElementById('cN').value=s.n||'';document.getElementById('cD').value=s.d||'';document.getElementById('cNum').value=s.num||''}
+
+// === INIT ===
+document.getElementById('xd').value=new Date().toISOString().slice(0,10);
+loadSettings();render();
+</script>
+</body>
+</html>
