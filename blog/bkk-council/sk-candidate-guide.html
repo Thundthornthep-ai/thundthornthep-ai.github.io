@@ -663,6 +663,112 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
 @media(max-width:480px){
   .salary-grid{grid-template-columns:1fr}
 }
+/* ============ TRAFFY FONDUE WIDGET ============ */
+.traffy-widget {
+  background: linear-gradient(135deg, #e8f5e9 0%, #e3f2fd 50%, #fff3e0 100%);
+  border-radius: 16px;
+  padding: 24px 32px;
+  margin: 24px auto;
+  max-width: 680px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.traffy-widget h3 {
+  color: #1B5E20;
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+.traffy-widget .subtitle {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+.traffy-select {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 2px solid #81C784;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  background: white;
+  font-family: 'Sarabun', sans-serif;
+  color: var(--text);
+  appearance: auto;
+}
+.traffy-select:focus {
+  outline: none;
+  border-color: #43A047;
+  box-shadow: 0 0 0 3px rgba(67,160,71,0.15);
+}
+.traffy-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.traffy-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Sarabun', sans-serif;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.traffy-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+.traffy-btn:active { transform: translateY(0); }
+.traffy-btn-primary {
+  background: #43A047;
+  color: white;
+}
+.traffy-btn-secondary {
+  background: #1976D2;
+  color: white;
+}
+.traffy-info {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 8px;
+  line-height: 1.6;
+}
+.traffy-tip {
+  background: #FFF8E1;
+  border-left: 4px solid #FFB300;
+  padding: 10px 14px;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.85rem;
+  margin-top: 12px;
+  color: #5D4037;
+  line-height: 1.7;
+}
+@media(max-width:480px){
+  .traffy-widget{padding:18px 16px;margin:16px auto}
+  .traffy-buttons{flex-direction:column;gap:8px}
+  .traffy-btn{padding:12px}
+}
+
+/* ============ FADE-IN SCROLL ANIMATIONS ============ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 </style>
 </head>
 <body>
@@ -695,6 +801,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
     <div class="nav-title">LAS <span>Research</span></div>
   </div>
   <div class="nav-links" id="desktopNav">
+    <a href="#traffy-fondue">🏙️ ลงพื้นที่</a>
     <a href="#checklist-5">คุณสมบัติ</a>
     <a href="#prohibited-26">ต้องห้าม</a>
     <a href="#pre-announcement">ก่อนประกาศ</a>
@@ -737,6 +844,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
 <!-- MOBILE NAV SIDEBAR -->
 <div class="mobile-nav-overlay" id="mobileOverlay"></div>
 <div class="mobile-nav" id="mobileNav">
+  <a href="#traffy-fondue" data-nav>🏙️ เครื่องมือลงพื้นที่</a>
   <a href="#checklist-5" data-nav>01 คุณสมบัติผู้สมัคร</a>
   <a href="#prohibited-26" data-nav>02 ลักษณะต้องห้าม 26 ข้อ</a>
   <a href="#pre-announcement" data-nav>03 ก่อนประกาศเลือกตั้ง</a>
@@ -813,6 +921,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
   <div class="toc">
     <h3>สารบัญ / Table of Contents</h3>
     <div class="toc-grid">
+      <a href="#traffy-fondue" class="toc-item" style="grid-column:1/-1;background:linear-gradient(135deg,#e8f5e9,#e3f2fd);border-radius:8px;font-weight:600;color:#1B5E20"><span class="toc-num" style="color:#43A047">🏙️</span> เครื่องมือลงพื้นที่ — Traffy Fondue</a>
       <a href="#checklist-5" class="toc-item"><span class="toc-num">01</span> คุณสมบัติผู้มีสิทธิสมัคร (<a class="matra-link" href="#law-m49" style="background:transparent;padding:0">ม.49</a>)</a>
       <a href="#prohibited-26" class="toc-item"><span class="toc-num">02</span> ลักษณะต้องห้าม 26 ข้อ (<a class="matra-link" href="#law-m50" style="background:transparent;padding:0">ม.50</a>)</a>
       <a href="#pre-announcement" class="toc-item"><span class="toc-num">03</span> ก่อนประกาศเลือกตั้ง (<a class="matra-link" href="#law-other" style="background:transparent;padding:0">ม.17-21</a>)</a>
@@ -852,6 +961,74 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
     </div>
   </div>
 </div>
+
+<!-- ============ TRAFFY FONDUE WIDGET ============ -->
+<section class="section" id="traffy-fondue" style="background:var(--bg);padding:48px 0 24px">
+  <div class="container">
+    <div class="traffy-widget">
+      <h3>📍 เครื่องมือลงพื้นที่ — Traffy Fondue</h3>
+      <p class="subtitle">ตรวจสอบปัญหาในเขตของคุณ เพื่อเตรียมนโยบายลงพื้นที่</p>
+      <select class="traffy-select" id="traffyDistrict">
+        <option value="">— เลือกเขต —</option>
+        <option value="คลองเตย">คลองเตย</option>
+        <option value="คลองสาน">คลองสาน</option>
+        <option value="คลองสามวา">คลองสามวา</option>
+        <option value="คันนายาว">คันนายาว</option>
+        <option value="จตุจักร">จตุจักร</option>
+        <option value="จอมทอง">จอมทอง</option>
+        <option value="ดอนเมือง">ดอนเมือง</option>
+        <option value="ดินแดง">ดินแดง</option>
+        <option value="ดุสิต">ดุสิต</option>
+        <option value="ตลิ่งชัน">ตลิ่งชัน</option>
+        <option value="ทวีวัฒนา">ทวีวัฒนา</option>
+        <option value="ทุ่งครุ">ทุ่งครุ</option>
+        <option value="ธนบุรี">ธนบุรี</option>
+        <option value="บางกอกน้อย">บางกอกน้อย</option>
+        <option value="บางกอกใหญ่">บางกอกใหญ่</option>
+        <option value="บางกะปิ">บางกะปิ</option>
+        <option value="บางขุนเทียน">บางขุนเทียน</option>
+        <option value="บางเขน">บางเขน</option>
+        <option value="บางคอแหลม">บางคอแหลม</option>
+        <option value="บางซื่อ">บางซื่อ</option>
+        <option value="บางนา">บางนา</option>
+        <option value="บางบอน">บางบอน</option>
+        <option value="บางพลัด">บางพลัด</option>
+        <option value="บางแค">บางแค</option>
+        <option value="บางรัก">บางรัก</option>
+        <option value="บึงกุ่ม">บึงกุ่ม</option>
+        <option value="ปทุมวัน">ปทุมวัน</option>
+        <option value="ประเวศ">ประเวศ</option>
+        <option value="ป้อมปราบศัตรูพ่าย">ป้อมปราบศัตรูพ่าย</option>
+        <option value="พญาไท">พญาไท</option>
+        <option value="พระโขนง">พระโขนง</option>
+        <option value="พระนคร">พระนคร</option>
+        <option value="ภาษีเจริญ">ภาษีเจริญ</option>
+        <option value="มีนบุรี">มีนบุรี</option>
+        <option value="ยานนาวา">ยานนาวา</option>
+        <option value="ราชเทวี">ราชเทวี</option>
+        <option value="ราษฎร์บูรณะ">ราษฎร์บูรณะ</option>
+        <option value="ลาดกระบัง">ลาดกระบัง</option>
+        <option value="ลาดพร้าว">ลาดพร้าว</option>
+        <option value="วังทองหลาง">วังทองหลาง</option>
+        <option value="วัฒนา">วัฒนา</option>
+        <option value="สวนหลวง">สวนหลวง</option>
+        <option value="สะพานสูง">สะพานสูง</option>
+        <option value="สาทร">สาทร</option>
+        <option value="สายไหม">สายไหม</option>
+        <option value="หนองจอก">หนองจอก</option>
+        <option value="หนองแขม">หนองแขม</option>
+        <option value="หลักสี่">หลักสี่</option>
+        <option value="ห้วยขวาง">ห้วยขวาง</option>
+      </select>
+      <div class="traffy-buttons">
+        <button class="traffy-btn traffy-btn-primary" onclick="window.open('https://bangkok.traffy.in.th/','_blank')">🔍 ดูปัญหาในเขต</button>
+        <button class="traffy-btn traffy-btn-secondary" onclick="window.open('https://bangkok.traffy.in.th/top','_blank')">📊 ดูสถิติเขต</button>
+      </div>
+      <p class="traffy-info">Traffy Fondue = ระบบแจ้งปัญหาเมือง กทม. มีเรื่องร้องเรียนกว่า 1.26 ล้านเรื่อง — ข้อมูลนี้ช่วยให้ผู้สมัครเข้าใจปัญหาจริงในพื้นที่</p>
+      <div class="traffy-tip">💡 Tip: เลือกเขตที่คุณจะลงสมัคร → ดูปัญหาที่ชาวบ้านแจ้ง → นำไปเป็นนโยบายหาเสียง</div>
+    </div>
+  </div>
+</section>
 
 <!-- ============ SECTION 1: QUALIFICATIONS (ม.49) ============ -->
 <section class="section" id="checklist-5">
@@ -3589,6 +3766,33 @@ function toggleCampaignEndCheck(el){
 // INIT
 updateQual();
 updatePI();
+
+// FADE-IN SCROLL ANIMATION (Intersection Observer)
+(function(){
+  // Add fade-in-section class to all sections
+  document.querySelectorAll('.section, .traffy-widget, .disclaimer-critical, .toc').forEach(function(el){
+    el.classList.add('fade-in-section');
+  });
+  // Observe and reveal
+  if('IntersectionObserver' in window){
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in-section').forEach(function(el){
+      observer.observe(el);
+    });
+  } else {
+    // Fallback: just show everything
+    document.querySelectorAll('.fade-in-section').forEach(function(el){
+      el.classList.add('visible');
+    });
+  }
+})();
 </script>
 </body>
 </html>
