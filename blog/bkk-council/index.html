@@ -20,6 +20,8 @@
 <meta name="author" content="ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <style>
 /* ============================================================
    ส.ก. NAVIGATOR — DASHBOARD HUB
@@ -613,74 +615,56 @@ body {
     </div>
   </a>
 
-  <!-- 4. TRAFFY FONDUE -->
-  <div class="section-divider"><div class="line"></div><span>เครื่องมือลงพื้นที่</span><div class="line"></div></div>
-  <div class="traffy-widget fade-in">
-    <h3>Traffy Fondue — ตรวจสอบปัญหาในเขต</h3>
-    <p class="subtitle">เลือกเขตเพื่อดูเรื่องร้องเรียนจริง นำไปเป็นนโยบายหาเสียง</p>
-    <select class="traffy-select" id="traffyDistrict">
-      <option value="">— เลือกเขต —</option>
-      <option value="คลองเตย">คลองเตย</option>
-      <option value="คลองสาน">คลองสาน</option>
-      <option value="คลองสามวา">คลองสามวา</option>
-      <option value="คันนายาว">คันนายาว</option>
-      <option value="จตุจักร">จตุจักร</option>
-      <option value="จอมทอง">จอมทอง</option>
-      <option value="ดอนเมือง">ดอนเมือง</option>
-      <option value="ดินแดง">ดินแดง</option>
-      <option value="ดุสิต">ดุสิต</option>
-      <option value="ตลิ่งชัน">ตลิ่งชัน</option>
-      <option value="ทวีวัฒนา">ทวีวัฒนา</option>
-      <option value="ทุ่งครุ">ทุ่งครุ</option>
-      <option value="ธนบุรี">ธนบุรี</option>
-      <option value="บางกอกน้อย">บางกอกน้อย</option>
-      <option value="บางกอกใหญ่">บางกอกใหญ่</option>
-      <option value="บางกะปิ">บางกะปิ</option>
-      <option value="บางขุนเทียน">บางขุนเทียน</option>
-      <option value="บางเขน">บางเขน</option>
-      <option value="บางคอแหลม">บางคอแหลม</option>
-      <option value="บางซื่อ">บางซื่อ</option>
-      <option value="บางนา">บางนา</option>
-      <option value="บางบอน">บางบอน</option>
-      <option value="บางพลัด">บางพลัด</option>
-      <option value="บางแค">บางแค</option>
-      <option value="บางรัก">บางรัก</option>
-      <option value="บึงกุ่ม">บึงกุ่ม</option>
-      <option value="ปทุมวัน">ปทุมวัน</option>
-      <option value="ประเวศ">ประเวศ</option>
-      <option value="ป้อมปราบศัตรูพ่าย">ป้อมปราบศัตรูพ่าย</option>
-      <option value="พญาไท">พญาไท</option>
-      <option value="พระโขนง">พระโขนง</option>
-      <option value="พระนคร">พระนคร</option>
-      <option value="ภาษีเจริญ">ภาษีเจริญ</option>
-      <option value="มีนบุรี">มีนบุรี</option>
-      <option value="ยานนาวา">ยานนาวา</option>
-      <option value="ราชเทวี">ราชเทวี</option>
-      <option value="ราษฎร์บูรณะ">ราษฎร์บูรณะ</option>
-      <option value="ลาดกระบัง">ลาดกระบัง</option>
-      <option value="ลาดพร้าว">ลาดพร้าว</option>
-      <option value="วังทองหลาง">วังทองหลาง</option>
-      <option value="วัฒนา">วัฒนา</option>
-      <option value="สวนหลวง">สวนหลวง</option>
-      <option value="สะพานสูง">สะพานสูง</option>
-      <option value="สาทร">สาทร</option>
-      <option value="สายไหม">สายไหม</option>
-      <option value="หนองจอก">หนองจอก</option>
-      <option value="หนองแขม">หนองแขม</option>
-      <option value="หลักสี่">หลักสี่</option>
-      <option value="ห้วยขวาง">ห้วยขวาง</option>
+  <!-- 4. DISTRICT INTELLIGENCE by LAS -->
+  <div class="section-divider"><div class="line"></div><span>District Intelligence by LAS</span><div class="line"></div></div>
+  <div class="fade-in" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:8px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+      <div>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:18px;color:var(--navy);margin-bottom:4px;">Traffy Fondue Live — ปัญหาจริงในเขต</h3>
+        <p style="font-size:13px;color:var(--text-secondary);margin:0;">เลือกเขต → ดู map + ปัญหาล่าสุด + เปรียบเทียบเร็ว/ช้า · ข้อมูลจาก API อัปเดตทุก 30 นาที</p>
+      </div>
+      <div style="font-size:11px;color:var(--text-muted);text-align:right;">Powered by <a href="https://www.traffy.in.th" target="_blank" style="color:var(--teal);text-decoration:none;">Traffy Fondue</a> Open Data</div>
+    </div>
+
+    <!-- District selector -->
+    <select id="diSelect" style="width:100%;padding:12px 16px;border:2px solid var(--gold);border-radius:var(--radius-sm);font-family:'Sarabun',sans-serif;font-size:16px;font-weight:600;background:#fff;color:var(--navy);margin-bottom:16px;" onchange="loadDistrictIntel(this.value)">
+      <option value="">— เลือกเขตที่จะลงสมัคร —</option>
     </select>
-    <div class="traffy-buttons">
-      <button class="traffy-btn traffy-btn-primary" onclick="var d=document.getElementById('traffyDistrict').value; if(d){window.open('https://share.traffy.in.th/teamchadchart?district='+encodeURIComponent(d),'_blank')}else{window.open('https://share.traffy.in.th/teamchadchart','_blank')}">ดูปัญหาในเขต</button>
-      <button class="traffy-btn traffy-btn-secondary" onclick="window.open('https://bangkok.traffy.in.th/top','_blank')">ดูสถิติเขต</button>
+
+    <!-- Results (hidden until district selected) -->
+    <div id="diResults" style="display:none;">
+
+      <!-- Stat cards -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:16px;" id="diStats"></div>
+
+      <!-- Map -->
+      <div id="diMap" style="height:350px;border-radius:var(--radius-sm);border:1px solid var(--border);margin-bottom:16px;background:var(--bg-alt);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:14px;">กำลังโหลด map...</div>
+
+      <!-- Fast vs Slow comparison -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;" id="diCompare">
+        <div style="background:#D1FAE5;border:1px solid #86EFAC;border-radius:var(--radius-sm);padding:14px;" id="diFastest">
+          <div style="font-size:12px;font-weight:700;color:#14532D;margin-bottom:6px;">⚡ แก้เร็วที่สุด</div>
+          <div style="font-size:13px;color:#166534;" id="diFastContent">กำลังวิเคราะห์...</div>
+        </div>
+        <div style="background:#FEE2E2;border:1px solid #FCA5A5;border-radius:var(--radius-sm);padding:14px;" id="diSlowest">
+          <div style="font-size:12px;font-weight:700;color:#991B1B;margin-bottom:6px;">🐢 แก้ช้าที่สุด</div>
+          <div style="font-size:13px;color:#7F1D1D;" id="diSlowContent">กำลังวิเคราะห์...</div>
+        </div>
+      </div>
+
+      <!-- Problem list -->
+      <div style="font-weight:600;font-size:14px;margin-bottom:8px;color:var(--navy);">10 ปัญหาล่าสุด</div>
+      <div id="diProblems" style="font-size:13px;"></div>
+
+      <!-- Links -->
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;">
+        <a id="diTraffyLink" href="#" target="_blank" style="padding:8px 16px;background:var(--teal);color:#fff;border-radius:var(--radius-sm);text-decoration:none;font-size:13px;font-weight:600;">ดูทั้งหมดใน Traffy Fondue</a>
+        <a href="district-intel.html" style="padding:8px 16px;background:var(--navy);color:#fff;border-radius:var(--radius-sm);text-decoration:none;font-size:13px;font-weight:600;">เปิด RED FLAG Tool</a>
+      </div>
     </div>
-    <p class="traffy-info">Traffy Fondue = ระบบแจ้งปัญหาเมือง กทม. มีเรื่องร้องเรียนกว่า 1.26 ล้านเรื่อง</p>
-    <div class="traffy-tip">Tip: เลือกเขตที่จะลงสมัคร → ดูปัญหาจริง → นำไปเป็นนโยบาย</div>
-    <!-- 50 District Quick Grid -->
-    <div style="margin-top:20px;border-top:1px solid rgba(255,255,255,0.1);padding-top:16px;">
-      <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:10px;text-align:center;">กดเลือกเขต → เปิด Traffy Fondue โดยตรง</div>
-      <div id="districtGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:6px;"></div>
-    </div>
+
+    <!-- Loading state -->
+    <div id="diLoading" style="display:none;text-align:center;padding:24px;color:var(--text-muted);font-size:14px;">กำลังดึงข้อมูลจาก Traffy Fondue API...</div>
   </div>
 
   <!-- 5. QUICK ACCESS (4 boxes, 2x2 grid) -->
@@ -1218,33 +1202,119 @@ document.addEventListener('click',function(e){
   if(!e.target.closest('.search-box')) document.getElementById('searchResults').style.display='none';
 });
 
-// TRAFFY FONDUE — 50 District Grid
+// DISTRICT INTELLIGENCE by LAS — Traffy Fondue API + Leaflet Map
 (function(){
-  var districts = [
-    'กรุงเทพกลาง','คลองเตย','คลองสาน','คลองสามวา','คันนายาว',
-    'จตุจักร','จอมทอง','ดอนเมือง','ดินแดง','ดุสิต',
-    'ตลิ่งชัน','ทวีวัฒนา','ทุ่งครุ','ธนบุรี','บางกอกน้อย',
-    'บางกอกใหญ่','บางกะปิ','บางขุนเทียน','บางเขน','บางคอแหลม',
-    'บางซื่อ','บางนา','บางบอน','บางพลัด','บางแค',
-    'บางรัก','บึงกุ่ม','ปทุมวัน','ประเวศ','ป้อมปราบศัตรูพ่าย',
-    'พญาไท','พระโขนง','พระนคร','ภาษีเจริญ','มีนบุรี',
-    'ยานนาวา','ราชเทวี','ราษฎร์บูรณะ','ลาดกระบัง','ลาดพร้าว',
-    'วังทองหลาง','วัฒนา','สวนหลวง','สะพานสูง','สาทร',
-    'สายไหม','หนองจอก','หนองแขม','หลักสี่','ห้วยขวาง'
-  ];
-  var grid = document.getElementById('districtGrid');
-  if(!grid) return;
-  districts.forEach(function(name){
-    var btn = document.createElement('a');
-    btn.href = 'https://share.traffy.in.th/teamchadchart?district=' + encodeURIComponent(name);
-    btn.target = '_blank';
-    btn.rel = 'noopener';
-    btn.textContent = name;
-    btn.style.cssText = 'display:block;padding:8px 6px;background:#fff;border:1px solid var(--border);border-radius:8px;text-align:center;font-size:12px;font-family:Sarabun,sans-serif;color:var(--text);text-decoration:none;transition:all 0.15s;line-height:1.3;';
-    btn.addEventListener('mouseenter',function(){ this.style.background='#ECFDF5'; this.style.borderColor='#22C55E'; this.style.color='#166534'; });
-    btn.addEventListener('mouseleave',function(){ this.style.background='#fff'; this.style.borderColor='#E5E7EB'; this.style.color='#1A1A2E'; });
-    grid.appendChild(btn);
-  });
+  var districts = ['คลองเตย','คลองสาน','คลองสามวา','คันนายาว','จตุจักร','จอมทอง','ดอนเมือง','ดินแดง','ดุสิต','ตลิ่งชัน','ทวีวัฒนา','ทุ่งครุ','ธนบุรี','บางกอกน้อย','บางกอกใหญ่','บางกะปิ','บางขุนเทียน','บางเขน','บางคอแหลม','บางซื่อ','บางนา','บางบอน','บางพลัด','บางแค','บางรัก','บึงกุ่ม','ปทุมวัน','ประเวศ','ป้อมปราบศัตรูพ่าย','พญาไท','พระโขนง','พระนคร','ภาษีเจริญ','มีนบุรี','ยานนาวา','ราชเทวี','ราษฎร์บูรณะ','ลาดกระบัง','ลาดพร้าว','วังทองหลาง','วัฒนา','สวนหลวง','สะพานสูง','สาทร','สายไหม','หนองจอก','หนองแขม','หลักสี่','ห้วยขวาง'];
+  var sel = document.getElementById('diSelect');
+  districts.forEach(function(d){ var o=document.createElement('option'); o.value=d; o.textContent=d; sel.appendChild(o); });
+  var diMap = null;
+  var diMarkers = [];
+  window.loadDistrictIntel = function(district){
+    if(!district){ document.getElementById('diResults').style.display='none'; return; }
+    document.getElementById('diResults').style.display='block';
+    document.getElementById('diLoading').style.display='block';
+    document.getElementById('diTraffyLink').href='https://share.traffy.in.th/teamchadchart?district='+encodeURIComponent(district);
+    // Init map
+    if(!diMap){
+      diMap = L.map('diMap').setView([13.756,100.502],12);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+        attribution:'&copy; OpenStreetMap',maxZoom:18
+      }).addTo(diMap);
+    }
+    // Clear markers
+    diMarkers.forEach(function(m){diMap.removeLayer(m)});
+    diMarkers=[];
+    // Fetch API
+    fetch('https://publicapi.traffy.in.th/teamchadchart-stat-api/geojson/v1?limit=1000')
+      .then(function(r){return r.json()})
+      .then(function(data){
+        document.getElementById('diLoading').style.display='none';
+        if(!data.features){return}
+        var items = data.features.filter(function(f){return f.properties&&f.properties.district===district});
+        // Stats
+        var total=items.length;
+        var done=items.filter(function(f){return f.properties.state==='เสร็จสิ้น'}).length;
+        var pending=items.filter(function(f){return f.properties.state==='รอรับเรื่อง'}).length;
+        var inprog=total-done-pending;
+        var types={};
+        items.forEach(function(f){var t=f.properties.problem_type_fondue||'อื่นๆ';types[t]=(types[t]||0)+1});
+        var topTypes=Object.entries(types).sort(function(a,b){return b[1]-a[1]}).slice(0,5);
+        // Render stat cards
+        var statsEl=document.getElementById('diStats');
+        statsEl.textContent='';
+        [{v:total,l:'ปัญหาทั้งหมด',c:'var(--navy)'},{v:done,l:'แก้แล้ว',c:'var(--green)'},{v:inprog,l:'กำลังดำเนินการ',c:'var(--orange)'},{v:pending,l:'รอรับเรื่อง',c:'var(--red)'}].forEach(function(s){
+          var card=document.createElement('div');
+          card.style.cssText='background:#fff;border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center;border-top:3px solid '+s.c;
+          var val=document.createElement('div');val.style.cssText='font-size:24px;font-weight:700;font-family:Space Grotesk,sans-serif;color:'+s.c;val.textContent=s.v;
+          var lab=document.createElement('div');lab.style.cssText='font-size:11px;color:var(--text-secondary);margin-top:2px;';lab.textContent=s.l;
+          card.appendChild(val);card.appendChild(lab);statsEl.appendChild(card);
+        });
+        // Map markers
+        var stateColors={'เสร็จสิ้น':'#22C55E','กำลังดำเนินการ':'#E67E22','รอรับเรื่อง':'#EF4444','ส่งต่อ(ใหม่)':'#F59E0B'};
+        var bounds=[];
+        items.forEach(function(f){
+          var g=f.geometry;
+          if(!g||!g.coordinates||g.coordinates.length<2)return;
+          var lat=g.coordinates[1],lng=g.coordinates[0];
+          if(!lat||!lng)return;
+          bounds.push([lat,lng]);
+          var color=stateColors[f.properties.state]||'#9CA3AF';
+          var marker=L.circleMarker([lat,lng],{radius:6,fillColor:color,color:'#fff',weight:1,fillOpacity:0.8});
+          marker.bindPopup('<b>'+E(f.properties.problem_type_fondue||'')+'</b><br>'+E(f.properties.state||'')+'<br><small>'+E(f.properties.address||'')+'</small>');
+          marker.addTo(diMap);
+          diMarkers.push(marker);
+        });
+        if(bounds.length)diMap.fitBounds(bounds,{padding:[20,20]});
+        // Fast vs Slow
+        var finished=items.filter(function(f){return f.properties.state==='เสร็จสิ้น'&&f.properties.duration_minutes_finished>0});
+        finished.sort(function(a,b){return a.properties.duration_minutes_finished-b.properties.duration_minutes_finished});
+        var fastEl=document.getElementById('diFastContent');
+        var slowEl=document.getElementById('diSlowContent');
+        if(finished.length>=2){
+          var fast=finished[0].properties;
+          var slow=finished[finished.length-1].properties;
+          var fastDays=Math.round(fast.duration_minutes_finished/1440);
+          var slowDays=Math.round(slow.duration_minutes_finished/1440);
+          fastEl.textContent=E(fast.problem_type_fondue)+' — แก้ใน '+fastDays+' วัน\nแจ้ง: '+E((fast.timestamp||'').slice(0,10))+'\nที่: '+E(fast.address||'');
+          fastEl.style.whiteSpace='pre-line';
+          slowEl.textContent=E(slow.problem_type_fondue)+' — ใช้เวลา '+slowDays+' วัน\nแจ้ง: '+E((slow.timestamp||'').slice(0,10))+'\nที่: '+E(slow.address||'');
+          slowEl.style.whiteSpace='pre-line';
+        } else if(finished.length===1){
+          var f1=finished[0].properties;
+          fastEl.textContent=E(f1.problem_type_fondue)+' — '+Math.round(f1.duration_minutes_finished/1440)+' วัน';
+          slowEl.textContent='ข้อมูลไม่เพียงพอ';
+        } else {
+          fastEl.textContent='ยังไม่มีปัญหาที่แก้เสร็จใน batch นี้';
+          slowEl.textContent='ยังไม่มีปัญหาที่แก้เสร็จใน batch นี้';
+        }
+        // Problem list (top 10)
+        var probEl=document.getElementById('diProblems');
+        probEl.textContent='';
+        items.slice(0,10).forEach(function(f){
+          var p=f.properties;
+          var row=document.createElement('div');
+          row.style.cssText='padding:10px 0;border-bottom:1px solid var(--border-light);display:flex;justify-content:space-between;align-items:flex-start;gap:8px;';
+          var left=document.createElement('div');
+          var typeSpan=document.createElement('div');typeSpan.style.cssText='font-weight:600;font-size:13px;';typeSpan.textContent=E(p.problem_type_fondue||'ไม่ระบุ');
+          var addrSpan=document.createElement('div');addrSpan.style.cssText='font-size:11px;color:var(--text-muted);margin-top:2px;';addrSpan.textContent=E(p.address||'')+' · '+E((p.timestamp||'').slice(0,16));
+          left.appendChild(typeSpan);left.appendChild(addrSpan);
+          var stateSpan=document.createElement('span');
+          var sc=stateColors[p.state]||'var(--text-muted)';
+          stateSpan.style.cssText='font-size:11px;padding:2px 8px;border-radius:10px;white-space:nowrap;font-weight:600;background:'+sc+'20;color:'+sc;
+          stateSpan.textContent=E(p.state||'');
+          row.appendChild(left);row.appendChild(stateSpan);probEl.appendChild(row);
+        });
+        if(!items.length){
+          probEl.textContent='ไม่พบข้อมูลในเขต'+district+' จาก batch ล่าสุด';
+          probEl.style.cssText='text-align:center;padding:24px;color:var(--text-muted);';
+        }
+      })
+      .catch(function(){
+        document.getElementById('diLoading').style.display='none';
+        document.getElementById('diProblems').textContent='ไม่สามารถเชื่อมต่อ Traffy API — ลองใหม่';
+      });
+  };
+  function E(s){if(!s)return'';var d=document.createElement('div');d.textContent=s;return d.innerHTML}
 })();
 
 // FADE-IN OBSERVER
