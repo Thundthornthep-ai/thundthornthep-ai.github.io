@@ -123,7 +123,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
 .nav{
   position:fixed;top:3px;left:0;right:0;z-index:100;
   padding:6px 24px;
-  display:flex;align-items:center;justify-content:space-between;
+  display:flex;align-items:center;justify-content:center;
   background:rgba(27,42,74,0.97);backdrop-filter:blur(12px);
   border-bottom:2px solid var(--gold);transition:all .3s;
 }
@@ -137,7 +137,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
 .nav-title span{color:var(--gold)}
 
 /* Desktop nav links — hi-tech pill/box style */
-.nav-links{display:flex;gap:5px;flex-wrap:wrap;align-items:center;justify-content:center;max-width:calc(100% - 140px);padding:4px 0}
+.nav-links{display:flex;gap:5px;flex-wrap:wrap;align-items:center;justify-content:center;max-width:100%;padding:4px 0}
 .nav-links a{
   display:inline-flex;align-items:center;
   padding:5px 12px;border-radius:8px;
@@ -154,11 +154,13 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
   color:#fff;
 }
 .nav-links a.active{
-  background:rgba(201,169,110,0.2);
+  background:rgba(201,169,110,0.25);
   border-color:#C9A96E;
   color:#fff;
+  box-shadow:0 0 14px rgba(201,169,110,0.4),0 0 4px rgba(201,169,110,0.3);
 }
 .nav-row-break{flex-basis:100%;height:0;margin:0;padding:0}
+.nav-group-label{flex-basis:100%;text-align:center;font-size:9px;color:rgba(255,255,255,0.3);letter-spacing:2px;text-transform:uppercase;font-family:'Space Grotesk',sans-serif;padding:3px 0 1px;margin:0}
 
 /* Hamburger button */
 .hamburger{
@@ -259,6 +261,48 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
   .countdown-wrapper{margin-left:0;gap:4px}
   .cd-box{min-width:40px;padding:4px 6px}
   .cd-num{font-size:1.1rem}
+}
+
+/* ============ HERO LINK BOXES ============ */
+.hero-link-boxes {
+  display: flex;
+  gap: 16px;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+.hero-link-box {
+  flex: 1;
+  padding: 18px 24px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  border-left: 4px solid;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s;
+  display: block;
+}
+.hero-link-box:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+.hero-link-box h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+.hero-link-box .sub {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+.hero-link-box.gold { border-color: #C9A96E; }
+.hero-link-box.gold h4 { color: #C9A96E; }
+.hero-link-box.teal { border-color: #20808D; }
+.hero-link-box.teal h4 { color: #4ECDC4; }
+@media(max-width:600px){
+  .hero-link-boxes{flex-direction:column;gap:12px;padding:0 16px}
 }
 
 /* ============ HERO SECTION ============ */
@@ -679,6 +723,27 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
 .flow-branch-card.branch-yes{background:#F0FDF4;border:1px solid #BBF7D0;color:#14532D}
 .flow-branch-card.branch-no{background:#FEF2F2;border:1px solid #FECACA;color:#991B1B}
 
+/* BKK POWERS 27 GRID */
+.bkk27-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:20px 0}
+.bkk27-card{display:flex;gap:12px;padding:14px 18px;background:#fff;border:1px solid var(--card-border);border-radius:var(--radius-sm);box-shadow:var(--shadow-sm);transition:all .2s}
+.bkk27-card:hover{border-color:var(--gold);box-shadow:var(--shadow-md)}
+.bkk27-num{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:#fff;background:var(--gold);width:28px;height:28px;min-width:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.bkk27-text{font-size:13px;color:var(--text);line-height:1.7;flex:1}
+.section-source{font-size:12px;color:var(--text3);margin-top:16px;padding-top:12px;border-top:1px solid var(--card-border)}
+
+/* COMMITTEES 13 GRID */
+.comm13-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:20px 0}
+.comm13-card{display:flex;gap:12px;padding:16px 20px;background:#fff;border:1px solid var(--card-border);border-radius:var(--radius-sm);box-shadow:var(--shadow-sm);transition:all .2s;border-left:3px solid #20808D}
+.comm13-card:hover{border-color:#20808D;box-shadow:var(--shadow-md);background:#F0FDFA}
+.comm13-num{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:#fff;background:#20808D;width:28px;height:28px;min-width:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.comm13-text{font-size:14px;color:var(--navy);line-height:1.7;flex:1;font-weight:600}
+.comm13-explain{background:#F0FDFA;border:1px solid #99F6E4;border-radius:var(--radius-sm);padding:16px 20px;margin-bottom:20px;font-size:14px;color:#0D9488;line-height:1.85}
+
+@media(max-width:768px){
+  .bkk27-grid{grid-template-columns:1fr}
+  .comm13-grid{grid-template-columns:1fr}
+}
+
 /* POWER LIST */
 .power-grid{display:grid;gap:12px;margin:16px 0}
 .power-card{display:flex;gap:14px;padding:18px 20px;background:#fff;border:1px solid var(--card-border);border-radius:var(--radius-sm);box-shadow:var(--shadow-sm);transition:all .2s}
@@ -855,15 +920,25 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
     </div>
   </div>
   <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:8px">สมมติฐาน: วันเลือกตั้ง 5 กรกฎาคม 2569 — วันที่แน่นอนจะประกาศโดย กกต. อย่างเป็นทางการ</div>
+
+  <!-- HERO LINK BOXES -->
+  <div class="hero-link-boxes" style="margin-top:20px">
+    <a href="#bkk-powers-27" class="hero-link-box gold">
+      <h4>อำนาจหน้าที่ กทม. 27 ข้อ</h4>
+      <div class="sub">ม.89 พ.ร.บ.กทม. 2528</div>
+    </a>
+    <a href="#committees-13" class="hero-link-box teal">
+      <h4>13 คณะกรรมการสามัญ สภาฯ กทม.</h4>
+      <div class="sub">ม.38 + ข้อบังคับสภา 2562</div>
+    </a>
+  </div>
 </div>
 
 <!-- STICKY NAV -->
 <nav class="nav" id="mainNav">
-  <div class="nav-brand">
-    <div class="nav-title">LAS <span>Research</span></div>
-  </div>
   <div class="nav-links" id="desktopNav">
     <!-- Row 1: Phase A -->
+    <div class="nav-group-label">Phase A — เตรียมตัว</div>
     <a href="#traffy-fondue">ลงพื้นที่</a>
     <a href="#checklist-5">คุณสมบัติ</a>
     <a href="#prohibited-26">ต้องห้าม</a>
@@ -872,7 +947,8 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
     <a href="#ballot-draw">จับเบอร์</a>
     <a href="#timeline-section">Timeline</a>
     <span class="nav-row-break"></span>
-    <!-- Row 2: Phase B+C -->
+    <!-- Row 2: Phase B -->
+    <div class="nav-group-label">Phase B — หาเสียง + สมัคร</div>
     <a href="#do-section">DO</a>
     <a href="#dont-section">DON'T</a>
     <a href="#campaign-end">ยุติหาเสียง</a>
@@ -882,16 +958,20 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
     <a href="#registration">สมัคร</a>
     <a href="#risk">Risk</a>
     <span class="nav-row-break"></span>
-    <!-- Row 3: Phase D -->
+    <!-- Row 3: Phase C+D -->
+    <div class="nav-group-label">Phase C — หลังเลือกตั้ง · Phase D — ปฏิบัติหน้าที่</div>
     <a href="#report-day">รายงานตัว</a>
     <a href="#first-day">ปฏิบัติหน้าที่</a>
     <a href="#asset-declaration">ทรัพย์สิน</a>
     <a href="#council-rules">ข้อบังคับสภา</a>
     <a href="#sk-powers">อำนาจ ส.ก.</a>
     <a href="#committees">กรรมการ</a>
+    <a href="#bkk-powers-27">27 อำนาจ กทม.</a>
+    <a href="#committees-13">13 กรรมการสามัญ</a>
     <a href="#ordinance-process">ข้อบัญญัติ</a>
     <span class="nav-row-break"></span>
     <!-- Row 4: Phase D+E -->
+    <div class="nav-group-label">Phase D — สภา · Phase E — คลังข้อมูล</div>
     <a href="#questions-motions">กระทู้-ญัตติ</a>
     <a href="#session-work">สมัยประชุม</a>
     <a href="#budget-review">งบประมาณ</a>
@@ -939,6 +1019,8 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
   <a href="#council-rules" data-nav>2.13 ข้อบังคับในสภา</a>
   <a href="#sk-powers" data-nav>2.14 อำนาจหน้าที่ ส.ก.</a>
   <a href="#committees" data-nav>2.15 กรรมการสามัญวิสามัญ</a>
+  <a href="#bkk-powers-27" data-nav>📋 อำนาจหน้าที่ กทม. 27 ข้อ</a>
+  <a href="#committees-13" data-nav>👥 13 คณะกรรมการสามัญ</a>
   <a href="#ordinance-process" data-nav>2.16 กระบวนการข้อบัญญัติ</a>
   <a href="#questions-motions" data-nav>2.17 กระทู้ถาม ญัตติ</a>
   <a href="#session-work" data-nav>2.18 เรื่องในสมัยประชุม</a>
@@ -2987,6 +3069,79 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
   </div>
 </section>
 
+<!-- ============ NEW SECTION: อำนาจหน้าที่ กทม. 27 ข้อ ============ -->
+<section class="section" id="bkk-powers-27">
+  <div class="container">
+    <span class="phase-badge phase-d">Phase D — ปฏิบัติหน้าที่ในสภา</span>
+    <div class="section-label phase-d-label"><span class="line"></span> อำนาจหน้าที่ กทม. 27 ข้อ</div>
+    <h2>📜 อำนาจหน้าที่ของกรุงเทพมหานคร 27 ข้อ</h2>
+    <p class="section-desc">มาตรา 89 พ.ร.บ.ระเบียบบริหารราชการ กทม. พ.ศ. 2528 — กำหนดอำนาจหน้าที่ของ กทม. ที่สมาชิกสภา กทม. ต้องรู้เพื่อตรวจสอบฝ่ายบริหาร</p>
+
+    <div class="bkk27-grid">
+      <div class="bkk27-card"><div class="bkk27-num">1</div><div class="bkk27-text">การรักษาความสงบเรียบร้อยของประชาชน</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">2</div><div class="bkk27-text">การทะเบียนตามที่กฎหมายกำหนด</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">3</div><div class="bkk27-text">การป้องกันและบรรเทาสาธารณภัย</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">4</div><div class="bkk27-text">การรักษาความสะอาดและความเป็นระเบียบเรียบร้อยของบ้านเมือง</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">5</div><div class="bkk27-text">การผังเมือง</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">6</div><div class="bkk27-text">การจัดให้มีและบำรุงรักษาทางบก ทางน้ำ และทางระบายน้ำ</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">7</div><div class="bkk27-text">การวิศวกรรมจราจร</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">8</div><div class="bkk27-text">การขนส่ง</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">9</div><div class="bkk27-text">การจัดให้มีและควบคุมตลาด ท่าเทียบเรือ ท่าข้าม และที่จอดรถ</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">10</div><div class="bkk27-text">การดูแลรักษาที่สาธารณะ</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">11</div><div class="bkk27-text">การควบคุมอาคาร</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">12</div><div class="bkk27-text">การปรับปรุงแหล่งชุมชนแออัดและการจัดการเกี่ยวกับที่อยู่อาศัย</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">13</div><div class="bkk27-text">การจัดให้มีและบำรุงรักษาสถานที่พักผ่อนหย่อนใจ</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">14</div><div class="bkk27-text">การพัฒนาและอนุรักษ์สิ่งแวดล้อม</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">15</div><div class="bkk27-text">การสาธารณูปโภค</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">16</div><div class="bkk27-text">การสาธารณสุข การอนามัยครอบครัว และการรักษาพยาบาล</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">17</div><div class="bkk27-text">การจัดให้มีและควบคุมสุสานและฌาปนสถาน</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">18</div><div class="bkk27-text">การควบคุมการเลี้ยงสัตว์</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">19</div><div class="bkk27-text">การจัดให้มีและควบคุมการฆ่าสัตว์</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">20</div><div class="bkk27-text">การควบคุมความปลอดภัย ความเป็นระเบียบเรียบร้อย และอนามัยในโรงมหรสพและสาธารณสถานอื่นๆ</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">21</div><div class="bkk27-text">การจัดการศึกษา</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">22</div><div class="bkk27-text">การสาธารณูปการ</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">23</div><div class="bkk27-text">การสังคมสงเคราะห์</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">24</div><div class="bkk27-text">การส่งเสริมการกีฬา</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">25</div><div class="bkk27-text">การส่งเสริมการประกอบอาชีพ</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">26</div><div class="bkk27-text">การพาณิชย์ของกรุงเทพมหานคร</div></div>
+      <div class="bkk27-card"><div class="bkk27-num">27</div><div class="bkk27-text">หน้าที่อื่นๆ ตามที่กฎหมายระบุ</div></div>
+    </div>
+
+    <div class="section-source">ที่มา: สถาบันพระปกเกล้า (<a href="https://wiki.kpi.ac.th" target="_blank" rel="noopener" style="color:var(--blue)">wiki.kpi.ac.th</a>)</div>
+  </div>
+</section>
+<!-- ============ NEW SECTION: 13 คณะกรรมการสามัญ ============ -->
+<section class="section" id="committees-13" style="background:var(--bg2)">
+  <div class="container">
+    <span class="phase-badge phase-d">Phase D — ปฏิบัติหน้าที่ในสภา</span>
+    <div class="section-label phase-d-label"><span class="line"></span> 13 คณะกรรมการสามัญ</div>
+    <h2>👥 13 คณะกรรมการสามัญประจำสภากรุงเทพมหานคร</h2>
+    <p class="section-desc">ตาม ม.38 พ.ร.บ.กทม. 2528 + ข้อบังคับการประชุมสภา กทม. พ.ศ. 2562</p>
+
+    <div class="comm13-explain">
+      คณะกรรมการสามัญ คือ คณะกรรมการที่สภา กทม. แต่งตั้งจากสมาชิกสภา คณะหนึ่งมีจำนวน 5-9 คน มีหน้าที่ตรวจสอบและติดตามการปฏิบัติงานของฝ่ายบริหารในแต่ละด้าน
+    </div>
+
+    <div class="comm13-grid">
+      <div class="comm13-card"><div class="comm13-num">1</div><div class="comm13-text">คณะกรรมการกิจการสภา</div></div>
+      <div class="comm13-card"><div class="comm13-num">2</div><div class="comm13-text">คณะกรรมการตรวจรายงานการประชุม</div></div>
+      <div class="comm13-card"><div class="comm13-num">3</div><div class="comm13-text">คณะกรรมการการศึกษา</div></div>
+      <div class="comm13-card"><div class="comm13-num">4</div><div class="comm13-text">คณะกรรมการการโยธาและผังเมือง</div></div>
+      <div class="comm13-card"><div class="comm13-num">5</div><div class="comm13-text">คณะกรรมการการสาธารณสุข</div></div>
+      <div class="comm13-card"><div class="comm13-num">6</div><div class="comm13-text">คณะกรรมการการรักษาความสะอาดและสิ่งแวดล้อม</div></div>
+      <div class="comm13-card"><div class="comm13-num">7</div><div class="comm13-text">คณะกรรมการการเศรษฐกิจ การเงิน การคลังและการงบประมาณ</div></div>
+      <div class="comm13-card"><div class="comm13-num">8</div><div class="comm13-text">คณะกรรมการการปกครองและรักษาความสงบเรียบร้อย</div></div>
+      <div class="comm13-card"><div class="comm13-num">9</div><div class="comm13-text">คณะกรรมการการพัฒนาชุมชนและสวัสดิการสังคม</div></div>
+      <div class="comm13-card"><div class="comm13-num">10</div><div class="comm13-text">คณะกรรมการการจราจรและการขนส่ง</div></div>
+      <div class="comm13-card"><div class="comm13-num">11</div><div class="comm13-text">คณะกรรมการการระบายน้ำ</div></div>
+      <div class="comm13-card"><div class="comm13-num">12</div><div class="comm13-text">คณะกรรมการการวัฒนธรรม การท่องเที่ยวและการกีฬา</div></div>
+      <div class="comm13-card"><div class="comm13-num">13</div><div class="comm13-text">คณะกรรมการการยุทธศาสตร์และเทคโนโลยีดิจิทัล</div></div>
+    </div>
+
+    <div class="section-source">ที่มา: สภากรุงเทพมหานคร (<a href="https://bmc.go.th" target="_blank" rel="noopener" style="color:var(--blue)">bmc.go.th</a>) — สภา กทม. ชุดที่ 13</div>
+  </div>
+</section>
+
 <!-- ============ SECTION 2.15: กรรมการสามัญวิสามัญ ============ -->
 <section class="section" id="committees">
   <div class="container">
@@ -3689,7 +3844,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
     'finance','registration',
     'ethics-section','risk','law-full-section','ect-resources','forms-timeline',
     'report-day','first-day','asset-declaration',
-    'council-rules','sk-powers','committees','ordinance-process',
+    'council-rules','sk-powers','bkk-powers-27','committees-13','committees','ordinance-process',
     'questions-motions','session-work','budget-review',
     'sk-benefits','termination','new-election',
     'knowledge-section','disclaimer-final'
