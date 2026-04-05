@@ -105,6 +105,15 @@
   </a>
 </div>
 
+<!-- TRAFFY LIVE DATA -->
+<div id="traffyLiveSection" style="margin-bottom:24px">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+    <div style="font-weight:700;font-size:15px;color:var(--navy)">ปัญหาล่าสุดจาก Traffy Fondue</div>
+    <button class="btn btn-o" style="padding:6px 12px;font-size:12px" onclick="fetchTraffy()">โหลดใหม่</button>
+  </div>
+  <div id="traffyData" style="font-size:13px;color:var(--text-muted);padding:16px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);text-align:center;">กด "โหลดใหม่" หรือเลือกเขตเพื่อดึงข้อมูลจาก Traffy API</div>
+</div>
+
 <!-- ADD POI / CHECK-IN -->
 <div class="btn-row no-print">
   <button class="btn btn-p" onclick="toggleEl('addPoiForm')">+ เพิ่มสถานที่</button>
@@ -220,10 +229,90 @@ function selectDistrict(name){
   document.getElementById('districtContent').style.display='block';
   // Update links
   var slug = districtUrls[name]||'';
-  document.getElementById('traffyLink').href='https://bangkok.traffy.in.th/?district='+encodeURIComponent(name);
+  document.getElementById('traffyLink').href='https://share.traffy.in.th/teamchadchart?district='+encodeURIComponent(name);
   document.getElementById('districtOfficeLink').href='https://webportal.bangkok.go.th/'+slug;
   document.getElementById('districtOfficeName').textContent='สำนักงานเขต'+name;
   renderDistrict();
+  fetchTraffy();
+}
+
+// === TRAFFY FONDUE API ===
+function fetchTraffy(){
+  if(!currentDistrict) return;
+  var el = document.getElementById('traffyData');
+  el.textContent = 'กำลังดึงข้อมูลจาก Traffy Fondue...';
+  el.style.textAlign = 'center';
+  fetch('https://publicapi.traffy.in.th/teamchadchart-stat-api/geojson/v1?limit=1000')
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      if(!data.features || !data.features.length){
+        el.textContent = 'ไม่พบข้อมูลจาก Traffy API';
+        return;
+      }
+      // Filter by district client-side (API doesn't filter server-side)
+      var districtItems = data.features.filter(function(f){
+        return f.properties && f.properties.district === currentDistrict;
+      });
+      // Also show total stats
+      var totalEl = data.total || data.features.length;
+      if(!districtItems.length){
+        el.textContent = '';
+        el.style.textAlign = 'left';
+        var noData = document.createElement('div');
+        noData.style.cssText = 'padding:12px;color:var(--text-muted);font-size:13px;text-align:center;';
+        noData.textContent = 'ไม่พบปัญหาในเขต' + currentDistrict + ' จาก batch ล่าสุด (Traffy cache 30 นาที) — ลองดูข้อมูลเต็มที่ Traffy Fondue';
+        el.appendChild(noData);
+        return;
+      }
+      // Build display
+      el.textContent = '';
+      el.style.textAlign = 'left';
+      var header = document.createElement('div');
+      header.style.cssText = 'font-size:12px;color:var(--text-muted);margin-bottom:8px;';
+      header.textContent = 'พบ ' + districtItems.length + ' เรื่องในเขต' + currentDistrict + ' (จาก API batch ' + totalEl + ' เรื่องทั่ว กทม.)';
+      el.appendChild(header);
+      // Show up to 10 items
+      districtItems.slice(0, 10).forEach(function(f){
+        var p = f.properties;
+        var card = document.createElement('div');
+        card.style.cssText = 'padding:10px 12px;border-bottom:1px solid var(--border-light);';
+        var top = document.createElement('div');
+        top.style.cssText = 'display:flex;justify-content:space-between;align-items:center;gap:8px;';
+        var type = document.createElement('span');
+        type.style.cssText = 'font-weight:600;font-size:13px;';
+        type.textContent = (p.problem_type_fondue || 'ไม่ระบุ');
+        var state = document.createElement('span');
+        var stateColor = p.state === 'เสร็จสิ้น' ? 'var(--green)' : p.state === 'กำลังดำเนินการ' ? 'var(--orange)' : 'var(--text-muted)';
+        state.style.cssText = 'font-size:11px;padding:2px 8px;border-radius:10px;background:' + stateColor + '20;color:' + stateColor + ';font-weight:600;';
+        state.textContent = p.state || '';
+        top.appendChild(type);
+        top.appendChild(state);
+        card.appendChild(top);
+        if(p.address){
+          var addr = document.createElement('div');
+          addr.style.cssText = 'font-size:12px;color:var(--text-secondary);margin-top:4px;';
+          addr.textContent = p.address;
+          card.appendChild(addr);
+        }
+        if(p.timestamp){
+          var time = document.createElement('div');
+          time.style.cssText = 'font-size:11px;color:var(--text-muted);margin-top:2px;';
+          time.textContent = p.timestamp;
+          card.appendChild(time);
+        }
+        el.appendChild(card);
+      });
+      if(districtItems.length > 10){
+        var more = document.createElement('div');
+        more.style.cssText = 'text-align:center;padding:8px;font-size:12px;color:var(--teal);';
+        more.textContent = '+ อีก ' + (districtItems.length - 10) + ' เรื่อง — ดูทั้งหมดที่ Traffy Fondue';
+        el.appendChild(more);
+      }
+    })
+    .catch(function(err){
+      el.textContent = 'ไม่สามารถเชื่อมต่อ Traffy API — ลองใหม่หรือดูที่ Traffy Fondue โดยตรง';
+      el.style.color = 'var(--red)';
+    });
 }
 
 // === RENDER ===

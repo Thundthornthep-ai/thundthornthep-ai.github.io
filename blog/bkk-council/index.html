@@ -671,7 +671,7 @@ body {
       <option value="ห้วยขวาง">ห้วยขวาง</option>
     </select>
     <div class="traffy-buttons">
-      <button class="traffy-btn traffy-btn-primary" onclick="var d=document.getElementById('traffyDistrict').value; if(d){window.open('https://bangkok.traffy.in.th/?district='+encodeURIComponent(d),'_blank')}else{window.open('https://bangkok.traffy.in.th/','_blank')}">ดูปัญหาในเขต</button>
+      <button class="traffy-btn traffy-btn-primary" onclick="var d=document.getElementById('traffyDistrict').value; if(d){window.open('https://share.traffy.in.th/teamchadchart?district='+encodeURIComponent(d),'_blank')}else{window.open('https://share.traffy.in.th/teamchadchart','_blank')}">ดูปัญหาในเขต</button>
       <button class="traffy-btn traffy-btn-secondary" onclick="window.open('https://bangkok.traffy.in.th/top','_blank')">ดูสถิติเขต</button>
     </div>
     <p class="traffy-info">Traffy Fondue = ระบบแจ้งปัญหาเมือง กทม. มีเรื่องร้องเรียนกว่า 1.26 ล้านเรื่อง</p>
@@ -1236,7 +1236,7 @@ document.addEventListener('click',function(e){
   if(!grid) return;
   districts.forEach(function(name){
     var btn = document.createElement('a');
-    btn.href = 'https://bangkok.traffy.in.th/?district=' + encodeURIComponent(name);
+    btn.href = 'https://share.traffy.in.th/teamchadchart?district=' + encodeURIComponent(name);
     btn.target = '_blank';
     btn.rel = 'noopener';
     btn.textContent = name;
