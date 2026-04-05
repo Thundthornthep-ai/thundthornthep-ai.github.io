@@ -131,7 +131,7 @@ body {
   display: flex; gap: 12px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .cd-row {
   display: flex; align-items: center; gap: 10px;
@@ -175,6 +175,216 @@ body {
 @media (max-width: 560px) {
   .countdown-row-container { flex-direction: column; align-items: center; }
   .cd-row { width: 100%; justify-content: space-between; }
+}
+
+/* ============ ตรวจสอบสิทธิ LINK CARD ============ */
+.check-rights-card {
+  display: flex; align-items: center; gap: 10px;
+  max-width: 520px;
+  margin: 0 auto 40px;
+  padding: 12px 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--blue);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition);
+}
+.check-rights-card:hover {
+  border-color: var(--blue);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+.check-rights-icon {
+  font-size: 20px;
+  min-width: 28px;
+  text-align: center;
+}
+.check-rights-info h4 {
+  font-size: 14px; font-weight: 700; color: var(--navy);
+  margin-bottom: 1px; line-height: 1.3;
+}
+.check-rights-info span {
+  font-size: 11px; color: var(--text-muted);
+}
+
+/* ============ TRAFFY FONDUE ============ */
+.traffy-widget {
+  background: linear-gradient(135deg, #e8f5e9 0%, #e3f2fd 50%, #fff3e0 100%);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  margin-bottom: 40px;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: var(--shadow);
+}
+.traffy-widget h3 {
+  color: #1B5E20;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+.traffy-widget .subtitle {
+  color: #666;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+.traffy-select {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 2px solid #81C784;
+  font-size: 14px;
+  margin-bottom: 10px;
+  background: white;
+  font-family: 'Sarabun', sans-serif;
+  color: var(--text);
+  appearance: auto;
+}
+.traffy-select:focus {
+  outline: none;
+  border-color: #43A047;
+  box-shadow: 0 0 0 3px rgba(67,160,71,0.15);
+}
+.traffy-buttons {
+  display: flex; gap: 10px; margin-bottom: 10px;
+}
+.traffy-btn {
+  flex: 1; padding: 9px;
+  border-radius: var(--radius-sm);
+  border: none;
+  font-size: 13px; cursor: pointer;
+  font-weight: 600;
+  font-family: 'Sarabun', sans-serif;
+  transition: transform 0.2s, box-shadow 0.2s;
+  color: white;
+}
+.traffy-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.traffy-btn-primary { background: #43A047; }
+.traffy-btn-secondary { background: #1976D2; }
+.traffy-info {
+  font-size: 12px; color: #888; margin-top: 6px; line-height: 1.6;
+}
+.traffy-tip {
+  background: #FFF8E1;
+  border-left: 3px solid #FFB300;
+  padding: 8px 12px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 13px; margin-top: 10px;
+  color: #5D4037; line-height: 1.7;
+}
+
+@media (max-width: 480px) {
+  .traffy-buttons { flex-direction: column; }
+}
+
+/* ============ QUICK ACCESS ============ */
+.quick-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+.quick-card {
+  padding: 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition);
+  border-left: 3px solid;
+  position: relative;
+}
+.quick-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+.quick-card.gold-accent { border-left-color: var(--gold); }
+.quick-card.teal-accent { border-left-color: var(--teal); }
+.quick-card.red-accent { border-left-color: #9F1239; }
+.quick-card h3 {
+  font-size: 15px; font-weight: 700;
+  color: var(--navy); margin-bottom: 4px;
+}
+.quick-card .sub {
+  font-size: 12px; color: var(--text-muted);
+}
+
+/* Coming Soon Quick Cards */
+.quick-card.coming-soon {
+  opacity: 0.6;
+  cursor: default;
+}
+.quick-card.coming-soon:hover {
+  box-shadow: var(--shadow);
+  transform: none;
+}
+.coming-soon-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--bg-alt);
+  color: var(--text-muted);
+  padding: 2px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+}
+
+@media (max-width: 560px) {
+  .quick-grid { grid-template-columns: 1fr; }
+}
+
+/* ============ SEARCH BOX ============ */
+.search-box {
+  max-width: 600px;
+  margin: 32px auto;
+  position: relative;
+}
+.search-box input {
+  width: 100%;
+  padding: 16px 20px 16px 48px;
+  border: 2px solid #E5E7EB;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: 'Sarabun', sans-serif;
+  background: white;
+  transition: all 0.3s;
+}
+.search-box input:focus {
+  border-color: #C9A96E;
+  box-shadow: 0 0 0 3px rgba(201,169,110,0.1);
+  outline: none;
+}
+.search-box .search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9CA3AF;
+  font-size: 1.2rem;
+}
+
+/* ============ SECTION TITLE ============ */
+.section-divider {
+  display: flex; align-items: center; gap: 10px;
+  margin: 40px 0 20px;
+}
+.section-divider .line {
+  flex: 1; height: 1px; background: var(--border);
+}
+.section-divider span {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px; font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
 }
 
 /* ============ PHASE CARDS ============ */
@@ -258,168 +468,6 @@ body {
   font-weight: 600;
 }
 
-/* ============ SECTION TITLE ============ */
-.section-divider {
-  display: flex; align-items: center; gap: 10px;
-  margin: 40px 0 20px;
-}
-.section-divider .line {
-  flex: 1; height: 1px; background: var(--border);
-}
-.section-divider span {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 11px; font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  white-space: nowrap;
-}
-
-/* ============ QUICK ACCESS ============ */
-.quick-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 40px;
-}
-.quick-card {
-  padding: 20px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  text-decoration: none;
-  color: inherit;
-  transition: all var(--transition);
-  border-left: 3px solid;
-}
-.quick-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
-}
-.quick-card.gold-accent { border-left-color: var(--gold); }
-.quick-card.teal-accent { border-left-color: var(--teal); }
-.quick-card h3 {
-  font-size: 15px; font-weight: 700;
-  color: var(--navy); margin-bottom: 4px;
-}
-.quick-card .sub {
-  font-size: 12px; color: var(--text-muted);
-}
-
-@media (max-width: 560px) {
-  .quick-grid { grid-template-columns: 1fr; }
-}
-
-/* ============ TRAFFY FONDUE ============ */
-.traffy-widget {
-  background: linear-gradient(135deg, #e8f5e9 0%, #e3f2fd 50%, #fff3e0 100%);
-  border-radius: var(--radius-lg);
-  padding: 24px 28px;
-  margin-bottom: 40px;
-  border: 1px solid rgba(0,0,0,0.06);
-  box-shadow: var(--shadow);
-}
-.traffy-widget h3 {
-  color: #1B5E20;
-  font-size: 16px;
-  margin-bottom: 4px;
-}
-.traffy-widget .subtitle {
-  color: #666;
-  font-size: 13px;
-  margin-bottom: 14px;
-}
-.traffy-select {
-  width: 100%;
-  padding: 10px 14px;
-  border-radius: var(--radius-sm);
-  border: 2px solid #81C784;
-  font-size: 14px;
-  margin-bottom: 10px;
-  background: white;
-  font-family: 'Sarabun', sans-serif;
-  color: var(--text);
-  appearance: auto;
-}
-.traffy-select:focus {
-  outline: none;
-  border-color: #43A047;
-  box-shadow: 0 0 0 3px rgba(67,160,71,0.15);
-}
-.traffy-buttons {
-  display: flex; gap: 10px; margin-bottom: 10px;
-}
-.traffy-btn {
-  flex: 1; padding: 9px;
-  border-radius: var(--radius-sm);
-  border: none;
-  font-size: 13px; cursor: pointer;
-  font-weight: 600;
-  font-family: 'Sarabun', sans-serif;
-  transition: transform 0.2s, box-shadow 0.2s;
-  color: white;
-}
-.traffy-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
-.traffy-btn-primary { background: #43A047; }
-.traffy-btn-secondary { background: #1976D2; }
-.traffy-info {
-  font-size: 12px; color: #888; margin-top: 6px; line-height: 1.6;
-}
-.traffy-tip {
-  background: #FFF8E1;
-  border-left: 3px solid #FFB300;
-  padding: 8px 12px;
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  font-size: 13px; margin-top: 10px;
-  color: #5D4037; line-height: 1.7;
-}
-
-@media (max-width: 480px) {
-  .traffy-buttons { flex-direction: column; }
-}
-
-/* ============ STATS GRID ============ */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  margin-bottom: 40px;
-}
-.stat-card {
-  padding: 18px 14px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
-  transition: all var(--transition);
-}
-.stat-card:hover {
-  border-color: var(--gold);
-  box-shadow: var(--shadow);
-  transform: translateY(-1px);
-}
-.stat-num {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 26px; font-weight: 700;
-  line-height: 1.1; margin-bottom: 4px;
-}
-.stat-label {
-  font-size: 12px; color: var(--text-secondary);
-  line-height: 1.4;
-}
-.stat-card.s-qual .stat-num { color: var(--teal); }
-.stat-card.s-prohibit .stat-num { color: var(--red); }
-.stat-card.s-district .stat-num { color: var(--navy); }
-.stat-card.s-days .stat-num { color: var(--gold); }
-
-@media (max-width: 560px) {
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
 /* ============ DOWNLOADS ============ */
 .dl-grid {
   display: grid;
@@ -484,7 +532,7 @@ body {
 @media print {
   .top-bar { display: none; }
   body { background: #fff; }
-  .phase-card, .stat-card, .dl-card, .quick-card { box-shadow: none; border: 1px solid #ccc; }
+  .phase-card, .dl-card, .quick-card { box-shadow: none; border: 1px solid #ccc; }
 }
 
 /* ============ FADE IN ============ */
@@ -510,14 +558,14 @@ body {
 <!-- MAIN CONTENT -->
 <div class="main">
 
-  <!-- HERO -->
+  <!-- 1. HERO -->
   <section class="hero fade-in">
     <div class="hero-badge"><span class="dot"></span> ส.ก. Navigator</div>
     <h1>คู่มือผู้สมัคร<br>สมาชิกสภากรุงเทพมหานคร</h1>
     <p class="hero-subtitle">ครบ 24 หัวข้อ — ก่อนสมัคร ถึง ปฏิบัติหน้าที่ในสภา</p>
   </section>
 
-  <!-- COUNTDOWN -->
+  <!-- 2. COUNTDOWN -->
   <div class="countdown-row-container fade-in">
     <div class="cd-row launch">
       <span class="cd-row-label">เปิดตัวทีมคนทำงาน</span>
@@ -541,80 +589,16 @@ body {
     </div>
   </div>
 
-  <!-- PHASE CARDS -->
-  <div class="section-divider"><div class="line"></div><span>เนื้อหาทั้ง 5 Phase</span><div class="line"></div></div>
-  <div class="phase-grid fade-in">
-    <a href="phase-a.html" class="phase-card">
-      <div class="phase-letter pa">A</div>
-      <div class="phase-info">
-        <div class="phase-name-th">ก่อนเลือกตั้ง</div>
-        <div class="phase-name-en">Pre-Election</div>
-      </div>
-      <div class="phase-meta">
-        <div class="phase-topics">5 หัวข้อ</div>
-      </div>
-      <span class="phase-arrow">→</span>
-    </a>
-    <a href="phase-b.html" class="phase-card">
-      <div class="phase-letter pb">B</div>
-      <div class="phase-info">
-        <div class="phase-name-th">ระหว่างเลือกตั้ง</div>
-        <div class="phase-name-en">Campaign</div>
-      </div>
-      <div class="phase-meta">
-        <div class="phase-topics">3 หัวข้อ + การเงิน</div>
-      </div>
-      <span class="phase-arrow">→</span>
-    </a>
-    <a href="phase-c.html" class="phase-card">
-      <div class="phase-letter pc">C</div>
-      <div class="phase-info">
-        <div class="phase-name-th">หลังเลือกตั้ง</div>
-        <div class="phase-name-en">Post-Election</div>
-      </div>
-      <div class="phase-meta">
-        <div class="phase-topics">4 หัวข้อ</div>
-      </div>
-      <span class="phase-arrow">→</span>
-    </a>
-    <a href="phase-d-e.html" class="phase-card">
-      <div class="phase-letter pd">D</div>
-      <div class="phase-info">
-        <div class="phase-name-th">ปฏิบัติหน้าที่</div>
-        <div class="phase-name-en">In Office</div>
-      </div>
-      <div class="phase-meta">
-        <div class="phase-topics">9 หัวข้อ</div>
-      </div>
-      <span class="phase-arrow">→</span>
-    </a>
-    <a href="phase-d-e.html#sk-benefits" class="phase-card">
-      <div class="phase-letter pe">E</div>
-      <div class="phase-info">
-        <div class="phase-name-th">คลังข้อมูล</div>
-        <div class="phase-name-en">Reference</div>
-      </div>
-      <div class="phase-meta">
-        <div class="phase-topics">7 หัวข้อ</div>
-      </div>
-      <span class="phase-arrow">→</span>
-    </a>
-  </div>
+  <!-- 3. ตรวจสอบสิทธิ -->
+  <a href="https://stat.bora.dopa.go.th/Election/absvote/#/" target="_blank" class="check-rights-card fade-in">
+    <div class="check-rights-icon">🔍</div>
+    <div class="check-rights-info">
+      <h4>ตรวจสอบสิทธิผู้สมัครรับเลือกตั้ง</h4>
+      <span>กรมการปกครอง กระทรวงมหาดไทย</span>
+    </div>
+  </a>
 
-  <!-- QUICK ACCESS -->
-  <div class="section-divider"><div class="line"></div><span>Quick Access</span><div class="line"></div></div>
-  <div class="quick-grid fade-in">
-    <a href="phase-d-e.html#bkk-powers-27" class="quick-card gold-accent">
-      <h3>อำนาจหน้าที่ กทม. 27 ข้อ</h3>
-      <div class="sub">ม.89 พ.ร.บ.กทม. 2528</div>
-    </a>
-    <a href="phase-d-e.html#committees-13" class="quick-card teal-accent">
-      <h3>13 คณะกรรมการสามัญ สภาฯ</h3>
-      <div class="sub">ม.38 + ข้อบังคับสภา 2562</div>
-    </a>
-  </div>
-
-  <!-- TRAFFY FONDUE -->
+  <!-- 4. TRAFFY FONDUE -->
   <div class="section-divider"><div class="line"></div><span>เครื่องมือลงพื้นที่</span><div class="line"></div></div>
   <div class="traffy-widget fade-in">
     <h3>Traffy Fondue — ตรวจสอบปัญหาในเขต</h3>
@@ -679,28 +663,96 @@ body {
     <div class="traffy-tip">Tip: เลือกเขตที่จะลงสมัคร → ดูปัญหาจริง → นำไปเป็นนโยบาย</div>
   </div>
 
-  <!-- STATS -->
-  <div class="section-divider"><div class="line"></div><span>ตัวเลขสำคัญ</span><div class="line"></div></div>
-  <div class="stats-grid fade-in">
-    <a href="phase-a.html#checklist-5" class="stat-card s-qual">
-      <div class="stat-num">5</div>
-      <div class="stat-label">คุณสมบัติ</div>
+  <!-- 5. QUICK ACCESS (4 boxes, 2x2 grid) -->
+  <div class="section-divider"><div class="line"></div><span>Quick Access</span><div class="line"></div></div>
+  <div class="quick-grid fade-in">
+    <a href="phase-d-e.html#bkk-powers-27" class="quick-card gold-accent">
+      <h3>อำนาจหน้าที่ กทม. 27 ข้อ</h3>
+      <div class="sub">ม.89 พ.ร.บ.กทม. 2528</div>
     </a>
-    <a href="phase-a.html#prohibited-26" class="stat-card s-prohibit">
-      <div class="stat-num">26</div>
-      <div class="stat-label">ต้องห้าม</div>
+    <a href="phase-d-e.html#committees-13" class="quick-card teal-accent">
+      <h3>13 คณะกรรมการสามัญ สภาฯ</h3>
+      <div class="sub">ม.38 + ข้อบังคับสภา 2562</div>
     </a>
-    <div class="stat-card s-district">
-      <div class="stat-num">50</div>
-      <div class="stat-label">เขตเลือกตั้ง</div>
+    <div class="quick-card gold-accent coming-soon">
+      <span class="coming-soon-badge">Coming Soon</span>
+      <h3>ทีมงาน &amp; ค่าใช้จ่าย</h3>
+      <div class="sub">จัดทีม — งบหาเสียง — บัญชีรายรับรายจ่าย</div>
     </div>
-    <div class="stat-card s-days">
-      <div class="stat-num" id="daysLeft">90</div>
-      <div class="stat-label">วัน นับถอยหลัง</div>
+    <div class="quick-card red-accent coming-soon">
+      <span class="coming-soon-badge">Coming Soon</span>
+      <h3>RED FLAG พื้นที่สำคัญในเขต</h3>
+      <div class="sub">ชุมชน · วัด · ร.ร. · หมู่บ้าน · คอนโด · ซอย · ร.พ. · สวนฯ · ราชการ · ท่าเรือ · สะพาน</div>
     </div>
   </div>
 
-  <!-- DOWNLOADS -->
+  <!-- 6. SEARCH BOX -->
+  <div class="search-box fade-in">
+    <span class="search-icon">🔎</span>
+    <input type="text" id="siteSearch" placeholder="ค้นหาข้อกฎหมาย มาตรา หัวข้อ..." onkeydown="if(event.key==='Enter')doSiteSearch()">
+  </div>
+
+  <!-- 7. PHASE CARDS -->
+  <div class="section-divider"><div class="line"></div><span>เนื้อหาทั้ง 5 Phase</span><div class="line"></div></div>
+  <div class="phase-grid fade-in">
+    <a href="phase-a.html" class="phase-card">
+      <div class="phase-letter pa">A</div>
+      <div class="phase-info">
+        <div class="phase-name-th">ก่อนเลือกตั้ง</div>
+        <div class="phase-name-en">Pre-Election</div>
+      </div>
+      <div class="phase-meta">
+        <div class="phase-topics">5 หัวข้อ</div>
+      </div>
+      <span class="phase-arrow">→</span>
+    </a>
+    <a href="phase-b.html" class="phase-card">
+      <div class="phase-letter pb">B</div>
+      <div class="phase-info">
+        <div class="phase-name-th">ระหว่างเลือกตั้ง</div>
+        <div class="phase-name-en">Campaign</div>
+      </div>
+      <div class="phase-meta">
+        <div class="phase-topics">3 หัวข้อ + การเงิน</div>
+      </div>
+      <span class="phase-arrow">→</span>
+    </a>
+    <a href="phase-c.html" class="phase-card">
+      <div class="phase-letter pc">C</div>
+      <div class="phase-info">
+        <div class="phase-name-th">หลังเลือกตั้ง</div>
+        <div class="phase-name-en">Post-Election</div>
+      </div>
+      <div class="phase-meta">
+        <div class="phase-topics">4 หัวข้อ</div>
+      </div>
+      <span class="phase-arrow">→</span>
+    </a>
+    <a href="phase-d-e.html" class="phase-card">
+      <div class="phase-letter pd">D</div>
+      <div class="phase-info">
+        <div class="phase-name-th">ปฏิบัติหน้าที่</div>
+        <div class="phase-name-en">In Office</div>
+      </div>
+      <div class="phase-meta">
+        <div class="phase-topics">9 หัวข้อ</div>
+      </div>
+      <span class="phase-arrow">→</span>
+    </a>
+    <a href="phase-d-e.html#sk-benefits" class="phase-card">
+      <div class="phase-letter pe">E</div>
+      <div class="phase-info">
+        <div class="phase-name-th">คลังข้อมูล</div>
+        <div class="phase-name-en">Reference</div>
+      </div>
+      <div class="phase-meta">
+        <div class="phase-topics">7 หัวข้อ</div>
+      </div>
+      <span class="phase-arrow">→</span>
+    </a>
+  </div>
+
+  <!-- 8. DOWNLOADS -->
   <div class="section-divider"><div class="line"></div><span>ดาวน์โหลดเอกสาร</span><div class="line"></div></div>
   <div class="dl-grid fade-in">
     <a href="downloads/pra-local-election-2562.pdf" target="_blank" class="dl-card">
@@ -749,7 +801,7 @@ body {
 
 </div><!-- end .main -->
 
-<!-- FOOTER -->
+<!-- 9. FOOTER -->
 <footer class="site-footer">
   <div class="footer-text">
     <span>Legal Advance Solution Co., Ltd. (LAS)</span> × <span>National Innovation Agency (NIA)</span>
@@ -802,14 +854,18 @@ body {
       document.getElementById('electionBoxes'),
       document.getElementById('electDone')
     );
-    // Update days left stat
-    var daysLeft = Math.ceil((electionTarget - now) / 864e5);
-    var el = document.getElementById('daysLeft');
-    if(el) el.textContent = daysLeft > 0 ? daysLeft : 0;
   }
   tick();
   setInterval(tick, 1000);
 })();
+
+// SEARCH
+function doSiteSearch(){
+  var q = document.getElementById('siteSearch').value.trim();
+  if(q){
+    window.open('https://www.google.com/search?q=site:thundthornthep-ai.github.io/blog/bkk-council/ ' + encodeURIComponent(q), '_blank');
+  }
+}
 
 // FADE-IN OBSERVER
 (function(){
