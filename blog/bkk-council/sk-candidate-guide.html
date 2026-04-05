@@ -582,6 +582,87 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
   .hero-logos img:last-child{height:65px}
   .hero{padding:110px 16px 40px}
 }
+
+/* ============ PHASE COLORS ============ */
+/* Phase C: Teal */
+.phase-c-label{color:#0D9488!important}
+.phase-c-label .line{background:#0D9488!important}
+.phase-c-accent{border-color:#0D9488}
+.phase-c-bg{background:#F0FDFA}
+/* Phase D: Warm */
+.phase-d-label{color:#D97706!important}
+.phase-d-label .line{background:#D97706!important}
+.phase-d-accent{border-color:#D97706}
+.phase-d-bg{background:#FFFBEB}
+/* Phase E: Burgundy */
+.phase-e-label{color:#9F1239!important}
+.phase-e-label .line{background:#9F1239!important}
+.phase-e-accent{border-color:#9F1239}
+.phase-e-bg{background:#FFF1F2}
+
+/* PHASE BADGE */
+.phase-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:14px}
+.phase-badge.phase-c{background:#CCFBF1;color:#0D9488;border:1px solid #99F6E4}
+.phase-badge.phase-d{background:#FEF3C7;color:#D97706;border:1px solid #FCD34D}
+.phase-badge.phase-e{background:#FFE4E6;color:#9F1239;border:1px solid #FECDD3}
+
+/* FLOWCHART STEPS */
+.flow-steps{position:relative;padding:0;margin:24px 0}
+.flow-step{display:flex;align-items:flex-start;gap:16px;margin-bottom:0;position:relative;padding-bottom:24px}
+.flow-step:last-child{padding-bottom:0}
+.flow-step::before{content:'';position:absolute;left:19px;top:40px;bottom:0;width:2px;background:#E5E7EB}
+.flow-step:last-child::before{display:none}
+.flow-num{width:40px;height:40px;min-width:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:#fff;position:relative;z-index:1}
+.flow-num.fn-gold{background:linear-gradient(135deg,var(--gold),#b8893a)}
+.flow-num.fn-green{background:linear-gradient(135deg,var(--green),#1a7a40)}
+.flow-num.fn-red{background:linear-gradient(135deg,#e74c3c,#c0392b)}
+.flow-num.fn-blue{background:linear-gradient(135deg,var(--blue),#1d4ed8)}
+.flow-num.fn-purple{background:linear-gradient(135deg,var(--purple),#7d3c98)}
+.flow-num.fn-teal{background:linear-gradient(135deg,#0D9488,#0F766E)}
+.flow-num.fn-warm{background:linear-gradient(135deg,#D97706,#B45309)}
+.flow-body{flex:1;padding:10px 18px;background:#fff;border:1px solid var(--card-border);border-radius:var(--radius-sm);box-shadow:var(--shadow-sm)}
+.flow-body h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.flow-body p{font-size:13px;color:var(--text2);line-height:1.75}
+.flow-arrow{text-align:center;font-size:20px;color:var(--text3);padding:4px 0;margin-left:10px}
+.flow-branch{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0 12px 56px}
+.flow-branch-card{padding:14px 18px;border-radius:var(--radius-sm);font-size:13px;line-height:1.75}
+.flow-branch-card.branch-yes{background:#F0FDF4;border:1px solid #BBF7D0;color:#14532D}
+.flow-branch-card.branch-no{background:#FEF2F2;border:1px solid #FECACA;color:#991B1B}
+
+/* POWER LIST */
+.power-grid{display:grid;gap:12px;margin:16px 0}
+.power-card{display:flex;gap:14px;padding:18px 20px;background:#fff;border:1px solid var(--card-border);border-radius:var(--radius-sm);box-shadow:var(--shadow-sm);transition:all .2s}
+.power-card:hover{border-color:var(--gold);box-shadow:var(--shadow-md)}
+.power-num{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:var(--gold);min-width:32px;line-height:1.2}
+.power-body h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.power-body p{font-size:13px;color:var(--text2);line-height:1.75}
+
+/* SALARY TABLE */
+.salary-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:16px 0}
+.salary-card{text-align:center;padding:22px 18px;background:#fff;border:1px solid var(--card-border);border-radius:var(--radius-sm);box-shadow:var(--shadow-sm);transition:all .2s}
+.salary-card:hover{border-color:var(--gold)}
+.salary-card .sal-amount{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;line-height:1.2;margin-bottom:4px}
+.salary-card .sal-label{font-size:13px;color:var(--text2)}
+.salary-card .sal-detail{font-size:11px;color:var(--text3);margin-top:4px}
+
+/* TERMINATION LIST */
+.term-list{display:grid;gap:8px;margin:16px 0}
+.term-item{display:flex;gap:12px;padding:14px 18px;background:#fff;border:1px solid var(--card-border);border-radius:var(--radius-sm);box-shadow:var(--shadow-sm);transition:all .2s}
+.term-item:hover{border-color:#F87171;background:#FEF2F2}
+.term-num{font-family:'Space Grotesk',sans-serif;font-weight:700;color:#DC2626;min-width:28px;font-size:14px;margin-top:2px}
+.term-text{font-size:13px;color:var(--text);line-height:1.75}
+
+/* DOWNLOAD BUTTON INLINE */
+.dl-btn-inline{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--navy);color:#fff;border-radius:8px;text-decoration:none;font-size:13px;font-weight:600;transition:all .2s;border:2px solid var(--gold);margin:10px 0}
+.dl-btn-inline:hover{background:var(--gold);color:var(--navy)}
+
+@media(max-width:768px){
+  .flow-branch{grid-template-columns:1fr;margin-left:0}
+  .salary-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .salary-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -632,6 +713,19 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
     <a href="#law-full-section">กฎหมาย</a>
     <a href="#ect-resources">กกต.</a>
     <a href="#forms-timeline">แบบฟอร์ม</a>
+    <a href="#report-day">รายงานตัว</a>
+    <a href="#first-day">ปฏิบัติหน้าที่</a>
+    <a href="#asset-declaration">ทรัพย์สิน</a>
+    <a href="#council-rules">ข้อบังคับสภา</a>
+    <a href="#sk-powers">อำนาจ ส.ก.</a>
+    <a href="#committees">กรรมการ</a>
+    <a href="#ordinance-process">ข้อบัญญัติ</a>
+    <a href="#questions-motions">กระทู้-ญัตติ</a>
+    <a href="#session-work">สมัยประชุม</a>
+    <a href="#budget-review">งบประมาณ</a>
+    <a href="#sk-benefits">สิทธิประโยชน์</a>
+    <a href="#termination">สิ้นสภาพ</a>
+    <a href="#new-election">เลือกตั้งใหม่</a>
     <a href="#knowledge-section">บทความ</a>
     <a href="#disclaimer-final">Disclaimer</a>
   </div>
@@ -661,6 +755,22 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
   <a href="#law-full-section" data-nav>15 ตัวบทกฎหมาย</a>
   <a href="#ect-resources" data-nav>16 กกต. Download Center</a>
   <a href="#forms-timeline" data-nav>17 แบบฟอร์มตามช่วงเวลา</a>
+  <a href="#report-day" data-nav>— Phase C: หลังเลือกตั้ง —</a>
+  <a href="#report-day" data-nav>2.10 วันรายงานตัว</a>
+  <a href="#first-day" data-nav>2.11 วันปฏิบัติหน้าที่</a>
+  <a href="#asset-declaration" data-nav>2.12 ยื่นบัญชีทรัพย์สิน</a>
+  <a href="#council-rules" data-nav>— Phase D: ปฏิบัติหน้าที่ —</a>
+  <a href="#council-rules" data-nav>2.13 ข้อบังคับในสภา</a>
+  <a href="#sk-powers" data-nav>2.14 อำนาจหน้าที่ ส.ก.</a>
+  <a href="#committees" data-nav>2.15 กรรมการสามัญวิสามัญ</a>
+  <a href="#ordinance-process" data-nav>2.16 กระบวนการข้อบัญญัติ</a>
+  <a href="#questions-motions" data-nav>2.17 กระทู้ถาม ญัตติ</a>
+  <a href="#session-work" data-nav>2.18 เรื่องในสมัยประชุม</a>
+  <a href="#budget-review" data-nav>2.19 พิจารณางบประมาณ</a>
+  <a href="#sk-benefits" data-nav>— Phase E: คลังข้อมูล —</a>
+  <a href="#sk-benefits" data-nav>2.22 สิทธิประโยชน์ ส.ก.</a>
+  <a href="#termination" data-nav>2.23 สิ้นสมาชิกภาพ</a>
+  <a href="#new-election" data-nav>2.24 เลือกตั้งใหม่</a>
   <a href="#knowledge-section" data-nav>18 บทความและข้อมูล</a>
   <a href="#disclaimer-final" data-nav>19 Disclaimer</a>
 </div>
@@ -721,6 +831,22 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
       <a href="#law-full-section" class="toc-item"><span class="toc-num">16</span> ตัวบทกฎหมาย + ดาวน์โหลด</a>
       <a href="#ect-resources" class="toc-item"><span class="toc-num">17</span> กกต. Download Center</a>
       <a href="#forms-timeline" class="toc-item"><span class="toc-num">18</span> แบบฟอร์มตามช่วงเวลา</a>
+      <a href="#report-day" class="toc-item" style="grid-column:1/-1;background:#F0FDFA;border-radius:8px;font-weight:600;color:#0D9488"><span class="toc-num" style="color:#0D9488">C</span> Phase C — หลังเลือกตั้ง</a>
+      <a href="#report-day" class="toc-item"><span class="toc-num">2.10</span> วันรายงานตัว</a>
+      <a href="#first-day" class="toc-item"><span class="toc-num">2.11</span> วันปฏิบัติหน้าที่</a>
+      <a href="#asset-declaration" class="toc-item"><span class="toc-num">2.12</span> การยื่นบัญชีทรัพย์สิน</a>
+      <a href="#council-rules" class="toc-item" style="grid-column:1/-1;background:#FFFBEB;border-radius:8px;font-weight:600;color:#D97706"><span class="toc-num" style="color:#D97706">D</span> Phase D — ปฏิบัติหน้าที่ในสภา</a>
+      <a href="#council-rules" class="toc-item"><span class="toc-num">2.13</span> ข้อบังคับในสภา</a>
+      <a href="#sk-powers" class="toc-item"><span class="toc-num">2.14</span> อำนาจหน้าที่ ส.ก.</a>
+      <a href="#committees" class="toc-item"><span class="toc-num">2.15</span> คณะกรรมการสามัญวิสามัญ</a>
+      <a href="#ordinance-process" class="toc-item"><span class="toc-num">2.16</span> กระบวนการออกข้อบัญญัติ</a>
+      <a href="#questions-motions" class="toc-item"><span class="toc-num">2.17</span> กระทู้ถาม ญัตติ</a>
+      <a href="#session-work" class="toc-item"><span class="toc-num">2.18</span> เรื่องราวในสมัยประชุม</a>
+      <a href="#budget-review" class="toc-item"><span class="toc-num">2.19</span> การพิจารณางบประมาณ</a>
+      <a href="#sk-benefits" class="toc-item" style="grid-column:1/-1;background:#FFF1F2;border-radius:8px;font-weight:600;color:#9F1239"><span class="toc-num" style="color:#9F1239">E</span> Phase E — คลังข้อมูลอ้างอิง</a>
+      <a href="#sk-benefits" class="toc-item"><span class="toc-num">2.22</span> สิทธิประโยชน์ ส.ก.</a>
+      <a href="#termination" class="toc-item"><span class="toc-num">2.23</span> การสิ้นสมาชิกภาพ ส.ก.</a>
+      <a href="#new-election" class="toc-item"><span class="toc-num">2.24</span> การเลือกตั้งใหม่</a>
       <a href="#knowledge-section" class="toc-item"><span class="toc-num">19</span> บทความและข้อมูลเพิ่มเติม</a>
       <a href="#disclaimer-final" class="toc-item"><span class="toc-num">20</span> Disclaimer (TH + EN)</a>
     </div>
@@ -1634,6 +1760,140 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
   </div>
 </section>
 
+<!-- ============ PHASE C: หลังเลือกตั้ง ============ -->
+
+<!-- ============ SECTION 2.10: วันรายงานตัว ============ -->
+<section class="section" id="report-day">
+  <div class="container">
+    <span class="phase-badge phase-c">Phase C — หลังเลือกตั้ง</span>
+    <div class="section-label phase-c-label"><span class="line"></span> PART 2.10 — REPORT DAY</div>
+    <h2>📋 วันรายงานตัว</h2>
+    <p class="section-desc">เมื่อ กกต. ประกาศผลการเลือกตั้งอย่างเป็นทางการ ผู้ได้รับเลือกตั้งจะได้รับหนังสือรับรองและต้องรายงานตัวต่อสำนักงานเลขาธิการสภา กทม. — อ้างอิง <a class="matra-link" href="#law-other">มาตรา 21 พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528</a> และ มาตรา 109 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</p>
+
+    <div class="law-text-box" style="margin-bottom:28px">
+      <h4>สมาชิกภาพเริ่มตั้งแต่เมื่อใด? — <a class="matra-link" href="#law-other">มาตรา 21</a></h4>
+      <div class="law-content">
+        <p><strong>สมาชิกภาพของสมาชิกสภากรุงเทพมหานครเริ่มตั้งแต่วันเลือกตั้ง</strong> และอยู่ในตำแหน่งตามอายุของสภากรุงเทพมหานคร</p>
+        <p style="font-size:13px;color:var(--text2);margin-top:8px">อ้างอิง: <a class="matra-link" href="#law-other">มาตรา 21 พ.ร.บ.ระเบียบบริหารราชการกรุงเทพมหานคร พ.ศ. 2528 (แก้ไข ฉบับที่ 6)</a></p>
+      </div>
+    </div>
+
+    <div class="card-band" style="margin-bottom:28px">
+      <div class="band-card green-band">
+        <span class="icon">📣</span>
+        <h4>กกต. ประกาศผลภายใน 30 วัน</h4>
+        <p>กกต. ตรวจสอบเบื้องต้นว่าการเลือกตั้งสุจริต → ประกาศผลภายใน 30 วันนับจากวันเลือกตั้ง → ผู้ได้รับเลือกตั้งได้รับหนังสือรับรอง<br><span style="font-size:12px;color:var(--text3)">มาตรา 109 พ.ร.บ.เลือกตั้งท้องถิ่น 2562</span></p>
+      </div>
+      <div class="band-card" style="border-color:#0D9488;background:#F0FDFA">
+        <span class="icon">🏛️</span>
+        <h4>รายงานตัวต่อสำนักงานเลขาธิการสภา กทม.</h4>
+        <p>ส.ก. ที่ได้รับเลือกตั้งต้องไปรายงานตัวต่อสำนักงานเลขาธิการสภากรุงเทพมหานคร เพื่อเตรียมเข้าร่วมประชุมสภาครั้งแรก</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">📌 Checklist วันรายงานตัว</h3>
+    <div class="checklist-grid">
+      <div class="check-item" style="cursor:default;border-color:#0D9488;background:#F0FDFA">
+        <div style="width:28px;height:28px;min-width:28px;background:linear-gradient(135deg,#0D9488,#0F766E);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:13px">1</div>
+        <label style="cursor:default"><strong>รับหนังสือรับรองจาก กกต.</strong> — ยืนยันผลการเลือกตั้งอย่างเป็นทางการ</label>
+      </div>
+      <div class="check-item" style="cursor:default;border-color:#0D9488;background:#F0FDFA">
+        <div style="width:28px;height:28px;min-width:28px;background:linear-gradient(135deg,#0D9488,#0F766E);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:13px">2</div>
+        <label style="cursor:default"><strong>รายงานตัวต่อสำนักงานเลขาธิการสภา กทม.</strong> — นำหนังสือรับรองและเอกสารประจำตัวไปแสดง</label>
+      </div>
+      <div class="check-item" style="cursor:default;border-color:#0D9488;background:#F0FDFA">
+        <div style="width:28px;height:28px;min-width:28px;background:linear-gradient(135deg,#0D9488,#0F766E);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:13px">3</div>
+        <label style="cursor:default"><strong>เตรียมเข้าประชุมสภาครั้งแรก</strong> — ศึกษาข้อบังคับการประชุมสภา กทม. และระเบียบวาระการประชุม</label>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2.11: วันปฏิบัติหน้าที่ ============ -->
+<section class="section" id="first-day" style="background:var(--bg2)">
+  <div class="container">
+    <span class="phase-badge phase-c">Phase C — หลังเลือกตั้ง</span>
+    <div class="section-label phase-c-label"><span class="line"></span> PART 2.11 — FIRST DAY</div>
+    <h2>🏛️ วันปฏิบัติหน้าที่</h2>
+    <p class="section-desc">การประชุมสภา กทม. ครั้งแรก — เลือกประธานสภาและรองประธาน เริ่มรับเงินเดือนย้อนหลัง — อ้างอิง <a class="matra-link" href="#law-other">มาตรา 25, 30, 31 พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528</a></p>
+
+    <div class="law-text-box" style="margin-bottom:28px">
+      <h4>ประชุมสภาครั้งแรก: เลือกประธาน + รองประธาน — <a class="matra-link" href="#law-other">มาตรา 25</a></h4>
+      <div class="law-content">
+        <p>ให้สภากรุงเทพมหานครเลือกสมาชิกเป็น <strong>ประธานสภา 1 คน</strong> และ <strong>รองประธานสภาไม่เกิน 2 คน</strong> มีวาระ <strong>2 ปี</strong></p>
+        <p style="font-size:13px;color:var(--text2);margin-top:8px">อ้างอิง: <a class="matra-link" href="#law-other">มาตรา 25 พ.ร.บ.ระเบียบบริหารราชการกรุงเทพมหานคร พ.ศ. 2528</a></p>
+      </div>
+    </div>
+
+    <div class="card-band" style="margin-bottom:28px">
+      <div class="band-card green-band">
+        <span class="icon">💰</span>
+        <h4>เริ่มรับเงินเดือน</h4>
+        <p>ส.ก. เริ่มรับเงินเดือน<strong>ย้อนหลังถึงวันเลือกตั้ง</strong> เนื่องจากสมาชิกภาพเริ่มตั้งแต่วันเลือกตั้ง ตาม <a class="matra-link" href="#law-other">มาตรา 21</a></p>
+      </div>
+      <div class="band-card" style="border-color:#0D9488;background:#F0FDFA">
+        <span class="icon">📅</span>
+        <h4>สมัยประชุมสามัญ</h4>
+        <p>ไม่น้อยกว่า <strong>2 สมัย</strong> แต่ไม่เกิน <strong>4 สมัยต่อปี</strong><br><span style="font-size:12px;color:var(--text3)"><a class="matra-link" href="#law-other">มาตรา 30</a> พ.ร.บ.ระเบียบบริหาร กทม. 2528</span></p>
+      </div>
+      <div class="band-card yellow-band">
+        <span class="icon">⚡</span>
+        <h4>สมัยวิสามัญ</h4>
+        <p>เมื่อมีกรณีจำเป็น — ผู้ว่า กทม. หรือสมาชิกไม่น้อยกว่า 1/3 ร้องขอ → ประธานสภากำหนดวันประชุมภายใน 15 วัน<br><span style="font-size:12px;color:var(--text3)"><a class="matra-link" href="#law-other">มาตรา 31</a> พ.ร.บ.ระเบียบบริหาร กทม. 2528</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2.12: การยื่นบัญชีทรัพย์สิน ============ -->
+<section class="section" id="asset-declaration">
+  <div class="container">
+    <span class="phase-badge phase-c">Phase C — หลังเลือกตั้ง</span>
+    <div class="section-label phase-c-label"><span class="line"></span> PART 2.12 — ASSET DECLARATION</div>
+    <h2>📑 การยื่นบัญชีทรัพย์สิน</h2>
+    <p class="section-desc">ส.ก. ต้องยื่นบัญชีทรัพย์สินและหนี้สินต่อ ป.ป.ช. ภายใน 60 วัน นับจากวันเข้ารับตำแหน่ง — อ้างอิง มาตรา 102 พระราชบัญญัติประกอบรัฐธรรมนูญว่าด้วยการป้องกันและปราบปรามการทุจริต พ.ศ. 2561 (พ.ร.ป.ป.ป.ช. 2561)</p>
+
+    <div class="warn-box" style="margin-bottom:24px;border-color:#DC2626">
+      <h4>⚠️ โทษหนัก — ไม่ยื่นหรือยื่นเท็จ</h4>
+      <p><strong>พ้นจากตำแหน่ง + ห้ามดำรงตำแหน่งทางการเมือง 5 ปี</strong> — การไม่ยื่นบัญชีทรัพย์สิน ยื่นไม่ครบ หรือยื่นข้อมูลเท็จ มีโทษตาม พ.ร.ป.ป.ป.ช. 2561</p>
+    </div>
+
+    <div class="table-wrap" style="margin-bottom:28px">
+      <table class="info-table">
+        <thead>
+          <tr><th>กรณี</th><th>กำหนดยื่น</th><th>อ้างอิง</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>เข้ารับตำแหน่ง</strong></td>
+            <td>ภายใน <strong>60 วัน</strong> นับจากวันเข้ารับตำแหน่ง</td>
+            <td>มาตรา 102 พ.ร.ป.ป.ป.ช. 2561</td>
+          </tr>
+          <tr>
+            <td><strong>พ้นจากตำแหน่ง</strong></td>
+            <td>ภายใน <strong>60 วัน</strong> นับจากวันพ้นตำแหน่ง</td>
+            <td>มาตรา 102 พ.ร.ป.ป.ป.ช. 2561</td>
+          </tr>
+          <tr>
+            <td><strong>ทุกปี</strong></td>
+            <td>ยื่นบัญชีทรัพย์สินทุกปีตลอดระยะเวลาดำรงตำแหน่ง</td>
+            <td>มาตรา 102 พ.ร.ป.ป.ป.ช. 2561</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card-band" style="margin-bottom:20px">
+      <div class="band-card" style="border-color:#0D9488;background:#F0FDFA">
+        <span class="icon">💻</span>
+        <h4>ยื่นผ่านระบบอิเล็กทรอนิกส์</h4>
+        <p>สามารถยื่นผ่านระบบอิเล็กทรอนิกส์ได้ตั้งแต่ 1 ตุลาคม 2565<br>
+        <a href="https://asset.nacc.go.th/dcs-app/" target="_blank" class="dl-btn-inline" style="margin-top:12px">🔗 ระบบยื่นบัญชีทรัพย์สิน ป.ป.ช. (nacc.go.th)</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ SECTION 6: FINANCE ============ -->
 <section class="section" id="finance" style="background:var(--bg2)">
   <div class="container">
@@ -2382,6 +2642,624 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
   </div>
 </section>
 
+<!-- ============ PHASE D: ปฏิบัติหน้าที่ในสภา ============ -->
+
+<!-- ============ SECTION 2.13: ข้อบังคับในสภา ============ -->
+<section class="section" id="council-rules">
+  <div class="container">
+    <span class="phase-badge phase-d">Phase D — ปฏิบัติหน้าที่ในสภา</span>
+    <div class="section-label phase-d-label"><span class="line"></span> PART 2.13 — COUNCIL RULES</div>
+    <h2>📜 ข้อบังคับในสภา</h2>
+    <p class="section-desc">ข้อบังคับการประชุมสภากรุงเทพมหานคร — หลักเกณฑ์สำคัญที่ ส.ก. ต้องปฏิบัติตาม — อ้างอิง <a class="matra-link" href="#law-other">มาตรา 33, 35 พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528</a></p>
+
+    <a href="downloads/bmc-council-rules.pdf" target="_blank" class="dl-btn-inline" style="margin-bottom:24px">📄 ดาวน์โหลดข้อบังคับการประชุมสภา กทม. (PDF — 948KB)</a>
+
+    <div class="card-band" style="margin-bottom:28px">
+      <div class="band-card" style="border-color:#D97706;background:#FFFBEB">
+        <span class="icon">⚖️</span>
+        <h4>องค์ประชุม</h4>
+        <p>ไม่น้อยกว่า<strong>กึ่งหนึ่ง</strong>ของจำนวนสมาชิกทั้งหมดที่มีอยู่<br><span style="font-size:12px;color:var(--text3)"><a class="matra-link" href="#law-other">มาตรา 33</a> พ.ร.บ.ระเบียบบริหาร กทม. 2528</span></p>
+      </div>
+      <div class="band-card" style="border-color:#D97706;background:#FFFBEB">
+        <span class="icon">🗳️</span>
+        <h4>การลงมติ</h4>
+        <p>ใช้<strong>เสียงข้างมาก</strong>เป็นมติของที่ประชุม<br><span style="font-size:12px;color:var(--text3)"><a class="matra-link" href="#law-other">มาตรา 33</a> พ.ร.บ.ระเบียบบริหาร กทม. 2528</span></p>
+      </div>
+      <div class="band-card green-band">
+        <span class="icon">👁️</span>
+        <h4>การประชุมเปิดเผย</h4>
+        <p>การประชุมเป็นไปโดย<strong>เปิดเผย</strong> ตามปกติ<br><span style="font-size:12px;color:var(--text3)"><a class="matra-link" href="#law-other">มาตรา 35</a> พ.ร.บ.ระเบียบบริหาร กทม. 2528</span></p>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">ข้อบังคับครอบคลุมเรื่องสำคัญ</h3>
+    <div class="checklist-grid">
+      <div class="check-item" style="cursor:default">
+        <div style="width:8px;height:8px;min-width:8px;border-radius:50%;background:#D97706;margin-top:8px"></div>
+        <label style="cursor:default">การเปิดประชุมและปิดประชุม</label>
+      </div>
+      <div class="check-item" style="cursor:default">
+        <div style="width:8px;height:8px;min-width:8px;border-radius:50%;background:#D97706;margin-top:8px"></div>
+        <label style="cursor:default">ระเบียบวาระการประชุม</label>
+      </div>
+      <div class="check-item" style="cursor:default">
+        <div style="width:8px;height:8px;min-width:8px;border-radius:50%;background:#D97706;margin-top:8px"></div>
+        <label style="cursor:default">การอภิปราย และการรักษาระเบียบในที่ประชุม</label>
+      </div>
+      <div class="check-item" style="cursor:default">
+        <div style="width:8px;height:8px;min-width:8px;border-radius:50%;background:#D97706;margin-top:8px"></div>
+        <label style="cursor:default">การลงมติ และการบันทึกมติ</label>
+      </div>
+      <div class="check-item" style="cursor:default">
+        <div style="width:8px;height:8px;min-width:8px;border-radius:50%;background:#D97706;margin-top:8px"></div>
+        <label style="cursor:default">การเสนอญัตติ กระทู้ถาม และข้อบัญญัติ</label>
+      </div>
+      <div class="check-item" style="cursor:default">
+        <div style="width:8px;height:8px;min-width:8px;border-radius:50%;background:#D97706;margin-top:8px"></div>
+        <label style="cursor:default">การตั้งและการทำงานของคณะกรรมการสามัญ/วิสามัญ</label>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2.14: อำนาจหน้าที่ ส.ก. ในสภา ============ -->
+<section class="section" id="sk-powers" style="background:var(--bg2)">
+  <div class="container">
+    <span class="phase-badge phase-d">Phase D — ปฏิบัติหน้าที่ในสภา</span>
+    <div class="section-label phase-d-label"><span class="line"></span> PART 2.14 — SK POWERS</div>
+    <h2>⚡ อำนาจหน้าที่ ส.ก. ในสภา</h2>
+    <p class="section-desc">อำนาจหน้าที่ 6 ด้านของสมาชิกสภากรุงเทพมหานคร — อ้างอิง สถาบันพระปกเกล้า (wiki.kpi.ac.th) และ พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528</p>
+
+    <div class="power-grid">
+      <div class="power-card">
+        <div class="power-num">1</div>
+        <div class="power-body">
+          <h4>เสนอ + พิจารณาให้ความเห็นชอบตราข้อบัญญัติ กทม.</h4>
+          <p>ส.ก. มีอำนาจเสนอร่างข้อบัญญัติ กทม. (จำนวนไม่น้อยกว่า 1/5) และพิจารณาให้ความเห็นชอบร่างข้อบัญญัติต่างๆ ที่เสนอเข้าสู่สภา — <a class="matra-link" href="#law-other">มาตรา 97-98</a></p>
+        </div>
+      </div>
+      <div class="power-card">
+        <div class="power-num">2</div>
+        <div class="power-body">
+          <h4>พิจารณาให้ความเห็นชอบร่างข้อบัญญัติงบประมาณรายจ่ายประจำปี</h4>
+          <p>อำนาจสำคัญที่สุดอย่างหนึ่ง — พิจารณางบประมาณประจำปีของ กทม. ผ่าน 3 วาระ — <a class="matra-link" href="#law-other">มาตรา 39</a></p>
+        </div>
+      </div>
+      <div class="power-card">
+        <div class="power-num">3</div>
+        <div class="power-body">
+          <h4>ควบคุม ตรวจสอบ ติดตามการบริหารของฝ่ายบริหาร</h4>
+          <p>ตั้งกระทู้ถามผู้ว่า กทม. (<a class="matra-link" href="#law-other">มาตรา 36</a>) | เปิดอภิปรายทั่วไป (<a class="matra-link" href="#law-other">มาตรา 37</a>)</p>
+        </div>
+      </div>
+      <div class="power-card">
+        <div class="power-num">4</div>
+        <div class="power-body">
+          <h4>พิจารณาให้ความเห็นชอบในกิจการที่กฎหมายกำหนด</h4>
+          <p>เรื่องที่กฎหมายกำหนดให้ต้องได้รับความเห็นชอบจากสภา กทม. ก่อนดำเนินการ</p>
+        </div>
+      </div>
+      <div class="power-card">
+        <div class="power-num">5</div>
+        <div class="power-body">
+          <h4>อำนาจอนุมัติ</h4>
+          <p>อนุมัติข้อกำหนด กทม. | ขยายเวลาคณะกรรมการ | และเรื่องอื่นๆ ตามที่กฎหมายกำหนด</p>
+        </div>
+      </div>
+      <div class="power-card">
+        <div class="power-num">6</div>
+        <div class="power-body">
+          <h4>วินิจฉัย</h4>
+          <p>ให้สมาชิกพ้นสมาชิกภาพ (ต้องใช้เสียง 2/3) | อนุมัติการลาประชุม | ตีความข้อบังคับการประชุม</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2.15: กรรมการสามัญวิสามัญ ============ -->
+<section class="section" id="committees">
+  <div class="container">
+    <span class="phase-badge phase-d">Phase D — ปฏิบัติหน้าที่ในสภา</span>
+    <div class="section-label phase-d-label"><span class="line"></span> PART 2.15 — COMMITTEES</div>
+    <h2>👥 คณะกรรมการสามัญ และวิสามัญ</h2>
+    <p class="section-desc">สภา กทม. มีอำนาจเลือกคณะกรรมการสามัญ และคณะกรรมการวิสามัญ เพื่อดำเนินงานตามอำนาจหน้าที่ — อ้างอิง <a class="matra-link" href="#law-other">มาตรา 38 พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528</a></p>
+
+    <div class="do-dont-grid" style="margin-bottom:28px">
+      <div class="do-section">
+        <h3>📋 คณะกรรมการสามัญ</h3>
+        <div class="do-card">
+          <div class="card-title">ตั้งจาก<strong>สมาชิกสภา กทม.</strong></div>
+        </div>
+        <div class="do-card">
+          <div class="card-title">ทำหน้าที่<strong>ถาวร</strong>ตลอดอายุสภา</div>
+        </div>
+        <div class="do-card">
+          <div class="card-title">เช่น คณะกรรมการสามัญด้านงบประมาณ ด้านกฎหมาย ฯลฯ</div>
+        </div>
+      </div>
+      <div class="dont-section" style="color:var(--navy)">
+        <h3 style="color:var(--navy)">📋 คณะกรรมการวิสามัญ</h3>
+        <div class="band-card yellow-band" style="margin-bottom:10px">
+          <div class="card-title" style="color:#92400E">ตั้งจาก<strong>สมาชิก + บุคคลภายนอก</strong></div>
+        </div>
+        <div class="band-card yellow-band" style="margin-bottom:10px">
+          <div class="card-title" style="color:#92400E">ทำหน้าที่<strong>เฉพาะเรื่อง</strong>ตามที่สภามอบหมาย</div>
+        </div>
+        <div class="band-card yellow-band" style="margin-bottom:10px">
+          <div class="card-title" style="color:#92400E">เช่น คณะกรรมการวิสามัญพิจารณาร่างข้อบัญญัติ</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="law-text-box">
+      <h4>องค์ประชุมคณะกรรมการ — <a class="matra-link" href="#law-other">มาตรา 38</a></h4>
+      <div class="law-content">
+        <p>องค์ประชุมคณะกรรมการ: <strong>ไม่น้อยกว่ากึ่งหนึ่ง</strong> ของจำนวนกรรมการทั้งหมด — ใช้ข้อบังคับสภา กทม. โดยอนุโลม</p>
+        <p style="margin-top:8px"><strong>หน้าที่:</strong> สอบสวน ศึกษา พิจารณา เรื่องที่อยู่ในอำนาจหน้าที่ แล้วรายงานต่อสภา</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2.16: เทคนิคกระบวนการออกข้อบัญญัติ ============ -->
+<section class="section" id="ordinance-process" style="background:var(--bg2)">
+  <div class="container">
+    <span class="phase-badge phase-d">Phase D — ปฏิบัติหน้าที่ในสภา</span>
+    <div class="section-label phase-d-label"><span class="line"></span> PART 2.16 — ORDINANCE PROCESS</div>
+    <h2>📝 กระบวนการออกข้อบัญญัติ กทม.</h2>
+    <p class="section-desc">ขั้นตอนการตราข้อบัญญัติกรุงเทพมหานคร — ตั้งแต่เสนอร่างจนถึงประกาศใช้ — อ้างอิง <a class="matra-link" href="#law-other">มาตรา 97, 98, 100, 101, 102 พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528</a></p>
+
+    <!-- Who can propose -->
+    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">ผู้มีสิทธิเสนอร่างข้อบัญญัติ — <a class="matra-link" href="#law-other">มาตรา 98</a></h3>
+    <div class="card-band" style="margin-bottom:28px">
+      <div class="band-card" style="border-color:#D97706;background:#FFFBEB">
+        <span class="icon">👤</span>
+        <h4>1. ผู้ว่าราชการ กทม.</h4>
+        <p>เสนอร่างข้อบัญญัติได้โดยตรง</p>
+      </div>
+      <div class="band-card" style="border-color:#D97706;background:#FFFBEB">
+        <span class="icon">👥</span>
+        <h4>2. สมาชิกไม่น้อยกว่า 1/5</h4>
+        <p>สมาชิกสภา กทม. ลงชื่อร่วมกันไม่น้อยกว่า 1/5 ของจำนวนสมาชิกทั้งหมด</p>
+      </div>
+      <div class="band-card green-band">
+        <span class="icon">🏘️</span>
+        <h4>3. ราษฎรเข้าชื่อ</h4>
+        <p>ประชาชนเข้าชื่อตามกฎหมาย (พ.ร.บ.ระเบียบบริหาร กทม. ฉบับที่ 5)</p>
+      </div>
+    </div>
+
+    <!-- Flowchart -->
+    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">📊 Flowchart: กระบวนการออกข้อบัญญัติ</h3>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-num fn-warm">1</div>
+        <div class="flow-body">
+          <h4>เสนอร่างข้อบัญญัติ</h4>
+          <p>ผู้ว่า กทม. / ส.ก. ไม่น้อยกว่า 1/5 / ราษฎรเข้าชื่อ → เสนอร่างเข้าสภา — <a class="matra-link" href="#law-other">มาตรา 98</a></p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num fn-warm">2</div>
+        <div class="flow-body">
+          <h4>สภาพิจารณา</h4>
+          <p>สภา กทม. พิจารณาร่างข้อบัญญัติ — อภิปราย แปรญัตติ ลงมติ — <a class="matra-link" href="#law-other">มาตรา 97</a></p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num fn-green">3</div>
+        <div class="flow-body">
+          <h4>สภาเห็นชอบ → ส่งผู้ว่า กทม. ลงนาม</h4>
+          <p>เมื่อสภาเห็นชอบ ส่งผู้ว่า กทม. ลงนามประกาศใช้ — <a class="matra-link" href="#law-other">มาตรา 100</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Branch: ผู้ว่าไม่เห็นชอบ -->
+    <div class="flow-branch">
+      <div class="flow-branch-card branch-yes">
+        <strong>✅ ผู้ว่าเห็นชอบ</strong><br>
+        ลงนามประกาศใช้ → <strong>ข้อบัญญัติมีผลบังคับ</strong>
+      </div>
+      <div class="flow-branch-card branch-no">
+        <strong>❌ ผู้ว่าไม่เห็นชอบ</strong><br>
+        ส่งคืนสภาพิจารณาใหม่ — <a class="matra-link" href="#law-other">มาตรา 101</a>
+      </div>
+    </div>
+
+    <div class="flow-steps" style="margin-top:16px">
+      <div class="flow-step">
+        <div class="flow-num fn-red">4</div>
+        <div class="flow-body">
+          <h4>สภายืนยันด้วยเสียง 3/4</h4>
+          <p>หากผู้ว่าไม่เห็นชอบ → สภาลงมติยืนยันด้วยคะแนนไม่น้อยกว่า <strong>3 ใน 4</strong> → ผู้ว่าต้องลงนามประกาศ — <a class="matra-link" href="#law-other">มาตรา 101</a></p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num fn-red">5</div>
+        <div class="flow-body" style="border-color:#FECACA;background:#FEF2F2">
+          <h4 style="color:#991B1B">สภาไม่เห็นชอบ → ร่างตกไป</h4>
+          <p>หากสภาไม่ยืนยัน หรือไม่เห็นชอบร่างตั้งแต่ต้น → ร่างข้อบัญญัตินั้นตกไป — <a class="matra-link" href="#law-other">มาตรา 102</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2.17: กระทู้ถาม ญัตติ ============ -->
+<section class="section" id="questions-motions">
+  <div class="container">
+    <span class="phase-badge phase-d">Phase D — ปฏิบัติหน้าที่ในสภา</span>
+    <div class="section-label phase-d-label"><span class="line"></span> PART 2.17 — QUESTIONS & MOTIONS</div>
+    <h2>❓ กระทู้ถาม และ ญัตติ</h2>
+    <p class="section-desc">เครื่องมือสำคัญของ ส.ก. ในการตรวจสอบฝ่ายบริหารและเสนอเรื่องต่อสภา — อ้างอิง <a class="matra-link" href="#law-other">มาตรา 36, 37 พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528 (แก้ไข ฉบับที่ 6)</a></p>
+
+    <div class="do-dont-grid" style="margin-bottom:28px">
+      <div class="do-section">
+        <h3>📌 กระทู้ถาม — <a class="matra-link" href="#law-other">มาตรา 36</a></h3>
+        <div class="do-card">
+          <div class="card-title">สมาชิกมีสิทธิตั้ง<strong>กระทู้ถามผู้ว่าราชการ กทม.</strong></div>
+          <span class="cite">สมาชิกทุกคนมีสิทธิตั้งกระทู้ถาม — ม.36 พ.ร.บ.ระเบียบบริหาร กทม. 2528</span>
+        </div>
+        <div class="do-card">
+          <div class="card-title">ใช้เป็นเครื่องมือ<strong>ตรวจสอบการทำงาน</strong>ของฝ่ายบริหาร</div>
+        </div>
+      </div>
+      <div class="do-section">
+        <h3>📌 ญัตติเปิดอภิปราย — <a class="matra-link" href="#law-other">มาตรา 37</a></h3>
+        <div class="band-card yellow-band" style="margin-bottom:10px">
+          <div class="card-title" style="color:#92400E">สมาชิกไม่น้อยกว่า <strong>2/5</strong> เข้าชื่อเสนอญัตติเปิดอภิปรายทั่วไป</div>
+          <span style="font-size:11px;color:#92400E;display:block;margin-top:4px">⚠️ แก้ไข ฉบับที่ 6 พ.ศ. 2562 — จาก 1/3 เป็น 2/5</span>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">ประเภทญัตติ</h3>
+    <div class="card-band" style="margin-bottom:20px">
+      <div class="band-card" style="border-color:#D97706;background:#FFFBEB">
+        <span class="icon">📋</span>
+        <h4>ญัตติทั่วไป</h4>
+        <p>เสนอเรื่องทั่วไปเพื่อให้สภาพิจารณาลงมติ — ข้อบังคับ ข้อ 37</p>
+      </div>
+      <div class="band-card red-band">
+        <span class="icon">🎤</span>
+        <h4>ญัตติเปิดอภิปรายทั่วไป</h4>
+        <p>ใช้ตรวจสอบฝ่ายบริหาร — ต้องใช้เสียง 2/5 — <a class="matra-link" href="#law-other">มาตรา 37</a></p>
+      </div>
+      <div class="band-card" style="border-color:#D97706;background:#FFFBEB">
+        <span class="icon">⚡</span>
+        <h4>ญัตติด่วน</h4>
+        <p>เรื่องด่วนที่ไม่ต้องเสนอล่วงหน้า — ข้อบังคับ ข้อ 38</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2.18: เรื่องราวในสมัยประชุม ============ -->
+<section class="section" id="session-work" style="background:var(--bg2)">
+  <div class="container">
+    <span class="phase-badge phase-d">Phase D — ปฏิบัติหน้าที่ในสภา</span>
+    <div class="section-label phase-d-label"><span class="line"></span> PART 2.18 — SESSION WORK</div>
+    <h2>📅 เรื่องราวในสมัยประชุม</h2>
+    <p class="section-desc">สมัยประชุมสามัญ วิสามัญ และเรื่องที่พิจารณาในสภา — อ้างอิง <a class="matra-link" href="#law-other">มาตรา 30, 31 พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528</a></p>
+
+    <div class="table-wrap" style="margin-bottom:28px">
+      <table class="info-table">
+        <thead>
+          <tr><th>ประเภทสมัยประชุม</th><th>จำนวน/เงื่อนไข</th><th>อ้างอิง</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>สมัยสามัญ</strong></td>
+            <td>ไม่น้อยกว่า <strong>2 สมัย</strong> แต่ไม่เกิน <strong>4 สมัย/ปี</strong></td>
+            <td><a class="matra-link" href="#law-other">มาตรา 30</a></td>
+          </tr>
+          <tr>
+            <td><strong>สมัยวิสามัญ</strong></td>
+            <td>ผู้ว่า กทม. หรือสมาชิก 1/3 ร้องขอ → ประธานสภากำหนดภายใน <strong>15 วัน</strong></td>
+            <td><a class="matra-link" href="#law-other">มาตรา 31</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">เรื่องที่พิจารณาในสมัยประชุม</h3>
+    <div class="card-band" style="margin-bottom:28px">
+      <div class="band-card" style="border-color:#D97706;background:#FFFBEB">
+        <span class="icon">📝</span>
+        <h4>ร่างข้อบัญญัติ</h4>
+        <p>พิจารณาร่างข้อบัญญัติที่เสนอเข้าสู่สภา</p>
+      </div>
+      <div class="band-card" style="border-color:#D97706;background:#FFFBEB">
+        <span class="icon">💰</span>
+        <h4>งบประมาณ</h4>
+        <p>พิจารณาร่างข้อบัญญัติงบประมาณรายจ่ายประจำปี</p>
+      </div>
+      <div class="band-card" style="border-color:#D97706;background:#FFFBEB">
+        <span class="icon">❓</span>
+        <h4>กระทู้ถาม</h4>
+        <p>ตั้งกระทู้ถามผู้ว่า กทม. เกี่ยวกับการบริหาร</p>
+      </div>
+      <div class="band-card" style="border-color:#D97706;background:#FFFBEB">
+        <span class="icon">📋</span>
+        <h4>ญัตติ</h4>
+        <p>เสนอญัตติทั่วไป ญัตติด่วน ญัตติเปิดอภิปราย</p>
+      </div>
+      <div class="band-card" style="border-color:#D97706;background:#FFFBEB">
+        <span class="icon">📊</span>
+        <h4>รายงานกรรมการ</h4>
+        <p>รับทราบรายงานจากคณะกรรมการสามัญ/วิสามัญ</p>
+      </div>
+    </div>
+
+    <div class="law-text-box">
+      <h4>เบี้ยประชุมกรรมาธิการ</h4>
+      <div class="law-content">
+        <p>กรรมการ: <strong>1,500 บาท/ครั้ง</strong> | อนุกรรมการ: <strong>800 บาท/ครั้ง</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2.19: การพิจารณางบประมาณ ============ -->
+<section class="section" id="budget-review">
+  <div class="container">
+    <span class="phase-badge phase-d">Phase D — ปฏิบัติหน้าที่ในสภา</span>
+    <div class="section-label phase-d-label"><span class="line"></span> PART 2.19 — BUDGET REVIEW</div>
+    <h2>💰 การพิจารณางบประมาณ</h2>
+    <p class="section-desc">สภา กทม. พิจารณาร่างข้อบัญญัติงบประมาณรายจ่ายประจำปี — กระบวนการ 3 วาระ — อ้างอิง <a class="matra-link" href="#law-other">มาตรา 39 พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528</a></p>
+
+    <div class="flow-steps" style="margin-bottom:28px">
+      <div class="flow-step">
+        <div class="flow-num fn-warm">1</div>
+        <div class="flow-body">
+          <h4>ผู้ว่า กทม. เสนอร่างข้อบัญญัติงบประมาณ</h4>
+          <p>ผู้ว่าราชการ กทม. จัดทำและเสนอร่างข้อบัญญัติงบประมาณรายจ่ายประจำปีเข้าสู่สภา</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num fn-warm">2</div>
+        <div class="flow-body" style="border-color:#D97706;background:#FFFBEB">
+          <h4>วาระที่ 1 — รับหลักการ</h4>
+          <p>ผู้ว่า กทม. แถลงหลักการและเหตุผลของร่างงบประมาณ → สภาลงมติ<strong>รับหลักการ</strong></p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num fn-warm">3</div>
+        <div class="flow-body" style="border-color:#D97706;background:#FFFBEB">
+          <h4>วาระที่ 2 — คณะกรรมาธิการพิจารณารายละเอียด</h4>
+          <p>ตั้งคณะกรรมาธิการพิจารณาร่างงบประมาณทีละรายการ — เรียกหน่วยงานชี้แจง — แปรญัตติ</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num fn-green">4</div>
+        <div class="flow-body">
+          <h4>วาระที่ 3 — ลงมติเห็นชอบ</h4>
+          <p>สภาลงมติ<strong>เห็นชอบหรือไม่เห็นชอบ</strong>ร่างงบประมาณทั้งฉบับ (การเพิ่มรายจ่ายต้องได้รับความเห็นชอบจากผู้ว่า กทม.) — <a class="matra-link" href="#law-other">มาตรา 39</a></p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num fn-green">5</div>
+        <div class="flow-body" style="border-color:#22C55E;background:#F0FDF4">
+          <h4>ประกาศใช้งบประมาณ</h4>
+          <p>ผู้ว่า กทม. ลงนามประกาศใช้ → ข้อบัญญัติงบประมาณมีผลบังคับ</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-box">
+      <div class="stat-box">
+        <div class="sb-num" style="color:#D97706">~90,000</div>
+        <div class="sb-label">ล้านบาท<br><span style="font-size:10px;color:var(--text3)">งบประมาณ กทม. ปี 2569 [ต้องยืนยัน]</span></div>
+      </div>
+      <div class="stat-box">
+        <div class="sb-num">3</div>
+        <div class="sb-label">วาระพิจารณา<br><span style="font-size:10px;color:var(--text3)">รับหลักการ → กมธ. → ลงมติ</span></div>
+      </div>
+      <div class="stat-box">
+        <div class="sb-num" style="color:#22C55E">50</div>
+        <div class="sb-label">เขตเลือกตั้ง ส.ก.<br><span style="font-size:10px;color:var(--text3)">50 เขต กทม.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHASE E: คลังข้อมูลอ้างอิง ============ -->
+
+<!-- ============ SECTION 2.22: สิทธิประโยชน์ ส.ก. ============ -->
+<section class="section" id="sk-benefits" style="background:var(--bg2)">
+  <div class="container">
+    <span class="phase-badge phase-e">Phase E — คลังข้อมูลอ้างอิง</span>
+    <div class="section-label phase-e-label"><span class="line"></span> PART 2.22 — SK BENEFITS</div>
+    <h2>💼 สิทธิประโยชน์ ส.ก.</h2>
+    <p class="section-desc">เงินเดือน เบี้ยประชุม และสวัสดิการของสมาชิกสภากรุงเทพมหานคร — อ้างอิง พระราชกฤษฎีกากำหนดเงินประจำตำแหน่งฯ ส.ก. (ฉบับที่ 8) พ.ศ. 2555</p>
+
+    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">เงินเดือนประจำตำแหน่ง</h3>
+    <div class="salary-grid" style="margin-bottom:28px">
+      <div class="salary-card">
+        <div class="sal-amount" style="color:var(--navy)">48,450</div>
+        <div class="sal-label">บาท/เดือน</div>
+        <div class="sal-detail"><strong>ส.ก.</strong><br>(เงินประจำตำแหน่ง 44,700 + เงินตอบแทน 3,750)</div>
+      </div>
+      <div class="salary-card" style="border-color:var(--gold);background:#FFFDF5">
+        <div class="sal-amount" style="color:var(--gold)">73,560</div>
+        <div class="sal-label">บาท/เดือน</div>
+        <div class="sal-detail"><strong>ประธานสภา</strong></div>
+      </div>
+      <div class="salary-card">
+        <div class="sal-amount" style="color:var(--navy)">61,140</div>
+        <div class="sal-label">บาท/เดือน</div>
+        <div class="sal-detail"><strong>รองประธานสภา</strong></div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">เบี้ยประชุม</h3>
+    <div class="table-wrap" style="margin-bottom:28px">
+      <table class="info-table">
+        <thead>
+          <tr><th>ประเภท</th><th>อัตรา</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>เบี้ยประชุมกรรมการ</strong></td>
+            <td><strong>1,500 บาท/ครั้ง</strong></td>
+          </tr>
+          <tr>
+            <td><strong>เบี้ยประชุมอนุกรรมการ</strong></td>
+            <td><strong>800 บาท/ครั้ง</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card-band">
+      <div class="band-card" style="border-color:#9F1239;background:#FFF1F2">
+        <span class="icon">📊</span>
+        <h4 style="color:#9F1239">รวม 4 ปี — ส.ก.</h4>
+        <p>ส.ก. ≈ <strong>2,325,600 บาท</strong> (เงินเดือน 48,450 × 48 เดือน) ยังไม่รวมเบี้ยประชุมกรรมการและสวัสดิการอื่นๆ</p>
+      </div>
+      <div class="band-card green-band">
+        <span class="icon">🏥</span>
+        <h4>สวัสดิการ</h4>
+        <p>ค่ารักษาพยาบาล | ค่าเดินทาง | สิทธิประโยชน์อื่นๆ ตามระเบียบ กทม.</p>
+      </div>
+    </div>
+
+    <p style="font-size:12px;color:var(--text3);margin-top:16px">อ้างอิง: พระราชกฤษฎีกากำหนดเงินประจำตำแหน่ง เงินค่าเบี้ยประชุม และประโยชน์ตอบแทนอื่นของสมาชิกสภากรุงเทพมหานคร เลขานุการประธานสภากรุงเทพมหานคร เลขานุการรองประธานสภากรุงเทพมหานคร ผู้ช่วยเลขานุการประธานสภากรุงเทพมหานคร ผู้ช่วยเลขานุการรองประธานสภากรุงเทพมหานคร ที่ปรึกษา เลขานุการ และผู้ช่วยเลขานุการของสมาชิกสภากรุงเทพมหานคร (ฉบับที่ 8) พ.ศ. 2555</p>
+  </div>
+</section>
+
+<!-- ============ SECTION 2.23: การสิ้นสภาพของ ส.ก. ============ -->
+<section class="section" id="termination">
+  <div class="container">
+    <span class="phase-badge phase-e">Phase E — คลังข้อมูลอ้างอิง</span>
+    <div class="section-label phase-e-label"><span class="line"></span> PART 2.23 — TERMINATION</div>
+    <h2>🚫 การสิ้นสมาชิกภาพของ ส.ก.</h2>
+    <p class="section-desc">เหตุที่ทำให้สมาชิกภาพของ ส.ก. สิ้นสุดลง — อ้างอิง <a class="matra-link" href="#law-other">มาตรา 23, 24 พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528 (แก้ไข ฉบับที่ 5)</a></p>
+
+    <div class="law-text-box" style="margin-bottom:28px">
+      <h4>มาตรา 23 — เหตุสิ้นสมาชิกภาพ</h4>
+      <div class="law-content">
+        <p>สมาชิกภาพของสมาชิกสภากรุงเทพมหานครสิ้นสุดลงด้วยเหตุดังต่อไปนี้:</p>
+      </div>
+    </div>
+
+    <div class="term-list">
+      <div class="term-item">
+        <div class="term-num">(1)</div>
+        <div class="term-text"><strong>ครบวาระ 4 ปี หรือยุบสภา</strong> — ถึงคราวออกตามอายุของสภากรุงเทพมหานคร หรือมีการยุบสภา</div>
+      </div>
+      <div class="term-item">
+        <div class="term-num">(2)</div>
+        <div class="term-text"><strong>ตาย</strong></div>
+      </div>
+      <div class="term-item">
+        <div class="term-num">(3)</div>
+        <div class="term-text"><strong>ลาออก</strong> — ยื่นหนังสือลาออกต่อประธานสภา มีผลในวันถัดไป</div>
+      </div>
+      <div class="term-item">
+        <div class="term-num">(4)</div>
+        <div class="term-text"><strong>ขาดคุณสมบัติ หรือมีลักษณะต้องห้าม</strong> — ตามกฎหมายที่เกี่ยวข้อง</div>
+      </div>
+      <div class="term-item">
+        <div class="term-num">(5)</div>
+        <div class="term-text"><strong>สภามีมติให้พ้นสมาชิกภาพ</strong> — ด้วยคะแนนไม่น้อยกว่า <strong>2 ใน 3</strong> ของจำนวนสมาชิกทั้งหมดที่มีอยู่</div>
+      </div>
+      <div class="term-item">
+        <div class="term-num">(6)</div>
+        <div class="term-text"><strong>รัฐมนตรีว่าการกระทรวงมหาดไทยสั่งให้พ้น</strong> — ตาม <a class="matra-link" href="#law-other">มาตรา 24</a> กระบวนการสอบสวน</div>
+      </div>
+      <div class="term-item">
+        <div class="term-num">(7)</div>
+        <div class="term-text"><strong>ขาดประชุมสภาตลอดสมัยประชุม</strong> — โดยไม่ได้รับอนุญาตจากสภา</div>
+      </div>
+      <div class="term-item">
+        <div class="term-num">(8)</div>
+        <div class="term-text"><strong>สภาวินิจฉัยให้ออก</strong> — ด้วยเสียง <strong>2 ใน 3</strong> (กรณีเสื่อมเสียเกียรติศักดิ์)</div>
+      </div>
+      <div class="term-item">
+        <div class="term-num">(9)</div>
+        <div class="term-text"><strong>ราษฎรลงคะแนนให้พ้นตำแหน่ง</strong> — ตามกฎหมายว่าด้วยการลงคะแนนเสียงเพื่อถอดถอนสมาชิกสภาท้องถิ่น (พ.ร.บ.ระเบียบบริหาร กทม. ฉบับที่ 5)</div>
+      </div>
+    </div>
+
+    <div class="law-text-box" style="margin-top:24px">
+      <h4>มาตรา 24 — กระบวนการสอบสวน</h4>
+      <div class="law-content">
+        <p>เมื่อรัฐมนตรีว่าการกระทรวงมหาดไทยเห็นว่ามีเหตุอันควรสงสัยว่าสมาชิกผู้ใดมีพฤติการณ์ร่ำรวยผิดปกติ หรือมีพฤติการณ์ส่อไปในทางทุจริต → ตั้งคณะกรรมการสอบสวน → ถ้าพบว่ามีมูล → สั่งให้พ้นจากตำแหน่งได้</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2.24: การเลือกตั้งใหม่ ============ -->
+<section class="section" id="new-election" style="background:var(--bg2)">
+  <div class="container">
+    <span class="phase-badge phase-e">Phase E — คลังข้อมูลอ้างอิง</span>
+    <div class="section-label phase-e-label"><span class="line"></span> PART 2.24 — NEW ELECTION</div>
+    <h2>🔄 การเลือกตั้งใหม่</h2>
+    <p class="section-desc">กรณีต่างๆ ที่ต้องจัดเลือกตั้ง ส.ก. ใหม่ และระบบใบสี — อ้างอิง พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528 และ พ.ร.บ.เลือกตั้งท้องถิ่น 2562</p>
+
+    <div class="table-wrap" style="margin-bottom:28px">
+      <table class="info-table">
+        <thead>
+          <tr><th>กรณี</th><th>อ้างอิง</th><th>กำหนดเลือกตั้ง</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ครบวาระ 4 ปี</strong></td>
+            <td><a class="matra-link" href="#law-other">มาตรา 17</a></td>
+            <td>เลือกตั้งทั่วไปภายใน <strong>45 วัน</strong> — <a class="matra-link" href="#law-m49">มาตรา 11</a></td>
+          </tr>
+          <tr>
+            <td><strong>ยุบสภา</strong></td>
+            <td><a class="matra-link" href="#law-other">มาตรา 18-19</a></td>
+            <td>เลือกตั้งภายใน <strong>60 วัน</strong></td>
+          </tr>
+          <tr>
+            <td><strong>ตำแหน่งว่าง</strong> (ตาย/ลาออก/ขาดคุณสมบัติ)</td>
+            <td><a class="matra-link" href="#law-other">มาตรา 21</a></td>
+            <td>เลือกตั้งเฉพาะเขตภายใน <strong>90 วัน</strong> (เว้นแต่เหลือวาระ &lt;180 วัน)</td>
+          </tr>
+          <tr>
+            <td><strong>กกต. สั่งเลือกตั้งใหม่</strong></td>
+            <td>มาตรา 16 พ.ร.บ.เลือกตั้งท้องถิ่น</td>
+            <td>กกต. มีอำนาจ<strong>ย่นหรือขยาย</strong>ระยะเวลาได้ตามความจำเป็น</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">🃏 ระบบใบสี — ผลต่อการลงสมัครใหม่</h3>
+    <div class="card-band" style="margin-bottom:28px">
+      <div class="band-card" style="border-color:#FCD34D;background:#FFFBEB">
+        <span class="icon">🟡</span>
+        <h4 style="color:#92400E">ใบเหลือง</h4>
+        <p style="color:#78350F"><strong>ลงสมัครใหม่ได้</strong> — กกต. สั่งเลือกตั้งใหม่ แต่ไม่ตัดสิทธิผู้สมัคร</p>
+      </div>
+      <div class="band-card" style="border-color:#FB923C;background:#FFF7ED">
+        <span class="icon">🟠</span>
+        <h4 style="color:#9A3412">ใบส้ม</h4>
+        <p style="color:#7C2D12"><strong>ห้ามลงสมัครในครั้งนั้น</strong> — กกต. สั่งเลือกตั้งใหม่ + ห้ามผู้ถูกสั่งลงสมัคร</p>
+      </div>
+      <div class="band-card" style="border-color:#EF4444;background:#FEF2F2">
+        <span class="icon">🔴</span>
+        <h4 style="color:#991B1B">ใบแดง</h4>
+        <p style="color:#7F1D1D"><strong>เพิกถอนสิทธิเลือกตั้ง</strong> — ศาลสั่งเพิกถอนสิทธิ มีกำหนดระยะเวลาตามที่ศาลกำหนด</p>
+      </div>
+    </div>
+
+    <div class="law-text-box" style="margin-bottom:20px">
+      <h4>📎 ย้อนกลับ: เตรียมตัวเลือกตั้งใหม่</h4>
+      <div class="law-content">
+        <p>หากต้องเลือกตั้งใหม่ ผู้สมัครต้องเริ่มกระบวนการตั้งแต่ต้น — ตรวจคุณสมบัติ เตรียมเอกสาร สมัครรับเลือกตั้ง →</p>
+        <p style="margin-top:8px"><a href="#checklist-5" class="dl-btn-inline" style="margin:0">🔄 กลับไป Section 2.1 — คุณสมบัติผู้สมัคร (เริ่มต้นใหม่)</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ SECTION 12: KNOWLEDGE & ARTICLES ============ -->
 <section class="section" id="knowledge-section" style="background:var(--bg2)">
   <div class="container">
@@ -2556,6 +3434,10 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
     'campaign-end','election-day','post-election',
     'finance','registration',
     'ethics-section','risk','law-full-section','ect-resources','forms-timeline',
+    'report-day','first-day','asset-declaration',
+    'council-rules','sk-powers','committees','ordinance-process',
+    'questions-motions','session-work','budget-review',
+    'sk-benefits','termination','new-election',
     'knowledge-section','disclaimer-final'
   ];
   var desktopLinks = document.querySelectorAll('#desktopNav a');
