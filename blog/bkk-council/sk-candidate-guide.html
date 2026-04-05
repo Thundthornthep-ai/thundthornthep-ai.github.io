@@ -105,7 +105,7 @@
   --max-w:1080px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
+html{scroll-behavior:smooth;scroll-padding-top:200px}
 body{font-family:'Sarabun','IBM Plex Sans Thai',sans-serif;font-size:16px;line-height:1.8;color:var(--text);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
 /* MATRA LINKS */
@@ -137,7 +137,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
 .nav-title span{color:var(--gold)}
 
 /* Desktop nav links — hi-tech pill/box style */
-.nav-links{display:flex;gap:5px;flex-wrap:wrap;align-items:center;justify-content:center;max-width:calc(100% - 200px);padding:4px 0}
+.nav-links{display:flex;gap:5px;flex-wrap:wrap;align-items:center;justify-content:center;max-width:calc(100% - 140px);padding:4px 0}
 .nav-links a{
   display:inline-flex;align-items:center;
   padding:5px 12px;border-radius:8px;
@@ -158,6 +158,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
   border-color:#C9A96E;
   color:#fff;
 }
+.nav-row-break{flex-basis:100%;height:0;margin:0;padding:0}
 
 /* Hamburger button */
 .hamburger{
@@ -202,7 +203,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
 }
 .section-label .line{width:28px;height:2px;background:var(--gold);border-radius:1px}
 .section h2{
-  font-family:'Space Grotesk',sans-serif;font-size:clamp(24px,3.5vw,34px);
+  font-family:'Space Grotesk',sans-serif;font-size:1.6rem;
   font-weight:700;color:var(--navy);margin-bottom:10px;letter-spacing:-.5px;line-height:1.25;
 }
 .section .section-desc{font-size:15px;color:var(--text2);max-width:720px;margin-bottom:40px;line-height:1.85}
@@ -221,7 +222,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
 /* ============ ELECTION DATE BANNER ============ */
 .election-banner{
   background:linear-gradient(135deg,#0d1f33 0%,#1B2A4A 50%,#0d2848 100%);
-  border-bottom:2px solid var(--gold);padding:64px 24px 12px;text-align:center;
+  border-bottom:2px solid var(--gold);padding:190px 24px 12px;text-align:center;
   position:relative;overflow:hidden;
 }
 .election-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 100%,rgba(201,169,110,.1),transparent);pointer-events:none}
@@ -236,7 +237,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
   border-radius:12px;padding:8px 16px;width:100%;
 }
 .countdown-row-label{
-  font-size:0.8rem;color:rgba(255,255,255,0.8);white-space:nowrap;min-width:140px;
+  font-size:1.1rem;color:rgba(255,255,255,0.8);white-space:nowrap;min-width:160px;
   font-weight:600;letter-spacing:.3px;
 }
 .countdown-row.row-launch .countdown-row-label{color:#C9A96E}
@@ -254,7 +255,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 @media(max-width:480px){
   .countdown-row{flex-direction:column;gap:6px;padding:8px 12px}
-  .countdown-row-label{min-width:unset;text-align:center;font-size:0.75rem}
+  .countdown-row-label{min-width:unset;text-align:center;font-size:0.95rem}
   .countdown-wrapper{margin-left:0;gap:4px}
   .cd-box{min-width:40px;padding:4px 6px}
   .cd-num{font-size:1.1rem}
@@ -264,7 +265,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
 .hero{
   min-height:60vh;display:flex;align-items:center;justify-content:center;
   position:relative;overflow:hidden;
-  padding:140px 24px 60px;
+  padding:200px 24px 60px;
   background:linear-gradient(160deg,#0a0f1a 0%,#1B2A4A 50%,#0a0f1a 100%);
 }
 .hero-bg::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,110,.07) 0%,transparent 70%);top:-80px;right:-50px;animation:heroFloat 18s ease-in-out infinite}
@@ -818,6 +819,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
   transform: translateY(0);
 }
 
+@media(max-width:600px){.card-color-grid{grid-template-columns:1fr !important}}
 </style>
 </head>
 <body>
@@ -831,47 +833,46 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
   <div id="countdownDisplay" class="countdown-dual">
     <!-- Line 1: Team Launch -->
     <div class="countdown-row row-launch">
-      <span class="countdown-row-label">🎉 เปิดตัวทีมคนทำงาน</span>
+      <span class="countdown-row-label">เปิดตัวทีมคนทำงาน</span>
       <div class="countdown-wrapper">
         <div class="cd-box"><span class="cd-num" id="cd-launch-days">--</span><span class="cd-label">วัน</span></div>
         <div class="cd-box"><span class="cd-num" id="cd-launch-hours">--</span><span class="cd-label">ชม.</span></div>
         <div class="cd-box"><span class="cd-num" id="cd-launch-min">--</span><span class="cd-label">นาที</span></div>
         <div class="cd-box"><span class="cd-num" id="cd-launch-sec">--</span><span class="cd-label">วินาที</span></div>
       </div>
-      <div id="launchDoneMsg" class="cd-done" style="display:none">🎉 เปิดตัวแล้ว!</div>
+      <div id="launchDoneMsg" class="cd-done" style="display:none">เปิดตัวแล้ว!</div>
     </div>
     <!-- Line 2: Election Day -->
     <div class="countdown-row row-election">
-      <span class="countdown-row-label">🗳️ วันเลือกตั้ง ส.ก.</span>
+      <span class="countdown-row-label">วันเลือกตั้ง ส.ก.</span>
       <div class="countdown-wrapper">
         <div class="cd-box"><span class="cd-num" id="cd-days">--</span><span class="cd-label">วัน</span></div>
         <div class="cd-box"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">ชม.</span></div>
         <div class="cd-box"><span class="cd-num" id="cd-minutes">--</span><span class="cd-label">นาที</span></div>
         <div class="cd-box"><span class="cd-num" id="cd-seconds">--</span><span class="cd-label">วินาที</span></div>
       </div>
-      <div id="electionDoneMsg" class="cd-done" style="display:none">🗳️ วันนี้คือวันเลือกตั้ง!</div>
+      <div id="electionDoneMsg" class="cd-done" style="display:none">วันนี้คือวันเลือกตั้ง!</div>
     </div>
   </div>
-  <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:8px">[ต้องยืนยัน] — วันเลือกตั้งที่แน่นอนจะประกาศโดย กกต. อย่างเป็นทางการก่อนการเลือกตั้ง</div>
+  <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:8px">สมมติฐาน: วันเลือกตั้ง 5 กรกฎาคม 2569 — วันที่แน่นอนจะประกาศโดย กกต. อย่างเป็นทางการ</div>
 </div>
 
 <!-- STICKY NAV -->
 <nav class="nav" id="mainNav">
   <div class="nav-brand">
-    <div class="nav-logos">
-      <img src="../../las-logo-full.png" alt="LAS Logo" onerror="this.style.display='none'">
-      <img src="../../nia-logo-full.png" alt="NIA Logo" style="opacity:.9" onerror="this.style.display='none'">
-    </div>
     <div class="nav-title">LAS <span>Research</span></div>
   </div>
   <div class="nav-links" id="desktopNav">
-    <a href="#traffy-fondue">🏙️ ลงพื้นที่</a>
+    <!-- Row 1: Phase A -->
+    <a href="#traffy-fondue">ลงพื้นที่</a>
     <a href="#checklist-5">คุณสมบัติ</a>
     <a href="#prohibited-26">ต้องห้าม</a>
     <a href="#pre-announcement">ก่อนประกาศ</a>
     <a href="#ect-announcement">ประกาศเลือกตั้ง</a>
-    <a href="#timeline-section">Timeline</a>
     <a href="#ballot-draw">จับเบอร์</a>
+    <a href="#timeline-section">Timeline</a>
+    <span class="nav-row-break"></span>
+    <!-- Row 2: Phase B+C -->
     <a href="#do-section">DO</a>
     <a href="#dont-section">DON'T</a>
     <a href="#campaign-end">ยุติหาเสียง</a>
@@ -879,11 +880,9 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
     <a href="#post-election">หลังเลือกตั้ง</a>
     <a href="#finance">การเงิน</a>
     <a href="#registration">สมัคร</a>
-    <a href="#ethics-section">จรรยาบรรณ</a>
     <a href="#risk">Risk</a>
-    <a href="#law-full-section">กฎหมาย</a>
-    <a href="#ect-resources">กกต.</a>
-    <a href="#forms-timeline">แบบฟอร์ม</a>
+    <span class="nav-row-break"></span>
+    <!-- Row 3: Phase D -->
     <a href="#report-day">รายงานตัว</a>
     <a href="#first-day">ปฏิบัติหน้าที่</a>
     <a href="#asset-declaration">ทรัพย์สิน</a>
@@ -891,13 +890,18 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
     <a href="#sk-powers">อำนาจ ส.ก.</a>
     <a href="#committees">กรรมการ</a>
     <a href="#ordinance-process">ข้อบัญญัติ</a>
+    <span class="nav-row-break"></span>
+    <!-- Row 4: Phase D+E -->
     <a href="#questions-motions">กระทู้-ญัตติ</a>
     <a href="#session-work">สมัยประชุม</a>
     <a href="#budget-review">งบประมาณ</a>
+    <a href="#law-full-section">กฎหมาย</a>
+    <a href="#ect-resources">กกต.</a>
+    <a href="#forms-timeline">แบบฟอร์ม</a>
     <a href="#sk-benefits">สิทธิประโยชน์</a>
     <a href="#termination">สิ้นสภาพ</a>
     <a href="#new-election">เลือกตั้งใหม่</a>
-    <a href="#knowledge-section">บทความ</a>
+    <a href="#ethics-section">จรรยาบรรณ</a>
     <a href="#disclaimer-final">Disclaimer</a>
   </div>
   <button class="hamburger" id="hamburgerBtn" aria-label="เปิดเมนู">
@@ -976,55 +980,11 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
   <div class="disclaimer-critical">
     <span class="dc-icon">⚠️</span>
     <h3>CRITICAL DISCLAIMER — อ่านก่อนใช้คู่มือนี้</h3>
-    <p>คู่มือนี้จัดทำจากตัวบทกฎหมายที่เผยแพร่ต่อสาธารณะ <strong>เพื่อใช้เป็น Reference ขั้นต้นเท่านั้น</strong> การสมัครรับเลือกตั้งจริงต้องยืนยันรายละเอียดทั้งหมดกับ <strong>สำนักงาน กกต. กรุงเทพมหานคร</strong> และ <strong>กรมการปกครอง กระทรวงมหาดไทย</strong> โดยตรง เนื่องจากรายละเอียดขนาด/จำนวนป้าย และงบประมาณค่าใช้จ่ายสูงสุด <strong>จะประกาศใหม่ทุกการเลือกตั้ง</strong> ตัวเลขในคู่มือนี้อ้างอิงจากการเลือกตั้ง ส.ก.65 เป็นตัวอย่าง ต้องตรวจสอบตัวเลขปัจจุบันก่อนการสมัครทุกครั้ง วันเลือกตั้ง 5 กรกฎาคม 2569 [ต้องยืนยัน] กับ กกต. อย่างเป็นทางการ</p>
+    <p>คู่มือนี้จัดทำจากตัวบทกฎหมายที่เผยแพร่ต่อสาธารณะ <strong>เพื่อใช้เป็น Reference ขั้นต้นเท่านั้น</strong> การสมัครรับเลือกตั้งจริงต้องยืนยันรายละเอียดทั้งหมดกับ <strong>สำนักงาน กกต. กรุงเทพมหานคร</strong> และ <strong>กรมการปกครอง กระทรวงมหาดไทย</strong> โดยตรง เนื่องจากรายละเอียดขนาด/จำนวนป้าย และงบประมาณค่าใช้จ่ายสูงสุด <strong>จะประกาศใหม่ทุกการเลือกตั้ง</strong> ตัวเลขในคู่มือนี้อ้างอิงจากการเลือกตั้ง ส.ก.65 เป็นตัวอย่าง ต้องตรวจสอบตัวเลขปัจจุบันก่อนการสมัครทุกครั้ง วันเลือกตั้ง 5 กรกฎาคม 2569 (สมมติฐาน: วันเลือกตั้ง 5 กรกฎาคม 2569) — ต้องยืนยันกับ กกต. อย่างเป็นทางการ</p>
   </div>
 </div>
 
-<!-- TABLE OF CONTENTS -->
-<div class="container">
-  <div class="toc">
-    <h3>สารบัญ / Table of Contents</h3>
-    <div class="toc-grid">
-      <a href="#traffy-fondue" class="toc-item" style="grid-column:1/-1;background:linear-gradient(135deg,#e8f5e9,#e3f2fd);border-radius:8px;font-weight:600;color:#1B5E20"><span class="toc-num" style="color:#43A047">🏙️</span> เครื่องมือลงพื้นที่ — Traffy Fondue</a>
-      <a href="#checklist-5" class="toc-item"><span class="toc-num">01</span> คุณสมบัติผู้มีสิทธิสมัคร (<a class="matra-link" href="#law-m49" style="background:transparent;padding:0">ม.49</a>)</a>
-      <a href="#prohibited-26" class="toc-item"><span class="toc-num">02</span> ลักษณะต้องห้าม 26 ข้อ (<a class="matra-link" href="#law-m50" style="background:transparent;padding:0">ม.50</a>)</a>
-      <a href="#pre-announcement" class="toc-item"><span class="toc-num">03</span> ก่อนประกาศเลือกตั้ง (<a class="matra-link" href="#law-other" style="background:transparent;padding:0">ม.17-21</a>)</a>
-      <a href="#ect-announcement" class="toc-item"><span class="toc-num">04</span> ประกาศเลือกตั้ง + รับสมัคร (<a class="matra-link" href="#law-m49" style="background:transparent;padding:0">ม.12</a>)</a>
-      <a href="#ballot-draw" class="toc-item"><span class="toc-num">05</span> วันจับเบอร์ (<a class="matra-link" href="#law-m50" style="background:transparent;padding:0">ม.54-55</a>)</a>
-      <a href="#timeline-section" class="toc-item"><span class="toc-num">06</span> Timeline เลือกตั้ง ส.ก. 2569</a>
-      <a href="#do-section" class="toc-item"><span class="toc-num">07</span> DO — สิ่งที่ทำได้</a>
-      <a href="#dont-section" class="toc-item"><span class="toc-num">08</span> DON'T — สิ่งที่ห้ามทำ</a>
-      <a href="#campaign-end" class="toc-item"><span class="toc-num">09</span> วันยุติการหาเสียง (<a class="matra-link" href="#law-m65" style="background:transparent;padding:0">ม.64</a>)</a>
-      <a href="#election-day" class="toc-item"><span class="toc-num">10</span> วันเลือกตั้ง</a>
-      <a href="#post-election" class="toc-item"><span class="toc-num">11</span> หลังวันเลือกตั้ง</a>
-      <a href="#finance" class="toc-item"><span class="toc-num">12</span> การเงินและบัญชี (<a class="matra-link" href="#law-m60" style="background:transparent;padding:0">ม.60-62</a>)</a>
-      <a href="#registration" class="toc-item"><span class="toc-num">13</span> ขั้นตอนการสมัคร</a>
-      <a href="#ethics-section" class="toc-item"><span class="toc-num">14</span> จรรยาบรรณ ส.ก.</a>
-      <a href="#risk" class="toc-item"><span class="toc-num">15</span> Risk Assessment สรุป</a>
-      <a href="#law-full-section" class="toc-item"><span class="toc-num">16</span> ตัวบทกฎหมาย + ดาวน์โหลด</a>
-      <a href="#ect-resources" class="toc-item"><span class="toc-num">17</span> กกต. Download Center</a>
-      <a href="#forms-timeline" class="toc-item"><span class="toc-num">18</span> แบบฟอร์มตามช่วงเวลา</a>
-      <a href="#report-day" class="toc-item" style="grid-column:1/-1;background:#F0FDFA;border-radius:8px;font-weight:600;color:#0D9488"><span class="toc-num" style="color:#0D9488">C</span> Phase C — หลังเลือกตั้ง</a>
-      <a href="#report-day" class="toc-item"><span class="toc-num">2.10</span> วันรายงานตัว</a>
-      <a href="#first-day" class="toc-item"><span class="toc-num">2.11</span> วันปฏิบัติหน้าที่</a>
-      <a href="#asset-declaration" class="toc-item"><span class="toc-num">2.12</span> การยื่นบัญชีทรัพย์สิน</a>
-      <a href="#council-rules" class="toc-item" style="grid-column:1/-1;background:#FFFBEB;border-radius:8px;font-weight:600;color:#D97706"><span class="toc-num" style="color:#D97706">D</span> Phase D — ปฏิบัติหน้าที่ในสภา</a>
-      <a href="#council-rules" class="toc-item"><span class="toc-num">2.13</span> ข้อบังคับในสภา</a>
-      <a href="#sk-powers" class="toc-item"><span class="toc-num">2.14</span> อำนาจหน้าที่ ส.ก.</a>
-      <a href="#committees" class="toc-item"><span class="toc-num">2.15</span> คณะกรรมการสามัญวิสามัญ</a>
-      <a href="#ordinance-process" class="toc-item"><span class="toc-num">2.16</span> กระบวนการออกข้อบัญญัติ</a>
-      <a href="#questions-motions" class="toc-item"><span class="toc-num">2.17</span> กระทู้ถาม ญัตติ</a>
-      <a href="#session-work" class="toc-item"><span class="toc-num">2.18</span> เรื่องราวในสมัยประชุม</a>
-      <a href="#budget-review" class="toc-item"><span class="toc-num">2.19</span> การพิจารณางบประมาณ</a>
-      <a href="#sk-benefits" class="toc-item" style="grid-column:1/-1;background:#FFF1F2;border-radius:8px;font-weight:600;color:#9F1239"><span class="toc-num" style="color:#9F1239">E</span> Phase E — คลังข้อมูลอ้างอิง</a>
-      <a href="#sk-benefits" class="toc-item"><span class="toc-num">2.22</span> สิทธิประโยชน์ ส.ก.</a>
-      <a href="#termination" class="toc-item"><span class="toc-num">2.23</span> การสิ้นสมาชิกภาพ ส.ก.</a>
-      <a href="#new-election" class="toc-item"><span class="toc-num">2.24</span> การเลือกตั้งใหม่</a>
-      <a href="#knowledge-section" class="toc-item"><span class="toc-num">19</span> บทความและข้อมูลเพิ่มเติม</a>
-      <a href="#disclaimer-final" class="toc-item"><span class="toc-num">20</span> Disclaimer (TH + EN)</a>
-    </div>
-  </div>
-</div>
+<!-- TOC REMOVED — nav pills serve this purpose -->
 
 <!-- ============ TRAFFY FONDUE WIDGET ============ -->
 <section class="section" id="traffy-fondue" style="background:var(--bg);padding:48px 0 24px">
@@ -1522,7 +1482,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
         <input type="checkbox" onclick="event.stopPropagation()">
         <label>
           <strong>ตรวจสอบว่า กกต. ประกาศจำนวน/ขนาดป้ายแล้วหรือยัง</strong>
-          — จำนวนและขนาดป้ายหาเสียง <strong>[ต้องยืนยัน]</strong> ประกาศใหม่ทุกการเลือกตั้ง
+          — จำนวนและขนาดป้ายหาเสียง <strong>(สมมติฐาน: วันเลือกตั้ง 5 ก.ค. 2569)</strong> ประกาศใหม่ทุกการเลือกตั้ง
         </label>
       </div>
     </div>
@@ -1539,7 +1499,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
   <div class="container">
     <div class="section-label"><span class="line"></span> PART 3 — TIMELINE 2569</div>
     <h2>📅 Timeline เลือกตั้ง ส.ก. 2569</h2>
-    <p class="section-desc">ปฏิทินกระบวนการเลือกตั้งจากต้นจนจบ — อ้างอิง มาตรา 12, 17, 40, 43, 56, 58, 62, 70, 78 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562<br><span style="color:#DC2626">[ต้องยืนยัน]</span> — วันที่แน่นอนจะประกาศโดย กกต. อย่างเป็นทางการ</p>
+    <p class="section-desc">ปฏิทินกระบวนการเลือกตั้งจากต้นจนจบ — อ้างอิง มาตรา 12, 17, 40, 43, 56, 58, 62, 70, 78 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562<br><span style="color:#DC2626">สมมติฐาน: วันเลือกตั้ง 5 กรกฎาคม 2569</span> — วันที่แน่นอนจะประกาศโดย กกต. อย่างเป็นทางการ</p>
 
     <div class="timeline">
       <div class="tl-item">
@@ -1554,7 +1514,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
       <div class="tl-item">
         <div class="tl-icon tl-start">🏛️</div>
         <div class="tl-body">
-          <div class="tl-date">[ต้องยืนยัน]</div>
+          <div class="tl-date">สมมติฐาน: 5 ก.ค. 69</div>
           <h4>กกต. ประกาศกำหนดให้มีการเลือกตั้ง</h4>
           <p>กกต. ออกประกาศกำหนดวันเลือกตั้ง ส.ก. 2569</p>
           <p class="tl-cite">มาตรา 142 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
@@ -1563,7 +1523,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
       <div class="tl-item">
         <div class="tl-icon tl-start">📢</div>
         <div class="tl-body">
-          <div class="tl-date">[ต้องยืนยัน]</div>
+          <div class="tl-date">สมมติฐาน: 5 ก.ค. 69</div>
           <h4>ผอ.กต.ท้องถิ่น ประกาศให้มีการเลือกตั้ง</h4>
           <p>เริ่มต้นกระบวนการรับสมัครอย่างเป็นทางการ — ผู้สมัครเริ่มนับ 1 ปีทะเบียนบ้านจากวันนี้</p>
           <p class="tl-cite">มาตรา 12 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
@@ -1572,7 +1532,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
       <div class="tl-item">
         <div class="tl-icon tl-reg">📝</div>
         <div class="tl-body">
-          <div class="tl-date">เปิดรับสมัคร [ต้องยืนยัน]</div>
+          <div class="tl-date">เปิดรับสมัคร (สมมติฐาน)</div>
           <h4>วันเปิดรับสมัคร ส.ก. 2569</h4>
           <p>ไม่น้อยกว่า 5 วัน เริ่มไม่เกิน 10 วันหลังประกาศ — นำเอกสารครบถ้วน ค่าธรรมเนียม 10,000 บาท</p>
           <p class="tl-cite">มาตรา 12 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
@@ -1581,7 +1541,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
       <div class="tl-item">
         <div class="tl-icon tl-reg">📋</div>
         <div class="tl-body">
-          <div class="tl-date">วันสุดท้ายรับสมัคร [ต้องยืนยัน]</div>
+          <div class="tl-date">วันสุดท้ายรับสมัคร (สมมติฐาน)</div>
           <h4>วันสุดท้ายยื่นใบสมัคร ส.ก.</h4>
           <p>หมดเขตยื่นใบสมัครตามกำหนด กกต. — ตรวจเอกสารให้ครบก่อนวันนี้</p>
           <p class="tl-cite">มาตรา 12 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
@@ -1590,7 +1550,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
       <div class="tl-item">
         <div class="tl-icon tl-reg">📣</div>
         <div class="tl-body">
-          <div class="tl-date">ประกาศรายชื่อ [ต้องยืนยัน]</div>
+          <div class="tl-date">ประกาศรายชื่อ (สมมติฐาน)</div>
           <h4>ประกาศบัญชีรายชื่อผู้มีสิทธิเลือกตั้ง</h4>
           <p>กกต. ประกาศรายชื่อผู้มีสิทธิ + ผู้สมัครที่ผ่านการตรวจสอบ</p>
           <p class="tl-cite">มาตรา 43 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
@@ -1599,7 +1559,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
       <div class="tl-item">
         <div class="tl-icon tl-warn">📣</div>
         <div class="tl-body">
-          <div class="tl-date">ช่วงหาเสียง [ต้องยืนยัน]</div>
+          <div class="tl-date">ช่วงหาเสียง (สมมติฐาน)</div>
           <h4>ช่วงหาเสียงอย่างเป็นทางการ</h4>
           <p>หาเสียงได้ตาม <a class="matra-link" href="#law-m65">มาตรา 64</a> — ปราศรัย แจกเอกสาร ติดป้ายตามสถานที่ที่กำหนด ใช้ Social Media — <strong>หยุด 18.00 น. วันก่อนเลือกตั้ง</strong></p>
           <p class="tl-cite"><a class="matra-link" href="#law-m65">มาตรา 64, 70</a> พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
@@ -1608,7 +1568,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
       <div class="tl-item">
         <div class="tl-icon tl-vote">🗳️</div>
         <div class="tl-body">
-          <div class="tl-date">เลือกตั้งล่วงหน้า [ต้องยืนยัน]</div>
+          <div class="tl-date">เลือกตั้งล่วงหน้า (สมมติฐาน)</div>
           <h4>วันเลือกตั้งล่วงหน้า — นอกเขตและในเขต</h4>
           <p>ผู้มีสิทธิที่ไม่สะดวกวันหลักสามารถไปใช้สิทธิได้ก่อน</p>
           <p class="tl-cite">มาตรา 78 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
@@ -1620,7 +1580,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
           <div class="tl-date" style="color:#DC2626;font-size:14px;font-weight:700">วันอาทิตย์ที่ 5 กรกฎาคม พ.ศ. 2569</div>
           <h4 class="tl-main-vote" style="color:var(--navy);font-size:clamp(18px,2.5vw,26px)">🗳️ วันเลือกตั้ง ส.ก. กทม. 2569 — เวลา 08.00-17.00 น.</h4>
           <p>ไปใช้สิทธิเลือกตั้ง ณ หน่วยเลือกตั้งในเขตที่มีชื่ออยู่ — ห้ามหาเสียงหลัง 18.00 น. วันก่อน และตลอดวันเลือกตั้ง</p>
-          <p class="tl-cite">[ต้องยืนยัน] วันที่แน่นอน — มาตรา 78 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
+          <p class="tl-cite">สมมติฐาน: วันเลือกตั้ง 5 กรกฎาคม 2569 — มาตรา 78 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</p>
         </div>
       </div>
       <div class="tl-item">
@@ -1672,7 +1632,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
       </div>
       <div class="do-card">
         <div class="card-title"><strong>ติดป้ายหาเสียง</strong> ตามสถานที่ ขนาด จำนวนที่ กกต. กำหนด — ห้ามติดในบริเวณที่เลือกตั้ง</div>
-        <span class="cite">มาตรา 71 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562 [ต้องยืนยัน] ขนาดและจำนวนจากระเบียบ กกต.</span>
+        <span class="cite">มาตรา 71 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562 (สมมติฐาน: วันเลือกตั้ง 5 ก.ค. 2569) ขนาดและจำนวนจากระเบียบ กกต.</span>
       </div>
       <div class="do-card">
         <div class="card-title"><strong>หาเสียงทาง Social Media / Online</strong> — ต้องไม่ฝ่าฝืนระเบียบ กกต. และไม่เผยแพร่ข้อมูลเท็จ</div>
@@ -1742,7 +1702,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
         <span class="penalty">โทษตามมาตรา 126</span>
       </div>
       <div class="dont-card">
-        <div class="card-title"><strong>ห้ามใช้จ่ายเกินวงเงินที่ กกต. กำหนด</strong> [ต้องยืนยัน] ตัวเลขจากประกาศ กกต. 2569</div>
+        <div class="card-title"><strong>ห้ามใช้จ่ายเกินวงเงินที่ กกต. กำหนด</strong> (สมมติฐาน: วันเลือกตั้ง 5 ก.ค. 2569) ตัวเลขจากประกาศ กกต.</div>
         <span class="cite">มาตรา 60 พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</span>
         <span class="penalty">โทษ: จำคุก 1-5 ปี + ปรับ 3 เท่า + เพิกถอนสิทธิเลือกตั้ง 10 ปี (มาตรา 127)</span>
       </div>
@@ -1941,26 +1901,30 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
     <!-- ระบบใบสี -->
     <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">🃏 ระบบใบสี — ผลทางกฎหมายหลังเลือกตั้ง</h3>
     <p style="font-size:13px;color:var(--text2);margin-bottom:16px">คำว่า "ใบเหลือง" "ใบส้ม" "ใบแดง" "ใบดำ" <strong>ไม่ปรากฏในตัวบทกฎหมาย</strong> แต่สาธารณชนใช้อ้างอิงกันอย่างแพร่หลาย</p>
-    <div class="card-band" style="margin-bottom:28px">
-      <div class="band-card" style="border-color:#FCD34D;background:#FFFBEB">
-        <span class="icon">🟡</span>
-        <h4 style="color:#92400E">ใบเหลือง (มาตรา 106-107)</h4>
-        <p style="color:#78350F">กกต. สั่งให้เลือกตั้งใหม่ในหน่วยเลือกตั้งหรือเขตเลือกตั้ง — <strong>ผู้ถูกสั่งยังสามารถลงสมัครในการเลือกตั้งใหม่ได้</strong></p>
+    <div class="card-color-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:28px">
+      <div style="border-left:4px solid #FFD600;background:#FFFDE7;border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:6px">
+        <h4 style="color:#92400E;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;margin:0">ใบเหลือง</h4>
+        <span style="font-size:12px;color:var(--text3)">มาตรา 106-107</span>
+        <p style="font-size:13px;color:#78350F;line-height:1.7;margin:0"><strong>ผลลัพธ์:</strong> สั่งเลือกตั้งใหม่</p>
+        <p style="font-size:13px;color:#78350F;line-height:1.7;margin:0">กกต. สั่งให้เลือกตั้งใหม่ในหน่วย/เขตเลือกตั้ง — <strong>ยังลงสมัครใหม่ได้</strong></p>
       </div>
-      <div class="band-card" style="border-color:#FB923C;background:#FFF7ED">
-        <span class="icon">🟠</span>
-        <h4 style="color:#9A3412">ใบส้ม (มาตรา 107)</h4>
-        <p style="color:#7C2D12">กกต. สั่งให้เลือกตั้งใหม่ + <strong>ห้ามผู้ถูกสั่งลงสมัครในการเลือกตั้งใหม่ครั้งนั้น</strong></p>
+      <div style="border-left:4px solid #FF9100;background:#FFF8E1;border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:6px">
+        <h4 style="color:#9A3412;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;margin:0">ใบส้ม</h4>
+        <span style="font-size:12px;color:var(--text3)">มาตรา 107</span>
+        <p style="font-size:13px;color:#7C2D12;line-height:1.7;margin:0"><strong>ผลลัพธ์:</strong> เลือกตั้งใหม่ + ห้ามลง</p>
+        <p style="font-size:13px;color:#7C2D12;line-height:1.7;margin:0">กกต. สั่งให้เลือกตั้งใหม่ + <strong>ห้ามผู้ถูกสั่งลงสมัครในครั้งนั้น</strong></p>
       </div>
-      <div class="band-card" style="border-color:#EF4444;background:#FEF2F2">
-        <span class="icon">🔴</span>
-        <h4 style="color:#991B1B">ใบแดง (มาตรา 108)</h4>
-        <p style="color:#7F1D1D">ศาลสั่ง <strong>เพิกถอนสิทธิเลือกตั้ง</strong> — ผู้ถูกเพิกถอนจะไม่สามารถสมัครรับเลือกตั้งได้ตามระยะเวลาที่ศาลกำหนด</p>
+      <div style="border-left:4px solid #D50000;background:#FEF2F2;border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:6px">
+        <h4 style="color:#991B1B;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;margin:0">ใบแดง</h4>
+        <span style="font-size:12px;color:var(--text3)">มาตรา 108</span>
+        <p style="font-size:13px;color:#7F1D1D;line-height:1.7;margin:0"><strong>ผลลัพธ์:</strong> เพิกถอนสิทธิเลือกตั้ง</p>
+        <p style="font-size:13px;color:#7F1D1D;line-height:1.7;margin:0">ศาลสั่ง <strong>เพิกถอนสิทธิเลือกตั้ง</strong> — ไม่สามารถสมัครได้ตามระยะเวลาที่ศาลกำหนด</p>
       </div>
-      <div class="band-card" style="border-color:#374151;background:#F3F4F6">
-        <span class="icon">⚫</span>
-        <h4 style="color:#111827">ใบดำ</h4>
-        <p style="color:#374151">ศาลสั่งเพิกถอนสิทธิ + <strong>ห้ามลงเลือกตั้งตลอดชีวิต</strong> — กรณีกระทำทุจริตร้ายแรง</p>
+      <div style="border-left:4px solid #212121;background:#F5F5F5;border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:6px">
+        <h4 style="color:#111827;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;margin:0">ใบดำ</h4>
+        <span style="font-size:12px;color:var(--text3)">กรณีทุจริตร้ายแรง</span>
+        <p style="font-size:13px;color:#374151;line-height:1.7;margin:0"><strong>ผลลัพธ์:</strong> ห้ามลงเลือกตั้งตลอดชีวิต</p>
+        <p style="font-size:13px;color:#374151;line-height:1.7;margin:0">ศาลสั่งเพิกถอนสิทธิ + <strong>ห้ามลงเลือกตั้งตลอดชีวิต</strong></p>
       </div>
     </div>
 
@@ -2128,7 +2092,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
       <div class="band-card" style="border-color:#0D9488;background:#F0FDFA">
         <span class="icon">💻</span>
         <h4>ยื่นผ่านระบบอิเล็กทรอนิกส์</h4>
-        <p>สามารถยื่นผ่านระบบอิเล็กทรอนิกส์ได้ตั้งแต่ 1 ตุลาคม 2565<br>
+        <p>ยื่นผ่านระบบอิเล็กทรอนิกส์ (nacc.go.th) — ระบบเปิดใช้ตั้งแต่ 1 ตุลาคม 2565<br>
         <a href="https://asset.nacc.go.th/dcs-app/" target="_blank" class="dl-btn-inline" style="margin-top:12px">🔗 ระบบยื่นบัญชีทรัพย์สิน ป.ป.ช. (nacc.go.th)</a></p>
       </div>
     </div>
@@ -2146,7 +2110,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
       <div class="band-card yellow-band">
         <span class="icon">💰</span>
         <h4>วงเงินค่าใช้จ่ายสูงสุด</h4>
-        <p><strong>[ต้องยืนยัน]</strong> จำนวนเงินสูงสุดกำหนดโดย ผอ.กต.ประจำจังหวัดประกาศก่อนเลือกตั้งแต่ละครั้ง — นับตั้งแต่ <strong>180 วันก่อนวันครบวาระ</strong><br><span style="font-size:12px;color:var(--text3)">มาตรา 60-61</span></p>
+        <p><strong>(สมมติฐาน: วันเลือกตั้ง 5 ก.ค. 2569)</strong> จำนวนเงินสูงสุดกำหนดโดย ผอ.กต.ประจำจังหวัดประกาศก่อนเลือกตั้งแต่ละครั้ง — นับตั้งแต่ <strong>180 วันก่อนวันครบวาระ</strong><br><span style="font-size:12px;color:var(--text3)">มาตรา 60-61</span></p>
       </div>
       <div class="band-card red-band">
         <span class="icon">📋</span>
@@ -2248,7 +2212,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
   <div class="container">
     <div class="section-label"><span class="line"></span> PART 7 — REGISTRATION</div>
     <h2>📝 ขั้นตอนการสมัคร</h2>
-    <p class="section-desc">อ้างอิง ชุดความรู้เลือกตั้ง ส.ก.65 หน้า 7 / ขั้นตอนการรับสมัครฯ — [ต้องยืนยัน] สถานที่ ผ่านประกาศ ผอ.กต.ท้องถิ่น กทม. ก่อนเลือกตั้งแต่ละครั้ง</p>
+    <p class="section-desc">อ้างอิง ชุดความรู้เลือกตั้ง ส.ก.65 หน้า 7 / ขั้นตอนการรับสมัครฯ — (สมมติฐาน: วันเลือกตั้ง 5 ก.ค. 2569) สถานที่ ผ่านประกาศ ผอ.กต.ท้องถิ่น กทม. ก่อนเลือกตั้งแต่ละครั้ง</p>
 
     <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:16px">เอกสารที่ต้องเตรียม</h3>
     <div class="table-wrap" style="margin-bottom:24px">
@@ -2295,7 +2259,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
       <p style="font-size:13px;color:var(--text2)">
         <strong style="color:var(--navy)">เขตเลือกตั้ง ส.ก.:</strong> ผู้สมัคร ส.ก. ต้องสมัครในเขตที่ตนมีทะเบียนบ้านอยู่ — มาตรา 19(1) พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562<br>
         <strong style="color:var(--navy)">สก. ไม่ต้องยื่นหลักฐานการศึกษา</strong> — เฉพาะ ผวก. กทม. ต้องปริญญาตรีขึ้นไป<br>
-        <strong style="color:var(--navy)">สถานที่สมัคร:</strong> [ต้องยืนยัน] จะประกาศในประกาศ ผอ.กต.ท้องถิ่น กทม. ก่อนการเลือกตั้งแต่ละครั้ง
+        <strong style="color:var(--navy)">สถานที่สมัคร:</strong> (สมมติฐาน: วันเลือกตั้ง 5 ก.ค. 2569) จะประกาศในประกาศ ผอ.กต.ท้องถิ่น กทม.
       </p>
     </div>
   </div>
@@ -2402,7 +2366,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
         <div class="law-dl-num">03</div>
         <div class="law-dl-body">
           <h4>ระเบียบ กกต. ว่าด้วยวิธีการหาเสียงและลักษณะต้องห้าม พ.ศ. 2563 (และฉบับที่ 2)</h4>
-          <p>รายละเอียดป้ายหาเสียง ขนาด จำนวน สถานที่ — [ต้องยืนยัน] จากประกาศ กกต. ก่อนการเลือกตั้งแต่ละครั้ง</p>
+          <p>รายละเอียดป้ายหาเสียง ขนาด จำนวน สถานที่ — (สมมติฐาน: วันเลือกตั้ง 5 ก.ค. 2569) จากประกาศ กกต.</p>
           <a href="https://www.ect.go.th/ect_th/" target="_blank" class="dl-btn">🔗 เว็บไซต์ กกต.</a>
         </div>
       </div>
@@ -2499,7 +2463,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
       <div class="law-content">
         <p><strong>พระราชบัญญัติการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น (ฉบับที่ 2) พ.ศ. 2566</strong> — แก้ไขมาตรา 34 อนุญาตให้ สส./สว./ข้าราชการการเมืองช่วยหาเสียงได้</p>
         <p><strong>พระราชบัญญัติระเบียบบริหารราชการกรุงเทพมหานคร พ.ศ. 2528 มาตรา 102</strong> — จำนวน ส.ก.: เขตละ 1 คน หากราษฎรเกิน 150,000 คน มี ส.ก. เพิ่ม 1 คนต่อ 150,000 คน (เศษเกิน 75,000 คน เพิ่มอีก 1 คน)</p>
-        <p><strong>ระเบียบ กกต. ว่าด้วยการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562 (และฉบับที่ 2 พ.ศ. 2563)</strong> — รายละเอียดขั้นตอนปฏิบัติและป้ายหาเสียง [ต้องยืนยัน] จากระเบียบล่าสุด</p>
+        <p><strong>ระเบียบ กกต. ว่าด้วยการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562 (และฉบับที่ 2 พ.ศ. 2563)</strong> — รายละเอียดขั้นตอนปฏิบัติและป้ายหาเสียง (สมมติฐาน: วันเลือกตั้ง 5 ก.ค. 2569) จากระเบียบล่าสุด</p>
       </div>
     </div>
 
@@ -2891,9 +2855,34 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
     <span class="phase-badge phase-d">Phase D — ปฏิบัติหน้าที่ในสภา</span>
     <div class="section-label phase-d-label"><span class="line"></span> PART 2.13 — COUNCIL RULES</div>
     <h2>📜 ข้อบังคับในสภา</h2>
-    <p class="section-desc">ข้อบังคับการประชุมสภากรุงเทพมหานคร — หลักเกณฑ์สำคัญที่ ส.ก. ต้องปฏิบัติตาม — อ้างอิง <a class="matra-link" href="#law-other">มาตรา 33, 35 พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528</a></p>
+    <p class="section-desc">ข้อบังคับการประชุมสภากรุงเทพมหานคร พ.ศ. 2562 (ฉบับหลัก) และแก้ไขเพิ่มเติม 3 ครั้ง — หลักเกณฑ์สำคัญที่ ส.ก. ต้องปฏิบัติตาม — อ้างอิง <a class="matra-link" href="#law-other">มาตรา 33, 35 พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528</a></p>
 
-    <a href="downloads/bmc-council-rules.pdf" target="_blank" class="dl-btn-inline" style="margin-bottom:24px">📄 ดาวน์โหลดข้อบังคับการประชุมสภา กทม. (PDF — 948KB)</a>
+    <div style="margin-bottom:24px">
+      <h4 style="font-family:'Space Grotesk',sans-serif;font-size:14px;color:var(--navy);margin-bottom:12px">ข้อบังคับการประชุมสภากรุงเทพมหานคร — ฉบับที่ใช้อยู่ปัจจุบัน</h4>
+      <div style="display:grid;gap:8px">
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;background:#F8FAFC;border:1px solid var(--card-border);border-radius:8px">
+          <span style="font-size:14px;font-weight:700;color:var(--navy);min-width:24px">1</span>
+          <span style="flex:1;font-size:14px;color:var(--text)">ข้อบังคับการประชุมสภากรุงเทพมหานคร พ.ศ. 2562 <strong>(ฉบับหลัก)</strong></span>
+          <span style="font-size:12px;color:var(--text3);white-space:nowrap">รอ upload</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;background:#F8FAFC;border:1px solid var(--card-border);border-radius:8px">
+          <span style="font-size:14px;font-weight:700;color:var(--navy);min-width:24px">2</span>
+          <span style="flex:1;font-size:14px;color:var(--text)">แก้ไขเพิ่มเติม <strong>ฉบับที่ 2 พ.ศ. 2563</strong></span>
+          <a href="downloads/bmc-rules-2563-v2.pdf" target="_blank" class="dl-btn-inline" style="font-size:12px;padding:4px 12px">📄 ดาวน์โหลด (117KB)</a>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;background:#F8FAFC;border:1px solid var(--card-border);border-radius:8px">
+          <span style="font-size:14px;font-weight:700;color:var(--navy);min-width:24px">3</span>
+          <span style="flex:1;font-size:14px;color:var(--text)">แก้ไขเพิ่มเติม <strong>ฉบับที่ 3 พ.ศ. 2565</strong></span>
+          <span style="font-size:12px;color:var(--text3);white-space:nowrap">รอ upload</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 16px;background:#F8FAFC;border:1px solid var(--card-border);border-radius:8px">
+          <span style="font-size:14px;font-weight:700;color:var(--navy);min-width:24px">4</span>
+          <span style="flex:1;font-size:14px;color:var(--text)">แก้ไขเพิ่มเติม <strong>ฉบับที่ 4 พ.ศ. 2566</strong></span>
+          <span style="font-size:12px;color:var(--text3);white-space:nowrap">รอ upload</span>
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--text3);margin-top:8px">หมายเหตุ: ไฟล์ PDF ฉบับหลัก ฉบับที่ 3 และฉบับที่ 4 อยู่ระหว่างการจัดเตรียม</p>
+    </div>
 
     <div class="card-band" style="margin-bottom:28px">
       <div class="band-card" style="border-color:#D97706;background:#FFFBEB">
@@ -3292,7 +3281,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
     <div class="stats-box">
       <div class="stat-box">
         <div class="sb-num" style="color:#D97706">~90,000</div>
-        <div class="sb-label">ล้านบาท<br><span style="font-size:10px;color:var(--text3)">งบประมาณ กทม. ปี 2569 [ต้องยืนยัน]</span></div>
+        <div class="sb-label">ล้านบาท<br><span style="font-size:10px;color:var(--text3)">งบประมาณ กทม. ปี 2569 (สมมติฐาน)</span></div>
       </div>
       <div class="stat-box">
         <div class="sb-num">3</div>
@@ -3537,7 +3526,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
       <div class="article-card">
         <span class="ac-tag tag-data">ข้อมูล</span>
         <h4>สถิติการเลือกตั้ง ส.ก. 65 อ้างอิง</h4>
-        <p>ส.ก.65: ผู้สมัคร 382 คน ใน 50 เขต | ผู้ได้รับเลือก 50 คน | ผู้มาใช้สิทธิ ~60% [ต้องยืนยัน] | เขตที่มี ส.ก. มากที่สุดคือเขตที่มีราษฎรเกิน 150,000 คน</p>
+        <p>ส.ก.65: ผู้สมัคร 382 คน ใน 50 เขต | ผู้ได้รับเลือก 50 คน | ผู้มาใช้สิทธิ ~60% (สมมติฐาน: วันเลือกตั้ง 5 ก.ค. 2569) | เขตที่มี ส.ก. มากที่สุดคือเขตที่มีราษฎรเกิน 150,000 คน</p>
       </div>
       <div class="article-card">
         <span class="ac-tag tag-law">กฎหมาย</span>
@@ -3559,7 +3548,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
         <tbody>
           <tr>
             <td>วงเงินค่าใช้จ่ายหาเสียง</td>
-            <td>[ต้องยืนยัน] ตามประกาศ กกต. แต่ละครั้ง</td>
+            <td>(สมมติฐาน: วันเลือกตั้ง 5 ก.ค. 2569) ตามประกาศ กกต.</td>
             <td>กำหนดตาม พ.ร.บ.เลือกตั้ง สส. แยกต่างหาก</td>
           </tr>
           <tr>
@@ -3594,7 +3583,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
       </div>
       <div class="stat-box">
         <div class="sb-num" style="color:#DC2626">~43%</div>
-        <div class="sb-label">ล้าสมัย ต้องแก้ไข<br><span style="font-size:10px;color:var(--text3)">[ต้องยืนยัน]</span></div>
+        <div class="sb-label">ล้าสมัย ต้องแก้ไข<br><span style="font-size:10px;color:var(--text3)">(สมมติฐาน)</span></div>
       </div>
       <div class="stat-box">
         <div class="sb-num" style="color:#22C55E">50</div>
