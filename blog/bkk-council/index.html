@@ -5,16 +5,16 @@
 <link rel="icon" type="image/webp" href="/las-logo.webp">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ส.ก. Navigator — คู่มือเลือกตั้ง ส.ก. กทม. 2569</title>
-<meta name="description" content="คู่มือครบวงจรสำหรับผู้สมัครสมาชิกสภากรุงเทพมหานคร (ส.ก.) — ครบ 24 หัวข้อ ก่อนสมัครถึงปฏิบัติหน้าที่ในสภา เลือกตั้ง 5 กรกฎาคม 2569">
+<meta name="description" content="คู่มือครบวงจรสำหรับผู้สมัครสมาชิกสภากรุงเทพมหานคร (ส.ก.) — ก่อนสมัครถึงปฏิบัติหน้าที่ในสภา From Zero to Hero เลือกตั้ง 5 กรกฎาคม 2569">
 <meta property="og:title" content="ส.ก. Navigator — คู่มือเลือกตั้ง ส.ก. กทม. 2569">
-<meta property="og:description" content="ครบ 24 หัวข้อ — ก่อนสมัครถึงปฏิบัติหน้าที่ในสภา">
+<meta property="og:description" content="ก่อนสมัคร ถึง ปฏิบัติหน้าที่ในสภา — From Zero to Hero">
 <meta property="og:locale" content="th_TH">
 <meta property="og:image" content="https://thundthornthep-ai.github.io/banner-las-nia.jpg">
 <meta property="og:url" content="https://thundthornthep-ai.github.io/blog/bkk-council/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ส.ก. Navigator — คู่มือเลือกตั้ง ส.ก. กทม. 2569">
-<meta name="twitter:description" content="ครบ 24 หัวข้อ — ก่อนสมัครถึงปฏิบัติหน้าที่ในสภา">
+<meta name="twitter:description" content="ก่อนสมัคร ถึง ปฏิบัติหน้าที่ในสภา — From Zero to Hero">
 <meta name="twitter:image" content="https://thundthornthep-ai.github.io/banner-las-nia.jpg">
 <link rel="canonical" href="https://thundthornthep-ai.github.io/blog/bkk-council/">
 <meta name="author" content="ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.">
@@ -133,8 +133,21 @@ body {
   font-size: 16px;
   color: var(--text-secondary);
   max-width: 500px;
-  margin: 0 auto 32px;
+  margin: 0 auto 8px;
   line-height: 1.7;
+}
+.hero-tagline {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(18px, 3vw, 26px);
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--gold) 0%, #e8c87a 40%, var(--navy) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 auto 32px;
+  line-height: 1.4;
 }
 
 /* ============ COUNTDOWN ============ */
@@ -314,7 +327,10 @@ body {
 }
 .quick-card.gold-accent { border-left-color: var(--gold); }
 .quick-card.teal-accent { border-left-color: var(--teal); }
-.quick-card.red-accent { border-left-color: #9F1239; }
+.quick-card.navy-accent { border-left-color: var(--navy); background: linear-gradient(135deg, rgba(27,42,74,0.04), rgba(201,169,110,0.06)); border-left-width: 4px; }
+.quick-card.navy-accent h3 { color: var(--navy); }
+.quick-card.green-accent { border-left-color: var(--green); background: linear-gradient(135deg, rgba(34,197,94,0.04), rgba(13,148,136,0.06)); border-left-width: 4px; }
+.quick-card.green-accent h3 { color: #15803D; }
 .quick-card h3 {
   font-size: 15px; font-weight: 700;
   color: var(--navy); margin-bottom: 4px;
@@ -351,35 +367,6 @@ body {
   .quick-grid { grid-template-columns: 1fr; }
 }
 
-/* ============ SEARCH BOX ============ */
-.search-box {
-  max-width: 600px;
-  margin: 32px auto;
-  position: relative;
-}
-.search-box input {
-  width: 100%;
-  padding: 16px 20px 16px 48px;
-  border: 2px solid #E5E7EB;
-  border-radius: 12px;
-  font-size: 1rem;
-  font-family: 'Sarabun', sans-serif;
-  background: white;
-  transition: all 0.3s;
-}
-.search-box input:focus {
-  border-color: #C9A96E;
-  box-shadow: 0 0 0 3px rgba(201,169,110,0.1);
-  outline: none;
-}
-.search-box .search-icon {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #9CA3AF;
-  font-size: 1.2rem;
-}
 
 /* ============ SECTION TITLE ============ */
 .section-divider {
@@ -396,6 +383,49 @@ body {
   text-transform: uppercase;
   letter-spacing: 1.5px;
   white-space: nowrap;
+}
+
+/* ============ DISTRICT INTELLIGENCE BRAND ============ */
+.di-brand {
+  margin: 48px 0 20px;
+  gap: 14px;
+}
+.di-brand .line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.di-brand-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  background: var(--navy);
+  border-radius: 24px;
+  border: 1.5px solid var(--gold);
+  box-shadow: 0 0 20px rgba(201,169,110,0.15), 0 2px 8px rgba(0,0,0,0.12);
+  white-space: nowrap;
+}
+.di-brand-label .di-text {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,0.95) !important;
+  background: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+.di-brand-label .di-badge {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  color: var(--navy) !important;
+  background: var(--gold) !important;
+  padding: 2px 8px !important;
+  border-radius: 10px !important;
 }
 
 /* ============ PHASE CARDS ============ */
@@ -449,6 +479,30 @@ body {
 .phase-letter.pc { background: linear-gradient(135deg, var(--teal), #0F766E); }
 .phase-letter.pd { background: linear-gradient(135deg, #7C3AED, #6D28D9); }
 .phase-letter.pe { background: linear-gradient(135deg, #BE185D, #9F1239); }
+
+/* Phase A (Zero) + Phase D (Hero) — highlighted borders */
+.phase-card.phase-highlight-a {
+  border: 2px solid var(--navy);
+  border-left: 4px solid var(--navy);
+  background: linear-gradient(135deg, rgba(27,42,74,0.03), var(--card));
+}
+.phase-card.phase-highlight-a .phase-name-en::after {
+  content: ' — Zero';
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 11px;
+}
+.phase-card.phase-highlight-d {
+  border: 2px solid #7C3AED;
+  border-left: 4px solid #7C3AED;
+  background: linear-gradient(135deg, rgba(124,58,237,0.03), var(--card));
+}
+.phase-card.phase-highlight-d .phase-name-en::after {
+  content: ' — Hero';
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 11px;
+}
 
 .phase-info { flex: 1; min-width: 0; }
 .phase-name-th {
@@ -561,7 +615,7 @@ body {
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","name":"ส.ก. Navigator — คู่มือเลือกตั้ง ส.ก. กทม. 2569","description":"คู่มือครบวงจรสำหรับผู้สมัครสมาชิกสภากรุงเทพมหานคร (ส.ก.) — ครบ 24 หัวข้อ ก่อนสมัครถึงปฏิบัติหน้าที่ในสภา","url":"https://thundthornthep-ai.github.io/blog/bkk-council/","author":{"@type":"Person","name":"ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.","url":"https://thundthornthep-ai.github.io/"},"publisher":{"@type":"LegalService","name":"Legal Advance Solution Co., Ltd.","url":"https://laslegal.co.th"},"dateModified":"2026-04-05","inLanguage":"th","about":["เลือกตั้ง ส.ก. กทม. 2569","สมาชิกสภากรุงเทพมหานคร","คู่มือผู้สมัคร ส.ก."]}
+{"@context":"https://schema.org","@type":"WebPage","name":"ส.ก. Navigator — คู่มือเลือกตั้ง ส.ก. กทม. 2569","description":"คู่มือครบวงจรสำหรับผู้สมัครสมาชิกสภากรุงเทพมหานคร (ส.ก.) — ก่อนสมัคร ถึง ปฏิบัติหน้าที่ในสภา — From Zero to Hero","url":"https://thundthornthep-ai.github.io/blog/bkk-council/","author":{"@type":"Person","name":"ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.","url":"https://thundthornthep-ai.github.io/"},"publisher":{"@type":"LegalService","name":"Legal Advance Solution Co., Ltd.","url":"https://laslegal.co.th"},"dateModified":"2026-04-05","inLanguage":"th","about":["เลือกตั้ง ส.ก. กทม. 2569","สมาชิกสภากรุงเทพมหานคร","คู่มือผู้สมัคร ส.ก."]}
 </script>
 </head>
 <body>
@@ -579,7 +633,8 @@ body {
   <section class="hero fade-in">
     <div class="hero-badge"><span class="dot"></span> ส.ก. Navigator</div>
     <h1>คู่มือผู้สมัคร<br>สมาชิกสภากรุงเทพมหานคร</h1>
-    <p class="hero-subtitle">ครบ 24 หัวข้อ — ก่อนสมัคร ถึง ปฏิบัติหน้าที่ในสภา</p>
+    <p class="hero-subtitle">ก่อนสมัคร ถึง ปฏิบัติหน้าที่ในสภา</p>
+    <p class="hero-tagline">From Zero to Hero</p>
   </section>
 
   <!-- 2. COUNTDOWN -->
@@ -616,7 +671,7 @@ body {
   </a>
 
   <!-- 4. DISTRICT INTELLIGENCE by LAS -->
-  <div class="section-divider"><div class="line"></div><span>District Intelligence by LAS</span><div class="line"></div></div>
+  <div class="section-divider di-brand"><div class="line"></div><span class="di-brand-label"><span class="di-text">District Intelligence</span><span class="di-badge">by LAS</span></span><div class="line"></div></div>
   <div class="fade-in" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:8px;">
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
       <div>
@@ -678,27 +733,21 @@ body {
       <h3>13 คณะกรรมการสามัญ สภาฯ</h3>
       <div class="sub">ม.38 + ข้อบังคับสภา 2562</div>
     </a>
-    <a href="campaign-tracker.html" class="quick-card gold-accent">
+    <a href="campaign-tracker.html" class="quick-card navy-accent">
       <h3>Campaign Tracker</h3>
       <div class="sub">ทีมงาน · รถ · ป้าย · บัญชีรายรับรายจ่าย · แจ้งเตือนวงเงิน กกต.</div>
     </a>
-    <a href="district-intel.html" class="quick-card red-accent">
-      <h3>RED FLAG พื้นที่สำคัญ</h3>
+    <a href="district-intel.html" class="quick-card green-accent">
+      <h3>GREEN FLAG พื้นที่สำคัญ</h3>
       <div class="sub">ข้อมูลเขต · ปักธง · check-in · Traffy Fondue · บันทึกปัญหา</div>
     </a>
   </div>
 
-  <!-- 6. SEARCH BOX (client-side — ค้นเฉพาะข้อมูลใน dashboard) -->
-  <div class="search-box fade-in" style="position:relative;">
-    <span class="search-icon">🔎</span>
-    <input type="text" id="siteSearch" placeholder="ค้นหาข้อกฎหมาย มาตรา หัวข้อ แบบฟอร์ม..." oninput="doLocalSearch()" onkeydown="handleSearchKey(event)">
-    <div id="searchResults" style="display:none;position:absolute;top:100%;left:0;right:0;z-index:50;background:#fff;border:1px solid var(--border);border-top:none;border-radius:0 0 var(--radius-sm) var(--radius-sm);box-shadow:var(--shadow-lg);max-height:400px;overflow-y:auto;"></div>
-  </div>
 
   <!-- 7. PHASE CARDS -->
   <div class="section-divider"><div class="line"></div><span>เนื้อหาทั้ง 5 Phase</span><div class="line"></div></div>
   <div class="phase-grid fade-in">
-    <a href="phase-a.html" class="phase-card">
+    <a href="phase-a.html" class="phase-card phase-highlight-a">
       <div class="phase-letter pa">A</div>
       <div class="phase-info">
         <div class="phase-name-th">ก่อนเลือกตั้ง</div>
@@ -731,7 +780,7 @@ body {
       </div>
       <span class="phase-arrow">→</span>
     </a>
-    <a href="phase-d-e.html" class="phase-card">
+    <a href="phase-d-e.html" class="phase-card phase-highlight-d">
       <div class="phase-letter pd">D</div>
       <div class="phase-info">
         <div class="phase-name-th">ปฏิบัติหน้าที่</div>
@@ -1032,99 +1081,6 @@ body {
   setInterval(tick, 1000);
 })();
 
-// SEARCH — client-side, ค้นเฉพาะข้อมูลใน dashboard (hardcoded data, no XSS risk)
-var searchData = [
-  {t:"คุณสมบัติและลักษณะต้องห้าม",p:"A",k:["คุณสมบัติ","ลักษณะต้องห้าม","อายุ","สัญชาติ","ม.12","ม.49","ม.50"],law:"ม.12 พ.ร.บ.กทม. 2528 / ม.49-51 พ.ร.บ.เลือกตั้งท้องถิ่น 2562",href:"phase-a.html",pdf:"downloads/prb-bma-2528.pdf"},
-  {t:"การสมัครรับเลือกตั้ง",p:"A",k:["สมัคร","ใบสมัคร","เอกสาร","ค่าสมัคร","แบบฟอร์ม","ส.ถ.","ผ.ถ."],law:"ม.51-53 พ.ร.บ.เลือกตั้งท้องถิ่น 2562",href:"phase-a.html#registration",pdf:"downloads/manual-registration.pdf"},
-  {t:"เขตเลือกตั้ง / จำนวน ส.ก.",p:"A",k:["เขต","50 เขต","จำนวน","ม.10","150,000"],law:"ม.10 พ.ร.บ.กทม. 2528 (ฉบับที่ 6)",href:"phase-a.html",pdf:"downloads/prb-bma-2528.pdf"},
-  {t:"วิธีการหาเสียง DO / DON'T",p:"B",k:["หาเสียง","ป้าย","โซเชียล","ห้าม","อิเล็กทรอนิกส์","ผู้ช่วย"],law:"ระเบียบ กกต. วิธีหาเสียง 2563",href:"phase-b.html",pdf:null},
-  {t:"ค่าใช้จ่ายเลือกตั้ง / บัญชีรายรับรายจ่าย",p:"B",k:["ค่าใช้จ่าย","บัญชี","รายรับ","รายจ่าย","เงิน","งบ","90 วัน","ม.62"],law:"ม.60-62 พ.ร.บ.เลือกตั้งท้องถิ่น 2562",href:"phase-b.html",pdf:"downloads/form-campaign-finance-ect.pdf"},
-  {t:"ความผิดเกี่ยวกับการเลือกตั้ง",p:"B",k:["ผิด","โทษ","ใบแดง","ใบเหลือง","ทุจริต","ซื้อเสียง"],law:"ม.120-129 พ.ร.บ.เลือกตั้งท้องถิ่น 2562",href:"phase-b.html",pdf:"downloads/election-offenses.pdf"},
-  {t:"วันยุติการหาเสียง / วันเลือกตั้ง",p:"B",k:["ยุติ","หยุด","18 ชั่วโมง","วันเลือกตั้ง","5 กรกฎาคม"],law:"ม.65 พ.ร.บ.เลือกตั้งท้องถิ่น 2562",href:"phase-b.html",pdf:"downloads/pra-local-election-2562.pdf"},
-  {t:"หลังเลือกตั้ง / ผลการเลือกตั้ง",p:"C",k:["ผล","ประกาศ","ร้องคัดค้าน","หลังเลือก"],law:"ม.106-119 พ.ร.บ.เลือกตั้งท้องถิ่น 2562",href:"phase-c.html",pdf:"downloads/pra-local-election-2562.pdf"},
-  {t:"การยื่นบัญชีทรัพย์สิน ป.ป.ช.",p:"C",k:["ทรัพย์สิน","ป.ป.ช.","บัญชี","ยื่น","NACC"],law:"ม.102 พ.ร.ป.ป.ป.ช. 2561",href:"phase-c.html",pdf:"downloads/organic-act-nacc-2561.pdf"},
-  {t:"อำนาจหน้าที่ กทม. 27 ข้อ",p:"D",k:["อำนาจ","หน้าที่","27 ข้อ","ม.89"],law:"ม.89 พ.ร.บ.กทม. 2528",href:"phase-d-e.html#bkk-powers-27",pdf:"downloads/bkk-council-powers-and-duties.pdf"},
-  {t:"13 คณะกรรมการสามัญ",p:"D",k:["กรรมการ","สามัญ","วิสามัญ","13 คณะ","ม.38"],law:"ม.38 พ.ร.บ.กทม. / ข้อบังคับสภา 2562",href:"phase-d-e.html#committees-13",pdf:"downloads/summary-03-committees.pdf"},
-  {t:"ข้อบังคับการประชุมสภา กทม.",p:"D",k:["ข้อบังคับ","ประชุม","สภา","ระเบียบ","วาระ"],law:"ข้อบังคับการประชุมสภา กทม. 2562",href:"phase-d-e.html",pdf:"downloads/bkk-council-meeting-rules-2562.pdf"},
-  {t:"กระทู้ถาม / ญัตติ / อภิปราย",p:"D",k:["กระทู้","ญัตติ","อภิปราย","ติดตาม","ตรวจสอบ"],law:"ข้อบังคับสภา กทม. + ระเบียบกระทู้ถามสด 2562",href:"phase-d-e.html",pdf:"downloads/summary-06-interpellations.pdf"},
-  {t:"การพิจารณางบประมาณ",p:"D",k:["งบประมาณ","พิจารณา","ข้อบัญญัติ","งบ กทม."],law:"ม.97-106 พ.ร.บ.กทม. 2528",href:"phase-d-e.html",pdf:"downloads/prb-bma-2528.pdf"},
-  {t:"จรรยาบรรณสมาชิกสภา กทม.",p:"E",k:["จรรยาบรรณ","จริยธรรม","ร้องเรียน"],law:"ข้อบังคับจรรยาบรรณ สก. กทม. 2559",href:"phase-d-e.html",pdf:"downloads/bkk-council-ethics-code-2559.pdf"},
-  {t:"สิทธิประโยชน์ ส.ก. / เงินเดือน",p:"E",k:["เงินเดือน","สิทธิ","เบี้ยประชุม","ค่าตอบแทน"],law:"พ.ร.ฎ.เงินประจำตำแหน่ง ส.ก. 2560",href:"phase-d-e.html#sk-benefits",pdf:"downloads/royal-decree-sk-salary-2560.pdf"},
-  {t:"พ.ร.บ.ระเบียบบริหาร กทม. 2528",p:"E",k:["พ.ร.บ.กทม.","2528","ระเบียบบริหาร"],law:"พ.ร.บ.กทม. 2528 (แก้ไข ฉ.6 พ.ศ. 2562)",href:"phase-d-e.html",pdf:"downloads/prb-bma-2528.pdf"},
-  {t:"พ.ร.บ.เลือกตั้งท้องถิ่น 2562",p:"E",k:["พ.ร.บ.เลือกตั้ง","2562","เลือกตั้งท้องถิ่น"],law:"พ.ร.บ.เลือกตั้งท้องถิ่น 2562 + ฉ.2 (2566)",href:"phase-d-e.html",pdf:"downloads/pra-local-election-2562.pdf"},
-  {t:"คู่มือสมาชิกสภา กทม. เล่ม 1-2",p:"E",k:["คู่มือ","สมาชิกสภา","ปฏิบัติงาน","handbook"],law:"เอกสารอ้างอิง สภา กทม.",href:"phase-d-e.html",pdf:"downloads/bkk-council-member-handbook-vol1.pdf"},
-  {t:"ระเบียบรับเรื่องร้องเรียน สก.",p:"E",k:["ร้องเรียน","ร้องทุกข์","ระเบียบ","พิจารณา"],law:"ระเบียบสภา กทม. ว่าด้วยการรับเรื่องร้องเรียน",href:"phase-d-e.html",pdf:"downloads/bkk-council-complaint-rules.pdf"},
-  {t:"Traffy Fondue — ปัญหาเมือง กทม.",p:"T",k:["traffy","fondue","ร้องเรียน","ปัญหา","เขต"],law:"เครื่องมือ NECTEC สำหรับ กทม.",href:"#traffy-section",pdf:null}
-];
-var searchHL = -1;
-function doLocalSearch(){
-  var q = document.getElementById('siteSearch').value.trim().toLowerCase();
-  var box = document.getElementById('searchResults');
-  if(!q){ box.style.display='none'; searchHL=-1; return; }
-  var results = searchData.filter(function(d){
-    return d.t.toLowerCase().indexOf(q)>=0 || d.k.some(function(k){return k.toLowerCase().indexOf(q)>=0;}) || (d.law && d.law.toLowerCase().indexOf(q)>=0);
-  });
-  box.textContent = '';
-  if(!results.length){
-    var empty = document.createElement('div');
-    empty.style.cssText = 'padding:16px;color:#9CA3AF;font-size:14px;';
-    empty.textContent = 'ไม่พบผลลัพธ์ — ลองค้น "คุณสมบัติ" "ม.12" "หาเสียง" "แบบฟอร์ม"';
-    box.appendChild(empty);
-    box.style.display='block'; return;
-  }
-  var phaseColors = {A:'#1B2A4A',B:'#C9A96E',C:'#20808D',D:'#8B7D6B',E:'#7A3B3B',T:'#0D9488'};
-  results.forEach(function(r,i){
-    var row = document.createElement('div');
-    row.className = 'sr-item';
-    row.style.cssText = 'padding:12px 16px;border-bottom:1px solid #F3F4F6;cursor:pointer;transition:background 0.15s;';
-    row.addEventListener('click', function(){ window.location.href = r.href; });
-    row.addEventListener('mouseenter', function(){ this.style.background='#F5F5F5'; });
-    row.addEventListener('mouseleave', function(){ this.style.background='#fff'; });
-    var top = document.createElement('div');
-    top.style.cssText = 'display:flex;align-items:center;gap:8px;';
-    var badge = document.createElement('span');
-    badge.style.cssText = 'display:inline-block;width:24px;height:24px;border-radius:6px;background:'+phaseColors[r.p]+';color:#fff;font-size:11px;font-weight:700;text-align:center;line-height:24px;flex-shrink:0;';
-    badge.textContent = r.p;
-    var title = document.createElement('span');
-    title.style.cssText = 'font-weight:600;font-size:14px;';
-    title.textContent = r.t;
-    top.appendChild(badge);
-    top.appendChild(title);
-    if(r.pdf){
-      var pdfLink = document.createElement('a');
-      pdfLink.href = r.pdf;
-      pdfLink.target = '_blank';
-      pdfLink.style.cssText = 'color:#0D9488;font-size:12px;text-decoration:none;margin-left:auto;flex-shrink:0;';
-      pdfLink.textContent = '📥 PDF';
-      pdfLink.addEventListener('click', function(e){ e.stopPropagation(); });
-      top.appendChild(pdfLink);
-    }
-    var law = document.createElement('div');
-    law.style.cssText = 'font-size:12px;color:#6B7280;margin-top:4px;margin-left:32px;';
-    law.textContent = r.law;
-    row.appendChild(top);
-    row.appendChild(law);
-    box.appendChild(row);
-  });
-  box.style.display = 'block';
-  searchHL = -1;
-}
-function handleSearchKey(e){
-  var box = document.getElementById('searchResults');
-  var items = box.querySelectorAll('.sr-item');
-  if(e.key==='Escape'){ box.style.display='none'; searchHL=-1; return; }
-  if(e.key==='ArrowDown'){ e.preventDefault(); searchHL=Math.min(searchHL+1,items.length-1); highlightSR(items); return; }
-  if(e.key==='ArrowUp'){ e.preventDefault(); searchHL=Math.max(searchHL-1,0); highlightSR(items); return; }
-  if(e.key==='Enter' && searchHL>=0 && items[searchHL]){ items[searchHL].click(); return; }
-  if(e.key==='Enter'){ doLocalSearch(); }
-}
-function highlightSR(items){
-  items.forEach(function(el,i){ el.style.background = i===searchHL ? '#F5F5F5' : '#fff'; });
-  if(items[searchHL]) items[searchHL].scrollIntoView({block:'nearest'});
-}
-document.addEventListener('click',function(e){
-  if(!e.target.closest('.search-box')) document.getElementById('searchResults').style.display='none';
-});
 
 // DISTRICT INTELLIGENCE by LAS — Traffy Fondue API + Leaflet Map
 (function(){
