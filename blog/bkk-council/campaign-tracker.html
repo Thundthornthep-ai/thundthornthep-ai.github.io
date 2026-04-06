@@ -5,37 +5,61 @@
 <link rel="icon" type="image/webp" href="/las-logo.webp">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Campaign Tracker — ส.ก. Navigator</title>
-<meta name="description" content="เครื่องมือบริหารทีมงาน ค่าใช้จ่ายหาเสียง บัญชีรายรับรายจ่ายสำหรับผู้สมัคร ส.ก. กทม. 2569 — แจ้งเตือนวงเงิน กกต. + พิมพ์ส่ง กกต.">
+<meta name="description" content="ระบบบัญชีค่าใช้จ่ายเลือกตั้ง ส.ก. กทม. 2569 — 12 ประเภทตามประกาศ กกต. 2563 + วงเงินตามเขต + ทีมงาน/รถ/ป้าย + พิมพ์ส่ง กกต.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#FAFAFA;--bg-alt:#F5F5F5;--card:#FFF;--text:#1A1A2E;--text-secondary:#6B7280;--text-muted:#9CA3AF;--navy:#1B2A4A;--navy-dark:#0d1f33;--gold:#C9A96E;--teal:#0D9488;--green:#22C55E;--red:#EF4444;--red-dark:#991B1B;--orange:#E67E22;--blue:#2563EB;--border:#E5E7EB;--border-light:#F3F4F6;--shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);--shadow-md:0 4px 12px rgba(0,0,0,.06);--radius:12px;--radius-sm:8px;--max-w:900px;--transition:.2s ease}
+:root{--bg:#FAFAFA;--bg-alt:#F5F5F5;--card:#FFF;--text:#1A1A2E;--text-secondary:#6B7280;--text-muted:#9CA3AF;--navy:#1B2A4A;--navy-dark:#0d1f33;--gold:#C9A96E;--teal:#0D9488;--green:#22C55E;--green-bg:#D1FAE5;--red:#EF4444;--red-bg:#FEE2E2;--red-dark:#991B1B;--orange:#E67E22;--orange-bg:#FEF3C7;--blue:#2563EB;--blue-bg:#DBEAFE;--border:#E5E7EB;--border-light:#F3F4F6;--shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);--shadow-md:0 4px 12px rgba(0,0,0,.06);--radius:12px;--radius-sm:8px;--max-w:960px;--transition:.2s ease}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.7;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
 .top-bar{position:fixed;top:0;left:0;right:0;z-index:100;height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:var(--navy);border-bottom:1px solid rgba(201,169,110,.2);font-size:13px}
 .top-bar-left{font-family:'Space Grotesk',sans-serif;color:rgba(255,255,255,.9);font-weight:500}.top-bar-left a{color:rgba(255,255,255,.6);text-decoration:none;margin-right:8px}.top-bar-left a:hover{color:#fff}
 .top-bar-right{color:rgba(255,255,255,.5);font-size:12px;font-family:'Space Grotesk',sans-serif}.top-bar-right span{color:var(--gold)}
-.main{max-width:var(--max-w);margin:0 auto;padding:64px 16px 80px}
+.main{max-width:var(--max-w);margin:0 auto;padding:64px 16px 40px}
 .tab-nav{display:flex;gap:4px;overflow-x:auto;padding:8px 0;margin-bottom:24px;border-bottom:2px solid var(--border)}
-.tab-btn{padding:10px 16px;border:none;background:none;font-family:'Sarabun',sans-serif;font-size:14px;font-weight:600;color:var(--text-secondary);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all var(--transition)}.tab-btn:hover{color:var(--navy)}.tab-btn.active{color:var(--navy);border-bottom-color:var(--gold)}
+.tab-btn{padding:10px 14px;border:none;background:none;font-family:'Sarabun',sans-serif;font-size:13px;font-weight:600;color:var(--text-secondary);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all var(--transition)}.tab-btn:hover{color:var(--navy)}.tab-btn.active{color:var(--navy);border-bottom-color:var(--gold)}
 .tab-panel{display:none}.tab-panel.active{display:block}
 .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:24px}
 .stat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center}.stat-card .sv{font-size:28px;font-weight:700;font-family:'Space Grotesk',sans-serif;color:var(--navy)}.stat-card .sl{font-size:13px;color:var(--text-secondary);margin-top:4px}
 .bb-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:24px}
-.bb-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.bb-title{font-size:15px;font-weight:600}.bb-pct{font-size:24px;font-weight:700;font-family:'Space Grotesk',sans-serif}
+.bb-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:12px;flex-wrap:wrap}.bb-title{font-size:15px;font-weight:600}.bb-pct{font-size:24px;font-weight:700;font-family:'Space Grotesk',sans-serif}
 .bb-track{height:16px;background:var(--bg-alt);border-radius:8px;overflow:hidden}.bb-fill{height:100%;border-radius:8px;transition:width .5s ease}
 .bb-alert{margin-top:12px;padding:10px 14px;border-radius:var(--radius-sm);font-size:13px;font-weight:600;display:none}.bb-alert.show{display:flex;align-items:center;gap:8px}
 .form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:16px}
 .fg{display:flex;flex-direction:column;gap:4px}.fg label{font-size:13px;font-weight:600;color:var(--text-secondary)}.fg input,.fg select,.fg textarea{padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'Sarabun',sans-serif;font-size:15px;transition:border-color var(--transition)}.fg input:focus,.fg select:focus{outline:none;border-color:var(--gold)}
 .btn{padding:10px 20px;border:none;border-radius:var(--radius-sm);font-family:'Sarabun',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all var(--transition)}.btn-p{background:var(--navy);color:#fff}.btn-p:hover{background:var(--navy-dark)}.btn-g{background:var(--gold);color:#fff}.btn-g:hover{opacity:.85}.btn-o{background:none;border:1px solid var(--border);color:var(--text-secondary)}.btn-o:hover{border-color:var(--gold)}.btn-d{background:var(--red);color:#fff;padding:6px 12px;font-size:12px}.btn-d:hover{background:var(--red-dark)}
 .btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-.dt{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:16px}.dt th{background:var(--bg-alt);padding:10px 12px;text-align:left;font-weight:600;color:var(--text-secondary);font-size:12px;border-bottom:2px solid var(--border)}.dt td{padding:10px 12px;border-bottom:1px solid var(--border-light)}.dt tr:hover{background:var(--bg-alt)}
+.dt{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:16px}.dt th{background:var(--bg-alt);padding:10px 12px;text-align:left;font-weight:600;color:var(--text-secondary);font-size:12px;border-bottom:2px solid var(--border);white-space:nowrap}.dt td{padding:10px 12px;border-bottom:1px solid var(--border-light)}.dt tr:hover{background:var(--bg-alt)}.dt .amt{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
 .empty{text-align:center;padding:32px;color:var(--text-muted);font-size:14px}
 .st{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--border)}.sd{font-size:13px;color:var(--text-secondary);margin-bottom:16px}
-.sr{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:8px}.sr label{font-size:14px;font-weight:600;min-width:140px}.sr input{flex:1;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'Sarabun',sans-serif;font-size:15px}
-.aw{padding:12px 16px;border-radius:var(--radius-sm);margin-bottom:16px;font-size:14px;display:flex;align-items:center;gap:8px;background:#FEF3C7;border:1px solid #F59E0B;color:#92400E}
+.sr{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:8px}.sr label{font-size:14px;font-weight:600;min-width:140px}.sr input,.sr select{flex:1;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'Sarabun',sans-serif;font-size:15px}
+.aw{padding:12px 16px;border-radius:var(--radius-sm);margin-bottom:16px;font-size:14px;display:flex;align-items:flex-start;gap:8px;background:#FEF3C7;border:1px solid #F59E0B;color:#92400E;line-height:1.6}
+.aw-danger{background:var(--red-bg);border-color:var(--red);color:var(--red-dark)}
+.aw-info{background:var(--blue-bg);border-color:var(--blue);color:#1E40AF}
+/* Expense type cards */
+.et-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:16px;margin-bottom:24px}
+.et-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:box-shadow var(--transition),border-color var(--transition)}.et-card:hover{box-shadow:var(--shadow-md);border-color:rgba(201,169,110,.3)}
+.et-num{width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.et-head{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}.et-name{font-size:15px;font-weight:700;color:var(--text)}.et-desc{font-size:12px;color:var(--text-secondary);margin-top:2px}
+.et-items{margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}.et-items ul{list-style:none;display:flex;flex-direction:column;gap:4px}.et-items li{font-size:12px;color:var(--text-secondary);display:flex;align-items:flex-start;gap:8px}.et-items li::before{content:'•';color:var(--gold);flex-shrink:0;margin-top:1px}
+.et-law{display:inline-block;margin-top:12px;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;background:rgba(27,42,74,.08);color:var(--navy)}
+/* Law accordion */
+.law-card{border:1px solid rgba(27,42,74,.15);border-radius:var(--radius);overflow:hidden;margin-bottom:12px}
+.law-hd{padding:14px 16px;display:flex;align-items:center;gap:12px;cursor:pointer;background:rgba(27,42,74,.04);transition:background var(--transition)}.law-hd:hover{background:rgba(27,42,74,.08)}
+.law-tag{font-size:11px;font-weight:700;color:var(--navy);background:rgba(27,42,74,.1);padding:3px 10px;border-radius:999px;white-space:nowrap}
+.law-tag-gold{color:var(--gold);background:rgba(201,169,110,.15)}
+.law-name{font-size:14px;font-weight:600;flex:1}
+.law-arrow{transition:transform .2s;color:var(--text-muted);flex-shrink:0}
+.law-body{padding:16px;display:none;font-size:14px;color:var(--text-secondary);line-height:1.8}.law-body.open{display:block}
+.law-body ul{padding-left:20px;margin-top:8px}.law-body li{margin-bottom:6px}
+.law-hl{background:rgba(201,169,110,.2);padding:1px 4px;border-radius:3px;color:var(--gold);font-weight:700}
+/* Timeline */
+.tl{display:flex;flex-direction:column}.tl-item{display:flex;gap:16px}.tl-marker{display:flex;flex-direction:column;align-items:center;flex-shrink:0}.tl-dot{width:12px;height:12px;border-radius:50%;border:2px solid var(--navy);background:var(--bg);flex-shrink:0;margin-top:4px}.tl-dot.filled{background:var(--navy)}.tl-dot.red{border-color:var(--red);background:var(--red)}.tl-line{width:2px;background:var(--border);flex:1;min-height:24px}.tl-content{padding-bottom:20px}.tl-label{font-size:14px;font-weight:700;color:var(--text)}.tl-label.red{color:var(--red)}.tl-desc{font-size:12px;color:var(--text-secondary);margin-top:2px;line-height:1.6}
+/* Badge */
+.badge{display:inline-flex;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;gap:4px}
+.badge-red{background:var(--red-bg);color:var(--red-dark)}.badge-orange{background:var(--orange-bg);color:#92400E}
 @media print{.top-bar,.tab-nav,.btn-row,.no-print{display:none!important}.main{padding:0;max-width:100%}.tab-panel{display:block!important}body{font-size:12px;line-height:1.4}}
-@media(max-width:640px){.stat-grid{grid-template-columns:repeat(2,1fr)}.form-row{grid-template-columns:1fr}.tab-btn{padding:8px 10px;font-size:13px}.dt{font-size:12px}.dt th,.dt td{padding:6px 8px}.sr{flex-direction:column;align-items:flex-start}}
+@media(max-width:640px){.stat-grid{grid-template-columns:repeat(2,1fr)}.form-row{grid-template-columns:1fr}.tab-btn{padding:8px 10px;font-size:12px}.dt{font-size:12px}.dt th,.dt td{padding:6px 8px}.sr{flex-direction:column;align-items:flex-start}.et-grid{grid-template-columns:1fr}.bb-header{flex-direction:column}}
 .site-footer{background:var(--navy-dark);color:rgba(255,255,255,.6);text-align:center;padding:24px;font-size:12px;line-height:1.8}.site-footer a{color:var(--gold);text-decoration:none}
 </style>
 </head>
@@ -43,9 +67,34 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
 <div class="top-bar"><div class="top-bar-left"><a href="index.html">← Dashboard</a> Campaign Tracker</div><div class="top-bar-right"><span>LAS</span> × <span>NIA</span></div></div>
 <div class="main">
 
-<!-- BUDGET BAR -->
+<!-- BUDGET BAR + DISTRICT SELECTOR -->
 <div class="bb-wrap">
-  <div class="bb-header"><div><div class="bb-title">วงเงินหาเสียง กกต.</div><div style="font-size:12px;color:var(--text-muted)">ใช้ไป <span id="S">0</span> / <span id="L">400,000</span> บาท</div></div><div class="bb-pct" id="P">0%</div></div>
+  <div class="bb-header">
+    <div>
+      <div class="bb-title">วงเงินหาเสียง กกต.</div>
+      <div style="font-size:12px;color:var(--text-muted)">ใช้ไป <span id="S">0</span> / <span id="L">900,000</span> บาท</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+      <select id="distSel" class="fg" style="padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;font-family:'Sarabun',sans-serif;max-width:320px" onchange="D.set('b',+this.value);render()">
+        <optgroup label="820,000 บาท">
+          <option value="820000">สัมพันธวงศ์ / ป้อมปราบฯ / บางรัก / ปทุมวัน / พระนคร</option>
+        </optgroup>
+        <optgroup label="900,000 บาท">
+          <option value="900000" selected>ราชเทวี / พญาไท / วัฒนา / คลองเตย / สาทร / บางคอแหลม / บึงกุ่ม / ทุ่งครุ</option>
+        </optgroup>
+        <optgroup label="1,000,000 บาท">
+          <option value="1000000">บางพลัด / สะพานสูง / ลาดพร้าว / ธนบุรี / คลองสาน / จอมทอง / ห้วยขวาง / ยานนาวา</option>
+        </optgroup>
+        <optgroup label="1,050,000 บาท">
+          <option value="1050000">ภาษีเจริญ / บางซื่อ / จตุจักร / หนองแขม / พระโขนง / บางนา / ราษฎร์บูรณะ / ดินแดง</option>
+        </optgroup>
+        <optgroup label="1,150,000 บาท">
+          <option value="1150000">บางเขน / บางแค / ดอนเมือง / สายไหม / มีนบุรี / หนองจอก / ลาดกระบัง / บางกอกน้อย</option>
+        </optgroup>
+      </select>
+      <div class="bb-pct" id="P">0%</div>
+    </div>
+  </div>
   <div class="bb-track"><div class="bb-fill" id="F" style="width:0%;background:var(--green)"></div></div>
   <div class="bb-alert" id="A"></div>
 </div>
@@ -60,15 +109,15 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
 
 <!-- TABS -->
 <div class="tab-nav no-print">
-  <button class="tab-btn active" onclick="showTab('team')">ทีมงาน</button>
-  <button class="tab-btn" onclick="showTab('vehicles')">รถ</button>
-  <button class="tab-btn" onclick="showTab('signs')">ป้าย</button>
+  <button class="tab-btn active" onclick="showTab('team')">ทีม/รถ/ป้าย</button>
+  <button class="tab-btn" onclick="showTab('types')">12 ประเภท</button>
   <button class="tab-btn" onclick="showTab('ledger')">บัญชี</button>
+  <button class="tab-btn" onclick="showTab('law')">กฎหมาย & โทษ</button>
   <button class="tab-btn" onclick="showTab('print')">พิมพ์ กกต.</button>
   <button class="tab-btn" onclick="showTab('settings')">ตั้งค่า</button>
 </div>
 
-<!-- TAB: TEAM -->
+<!-- TAB: TEAM/VEHICLES/SIGNS -->
 <div class="tab-panel active" id="p-team">
   <div class="st">ผู้ช่วยหาเสียง / ทีมงาน</div>
   <div class="sd">ม.66 พ.ร.บ.เลือกตั้งท้องถิ่น 2562 — ต้องแจ้ง กกต. (ชื่อ, หน้าที่, ค่าตอบแทน)</div>
@@ -79,11 +128,8 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
     <div class="btn-row" style="margin-top:12px"><button class="btn btn-g" onclick="addTeam()">บันทึก</button><button class="btn btn-o" onclick="toggleForm('tf')">ยกเลิก</button></div>
   </div>
   <div id="tT"></div>
-</div>
 
-<!-- TAB: VEHICLES -->
-<div class="tab-panel" id="p-vehicles">
-  <div class="st">รถหาเสียง</div>
+  <div class="st" style="margin-top:32px">รถหาเสียง</div>
   <div class="sd">ม.67 — ห้ามจัดยานพาหนะให้ผู้มีสิทธิเลือกตั้ง ยกเว้นรถหาเสียงของผู้สมัคร</div>
   <div class="btn-row no-print"><button class="btn btn-p" onclick="toggleForm('vf')">+ เพิ่มรถ</button></div>
   <div id="vf" style="display:none;margin-bottom:16px;padding:16px;background:var(--card);border:1px solid var(--gold);border-radius:var(--radius)">
@@ -92,26 +138,31 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
     <div class="btn-row" style="margin-top:12px"><button class="btn btn-g" onclick="addVeh()">บันทึก</button><button class="btn btn-o" onclick="toggleForm('vf')">ยกเลิก</button></div>
   </div>
   <div id="vT"></div>
-</div>
 
-<!-- TAB: SIGNS -->
-<div class="tab-panel" id="p-signs">
-  <div class="st">ป้ายหาเสียง</div>
+  <div class="st" style="margin-top:32px">ป้ายหาเสียง</div>
   <div class="sd">ม.71 + ระเบียบ กกต. 2563 — ขนาด/จำนวนตามที่ กกต.กทม. กำหนด</div>
   <div class="aw">ขนาด: แผ่นป้ายไม่เกิน 130×245 ซม. / ประกาศ A3 — จำนวน: ป้าย ≤5× หน่วยเลือกตั้ง / ประกาศ ≤10× หน่วย</div>
   <div class="btn-row no-print"><button class="btn btn-p" onclick="toggleForm('sf')">+ เพิ่มป้าย</button></div>
   <div id="sf" style="display:none;margin-bottom:16px;padding:16px;background:var(--card);border:1px solid var(--gold);border-radius:var(--radius)">
-    <div class="form-row"><div class="fg"><label>ประเภท</label><select id="st"><option>แผ่นป้าย (130×245)</option><option>ประกาศ A3</option><option>อื่นๆ</option></select></div><div class="fg"><label>จำนวน</label><input type="number" id="sq"></div></div>
+    <div class="form-row"><div class="fg"><label>ประเภท</label><select id="sty"><option>แผ่นป้าย (130×245)</option><option>ประกาศ A3</option><option>อื่นๆ</option></select></div><div class="fg"><label>จำนวน</label><input type="number" id="sq"></div></div>
     <div class="form-row"><div class="fg"><label>สถานที่ติด</label><input id="sl"></div><div class="fg"><label>ราคารวม</label><input type="number" id="sc"></div></div>
     <div class="btn-row" style="margin-top:12px"><button class="btn btn-g" onclick="addSign()">บันทึก</button><button class="btn btn-o" onclick="toggleForm('sf')">ยกเลิก</button></div>
   </div>
   <div id="sT2"></div>
 </div>
 
+<!-- TAB: 12 EXPENSE TYPES -->
+<div class="tab-panel" id="p-types">
+  <div class="st">ประเภทค่าใช้จ่าย 12 ประเภทตามกฎหมาย</div>
+  <div class="sd">ตามประกาศ กกต. เรื่อง ประเภทค่าใช้จ่ายในการเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2563 อาศัยอำนาจตาม มาตรา 61 พ.ร.บ. เลือกตั้งท้องถิ่น พ.ศ. 2562</div>
+  <div class="aw">⚠️ <b>สำคัญ: ค่าใช้จ่ายของบุคคลอื่นต้องนับรวมด้วย</b> — หากบุคคลอื่นจ่ายแทนหรือให้ทรัพย์สินโดยผู้สมัครรับทราบและยินยอม ต้องนำมารวมคำนวณด้วย หากไม่ยินยอม ต้องแจ้งผู้อำนวยการการเลือกตั้งภายใน <b>3 วัน</b> (มาตรา 60 วรรคสาม)</div>
+  <div class="et-grid" id="etGrid"></div>
+</div>
+
 <!-- TAB: LEDGER -->
 <div class="tab-panel" id="p-ledger">
   <div class="st">บัญชีรายรับ-รายจ่าย</div>
-  <div class="sd">ม.60-62 — ยื่น กกต. ภายใน 90 วัน (โทษ ม.128: จำคุก ≤2 ปี / ปรับ ≤40,000 / เพิกถอน 5 ปี)</div>
+  <div class="sd">ม.60-62 — ยื่น กกต. ภายใน 90 วัน · แบบ ส.ถ./ผ.ถ. 1/13 (ค)</div>
   <div class="btn-row no-print">
     <button class="btn btn-p" onclick="toggleForm('xf')">+ เพิ่มรายการ</button>
     <button class="btn btn-o" onclick="fTx='all';render()">ทั้งหมด</button>
@@ -120,8 +171,12 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
   </div>
   <div id="xf" style="display:none;margin-bottom:16px;padding:16px;background:var(--card);border:1px solid var(--gold);border-radius:var(--radius)">
     <div class="form-row"><div class="fg"><label>ประเภท</label><select id="xt"><option value="expense">รายจ่าย</option><option value="income">รายรับ</option></select></div><div class="fg"><label>วันที่</label><input type="date" id="xd"></div></div>
-    <div class="form-row"><div class="fg"><label>หมวด</label><select id="xc"><option value="1">1. ค่าจ้างแรงงาน</option><option value="2">2. ค่าเช่ายานพาหนะ</option><option value="3">3. ค่าเช่าสถานที่</option><option value="4">4. ค่าจัดทำป้าย</option><option value="5">5. ค่าเอกสาร/พิมพ์</option><option value="6">6. ค่าโฆษณา/สื่อ</option><option value="7">7. ค่าอาหาร (ทีมงาน)</option><option value="8">8. ค่าสาธารณูปโภค</option><option value="9">9. ค่าเดินทาง</option><option value="10">10. ค่าจัดกิจกรรม</option><option value="11">11. ค่าวิจัย/สำรวจ</option><option value="12">12. ค่าสื่อออนไลน์</option><option value="13">13. อื่นๆ</option><option value="in">รายรับ</option></select></div><div class="fg"><label>จำนวนเงิน</label><input type="number" id="xa"></div></div>
-    <div class="form-row"><div class="fg" style="grid-column:1/-1"><label>รายละเอียด</label><input id="xm" placeholder="เช่น ค่าจ้างนาย A ติดป้าย"></div></div>
+    <div class="form-row">
+      <div class="fg"><label>หมวดค่าใช้จ่าย (12 ประเภท กกต.)</label><select id="xc"></select></div>
+      <div class="fg"><label>จำนวนเงิน (บาท)</label><input type="number" id="xa" step="0.01"></div>
+    </div>
+    <div class="form-row"><div class="fg" style="grid-column:1/-1"><label>รายละเอียด</label><input id="xm" placeholder="เช่น ค่าจ้างนาย A ติดป้าย 5 จุด"></div></div>
+    <div class="form-row"><div class="fg"><label>หมายเลขเอกสาร/ใบเสร็จ</label><input id="xdn" placeholder="เช่น ใบเสร็จ 001"></div><div class="fg"><label>ชื่อผู้รับเงิน</label><input id="xpy" placeholder="ชื่อผู้รับเงิน/บริษัท"></div></div>
     <div class="btn-row" style="margin-top:12px"><button class="btn btn-g" onclick="addTx()">บันทึก</button><button class="btn btn-o" onclick="toggleForm('xf')">ยกเลิก</button></div>
   </div>
   <div class="stat-grid" style="margin-bottom:16px">
@@ -129,7 +184,117 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
     <div class="stat-card" style="border-left:4px solid var(--red)"><div class="sv" style="color:var(--red)" id="xE">0</div><div class="sl">รายจ่าย (บาท)</div></div>
     <div class="stat-card" style="border-left:4px solid var(--blue)"><div class="sv" style="color:var(--blue)" id="xB">0</div><div class="sl">คงเหลือ (บาท)</div></div>
   </div>
+  <!-- Summary by type -->
+  <div style="margin-bottom:16px;font-size:14px;font-weight:600;color:var(--navy)">สรุปค่าใช้จ่ายแยกตามประเภท</div>
+  <div id="sumTbl"></div>
+  <!-- Full ledger -->
+  <div style="margin-bottom:8px;font-size:14px;font-weight:600;color:var(--navy)">รายการทั้งหมด</div>
+  <div class="btn-row no-print" style="margin-bottom:8px">
+    <button class="btn btn-o" style="font-size:12px;padding:6px 14px" onclick="exportCSV()">Export CSV</button>
+  </div>
   <div id="xT"></div>
+</div>
+
+<!-- TAB: LAW & PENALTIES -->
+<div class="tab-panel" id="p-law">
+  <div class="st">กฎหมายและระเบียบที่เกี่ยวข้อง</div>
+  <div class="sd">กรอบกฎหมายหลักสำหรับการเลือกตั้ง สก. กทม. — คลิกเพื่อขยายรายละเอียด</div>
+
+  <div class="law-card">
+    <div class="law-hd" onclick="toggleLaw(this)">
+      <span class="law-tag">ม. 60–62</span>
+      <span class="law-name">พ.ร.บ. เลือกตั้งท้องถิ่น พ.ศ. 2562 — หมวดค่าใช้จ่ายในการเลือกตั้ง</span>
+      <span class="law-arrow">▼</span>
+    </div>
+    <div class="law-body">
+      <p><b>มาตรา 60</b> — ให้ผู้สมัครเป็นผู้รับผิดชอบการใช้จ่ายเงินในการเลือกตั้ง และต้องไม่ใช้จ่ายเงินเกินจำนวนที่ผู้อำนวยการการเลือกตั้งประจำจังหวัดประกาศกำหนด</p>
+      <p style="margin-top:8px"><b>ค่าใช้จ่ายของผู้สมัคร รวมถึง:</b></p>
+      <ul>
+        <li>เงินที่บุคคลอื่นได้จ่ายหรือรับว่าจะจ่ายแทน เพื่อประโยชน์ในการหาเสียง <span class="law-hl">โดยผู้สมัครรับรู้หรือยินยอม</span></li>
+        <li>ทรัพย์สินที่บุคคลอื่นนำมาให้ใช้หรือยกให้โดยไม่คิดค่าตอบแทน (คิดตามอัตราปกติในท้องที่)</li>
+      </ul>
+      <p style="margin-top:8px"><b>มาตรา 61</b> — กำหนดรอบระยะเวลาการคำนวณค่าใช้จ่าย: (1) กรณีครบวาระ นับย้อนหลัง <span class="law-hl">180 วัน</span> ก่อนวันครบวาระ (2) กรณีตำแหน่งว่าง นับตั้งแต่วันที่ตำแหน่งว่างลง</p>
+      <p style="margin-top:8px"><b>มาตรา 62</b> — ผู้สมัครต้องยื่นบัญชีรายรับและรายจ่ายพร้อมหลักฐาน ต่อผู้อำนวยการการเลือกตั้งประจำจังหวัด ภายใน <span class="law-hl">90 วัน</span> นับจากวันเลือกตั้ง</p>
+    </div>
+  </div>
+
+  <div class="law-card">
+    <div class="law-hd" onclick="toggleLaw(this)">
+      <span class="law-tag">ข้อ 123–124, 230</span>
+      <span class="law-name">ระเบียบ กกต. ว่าด้วยการเลือกตั้งสมาชิกสภาท้องถิ่นฯ พ.ศ. 2562</span>
+      <span class="law-arrow">▼</span>
+    </div>
+    <div class="law-body">
+      <p><b>ข้อ 123</b> — กำหนดแบบฟอร์มที่ใช้ยื่นบัญชีรายรับและรายจ่าย: แบบ ส.ถ./ผ.ถ. 1/13 (ก)–(ช)</p>
+      <p style="margin-top:8px"><b>ข้อ 124</b> — กำหนดเอกสารหลักฐานประกอบ เช่น ใบเสร็จรับเงิน ใบกำกับภาษี ใบสำคัญรับเงิน</p>
+      <p style="margin-top:8px"><b>ข้อ 230</b> — สำหรับการเลือกตั้งครั้งแรก ให้คำนวณค่าใช้จ่ายตั้งแต่วันที่ <span class="law-hl">กกต. ประกาศให้มีการเลือกตั้ง</span></p>
+    </div>
+  </div>
+
+  <div class="law-card">
+    <div class="law-hd" onclick="toggleLaw(this)">
+      <span class="law-tag law-tag-gold">ประกาศ กกต. 2563</span>
+      <span class="law-name">ประเภทค่าใช้จ่ายในการเลือกตั้ง 12 ประเภท</span>
+      <span class="law-arrow">▼</span>
+    </div>
+    <div class="law-body">
+      <p>อาศัยอำนาจตามมาตรา 22 พ.ร.ป.กกต. พ.ศ. 2560 และ มาตรา 61 พ.ร.บ. เลือกตั้งท้องถิ่น พ.ศ. 2562 กำหนดประเภทค่าใช้จ่าย 12 ประเภท ประกาศในราชกิจจานุเบกษา 6 มีนาคม 2563</p>
+      <p style="margin-top:8px">ดูรายละเอียดแต่ละประเภทได้ที่แท็บ <b>"12 ประเภท"</b></p>
+    </div>
+  </div>
+
+  <div class="law-card">
+    <div class="law-hd" onclick="toggleLaw(this)">
+      <span class="law-tag">แบบฟอร์ม</span>
+      <span class="law-name">แบบฟอร์มบัญชีรายรับและรายจ่าย ส.ถ./ผ.ถ. 1/13</span>
+      <span class="law-arrow">▼</span>
+    </div>
+    <div class="law-body">
+      <ul>
+        <li><b>ส.ถ./ผ.ถ. 1/13 (ก)</b> — แบบบัญชีรายรับและรายจ่ายหน้าปก สรุปยอดรวม</li>
+        <li><b>ส.ถ./ผ.ถ. 1/13 (ข)</b> — บัญชีรายรับ ระบุแหล่งที่มาทั้งหมด</li>
+        <li><b>ส.ถ./ผ.ถ. 1/13 (ค)</b> — บัญชีรายจ่าย ระบุรายการตามประเภท</li>
+        <li><b>ส.ถ./ผ.ถ. 1/13 (ง)</b> — รายการค่าใช้จ่ายค้างจ่าย (หากมี)</li>
+        <li><b>ส.ถ./ผ.ถ. 1/13 (จ)</b> — ใบรับเงิน/ทรัพย์สินจากบุคคลอื่น</li>
+        <li><b>ส.ถ./ผ.ถ. 1/13 (ฉ)</b> — ใบสำคัญรับเงิน สำหรับค่าจ้างแรงงาน</li>
+        <li><b>ส.ถ./ผ.ถ. 1/13 (ช)</b> — ใบรับรองการจ่ายเงิน สำหรับรายจ่ายเล็กน้อยที่ไม่มีใบเสร็จ</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- DEADLINES & PENALTIES -->
+  <div class="st" style="margin-top:32px">กำหนดเวลาสำคัญ</div>
+  <div class="tl">
+    <div class="tl-item"><div class="tl-marker"><div class="tl-dot filled"></div><div class="tl-line"></div></div><div class="tl-content"><div class="tl-label">180 วัน ก่อนครบวาระ</div><div class="tl-desc">เริ่มนับระยะเวลาคำนวณค่าใช้จ่าย (ม. 61 (1))</div></div></div>
+    <div class="tl-item"><div class="tl-marker"><div class="tl-dot filled"></div><div class="tl-line"></div></div><div class="tl-content"><div class="tl-label">วันประกาศให้มีการเลือกตั้ง (กกต.)</div><div class="tl-desc">เริ่มนับสำหรับการเลือกตั้งครั้งแรก ตามระเบียบ กกต. ข้อ 230</div></div></div>
+    <div class="tl-item"><div class="tl-marker"><div class="tl-dot red"></div><div class="tl-line"></div></div><div class="tl-content"><div class="tl-label red">📅 วันเลือกตั้ง (D-Day)</div><div class="tl-desc">สิ้นสุดการนับค่าใช้จ่ายในการเลือกตั้ง</div></div></div>
+    <div class="tl-item"><div class="tl-marker"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><div class="tl-label">ภายใน 3 วัน หลังทราบ</div><div class="tl-desc">แจ้งไม่ยินยอมให้บุคคลอื่นโฆษณาหาเสียงแทน (ม. 60 วรรคสาม)</div></div></div>
+    <div class="tl-item"><div class="tl-marker"><div class="tl-dot red"></div></div><div class="tl-content"><div class="tl-label red">⚠️ ภายใน 90 วัน หลังเลือกตั้ง</div><div class="tl-desc"><b>กำหนดสุดท้าย</b> ยื่นบัญชีรายรับและรายจ่าย ต่อผู้อำนวยการการเลือกตั้งประจำ กทม. (ม. 62)</div></div></div>
+  </div>
+
+  <div class="st" style="margin-top:32px">บทกำหนดโทษ</div>
+  <div class="aw aw-danger" style="margin-bottom:16px">⚠️ <b>โทษสูงสุด: จำคุก 1–5 ปี + เพิกถอนสิทธิเลือกตั้ง 10 ปี</b> — กรณีใช้จ่ายเกินวงเงิน หรือยื่นบัญชีเท็จ/ไม่ครบถ้วน (ม. 127, 129)</div>
+  <div style="overflow-x:auto">
+    <table class="dt">
+      <thead><tr><th>กรณี</th><th>โทษ</th><th>มาตรา</th></tr></thead>
+      <tbody>
+        <tr><td style="font-size:13px"><b>ใช้จ่ายเกินวงเงิน</b></td><td style="font-size:13px"><span class="badge badge-red">จำคุก 1–5 ปี</span> หรือปรับ 20,000–100,000 บาท หรือปรับ 3 เท่าของยอดเกิน <span class="badge badge-red">เพิกถอนสิทธิ์ 10 ปี</span></td><td><b>ม. 127</b></td></tr>
+        <tr><td style="font-size:13px"><b>ไม่ยื่นบัญชีภายใน 90 วัน</b></td><td style="font-size:13px">ปรับ 10,000–50,000 บาท <span class="badge badge-orange">เพิกถอนสิทธิ์ 5 ปี</span></td><td><b>ม. 128</b></td></tr>
+        <tr><td style="font-size:13px"><b>ยื่นบัญชีเท็จ / ไม่ครบถ้วน</b></td><td style="font-size:13px"><span class="badge badge-red">จำคุก 1–5 ปี</span> หรือปรับ 20,000–100,000 บาท <span class="badge badge-red">เพิกถอนสิทธิ์ 10 ปี</span></td><td><b>ม. 129</b></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- REFERENCES -->
+  <div style="margin-top:24px;padding:16px;background:rgba(27,42,74,.04);border:1px solid rgba(27,42,74,.1);border-radius:var(--radius)">
+    <div style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:12px">แหล่งอ้างอิงทางการ</div>
+    <ol style="font-size:13px;color:var(--text-secondary);line-height:2;padding-left:20px">
+      <li><b>พ.ร.บ. การเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</b> (มาตรา 60–62, 127–129)</li>
+      <li><b>ระเบียบ กกต. ว่าด้วยการเลือกตั้งสมาชิกสภาท้องถิ่นฯ พ.ศ. 2562</b> (แก้ไขเพิ่มเติม ฉบับที่ 5 พ.ศ. 2568) ข้อ 123, 124, 230</li>
+      <li><b>ประกาศ กกต. เรื่อง ประเภทค่าใช้จ่ายในการเลือกตั้งฯ พ.ศ. 2563</b> ราชกิจจานุเบกษา 6 มีนาคม 2563</li>
+      <li><b>ประกาศผู้อำนวยการการเลือกตั้งประจำ กทม.</b> เรื่อง กำหนดจำนวนเงินค่าใช้จ่ายผู้สมัคร สก. 25 พฤศจิกายน 2564</li>
+    </ol>
+  </div>
 </div>
 
 <!-- TAB: PRINT -->
@@ -147,29 +312,46 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
 <!-- TAB: SETTINGS -->
 <div class="tab-panel" id="p-settings">
   <div class="st">ตั้งค่า</div>
-  <div class="sr"><label>วงเงิน กกต. (บาท)</label><input type="number" id="cB" value="400000" onchange="D.set('b',+this.value);render()"></div>
   <div class="sr"><label>ชื่อผู้สมัคร</label><input id="cN" onchange="D.set('n',this.value)"></div>
   <div class="sr"><label>เขตที่สมัคร</label><input id="cD" onchange="D.set('d',this.value)"></div>
   <div class="sr"><label>หมายเลข</label><input id="cNum" onchange="D.set('num',this.value)"></div>
+  <div class="sr"><label>วันเลือกตั้ง</label><input type="date" id="cED" onchange="D.set('edate',this.value)"></div>
   <div class="btn-row" style="margin-top:24px">
     <button class="btn btn-o" onclick="doExport()">Export ข้อมูล</button>
     <label class="btn btn-o" style="cursor:pointer"><input type="file" accept=".json" style="display:none" onchange="doImport(event)">Import ข้อมูล</label>
-    <button class="btn btn-d" onclick="if(confirm('ลบข้อมูลทั้งหมด?'))clearAll()">ล้างข้อมูล</button>
+    <button class="btn btn-d" onclick="if(confirm('ลบข้อมูลทั้งหมด? การดำเนินการนี้ไม่สามารถย้อนกลับได้'))clearAll()">ล้างข้อมูลทั้งหมด</button>
   </div>
 </div>
 
 </div>
-<footer class="site-footer"><span>Legal Advance Solution Co., Ltd. (LAS)</span> × <span>National Innovation Agency (NIA)</span><br><a href="index.html">Dashboard</a> · <a href="sk-candidate-guide.html">คู่มือฉบับเต็ม</a><br>อ้างอิง: ม.60-62 พ.ร.บ.เลือกตั้งท้องถิ่น 2562 · <a href="https://www.ect.go.th" target="_blank">กกต.</a></footer>
+<footer class="site-footer"><span>Legal Advance Solution Co., Ltd. (LAS)</span> × <span>National Innovation Agency (NIA)</span><br><a href="index.html">Dashboard</a> · <a href="sk-candidate-guide.html">คู่มือฉบับเต็ม</a><br>อ้างอิง: ม.60-62 พ.ร.บ.เลือกตั้งท้องถิ่น 2562 · ประกาศ กกต. ประเภทค่าใช้จ่าย 2563 · <a href="https://www.ect.go.th" target="_blank">กกต.</a></footer>
 
 <script>
+// === 12 EXPENSE TYPES (ประกาศ กกต. 2563) ===
+var ET=[
+  {id:1,name:'ค่าสมัครรับเลือกตั้ง',law:'ประกาศ กกต. 2563 ข้อ 3(1)',desc:'ค่าใช้จ่ายในกระบวนการสมัครรับเลือกตั้ง',items:['ค่าธรรมเนียมสมัครรับเลือกตั้ง','ค่าถ่ายรูปเพื่อใช้ในใบสมัคร','ค่าใบรับรองแพทย์','ค่าถ่ายเอกสารประกอบหลักฐานการสมัคร']},
+  {id:2,name:'ค่าจ้างแรงงาน',law:'ประกาศ กกต. 2563 ข้อ 3(2)',desc:'ค่าจ้างผู้ช่วยหาเสียงในอัตราปกติของท้องถิ่น',items:['ค่าจ้างผู้ช่วยหาเสียง','ค่าจ้างปิดป้ายโฆษณา','ค่าจ้างแจกใบปลิว/แผ่นพับ','ค่าจ้างแรงงานอื่นที่เกี่ยวกับการเลือกตั้ง (ตามอัตราปกติ)']},
+  {id:3,name:'ค่าจ้างทำของ',law:'ประกาศ กกต. 2563 ข้อ 3(3)',desc:'ค่าจัดทำสิ่งของสำหรับผู้สมัครและผู้ช่วยหาเสียง',items:['ค่าจ้างทำเสื้อแจ็กเก็ต','ค่าจ้างทำหมวก','ค่าจ้างทำเสื้อยืด','ค่าจ้างทำสิ่งของอื่นสำหรับผู้สมัครและทีม']},
+  {id:4,name:'ค่าโฆษณาในสื่อต่าง ๆ',law:'ประกาศ กกต. 2563 ข้อ 3(4)',desc:'ค่าโฆษณาผ่านสื่อมวลชนทุกประเภท',items:['ค่าสื่อสิ่งพิมพ์ต่าง ๆ','ค่าผลิตสื่อเพื่อออกอากาศทางวิทยุ','ค่าผลิตสื่อเพื่อออกอากาศทางโทรทัศน์','ค่าโฆษณาอื่นเพื่อหาเสียงเลือกตั้ง']},
+  {id:5,name:'ค่าจัดทำป้าย เอกสาร สิ่งพิมพ์',law:'ประกาศ กกต. 2563 ข้อ 3(5)',desc:'ค่าจัดทำสื่อหาเสียงที่มีชื่อหรือหมายเลขผู้สมัคร',items:['ค่าจัดทำประกาศ/ป้ายโฆษณา','ค่าจัดทำแผ่นปลิว/แผ่นพับ','ค่าจัดทำโปสเตอร์/สติกเกอร์','ค่าวัสดุ ค่าจ้างเขียน และค่าติดตั้งป้าย']},
+  {id:6,name:'ค่าหาเสียงทางอิเล็กทรอนิกส์',law:'ประกาศ กกต. 2563 ข้อ 3(6)',desc:'ค่าบริการสื่อออนไลน์และอิเล็กทรอนิกส์ทุกประเภท',items:['ค่าบริการเว็บไซต์','ค่าโฆษณาโซเชียลมีเดีย (FB/IG/TikTok/X)','ค่าบริการ YouTube/แอปพลิเคชัน','ค่าบริการ Email/SMS/สื่ออิเล็กทรอนิกส์อื่น']},
+  {id:7,name:'ค่าจัดซื้อหรือเช่าวัสดุและอุปกรณ์',law:'ประกาศ กกต. 2563 ข้อ 3(7)',desc:'ค่าวัสดุและอุปกรณ์ที่ใช้ในการหาเสียง',items:['ค่าจัดซื้อเทปบันทึกเสียง','ค่าเช่าเครื่องขยายเสียง','ค่าเช่าอุปกรณ์ไฟฟ้าและแสงสว่าง','ค่าวัสดุอุปกรณ์อื่นสำหรับการหาเสียง']},
+  {id:8,name:'ค่าเช่าสถานที่และค่าตกแต่ง',law:'ประกาศ กกต. 2563 ข้อ 3(8)',desc:'ค่าสถานที่สำหรับกิจกรรมหาเสียง',items:['ค่าเช่าสำนักงาน/ศูนย์รณรงค์หาเสียง','ค่าเช่าสถานที่หรือเวทีปราศรัย','ค่าตกแต่งสถานที่หาเสียง','ค่าวัสดุอุปกรณ์ตกแต่ง']},
+  {id:9,name:'ค่าใช้จ่ายในการเดินทาง',law:'ประกาศ กกต. 2563 ข้อ 3(9)',desc:'ค่าเดินทางเพื่อวัตถุประสงค์หาเสียงเท่านั้น',items:['ค่าเช่าหรือค่าจ้างเหมารถยนต์','ค่าเช่าหรือค่าจ้างเรือยนต์/ยานพาหนะ','ค่าน้ำมันเชื้อเพลิงสำหรับการหาเสียง','ค่าเช่าที่พักสำหรับการหาเสียง']},
+  {id:10,name:'ค่าสาธารณูปโภค',law:'ประกาศ กกต. 2563 ข้อ 3(10)',desc:'ส่วนที่เกินกว่ารายจ่ายปกติที่เคยเป็นอยู่',items:['ค่าไฟฟ้าที่เกินกว่าปกติ','ค่าน้ำประปาที่เกินกว่าปกติ','ค่าโทรศัพท์ที่เกินกว่าปกติ','ค่าบริการทางไปรษณีย์ที่เกี่ยวกับการเลือกตั้ง']},
+  {id:11,name:'ค่าใช้จ่ายสำหรับผู้ช่วยหาเสียง',law:'ประกาศ กกต. 2563 ข้อ 3(11)',desc:'ค่าใช้จ่ายดูแลทีมงานหาเสียง',items:['ค่าอบรมผู้ช่วยหาเสียง','ค่าอาหารและเครื่องดื่มสำหรับผู้ช่วยหาเสียง']},
+  {id:12,name:'ค่าใช้จ่ายอื่นที่ กกต. อนุญาต',law:'ประกาศ กกต. 2563 ข้อ 3(12)',desc:'ต้องได้รับอนุญาตจาก กกต. ก่อนดำเนินการ',items:['ค่าใช้จ่ายที่เกี่ยวกับการหาเสียงแต่ไม่อยู่ในประเภทที่ 1–11','ต้องยื่นขออนุญาตต่อ กกต. ล่วงหน้า','ต้องไม่ขัดต่อกฎหมายเลือกตั้ง']}
+];
+// Category names lookup
+var CN={};ET.forEach(function(t){CN[t.id]=t.name});CN['in']='รายรับ';
+
 // === DATA LAYER (localStorage — เผื่อ Firebase migration) ===
 var D={
   g:function(k,d){try{return JSON.parse(localStorage.getItem('sk_'+k))||d}catch(e){return d}},
   s:function(k,v){localStorage.setItem('sk_'+k,JSON.stringify(v))},
-  get:function(k){return D.g(k,k==='b'?400000:k==='team'||k==='veh'||k==='sign'||k==='tx'?[]:{})},
+  get:function(k){return D.g(k,k==='b'?900000:k==='team'||k==='veh'||k==='sign'||k==='tx'?[]:{})},
   set:function(k,v){D.s(k,v)}
 };
-var CN={'1':'ค่าจ้างแรงงาน','2':'ค่าเช่ายานพาหนะ','3':'ค่าเช่าสถานที่','4':'ค่าจัดทำป้าย','5':'ค่าเอกสาร','6':'ค่าโฆษณา','7':'ค่าอาหาร','8':'ค่าสาธารณูปโภค','9':'ค่าเดินทาง','10':'ค่าจัดกิจกรรม','11':'ค่าวิจัย','12':'ค่าสื่อออนไลน์','13':'อื่นๆ','in':'รายรับ'};
 var fTx='all';
 
 // === ESCAPE (XSS-safe for user's own localStorage data) ===
@@ -181,17 +363,18 @@ function showTab(n){
   document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active')});
   document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
   var el=document.getElementById('p-'+n);if(el)el.classList.add('active');
-  var idx={team:0,vehicles:1,signs:2,ledger:3,print:4,settings:5}[n];
+  var idx={team:0,types:1,ledger:2,law:3,print:4,settings:5}[n];
   var btns=document.querySelectorAll('.tab-btn');if(btns[idx])btns[idx].classList.add('active');
   if(n==='print')renderPrint();
 }
 function toggleForm(id){var el=document.getElementById(id);el.style.display=el.style.display==='none'?'block':'none'}
+function toggleLaw(hd){var body=hd.nextElementSibling;var arrow=hd.querySelector('.law-arrow');body.classList.toggle('open');arrow.textContent=body.classList.contains('open')?'▲':'▼'}
 
 // === CRUD ===
 function addTeam(){var n=document.getElementById('tn').value.trim();if(!n){alert('กรุณากรอกชื่อ');return}var a=D.get('team');a.push({id:Date.now(),n:n,r:document.getElementById('tr').value.trim(),p:+document.getElementById('tp').value||0,s:document.getElementById('ts').value});D.set('team',a);document.getElementById('tn').value='';document.getElementById('tr').value='';document.getElementById('tp').value='';toggleForm('tf');render()}
 function addVeh(){var p=document.getElementById('vp').value.trim();if(!p){alert('กรุณากรอกทะเบียน');return}var a=D.get('veh');a.push({id:Date.now(),p:p,t:document.getElementById('vt').value,c:+document.getElementById('vc').value||0,n:document.getElementById('vn').value.trim()});D.set('veh',a);document.getElementById('vp').value='';document.getElementById('vc').value='';document.getElementById('vn').value='';toggleForm('vf');render()}
-function addSign(){var q=+document.getElementById('sq').value;if(!q){alert('กรุณากรอกจำนวน');return}var a=D.get('sign');a.push({id:Date.now(),t:document.getElementById('st').value,q:q,l:document.getElementById('sl').value.trim(),c:+document.getElementById('sc').value||0});D.set('sign',a);document.getElementById('sq').value='';document.getElementById('sl').value='';document.getElementById('sc').value='';toggleForm('sf');render()}
-function addTx(){var amt=+document.getElementById('xa').value;if(!amt){alert('กรุณากรอกจำนวนเงิน');return}var a=D.get('tx');a.push({id:Date.now(),type:document.getElementById('xt').value,date:document.getElementById('xd').value||new Date().toISOString().slice(0,10),cat:document.getElementById('xc').value,amt:amt,memo:document.getElementById('xm').value.trim()});D.set('tx',a);document.getElementById('xa').value='';document.getElementById('xm').value='';toggleForm('xf');render()}
+function addSign(){var q=+document.getElementById('sq').value;if(!q){alert('กรุณากรอกจำนวน');return}var a=D.get('sign');a.push({id:Date.now(),t:document.getElementById('sty').value,q:q,l:document.getElementById('sl').value.trim(),c:+document.getElementById('sc').value||0});D.set('sign',a);document.getElementById('sq').value='';document.getElementById('sl').value='';document.getElementById('sc').value='';toggleForm('sf');render()}
+function addTx(){var amt=+document.getElementById('xa').value;if(!amt){alert('กรุณากรอกจำนวนเงิน');return}var a=D.get('tx');a.push({id:Date.now(),type:document.getElementById('xt').value,date:document.getElementById('xd').value||new Date().toISOString().slice(0,10),cat:document.getElementById('xc').value,amt:amt,memo:document.getElementById('xm').value.trim(),docno:document.getElementById('xdn').value.trim(),payee:document.getElementById('xpy').value.trim()});D.set('tx',a);document.getElementById('xa').value='';document.getElementById('xm').value='';document.getElementById('xdn').value='';document.getElementById('xpy').value='';toggleForm('xf');render()}
 function del(type,id){if(!confirm('ลบรายการนี้?'))return;D.set(type,D.get(type).filter(function(i){return i.id!==id}));render()}
 
 // === RENDER ===
@@ -210,59 +393,112 @@ function render(){
   var f=document.getElementById('F');f.style.width=Math.min(pct,100)+'%';
   f.style.background=pct>=100?'var(--red)':pct>=90?'var(--orange)':pct>=75?'#F1C40F':'var(--green)';
   var al=document.getElementById('A');
-  if(pct>=100){al.className='bb-alert show';al.style.background='#FEE2E2';al.style.color='#991B1B';al.textContent='🚨 เกินวงเงิน กกต.! ('+pct+'%) — เสี่ยงถูกลงโทษ ม.127'}
-  else if(pct>=90){al.className='bb-alert show';al.style.background='#FEF3C7';al.style.color='#92400E';al.textContent='⚠️ ใช้ไป '+pct+'% — เหลืองบไม่ถึง 10%!'}
+  if(pct>=100){al.className='bb-alert show';al.style.background='var(--red-bg)';al.style.color='var(--red-dark)';al.textContent='🚨 เกินวงเงิน กกต.! ('+pct+'%) — เสี่ยงถูกลงโทษ ม.127 จำคุก 1-5 ปี + เพิกถอนสิทธิ์ 10 ปี'}
+  else if(pct>=90){al.className='bb-alert show';al.style.background='var(--orange-bg)';al.style.color='#92400E';al.textContent='⚠️ ใช้ไป '+pct+'% — เหลืองบไม่ถึง 10%!'}
+  else if(pct>=75){al.className='bb-alert show';al.style.background='var(--orange-bg)';al.style.color='#92400E';al.textContent='⚡ ใช้ไป '+pct+'% — ควรระมัดระวังการใช้จ่าย'}
   else{al.className='bb-alert'}
+  // District selector sync
+  var sel=document.getElementById('distSel');
+  for(var i=0;i<sel.options.length;i++){if(+sel.options[i].value===budget){sel.selectedIndex=i;break}}
   // Tables
-  renderTbl('tT',team,['#','ชื่อ','หน้าที่','ค่า/วัน','วันเริ่ม',''],function(t,i){return '<tr><td>'+(i+1)+'</td><td>'+E(t.n)+'</td><td>'+E(t.r)+'</td><td>'+N(t.p)+'</td><td>'+E(t.s)+'</td><td class="no-print"><button class="btn-d" onclick="del(\'team\','+t.id+')">ลบ</button></td></tr>'});
-  renderTbl('vT',veh,['#','ทะเบียน','ประเภท','ค่าเช่า/วัน','หมายเหตุ',''],function(v,i){return '<tr><td>'+(i+1)+'</td><td>'+E(v.p)+'</td><td>'+E(v.t)+'</td><td>'+N(v.c)+'</td><td>'+E(v.n)+'</td><td class="no-print"><button class="btn-d" onclick="del(\'veh\','+v.id+')">ลบ</button></td></tr>'});
-  renderTbl('sT2',sign,['#','ประเภท','จำนวน','สถานที่','ราคารวม',''],function(s,i){return '<tr><td>'+(i+1)+'</td><td>'+E(s.t)+'</td><td>'+s.q+'</td><td>'+E(s.l)+'</td><td>'+N(s.c)+'</td><td class="no-print"><button class="btn-d" onclick="del(\'sign\','+s.id+')">ลบ</button></td></tr>'});
+  renderTbl('tT',team,['#','ชื่อ','หน้าที่','ค่า/วัน','วันเริ่ม',''],function(t,i){return '<tr><td>'+(i+1)+'</td><td>'+E(t.n)+'</td><td>'+E(t.r)+'</td><td class="amt">'+N(t.p)+'</td><td>'+E(t.s)+'</td><td class="no-print"><button class="btn-d" onclick="del(\'team\','+t.id+')">ลบ</button></td></tr>'});
+  renderTbl('vT',veh,['#','ทะเบียน','ประเภท','ค่าเช่า/วัน','หมายเหตุ',''],function(v,i){return '<tr><td>'+(i+1)+'</td><td>'+E(v.p)+'</td><td>'+E(v.t)+'</td><td class="amt">'+N(v.c)+'</td><td>'+E(v.n)+'</td><td class="no-print"><button class="btn-d" onclick="del(\'veh\','+v.id+')">ลบ</button></td></tr>'});
+  renderTbl('sT2',sign,['#','ประเภท','จำนวน','สถานที่','ราคารวม',''],function(s,i){return '<tr><td>'+(i+1)+'</td><td>'+E(s.t)+'</td><td>'+s.q+'</td><td>'+E(s.l)+'</td><td class="amt">'+N(s.c)+'</td><td class="no-print"><button class="btn-d" onclick="del(\'sign\','+s.id+')">ลบ</button></td></tr>'});
   // Tx
   var ftx=fTx==='all'?tx:tx.filter(function(t){return t.type===fTx});
   ftx.sort(function(a,b){return b.date>a.date?1:-1});
   var inc=tx.filter(function(t){return t.type==='income'}).reduce(function(s,t){return s+t.amt},0);
   document.getElementById('xI').textContent=N(inc);document.getElementById('xE').textContent=N(spent);document.getElementById('xB').textContent=N(inc-spent);
-  renderTbl('xT',ftx,['วันที่','ประเภท','หมวด','จำนวน','รายละเอียด',''],function(t){var tl=t.type==='income'?'<span style="color:var(--green)">รับ</span>':'<span style="color:var(--red)">จ่าย</span>';return '<tr><td>'+E(t.date)+'</td><td>'+tl+'</td><td>'+E(CN[t.cat]||t.cat)+'</td><td style="text-align:right;font-weight:600">'+N(t.amt)+'</td><td>'+E(t.memo)+'</td><td class="no-print"><button class="btn-d" onclick="del(\'tx\','+t.id+')">ลบ</button></td></tr>'});
+  // Summary by type
+  renderSummary(tx);
+  // Full ledger
+  renderTbl('xT',ftx,['วันที่','ประเภท','หมวด','รายละเอียด','เอกสาร','ผู้รับ','จำนวน',''],function(t){var tl=t.type==='income'?'<span style="color:var(--green)">รับ</span>':'<span style="color:var(--red)">จ่าย</span>';return '<tr><td>'+E(t.date)+'</td><td>'+tl+'</td><td style="font-size:12px">'+E(CN[t.cat]||t.cat)+'</td><td>'+E(t.memo)+'</td><td style="font-size:12px;color:var(--text-muted)">'+E(t.docno||'-')+'</td><td style="font-size:12px;color:var(--text-muted)">'+E(t.payee||'-')+'</td><td class="amt">'+N(t.amt)+'</td><td class="no-print"><button class="btn-d" onclick="del(\'tx\','+t.id+')">ลบ</button></td></tr>'});
 }
+
+function renderSummary(tx){
+  var el=document.getElementById('sumTbl');
+  var expenses=tx.filter(function(t){return t.type==='expense'});
+  if(!expenses.length){el.innerHTML='<div class="empty">ยังไม่มีรายจ่าย</div>';return}
+  var grouped={};expenses.forEach(function(e){if(!grouped[e.cat])grouped[e.cat]={count:0,total:0};grouped[e.cat].count++;grouped[e.cat].total+=e.amt});
+  var h='<table class="dt"><thead><tr><th>ประเภทที่</th><th>ประเภทค่าใช้จ่าย</th><th>รายการ</th><th class="amt">ยอดรวม</th><th>กฎหมาย</th></tr></thead><tbody>';
+  Object.keys(grouped).sort(function(a,b){return a-b}).forEach(function(catId){
+    var d=grouped[catId];var t=ET.find(function(e){return e.id===+catId});
+    h+='<tr><td>'+catId+'</td><td style="font-size:13px">'+(t?t.name:'-')+'</td><td>'+d.count+'</td><td class="amt">'+N(d.total)+'</td><td style="font-size:11px;color:var(--text-muted)">'+(t?t.law:'')+'</td></tr>';
+  });
+  h+='</tbody></table>';el.innerHTML=h;
+}
+
 // NOTE: innerHTML used here is safe — all values are escaped via E() and data comes from user's own localStorage
 function renderTbl(id,data,heads,rowFn){
   var el=document.getElementById(id);
   if(!data.length){el.textContent='';var p=document.createElement('div');p.className='empty';p.textContent='ยังไม่มีข้อมูล';el.appendChild(p);return}
-  var h='<table class="dt"><thead><tr>'+heads.map(function(h){return '<th>'+h+'</th>'}).join('')+'</tr></thead><tbody>'+data.map(rowFn).join('')+'</tbody></table>';
+  var h='<div style="overflow-x:auto"><table class="dt"><thead><tr>'+heads.map(function(h){return '<th>'+h+'</th>'}).join('')+'</tr></thead><tbody>'+data.map(rowFn).join('')+'</tbody></table></div>';
   el.innerHTML=h;
+}
+
+// === RENDER EXPENSE TYPES GRID ===
+function renderTypesGrid(){
+  var grid=document.getElementById('etGrid');
+  grid.innerHTML=ET.map(function(t){return '<div class="et-card"><div class="et-head"><div class="et-num">'+t.id+'</div><div><div class="et-name">'+t.name+'</div><div class="et-desc">'+t.desc+'</div></div></div><div class="et-items"><ul>'+t.items.map(function(i){return '<li>'+i+'</li>'}).join('')+'</ul><div class="et-law">'+t.law+'</div></div></div>'}).join('');
+}
+
+// === RENDER CATEGORY SELECT ===
+function renderCatSelect(){
+  var sel=document.getElementById('xc');
+  sel.innerHTML='<option value="">-- เลือกประเภท --</option>'+ET.map(function(t){return '<option value="'+t.id+'">'+t.id+'. '+t.name+'</option>'}).join('')+'<option value="in">รายรับ</option>';
 }
 
 // === PRINT PREVIEW ===
 function renderPrint(){
-  var s=D.get('settings')||{},tx=D.get('tx'),budget=D.get('b');
+  var tx=D.get('tx'),budget=D.get('b'),cN=D.get('n')||'(ยังไม่ระบุ)',cD=D.get('d')||'(ยังไม่ระบุ)',cNum=D.get('num')||'-';
   var inc=tx.filter(function(t){return t.type==='income'}),exp=tx.filter(function(t){return t.type==='expense'});
   var tI=inc.reduce(function(s,t){return s+t.amt},0),tE=exp.reduce(function(s,t){return s+t.amt},0);
   exp.sort(function(a,b){return(a.cat||'').localeCompare(b.cat||'')||(a.date||'').localeCompare(b.date||'')});
-  var h='<div style="text-align:center;margin-bottom:24px"><div style="font-size:18px;font-weight:700">บัญชีแสดงรายรับและรายจ่ายในการเลือกตั้ง</div><div style="font-size:14px;color:var(--text-secondary)">สมาชิกสภากรุงเทพมหานคร (ส.ก.) · เลือกตั้ง 5 กรกฎาคม 2569</div></div>';
-  h+='<div style="margin-bottom:16px;font-size:14px"><b>ผู้สมัคร:</b> '+E(s.n||'(ยังไม่ระบุ)')+' | <b>เขต:</b> '+E(s.d||'(ยังไม่ระบุ)')+' | <b>เบอร์:</b> '+E(s.num||'-')+'</div>';
-  h+='<div style="font-weight:700;margin:16px 0 8px">รายรับ</div><table style="width:100%;border-collapse:collapse;font-size:13px"><tr style="background:#f5f5f5"><th style="padding:6px;border:1px solid #ddd;text-align:left">วันที่</th><th style="padding:6px;border:1px solid #ddd;text-align:left">รายละเอียด</th><th style="padding:6px;border:1px solid #ddd;text-align:right">จำนวนเงิน</th></tr>';
+  var h='<div style="text-align:center;margin-bottom:24px"><div style="font-size:18px;font-weight:700">บัญชีแสดงรายรับและรายจ่ายในการเลือกตั้ง</div><div style="font-size:14px;color:var(--text-secondary)">สมาชิกสภากรุงเทพมหานคร (ส.ก.) · ตามแบบ ส.ถ./ผ.ถ. 1/13</div></div>';
+  h+='<div style="margin-bottom:16px;font-size:14px"><b>ผู้สมัคร:</b> '+E(cN)+' | <b>เขต:</b> '+E(cD)+' | <b>เบอร์:</b> '+E(cNum)+'</div>';
+  h+='<div style="font-weight:700;margin:16px 0 8px">รายรับ (ส.ถ./ผ.ถ. 1/13 (ข))</div><table style="width:100%;border-collapse:collapse;font-size:13px"><tr style="background:#f5f5f5"><th style="padding:6px;border:1px solid #ddd;text-align:left">วันที่</th><th style="padding:6px;border:1px solid #ddd;text-align:left">รายละเอียด</th><th style="padding:6px;border:1px solid #ddd;text-align:right">จำนวนเงิน</th></tr>';
   inc.forEach(function(t){h+='<tr><td style="padding:6px;border:1px solid #ddd">'+E(t.date)+'</td><td style="padding:6px;border:1px solid #ddd">'+E(t.memo||'รายรับ')+'</td><td style="padding:6px;border:1px solid #ddd;text-align:right">'+N(t.amt)+'</td></tr>'});
   h+='<tr style="font-weight:700;background:#D1FAE5"><td colspan="2" style="padding:6px;border:1px solid #ddd">รวมรายรับ</td><td style="padding:6px;border:1px solid #ddd;text-align:right">'+N(tI)+'</td></tr></table>';
-  h+='<div style="font-weight:700;margin:16px 0 8px">รายจ่าย</div><table style="width:100%;border-collapse:collapse;font-size:13px"><tr style="background:#f5f5f5"><th style="padding:6px;border:1px solid #ddd;text-align:left">วันที่</th><th style="padding:6px;border:1px solid #ddd;text-align:left">หมวด</th><th style="padding:6px;border:1px solid #ddd;text-align:left">รายละเอียด</th><th style="padding:6px;border:1px solid #ddd;text-align:right">จำนวนเงิน</th></tr>';
-  exp.forEach(function(t){h+='<tr><td style="padding:6px;border:1px solid #ddd">'+E(t.date)+'</td><td style="padding:6px;border:1px solid #ddd">'+E(CN[t.cat]||t.cat)+'</td><td style="padding:6px;border:1px solid #ddd">'+E(t.memo)+'</td><td style="padding:6px;border:1px solid #ddd;text-align:right">'+N(t.amt)+'</td></tr>'});
-  h+='<tr style="font-weight:700;background:#FEE2E2"><td colspan="3" style="padding:6px;border:1px solid #ddd">รวมรายจ่าย</td><td style="padding:6px;border:1px solid #ddd;text-align:right">'+N(tE)+'</td></tr></table>';
-  h+='<div style="margin-top:16px;padding:12px;background:var(--bg-alt);border-radius:8px;font-size:14px"><b>วงเงิน กกต.:</b> '+N(budget)+' บาท | <b>ใช้ไป:</b> '+N(tE)+' ('+(budget>0?Math.round(tE/budget*100):0)+'%)</div>';
+  h+='<div style="font-weight:700;margin:16px 0 8px">รายจ่าย (ส.ถ./ผ.ถ. 1/13 (ค)) — 12 ประเภทตามประกาศ กกต. 2563</div><table style="width:100%;border-collapse:collapse;font-size:13px"><tr style="background:#f5f5f5"><th style="padding:6px;border:1px solid #ddd;text-align:left">วันที่</th><th style="padding:6px;border:1px solid #ddd;text-align:left">ประเภท</th><th style="padding:6px;border:1px solid #ddd;text-align:left">รายละเอียด</th><th style="padding:6px;border:1px solid #ddd;text-align:left">เอกสาร</th><th style="padding:6px;border:1px solid #ddd;text-align:right">จำนวนเงิน</th></tr>';
+  exp.forEach(function(t){h+='<tr><td style="padding:6px;border:1px solid #ddd">'+E(t.date)+'</td><td style="padding:6px;border:1px solid #ddd;font-size:12px">'+E(CN[t.cat]||t.cat)+'</td><td style="padding:6px;border:1px solid #ddd">'+E(t.memo)+'</td><td style="padding:6px;border:1px solid #ddd;font-size:11px">'+E(t.docno||'-')+'</td><td style="padding:6px;border:1px solid #ddd;text-align:right">'+N(t.amt)+'</td></tr>'});
+  h+='<tr style="font-weight:700;background:#FEE2E2"><td colspan="4" style="padding:6px;border:1px solid #ddd">รวมรายจ่าย</td><td style="padding:6px;border:1px solid #ddd;text-align:right">'+N(tE)+'</td></tr></table>';
+  h+='<div style="margin-top:16px;padding:12px;background:var(--bg-alt);border-radius:8px;font-size:14px"><b>วงเงิน กกต.:</b> '+N(budget)+' บาท | <b>ใช้ไป:</b> '+N(tE)+' ('+(budget>0?Math.round(tE/budget*100):0)+'%) | <b>คงเหลือ:</b> '+N(budget-tE)+' บาท</div>';
   h+='<div style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:32px;font-size:13px"><div style="text-align:center;border-top:1px solid #000;padding-top:8px">ลงชื่อ .........................<br>(ผู้สมัคร)</div><div style="text-align:center;border-top:1px solid #000;padding-top:8px">ลงชื่อ .........................<br>(ผู้จัดทำบัญชี)</div></div>';
-  h+='<div style="margin-top:24px;font-size:11px;color:var(--text-muted);border-top:1px solid var(--border);padding-top:8px">สร้างจาก ส.ก. Navigator Campaign Tracker · LAS × NIA · อ้างอิง ม.60-62 พ.ร.บ.เลือกตั้งท้องถิ่น 2562<br><b>หมายเหตุ:</b> เอกสารนี้เป็น draft — กรุณาตรวจสอบกับแบบฟอร์ม กกต. จริงก่อนลงนามยื่น</div>';
+  h+='<div style="margin-top:24px;font-size:11px;color:var(--text-muted);border-top:1px solid var(--border);padding-top:8px">สร้างจาก ส.ก. Navigator Campaign Tracker · LAS × NIA · อ้างอิง ม.60-62 พ.ร.บ.เลือกตั้งท้องถิ่น 2562 + ประกาศ กกต. ประเภทค่าใช้จ่าย 2563<br><b>หมายเหตุ:</b> เอกสารนี้เป็น draft — กรุณาตรวจสอบกับแบบฟอร์ม กกต. จริง (ส.ถ./ผ.ถ. 1/13) ก่อนลงนามยื่น</div>';
   document.getElementById('printArea').innerHTML=h;
 }
 
-// === EXPORT/IMPORT ===
-function doExport(){var d={v:'1.0',date:new Date().toISOString(),b:D.get('b'),settings:D.get('settings'),team:D.get('team'),veh:D.get('veh'),sign:D.get('sign'),tx:D.get('tx')};var blob=new Blob([JSON.stringify(d,null,2)],{type:'application/json'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download='campaign-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url)}
-function doImport(ev){var f=ev.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(e){try{var d=JSON.parse(e.target.result);if(!d.v){alert('ไฟล์ไม่ถูกต้อง');return}if(!confirm('Import จะทับข้อมูลเดิม?'))return;if(d.b)D.set('b',d.b);if(d.settings)D.set('settings',d.settings);if(d.team)D.set('team',d.team);if(d.veh)D.set('veh',d.veh);if(d.sign)D.set('sign',d.sign);if(d.tx)D.set('tx',d.tx);loadSettings();render();alert('Import สำเร็จ!')}catch(err){alert('Error: '+err.message)}};r.readAsText(f)}
-function clearAll(){['sk_b','sk_settings','sk_team','sk_veh','sk_sign','sk_tx'].forEach(function(k){localStorage.removeItem(k)});loadSettings();render()}
+// === EXPORT CSV ===
+function exportCSV(){
+  var tx=D.get('tx');if(!tx.length){alert('ยังไม่มีรายการ');return}
+  var header=['ลำดับ','วันที่','ประเภท','หมวดที่','หมวดค่าใช้จ่าย','รายละเอียด','หมายเลขเอกสาร','ผู้รับเงิน','จำนวนเงิน'];
+  var rows=tx.map(function(e,i){return [i+1,e.date,e.type==='income'?'รายรับ':'รายจ่าย',e.cat,CN[e.cat]||'-','"'+E(e.memo)+'"',e.docno||'-',e.payee||'-',e.amt.toFixed(2)]});
+  var csv='\uFEFF'+[header].concat(rows).map(function(r){return r.join(',')}).join('\n');
+  var blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});
+  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='บัญชีรายจ่ายเลือกตั้ง_สก_กทม.csv';a.click()
+}
+
+// === EXPORT/IMPORT JSON ===
+function doExport(){var d={v:'2.0',date:new Date().toISOString(),b:D.get('b'),n:D.get('n'),d:D.get('d'),num:D.get('num'),edate:D.get('edate'),team:D.get('team'),veh:D.get('veh'),sign:D.get('sign'),tx:D.get('tx')};var blob=new Blob([JSON.stringify(d,null,2)],{type:'application/json'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download='campaign-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url)}
+function doImport(ev){var f=ev.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(e){try{var d=JSON.parse(e.target.result);if(!d.v){alert('ไฟล์ไม่ถูกต้อง');return}if(!confirm('Import จะทับข้อมูลเดิม ต้องการดำเนินการ?'))return;if(d.b)D.set('b',d.b);if(d.n)D.set('n',d.n);if(d.d)D.set('d',d.d);if(d.num)D.set('num',d.num);if(d.edate)D.set('edate',d.edate);if(d.team)D.set('team',d.team);if(d.veh)D.set('veh',d.veh);if(d.sign)D.set('sign',d.sign);if(d.tx)D.set('tx',d.tx);if(d.settings){D.set('n',d.settings.n||'');D.set('d',d.settings.d||'');D.set('num',d.settings.num||'')}loadSettings();render();alert('Import สำเร็จ!')}catch(err){alert('Error: '+err.message)}};r.readAsText(f)}
+function clearAll(){['sk_b','sk_n','sk_d','sk_num','sk_edate','sk_team','sk_veh','sk_sign','sk_tx'].forEach(function(k){localStorage.removeItem(k)});loadSettings();render()}
 
 // === SETTINGS ===
-function loadSettings(){var s=D.get('settings')||{};document.getElementById('cB').value=D.get('b');document.getElementById('cN').value=s.n||'';document.getElementById('cD').value=s.d||'';document.getElementById('cNum').value=s.num||''}
+function loadSettings(){
+  document.getElementById('cN').value=D.get('n')||'';
+  document.getElementById('cD').value=D.get('d')||'';
+  document.getElementById('cNum').value=D.get('num')||'';
+  document.getElementById('cED').value=D.get('edate')||'';
+  var b=D.get('b');var sel=document.getElementById('distSel');
+  for(var i=0;i<sel.options.length;i++){if(+sel.options[i].value===b){sel.selectedIndex=i;break}}
+}
 
 // === INIT ===
 document.getElementById('xd').value=new Date().toISOString().slice(0,10);
-loadSettings();render();
+renderTypesGrid();
+renderCatSelect();
+loadSettings();
+render();
 </script>
 </body>
 </html>
