@@ -234,73 +234,6 @@ body {
   font-size: 11px; color: var(--text-muted);
 }
 
-/* ============ TRAFFY FONDUE ============ */
-.traffy-widget {
-  background: linear-gradient(135deg, #e8f5e9 0%, #e3f2fd 50%, #fff3e0 100%);
-  border-radius: var(--radius-lg);
-  padding: 24px 28px;
-  margin-bottom: 40px;
-  border: 1px solid rgba(0,0,0,0.06);
-  box-shadow: var(--shadow);
-}
-.traffy-widget h3 {
-  color: #1B5E20;
-  font-size: 16px;
-  margin-bottom: 4px;
-}
-.traffy-widget .subtitle {
-  color: #666;
-  font-size: 13px;
-  margin-bottom: 14px;
-}
-.traffy-select {
-  width: 100%;
-  padding: 10px 14px;
-  border-radius: var(--radius-sm);
-  border: 2px solid #81C784;
-  font-size: 14px;
-  margin-bottom: 10px;
-  background: white;
-  font-family: 'Sarabun', sans-serif;
-  color: var(--text);
-  appearance: auto;
-}
-.traffy-select:focus {
-  outline: none;
-  border-color: #43A047;
-  box-shadow: 0 0 0 3px rgba(67,160,71,0.15);
-}
-.traffy-buttons {
-  display: flex; gap: 10px; margin-bottom: 10px;
-}
-.traffy-btn {
-  flex: 1; padding: 9px;
-  border-radius: var(--radius-sm);
-  border: none;
-  font-size: 13px; cursor: pointer;
-  font-weight: 600;
-  font-family: 'Sarabun', sans-serif;
-  transition: transform 0.2s, box-shadow 0.2s;
-  color: white;
-}
-.traffy-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
-.traffy-btn-primary { background: #43A047; }
-.traffy-btn-secondary { background: #1976D2; }
-.traffy-info {
-  font-size: 12px; color: #888; margin-top: 6px; line-height: 1.6;
-}
-.traffy-tip {
-  background: #FFF8E1;
-  border-left: 3px solid #FFB300;
-  padding: 8px 12px;
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  font-size: 13px; margin-top: 10px;
-  color: #5D4037; line-height: 1.7;
-}
-
-@media (max-width: 480px) {
-  .traffy-buttons { flex-direction: column; }
-}
 
 /* ============ QUICK ACCESS ============ */
 .quick-grid {
@@ -487,10 +420,17 @@ body {
   background: linear-gradient(135deg, rgba(27,42,74,0.03), var(--card));
 }
 .phase-card.phase-highlight-a .phase-name-en::after {
-  content: ' — Zero';
-  color: var(--gold);
-  font-weight: 700;
-  font-size: 11px;
+  content: 'FROM ZERO';
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, var(--navy), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-top: 4px;
 }
 .phase-card.phase-highlight-d {
   border: 2px solid #7C3AED;
@@ -498,10 +438,17 @@ body {
   background: linear-gradient(135deg, rgba(124,58,237,0.03), var(--card));
 }
 .phase-card.phase-highlight-d .phase-name-en::after {
-  content: ' — Hero';
-  color: var(--gold);
-  font-weight: 700;
-  font-size: 11px;
+  content: 'TO HERO';
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  background: linear-gradient(135deg, var(--gold), #7C3AED);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-top: 4px;
 }
 
 .phase-info { flex: 1; min-width: 0; }
@@ -534,43 +481,6 @@ body {
   padding: 2px 8px;
   border-radius: 4px;
   font-weight: 600;
-}
-
-/* ============ DOWNLOADS ============ */
-.dl-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin-bottom: 40px;
-}
-.dl-card {
-  display: flex; align-items: flex-start; gap: 10px;
-  padding: 14px 16px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-sm);
-  text-decoration: none;
-  color: inherit;
-  transition: all var(--transition);
-}
-.dl-card:hover {
-  border-color: var(--gold);
-  box-shadow: var(--shadow);
-}
-.dl-icon {
-  font-size: 20px; min-width: 24px; line-height: 1.2;
-}
-.dl-info h4 {
-  font-size: 13px; font-weight: 700; color: var(--navy);
-  margin-bottom: 2px; line-height: 1.4;
-}
-.dl-info span {
-  font-size: 11px; color: var(--text-muted);
-}
-
-@media (max-width: 560px) {
-  .dl-grid { grid-template-columns: 1fr; }
 }
 
 /* ============ FOOTER ============ */
@@ -714,7 +624,7 @@ body {
       <!-- Links -->
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;">
         <a id="diTraffyLink" href="#" target="_blank" style="padding:8px 16px;background:var(--teal);color:#fff;border-radius:var(--radius-sm);text-decoration:none;font-size:13px;font-weight:600;">ดูทั้งหมดใน Traffy Fondue</a>
-        <a href="district-intel.html" style="padding:8px 16px;background:var(--navy);color:#fff;border-radius:var(--radius-sm);text-decoration:none;font-size:13px;font-weight:600;">เปิด RED FLAG Tool</a>
+        <a href="district-intel.html" style="padding:8px 16px;background:var(--navy);color:#fff;border-radius:var(--radius-sm);text-decoration:none;font-size:13px;font-weight:600;">เปิด GREEN FLAG Tool</a>
       </div>
     </div>
 
@@ -804,211 +714,7 @@ body {
     </a>
   </div>
 
-  <!-- 8. DOWNLOADS — คลังกฎหมายจัดหมวด (PDF ดาวน์โหลดได้ทันที) -->
-
-  <!-- 8A. กฎหมายหลัก -->
-  <div class="section-divider"><div class="line"></div><span>กฎหมายหลัก (พ.ร.บ. / พ.ร.ป.)</span><div class="line"></div></div>
-  <div class="dl-grid fade-in">
-    <a href="downloads/pra-local-election-2562.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📄</div>
-      <div class="dl-info">
-        <h4>พ.ร.บ.เลือกตั้งท้องถิ่น 2562</h4>
-        <span>กฎหมายหลักสำหรับการสมัคร ส.ก. · 391 KB</span>
-      </div>
-    </a>
-    <a href="downloads/pra-local-election-2566-v2.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📄</div>
-      <div class="dl-info">
-        <h4>พ.ร.บ.เลือกตั้งท้องถิ่น ฉบับที่ 2 (2566)</h4>
-        <span>แก้ไขเพิ่มเติมมาตราสำคัญ · 137 KB</span>
-      </div>
-    </a>
-    <a href="downloads/prb-bma-2528.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📄</div>
-      <div class="dl-info">
-        <h4>พ.ร.บ.ระเบียบบริหาร กทม. 2528</h4>
-        <span>อำนาจหน้าที่ กทม. + จำนวน ส.ก. · 492 KB</span>
-      </div>
-    </a>
-    <a href="downloads/organic-act-nacc-2561.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📄</div>
-      <div class="dl-info">
-        <h4>พ.ร.ป. ป.ป.ช. 2561</h4>
-        <span>ยื่นบัญชีทรัพย์สิน / ม.102 · 549 KB</span>
-      </div>
-    </a>
-  </div>
-  <div style="text-align:center;margin-top:8px;"><small style="color:var(--text-muted);font-size:11px;">อ้างอิง: <a href="https://www.ocs.go.th/searchlaw" target="_blank" style="color:var(--text-muted);">สำนักงานคณะกรรมการกฤษฎีกา (ocs.go.th)</a></small></div>
-
-
-  <!-- 8C. แบบฟอร์ม + คู่มือผู้สมัคร -->
-  <div class="section-divider"><div class="line"></div><span>แบบฟอร์ม + คู่มือผู้สมัคร</span><div class="line"></div></div>
-  <div class="dl-grid fade-in">
-    <a href="downloads/form-candidate-application-sk.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📥</div>
-      <div class="dl-info">
-        <h4>ใบสมัคร ส.ถ. 4/1 (สก. กทม.)</h4>
-        <span>แบบฟอร์มใบสมัครรับเลือกตั้ง · 120 KB</span>
-      </div>
-    </a>
-    <a href="downloads/form-campaign-finance-ect.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📥</div>
-      <div class="dl-info">
-        <h4>แบบบัญชีรายรับรายจ่ายเลือกตั้ง</h4>
-        <span>บังคับยื่น กกต. ภายใน 90 วัน · 181 KB</span>
-      </div>
-    </a>
-    <a href="downloads/manual-registration.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📥</div>
-      <div class="dl-info">
-        <h4>คู่มือการรับสมัคร</h4>
-        <span>ขั้นตอน เอกสาร แบบฟอร์ม · 2.8 MB</span>
-      </div>
-    </a>
-    <a href="downloads/registration-steps-sk65.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📥</div>
-      <div class="dl-info">
-        <h4>ขั้นตอนรับสมัคร ส.ก. 65</h4>
-        <span>ขั้นตอนจริงจากการสมัครครั้งก่อน · 161 KB</span>
-      </div>
-    </a>
-    <a href="downloads/election-knowledge-sk65.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📥</div>
-      <div class="dl-info">
-        <h4>ชุดความรู้เลือกตั้ง ส.ก. 65</h4>
-        <span>สรุปกฎเกณฑ์การเลือกตั้ง · 1.7 MB</span>
-      </div>
-    </a>
-    <a href="downloads/election-offenses.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">⚖️</div>
-      <div class="dl-info">
-        <h4>ความผิดเกี่ยวกับการเลือกตั้ง</h4>
-        <span>บทลงโทษ ใบแดง ใบเหลือง · 2.2 MB</span>
-      </div>
-    </a>
-  </div>
-
-  <!-- 8D. ข้อบังคับ / จรรยาบรรณ สภา กทม. (เฉพาะ กทม.) -->
-  <div class="section-divider"><div class="line"></div><span>ข้อบังคับ / จรรยาบรรณ สภา กทม.</span><div class="line"></div></div>
-  <div class="dl-grid fade-in">
-    <a href="downloads/bkk-council-meeting-rules-2562.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📜</div>
-      <div class="dl-info">
-        <h4>ข้อบังคับการประชุมสภา กทม. 2562</h4>
-        <span>ฉบับหลัก · 252 KB</span>
-      </div>
-    </a>
-    <a href="downloads/bmc-rules-2563-v2.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📜</div>
-      <div class="dl-info">
-        <h4>แก้ไขครั้งที่ 2 (2563)</h4>
-        <span>ข้อบังคับการประชุม ฉบับแก้ไข · 115 KB</span>
-      </div>
-    </a>
-    <a href="downloads/bkk-council-meeting-rules-amendment3-2565.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📜</div>
-      <div class="dl-info">
-        <h4>แก้ไขครั้งที่ 3 (2565)</h4>
-        <span>ข้อบังคับการประชุม ฉบับแก้ไข · 72 KB</span>
-      </div>
-    </a>
-    <a href="downloads/bkk-council-meeting-rules-amendment4-2566.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📜</div>
-      <div class="dl-info">
-        <h4>แก้ไขครั้งที่ 4 (2566)</h4>
-        <span>ข้อบังคับการประชุม ฉบับล่าสุด · 83 KB</span>
-      </div>
-    </a>
-    <a href="downloads/bkk-council-ethics-code-2559.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📜</div>
-      <div class="dl-info">
-        <h4>จรรยาบรรณสมาชิกสภา กทม. 2559</h4>
-        <span>ข้อบังคับเฉพาะ กทม. · 48 KB</span>
-      </div>
-    </a>
-    <a href="downloads/bkk-council-complaint-rules.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📜</div>
-      <div class="dl-info">
-        <h4>ระเบียบรับเรื่องร้องเรียน / พิจารณา</h4>
-        <span>ระเบียบจรรยาบรรณ สก. · 58 KB</span>
-      </div>
-    </a>
-    <a href="downloads/bkk-council-urgent-questions-2562.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📜</div>
-      <div class="dl-info">
-        <h4>ระเบียบกระทู้ถามสด 2562</h4>
-        <span>การจัดกระทู้ถามสดเข้าวาระ · 230 KB</span>
-      </div>
-    </a>
-    <a href="downloads/bkk-council-powers-and-duties.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📜</div>
-      <div class="dl-info">
-        <h4>อำนาจหน้าที่สภา กทม.</h4>
-        <span>ม.89 พ.ร.บ.กทม. 2528 · 78 KB</span>
-      </div>
-    </a>
-  </div>
-
-  <!-- 8E. คู่มือปฏิบัติงาน + สรุป -->
-  <div class="section-divider"><div class="line"></div><span>คู่มือปฏิบัติงาน + สรุปรายตอน</span><div class="line"></div></div>
-  <div class="dl-grid fade-in">
-    <a href="downloads/bkk-council-member-handbook-vol1.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📘</div>
-      <div class="dl-info">
-        <h4>คู่มือสมาชิกสภา กทม. เล่ม 1</h4>
-        <span>ปฏิบัติงานในสภา — ไฟล์ใหญ่ · 15.4 MB</span>
-      </div>
-    </a>
-    <a href="downloads/bkk-council-member-handbook-vol2.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📘</div>
-      <div class="dl-info">
-        <h4>คู่มือสมาชิกสภา กทม. เล่ม 2</h4>
-        <span>เนื้อหาเชิงลึก — ไฟล์ใหญ่ · 24.3 MB</span>
-      </div>
-    </a>
-    <a href="downloads/summary-01-powers-and-duties.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📑</div>
-      <div class="dl-info">
-        <h4>สรุป 1: อำนาจหน้าที่</h4>
-        <span>สรุปอำนาจหน้าที่สมาชิกสภา · 982 KB</span>
-      </div>
-    </a>
-    <a href="downloads/summary-02-council-meetings.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📑</div>
-      <div class="dl-info">
-        <h4>สรุป 2: การประชุมสภา</h4>
-        <span>ขั้นตอนการประชุม · 1 MB</span>
-      </div>
-    </a>
-    <a href="downloads/summary-03-committees.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📑</div>
-      <div class="dl-info">
-        <h4>สรุป 3: คณะกรรมการ</h4>
-        <span>สามัญ / วิสามัญ · 1 MB</span>
-      </div>
-    </a>
-    <a href="downloads/summary-04-motions-and-debates.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📑</div>
-      <div class="dl-info">
-        <h4>สรุป 4: ญัตติและอภิปราย</h4>
-        <span>วิธีเสนอญัตติ · 1 MB</span>
-      </div>
-    </a>
-    <a href="downloads/summary-05-motion-endorsement.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📑</div>
-      <div class="dl-info">
-        <h4>สรุป 5: การรับรองญัตติ</h4>
-        <span>กระบวนการรับรอง · 967 KB</span>
-      </div>
-    </a>
-    <a href="downloads/summary-06-interpellations.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📑</div>
-      <div class="dl-info">
-        <h4>สรุป 6: กระทู้ถาม</h4>
-        <span>วิธียื่นกระทู้ถามในสภา · 3.1 MB</span>
-      </div>
-    </a>
-  </div>
+  <!-- Downloads removed — accessible via Phase E (คลังข้อมูล / Reference) -->
 
   <!-- 8.5 VERIFIED BADGE -->
   <div class="verified-badge fade-in" style="margin-top:40px;padding:20px 24px;background:linear-gradient(135deg,#F0FDF4,#ECFDF5);border:1px solid #BBF7D0;border-radius:12px;text-align:center;">
@@ -1016,7 +722,7 @@ body {
       <span style="font-size:18px;">&#x2705;</span> ตรวจสอบแล้ว — 110+ มาตรากฎหมาย ผ่านการ Verify จากตัวบทจริง
     </div>
     <div style="font-size:12px;color:#4B5563;line-height:1.6;">
-      อ้างอิง พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528 (ฉบับที่ 6) &middot; พ.ร.บ.เลือกตั้งท้องถิ่น 2562 (และฉบั��ที่ 2 พ.ศ. 2566)<br>
+      อ้างอิง พ.ร.บ.ระเบียบบริหารราชการ กทม. 2528 (ฉบับที่ 6) &middot; พ.ร.บ.เลือกตั้งท้องถิ่น 2562 (และฉบับที่ 2 พ.ศ. 2566)<br>
       ตรวจโดย LAS Legal AI &middot; อัปเดตล่าสุด: 5 เมษายน 2569
     </div>
   </div>
@@ -1122,7 +828,7 @@ body {
         // Render stat cards
         var statsEl=document.getElementById('diStats');
         statsEl.textContent='';
-        [{v:total,l:'ปัญหาทั้งหมด',c:'var(--navy)'},{v:done,l:'แก้แล้ว',c:'var(--green)'},{v:inprog,l:'กำลังดำเนินการ',c:'var(--orange)'},{v:pending,l:'รอรับเรื่อง',c:'var(--red)'}].forEach(function(s){
+        [{v:total,l:'ปัญหาทั้งหมด',c:'var(--navy)'},{v:done,l:'แก้แล้ว',c:'var(--green)'},{v:inprog,l:'กำลังดำเนินการ',c:'#E67E22'},{v:pending,l:'รอรับเรื่อง',c:'var(--red)'}].forEach(function(s){
           var card=document.createElement('div');
           card.style.cssText='background:#fff;border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center;border-top:3px solid '+s.c;
           var val=document.createElement('div');val.style.cssText='font-size:24px;font-weight:700;font-family:Space Grotesk,sans-serif;color:'+s.c;val.textContent=s.v;
