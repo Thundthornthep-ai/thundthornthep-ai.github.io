@@ -106,4 +106,60 @@
     var el = document.getElementById('las-auth-user');
     if (el) el.focus();
   }, 100);
+
+  // --- Anti-copy protection (read-only for viewers) ---
+  function enableCopyProtection() {
+    // Disable text selection via CSS
+    var style = document.createElement('style');
+    style.textContent = [
+      'main, article, .content, .article-body, section {',
+      '  -webkit-user-select: none;',
+      '  -moz-user-select: none;',
+      '  -ms-user-select: none;',
+      '  user-select: none;',
+      '}',
+      // Allow selection in code blocks for usability
+      'pre, code, input, textarea { user-select: text !important; }'
+    ].join('\n');
+    document.head.appendChild(style);
+
+    // Disable right-click on content
+    document.addEventListener('contextmenu', function (e) {
+      if (e.target.closest('input, textarea, pre, code')) return;
+      e.preventDefault();
+    });
+
+    // Disable common copy shortcuts (Ctrl+C, Ctrl+U, Ctrl+S, Ctrl+P)
+    document.addEventListener('keydown', function (e) {
+      if (e.target.closest('input, textarea')) return;
+      if ((e.ctrlKey || e.metaKey) && ['c','u','s','p','a'].indexOf(e.key.toLowerCase()) !== -1) {
+        e.preventDefault();
+      }
+    });
+
+    // Disable drag
+    document.addEventListener('dragstart', function (e) {
+      e.preventDefault();
+    });
+  }
+
+  // Apply copy protection after auth succeeds (or if already authed)
+  if (sessionStorage.getItem(SESSION_KEY) === '1') {
+    enableCopyProtection();
+  } else {
+    // Patch the attempt function to also enable protection after login
+    var origAttempt = attempt;
+    attempt = function () {
+      origAttempt();
+      if (sessionStorage.getItem(SESSION_KEY) === '1') {
+        enableCopyProtection();
+      }
+    };
+    document.getElementById('las-auth-btn').removeEventListener('click', origAttempt);
+    document.getElementById('las-auth-btn').addEventListener('click', attempt);
+    document.getElementById('las-auth-pass').removeEventListener('keydown', origAttempt);
+    document.getElementById('las-auth-pass').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') attempt();
+    });
+  }
 })();
