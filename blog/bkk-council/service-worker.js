@@ -1,12 +1,13 @@
 // Service Worker for ส.ก. Navigator PWA
 // Version: sk-navigator-v1
 
-const CACHE_NAME = 'sk-navigator-v2';
+const CACHE_NAME = 'sk-navigator-v3';
 
 const URLS_TO_CACHE = [
   './',
   './index.html',
   './campaign-tracker.html',
+  './campaign-dashboard.html',
   './district-intel.html',
   './phase-a.html',
   './phase-b.html',

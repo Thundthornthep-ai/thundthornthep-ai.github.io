@@ -6,6 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>District Intelligence — ส.ก. Navigator</title>
 <meta name="description" content="GREEN FLAG พื้นที่สำคัญ 50 เขต กทม. — ข้อมูลชุมชน วัด โรงเรียน ตลาด + ปักธง check-in + Traffy Fondue สำหรับผู้สมัคร ส.ก. 2569">
+<meta property="og:title" content="District Intelligence — ส.ก. Navigator">
+<meta property="og:description" content="GREEN FLAG พื้นที่สำคัญ 50 เขต กทม. — ปักธง check-in + Traffy Fondue">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://thundthornthep-ai.github.io/las-logo.webp">
+<link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -281,7 +286,7 @@ function selectDistrict(name){
   document.getElementById('districtContent').style.display='block';
   // Update links
   var slug = districtUrls[name]||'';
-  document.getElementById('traffyLink').href='https://share.traffy.in.th/teamchadchart?district='+encodeURIComponent(name);
+  document.getElementById('traffyLink').href='https://bangkok.traffy.in.th/?district='+encodeURIComponent(name);
   document.getElementById('districtOfficeLink').href='https://webportal.bangkok.go.th/'+slug;
   document.getElementById('districtOfficeName').textContent='สำนักงานเขต'+name;
   renderDistrict();
@@ -294,8 +299,10 @@ function fetchTraffy(){
   var el = document.getElementById('traffyData');
   el.textContent = 'กำลังดึงข้อมูลจาก Traffy Fondue...';
   el.style.textAlign = 'center';
-  fetch('https://publicapi.traffy.in.th/teamchadchart-stat-api/geojson/v1?limit=1000')
-    .then(function(r){ return r.json(); })
+  if(window._traffyAbort)window._traffyAbort.abort();
+  window._traffyAbort=new AbortController();
+  fetch('https://publicapi.traffy.in.th/teamchadchart-stat-api/geojson/v1?limit=1000',{signal:window._traffyAbort.signal})
+    .then(function(r){ if(!r.ok)throw new Error('API status '+r.status); return r.json(); })
     .then(function(data){
       if(!data.features || !data.features.length){
         el.textContent = 'ไม่พบข้อมูลจาก Traffy API';

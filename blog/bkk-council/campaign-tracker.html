@@ -6,6 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Campaign Tracker — ส.ก. Navigator</title>
 <meta name="description" content="ระบบบัญชีค่าใช้จ่ายเลือกตั้ง ส.ก. กทม. 2569 — 12 ประเภทตามประกาศ กกต. 2563 + วงเงินตามเขต + ทีมงาน/รถ/ป้าย + พิมพ์ส่ง กกต.">
+<meta property="og:title" content="Campaign Tracker — ส.ก. Navigator">
+<meta property="og:description" content="ระบบบัญชีค่าใช้จ่ายเลือกตั้ง ส.ก. กทม. 2569 — ทีมงาน รถ ป้าย + พิมพ์ส่ง กกต.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://thundthornthep-ai.github.io/las-logo.webp">
+<link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -610,6 +615,9 @@ function loadSettings(){
 function checkBackupReminder(){
   var banner=document.getElementById('backupBanner');
   var msg=document.getElementById('backupMsg');
+  // Only show if user has actual data
+  var hasData=D.get('team').length||D.get('vehicles').length||D.get('signs').length||D.get('transactions').length;
+  if(!hasData)return;
   var last=localStorage.getItem('sk_lastExport');
   var now=Date.now();
   var sevenDays=7*24*60*60*1000;
@@ -617,7 +625,7 @@ function checkBackupReminder(){
   if(dismissed)return;
   if(!last){
     banner.style.display='flex';
-    msg.textContent='คุณยังไม่เคยสำรองข้อมูล — กดปุ่ม Export JSON เพื่อเก็บไว้';
+    msg.textContent='คุณมีข้อมูลแล้วแต่ยังไม่เคยสำรอง — กดปุ่ม Export JSON เพื่อเก็บไว้';
   }else{
     var elapsed=now-parseInt(last,10);
     if(elapsed>sevenDays){
@@ -643,6 +651,10 @@ loadSettings();
 render();
 checkBackupReminder();
 </script>
+<div style="max-width:var(--max-w);margin:24px auto;padding:16px;background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);font-size:12px;color:var(--text-muted);line-height:1.6;text-align:center">
+⚠️ <strong>ข้อสงวนสิทธิ์:</strong> เครื่องมือนี้เป็นเพียงตัวช่วยจัดการข้อมูลเบื้องต้น — ใช้เป็น draft เท่านั้น ตรวจสอบกับแบบฟอร์ม กกต. จริงก่อนยื่น ผู้พัฒนาไม่รับผิดชอบต่อความถูกต้องของข้อมูล<br>
+จัดทำโดย ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D. — Legal Advance Solution Co., Ltd.
+</div>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('service-worker.js')}</script>
 </body>
 </html>

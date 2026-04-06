@@ -801,7 +801,7 @@ body {
     if(!district){ document.getElementById('diResults').style.display='none'; return; }
     document.getElementById('diResults').style.display='block';
     document.getElementById('diLoading').style.display='block';
-    document.getElementById('diTraffyLink').href='https://share.traffy.in.th/teamchadchart?district='+encodeURIComponent(district);
+    document.getElementById('diTraffyLink').href='https://bangkok.traffy.in.th/?district='+encodeURIComponent(district);
     // Init map
     if(!diMap){
       diMap = L.map('diMap').setView([13.756,100.502],12);
@@ -812,9 +812,11 @@ body {
     // Clear markers
     diMarkers.forEach(function(m){diMap.removeLayer(m)});
     diMarkers=[];
-    // Fetch API
-    fetch('https://publicapi.traffy.in.th/teamchadchart-stat-api/geojson/v1?limit=1000')
-      .then(function(r){return r.json()})
+    // Fetch API (with AbortController for rapid switching)
+    if(window._diAbort)window._diAbort.abort();
+    window._diAbort=new AbortController();
+    fetch('https://publicapi.traffy.in.th/teamchadchart-stat-api/geojson/v1?limit=1000',{signal:window._diAbort.signal})
+      .then(function(r){if(!r.ok)throw new Error('API status '+r.status);return r.json()})
       .then(function(data){
         document.getElementById('diLoading').style.display='none';
         if(!data.features){return}
@@ -837,6 +839,14 @@ body {
           var lab=document.createElement('div');lab.style.cssText='font-size:11px;color:var(--text-secondary);margin-top:2px;';lab.textContent=s.l;
           card.appendChild(val);card.appendChild(lab);statsEl.appendChild(card);
         });
+        // Date range display
+        var timestamps=items.map(function(f){return f.properties.timestamp}).filter(Boolean).sort();
+        if(timestamps.length){
+          var fmt=function(ts){var d=new Date(ts.replace(' ','T'));if(isNaN(d))return ts.slice(0,10);var dd=d.getDate(),mm=d.getMonth(),yy=d.getFullYear()+543;var mths=['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];return dd+' '+mths[mm]+' '+yy};
+          var rangeEl=document.getElementById('diDateRange');
+          if(!rangeEl){rangeEl=document.createElement('div');rangeEl.id='diDateRange';rangeEl.style.cssText='text-align:center;font-size:12px;color:var(--text-secondary);margin-top:6px;padding:4px 8px;background:var(--bg-alt);border-radius:6px;';statsEl.parentNode.insertBefore(rangeEl,statsEl.nextSibling)}
+          rangeEl.textContent='📅 รวมเรื่องตั้งแต่ '+fmt(timestamps[0])+' ถึง '+fmt(timestamps[timestamps.length-1])+' ('+timestamps.length+' เรื่อง)';
+        }
         // Map markers
         var stateColors={'เสร็จสิ้น':'#22C55E','กำลังดำเนินการ':'#E67E22','รอรับเรื่อง':'#EF4444','ส่งต่อ(ใหม่)':'#F59E0B'};
         var bounds=[];
@@ -906,7 +916,7 @@ body {
         probEl.textContent='';
         items.slice(0,10).forEach(function(f){
           var p=f.properties;
-          var traffyUrl=p.ticket_id?'https://share.traffy.in.th/teamchadchart/'+encodeURIComponent(p.ticket_id):'';
+          var traffyUrl=p.ticket_id?'https://bangkok.traffy.in.th/detail?ticketID='+encodeURIComponent(p.ticket_id):'';
           var row=document.createElement(traffyUrl?'a':'div');
           if(traffyUrl){row.href=traffyUrl;row.target='_blank';row.rel='noopener';}
           row.style.cssText='padding:10px 0;border-bottom:1px solid var(--border-light);display:flex;align-items:flex-start;gap:10px;text-decoration:none;color:inherit;transition:background 0.15s;cursor:'+(traffyUrl?'pointer':'default');
@@ -921,9 +931,11 @@ body {
           }
           var mid=document.createElement('div');mid.style.cssText='flex:1;min-width:0;';
           var typeSpan=document.createElement('div');typeSpan.style.cssText='font-weight:600;font-size:13px;';typeSpan.textContent=E(p.problem_type_fondue||'ไม่ระบุ');
-          var addrSpan=document.createElement('div');addrSpan.style.cssText='font-size:11px;color:var(--text-muted);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';addrSpan.textContent=E(p.address||'')+' · '+E((p.timestamp||'').slice(0,10));
-          mid.appendChild(typeSpan);mid.appendChild(addrSpan);
-          if(traffyUrl){var linkHint=document.createElement('div');linkHint.style.cssText='font-size:10px;color:var(--teal);margin-top:2px;';linkHint.textContent='คลิกดูรายละเอียด →';mid.appendChild(linkHint)}
+          var fmtTs=function(ts){if(!ts)return'';var d=new Date(ts.replace(' ','T'));if(isNaN(d))return ts;var dd=d.getDate(),mm=d.getMonth(),yy=d.getFullYear()+543,hh=('0'+d.getHours()).slice(-2),mi=('0'+d.getMinutes()).slice(-2);var mths=['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];return dd+' '+mths[mm]+' '+yy+' เวลา '+hh+':'+mi+' น.'};
+          var addrSpan=document.createElement('div');addrSpan.style.cssText='font-size:11px;color:var(--text-muted);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';addrSpan.textContent=E(p.address||'');
+          var tsSpan=document.createElement('div');tsSpan.style.cssText='font-size:10px;color:var(--teal);margin-top:1px;';tsSpan.textContent='🕐 แจ้งเมื่อ '+fmtTs(p.timestamp);
+          mid.appendChild(typeSpan);mid.appendChild(addrSpan);mid.appendChild(tsSpan);
+          if(traffyUrl){var linkHint=document.createElement('div');linkHint.style.cssText='font-size:10px;color:var(--navy);margin-top:2px;font-weight:600;';linkHint.textContent='🔗 คลิกดูรายละเอียดที่ Traffy →';mid.appendChild(linkHint)}
           var right=document.createElement('div');right.style.cssText='display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;';
           var stateSpan=document.createElement('span');
           var sc=stateColors[p.state]||'var(--text-muted)';

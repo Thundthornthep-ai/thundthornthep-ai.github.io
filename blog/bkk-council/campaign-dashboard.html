@@ -11,7 +11,8 @@
 <meta property="og:image" content="https://thundthornthep-ai.github.io/blog/bkk-council/img/og-dashboard.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230A1628'/><text x='16' y='22' text-anchor='middle' font-family='serif' font-size='16' font-weight='bold' fill='%23C9A96E'>B</text></svg>">
+<link rel="icon" type="image/webp" href="/las-logo.webp">
+<link rel="manifest" href="manifest.json">
 <title>BKK Election Dashboard — สก. ชุดที่ 14</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -594,7 +595,12 @@ body::before {
 </head>
 <body>
 
-<div class="container">
+<div style="position:fixed;top:0;left:0;right:0;z-index:100;height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:#0A1628;border-bottom:1px solid rgba(201,169,110,.2);font-size:13px">
+  <div style="font-family:'Noto Sans Thai',sans-serif;color:rgba(255,255,255,.9);font-weight:500"><a href="index.html" style="color:rgba(255,255,255,.6);text-decoration:none;margin-right:8px">← ส.ก. Navigator</a> Campaign Dashboard</div>
+  <div style="color:rgba(255,255,255,.5);font-size:12px">by <span style="color:#C9A96E">LAS</span></div>
+</div>
+
+<div class="container" style="padding-top:56px">
 
   <!-- HERO -->
   <section class="hero animate">
@@ -999,5 +1005,6 @@ document.getElementById('updateDate').textContent = new Date().toLocaleDateStrin
 });
 </script>
 
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('service-worker.js')}</script>
 </body>
 </html>
