@@ -12,9 +12,10 @@
   var VALID_USER = 'LAS';
   var VALID_PASS = 'laslegal';
   var SESSION_KEY = 'las_auth_ok';
+  var REMEMBER_KEY = 'las_auth_remember';
 
-  // Already authenticated this session
-  if (sessionStorage.getItem(SESSION_KEY) === '1') return;
+  // Already authenticated (localStorage = remember me, sessionStorage = this session)
+  if (localStorage.getItem(SESSION_KEY) === '1' || sessionStorage.getItem(SESSION_KEY) === '1') return;
 
   // --- Hide page content ---
   document.documentElement.style.overflow = 'hidden';
@@ -54,6 +55,12 @@
     'color:#e8eef3;font-size:14px;outline:none;box-sizing:border-box;" onfocus="this.style.borderColor=\'#C9A96E\'" onblur="this.style.borderColor=\'#1e3a5f\'">',
     '</div>',
 
+    // Remember me checkbox
+    '<div style="margin-bottom:16px;text-align:left;display:flex;align-items:center;gap:8px;">',
+    '<input id="las-auth-remember" type="checkbox" style="width:16px;height:16px;accent-color:#C9A96E;cursor:pointer;">',
+    '<label for="las-auth-remember" style="color:#8ab4d8;font-size:12px;cursor:pointer;user-select:none;">จดจำการเข้าสู่ระบบ / Remember me</label>',
+    '</div>',
+
     // Error message (hidden)
     '<div id="las-auth-error" style="display:none;color:#e74c3c;font-size:12px;margin-bottom:12px;">',
     'Invalid username or password</div>',
@@ -79,8 +86,13 @@
   function attempt() {
     var u = document.getElementById('las-auth-user').value.trim();
     var p = document.getElementById('las-auth-pass').value;
+    var remember = document.getElementById('las-auth-remember').checked;
     if (u === VALID_USER && p === VALID_PASS) {
-      sessionStorage.setItem(SESSION_KEY, '1');
+      if (remember) {
+        localStorage.setItem(SESSION_KEY, '1');
+      } else {
+        sessionStorage.setItem(SESSION_KEY, '1');
+      }
       overlay.remove();
       if (mainEl) mainEl.style.display = '';
       document.documentElement.style.overflow = '';
@@ -144,14 +156,14 @@
   }
 
   // Apply copy protection after auth succeeds (or if already authed)
-  if (sessionStorage.getItem(SESSION_KEY) === '1') {
+  if (localStorage.getItem(SESSION_KEY) === '1' || sessionStorage.getItem(SESSION_KEY) === '1') {
     enableCopyProtection();
   } else {
     // Patch the attempt function to also enable protection after login
     var origAttempt = attempt;
     attempt = function () {
       origAttempt();
-      if (sessionStorage.getItem(SESSION_KEY) === '1') {
+      if (localStorage.getItem(SESSION_KEY) === '1' || sessionStorage.getItem(SESSION_KEY) === '1') {
         enableCopyProtection();
       }
     };
