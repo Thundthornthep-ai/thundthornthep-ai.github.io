@@ -1205,22 +1205,57 @@
     </ol>
   </div>
 
-  <!-- Law Tags -->
-  <div class="legal-tags" style="margin-top:32px;padding:18px 20px;background:#0d1b2a;border:1px solid #1e3a5f;border-radius:10px;">
-    <div style="font-size:12px;color:#C9A96E;font-weight:bold;margin-bottom:10px;letter-spacing:1px;">กฎหมายที่เกี่ยวข้อง</div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;">
-      <span style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #27AE60;border-radius:6px;font-size:11px;color:#8ab4d8;">Due Diligence</span>
-      <span style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #27AE60;border-radius:6px;font-size:11px;color:#8ab4d8;">M&amp;A Thailand</span>
-      <span style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #27AE60;border-radius:6px;font-size:11px;color:#8ab4d8;">Corporate Law</span>
-      <span style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #C9A96E;border-radius:6px;font-size:11px;color:#8ab4d8;">ปพพ. มาตรา 182–184</span>
-      <span style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #C9A96E;border-radius:6px;font-size:11px;color:#8ab4d8;">FBA 2542</span>
-      <span style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #C9A96E;border-radius:6px;font-size:11px;color:#8ab4d8;">PDPA 2562</span>
-      <span style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #4a9eff;border-radius:6px;font-size:11px;color:#8ab4d8;">Conditions Precedent</span>
-      <span style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #4a9eff;border-radius:6px;font-size:11px;color:#8ab4d8;">Long Stop Date</span>
-      <span style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #4a9eff;border-radius:6px;font-size:11px;color:#8ab4d8;">R&amp;W</span>
-      <span style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #4a9eff;border-radius:6px;font-size:11px;color:#8ab4d8;">MAC Clause</span>
-      <span style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #4a9eff;border-radius:6px;font-size:11px;color:#8ab4d8;">พ.ร.บ. แรงงาน ฉ.9/2568</span>
-      <span style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #4a9eff;border-radius:6px;font-size:11px;color:#8ab4d8;">EIA</span>
+  <!-- ============ LAW REFERENCE CARDS ============ -->
+  <style>
+    .law-ref-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:12px}
+    .law-ref-card{display:flex;align-items:center;gap:12px;padding:14px 16px;background:#0f2133;border:1px solid #1e3a5f;border-radius:10px;text-decoration:none;color:#c8dce8;transition:all .25s ease;cursor:pointer}
+    .law-ref-card:hover{background:#162d45;border-color:#C9A96E;transform:translateY(-2px);box-shadow:0 4px 16px rgba(201,169,110,.15)}
+    .law-ref-card .law-icon{flex-shrink:0;width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:bold}
+    .law-ref-card .law-info{flex:1;min-width:0}
+    .law-ref-card .law-name{font-size:13px;font-weight:600;color:#e8eef3;line-height:1.3}
+    .law-ref-card .law-source{font-size:10px;color:#6a8da8;margin-top:3px}
+    .law-ref-card .law-arrow{flex-shrink:0;color:#4a6a82;font-size:16px;transition:color .2s}
+    .law-ref-card:hover .law-arrow{color:#C9A96E}
+    .law-ref-card.cat-act{border-left:3px solid #27AE60}.law-ref-card.cat-act .law-icon{background:rgba(39,174,96,.15);color:#27AE60}
+    .law-ref-card.cat-code{border-left:3px solid #C9A96E}.law-ref-card.cat-code .law-icon{background:rgba(201,169,110,.15);color:#C9A96E}
+    .law-ref-card.cat-reg{border-left:3px solid #4a9eff}.law-ref-card.cat-reg .law-icon{background:rgba(74,158,255,.15);color:#4a9eff}
+    .law-ref-card.cat-concept{border-left:3px solid #9b59b6}.law-ref-card.cat-concept .law-icon{background:rgba(155,89,182,.15);color:#9b59b6}
+  </style>
+
+  <div style="margin-top:32px;padding:24px;background:#0d1b2a;border:1px solid #1e3a5f;border-radius:12px;">
+    <div style="font-size:13px;color:#C9A96E;font-weight:bold;margin-bottom:6px;letter-spacing:1px;">LEGAL REFERENCES</div>
+    <div style="font-size:11px;color:#6a8da8;margin-bottom:16px;">กฎหมายที่เกี่ยวข้อง — คลิกเพื่อดูตัวบทจากแหล่งทางการ</div>
+    <div class="law-ref-grid">
+      <a class="law-ref-card cat-code" href="https://www.krisdika.go.th/librarian/getfile?sysid=549494&fid=Lo6" target="_blank" rel="noopener">
+        <div class="law-icon">&#167;</div>
+        <div class="law-info"><div class="law-name">ปพพ. มาตรา 182–184</div><div class="law-source">&#128279; krisdika.go.th</div></div>
+        <div class="law-arrow">&#8599;</div>
+      </a>
+      <a class="law-ref-card cat-act" href="https://www.krisdika.go.th/librarian/getfile?sysid=549803&fid=Lo6" target="_blank" rel="noopener">
+        <div class="law-icon">&#9878;</div>
+        <div class="law-info"><div class="law-name">FBA 2542 — พ.ร.บ.ประกอบธุรกิจต่างด้าว</div><div class="law-source">&#128279; krisdika.go.th</div></div>
+        <div class="law-arrow">&#8599;</div>
+      </a>
+      <a class="law-ref-card cat-act" href="https://www.pdpc.or.th/uploads/files/PDPA-act.pdf" target="_blank" rel="noopener">
+        <div class="law-icon">&#9878;</div>
+        <div class="law-info"><div class="law-name">PDPA 2562 — พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล</div><div class="law-source">&#128279; pdpc.or.th</div></div>
+        <div class="law-arrow">&#8599;</div>
+      </a>
+      <a class="law-ref-card cat-act" href="https://www.krisdika.go.th/librarian/getfile?sysid=549746&fid=Lo6" target="_blank" rel="noopener">
+        <div class="law-icon">&#9878;</div>
+        <div class="law-info"><div class="law-name">พ.ร.บ.คุ้มครองแรงงาน ฉ.9/2568 (LPA)</div><div class="law-source">&#128279; krisdika.go.th</div></div>
+        <div class="law-arrow">&#8599;</div>
+      </a>
+      <a class="law-ref-card cat-concept" href="#" target="_blank" rel="noopener">
+        <div class="law-icon">&#9733;</div>
+        <div class="law-info"><div class="law-name">Due Diligence &amp; M&amp;A Concepts</div><div class="law-source">&#128279; บทความนี้ — Conditions Precedent, Long Stop Date, R&amp;W, MAC Clause</div></div>
+        <div class="law-arrow">&#8599;</div>
+      </a>
+      <a class="law-ref-card cat-concept" href="#" target="_blank" rel="noopener">
+        <div class="law-icon">&#9733;</div>
+        <div class="law-info"><div class="law-name">Corporate Law &amp; EIA Concepts</div><div class="law-source">&#128279; บทความนี้ — Corporate Law, Environmental Impact Assessment</div></div>
+        <div class="law-arrow">&#8599;</div>
+      </a>
     </div>
   </div>
 
@@ -1262,5 +1297,6 @@
 <div style="text-align:center;padding:16px 20px;margin:20px auto;max-width:800px;">
   <a href="../all-content.html" style="color:#0645ad;font-weight:bold;text-decoration:none;">ดูบทความและบล็อกทั้งหมด / View All Content &rarr;</a>
 </div>
+<script src="/js/auth-gate.js"></script>
 </body>
 </html>
