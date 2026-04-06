@@ -527,6 +527,8 @@ body {
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","name":"ส.ก. Navigator — คู่มือเลือกตั้ง ส.ก. กทม. 2569","description":"คู่มือครบวงจรสำหรับผู้สมัครสมาชิกสภากรุงเทพมหานคร (ส.ก.) — ก่อนสมัคร ถึง ปฏิบัติหน้าที่ในสภา — From Zero to Hero","url":"https://thundthornthep-ai.github.io/blog/bkk-council/","author":{"@type":"Person","name":"ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.","url":"https://thundthornthep-ai.github.io/"},"publisher":{"@type":"LegalService","name":"Legal Advance Solution Co., Ltd.","url":"https://laslegal.co.th"},"dateModified":"2026-04-05","inLanguage":"th","about":["เลือกตั้ง ส.ก. กทม. 2569","สมาชิกสภากรุงเทพมหานคร","คู่มือผู้สมัคร ส.ก."]}
 </script>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1B2A4A">
 </head>
 <body>
 
@@ -790,7 +792,7 @@ body {
 
 // DISTRICT INTELLIGENCE by LAS — Traffy Fondue API + Leaflet Map
 (function(){
-  var districts = ['คลองเตย','คลองสาน','คลองสามวา','คันนายาว','จตุจักร','จอมทอง','ดอนเมือง','ดินแดง','ดุสิต','ตลิ่งชัน','ทวีวัฒนา','ทุ่งครุ','ธนบุรี','บางกอกน้อย','บางกอกใหญ่','บางกะปิ','บางขุนเทียน','บางเขน','บางคอแหลม','บางซื่อ','บางนา','บางบอน','บางพลัด','บางแค','บางรัก','บึงกุ่ม','ปทุมวัน','ประเวศ','ป้อมปราบศัตรูพ่าย','พญาไท','พระโขนง','พระนคร','ภาษีเจริญ','มีนบุรี','ยานนาวา','ราชเทวี','ราษฎร์บูรณะ','ลาดกระบัง','ลาดพร้าว','วังทองหลาง','วัฒนา','สวนหลวง','สะพานสูง','สาทร','สายไหม','หนองจอก','หนองแขม','หลักสี่','ห้วยขวาง'];
+  var districts = ['คลองเตย','คลองสาน','คลองสามวา','คันนายาว','จตุจักร','จอมทอง','ดอนเมือง','ดินแดง','ดุสิต','ตลิ่งชัน','ทวีวัฒนา','ทุ่งครุ','ธนบุรี','บางกอกน้อย','บางกอกใหญ่','บางกะปิ','บางขุนเทียน','บางเขน','บางคอแหลม','บางซื่อ','บางนา','บางบอน','บางพลัด','บางแค','บางรัก','บึงกุ่ม','ปทุมวัน','ประเวศ','ป้อมปราบศัตรูพ่าย','พญาไท','พระโขนง','พระนคร','ภาษีเจริญ','มีนบุรี','ยานนาวา','ราชเทวี','ราษฎร์บูรณะ','ลาดกระบัง','ลาดพร้าว','วังทองหลาง','วัฒนา','สวนหลวง','สะพานสูง','สาทร','สายไหม','สัมพันธวงศ์','หนองจอก','หนองแขม','หลักสี่','ห้วยขวาง'];
   var sel = document.getElementById('diSelect');
   districts.forEach(function(d){ var o=document.createElement('option'); o.value=d; o.textContent=d; sel.appendChild(o); });
   var diMap = null;
@@ -851,44 +853,85 @@ body {
           diMarkers.push(marker);
         });
         if(bounds.length)diMap.fitBounds(bounds,{padding:[20,20]});
-        // Fast vs Slow
+        // Fast vs Slow — with smart fallback
         var finished=items.filter(function(f){return f.properties.state==='เสร็จสิ้น'&&f.properties.duration_minutes_finished>0});
         finished.sort(function(a,b){return a.properties.duration_minutes_finished-b.properties.duration_minutes_finished});
         var fastEl=document.getElementById('diFastContent');
         var slowEl=document.getElementById('diSlowContent');
+        var fastBox=document.getElementById('diFastest');
+        var slowBox=document.getElementById('diSlowest');
+        // Reset labels
+        fastBox.firstElementChild.textContent='⚡ แก้เร็วที่สุด';
+        slowBox.firstElementChild.textContent='🐢 แก้ช้าที่สุด';
+        fastEl.style.whiteSpace='pre-line';
+        slowEl.style.whiteSpace='pre-line';
         if(finished.length>=2){
           var fast=finished[0].properties;
           var slow=finished[finished.length-1].properties;
           var fastDays=Math.round(fast.duration_minutes_finished/1440);
           var slowDays=Math.round(slow.duration_minutes_finished/1440);
-          fastEl.textContent=E(fast.problem_type_fondue)+' — แก้ใน '+fastDays+' วัน\nแจ้ง: '+E((fast.timestamp||'').slice(0,10))+'\nที่: '+E(fast.address||'');
-          fastEl.style.whiteSpace='pre-line';
+          fastEl.textContent=E(fast.problem_type_fondue)+' — แก้ใน '+(fastDays<1?'ไม่ถึง 1':fastDays)+' วัน\nแจ้ง: '+E((fast.timestamp||'').slice(0,10))+'\nที่: '+E(fast.address||'');
           slowEl.textContent=E(slow.problem_type_fondue)+' — ใช้เวลา '+slowDays+' วัน\nแจ้ง: '+E((slow.timestamp||'').slice(0,10))+'\nที่: '+E(slow.address||'');
-          slowEl.style.whiteSpace='pre-line';
         } else if(finished.length===1){
           var f1=finished[0].properties;
-          fastEl.textContent=E(f1.problem_type_fondue)+' — '+Math.round(f1.duration_minutes_finished/1440)+' วัน';
-          slowEl.textContent='ข้อมูลไม่เพียงพอ';
+          var f1Days=Math.round(f1.duration_minutes_finished/1440);
+          fastEl.textContent=E(f1.problem_type_fondue)+' — แก้ใน '+(f1Days<1?'ไม่ถึง 1':f1Days)+' วัน\nที่: '+E(f1.address||'');
+          // Fallback: show top unresolved problem
+          var unresolved=items.filter(function(f){return f.properties.state!=='เสร็จสิ้น'});
+          if(unresolved.length){
+            var uTypes={};unresolved.forEach(function(f){var t=f.properties.problem_type_fondue||'อื่นๆ';uTypes[t]=(uTypes[t]||0)+1});
+            var topU=Object.entries(uTypes).sort(function(a,b){return b[1]-a[1]})[0];
+            slowBox.firstElementChild.textContent='🔴 ปัญหารอแก้มากที่สุด';
+            slowEl.textContent=E(topU[0])+' — '+topU[1]+' เรื่องที่ยังไม่เสร็จ';
+          } else {
+            slowEl.textContent='ทุกเรื่องแก้เสร็จแล้ว ✅';
+          }
+        } else if(total>0){
+          // No finished items — fallback to type analysis
+          fastBox.firstElementChild.textContent='📊 ปัญหาที่พบมากที่สุด';
+          slowBox.firstElementChild.textContent='📈 สถานะรวม';
+          if(topTypes.length){
+            fastEl.textContent=topTypes.map(function(t,i){return(i+1)+'. '+E(t[0])+' ('+t[1]+' เรื่อง)'}).join('\n');
+          } else {
+            fastEl.textContent='ไม่มีข้อมูลประเภทปัญหา';
+          }
+          var pctDone=total>0?Math.round(done/total*100):0;
+          slowEl.textContent='แก้แล้ว '+done+'/'+total+' เรื่อง ('+pctDone+'%)\nกำลังดำเนินการ: '+inprog+'\nรอรับเรื่อง: '+pending;
         } else {
-          fastEl.textContent='ยังไม่มีปัญหาที่แก้เสร็จใน batch นี้';
-          slowEl.textContent='ยังไม่มีปัญหาที่แก้เสร็จใน batch นี้';
+          fastEl.textContent='ไม่พบข้อมูลในเขตนี้จาก batch ล่าสุด';
+          slowEl.textContent='ลองดูข้อมูลเต็มที่ Traffy Fondue';
         }
-        // Problem list (top 10)
+        // Problem list (top 10) — clickable links to Traffy
         var probEl=document.getElementById('diProblems');
         probEl.textContent='';
         items.slice(0,10).forEach(function(f){
           var p=f.properties;
-          var row=document.createElement('div');
-          row.style.cssText='padding:10px 0;border-bottom:1px solid var(--border-light);display:flex;justify-content:space-between;align-items:flex-start;gap:8px;';
-          var left=document.createElement('div');
+          var traffyUrl=p.ticket_id?'https://share.traffy.in.th/teamchadchart/'+encodeURIComponent(p.ticket_id):'';
+          var row=document.createElement(traffyUrl?'a':'div');
+          if(traffyUrl){row.href=traffyUrl;row.target='_blank';row.rel='noopener';}
+          row.style.cssText='padding:10px 0;border-bottom:1px solid var(--border-light);display:flex;align-items:flex-start;gap:10px;text-decoration:none;color:inherit;transition:background 0.15s;cursor:'+(traffyUrl?'pointer':'default');
+          if(traffyUrl){row.onmouseenter=function(){this.style.background='var(--bg-alt)'};row.onmouseleave=function(){this.style.background='none'}}
+          // Photo thumbnail
+          if(p.photo_url){
+            var img=document.createElement('img');
+            img.src=p.photo_url;img.alt='';img.loading='lazy';
+            img.style.cssText='width:48px;height:48px;object-fit:cover;border-radius:6px;flex-shrink:0;border:1px solid var(--border);';
+            img.onerror=function(){this.style.display='none'};
+            row.appendChild(img);
+          }
+          var mid=document.createElement('div');mid.style.cssText='flex:1;min-width:0;';
           var typeSpan=document.createElement('div');typeSpan.style.cssText='font-weight:600;font-size:13px;';typeSpan.textContent=E(p.problem_type_fondue||'ไม่ระบุ');
-          var addrSpan=document.createElement('div');addrSpan.style.cssText='font-size:11px;color:var(--text-muted);margin-top:2px;';addrSpan.textContent=E(p.address||'')+' · '+E((p.timestamp||'').slice(0,16));
-          left.appendChild(typeSpan);left.appendChild(addrSpan);
+          var addrSpan=document.createElement('div');addrSpan.style.cssText='font-size:11px;color:var(--text-muted);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';addrSpan.textContent=E(p.address||'')+' · '+E((p.timestamp||'').slice(0,10));
+          mid.appendChild(typeSpan);mid.appendChild(addrSpan);
+          if(traffyUrl){var linkHint=document.createElement('div');linkHint.style.cssText='font-size:10px;color:var(--teal);margin-top:2px;';linkHint.textContent='คลิกดูรายละเอียด →';mid.appendChild(linkHint)}
+          var right=document.createElement('div');right.style.cssText='display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;';
           var stateSpan=document.createElement('span');
           var sc=stateColors[p.state]||'var(--text-muted)';
           stateSpan.style.cssText='font-size:11px;padding:2px 8px;border-radius:10px;white-space:nowrap;font-weight:600;background:'+sc+'20;color:'+sc;
           stateSpan.textContent=E(p.state||'');
-          row.appendChild(left);row.appendChild(stateSpan);probEl.appendChild(row);
+          right.appendChild(stateSpan);
+          if(p.duration_minutes_finished>0){var dur=document.createElement('span');dur.style.cssText='font-size:10px;color:var(--text-muted);';dur.textContent=Math.round(p.duration_minutes_finished/1440)+' วัน';right.appendChild(dur)}
+          row.appendChild(mid);row.appendChild(right);probEl.appendChild(row);
         });
         if(!items.length){
           probEl.textContent='ไม่พบข้อมูลในเขต'+district+' จาก batch ล่าสุด';
@@ -924,5 +967,6 @@ body {
   }
 })();
 </script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('service-worker.js')}</script>
 </body>
 </html>

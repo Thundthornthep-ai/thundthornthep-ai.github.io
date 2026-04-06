@@ -502,6 +502,8 @@ a.matra-link:hover { background: #c7d2fe; text-decoration: underline; }
 }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 </style>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1B2A4A">
 </head>
 <body>
 
@@ -1107,5 +1109,6 @@ document.addEventListener('click', function(e) {
   }
 })();
 </script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('service-worker.js')}</script>
 </body>
 </html>

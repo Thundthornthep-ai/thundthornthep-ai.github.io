@@ -58,14 +58,44 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
 /* Badge */
 .badge{display:inline-flex;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;gap:4px}
 .badge-red{background:var(--red-bg);color:var(--red-dark)}.badge-orange{background:var(--orange-bg);color:#92400E}
-@media print{.top-bar,.tab-nav,.btn-row,.no-print{display:none!important}.main{padding:0;max-width:100%}.tab-panel{display:block!important}body{font-size:12px;line-height:1.4}}
+/* Backup Reminder */
+.backup-reminder{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;background:#FEF3C7;border:1px solid #F59E0B;border-radius:var(--radius-sm);margin-bottom:20px;font-size:13px;color:#92400E;line-height:1.5;flex-wrap:wrap}
+.backup-reminder .br-msg{flex:1;min-width:200px}
+.backup-reminder .br-actions{display:flex;gap:8px;align-items:center;flex-shrink:0}
+.backup-reminder .br-export{padding:6px 14px;background:var(--navy);color:#fff;border:none;border-radius:var(--radius-sm);font-family:'Sarabun',sans-serif;font-size:12px;font-weight:600;cursor:pointer}
+.backup-reminder .br-export:hover{background:var(--navy-dark)}
+.backup-reminder .br-dismiss{padding:4px 8px;background:none;border:1px solid #D97706;color:#92400E;border-radius:var(--radius-sm);font-family:'Sarabun',sans-serif;font-size:12px;cursor:pointer}
+.backup-reminder .br-dismiss:hover{background:rgba(217,119,6,.1)}
+@media print{.no-print,.top-bar,.tab-nav,.btn-row,.site-footer,.backup-reminder{display:none!important}.main{padding:0;max-width:100%}.tab-panel{display:block!important}body{font-size:13px}}
 @media(max-width:640px){.stat-grid{grid-template-columns:repeat(2,1fr)}.form-row{grid-template-columns:1fr}.tab-btn{padding:8px 10px;font-size:12px}.dt{font-size:12px}.dt th,.dt td{padding:6px 8px}.sr{flex-direction:column;align-items:flex-start}.et-grid{grid-template-columns:1fr}.bb-header{flex-direction:column}}
+@media(max-width:600px){
+  .tab-nav{overflow-x:auto;-webkit-overflow-scrolling:touch;flex-wrap:nowrap}
+  .tab-btn{font-size:12px;padding:8px 12px;white-space:nowrap}
+  .form-row{flex-direction:column}
+  .form-row .fg{width:100%}
+  .dt{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .stat-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+  .sc{padding:12px}
+  .sc .st{font-size:14px}
+  .bb-track{height:16px}
+}
 .site-footer{background:var(--navy-dark);color:rgba(255,255,255,.6);text-align:center;padding:24px;font-size:12px;line-height:1.8}.site-footer a{color:var(--gold);text-decoration:none}
 </style>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1B2A4A">
 </head>
 <body>
 <div class="top-bar"><div class="top-bar-left"><a href="index.html">← Dashboard</a> Campaign Tracker</div><div class="top-bar-right"><span>LAS</span> × <span>NIA</span></div></div>
 <div class="main">
+
+<!-- BACKUP REMINDER BANNER -->
+<div class="backup-reminder" id="backupBanner" style="display:none">
+  <div class="br-msg" id="backupMsg"></div>
+  <div class="br-actions">
+    <button class="br-export" onclick="doExport()">Export JSON</button>
+    <button class="br-dismiss" onclick="dismissBackup()">ปิด</button>
+  </div>
+</div>
 
 <!-- BUDGET BAR + DISTRICT SELECTOR -->
 <div class="bb-wrap">
@@ -490,24 +520,65 @@ function renderCatSelect(){
   sel.innerHTML='<option value="">-- เลือกประเภท --</option>'+ET.map(function(t){return '<option value="'+t.id+'">'+t.id+'. '+t.name+'</option>'}).join('')+'<option value="in">รายรับ</option>';
 }
 
-// === PRINT PREVIEW ===
+// === PRINT PREVIEW (improved ส.ถ./ผ.ถ. 1/13 format) ===
+// NOTE: innerHTML is safe here — all user values are escaped via E() and data comes from user's own localStorage
 function renderPrint(){
   var tx=D.get('tx'),budget=D.get('b'),cN=D.get('n')||'(ยังไม่ระบุ)',cD=D.get('d')||'(ยังไม่ระบุ)',cNum=D.get('num')||'-',cED=D.get('edate')||'-';
   var inc=tx.filter(function(t){return t.type==='income'}),exp=tx.filter(function(t){return t.type==='expense'});
   var tI=inc.reduce(function(s,t){return s+t.amt},0),tE=exp.reduce(function(s,t){return s+t.amt},0);
   exp.sort(function(a,b){return(a.cat||'').localeCompare(b.cat||'')||(a.date||'').localeCompare(b.date||'')});
-  var h='<div style="text-align:center;margin-bottom:24px"><div style="font-size:18px;font-weight:700">บัญชีแสดงรายรับและรายจ่ายในการเลือกตั้ง</div><div style="font-size:14px;color:var(--text-secondary)">สมาชิกสภากรุงเทพมหานคร (ส.ก.) · ตามแบบ ส.ถ./ผ.ถ. 1/13</div></div>';
-  h+='<div style="margin-bottom:16px;font-size:14px"><b>ผู้สมัคร:</b> '+E(cN)+' | <b>เขต:</b> '+E(cD)+' | <b>เบอร์:</b> '+E(cNum)+' | <b>วันเลือกตั้ง:</b> '+E(cED)+'</div>';
+  var pa=document.getElementById('printArea');
+  // Build structured print output
+  // Header box
+  var hdr=document.createElement('div');
+  hdr.style.cssText='border:2px solid #000;padding:16px;text-align:center;margin-bottom:20px';
+  var hdrLabel=document.createElement('div');hdrLabel.style.cssText='font-size:11px;color:#666;margin-bottom:4px';hdrLabel.textContent='แบบ';
+  var hdrTitle=document.createElement('div');hdrTitle.style.cssText='font-size:20px;font-weight:700';hdrTitle.textContent='ส.ถ./ผ.ถ. 1/13';
+  var hdrSub=document.createElement('div');hdrSub.style.cssText='font-size:14px;margin-top:4px';hdrSub.textContent='บัญชีแสดงรายรับและรายจ่ายในการเลือกตั้ง';
+  var hdrSub2=document.createElement('div');hdrSub2.style.cssText='font-size:13px;color:#555;margin-top:2px';hdrSub2.textContent='สมาชิกสภากรุงเทพมหานคร (ส.ก.)';
+  hdr.appendChild(hdrLabel);hdr.appendChild(hdrTitle);hdr.appendChild(hdrSub);hdr.appendChild(hdrSub2);
+  // Candidate info box
+  var cBox=document.createElement('div');
+  cBox.style.cssText='border:1px solid #999;border-radius:4px;padding:14px 16px;margin-bottom:20px;font-size:14px';
+  var cGrid=document.createElement('div');cGrid.style.cssText='display:grid;grid-template-columns:1fr 1fr;gap:8px 24px';
+  var fields=[['ชื่อผู้สมัคร',cN],['เขตเลือกตั้ง',cD],['หมายเลขผู้สมัคร',cNum],['วันเลือกตั้ง',cED]];
+  fields.forEach(function(f){var d=document.createElement('div');var b=document.createElement('b');b.textContent=f[0]+': ';d.appendChild(b);d.appendChild(document.createTextNode(f[1]));cGrid.appendChild(d)});
+  cBox.appendChild(cGrid);
+  // For the table sections we use the existing safe pattern (E() escaped values in HTML string)
+  var tablesDiv=document.createElement('div');
+  var h='';
+  // Income table
   h+='<div style="font-weight:700;margin:16px 0 8px">รายรับ (ส.ถ./ผ.ถ. 1/13 (ข))</div><table style="width:100%;border-collapse:collapse;font-size:13px"><tr style="background:#f5f5f5"><th style="padding:6px;border:1px solid #ddd;text-align:left">วันที่</th><th style="padding:6px;border:1px solid #ddd;text-align:left">รายละเอียด</th><th style="padding:6px;border:1px solid #ddd;text-align:right">จำนวนเงิน</th></tr>';
   inc.forEach(function(t){h+='<tr><td style="padding:6px;border:1px solid #ddd">'+E(t.date)+'</td><td style="padding:6px;border:1px solid #ddd">'+E(t.memo||'รายรับ')+'</td><td style="padding:6px;border:1px solid #ddd;text-align:right">'+N(t.amt)+'</td></tr>'});
   h+='<tr style="font-weight:700;background:#D1FAE5"><td colspan="2" style="padding:6px;border:1px solid #ddd">รวมรายรับ</td><td style="padding:6px;border:1px solid #ddd;text-align:right">'+N(tI)+'</td></tr></table>';
+  // Expense table
   h+='<div style="font-weight:700;margin:16px 0 8px">รายจ่าย (ส.ถ./ผ.ถ. 1/13 (ค)) — 12 ประเภทตามประกาศ กกต. 2563</div><table style="width:100%;border-collapse:collapse;font-size:13px"><tr style="background:#f5f5f5"><th style="padding:6px;border:1px solid #ddd;text-align:left">วันที่</th><th style="padding:6px;border:1px solid #ddd;text-align:left">ประเภท</th><th style="padding:6px;border:1px solid #ddd;text-align:left">รายละเอียด</th><th style="padding:6px;border:1px solid #ddd;text-align:left">ผู้รับเงิน</th><th style="padding:6px;border:1px solid #ddd;text-align:left">เอกสาร</th><th style="padding:6px;border:1px solid #ddd;text-align:right">จำนวนเงิน</th></tr>';
   exp.forEach(function(t){h+='<tr><td style="padding:6px;border:1px solid #ddd">'+E(t.date)+'</td><td style="padding:6px;border:1px solid #ddd;font-size:12px">'+E(CN[t.cat]||t.cat)+'</td><td style="padding:6px;border:1px solid #ddd">'+E(t.memo)+'</td><td style="padding:6px;border:1px solid #ddd">'+E(t.payee||'-')+'</td><td style="padding:6px;border:1px solid #ddd;font-size:11px">'+E(t.docno||'-')+'</td><td style="padding:6px;border:1px solid #ddd;text-align:right">'+N(t.amt)+'</td></tr>'});
   h+='<tr style="font-weight:700;background:#FEE2E2"><td colspan="5" style="padding:6px;border:1px solid #ddd">รวมรายจ่าย</td><td style="padding:6px;border:1px solid #ddd;text-align:right">'+N(tE)+'</td></tr></table>';
+  // Budget summary
   h+='<div style="margin-top:16px;padding:12px;background:var(--bg-alt);border-radius:8px;font-size:14px"><b>วงเงิน กกต.:</b> '+N(budget)+' บาท | <b>ใช้ไป:</b> '+N(tE)+' ('+(budget>0?Math.round(tE/budget*100):0)+'%) | <b>คงเหลือ:</b> '+N(budget-tE)+' บาท</div>';
-  h+='<div style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:32px;font-size:13px"><div style="text-align:center;border-top:1px solid #000;padding-top:8px">ลงชื่อ .........................<br>(ผู้สมัคร)</div><div style="text-align:center;border-top:1px solid #000;padding-top:8px">ลงชื่อ .........................<br>(ผู้จัดทำบัญชี)</div></div>';
-  h+='<div style="margin-top:24px;font-size:11px;color:var(--text-muted);border-top:1px solid var(--border);padding-top:8px">สร้างจาก ส.ก. Navigator Campaign Tracker · LAS × NIA · อ้างอิง ม.60-62 พ.ร.บ.เลือกตั้งท้องถิ่น 2562 + ประกาศ กกต. ประเภทค่าใช้จ่าย 2563<br><b>หมายเหตุ:</b> เอกสารนี้เป็น draft — กรุณาตรวจสอบกับแบบฟอร์ม กกต. จริง (ส.ถ./ผ.ถ. 1/13) ก่อนลงนามยื่น</div>';
-  document.getElementById('printArea').innerHTML=h;
+  tablesDiv.innerHTML=h;
+  // Signature section (DOM-built for safety)
+  var sigDiv=document.createElement('div');sigDiv.style.cssText='margin-top:40px;font-size:13px';
+  var sigLine=document.createElement('div');sigLine.style.cssText='text-align:center;margin-bottom:32px';
+  var sigText=document.createElement('div');sigText.style.marginBottom='8px';sigText.textContent='ลงชื่อ ........................... ผู้สมัคร';
+  var sigName=document.createElement('div');sigName.textContent='('+cN+')';
+  sigLine.appendChild(sigText);sigLine.appendChild(sigName);
+  var dateDiv=document.createElement('div');dateDiv.style.cssText='text-align:center;margin-bottom:24px';dateDiv.textContent='วันที่ ......../......../........';
+  sigDiv.appendChild(sigLine);sigDiv.appendChild(dateDiv);
+  // Page footer
+  var pageFooter=document.createElement('div');pageFooter.style.cssText='margin-top:24px;text-align:center;font-size:12px;color:#999';pageFooter.textContent='หน้า ___ จาก ___';
+  // Disclaimer box
+  var discl=document.createElement('div');
+  discl.style.cssText='margin-top:20px;padding:12px 16px;border:1px solid #D97706;border-radius:6px;background:#FFFBEB;font-size:12px;color:#92400E;line-height:1.7';
+  var disclB=document.createElement('b');disclB.textContent='หมายเหตุ: ';
+  discl.appendChild(disclB);
+  discl.appendChild(document.createTextNode('เอกสารนี้สร้างจาก ส.ก. Navigator Campaign Tracker (LAS x NIA) — ใช้เป็น draft สำหรับตรวจสอบ กรุณายืนยันกับแบบฟอร์ม กกต. จริง (ส.ถ./ผ.ถ. 1/13) ก่อนลงนามยื่น'));
+  discl.appendChild(document.createElement('br'));
+  discl.appendChild(document.createTextNode('อ้างอิง: ม.60-62 พ.ร.บ.เลือกตั้งท้องถิ่น 2562 + ประกาศ กกต. ประเภทค่าใช้จ่าย 2563'));
+  // Assemble
+  pa.textContent='';
+  pa.appendChild(hdr);pa.appendChild(cBox);pa.appendChild(tablesDiv);pa.appendChild(sigDiv);pa.appendChild(pageFooter);pa.appendChild(discl);
 }
 
 // === EXPORT CSV ===
@@ -521,7 +592,7 @@ function exportCSV(){
 }
 
 // === EXPORT/IMPORT JSON ===
-function doExport(){var d={v:'2.0',date:new Date().toISOString(),b:D.get('b'),n:D.get('n'),d:D.get('d'),num:D.get('num'),edate:D.get('edate'),team:D.get('team'),veh:D.get('veh'),sign:D.get('sign'),tx:D.get('tx')};var blob=new Blob([JSON.stringify(d,null,2)],{type:'application/json'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download='campaign-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url)}
+function doExport(){var d={v:'2.0',date:new Date().toISOString(),b:D.get('b'),n:D.get('n'),d:D.get('d'),num:D.get('num'),edate:D.get('edate'),team:D.get('team'),veh:D.get('veh'),sign:D.get('sign'),tx:D.get('tx')};var blob=new Blob([JSON.stringify(d,null,2)],{type:'application/json'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download='campaign-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url);localStorage.setItem('sk_lastExport',Date.now().toString());hideBackupBanner()}
 function doImport(ev){var f=ev.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(e){try{var d=JSON.parse(e.target.result);if(!d.v){alert('ไฟล์ไม่ถูกต้อง');return}if(!confirm('Import จะทับข้อมูลเดิม ต้องการดำเนินการ?'))return;if(d.b)D.set('b',d.b);if(d.n)D.set('n',d.n);if(d.d)D.set('d',d.d);if(d.num)D.set('num',d.num);if(d.edate)D.set('edate',d.edate);if(d.team)D.set('team',d.team);if(d.veh)D.set('veh',d.veh);if(d.sign)D.set('sign',d.sign);if(d.tx)D.set('tx',d.tx);if(d.settings){D.set('n',d.settings.n||'');D.set('d',d.settings.d||'');D.set('num',d.settings.num||'')}loadSettings();render();alert('Import สำเร็จ!')}catch(err){alert('Error: '+err.message)}};r.readAsText(f)}
 function clearAll(){['sk_b','sk_n','sk_d','sk_num','sk_edate','sk_team','sk_veh','sk_sign','sk_tx'].forEach(function(k){localStorage.removeItem(k)});loadSettings();render()}
 
@@ -535,12 +606,43 @@ function loadSettings(){
   for(var i=0;i<sel.options.length;i++){if(+sel.options[i].value===b){sel.selectedIndex=i;break}}
 }
 
+// === BACKUP REMINDER ===
+function checkBackupReminder(){
+  var banner=document.getElementById('backupBanner');
+  var msg=document.getElementById('backupMsg');
+  var last=localStorage.getItem('sk_lastExport');
+  var now=Date.now();
+  var sevenDays=7*24*60*60*1000;
+  var dismissed=sessionStorage.getItem('sk_backupDismissed');
+  if(dismissed)return;
+  if(!last){
+    banner.style.display='flex';
+    msg.textContent='คุณยังไม่เคยสำรองข้อมูล — กดปุ่ม Export JSON เพื่อเก็บไว้';
+  }else{
+    var elapsed=now-parseInt(last,10);
+    if(elapsed>sevenDays){
+      var days=Math.floor(elapsed/(24*60*60*1000));
+      banner.style.display='flex';
+      msg.textContent='คุณยังไม่ได้สำรองข้อมูล '+days+' วัน — กดปุ่ม Export JSON เพื่อเก็บไว้';
+    }
+  }
+}
+function dismissBackup(){
+  document.getElementById('backupBanner').style.display='none';
+  sessionStorage.setItem('sk_backupDismissed','1');
+}
+function hideBackupBanner(){
+  document.getElementById('backupBanner').style.display='none';
+}
+
 // === INIT ===
 document.getElementById('xd').value=new Date().toISOString().slice(0,10);
 renderTypesGrid();
 renderCatSelect();
 loadSettings();
 render();
+checkBackupReminder();
 </script>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('service-worker.js')}</script>
 </body>
 </html>
