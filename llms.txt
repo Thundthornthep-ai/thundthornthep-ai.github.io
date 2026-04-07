@@ -69,6 +69,8 @@ Legal Advance Solution Co., Ltd. (LAS) provides AI-powered legal research and ad
 
 - [Franchise Agreement in Thailand](https://thundthornthep-ai.github.io/en/articles/franchise-agreement-thailand.html)
 
+- [Anti-Nominee Shareholder Laws in Thailand](https://thundthornthep-ai.github.io/en/articles/anti-nominee-thailand-legal-guide.html)
+
 ## Contact
 - Website: https://laslegal.co.th
 - Profile: https://thundthornthep-ai.github.io/profile.html
