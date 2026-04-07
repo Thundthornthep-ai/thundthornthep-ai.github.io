@@ -62,7 +62,7 @@
 
     // Broader law names → PDF direct
     { pattern: /^ปพพ\.|^ประมวลกฎหมายแพ่ง/,  url: PDF+'civil-commercial-code-2568.pdf', title: 'ประมวลกฎหมายแพ่งและพาณิชย์ (ฉบับอัปเดต 2568) — PDF' },
-    { pattern: /^พ\.ร\.บ\./,                url: 'https://www.ocs.go.th/searchlaw', title: 'ค้นหากฎหมาย — สำนักงานคณะกรรมการกฤษฎีกา', external: true }
+    { pattern: /^พ\.ร\.บ\./,                url: 'https://www.ocs.go.th/searchlaw-law', title: 'ค้นหากฎหมาย — สำนักงานคณะกรรมการกฤษฎีกา', external: true }
   ];
 
   // --- Selectors to scan ---

@@ -33,7 +33,7 @@
   - ✅ คู่มือ กกต.
   - ✅ เว็บ กกต. (ect.go.th)
   - ✅ เว็บสภา กทม. (bmc.go.th)
-  - ✅ กฤษฎีกา (krisdika.go.th)
+  - ✅ กฤษฎีกา (www.ocs.go.th/searchlaw-law)
   - ❌ ไม่ใช้: บทความวิชาการ, สื่อ, Wikipedia, Blog (ละเมิดลิขสิทธิ์)
 
 ---

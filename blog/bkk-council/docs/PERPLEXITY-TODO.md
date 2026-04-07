@@ -29,16 +29,16 @@
 
 ## Critical Fixes ที่น้องเพอต้องแก้ใน HTML
 
-### Fix 1 — krisdika.go.th link ตาย
+### Fix 1 — www.ocs.go.th/searchlaw-law link ตาย
 **ไฟล์:** `phase-d-e.html` (บรรทัด 1213, 2560), `sk-candidate-guide.html`
-**ปัญหา:** `https://krisdika.go.th` DNS ไม่ resolve
+**ปัญหา:** `https://www.ocs.go.th/searchlaw-law` DNS ไม่ resolve
 **แก้ไข:** เปลี่ยนทุกจุดเป็น:
 ```
-https://www.krisdika.go.th
+https://www.ocs.go.th/searchlaw-law
 ```
 หรือถ้ายัง fail:
 ```
-https://ocs.go.th/searchlaw
+https://www.ocs.go.th/searchlaw-law
 ```
 
 ### Fix 2 — เพิ่ม download links สำหรับ PDF ใหม่ 3 ไฟล์

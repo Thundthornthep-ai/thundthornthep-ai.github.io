@@ -15,7 +15,7 @@
 
 ### สิ่งที่แก้ไขแล้วใน Round 2+3:
 - ✅ wiki.kpi.ac.th ลบครบ 4 จุด (2 ไฟล์) → อ้าง ม.89 พ.ร.บ.กทม. โดยตรง
-- ✅ krisdika.go.th → www.krisdika.go.th (link ใช้ได้แล้ว)
+- ✅ www.ocs.go.th/searchlaw-law → www.www.ocs.go.th/searchlaw-law (link ใช้ได้แล้ว)
 - ✅ dashboard.html countdown → ISO string +07:00
 - ✅ sk-candidate-guide.html countdown → T08:00:00+07:00
 - ✅ Phase E → 9 หัวข้อ (แก้จาก 7)
@@ -87,7 +87,7 @@
 - **ไฟล์:** `phase-d-e.html` บรรทัด 801 + 886
 - **พบ:** อ้างอิง "ที่มา: สถาบันพระปกเกล้า (wiki.kpi.ac.th)" ในส่วนอำนาจหน้าที่ กทม. 27 ข้อ
 - **ปัญหา:** wiki.kpi.ac.th เป็น wiki สถาบันวิชาการ ไม่ใช่ตัวบทกฎหมาย ไม่อยู่ใน approved sources
-- **แก้ไข:** ลบ credit wiki.kpi.ac.th → อ้างอิง ม.89 พ.ร.บ.ระเบียบบริหาร กทม. 2528 โดยตรง หรือ krisdika.go.th
+- **แก้ไข:** ลบ credit wiki.kpi.ac.th → อ้างอิง ม.89 พ.ร.บ.ระเบียบบริหาร กทม. 2528 โดยตรง หรือ www.ocs.go.th/searchlaw-law
 
 #### W2 — ม.11 อ้างผิดบริบท (กรณีครบวาระ 45 วัน)
 - **ไฟล์:** `phase-d-e.html` บรรทัด 1367
@@ -194,7 +194,7 @@
 
 | URL | Status | Severity |
 |-----|--------|----------|
-| krisdika.go.th | **000 — DNS ไม่ resolve** | 🔴 Critical |
+| www.ocs.go.th/searchlaw-law | **000 — DNS ไม่ resolve** | 🔴 Critical |
 | ect.go.th | 200 OK | ✅ |
 | bmc.go.th | 200 OK | ✅ |
 | gdcatalog.go.th | 200 OK | ✅ |
@@ -207,10 +207,10 @@
 
 ### 🔴 Critical Issues
 
-#### C3 — krisdika.go.th DNS fail
+#### C3 — www.ocs.go.th/searchlaw-law DNS fail
 - **ไฟล์:** `phase-d-e.html`, `sk-candidate-guide.html`
-- **ปัญหา:** link ไปยัง krisdika.go.th ไม่สามารถ resolve DNS ได้ — ผู้ใช้คลิกแล้วเปิดไม่ได้
-- **แก้ไข:** ตรวจสอบ URL ล่าสุดของกฤษฎีกา (อาจเปลี่ยนเป็น `www.krisdika.go.th` หรือ URL ใหม่) → อัปเดต link ทุกจุด
+- **ปัญหา:** link ไปยัง www.ocs.go.th/searchlaw-law ไม่สามารถ resolve DNS ได้ — ผู้ใช้คลิกแล้วเปิดไม่ได้
+- **แก้ไข:** ตรวจสอบ URL ล่าสุดของกฤษฎีกา (อาจเปลี่ยนเป็น `www.www.ocs.go.th/searchlaw-law` หรือ URL ใหม่) → อัปเดต link ทุกจุด
 
 ---
 
@@ -350,7 +350,7 @@
 |---|------|------|--------|---------|
 | C1 | 1 | phase-d-e.html:1024 | ม.102 ใช้ผิดบริบท (ข้อบัญญัติตก) | ตรวจตัวบทจริง → แก้เลขมาตรา |
 | C2 | 1 | phase-a.html:747 | ม.12 คำอธิบายตำแหน่งคลุมเครือ | ระบุให้ชัดว่า ผอ.กต. กทม. = ผอ.กต.จังหวัด |
-| C3 | 3 | phase-d-e.html, sk-guide | krisdika.go.th DNS fail | อัปเดต URL กฤษฎีกา |
+| C3 | 3 | phase-d-e.html, sk-guide | www.ocs.go.th/searchlaw-law DNS fail | อัปเดต URL กฤษฎีกา |
 | C4 | 6 | dashboard.html:938 | Countdown ไม่มี timezone | เปลี่ยนเป็น ISO string +07:00 |
 
 ### 🟡 Warning — ควรแก้ก่อนเผยแพร่ (11 จุด)
@@ -398,7 +398,7 @@
 
 1. **มาตราผิด/คลุมเครือ 4 จุด Critical** — เว็บกฎหมายสาธารณะต้อง Zero Error ที่มาตรา เพราะผู้ใช้จะนำไป "อ้าง" ต่อ — ผิด 1 มาตรา = เสียความน่าเชื่อถือทั้งเว็บ
 2. **แหล่งอ้างอิง wiki.kpi.ac.th** — ต้องลบทิ้ง ใช้ตัวบทจริงแทน ไม่ใช่ wiki
-3. **krisdika.go.th link ตาย** — ต้องแก้ด่วน เพราะเป็นแหล่งอ้างอิงหลัก
+3. **www.ocs.go.th/searchlaw-law link ตาย** — ต้องแก้ด่วน เพราะเป็นแหล่งอ้างอิงหลัก
 4. **dashboard.html timezone** — bug ที่ทำให้ countdown ผิดสำหรับผู้ใช้ต่างประเทศ
 5. **14 PDFs ที่ไม่มี link** — เท่ากับ "ซ่อนทรัพยากร" จากผู้ใช้ ต้องเพิ่ม link
 
@@ -470,8 +470,8 @@
 #### 3.1 "Audit Trail" — หน้า Verify Log สาธารณะ
 เปิดเผย `docs/verify-log.md` เป็นหน้า HTML ให้ผู้ใช้เข้าถึงได้:
 ```
-✅ ม.49 — ตรวจกับตัวบท krisdika.go.th → ถูกต้อง [2026-04-05]
-✅ ม.50 — ตรวจกับตัวบท krisdika.go.th → ถูกต้อง [2026-04-05]
+✅ ม.49 — ตรวจกับตัวบท www.ocs.go.th/searchlaw-law → ถูกต้อง [2026-04-05]
+✅ ม.50 — ตรวจกับตัวบท www.ocs.go.th/searchlaw-law → ถูกต้อง [2026-04-05]
 ⚠️ ม.102 — อยู่ระหว่างยืนยัน [2026-04-05]
 ```
 **ทำไม:** ผู้ใช้เห็น log การตรวจสอบ = รู้ว่าเราไม่ได้มั่ว มีกระบวนการ QC จริง — **ไม่มีเว็บกฎหมายไหนในไทยทำแบบนี้**
@@ -508,7 +508,7 @@
 ### ⏰ ก่อน Deploy (ภายใน 24 ชม.)
 1. แก้ C1 — ม.102 ข้อบัญญัติตก → ตรวจตัวบทจริง
 2. แก้ C2 — ม.12 ระบุตำแหน่งให้ชัด
-3. แก้ C3 — อัปเดต URL krisdika.go.th
+3. แก้ C3 — อัปเดต URL www.ocs.go.th/searchlaw-law
 4. แก้ C4 — dashboard.html timezone fix
 
 ### ⏰ สัปดาห์นี้
