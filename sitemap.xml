@@ -650,4 +650,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/pdpa-compliance-guide-business.html"/>
   </url>
 
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/bid-rigging-thailand.html</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/bid-rigging-thailand.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/bid-rigging-thailand.html"/>
+  </url>
+
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/joint-venture-agreement-thailand.html</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/joint-venture-agreement-thailand.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/joint-venture-agreement-thailand.html"/>
+  </url>
+
 </urlset>
