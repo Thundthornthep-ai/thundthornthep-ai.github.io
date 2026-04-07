@@ -620,4 +620,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/nda-non-disclosure-agreement-thailand.html"/>
   </url>
 
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/mergers-acquisitions-thailand.html</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/mergers-acquisitions-thailand.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/mergers-acquisitions-thailand.html"/>
+  </url>
+
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/transfer-pricing-thailand.html</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/transfer-pricing-thailand.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/transfer-pricing-thailand.html"/>
+  </url>
+
 </urlset>
