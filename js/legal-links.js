@@ -112,10 +112,88 @@
     });
   }
 
+  // ==========================================================
+  // LAW-REF-CARD: Centralized PDF/Link Map (Single Source of Truth)
+  // เปลี่ยน URL ที่นี่ที่เดียว → update ทุก law-ref-card ทั้งเว็บ
+  // ==========================================================
+
+  var OCS = 'https://www.ocs.go.th/searchlaw-law';
+
+  var LAW_CARD_MAP = {
+    // ประมวลกฎหมาย
+    'ปพพ.':           { pdf: PDF+'civil-commercial-code-2568.pdf', name: 'ประมวลกฎหมายแพ่งและพาณิชย์' },
+    'รัษฎากร':         { pdf: PDF+'revenue-code.pdf', name: 'ประมวลรัษฎากร' },
+
+    // พ.ร.บ. ที่มี PDF
+    'FBA':            { pdf: PDF+'foreign-business-act-2542.pdf', name: 'พ.ร.บ.ประกอบธุรกิจของคนต่างด้าว พ.ศ. 2542' },
+    'PDPA':           { pdf: PDF+'pdpa-2562.pdf', name: 'พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562' },
+    'LPA':            { pdf: PDF+'labour-protection-act-2541-amendment9.pdf', name: 'พ.ร.บ.คุ้มครองแรงงาน (แก้ไขครั้งที่ 9) พ.ศ. 2568' },
+    'คอนโด':          { pdf: PDF+'condominium-act-2522.pdf', name: 'พ.ร.บ.อาคารชุด พ.ศ. 2522' },
+    'โรงแรม':          { pdf: PDF+'hotel-act-2547.pdf', name: 'พ.ร.บ.โรงแรม พ.ศ. 2547' },
+    'แข่งขัน':         { pdf: PDF+'trade-competition-act-2560.pdf', name: 'พ.ร.บ.การแข่งขันทางการค้า พ.ศ. 2560' },
+    'คุ้มครองผู้บริโภค':  { pdf: PDF+'consumer-protection-act.pdf', name: 'พ.ร.บ.คุ้มครองผู้บริโภค พ.ศ. 2522' },
+    'เครื่องหมายการค้า': { pdf: PDF+'trademark-act.pdf', name: 'พ.ร.บ.เครื่องหมายการค้า พ.ศ. 2534' },
+    'ความลับทางการค้า':  { pdf: PDF+'trade-secrets-act-2545.pdf', name: 'พ.ร.บ.ความลับทางการค้า พ.ศ. 2545' },
+    'ลิขสิทธิ์':        { pdf: PDF+'copyright-act.pdf', name: 'พ.ร.บ.ลิขสิทธิ์ พ.ศ. 2537' },
+    'สิทธิบัตร':        { pdf: PDF+'patent-act.pdf', name: 'พ.ร.บ.สิทธิบัตร พ.ศ. 2522' },
+    'หลักทรัพย์':       { pdf: PDF+'securities-act-2535.pdf', name: 'พ.ร.บ.หลักทรัพย์และตลาดหลักทรัพย์ พ.ศ. 2535' },
+    'ข้อสัญญาไม่เป็นธรรม': { pdf: PDF+'unfair-contract-terms-act-2540.pdf', name: 'พ.ร.บ.ว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540' },
+    'อนุญาโตตุลาการ':    { pdf: PDF+'arbitration-act-2545.pdf', name: 'พ.ร.บ.อนุญาโตตุลาการ พ.ศ. 2545' },
+    'คอมพิวเตอร์':      { pdf: PDF+'computer-crime-act-2550.pdf', name: 'พ.ร.บ.ว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ พ.ศ. 2550' },
+    'BOI':            { pdf: PDF+'investment-promotion-act-boi.pdf', name: 'พ.ร.บ.ส่งเสริมการลงทุน พ.ศ. 2520' },
+
+    // พ.ร.บ. ที่ยังไม่มี PDF — OCS search fallback
+    'เครื่องสำอาง':     { ocs: 'พระราชบัญญัติเครื่องสำอาง', name: 'พ.ร.บ.เครื่องสำอาง พ.ศ. 2558' },
+    'อาหาร':          { ocs: 'พระราชบัญญัติอาหาร', name: 'พ.ร.บ.อาหาร พ.ศ. 2522' },
+    'โรงงาน':          { ocs: 'พระราชบัญญัติโรงงาน', name: 'พ.ร.บ.โรงงาน พ.ศ. 2535' },
+    'ที่ดิน':           { ocs: 'ประมวลกฎหมายที่ดิน', name: 'ประมวลกฎหมายที่ดิน' },
+    'ภาษีที่ดิน':       { ocs: 'พระราชบัญญัติภาษีที่ดินและสิ่งปลูกสร้าง', name: 'พ.ร.บ.ภาษีที่ดินและสิ่งปลูกสร้าง พ.ศ. 2562' },
+    'EEC':            { ocs: 'พระราชบัญญัติเขตพัฒนาพิเศษภาคตะวันออก', name: 'พ.ร.บ.เขตพัฒนาพิเศษภาคตะวันออก พ.ศ. 2561' },
+    'ธุรกรรมอิเล็กทรอนิกส์': { ocs: 'พระราชบัญญัติว่าด้วยธุรกรรมทางอิเล็กทรอนิกส์', name: 'พ.ร.บ.ธุรกรรมทางอิเล็กทรอนิกส์ พ.ศ. 2544' },
+
+    // Concept cards → internal articles
+    'concept:ma':       { article: '/articles/mergers-acquisitions-thailand.html', name: 'Due Diligence & M&A' },
+    'concept:corporate': { article: '/articles/company-registration-thailand-guide.html', name: 'Corporate Law' },
+    'concept:franchise': { article: '/articles/franchise-agreement-thailand.html', name: 'Franchise & Distribution' },
+    'concept:contract':  { article: '/articles/contract-reading-guide.html', name: 'Contract Fundamentals' },
+    'concept:labour':    { article: '/articles/employment-contract-thailand-guide.html', name: 'Labour & Employment' },
+    'concept:realestate': { article: '/articles/foreigner-buy-condo-thailand.html', name: 'Real Estate & Property' },
+    'concept:ip':        { article: '/articles/ip-law-business-marketing.html', name: 'Intellectual Property' }
+  };
+
+  /**
+   * resolveLawRefCards — Auto-resolve law-ref-card links from LAW_CARD_MAP
+   * Reads data-law attribute, updates href + law-source text
+   */
+  function resolveLawRefCards() {
+    var cards = document.querySelectorAll('.law-ref-card[data-law]');
+    cards.forEach(function (card) {
+      var key = card.getAttribute('data-law');
+      if (!key) return;
+
+      var entry = LAW_CARD_MAP[key];
+      if (!entry) return;
+
+      var sourceEl = card.querySelector('.law-source');
+
+      if (entry.pdf) {
+        card.href = entry.pdf;
+        if (sourceEl) sourceEl.textContent = '\uD83D\uDD17 \u0E14\u0E32\u0E27\u0E19\u0E4C\u0E42\u0E2B\u0E25\u0E14 PDF ' + entry.name;
+      } else if (entry.article) {
+        card.href = entry.article;
+        if (sourceEl) sourceEl.textContent = '\uD83D\uDD17 \u0E2D\u0E48\u0E32\u0E19\u0E1A\u0E17\u0E04\u0E27\u0E32\u0E21 ' + entry.name;
+      } else if (entry.ocs) {
+        card.href = OCS + '?q=' + encodeURIComponent(entry.ocs);
+        if (sourceEl) sourceEl.textContent = '\uD83D\uDD17 \u0E04\u0E49\u0E19\u0E2B\u0E32\u0E15\u0E31\u0E27\u0E1A\u0E17\u0E01\u0E0E\u0E2B\u0E21\u0E32\u0E22 \u2014 \u0E2A\u0E33\u0E19\u0E31\u0E01\u0E07\u0E32\u0E19\u0E04\u0E13\u0E30\u0E01\u0E23\u0E23\u0E21\u0E01\u0E32\u0E23\u0E01\u0E24\u0E29\u0E0E\u0E35\u0E01\u0E32';
+      }
+    });
+  }
+
   // Run after DOM is ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', linkify);
+    document.addEventListener('DOMContentLoaded', function() { linkify(); resolveLawRefCards(); });
   } else {
     linkify();
+    resolveLawRefCards();
   }
 })();
