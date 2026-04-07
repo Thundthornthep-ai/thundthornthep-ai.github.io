@@ -67,6 +67,8 @@ Legal Advance Solution Co., Ltd. (LAS) provides AI-powered legal research and ad
 - [PDPA Essentials Every Thai Business Must Know](https://thundthornthep-ai.github.io/en/articles/pdpa-essentials-entrepreneurs.html)
 - [Why Lawyers Read Contracts Differently: 5 Key Methods](https://thundthornthep-ai.github.io/en/articles/why-lawyers-read-contracts-differently.html)
 
+- [Franchise Agreement in Thailand](https://thundthornthep-ai.github.io/en/articles/franchise-agreement-thailand.html)
+
 ## Contact
 - Website: https://laslegal.co.th
 - Profile: https://thundthornthep-ai.github.io/profile.html

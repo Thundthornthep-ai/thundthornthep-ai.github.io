@@ -570,4 +570,14 @@
     <priority>0.50</priority>
   </url>
 
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/franchise-agreement-thailand.html</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/franchise-agreement-thailand.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/franchise-agreement-thailand.html"/>
+  </url>
+
 </urlset>
