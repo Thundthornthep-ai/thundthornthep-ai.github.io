@@ -610,4 +610,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/lease-agreement-thailand-guide.html"/>
   </url>
 
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/nda-non-disclosure-agreement-thailand.html</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/nda-non-disclosure-agreement-thailand.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/nda-non-disclosure-agreement-thailand.html"/>
+  </url>
+
 </urlset>
