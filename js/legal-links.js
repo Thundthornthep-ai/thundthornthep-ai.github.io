@@ -35,10 +35,10 @@
     { pattern: /มาตรา\s*41(?:\/1)?/,       url: '/articles/labour-protection-act-amendment-9-2568.html', title: 'LPA ฉบับที่ 9 — ลาคลอด 120 วัน (ม.41)', pdf: PDF+'labour-protection-act-2541-amendment9.pdf' },
 
     // พ.ร.บ.ความลับทางการค้า
-    { pattern: /มาตรา\s*3|ม\.?\s*3(?!\d)/,  url: '/articles/las-shield-02.html', title: 'LAS Shield 02 — NDA ความลับทางการค้า (ม.3)', pdf: PDF+'trade-secrets-act-2545.pdf' },
+    { pattern: /มาตรา\s*3(?!\d)|ม\.?\s*3(?!\d)/,  url: '/articles/las-shield-02.html', title: 'LAS Shield 02 — NDA ความลับทางการค้า (ม.3)', pdf: PDF+'trade-secrets-act-2545.pdf' },
 
     // พ.ร.บ.ข้อสัญญาที่ไม่เป็นธรรม
-    { pattern: /มาตรา\s*4|ม\.?\s*4(?!\d)/,  url: '/articles/las-share-10.html', title: 'LAS Share 10 — ข้อสัญญาที่ไม่เป็นธรรม (ม.4)', pdf: PDF+'unfair-contract-terms-act-2540.pdf' },
+    { pattern: /มาตรา\s*4(?!\d)|ม\.?\s*4(?!\d)/,  url: '/articles/las-share-10.html', title: 'LAS Share 10 — ข้อสัญญาที่ไม่เป็นธรรม (ม.4)', pdf: PDF+'unfair-contract-terms-act-2540.pdf' },
 
     // Contract types → relevant LAS articles
     { pattern: /^NDA$/i,                    url: '/articles/nda-non-disclosure-agreement-thailand.html', title: 'NDA สัญญารักษาความลับ — คู่มือฉบับสมบูรณ์', pdf: PDF+'trade-secrets-act-2545.pdf' },
@@ -158,7 +158,22 @@
     'concept:contract':  { article: '/articles/contract-reading-guide.html', name: 'Contract Fundamentals' },
     'concept:labour':    { article: '/articles/employment-contract-thailand-guide.html', name: 'Labour & Employment' },
     'concept:realestate': { article: '/articles/foreigner-buy-condo-thailand.html', name: 'Real Estate & Property' },
-    'concept:ip':        { article: '/articles/ip-law-business-marketing.html', name: 'Intellectual Property' }
+    'concept:ip':        { article: '/articles/ip-law-business-marketing.html', name: 'Intellectual Property' },
+
+    // Missing keys found by Audit Agent (2026-04-08)
+    'ป.ป.ช.':           { ocs: '\u0E1B\u0E49\u0E2D\u0E07\u0E01\u0E31\u0E19\u0E41\u0E25\u0E30\u0E1B\u0E23\u0E32\u0E1A\u0E1B\u0E23\u0E32\u0E21\u0E17\u0E38\u0E08\u0E23\u0E34\u0E15', name: '\u0E1E.\u0E23.\u0E1A.\u0E1B\u0E49\u0E2D\u0E07\u0E01\u0E31\u0E19\u0E41\u0E25\u0E30\u0E1B\u0E23\u0E32\u0E1A\u0E1B\u0E23\u0E32\u0E21\u0E17\u0E38\u0E08\u0E23\u0E34\u0E15 \u0E1E.\u0E28. 2561' },
+    '\u0E08\u0E31\u0E14\u0E0B\u0E37\u0E49\u0E2D\u0E08\u0E31\u0E14\u0E08\u0E49\u0E32\u0E07': { ocs: '\u0E08\u0E31\u0E14\u0E0B\u0E37\u0E49\u0E2D\u0E08\u0E31\u0E14\u0E08\u0E49\u0E32\u0E07', name: '\u0E1E.\u0E23.\u0E1A.\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E0B\u0E37\u0E49\u0E2D\u0E08\u0E31\u0E14\u0E08\u0E49\u0E32\u0E07\u0E20\u0E32\u0E04\u0E23\u0E31\u0E10 \u0E1E.\u0E28. 2560' },
+    '\u0E21\u0E2B\u0E32\u0E0A\u0E19':  { ocs: '\u0E1A\u0E23\u0E34\u0E29\u0E31\u0E17\u0E21\u0E2B\u0E32\u0E0A\u0E19\u0E08\u0E33\u0E01\u0E31\u0E14', name: '\u0E1E.\u0E23.\u0E1A.\u0E1A\u0E23\u0E34\u0E29\u0E31\u0E17\u0E21\u0E2B\u0E32\u0E0A\u0E19\u0E08\u0E33\u0E01\u0E31\u0E14 \u0E1E.\u0E28. 2535' },
+    '\u0E23\u0E31\u0E10\u0E18\u0E23\u0E23\u0E21\u0E19\u0E39\u0E0D': { ocs: '\u0E23\u0E31\u0E10\u0E18\u0E23\u0E23\u0E21\u0E19\u0E39\u0E0D', name: '\u0E23\u0E31\u0E10\u0E18\u0E23\u0E23\u0E21\u0E19\u0E39\u0E0D\u0E41\u0E2B\u0E48\u0E07\u0E23\u0E32\u0E0A\u0E2D\u0E32\u0E13\u0E32\u0E08\u0E31\u0E01\u0E23\u0E44\u0E17\u0E22 \u0E1E.\u0E28. 2560' },
+    '\u0E25\u0E30\u0E40\u0E21\u0E34\u0E14\u0E40\u0E08\u0E49\u0E32\u0E2B\u0E19\u0E49\u0E32\u0E17\u0E35\u0E48': { ocs: '\u0E04\u0E27\u0E32\u0E21\u0E23\u0E31\u0E1A\u0E1C\u0E34\u0E14\u0E17\u0E32\u0E07\u0E25\u0E30\u0E40\u0E21\u0E34\u0E14', name: '\u0E1E.\u0E23.\u0E1A.\u0E04\u0E27\u0E32\u0E21\u0E23\u0E31\u0E1A\u0E1C\u0E34\u0E14\u0E17\u0E32\u0E07\u0E25\u0E30\u0E40\u0E21\u0E34\u0E14\u0E02\u0E2D\u0E07\u0E40\u0E08\u0E49\u0E32\u0E2B\u0E19\u0E49\u0E32\u0E17\u0E35\u0E48 \u0E1E.\u0E28. 2539' },
+    '\u0E2E\u0E31\u0E49\u0E27\u0E1B\u0E23\u0E30\u0E21\u0E39\u0E25': { ocs: '\u0E27\u0E48\u0E32\u0E14\u0E49\u0E27\u0E22\u0E04\u0E27\u0E32\u0E21\u0E1C\u0E34\u0E14\u0E40\u0E01\u0E35\u0E48\u0E22\u0E27\u0E01\u0E31\u0E1A\u0E01\u0E32\u0E23\u0E40\u0E2A\u0E19\u0E2D\u0E23\u0E32\u0E04\u0E32', name: '\u0E1E.\u0E23.\u0E1A.\u0E27\u0E48\u0E32\u0E14\u0E49\u0E27\u0E22\u0E04\u0E27\u0E32\u0E21\u0E1C\u0E34\u0E14\u0E40\u0E01\u0E35\u0E48\u0E22\u0E27\u0E01\u0E31\u0E1A\u0E01\u0E32\u0E23\u0E40\u0E2A\u0E19\u0E2D\u0E23\u0E32\u0E04\u0E32 \u0E1E.\u0E28. 2542' },
+    '\u0E40\u0E0A\u0E48\u0E32\u0E2D\u0E2A\u0E31\u0E07\u0E2B\u0E32\u0E2F': { ocs: '\u0E01\u0E32\u0E23\u0E40\u0E0A\u0E48\u0E32\u0E2D\u0E2A\u0E31\u0E07\u0E2B\u0E32\u0E23\u0E34\u0E21\u0E17\u0E23\u0E31\u0E1E\u0E22\u0E4C', name: '\u0E1E.\u0E23.\u0E1A.\u0E01\u0E32\u0E23\u0E40\u0E0A\u0E48\u0E32\u0E2D\u0E2A\u0E31\u0E07\u0E2B\u0E32\u0E23\u0E34\u0E21\u0E17\u0E23\u0E31\u0E1E\u0E22\u0E4C\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E1E\u0E32\u0E13\u0E34\u0E0A\u0E22\u0E01\u0E23\u0E23\u0E21\u0E41\u0E25\u0E30\u0E2D\u0E38\u0E15\u0E2A\u0E32\u0E2B\u0E01\u0E23\u0E23\u0E21 \u0E1E.\u0E28. 2542' },
+    'concept:anticorruption': { article: '/articles/civil-recovery-corruption-thailand.html', name: 'Anti-Corruption & Civil Recovery' },
+    'concept:digital':   { article: '/articles/social-media-marketing-law.html', name: 'Digital & Social Media Law' },
+    'concept:drafting':  { article: '/articles/art-of-ancient-contract-drafting.html', name: 'Contract Drafting' },
+    'concept:lease':     { article: '/articles/lease-agreement-thailand-guide.html', name: 'Lease Agreement' },
+    'concept:nominee':   { article: '/articles/anti-nominee-thailand-legal-guide.html', name: 'Anti-Nominee' },
+    'concept:review':    { article: '/articles/contract-reading-guide.html', name: 'Contract Review' }
   };
 
   /**
@@ -180,6 +195,8 @@
         card.href = entry.pdf;
         if (sourceEl) sourceEl.textContent = '\uD83D\uDD17 \u0E14\u0E32\u0E27\u0E19\u0E4C\u0E42\u0E2B\u0E25\u0E14 PDF ' + entry.name;
       } else if (entry.article) {
+        // Skip self-referencing links (current page)
+        if (window.location.pathname.endsWith(entry.article)) return;
         card.href = entry.article;
         if (sourceEl) sourceEl.textContent = '\uD83D\uDD17 \u0E2D\u0E48\u0E32\u0E19\u0E1A\u0E17\u0E04\u0E27\u0E32\u0E21 ' + entry.name;
       } else if (entry.ocs) {
