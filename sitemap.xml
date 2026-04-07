@@ -590,4 +590,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/anti-nominee-thailand-legal-guide.html"/>
   </url>
 
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/employment-contract-thailand-guide.html</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/employment-contract-thailand-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/employment-contract-thailand-guide.html"/>
+  </url>
+
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/lease-agreement-thailand-guide.html</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/lease-agreement-thailand-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/lease-agreement-thailand-guide.html"/>
+  </url>
+
 </urlset>
