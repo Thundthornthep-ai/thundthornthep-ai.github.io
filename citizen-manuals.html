@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/webp" href="/las-logo.webp">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="คู่มือประชาชนทางการ (Thai Government Citizen Manuals) สำหรับ LAS 4 Series — รวบรวม URL ทางการจาก DBD, BOI, DIP, BOT, SEC, IEAT, สคส. สำหรับ practitioner">
+<meta name="keywords" content="คู่มือประชาชน, citizen manuals Thailand, info.go.th, DBD, BOI, DIP, ธปท., ก.ล.ต., LAS reference">
+<meta name="author" content="Thundthornthep Yamoutai, Ph.D.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://thundthornthep-ai.github.io/citizen-manuals.html">
+<title>คู่มือประชาชน — LAS Practitioner Reference | LAS</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="คู่มือประชาชน — LAS Practitioner Reference">
+<meta property="og:description" content="Thai Government Citizen Manuals for LAS 4 Series — official URLs from 8 government agencies">
+<meta property="og:image" content="https://thundthornthep-ai.github.io/banner-las-nia.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0f1a;
+    --card-bg: #0f1729;
+    --text: #e2e8f0;
+    --text-2: #94a3b8;
+    --gold: #C9A96E;
+    --navy: #1B2A4A;
+    --border: #1e293b;
+  }
+  * { box-sizing:border-box; }
+  body[data-lang="th"] .lang-en { display:none; }
+  body[data-lang="en"] .lang-th { display:none; }
+  body {
+    margin:0; padding:0; background:var(--bg); color:var(--text);
+    font-family:'IBM Plex Sans Thai','Inter',-apple-system,sans-serif;
+    line-height:1.7;
+  }
+  .container { max-width:1100px; margin:0 auto; padding:30px 20px 60px; }
+  h1 { font-size:28px; margin:0 0 8px; color:var(--gold); }
+  .subtitle { font-size:14px; color:var(--text-2); margin:0 0 18px; }
+  .breadcrumb { font-size:13px; color:var(--text-2); margin-bottom:24px; }
+  .breadcrumb a { color:var(--gold); text-decoration:none; }
+  .global-lang-toggle {
+    position:fixed; top:14px; right:14px; z-index:9999;
+    display:inline-flex; background:#0f1729; border:1px solid #334155;
+    border-radius:8px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.4);
+  }
+  .global-lang-toggle button {
+    background:transparent; color:#94a3b8; border:none; padding:8px 16px;
+    font-size:13px; font-weight:600; cursor:pointer; transition:all 0.2s;
+    font-family:inherit;
+  }
+  .global-lang-toggle button.active { background:var(--gold); color:var(--navy); }
+  .global-lang-toggle button:hover:not(.active) { color:#cbd5e1; }
+  .intro {
+    background:var(--card-bg); border-left:4px solid var(--gold);
+    padding:18px 22px; border-radius:8px; margin-bottom:30px;
+  }
+  .intro p { margin:0 0 6px; color:var(--text); font-size:14px; }
+  .intro p:last-child { margin-bottom:0; color:var(--text-2); font-size:13px; }
+  .manual-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:16px; }
+  .manual-card {
+    background:var(--card-bg); border:1px solid var(--border);
+    border-radius:12px; padding:20px; position:relative;
+    transition:transform 0.2s, border-color 0.2s;
+  }
+  .manual-card:hover { transform:translateY(-2px); border-color:var(--gold); }
+  .card-num {
+    position:absolute; top:14px; right:18px; font-size:11px;
+    color:var(--text-2); font-weight:700; letter-spacing:1px;
+  }
+  .manual-card h3 {
+    font-size:16px; margin:0 0 12px; padding-right:30px;
+    color:var(--gold); line-height:1.4;
+  }
+  .manual-card .agency, .manual-card .law {
+    font-size:12.5px; color:var(--text-2); margin:6px 0; line-height:1.5;
+  }
+  .manual-card .agency strong, .manual-card .law strong { color:var(--text); }
+  .manual-card .alert-box {
+    background:#7c2d12; color:#fed7aa; padding:8px 12px;
+    border-radius:6px; font-size:12px; margin:10px 0;
+  }
+  .manual-card .cta {
+    display:inline-block; background:var(--gold); color:var(--navy);
+    padding:9px 16px; border-radius:6px; text-decoration:none;
+    font-weight:700; font-size:13px; margin-top:14px;
+    transition:background 0.2s;
+  }
+  .manual-card .cta:hover { background:#d4b67a; }
+  .badge {
+    display:inline-block; padding:3px 10px; border-radius:4px;
+    font-size:10px; font-weight:700; margin-left:8px; vertical-align:middle;
+  }
+  .badge.verified { background:#065f46; color:#6ee7b7; }
+  .badge.unverified { background:#374151; color:#9ca3b8; }
+  .disclaimer {
+    background:#1e293b; padding:18px 22px; border-radius:8px; margin-top:40px;
+    font-size:13px; color:var(--text-2);
+  }
+  .disclaimer h3 { color:var(--gold); margin:0 0 8px; font-size:14px; }
+  .footer { margin-top:30px; text-align:center; color:var(--text-2); font-size:12px; }
+  .footer a { color:var(--gold); text-decoration:none; }
+</style>
+</head>
+<body data-lang="th">
+
+<div class="global-lang-toggle" role="group" aria-label="Language toggle">
+  <button type="button" class="active" data-lang="th" onclick="setLang('th')">ไทย</button>
+  <button type="button" data-lang="en" onclick="setLang('en')">English</button>
+</div>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="/">Home</a> / <a href="/knowledge-hub.html">Knowledge Hub</a> /
+    <span class="lang-th">คู่มือประชาชน</span><span class="lang-en">Citizen Manuals</span>
+  </div>
+
+  <h1>
+    <span class="lang-th">คู่มือประชาชน — LAS Practitioner Reference</span>
+    <span class="lang-en">Thai Citizen Manuals — LAS Practitioner Reference</span>
+  </h1>
+  <p class="subtitle">
+    <span class="lang-th">รวบรวมคู่มือประชาชนทางการจาก 8 หน่วยงานรัฐ สำหรับใช้อ้างอิงในการให้คำปรึกษากฎหมายธุรกิจ</span>
+    <span class="lang-en">Official citizen manuals from 8 Thai government agencies — practitioner reference for business legal advisory</span>
+  </p>
+
+  <div class="intro">
+    <p>
+      <span class="lang-th"><b>เกี่ยวกับหน้านี้:</b> รวบรวม URL คู่มือประชาชนทางการสำหรับ 18 หัวข้อใน LAS 4 Series — ครอบคลุม Share (รากฐาน), Shield (ปกป้อง), และ UP (ขยาย) สามารถใช้เป็น quick reference สำหรับทนายและที่ปรึกษากฎหมายธุรกิจ</span>
+      <span class="lang-en"><b>About this page:</b> Curated official citizen manual URLs for 18 topics in the LAS 4 Series — covering Share (Foundation), Shield (Protect), and UP (Scale Up). Quick reference for Thai business lawyers and legal advisors.</span>
+    </p>
+    <p>
+      <span class="lang-th"><b>หน่วยงาน:</b> DBD · BOI · DIP · ธปท. · ก.ล.ต. · กรมที่ดิน · DLPW · สคส. · สคบ. · สศค. · กนอ.</span>
+      <span class="lang-en"><b>Agencies:</b> DBD · BOI · DIP · BOT · SEC · DOL · DLPW · PDPC · OCPB · FPO · IEAT</span>
+    </p>
+  </div>
+
+<section class="series-block" style="margin-top:36px;">
+  <div class="series-header" style="background:linear-gradient(135deg,#1e3a5f,#1e40af);padding:18px 22px;border-radius:12px;margin-bottom:16px;">
+    <h2 style="color:#93c5fd;margin:0;font-size:20px;">
+      <span class="lang-th">LAS Share — รากฐาน</span>
+      <span class="lang-en">LAS Share — Foundation</span>
+    </h2>
+  </div>
+  <div class="manual-grid">
+
+    <div class="manual-card">
+      <div class="card-num">01</div>
+      <h3>
+        <span class="lang-th">สัญญาจ้างทำของ vs จ้างแรงงาน</span>
+        <span class="lang-en">Hire of Work vs Employment</span>
+      </h3>
+      <p class="agency">
+        <strong><span class="lang-th">หน่วยงาน:</span><span class="lang-en">Agency:</span></strong>
+        <span class="lang-th">กรมสวัสดิการและคุ้มครองแรงงาน (DLPW)</span>
+        <span class="lang-en">Dept of Labour Protection</span>
+      </p>
+      <p class="law">
+        <strong><span class="lang-th">กฎหมาย:</span><span class="lang-en">Law:</span></strong>
+        ปพพ. ม.575-607
+      </p>
+      
+      <a class="cta" href="https://www.labour.go.th/index.php/labor-law" target="_blank" rel="noopener noreferrer">
+        <span class="lang-th">เปิดคู่มือ →</span>
+        <span class="lang-en">Open Manual →</span>
+      </a>
+      <span class="badge unverified">parent page</span>
+    </div>
+
+    <div class="manual-card">
+      <div class="card-num">02</div>
+      <h3>
+        <span class="lang-th">หนังสือบริคณห์สนธิ + จดทะเบียนบริษัท</span>
+        <span class="lang-en">MOA + Company Registration</span>
+      </h3>
+      <p class="agency">
+        <strong><span class="lang-th">หน่วยงาน:</span><span class="lang-en">Agency:</span></strong>
+        <span class="lang-th">กรมพัฒนาธุรกิจการค้า (DBD)</span>
+        <span class="lang-en">Dept of Business Development</span>
+      </p>
+      <p class="law">
+        <strong><span class="lang-th">กฎหมาย:</span><span class="lang-en">Law:</span></strong>
+        ปพพ. ม.1096-1098
+      </p>
+      
+      <a class="cta" href="https://www.dbd.go.th/storage/manual/0097faba-992d-4e07-8f37-d029a4d6c133.pdf" target="_blank" rel="noopener noreferrer">
+        <span class="lang-th">เปิดคู่มือ →</span>
+        <span class="lang-en">Open Manual →</span>
+      </a>
+      <span class="badge verified">✓ PDF verified</span>
+    </div>
+
+    <div class="manual-card">
+      <div class="card-num">03</div>
+      <h3>
+        <span class="lang-th">มติประชุมผู้ถือหุ้น</span>
+        <span class="lang-en">Shareholder Resolutions</span>
+      </h3>
+      <p class="agency">
+        <strong><span class="lang-th">หน่วยงาน:</span><span class="lang-en">Agency:</span></strong>
+        <span class="lang-th">DBD</span>
+        <span class="lang-en">DBD</span>
+      </p>
+      <p class="law">
+        <strong><span class="lang-th">กฎหมาย:</span><span class="lang-en">Law:</span></strong>
+        ปพพ. ม.1156-1175
+      </p>
+      
+      <a class="cta" href="https://www.dbd.go.th/storage/manual/527bd05f-f077-4e78-91eb-c07e392d915f.pdf" target="_blank" rel="noopener noreferrer">
+        <span class="lang-th">เปิดคู่มือ →</span>
+        <span class="lang-en">Open Manual →</span>
+      </a>
+      <span class="badge verified">✓ PDF verified</span>
+    </div>
+
+    <div class="manual-card">
+      <div class="card-num">04</div>
+      <h3>
+        <span class="lang-th">จดทะเบียนสัญญาเช่า</span>
+        <span class="lang-en">Lease Registration</span>
+      </h3>
+      <p class="agency">
+        <strong><span class="lang-th">หน่วยงาน:</span><span class="lang-en">Agency:</span></strong>
+        <span class="lang-th">กรมที่ดิน (DOL)</span>
+        <span class="lang-en">Dept of Lands</span>
+      </p>
+      <p class="law">
+        <strong><span class="lang-th">กฎหมาย:</span><span class="lang-en">Law:</span></strong>
+        ปพพ. ม.537-545
+      </p>
+      
+      <a class="cta" href="https://www.dol.go.th/Documents/manual/65.pdf" target="_blank" rel="noopener noreferrer">
+        <span class="lang-th">เปิดคู่มือ →</span>
+        <span class="lang-en">Open Manual →</span>
+      </a>
+      <span class="badge verified">✓ PDF verified</span>
+    </div>
+
+    <div class="manual-card">
+      <div class="card-num">05</div>
+      <h3>
+        <span class="lang-th">การโอนหุ้น</span>
+        <span class="lang-en">Share Transfer</span>
+      </h3>
+      <p class="agency">
+        <strong><span class="lang-th">หน่วยงาน:</span><span class="lang-en">Agency:</span></strong>
+        <span class="lang-th">DBD</span>
+        <span class="lang-en">DBD</span>
+      </p>
+      <p class="law">
+        <strong><span class="lang-th">กฎหมาย:</span><span class="lang-en">Law:</span></strong>
+        ปพพ. ม.1129
+      </p>
+      
+      <a class="cta" href="https://www.dbd.go.th/index_answer.php?tid=4009641" target="_blank" rel="noopener noreferrer">
+        <span class="lang-th">เปิดคู่มือ →</span>
+        <span class="lang-en">Open Manual →</span>
+      </a>
+      <span class="badge unverified">parent page</span>
+    </div>
+
+    <div class="manual-card">
+      <div class="card-num">06</div>
+      <h3>
+        <span class="lang-th">ข้อสัญญาที่ไม่เป็นธรรม</span>
+        <span class="lang-en">Unfair Contract Terms</span>
+      </h3>
+      <p class="agency">
+        <strong><span class="lang-th">หน่วยงาน:</span><span class="lang-en">Agency:</span></strong>
+        <span class="lang-th">สคบ. (OCPB)</span>
+        <span class="lang-en">Office of Consumer Protection</span>
+      </p>
+      <p class="law">
+        <strong><span class="lang-th">กฎหมาย:</span><span class="lang-en">Law:</span></strong>
+        พ.ร.บ.ข้อสัญญาที่ไม่เป็นธรรม 2540
+      </p>
+      
+      <a class="cta" href="https://www.ocpb.go.th" target="_blank" rel="noopener noreferrer">
+        <span class="lang-th">เปิดคู่มือ →</span>
+        <span class="lang-en">Open Manual →</span>
+      </a>
+      <span class="badge unverified">parent page</span>
+    </div>
+</div>
+</section>
+
+<section class="series-block" style="margin-top:36px;">
+  <div class="series-header" style="background:linear-gradient(135deg,#4a1942,#9d174d);padding:18px 22px;border-radius:12px;margin-bottom:16px;">
+    <h2 style="color:#fbcfe8;margin:0;font-size:20px;">
+      <span class="lang-th">LAS Shield — ปกป้อง</span>
+      <span class="lang-en">LAS Shield — Protect</span>
+    </h2>
+  </div>
+  <div class="manual-grid">
+
+    <div class="manual-card">
+      <div class="card-num">07</div>
+      <h3>
+        <span class="lang-th">ขออนุญาตประกอบธุรกิจต่างด้าว (FBA)</span>
+        <span class="lang-en">Foreign Business License</span>
+      </h3>
+      <p class="agency">
+        <strong><span class="lang-th">หน่วยงาน:</span><span class="lang-en">Agency:</span></strong>
+        <span class="lang-th">DBD</span>
+        <span class="lang-en">DBD</span>
+      </p>
+      <p class="law">
+        <strong><span class="lang-th">กฎหมาย:</span><span class="lang-en">Law:</span></strong>
+        พ.ร.บ.การประกอบธุรกิจของคนต่างด้าว 2542
+      </p>
+      
+      <a class="cta" href="https://www.dbd.go.th/storage/manual/a565f097-1251-4224-a9d8-0589bf95fb62.pdf" target="_blank" rel="noopener noreferrer">
+        <span class="lang-th">เปิดคู่มือ →</span>
+        <span class="lang-en">Open Manual →</span>
+      </a>
+      <span class="badge verified">✓ PDF verified</span>
+    </div>
+
+    <div class="manual-card">
+      <div class="card-num">08</div>
+      <h3>
+        <span class="lang-th">จดทะเบียนเครื่องหมายการค้า</span>
+        <span class="lang-en">Trademark Registration</span>
+      </h3>
+      <p class="agency">
+        <strong><span class="lang-th">หน่วยงาน:</span><span class="lang-en">Agency:</span></strong>
+        <span class="lang-th">กรมทรัพย์สินทางปัญญา (DIP)</span>
+        <span class="lang-en">Dept of Intellectual Property</span>
+      </p>
+      <p class="law">
+        <strong><span class="lang-th">กฎหมาย:</span><span class="lang-en">Law:</span></strong>
+        พ.ร.บ.เครื่องหมายการค้า 2534
+      </p>
+      
+      <a class="cta" href="https://www.ipthailand.go.th/images/26669/2567/CitizenGuide/TM/2.TM_CitizenGuide.pdf" target="_blank" rel="noopener noreferrer">
+        <span class="lang-th">เปิดคู่มือ →</span>
+        <span class="lang-en">Open Manual →</span>
+      </a>
+      <span class="badge verified">✓ PDF verified</span>
+    </div>
+
+    <div class="manual-card">
+      <div class="card-num">09</div>
+      <h3>
+        <span class="lang-th">จดทะเบียนสิทธิบัตร</span>
+        <span class="lang-en">Patent Registration</span>
+      </h3>
+      <p class="agency">
+        <strong><span class="lang-th">หน่วยงาน:</span><span class="lang-en">Agency:</span></strong>
+        <span class="lang-th">DIP</span>
+        <span class="lang-en">DIP</span>
+      </p>
+      <p class="law">
+        <strong><span class="lang-th">กฎหมาย:</span><span class="lang-en">Law:</span></strong>
+        พ.ร.บ.สิทธิบัตร 2522
+      </p>
+      
+      <a class="cta" href="https://www.ipthailand.go.th/th/patent-0110.html" target="_blank" rel="noopener noreferrer">
+        <span class="lang-th">เปิดคู่มือ →</span>
+        <span class="lang-en">Open Manual →</span>
+      </a>
+      <span class="badge verified">✓ PDF verified</span>
+    </div>
+
+    <div class="manual-card">
+      <div class="card-num">10</div>
+      <h3>
+        <span class="lang-th">PDPA Compliance</span>
+        <span class="lang-en">PDPA Compliance</span>
+      </h3>
+      <p class="agency">
+        <strong><span class="lang-th">หน่วยงาน:</span><span class="lang-en">Agency:</span></strong>
+        <span class="lang-th">สำนักงาน สคส. (PDPC)</span>
+        <span class="lang-en">PDPC</span>
+      </p>
+      <p class="law">
+        <strong><span class="lang-th">กฎหมาย:</span><span class="lang-en">Law:</span></strong>
+        พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล 2562
+      </p>
+      
+      <a class="cta" href="https://www.pdpc.or.th/" target="_blank" rel="noopener noreferrer">
+        <span class="lang-th">เปิดคู่มือ →</span>
+        <span class="lang-en">Open Manual →</span>
+      </a>
+      <span class="badge verified">✓ PDF verified</span>
+    </div>
+
+    <div class="manual-card">
+      <div class="card-num">11</div>
+      <h3>
+        <span class="lang-th">กฎหมายแรงงาน LPA ฉบับที่ 9</span>
+        <span class="lang-en">Labour Protection Act #9</span>
+      </h3>
+      <p class="agency">
+        <strong><span class="lang-th">หน่วยงาน:</span><span class="lang-en">Agency:</span></strong>
+        <span class="lang-th">DLPW</span>
+        <span class="lang-en">DLPW</span>
+      </p>
+      <p class="law">
+        <strong><span class="lang-th">กฎหมาย:</span><span class="lang-en">Law:</span></strong>
+        พ.ร.บ.คุ้มครองแรงงาน ฉบับ 9 พ.ศ. 2568
+      </p>
+      <div class="alert-box">⚠ ใช้เฉพาะฉบับที่ 9 (2568) เท่านั้น</div>
+      <a class="cta" href="https://www.labour.go.th/index.php/home" target="_blank" rel="noopener noreferrer">
+        <span class="lang-th">เปิดคู่มือ →</span>
+        <span class="lang-en">Open Manual →</span>
+      </a>
+      <span class="badge unverified">parent page</span>
+    </div>
+
+    <div class="manual-card">
+      <div class="card-num">12</div>
+      <h3>
+        <span class="lang-th">Escrow Agent (ดูแลผลประโยชน์คู่สัญญา)</span>
+        <span class="lang-en">Escrow Agent</span>
+      </h3>
+      <p class="agency">
+        <strong><span class="lang-th">หน่วยงาน:</span><span class="lang-en">Agency:</span></strong>
+        <span class="lang-th">สศค. / ธปท.</span>
+        <span class="lang-en">FPO / BOT</span>
+      </p>
+      <p class="law">
+        <strong><span class="lang-th">กฎหมาย:</span><span class="lang-en">Law:</span></strong>
+        พ.ร.บ.การดูแลผลประโยชน์ของคู่สัญญา 2551
+      </p>
+      
+      <a class="cta" href="https://www.fpo.go.th/main/Department/Bureau-of-Financial-Protection-Policy/การดูแลผลประโยชน์ของคู่สัญญา-(1)/ผู้ดูแลผลประโยชน์ของคู่สัญญา-(Escrow-Agent).aspx" target="_blank" rel="noopener noreferrer">
+        <span class="lang-th">เปิดคู่มือ →</span>
+        <span class="lang-en">Open Manual →</span>
+      </a>
+      <span class="badge unverified">parent page</span>
+    </div>
+</div>
+</section>
+
+<section class="series-block" style="margin-top:36px;">
+  <div class="series-header" style="background:linear-gradient(135deg,#043927,#065f46);padding:18px 22px;border-radius:12px;margin-bottom:16px;">
+    <h2 style="color:#6ee7b7;margin:0;font-size:20px;">
+      <span class="lang-th">LAS UP — ขยาย</span>
+      <span class="lang-en">LAS UP — Scale Up</span>
+    </h2>
+  </div>
+  <div class="manual-grid">
+
+    <div class="manual-card">
+      <div class="card-num">13</div>
+      <h3>
+        <span class="lang-th">ขอ BOI Promotion</span>
+        <span class="lang-en">BOI Investment Promotion</span>
+      </h3>
+      <p class="agency">
+        <strong><span class="lang-th">หน่วยงาน:</span><span class="lang-en">Agency:</span></strong>
+        <span class="lang-th">สำนักงาน BOI</span>
+        <span class="lang-en">Board of Investment</span>
+      </p>
+      <p class="law">
+        <strong><span class="lang-th">กฎหมาย:</span><span class="lang-en">Law:</span></strong>
+        พ.ร.บ.ส่งเสริมการลงทุน 2520
+      </p>
+      
+      <a class="cta" href="https://www.boi.go.th/index.php?page=apply_form" target="_blank" rel="noopener noreferrer">
+        <span class="lang-th">เปิดคู่มือ →</span>
+        <span class="lang-en">Open Manual →</span>
+      </a>
+      <span class="badge verified">✓ PDF verified</span>
+    </div>
+
+    <div class="manual-card">
+      <div class="card-num">14</div>
+      <h3>
+        <span class="lang-th">ใบอนุญาตประกอบธุรกิจสถาบันการเงิน</span>
+        <span class="lang-en">Financial Institution License</span>
+      </h3>
+      <p class="agency">
+        <strong><span class="lang-th">หน่วยงาน:</span><span class="lang-en">Agency:</span></strong>
+        <span class="lang-th">ธนาคารแห่งประเทศไทย (BOT)</span>
+        <span class="lang-en">Bank of Thailand</span>
+      </p>
+      <p class="law">
+        <strong><span class="lang-th">กฎหมาย:</span><span class="lang-en">Law:</span></strong>
+        พ.ร.บ.ธุรกิจสถาบันการเงิน 2551
+      </p>
+      
+      <a class="cta" href="https://www.bot.or.th/th/our-services/public-handbook.html" target="_blank" rel="noopener noreferrer">
+        <span class="lang-th">เปิดคู่มือ →</span>
+        <span class="lang-en">Open Manual →</span>
+      </a>
+      <span class="badge verified">✓ PDF verified</span>
+    </div>
+
+    <div class="manual-card">
+      <div class="card-num">15</div>
+      <h3>
+        <span class="lang-th">เตรียมพร้อม IPO / Listing</span>
+        <span class="lang-en">IPO / Listing Preparation</span>
+      </h3>
+      <p class="agency">
+        <strong><span class="lang-th">หน่วยงาน:</span><span class="lang-en">Agency:</span></strong>
+        <span class="lang-th">ก.ล.ต. (SEC)</span>
+        <span class="lang-en">SEC Thailand</span>
+      </p>
+      <p class="law">
+        <strong><span class="lang-th">กฎหมาย:</span><span class="lang-en">Law:</span></strong>
+        พ.ร.บ.หลักทรัพย์ 2535
+      </p>
+      
+      <a class="cta" href="https://www.sec.or.th/TH/Documents/ManualSelect/manual-25620121-stock.pdf" target="_blank" rel="noopener noreferrer">
+        <span class="lang-th">เปิดคู่มือ →</span>
+        <span class="lang-en">Open Manual →</span>
+      </a>
+      <span class="badge verified">✓ PDF verified</span>
+    </div>
+
+    <div class="manual-card">
+      <div class="card-num">16</div>
+      <h3>
+        <span class="lang-th">จดทะเบียนนิติบุคคลตั้งใหม่</span>
+        <span class="lang-en">New Entity Registration</span>
+      </h3>
+      <p class="agency">
+        <strong><span class="lang-th">หน่วยงาน:</span><span class="lang-en">Agency:</span></strong>
+        <span class="lang-th">DBD</span>
+        <span class="lang-en">DBD</span>
+      </p>
+      <p class="law">
+        <strong><span class="lang-th">กฎหมาย:</span><span class="lang-en">Law:</span></strong>
+        ปพพ. ม.1015-1098
+      </p>
+      
+      <a class="cta" href="https://www.dbd.go.th/storage/manual/644ffb30-f6bf-4e60-a3be-9db74a65509b.pdf" target="_blank" rel="noopener noreferrer">
+        <span class="lang-th">เปิดคู่มือ →</span>
+        <span class="lang-en">Open Manual →</span>
+      </a>
+      <span class="badge verified">✓ PDF verified</span>
+    </div>
+
+    <div class="manual-card">
+      <div class="card-num">17</div>
+      <h3>
+        <span class="lang-th">นิคมอุตสาหกรรม (IEAT)</span>
+        <span class="lang-en">Industrial Estate</span>
+      </h3>
+      <p class="agency">
+        <strong><span class="lang-th">หน่วยงาน:</span><span class="lang-en">Agency:</span></strong>
+        <span class="lang-th">การนิคมอุตสาหกรรม (IEAT)</span>
+        <span class="lang-en">IEAT</span>
+      </p>
+      <p class="law">
+        <strong><span class="lang-th">กฎหมาย:</span><span class="lang-en">Law:</span></strong>
+        พ.ร.บ.การนิคมอุตสาหกรรม 2522
+      </p>
+      
+      <a class="cta" href="https://www.ieat.go.th/th/ieathandbook" target="_blank" rel="noopener noreferrer">
+        <span class="lang-th">เปิดคู่มือ →</span>
+        <span class="lang-en">Open Manual →</span>
+      </a>
+      <span class="badge verified">✓ PDF verified</span>
+    </div>
+
+    <div class="manual-card">
+      <div class="card-num">18</div>
+      <h3>
+        <span class="lang-th">Treaty of Amity (US Citizens)</span>
+        <span class="lang-en">Treaty of Amity</span>
+      </h3>
+      <p class="agency">
+        <strong><span class="lang-th">หน่วยงาน:</span><span class="lang-en">Agency:</span></strong>
+        <span class="lang-th">DBD</span>
+        <span class="lang-en">DBD</span>
+      </p>
+      <p class="law">
+        <strong><span class="lang-th">กฎหมาย:</span><span class="lang-en">Law:</span></strong>
+        พ.ร.บ.การประกอบธุรกิจของคนต่างด้าว 2542 + สนธิสัญญาไทย-สหรัฐ
+      </p>
+      
+      <a class="cta" href="https://www.dbd.go.th/manual" target="_blank" rel="noopener noreferrer">
+        <span class="lang-th">เปิดคู่มือ →</span>
+        <span class="lang-en">Open Manual →</span>
+      </a>
+      <span class="badge unverified">parent page</span>
+    </div>
+</div>
+</section>
+
+  <div class="disclaimer">
+    <h3><span class="lang-th">ข้อจำกัดความรับผิด / Disclaimer</span><span class="lang-en">Disclaimer</span></h3>
+    <p>
+      <span class="lang-th">URL ทุกรายการเป็นเว็บไซต์ราชการอย่างเป็นทางการ — แต่อาจมีการปรับปรุงเปลี่ยนแปลง ผู้ใช้ควรตรวจสอบความถูกต้องของข้อมูลกับหน่วยงานโดยตรงก่อนนำไปใช้ในการตัดสินใจทางธุรกิจหรือกฎหมาย</span>
+      <span class="lang-en">All URLs are official Thai government websites, but may be updated periodically. Users should verify information directly with the relevant agency before making business or legal decisions.</span>
+    </p>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2026 Thundthornthep Yamoutai, Ph.D. — Legal Advance Solution Co., Ltd. (LAS)</p>
+    <p><a href="/knowledge-hub.html">← Back to Knowledge Hub</a></p>
+  </div>
+</div>
+
+<script>
+function setLang(lang) {
+  document.body.setAttribute('data-lang', lang);
+  document.querySelectorAll('.global-lang-toggle button').forEach(function(b) {
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+  });
+  try { localStorage.setItem('las_site_lang', lang); } catch(e) {}
+}
+(function(){
+  try {
+    var saved = localStorage.getItem('las_site_lang') || localStorage.getItem('las_fw_lang');
+    if (saved === 'en') setLang('en');
+  } catch(e) {}
+})();
+</script>
+</body>
+</html>

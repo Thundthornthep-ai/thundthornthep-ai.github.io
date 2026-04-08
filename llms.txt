@@ -73,6 +73,8 @@ Legal Advance Solution Co., Ltd. (LAS) provides AI-powered legal research and ad
 
 - [NDA Non-Disclosure Agreement in Thailand](https://thundthornthep-ai.github.io/en/articles/nda-non-disclosure-agreement-thailand.html)
 
+- [Citizen Manuals — LAS Practitioner Reference](https://thundthornthep-ai.github.io/citizen-manuals.html)
+
 ## Contact
 - Website: https://laslegal.co.th
 - Profile: https://thundthornthep-ai.github.io/profile.html
