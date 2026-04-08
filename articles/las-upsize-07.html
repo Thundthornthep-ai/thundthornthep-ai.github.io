@@ -291,6 +291,152 @@ th{background:#dde5ee}
 <p>ควรพิจารณาปฏิเสธหาก: (1) Valuation ต่ำเกินไปจนเสียสัดส่วนหุ้นมากเกินไปสำหรับจำนวนเงินที่ได้ (2) Term Sheet มี Participating Preferred 2x หรือ Full Ratchet Anti-Dilution ซึ่งกดดันผลตอบแทนผู้ก่อตั้งมาก (3) VC ขอ Board Majority ตั้งแต่ต้น ทำให้ผู้ก่อตั้งสูญเสียการควบคุม (4) VC ไม่ match กับ Vision และ Network ที่บริษัทต้องการ</p>
 </div>
 
+<h2>Convertible Note — กลไกที่ต้องเข้าใจให้ลึก</h2>
+
+<h3>Conversion Trigger Events (เหตุการณ์ที่กระตุ้นการแปลงสภาพ)</h3>
+<table>
+<tr><th>Trigger Event</th><th>ผลที่เกิดขึ้น</th><th>ประเด็นที่ต้องเจรจา</th></tr>
+<tr><td>Qualified Financing (รอบระดมทุนมีคุณสมบัติ)</td><td>CN แปลงเป็นหุ้นในรอบนั้นโดยอัตโนมัติ ได้ Discount Rate หรือ Cap แล้วแต่อย่างใดดีกว่า</td><td>กำหนดขนาดขั้นต่ำของ Qualified Financing ให้ชัดเจน ป้องกัน Synthetic Round</td></tr>
+<tr><td>Non-Qualified Financing (รอบระดมทุนเล็กกว่าเกณฑ์)</td><td>แล้วแต่เงื่อนไข CN — อาจแปลงหรือคงสถานะหนี้</td><td>ต้องระบุว่าจะทำอย่างไร ห้ามปล่อยให้คลุมเครือ</td></tr>
+<tr><td>Maturity Date (ครบกำหนด)</td><td>บริษัทอาจต้องชำระคืนเป็นเงินสด หรือแปลงเป็นหุ้นตามราคาที่กำหนด</td><td>กำหนดสิทธิ์ของนักลงทุนในการเลือกระหว่างรับเงินคืนหรือแปลงสภาพ</td></tr>
+<tr><td>Change of Control / IPO</td><td>มักกำหนดให้แปลงสภาพก่อน Exit เพื่อให้นักลงทุนได้รับประโยชน์จาก Liquidity Event</td><td>อาจมี Change of Control Premium เพิ่มเติม เช่น 1.5x เงินต้น</td></tr>
+</table>
+
+<h3>Most Favored Nation (MFN) Clause</h3>
+<p>MFN Clause ให้สิทธิ์นักลงทุน CN ได้รับเงื่อนไขที่ดีที่สุดเท่ากับ CN ที่ออกในภายหลัง หากบริษัทออก CN ใหม่ในเงื่อนไขที่ดีกว่า นักลงทุนรายแรกสามารถเลือกใช้เงื่อนไขใหม่แทนได้ ป้องกันไม่ให้นักลงทุนรายแรกถูกเอาเปรียบ และสร้างแรงจูงใจในการลงทุนตั้งแต่ระยะแรก</p>
+
+<h2>SAFE — Simple Agreement for Future Equity ฉบับสมบูรณ์</h2>
+
+<h3>เปรียบเทียบ SAFE vs Convertible Note</h3>
+<table>
+<tr><th>ประเด็น</th><th>SAFE</th><th>Convertible Note</th></tr>
+<tr><td>ประเภทตราสาร</td><td>ไม่ใช่หนี้ ไม่ใช่ทุน — เป็นสัญญาจะซื้อหุ้น</td><td>ตราสารหนี้ที่แปลงสภาพเป็นหุ้นได้</td></tr>
+<tr><td>ดอกเบี้ย</td><td>ไม่มีดอกเบี้ย</td><td>มีดอกเบี้ย 6–8% ต่อปี</td></tr>
+<tr><td>วันครบกำหนด</td><td>ไม่มี — ไม่กดดันบริษัท</td><td>มีกำหนด 18–24 เดือน — กดดันให้ระดมทุนต่อ</td></tr>
+<tr><td>ความซับซ้อน</td><td>ต่ำ — เอกสารสั้น ค่าใช้จ่ายทางกฎหมายน้อย</td><td>ปานกลาง — มีข้อกำหนดมากกว่า</td></tr>
+<tr><td>สถานะหากบริษัทล้มละลาย</td><td>ได้รับเงินคืนหลังเจ้าหนี้แต่ก่อนหุ้นสามัญ (ขึ้นกับ SAFE terms)</td><td>เป็นเจ้าหนี้ — ได้รับก่อนผู้ถือหุ้นทั้งหมด</td></tr>
+<tr><td>เหมาะกับ</td><td>Pre-Seed / Seed ที่ต้องการความเร็ว</td><td>Bridge Financing หรือเมื่อต้องการโครงสร้างที่ชัดเจนกว่า</td></tr>
+</table>
+
+<h3>SAFE 4 แบบมาตรฐาน (Y Combinator)</h3>
+<ul>
+  <li><strong>SAFE with Valuation Cap (No Discount):</strong> มีเพดาน Valuation แต่ไม่มีส่วนลดราคา — เหมาะกับนักลงทุนรายแรกที่รับความเสี่ยงสูง</li>
+  <li><strong>SAFE with Discount (No Cap):</strong> มีส่วนลด 15–25% จาก Valuation รอบถัดไป แต่ไม่มีเพดาน — ได้เปรียบหากบริษัทโตช้า</li>
+  <li><strong>SAFE with Cap and Discount:</strong> มีทั้ง Cap และ Discount — นักลงทุนเลือกอย่างใดดีกว่า — เป็นที่นิยมสูงสุด</li>
+  <li><strong>MFN SAFE (No Cap, No Discount):</strong> ไม่มีทั้ง Cap และ Discount แต่มี MFN — ใช้ใน Friends &amp; Family Round ที่ Valuation ยังไม่ชัดเจน</li>
+</ul>
+
+<h2>Term Sheet — ข้อกำหนดสำคัญที่ต้องเจรจา</h2>
+
+<h3>เงื่อนไขที่กระทบผู้ก่อตั้งมากที่สุด</h3>
+<table>
+<tr><th>เงื่อนไข</th><th>ผลกระทบต่อผู้ก่อตั้ง</th><th>แนวทางเจรจา</th></tr>
+<tr><td>Liquidation Preference 2x Participating</td><td>นักลงทุนได้ 2x เงินกลับก่อน แล้วยังแบ่งส่วนที่เหลือด้วย</td><td>ต่อรองเป็น 1x Non-Participating — มาตรฐาน Silicon Valley</td></tr>
+<tr><td>Full Ratchet Anti-Dilution</td><td>Down Round ทำให้ Dilution รุนแรงมาก</td><td>ขอ Weighted Average Broad-Based แทน</td></tr>
+<tr><td>Pay-to-Play</td><td>ถ้าไม่ลงทุนในรอบถัดไป จะเสีย Preferred Rights ทั้งหมด</td><td>อาจยอมรับได้หากสร้างแรงจูงใจให้นักลงทุนสนับสนุนบริษัทต่อ</td></tr>
+<tr><td>Drag-Along ที่ Threshold ต่ำ</td><td>นักลงทุนบังคับขายบริษัทโดยที่ผู้ก่อตั้งไม่ต้องการ</td><td>กำหนด Threshold สูง เช่น 80% ของผู้ถือหุ้นทั้งหมด + ราคาขั้นต่ำ</td></tr>
+<tr><td>Option Pool ขนาดใหญ่ก่อน Investment (Pre-money)</td><td>ลด Effective Valuation ของผู้ก่อตั้งจริง ๆ</td><td>ขอ Option Pool หลัง Investment (Post-money) หรือกำหนดขนาดที่เหมาะสม</td></tr>
+<tr><td>Board Control ตั้งแต่ต้น</td><td>นักลงทุนมีที่นั่งกรรมการเกินครึ่ง → สูญเสียการควบคุม</td><td>รักษา Board ที่ 3 คน: 1 ผู้ก่อตั้ง, 1 นักลงทุน, 1 Independent</td></tr>
+</table>
+
+<h2>Investor Rights — สิทธิ์ที่นักลงทุน VC มักขอ</h2>
+
+<h3>Information Rights</h3>
+<p>นักลงทุนมักขอ Information Rights เพื่อติดตามสถานะการลงทุน ได้แก่</p>
+<ul>
+  <li>งบการเงินรายไตรมาสภายใน 45 วันหลังสิ้นไตรมาส</li>
+  <li>งบการเงินรายปีที่ผ่าน Audit ภายใน 90 วัน</li>
+  <li>แผนธุรกิจและ Budget ประจำปีก่อนสิ้นปี</li>
+  <li>สิทธิ์เข้าร่วมประชุม Board ในฐานะ Observer (Board Observer Rights)</li>
+  <li>รายงาน Cap Table ที่ Update ทุกรอบระดมทุน</li>
+</ul>
+
+<h3>Registration Rights</h3>
+<p>เมื่อบริษัทเข้าตลาดหลักทรัพย์ (IPO) นักลงทุนมักขอ Registration Rights เพื่อขายหุ้นออก:</p>
+<ul>
+  <li><strong>Demand Registration:</strong> สิทธิ์บังคับให้บริษัท Register หุ้นของนักลงทุนเพื่อขายในตลาด</li>
+  <li><strong>Piggyback Registration:</strong> สิทธิ์ขายหุ้นพร้อมกับบริษัทเมื่อมีการ Register หุ้นอยู่แล้ว</li>
+  <li><strong>S-3 / Form Filing Rights:</strong> สิทธิ์ขอยื่น Filing ขนาดเล็กเพื่อขายหุ้นในตลาดรอง</li>
+</ul>
+
+<h2>Anti-Dilution — เปรียบเทียบกลไกฉบับสมบูรณ์</h2>
+
+<h3>ตัวอย่างการคำนวณ: Full Ratchet vs Weighted Average</h3>
+<p>สมมติ: Series A ลงทุนที่ราคา 100 บาท/หุ้น บริษัทต้องระดมทุน Down Round ที่ราคา 50 บาท/หุ้น</p>
+<table>
+<tr><th>กลไก</th><th>ราคาแปลงสภาพใหม่</th><th>จำนวนหุ้นที่นักลงทุนได้</th><th>ผลต่อผู้ก่อตั้ง</th></tr>
+<tr><td>Full Ratchet</td><td>50 บาท (เท่ากับราคาใหม่)</td><td>เพิ่มเป็น 2 เท่า (ลงทุน 1M → เดิม 10,000 หุ้น → ได้ 20,000 หุ้น)</td><td>Dilution รุนแรง — สัดส่วนผู้ก่อตั้งลดลงมาก</td></tr>
+<tr><td>Weighted Average (Broad-Based)</td><td>ระหว่าง 50–100 บาท (ถ่วงน้ำหนักตาม Volume)</td><td>เพิ่มขึ้น แต่น้อยกว่า Full Ratchet</td><td>Dilution พอสมควร — ยุติธรรมกว่า</td></tr>
+<tr><td>ไม่มี Anti-Dilution</td><td>100 บาท (ราคาเดิม)</td><td>ไม่เปลี่ยน</td><td>ผู้ก่อตั้งไม่ถูก Dilute เพิ่ม แต่นักลงทุนเสียมูลค่า</td></tr>
+</table>
+
+<h2>Cap Table Management — บริหาร Ownership Structure</h2>
+
+<h3>Cap Table ทุกรอบระดมทุน</h3>
+<p>Cap Table (Capitalization Table) คือเอกสารที่แสดงโครงสร้างความเป็นเจ้าของบริษัท ณ ขณะใดขณะหนึ่ง รวมถึงสัดส่วนของผู้ก่อตั้ง นักลงทุน พนักงาน (ESOP) และ Outstanding Convertible Securities</p>
+
+<table>
+<tr><th>รอบ</th><th>ผู้ก่อตั้ง A</th><th>ผู้ก่อตั้ง B</th><th>ESOP Pool</th><th>Seed Investor</th><th>Series A</th><th>Pre-Money Valuation</th></tr>
+<tr><td>ก่อตั้ง</td><td>60%</td><td>40%</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Pre-Seed (ESOP)</td><td>54%</td><td>36%</td><td>10%</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Seed (20% Dilution)</td><td>43.2%</td><td>28.8%</td><td>8%</td><td>20%</td><td>—</td><td>25M</td></tr>
+<tr><td>Series A (25% Dilution)</td><td>32.4%</td><td>21.6%</td><td>6%</td><td>15%</td><td>25%</td><td>100M</td></tr>
+</table>
+
+<p>สิ่งสำคัญที่ผู้ก่อตั้งต้องเข้าใจ: การ Dilute ในแต่ละรอบไม่ใช่สิ่งที่ไม่ดีเสมอไป หากมูลค่าบริษัทเพิ่มขึ้นสูงพอ มูลค่าหุ้นที่ผู้ก่อตั้งถืออยู่ (แม้สัดส่วนลดลง) ก็อาจมีมูลค่าสูงขึ้นได้</p>
+
+<h3>ESOP (Employee Stock Option Plan) — กฎหมายและโครงสร้าง</h3>
+<p>ตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 1108(5) บริษัทสามารถออกหุ้นบุริมสิทธิหรือ Warrant สำหรับพนักงานได้ ESOP ในบริษัทไทยมักใช้โครงสร้างดังนี้</p>
+<ul>
+  <li><strong>Phantom Stock:</strong> ไม่ได้ให้หุ้นจริง แต่จ่าย Cash Bonus ตามมูลค่าหุ้นที่เพิ่มขึ้น — ง่ายกว่าแต่ไม่ได้สิทธิ์ผู้ถือหุ้น</li>
+  <li><strong>Warrant to Purchase Shares:</strong> ให้สิทธิ์ซื้อหุ้นในราคาที่กำหนด ภายในระยะเวลาที่กำหนด — ต้องได้รับอนุมัติจากที่ประชุมผู้ถือหุ้น</li>
+  <li><strong>Direct Share Grant:</strong> ให้หุ้นจริงพร้อม Vesting Schedule — ต้องเพิ่มทุน ซับซ้อนกว่าแต่ Align ผลประโยชน์ดีที่สุด</li>
+</ul>
+
+<h2>ข้อควรระวังทางกฎหมายสำหรับ Startup ที่ระดมทุน</h2>
+
+<div class="risk-high">
+<div class="risk-label">🔴 High Risk — เสนอขายหลักทรัพย์โดยไม่ยื่น Filing</div>
+<p>การเสนอขายหุ้นต่อนักลงทุนเกิน 50 รายในรอบ 12 เดือน โดยไม่ยื่น Filing ต่อ ก.ล.ต. เข้าข่ายผิดพระราชบัญญัติหลักทรัพย์และตลาดหลักทรัพย์ พ.ศ. 2535 มาตรา 32 โทษจำคุกไม่เกิน 5 ปี หรือปรับไม่เกิน 500,000 บาท หรือทั้งจำทั้งปรับ Option A: จำกัดนักลงทุนไม่เกิน 50 ราย ต่อ 12 เดือน ภายใต้ PP Exemption | Option B: ยื่น Filing ก่อนเสนอขายหากต้องการนักลงทุนจำนวนมาก</p>
+</div>
+
+<div class="risk-medium">
+<div class="risk-label">🟡 Risk: MEDIUM — Misrepresentation ในการ Pitch</div>
+<p>การให้ข้อมูลที่เป็นเท็จหรือเกินจริงแก่นักลงทุนในกระบวนการระดมทุน อาจส่งผลให้นักลงทุนเพิกถอนสัญญาได้ตาม ปพพ. มาตรา 159 (การแสดงเจตนาโดยถูกกลฉ้อฉล) และอาจมีความรับผิดทางแพ่งในการชดใช้ค่าเสียหาย</p>
+</div>
+
+<h2>ขั้นตอนระดมทุนจาก Seed ถึง Series B — Timeline และเอกสารที่ต้องเตรียม</h2>
+
+<h3>Seed Round — เอกสารที่นักลงทุนมักขอดู</h3>
+<table>
+<tr><th>เอกสาร</th><th>รายละเอียด</th><th>เตรียมโดย</th></tr>
+<tr><td>Pitch Deck (10–15 สไลด์)</td><td>Problem, Solution, Market, Traction, Team, Business Model, Financials, Ask</td><td>Founders</td></tr>
+<tr><td>Financial Model (3 ปี)</td><td>Revenue projections, Cost structure, Cash burn, Runway</td><td>Founders + CFO</td></tr>
+<tr><td>Cap Table</td><td>โครงสร้างผู้ถือหุ้นปัจจุบันและหลังรอบนี้</td><td>Founders</td></tr>
+<tr><td>Term Sheet / SAFE Template</td><td>เงื่อนไขหลักที่เสนอนักลงทุน</td><td>ทนายความ</td></tr>
+<tr><td>หนังสือรับรองบริษัท + ข้อบังคับ</td><td>เอกสารจดทะเบียนบริษัท</td><td>DBD</td></tr>
+</table>
+
+<h3>Series A — Due Diligence ที่นักลงทุนทำ</h3>
+<table>
+<tr><th>ด้าน</th><th>สิ่งที่ VC ตรวจสอบ</th><th>เอกสารที่ต้องเตรียม</th></tr>
+<tr><td>Legal DD</td><td>โครงสร้างองค์กร, IP Ownership, สัญญาสำคัญ, คดีความ, ใบอนุญาต</td><td>สัญญาทั้งหมด, ทะเบียนทรัพย์สินทางปัญญา, Legal Opinion</td></tr>
+<tr><td>Financial DD</td><td>งบการเงินย้อนหลัง, Revenue Recognition, Unit Economics</td><td>งบการเงิน 2–3 ปี (Reviewed/Audited), MIS Reports</td></tr>
+<tr><td>Technical DD</td><td>สถาปัตยกรรม Technology, Technical Debt, Security</td><td>Technical Architecture Document</td></tr>
+<tr><td>Commercial DD</td><td>ลูกค้าจริง, Churn Rate, NPS, Market Size</td><td>Customer List (Anonymized), Retention Data</td></tr>
+<tr><td>Team DD</td><td>ประวัติ Founders, Key Employees, วัฒนธรรมองค์กร</td><td>CV ทีมหลัก, Employee Agreements</td></tr>
+</table>
+
+<h3>Red Flags ที่ทำให้ VC ถอนตัว</h3>
+<ul>
+  <li>โครงสร้าง Cap Table ที่ซับซ้อนเกินไป หรือมีผู้ถือหุ้นที่ไม่เป็นประโยชน์ต่อบริษัท</li>
+  <li>IP ไม่ได้รับการโอนมาเป็นของบริษัทอย่างชัดเจน (Founder ยังถือ IP ส่วนตัว)</li>
+  <li>สัญญากับลูกค้าหรือพาร์ทเนอร์ที่ Lock-in บริษัทอย่างไม่สมเหตุสมผล</li>
+  <li>ข้อมูลทางการเงินไม่ตรงกันระหว่าง Pitch Deck กับเอกสารจริง</li>
+  <li>ความขัดแย้งระหว่าง Founders ที่ยังไม่ได้แก้ไข</li>
+  <li>ภาระภาษีหรือคดีความที่ซ่อนอยู่ไม่ได้เปิดเผย</li>
+</ul>
+
 <h2>สรุป</h2>
 <p>การระดมทุนเป็นจุดเปลี่ยนสำคัญที่ส่งผลระยะยาวต่อโครงสร้างความเป็นเจ้าของและอำนาจการบริหาร ทั้ง Debt และ Equity มีข้อดีข้อเสียที่ต้องพิจารณาในบริบทเฉพาะของแต่ละธุรกิจ การเข้าใจโครงสร้างกฎหมาย ข้อกำหนด SEC และกลไกในสัญญาระดมทุน จะช่วยให้ผู้ก่อตั้งเจรจาได้อย่างมีประสิทธิภาพและปกป้องผลประโยชน์ในระยะยาว</p>
 
