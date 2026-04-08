@@ -680,4 +680,44 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/eec-investment-thailand.html"/>
   </url>
 
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/ai-legal-tech-thailand.html</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/ai-legal-tech-thailand.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/ai-legal-tech-thailand.html"/>
+  </url>
+
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/asset-declaration-thailand.html</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/asset-declaration-thailand.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/asset-declaration-thailand.html"/>
+  </url>
+
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/business-tax-essentials.html</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/business-tax-essentials.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/business-tax-essentials.html"/>
+  </url>
+
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/en/articles/civil-recovery-corruption-thailand.html</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/civil-recovery-corruption-thailand.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/civil-recovery-corruption-thailand.html"/>
+  </url>
+
 </urlset>
