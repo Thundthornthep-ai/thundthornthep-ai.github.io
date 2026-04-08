@@ -723,7 +723,38 @@
   }
 </style>
 </head>
-<body>
+<body data-lang="th">
+
+<style>
+  /* Global TH/EN toggle */
+  body[data-lang="th"] .lang-en { display:none; }
+  body[data-lang="en"] .lang-th { display:none; }
+  body[data-lang="en"] [data-th-en] .th-text { display:none; }
+  body[data-lang="th"] [data-th-en] .en-text { display:none; }
+
+  .global-lang-toggle {
+    position:fixed; top:14px; right:14px; z-index:9999;
+    display:inline-flex; background:#0f1729; border:1px solid #334155;
+    border-radius:8px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.3);
+  }
+  .global-lang-toggle button {
+    background:transparent; color:#94a3b8; border:none; padding:8px 16px;
+    font-size:13px; font-weight:600; cursor:pointer; transition:all 0.2s;
+    font-family:inherit;
+  }
+  .global-lang-toggle button.active { background:#C9A96E; color:#1B2A4A; }
+  .global-lang-toggle button:hover:not(.active) { color:#cbd5e1; }
+  @media (max-width:720px) {
+    .global-lang-toggle { top:8px; right:8px; }
+    .global-lang-toggle button { padding:6px 12px; font-size:12px; }
+  }
+</style>
+
+<div class="global-lang-toggle" role="group" aria-label="Site language toggle">
+  <button type="button" class="active" data-lang="th" onclick="setSiteLang('th')">ไทย</button>
+  <button type="button" data-lang="en" onclick="setSiteLang('en')">English</button>
+</div>
+
 <div class="lang-switch" style="position:fixed;top:12px;right:12px;z-index:9999;font-size:13px;background:#1B2A4A;padding:6px 14px;border-radius:20px;border:1px solid #C9A96E;">
   <a href="https://thundthornthep-ai.github.io/" style="color:#aaa;text-decoration:none;">EN</a>
   <span style="color:#888;margin:0 4px;">|</span>
@@ -739,7 +770,7 @@
 </div>
 
 <!-- TITLE -->
-<h1 class="page-title">ความรู้กฎหมาย | Legal Knowledge Hub</h1>
+<h1 class="page-title"><span class="lang-th">ความรู้กฎหมาย</span><span class="lang-en">Legal Knowledge Hub</span></h1>
 
 <div class="hub-intro">
   <p><b>บทความความรู้กฎหมายธุรกิจ</b> โดย <a href="https://thundthornthep-ai.github.io/">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</a> และทีม <a href="https://laslegal.co.th" target="_blank">Legal Advance Solution Co., Ltd. (LAS)</a> — รวบรวมจากประสบการณ์กว่า 20 ปี ในสาขากฎหมายธุรกิจ ทรัพย์สินทางปัญญา ภาษี คุ้มครองผู้บริโภค การตลาดดิจิทัล สัญญา PDPA แรงงาน อสังหาริมทรัพย์ และ AI Legal Tech</p>
@@ -907,6 +938,27 @@
   </div>
 </div>
 
+
+<script>
+function setSiteLang(lang) {
+  document.body.setAttribute('data-lang', lang);
+  // Sync all toggles on page
+  document.querySelectorAll('.global-lang-toggle button, .las-lang-toggle button').forEach(function(b) {
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+  });
+  // Sync .las-fw section
+  var fw = document.querySelector('.las-fw');
+  if (fw) fw.setAttribute('data-lang', lang);
+  try { localStorage.setItem('las_site_lang', lang); } catch(e) {}
+}
+(function(){
+  try {
+    var saved = localStorage.getItem('las_site_lang') || localStorage.getItem('las_fw_lang');
+    if (saved === 'en') setSiteLang('en');
+  } catch(e) {}
+})();
+</script>
+
 <script>
 function setLasFwLang(lang) {
   var fw = document.querySelector('.las-fw');
@@ -928,7 +980,7 @@ function setLasFwLang(lang) {
 
 <!-- ═══════════════════════════ ARTICLES ═══════════════════════════ -->
 
-<h2>บทความล่าสุด / Latest Articles</h2>
+<h2><span class="lang-th">บทความล่าสุด</span><span class="lang-en">Latest Articles</span></h2>
 
 <!-- ═══════ BLUE OCEAN SERIES — 16 NEW ARTICLES ═══════ -->
 
@@ -1586,7 +1638,7 @@ function setLasFwLang(lang) {
 <!-- ═══════════════════════════ BANGKOK POSSIBLE ═══════════════════════════ -->
 
 <div class="series-section" data-category="bkk">
-<h2>Bangkok Possible — ชุดบทความ ส.ก. กทม.</h2>
+<h2><span class="lang-th">Bangkok Possible — ชุดบทความ ส.ก. กทม.</span><span class="lang-en">Bangkok Possible — Bangkok City Council Series</span></h2>
 <p style="font-size:13px;color:#555;margin-bottom:12px;">ชุดบทความวิจัย AI-Powered เกี่ยวกับสภากรุงเทพมหานคร สมาชิกสภากรุงเทพมหานคร (ส.ก.) ข้อบัญญัติ กทม. 311 ฉบับ และการเลือกตั้ง 2569 | <a href="blog/bkk-council/">ดูหน้า ส.ก. Navigator</a></p>
 <div class="series-grid">
   <a class="series-card" href="blog/bkk-council/ep1.html" style="border-left-color:#6366f1;"><b>EP.1</b> ส.ก. คือใคร? เข้าใจสภา กทม. ก่อนเลือกตั้ง 2569<span class="series-ref">Who is ส.ก.? Understanding BMA Council</span></a>
@@ -1601,7 +1653,7 @@ function setLasFwLang(lang) {
 </div>
 
 <!-- ═══════════════════════════ ABOUT AUTHOR ═══════════════════════════ -->
-<h2>เกี่ยวกับผู้เขียน / About the Author</h2>
+<h2><span class="lang-th">เกี่ยวกับผู้เขียน</span><span class="lang-en">About the Author</span></h2>
 <div style="background:#f0f4f8; border:1px solid #a2a9b1; padding:16px 20px; margin:12px 0;">
   <p><b>Thundthornthep Yamoutai, Ph.D.</b></p>
   <p style="font-size:13px;">ทนายความและนักวิจัยกฎหมาย ผู้ก่อตั้งและกรรมการผู้จัดการ บริษัท ลีกัล แอดวานซ์ โซลูชั่น จำกัด (LAS) — ประสบการณ์กว่า 20 ปี ด้านกฎหมายธุรกิจ อสังหาริมทรัพย์ PDPA และที่ปรึกษาภาครัฐ ผู้พัฒนาระบบวิจัยกฎหมาย AI ที่ได้รับทุน NIA</p>
