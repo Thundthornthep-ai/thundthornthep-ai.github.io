@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/webp" href="/las-logo.webp">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Legal Analytics — AI-Powered Legal Research | LAS</title>
+<meta name="description" content="Deep Legal Analytics and the AI-First Lawyer mindset: start from data, not intuition. A 3-layer thinking model — Data, Pattern, Insight — transforming the legal profession.">
+<meta name="keywords" content="Deep Legal Analytics, AI-First Lawyer, Legal AI, Data-Driven Law, AI Legal Research, Legal Technology Thailand, Thundthornthep Yamoutai, AI-powered legal research">
+<meta name="author" content="Thundthornthep Yamoutai, Ph.D.">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://thundthornthep-ai.github.io/en/articles/deep-legal-analytics.html">
+<link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/deep-legal-analytics.html">
+<link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/deep-legal-analytics.html">
+<link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/en/articles/deep-legal-analytics.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Deep Legal Analytics — AI-Powered Legal Research | LAS">
+<meta property="og:description" content="The AI-First Lawyer mindset: start from data, not intuition. A 3-layer thinking model — Data Layer, Pattern Layer, Insight Layer — that is reshaping the legal profession.">
+<meta property="og:url" content="https://thundthornthep-ai.github.io/en/articles/deep-legal-analytics.html">
+<meta property="og:image" content="https://thundthornthep-ai.github.io/banner-las-nia.jpg">
+<meta property="og:site_name" content="Thundthornthep AI — Legal Advance Solution">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="th_TH">
+<meta property="article:author" content="Thundthornthep Yamoutai, Ph.D.">
+<meta property="article:published_time" content="2026-04-03">
+<meta property="article:section" content="AI Legal Technology">
+<meta property="article:tag" content="Deep Legal Analytics">
+<meta property="article:tag" content="AI-First Lawyer">
+<meta property="article:tag" content="Legal Technology Thailand">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Deep Legal Analytics — AI-Powered Legal Research | LAS">
+<meta name="twitter:description" content="The AI-First Lawyer mindset: start from data, not intuition. 3-layer model — Data, Pattern, Insight — transforming Thai legal practice.">
+<meta name="twitter:image" content="https://thundthornthep-ai.github.io/banner-las-nia.jpg">
+
+<!-- JSON-LD Article Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Deep Legal Analytics — AI-Powered Legal Research",
+  "description": "An exploration of the AI-First Lawyer mindset: beginning from data rather than intuition, and applying a 3-layer thinking model (Data Layer, Pattern Layer, Insight Layer) to transform legal research and strategic advice in Thailand.",
+  "image": "https://thundthornthep-ai.github.io/banner-las-nia.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Thundthornthep Yamoutai, Ph.D.",
+    "url": "https://thundthornthep-ai.github.io/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Legal Advance Solution Co., Ltd.",
+    "alternateName": "LAS",
+    "url": "https://laslegal.co.th"
+  },
+  "funder": {
+    "@type": "GovernmentOrganization",
+    "name": "National Innovation Agency (NIA)",
+    "alternateName": "สำนักงานนวัตกรรมแห่งชาติ"
+  },
+  "datePublished": "2026-04-03",
+  "dateModified": "2026-04-03",
+  "inLanguage": "en",
+  "mainEntityOfPage": "https://thundthornthep-ai.github.io/en/articles/deep-legal-analytics.html",
+  "keywords": ["Deep Legal Analytics", "AI-First Lawyer", "Legal AI Thailand", "Data-Driven Law", "AI Legal Research", "Legal Technology", "NIA Research"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy: #0F1A2E;
+    --navy2: #1B2A4A;
+    --gold: #C9A96E;
+    --gold-light: #E8D5B0;
+    --accent: #4ECDC4;
+    --red: #E74C3C;
+    --bg: #0a0f1a;
+    --text: #E8E8E8;
+    --text2: #8A94A6;
+    --text3: #5A6478;
+    --radius: 16px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Space Grotesk', 'Noto Sans Thai', 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Header */
+  .site-header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+    border-bottom: 3px solid var(--gold);
+    padding: 18px 24px;
+    text-align: center;
+  }
+  .site-header .brand {
+    color: var(--gold);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .site-header .author-name {
+    color: var(--gold-light);
+    font-size: 12px;
+    margin-top: 4px;
+    opacity: 0.85;
+  }
+  .site-header nav { margin-top: 10px; }
+  .site-header nav a {
+    color: var(--text2);
+    text-decoration: none;
+    font-size: 13px;
+    margin: 0 12px;
+    transition: color 0.2s;
+  }
+  .site-header nav a:hover { color: var(--gold); }
+
+  /* Hero */
+  .article-hero {
+    background: linear-gradient(180deg, var(--navy2) 0%, var(--bg) 100%);
+    padding: 60px 24px 40px;
+    text-align: center;
+  }
+  .article-hero .category-badge {
+    display: inline-block;
+    background: rgba(201, 169, 110, 0.15);
+    color: var(--gold);
+    border: 1px solid rgba(201, 169, 110, 0.3);
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .article-hero h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #fff;
+    max-width: 800px;
+    margin: 0 auto 12px;
+    line-height: 1.3;
+  }
+  .article-hero .subtitle {
+    font-size: 1.1rem;
+    color: var(--text2);
+    max-width: 660px;
+    margin: 0 auto 20px;
+  }
+  .article-hero .meta { font-size: 13px; color: var(--text3); }
+  .article-hero .meta span { margin: 0 8px; }
+
+  /* Body container */
+  .article-container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+  }
+
+  /* TOC */
+  .toc {
+    background: rgba(27, 42, 74, 0.6);
+    border: 1px solid rgba(201, 169, 110, 0.2);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-bottom: 40px;
+  }
+  .toc h2 {
+    color: var(--gold);
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    border: none;
+    padding: 0;
+  }
+  .toc ol {
+    list-style: none;
+    counter-reset: toc-counter;
+    padding-left: 0;
+  }
+  .toc ol li {
+    counter-increment: toc-counter;
+    margin: 6px 0;
+    font-size: 0.95rem;
+  }
+  .toc ol li::before {
+    content: counter(toc-counter) ".";
+    color: var(--gold);
+    font-weight: 700;
+    margin-right: 8px;
+  }
+  .toc ol li a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .toc ol li a:hover { color: var(--gold); }
+
+  /* Sections */
+  .section-block { margin-bottom: 48px; }
+
+  h2.section-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    border-bottom: 2px solid rgba(201, 169, 110, 0.3);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+
+  h3.sub-heading {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+
+  p { margin-bottom: 16px; text-align: justify; }
+  ul, ol { margin: 12px 0 20px 28px; }
+  li { margin-bottom: 8px; }
+
+  /* Pull quote */
+  .pullquote {
+    border-left: 4px solid var(--gold);
+    background: rgba(201, 169, 110, 0.08);
+    padding: 20px 24px;
+    margin: 32px 0;
+    font-size: 1.18rem;
+    font-style: italic;
+    color: var(--gold-light);
+    line-height: 1.6;
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+
+  /* 3-Layer stack */
+  .layer-stack { margin: 32px 0; }
+  .layer {
+    padding: 24px 28px;
+    border-radius: var(--radius);
+    margin-bottom: 4px;
+    position: relative;
+  }
+  .layer-num {
+    font-size: 2rem;
+    font-weight: 900;
+    opacity: 0.3;
+    position: absolute;
+    right: 20px;
+    top: 12px;
+  }
+  .layer h3 { margin-top: 0; font-size: 1.18rem; }
+  .layer-1 {
+    background: linear-gradient(135deg, #1a3a5c, #1B2A4A);
+    border: 1px solid rgba(78, 205, 196, 0.4);
+  }
+  .layer-1 h3 { color: var(--accent); }
+  .layer-2 {
+    background: linear-gradient(135deg, #2a3a2a, #1B2A4A);
+    border: 1px solid rgba(201, 169, 110, 0.4);
+  }
+  .layer-2 h3 { color: var(--gold); }
+  .layer-3 {
+    background: linear-gradient(135deg, #3a1a2a, #1B2A4A);
+    border: 1px solid rgba(231, 76, 60, 0.4);
+  }
+  .layer-3 h3 { color: #E74C3C; }
+  .layer-arrow {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--text2);
+    margin: 4px 0;
+  }
+
+  /* Stat cards */
+  .stats-row { display: flex; gap: 16px; margin: 28px 0; flex-wrap: wrap; }
+  .stat-card {
+    flex: 1;
+    min-width: 160px;
+    background: var(--navy2);
+    border: 1px solid rgba(201, 169, 110, 0.25);
+    border-radius: var(--radius);
+    padding: 20px;
+    text-align: center;
+  }
+  .stat-card .number {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--gold);
+  }
+  .stat-card .label {
+    font-size: 0.85rem;
+    color: var(--text2);
+    margin-top: 4px;
+  }
+
+  /* NIA badge */
+  .nia-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--navy2);
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    color: var(--gold-light);
+    margin-bottom: 20px;
+  }
+
+  /* Comparison table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: var(--navy2);
+    border-radius: var(--radius);
+    overflow: hidden;
+    font-size: 0.95rem;
+  }
+  th {
+    background: var(--navy);
+    color: var(--gold);
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  td {
+    padding: 12px 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  tr:hover td { background: rgba(78, 205, 196, 0.04); }
+
+  /* CTA box */
+  .cta-box {
+    background: linear-gradient(135deg, var(--navy2), var(--navy));
+    border: 1px solid var(--gold);
+    border-radius: var(--radius);
+    padding: 32px;
+    text-align: center;
+    margin: 40px 0;
+  }
+  .cta-box h3 { color: var(--gold); margin-bottom: 12px; font-size: 1.2rem; }
+  .cta-box p { color: var(--text2); margin-bottom: 0; }
+
+  /* Disclaimer */
+  .disclaimer {
+    background: rgba(201, 169, 110, 0.06);
+    border: 1px solid rgba(201, 169, 110, 0.2);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.82rem;
+    color: var(--text2);
+    line-height: 1.7;
+  }
+  .disclaimer strong { color: var(--gold-light); }
+
+  /* Footer */
+  .site-footer {
+    background: var(--navy);
+    border-top: 2px solid var(--gold);
+    padding: 24px;
+    text-align: center;
+    color: var(--text2);
+    font-size: 0.82rem;
+    line-height: 1.7;
+  }
+  .site-footer .author { color: var(--gold-light); font-weight: 600; }
+
+  /* Lang switch */
+  .lang-switch {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 9999;
+    font-size: 13px;
+    background: #1B2A4A;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid #C9A96E;
+  }
+
+  @media (max-width: 600px) {
+    .article-hero h1 { font-size: 1.6rem; }
+    .stats-row { flex-direction: column; }
+    .article-container { padding: 24px 14px 40px; }
+    table { font-size: 0.82rem; }
+    th, td { padding: 10px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <span style="color:#C9A96E;font-weight:bold;">EN</span>
+  <span style="color:#888;margin:0 4px;">|</span>
+  <a href="https://thundthornthep-ai.github.io/articles/deep-legal-analytics.html" style="color:#aaa;text-decoration:none;">TH</a>
+</div>
+
+<header class="site-header">
+  <div class="brand">THUNDTHORNTHEP AI</div>
+  <div class="author-name">Thundthornthep Yamoutai, Ph.D. &mdash; Legal Advance Solution Co., Ltd.</div>
+  <nav>
+    <a href="https://thundthornthep-ai.github.io/en/">Home</a>
+    <a href="https://thundthornthep-ai.github.io/en/articles/ai-replacing-lawyers.html">AI &amp; Lawyers</a>
+    <a href="https://thundthornthep-ai.github.io/en/articles/solo-practitioner-ai-advantage.html">Solo Practitioner</a>
+    <a href="https://thundthornthep-ai.github.io/en/articles/ai-legal-tech-thailand.html">AI LegalTech</a>
+  </nav>
+</header>
+
+<div class="article-hero">
+  <div class="category-badge">AI Legal Research &mdash; NIA-Funded</div>
+  <h1>Deep Legal Analytics<br>AI-Powered Legal Research</h1>
+  <p class="subtitle">The best lawyers five years from now will not be those who memorise the most statutes — they will be those who think systematically and use data as their starting point.</p>
+  <div class="meta">
+    <span>2 April 2026</span>
+    <span>&bull;</span>
+    <span>Thundthornthep Yamoutai, Ph.D.</span>
+    <span>&bull;</span>
+    <span>Legal Advance Solution Co., Ltd.</span>
+  </div>
+</div>
+
+<main class="article-container">
+
+  <div class="nia-badge">NIA-Funded Research &mdash; National Innovation Agency (สำนักงานนวัตกรรมแห่งชาติ)</div>
+
+  <!-- Table of Contents -->
+  <nav class="toc" aria-label="Table of Contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#ai-first">What is "AI-First" Thinking?</a></li>
+      <li><a href="#three-layers">The 3-Layer Thinking Model</a></li>
+      <li><a href="#case-study">Case Study: 311 Ordinances &rarr; Consolidation Proposal</a></li>
+      <li><a href="#comparison">Traditional Lawyer vs. AI-First Lawyer</a></li>
+      <li><a href="#right-question">The Right Question</a></li>
+      <li><a href="#how-to-start">How to Become an AI-First Lawyer</a></li>
+    </ol>
+  </nav>
+
+  <!-- Section 1 -->
+  <section class="section-block" id="ai-first">
+    <h2 class="section-heading">What is "AI-First" Thinking?</h2>
+
+    <p>"AI-First" does not mean "let AI do everything." It means <strong>beginning with data rather than intuition</strong>.</p>
+
+    <p>When a traditional lawyer encounters a legal question, they typically start from a feeling — an instinct about which statute or provision is likely to apply — and then go looking for evidence to confirm that hunch. This is a form of <strong>confirmation bias</strong> that is deeply embedded in the legal profession.</p>
+
+    <p>An AI-First lawyer does the opposite: <strong>collect all available data first, then let patterns surface the answer</strong>. The approach mirrors that of a scientist who forms hypotheses from evidence rather than drawing conclusions first and retrofitting data to support them.</p>
+
+    <p>In the context of Thai law, this distinction carries particular weight. The Thai legal system is complex — hundreds of statutes, tens of thousands of Supreme Court decisions (Dika), continuously updated ministerial regulations. No single practitioner can hold all of this in memory. AI can process all of it.</p>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="section-block" id="three-layers">
+    <h2 class="section-heading">The 3-Layer Thinking Model</h2>
+
+    <p>At the core of Deep Legal Analytics is a three-layer model (Three-Layer Model) in which each layer feeds the next:</p>
+
+    <div class="layer-stack">
+      <div class="layer layer-1">
+        <div class="layer-num">01</div>
+        <h3>Layer 1: Data Layer &mdash; Raw Input</h3>
+        <p style="margin-bottom:0">Gather all relevant information without filtering: statutory text, Supreme Court decisions, ministerial notifications, Council of State opinions, local ordinances, case facts, supporting documents. Everything enters the AI system — nothing is discarded at this stage.</p>
+      </div>
+      <div class="layer-arrow">&darr;</div>
+      <div class="layer layer-2">
+        <div class="layer-num">02</div>
+        <h3>Layer 2: Pattern Layer &mdash; Pattern Recognition</h3>
+        <p style="margin-bottom:0">AI analyses the Layer 1 data to identify patterns: which statutes co-appear most frequently? When did a line of Dika decisions reverse direction? Which contract clauses generate recurring disputes? Where do overlapping provisions create conflicts? This is precisely what humans do slowly — AI does in minutes.</p>
+      </div>
+      <div class="layer-arrow">&darr;</div>
+      <div class="layer layer-3">
+        <div class="layer-num">03</div>
+        <h3>Layer 3: Insight Layer &mdash; Strategic Recommendations</h3>
+        <p style="margin-bottom:0">The lawyer takes the patterns from Layer 2 and translates them into strategic advice: on what cause of action should a claim be filed? What contract architecture minimises risk? Which points deserve priority in negotiation? This is the layer where a lawyer's judgment is most valuable. AI supplies the data; the lawyer supplies the judgment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section class="section-block" id="case-study">
+    <h2 class="section-heading">Case Study: 311 Ordinances &rarr; 74 Overlapping &rarr; Consolidation Proposal</h2>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="number">311</div>
+        <div class="label">Total Ordinances Analysed</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">74</div>
+        <div class="label">Overlapping Provisions Found</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">1</div>
+        <div class="label">Consolidation Proposal Generated</div>
+      </div>
+    </div>
+
+    <p>The clearest illustration of the 3-Layer Model in action is a project analysing 311 Bangkok Metropolitan Administration ordinances:</p>
+
+    <p><strong>Layer 1 (Data):</strong> AI read and categorised all 311 ordinances, extracting the key attributes of each — date of promulgation, scope of application, substantive content, current status.</p>
+
+    <p><strong>Layer 2 (Pattern):</strong> AI identified 74 ordinances containing overlapping provisions. Some were enacted in different eras yet covered identical subject matter. Others contained conflicting provisions without any formal repeal of the earlier text — a pattern that would be invisible to any lawyer reading them one by one.</p>
+
+    <p><strong>Layer 3 (Insight):</strong> These findings formed the evidentiary basis for a policy recommendation: consolidate the overlapping ordinances, reduce their total number, modernise the surviving text, and eliminate internal contradictions. Such a recommendation is only credible when grounded in data from all 311 sources — not informed guesswork drawn from partial experience.</p>
+  </section>
+
+  <!-- Section 4 -->
+  <section class="section-block" id="comparison">
+    <h2 class="section-heading">Traditional Lawyer vs. AI-First Lawyer</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>Traditional Lawyer</th>
+          <th>AI-First Lawyer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Starting Point</strong></td>
+          <td>Intuition / Prior experience</td>
+          <td>Raw data / Systematic collection</td>
+        </tr>
+        <tr>
+          <td><strong>Research Method</strong></td>
+          <td>Linear search, item by item</td>
+          <td>Parallel analysis across full dataset</td>
+        </tr>
+        <tr>
+          <td><strong>Bias Check</strong></td>
+          <td>Rarely done; relies on personal judgment</td>
+          <td>AI surfaces patterns that contradict initial assumptions</td>
+        </tr>
+        <tr>
+          <td><strong>Coverage</strong></td>
+          <td>Limited by time and capacity</td>
+          <td>100% of available data</td>
+        </tr>
+        <tr>
+          <td><strong>Pattern Recognition</strong></td>
+          <td>Based on individual experience</td>
+          <td>AI-driven analysis across entire corpus</td>
+        </tr>
+        <tr>
+          <td><strong>Speed to Insight</strong></td>
+          <td>Days to weeks</td>
+          <td>Hours to one day</td>
+        </tr>
+        <tr>
+          <td><strong>Consistency</strong></td>
+          <td>Dependent on energy and mood</td>
+          <td>Consistent every time</td>
+        </tr>
+        <tr>
+          <td><strong>Strategic Value</strong></td>
+          <td>High — but limited data foundation</td>
+          <td>Very high — 100% data foundation</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Section 5 -->
+  <section class="section-block" id="right-question">
+    <h2 class="section-heading">The Right Question</h2>
+
+    <div class="pullquote">"A great lawyer is not the one who memorises the most law — a great lawyer is the one who asks the right question, and then lets AI find the answer."</div>
+
+    <p>In the era of AI, the most valuable lawyering skills are no longer about memory. They are:</p>
+
+    <ul>
+      <li><strong>Questioning</strong> &mdash; Ask the right question and AI returns the right answer. Ask the wrong question and no AI can compensate. Framing the question correctly is a distinctly human, distinctly expert skill.</li>
+      <li><strong>Interpretation</strong> &mdash; AI surfaces data and patterns. Determining what those patterns mean in the specific factual and legal context of a given matter — that is the lawyer's responsibility.</li>
+      <li><strong>Strategic Judgment</strong> &mdash; When there are twenty viable options, selecting the most appropriate course for a particular client in particular circumstances is something AI cannot do alone.</li>
+      <li><strong>Communication</strong> &mdash; Translating complex analytical outputs into terms a client can understand and act upon quickly is a capability that remains irreducibly human.</li>
+    </ul>
+
+    <p>This is why "AI-First" does not mean "AI does everything." It means: <strong>use AI for what AI does better, so the lawyer has capacity for what the lawyer does better</strong>.</p>
+  </section>
+
+  <!-- Section 6 -->
+  <section class="section-block" id="how-to-start">
+    <h2 class="section-heading">How to Become an AI-First Lawyer</h2>
+
+    <p>The transition from a traditional to an AI-First lawyer does not require writing code or studying computer science. It requires changing three habits of mind:</p>
+
+    <ol>
+      <li>
+        <strong>From "I know" to "The data shows"</strong><br>
+        Before offering any opinion, ask yourself: do I have data to support this? If not — find the data first. Replace confident assertion with evidence-based analysis.
+      </li>
+      <li>
+        <strong>From "Search until I find something" to "Search everything first"</strong><br>
+        Do not stop at the first Dika decision that supports your position. Search the full body of relevant decisions and examine whether there is a contrary line of authority. Completeness precedes conclusion.
+      </li>
+      <li>
+        <strong>From "Do it myself" to "Design the system"</strong><br>
+        Rather than reading a contract clause by clause with unaided eyes, design the checklist and analytical framework that AI uses to review it. You become the decision-maker at the final layer, not the first reader at the raw-data layer.
+      </li>
+    </ol>
+
+    <div class="cta-box">
+      <h3>AI-Powered Legal Research System</h3>
+      <p>Legal Advance Solution (LAS) is building tools that make Deep Legal Analytics accessible to Thai legal practitioners.<br>Research supported by the National Innovation Agency (NIA).</p>
+      <p style="margin-top:12px"><a href="https://thundthornthep-ai.github.io/en/" style="color:var(--accent)">thundthornthep-ai.github.io</a></p>
+    </div>
+  </section>
+
+  <div class="disclaimer">
+    <strong>Disclaimer:</strong><br>
+    This article is published for informational and thought leadership purposes relating to AI Legal Technology only. It does not constitute legal advice for any specific matter. Readers should consult a licensed attorney for advice on their individual circumstances. The views expressed are those of the author alone and do not represent or bind any organisation.<br><br>
+    &copy; 2026 Thundthornthep Yamoutai, Ph.D. &mdash; Legal Advance Solution Co., Ltd. All rights reserved.
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="author">Thundthornthep Yamoutai, Ph.D.</div>
+  <div>Managing Director &mdash; Legal Advance Solution Co., Ltd. (LAS)</div>
+  <div>AI-Powered Legal Research Advisory System &mdash; Funded by NIA</div>
+  <div style="margin-top:8px">&copy; 2026 All Rights Reserved</div>
+</footer>
+
+<div style="text-align:center;padding:16px 20px;margin:20px auto;max-width:800px;">
+  <a href="https://thundthornthep-ai.github.io/en/articles/ai-legal-tech-thailand.html" style="color:#4ECDC4;font-weight:600;">Related: AI LegalTech in Thailand &rarr;</a>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="https://thundthornthep-ai.github.io/en/articles/solo-practitioner-ai-advantage.html" style="color:#4ECDC4;font-weight:600;">The Solo Practitioner AI Advantage &rarr;</a>
+</div>
+
+<script src="/js/auth-gate.js"></script>
+<script src="/js/legal-links.js"></script>
+</body>
+</html>
