@@ -771,35 +771,160 @@
 
 <!-- LAS BUSINESS LEGAL ADVISORY FRAMEWORK -->
 
-<h2 style="margin-top:40px;">LAS Business Legal Advisory Framework</h2>
-<div class="hub-intro" style="border-left-color:#C9A96E;">
-  <p><b>LAS 4 Series</b> &mdash; Share &rarr; Shield &rarr; C&amp;C &rarr; UP &mdash; framework for Thai business legal advisory &amp; new lawyer training</p>
-  <p style="font-size:13px;color:#aaa;"><b>LAS Methodology:</b> Eliminate Risk &rarr; Reduce Risk &rarr; Distribute Risk (Legal + Business + Reputational)</p>
+<style>
+  .las-fw-section { margin-top:40px; }
+  .las-fw-header { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:14px; }
+  .las-fw-header h2 { margin:0; }
+  .las-lang-toggle { display:inline-flex; background:#0f1729; border:1px solid #334155; border-radius:8px; overflow:hidden; }
+  .las-lang-toggle button { background:transparent; color:#94a3b8; border:none; padding:7px 16px; font-size:13px; font-weight:600; cursor:pointer; transition:all 0.2s; font-family:inherit; }
+  .las-lang-toggle button.active { background:#C9A96E; color:#1B2A4A; }
+  .las-lang-toggle button:hover:not(.active) { color:#cbd5e1; }
+  .las-fw-intro { border-left:4px solid #C9A96E; background:#0f1729; padding:14px 18px; border-radius:8px; margin-bottom:18px; }
+  .las-fw-intro p { margin:0; color:#e2e8f0; font-size:14px; line-height:1.7; }
+  .las-fw-intro p + p { margin-top:6px; font-size:13px; color:#94a3b8; }
+  .las-fw-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:20px 0; }
+  @media (max-width:720px) { .las-fw-grid { grid-template-columns:1fr; } }
+  .las-fw-card { padding:22px; border-radius:14px; transition:transform 0.2s; }
+  .las-fw-card:hover { transform:translateY(-2px); }
+  .las-fw-card .step { font-size:11px; font-weight:700; letter-spacing:1px; opacity:0.7; }
+  .las-fw-card h3 { font-size:18px; margin:4px 0 8px; font-weight:700; }
+  .las-fw-card .subtitle { font-size:12.5px; margin:0 0 12px; opacity:0.9; line-height:1.55; }
+  .las-fw-card .meta { font-size:12px; opacity:0.9; margin:0; }
+  .las-fw-card a.view-all { color:inherit; text-decoration:underline; font-weight:600; }
+  .las-fw-card.share { background:linear-gradient(135deg,#1e3a5f,#1e40af); color:#bfdbfe; }
+  .las-fw-card.share h3 { color:#93c5fd; }
+  .las-fw-card.shield { background:linear-gradient(135deg,#4a1942,#9d174d); color:#f9a8d4; }
+  .las-fw-card.shield h3 { color:#fbcfe8; }
+  .las-fw-card.cc { background:linear-gradient(135deg,#4a3000,#92400e); color:#fcd34d; }
+  .las-fw-card.cc h3 { color:#fde68a; }
+  .las-fw-card.up { background:linear-gradient(135deg,#043927,#065f46); color:#a7f3d0; }
+  .las-fw-card.up h3 { color:#6ee7b7; }
+  .las-risk-box { background:#1B2A4A; padding:18px 22px; border-radius:10px; margin-bottom:32px; border-left:4px solid #C9A96E; }
+  .las-risk-box .title { color:#C9A96E; font-size:15px; font-weight:700; margin:0 0 6px; letter-spacing:0.3px; }
+  .las-risk-box .body { color:#e2e8f0; font-size:13.5px; margin:0; line-height:1.7; }
+  .las-risk-box .body strong { color:#fbbf24; }
+  .las-fw[data-lang="th"] .lang-en { display:none; }
+  .las-fw[data-lang="en"] .lang-th { display:none; }
+</style>
+
+<div class="las-fw-section las-fw" data-lang="th">
+  <div class="las-fw-header">
+    <h2>LAS Business Legal Advisory Framework</h2>
+    <div class="las-lang-toggle" role="group" aria-label="Language toggle">
+      <button type="button" class="active" data-lang="th" onclick="setLasFwLang('th')">ไทย</button>
+      <button type="button" data-lang="en" onclick="setLasFwLang('en')">English</button>
+    </div>
+  </div>
+
+  <div class="las-fw-intro">
+    <p>
+      <span class="lang-th"><b>LAS 4 Series</b> — Share → Shield → C&amp;C → UP — กรอบการให้คำปรึกษากฎหมายธุรกิจไทย และใช้สอนงานทนายใหม่ในภาคปฏิบัติ</span>
+      <span class="lang-en"><b>LAS 4 Series</b> — Share → Shield → C&amp;C → UP — framework for Thai business legal advisory &amp; new lawyer training</span>
+    </p>
+    <p>
+      <span class="lang-th"><b>LAS Methodology:</b> กำจัดความเสี่ยง → ลดความเสี่ยง → กระจายความเสี่ยง (ความเสี่ยงทางกฎหมาย + ธุรกิจ + ชื่อเสียง)</span>
+      <span class="lang-en"><b>LAS Methodology:</b> Eliminate Risk → Reduce Risk → Distribute Risk (Legal + Business + Reputational)</span>
+    </p>
+  </div>
+
+  <div class="las-fw-grid">
+    <div class="las-fw-card share">
+      <div class="step">STEP 1</div>
+      <h3>
+        <span class="lang-th">LAS Share — รากฐาน</span>
+        <span class="lang-en">LAS Share — Foundation</span>
+      </h3>
+      <p class="subtitle">
+        <span class="lang-th">ความรู้กฎหมายพื้นฐานสำหรับผู้ประกอบการ — สัญญา บริคณห์สนธิ มติประชุม อายุความ ค้ำประกัน เช่า โอนหุ้น มอบอำนาจ</span>
+        <span class="lang-en">Legal foundations every entrepreneur must know — contracts, MOA, resolutions, prescription, guarantee, lease, share transfer, POA</span>
+      </p>
+      <p class="meta">
+        <span class="lang-th">10 บทความ — </span><span class="lang-en">10 articles — </span>
+        <a class="view-all" href="articles/las-share-01.html">
+          <span class="lang-th">ดูทั้งหมด</span><span class="lang-en">View all</span>
+        </a>
+      </p>
+    </div>
+
+    <div class="las-fw-card shield">
+      <div class="step">STEP 2</div>
+      <h3>
+        <span class="lang-th">LAS Shield — ปกป้องธุรกิจ</span>
+        <span class="lang-en">LAS Shield — Protect</span>
+      </h3>
+      <p class="subtitle">
+        <span class="lang-th">เครื่องมือกฎหมายปกป้องธุรกิจ — License, BOI, IP, AOA, NDA, Non-Compete, PDPA, ข้อบังคับการทำงาน, BOD/AGM/EGM</span>
+        <span class="lang-en">Legal tools to protect business — licenses, BOI, IP registration, AOA, NDA, Non-Compete, PDPA, work rules, board meetings</span>
+      </p>
+      <p class="meta">
+        <span class="lang-th">10 บทความ — </span><span class="lang-en">10 articles — </span>
+        <a class="view-all" href="articles/las-shield-index.html">
+          <span class="lang-th">ดูทั้งหมด</span><span class="lang-en">View all</span>
+        </a>
+      </p>
+    </div>
+
+    <div class="las-fw-card cc">
+      <div class="step">STEP 3</div>
+      <h3>LAS C&amp;C — Contract &amp; Control</h3>
+      <p class="subtitle">
+        <span class="lang-th">ควบคุม monitor สัญญาและเอกสารบริษัททุกประเภท — Contract Summary, รายงานการประชุม, หนังสือแจ้ง เตือน ตอบกลับ</span>
+        <span class="lang-en">Monitor and control all contracts and corporate documents — contract summaries, meeting minutes, notices, warnings, responses</span>
+      </p>
+      <p class="meta">
+        <span class="lang-th">10 บทความ — </span><span class="lang-en">10 articles — </span>
+        <a class="view-all" href="articles/las-cc-index.html">
+          <span class="lang-th">ดูทั้งหมด</span><span class="lang-en">View all</span>
+        </a>
+      </p>
+    </div>
+
+    <div class="las-fw-card up">
+      <div class="step">STEP 4</div>
+      <h3>
+        <span class="lang-th">LAS UP — ขยายกิจการ</span>
+        <span class="lang-en">LAS UP — Scale Up</span>
+      </h3>
+      <p class="subtitle">
+        <span class="lang-th">JV, M&amp;A, Asset Purchase, ขยายสาขา, เพิ่มทุน, Holding Company, Startup, Raise Fund, เตรียม IPO</span>
+        <span class="lang-en">JV, M&amp;A, asset purchase, branch expansion, capital increase, holding company, startup, fundraising, IPO preparation</span>
+      </p>
+      <p class="meta">
+        <span class="lang-th">10 บทความ — </span><span class="lang-en">10 articles — </span>
+        <a class="view-all" href="articles/las-upsize-index.html">
+          <span class="lang-th">ดูทั้งหมด</span><span class="lang-en">View all</span>
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <div class="las-risk-box">
+    <p class="title">LAS Risk Methodology</p>
+    <p class="body">
+      <span class="lang-th"><strong>กำจัด</strong> (Eliminate) → <strong>ลด</strong> (Reduce) → <strong>กระจาย</strong> (Distribute) ความเสี่ยง — ครอบคลุมทั้งความเสี่ยงทางกฎหมาย ธุรกิจ และชื่อเสียง</span>
+      <span class="lang-en"><strong>Eliminate</strong> → <strong>Reduce</strong> → <strong>Distribute</strong> Risk — covering Legal, Business, and Reputational Risk</span>
+    </p>
+  </div>
 </div>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0;">
-  <div style="background:linear-gradient(135deg,#1e3a5f,#1e40af);padding:20px;border-radius:12px;">
-    <h3 style="color:#93c5fd;font-size:15px;margin:0 0 8px;">1. LAS Share &mdash; Foundation</h3>
-    <p style="color:#bfdbfe;font-size:12px;margin:0 0 8px;">10 articles &mdash; <a href="articles/las-share-01.html" style="color:#93c5fd;">View all</a></p>
-  </div>
-  <div style="background:linear-gradient(135deg,#4a1942,#9d174d);padding:20px;border-radius:12px;">
-    <h3 style="color:#fbcfe8;font-size:15px;margin:0 0 8px;">2. LAS Shield &mdash; Protect</h3>
-    <p style="color:#f9a8d4;font-size:12px;margin:0 0 8px;">10 articles &mdash; <a href="articles/las-shield-index.html" style="color:#fbcfe8;">View all</a></p>
-  </div>
-  <div style="background:linear-gradient(135deg,#4a3000,#92400e);padding:20px;border-radius:12px;">
-    <h3 style="color:#fde68a;font-size:15px;margin:0 0 8px;">3. LAS C&amp;C &mdash; Contract &amp; Control</h3>
-    <p style="color:#fcd34d;font-size:12px;margin:0 0 8px;">10 articles &mdash; <a href="articles/las-cc-index.html" style="color:#fde68a;">View all</a></p>
-  </div>
-  <div style="background:linear-gradient(135deg,#043927,#065f46);padding:20px;border-radius:12px;">
-    <h3 style="color:#6ee7b7;font-size:15px;margin:0 0 8px;">4. LAS UP &mdash; Scale Up</h3>
-    <p style="color:#a7f3d0;font-size:12px;margin:0 0 8px;">10 articles &mdash; <a href="articles/las-upsize-index.html" style="color:#6ee7b7;">View all</a></p>
-  </div>
-</div>
-
-<div style="background:#1B2A4A;padding:16px 20px;border-radius:8px;margin-bottom:32px;border-left:4px solid #C9A96E;">
-  <p style="color:#C9A96E;font-size:14px;font-weight:600;margin:0 0 4px;">LAS Risk Methodology</p>
-  <p style="color:#e2e8f0;font-size:13px;margin:0;">Eliminate &rarr; Reduce &rarr; Distribute (Legal + Business + Reputational Risk)</p>
-</div>
+<script>
+function setLasFwLang(lang) {
+  var fw = document.querySelector('.las-fw');
+  if (!fw) return;
+  fw.setAttribute('data-lang', lang);
+  var btns = fw.querySelectorAll('.las-lang-toggle button');
+  btns.forEach(function(b) {
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+  });
+  try { localStorage.setItem('las_fw_lang', lang); } catch(e) {}
+}
+(function(){
+  try {
+    var saved = localStorage.getItem('las_fw_lang');
+    if (saved === 'en') setLasFwLang('en');
+  } catch(e) {}
+})();
+</script>
 
 <!-- ═══════════════════════════ ARTICLES ═══════════════════════════ -->
 
