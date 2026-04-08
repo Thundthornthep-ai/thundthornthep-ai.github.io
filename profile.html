@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
 <meta charset="UTF-8">
 <link rel="icon" type="image/webp" href="/las-logo.webp">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="kGvHLz5Y8goQ8Sq9Tyt_wK5kcjH-6uIzu6Or2vdwMhQ" />
-<title>AI Legal Tech Pioneer &amp; Business Lawyer | Thundthornthep Yamoutai</title>
+<title>ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D. — Business Lawyer &amp; AI LegalTech Pioneer</title>
 
 <!-- SEO META -->
-<meta name="description" content="Thundthornthep Yamoutai, Ph.D. — AI Legal Tech Pioneer, Business Lawyer 20+ years. Founder of LAS. PDPA, Corporate Law, Real Estate, Due Diligence.">
-<meta name="keywords" content="Thundthornthep Yamoutai, Thundthornthep Yamoutai Ph.D., AI Legal Tech, Legal Advance Solution, LAS, Business Lawyer Thailand, PDPA, Corporate Law, Real Estate Law, Due Diligence, Contract Drafting, AI Legal Research, NIA, Legal Technology Thailand">
+<meta name="description" content="ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D. — ทนายความธุรกิจ 20+ ปี, ผู้ก่อตั้ง LAS, AI Legal Tech Pioneer. Thai Business Lawyer, PDPA, Corporate Law, Real Estate, Due Diligence.">
+<meta name="keywords" content="ธันย์ธรณ์เทพ แย้มอุทัย, Thundthornthep Yamoutai, AI Legal Tech, Legal Advance Solution, LAS, Business Lawyer Thailand, PDPA, Corporate Law, Real Estate Law, Due Diligence, Contract Drafting, AI Legal Research, NIA, Legal Technology Thailand">
 <meta name="author" content="Thundthornthep Yamoutai, Ph.D.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <link rel="canonical" href="https://thundthornthep-ai.github.io/profile.html">
+<link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/profile.html">
 <link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/profile.html">
-<link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/th/profile.html">
 <link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/profile.html">
 <meta name="language" content="English">
 <meta http-equiv="content-language" content="en">
@@ -536,8 +536,50 @@
     .practice-grid { grid-template-columns: 1fr; }
   }
 </style>
+<style>
+  /* ── Global TH/EN toggle ── */
+  body[data-lang="th"] .lang-en { display:none; }
+  body[data-lang="en"] .lang-th { display:none; }
+  .global-lang-toggle {
+    position:fixed; top:14px; right:14px; z-index:9999;
+    display:inline-flex; background:#1B2A4A; border:1px solid #C9A96E;
+    border-radius:8px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.3);
+  }
+  .global-lang-toggle button {
+    background:transparent; color:#C9A96E; border:none; padding:8px 16px;
+    font-size:13px; font-weight:600; cursor:pointer; transition:all 0.2s;
+    font-family:'Georgia',serif;
+  }
+  .global-lang-toggle button.active { background:#C9A96E; color:#1B2A4A; }
+  .global-lang-toggle button:hover:not(.active) { color:#fff; background:#2a3f66; }
+  @media (max-width:720px) {
+    .global-lang-toggle { top:8px; right:8px; }
+    .global-lang-toggle button { padding:6px 12px; font-size:12px; }
+  }
+</style>
 </head>
-<body>
+<body data-lang="th">
+
+<div class="global-lang-toggle" role="group" aria-label="Language toggle">
+  <button type="button" class="active" data-lang="th" onclick="setBioLang('th')">ไทย</button>
+  <button type="button" data-lang="en" onclick="setBioLang('en')">English</button>
+</div>
+
+<script>
+function setBioLang(lang) {
+  document.body.setAttribute('data-lang', lang);
+  document.querySelectorAll('.global-lang-toggle button').forEach(function(b) {
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+  });
+  try { localStorage.setItem('las_site_lang', lang); } catch(e) {}
+}
+(function(){
+  try {
+    var saved = localStorage.getItem('las_site_lang') || localStorage.getItem('las_fw_lang');
+    if (saved === 'en') setBioLang('en');
+  } catch(e) {}
+})();
+</script>
 <div class="lang-switch" style="position:fixed;top:12px;right:12px;z-index:9999;font-size:13px;background:#1B2A4A;padding:6px 14px;border-radius:20px;border:1px solid #C9A96E;">
   <span style="color:#C9A96E;font-weight:bold;">EN</span>
   <span style="color:#888;margin:0 4px;">|</span>
@@ -592,9 +634,14 @@
   </div>
 
   <div class="cta-group">
-    <a href="mailto:thund@laslegal.co.th" class="cta-btn cta-primary">Contact LAS</a>
-    <a href="index.html" class="cta-btn cta-outline">Full Biography</a>
-    <a href="all-content.html" class="cta-btn cta-outline">All Articles</a>
+    <a href="mailto:thund@laslegal.co.th" class="cta-btn cta-primary">
+      <span class="lang-th">ติดต่อ LAS</span>
+      <span class="lang-en">Contact LAS</span>
+    </a>
+    <a href="knowledge-hub.html" class="cta-btn cta-outline">
+      <span class="lang-th">คลังความรู้กฎหมาย</span>
+      <span class="lang-en">Legal Knowledge Hub</span>
+    </a>
   </div>
 </div>
 
@@ -872,17 +919,15 @@
 
 <!-- ═══════════════════ FOOTER ═══════════════════ -->
 <div class="page-footer">
-  Thundthornthep Yamoutai, Ph.D. &nbsp;|&nbsp; Founder &amp; Managing Director, Legal Advance Solution Co., Ltd. (LAS)<br>
-  AI Legal Tech &nbsp;|&nbsp; Business Lawyer Thailand &nbsp;|&nbsp; PDPA &nbsp;|&nbsp; Corporate Law &nbsp;|&nbsp; Real Estate &nbsp;|&nbsp; Due Diligence
-  <div class="footer-links">
-    <a href="index.html">Full Biography</a>
-    <a href="all-content.html">All Articles</a>
-    <a href="knowledge-hub.html">Knowledge Hub</a>
-    <a href="th/knowledge-hub.html">บทความภาษาไทย</a>
-    <a href="pdpa-advisory.html">PDPA Advisory</a>
-    <a href="blog/bkk-council/">Bangkok Possible</a>
+  <span class="lang-th">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span>
+  <span class="lang-en">Thundthornthep Yamoutai, Ph.D.</span>
+  &nbsp;|&nbsp;
+  <span class="lang-th">ผู้ก่อตั้งและกรรมการผู้จัดการ บริษัท ลีกัล แอดวานซ์ โซลูชั่น จำกัด (LAS)</span>
+  <span class="lang-en">Founder &amp; Managing Director, Legal Advance Solution Co., Ltd. (LAS)</span>
+  <div style="margin-top:10px; color:#555; font-size:12px;">
+    <span class="lang-th">© 2026 สงวนลิขสิทธิ์ — อัพเดทล่าสุด เมษายน 2569</span>
+    <span class="lang-en">© 2026 All Rights Reserved — Last updated: April 2026</span>
   </div>
-  <div style="margin-top:10px; color:#555;">Last updated: April 2026</div>
 </div>
 
 <!-- SEO: AI-Friendly Summary Block -->
