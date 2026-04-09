@@ -56,10 +56,6 @@ th{background:#dde5ee}
 </style>
 </head>
 <body>
-<div class="lang-switch" style="position:fixed;top:12px;right:12px;z-index:9999;font-size:13px;background:#1B2A4A;padding:6px 14px;border-radius:20px;border:1px solid #C9A96E;">
-  <span style="color:#888;margin:0 4px;">|</span>
-  <span style="color:#C9A96E;font-weight:bold;">TH</span>
-</div>
 <div class="wiki-wrapper">
 <span class="series-badge">LAS UP</span>
 <h1 class="page-title">Shareholders' Agreement — ทำไมต้องมี?</h1>
@@ -384,6 +380,74 @@ th{background:#dde5ee}
 <tr><td>14</td><td>กำหนด Dividend Policy หรือ Right to Declare Dividend</td><td>✓ / ✗</td></tr>
 <tr><td>15</td><td>ทุกฝ่ายได้รับการตรวจสอบโดยที่ปรึกษากฎหมายของตนเอง</td><td>✓ / ✗</td></tr>
 </table>
+
+<h2>การบังคับใช้ SHA ในศาลไทย — ประเด็นกฎหมายที่ต้องรู้</h2>
+<p>SHA เป็นสัญญาเอกชนระหว่างผู้ถือหุ้น ซึ่งมีผลบังคับระหว่างคู่สัญญาเท่านั้น แต่ไม่มีผลต่อบุคคลภายนอก (Third Parties) และไม่สามารถแก้ไขข้อบังคับบริษัท (Articles of Association) ได้โดยอัตโนมัติ ประเด็นกฎหมายสำคัญที่ต้องพิจารณา:</p>
+<table>
+<tr><th>ประเด็น</th><th>หลักกฎหมาย</th><th>ผลกระทบ</th></tr>
+<tr><td>SHA vs. ข้อบังคับบริษัท</td><td>ปพพ. มาตรา 1175 — ข้อบังคับบริษัทเป็นเอกสารสาธารณะ ผูกพันบุคคลภายนอก</td><td>หาก SHA ขัดกับข้อบังคับ → ข้อบังคับมีผลก่อน ควรแก้ไขข้อบังคับให้สอดคล้องกับ SHA</td></tr>
+<tr><td>Right of First Refusal ใน SHA</td><td>ปพพ. มาตรา 1129 — การโอนหุ้นในบริษัทจำกัดต้องได้รับความยินยอมจากที่ประชุม</td><td>ROFR ใน SHA เสริมสิทธิในการโอนหุ้น แต่ต้องสอดคล้องกับขั้นตอนในข้อบังคับ</td></tr>
+<tr><td>Drag-Along ในศาลไทย</td><td>ยังไม่มีฎีกาชัดเจน — ต้องออกแบบให้สอดคล้อง ปพพ. มาตรา 149–156 (นิติกรรม)</td><td>ต้องระบุราคาขั้นต่ำและกระบวนการที่ชัดเจน มิฉะนั้นอาจถูกโต้แย้งว่าเป็นสัญญาที่ไม่เป็นธรรม</td></tr>
+<tr><td>Non-Compete Clause</td><td>ปพพ. มาตรา 150 — ข้อตกลงที่ขัดต่อความสงบเรียบร้อยหรือมีวัตถุที่เป็นการต้องห้ามชัดแจ้งเป็นโมฆะ</td><td>กำหนดระยะเวลา (ไม่เกิน 2 ปี) และพื้นที่ทางภูมิศาสตร์ให้ชัดเจน</td></tr>
+<tr><td>Put/Call Option</td><td>ปพพ. มาตรา 454 — บุริมสิทธิ / ปพพ. มาตรา 537 — ข้อตกลงเบื้องต้น</td><td>Put/Call ต้องกำหนดราคาหรือวิธีคำนวณราคาที่ชัดเจน ห้ามเป็นตัวเลขลอยอยู่</td></tr>
+<tr><td>การอนุญาโตตุลาการ</td><td>พ.ร.บ.อนุญาโตตุลาการ พ.ศ.2545 — รับรองการระงับข้อพิพาทโดยอนุญาโตตุลาการ</td><td>ระบุสถาบัน (TAI/SIAC/ICC), กฎ, จำนวนอนุญาโตตุลาการ, ภาษา และที่นั่งชัดเจน</td></tr>
+</table>
+
+<h2>โครงสร้าง SHA สำหรับ Joint Venture 50:50</h2>
+<p>JV แบบ 50:50 มีความซับซ้อนสูงสุดเพราะไม่มีผู้ถือหุ้นรายใดมีอำนาจข้างมากเด็ดขาด โครงสร้างที่แนะนำ:</p>
+<ul>
+<li><strong>Board Composition:</strong> ฝ่ายละ 2 กรรมการ + Chairman หมุนเวียนทุก 2 ปี หรือเป็นบุคคลที่ทั้งสองฝ่ายยินยอม</li>
+<li><strong>Casting Vote:</strong> ระบุชัดว่า Chairman มีหรือไม่มี Casting Vote — มีผลต่อ Deadlock Resolution ทั้งหมด</li>
+<li><strong>Reserved Matters Threshold:</strong> ทุกมติสำคัญต้องการ "Supermajority" — เช่น 75% หรือ Unanimous ทำให้ทั้งสองฝ่ายต้องเห็นด้วย</li>
+<li><strong>Deadlock Escalation:</strong> กำหนด 3 ระดับ — CEO, Executive Committee, Board ก่อนเข้าสู่ Formal Deadlock</li>
+<li><strong>Russian Roulette Clause:</strong> ฝ่ายหนึ่งเสนอราคา อีกฝ่ายต้องซื้อหรือขายในราคานั้น — สร้างแรงจูงใจให้เสนอราคาที่ยุติธรรม</li>
+<li><strong>Sunset Clause:</strong> SHA มีอายุกำหนด (เช่น 5 ปี) หลังจากนั้นต้องต่ออายุ — ป้องกัน SHA เก่าที่ไม่สอดคล้องกับสถานการณ์ปัจจุบัน</li>
+</ul>
+
+<div class="highlight-box">
+<strong>Best Practice — SHA + ข้อบังคับคู่กัน:</strong><br>
+LAS แนะนำให้จัดทำ SHA และแก้ไขข้อบังคับบริษัท (Articles of Association) พร้อมกันเสมอ โดยนำข้อสำคัญจาก SHA (เช่น Reserved Matters, ROFR, Drag-Along) มาสะท้อนในข้อบังคับด้วย เพื่อให้มีผลบังคับต่อบุคคลภายนอกและผู้ถือหุ้นรายใหม่ที่เข้ามาในภายหลัง แม้จะไม่ได้ลงนามใน SHA ต้นฉบับ
+</div>
+
+<h2>เงื่อนไขการลงทุนสำหรับ SHA ประเภทต่างๆ — ตาม Stage ของบริษัท</h2>
+<p>โครงสร้าง SHA ที่เหมาะสมแตกต่างกันตาม Stage ของบริษัทและประเภทของนักลงทุน:</p>
+<table>
+<tr><th>Stage</th><th>ประเภทนักลงทุน</th><th>ข้อสำคัญใน SHA</th><th>ข้อที่มักต้องต่อรอง</th></tr>
+<tr><td>Seed / Pre-Series A</td><td>Angel Investor, FFF (Friends, Family, Fools)</td><td>Simple Cap Table, ROFR, Information Rights รายไตรมาส</td><td>Liquidation Preference มักไม่มี / Anti-Dilution แบบ Simple</td></tr>
+<tr><td>Series A</td><td>VC Fund ขนาดเล็ก-กลาง</td><td>Reserved Matters, Board Seat, Anti-Dilution (Broad-Based WA), Pro-Rata Rights</td><td>Board Composition, Protective Provisions ขอบเขต</td></tr>
+<tr><td>Series B+</td><td>VC/PE Fund ขนาดใหญ่, Strategic Investor</td><td>Comprehensive Reserved Matters, Multiple Liquidation Preference, Pay-to-Play, Drag-Along เต็มรูปแบบ</td><td>Management Rights, Observer Rights, Drag-Along Threshold</td></tr>
+<tr><td>Pre-IPO / Growth</td><td>PE Fund, Family Office</td><td>Registration Rights (Demand/Piggyback), Lock-up, IPO Ratchet</td><td>Lock-up Duration, IPO Price Target สำหรับ Ratchet</td></tr>
+<tr><td>Joint Venture</td><td>Strategic Partner / Corporate</td><td>50:50 Governance Structure, Deadlock Protocol, Exit Mechanism, Non-Compete</td><td>Board Control, Reserved Matters Threshold (Majority vs. Unanimous)</td></tr>
+</table>
+
+<h2>SHA Amendment และ Termination — การแก้ไขและสิ้นสุด SHA</h2>
+<p>SHA สามารถแก้ไขและสิ้นสุดได้ในกรณีต่อไปนี้ ควรกำหนดเงื่อนไขไว้อย่างชัดเจน:</p>
+<ul>
+<li><strong>การแก้ไข SHA:</strong> โดยปกติต้องการ Written Agreement ของทุกฝ่ายหรือ Supermajority ที่กำหนด — ไม่สามารถแก้ไขฝ่ายเดียวได้</li>
+<li><strong>สิ้นสุดโดยอัตโนมัติ:</strong> เมื่อบริษัท IPO (Register ในตลาดหลักทรัพย์) — สิทธิพิเศษใน SHA มักสิ้นสุดโดยอัตโนมัติ</li>
+<li><strong>สิ้นสุดเมื่อขาย 100%:</strong> เมื่อผู้ถือหุ้นทุกรายขายหุ้นทั้งหมด — SHA หมดอายุตามนิยาม</li>
+<li><strong>Sunset Clause:</strong> บางฉบับกำหนดวันหมดอายุ เช่น 7–10 ปี หลังจากนั้นต้องต่ออายุหรือเจรจาใหม่</li>
+<li><strong>Material Breach:</strong> กรณีฝ่ายใดฝ่ายหนึ่งละเมิด SHA สาระสำคัญ ฝ่ายอื่นอาจบอกเลิก SHA ได้หลังจาก Notice Period ที่กำหนด</li>
+</ul>
+
+<h2>ค่าใช้จ่ายและระยะเวลาในการจัดทำ SHA</h2>
+<p>การจัดทำ SHA อย่างครบถ้วนต้องใช้เวลาและงบประมาณที่เหมาะสม โดยประมาณการดังนี้:</p>
+<ul>
+<li><strong>SHA ขนาดเล็ก (2 ผู้ถือหุ้น, ธุรกิจ SME):</strong> ค่าที่ปรึกษากฎหมาย 50,000–150,000 บาท ระยะเวลา 2–4 สัปดาห์</li>
+<li><strong>SHA กลาง (3–5 ผู้ถือหุ้น, มีนักลงทุนสถาบัน):</strong> ค่าที่ปรึกษา 150,000–500,000 บาท ระยะเวลา 4–8 สัปดาห์</li>
+<li><strong>SHA ขนาดใหญ่ (JV ระหว่างประเทศ, บริษัทมหาชน):</strong> ค่าที่ปรึกษา 500,000–2,000,000+ บาท ระยะเวลา 8–16 สัปดาห์</li>
+<li><strong>ค่าแปล SHA (EN↔TH):</strong> 30,000–80,000 บาท — ควรใช้นักแปลกฎหมายที่เชี่ยวชาญ</li>
+<li><strong>ค่าอากรแสตมป์:</strong> SHA เป็นสัญญาค้ำประกัน/สัญญาประเภทหนึ่ง — ตรวจสอบกับนักบัญชีเรื่องอากรแสตมป์ที่ถูกต้อง</li>
+<li><strong>ค่าล่ามในการเจรจา:</strong> กรณี Cross-Border SHA ที่ต้องการล่ามกฎหมายระหว่างการเจรจา ค่าใช้จ่าย 10,000–30,000 บาท/วัน</li>
+<li><strong>ค่า Notarization และ Apostille:</strong> กรณี SHA ที่ต้องใช้ในต่างประเทศ ต้องผ่านการรับรองเอกสารและ Apostille ค่าใช้จ่ายประมาณ 5,000–15,000 บาท</li>
+<li><strong>ค่าอัพเดท SHA เมื่อมีการเปลี่ยนแปลง:</strong> เมื่อมีผู้ถือหุ้นใหม่หรือโครงสร้างเปลี่ยน ค่าที่ปรึกษาแก้ไข SHA 30,000–200,000 บาท ขึ้นอยู่กับความซับซ้อน</li>
+<li><strong>ประมาณการรวม:</strong> SME SHA 2–3 ผู้ถือหุ้น ค่าใช้จ่ายรวม 80,000–300,000 บาท / JV ระหว่างประเทศ 500,000–3,000,000 บาท</li>
+</ul>
+
+<div class="highlight-box">
+<strong>LAS Tip — เจรจา SHA อย่างไรให้ได้เปรียบ:</strong><br>
+เตรียม "Walk-Away Position" ก่อนเจรจาทุกครั้ง — รู้ว่าข้อไหนต้องได้, ข้อไหนยืดหยุ่นได้, และข้อไหนถ้าไม่ได้ให้ถอนตัวจาก Deal การมีที่ปรึกษากฎหมายที่มีประสบการณ์ทั้งด้านไทยและต่างประเทศช่วยให้เจรจาจากฐานความรู้ที่แข็งแกร่ง ใช้เวลาศึกษา Term Sheet และ SHA ร่างแรกอย่างละเอียดก่อนตอบรับ และอย่ารีบเร่งปิด Deal โดยไม่มีความเข้าใจในข้อกำหนดทุกข้อ
+</div>
 
 <h2>สรุป</h2>
 <p>SHA ไม่ใช่เอกสารที่สร้างความไม่ไว้ใจ แต่เป็นเครื่องมือสร้างความชัดเจน ลดโอกาสขัดแย้ง และมีกลไกรองรับเมื่อเกิดปัญหา ธุรกิจที่โตอย่างยั่งยืนคือธุรกิจที่มีโครงสร้างกฎหมายรองรับตั้งแต่เริ่มต้น SHA ที่ครอบคลุม Reserved Matters, Deadlock Resolution, Tag/Drag-Along, Anti-Dilution และ Exit Mechanism จะปกป้องผู้ถือหุ้นทุกฝ่ายและทำให้บริษัทสามารถดึงดูดนักลงทุนที่มีคุณภาพในอนาคต</p>
