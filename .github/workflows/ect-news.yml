@@ -1,11 +1,19 @@
 name: ECT Daily News Agent
 
-# Runs 3 times per day (Thailand time): 07:00 / 11:00 / 15:00
-# TH = UTC+7, so TH 07:00 = UTC 00:00, TH 11:00 = UTC 04:00, TH 15:00 = UTC 08:00
+# ============================================================
+# NOTE: Scheduled cron is DISABLED because ect.go.th blocks
+# GitHub Actions runner IPs with HTTP 403. Use local cron via
+# scripts/run-ect-news-local.bat (Windows Task Scheduler) from
+# a Thai residential IP instead.
+#
+# Manual workflow_dispatch is still allowed for testing the
+# pipeline end-to-end (will still 403 on downloads but exercises
+# the safeguard logic).
+# ============================================================
+
 on:
-  schedule:
-    - cron: '0 0,4,8 * * *'
-  # Also allow manual trigger from GitHub Actions UI or workflow_dispatch API
+  # schedule:
+  #   - cron: '0 0,4,8 * * *'  # disabled — see note above
   workflow_dispatch:
     inputs:
       limit:
@@ -14,7 +22,7 @@ on:
         default: '5'
 
 permissions:
-  contents: write  # needed to commit back to the repo
+  contents: write
 
 jobs:
   update-news:
@@ -58,7 +66,6 @@ jobs:
         run: |
           git config user.name "ECT News Bot"
           git config user.email "noreply+ect-news-bot@github.com"
-          # Pull latest to avoid conflicts with parallel commits
           git pull --rebase origin main || true
           git commit -m "chore(ect-news): auto-update $(date -u +'%Y-%m-%d %H:%M UTC')" || echo "Nothing to commit"
           git push origin main || echo "Push failed (will retry next cron)"
