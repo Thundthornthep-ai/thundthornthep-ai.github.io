@@ -174,16 +174,64 @@ SEED_URLS = [
 # ============================================================
 
 def download_pdf(url, target_path):
-    """Download PDF with requests + browser User-Agent.
-    ect.go.th rejects python-requests default UA with 403. Mimic Chrome.
+    """Download PDF with Playwright-first (browser fingerprint) + requests fallback.
+    ect.go.th blocks by IP reputation and UA — GitHub Actions runners get 403 on
+    plain requests. Using Playwright's APIRequestContext uses the full browser
+    stack (same fingerprint the site serves via the homepage), which works.
     Returns True if downloaded (or exists).
     """
     if target_path.exists() and target_path.stat().st_size > 10000:
         return True
+
+    # Strategy 1: Playwright APIRequestContext (preferred on CI)
+    try:
+        from playwright.sync_api import sync_playwright
+
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            context = browser.new_context(
+                user_agent=(
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                    "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+                ),
+                extra_http_headers={
+                    "Accept": "application/pdf,*/*;q=0.8",
+                    "Accept-Language": "th,en-US;q=0.9,en;q=0.8",
+                    "Referer": "https://www.ect.go.th/ect_th/th/dailynews2569",
+                },
+            )
+            # Seed cookies by visiting homepage first (bypass IP reputation checks)
+            page = context.new_page()
+            try:
+                page.goto(
+                    "https://www.ect.go.th/ect_th/th/dailynews2569",
+                    wait_until="domcontentloaded",
+                    timeout=30000,
+                )
+            except Exception:
+                pass  # Not critical if homepage fails; cookies may still be set
+            # Now download via context.request (shares cookies + browser fingerprint)
+            response = context.request.get(url, timeout=180000)
+            if response.ok:
+                body = response.body()
+                if body and len(body) > 10000:
+                    target_path.write_bytes(body)
+                    browser.close()
+                    return True
+                else:
+                    print(f"  ⚠️  empty response ({len(body) if body else 0} bytes)")
+            else:
+                print(f"  ⚠️  Playwright GET returned {response.status}")
+            browser.close()
+    except ImportError:
+        print("  ⚠️  playwright not installed, falling back to requests")
+    except Exception as e:
+        print(f"  ⚠️  Playwright download failed: {e}, trying requests fallback")
+
+    # Strategy 2: plain requests with browser headers (local dev fallback)
     try:
         import requests
     except ImportError:
-        print("⚠️  requests not installed")
         return False
     headers = {
         "User-Agent": (
@@ -203,7 +251,6 @@ def download_pdf(url, target_path):
         return True
     except Exception as e:
         print(f"  ❌ download failed: {e}")
-        # Clean up partial file
         if target_path.exists() and target_path.stat().st_size < 10000:
             try:
                 target_path.unlink()
