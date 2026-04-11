@@ -341,7 +341,7 @@
     <div class="band-card yellow-band">
       <span class="icon">💰</span>
       <h4>วงเงินค่าใช้จ่ายสูงสุด</h4>
-      <p><strong>(สมมติฐาน: วันเลือกตั้ง 5 ก.ค. 2569)</strong> จำนวนเงินสูงสุดกำหนดโดย ผอ.กต.ประจำจังหวัดประกาศก่อนเลือกตั้งแต่ละครั้ง — นับตั้งแต่ <strong>180 วันก่อนวันครบวาระ</strong><br><span style="font-size:12px;color:var(--text-muted)">มาตรา 60-61</span></p>
+      <p><strong>(ตามแผนราชการ: วันเลือกตั้ง 28 มิ.ย. 2569)</strong> จำนวนเงินสูงสุดกำหนดโดย ผอ.กต.ประจำจังหวัดประกาศก่อนเลือกตั้งแต่ละครั้ง — นับตั้งแต่ <strong>180 วันก่อนวันครบวาระ</strong><br><span style="font-size:12px;color:var(--text-muted)">มาตรา 60-61</span></p>
     </div>
     <div class="band-card red-band">
       <span class="icon">📋</span>
@@ -428,6 +428,38 @@
   <!-- ดาวน์โหลดเพิ่มเติม -->
 </section>
 
+<!-- ============ ELECTION EXPENSES DEEP DIVE (Single Source of Truth) ============ -->
+<section class="topic-section fade-in" id="election-expenses">
+  <div class="topic-label"><span class="line"></span> EXPENSE LAW — DEEP DIVE</div>
+  <h2>💰 กฎหมายค่าใช้จ่ายเลือกตั้ง — เจาะลึก</h2>
+  <p class="section-desc">อ้างอิง: พ.ร.บ.เลือกตั้งท้องถิ่น 2562 ม.61 · ประกาศ กกต. 25 ก.พ. 2563 · ประกาศ ผอ.กกต.กทม. 25 พ.ย. 2564</p>
+
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:8px;margin-top:20px;">🏛️ เพดานค่าใช้จ่าย 3 ระดับ</h3>
+  <p style="font-size:12px;color:var(--text-muted);margin-bottom:16px;">ตามประกาศ ผอ.กกต.กทม. ลงวันที่ 25 พฤศจิกายน 2564 · ม.61 วรรคสาม · ⚠️ อาจมีประกาศฉบับใหม่ก่อน 28 มิ.ย. 2569</p>
+  <div class="card-band" id="expense-ceiling-cards"></div>
+
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:8px;margin-top:28px;">📅 รอบคำนวณค่าใช้จ่าย</h3>
+  <p style="font-size:12px;color:var(--text-muted);margin-bottom:16px;">ตามมาตรา 61 วรรคสอง + ระเบียบ กกต. ข้อ 230</p>
+  <div class="table-wrap">
+    <table class="info-table">
+      <thead><tr><th>กรณี</th><th>รอบคำนวณ</th><th>อ้างอิง</th></tr></thead>
+      <tbody id="expense-period-rows"></tbody>
+    </table>
+  </div>
+
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:8px;margin-top:28px;">⚠️ 12 ประเภทค่าใช้จ่าย + ระดับความเสี่ยง</h3>
+  <p style="font-size:12px;color:var(--text-muted);margin-bottom:16px;">ตามประกาศ กกต. 25 ก.พ. 2563 · ไฮไลต์แดง = ความเสี่ยงสูง (กกต.ตีความกว้าง)</p>
+  <div id="expense-type-list" style="display:flex;flex-direction:column;gap:8px;"></div>
+
+  <h3 style="font-family:'Space Grotesk',sans-serif;color:var(--navy);font-size:16px;margin-bottom:8px;margin-top:28px;">❓ คำถาม-คำตอบ ที่พบบ่อย</h3>
+  <div id="expense-faq-list" style="display:flex;flex-direction:column;gap:6px;"></div>
+
+  <div class="warn-box" style="margin-top:24px;">
+    <h4>⚠️ โทษฝ่าฝืน ม.61 (สรุป)</h4>
+    <p><strong>ม.109:</strong> จำคุกไม่เกิน 5 ปี หรือปรับไม่เกิน 100,000 บาท หรือทั้งจำทั้งปรับ · <strong>ม.62:</strong> โฆษณาก่อนประกาศ → จำคุก 1–10 ปี ปรับ 20,000–200,000 บาท · <strong>ม.127:</strong> ต้องรายงานค่าใช้จ่ายภายใน 90 วันหลังวันเลือกตั้ง</p>
+  </div>
+</section>
+
 <!-- เอกสารที่เกี่ยวข้อง — Phase B -->
 <section class="topic-section fade-in" id="phase-b-downloads" style="margin-top:48px;padding-top:32px;border-top:2px solid var(--border);">
   <h2 style="font-size:18px;margin-bottom:16px;">📥 เอกสารที่เกี่ยวข้อง — ดาวน์โหลด PDF</h2>
@@ -451,7 +483,7 @@
 <footer class="site-footer">
   <div class="footer-text">
     <span>Legal Advance Solution Co., Ltd. (LAS)</span> × <span>National Innovation Agency (NIA)</span><br>
-    ผู้เขียน: <span>Thundthornthep Yamoutai, Ph.D.</span> · อัปเดต: เมษายน 2569<br>
+    ผู้เขียน: <span>Thundthornthep Yamoutai, Ph.D.</span> · อัปเดต: 11 เมษายน 2569 · วันเลือกตั้ง: 28 มิถุนายน 2569<br>
     <a href="index.html">Dashboard</a> · <a href="sk-candidate-guide.html">คู่มือฉบับเต็ม</a>
   </div>
 </footer>
@@ -538,6 +570,121 @@ document.addEventListener('click', function(e) {
 })();
 </script>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('service-worker.js')}</script>
+<!-- BKK Election 2569 data module (Single Source of Truth) -->
+<script src="election_expenses_data.js"></script>
+<script>
+// Render expense section from data.js (safe DOM)
+(function(){
+  var D = window.BKKElection2569;
+  if(!D) return;
+
+  var ceilEl = document.getElementById('expense-ceiling-cards');
+  if(ceilEl){
+    var bandColors = ['green-band','yellow-band','red-band'];
+    var icons = ['🟢','🟡','🔴'];
+    D.EXPENSE_CEILINGS.tiers.forEach(function(t, i){
+      var card = document.createElement('div');
+      card.className = 'band-card ' + bandColors[i];
+      var ic = document.createElement('span'); ic.className='icon'; ic.textContent=icons[i];
+      var h4 = document.createElement('h4'); h4.textContent = t.ceilingLabel;
+      var p = document.createElement('p');
+      var st = document.createElement('strong'); st.textContent = t.label;
+      p.appendChild(st); p.appendChild(document.createElement('br'));
+      var sm = document.createElement('span');
+      sm.style.cssText = 'font-size:11px;color:var(--text-muted);';
+      sm.textContent = 'ตัวอย่าง: ' + (t.examples||[]).slice(0,3).join(', ');
+      p.appendChild(sm);
+      card.appendChild(ic); card.appendChild(h4); card.appendChild(p);
+      ceilEl.appendChild(card);
+    });
+  }
+
+  var periodEl = document.getElementById('expense-period-rows');
+  if(periodEl){
+    Object.keys(D.EXPENSE_PERIODS).forEach(function(k){
+      var p = D.EXPENSE_PERIODS[k];
+      var tr = document.createElement('tr');
+      var td1 = document.createElement('td');
+      var st = document.createElement('strong'); st.textContent = p.caseType;
+      td1.appendChild(st);
+      if(p.notes){
+        td1.appendChild(document.createElement('br'));
+        var ns = document.createElement('small');
+        ns.style.cssText = 'color:var(--text-muted);';
+        ns.textContent = p.notes;
+        td1.appendChild(ns);
+      }
+      var td2 = document.createElement('td'); td2.textContent = p.rule;
+      var td3 = document.createElement('td');
+      td3.style.cssText = 'font-size:11px;color:var(--text-secondary);';
+      td3.textContent = p.law;
+      tr.appendChild(td1); tr.appendChild(td2); tr.appendChild(td3);
+      periodEl.appendChild(tr);
+    });
+  }
+
+  var typesEl = document.getElementById('expense-type-list');
+  if(typesEl){
+    D.EXPENSE_TYPES.forEach(function(t){
+      var row = document.createElement('div');
+      var rc = t.riskLevel === 'สูง' ? '#C0392B' : (t.riskLevel === 'กลาง' ? '#E67E22' : '#27AE60');
+      var bg = t.riskLevel === 'สูง' ? '#FADBD8' : (t.riskLevel === 'กลาง' ? '#FDEBD0' : '#D5F5E3');
+      row.style.cssText = 'display:grid;grid-template-columns:40px 1fr 80px;gap:12px;padding:12px 14px;background:'+bg+';border-left:3px solid '+rc+';border-radius:var(--radius-sm);align-items:center;';
+      var num = document.createElement('div');
+      num.style.cssText = "font-size:18px;font-weight:700;color:" + rc + ";font-family:'Space Grotesk',sans-serif;";
+      num.textContent = '(' + t.id + ')';
+      var mid = document.createElement('div');
+      var nm = document.createElement('div');
+      nm.style.cssText = 'font-size:13px;font-weight:600;color:var(--navy);';
+      nm.textContent = t.name;
+      var dt = document.createElement('div');
+      dt.style.cssText = 'font-size:11px;color:var(--text-secondary);margin-top:2px;';
+      dt.textContent = t.detail;
+      mid.appendChild(nm); mid.appendChild(dt);
+      if(t.note){
+        var nE = document.createElement('div');
+        nE.style.cssText = 'font-size:10px;color:'+rc+';margin-top:4px;font-weight:600;';
+        nE.textContent = t.note;
+        mid.appendChild(nE);
+      }
+      var badge = document.createElement('div');
+      badge.style.cssText = 'font-size:11px;font-weight:700;color:#fff;background:'+rc+';padding:4px 8px;border-radius:10px;text-align:center;white-space:nowrap;';
+      badge.textContent = 'เสี่ยง ' + t.riskLevel;
+      row.appendChild(num); row.appendChild(mid); row.appendChild(badge);
+      typesEl.appendChild(row);
+    });
+  }
+
+  var faqEl = document.getElementById('expense-faq-list');
+  if(faqEl && D.FAQ){
+    D.FAQ.forEach(function(f){
+      var det = document.createElement('details');
+      det.style.cssText = 'background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;';
+      var sum = document.createElement('summary');
+      sum.style.cssText = 'cursor:pointer;font-size:13px;font-weight:600;color:var(--navy);';
+      var cat = document.createElement('span');
+      cat.style.cssText = 'display:inline-block;font-size:10px;background:var(--navy);color:#fff;padding:2px 6px;border-radius:4px;margin-right:6px;font-weight:500;';
+      cat.textContent = f.category;
+      sum.appendChild(cat);
+      sum.appendChild(document.createTextNode(f.q));
+      var ans = document.createElement('p');
+      ans.style.cssText = 'font-size:13px;color:var(--text);line-height:1.6;margin-top:10px;margin-bottom:8px;';
+      ans.textContent = f.a;
+      var laws = document.createElement('p');
+      laws.style.cssText = 'font-size:11px;color:var(--text-muted);font-style:italic;';
+      laws.textContent = '📜 ' + (f.laws||[]).join(' · ');
+      det.appendChild(sum); det.appendChild(ans); det.appendChild(laws);
+      if(f.riskNote){
+        var rn = document.createElement('p');
+        rn.style.cssText = 'font-size:11px;color:#C0392B;font-weight:600;margin-top:6px;';
+        rn.textContent = '⚠️ ' + f.riskNote;
+        det.appendChild(rn);
+      }
+      faqEl.appendChild(det);
+    });
+  }
+})();
+</script>
 <!-- Canonical setSiteLang() — see docs/BILINGUAL-CONVENTION.md -->
 <script>
 function setSiteLang(lang) {
