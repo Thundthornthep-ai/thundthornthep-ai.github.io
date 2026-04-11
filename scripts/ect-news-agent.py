@@ -99,22 +99,35 @@ def discover_pdf_urls_playwright():
         return []
 
     results = []
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        page = browser.new_page()
-        page.goto("https://www.ect.go.th/ect_th/th/dailynews2569", wait_until="networkidle", timeout=60000)
-        # Find all PDF cards
-        cards = page.evaluate("""() => {
-            const cards = Array.from(document.querySelectorAll('.table-card-01, tr.table-card-01'));
-            return cards.map(c => {
-                const link = c.querySelector('a[href*=".pdf"]');
-                return {
-                    href: link ? link.href : '',
-                    text: c.textContent.trim()
-                };
-            }).filter(c => c.href);
-        }""")
-        browser.close()
+    try:
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            page = browser.new_page()
+            # Use domcontentloaded (faster, doesn't wait for analytics)
+            page.goto("https://www.ect.go.th/ect_th/th/dailynews2569",
+                      wait_until="domcontentloaded", timeout=45000)
+            # Wait for at least one PDF card to appear
+            try:
+                page.wait_for_selector('a[href*=".pdf"]', timeout=15000)
+            except Exception:
+                print("  ⚠️  PDF cards didn't appear within 15s — page may have changed")
+            # Small grace period for JS rendering
+            page.wait_for_timeout(2000)
+            # Find all PDF cards
+            cards = page.evaluate("""() => {
+                const cards = Array.from(document.querySelectorAll('.table-card-01, tr.table-card-01'));
+                return cards.map(c => {
+                    const link = c.querySelector('a[href*=".pdf"]');
+                    return {
+                        href: link ? link.href : '',
+                        text: c.textContent.trim()
+                    };
+                }).filter(c => c.href);
+            }""")
+            browser.close()
+    except Exception as e:
+        print(f"  ⚠️  Playwright discovery failed: {e}")
+        return []
 
     # Parse card texts like "สรุปข่าว วันที่ 10 เม.ย. 69.pdf ขนาดไฟล์ 28.43 MB ..."
     thai_months = {
@@ -358,12 +371,16 @@ def main():
         print(f"Using {len(urls)} seed URLs (no scraping)")
     else:
         print("Discovering latest PDFs via Playwright...")
-        urls = discover_pdf_urls_playwright()
+        try:
+            urls = discover_pdf_urls_playwright()
+        except Exception as e:
+            print(f"⚠️  discovery crashed: {e}")
+            urls = []
         if not urls:
-            print("⚠️  discovery failed, falling back to seed URLs")
+            print("⚠️  discovery returned empty, falling back to seed URLs")
             urls = SEED_URLS
         urls = urls[: args.limit]
-        print(f"Found {len(urls)} PDFs")
+        print(f"Using {len(urls)} PDFs")
 
     items = []
     for date_iso, pdf_url, size_mb in urls:
