@@ -1,0 +1,40 @@
+name: Validate knowledge-hub.html
+
+# Sustainability guard — runs the validator on every push/PR that touches
+# knowledge-hub.html or articles. Blocks merge if any check fails.
+# See scripts/validate-knowledge-hub.js for the full check list.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'knowledge-hub.html'
+      - 'scripts/validate-knowledge-hub.js'
+      - '.github/workflows/validate.yml'
+  pull_request:
+    paths:
+      - 'knowledge-hub.html'
+      - 'scripts/validate-knowledge-hub.js'
+      - '.github/workflows/validate.yml'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run knowledge-hub validator
+        run: node scripts/validate-knowledge-hub.js
+
+      - name: Summary on failure
+        if: failure()
+        run: |
+          echo "::error::Knowledge Hub validation failed. Run 'node scripts/validate-knowledge-hub.js' locally to see details."
+          echo "See docs/BILINGUAL-CONVENTION.md for the bilingual class standard."

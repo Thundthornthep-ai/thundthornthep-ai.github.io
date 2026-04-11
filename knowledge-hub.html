@@ -1717,21 +1717,81 @@ function setLasFwLang(lang) {
 </div><!-- .wiki-wrapper -->
 
 <script>
-/* Fixed 2026-04-11: pass `this` instead of relying on window.event.target (unsafe in strict mode / non-Chromium).
-   Also filters .las-fw-card (framework overview cards) so LAS Share/Shield/C&C/UP buttons work. */
+/* ─────────────────────────────────────────────────────────────
+   Self-healing filter bar — v2 (2026-04-11)
+   Rationale: see docs/BILINGUAL-CONVENTION.md + scripts/validate-knowledge-hub.js
+
+   Philosophy: the filter bar reads DOM as single source of truth.
+   Hard-coded counts or category lists drift → instead auto-compute
+   on DOMContentLoaded. Adding/removing articles never requires
+   touching the filter bar again.
+   ───────────────────────────────────────────────────────────── */
+
 function filterArticles(category, btn) {
-  const cards = document.querySelectorAll('.article-card');
-  const series = document.querySelectorAll('.series-section');
-  const fwCards = document.querySelectorAll('.las-fw-card');
+  const selectors = ['.article-card', '.series-section', '.las-fw-card'];
   const buttons = document.querySelectorAll('.filter-btn');
   buttons.forEach(b => b.classList.remove('active'));
   if (btn) btn.classList.add('active');
-  const show = (el, display) => {
-    el.style.display = (category === 'all' || el.dataset.category === category) ? display : 'none';
-  };
-  cards.forEach(el => show(el, 'block'));
-  series.forEach(el => show(el, 'block'));
-  fwCards.forEach(el => show(el, ''));
+  selectors.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => {
+      const match = (category === 'all' || el.dataset.category === category);
+      el.style.display = match ? '' : 'none';
+    });
+  });
+}
+
+/* initFilterBar — auto-compute counts and hide dead buttons from live DOM */
+function initFilterBar() {
+  const counts = {};
+  const seen = new Set(['all']);
+  ['.article-card', '.series-section', '.las-fw-card'].forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => {
+      const c = el.dataset.category;
+      if (!c) return;
+      seen.add(c);
+      // Only count .article-card for button labels (series/fw are structural, not leaf content)
+      if (el.classList.contains('article-card')) {
+        counts[c] = (counts[c] || 0) + 1;
+      }
+    });
+  });
+  // Total count for "all" button = total article-cards + total series-card leaf links
+  const totalArticles = document.querySelectorAll('.article-card').length;
+  const totalSeriesLeaves = document.querySelectorAll('.series-card').length;
+  counts['all'] = totalArticles + totalSeriesLeaves;
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    // Extract category from onclick attribute
+    const onclick = btn.getAttribute('onclick') || '';
+    const m = onclick.match(/filterArticles\('([^']+)'/);
+    if (!m) return;
+    const cat = m[1];
+
+    // Hide dead buttons (no matching content in DOM)
+    if (!seen.has(cat)) {
+      btn.style.display = 'none';
+      return;
+    }
+
+    // Update count in label — only for categories where we counted article-cards
+    // (LAS 4 Series + bkk use fw-cards/series-sections with their own fixed counts)
+    if (cat in counts && cat !== 'all' && !cat.startsWith('las-') && cat !== 'bkk') {
+      const n = counts[cat];
+      btn.querySelectorAll('.lang-th, .lang-en').forEach(span => {
+        span.textContent = span.textContent.replace(/\(\d+\)/, '(' + n + ')');
+      });
+    } else if (cat === 'all') {
+      btn.querySelectorAll('.lang-th, .lang-en').forEach(span => {
+        span.textContent = span.textContent.replace(/\(\d+\)/, '(' + counts['all'] + ')');
+      });
+    }
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initFilterBar);
+} else {
+  initFilterBar();
 }
 </script>
 <script src="/js/legal-links.js"></script>

@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+#
+# pre-commit hook — validates knowledge-hub.html before allowing commit
+#
+# This is the LOCAL counterpart to .github/workflows/validate.yml.
+# Both call the same validator so behavior is identical between local
+# and CI. If validation fails, the commit is aborted and you see the
+# errors immediately — before CI catches them on push.
+#
+# To bypass in an emergency (strongly discouraged):
+#   git commit --no-verify
+#
+# Install: run `bash scripts/install-hooks.sh` after cloning.
+
+set -e
+
+# Only run if knowledge-hub.html or the validator itself is staged
+CHANGED=$(git diff --cached --name-only --diff-filter=ACMR)
+
+needs_validation=false
+for f in $CHANGED; do
+  case "$f" in
+    knowledge-hub.html|scripts/validate-knowledge-hub.js)
+      needs_validation=true
+      break
+      ;;
+  esac
+done
+
+if [ "$needs_validation" = false ]; then
+  exit 0
+fi
+
+# Check node is available
+if ! command -v node >/dev/null 2>&1; then
+  echo "pre-commit: node is not installed, skipping knowledge-hub validation" >&2
+  exit 0
+fi
+
+echo "pre-commit: validating knowledge-hub.html..."
+if ! node scripts/validate-knowledge-hub.js; then
+  echo ""
+  echo "pre-commit: VALIDATION FAILED — commit aborted." >&2
+  echo "Fix the issues above, then re-commit." >&2
+  echo "Emergency override (not recommended): git commit --no-verify" >&2
+  exit 1
+fi
+
+exit 0
