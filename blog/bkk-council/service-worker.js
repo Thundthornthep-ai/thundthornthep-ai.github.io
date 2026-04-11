@@ -1,7 +1,7 @@
 // Service Worker for ส.ก. Navigator PWA
-// Version: sk-navigator-v4 (2026-04-11 — PWA upgrade + expense data module)
+// Version: sk-navigator-v5 (2026-04-11 — CSS restoration + force reload)
 
-const CACHE_NAME = 'sk-navigator-v4';
+const CACHE_NAME = 'sk-navigator-v5';
 
 const URLS_TO_CACHE = [
   './',
