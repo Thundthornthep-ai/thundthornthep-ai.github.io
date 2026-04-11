@@ -26,6 +26,82 @@
 <!-- [[THEME-MIGRATION-v1]] -->
 <link rel="stylesheet" href="/css/wiki-theme.css">
 <!-- [[/THEME-MIGRATION-v1]] -->
+<style>
+:root{
+  --navy:#0F1A2E;--navy2:#1B2A4A;--gold:#C9A96E;--gold-light:#E8D5B0;
+  --accent:#4ECDC4;--accent2:#44A08D;
+  --red:#E74C3C;--orange:#F39C12;--green:#2ECC71;
+  --bg:#0a0f1a;--card:rgba(255,255,255,0.04);--card-border:rgba(255,255,255,0.08);
+  --text:#E8E8E8;--text2:#8A94A6;--text3:#5A6478;
+  --radius:16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans Thai','Sarabun',sans-serif;font-size:16px;line-height:1.85;color:var(--text);background:var(--bg)}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+.container{max-width:780px;margin:0 auto;padding:0 24px}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(20px);background:rgba(15,26,46,0.85);border-bottom:1px solid rgba(255,255,255,0.05)}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo{width:32px;height:32px;background:linear-gradient(135deg,var(--gold),var(--accent));border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:var(--navy)}
+.nav-title{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;color:#fff;letter-spacing:-.3px}
+.nav-title span{color:var(--gold)}
+
+/* HERO */
+.hero{padding:120px 24px 60px;text-align:center}
+.hero-label{display:inline-block;padding:4px 14px;border-radius:20px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,169,110,.3);background:rgba(201,169,110,.06);margin-bottom:16px}
+.hero h1{font-family:'Space Grotesk','IBM Plex Sans Thai',sans-serif;font-size:clamp(26px,4vw,38px);font-weight:700;color:#fff;line-height:1.3;margin-bottom:16px}
+.hero .subtitle{color:var(--text2);font-size:15px;max-width:600px;margin:0 auto 24px}
+.meta{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--text3)}
+
+/* ARTICLE */
+article{padding:40px 0 80px}
+article h2{font-family:'Space Grotesk','IBM Plex Sans Thai',sans-serif;font-size:22px;font-weight:700;color:#fff;margin:48px 0 16px;padding-left:16px;border-left:3px solid var(--gold)}
+article h3{font-size:18px;font-weight:600;color:var(--gold-light);margin:32px 0 12px}
+article p{margin-bottom:16px;color:var(--text)}
+article ul,article ol{margin:0 0 16px 24px}
+article li{margin-bottom:8px}
+
+/* BLOCKQUOTE - for legal text */
+.law-text{background:rgba(201,169,110,.06);border-left:3px solid var(--gold);padding:16px 20px;margin:16px 0 24px;border-radius:0 var(--radius) var(--radius) 0;font-size:14px;line-height:1.9;color:var(--gold-light)}
+.law-text .cite{display:block;margin-top:8px;font-size:12px;color:var(--text3);font-style:normal}
+
+/* WARNING BOX */
+.warn-box{background:rgba(231,76,60,.08);border:1px solid rgba(231,76,60,.2);border-radius:var(--radius);padding:16px 20px;margin:20px 0;font-size:14px}
+.warn-box strong{color:var(--red)}
+
+/* INFO BOX */
+.info-box{background:rgba(78,205,196,.06);border:1px solid rgba(78,205,196,.15);border-radius:var(--radius);padding:16px 20px;margin:20px 0;font-size:14px}
+.info-box strong{color:var(--accent)}
+
+/* TABLE */
+.article-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
+.article-table th{background:rgba(201,169,110,.1);color:var(--gold-light);padding:10px 14px;text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.article-table td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.04)}
+.article-table tr:hover td{background:rgba(255,255,255,.02)}
+
+/* SCENARIO */
+.scenario{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);padding:20px 24px;margin:24px 0}
+.scenario-title{font-weight:600;color:var(--accent);margin-bottom:8px;font-size:15px}
+
+/* FOOTER */
+footer{padding:40px 24px;text-align:center;font-size:13px;color:var(--text3);border-top:1px solid rgba(255,255,255,.04)}
+footer a{color:var(--gold)}
+footer b{color:var(--gold)}
+
+/* REFERENCES */
+.references{font-size:13px;line-height:1.8;color:var(--text2)}
+.references li{margin-bottom:6px}
+
+@media(max-width:600px){
+  .hero h1{font-size:24px}
+  article h2{font-size:19px}
+  .meta{flex-direction:column;gap:6px}
+}
+</style>
 </head>
 <body data-lang="th">
 
