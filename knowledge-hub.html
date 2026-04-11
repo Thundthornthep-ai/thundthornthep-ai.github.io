@@ -800,25 +800,25 @@
 
 <!-- FILTER BAR -->
 <div class="filter-bar">
-  <button class="filter-btn active" onclick="filterArticles('all')">ทั้งหมด / All (98)</button>
-  <button class="filter-btn" onclick="filterArticles('las-share')" style="border-color:#1e40af;color:#1e40af;">LAS Share (10)</button>
-  <button class="filter-btn" onclick="filterArticles('las-shield')" style="border-color:#9d174d;color:#9d174d;">LAS Shield (10)</button>
-  <button class="filter-btn" onclick="filterArticles('las-cc')" style="border-color:#92400e;color:#92400e;">LAS C&C (10)</button>
-  <button class="filter-btn" onclick="filterArticles('las-upsize')" style="border-color:#065f46;color:#065f46;">LAS UP (10)</button>
-  <button class="filter-btn" onclick="filterArticles('corporate')">กฎหมายธุรกิจ / Corporate (13)</button>
-  <button class="filter-btn" onclick="filterArticles('contract')">สัญญาธุรกิจ / Contracts (9)</button>
-  <button class="filter-btn" onclick="filterArticles('investment')">การลงทุน / Investment (6)</button>
-  <button class="filter-btn" onclick="filterArticles('realestate')">อสังหาริมทรัพย์ / Real Estate (3)</button>
-  <button class="filter-btn" onclick="filterArticles('labour')">แรงงาน / Labour (3)</button>
-  <button class="filter-btn" onclick="filterArticles('pdpa')">PDPA (4)</button>
-  <button class="filter-btn" onclick="filterArticles('tax')">ภาษี / Tax (2)</button>
-  <button class="filter-btn" onclick="filterArticles('ip')">ทรัพย์สินทางปัญญา / IP (1)</button>
-  <button class="filter-btn" onclick="filterArticles('digital')">การตลาดดิจิทัล / Digital (1)</button>
-  <button class="filter-btn" onclick="filterArticles('consumer')">ผู้บริโภค / Consumer (1)</button>
-  <button class="filter-btn" onclick="filterArticles('ai')">AI Legal Tech (4)</button>
-  <button class="filter-btn" onclick="filterArticles('anticorruption')">ป้องกันทุจริต (3)</button>
-  <button class="filter-btn" onclick="filterArticles('professional')">วิชาชีพ / Professional (1)</button>
-  <button class="filter-btn" onclick="filterArticles('bkk')" style="border-color:#6366f1;color:#6366f1;">Bangkok Possible (8)</button>
+  <button class="filter-btn active" onclick="filterArticles('all', this)"><span class="lang-th">ทั้งหมด (98)</span><span class="lang-en">All (98)</span></button>
+  <button class="filter-btn" onclick="filterArticles('las-share', this)" style="border-color:#1e40af;color:#1e40af;"><span class="lang-th">LAS Share (10)</span><span class="lang-en">LAS Share (10)</span></button>
+  <button class="filter-btn" onclick="filterArticles('las-shield', this)" style="border-color:#9d174d;color:#9d174d;"><span class="lang-th">LAS Shield (10)</span><span class="lang-en">LAS Shield (10)</span></button>
+  <button class="filter-btn" onclick="filterArticles('las-cc', this)" style="border-color:#92400e;color:#92400e;"><span class="lang-th">LAS C&C (10)</span><span class="lang-en">LAS C&C (10)</span></button>
+  <button class="filter-btn" onclick="filterArticles('las-upsize', this)" style="border-color:#065f46;color:#065f46;"><span class="lang-th">LAS UP (10)</span><span class="lang-en">LAS UP (10)</span></button>
+  <button class="filter-btn" onclick="filterArticles('corporate', this)"><span class="lang-th">กฎหมายธุรกิจ (14)</span><span class="lang-en">Corporate (14)</span></button>
+  <button class="filter-btn" onclick="filterArticles('contract', this)"><span class="lang-th">สัญญาธุรกิจ (9)</span><span class="lang-en">Contracts (9)</span></button>
+  <button class="filter-btn" onclick="filterArticles('investment', this)"><span class="lang-th">การลงทุน (3)</span><span class="lang-en">Investment (3)</span></button>
+  <button class="filter-btn" onclick="filterArticles('realestate', this)"><span class="lang-th">อสังหาริมทรัพย์ (3)</span><span class="lang-en">Real Estate (3)</span></button>
+  <button class="filter-btn" onclick="filterArticles('labour', this)"><span class="lang-th">แรงงาน (4)</span><span class="lang-en">Labour (4)</span></button>
+  <button class="filter-btn" onclick="filterArticles('pdpa', this)"><span class="lang-th">PDPA (4)</span><span class="lang-en">PDPA (4)</span></button>
+  <button class="filter-btn" onclick="filterArticles('tax', this)"><span class="lang-th">ภาษี (2)</span><span class="lang-en">Tax (2)</span></button>
+  <button class="filter-btn" onclick="filterArticles('ip', this)"><span class="lang-th">ทรัพย์สินทางปัญญา (1)</span><span class="lang-en">IP (1)</span></button>
+  <button class="filter-btn" onclick="filterArticles('digital', this)"><span class="lang-th">การตลาดดิจิทัล (1)</span><span class="lang-en">Digital (1)</span></button>
+  <button class="filter-btn" onclick="filterArticles('consumer', this)"><span class="lang-th">ผู้บริโภค (1)</span><span class="lang-en">Consumer (1)</span></button>
+  <button class="filter-btn" onclick="filterArticles('ai', this)"><span class="lang-th">AI Legal Tech (4)</span><span class="lang-en">AI Legal Tech (4)</span></button>
+  <button class="filter-btn" onclick="filterArticles('anticorruption', this)"><span class="lang-th">ป้องกันทุจริต (3)</span><span class="lang-en">Anti-Corruption (3)</span></button>
+  <button class="filter-btn" onclick="filterArticles('professional', this)"><span class="lang-th">วิชาชีพ (1)</span><span class="lang-en">Professional (1)</span></button>
+  <button class="filter-btn" onclick="filterArticles('bkk', this)" style="border-color:#6366f1;color:#6366f1;"><span class="lang-th">Bangkok Possible (8)</span><span class="lang-en">Bangkok Possible (8)</span></button>
 </div>
 
 <!-- LAS BUSINESS LEGAL ADVISORY FRAMEWORK -->
@@ -880,7 +880,7 @@
   </div>
 
   <div class="las-fw-grid">
-    <div class="las-fw-card share">
+    <div class="las-fw-card share" data-category="las-share">
       <div class="step">STEP 1</div>
       <h3>
         <span class="lang-th">LAS Share — รากฐาน</span>
@@ -898,7 +898,7 @@
       </p>
     </div>
 
-    <div class="las-fw-card shield">
+    <div class="las-fw-card shield" data-category="las-shield">
       <div class="step">STEP 2</div>
       <h3>
         <span class="lang-th">LAS Shield — ปกป้องธุรกิจ</span>
@@ -916,7 +916,7 @@
       </p>
     </div>
 
-    <div class="las-fw-card cc">
+    <div class="las-fw-card cc" data-category="las-cc">
       <div class="step">STEP 3</div>
       <h3>LAS C&amp;C — Contract &amp; Control</h3>
       <p class="subtitle">
@@ -931,7 +931,7 @@
       </p>
     </div>
 
-    <div class="las-fw-card up">
+    <div class="las-fw-card up" data-category="las-upsize">
       <div class="step">STEP 4</div>
       <h3>
         <span class="lang-th">LAS UP — ขยายกิจการ</span>
@@ -1019,7 +1019,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-04">4 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">วิเคราะห์ฉบับสมบูรณ์ พ.ร.บ.คุ้มครองแรงงาน (ฉบับที่ 9) พ.ศ. 2568 — ลาคลอด 120 วัน ลาช่วยคู่สมรส 15 วัน ค่าจ้างลาคลอด 60 วัน และผลกระทบต่อนายจ้าง-ลูกจ้าง</div>
   <div class="card-tags"><span>LPA Amendment 9</span><span>ลาคลอด 120 วัน</span><span>กฎหมายแรงงาน</span><span>Labour Law</span></div>
-  <a class="read-more" href="articles/labour-protection-act-amendment-9-2568.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/labour-protection-act-amendment-9-2568.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- BLUE OCEAN 2 — NDA -->
@@ -1030,7 +1030,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-04">4 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">องค์ประกอบ NDA ที่ถูกต้องตามกฎหมายไทย ข้อที่ต้องระวัง การบังคับใช้ และวิธีป้องกันความลับทางการค้าอย่างมีประสิทธิภาพ</div>
   <div class="card-tags"><span>NDA</span><span>สัญญาความลับ</span><span>Non-Disclosure Agreement</span><span>ความลับทางการค้า</span></div>
-  <a class="read-more" href="articles/nda-non-disclosure-agreement-thailand.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/nda-non-disclosure-agreement-thailand.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- BLUE OCEAN 3 — Hotel Management Agreement -->
@@ -1041,7 +1041,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-04">4 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">โครงสร้าง HMA ค่าธรรมเนียมการจัดการ (Base + Incentive Fee) Performance Test และข้อพิพาทที่พบบ่อยในธุรกิจโรงแรมไทย</div>
   <div class="card-tags"><span>Hotel Management Agreement</span><span>HMA</span><span>Hospitality Law</span><span>สัญญาบริหาร</span></div>
-  <a class="read-more" href="articles/hotel-management-agreement-thailand.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/hotel-management-agreement-thailand.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- BLUE OCEAN 4 — PDPA B2B -->
@@ -1052,7 +1052,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-04">4 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">การปฏิบัติตาม PDPA ในบริบท B2B ข้อตกลง Data Processing Agreement (DPA) หน้าที่ Data Controller และ Processor และโทษที่เกิดขึ้นหากฝ่าฝืน</div>
   <div class="card-tags"><span>PDPA B2B</span><span>Data Processing Agreement</span><span>DPA</span><span>Data Protection</span></div>
-  <a class="read-more" href="articles/pdpa-compliance-guide-business.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/pdpa-compliance-guide-business.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- BLUE OCEAN 5 — Due Diligence & CP -->
@@ -1063,7 +1063,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-04">4 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">กระบวนการ Due Diligence 11 หมวด Conditions Precedent (CP) และ CP Checklist สำหรับธุรกรรม M&amp;A การลงทุน และการซื้อขายกิจการในประเทศไทย</div>
   <div class="card-tags"><span>Due Diligence</span><span>Conditions Precedent</span><span>M&amp;A</span><span>CP Checklist</span></div>
-  <a class="read-more" href="articles/due-diligence-conditions-precedent-thailand.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/due-diligence-conditions-precedent-thailand.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- BLUE OCEAN 6 — Company Registration -->
@@ -1074,7 +1074,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-04">4 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">ขั้นตอนจดทะเบียนบริษัทจำกัดในประเทศไทย ทุนจดทะเบียน คณะกรรมการ หนังสือบริคณห์สนธิ และข้อกำหนดพิเศษสำหรับนักลงทุนต่างชาติ</div>
   <div class="card-tags"><span>จดทะเบียนบริษัท</span><span>Company Registration</span><span>Thailand Business</span><span>บริษัทจำกัด</span></div>
-  <a class="read-more" href="articles/company-registration-thailand-guide.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/company-registration-thailand-guide.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- BLUE OCEAN 7 — Lease Agreement -->
@@ -1085,7 +1085,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-04">4 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">ประเภทสัญญาเช่า ข้อกำหนดสำคัญ การจดทะเบียนสัญญาเช่าเกิน 3 ปี สิทธิผู้เช่าและผู้ให้เช่า และข้อควรระวังสำหรับนักลงทุนต่างชาติ</div>
   <div class="card-tags"><span>สัญญาเช่า</span><span>Lease Agreement</span><span>Commercial Lease</span><span>Residential Lease</span></div>
-  <a class="read-more" href="articles/lease-agreement-thailand-guide.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/lease-agreement-thailand-guide.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- BLUE OCEAN 8 — Foreigner Condo -->
@@ -1096,7 +1096,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-04">4 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">Foreign Quota 49% กฎหมายอาคารชุด วิธีการถือครองที่ดินของต่างชาติ การโอนเงินเข้าประเทศ (FET) และทางเลือกทางกฎหมายสำหรับการลงทุนอสังหาริมทรัพย์ในไทย</div>
   <div class="card-tags"><span>ต่างชาติซื้อคอนโด</span><span>Foreign Quota</span><span>Condominium Act</span><span>FET</span></div>
-  <a class="read-more" href="articles/foreigner-buy-condo-thailand.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/foreigner-buy-condo-thailand.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- BLUE OCEAN 9 — Employment Contract -->
@@ -1107,7 +1107,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-04">4 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">ข้อกำหนดบังคับตามกฎหมายในสัญญาจ้าง สัญญาจ้างประเภทต่างๆ (Fixed-Term vs Permanent) การปฏิบัติตาม LPA ฉบับที่ 9 และสิทธิของนายจ้างและลูกจ้าง</div>
   <div class="card-tags"><span>สัญญาจ้างแรงงาน</span><span>Employment Contract</span><span>Labour Law</span><span>LPA</span></div>
-  <a class="read-more" href="articles/employment-contract-thailand-guide.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/employment-contract-thailand-guide.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- BLUE OCEAN 10 — Franchise -->
@@ -1118,7 +1118,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-04">4 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">โครงสร้างสัญญาแฟรนไชส์ ค่าแฟรนไชส์ Royalty Fee Territory Rights การต่ออายุและยุติสัญญา และสิทธิของแฟรนไชส์ซอร์และแฟรนไชส์ซีในประเทศไทย</div>
   <div class="card-tags"><span>สัญญาแฟรนไชส์</span><span>Franchise Agreement</span><span>Royalty Fee</span><span>Territory Rights</span></div>
-  <a class="read-more" href="articles/franchise-agreement-thailand.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/franchise-agreement-thailand.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- BLUE OCEAN 11 — BOI -->
@@ -1129,7 +1129,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-04">4 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">สิทธิประโยชน์ BOI 3 ประเภท ประเภทกิจการที่ได้รับการส่งเสริม ขั้นตอนการยื่นขอ BOI และเงื่อนไขการปฏิบัติตามหลังได้รับการส่งเสริม</div>
   <div class="card-tags"><span>BOI Thailand</span><span>สิทธิประโยชน์การลงทุน</span><span>ยกเว้นภาษี</span><span>Foreign Investment</span></div>
-  <a class="read-more" href="articles/boi-investment-thailand-guide.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/boi-investment-thailand-guide.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- BLUE OCEAN 12 — Anti-Nominee -->
@@ -1140,7 +1140,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-04">4 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">Foreign Business Act มาตรา Anti-Nominee กระบวนการตรวจสอบ DBD โทษทางอาญาและแพ่ง และการปฏิบัติตามกฎหมายสำหรับบริษัทที่มีผู้ถือหุ้นต่างชาติ</div>
   <div class="card-tags"><span>Anti-Nominee</span><span>Foreign Business Act</span><span>DBD</span><span>ถือหุ้นแทน</span></div>
-  <a class="read-more" href="articles/anti-nominee-thailand-legal-guide.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/anti-nominee-thailand-legal-guide.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- BLUE OCEAN 13 — Joint Venture -->
@@ -1151,7 +1151,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-04">4 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">โครงสร้าง JV กลไก Deadlock Break Exit Mechanisms (ROFO, Tag-Along, Drag-Along) Shareholder Rights และ Governance ในสัญญาร่วมทุนประเทศไทย</div>
   <div class="card-tags"><span>Joint Venture</span><span>สัญญาร่วมทุน</span><span>Shareholder Agreement</span><span>Deadlock</span></div>
-  <a class="read-more" href="articles/joint-venture-agreement-thailand.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/joint-venture-agreement-thailand.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- BLUE OCEAN 14 — M&A -->
@@ -1162,7 +1162,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-04">4 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">กระบวนการ M&amp;A ในประเทศไทย กฎหมายการแข่งขันทางการค้า (TCC) SEC Tender Offer Due Diligence และ Post-Merger Integration</div>
   <div class="card-tags"><span>M&amp;A Thailand</span><span>ควบรวมกิจการ</span><span>Tender Offer</span><span>Trade Competition Act</span></div>
-  <a class="read-more" href="articles/mergers-acquisitions-thailand.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/mergers-acquisitions-thailand.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- BLUE OCEAN 15 — Transfer Pricing -->
@@ -1173,7 +1173,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-04">4 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">กฎ Arm's Length Principle สำหรับกลุ่มบริษัทที่เกี่ยวข้อง เอกสารที่ต้องจัดทำ (TP Documentation) การยื่น CbCR และบทลงโทษการฝ่าฝืนกฎ Transfer Pricing</div>
   <div class="card-tags"><span>Transfer Pricing</span><span>ราคาโอน</span><span>Arm's Length</span><span>TP Documentation</span></div>
-  <a class="read-more" href="articles/transfer-pricing-thailand.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/transfer-pricing-thailand.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- BLUE OCEAN 16 — EEC -->
@@ -1184,7 +1184,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-04">4 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">กฎหมาย EEC พ.ร.บ.เขตพัฒนาพิเศษภาคตะวันออก สิทธิประโยชน์พิเศษ กิจการ S-Curve ที่ได้รับการส่งเสริม และกระบวนการยื่นขอลงทุนในเขต EEC</div>
   <div class="card-tags"><span>EEC</span><span>Eastern Economic Corridor</span><span>S-Curve</span><span>EEC Act</span></div>
-  <a class="read-more" href="articles/eec-investment-thailand.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/eec-investment-thailand.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- ═══════ END BLUE OCEAN SERIES ═══════ -->
@@ -1195,7 +1195,7 @@ function setLasFwLang(lang) {
   <div class="card-subtitle">Bid Rigging in Thailand</div>
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-03">3 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-tags"><span>ฮั๊วประมูล</span><span>Bid Rigging</span><span>ปปช.</span></div>
-  <a class="read-more" href="articles/bid-rigging-thailand.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/bid-rigging-thailand.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <article class="article-card" data-category="anticorruption" itemscope itemtype="https://schema.org/Article">
@@ -1204,7 +1204,7 @@ function setLasFwLang(lang) {
   <div class="card-subtitle">Asset Declaration for Government Officials</div>
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-03">3 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-tags"><span>บัญชีทรัพย์สิน</span><span>ปปช.</span><span>ข้าราชการ</span></div>
-  <a class="read-more" href="articles/asset-declaration-thailand.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/asset-declaration-thailand.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <article class="article-card" data-category="anticorruption" itemscope itemtype="https://schema.org/Article">
@@ -1213,7 +1213,7 @@ function setLasFwLang(lang) {
   <div class="card-subtitle">Civil Recovery from Corrupt Officials</div>
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-03">3 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-tags"><span>ฟ้องแพ่ง</span><span>ละเมิดเจ้าหน้าที่</span><span>อัยการ</span></div>
-  <a class="read-more" href="articles/civil-recovery-corruption-thailand.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/civil-recovery-corruption-thailand.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <article class="article-card" data-category="ai" itemscope itemtype="https://schema.org/Article">
@@ -1222,7 +1222,7 @@ function setLasFwLang(lang) {
   <div class="card-subtitle">AI ไม่ได้มาแทนทนาย — แต่มาแทนทนายที่ไม่ใช้ AI</div>
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-03">3 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-tags"><span>AI Legal Tech</span><span>NIA</span><span>Legal Innovation</span></div>
-  <a class="read-more" href="articles/ai-replacing-lawyers.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/ai-replacing-lawyers.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <article class="article-card" data-category="ai" itemscope itemtype="https://schema.org/Article">
@@ -1231,7 +1231,7 @@ function setLasFwLang(lang) {
   <div class="card-subtitle">The AI-First Methodology</div>
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-03">3 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-tags"><span>Deep Analytics</span><span>AI-First</span><span>NIA</span></div>
-  <a class="read-more" href="articles/deep-legal-analytics.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/deep-legal-analytics.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <article class="article-card" data-category="ai" itemscope itemtype="https://schema.org/Article">
@@ -1240,7 +1240,7 @@ function setLasFwLang(lang) {
   <div class="card-subtitle">ทำไม AI ทำให้สำนักงานเล็กชนะ</div>
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-03">3 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-tags"><span>Solo Practice</span><span>AI Advantage</span><span>LAS</span></div>
-  <a class="read-more" href="articles/solo-practitioner-ai-advantage.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/solo-practitioner-ai-advantage.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 
@@ -1256,7 +1256,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-01">1 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">Guide to AI Legal Technology in Thailand covering NIA-funded research, PDPA compliance, corporate law, and due diligence — pioneering AI-powered legal advisory system</div>
   <div class="card-tags"><span>AI Legal Tech</span><span>NIA</span><span>Legal Innovation</span><span>Thailand</span></div>
-  <a class="read-more" href="articles/ai-legal-tech-thailand.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/ai-legal-tech-thailand.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- NEW 2 — Art of Ancient Contract Drafting -->
@@ -1267,7 +1267,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-03">3 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">ศิลปะการร่างสัญญาชั้นครู — ความนิ่งของผู้ร่าง ทุกคำมีน้ำหนัก บทเรียนจากสัญญาโบราณสู่เทคนิคสมัยใหม่</div>
   <div class="card-tags"><span>สัญญาโบราณ</span><span>Contract Drafting</span><span>ศิลปะการร่าง</span></div>
-  <a class="read-more" href="articles/art-of-ancient-contract-drafting.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/art-of-ancient-contract-drafting.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- NEW 3 — How to Choose a Business Lawyer -->
@@ -1278,7 +1278,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-01">1 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">Guide to choosing a business lawyer in Thailand covering key practice areas, AI-powered legal services, and what to look for in corporate counsel</div>
   <div class="card-tags"><span>Business Lawyer</span><span>ทนายธุรกิจ</span><span>Legal Services</span><span>Thailand</span></div>
-  <a class="read-more" href="articles/business-lawyer-thailand-guide.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/business-lawyer-thailand-guide.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- NEW 4 — Contract Reading Guide -->
@@ -1289,7 +1289,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-03">3 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">คู่มืออ่านสัญญาสำหรับผู้ประกอบการ: โครงสร้างสัญญา Checklist 10 ข้อ เทคนิคอ่านสัญญาแบบนักกฎหมาย</div>
   <div class="card-tags"><span>อ่านสัญญา</span><span>Contract Reading</span><span>Checklist</span><span>ผู้ประกอบการ</span></div>
-  <a class="read-more" href="articles/contract-reading-guide.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/contract-reading-guide.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- NEW 5 — Due Diligence Checklist -->
@@ -1300,7 +1300,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-01">1 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">Due diligence checklist for Thailand business transactions covering M&A, joint ventures, real estate, and PDPA compliance requirements</div>
   <div class="card-tags"><span>Due Diligence</span><span>Checklist</span><span>M&A</span><span>Joint Venture</span><span>PDPA</span></div>
-  <a class="read-more" href="articles/due-diligence-checklist-thailand.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/due-diligence-checklist-thailand.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- NEW 6 — PDPA Compliance Guide -->
@@ -1311,7 +1311,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-01">1 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">PDPA compliance guide for Thailand covering 6 lawful bases, 8 data subject rights, DPO requirements, and penalties up to 5 million baht</div>
   <div class="card-tags"><span>PDPA</span><span>Compliance</span><span>Data Protection</span><span>DPO</span></div>
-  <a class="read-more" href="articles/pdpa-compliance-guide-thailand.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/pdpa-compliance-guide-thailand.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- NEW 7 — PDPA Essentials for Entrepreneurs -->
@@ -1322,7 +1322,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-03">3 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">PDPA สิ่งที่ผู้ประกอบการต้องรู้ — 5 สิ่งที่ต้องทำทันที เพื่อหลีกเลี่ยงโทษปรับสูงสุด 5 ล้านบาท</div>
   <div class="card-tags"><span>PDPA</span><span>ผู้ประกอบการ</span><span>5 สิ่งต้องทำ</span><span>โทษปรับ</span></div>
-  <a class="read-more" href="articles/pdpa-essentials-entrepreneurs.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/pdpa-essentials-entrepreneurs.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- NEW 8 — Why Lawyers Read Contracts Differently -->
@@ -1333,7 +1333,7 @@ function setLasFwLang(lang) {
   <div class="card-meta"><time itemprop="datePublished" datetime="2026-04-03">3 เมษายน 2569</time> · โดย <span itemprop="author">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span></div>
   <div class="card-summary" itemprop="description">5 วิธีที่นักกฎหมายอ่านสัญญาต่างจากคนทั่วไป — เทคนิคที่ทำให้มองเห็นความเสี่ยงที่ซ่อนอยู่ในทุกข้อสัญญา</div>
   <div class="card-tags"><span>อ่านสัญญา</span><span>นักกฎหมาย</span><span>Contract Analysis</span><span>5 วิธี</span></div>
-  <a class="read-more" href="articles/why-lawyers-read-contracts-differently.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/why-lawyers-read-contracts-differently.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- ═══════ LAS LEGAL RESEARCH SERIES ═══════ -->
@@ -1350,7 +1350,7 @@ function setLasFwLang(lang) {
   <div class="card-tags">
     <span>Nominee Director</span><span>Duty of Care</span><span>Criminal Liability</span><span>Tax</span><span>กรรมการบริษัท</span>
   </div>
-  <a class="read-more" href="blog/bkk-council/shareholding-article2.html">อ่านบทความ / Read Article →</a>
+  <a class="read-more" href="blog/bkk-council/shareholding-article2.html"><span class="lang-th">อ่านบทความ →</span><span class="lang-en">Read Article →</span></a>
 </article>
 
 <!-- ARTICLE 19 — Nominee Shareholding (LAS Legal Research Series #1) -->
@@ -1365,7 +1365,7 @@ function setLasFwLang(lang) {
   <div class="card-tags">
     <span>Nominee Shareholding</span><span>Shareholder Register</span><span>Beneficial Owner</span><span>Section 1129</span><span>ฝากหุ้น</span>
   </div>
-  <a class="read-more" href="blog/bkk-council/shareholding-article1.html">อ่านบทความ / Read Article →</a>
+  <a class="read-more" href="blog/bkk-council/shareholding-article1.html"><span class="lang-th">อ่านบทความ →</span><span class="lang-en">Read Article →</span></a>
 </article>
 
 <!-- ═══════ NEW ARTICLES FROM KU MARKETING COURSE ═══════ -->
@@ -1383,7 +1383,7 @@ function setLasFwLang(lang) {
   <div class="card-tags">
     <span>ตรวจสอบสัญญา</span><span>Contract Review</span><span>Commercial Terms</span><span>Legal Terms</span><span>Power of Attorney</span>
   </div>
-  <a class="read-more" href="articles/contract-document-review.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/contract-document-review.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- ARTICLE 17 — Consumer Protection -->
@@ -1399,7 +1399,7 @@ function setLasFwLang(lang) {
   <div class="card-tags">
     <span>คุ้มครองผู้บริโภค</span><span>Consumer Protection</span><span>โฆษณา</span><span>Advertising Law</span><span>E-Commerce</span><span>อย.</span>
   </div>
-  <a class="read-more" href="articles/consumer-protection-marketing.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/consumer-protection-marketing.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- ARTICLE 16 — Company Registration -->
@@ -1415,7 +1415,7 @@ function setLasFwLang(lang) {
   <div class="card-tags">
     <span>จดทะเบียนบริษัท</span><span>Company Registration</span><span>Joint Venture</span><span>Consortium</span><span>ต่างชาติ</span><span>Foreign Business</span>
   </div>
-  <a class="read-more" href="articles/company-registration-guide.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/company-registration-guide.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- ARTICLE 15 — Business Tax -->
@@ -1431,7 +1431,7 @@ function setLasFwLang(lang) {
   <div class="card-tags">
     <span>ภาษีธุรกิจ</span><span>Business Tax</span><span>VAT</span><span>ภาษีเงินได้</span><span>Income Tax</span><span>อากรแสตมป์</span>
   </div>
-  <a class="read-more" href="articles/business-tax-essentials.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/business-tax-essentials.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- ARTICLE 14 — Marketing Contracts -->
@@ -1447,7 +1447,7 @@ function setLasFwLang(lang) {
   <div class="card-tags">
     <span>สัญญาอินฟลูเอนเซอร์</span><span>Influencer Contract</span><span>NDA</span><span>Brand Ambassador</span><span>Event</span>
   </div>
-  <a class="read-more" href="articles/marketing-business-contracts.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/marketing-business-contracts.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- ARTICLE 13 — Social Media Marketing Law -->
@@ -1463,7 +1463,7 @@ function setLasFwLang(lang) {
   <div class="card-tags">
     <span>การตลาดดิจิทัล</span><span>Digital Marketing Law</span><span>พ.ร.บ.คอมพิวเตอร์</span><span>SPAM</span><span>โซเชียลมีเดีย</span><span>E-Commerce</span>
   </div>
-  <a class="read-more" href="articles/social-media-marketing-law.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/social-media-marketing-law.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- ARTICLE 12 — Intellectual Property -->
@@ -1479,7 +1479,7 @@ function setLasFwLang(lang) {
   <div class="card-tags">
     <span>ทรัพย์สินทางปัญญา</span><span>Intellectual Property</span><span>ลิขสิทธิ์</span><span>Copyright</span><span>เครื่องหมายการค้า</span><span>Trademark</span><span>สิทธิบัตร</span><span>Patent</span>
   </div>
-  <a class="read-more" href="articles/ip-law-business-marketing.html">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="articles/ip-law-business-marketing.html"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- ═══════ EXISTING ARTICLES ═══════ -->
@@ -1497,7 +1497,7 @@ function setLasFwLang(lang) {
   <div class="card-tags">
     <span>กฎหมายแรงงาน</span><span>Labour Protection Act</span><span>ลาคลอด</span><span>Maternity Leave</span><span>สิทธิลูกจ้าง</span>
   </div>
-  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/97" target="_blank">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/97" target="_blank"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- ARTICLE 10 — Shareholder Register -->
@@ -1513,7 +1513,7 @@ function setLasFwLang(lang) {
   <div class="card-tags">
     <span>ผู้ถือหุ้น</span><span>Shareholder Register</span><span>บอจ.5</span><span>Company Compliance</span>
   </div>
-  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/96" target="_blank">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/96" target="_blank"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- ARTICLE 9 — Unfair Dismissal -->
@@ -1529,7 +1529,7 @@ function setLasFwLang(lang) {
   <div class="card-tags">
     <span>เลิกจ้างไม่เป็นธรรม</span><span>Unfair Dismissal</span><span>กฎหมายแรงงาน</span><span>คำพิพากษา</span><span>Constructive Dismissal</span>
   </div>
-  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/95" target="_blank">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/95" target="_blank"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- ARTICLE 8 — Shareholder Structure Guide -->
@@ -1545,7 +1545,7 @@ function setLasFwLang(lang) {
   <div class="card-tags">
     <span>ผู้ถือหุ้น</span><span>Shareholder Structure</span><span>Corporate Governance</span><span>บริษัทจำกัด</span>
   </div>
-  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/70" target="_blank">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/70" target="_blank"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- ARTICLE 7 — Joint Venture -->
@@ -1561,7 +1561,7 @@ function setLasFwLang(lang) {
   <div class="card-tags">
     <span>Joint Venture</span><span>การร่วมทุน</span><span>Business Partnership</span><span>สัญญาร่วมทุน</span>
   </div>
-  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/67" target="_blank">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/67" target="_blank"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- ARTICLE 6 — PDPA -->
@@ -1577,7 +1577,7 @@ function setLasFwLang(lang) {
   <div class="card-tags">
     <span>PDPA</span><span>คุ้มครองข้อมูลส่วนบุคคล</span><span>Data Protection</span><span>Privacy Law</span><span>DPO</span><span>Consent</span>
   </div>
-  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/66" target="_blank">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/66" target="_blank"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- ARTICLE 5 — Mixed-Use Real Estate -->
@@ -1593,7 +1593,7 @@ function setLasFwLang(lang) {
   <div class="card-tags">
     <span>อสังหาริมทรัพย์</span><span>Mixed-Use Development</span><span>กฎหมายอาคารชุด</span><span>Condominium Law</span><span>EIA</span><span>งานวิจัย</span>
   </div>
-  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/65" target="_blank">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/65" target="_blank"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- ARTICLE 4 — Business Structures -->
@@ -1609,7 +1609,7 @@ function setLasFwLang(lang) {
   <div class="card-tags">
     <span>โครงสร้างธุรกิจ</span><span>Company Formation</span><span>ห้างหุ้นส่วน</span><span>บริษัทจำกัด</span><span>Thai Corporate Law</span>
   </div>
-  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/64" target="_blank">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/64" target="_blank"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- ARTICLE 3 — 12 Golden Rules -->
@@ -1625,7 +1625,7 @@ function setLasFwLang(lang) {
   <div class="card-tags">
     <span>จรรยาบรรณ</span><span>Legal Ethics</span><span>Professional Standards</span><span>ทนายความ</span>
   </div>
-  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/63" target="_blank">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/63" target="_blank"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- ARTICLE 2 — Contract Review -->
@@ -1641,7 +1641,7 @@ function setLasFwLang(lang) {
   <div class="card-tags">
     <span>สัญญา</span><span>Contract Review</span><span>Due Diligence</span><span>ข้อควรระวัง</span>
   </div>
-  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/62" target="_blank">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/62" target="_blank"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- ARTICLE 1 — Business Law Foundation -->
@@ -1657,7 +1657,7 @@ function setLasFwLang(lang) {
   <div class="card-tags">
     <span>กฎหมายธุรกิจ</span><span>Business Law</span><span>Legal Planning</span><span>ผู้ประกอบการ</span><span>Corporate Compliance</span>
   </div>
-  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/61" target="_blank">อ่านบทความเต็ม →</a>
+  <a class="read-more" href="https://laslegal.co.th/LawKnowledge/Detail/61" target="_blank"><span class="lang-th">อ่านบทความเต็ม →</span><span class="lang-en">Read Full Article →</span></a>
 </article>
 
 <!-- ═══════════════════════════ BANGKOK POSSIBLE ═══════════════════════════ -->
@@ -1717,26 +1717,21 @@ function setLasFwLang(lang) {
 </div><!-- .wiki-wrapper -->
 
 <script>
-function filterArticles(category) {
+/* Fixed 2026-04-11: pass `this` instead of relying on window.event.target (unsafe in strict mode / non-Chromium).
+   Also filters .las-fw-card (framework overview cards) so LAS Share/Shield/C&C/UP buttons work. */
+function filterArticles(category, btn) {
   const cards = document.querySelectorAll('.article-card');
   const series = document.querySelectorAll('.series-section');
+  const fwCards = document.querySelectorAll('.las-fw-card');
   const buttons = document.querySelectorAll('.filter-btn');
-  buttons.forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
-  cards.forEach(card => {
-    if (category === 'all' || card.dataset.category === category) {
-      card.style.display = 'block';
-    } else {
-      card.style.display = 'none';
-    }
-  });
-  series.forEach(sec => {
-    if (category === 'all' || sec.dataset.category === category) {
-      sec.style.display = 'block';
-    } else {
-      sec.style.display = 'none';
-    }
-  });
+  buttons.forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  const show = (el, display) => {
+    el.style.display = (category === 'all' || el.dataset.category === category) ? display : 'none';
+  };
+  cards.forEach(el => show(el, 'block'));
+  series.forEach(el => show(el, 'block'));
+  fwCards.forEach(el => show(el, ''));
 }
 </script>
 <script src="/js/legal-links.js"></script>
