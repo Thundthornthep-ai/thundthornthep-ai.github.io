@@ -1,7 +1,7 @@
 // Service Worker for ส.ก. Navigator PWA
-// Version: sk-navigator-v1
+// Version: sk-navigator-v4 (2026-04-11 — PWA upgrade + expense data module)
 
-const CACHE_NAME = 'sk-navigator-v3';
+const CACHE_NAME = 'sk-navigator-v4';
 
 const URLS_TO_CACHE = [
   './',
@@ -13,7 +13,9 @@ const URLS_TO_CACHE = [
   './phase-b.html',
   './phase-c.html',
   './phase-d-e.html',
-  './sk-candidate-guide.html'
+  './sk-candidate-guide.html',
+  './election_expenses_data.js',
+  './manifest.json'
 ];
 
 const GOOGLE_FONTS_CACHE = 'sk-fonts-v1';
@@ -22,7 +24,14 @@ const GOOGLE_FONTS_CACHE = 'sk-fonts-v1';
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(CACHE_NAME).then(function(cache) {
-      return cache.addAll(URLS_TO_CACHE);
+      // Use addAll but allow individual failures to not block whole install
+      return Promise.all(
+        URLS_TO_CACHE.map(function(url) {
+          return cache.add(url).catch(function(err) {
+            console.warn('[SW] Failed to cache:', url, err);
+          });
+        })
+      );
     })
   );
   self.skipWaiting();

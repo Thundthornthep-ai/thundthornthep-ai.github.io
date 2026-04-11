@@ -1,14 +1,70 @@
 {
   "name": "ส.ก. Navigator — คู่มือเลือกตั้ง กทม. 2569",
   "short_name": "ส.ก. Navigator",
-  "description": "District Intelligence by LAS — From Zero to Hero",
+  "description": "คู่มือผู้สมัคร ส.ก. + District Intelligence by LAS — เลือกตั้ง 28 มิถุนายน 2569",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#0F1B2D",
   "theme_color": "#1B2A4A",
   "lang": "th",
+  "dir": "ltr",
+  "categories": ["government", "news", "education"],
   "icons": [
-    {"src": "/las-logo.webp", "sizes": "192x192", "type": "image/webp"},
-    {"src": "/las-logo.webp", "sizes": "512x512", "type": "image/webp"}
+    {
+      "src": "/las-logo-color.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/las-logo-color.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/las-logo-color.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/las-logo-color.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Timeline เลือกตั้ง",
+      "short_name": "Timeline",
+      "description": "ดูปฏิทินกระบวนการเลือกตั้ง 23 จุด",
+      "url": "./phase-a.html#election-timeline",
+      "icons": [{"src": "/las-logo-color.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "กฎหมายค่าใช้จ่าย",
+      "short_name": "ค่าใช้จ่าย",
+      "description": "เพดาน + 12 ประเภทค่าใช้จ่าย",
+      "url": "./phase-b.html#election-expenses",
+      "icons": [{"src": "/las-logo-color.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "Campaign Tracker",
+      "short_name": "Tracker",
+      "description": "บัญชีรายรับรายจ่าย + แจ้งเตือนวงเงิน",
+      "url": "./campaign-tracker.html",
+      "icons": [{"src": "/las-logo-color.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "District Intelligence",
+      "short_name": "เขต",
+      "description": "Traffy Fondue + ปัญหาในเขต",
+      "url": "./district-intel.html",
+      "icons": [{"src": "/las-logo-color.png", "sizes": "192x192"}]
+    }
   ]
 }
