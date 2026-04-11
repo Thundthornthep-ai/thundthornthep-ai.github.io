@@ -13,59 +13,19 @@
 <link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#FAFAFA;--bg-alt:#F5F5F5;--card:#FFF;--text:#1A1A2E;--text-secondary:#6B7280;--text-muted:#9CA3AF;--navy:#1B2A4A;--navy-dark:#0d1f33;--gold:#C9A96E;--teal:#0D9488;--green:#22C55E;--green-dark:#14532D;--red:#EF4444;--red-dark:#991B1B;--orange:#E67E22;--blue:#2563EB;--border:#E5E7EB;--border-light:#F3F4F6;--shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);--radius:12px;--radius-sm:8px;--max-w:900px;--transition:.2s ease}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.7;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
-.top-bar{position:fixed;top:0;left:0;right:0;z-index:100;height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:var(--navy);border-bottom:1px solid rgba(201,169,110,.2);font-size:13px}
-.top-bar-left{font-family:'Space Grotesk',sans-serif;color:rgba(255,255,255,.9);font-weight:500}.top-bar-left a{color:rgba(255,255,255,.6);text-decoration:none;margin-right:8px}.top-bar-left a:hover{color:#fff}
-.top-bar-right{color:rgba(255,255,255,.5);font-size:12px;font-family:'Space Grotesk',sans-serif}.top-bar-right span{color:var(--gold)}
-.main{max-width:var(--max-w);margin:0 auto;padding:64px 16px 80px}
-.st{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--border)}
-.sd{font-size:13px;color:var(--text-secondary);margin-bottom:16px}
-.btn{padding:10px 20px;border:none;border-radius:var(--radius-sm);font-family:'Sarabun',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all var(--transition)}.btn-p{background:var(--navy);color:#fff}.btn-p:hover{background:var(--navy-dark)}.btn-g{background:var(--gold);color:#fff}.btn-g:hover{opacity:.85}.btn-o{background:none;border:1px solid var(--border);color:var(--text-secondary)}.btn-o:hover{border-color:var(--gold)}.btn-d{background:var(--red);color:#fff;padding:6px 12px;font-size:12px}
-.btn-teal{background:var(--teal);color:#fff}.btn-teal:hover{opacity:.85}
-.btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-.form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:16px}
-.fg{display:flex;flex-direction:column;gap:4px}.fg label{font-size:13px;font-weight:600;color:var(--text-secondary)}.fg input,.fg select,.fg textarea{padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'Sarabun',sans-serif;font-size:15px}.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--gold)}
-/* District selector */
-.district-select{width:100%;padding:14px 16px;border:2px solid var(--gold);border-radius:var(--radius);font-family:'Sarabun',sans-serif;font-size:16px;font-weight:600;background:var(--card);color:var(--navy);margin-bottom:24px;cursor:pointer}
-.district-select:focus{outline:none;border-color:var(--navy)}
-/* Link buttons */
-.link-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-bottom:24px}
-.link-card{display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);text-decoration:none;color:var(--text);transition:all var(--transition)}.link-card:hover{border-color:var(--gold);box-shadow:var(--shadow)}
-.link-card .lc-icon{font-size:20px}.link-card .lc-text{font-size:14px;font-weight:600}.link-card .lc-sub{font-size:11px;color:var(--text-muted)}
-/* POI categories */
-.poi-section{margin-bottom:24px}
-.poi-cat{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:8px;overflow:hidden}
-.poi-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;cursor:pointer;font-weight:600;font-size:14px;transition:background var(--transition)}.poi-header:hover{background:var(--bg-alt)}
-.poi-header .count{background:var(--bg-alt);padding:2px 10px;border-radius:12px;font-size:12px;color:var(--text-secondary)}
-.poi-body{padding:0 16px 12px;display:none}.poi-body.open{display:block}
-.poi-item{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border-light);font-size:14px}
-.poi-item:last-child{border-bottom:none}
-.poi-item .status{width:10px;height:10px;border-radius:50%;margin-right:8px;flex-shrink:0}
-.poi-item .status.visited{background:var(--green)}.poi-item .status.pending{background:var(--border)}
-/* Check-in card */
-.checkin-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:8px}
-.checkin-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.checkin-name{font-weight:600;font-size:15px}.checkin-date{font-size:12px;color:var(--text-muted)}
-.checkin-problem{font-size:13px;color:var(--text-secondary);padding:8px 12px;background:var(--bg-alt);border-radius:var(--radius-sm);margin-top:8px}
-/* Progress */
-.progress-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:24px}
-.progress-bar{height:12px;background:var(--bg-alt);border-radius:6px;overflow:hidden;margin-top:8px}
-.progress-fill{height:100%;background:var(--teal);border-radius:6px;transition:width .5s}
-/* Stats */
-.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
-.stat-box{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-align:center}
-.stat-box .sv{font-size:24px;font-weight:700;font-family:'Space Grotesk',sans-serif;color:var(--teal)}
-.stat-box .sl{font-size:12px;color:var(--text-secondary);margin-top:2px}
-@media print{.top-bar,.btn-row,.no-print{display:none!important}.main{padding:0;max-width:100%}}
-@media(max-width:640px){.form-row{grid-template-columns:1fr}.link-grid{grid-template-columns:1fr}.stat-row{grid-template-columns:repeat(3,1fr);gap:6px}.stat-box{padding:10px}.stat-box .sv{font-size:20px}}
-.site-footer{background:var(--navy-dark);color:rgba(255,255,255,.6);text-align:center;padding:24px;font-size:12px;line-height:1.8}.site-footer a{color:var(--gold);text-decoration:none}
-</style>
+<!-- [[THEME-MIGRATION-v1]] -->
+<link rel="stylesheet" href="/css/wiki-theme.css">
+<!-- [[/THEME-MIGRATION-v1]] -->
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#1B2A4A">
 </head>
-<body>
+<body data-lang="th">
+<!-- Canonical TH/EN toggle (see docs/BILINGUAL-CONVENTION.md) -->
+<div class="global-lang-toggle" role="group" aria-label="Site language toggle">
+  <button type="button" class="active" data-lang="th" onclick="setSiteLang('th')">ไทย</button>
+  <button type="button" data-lang="en" onclick="setSiteLang('en')">English</button>
+</div>
+
 <div class="top-bar"><div class="top-bar-left"><a href="index.html">← Dashboard</a> District Intelligence</div><div class="top-bar-right"><span>LAS</span> × <span>NIA</span></div></div>
 <div class="main">
 
@@ -599,5 +559,22 @@ function doImportDI(ev){
 function toggleEl(id){var el=document.getElementById(id);el.style.display=el.style.display==='none'?'block':'none'}
 </script>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('service-worker.js')}</script>
+<!-- Canonical setSiteLang() — see docs/BILINGUAL-CONVENTION.md -->
+<script>
+function setSiteLang(lang) {
+  document.body.setAttribute('data-lang', lang);
+  document.querySelectorAll('.global-lang-toggle button').forEach(function(b) {
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+  });
+  try { localStorage.setItem('las_site_lang', lang); } catch(e) {}
+}
+(function(){
+  try {
+    var saved = localStorage.getItem('las_site_lang');
+    if (saved === 'en') setSiteLang('en');
+  } catch(e) {}
+})();
+</script>
+
 </body>
 </html>

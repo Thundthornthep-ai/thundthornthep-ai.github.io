@@ -13,83 +13,19 @@
 <link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#FAFAFA;--bg-alt:#F5F5F5;--card:#FFF;--text:#1A1A2E;--text-secondary:#6B7280;--text-muted:#9CA3AF;--navy:#1B2A4A;--navy-dark:#0d1f33;--gold:#C9A96E;--teal:#0D9488;--green:#22C55E;--green-bg:#D1FAE5;--red:#EF4444;--red-bg:#FEE2E2;--red-dark:#991B1B;--orange:#E67E22;--orange-bg:#FEF3C7;--blue:#2563EB;--blue-bg:#DBEAFE;--border:#E5E7EB;--border-light:#F3F4F6;--shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);--shadow-md:0 4px 12px rgba(0,0,0,.06);--radius:12px;--radius-sm:8px;--max-w:960px;--transition:.2s ease}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.7;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
-.top-bar{position:fixed;top:0;left:0;right:0;z-index:100;height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:var(--navy);border-bottom:1px solid rgba(201,169,110,.2);font-size:13px}
-.top-bar-left{font-family:'Space Grotesk',sans-serif;color:rgba(255,255,255,.9);font-weight:500}.top-bar-left a{color:rgba(255,255,255,.6);text-decoration:none;margin-right:8px}.top-bar-left a:hover{color:#fff}
-.top-bar-right{color:rgba(255,255,255,.5);font-size:12px;font-family:'Space Grotesk',sans-serif}.top-bar-right span{color:var(--gold)}
-.main{max-width:var(--max-w);margin:0 auto;padding:64px 16px 40px}
-.tab-nav{display:flex;gap:4px;overflow-x:auto;padding:8px 0;margin-bottom:24px;border-bottom:2px solid var(--border)}
-.tab-btn{padding:10px 14px;border:none;background:none;font-family:'Sarabun',sans-serif;font-size:13px;font-weight:600;color:var(--text-secondary);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all var(--transition)}.tab-btn:hover{color:var(--navy)}.tab-btn.active{color:var(--navy);border-bottom-color:var(--gold)}
-.tab-panel{display:none}.tab-panel.active{display:block}
-.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:24px}
-.stat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center}.stat-card .sv{font-size:28px;font-weight:700;font-family:'Space Grotesk',sans-serif;color:var(--navy)}.stat-card .sl{font-size:13px;color:var(--text-secondary);margin-top:4px}
-.bb-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:24px}
-.bb-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:12px;flex-wrap:wrap}.bb-title{font-size:15px;font-weight:600}.bb-pct{font-size:24px;font-weight:700;font-family:'Space Grotesk',sans-serif}
-.bb-track{height:16px;background:var(--bg-alt);border-radius:8px;overflow:hidden}.bb-fill{height:100%;border-radius:8px;transition:width .5s ease}
-.bb-alert{margin-top:12px;padding:10px 14px;border-radius:var(--radius-sm);font-size:13px;font-weight:600;display:none}.bb-alert.show{display:flex;align-items:center;gap:8px}
-.form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:16px}
-.fg{display:flex;flex-direction:column;gap:4px}.fg label{font-size:13px;font-weight:600;color:var(--text-secondary)}.fg input,.fg select,.fg textarea{padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'Sarabun',sans-serif;font-size:15px;transition:border-color var(--transition)}.fg input:focus,.fg select:focus{outline:none;border-color:var(--gold)}
-.btn{padding:10px 20px;border:none;border-radius:var(--radius-sm);font-family:'Sarabun',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all var(--transition)}.btn-p{background:var(--navy);color:#fff}.btn-p:hover{background:var(--navy-dark)}.btn-g{background:var(--gold);color:#fff}.btn-g:hover{opacity:.85}.btn-o{background:none;border:1px solid var(--border);color:var(--text-secondary)}.btn-o:hover{border-color:var(--gold)}.btn-d{background:var(--red);color:#fff;padding:6px 12px;font-size:12px}.btn-d:hover{background:var(--red-dark)}
-.btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-.dt{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:16px}.dt th{background:var(--bg-alt);padding:10px 12px;text-align:left;font-weight:600;color:var(--text-secondary);font-size:12px;border-bottom:2px solid var(--border);white-space:nowrap}.dt td{padding:10px 12px;border-bottom:1px solid var(--border-light)}.dt tr:hover{background:var(--bg-alt)}.dt .amt{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
-.empty{text-align:center;padding:32px;color:var(--text-muted);font-size:14px}
-.st{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--border)}.sd{font-size:13px;color:var(--text-secondary);margin-bottom:16px}
-.sr{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:8px}.sr label{font-size:14px;font-weight:600;min-width:140px}.sr input,.sr select{flex:1;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'Sarabun',sans-serif;font-size:15px}
-.aw{padding:12px 16px;border-radius:var(--radius-sm);margin-bottom:16px;font-size:14px;display:flex;align-items:flex-start;gap:8px;background:#FEF3C7;border:1px solid #F59E0B;color:#92400E;line-height:1.6}
-.aw-danger{background:var(--red-bg);border-color:var(--red);color:var(--red-dark)}
-.aw-info{background:var(--blue-bg);border-color:var(--blue);color:#1E40AF}
-/* Expense type cards */
-.et-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:16px;margin-bottom:24px}
-.et-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:box-shadow var(--transition),border-color var(--transition)}.et-card:hover{box-shadow:var(--shadow-md);border-color:rgba(201,169,110,.3)}
-.et-num{width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.et-head{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}.et-name{font-size:15px;font-weight:700;color:var(--text)}.et-desc{font-size:12px;color:var(--text-secondary);margin-top:2px}
-.et-items{margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}.et-items ul{list-style:none;display:flex;flex-direction:column;gap:4px}.et-items li{font-size:12px;color:var(--text-secondary);display:flex;align-items:flex-start;gap:8px}.et-items li::before{content:'•';color:var(--gold);flex-shrink:0;margin-top:1px}
-.et-law{display:inline-block;margin-top:12px;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;background:rgba(27,42,74,.08);color:var(--navy)}
-/* Law accordion */
-.law-card{border:1px solid rgba(27,42,74,.15);border-radius:var(--radius);overflow:hidden;margin-bottom:12px}
-.law-hd{padding:14px 16px;display:flex;align-items:center;gap:12px;cursor:pointer;background:rgba(27,42,74,.04);transition:background var(--transition)}.law-hd:hover{background:rgba(27,42,74,.08)}
-.law-tag{font-size:11px;font-weight:700;color:var(--navy);background:rgba(27,42,74,.1);padding:3px 10px;border-radius:999px;white-space:nowrap}
-.law-tag-gold{color:var(--gold);background:rgba(201,169,110,.15)}
-.law-name{font-size:14px;font-weight:600;flex:1}
-.law-arrow{transition:transform .2s;color:var(--text-muted);flex-shrink:0}
-.law-body{padding:16px;display:none;font-size:14px;color:var(--text-secondary);line-height:1.8}.law-body.open{display:block}
-.law-body ul{padding-left:20px;margin-top:8px}.law-body li{margin-bottom:6px}
-.law-hl{background:rgba(201,169,110,.2);padding:1px 4px;border-radius:3px;color:var(--gold);font-weight:700}
-/* Timeline */
-.tl{display:flex;flex-direction:column}.tl-item{display:flex;gap:16px}.tl-marker{display:flex;flex-direction:column;align-items:center;flex-shrink:0}.tl-dot{width:12px;height:12px;border-radius:50%;border:2px solid var(--navy);background:var(--bg);flex-shrink:0;margin-top:4px}.tl-dot.filled{background:var(--navy)}.tl-dot.red{border-color:var(--red);background:var(--red)}.tl-line{width:2px;background:var(--border);flex:1;min-height:24px}.tl-content{padding-bottom:20px}.tl-label{font-size:14px;font-weight:700;color:var(--text)}.tl-label.red{color:var(--red)}.tl-desc{font-size:12px;color:var(--text-secondary);margin-top:2px;line-height:1.6}
-/* Badge */
-.badge{display:inline-flex;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;gap:4px}
-.badge-red{background:var(--red-bg);color:var(--red-dark)}.badge-orange{background:var(--orange-bg);color:#92400E}
-/* Backup Reminder */
-.backup-reminder{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;background:#FEF3C7;border:1px solid #F59E0B;border-radius:var(--radius-sm);margin-bottom:20px;font-size:13px;color:#92400E;line-height:1.5;flex-wrap:wrap}
-.backup-reminder .br-msg{flex:1;min-width:200px}
-.backup-reminder .br-actions{display:flex;gap:8px;align-items:center;flex-shrink:0}
-.backup-reminder .br-export{padding:6px 14px;background:var(--navy);color:#fff;border:none;border-radius:var(--radius-sm);font-family:'Sarabun',sans-serif;font-size:12px;font-weight:600;cursor:pointer}
-.backup-reminder .br-export:hover{background:var(--navy-dark)}
-.backup-reminder .br-dismiss{padding:4px 8px;background:none;border:1px solid #D97706;color:#92400E;border-radius:var(--radius-sm);font-family:'Sarabun',sans-serif;font-size:12px;cursor:pointer}
-.backup-reminder .br-dismiss:hover{background:rgba(217,119,6,.1)}
-@media print{.no-print,.top-bar,.tab-nav,.btn-row,.site-footer,.backup-reminder{display:none!important}.main{padding:0;max-width:100%}.tab-panel{display:block!important}body{font-size:13px}}
-@media(max-width:640px){.stat-grid{grid-template-columns:repeat(2,1fr)}.form-row{grid-template-columns:1fr}.tab-btn{padding:8px 10px;font-size:12px}.dt{font-size:12px}.dt th,.dt td{padding:6px 8px}.sr{flex-direction:column;align-items:flex-start}.et-grid{grid-template-columns:1fr}.bb-header{flex-direction:column}}
-@media(max-width:600px){
-  .tab-nav{overflow-x:auto;-webkit-overflow-scrolling:touch;flex-wrap:nowrap}
-  .tab-btn{font-size:12px;padding:8px 12px;white-space:nowrap}
-  .form-row{flex-direction:column}
-  .form-row .fg{width:100%}
-  .dt{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
-  .stat-grid{grid-template-columns:repeat(2,1fr);gap:8px}
-  .sc{padding:12px}
-  .sc .st{font-size:14px}
-  .bb-track{height:16px}
-}
-.site-footer{background:var(--navy-dark);color:rgba(255,255,255,.6);text-align:center;padding:24px;font-size:12px;line-height:1.8}.site-footer a{color:var(--gold);text-decoration:none}
-</style>
+<!-- [[THEME-MIGRATION-v1]] -->
+<link rel="stylesheet" href="/css/wiki-theme.css">
+<!-- [[/THEME-MIGRATION-v1]] -->
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#1B2A4A">
 </head>
-<body>
+<body data-lang="th">
+<!-- Canonical TH/EN toggle (see docs/BILINGUAL-CONVENTION.md) -->
+<div class="global-lang-toggle" role="group" aria-label="Site language toggle">
+  <button type="button" class="active" data-lang="th" onclick="setSiteLang('th')">ไทย</button>
+  <button type="button" data-lang="en" onclick="setSiteLang('en')">English</button>
+</div>
+
 <div class="top-bar"><div class="top-bar-left"><a href="index.html">← Dashboard</a> Campaign Tracker</div><div class="top-bar-right"><span>LAS</span> × <span>NIA</span></div></div>
 <div class="main">
 
@@ -656,5 +592,22 @@ checkBackupReminder();
 จัดทำโดย ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D. — Legal Advance Solution Co., Ltd.
 </div>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('service-worker.js')}</script>
+<!-- Canonical setSiteLang() — see docs/BILINGUAL-CONVENTION.md -->
+<script>
+function setSiteLang(lang) {
+  document.body.setAttribute('data-lang', lang);
+  document.querySelectorAll('.global-lang-toggle button').forEach(function(b) {
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+  });
+  try { localStorage.setItem('las_site_lang', lang); } catch(e) {}
+}
+(function(){
+  try {
+    var saved = localStorage.getItem('las_site_lang');
+    if (saved === 'en') setSiteLang('en');
+  } catch(e) {}
+})();
+</script>
+
 </body>
 </html>

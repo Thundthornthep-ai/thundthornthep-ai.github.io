@@ -13,6 +13,21 @@
  * See docs/ARTICLE-THEME-MIGRATION.md for migration playbook.
  */
 
+/* ── Legacy CSS variables (backwards compat for body inline styles) ── */
+/* Some migrated articles still reference var(--navy) etc. in inline styles. */
+/* Defining them here avoids broken rendering without needing to edit every file. */
+:root {
+  --navy: #1B2A4A;
+  --navy2: #0F1A2E;
+  --gold: #C9A96E;
+  --gold-light: #E8D5B0;
+  --accent: #4a7cad;
+  --red: #C0392B;
+  --text: #202122;
+  --text2: #54595d;
+  --text3: #72777d;
+}
+
 /* ── Wikipedia-inspired reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
