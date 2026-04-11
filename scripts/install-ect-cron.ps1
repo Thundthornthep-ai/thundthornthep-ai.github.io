@@ -1,5 +1,5 @@
 # ============================================================
-#  ECT News Agent — Windows Task Scheduler Installer
+#  ECT News Agent - Windows Task Scheduler Installer
 # ============================================================
 #  Registers 3 scheduled tasks to run the ECT news agent at:
 #    - 07:00  (morning brief)
@@ -75,12 +75,12 @@ foreach ($t in $Times) {
     -Trigger $trigger `
     -Principal $principal `
     -Settings $settings `
-    -Description "ECT Daily News Agent — automated run at $time (CEO directive for BKK SK election 2569)"
+    -Description "ECT Daily News Agent - automated run at $time (CEO directive for BKK SK election 2569)"
 
   Write-Host "  Registered: $name at $time" -ForegroundColor Green
 }
 
 Write-Host "`nAll 3 tasks installed. Verify in Task Scheduler (taskschd.msc)." -ForegroundColor Cyan
-Write-Host "They will appear under: Task Scheduler Library → $TaskPrefix-*" -ForegroundColor Gray
+Write-Host "They will appear under: Task Scheduler Library -> $TaskPrefix-*" -ForegroundColor Gray
 Write-Host "`nTo test manually now, run:" -ForegroundColor Yellow
 Write-Host "  $BatPath" -ForegroundColor White
