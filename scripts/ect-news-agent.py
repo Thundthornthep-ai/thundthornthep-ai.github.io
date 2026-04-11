@@ -174,7 +174,10 @@ SEED_URLS = [
 # ============================================================
 
 def download_pdf(url, target_path):
-    """Download PDF with requests. Returns True if downloaded (or exists)."""
+    """Download PDF with requests + browser User-Agent.
+    ect.go.th rejects python-requests default UA with 403. Mimic Chrome.
+    Returns True if downloaded (or exists).
+    """
     if target_path.exists() and target_path.stat().st_size > 10000:
         return True
     try:
@@ -182,8 +185,17 @@ def download_pdf(url, target_path):
     except ImportError:
         print("⚠️  requests not installed")
         return False
+    headers = {
+        "User-Agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+            "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        ),
+        "Accept": "application/pdf,*/*;q=0.8",
+        "Accept-Language": "th,en-US;q=0.9,en;q=0.8",
+        "Referer": "https://www.ect.go.th/ect_th/th/dailynews2569",
+    }
     try:
-        r = requests.get(url, stream=True, timeout=180)
+        r = requests.get(url, stream=True, timeout=180, headers=headers)
         r.raise_for_status()
         with open(target_path, "wb") as f:
             for chunk in r.iter_content(chunk_size=65536):
@@ -191,6 +203,12 @@ def download_pdf(url, target_path):
         return True
     except Exception as e:
         print(f"  ❌ download failed: {e}")
+        # Clean up partial file
+        if target_path.exists() and target_path.stat().st_size < 10000:
+            try:
+                target_path.unlink()
+            except Exception:
+                pass
         return False
 
 
@@ -393,17 +411,42 @@ def main():
             import traceback
             traceback.print_exc()
 
+    # SAFEGUARD: Don't overwrite latest.json if new data is empty.
+    # This protects against network failures silently clearing the widget.
+    if len(items) == 0:
+        print("\n⚠️  No items produced — KEEPING existing latest.json unchanged")
+        print("   (This prevents a failed run from clearing the widget)")
+        if JSON_OUT.exists():
+            print(f"   Existing: {JSON_OUT}")
+        print("=" * 70)
+        sys.exit(0)
+
+    # SAFEGUARD: If existing JSON has more items and new run has fewer,
+    # preserve the old data (merge rather than replace).
+    existing_items = []
+    if JSON_OUT.exists():
+        try:
+            existing = json.loads(JSON_OUT.read_text(encoding="utf-8"))
+            existing_items = existing.get("items", [])
+        except Exception:
+            pass
+    # Merge: new items take priority, fill up to 10 total
+    existing_by_date = {it["date"]: it for it in existing_items}
+    for it in items:
+        existing_by_date[it["date"]] = it  # new overwrites old for same date
+    merged = sorted(existing_by_date.values(), key=lambda x: x["date"], reverse=True)[:10]
+
     # Write latest.json
     now = dt.datetime.now(dt.timezone(dt.timedelta(hours=7)))
     payload = {
         "lastUpdated": now.isoformat(),
         "lastUpdatedHuman": now.strftime("%d %b %Y %H:%M น. (เวลาไทย)"),
         "source": "https://www.ect.go.th/ect_th/th/dailynews2569",
-        "itemCount": len(items),
-        "items": items,
+        "itemCount": len(merged),
+        "items": merged,
     }
     JSON_OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"\n💾 Wrote {JSON_OUT} ({len(items)} items)")
+    print(f"\n💾 Wrote {JSON_OUT} ({len(merged)} items — merged from {len(existing_items)} existing + {len(items)} new)")
     print("=" * 70)
 
 
