@@ -193,6 +193,8 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
 <div class="tab-nav no-print">
   <button class="tab-btn active" onclick="showTab('team')">ทีม/รถ/ป้าย</button>
   <button class="tab-btn" onclick="showTab('types')">12 ประเภท</button>
+  <button class="tab-btn" onclick="showTab('scenarios')">⚖️ 2 Scenarios</button>
+  <button class="tab-btn" onclick="showTab('qa')">❓ Q&amp;A</button>
   <button class="tab-btn" onclick="showTab('ledger')">บัญชี</button>
   <button class="tab-btn" onclick="showTab('law')">กฎหมาย & โทษ</button>
   <button class="tab-btn" onclick="showTab('print')">พิมพ์ กกต.</button>
@@ -242,6 +244,230 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
 </div>
 
 <!-- TAB: LEDGER -->
+<!-- TAB: SCENARIOS — 2 กรณีเปรียบเทียบ -->
+<div class="tab-panel" id="p-scenarios">
+  <div class="st">⚖️ 2 Scenarios — เปรียบเทียบรอบคำนวณค่าใช้จ่าย</div>
+  <div class="sd">ฐานกฎหมาย: มาตรา 61 พ.ร.บ.เลือกตั้งท้องถิ่น 2562 · ระเบียบ กกต. ข้อ 230 · ประกาศ กกต. 243/2569 (10 เม.ย. 2569)</div>
+
+  <!-- BIG ANSWER BOX -->
+  <div style="margin-top:20px;padding:20px;background:linear-gradient(135deg,#FEF3C7,#FDE68A);border:2px solid #C9A96E;border-radius:var(--radius);">
+    <div style="font-size:13px;color:#92400E;font-weight:700;margin-bottom:6px;">🎯 คำตอบหลัก</div>
+    <div style="font-size:16px;color:#1B2A4A;font-weight:700;line-height:1.6;margin-bottom:8px;">
+      ถ้าผู้ว่าฯ กทม. ลาออก 2 พ.ค. 2569<br>→ ส.ก. เริ่มนับค่าใช้จ่าย <span style="color:#C0392B;">22 พฤศจิกายน 2568</span> (ไม่ใช่ 2 พ.ค. 2569)
+    </div>
+    <div style="font-size:12px;color:#6B7280;line-height:1.7;">
+      เหตุผล: ส.ก. แต่ละคน <strong>ครบวาระ 21 พ.ค. 2569</strong> (4 ปีจาก 22 พ.ค. 2565) → ยังเป็น <strong>กรณีครบวาระ</strong> ตาม ม.61(1) → 180 วันก่อนครบวาระ = 22 พ.ย. 2568 · การลาออกของ<u>ผู้ว่าฯ</u> ไม่เปลี่ยนสถานะของ <u>ส.ก.</u> เพราะแต่ละตำแหน่งมีสถานะทางกฎหมายอิสระต่อกัน
+    </div>
+  </div>
+
+  <!-- 2 SCENARIO CARDS SIDE BY SIDE -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;margin-top:24px;">
+
+    <!-- Scenario A: ครบวาระปกติ -->
+    <div style="background:var(--card);border:2px solid #27AE60;border-radius:var(--radius);padding:18px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+        <span style="font-size:24px;">🟢</span>
+        <div>
+          <div style="font-size:11px;color:#27AE60;font-weight:700;">SCENARIO A</div>
+          <div style="font-size:15px;color:var(--navy);font-weight:700;">ส.ก. ครบวาระปกติ</div>
+        </div>
+      </div>
+      <div style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">ฐาน: ม.61(1) · ระเบียบ ข้อ 230</div>
+
+      <table style="width:100%;border-collapse:collapse;font-size:12px;">
+        <tr><td style="padding:6px 0;color:var(--text-secondary);">วันครบวาระ</td><td style="padding:6px 0;text-align:right;font-weight:700;color:var(--navy);">21 พ.ค. 2569</td></tr>
+        <tr><td style="padding:6px 0;color:var(--text-secondary);border-top:1px solid var(--border-light);">เริ่มนับค่าใช้จ่าย</td><td style="padding:6px 0;text-align:right;font-weight:700;color:#C0392B;border-top:1px solid var(--border-light);">22 พ.ย. 2568</td></tr>
+        <tr><td style="padding:6px 0;color:var(--text-secondary);border-top:1px solid var(--border-light);">วันเลือกตั้ง</td><td style="padding:6px 0;text-align:right;font-weight:700;color:var(--navy);border-top:1px solid var(--border-light);">28 มิ.ย. 2569</td></tr>
+        <tr><td style="padding:6px 0;color:var(--text-secondary);border-top:1px solid var(--border-light);">รวมระยะเวลา</td><td style="padding:6px 0;text-align:right;font-weight:700;color:var(--navy);border-top:1px solid var(--border-light);">~218 วัน</td></tr>
+      </table>
+
+      <div style="margin-top:12px;padding:10px;background:#D5F5E3;border-radius:6px;font-size:11px;color:#14532D;line-height:1.6;">
+        ✓ <b>สถานะปัจจุบัน</b> — ประกาศ กกต. 243/2569 ยืนยันรอบคำนวณเริ่ม 22 พ.ย. 2568
+      </div>
+    </div>
+
+    <!-- Scenario B: ผู้ว่าฯ ลาออก -->
+    <div style="background:var(--card);border:2px solid #E67E22;border-radius:var(--radius);padding:18px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+        <span style="font-size:24px;">🟡</span>
+        <div>
+          <div style="font-size:11px;color:#E67E22;font-weight:700;">SCENARIO B</div>
+          <div style="font-size:15px;color:var(--navy);font-weight:700;">ผู้ว่าฯ ลาออก 2 พ.ค. 2569</div>
+        </div>
+      </div>
+      <div style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">ฐาน: ม.11, ม.12, ม.61(2) · ระเบียบ ข้อ 230</div>
+
+      <div style="background:#FDEBD0;padding:10px;border-radius:6px;font-size:11px;color:#7E5109;line-height:1.6;margin-bottom:10px;">
+        <b>⚠️ สำคัญ:</b> การลาออกของ<u>ผู้ว่าฯ</u> ส่งผลต่อ<strong>เฉพาะการเลือกตั้งผู้ว่าฯ</strong> ไม่ส่งผลต่อสถานะ ส.ก. ที่ยังดำรงตำแหน่งครบวาระ 4 ปี
+      </div>
+
+      <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:6px;">📍 ผู้ว่าฯ กทม. (ลาออก):</div>
+      <table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:12px;">
+        <tr><td style="padding:4px 0;color:var(--text-secondary);">วันตำแหน่งว่าง</td><td style="padding:4px 0;text-align:right;font-weight:700;">2 พ.ค. 2569</td></tr>
+        <tr><td style="padding:4px 0;color:var(--text-secondary);">เริ่มนับค่าใช้จ่าย</td><td style="padding:4px 0;text-align:right;font-weight:700;color:#C0392B;">2 พ.ค. 2569</td></tr>
+        <tr><td style="padding:4px 0;color:var(--text-secondary);">ต้องเลือกตั้งภายใน</td><td style="padding:4px 0;text-align:right;font-weight:700;">60 วัน (ม.12)</td></tr>
+      </table>
+
+      <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:6px;">📍 ส.ก. 50 เขต (ยังครบวาระ):</div>
+      <table style="width:100%;border-collapse:collapse;font-size:11px;">
+        <tr><td style="padding:4px 0;color:var(--text-secondary);">วันครบวาระ</td><td style="padding:4px 0;text-align:right;font-weight:700;">21 พ.ค. 2569</td></tr>
+        <tr><td style="padding:4px 0;color:var(--text-secondary);">เริ่มนับค่าใช้จ่าย</td><td style="padding:4px 0;text-align:right;font-weight:700;color:#27AE60;">22 พ.ย. 2568 <small>(ไม่เปลี่ยน)</small></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- VISUAL TIMELINE -->
+  <div class="st" style="margin-top:32px;">📅 Timeline เปรียบเทียบ</div>
+  <div class="tl" style="margin-top:16px;">
+    <div class="tl-item">
+      <div class="tl-marker"><div class="tl-dot filled"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-label">22 พฤศจิกายน 2568</div>
+        <div class="tl-desc"><strong style="color:#C0392B;">⏱️ เริ่มนับค่าใช้จ่าย ส.ก. (180 วันก่อนครบวาระ)</strong> — ม.61(1) · ประกาศ กกต. 243/2569 ยืนยันรอบนี้</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-marker"><div class="tl-dot filled"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-label">2 พฤษภาคม 2569 (สมมติฐาน)</div>
+        <div class="tl-desc">🚨 <strong>ผู้ว่าฯ กทม. ลาออก</strong> → เริ่มนับค่าใช้จ่าย <u>ผู้ว่าฯ</u> จากวันนี้ (ม.61(2)) · แต่ <u>ส.ก.</u> ไม่เปลี่ยน (ยังยึดครบวาระ 21 พ.ค. 2569)</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-marker"><div class="tl-dot filled"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-label">21 พฤษภาคม 2569</div>
+        <div class="tl-desc">🏛️ <strong>ส.ก. ครบวาระ 4 ปี</strong> (นับจากวันเลือกตั้ง 22 พ.ค. 2565) — ม.11 พ.ร.บ.เลือกตั้งท้องถิ่น</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-marker"><div class="tl-dot filled"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-label">22–23 พฤษภาคม 2569</div>
+        <div class="tl-desc">📢 ผอ.กกต. ประกาศให้มีการเลือกตั้ง — ม.12</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-marker"><div class="tl-dot filled"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-label">28 พ.ค. – 1 มิ.ย. 2569</div>
+        <div class="tl-desc">📝 วันรับสมัครรับเลือกตั้ง (5 วัน) — ม.12</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-marker"><div class="tl-dot red"></div><div class="tl-line"></div></div>
+      <div class="tl-content">
+        <div class="tl-label red">🗳️ 28 มิถุนายน 2569 — วันเลือกตั้ง</div>
+        <div class="tl-desc">ลงคะแนนทั้ง ส.ก. และผู้ว่าฯ กทม. พร้อมกัน · 08:00–17:00 น.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-marker"><div class="tl-dot"></div></div>
+      <div class="tl-content">
+        <div class="tl-label">ภายใน 26 กันยายน 2569</div>
+        <div class="tl-desc">📋 กำหนดสุดท้ายยื่นบัญชีรายรับ-รายจ่าย ต่อ ผอ.กกต.กทม. (90 วันหลังเลือกตั้ง) — ม.62</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY NOT BOX -->
+  <div style="margin-top:28px;padding:18px;background:rgba(192,57,43,0.06);border-left:4px solid #C0392B;border-radius:var(--radius-sm);">
+    <div style="font-size:14px;font-weight:700;color:#C0392B;margin-bottom:8px;">❌ ทำไม ส.ก. ถึงไม่เริ่มนับจาก 2 พ.ค. 2569?</div>
+    <ol style="font-size:12px;color:var(--text);line-height:1.8;padding-left:18px;margin:0;">
+      <li><strong>ม.61 แยกกรณีชัดเจน</strong> — (1) ครบวาระ / (2) ตำแหน่งว่าง · การตัดสินว่าอยู่กรณีไหนต้องดูที่ตำแหน่งของ<u>ผู้สมัครเอง</u> ไม่ใช่ตำแหน่งอื่น</li>
+      <li><strong>ส.ก. แต่ละคนมีวาระของตัวเอง</strong> — ไม่ได้ผูกติดกับผู้ว่าฯ · 50 เขต = 50 ตำแหน่งอิสระ · ทั้งหมดครบวาระพร้อมกัน 21 พ.ค. 2569</li>
+      <li><strong>ระเบียบ กกต. ข้อ 230</strong> — "กรณีลาออก/ถูกสั่งพ้นตำแหน่ง" ใช้กับ<u>ผู้ที่ลาออก/พ้นตำแหน่ง</u>เท่านั้น · ส.ก. ไม่ได้ลาออก</li>
+      <li><strong>ประกาศ กกต. 243/2569</strong> (10 เม.ย. 2569) ยืนยันชัดเจน: "รอบคำนวณค่าใช้จ่าย = 22 พ.ย. 2568" — เป็น official position</li>
+    </ol>
+  </div>
+</div>
+
+<!-- TAB: Q&A -->
+<div class="tab-panel" id="p-qa">
+  <div class="st">❓ คำถาม-คำตอบ ที่พบบ่อย</div>
+  <div class="sd">ประเด็นสำคัญเกี่ยวกับการคำนวณค่าใช้จ่าย ส.ก. 2569 — ใช้งานเป็น quick-reference ก่อนลงมือหาเสียง</div>
+
+  <div class="law-card">
+    <div class="law-hd" onclick="toggleLaw(this)">
+      <span class="law-tag law-tag-gold">Q1</span>
+      <span class="law-name">ค่าอาหารเลี้ยงทีมงานก่อน 22 พ.ย. 2568 นับเป็นค่าใช้จ่ายเลือกตั้งไหม?</span>
+      <span class="law-arrow">▼</span>
+    </div>
+    <div class="law-body">
+      <p><strong>ไม่นับ</strong> — ถ้าเป็นการใช้จ่าย<u>ก่อน</u>รอบคำนวณ (ก่อน 22 พ.ย. 2568) และไม่ได้มีวัตถุประสงค์เพื่อการหาเสียงเฉพาะเจาะจง</p>
+      <p style="margin-top:8px;"><strong>แต่ระวัง:</strong> ถ้าเป็นการสร้างฐานเสียงที่เชื่อมโยงกับการเลือกตั้งได้ (เช่น แจกของให้ประชาชนโดยประกาศว่าจะลงสมัคร) อาจเข้าข่าย <span class="law-hl">ม.65</span> (ห้ามให้ทรัพย์สิน) ซึ่งมีผลบังคับ <strong>90 วันก่อนครบวาระ</strong> (ประมาณ 20 ก.พ. 2569)</p>
+      <p class="law-hl" style="margin-top:8px;">📜 ม.65(1)(2) — ความผิดมูลฐาน ปปง. · ม.127 โทษสูง</p>
+    </div>
+  </div>
+
+  <div class="law-card">
+    <div class="law-hd" onclick="toggleLaw(this)">
+      <span class="law-tag law-tag-gold">Q2</span>
+      <span class="law-name">ถ้าจ้างที่ปรึกษาการเมืองตั้งแต่ ก.ย. 2568 ต้องนับเป็นค่าใช้จ่ายเลือกตั้งไหม?</span>
+      <span class="law-arrow">▼</span>
+    </div>
+    <div class="law-body">
+      <p><strong>ต้องแยกเป็น 2 ช่วง:</strong></p>
+      <ul>
+        <li><strong>ก.ย. – 21 พ.ย. 2568:</strong> ไม่นับเป็นค่าใช้จ่ายเลือกตั้ง (อยู่นอกรอบคำนวณ)</li>
+        <li><strong>22 พ.ย. 2568 เป็นต้นไป:</strong> ต้องนับ — จัดเข้าประเภท <span class="law-hl">ข้อ 3(11) ค่าที่ปรึกษา</span> ตามประกาศ กกต. 2563</li>
+      </ul>
+      <p style="margin-top:8px;"><strong>⚠️ เงื่อนไขสำคัญ:</strong> ต้องมีสัญญาจ้างที่ชัดเจน ใบกำกับภาษี และใบเสร็จ · ถ้าไม่มีอาจถูกตีความเป็น "บุคคลอื่นจ่ายแทน" ตาม ม.61(1)(2)</p>
+    </div>
+  </div>
+
+  <div class="law-card">
+    <div class="law-hd" onclick="toggleLaw(this)">
+      <span class="law-tag law-tag-gold">Q3</span>
+      <span class="law-name">ป้าย "ผมจะลงสมัคร ส.ก." ก่อน 22 พ.ย. 2568 ทำได้ไหม?</span>
+      <span class="law-arrow">▼</span>
+    </div>
+    <div class="law-body">
+      <p><strong>ทำได้ แต่มีข้อจำกัด</strong> — การแสดงเจตนาลงสมัครไม่ใช่การหาเสียงโดยตรง แต่ต้องระวัง:</p>
+      <ul>
+        <li>ห้ามมีข้อความหาเสียง (เช่น "เลือกผม" "นโยบาย X")</li>
+        <li>ห้ามโฆษณามหรสพ — <span class="law-hl">ม.65(4)</span></li>
+        <li>ค่าใช้จ่ายป้าย<strong>ยังไม่นับ</strong>ตาม ม.61 (นอกรอบ) — แต่อาจโดนตรวจสอบในภายหลัง</li>
+      </ul>
+      <p style="margin-top:8px;" class="law-hl">💡 แนะนำ: ถ้าจะทำป้ายก่อนรอบคำนวณ ควรเก็บใบเสร็จและลงบันทึกวันที่ติดป้าย เพื่อใช้ยืนยันว่า "ก่อนรอบ" ถ้าถูกตรวจสอบ</p>
+    </div>
+  </div>
+
+  <div class="law-card">
+    <div class="law-hd" onclick="toggleLaw(this)">
+      <span class="law-tag law-tag-gold">Q4</span>
+      <span class="law-name">ถ้าผู้ว่าฯ ลาออก 2 พ.ค. 2569 — ส.ก. ต้องเลือกตั้งเร็วขึ้นไหม?</span>
+      <span class="law-arrow">▼</span>
+    </div>
+    <div class="law-body">
+      <p><strong>ไม่เร็วขึ้น</strong> — ส.ก. ยังยึดวาระครบกำหนด 21 พ.ค. 2569 (4 ปีจาก 22 พ.ค. 2565)</p>
+      <ul>
+        <li><strong>ผู้ว่าฯ ลาออก 2 พ.ค. 2569:</strong> ต้องจัดเลือกตั้งผู้ว่าฯ ใหม่ภายใน 60 วัน (ม.12) = <u>ไม่เกิน 1 ก.ค. 2569</u></li>
+        <li><strong>ส.ก. ครบวาระ 21 พ.ค. 2569:</strong> ต้องจัดเลือกตั้งภายใน 45 วัน = <u>ไม่เกิน 5 ก.ค. 2569</u></li>
+        <li>ช่วงเวลาคาบเกี่ยวกัน → กกต. จึงจัดเลือกตั้งรวมกันในวันเดียว <strong>28 มิ.ย. 2569</strong></li>
+      </ul>
+      <p class="law-hl" style="margin-top:8px;">📜 ม.11, ม.12 พ.ร.บ.เลือกตั้งท้องถิ่น 2562 · ม.49 พ.ร.บ.ระเบียบบริหาร กทม. 2528</p>
+    </div>
+  </div>
+
+  <div class="law-card">
+    <div class="law-hd" onclick="toggleLaw(this)">
+      <span class="law-tag law-tag-gold">Q5</span>
+      <span class="law-name">โฆษณา Facebook/Google Ads ก่อน 22 พ.ย. 2568 นับไหม?</span>
+      <span class="law-arrow">▼</span>
+    </div>
+    <div class="law-body">
+      <p><strong>ไม่นับในรอบคำนวณ</strong> — ถ้าจ่ายและเผยแพร่<u>ก่อน</u> 22 พ.ย. 2568</p>
+      <p style="margin-top:8px;"><strong>แต่มีจุดเสี่ยง:</strong></p>
+      <ul>
+        <li>ถ้าโฆษณา <strong>รันต่อ</strong>หลัง 22 พ.ย. 2568 — ต้องนับส่วนที่รันในรอบคำนวณ</li>
+        <li>ถ้าใช้ <strong>คูปองจ่ายล่วงหน้า</strong> แต่ Ad รันในรอบ — นับตาม<u>วันที่ Ad ทำงาน</u></li>
+        <li>โฆษณาก่อนประกาศให้มีการเลือกตั้ง — ห้ามตาม <span class="law-hl">ม.62</span> (โทษจำคุก 1–10 ปี ปรับ 20,000–200,000 บาท)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <div class="tab-panel" id="p-ledger">
   <div class="st">บัญชีรายรับ-รายจ่าย</div>
   <div class="sd">ม.60-62 — ยื่น กกต. ภายใน 90 วัน · แบบ ส.ถ./ผ.ถ. 1/13 (ค)</div>
@@ -279,8 +505,39 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
 
 <!-- TAB: LAW & PENALTIES -->
 <div class="tab-panel" id="p-law">
-  <div class="st">กฎหมายและระเบียบที่เกี่ยวข้อง</div>
-  <div class="sd">กรอบกฎหมายหลักสำหรับการเลือกตั้ง สก. กทม. — คลิกเพื่อขยายรายละเอียด</div>
+  <div class="st">📋 ฐานกฎหมายครบชุด — ค่าใช้จ่ายเลือกตั้ง ส.ก. 2569</div>
+  <div class="sd">ทุกมาตรา ทุกฉบับ · อัปเดตล่าสุดตามประกาศ กกต. 10 เมษายน 2569</div>
+
+  <!-- FULL LEGAL BASIS TABLE -->
+  <div style="overflow-x:auto;margin-top:20px;margin-bottom:28px;">
+    <table class="dt" style="font-size:12px;">
+      <thead>
+        <tr>
+          <th style="width:28%;">กฎหมาย / ฉบับ</th>
+          <th style="width:14%;">มาตรา / ข้อ</th>
+          <th style="width:40%;">สาระสำคัญ</th>
+          <th style="width:18%;">วันที่มีผล</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>พ.ร.บ. การเลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น พ.ศ. 2562</strong></td><td><span class="badge badge-navy">ม.61</span></td><td>รอบระยะเวลาคำนวณค่าใช้จ่าย · <strong>กรณีครบวาระ</strong> = 180 วันก่อนวันครบวาระ · <strong>กรณีอื่น</strong> = ตั้งแต่วันที่ตำแหน่งว่างหรือวันประกาศ</td><td>16 เม.ย. 2562 <br><small>(ราชกิจจาฯ)</small></td></tr>
+        <tr><td><strong>พ.ร.บ. เลือกตั้งท้องถิ่น 2562</strong></td><td><span class="badge badge-navy">ม.61(1)(2)</span></td><td>นิยาม "ค่าใช้จ่ายเลือกตั้ง" รวมค่าใช้จ่ายที่<strong>บุคคลอื่นจ่าย</strong>หรือทรัพย์สินที่ให้ใช้โดยไม่คิดค่าตอบแทน หากผู้สมัคร<u>รับรู้/ยินยอม</u></td><td>16 เม.ย. 2562</td></tr>
+        <tr><td><strong>พ.ร.บ. เลือกตั้งท้องถิ่น 2562</strong></td><td><span class="badge badge-navy">ม.64</span></td><td>ระยะเวลาหาเสียง · <strong>ครบวาระ</strong> = เริ่มได้ 180 วันก่อนครบวาระ ถึง 18:00 น. ก่อนวันเลือกตั้ง</td><td>16 เม.ย. 2562</td></tr>
+        <tr><td><strong>พ.ร.บ. เลือกตั้งท้องถิ่น 2562</strong></td><td><span class="badge badge-red">ม.65</span></td><td>ข้อห้ามหาเสียง (ให้ทรัพย์สิน · จัดเลี้ยง · โฆษณามหรสพ ฯลฯ) · <strong>ครบวาระ</strong> = ห้ามก่อนวันครบวาระ <u>90 วัน</u> · (1)(2) = ความผิดมูลฐาน ปปง.</td><td>16 เม.ย. 2562</td></tr>
+        <tr><td><strong>พ.ร.บ. เลือกตั้งท้องถิ่น 2562</strong></td><td><span class="badge badge-navy">ม.109</span></td><td>ผู้สมัครต้องยื่นบัญชีรายรับ-รายจ่ายในการเลือกตั้ง ภายใน <strong>90 วัน</strong>หลังวันเลือกตั้ง</td><td>16 เม.ย. 2562</td></tr>
+        <tr><td><strong>พ.ร.บ. เลือกตั้งท้องถิ่น 2562</strong></td><td><span class="badge badge-red">ม.127</span></td><td>โทษอาญา: <strong>จำคุก 1–10 ปี</strong> ปรับ 20,000–200,000 บาท กรณีฝ่าฝืนข้อห้ามค่าใช้จ่าย</td><td>16 เม.ย. 2562</td></tr>
+        <tr><td><strong>พ.ร.บ. เลือกตั้งท้องถิ่น 2562</strong></td><td><span class="badge badge-red">ม.128</span></td><td>โทษ<strong>ชดใช้ค่าใช้จ่าย</strong>การเลือกตั้งใหม่ หากถูกเพิกถอนสิทธิเลือกตั้ง</td><td>16 เม.ย. 2562</td></tr>
+        <tr><td><strong>ระเบียบ กกต. ว่าด้วยการเลือกตั้งสมาชิกสภาท้องถิ่น พ.ศ. 2562</strong></td><td><span class="badge badge-gold">ข้อ 230</span></td><td><strong>กำหนดรอบคำนวณ:</strong> กรณี<u>ลาออก/ถูกสั่งพ้นตำแหน่ง</u> = นับตั้งแต่วันตำแหน่งว่าง <strong>ไม่ใช่ 180 วันก่อนวาระ</strong></td><td>บังคับใช้พร้อม พ.ร.บ. 2562</td></tr>
+        <tr><td><strong>ประกาศ กกต. เรื่อง ประเภทของค่าใช้จ่ายในการเลือกตั้งสมาชิกสภาท้องถิ่น พ.ศ. 2563</strong></td><td><span class="badge badge-gold">ข้อ 3 (12 ประเภท)</span></td><td>12 ประเภทค่าใช้จ่าย: ค่าโฆษณา/ป้าย/สื่อ · ค่าเช่าพื้นที่ · ค่ายานพาหนะ · ค่าบุคคลช่วยหาเสียง · ค่าจัดงาน ฯลฯ</td><td>25 ก.พ. 2563 <br><small>ราชกิจจาฯ 6 มี.ค. 2563</small></td></tr>
+        <tr><td><strong>ระเบียบ กกต. ว่าด้วยการหาเสียงและลักษณะต้องห้ามในการหาเสียงเลือกตั้ง พ.ศ. 2563</strong></td><td><span class="badge badge-navy">ทุกข้อ</span></td><td>กำหนดวิธีหาเสียงที่ทำได้/ห้ามทำ รวม<strong>สื่อดิจิทัล · ป้ายโฆษณา · การรวมกลุ่ม</strong></td><td>2563</td></tr>
+        <tr><td><strong>ประกาศ ผอ.กกต.กทม. เรื่อง กำหนดจำนวนเงินค่าใช้จ่ายในการเลือกตั้ง ส.ก. กทม.</strong></td><td><span class="badge badge-gold">ทุกเขต 50 เขต</span></td><td>เพดานค่าใช้จ่าย ส.ก. รายเขต: <strong>820,000 / 950,000 / 1,150,000 บาท</strong> ตามขนาดประชากร</td><td>25 พ.ย. 2564</td></tr>
+        <tr style="background:#FEF3C7;"><td><strong>ประกาศ กกต. เลขที่ 243/2569</strong> <small>(ฉบับล่าสุด)</small></td><td><span class="badge badge-red">ข้อ 1, 2, 3</span></td><td><strong>ยืนยันรอบคำนวณ</strong> = <span style="color:#C0392B;font-weight:700;">22 พ.ย. 2568</span> · รอบหาเสียง = 22 พ.ย. 2568 ถึง 18:00 น. ก่อนวันเลือกตั้ง · ห้ามฝ่าฝืน ม.65 + ระเบียบ 2563</td><td><strong>10 เม.ย. 2569</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="st" style="margin-top:28px;">กฎหมายและระเบียบที่เกี่ยวข้อง (คลิกขยาย)</div>
+  <div class="sd">กรอบกฎหมายหลักสำหรับการเลือกตั้ง สก. กทม.</div>
 
   <div class="law-card">
     <div class="law-hd" onclick="toggleLaw(this)">
