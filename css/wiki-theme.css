@@ -673,3 +673,15 @@ body[data-lang="en"] .lang-th { display: none; }
   .global-lang-toggle { top: 8px; right: 8px; }
   .global-lang-toggle button { padding: 6px 12px; font-size: 12px; }
 }
+
+/* ============================================================
+   Global TH/EN Toggle — HIDDEN (per CEO directive 2026-04-12)
+   ============================================================
+   The site-wide language toggle is hidden across all pages.
+   To re-enable in the future, remove this rule block.
+   Note: toggle HTML remains in pages for rollback; setSiteLang()
+   still works if called programmatically.
+   ============================================================ */
+.global-lang-toggle {
+  display: none !important;
+}
