@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/webp" href="/las-logo.webp">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ═══════════════════════════════════════════════════════════
+     ARTICLE TEMPLATE — Wikipedia theme (canonical LAS style)
+     ═══════════════════════════════════════════════════════════
+     Replace {{PLACEHOLDERS}} with article-specific values.
+     Do NOT inline <style> — use /css/wiki-theme.css instead.
+     See docs/ARTICLE-THEME-MIGRATION.md for migration playbook.
+     ═══════════════════════════════════════════════════════════ -->
+
+<title>{{TITLE}} | Thundthornthep Yamoutai, Ph.D. | LAS</title>
+
+<!-- SEO META -->
+<meta name="description" content="{{DESCRIPTION}}">
+<meta name="keywords" content="{{KEYWORDS}}">
+<meta name="author" content="Thundthornthep Yamoutai, Ph.D.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="{{CANONICAL_URL}}">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESCRIPTION}}">
+<meta property="og:url" content="{{CANONICAL_URL}}">
+<meta property="og:site_name" content="Thundthornthep Yamoutai, Ph.D. — Legal Advance Solution">
+<meta property="og:image" content="https://thundthornthep-ai.github.io/banner-las-nia.jpg">
+<meta property="og:locale" content="th_TH">
+<meta property="og:locale:alternate" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{TITLE}}">
+<meta name="twitter:description" content="{{DESCRIPTION}}">
+<meta name="twitter:image" content="https://thundthornthep-ai.github.io/banner-las-nia.jpg">
+
+<!-- JSON-LD: Article schema — replace with real values -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{TITLE}}",
+  "description": "{{DESCRIPTION}}",
+  "author": {
+    "@type": "Person",
+    "name": "Thundthornthep Yamoutai, Ph.D.",
+    "url": "https://thundthornthep-ai.github.io/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Legal Advance Solution Co., Ltd.",
+    "alternateName": "LAS",
+    "url": "https://laslegal.co.th"
+  },
+  "datePublished": "{{DATE_PUBLISHED}}",
+  "dateModified": "{{DATE_MODIFIED}}",
+  "mainEntityOfPage": "{{CANONICAL_URL}}",
+  "image": "https://thundthornthep-ai.github.io/banner-las-nia.jpg",
+  "inLanguage": "th"
+}
+</script>
+
+<!-- Canonical wiki theme — single source of truth -->
+<link rel="stylesheet" href="/css/wiki-theme.css">
+</head>
+<body data-lang="th">
+
+<!-- Language toggle (canonical — do not duplicate) -->
+<div class="global-lang-toggle" role="group" aria-label="Site language toggle">
+  <button type="button" class="active" data-lang="th" onclick="setSiteLang('th')">ไทย</button>
+  <button type="button" data-lang="en" onclick="setSiteLang('en')">English</button>
+</div>
+
+<div class="wiki-wrapper">
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="/">Thundthornthep Yamoutai, Ph.D.</a> &gt;
+    <a href="/knowledge-hub.html">ความรู้กฎหมาย / Legal Knowledge Hub</a> &gt;
+    <strong>{{SHORT_TITLE}}</strong>
+  </div>
+
+  <!-- Article title -->
+  <h1 class="page-title">
+    <span class="lang-th">{{TITLE_TH}}</span>
+    <span class="lang-en">{{TITLE_EN}}</span>
+  </h1>
+
+  <!-- Article metadata -->
+  <div class="article-meta">
+    <span class="lang-th">โดย <a href="/">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</a> • {{DATE_HUMAN_TH}} • หมวด: {{CATEGORY_TH}}</span>
+    <span class="lang-en">By <a href="/">Thundthornthep Yamoutai, Ph.D.</a> • {{DATE_HUMAN_EN}} • Category: {{CATEGORY_EN}}</span>
+  </div>
+
+  <!-- Article intro / lede -->
+  <div class="article-intro">
+    <p>
+      <span class="lang-th">{{LEDE_TH}}</span>
+      <span class="lang-en">{{LEDE_EN}}</span>
+    </p>
+  </div>
+
+  <!-- ═══ ARTICLE BODY — preserve all legal content verbatim ═══ -->
+
+  {{ARTICLE_BODY}}
+
+  <!-- ═══ END ARTICLE BODY ═══ -->
+
+  <!-- Disclaimer (required on all legal articles) -->
+  <div class="disclaimer">
+    <b><span class="lang-th">⚠️ คำชี้แจง:</span><span class="lang-en">⚠️ Disclaimer:</span></b>
+    <span class="lang-th">
+      บทความนี้เป็นเนื้อหาเชิงวิชาการเพื่อการศึกษาและความเข้าใจเบื้องต้นเท่านั้น
+      ไม่ถือเป็นคำแนะนำทางกฎหมายเฉพาะกรณี กรุณาปรึกษาทนายความก่อนดำเนินการใดๆ
+      Legal Advance Solution Co., Ltd. และผู้เขียนไม่รับผิดชอบต่อการนำไปใช้โดยตรง
+    </span>
+    <span class="lang-en">
+      This article is academic content for general education only and does not
+      constitute specific legal advice. Please consult a qualified lawyer before
+      acting on any information. Legal Advance Solution Co., Ltd. and the author
+      assume no liability for direct application.
+    </span>
+  </div>
+
+  <!-- Footer -->
+  <div class="wiki-footer">
+    <span class="lang-th">
+      ความรู้กฎหมาย | Legal Knowledge Hub —
+      <a href="/">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</a> |
+      <a href="https://laslegal.co.th" target="_blank">Legal Advance Solution Co., Ltd.</a><br>
+      LAS x NIA | AI-Powered Legal Research Advisory System
+    </span>
+    <span class="lang-en">
+      Legal Knowledge Hub —
+      <a href="/">Thundthornthep Yamoutai, Ph.D.</a> |
+      <a href="https://laslegal.co.th" target="_blank">Legal Advance Solution Co., Ltd.</a><br>
+      LAS x NIA | AI-Powered Legal Research Advisory System
+    </span>
+  </div>
+
+</div><!-- .wiki-wrapper -->
+
+<!-- Canonical setSiteLang() — see docs/BILINGUAL-CONVENTION.md -->
+<script>
+function setSiteLang(lang) {
+  document.body.setAttribute('data-lang', lang);
+  document.querySelectorAll('.global-lang-toggle button').forEach(function(b) {
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+  });
+  try { localStorage.setItem('las_site_lang', lang); } catch(e) {}
+}
+(function(){
+  try {
+    var saved = localStorage.getItem('las_site_lang');
+    if (saved === 'en') setSiteLang('en');
+  } catch(e) {}
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,660 @@
+/*
+ * wiki-theme.css — Canonical LAS Knowledge Hub theme
+ *
+ * Extracted from index.html (profile page) on 2026-04-11 as the single
+ * source of truth for the Wikipedia-inspired look & feel used across
+ * knowledge-hub.html, profile, and all articles.
+ *
+ * Used by:
+ *   - index.html (profile)
+ *   - knowledge-hub.html (catalog)
+ *   - articles/*.html (migrated articles — Phase 1)
+ *
+ * See docs/ARTICLE-THEME-MIGRATION.md for migration playbook.
+ */
+
+/* ── Wikipedia-inspired reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #202122;
+  background: #f6f6f6;
+}
+
+/* ── Page frame ── */
+.wiki-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #a7d7f9;
+  padding: 20px 28px 40px;
+}
+
+/* ── Article title ── */
+h1.page-title {
+  font-family: 'Linux Libertine', 'Georgia', serif;
+  font-size: 28px;
+  font-weight: normal;
+  border-bottom: 1px solid #a2a9b1;
+  padding-bottom: 4px;
+  margin-bottom: 16px;
+}
+
+/* ── Section headings ── */
+h2 {
+  font-family: 'Linux Libertine', 'Georgia', serif;
+  font-size: 22px;
+  font-weight: normal;
+  border-bottom: 1px solid #a2a9b1;
+  margin: 24px 0 8px;
+  padding-bottom: 2px;
+}
+h3 {
+  font-size: 17px;
+  font-weight: bold;
+  margin: 16px 0 6px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 12px 0 4px;
+}
+
+p { margin: 6px 0; }
+
+ul, ol { margin: 6px 0 6px 24px; }
+li { margin: 3px 0; }
+
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+strong, b { font-weight: bold; }
+em, i { font-style: italic; }
+
+blockquote {
+  margin: 10px 20px;
+  padding: 8px 16px;
+  border-left: 3px solid #a7d7f9;
+  background: #f8f9fa;
+  font-style: italic;
+  color: #555;
+}
+
+code {
+  font-family: 'Consolas', 'Monaco', monospace;
+  background: #f0f4f8;
+  padding: 1px 4px;
+  border-radius: 2px;
+  font-size: 13px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #a2a9b1;
+  margin: 20px 0;
+}
+
+/* ── Breadcrumb ── */
+.breadcrumb {
+  font-size: 12px;
+  color: #54595d;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+}
+.breadcrumb a { color: #0645ad; }
+
+/* ── Infobox ── */
+.infobox {
+  float: right;
+  width: 290px;
+  margin: 0 0 14px 20px;
+  border: 1px solid #a2a9b1;
+  border-collapse: collapse;
+  background: #f8f9fa;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.infobox .ib-header {
+  background: #b0c4de;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px 6px;
+}
+.infobox .ib-subheader {
+  background: #d0dff0;
+  text-align: center;
+  font-size: 13px;
+  padding: 4px 6px;
+  font-style: italic;
+}
+.infobox .ib-photo {
+  text-align: center;
+  padding: 8px;
+  background: #f8f9fa;
+}
+.infobox .ib-photo img {
+  width: 220px;
+  height: auto;
+  border: 1px solid #ccc;
+}
+.infobox .ib-photo-caption {
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  padding: 2px 8px 6px;
+  background: #f8f9fa;
+}
+.infobox td, .infobox th {
+  vertical-align: top;
+  padding: 4px 8px;
+  border-top: 1px solid #ccc;
+}
+.infobox th {
+  text-align: left;
+  font-weight: bold;
+  width: 95px;
+  background: #e9eef3;
+}
+
+/* ── Table of Contents ── */
+.toc {
+  display: inline-block;
+  background: #f8f9fa;
+  border: 1px solid #a2a9b1;
+  padding: 10px 16px;
+  margin: 10px 0 16px;
+  font-size: 13px;
+}
+.toc-title { font-weight: bold; text-align: center; margin-bottom: 6px; }
+.toc ol { margin-left: 18px; }
+.toc li { margin: 2px 0; }
+.toc ol ol { margin-left: 16px; }
+
+/* ── Tables (generic + gov-table) ── */
+table {
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 10px 0;
+}
+.gov-table, table.article-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 10px 0;
+}
+.gov-table th, .gov-table td,
+table.article-table th, table.article-table td {
+  border: 1px solid #a2a9b1;
+  padding: 5px 8px;
+  vertical-align: top;
+}
+.gov-table th, table.article-table th {
+  background: #dde3ea;
+  text-align: left;
+  font-weight: bold;
+}
+.gov-table tr:nth-child(even),
+table.article-table tr:nth-child(even) { background: #f8f9fa; }
+.status-active { color: #006400; font-weight: bold; }
+.status-completed { color: #555; }
+
+/* ── Practice area grid ── */
+.practice-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 10px 0;
+}
+.practice-item {
+  background: #f0f4f8;
+  border-left: 3px solid #4a7cad;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+.practice-item b { display: block; margin-bottom: 2px; }
+
+/* ── Publications list ── */
+.pub-item {
+  margin: 8px 0;
+  padding: 8px 12px;
+  background: #fafbfc;
+  border-left: 3px solid #0645ad;
+}
+.pub-item .pub-title { font-weight: bold; }
+.pub-item .pub-meta { font-size: 12px; color: #555; margin-top: 2px; }
+
+/* ── Risk boxes (legal articles) ── */
+.risk-high {
+  background: #FADBD8;
+  border-left: 4px solid #C0392B;
+  padding: 10px 14px;
+  margin: 10px 0;
+}
+.risk-medium {
+  background: #FDEBD0;
+  border-left: 4px solid #E67E22;
+  padding: 10px 14px;
+  margin: 10px 0;
+}
+.risk-low {
+  background: #D5F5E3;
+  border-left: 4px solid #27AE60;
+  padding: 10px 14px;
+  margin: 10px 0;
+}
+
+/* ── Citation / legal reference ── */
+.citation, .legal-ref {
+  background: #fff8dc;
+  border-left: 3px solid #C9A96E;
+  padding: 6px 12px;
+  margin: 8px 0;
+  font-size: 13px;
+}
+
+/* ── Article hub intro / callout ── */
+.hub-intro, .article-intro {
+  background: #f0f4f8;
+  border-left: 4px solid #4a7cad;
+  padding: 14px 18px;
+  margin: 16px 0;
+  font-size: 14px;
+}
+
+/* ── Article metadata (date, author, category) ── */
+.article-meta {
+  font-size: 12px;
+  color: #72777d;
+  border-bottom: 1px solid #eaecf0;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+.article-meta a { color: #0645ad; }
+
+/* ── Disclaimer ── */
+.disclaimer {
+  background: #fffbea;
+  border: 1px solid #f0c36d;
+  padding: 10px 14px;
+  margin: 24px 0 12px;
+  font-size: 12px;
+  color: #544;
+}
+.disclaimer b { color: #a04a00; }
+
+/* ── Footer ── */
+.wiki-footer {
+  margin-top: 36px;
+  padding-top: 10px;
+  border-top: 1px solid #a2a9b1;
+  font-size: 12px;
+  color: #72777d;
+  text-align: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .infobox { float: none; width: 100%; margin: 0 0 16px; }
+  .wiki-wrapper { padding: 12px 10px 24px; }
+  .practice-grid { grid-template-columns: 1fr; }
+  h1.page-title { font-size: 24px; }
+  h2 { font-size: 19px; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COMPATIBILITY LAYER — dark-theme legacy classes mapped to wiki
+   These classes were used in 79 dark-theme articles. Rather than
+   rewriting every article body, we map each class to a wiki-safe
+   rendering. This makes Phase 1 migration non-invasive.
+   ═══════════════════════════════════════════════════════════ */
+
+/* Legacy article hero — re-render as simple banner */
+.article-hero {
+  background: #f0f4f8;
+  border-left: 4px solid #4a7cad;
+  padding: 16px 20px;
+  margin: 10px 0 16px;
+}
+.article-hero h1 {
+  font-family: 'Linux Libertine', 'Georgia', serif;
+  font-size: 26px;
+  font-weight: normal;
+  border: none;
+  padding: 0;
+  margin: 0 0 6px;
+  color: #202122;
+}
+.article-hero .subtitle {
+  font-size: 14px;
+  color: #54595d;
+  margin: 4px 0 8px;
+}
+.article-hero .meta,
+.article-hero .category-badge {
+  font-size: 12px;
+  color: #72777d;
+}
+.article-hero .category-badge {
+  display: inline-block;
+  background: #dde3ea;
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-bottom: 6px;
+  color: #202122;
+}
+
+/* Legacy header/footer — hide in favor of wiki-footer */
+.site-header { display: none; }
+.site-footer { display: none; }
+
+/* Legacy main container — translate to wiki-wrapper-like */
+.article-container {
+  /* If not already inside .wiki-wrapper, provide fallback */
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Legacy section structure */
+.section-block { margin: 18px 0; }
+.section-heading {
+  font-family: 'Linux Libertine', 'Georgia', serif;
+  font-size: 22px;
+  font-weight: normal;
+  border-bottom: 1px solid #a2a9b1;
+  margin: 24px 0 8px;
+  padding-bottom: 2px;
+}
+.section-heading .en {
+  display: block;
+  font-size: 13px;
+  color: #72777d;
+  font-style: italic;
+  margin-top: 2px;
+}
+.sub-heading {
+  font-size: 17px;
+  font-weight: bold;
+  margin: 16px 0 6px;
+  color: #202122;
+}
+
+/* Insight / warning / success / amendment callouts */
+.insight-box {
+  background: #e7f3fe;
+  border-left: 4px solid #4a7cad;
+  padding: 10px 14px;
+  margin: 10px 0;
+}
+.insight-box .label {
+  font-weight: bold;
+  color: #1e4c7a;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.warning-box {
+  background: #fdf4e3;
+  border-left: 4px solid #E67E22;
+  padding: 10px 14px;
+  margin: 10px 0;
+}
+.warning-box .label {
+  font-weight: bold;
+  color: #a04a00;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.success-box {
+  background: #e8f6ea;
+  border-left: 4px solid #27AE60;
+  padding: 10px 14px;
+  margin: 10px 0;
+}
+.success-box .label {
+  font-weight: bold;
+  color: #1a6b2f;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.step-box {
+  background: #f8f9fa;
+  border-left: 3px solid #4a7cad;
+  padding: 10px 14px;
+  margin: 8px 0;
+  display: flex;
+  gap: 12px;
+}
+.step-num {
+  font-weight: bold;
+  color: #4a7cad;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.step-content { flex: 1; }
+
+/* Law citation card */
+.law-cite {
+  background: #fff8dc;
+  border-left: 4px solid #C9A96E;
+  padding: 10px 14px;
+  margin: 10px 0;
+  font-size: 13px;
+}
+.law-cite strong {
+  color: #7a5b1e;
+}
+
+/* Law reference grid (3 categories) */
+.law-ref-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 10px 0;
+}
+.law-ref-card {
+  padding: 10px 14px;
+  background: #f8f9fa;
+  border-left: 3px solid #4a7cad;
+  font-size: 13px;
+}
+.law-ref-card.cat-act { border-left-color: #C0392B; }
+.law-ref-card.cat-reg { border-left-color: #E67E22; }
+.law-ref-card.cat-concept { border-left-color: #4a7cad; }
+.law-ref-card .law-name { font-weight: bold; display: block; margin-bottom: 2px; }
+.law-ref-card .law-source { font-size: 11px; color: #72777d; }
+.law-ref-card .law-info { font-size: 12px; color: #555; margin-top: 2px; }
+.law-arrow, .law-icon { color: #4a7cad; }
+
+/* Amendment grid (for multi-section comparisons) */
+.amendment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 12px 0;
+}
+.amendment-card {
+  background: #f8f9fa;
+  border: 1px solid #a2a9b1;
+  border-radius: 2px;
+  padding: 10px 14px;
+}
+.amendment-card .badge {
+  display: inline-block;
+  background: #dde3ea;
+  color: #202122;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.amendment-card .badge.new {
+  background: #d4edda;
+  color: #1a6b2f;
+}
+.amendment-card h4 {
+  font-size: 15px;
+  margin: 4px 0 2px;
+  color: #202122;
+}
+.amendment-card .en-label {
+  font-size: 12px;
+  color: #72777d;
+  font-style: italic;
+  margin-bottom: 4px;
+}
+.amendment-card p {
+  font-size: 13px;
+  color: #555;
+  margin: 4px 0 0;
+}
+
+/* Old vs new value comparison inside amendment text */
+.old-val {
+  color: #C0392B;
+  text-decoration: line-through;
+}
+.new-val {
+  color: #1a6b2f;
+  font-weight: bold;
+}
+
+/* Compare table */
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 12px 0;
+}
+.compare-table th, .compare-table td {
+  border: 1px solid #a2a9b1;
+  padding: 6px 10px;
+  vertical-align: top;
+  text-align: left;
+}
+.compare-table th {
+  background: #dde3ea;
+  font-weight: bold;
+}
+.compare-table tr:nth-child(even) { background: #f8f9fa; }
+
+/* Content list (ordered steps) */
+.content-list {
+  margin: 8px 0 8px 24px;
+}
+.content-list li {
+  margin: 6px 0;
+}
+
+/* References section */
+.references {
+  background: #fafbfc;
+  border: 1px solid #eaecf0;
+  padding: 12px 16px;
+  margin: 20px 0 10px;
+  font-size: 13px;
+}
+.references h2, .references h3 { margin-top: 4px; }
+
+/* Risk inline badges */
+.risk-high, .risk-medium, .risk-low {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: bold;
+  margin-left: 4px;
+}
+.risk-high { background: #FADBD8; color: #C0392B; }
+.risk-medium { background: #FDEBD0; color: #a04a00; }
+.risk-low { background: #D5F5E3; color: #1a6b2f; }
+
+/* Legacy subtitle inside hero */
+.subtitle {
+  font-size: 14px;
+  color: #54595d;
+  font-style: italic;
+}
+
+/* New-section spacer */
+.new-section {
+  margin-top: 30px;
+  padding-top: 16px;
+  border-top: 2px solid #eaecf0;
+}
+
+/* Back-to-top link */
+.back-top {
+  display: inline-block;
+  font-size: 12px;
+  color: #0645ad;
+  margin: 8px 0;
+}
+
+/* Legacy .en inline label */
+.en, .en-label {
+  font-size: 12px;
+  color: #72777d;
+  font-style: italic;
+}
+
+/* Legacy footer/meta (for articles not yet migrated) */
+.footer-author {
+  text-align: center;
+  font-size: 12px;
+  color: #72777d;
+  margin-top: 20px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   END COMPATIBILITY LAYER
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Global TH/EN toggle (canonical — see docs/BILINGUAL-CONVENTION.md) ── */
+body[data-lang="th"] .lang-en { display: none; }
+body[data-lang="en"] .lang-th { display: none; }
+
+.global-lang-toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 9999;
+  display: inline-flex;
+  background: #1B2A4A;
+  border: 1px solid #C9A96E;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.global-lang-toggle button {
+  background: transparent;
+  color: #C9A96E;
+  border: none;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.global-lang-toggle button.active { background: #C9A96E; color: #1B2A4A; }
+.global-lang-toggle button:hover:not(.active) { color: #fff; background: #2a3f66; }
+
+@media (max-width: 720px) {
+  .global-lang-toggle { top: 8px; right: 8px; }
+  .global-lang-toggle button { padding: 6px 12px; font-size: 12px; }
+}
