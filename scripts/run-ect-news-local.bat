@@ -30,16 +30,22 @@ echo ============================================================
 REM Pull latest to avoid conflicts with parallel AI sessions
 git pull --rebase origin main
 
-REM Run the agent (try live scrape, fall back to seed)
+REM Step 1: Run the daily agent (try live scrape, fall back to seed)
 python -X utf8 scripts\ect-news-agent.py --limit 5
 
 IF %ERRORLEVEL% NEQ 0 (
-  echo [ERROR] Agent script failed with code %ERRORLEVEL%
+  echo [ERROR] Daily agent failed with code %ERRORLEVEL%
   exit /b %ERRORLEVEL%
 )
 
-REM Stage only the data files (not PDFs — they're gitignored)
-git add blog/bkk-council/data/ect-news/latest.json blog/bkk-council/data/ect-news/images/
+REM Step 2: Generate monthly rollup for current month
+python -X utf8 scripts\ect-news-monthly.py
+
+REM Step 3: Push notifications (Notion + Gmail) — silent if no creds
+python -X utf8 scripts\ect-news-notify.py
+
+REM Stage data files (not PDFs — they're gitignored)
+git add blog/bkk-council/data/ect-news/latest.json blog/bkk-council/data/ect-news/images/ blog/bkk-council/data/ect-news/daily/ blog/bkk-council/data/ect-news/monthly/
 
 REM Check if there's anything to commit
 git diff --cached --quiet
