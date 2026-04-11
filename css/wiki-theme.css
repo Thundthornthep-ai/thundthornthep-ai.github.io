@@ -362,9 +362,11 @@ table.article-table tr:nth-child(even) { background: #f8f9fa; }
   color: #202122;
 }
 
-/* Legacy header/footer — hide in favor of wiki-footer */
-.site-header { display: none; }
-.site-footer { display: none; }
+/* Legacy header/footer — hide ONLY on pages that use wiki-footer/wiki-header
+   instead. Pages without wiki-footer (e.g. bkk-council) keep their site-footer
+   visible. Uses :has() selector (Chrome 105+, Safari 15.4+, Firefox 121+). */
+body:has(.wiki-header) .site-header { display: none; }
+body:has(.wiki-footer) .site-footer { display: none; }
 
 /* Legacy main container — translate to wiki-wrapper-like */
 .article-container {
