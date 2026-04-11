@@ -618,7 +618,334 @@ body {
     </div>
   </a>
 
-  <!-- 4. DISTRICT INTELLIGENCE by LAS -->
+  <!-- 3.5 ECT DAILY NEWS WIDGET — ติดตามข่าว กกต. รายวัน -->
+<div class="ect-news-widget fade-in" id="ectNewsWidget">
+  <div class="ect-hd">
+    <div class="ect-hd-left">
+      <div class="ect-icon">📰</div>
+      <div>
+        <h3>ติดตามข่าว กกต. รายวัน</h3>
+        <p class="ect-sub">3 ข่าวล่าสุด — กรอง ส.ก. / ผู้ว่าฯ กทม. / เลือกตั้งท้องถิ่น</p>
+      </div>
+    </div>
+    <button type="button" class="ect-update-btn" id="ectUpdateBtn" onclick="loadEctNews(true)">
+      <span class="ect-update-icon">🔄</span>
+      <span class="ect-update-label">Click for UPDATE</span>
+    </button>
+  </div>
+  <div class="ect-meta" id="ectMeta">กำลังโหลด...</div>
+  <div class="ect-items" id="ectItems"></div>
+  <div class="ect-footer">
+    <a href="https://www.ect.go.th/ect_th/th/dailynews2569" target="_blank" rel="noopener">
+      🔗 ดูรายการข่าว กกต. ทั้งหมดที่ ect.go.th →
+    </a>
+  </div>
+</div>
+
+<style>
+/* ============================================================
+   ECT NEWS WIDGET — Dark Green Theme, Mobile-First
+   ============================================================ */
+.ect-news-widget {
+  background: linear-gradient(135deg, #0B3D1F 0%, #14532D 50%, #166534 100%);
+  border: 2px solid #22C55E;
+  border-radius: var(--radius);
+  padding: 20px;
+  margin: 16px 0 20px;
+  color: #ECFDF5;
+  box-shadow: 0 8px 24px rgba(5, 46, 22, 0.25);
+}
+.ect-hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.ect-hd-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+.ect-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+.ect-news-widget h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #D4FBDB;
+  margin: 0 0 2px;
+  line-height: 1.3;
+}
+.ect-sub {
+  font-size: 11px;
+  color: #86EFAC;
+  margin: 0;
+  line-height: 1.4;
+}
+.ect-update-btn {
+  background: linear-gradient(135deg, #C9A96E, #D4B07A);
+  color: #14532D;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  min-height: 44px;  /* touch target */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.ect-update-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.ect-update-btn:active {
+  transform: translateY(0);
+}
+.ect-update-btn.loading .ect-update-icon {
+  animation: ect-spin 1s linear infinite;
+}
+@keyframes ect-spin {
+  to { transform: rotate(360deg); }
+}
+.ect-update-icon {
+  font-size: 14px;
+  display: inline-block;
+}
+.ect-meta {
+  font-size: 11px;
+  color: #BBF7D0;
+  padding: 8px 12px;
+  background: rgba(5, 46, 22, 0.4);
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border-left: 3px solid #22C55E;
+}
+.ect-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ect-item {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(134, 239, 172, 0.3);
+  border-radius: 8px;
+  padding: 12px 14px;
+  transition: all 0.2s;
+}
+.ect-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(134, 239, 172, 0.6);
+}
+.ect-item.important {
+  border-left: 4px solid #FDE047;
+  background: rgba(253, 224, 71, 0.08);
+}
+.ect-item-hd {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+.ect-item-date {
+  font-size: 12px;
+  font-weight: 700;
+  color: #D4FBDB;
+  font-family: 'Space Grotesk', sans-serif;
+}
+.ect-imp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #FDE047;
+  color: #713F12;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+.ect-tier-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 9px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.ect-tier-strict { background: #DC2626; color: #FFF; }
+.ect-tier-broad  { background: #EA580C; color: #FFF; }
+.ect-tier-context{ background: #64748B; color: #FFF; }
+.ect-item-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #F0FDF4;
+  line-height: 1.5;
+  margin: 4px 0 8px;
+}
+.ect-item-summary {
+  font-size: 12px;
+  color: #D1FAE5;
+  line-height: 1.65;
+  margin: 6px 0 10px;
+  white-space: pre-wrap;
+  max-height: 120px;
+  overflow: hidden;
+  position: relative;
+}
+.ect-item-summary.expanded { max-height: none; }
+.ect-item-kw {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 8px 0;
+}
+.ect-kw-tag {
+  font-size: 10px;
+  background: rgba(34, 197, 94, 0.25);
+  color: #BBF7D0;
+  padding: 3px 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(134, 239, 172, 0.3);
+}
+.ect-item-images {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 10px 0 6px;
+}
+.ect-item-images img {
+  width: 80px;
+  height: auto;
+  max-height: 110px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid rgba(134, 239, 172, 0.4);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.ect-item-images img:hover {
+  transform: scale(1.05);
+}
+.ect-item-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(134, 239, 172, 0.2);
+}
+.ect-item-actions a {
+  font-size: 11px;
+  color: #FDE047;
+  text-decoration: none;
+  padding: 4px 10px;
+  background: rgba(253, 224, 71, 0.12);
+  border: 1px solid rgba(253, 224, 71, 0.4);
+  border-radius: 6px;
+  transition: all 0.2s;
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+}
+.ect-item-actions a:hover {
+  background: rgba(253, 224, 71, 0.25);
+  color: #FFF;
+}
+.ect-footer {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(134, 239, 172, 0.25);
+  text-align: center;
+}
+.ect-footer a {
+  font-size: 12px;
+  color: #BBF7D0;
+  text-decoration: none;
+  font-weight: 500;
+}
+.ect-footer a:hover {
+  color: #FFF;
+}
+.ect-empty {
+  padding: 20px;
+  text-align: center;
+  color: #BBF7D0;
+  font-size: 12px;
+}
+
+/* ============ MOBILE RESPONSIVE ============ */
+@media (max-width: 640px) {
+  .ect-news-widget {
+    padding: 16px;
+    margin: 12px -4px 16px;
+    border-radius: var(--radius-sm);
+  }
+  .ect-hd {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .ect-update-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .ect-news-widget h3 {
+    font-size: 16px;
+  }
+  .ect-icon {
+    font-size: 28px;
+  }
+  .ect-item-images img {
+    width: calc(33.333% - 4px);
+    max-width: 120px;
+  }
+  .ect-item-summary {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+}
+
+/* Modal for image zoom */
+.ect-img-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  cursor: zoom-out;
+}
+.ect-img-modal.visible { display: flex; }
+.ect-img-modal img {
+  max-width: 95%;
+  max-height: 95vh;
+  border-radius: 4px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+</style>
+
+<!-- Image zoom modal -->
+<div class="ect-img-modal" id="ectImgModal" onclick="this.classList.remove('visible')">
+  <img id="ectImgModalContent" src="" alt="">
+</div>
+
+<!-- 4. DISTRICT INTELLIGENCE by LAS -->
   <div class="section-divider di-brand"><div class="line"></div><span class="di-brand-label"><span class="di-text">District Intelligence</span><span class="di-badge">by LAS</span></span><div class="line"></div></div>
   <div class="fade-in" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:8px;">
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
@@ -1068,6 +1395,171 @@ body {
     row.appendChild(icon); row.appendChild(mid); row.appendChild(dt);
     el.appendChild(row);
   });
+})();
+
+// ============ ECT NEWS WIDGET LOADER ============
+(function(){
+  window.loadEctNews = function(forceRefresh){
+    var btn = document.getElementById('ectUpdateBtn');
+    var meta = document.getElementById('ectMeta');
+    var items = document.getElementById('ectItems');
+    if(!items) return;
+    if(btn) btn.classList.add('loading');
+    var url = 'data/ect-news/latest.json' + (forceRefresh ? ('?t=' + Date.now()) : '');
+    fetch(url, {cache: forceRefresh ? 'no-store' : 'default'})
+      .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function(data){
+        if(btn) btn.classList.remove('loading');
+        renderEctNews(data);
+      })
+      .catch(function(e){
+        if(btn) btn.classList.remove('loading');
+        if(meta) meta.textContent = '⚠️ ยังไม่มีข้อมูล — กรุณารอ cron update (รอบถัดไป 07:00 / 11:00 / 15:00 น.)';
+        if(items){
+          while(items.firstChild) items.removeChild(items.firstChild);
+          var empty = document.createElement('div');
+          empty.className = 'ect-empty';
+          empty.textContent = 'ไม่สามารถโหลดข้อมูลได้: ' + e.message;
+          items.appendChild(empty);
+        }
+      });
+  };
+
+  function renderEctNews(data){
+    var meta = document.getElementById('ectMeta');
+    var items = document.getElementById('ectItems');
+    if(!meta || !items) return;
+
+    // Meta line
+    var metaText = '⏱️ อัปเดตล่าสุด: ' + (data.lastUpdatedHuman || data.lastUpdated || 'ไม่ทราบ');
+    metaText += ' · 📊 ' + (data.itemCount || 0) + ' รายการ';
+    meta.textContent = metaText;
+
+    // Clear
+    while(items.firstChild) items.removeChild(items.firstChild);
+
+    var newsItems = (data.items || []).slice(0, 3);
+    if(newsItems.length === 0){
+      var empty = document.createElement('div');
+      empty.className = 'ect-empty';
+      empty.textContent = 'ไม่มีข่าวล่าสุด — กรุณารอ cron รอบถัดไป';
+      items.appendChild(empty);
+      return;
+    }
+
+    newsItems.forEach(function(item){
+      var card = document.createElement('div');
+      card.className = 'ect-item' + (item.important ? ' important' : '');
+
+      // Header row: date + badges
+      var hd = document.createElement('div');
+      hd.className = 'ect-item-hd';
+      var dateSpan = document.createElement('span');
+      dateSpan.className = 'ect-item-date';
+      dateSpan.textContent = '📅 ' + formatThaiDate(item.date);
+      hd.appendChild(dateSpan);
+
+      if(item.important){
+        var imp = document.createElement('span');
+        imp.className = 'ect-imp-badge';
+        imp.textContent = '⭐ สำคัญ';
+        hd.appendChild(imp);
+      }
+      if(item.tier && item.tier !== 'none'){
+        var tierBadge = document.createElement('span');
+        tierBadge.className = 'ect-tier-badge ect-tier-' + item.tier;
+        tierBadge.textContent = item.tier === 'strict' ? 'ส.ก. ตรง' : (item.tier === 'broad' ? 'กว้าง' : 'บริบท');
+        hd.appendChild(tierBadge);
+      }
+      card.appendChild(hd);
+
+      // Title
+      var title = document.createElement('div');
+      title.className = 'ect-item-title';
+      title.textContent = item.title || 'ไม่มีชื่อ';
+      card.appendChild(title);
+
+      // Summary (truncated)
+      if(item.summary){
+        var sum = document.createElement('div');
+        sum.className = 'ect-item-summary';
+        sum.textContent = item.summary;
+        sum.onclick = function(){ this.classList.toggle('expanded'); };
+        card.appendChild(sum);
+      }
+
+      // Keywords
+      if(item.matched_keywords && item.matched_keywords.length > 0){
+        var kwWrap = document.createElement('div');
+        kwWrap.className = 'ect-item-kw';
+        item.matched_keywords.slice(0, 6).forEach(function(kw){
+          var tag = document.createElement('span');
+          tag.className = 'ect-kw-tag';
+          tag.textContent = kw;
+          kwWrap.appendChild(tag);
+        });
+        card.appendChild(kwWrap);
+      }
+
+      // Images
+      if(item.images && item.images.length > 0){
+        var imgWrap = document.createElement('div');
+        imgWrap.className = 'ect-item-images';
+        item.images.forEach(function(imgPath){
+          var img = document.createElement('img');
+          img.src = imgPath;
+          img.alt = 'หน้าสำคัญจาก PDF ' + item.date;
+          img.loading = 'lazy';
+          img.onclick = function(){
+            var modal = document.getElementById('ectImgModal');
+            var mImg = document.getElementById('ectImgModalContent');
+            if(modal && mImg){
+              mImg.src = imgPath;
+              modal.classList.add('visible');
+            }
+          };
+          imgWrap.appendChild(img);
+        });
+        card.appendChild(imgWrap);
+      }
+
+      // Actions: PDF link + source link
+      var actions = document.createElement('div');
+      actions.className = 'ect-item-actions';
+      if(item.pdf_url){
+        var pdfA = document.createElement('a');
+        pdfA.href = item.pdf_url;
+        pdfA.target = '_blank';
+        pdfA.rel = 'noopener';
+        pdfA.textContent = '📄 PDF ต้นฉบับ (' + (item.pdf_size_mb || '?') + ' MB, ' + (item.pdf_pages || '?') + ' หน้า)';
+        actions.appendChild(pdfA);
+      }
+      if(item.finding_count > 0){
+        var cnt = document.createElement('span');
+        cnt.style.cssText = 'font-size:10px;color:#BBF7D0;padding:4px 8px;';
+        cnt.textContent = '🔍 พบ ' + item.finding_count + ' หน้าที่เกี่ยวข้อง';
+        actions.appendChild(cnt);
+      }
+      card.appendChild(actions);
+
+      items.appendChild(card);
+    });
+  }
+
+  function formatThaiDate(iso){
+    if(!iso) return '';
+    var d = new Date(iso + 'T00:00:00+07:00');
+    if(isNaN(d)) return iso;
+    var mths = ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
+    return d.getDate() + ' ' + mths[d.getMonth()] + ' ' + (d.getFullYear() + 543);
+  }
+
+  // Auto-load on page ready
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){ loadEctNews(false); });
+  } else {
+    loadEctNews(false);
+  }
 })();
 
 // FADE-IN OBSERVER

@@ -1,0 +1,4 @@
+# PDFs are large (10-32 MB each) and available on ect.go.th directly.
+# Only commit JSON + extracted page images to keep repo lean.
+pdfs/
+*.pdf

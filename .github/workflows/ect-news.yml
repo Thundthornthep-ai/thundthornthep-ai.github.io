@@ -1,0 +1,64 @@
+name: ECT Daily News Agent
+
+# Runs 3 times per day (Thailand time): 07:00 / 11:00 / 15:00
+# TH = UTC+7, so TH 07:00 = UTC 00:00, TH 11:00 = UTC 04:00, TH 15:00 = UTC 08:00
+on:
+  schedule:
+    - cron: '0 0,4,8 * * *'
+  # Also allow manual trigger from GitHub Actions UI or workflow_dispatch API
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Max PDFs to process'
+        required: false
+        default: '5'
+
+permissions:
+  contents: write  # needed to commit back to the repo
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pdfplumber requests pillow playwright
+          playwright install --with-deps chromium
+
+      - name: Run ECT news agent
+        run: |
+          python scripts/ect-news-agent.py --limit ${{ github.event.inputs.limit || '5' }}
+        env:
+          PYTHONUNBUFFERED: '1'
+
+      - name: Check for changes
+        id: check
+        run: |
+          git add blog/bkk-council/data/ect-news/latest.json blog/bkk-council/data/ect-news/images/ 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No changes to commit"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            git diff --staged --stat
+          fi
+
+      - name: Commit and push
+        if: steps.check.outputs.has_changes == 'true'
+        run: |
+          git config user.name "ECT News Bot"
+          git config user.email "noreply+ect-news-bot@github.com"
+          # Pull latest to avoid conflicts with parallel commits
+          git pull --rebase origin main || true
+          git commit -m "chore(ect-news): auto-update $(date -u +'%Y-%m-%d %H:%M UTC')" || echo "Nothing to commit"
+          git push origin main || echo "Push failed (will retry next cron)"
