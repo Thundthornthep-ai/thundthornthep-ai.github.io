@@ -52,7 +52,9 @@ jobs:
       - name: Check for changes
         id: check
         run: |
-          git add blog/bkk-council/data/ect-news/latest.json blog/bkk-council/data/ect-news/images/ 2>/dev/null || true
+          # git add returns non-zero when paths don't exist (expected when no new news);
+          # suppress that error only — real failures (e.g. permission) still surface via stderr.
+          git add -- blog/bkk-council/data/ect-news/latest.json blog/bkk-council/data/ect-news/images/ 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
             echo "No changes to commit"
@@ -66,6 +68,6 @@ jobs:
         run: |
           git config user.name "ECT News Bot"
           git config user.email "noreply+ect-news-bot@github.com"
-          git pull --rebase origin main || true
-          git commit -m "chore(ect-news): auto-update $(date -u +'%Y-%m-%d %H:%M UTC')" || echo "Nothing to commit"
-          git push origin main || echo "Push failed (will retry next cron)"
+          git pull --rebase origin main
+          git commit -m "chore(ect-news): auto-update $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push origin main
