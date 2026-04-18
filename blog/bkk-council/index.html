@@ -112,11 +112,36 @@ body {
 }
 .top-bar-right span { color: var(--gold); }
 
+/* ============ WARNING MARQUEE ============ */
+.warning-marquee {
+  position: fixed; top: 48px; left: 0; right: 0; z-index: 99;
+  background: #DC2626;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 6px 0;
+}
+.warning-marquee-track {
+  display: inline-block;
+  animation: marquee-scroll 45s linear infinite;
+}
+.warning-marquee-text {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFFFFF;
+  font-family: 'Sarabun', sans-serif;
+  padding: 0 60px;
+}
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* ============ MAIN CONTENT ============ */
 .main {
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 72px 24px 64px;
+  padding: 108px 24px 64px;
 }
 
 /* ============ HERO ============ */
@@ -190,7 +215,6 @@ body {
   font-size: 13px; font-weight: 600;
   white-space: nowrap; min-width: 120px;
 }
-.cd-row.launch .cd-row-label { color: var(--gold); }
 .cd-row.election .cd-row-label { color: var(--teal); }
 .cd-boxes { display: flex; gap: 4px; }
 .cd-box {
@@ -204,7 +228,6 @@ body {
   font-size: 15px; font-weight: 700;
   line-height: 1.2; display: block;
 }
-.cd-row.launch .cd-num { color: var(--gold); }
 .cd-row.election .cd-num { color: var(--teal); }
 .cd-label-sm {
   font-size: 8px; color: var(--text-muted);
@@ -213,7 +236,7 @@ body {
 }
 .cd-done {
   font-size: 14px; font-weight: 700;
-  color: var(--gold); animation: pulse 1.5s infinite;
+  color: var(--teal); animation: pulse 1.5s infinite;
   display: none;
 }
 
@@ -529,7 +552,7 @@ body {
 
 /* ============ PRINT ============ */
 @media print {
-  .top-bar { display: none; }
+  .top-bar, .warning-marquee { display: none; }
   body { background: #fff; }
   .phase-card, .dl-card, .quick-card { box-shadow: none; border: 1px solid #ccc; }
 }
@@ -554,6 +577,14 @@ body {
 <div class="top-bar">
   <div class="top-bar-left">คู่มือเลือกตั้ง ส.ก. กทม. 2569</div>
   <div class="top-bar-right"><span>LAS</span> Research × <span>NIA</span></div>
+</div>
+
+<!-- WARNING MARQUEE -->
+<div class="warning-marquee">
+  <div class="warning-marquee-track">
+    <span class="warning-marquee-text">คำเตือน : ชุดข้อมูลความรู้นี้ เป็นเพียงการทดลองระบบ AI Legal Research เท่านั้น และไม่มีค่าใช้จ่าย ไม่ได้มีวัตถุประสงค์ในการสนับสนุนผู้สมัครรับเลือกตั้ง รายหนึ่งรายใด ดังนั้น หากมีการนำข้อมูลชุดความรู้ใดไปใช้ในทางใดๆ ก็ตาม ขอให้ผู้ใช้งานได้โปรดตรวจสอบความถูกต้องกับข้อมูลของหน่วยงานราชการที่มีหน้าที่รับผิดชอบโดยถูกต้อง</span>
+    <span class="warning-marquee-text">คำเตือน : ชุดข้อมูลความรู้นี้ เป็นเพียงการทดลองระบบ AI Legal Research เท่านั้น และไม่มีค่าใช้จ่าย ไม่ได้มีวัตถุประสงค์ในการสนับสนุนผู้สมัครรับเลือกตั้ง รายหนึ่งรายใด ดังนั้น หากมีการนำข้อมูลชุดความรู้ใดไปใช้ในทางใดๆ ก็ตาม ขอให้ผู้ใช้งานได้โปรดตรวจสอบความถูกต้องกับข้อมูลของหน่วยงานราชการที่มีหน้าที่รับผิดชอบโดยถูกต้อง</span>
+  </div>
 </div>
 
 <!-- PWA INSTALL PROMPT -->
@@ -588,20 +619,10 @@ body {
     <p class="hero-tagline">From Zero to Hero</p>
   </section>
 
-  <!-- 2. COUNTDOWN -->
+  <!-- 2. COUNTDOWN — วันเลือกตั้ง ส.ก. -->
   <div class="countdown-row-container fade-in">
-    <div class="cd-row launch">
-      <span class="cd-row-label">เปิดตัวทีมคนทำงาน</span>
-      <div class="cd-boxes" id="launchBoxes">
-        <div class="cd-box"><span class="cd-num" id="cd-launch-d">--</span><span class="cd-label-sm">วัน</span></div>
-        <div class="cd-box"><span class="cd-num" id="cd-launch-h">--</span><span class="cd-label-sm">ชม.</span></div>
-        <div class="cd-box"><span class="cd-num" id="cd-launch-m">--</span><span class="cd-label-sm">นาที</span></div>
-        <div class="cd-box"><span class="cd-num" id="cd-launch-s">--</span><span class="cd-label-sm">วินาที</span></div>
-      </div>
-      <span class="cd-done" id="launchDone">เปิดตัวแล้ว!</span>
-    </div>
     <div class="cd-row election">
-      <span class="cd-row-label">วันเลือกตั้ง ส.ก.</span>
+      <span class="cd-row-label">วันเลือกตั้ง ส.ก. — 28 มิ.ย. 2569</span>
       <div class="cd-boxes" id="electionBoxes">
         <div class="cd-box"><span class="cd-num" id="cd-elect-d">--</span><span class="cd-label-sm">วัน</span></div>
         <div class="cd-box"><span class="cd-num" id="cd-elect-h">--</span><span class="cd-label-sm">ชม.</span></div>
@@ -800,6 +821,18 @@ body {
   line-height: 1.5;
   margin: 4px 0 8px;
 }
+.ect-relevance-box {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin: 4px 0 10px;
+  font-size: 11px;
+  line-height: 1.7;
+  color: #A7F3D0;
+}
+.ect-relevance-box div { margin-bottom: 2px; }
+.ect-relevance-box div:last-child { margin-bottom: 0; }
 .ect-item-summary {
   font-size: 12px;
   color: #D1FAE5;
@@ -1105,13 +1138,9 @@ body {
 <!-- BKK Election 2569 data module (Single Source of Truth) -->
 <script src="election_expenses_data.js"></script>
 <script>
-// COUNTDOWN
+// COUNTDOWN — วันเลือกตั้ง ส.ก. เท่านั้น
 (function(){
-  // Single source of truth: election_expenses_data.js
   var _BKK = window.BKKElection2569;
-  var launchTarget = _BKK
-    ? new Date(_BKK.COUNTDOWN_TARGETS.teamLaunch.date + 'T00:00:00+07:00').getTime()
-    : new Date('2026-05-01T00:00:00+07:00').getTime();
   var electionTarget = _BKK
     ? new Date(_BKK.KEY_DATES.electionDay.date + 'T08:00:00+07:00').getTime()
     : new Date('2026-06-28T08:00:00+07:00').getTime();
@@ -1134,15 +1163,6 @@ body {
 
   function tick(){
     var now = Date.now();
-    updateCD(
-      launchTarget - now,
-      document.getElementById('cd-launch-d'),
-      document.getElementById('cd-launch-h'),
-      document.getElementById('cd-launch-m'),
-      document.getElementById('cd-launch-s'),
-      document.getElementById('launchBoxes'),
-      document.getElementById('launchDone')
-    );
     updateCD(
       electionTarget - now,
       document.getElementById('cd-elect-d'),
@@ -1460,6 +1480,35 @@ body {
       title.textContent = item.title || 'ไม่มีชื่อ';
       card.appendChild(title);
 
+      // Relevance box — สรุปว่าเกี่ยวกับ ส.ก. อย่างไร
+      if(item.matched_keywords && item.matched_keywords.length > 0){
+        var relBox = document.createElement('div');
+        relBox.className = 'ect-relevance-box';
+        // Categorize keywords into groups
+        var skKw = [], elecKw = [], govKw = [];
+        item.matched_keywords.forEach(function(kw){
+          if(/สภากรุงเทพ|ส\.ก\.|สก\.|สมาชิกสภากรุงเทพ/.test(kw)) skKw.push(kw);
+          else if(/เลือกตั้ง|วันเลือกตั้ง|ค่าใช้จ่าย/.test(kw)) elecKw.push(kw);
+          else if(/ผู้ว่า|กรุงเทพมหานคร|ท้องถิ่น|กกต/.test(kw)) govKw.push(kw);
+        });
+        if(skKw.length > 0){
+          var line1 = document.createElement('div');
+          line1.textContent = '\uD83C\uDFDB\uFE0F เกี่ยวกับ ส.ก. โดยตรง: ' + skKw.join(', ');
+          relBox.appendChild(line1);
+        }
+        if(elecKw.length > 0){
+          var line2 = document.createElement('div');
+          line2.textContent = '\uD83D\uDDF3\uFE0F เรื่องเลือกตั้ง: ' + elecKw.join(', ');
+          relBox.appendChild(line2);
+        }
+        if(govKw.length > 0){
+          var line3 = document.createElement('div');
+          line3.textContent = '\uD83C\uDFE2 กกต./กทม.: ' + govKw.join(', ');
+          relBox.appendChild(line3);
+        }
+        card.appendChild(relBox);
+      }
+
       // Summary (truncated)
       if(item.summary){
         var sum = document.createElement('div');
@@ -1469,7 +1518,7 @@ body {
         card.appendChild(sum);
       }
 
-      // Keywords
+      // Keywords tags
       if(item.matched_keywords && item.matched_keywords.length > 0){
         var kwWrap = document.createElement('div');
         kwWrap.className = 'ect-item-kw';

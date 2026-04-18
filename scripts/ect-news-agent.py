@@ -129,21 +129,29 @@ def discover_pdf_urls_playwright():
         print(f"  ⚠️  Playwright discovery failed: {e}")
         return []
 
-    # Parse card texts like "สรุปข่าว วันที่ 10 เม.ย. 69.pdf ขนาดไฟล์ 28.43 MB ..."
+    # Parse card texts — supports two formats:
+    #   "สรุปข่าว วันที่ 10 เม.ย. 69" (abbreviated month + 2-digit BE year)
+    #   "สรุปข่าว กกต. วันที่ 18 เมษายน 2569" (full month + 4-digit BE year)
     thai_months = {
+        # Abbreviated
         "ม.ค.": 1, "ก.พ.": 2, "มี.ค.": 3, "เม.ย.": 4,
         "พ.ค.": 5, "มิ.ย.": 6, "ก.ค.": 7, "ส.ค.": 8,
         "ก.ย.": 9, "ต.ค.": 10, "พ.ย.": 11, "ธ.ค.": 12,
+        # Full names
+        "มกราคม": 1, "กุมภาพันธ์": 2, "มีนาคม": 3, "เมษายน": 4,
+        "พฤษภาคม": 5, "มิถุนายน": 6, "กรกฎาคม": 7, "สิงหาคม": 8,
+        "กันยายน": 9, "ตุลาคม": 10, "พฤศจิกายน": 11, "ธันวาคม": 12,
     }
     for c in cards:
-        m = re.search(r"วันที่\s*(\d{1,2})\s*([ก-๙\.]+)\s*(\d{2,4})", c["text"])
+        # Match: วันที่ DD <month> YY or YYYY (with optional whitespace/dots)
+        m = re.search(r"วันที่\s*(\d{1,2})\s+([ก-๙\.]+(?:คม|ยน)?)\s*(\d{2,4})", c["text"])
         if not m:
             continue
-        day, mon_th, year_buddhist = m.group(1), m.group(2), m.group(3)
+        day, mon_th, year_buddhist = m.group(1), m.group(2).strip(), m.group(3)
         month = thai_months.get(mon_th)
         if not month:
             continue
-        # Convert BE 2-digit year to CE
+        # Convert BE year to CE
         year_buddhist = int(year_buddhist)
         if year_buddhist < 100:
             year_buddhist += 2500  # 69 → 2569
