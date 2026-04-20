@@ -1338,18 +1338,26 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
 <!-- LOGIN AUTHENTICATION (SHA-256 via Web Crypto API) + CHANGE PASSWORD -->
 <script>
 (function(){
-  var VALID_USER = 'Bkk2569';
-  var DEFAULT_HASH = 'cf3f52022f7443487ae3bb5d8407b08c19b8a448925e6d1ae9c6e9da35fc09f3';
+  // Multi-user credentials (username → default SHA-256 hash)
+  var USERS = {
+    'Bkk2569': 'cf3f52022f7443487ae3bb5d8407b08c19b8a448925e6d1ae9c6e9da35fc09f3',
+    'Las':     '1a85566689349a0df159bbdf1252d31b6c2574177ad99d5d0af7df9075b55259'
+  };
   var SESSION_KEY = 'bkk_sk_auth';
   var PW_HASH_KEY = 'bkk_sk_pw_hash';
+  var SESSION_USER_KEY = 'bkk_sk_user';
   var MIN_PW_LENGTH = 8;
 
-  // Read current valid hash — localStorage override if user has changed password
-  function getValidHash(){
+  // Read current valid hash for a user — localStorage override if user has changed password
+  function getValidHash(user){
     try {
-      var stored = localStorage.getItem(PW_HASH_KEY);
-      return (stored && stored.length === 64) ? stored : DEFAULT_HASH;
-    } catch(e){ return DEFAULT_HASH; }
+      var stored = localStorage.getItem(PW_HASH_KEY + '_' + user);
+      return (stored && stored.length === 64) ? stored : (USERS[user] || '');
+    } catch(e){ return USERS[user] || ''; }
+  }
+
+  function getCurrentUser(){
+    try { return sessionStorage.getItem(SESSION_USER_KEY) || ''; } catch(e){ return ''; }
   }
 
   var overlay = document.getElementById('loginOverlay');
@@ -1402,13 +1410,13 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
       e.preventDefault();
       var user = (userField.value || '').trim();
       var pass = passField.value || '';
-      if(user !== VALID_USER){
+      if(!USERS[user]){
         if(errorEl) errorEl.textContent = 'Username หรือ Password ไม่ถูกต้อง';
         return;
       }
       var hash = await sha256(pass);
-      if(hash === getValidHash()){
-        try { sessionStorage.setItem(SESSION_KEY, '1'); } catch(e){}
+      if(hash === getValidHash(user)){
+        try { sessionStorage.setItem(SESSION_KEY, '1'); sessionStorage.setItem(SESSION_USER_KEY, user); } catch(e){}
         showDashboard();
       } else {
         if(errorEl) errorEl.textContent = 'Username หรือ Password ไม่ถูกต้อง';
@@ -1420,7 +1428,7 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
 
   if(logoutBtn){
     logoutBtn.addEventListener('click', function(){
-      try { sessionStorage.removeItem(SESSION_KEY); } catch(e){}
+      try { sessionStorage.removeItem(SESSION_KEY); sessionStorage.removeItem(SESSION_USER_KEY); } catch(e){}
       showLogin();
     });
   }
@@ -1461,7 +1469,7 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
 
       // Validate current
       var curHash = await sha256(cur);
-      if(curHash !== getValidHash()){
+      if(curHash !== getValidHash(getCurrentUser())){
         setMsg('รหัสปัจจุบันไม่ถูกต้อง', 'err');
         cpwCurrent.focus();
         return;
@@ -1483,7 +1491,7 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
       }
       try {
         var newHash = await sha256(nw);
-        localStorage.setItem(PW_HASH_KEY, newHash);
+        localStorage.setItem(PW_HASH_KEY + '_' + getCurrentUser(), newHash);
         setMsg('✅ เปลี่ยนรหัสเรียบร้อย — ปิดหน้าต่างใน 2 วินาที', 'ok');
         setTimeout(closeCpw, 2000);
       } catch(err){
