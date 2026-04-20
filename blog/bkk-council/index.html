@@ -23,8 +23,8 @@
 <meta name="author" content="Legal Advance Solution Co., Ltd.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
 <!-- [[THEME-MIGRATION-v1]] -->
 <link rel="stylesheet" href="/css/wiki-theme.css">
 <!-- [[/THEME-MIGRATION-v1]] -->
@@ -33,6 +33,10 @@
 </script>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#1B2A4A">
+<!-- Security Headers -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; img-src 'self' data: blob: https://*.tile.openstreetmap.org https://publicapi.traffy.in.th https://*.traffy.in.th https://www.googletagmanager.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://publicapi.traffy.in.th https://www.google-analytics.com https://www.googletagmanager.com; frame-src 'none'; object-src 'none'; base-uri 'self';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
 <!-- iOS PWA support -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -567,16 +571,206 @@ body {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ============ LOGIN OVERLAY ============ */
+.login-overlay {
+  position: fixed; inset: 0; z-index: 99999;
+  background: linear-gradient(135deg, #0F1B2D 0%, #1B2A4A 50%, #0F1B2D 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Sarabun', sans-serif;
+}
+.login-overlay.hidden { display: none; }
+.login-box {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 40px 36px 36px;
+  width: 100%;
+  max-width: 380px;
+  margin: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 0 1px rgba(201,169,110,0.2);
+  text-align: center;
+}
+.login-box .login-logo {
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+.login-box h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.login-box .login-sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+.login-field {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: 'Sarabun', sans-serif;
+  font-size: 15px;
+  color: var(--text);
+  background: var(--bg);
+  margin-bottom: 12px;
+  transition: border-color var(--transition);
+  box-sizing: border-box;
+}
+.login-field:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201,169,110,0.15);
+}
+.login-field::placeholder { color: var(--text-muted); }
+.login-btn {
+  width: 100%;
+  padding: 13px 24px;
+  background: linear-gradient(135deg, var(--navy), #243B5E);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: 'Sarabun', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition);
+  margin-top: 4px;
+}
+.login-btn:hover { background: linear-gradient(135deg, #243B5E, #1B2A4A); box-shadow: var(--shadow-md); }
+.login-btn:active { transform: scale(0.98); }
+.login-error {
+  color: var(--red);
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 12px;
+  min-height: 20px;
+}
+.login-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+/* Logout button in top-bar */
+.logout-btn {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(201,169,110,0.3);
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+  transition: all var(--transition);
+  margin-left: 12px;
+}
+.logout-btn:hover { background: rgba(201,169,110,0.2); color: #fff; }
+/* Change-password button (sibling of Logout) */
+.changepw-btn {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(201,169,110,0.3);
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+  transition: all var(--transition);
+  margin-left: 8px;
+}
+.changepw-btn:hover { background: rgba(201,169,110,0.2); color: #fff; }
+
+/* Change password modal — reuses login-overlay styling pattern */
+.cpw-overlay {
+  position: fixed; inset: 0; z-index: 10000;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(15,27,45,0.55); backdrop-filter: blur(6px);
+  padding: 16px;
+}
+.cpw-overlay.hidden { display: none; }
+.cpw-box {
+  background: #fff; border-radius: 16px;
+  box-shadow: 0 20px 48px rgba(0,0,0,0.22);
+  padding: 28px 24px; max-width: 380px; width: 100%;
+}
+.cpw-box h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--navy); font-size: 18px; margin-bottom: 6px;
+}
+.cpw-box .cpw-sub { font-size: 13px; color: var(--text-secondary); margin-bottom: 18px; }
+.cpw-box input {
+  width: 100%; font-size: 14px; padding: 10px 12px;
+  border: 1px solid var(--border); border-radius: 8px;
+  margin-bottom: 10px; font-family: 'Sarabun', sans-serif;
+}
+.cpw-box input:focus { outline: 2px solid var(--gold); border-color: var(--gold); }
+.cpw-box .cpw-actions { display: flex; gap: 8px; margin-top: 8px; }
+.cpw-box button {
+  flex: 1; padding: 10px 12px; font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px; font-weight: 600; border-radius: 8px; cursor: pointer;
+  border: 1px solid transparent; transition: all var(--transition);
+}
+.cpw-save { background: var(--navy); color: #fff; }
+.cpw-save:hover { background: var(--navy-dark); }
+.cpw-cancel { background: #F3F4F6; color: var(--text); border-color: var(--border); }
+.cpw-cancel:hover { background: #E5E7EB; }
+.cpw-msg { font-size: 12px; margin-top: 8px; min-height: 16px; }
+.cpw-msg.err { color: #C0392B; }
+.cpw-msg.ok { color: #27AE60; }
+.cpw-hint { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
 </style>
 </head>
 <body data-lang="th">
 
-
+<!-- LOGIN OVERLAY -->
+<div class="login-overlay" id="loginOverlay">
+  <div class="login-box">
+    <div class="login-logo">🏛️</div>
+    <h2>ส.ก. Navigator</h2>
+    <div class="login-sub">คู่มือเลือกตั้ง ส.ก. กทม. 2569 — เข้าสู่ระบบเพื่อดูเนื้อหา</div>
+    <form id="loginForm" autocomplete="off">
+      <input type="text" class="login-field" id="loginUser" placeholder="Username" autocomplete="username" required>
+      <input type="password" class="login-field" id="loginPass" placeholder="Password" autocomplete="current-password" required>
+      <button type="submit" class="login-btn" id="loginBtn">เข้าสู่ระบบ</button>
+    </form>
+    <div class="login-error" id="loginError"></div>
+    <div class="login-footer">
+      LAS Research × NIA — งานวิชาการเพื่อนำเสนอ<br>
+      Legal Advance Solution Co., Ltd.
+    </div>
+  </div>
+</div>
 
 <!-- TOP BAR -->
 <div class="top-bar">
   <div class="top-bar-left">คู่มือเลือกตั้ง ส.ก. กทม. 2569</div>
-  <div class="top-bar-right"><span>LAS</span> Research × <span>NIA</span></div>
+  <div class="top-bar-right"><span>LAS</span> Research × <span>NIA</span><button type="button" class="changepw-btn" id="changePwBtn" style="display:none;" title="เปลี่ยนรหัสผ่าน">เปลี่ยนรหัส</button><button type="button" class="logout-btn" id="logoutBtn" style="display:none;" title="ออกจากระบบ">Logout</button></div>
+</div>
+
+<!-- CHANGE PASSWORD MODAL -->
+<div class="cpw-overlay hidden" id="cpwOverlay" role="dialog" aria-modal="true" aria-labelledby="cpwTitle">
+  <div class="cpw-box">
+    <h3 id="cpwTitle">🔑 เปลี่ยนรหัสผ่าน</h3>
+    <div class="cpw-sub">รหัสใหม่จะถูกเก็บในเครื่องนี้เท่านั้น (localStorage) — ไม่ sync ข้ามอุปกรณ์ / ล้าง cache = คืนค่าเดิม</div>
+    <form id="cpwForm" autocomplete="off">
+      <input type="password" id="cpwCurrent" placeholder="รหัสปัจจุบัน" autocomplete="current-password" required>
+      <input type="password" id="cpwNew" placeholder="รหัสใหม่ (อย่างน้อย 8 ตัวอักษร)" autocomplete="new-password" minlength="8" required>
+      <input type="password" id="cpwConfirm" placeholder="ยืนยันรหัสใหม่" autocomplete="new-password" minlength="8" required>
+      <div class="cpw-hint">⚠️ รหัสใหม่ต้องมีความยาวอย่างน้อย 8 ตัวอักษร</div>
+      <div class="cpw-msg" id="cpwMsg"></div>
+      <div class="cpw-actions">
+        <button type="button" class="cpw-cancel" id="cpwCancel">ยกเลิก</button>
+        <button type="submit" class="cpw-save">บันทึก</button>
+      </div>
+    </form>
+  </div>
 </div>
 
 <!-- WARNING MARQUEE -->
@@ -652,7 +846,7 @@ body {
         <p class="ect-sub">3 ข่าวล่าสุด — กรอง ส.ก. / ผู้ว่าฯ กทม. / เลือกตั้งท้องถิ่น</p>
       </div>
     </div>
-    <button type="button" class="ect-update-btn" id="ectUpdateBtn" onclick="loadEctNews(true)">
+    <button type="button" class="ect-update-btn" id="ectUpdateBtn">
       <span class="ect-update-icon">🔄</span>
       <span class="ect-update-label">Click for UPDATE</span>
     </button>
@@ -977,9 +1171,13 @@ body {
 </style>
 
 <!-- Image zoom modal -->
-<div class="ect-img-modal" id="ectImgModal" onclick="this.classList.remove('visible')">
+<div class="ect-img-modal" id="ectImgModal">
   <img id="ectImgModalContent" src="" alt="">
 </div>
+<script>
+document.getElementById('ectImgModal').addEventListener('click', function(){ this.classList.remove('visible'); });
+function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);return p.protocol==='https:';}catch(e){return false;}}
+</script>
 
 <!-- 4. DISTRICT INTELLIGENCE by LAS -->
   <div class="section-divider di-brand"><div class="line"></div><span class="di-brand-label"><span class="di-text">District Intelligence</span><span class="di-badge">by LAS</span></span><div class="line"></div></div>
@@ -989,11 +1187,11 @@ body {
         <h3 style="font-family:'Space Grotesk',sans-serif;font-size:18px;color:var(--navy);margin-bottom:4px;">Traffy Fondue Live — ปัญหาจริงในเขต</h3>
         <p style="font-size:13px;color:var(--text-secondary);margin:0;">เลือกเขต → ดู map + ปัญหาล่าสุด + เปรียบเทียบเร็ว/ช้า · ข้อมูลจาก API อัปเดตทุก 30 นาที</p>
       </div>
-      <div style="font-size:11px;color:var(--text-muted);text-align:right;">Powered by <a href="https://www.traffy.in.th" target="_blank" style="color:var(--teal);text-decoration:none;">Traffy Fondue</a> Open Data</div>
+      <div style="font-size:11px;color:var(--text-muted);text-align:right;">Powered by <a href="https://www.traffy.in.th" target="_blank" rel="noopener noreferrer" style="color:var(--teal);text-decoration:none;">Traffy Fondue</a> Open Data</div>
     </div>
 
     <!-- District selector -->
-    <select id="diSelect" style="width:100%;padding:12px 16px;border:2px solid var(--gold);border-radius:var(--radius-sm);font-family:'Sarabun',sans-serif;font-size:16px;font-weight:600;background:#fff;color:var(--navy);margin-bottom:16px;" onchange="loadDistrictIntel(this.value)">
+    <select id="diSelect" style="width:100%;padding:12px 16px;border:2px solid var(--gold);border-radius:var(--radius-sm);font-family:'Sarabun',sans-serif;font-size:16px;font-weight:600;background:#fff;color:var(--navy);margin-bottom:16px;">
       <option value="">— เลือกเขตที่จะลงสมัคร —</option>
     </select>
 
@@ -1024,7 +1222,7 @@ body {
 
       <!-- Links -->
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;">
-        <a id="diTraffyLink" href="#" target="_blank" style="padding:8px 16px;background:var(--teal);color:#fff;border-radius:var(--radius-sm);text-decoration:none;font-size:13px;font-weight:600;">ดูทั้งหมดใน Traffy Fondue</a>
+        <a id="diTraffyLink" href="#" target="_blank" rel="noopener noreferrer" style="padding:8px 16px;background:var(--teal);color:#fff;border-radius:var(--radius-sm);text-decoration:none;font-size:13px;font-weight:600;">ดูทั้งหมดใน Traffy Fondue</a>
         <a href="district-intel.html" style="padding:8px 16px;background:var(--navy);color:#fff;border-radius:var(--radius-sm);text-decoration:none;font-size:13px;font-weight:600;">เปิด GREEN FLAG Tool</a>
       </div>
     </div>
@@ -1136,6 +1334,166 @@ body {
 
 <!-- BKK Election 2569 data module (Single Source of Truth) -->
 <script src="election_expenses_data.js"></script>
+
+<!-- LOGIN AUTHENTICATION (SHA-256 via Web Crypto API) + CHANGE PASSWORD -->
+<script>
+(function(){
+  var VALID_USER = 'Bkk2569';
+  var DEFAULT_HASH = 'cf3f52022f7443487ae3bb5d8407b08c19b8a448925e6d1ae9c6e9da35fc09f3';
+  var SESSION_KEY = 'bkk_sk_auth';
+  var PW_HASH_KEY = 'bkk_sk_pw_hash';
+  var MIN_PW_LENGTH = 8;
+
+  // Read current valid hash — localStorage override if user has changed password
+  function getValidHash(){
+    try {
+      var stored = localStorage.getItem(PW_HASH_KEY);
+      return (stored && stored.length === 64) ? stored : DEFAULT_HASH;
+    } catch(e){ return DEFAULT_HASH; }
+  }
+
+  var overlay = document.getElementById('loginOverlay');
+  var form = document.getElementById('loginForm');
+  var userField = document.getElementById('loginUser');
+  var passField = document.getElementById('loginPass');
+  var errorEl = document.getElementById('loginError');
+  var logoutBtn = document.getElementById('logoutBtn');
+  var changePwBtn = document.getElementById('changePwBtn');
+  var cpwOverlay = document.getElementById('cpwOverlay');
+  var cpwForm = document.getElementById('cpwForm');
+  var cpwCurrent = document.getElementById('cpwCurrent');
+  var cpwNew = document.getElementById('cpwNew');
+  var cpwConfirm = document.getElementById('cpwConfirm');
+  var cpwMsg = document.getElementById('cpwMsg');
+  var cpwCancel = document.getElementById('cpwCancel');
+
+  function isLoggedIn(){
+    try { return sessionStorage.getItem(SESSION_KEY) === '1'; } catch(e){ return false; }
+  }
+
+  function showDashboard(){
+    if(overlay) overlay.classList.add('hidden');
+    if(logoutBtn) logoutBtn.style.display = 'inline-block';
+    if(changePwBtn) changePwBtn.style.display = 'inline-block';
+  }
+
+  function showLogin(){
+    if(overlay) overlay.classList.remove('hidden');
+    if(logoutBtn) logoutBtn.style.display = 'none';
+    if(changePwBtn) changePwBtn.style.display = 'none';
+    if(userField) userField.value = '';
+    if(passField) passField.value = '';
+    if(errorEl) errorEl.textContent = '';
+  }
+
+  async function sha256(message){
+    var msgBuffer = new TextEncoder().encode(message);
+    var hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+    var hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
+  }
+
+  if(isLoggedIn()){
+    showDashboard();
+  }
+
+  if(form){
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      var user = (userField.value || '').trim();
+      var pass = passField.value || '';
+      if(user !== VALID_USER){
+        if(errorEl) errorEl.textContent = 'Username หรือ Password ไม่ถูกต้อง';
+        return;
+      }
+      var hash = await sha256(pass);
+      if(hash === getValidHash()){
+        try { sessionStorage.setItem(SESSION_KEY, '1'); } catch(e){}
+        showDashboard();
+      } else {
+        if(errorEl) errorEl.textContent = 'Username หรือ Password ไม่ถูกต้อง';
+        passField.value = '';
+        passField.focus();
+      }
+    });
+  }
+
+  if(logoutBtn){
+    logoutBtn.addEventListener('click', function(){
+      try { sessionStorage.removeItem(SESSION_KEY); } catch(e){}
+      showLogin();
+    });
+  }
+
+  // ===== CHANGE PASSWORD =====
+  function openCpw(){
+    if(!cpwOverlay) return;
+    cpwCurrent.value = ''; cpwNew.value = ''; cpwConfirm.value = '';
+    if(cpwMsg){ cpwMsg.textContent = ''; cpwMsg.className = 'cpw-msg'; }
+    cpwOverlay.classList.remove('hidden');
+    setTimeout(function(){ cpwCurrent.focus(); }, 50);
+  }
+  function closeCpw(){
+    if(!cpwOverlay) return;
+    cpwOverlay.classList.add('hidden');
+  }
+
+  if(changePwBtn){ changePwBtn.addEventListener('click', openCpw); }
+  if(cpwCancel){ cpwCancel.addEventListener('click', closeCpw); }
+  if(cpwOverlay){
+    cpwOverlay.addEventListener('click', function(e){
+      if(e.target === cpwOverlay) closeCpw();
+    });
+  }
+
+  if(cpwForm){
+    cpwForm.addEventListener('submit', async function(e){
+      e.preventDefault();
+      var cur = cpwCurrent.value || '';
+      var nw = cpwNew.value || '';
+      var cf = cpwConfirm.value || '';
+
+      function setMsg(txt, kind){
+        if(!cpwMsg) return;
+        cpwMsg.textContent = txt;
+        cpwMsg.className = 'cpw-msg ' + (kind || 'err');
+      }
+
+      // Validate current
+      var curHash = await sha256(cur);
+      if(curHash !== getValidHash()){
+        setMsg('รหัสปัจจุบันไม่ถูกต้อง', 'err');
+        cpwCurrent.focus();
+        return;
+      }
+      if(nw.length < MIN_PW_LENGTH){
+        setMsg('รหัสใหม่ต้องมีอย่างน้อย ' + MIN_PW_LENGTH + ' ตัวอักษร', 'err');
+        cpwNew.focus();
+        return;
+      }
+      if(nw !== cf){
+        setMsg('รหัสใหม่และยืนยันไม่ตรงกัน', 'err');
+        cpwConfirm.focus();
+        return;
+      }
+      if(nw === cur){
+        setMsg('รหัสใหม่ต้องไม่ตรงกับรหัสปัจจุบัน', 'err');
+        cpwNew.focus();
+        return;
+      }
+      try {
+        var newHash = await sha256(nw);
+        localStorage.setItem(PW_HASH_KEY, newHash);
+        setMsg('✅ เปลี่ยนรหัสเรียบร้อย — ปิดหน้าต่างใน 2 วินาที', 'ok');
+        setTimeout(closeCpw, 2000);
+      } catch(err){
+        setMsg('ไม่สามารถบันทึกรหัสใหม่ได้ (localStorage ถูกบล็อก)', 'err');
+      }
+    });
+  }
+})();
+</script>
+
 <script>
 // COUNTDOWN — วันเลือกตั้ง ส.ก. เท่านั้น
 (function(){
@@ -1199,15 +1557,43 @@ body {
     // Clear markers
     diMarkers.forEach(function(m){diMap.removeLayer(m)});
     diMarkers=[];
-    // Fetch API (with AbortController for rapid switching)
-    if(window._diAbort)window._diAbort.abort();
-    window._diAbort=new AbortController();
-    fetch('https://publicapi.traffy.in.th/teamchadchart-stat-api/geojson/v1?limit=1000',{signal:window._diAbort.signal})
-      .then(function(r){if(!r.ok)throw new Error('API status '+r.status);return r.json()})
+    // Fetch with sessionStorage cache (5 min) + district-aware indexing
+    var TRAFFY_CACHE_KEY='bkk_traffy_cache_v1';
+    var TRAFFY_TTL=5*60*1000; // 5 minutes
+    if(!window._traffyCache){
+      try{var stored=sessionStorage.getItem(TRAFFY_CACHE_KEY);
+        if(stored){var parsed=JSON.parse(stored);
+          if(parsed&&parsed.ts&&(Date.now()-parsed.ts<TRAFFY_TTL))window._traffyCache=parsed;}}catch(e){}
+    }
+    var _useCache=window._traffyCache&&window._traffyCache.data&&(Date.now()-window._traffyCache.ts<TRAFFY_TTL);
+    var _dataP;
+    if(_useCache){
+      _dataP=Promise.resolve(window._traffyCache.data);
+    } else {
+      if(window._diAbort)window._diAbort.abort();
+      window._diAbort=new AbortController();
+      _dataP=fetch('https://publicapi.traffy.in.th/teamchadchart-stat-api/geojson/v1?limit=2000',{signal:window._diAbort.signal})
+        .then(function(r){if(!r.ok)throw new Error('API status '+r.status);return r.json()})
+        .then(function(data){
+          window._traffyCache={data:data,ts:Date.now()};
+          // Build district index for O(1) per-district lookup on subsequent switches
+          var idx={};
+          (data.features||[]).forEach(function(f){var d=f.properties&&f.properties.district;if(!d)return;(idx[d]=idx[d]||[]).push(f);});
+          window._traffyIndex=idx;
+          try{sessionStorage.setItem(TRAFFY_CACHE_KEY,JSON.stringify(window._traffyCache));}catch(e){}
+          return data;
+        });
+    }
+    _dataP
       .then(function(data){
         document.getElementById('diLoading').style.display='none';
         if(!data.features){return}
-        var items = data.features.filter(function(f){return f.properties&&f.properties.district===district});
+        // Use precomputed index if available (O(1) vs O(N) filter)
+        if(!window._traffyIndex){
+          var idx={};(data.features||[]).forEach(function(f){var d=f.properties&&f.properties.district;if(!d)return;(idx[d]=idx[d]||[]).push(f);});
+          window._traffyIndex=idx;
+        }
+        var items = window._traffyIndex[district] || [];
         // Stats
         var total=items.length;
         var done=items.filter(function(f){return f.properties.state==='เสร็จสิ้น'}).length;
@@ -1298,10 +1684,10 @@ body {
           fastEl.textContent='ไม่พบข้อมูลในเขตนี้จาก batch ล่าสุด';
           slowEl.textContent='ลองดูข้อมูลเต็มที่ Traffy Fondue';
         }
-        // Problem list (top 10) — clickable links to Traffy
+        // Problem list (top 3 — AI highlight samples; full list → Traffy website)
         var probEl=document.getElementById('diProblems');
         probEl.textContent='';
-        items.slice(0,10).forEach(function(f){
+        items.slice(0,3).forEach(function(f){
           var p=f.properties;
           var traffyUrl=p.ticket_id?'https://bangkok.traffy.in.th/detail?ticketID='+encodeURIComponent(p.ticket_id):'';
           var row=document.createElement(traffyUrl?'a':'div');
@@ -1309,7 +1695,7 @@ body {
           row.style.cssText='padding:10px 0;border-bottom:1px solid var(--border-light);display:flex;align-items:flex-start;gap:10px;text-decoration:none;color:inherit;transition:background 0.15s;cursor:'+(traffyUrl?'pointer':'default');
           if(traffyUrl){row.onmouseenter=function(){this.style.background='var(--bg-alt)'};row.onmouseleave=function(){this.style.background='none'}}
           // Photo thumbnail
-          if(p.photo_url){
+          if(p.photo_url&&_isSafeImgUrl(p.photo_url)){
             var img=document.createElement('img');
             img.src=p.photo_url;img.alt='';img.loading='lazy';
             img.style.cssText='width:48px;height:48px;object-fit:cover;border-radius:6px;flex-shrink:0;border:1px solid var(--border);';
@@ -1335,6 +1721,29 @@ body {
         if(!items.length){
           probEl.textContent='ไม่พบข้อมูลในเขต'+district+' จาก batch ล่าสุด';
           probEl.style.cssText='text-align:center;padding:24px;color:var(--text-muted);';
+        } else if(items.length > 3){
+          // CTA: link to full list on Traffy website
+          var ctaWrap=document.createElement('a');
+          ctaWrap.href='https://bangkok.traffy.in.th/?district='+encodeURIComponent(district);
+          ctaWrap.target='_blank';
+          ctaWrap.rel='noopener';
+          ctaWrap.style.cssText='display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;margin-top:14px;background:linear-gradient(135deg,#0D9488 0%,#14B8A6 100%);color:#fff;border-radius:10px;text-decoration:none;font-weight:600;box-shadow:0 2px 6px rgba(13,148,136,0.3);transition:transform 0.15s;';
+          ctaWrap.onmouseenter=function(){this.style.transform='translateY(-1px)'};
+          ctaWrap.onmouseleave=function(){this.style.transform='none'};
+          var ctaLeft=document.createElement('div');
+          ctaLeft.style.cssText='flex:1;min-width:0;';
+          var ctaTitle=document.createElement('div');
+          ctaTitle.style.cssText='font-size:14px;font-weight:700;';
+          ctaTitle.textContent='🗺️ ดูข้อมูลครบทั้งหมด '+items.length+' เรื่องที่ Traffy Fondue';
+          var ctaSub=document.createElement('div');
+          ctaSub.style.cssText='font-size:11px;opacity:0.9;margin-top:2px;';
+          ctaSub.textContent='แผนที่ + สถิติ + ประเภทปัญหาเชิงลึก — ข้อมูล real-time จากระบบร้องเรียน กทม.';
+          ctaLeft.appendChild(ctaTitle);ctaLeft.appendChild(ctaSub);
+          var ctaArrow=document.createElement('div');
+          ctaArrow.style.cssText='font-size:24px;flex-shrink:0;';
+          ctaArrow.textContent='→';
+          ctaWrap.appendChild(ctaLeft);ctaWrap.appendChild(ctaArrow);
+          probEl.appendChild(ctaWrap);
         }
       })
       .catch(function(){
@@ -1343,58 +1752,6 @@ body {
       });
   };
   function E(s){if(!s)return'';var d=document.createElement('div');d.textContent=s;return d.innerHTML}
-})();
-
-// TIMELINE TEASER — render 5 upcoming milestones from data.js (safe DOM)
-(function(){
-  var el = document.getElementById('timelineTeaser');
-  if(!el || !window.BKKElection2569) return;
-  var KEY = window.BKKElection2569.KEY_DATES;
-  var now = Date.now();
-  var mths = ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
-  function fmt(iso){
-    var d = new Date(iso + 'T00:00:00+07:00');
-    return d.getDate() + ' ' + mths[d.getMonth()] + ' ' + (d.getFullYear()+543);
-  }
-  var items = Object.keys(KEY).map(function(k){
-    var v = KEY[k];
-    return { date:v.date, ts:new Date(v.date+'T00:00:00+07:00').getTime(), label:v.label, law:v.law, isElection:k==='electionDay' };
-  }).filter(function(i){ return i.ts >= now - 864e5; })
-    .sort(function(a,b){ return a.ts - b.ts; })
-    .slice(0, 5);
-  while(el.firstChild) el.removeChild(el.firstChild);
-  if(!items.length){
-    var empty = document.createElement('div');
-    empty.style.cssText = 'padding:16px;text-align:center;color:var(--text-muted);font-size:13px;';
-    empty.textContent = 'กระบวนการเลือกตั้งเสร็จสิ้นแล้ว';
-    el.appendChild(empty);
-    return;
-  }
-  items.forEach(function(i){
-    var isElec = i.isElection;
-    var bgColor = isElec ? 'linear-gradient(135deg,#FEF3C7,#FDE68A)' : 'var(--bg-alt)';
-    var borderColor = isElec ? 'var(--gold)' : 'var(--border)';
-    var dateColor = isElec ? '#92400E' : 'var(--navy)';
-    var row = document.createElement('div');
-    row.style.cssText = 'display:flex;align-items:center;gap:12px;padding:12px 14px;background:'+bgColor+';border:1px solid '+borderColor+';border-left:3px solid '+dateColor+';border-radius:var(--radius-sm);';
-    var icon = document.createElement('div');
-    icon.style.cssText = 'font-size:18px;flex-shrink:0;';
-    icon.textContent = isElec ? '🗳️' : '📌';
-    var mid = document.createElement('div');
-    mid.style.cssText = 'flex:1;min-width:0;';
-    var lbl = document.createElement('div');
-    lbl.style.cssText = 'font-size:13px;font-weight:600;color:var(--navy);line-height:1.4;';
-    lbl.textContent = i.label;
-    var law = document.createElement('div');
-    law.style.cssText = 'font-size:11px;color:var(--text-muted);margin-top:2px;';
-    law.textContent = i.law;
-    mid.appendChild(lbl); mid.appendChild(law);
-    var dt = document.createElement('div');
-    dt.style.cssText = "font-size:13px;font-weight:700;color:" + dateColor + ";font-family:'Space Grotesk',sans-serif;flex-shrink:0;white-space:nowrap;";
-    dt.textContent = fmt(i.date);
-    row.appendChild(icon); row.appendChild(mid); row.appendChild(dt);
-    el.appendChild(row);
-  });
 })();
 
 // ============ ECT NEWS WIDGET LOADER ============
@@ -1540,6 +1897,7 @@ body {
           img.alt = 'หน้าสำคัญจาก PDF ' + item.date;
           img.loading = 'lazy';
           img.onclick = function(){
+            if(!_isSafeImgUrl(imgPath)) return;
             var modal = document.getElementById('ectImgModal');
             var mImg = document.getElementById('ectImgModalContent');
             if(modal && mImg){
@@ -1559,7 +1917,7 @@ body {
         var pdfA = document.createElement('a');
         pdfA.href = item.pdf_url;
         pdfA.target = '_blank';
-        pdfA.rel = 'noopener';
+        pdfA.rel = 'noopener noreferrer';
         pdfA.textContent = '📄 PDF ต้นฉบับ (' + (item.pdf_size_mb || '?') + ' MB, ' + (item.pdf_pages || '?') + ' หน้า)';
         actions.appendChild(pdfA);
       }
@@ -1583,12 +1941,96 @@ body {
     return d.getDate() + ' ' + mths[d.getMonth()] + ' ' + (d.getFullYear() + 543);
   }
 
-  // Auto-load on page ready
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', function(){ loadEctNews(false); });
-  } else {
-    loadEctNews(false);
+  // ===== CLIENT-SIDE CACHE (localStorage) for instant first-paint =====
+  var ECT_CACHE_KEY = 'bkk_ect_news_cache_v1';
+  var ECT_AUTO_REFRESH_MS = 5 * 60 * 1000;  // auto refresh every 5 minutes
+  var ECT_STALE_MS = 15 * 60 * 1000;        // treat as stale after 15 min
+
+  function hydrateFromCache(){
+    try {
+      var raw = localStorage.getItem(ECT_CACHE_KEY);
+      if(!raw) return false;
+      var obj = JSON.parse(raw);
+      if(!obj || !obj.data) return false;
+      renderEctNews(obj.data);
+      var meta = document.getElementById('ectMeta');
+      if(meta && obj.ts){
+        var ageMin = Math.round((Date.now() - obj.ts) / 60000);
+        meta.textContent += ' · 💾 cache (' + ageMin + ' นาทีที่แล้ว)';
+      }
+      return true;
+    } catch(e){ return false; }
   }
+
+  // Wrap loader to persist successful fetches into localStorage cache
+  var _origLoader = window.loadEctNews;
+  window.loadEctNews = function(forceRefresh){
+    var btn = document.getElementById('ectUpdateBtn');
+    var meta = document.getElementById('ectMeta');
+    var items = document.getElementById('ectItems');
+    if(!items) return;
+    if(btn) btn.classList.add('loading');
+    var url = 'data/ect-news/latest.json' + (forceRefresh ? ('?t=' + Date.now()) : '');
+    return fetch(url, {cache: forceRefresh ? 'no-store' : 'default'})
+      .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function(data){
+        if(btn) btn.classList.remove('loading');
+        renderEctNews(data);
+        try { localStorage.setItem(ECT_CACHE_KEY, JSON.stringify({data: data, ts: Date.now()})); } catch(e){}
+      })
+      .catch(function(e){
+        if(btn) btn.classList.remove('loading');
+        if(!hydrateFromCache()){
+          if(meta) meta.textContent = '⚠️ ยังไม่มีข้อมูล — กรุณารอ cron update รอบถัดไป';
+          if(items){
+            while(items.firstChild) items.removeChild(items.firstChild);
+            var empty = document.createElement('div');
+            empty.className = 'ect-empty';
+            empty.textContent = 'ไม่สามารถโหลดข้อมูลได้: ' + e.message;
+            items.appendChild(empty);
+          }
+        }
+      });
+  };
+
+  // Auto-load: hydrate from cache first (instant paint), then fetch fresh
+  function initLoad(){
+    hydrateFromCache();               // instant paint from localStorage
+    window.loadEctNews(false);        // then fetch fresh
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initLoad);
+  } else {
+    initLoad();
+  }
+
+  // Auto-refresh every 5 min (silent, throttled)
+  var _ectTimer = setInterval(function(){
+    if(document.hidden) return;  // skip while tab hidden
+    window.loadEctNews(true);
+  }, ECT_AUTO_REFRESH_MS);
+
+  // Refresh when tab becomes visible if data is stale
+  document.addEventListener('visibilitychange', function(){
+    if(document.hidden) return;
+    try {
+      var raw = localStorage.getItem(ECT_CACHE_KEY);
+      var obj = raw && JSON.parse(raw);
+      if(!obj || !obj.ts || (Date.now() - obj.ts > ECT_STALE_MS)){
+        window.loadEctNews(true);
+      }
+    } catch(e){ window.loadEctNews(true); }
+  });
+
+  // ECT update button
+  var ectBtn = document.getElementById('ectUpdateBtn');
+  if(ectBtn) ectBtn.addEventListener('click', function(){ window.loadEctNews(true); });
+})();
+
+// District selector — addEventListener (no inline onchange)
+(function(){
+  var diSel = document.getElementById('diSelect');
+  if(diSel) diSel.addEventListener('change', function(){ loadDistrictIntel(this.value); });
 })();
 
 // FADE-IN OBSERVER
@@ -1616,7 +2058,18 @@ body {
 // PWA — Service Worker registration + install prompt
 (function(){
   if('serviceWorker' in navigator){
-    navigator.serviceWorker.register('service-worker.js').catch(function(e){
+    navigator.serviceWorker.register('service-worker.js').then(function(reg){
+      reg.addEventListener('updatefound', function(){
+        var newWorker = reg.installing;
+        if(newWorker){
+          newWorker.addEventListener('statechange', function(){
+            if(newWorker.state === 'activated' && navigator.serviceWorker.controller){
+              if(confirm('มีเวอร์ชันใหม่ของ ส.ก. Navigator — โหลดหน้าใหม่?')) location.reload();
+            }
+          });
+        }
+      });
+    }).catch(function(e){
       console.warn('SW registration failed:', e);
     });
   }
