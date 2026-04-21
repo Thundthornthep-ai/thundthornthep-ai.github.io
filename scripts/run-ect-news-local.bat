@@ -54,9 +54,22 @@ IF %ERRORLEVEL% EQU 0 (
   exit /b 0
 )
 
-REM Commit + push
+REM Commit + push (with retry for parallel session conflicts)
 git commit -m "chore(ect-news): local auto-update %DATE% %TIME%"
+
+REM Push attempt 1
 git push origin main
+IF %ERRORLEVEL% NEQ 0 (
+  echo [WARN] Push failed, retrying after pull --rebase...
+  git pull --rebase origin main
+  git push origin main
+  IF %ERRORLEVEL% NEQ 0 (
+    echo [WARN] Push retry 2 failed, trying once more...
+    timeout /t 5 /nobreak >nul
+    git pull --rebase origin main
+    git push origin main
+  )
+)
 
 echo.
 echo ============================================================
