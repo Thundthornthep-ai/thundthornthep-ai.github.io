@@ -656,6 +656,53 @@ body {
   color: var(--text-muted);
   line-height: 1.6;
 }
+/* Password toggle */
+.login-pw-wrap {
+  position: relative;
+}
+.login-pw-wrap .login-field { padding-right: 48px; }
+.login-pw-toggle {
+  position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; cursor: pointer;
+  font-size: 18px; color: var(--text-muted); padding: 4px;
+  transition: color var(--transition);
+}
+.login-pw-toggle:hover { color: var(--navy); }
+/* Remember me */
+.login-remember {
+  display: flex; align-items: center; gap: 8px;
+  margin: 8px 0 4px; font-size: 13px; color: var(--text-secondary);
+  cursor: pointer; user-select: none;
+}
+.login-remember input[type="checkbox"] {
+  width: 16px; height: 16px; accent-color: var(--gold);
+  cursor: pointer;
+}
+/* Download buttons */
+.login-download-row {
+  display: flex; gap: 8px; justify-content: center;
+  margin-top: 12px;
+}
+.login-dl-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px; border-radius: 8px;
+  font-size: 12px; font-weight: 600; text-decoration: none;
+  border: 1px solid var(--border); color: var(--text-secondary);
+  background: var(--bg); transition: all var(--transition);
+  cursor: pointer;
+}
+.login-dl-btn:hover { border-color: var(--gold); color: var(--navy); background: #FFFDF5; }
+/* Mobile responsive login */
+@media (max-width: 480px) {
+  .login-box { padding: 28px 20px 24px; margin: 12px; }
+  .login-box h2 { font-size: 20px; }
+  .login-box .login-sub { font-size: 12px; }
+  .login-field { font-size: 16px; padding: 14px 16px; }
+  .login-pw-wrap .login-field { padding-right: 44px; }
+  .login-btn { font-size: 16px; padding: 14px 24px; }
+  .login-download-row { flex-direction: column; }
+  .login-dl-btn { justify-content: center; font-size: 13px; padding: 10px 16px; }
+}
 /* Logout button in top-bar */
 .logout-btn {
   background: rgba(255,255,255,0.1);
@@ -737,10 +784,20 @@ body {
     <div class="login-sub">คู่มือเลือกตั้ง ส.ก. กทม. 2569 — เข้าสู่ระบบเพื่อดูเนื้อหา</div>
     <form id="loginForm" autocomplete="off">
       <input type="text" class="login-field" id="loginUser" placeholder="Username" autocomplete="username" required>
-      <input type="password" class="login-field" id="loginPass" placeholder="Password" autocomplete="current-password" required>
+      <div class="login-pw-wrap">
+        <input type="password" class="login-field" id="loginPass" placeholder="Password" autocomplete="current-password" required>
+        <button type="button" class="login-pw-toggle" id="loginPwToggle" title="แสดง/ซ่อนรหัสผ่าน">👁️</button>
+      </div>
+      <label class="login-remember">
+        <input type="checkbox" id="loginRemember"> จดจำการเข้าสู่ระบบ
+      </label>
       <button type="submit" class="login-btn" id="loginBtn">เข้าสู่ระบบ</button>
     </form>
     <div class="login-error" id="loginError"></div>
+    <div class="login-download-row">
+      <button type="button" class="login-dl-btn" id="loginDlMobile">📱 ติดตั้งบนมือถือ</button>
+      <button type="button" class="login-dl-btn" id="loginDlDesktop">💻 ติดตั้งบนคอมพิวเตอร์</button>
+    </div>
     <div class="login-footer">
       LAS Research × NIA — งานวิชาการเพื่อนำเสนอ<br>
       Legal Advance Solution Co., Ltd.
@@ -1388,6 +1445,7 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
   var SESSION_KEY = 'bkk_sk_auth';
   var PW_HASH_KEY = 'bkk_sk_pw_hash';
   var SESSION_USER_KEY = 'bkk_sk_user';
+  var REMEMBER_KEY = 'bkk_sk_remember';
   var MIN_PW_LENGTH = 8;
 
   // Read current valid hash for a user — localStorage override if user has changed password
@@ -1418,7 +1476,11 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
   var cpwCancel = document.getElementById('cpwCancel');
 
   function isLoggedIn(){
-    try { return sessionStorage.getItem(SESSION_KEY) === '1'; } catch(e){ return false; }
+    try {
+      if(sessionStorage.getItem(SESSION_KEY) === '1') return true;
+      if(localStorage.getItem(REMEMBER_KEY) === '1') return true;
+      return false;
+    } catch(e){ return false; }
   }
 
   function showDashboard(){
@@ -1443,6 +1505,39 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
     return hashArray.map(function(b){ return b.toString(16).padStart(2,'0'); }).join('');
   }
 
+  // Show/hide password toggle
+  var pwToggle = document.getElementById('loginPwToggle');
+  if(pwToggle && passField){
+    pwToggle.addEventListener('click', function(){
+      var isHidden = passField.type === 'password';
+      passField.type = isHidden ? 'text' : 'password';
+      pwToggle.textContent = isHidden ? '🙈' : '👁️';
+      pwToggle.title = isHidden ? 'ซ่อนรหัสผ่าน' : 'แสดงรหัสผ่าน';
+    });
+  }
+
+  // Download buttons (PWA install)
+  var _loginDeferredPrompt = null;
+  window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); _loginDeferredPrompt = e; });
+  var dlMobile = document.getElementById('loginDlMobile');
+  var dlDesktop = document.getElementById('loginDlDesktop');
+  function triggerInstall(){
+    if(_loginDeferredPrompt){ _loginDeferredPrompt.prompt(); _loginDeferredPrompt = null; }
+    else {
+      var ua = navigator.userAgent.toLowerCase();
+      if(/iphone|ipad|ipod/.test(ua)){
+        alert('iOS: กด Share (🔗) → เพิ่มในหน้าจอโฮม');
+      } else {
+        alert('เปิดในเบราว์เซอร์ Chrome/Edge แล้วกดเมนู → ติดตั้งแอป');
+      }
+    }
+  }
+  if(dlMobile) dlMobile.addEventListener('click', triggerInstall);
+  if(dlDesktop) dlDesktop.addEventListener('click', triggerInstall);
+
+  // Remember me checkbox
+  var rememberCheck = document.getElementById('loginRemember');
+
   if(isLoggedIn()){
     showDashboard();
   }
@@ -1458,7 +1553,14 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
       }
       var hash = await sha256(pass);
       if(hash === getValidHash(user)){
-        try { sessionStorage.setItem(SESSION_KEY, '1'); sessionStorage.setItem(SESSION_USER_KEY, user); } catch(e){}
+        try {
+          sessionStorage.setItem(SESSION_KEY, '1');
+          sessionStorage.setItem(SESSION_USER_KEY, user);
+          if(rememberCheck && rememberCheck.checked){
+            localStorage.setItem(REMEMBER_KEY, '1');
+            localStorage.setItem(SESSION_USER_KEY, user);
+          }
+        } catch(e){}
         showDashboard();
       } else {
         if(errorEl) errorEl.textContent = 'Username หรือ Password ไม่ถูกต้อง';
@@ -1470,7 +1572,7 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
 
   if(logoutBtn){
     logoutBtn.addEventListener('click', function(){
-      try { sessionStorage.removeItem(SESSION_KEY); sessionStorage.removeItem(SESSION_USER_KEY); } catch(e){}
+      try { sessionStorage.removeItem(SESSION_KEY); sessionStorage.removeItem(SESSION_USER_KEY); localStorage.removeItem(REMEMBER_KEY); localStorage.removeItem(SESSION_USER_KEY); } catch(e){}
       showLogin();
     });
   }
