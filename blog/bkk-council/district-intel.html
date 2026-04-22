@@ -538,7 +538,7 @@ function renderDistrict(){
       delBtn.className = 'btn-d no-print';
       delBtn.style.cssText = 'padding:4px 10px;font-size:11px';
       delBtn.textContent = 'ลบ';
-      delBtn.addEventListener('click', function(e){ e.stopPropagation(); if(confirm('ลบสถานที่ "'+item.name+'" ?\n\n(ลบถาวร — ข้อมูล check-in ยังอยู่)'){removePoi(cat.key, item.id)} });
+      delBtn.addEventListener('click', function(e){ e.stopPropagation(); if(confirm('ลบสถานที่ "'+item.name+'" ?\n\n(ลบถาวร — ข้อมูล check-in ยังอยู่)')){removePoi(cat.key, item.id)} });
       btnWrap.appendChild(delBtn);
       row.appendChild(btnWrap);
       body.appendChild(row);
