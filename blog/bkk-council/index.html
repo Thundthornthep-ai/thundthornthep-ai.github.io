@@ -2335,118 +2335,31 @@ function setSiteLang(lang) {
 })();
 </script>
 
-<!-- CURSOR PICKER: Walk Walk Walk / Work Work Work / Normal -->
-<div id="cursorFollower" style="display:none;position:fixed;pointer-events:none;z-index:9999;width:40px;height:40px;transform:translate(-20px,-20px)"></div>
+<!-- CURSOR PICKER: Walk / Work / Normal — uses CSS cursor with logo images -->
 <div id="cursorPicker" style="position:fixed;bottom:16px;left:16px;z-index:500;display:flex;gap:4px;align-items:center;background:rgba(27,42,74,.92);backdrop-filter:blur(8px);padding:6px 10px;border-radius:24px;box-shadow:0 4px 16px rgba(0,0,0,.2)">
   <button onclick="setCursorMode('walk')" id="cpWalk" title="Walk Walk Walk" style="width:32px;height:32px;border-radius:50%;border:2px solid transparent;background:none;cursor:pointer;padding:0;transition:all .2s"><img src="img/flag-walk.jpg" style="width:100%;height:100%;border-radius:50%;object-fit:cover" alt="Walk"></button>
   <button onclick="setCursorMode('work')" id="cpWork" title="Work Work Work" style="width:32px;height:32px;border-radius:50%;border:2px solid transparent;background:none;cursor:pointer;padding:0;transition:all .2s"><img src="img/flag-work.jpg" style="width:100%;height:100%;border-radius:50%;object-fit:cover" alt="Work"></button>
   <button onclick="setCursorMode('normal')" id="cpNormal" title="Normal" style="width:32px;height:32px;border-radius:50%;border:2px solid transparent;background:rgba(255,255,255,.15);cursor:pointer;padding:0;font-size:14px;color:#fff;transition:all .2s">⊙</button>
   <span style="font-size:9px;color:rgba(255,255,255,.5);margin-left:2px;font-family:'Space Grotesk',sans-serif">cursor</span>
 </div>
-
 <style>
-/* Walking SVG figure — arms/legs animate */
-.cursor-figure{position:relative;width:40px;height:40px}
-.cursor-figure svg{width:100%;height:100%}
-/* Walk mode: gentle walking pace */
-.cursor-walk .limb-left-arm{animation:walkArm .8s ease-in-out infinite alternate}
-.cursor-walk .limb-right-arm{animation:walkArm .8s ease-in-out infinite alternate-reverse}
-.cursor-walk .limb-left-leg{animation:walkLeg .8s ease-in-out infinite alternate}
-.cursor-walk .limb-right-leg{animation:walkLeg .8s ease-in-out infinite alternate-reverse}
-.cursor-walk .body-bounce{animation:walkBounce .4s ease-in-out infinite alternate}
-/* Work mode: fast running */
-.cursor-work .limb-left-arm{animation:runArm .3s ease-in-out infinite alternate}
-.cursor-work .limb-right-arm{animation:runArm .3s ease-in-out infinite alternate-reverse}
-.cursor-work .limb-left-leg{animation:runLeg .3s ease-in-out infinite alternate}
-.cursor-work .limb-right-leg{animation:runLeg .3s ease-in-out infinite alternate-reverse}
-.cursor-work .body-bounce{animation:runBounce .15s ease-in-out infinite alternate}
-/* Keyframes — walking */
-@keyframes walkArm{from{transform:rotate(-25deg)}to{transform:rotate(25deg)}}
-@keyframes walkLeg{from{transform:rotate(-20deg)}to{transform:rotate(20deg)}}
-@keyframes walkBounce{from{transform:translateY(0)}to{transform:translateY(-1.5px)}}
-/* Keyframes — running */
-@keyframes runArm{from{transform:rotate(-40deg)}to{transform:rotate(40deg)}}
-@keyframes runLeg{from{transform:rotate(-35deg)}to{transform:rotate(35deg)}}
-@keyframes runBounce{from{transform:translateY(0)}to{transform:translateY(-2.5px)}}
-/* Active button */
 #cursorPicker button.active-cursor{border-color:#C9A96E !important;box-shadow:0 0 8px rgba(201,169,110,.5)}
-/* Hide real cursor in custom mode */
-.custom-cursor{cursor:none}.custom-cursor *{cursor:none}.custom-cursor .leaflet-container,.custom-cursor .leaflet-container *{cursor:grab !important}.custom-cursor .leaflet-dragging .leaflet-container,.custom-cursor .leaflet-dragging .leaflet-container *{cursor:grabbing !important}
+.cursor-walk,.cursor-walk *{cursor:url('img/cursor-walk.png') 16 16,auto !important}
+.cursor-work,.cursor-work *{cursor:url('img/cursor-work.png') 16 16,auto !important}
+.cursor-walk .leaflet-container,.cursor-walk .leaflet-container *,.cursor-work .leaflet-container,.cursor-work .leaflet-container *{cursor:url('img/flag-walk.jpg') 16 16,grab !important}
 </style>
-
 <script>
-// Walking figure SVG (green silhouette with animated limbs)
-var walkSVG = '<svg viewBox="0 0 40 48" xmlns="http://www.w3.org/2000/svg">'
-  +'<g class="body-bounce">'
-  // Head
-  +'<circle cx="20" cy="8" r="5" fill="#2E7D32"/>'
-  // Body
-  +'<line x1="20" y1="13" x2="20" y2="28" stroke="#2E7D32" stroke-width="3.5" stroke-linecap="round"/>'
-  // Left arm (pivot at shoulder)
-  +'<line class="limb-left-arm" x1="20" y1="16" x2="12" y2="24" stroke="#2E7D32" stroke-width="2.5" stroke-linecap="round" style="transform-origin:20px 16px"/>'
-  // Right arm
-  +'<line class="limb-right-arm" x1="20" y1="16" x2="28" y2="24" stroke="#2E7D32" stroke-width="2.5" stroke-linecap="round" style="transform-origin:20px 16px"/>'
-  // Left leg (pivot at hip)
-  +'<line class="limb-left-leg" x1="20" y1="28" x2="13" y2="40" stroke="#2E7D32" stroke-width="3" stroke-linecap="round" style="transform-origin:20px 28px"/>'
-  // Right leg
-  +'<line class="limb-right-leg" x1="20" y1="28" x2="27" y2="40" stroke="#2E7D32" stroke-width="3" stroke-linecap="round" style="transform-origin:20px 28px"/>'
-  +'</g></svg>';
-
-// Work figure SVG (lighter green, leaning forward — running pose)
-var workSVG = '<svg viewBox="0 0 40 48" xmlns="http://www.w3.org/2000/svg">'
-  +'<g class="body-bounce" transform="rotate(-8,20,24)">'
-  // Head
-  +'<circle cx="22" cy="7" r="5" fill="#4CAF50"/>'
-  // Body (leaning forward)
-  +'<line x1="21" y1="12" x2="19" y2="27" stroke="#4CAF50" stroke-width="3.5" stroke-linecap="round"/>'
-  // Left arm
-  +'<line class="limb-left-arm" x1="21" y1="15" x2="13" y2="22" stroke="#4CAF50" stroke-width="2.5" stroke-linecap="round" style="transform-origin:21px 15px"/>'
-  // Right arm
-  +'<line class="limb-right-arm" x1="21" y1="15" x2="29" y2="22" stroke="#4CAF50" stroke-width="2.5" stroke-linecap="round" style="transform-origin:21px 15px"/>'
-  // Left leg
-  +'<line class="limb-left-leg" x1="19" y1="27" x2="11" y2="40" stroke="#4CAF50" stroke-width="3" stroke-linecap="round" style="transform-origin:19px 27px"/>'
-  // Right leg
-  +'<line class="limb-right-leg" x1="19" y1="27" x2="27" y2="40" stroke="#4CAF50" stroke-width="3" stroke-linecap="round" style="transform-origin:19px 27px"/>'
-  +'</g></svg>';
-
-var cursorMode = 'normal';
-var follower = document.getElementById('cursorFollower');
-
+var cursorMode='normal';
 function setCursorMode(mode){
-  cursorMode = mode;
-  try{localStorage.setItem('bkk_cursor_mode', mode)}catch(e){}
-  // Update buttons
+  cursorMode=mode;
+  try{localStorage.setItem('bkk_cursor_mode',mode)}catch(e){}
   document.querySelectorAll('#cursorPicker button').forEach(function(b){b.classList.remove('active-cursor')});
-  var activeBtn = document.getElementById(mode==='walk'?'cpWalk':mode==='work'?'cpWork':'cpNormal');
-  if(activeBtn) activeBtn.classList.add('active-cursor');
-  if(mode==='normal'){
-    follower.style.display='none';
-    document.body.classList.remove('custom-cursor');
-  } else {
-    document.body.classList.add('custom-cursor');
-    follower.style.display='block';
-    var fig = document.createElement('div');
-    fig.className = 'cursor-figure '+(mode==='walk'?'cursor-walk':'cursor-work');
-    fig.style.cssText = 'width:40px;height:48px';
-    follower.textContent='';
-    follower.appendChild(fig);
-    fig.insertAdjacentHTML('beforeend', mode==='walk'?walkSVG:workSVG);
-  }
+  var ab=document.getElementById(mode==='walk'?'cpWalk':mode==='work'?'cpWork':'cpNormal');
+  if(ab)ab.classList.add('active-cursor');
+  document.body.classList.remove('cursor-walk','cursor-work');
+  if(mode!=='normal') document.body.classList.add('cursor-'+mode);
 }
-
-// Mouse follow
-document.addEventListener('mousemove', function(e){
-  if(cursorMode==='normal') return;
-  follower.style.left = e.clientX+'px';
-  follower.style.top = e.clientY+'px';
-});
-
-// Restore saved preference
-(function(){
-  var saved = 'normal';
-  try{saved = localStorage.getItem('bkk_cursor_mode')||'normal'}catch(e){}
-  setCursorMode(saved);
-})();
+(function(){var s='normal';try{s=localStorage.getItem('bkk_cursor_mode')||'normal'}catch(e){}setCursorMode(s)})();
 </script>
 
 </body>
