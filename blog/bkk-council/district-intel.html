@@ -21,6 +21,8 @@
 <!-- [[/THEME-MIGRATION-v1]] -->
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#1B2A4A">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <style>
 :root{--bg:#FAFAFA;--bg-alt:#F5F5F5;--card:#FFF;--text:#1A1A2E;--text-secondary:#6B7280;--text-muted:#9CA3AF;--navy:#1B2A4A;--navy-dark:#0d1f33;--gold:#C9A96E;--teal:#0D9488;--green:#22C55E;--green-dark:#14532D;--red:#EF4444;--red-dark:#991B1B;--orange:#E67E22;--blue:#2563EB;--border:#E5E7EB;--border-light:#F3F4F6;--shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);--radius:12px;--radius-sm:8px;--max-w:900px;--transition:.2s ease}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.7;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
@@ -66,6 +68,33 @@
 .stat-box{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px;text-align:center}
 .stat-box .sv{font-size:24px;font-weight:700;font-family:'Space Grotesk',sans-serif;color:var(--teal)}
 .stat-box .sl{font-size:12px;color:var(--text-secondary);margin-top:2px}
+/* Photo upload */
+.photo-slot{display:flex;align-items:center;justify-content:center;width:80px;height:56px;border:2px dashed var(--border);border-radius:var(--radius-sm);cursor:pointer;transition:all var(--transition);position:relative;overflow:hidden}.photo-slot:hover{border-color:var(--teal)}.photo-slot input[type="file"]{position:absolute;opacity:0;width:100%;height:100%;cursor:pointer}.photo-slot-icon{font-size:13px;color:var(--text-muted);pointer-events:none;text-align:center}
+.photo-slot.has-photo{border-style:solid;border-color:var(--teal)}.photo-slot.has-photo img{width:100%;height:100%;object-fit:cover}
+.photo-thumb{position:relative;width:calc(50% - 4px);max-width:200px;aspect-ratio:16/9;border-radius:var(--radius-sm);overflow:hidden;border:1px solid var(--border)}.photo-thumb img{width:100%;height:100%;object-fit:cover}.photo-thumb .photo-remove{position:absolute;top:2px;right:2px;background:rgba(0,0,0,.6);color:#fff;border:none;border-radius:50%;width:20px;height:20px;font-size:11px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.checkin-photos{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.checkin-photos img{width:calc(50% - 3px);aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius-sm);border:1px solid var(--border);cursor:pointer}
+.photo-modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.85);z-index:200;display:flex;align-items:center;justify-content:center;padding:16px;cursor:pointer}.photo-modal img{max-width:100%;max-height:90vh;border-radius:8px}
+/* POI Popup */
+.poi-popup-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:150;display:flex;align-items:center;justify-content:center;padding:16px}
+.poi-popup{background:#fff;border-radius:var(--radius);max-width:480px;width:100%;max-height:85vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.poi-popup-header{display:flex;justify-content:space-between;align-items:center;padding:16px;border-bottom:1px solid var(--border);background:var(--green);color:#fff;border-radius:var(--radius) var(--radius) 0 0}
+.poi-popup-header h3{margin:0;font-size:16px}.poi-popup-close{background:none;border:none;color:#fff;font-size:20px;cursor:pointer}
+.poi-popup-body{padding:16px}.poi-popup-field{font-size:13px;padding:8px 12px;border-radius:var(--radius-sm);margin-bottom:8px}
+.poi-popup-photos{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.poi-popup-photos img{width:calc(50% - 3px);aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius-sm);border:1px solid var(--border);cursor:pointer}
+.poi-popup-link{display:block;text-align:center;padding:10px;color:var(--teal);font-size:13px;font-weight:600;cursor:pointer;text-decoration:underline}
+.poi-item .flag-icon{width:28px;height:28px;border-radius:50%;margin-right:6px;flex-shrink:0;object-fit:cover;cursor:pointer;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}.poi-item .flag-icon:hover{transform:scale(1.2)}
+/* Traffy cards */
+.traffy-card{display:flex;gap:12px;padding:12px;border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:8px;background:var(--card);transition:all var(--transition);cursor:pointer}.traffy-card:hover{border-color:var(--teal);box-shadow:var(--shadow)}
+.traffy-photo{width:80px;height:80px;border-radius:var(--radius-sm);object-fit:cover;flex-shrink:0;background:var(--bg-alt);border:1px solid var(--border)}
+.traffy-info{flex:1;min-width:0}.traffy-type{font-weight:600;font-size:13px;color:var(--navy);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.traffy-addr{font-size:12px;color:var(--text-secondary);margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.traffy-meta{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.traffy-state{font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600;white-space:nowrap}
+.traffy-time{font-size:11px;color:var(--text-muted)}
+.traffy-actions{display:flex;flex-direction:column;gap:4px;flex-shrink:0;align-items:center;justify-content:center}
+.traffy-fly{background:var(--teal);color:#fff;border:none;border-radius:50%;width:32px;height:32px;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--transition)}.traffy-fly:hover{transform:scale(1.15);background:var(--navy)}
+.traffy-link{font-size:10px;color:var(--teal);text-decoration:none;font-weight:600;white-space:nowrap}.traffy-link:hover{text-decoration:underline}
+@media(max-width:640px){#traffyMap{height:260px}}
 @media print{.top-bar,.btn-row,.no-print{display:none!important}.main{padding:0;max-width:100%}}
 @media(max-width:640px){.form-row{grid-template-columns:1fr}.link-grid{grid-template-columns:1fr}.stat-row{grid-template-columns:repeat(3,1fr);gap:6px}.stat-box{padding:10px}.stat-box .sv{font-size:20px}}
 .site-footer{background:var(--navy-dark);color:rgba(255,255,255,.6);text-align:center;padding:24px;font-size:12px;line-height:1.8}.site-footer a{color:var(--gold);text-decoration:none}
@@ -120,12 +149,14 @@
   </a>
 </div>
 
-<!-- TRAFFY LIVE DATA -->
+<!-- TRAFFY MAP + LIVE DATA -->
 <div id="traffyLiveSection" style="margin-bottom:24px">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-    <div style="font-weight:700;font-size:15px;color:var(--navy)">ปัญหาล่าสุดจาก Traffy Fondue</div>
+    <div style="font-weight:700;font-size:15px;color:var(--navy)">แผนที่ปัญหา + Traffy Fondue</div>
     <button class="btn btn-o" style="padding:6px 12px;font-size:12px" onclick="fetchTraffy()">โหลดใหม่</button>
   </div>
+  <div id="traffyMap" style="width:100%;height:350px;border-radius:12px;border:1px solid #E5E7EB;margin-bottom:16px;z-index:1"></div>
+  <div id="traffySummary" style="font-size:12px;color:#9CA3AF;margin-bottom:8px"></div>
   <div id="traffyData" style="font-size:13px;color:var(--text-muted);padding:16px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);text-align:center;">กด "โหลดใหม่" หรือเลือกเขตเพื่อดึงข้อมูลจาก Traffy API</div>
 </div>
 
@@ -164,6 +195,20 @@
   <div class="form-row">
     <div class="fg" style="grid-column:1/-1"><label>ความต้องการของชุมชน</label><textarea id="ciNeed" rows="2" placeholder="เช่น ต้องการสวนสาธารณะ ทางเท้าที่ดีขึ้น"></textarea></div>
   </div>
+  <!-- PHOTO UPLOAD -->
+  <div class="form-row">
+    <div class="fg" style="grid-column:1/-1">
+      <label>ภาพถ่ายสถานที่ (สูงสุด 4 รูป)</label>
+      <div id="ciPhotoPreview" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px"></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <label class="photo-slot" id="photoSlot0"><input type="file" accept="image/*" capture="environment" onchange="handlePhoto(this,0)"><span class="photo-slot-icon">📷 1</span></label>
+        <label class="photo-slot" id="photoSlot1"><input type="file" accept="image/*" capture="environment" onchange="handlePhoto(this,1)"><span class="photo-slot-icon">📷 2</span></label>
+        <label class="photo-slot" id="photoSlot2"><input type="file" accept="image/*" capture="environment" onchange="handlePhoto(this,2)"><span class="photo-slot-icon">📷 3</span></label>
+        <label class="photo-slot" id="photoSlot3"><input type="file" accept="image/*" capture="environment" onchange="handlePhoto(this,3)"><span class="photo-slot-icon">📷 4</span></label>
+      </div>
+      <div style="font-size:11px;color:var(--text-muted);margin-top:4px">กดช่องเพื่อถ่ายรูปหรือเลือกจากอัลบั้ม</div>
+    </div>
+  </div>
   <div class="btn-row" style="margin-top:12px"><button class="btn btn-teal" onclick="doCheckin()">ปักธง</button><button class="btn btn-o" onclick="toggleEl('checkinForm')">ยกเลิก</button></div>
 </div>
 
@@ -172,7 +217,14 @@
 
 <!-- CHECK-IN LOG -->
 <div style="margin-top:32px">
-  <div class="st">บันทึกการลงพื้นที่</div>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+    <div class="st" style="margin-bottom:0;border-bottom:none;padding-bottom:0">บันทึกการลงพื้นที่</div>
+    <div class="btn-row no-print" style="margin-bottom:0">
+      <button class="btn btn-p" onclick="printReport()" style="padding:8px 14px;font-size:13px">🖨️ พิมพ์รายงาน</button>
+      <button class="btn btn-g" onclick="downloadReport()" style="padding:8px 14px;font-size:13px">📥 ดาวน์โหลดรายงาน</button>
+    </div>
+  </div>
+  <div style="border-bottom:2px solid var(--border);margin:8px 0 16px"></div>
   <div id="checkinLog"></div>
 </div>
 
@@ -301,85 +353,67 @@ function selectDistrict(name){
   fetchTraffy();
 }
 
-// === TRAFFY FONDUE API ===
+// === TRAFFY FONDUE API + MAP ===
+var traffyMap=null,traffyMarkers=[];
+function initTraffyMap(){try{if(traffyMap){traffyMap.remove();traffyMap=null;}}catch(e){}traffyMarkers=[];var container=document.getElementById('traffyMap');if(!container)return;container.textContent='';container._leaflet_id=null;traffyMap=L.map('traffyMap',{zoomControl:true,scrollWheelZoom:true}).setView([13.756,100.502],12);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'OpenStreetMap',maxZoom:19}).addTo(traffyMap);}
+function flyToIssue(lat,lng){if(!traffyMap)return;traffyMap.flyTo([lat,lng],17,{duration:1.5});traffyMarkers.forEach(function(m){if(Math.abs(m.getLatLng().lat-lat)<0.0001&&Math.abs(m.getLatLng().lng-lng)<0.0001)m.openPopup();});document.getElementById('traffyMap').scrollIntoView({behavior:'smooth',block:'center'});}
+function getTraffyCaseUrl(p){if(p.ticket_id)return'https://bangkok.traffy.in.th/report/'+p.ticket_id;if(p._id)return'https://bangkok.traffy.in.th/report/'+p._id;return'https://bangkok.traffy.in.th/?district='+encodeURIComponent(currentDistrict);}
 function fetchTraffy(){
-  if(!currentDistrict) return;
-  var el = document.getElementById('traffyData');
-  el.textContent = 'กำลังดึงข้อมูลจาก Traffy Fondue...';
-  el.style.textAlign = 'center';
+  if(!currentDistrict)return;
+  var el=document.getElementById('traffyData');
+  var sumEl=document.getElementById('traffySummary');
+  el.textContent='กำลังดึงข้อมูลจาก Traffy Fondue...';el.style.textAlign='center';el.style.color='';
+  if(sumEl)sumEl.textContent='';
+  initTraffyMap();
   if(window._traffyAbort)window._traffyAbort.abort();
   window._traffyAbort=new AbortController();
   fetch('https://publicapi.traffy.in.th/teamchadchart-stat-api/geojson/v1?limit=1000',{signal:window._traffyAbort.signal})
-    .then(function(r){ if(!r.ok)throw new Error('API status '+r.status); return r.json(); })
-    .then(function(data){
-      if(!data.features || !data.features.length){
-        el.textContent = 'ไม่พบข้อมูลจาก Traffy API';
-        return;
-      }
-      // Filter by district client-side (API doesn't filter server-side)
-      var districtItems = data.features.filter(function(f){
-        return f.properties && f.properties.district === currentDistrict;
-      });
-      // Also show total stats
-      var totalEl = data.total || data.features.length;
-      if(!districtItems.length){
-        el.textContent = '';
-        el.style.textAlign = 'left';
-        var noData = document.createElement('div');
-        noData.style.cssText = 'padding:12px;color:var(--text-muted);font-size:13px;text-align:center;';
-        noData.textContent = 'ไม่พบปัญหาในเขต' + currentDistrict + ' จาก batch ล่าสุด (Traffy cache 30 นาที) — ลองดูข้อมูลเต็มที่ Traffy Fondue';
-        el.appendChild(noData);
-        return;
-      }
-      // Build display
-      el.textContent = '';
-      el.style.textAlign = 'left';
-      var header = document.createElement('div');
-      header.style.cssText = 'font-size:12px;color:var(--text-muted);margin-bottom:8px;';
-      header.textContent = 'พบ ' + districtItems.length + ' เรื่องในเขต' + currentDistrict + ' (จาก API batch ' + totalEl + ' เรื่องทั่ว กทม.)';
-      el.appendChild(header);
-      // Show up to 10 items
-      districtItems.slice(0, 10).forEach(function(f){
-        var p = f.properties;
-        var card = document.createElement('div');
-        card.style.cssText = 'padding:10px 12px;border-bottom:1px solid var(--border-light);';
-        var top = document.createElement('div');
-        top.style.cssText = 'display:flex;justify-content:space-between;align-items:center;gap:8px;';
-        var type = document.createElement('span');
-        type.style.cssText = 'font-weight:600;font-size:13px;';
-        type.textContent = (p.problem_type_fondue || 'ไม่ระบุ');
-        var state = document.createElement('span');
-        var stateColor = p.state === 'เสร็จสิ้น' ? 'var(--green)' : p.state === 'กำลังดำเนินการ' ? 'var(--orange)' : 'var(--text-muted)';
-        state.style.cssText = 'font-size:11px;padding:2px 8px;border-radius:10px;background:' + stateColor + '20;color:' + stateColor + ';font-weight:600;';
-        state.textContent = p.state || '';
-        top.appendChild(type);
-        top.appendChild(state);
-        card.appendChild(top);
-        if(p.address){
-          var addr = document.createElement('div');
-          addr.style.cssText = 'font-size:12px;color:var(--text-secondary);margin-top:4px;';
-          addr.textContent = p.address;
-          card.appendChild(addr);
-        }
-        if(p.timestamp){
-          var time = document.createElement('div');
-          time.style.cssText = 'font-size:11px;color:var(--text-muted);margin-top:2px;';
-          time.textContent = p.timestamp;
-          card.appendChild(time);
-        }
-        el.appendChild(card);
-      });
-      if(districtItems.length > 10){
-        var more = document.createElement('div');
-        more.style.cssText = 'text-align:center;padding:8px;font-size:12px;color:var(--teal);';
-        more.textContent = '+ อีก ' + (districtItems.length - 10) + ' เรื่อง — ดูทั้งหมดที่ Traffy Fondue';
-        el.appendChild(more);
-      }
-    })
-    .catch(function(err){
-      el.textContent = 'ไม่สามารถเชื่อมต่อ Traffy API — ลองใหม่หรือดูที่ Traffy Fondue โดยตรง';
-      el.style.color = 'var(--red)';
+  .then(function(r){if(!r.ok)throw new Error('API '+r.status);return r.json();})
+  .then(function(data){
+    if(!data.features||!data.features.length){el.textContent='ไม่พบข้อมูลจาก Traffy API';return;}
+    var items=data.features.filter(function(f){return f.properties&&f.properties.district===currentDistrict;});
+    var totalAll=data.total||data.features.length;
+    if(!items.length){el.textContent='';var nd=document.createElement('div');nd.style.cssText='padding:16px;color:var(--text-muted);font-size:13px;text-align:center';nd.textContent='ไม่พบปัญหาในเขต'+currentDistrict+' จาก batch ล่าสุด';el.appendChild(nd);return;}
+    // Summary
+    var pending=items.filter(function(f){return f.properties.state==='กำลังดำเนินการ'}).length;
+    var done=items.filter(function(f){return f.properties.state==='เสร็จสิ้น'}).length;
+    if(sumEl)sumEl.textContent='พบ '+items.length+' เรื่องในเขต'+currentDistrict+' | กำลังดำเนินการ '+pending+' | เสร็จสิ้น '+done+' | (จาก '+totalAll+' เรื่องทั่ว กทม.)';
+    // Map markers
+    var bounds=[];
+    items.forEach(function(f){
+      var co=f.geometry&&f.geometry.coordinates;if(!co||!co[0]||!co[1])return;
+      var lat=co[1],lng=co[0],p=f.properties;
+      var sc=p.state==='เสร็จสิ้น'?'#22C55E':p.state==='กำลังดำเนินการ'?'#E67E22':'#EF4444';
+      var icon=L.divIcon({className:'',html:'<div style="width:14px;height:14px;border-radius:50%;background:'+sc+';border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.3)"></div>',iconSize:[14,14],iconAnchor:[7,7]});
+      var mk=L.marker([lat,lng],{icon:icon}).addTo(traffyMap);
+      var ph='<div style="font-size:13px;max-width:220px;line-height:1.5"><b>'+E(p.problem_type_fondue||'ไม่ระบุ')+'</b><br><span style="color:#6B7280;font-size:11px">'+E(p.address||'')+'</span>';
+      if(p.photo)ph+='<br><img src="'+p.photo+'" style="width:100%;margin-top:6px;border-radius:4px" alt="">';
+      ph+='<br><a href="'+getTraffyCaseUrl(p)+'" target="_blank" style="color:#0D9488;font-size:11px;font-weight:600">ดูเคสจริง →</a></div>';
+      mk.bindPopup(ph,{maxWidth:250});traffyMarkers.push(mk);bounds.push([lat,lng]);
     });
+    if(bounds.length)traffyMap.fitBounds(bounds,{padding:[30,30],maxZoom:14});
+    // Cards (top 5)
+    el.textContent='';el.style.textAlign='left';
+    items.slice(0,5).forEach(function(f){
+      var p=f.properties,co=f.geometry&&f.geometry.coordinates,lat=co?co[1]:null,lng=co?co[0]:null,url=getTraffyCaseUrl(p);
+      var card=document.createElement('div');card.className='traffy-card';
+      if(p.photo){var ph=document.createElement('img');ph.className='traffy-photo';ph.src=p.photo;ph.alt=p.problem_type_fondue||'';ph.loading='lazy';ph.addEventListener('click',function(){window.open(url,'_blank')});card.appendChild(ph);}
+      else{var pl=document.createElement('div');pl.className='traffy-photo';pl.style.cssText='display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--text-muted)';pl.textContent='📷';card.appendChild(pl);}
+      var info=document.createElement('div');info.className='traffy-info';info.addEventListener('click',function(){window.open(url,'_blank')});
+      var ty=document.createElement('div');ty.className='traffy-type';ty.textContent=p.problem_type_fondue||'ไม่ระบุ';info.appendChild(ty);
+      if(p.address){var ad=document.createElement('div');ad.className='traffy-addr';ad.textContent=p.address;info.appendChild(ad);}
+      var me=document.createElement('div');me.className='traffy-meta';
+      var st=document.createElement('span');st.className='traffy-state';var stc=p.state==='เสร็จสิ้น'?'#22C55E':p.state==='กำลังดำเนินการ'?'#E67E22':'#9CA3AF';st.style.cssText='background:'+stc+'20;color:'+stc;st.textContent=p.state||'รอรับเรื่อง';me.appendChild(st);
+      if(p.timestamp){var tm=document.createElement('span');tm.className='traffy-time';tm.textContent=p.timestamp;me.appendChild(tm);}
+      info.appendChild(me);card.appendChild(info);
+      var act=document.createElement('div');act.className='traffy-actions';
+      if(lat&&lng){var fb=document.createElement('button');fb.className='traffy-fly';fb.title='บินไปจุดเกิดเหตุ';fb.textContent='📍';(function(a,b){fb.addEventListener('click',function(e){e.stopPropagation();flyToIssue(a,b)})})(lat,lng);act.appendChild(fb);}
+      var lk=document.createElement('a');lk.className='traffy-link';lk.href=url;lk.target='_blank';lk.textContent='ดูเคส';act.appendChild(lk);
+      card.appendChild(act);el.appendChild(card);
+    });
+    if(items.length>5){var mo=document.createElement('a');mo.href='https://bangkok.traffy.in.th/?district='+encodeURIComponent(currentDistrict);mo.target='_blank';mo.style.cssText='display:block;text-align:center;padding:10px;font-size:13px;color:var(--teal);font-weight:600;text-decoration:none';mo.textContent='+ อีก '+(items.length-5)+' เรื่อง — ดูทั้งหมดที่ Traffy Fondue →';el.appendChild(mo);}
+  })
+  .catch(function(err){if(err.name==='AbortError')return;el.textContent='ไม่สามารถเชื่อมต่อ Traffy API';el.style.color='var(--red)';});
 }
 
 // === RENDER ===
@@ -489,7 +523,7 @@ function renderDistrict(){
     nameEl.textContent = '📍 ' + (ci.placeName || 'ไม่ระบุ');
     var dateEl = document.createElement('div');
     dateEl.className = 'checkin-date';
-    dateEl.textContent = ci.date;
+    dateEl.textContent = ci.date + (ci.timestamp ? ' ' + new Date(ci.timestamp).toLocaleTimeString('th-TH',{hour:'2-digit',minute:'2-digit'}) : '');
     hdr.appendChild(nameEl);
     hdr.appendChild(dateEl);
     card.appendChild(hdr);
@@ -505,6 +539,16 @@ function renderDistrict(){
       need.style.background = '#EFF6FF';
       need.textContent = 'ต้องการ: ' + ci.need;
       card.appendChild(need);
+    }
+    if(ci.photos && ci.photos.length){
+      var photosDiv = document.createElement('div');
+      photosDiv.className = 'checkin-photos';
+      ci.photos.forEach(function(src){
+        var img = document.createElement('img'); img.src = src; img.alt = ''; img.loading = 'lazy';
+        img.addEventListener('click', function(){ showPhotoModal(src); });
+        photosDiv.appendChild(img);
+      });
+      card.appendChild(photosDiv);
     }
     var delBtn = document.createElement('button');
     delBtn.className = 'btn-d no-print';
@@ -557,6 +601,8 @@ function doCheckin(){
     });
   });
   D.s('pois_'+currentDistrict, pois);
+  // Collect photos
+  var photos = ciPhotos.filter(function(p){ return p !== null; });
   // Save check-in
   var checkins = D.g('checkins_'+currentDistrict, []);
   checkins.push({
@@ -565,11 +611,14 @@ function doCheckin(){
     placeName: placeName,
     date: document.getElementById('ciDate').value || new Date().toISOString().slice(0,10),
     problem: document.getElementById('ciProblem').value.trim(),
-    need: document.getElementById('ciNeed').value.trim()
+    need: document.getElementById('ciNeed').value.trim(),
+    photos: photos,
+    timestamp: new Date().toISOString()
   });
   D.s('checkins_'+currentDistrict, checkins);
   document.getElementById('ciProblem').value='';
   document.getElementById('ciNeed').value='';
+  resetPhotos();
   toggleEl('checkinForm');
   renderDistrict();
 }
@@ -605,6 +654,162 @@ function doImportDI(ev){
 }
 
 function toggleEl(id){var el=document.getElementById(id);el.style.display=el.style.display==='none'?'block':'none'}
+
+// === PHOTO HANDLING ===
+var ciPhotos = [null, null, null, null];
+function handlePhoto(input, slotIndex) {
+  var file = input.files[0]; if (!file) return;
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var img = new Image();
+    img.onload = function() {
+      var maxW = 1600, scale = img.width > maxW ? maxW / img.width : 1;
+      var canvas = document.createElement('canvas');
+      canvas.width = Math.round(img.width * scale); canvas.height = Math.round(img.height * scale);
+      canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+      ciPhotos[slotIndex] = canvas.toDataURL('image/jpeg', 0.85);
+      renderPhotoSlot(slotIndex); renderPhotoPreview();
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+function renderPhotoSlot(idx) {
+  var slot = document.getElementById('photoSlot' + idx); if(!slot) return;
+  var oldImg = slot.querySelector('img'); if (oldImg) oldImg.remove();
+  var iconEl = slot.querySelector('.photo-slot-icon');
+  if (ciPhotos[idx]) {
+    slot.classList.add('has-photo'); if (iconEl) iconEl.style.display = 'none';
+    var img = document.createElement('img'); img.src = ciPhotos[idx]; img.alt = 'Photo '+(idx+1); slot.appendChild(img);
+  } else {
+    slot.classList.remove('has-photo'); if (iconEl) iconEl.style.display = '';
+  }
+}
+function renderPhotoPreview() {
+  var container = document.getElementById('ciPhotoPreview'); if(!container) return;
+  container.textContent = '';
+  ciPhotos.forEach(function(dataUrl, idx) {
+    if (!dataUrl) return;
+    var thumb = document.createElement('div'); thumb.className = 'photo-thumb';
+    var img = document.createElement('img'); img.src = dataUrl; img.alt = 'Preview '+(idx+1);
+    img.addEventListener('click', function() { showPhotoModal(dataUrl); });
+    var removeBtn = document.createElement('button'); removeBtn.className = 'photo-remove'; removeBtn.textContent = '\u00d7';
+    removeBtn.addEventListener('click', function(ev) {
+      ev.preventDefault(); ev.stopPropagation(); ciPhotos[idx] = null;
+      var input = document.querySelector('#photoSlot'+idx+' input'); if(input) input.value = '';
+      renderPhotoSlot(idx); renderPhotoPreview();
+    });
+    thumb.appendChild(img); thumb.appendChild(removeBtn); container.appendChild(thumb);
+  });
+}
+function showPhotoModal(src) {
+  var modal = document.createElement('div'); modal.className = 'photo-modal';
+  var img = document.createElement('img'); img.src = src;
+  modal.appendChild(img); modal.addEventListener('click', function() { modal.remove(); });
+  document.body.appendChild(modal);
+}
+function resetPhotos() {
+  ciPhotos = [null, null, null, null];
+  for (var i = 0; i < 4; i++) {
+    var input = document.querySelector('#photoSlot'+i+' input'); if(input) input.value = '';
+    renderPhotoSlot(i);
+  }
+  renderPhotoPreview();
+}
+
+// === POI CHECKIN POPUP ===
+function showPoiCheckinPopup(poiItem) {
+  var checkins = D.g('checkins_'+currentDistrict, []);
+  var related = checkins.filter(function(c){ return String(c.placeId)===String(poiItem.id) || c.placeName===poiItem.name; });
+  var overlay = document.createElement('div'); overlay.className = 'poi-popup-overlay';
+  overlay.addEventListener('click', function(ev){ if(ev.target===overlay) overlay.remove(); });
+  var popup = document.createElement('div'); popup.className = 'poi-popup';
+  var header = document.createElement('div'); header.className = 'poi-popup-header';
+  var h3 = document.createElement('h3');
+  var popupLogo = document.createElement('img'); popupLogo.src='img/flag-walk.jpg'; popupLogo.alt='';
+  popupLogo.style.cssText='width:28px;height:28px;border-radius:50%;margin-right:8px;vertical-align:middle';
+  h3.appendChild(popupLogo); h3.appendChild(document.createTextNode(' '+poiItem.name));
+  var closeBtn = document.createElement('button'); closeBtn.className='poi-popup-close'; closeBtn.textContent='\u00d7';
+  closeBtn.addEventListener('click', function(){ overlay.remove(); });
+  header.appendChild(h3); header.appendChild(closeBtn); popup.appendChild(header);
+  var body = document.createElement('div'); body.className = 'poi-popup-body';
+  if(!related.length){
+    var nd = document.createElement('div'); nd.style.cssText='text-align:center;padding:16px;color:var(--text-muted);font-size:13px';
+    nd.textContent = 'ปักธงแล้ว แต่ยังไม่มีบันทึกรายละเอียด'; body.appendChild(nd);
+  } else {
+    related.sort(function(a,b){return (b.timestamp||b.date)>(a.timestamp||a.date)?1:-1});
+    related.forEach(function(ci, idx){
+      if(idx>0){var sep=document.createElement('hr');sep.style.cssText='border:none;border-top:1px solid var(--border);margin:12px 0';body.appendChild(sep);}
+      var dateDisplay=ci.date||''; if(ci.timestamp) dateDisplay+=' '+new Date(ci.timestamp).toLocaleTimeString('th-TH',{hour:'2-digit',minute:'2-digit'});
+      var dateEl=document.createElement('div');dateEl.style.cssText='font-size:12px;color:var(--teal);font-weight:600;margin-bottom:6px';dateEl.textContent=dateDisplay;body.appendChild(dateEl);
+      if(ci.problem){var prob=document.createElement('div');prob.className='poi-popup-field';prob.style.background='#FEF2F2';prob.style.color='#991B1B';prob.textContent='ปัญหา: '+ci.problem;body.appendChild(prob);}
+      if(ci.need){var need=document.createElement('div');need.className='poi-popup-field';need.style.background='#EFF6FF';need.style.color='#1E40AF';need.textContent='ต้องการ: '+ci.need;body.appendChild(need);}
+      if(ci.photos&&ci.photos.length){var pd=document.createElement('div');pd.className='poi-popup-photos';ci.photos.forEach(function(src){var im=document.createElement('img');im.src=src;im.alt='';im.loading='lazy';im.addEventListener('click',function(){showPhotoModal(src)});pd.appendChild(im)});body.appendChild(pd);}
+    });
+  }
+  var link=document.createElement('div');link.className='poi-popup-link';link.textContent='ดูบันทึกทั้งหมดด้านล่าง';
+  link.addEventListener('click',function(){overlay.remove();document.getElementById('checkinLog').scrollIntoView({behavior:'smooth'})});
+  body.appendChild(link); popup.appendChild(body); overlay.appendChild(popup); document.body.appendChild(overlay);
+}
+
+// === REPORT GENERATION ===
+function generateReportHTML() {
+  var pois=D.g('pois_'+currentDistrict,{}),checkins=D.g('checkins_'+currentDistrict,[]),allPois=[];
+  poiCategories.forEach(function(cat){allPois=allPois.concat(pois[cat.key]||[])});
+  var visited=allPois.filter(function(p){return p.visited}).length,total=allPois.length;
+  var pct=total>0?Math.round(visited/total*100):0;
+  var now=new Date(),dateStr=now.toLocaleDateString('th-TH',{year:'numeric',month:'long',day:'numeric'});
+  var timeStr=now.toLocaleTimeString('th-TH',{hour:'2-digit',minute:'2-digit'});
+  var h=[];
+  h.push('<!DOCTYPE html><html lang="th"><head><meta charset="UTF-8"><title>รายงานปักธง เขต'+E(currentDistrict)+'</title>');
+  h.push('<style>body{font-family:Sarabun,sans-serif;max-width:800px;margin:0 auto;padding:24px;color:#1A1A2E;font-size:14px;line-height:1.7}');
+  h.push('.hd{text-align:center;border-bottom:3px solid #1B2A4A;padding-bottom:16px;margin-bottom:24px}.hd h1{font-size:20px;color:#1B2A4A;margin:0 0 4px}.hd h2{font-size:16px;color:#C9A96E;margin:0 0 8px}');
+  h.push('.stats{display:flex;justify-content:space-around;padding:16px;background:#F5F5F5;border-radius:8px;margin-bottom:24px;text-align:center}.stats .s{flex:1}.stats .v{font-size:24px;font-weight:700;color:#0D9488}.stats .l{font-size:11px;color:#6B7280}');
+  h.push('.ci{border:1px solid #E5E7EB;border-radius:8px;padding:14px;margin-bottom:12px;page-break-inside:avoid}.ci-n{font-weight:700;font-size:15px}.ci-d{font-size:12px;color:#9CA3AF}');
+  h.push('.ci-f{font-size:13px;padding:6px 10px;border-radius:6px;margin-top:6px}.ci-p{background:#FEF2F2;color:#991B1B}.ci-nd{background:#EFF6FF;color:#1E40AF}');
+  h.push('.ci-ph{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.ci-ph img{width:calc(50% - 3px);max-height:200px;object-fit:cover;border-radius:6px}');
+  h.push('.ft{text-align:center;margin-top:32px;padding-top:16px;border-top:2px solid #1B2A4A;font-size:11px;color:#6B7280}');
+  h.push('</style></head><body>');
+  h.push('<div class="hd"><h1>รายงานการลงพื้นที่ — เขต'+E(currentDistrict)+'</h1><h2>GREEN FLAG District Intelligence Report</h2>');
+  h.push('<div style="font-size:12px;color:#6B7280">วันที่: '+dateStr+' เวลา '+timeStr+'</div></div>');
+  h.push('<div class="stats"><div class="s"><div class="v">'+total+'</div><div class="l">สถานที่</div></div>');
+  h.push('<div class="s"><div class="v">'+visited+'</div><div class="l">ปักธงแล้ว</div></div>');
+  h.push('<div class="s"><div class="v">'+checkins.length+'</div><div class="l">บันทึก</div></div>');
+  h.push('<div class="s"><div class="v">'+pct+'%</div><div class="l">คืบหน้า</div></div></div>');
+  if(checkins.length){
+    h.push('<h3>รายละเอียด ('+checkins.length+' บันทึก)</h3>');
+    checkins.slice().sort(function(a,b){return(b.timestamp||b.date)>(a.timestamp||a.date)?1:-1}).forEach(function(ci,i){
+      h.push('<div class="ci"><div style="display:flex;justify-content:space-between"><div class="ci-n">'+(i+1)+'. '+E(ci.placeName||'')+'</div>');
+      var dd=ci.date||''; if(ci.timestamp) dd+=' '+new Date(ci.timestamp).toLocaleTimeString('th-TH',{hour:'2-digit',minute:'2-digit'});
+      h.push('<div class="ci-d">'+dd+'</div></div>');
+      if(ci.problem) h.push('<div class="ci-f ci-p">ปัญหา: '+E(ci.problem)+'</div>');
+      if(ci.need) h.push('<div class="ci-f ci-nd">ต้องการ: '+E(ci.need)+'</div>');
+      if(ci.photos&&ci.photos.length){h.push('<div class="ci-ph">');ci.photos.forEach(function(s){h.push('<img src="'+s+'" alt="">')});h.push('</div>');}
+      h.push('</div>');
+    });
+  }
+  h.push('<div class="ft"><b style="color:#C9A96E">Legal Advance Solution Co., Ltd. (LAS)</b> x NIA<br>สร้างอัตโนมัติเมื่อ '+dateStr+'</div>');
+  h.push('</body></html>');
+  return h.join('');
+}
+function printReport() {
+  if(!currentDistrict){alert('กรุณาเลือกเขตก่อน');return}
+  var reportHtml = generateReportHTML();
+  var iframe = document.createElement('iframe');
+  iframe.style.cssText = 'position:fixed;top:-9999px;left:-9999px;width:800px;height:600px';
+  document.body.appendChild(iframe);
+  iframe.srcdoc = reportHtml;
+  iframe.onload = function(){ iframe.contentWindow.print(); setTimeout(function(){ document.body.removeChild(iframe); }, 1000); };
+}
+function downloadReport() {
+  if(!currentDistrict){alert('กรุณาเลือกเขตก่อน');return}
+  var reportHtml = generateReportHTML();
+  var blob = new Blob([reportHtml], {type:'text/html;charset=utf-8'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a'); a.href = url;
+  a.download = 'รายงานปักธง-เขต'+currentDistrict+'-'+new Date().toISOString().slice(0,10)+'.html';
+  a.click(); URL.revokeObjectURL(url);
+}
 </script>
 <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('service-worker.js')}</script>
 <!-- Canonical setSiteLang() — see docs/BILINGUAL-CONVENTION.md -->
