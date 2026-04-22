@@ -1241,8 +1241,8 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
   <div class="fade-in" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:8px;">
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
       <div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:18px;color:var(--navy);margin-bottom:4px;">Traffy Fondue Live + Fly to Problem</h3>
-        <p style="font-size:13px;color:var(--text-secondary);margin:0;">เลือกเขต → ดู map + กดปักหมุดบินไปจุดเกิดเหตุ + เปรียบเทียบเร็ว/ช้า · ข้อมูลจาก API อัปเดตทุก 30 นาที</p>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:18px;color:var(--navy);margin-bottom:4px;">Traffy Fondue Live + Run to Problem</h3>
+        <p style="font-size:13px;color:var(--text-secondary);margin:0;">เลือกเขต → ดู map + กดปักหมุดวิ่งไปจุดเกิดเหตุ + เปรียบเทียบเร็ว/ช้า · ข้อมูลจาก API อัปเดตทุก 30 นาที</p>
       </div>
       <div style="font-size:11px;color:var(--text-muted);text-align:right;">Powered by <a href="https://www.traffy.in.th" target="_blank" rel="noopener noreferrer" style="color:var(--teal);text-decoration:none;">Traffy Fondue</a> Open Data</div>
     </div>
@@ -1274,7 +1274,7 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
       </div>
 
       <!-- Problem list -->
-      <div style="font-weight:600;font-size:14px;margin-bottom:8px;color:var(--navy);">5 ปัญหาล่าสุด — กดปักหมุด 📍 เพื่อบินไปจุดเกิดเหตุ</div>
+      <div style="font-weight:600;font-size:14px;margin-bottom:8px;color:var(--navy);">5 ปัญหาล่าสุด — กดปักหมุด 📍 เพื่อวิ่งไปจุดเกิดเหตุ</div>
       <div id="diProblems" style="font-size:13px;"></div>
 
       <!-- Links -->
@@ -1861,14 +1861,18 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
           row.style.cssText='padding:12px;border:1px solid var(--border);border-radius:8px;margin-bottom:8px;display:flex;align-items:flex-start;gap:10px;background:#fff;transition:all 0.15s;';
           row.onmouseenter=function(){this.style.borderColor='var(--teal)';this.style.boxShadow='0 2px 8px rgba(0,0,0,.06)'};
           row.onmouseleave=function(){this.style.borderColor='var(--border)';this.style.boxShadow='none'};
-          // Photo
+          // Photo (large + fallback)
           if(p.photo_url){
             var img=document.createElement('img');
-            img.src=p.photo_url;img.alt='';img.loading='lazy';
-            img.style.cssText='width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:1px solid var(--border);cursor:pointer;';
+            img.src=p.photo_url;img.alt='ภาพจุดเกิดเหตุ';img.loading='lazy';
+            img.style.cssText='width:100px;height:100px;object-fit:cover;border-radius:8px;flex-shrink:0;border:1px solid var(--border);cursor:pointer;';
             img.onerror=function(){this.style.display='none'};
             if(traffyUrl)(function(u){img.addEventListener('click',function(){window.open(u,'_blank')})})(traffyUrl);
             row.appendChild(img);
+          } else {
+            var ph=document.createElement('div');
+            ph.style.cssText='width:100px;height:100px;border-radius:8px;flex-shrink:0;border:1px solid var(--border);background:var(--bg-alt);display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--text-muted)';
+            ph.textContent='📷';row.appendChild(ph);
           }
           // Info (clickable to case)
           var mid=document.createElement('div');mid.style.cssText='flex:1;min-width:0;';
@@ -1884,7 +1888,7 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
           row.appendChild(mid);
           // Actions: fly-to + link
           var actDiv=document.createElement('div');actDiv.style.cssText='display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;';
-          if(lat&&lng){var flyBtn=document.createElement('button');flyBtn.style.cssText='background:var(--teal);color:#fff;border:none;border-radius:50%;width:36px;height:36px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.15s;box-shadow:0 1px 3px rgba(0,0,0,.15)';flyBtn.title='บินไปจุดเกิดเหตุ';flyBtn.textContent='📍';
+          if(lat&&lng){var flyBtn=document.createElement('button');flyBtn.style.cssText='background:var(--teal);color:#fff;border:none;border-radius:50%;width:36px;height:36px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.15s;box-shadow:0 1px 3px rgba(0,0,0,.15)';flyBtn.title='วิ่งไปจุดเกิดเหตุ';flyBtn.textContent='📍';
             flyBtn.onmouseenter=function(){this.style.transform='scale(1.15)';this.style.background='var(--navy)'};
             flyBtn.onmouseleave=function(){this.style.transform='none';this.style.background='var(--teal)'};
             (function(a,b){flyBtn.addEventListener('click',function(e){e.stopPropagation();diMap.flyTo([a,b],17,{duration:1.5});diMarkers.forEach(function(m){if(m.getLatLng&&Math.abs(m.getLatLng().lat-a)<0.0001&&Math.abs(m.getLatLng().lng-b)<0.0001)m.openPopup()});document.getElementById('diMap').scrollIntoView({behavior:'smooth',block:'center'})})})(lat,lng);

@@ -426,7 +426,7 @@ function fetchTraffy(){
       if(p.timestamp){var tm=document.createElement('span');tm.className='traffy-time';tm.textContent=p.timestamp;me.appendChild(tm);}
       info.appendChild(me);card.appendChild(info);
       var act=document.createElement('div');act.className='traffy-actions';
-      if(lat&&lng){var fb=document.createElement('button');fb.className='traffy-fly';fb.title='บินไปจุดเกิดเหตุ';fb.textContent='📍';(function(a,b){fb.addEventListener('click',function(e){e.stopPropagation();flyToIssue(a,b)})})(lat,lng);act.appendChild(fb);}
+      if(lat&&lng){var fb=document.createElement('button');fb.className='traffy-fly';fb.title='วิ่งไปจุดเกิดเหตุ';fb.textContent='📍';(function(a,b){fb.addEventListener('click',function(e){e.stopPropagation();flyToIssue(a,b)})})(lat,lng);act.appendChild(fb);}
       var lk=document.createElement('a');lk.className='traffy-link';lk.href=url;lk.target='_blank';lk.textContent='ดูเคส';act.appendChild(lk);
       card.appendChild(act);el.appendChild(card);
     });
@@ -654,7 +654,7 @@ function renderDistrict(){
       var flyBtn = document.createElement('button');
       flyBtn.className = 'btn btn-teal';
       flyBtn.style.cssText = 'padding:6px 12px;font-size:12px;display:flex;align-items:center;gap:4px';
-      flyBtn.textContent = '📍 บินไปจุดนี้';
+      flyBtn.textContent = '📍 วิ่งไปจุดนี้';
       (function(lat,lng,name){flyBtn.addEventListener('click',function(){
         window.traffyMap.flyTo([lat,lng],17,{duration:1.5});
         if(window._checkinMarkers){window._checkinMarkers.forEach(function(m){if(m.getLatLng&&Math.abs(m.getLatLng().lat-lat)<0.0001)m.openPopup()});}
