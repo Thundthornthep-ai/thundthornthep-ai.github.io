@@ -760,7 +760,7 @@ body::before {
         </div>
         <div class="tl-item">
           <div class="tl-dot future"></div>
-          <div class="tl-date">22 พ.ค. 69</div>
+          <div class="tl-date">21 พ.ค. 69</div>
           <div class="tl-title">วาระ สก. ชุดที่ 13 ครบ</div>
           <div class="tl-desc">รอ กกต. ประกาศให้มีการเลือกตั้ง</div>
         </div>
@@ -930,8 +930,8 @@ function updateCountdown() {
   document.getElementById('secsLeft').textContent = secs;
   document.getElementById('weeksLeft').textContent = weeks;
 
-  // Progress: from 5 Jan 2569 (180 days before สก.ชุด 13 ครบวาระ 22 พ.ค. 2569) to election 5 Jul 2569
-  const CAMPAIGN_START = new Date(2026, 0, 5);
+  // Progress: from 22 พ.ย. 2568 (180 วันก่อนครบวาระ 21 พ.ค. 2569, ม.61(1)) ถึงวันเลือกตั้ง 28 มิ.ย. 2569
+  const CAMPAIGN_START = new Date(2025, 10, 22);
   const start = CAMPAIGN_START;
   const total = election - start;
   const elapsed = now - start;
