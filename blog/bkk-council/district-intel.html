@@ -520,11 +520,27 @@ function renderDistrict(){
         }
       });
       row.appendChild(nameSpan);
+      var btnWrap = document.createElement('div');
+      btnWrap.style.cssText = 'display:flex;gap:4px;flex-shrink:0';
+      if(item.visited){
+        var unflagBtn = document.createElement('button');
+        unflagBtn.className = 'btn-d no-print';
+        unflagBtn.style.cssText = 'background:var(--orange);padding:4px 10px;font-size:11px';
+        unflagBtn.textContent = 'ถอนธง';
+        unflagBtn.title = 'ยกเลิกปักธง (ข้อมูล check-in ยังเก็บอยู่)';
+        (function(catKey,itemId,itemName){unflagBtn.addEventListener('click', function(e){
+          e.stopPropagation();
+          if(confirm('ยกเลิกปักธง "'+itemName+'" ?\n\n(ข้อมูล check-in ที่บันทึกไว้จะยังอยู่ — ไม่ลบ)')){unflagPoi(catKey,itemId)}
+        })})(cat.key,item.id,item.name);
+        btnWrap.appendChild(unflagBtn);
+      }
       var delBtn = document.createElement('button');
       delBtn.className = 'btn-d no-print';
+      delBtn.style.cssText = 'padding:4px 10px;font-size:11px';
       delBtn.textContent = 'ลบ';
-      delBtn.addEventListener('click', function(e){ e.stopPropagation(); if(confirm('ลบ '+item.name+'?')){removePoi(cat.key, item.id)} });
-      row.appendChild(delBtn);
+      delBtn.addEventListener('click', function(e){ e.stopPropagation(); if(confirm('ลบสถานที่ "'+item.name+'" ?\n\n(ลบถาวร — ข้อมูล check-in ยังอยู่)'){removePoi(cat.key, item.id)} });
+      btnWrap.appendChild(delBtn);
+      row.appendChild(btnWrap);
       body.appendChild(row);
     });
     section.appendChild(body);
@@ -674,6 +690,12 @@ function addPoi(){
   document.getElementById('poiAddr').value='';
   document.getElementById('poiNote').value='';
   toggleEl('addPoiForm');
+  renderDistrict();
+}
+function unflagPoi(catKey, id){
+  var pois = D.g('pois_'+currentDistrict, {});
+  (pois[catKey]||[]).forEach(function(p){ if(String(p.id)===String(id)) p.visited=false; });
+  D.s('pois_'+currentDistrict, pois);
   renderDistrict();
 }
 function removePoi(catKey, id){
