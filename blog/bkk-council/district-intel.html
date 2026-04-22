@@ -93,6 +93,8 @@
 .traffy-actions{display:flex;flex-direction:column;gap:4px;flex-shrink:0;align-items:center;justify-content:center}
 .traffy-fly{background:var(--teal);color:#fff;border:none;border-radius:50%;width:32px;height:32px;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--transition)}.traffy-fly:hover{transform:scale(1.15);background:var(--navy)}
 .traffy-link{font-size:10px;color:var(--teal);text-decoration:none;font-weight:600;white-space:nowrap}.traffy-link:hover{text-decoration:underline}
+.walk-marker{border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.3);border:2px solid #22C55E}
+@keyframes fadeInUp{from{opacity:0;transform:translateX(-50%) translateY(10px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
 @media(max-width:640px){#traffyMap{height:260px}}
 @media print{.top-bar,.btn-row,.no-print{display:none!important}.main{padding:0;max-width:100%}}
 @media(max-width:640px){.form-row{grid-template-columns:1fr}.link-grid{grid-template-columns:1fr}.stat-row{grid-template-columns:repeat(3,1fr);gap:6px}.stat-box{padding:10px}.stat-box .sv{font-size:20px}}
@@ -162,7 +164,7 @@
 <!-- ADD POI / CHECK-IN -->
 <div class="btn-row no-print">
   <button class="btn btn-p" onclick="toggleEl('addPoiForm')">+ เพิ่มสถานที่</button>
-  <button class="btn btn-teal" onclick="toggleEl('checkinForm')">ปักธง / Check-in</button>
+  <button class="btn btn-teal" onclick="toggleEl('checkinForm');captureGPS()">ปักธง / Check-in</button>
   <button class="btn btn-o" onclick="doExportDI()">Export JSON</button>
   <label class="btn btn-o" style="cursor:pointer"><input type="file" accept=".json" style="display:none" onchange="doImportDI(event)">Import</label>
 </div>
@@ -187,6 +189,16 @@
   <div class="form-row">
     <div class="fg"><label>สถานที่</label><select id="ciPlace"></select></div>
     <div class="fg"><label>วันที่</label><input type="date" id="ciDate"></div>
+  </div>
+  <div class="form-row">
+    <div class="fg" style="grid-column:1/-1">
+      <label>พิกัด GPS</label>
+      <div style="display:flex;gap:8px;align-items:center">
+        <input id="ciGps" readonly placeholder="กดปุ่มจับพิกัด →" style="flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;background:var(--bg-alt);color:var(--navy)">
+        <button type="button" class="btn btn-teal" onclick="captureGPS()" style="padding:10px 14px;white-space:nowrap">📡 จับพิกัด</button>
+      </div>
+      <div id="ciGpsStatus" style="font-size:11px;color:var(--text-muted);margin-top:4px"></div>
+    </div>
   </div>
   <div class="form-row">
     <div class="fg" style="grid-column:1/-1"><label>ปัญหาที่พบ</label><textarea id="ciProblem" rows="2" placeholder="เช่น ถนนชำรุด ไฟทางดับ น้ำท่วมขัง"></textarea></div>
@@ -504,6 +516,23 @@ function renderDistrict(){
     ciSelect.appendChild(opt);
   });
 
+  // Plot Walk icon markers on map for checkins with GPS
+  if(window.traffyMap){
+    if(window._checkinMarkers){window._checkinMarkers.forEach(function(m){m.remove()});}
+    window._checkinMarkers=[];
+    checkins.forEach(function(ci){
+      if(!ci.lat||!ci.lng) return;
+      var walkIcon=L.icon({iconUrl:'img/flag-walk.jpg',iconSize:[32,32],iconAnchor:[16,16],popupAnchor:[0,-16],className:'walk-marker'});
+      var mk=L.marker([ci.lat,ci.lng],{icon:walkIcon}).addTo(window.traffyMap);
+      var popupParts=['<div style="font-size:13px;max-width:220px;line-height:1.5">','<b style="color:#14532D">'+E(ci.placeName||'ปักธง')+'</b>','<br><span style="font-size:11px;color:#6B7280">'+E(ci.date||'')+' '+(ci.timestamp?new Date(ci.timestamp).toLocaleTimeString('th-TH',{hour:'2-digit',minute:'2-digit'}):'')+'</span>'];
+      if(ci.problem) popupParts.push('<br><span style="font-size:11px;color:#991B1B">ปัญหา: '+E(ci.problem)+'</span>');
+      if(ci.photos&&ci.photos.length) popupParts.push('<br><img src="'+ci.photos[0]+'" style="width:100%;margin-top:4px;border-radius:4px" alt="">');
+      popupParts.push('</div>');
+      mk.bindPopup(popupParts.join(''),{maxWidth:240});
+      window._checkinMarkers.push(mk);
+    });
+  }
+
   // Check-in log
   var logEl = document.getElementById('checkinLog');
   logEl.textContent = '';
@@ -552,12 +581,47 @@ function renderDistrict(){
       });
       card.appendChild(photosDiv);
     }
+    // Action bar (interactive buttons)
+    var actionBar = document.createElement('div');
+    actionBar.style.cssText = 'display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;align-items:center';
+    // Fly-to button (if GPS)
+    if(ci.lat && ci.lng && window.traffyMap){
+      var flyBtn = document.createElement('button');
+      flyBtn.className = 'btn btn-teal';
+      flyBtn.style.cssText = 'padding:6px 12px;font-size:12px;display:flex;align-items:center;gap:4px';
+      flyBtn.textContent = '📍 บินไปจุดนี้';
+      (function(lat,lng,name){flyBtn.addEventListener('click',function(){
+        window.traffyMap.flyTo([lat,lng],17,{duration:1.5});
+        if(window._checkinMarkers){window._checkinMarkers.forEach(function(m){if(m.getLatLng&&Math.abs(m.getLatLng().lat-lat)<0.0001)m.openPopup()});}
+        document.getElementById('traffyMap').scrollIntoView({behavior:'smooth',block:'center'});
+      })})(ci.lat,ci.lng,ci.placeName);
+      actionBar.appendChild(flyBtn);
+    }
+    // Share/Copy link button
+    var shareBtn = document.createElement('button');
+    shareBtn.className = 'btn btn-p';
+    shareBtn.style.cssText = 'padding:6px 12px;font-size:12px;display:flex;align-items:center;gap:4px';
+    shareBtn.textContent = '📋 แชร์';
+    (function(checkinData){shareBtn.addEventListener('click',function(){shareCheckin(checkinData)})})(ci);
+    actionBar.appendChild(shareBtn);
+    // Open in Google Maps (if GPS)
+    if(ci.lat && ci.lng){
+      var mapsBtn = document.createElement('a');
+      mapsBtn.className = 'btn btn-o';
+      mapsBtn.style.cssText = 'padding:6px 12px;font-size:12px;display:flex;align-items:center;gap:4px;text-decoration:none';
+      mapsBtn.href = 'https://www.google.com/maps?q='+ci.lat+','+ci.lng;
+      mapsBtn.target = '_blank';
+      mapsBtn.textContent = '🗺️ Google Maps';
+      actionBar.appendChild(mapsBtn);
+    }
+    // Delete
     var delBtn = document.createElement('button');
     delBtn.className = 'btn-d no-print';
-    delBtn.style.marginTop = '8px';
+    delBtn.style.cssText = 'margin-left:auto;padding:6px 12px;font-size:12px';
     delBtn.textContent = 'ลบ';
     delBtn.addEventListener('click', function(){ if(confirm('ลบบันทึกนี้?')){removeCheckin(ci.id)} });
-    card.appendChild(delBtn);
+    actionBar.appendChild(delBtn);
+    card.appendChild(actionBar);
     logEl.appendChild(card);
   });
 }
@@ -615,12 +679,17 @@ function doCheckin(){
     problem: document.getElementById('ciProblem').value.trim(),
     need: document.getElementById('ciNeed').value.trim(),
     photos: photos,
+    lat: ciLat,
+    lng: ciLng,
     timestamp: new Date().toISOString()
   });
   D.s('checkins_'+currentDistrict, checkins);
   document.getElementById('ciProblem').value='';
   document.getElementById('ciNeed').value='';
   resetPhotos();
+  ciLat=null;ciLng=null;
+  var gpsEl=document.getElementById('ciGps');if(gpsEl)gpsEl.value='';
+  var gpsStatus=document.getElementById('ciGpsStatus');if(gpsStatus)gpsStatus.textContent='';
   toggleEl('checkinForm');
   renderDistrict();
 }
@@ -656,6 +725,67 @@ function doImportDI(ev){
 }
 
 function toggleEl(id){var el=document.getElementById(id);el.style.display=el.style.display==='none'?'block':'none'}
+
+// === SHARE CHECKIN ===
+function shareCheckin(ci){
+  var text = '🟢 ปักธง — '+E(ci.placeName||'ไม่ระบุ')+'\n';
+  text += '📅 '+ci.date+(ci.timestamp?' '+new Date(ci.timestamp).toLocaleTimeString('th-TH',{hour:'2-digit',minute:'2-digit'}):'')+'\n';
+  text += '📍 เขต'+currentDistrict+'\n';
+  if(ci.problem) text += '⚠️ ปัญหา: '+ci.problem+'\n';
+  if(ci.need) text += '💡 ต้องการ: '+ci.need+'\n';
+  if(ci.lat&&ci.lng) text += '🗺️ https://www.google.com/maps?q='+ci.lat+','+ci.lng+'\n';
+  text += '\n— ส.ก. Navigator by LAS';
+  // Try native share first (mobile)
+  if(navigator.share){
+    navigator.share({title:'ปักธง '+ci.placeName,text:text}).catch(function(){});
+    return;
+  }
+  // Fallback: copy to clipboard
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(function(){
+      showToast('คัดลอกแล้ว — วางใน LINE ได้เลย');
+    }).catch(function(){
+      fallbackCopy(text);
+    });
+  } else {
+    fallbackCopy(text);
+  }
+}
+function fallbackCopy(text){
+  var ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;top:-9999px';
+  document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');showToast('คัดลอกแล้ว — วางใน LINE ได้เลย');}catch(e){showToast('กรุณา copy ข้อความด้วยตนเอง');}
+  document.body.removeChild(ta);
+}
+function showToast(msg){
+  var existing=document.querySelector('.toast-msg');if(existing)existing.remove();
+  var toast=document.createElement('div');toast.className='toast-msg';
+  toast.style.cssText='position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:12px 24px;border-radius:var(--radius);font-size:14px;font-weight:600;z-index:300;box-shadow:0 4px 12px rgba(0,0,0,.2);animation:fadeInUp .3s ease';
+  toast.textContent=msg;
+  document.body.appendChild(toast);
+  setTimeout(function(){toast.style.opacity='0';toast.style.transition='opacity .3s';setTimeout(function(){toast.remove()},300)},2500);
+}
+
+// === GPS CAPTURE ===
+var ciLat=null, ciLng=null;
+function captureGPS(){
+  var statusEl=document.getElementById('ciGpsStatus');
+  var gpsEl=document.getElementById('ciGps');
+  if(!navigator.geolocation){statusEl.textContent='เบราว์เซอร์ไม่รองรับ GPS';statusEl.style.color='var(--red)';return;}
+  statusEl.textContent='กำลังจับพิกัด...';statusEl.style.color='var(--teal)';
+  navigator.geolocation.getCurrentPosition(
+    function(pos){
+      ciLat=pos.coords.latitude;ciLng=pos.coords.longitude;
+      gpsEl.value=ciLat.toFixed(6)+', '+ciLng.toFixed(6);
+      statusEl.textContent='จับพิกัดสำเร็จ (ความแม่นยำ '+Math.round(pos.coords.accuracy)+' เมตร)';
+      statusEl.style.color='var(--green)';
+    },
+    function(err){
+      statusEl.textContent='ไม่สามารถจับพิกัดได้: '+err.message;statusEl.style.color='var(--red)';
+    },
+    {enableHighAccuracy:true,timeout:10000}
+  );
+}
 
 // === PHOTO HANDLING ===
 var ciPhotos = [null, null, null, null];
