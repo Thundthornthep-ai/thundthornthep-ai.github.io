@@ -52,7 +52,7 @@
     {"@type": "Question", "name": "Industrial Estate ให้ประโยชน์อะไรเพิ่มเติมจาก BOI ปกติ?", "acceptedAnswer": {"@type": "Answer", "text": "Industrial Estate ให้: สิทธิถือครองที่ดินในนิคม, One-stop service สำหรับใบอนุญาต, Free Trade Zone (ยกเว้นอากรขาเข้าวัตถุดิบสำหรับ Export), โครงสร้างพื้นฐานพร้อม (สาธารณูปโภค ท่าเรือ สนามบิน) และ Security/Fire protection"}},
     {"@type": "Question", "name": "Exit Strategy ที่ดีที่สุดสำหรับบริษัทต่างชาติในไทยคืออะไร?", "acceptedAnswer": {"@type": "Answer", "text": "ขึ้นกับเป้าหมาย: Trade Sale (ขายให้ Strategic Buyer) เหมาะกับบริษัทที่มี brand/market share ดี, Secondary Sale (ขายให้ PE Fund) เหมาะกับบริษัทที่มี recurring revenue, IPO บน SET/MAI เหมาะกับบริษัทขนาดใหญ่ที่ต้องการ liquidity"}},
     {"@type": "Question", "name": "Work Permit สำหรับผู้บริหารต่างชาติที่ได้ BOI ต่างจากปกติอย่างไร?", "acceptedAnswer": {"@type": "Answer", "text": "BOI-promoted companies ได้รับสิทธิ One-Stop Service สำหรับ Work Permit และ VISA (Non-B) ซึ่งอนุมัติเร็วกว่าช่องทางปกติ และในบางกรณีไม่ต้องยืนยันสัดส่วน 4:1 สำหรับพนักงานระดับผู้บริหาร [T1-Training — ยืนยันกับ BOI]"}},
-    {"@type": "Question", "name": "ถ้าบริษัทต่างชาติไม่ได้ BOI และไม่ได้ FBA License ความเสี่ยงคืออะไร?", "acceptedAnswer": {"@type": "Answer", "text": "โทษอาญาตาม FBA: จำคุกและ/หรือปรับ, คำสั่งหยุดประกอบกิจการ, เพิกถอนทะเบียนบริษัท นอกจากนี้กรรมการและผู้ถือหุ้นอาจรับผิดส่วนตัว [ต้องยืนยันมาตรา]"}},
+    {"@type": "Question", "name": "ถ้าบริษัทต่างชาติไม่ได้ BOI และไม่ได้ FBA License ความเสี่ยงคืออะไร?", "acceptedAnswer": {"@type": "Answer", "text": "โทษอาญาตาม FBA มาตรา 36-37: จำคุกไม่เกิน 3 ปี หรือปรับ 100,000-1,000,000 บาท, คำสั่งหยุดประกอบกิจการ, เพิกถอนทะเบียนบริษัท กรรมการและผู้ถือหุ้นอาจรับผิดส่วนตัว ฝ่าฝืนหลังคำสั่ง: ปรับรายวัน (มาตรา 37)"}},
     {"@type": "Question", "name": "ต้องใช้เวลาและงบประมาณเท่าไหร่ในการตั้งบริษัทต่างชาติในไทยครบถ้วน?", "acceptedAnswer": {"@type": "Answer", "text": "เส้นทาง FBA: 45-90 วัน, ค่าใช้จ่าย 50,000-200,000 บาท (ไม่รวมค่าที่ปรึกษา) | เส้นทาง BOI: 3-6 เดือน, ค่าใช้จ่ายสูงกว่าแต่ได้สิทธิประโยชน์ระยะยาว [T1-Training — ยืนยันกับ DBD/BOI]"}}
   ]
 }
@@ -136,9 +136,9 @@ tr:nth-child(even) td{background:#f8f9fa}
 
 <h3>บทลงโทษ FBA</h3>
 <div class="risk-high">
-  <strong>🔴 โทษอาญา FBA</strong> (พระราชบัญญัติการประกอบธุรกิจของคนต่างด้าว พ.ศ. 2542 [ต้องยืนยันมาตรา 35])<br>
-  • จำคุกไม่เกิน 3 ปี หรือปรับตั้งแต่ 100,000 ถึง 1,000,000 บาท หรือทั้งจำทั้งปรับ [T1-Training — ต้องยืนยัน]<br>
-  • ถ้ายังฝ่าฝืนหลังจากได้รับคำสั่ง: ปรับรายวันเพิ่ม [ต้องยืนยันมาตรา]<br>
+  <strong>🔴 โทษอาญา FBA</strong> (พระราชบัญญัติการประกอบธุรกิจของคนต่างด้าว พ.ศ. 2542 มาตรา 36-37)<br>
+  • จำคุกไม่เกิน 3 ปี หรือปรับตั้งแต่ 100,000 ถึง 1,000,000 บาท หรือทั้งจำทั้งปรับ (มาตรา 36)<br>
+  • ถ้ายังฝ่าฝืนหลังจากได้รับคำสั่ง: ปรับรายวัน วันละ 10,000-50,000 บาท (มาตรา 37)<br>
   • กรณีใช้ Thai Nominee: ทั้งนักลงทุนต่างชาติและผู้ถือหุ้นนอมินีมีความผิดร่วมกัน
 </div>
 
@@ -227,13 +227,13 @@ tr:nth-child(even) td{background:#f8f9fa}
 </div>
 
 <div class="risk-high">
-  <strong>🔴 Risk 2 — PDPA Cross-Border Data Transfer:</strong> ส่งข้อมูลลูกค้าไทยไป HQ ต่างประเทศโดยไม่มี legal basis ตาม PDPA [ต้องยืนยันมาตรา]<br>
+  <strong>🔴 Risk 2 — PDPA Cross-Border Data Transfer:</strong> ส่งข้อมูลลูกค้าไทยไป HQ ต่างประเทศโดยไม่มี legal basis ตาม PDPA มาตรา 28-29<br>
   <strong>Option A:</strong> Standard Contractual Clauses (SCC) กับ HQ<br>
   <strong>Option B:</strong> Consent-based transfer + DPIA สำหรับข้อมูลที่ sensitive
 </div>
 
 <div class="risk-medium">
-  <strong>🟡 Risk 3 — Force Majeure ไม่ครอบคลุม:</strong> สัญญาที่ไม่มี FM Clause ที่ครอบคลุม COVID-19, Flood, Political disruption อาจทำให้ลูกค้าฟ้องไม่ส่งมอบสินค้าได้ — ต้องมี FM Clause ครอบคลุมตามหลักกฎหมายไทย (ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 8 และ มาตรา 219 [ต้องยืนยันมาตรา])</div>
+  <strong>🟡 Risk 3 — Force Majeure ไม่ครอบคลุม:</strong> สัญญาที่ไม่มี FM Clause ที่ครอบคลุม COVID-19, Flood, Political disruption อาจทำให้ลูกค้าฟ้องไม่ส่งมอบสินค้าได้ — ต้องมี FM Clause ครอบคลุมตามหลักกฎหมายไทย (ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 8 ประกอบ มาตรา 219)</div>
 
 <div class="risk-medium">
   <strong>🟡 Risk 4 — ประกันภัยธุรกิจ:</strong> หลายบริษัทต่างชาติมีประกัน HQ แต่ไม่ครอบคลุมการดำเนินงานในไทย ต้องซื้อประกัน Commercial General Liability, Product Liability และ D&amp;O Insurance แยกสำหรับ Thai entity</div>
@@ -263,11 +263,11 @@ tr:nth-child(even) td{background:#f8f9fa}
 <h3>PDPA Compliance สำหรับบริษัทต่างชาติ</h3>
 <table>
   <tr><th>ประเด็น PDPA</th><th>ข้อกำหนด</th><th>สถานะสำหรับต่างชาติ</th></tr>
-  <tr><td>DPO (Data Protection Officer)</td><td>ต้องแต่งตั้งถ้าองค์กรขนาดใหญ่หรือประมวลผล sensitive data [ต้องยืนยันมาตรา 37]</td><td>บริษัทต่างชาติส่วนใหญ่ควรแต่งตั้ง DPO</td></tr>
-  <tr><td>Cross-Border Transfer</td><td>ต้องมี Adequate Protection หรือ SCC [ต้องยืนยันมาตรา]</td><td>⚠️ จำเป็นถ้าส่งข้อมูลกลับ HQ</td></tr>
+  <tr><td>DPO (Data Protection Officer)</td><td>ต้องแต่งตั้งถ้าองค์กรขนาดใหญ่หรือประมวลผล sensitive data (PDPA มาตรา 41)</td><td>บริษัทต่างชาติส่วนใหญ่ควรแต่งตั้ง DPO</td></tr>
+  <tr><td>Cross-Border Transfer</td><td>ต้องมี Adequate Protection หรือ SCC (PDPA มาตรา 28-29)</td><td>⚠️ จำเป็นถ้าส่งข้อมูลกลับ HQ</td></tr>
   <tr><td>Data Subject Rights</td><td>Right to access, correct, delete, object, portability</td><td>ต้องมี Process ตอบสนองใน 30 วัน</td></tr>
   <tr><td>Privacy Notice</td><td>ต้องมีก่อนหรือขณะเก็บข้อมูล</td><td>ต้องมีทั้ง TH &amp; EN สำหรับลูกค้าต่างชาติ</td></tr>
-  <tr><td>Data Breach Notification</td><td>แจ้ง PDPC ภายใน 72 ชั่วโมง [ต้องยืนยันมาตรา]</td><td>ต้องมี Incident Response Plan</td></tr>
+  <tr><td>Data Breach Notification</td><td>แจ้ง สคส. ภายใน 72 ชั่วโมง (PDPA มาตรา 37(4))</td><td>ต้องมี Incident Response Plan</td></tr>
 </table>
 
 <h3>Employment Law — กฎหมายแรงงานที่ต่างชาติมักพลาด</h3>
@@ -298,11 +298,11 @@ tr:nth-child(even) td{background:#f8f9fa}
 <p style="font-size:11px;color:#888;">[T1-Training — รายละเอียด BOI Categories อาจเปลี่ยนแปลง ตรวจสอบล่าสุดที่ boi.go.th]</p>
 
 <h3>Industrial Estate — ทางเลือกสำหรับธุรกิจผลิต/ส่งออก</h3>
-<p>Industrial Estates ภายใต้การนิคมอุตสาหกรรมแห่งประเทศไทย (IEAT) อ้างอิง: พระราชบัญญัติการนิคมอุตสาหกรรมแห่งประเทศไทย พ.ศ. 2522 [ต้องยืนยันมาตรา] ให้ประโยชน์เพิ่มเติม:</p>
+<p>Industrial Estates ภายใต้การนิคมอุตสาหกรรมแห่งประเทศไทย (IEAT) อ้างอิง: พระราชบัญญัติการนิคมอุตสาหกรรมแห่งประเทศไทย พ.ศ. 2522 ให้ประโยชน์เพิ่มเติม:</p>
 <ul>
   <li><strong>IE Zone:</strong> ผลิต แปรรูป — BOI incentives + สาธารณูปโภคพร้อม</li>
   <li><strong>EPZ/FTZ (Export Processing/Free Trade Zone):</strong> ยกเว้นอากรขาเข้าวัตถุดิบสำหรับ Export 100%</li>
-  <li><strong>สิทธิถือที่ดิน:</strong> บริษัทใน IEAT สามารถถือครองที่ดินในนิคมได้ [ต้องยืนยันมาตรา]</li>
+  <li><strong>สิทธิถือที่ดิน:</strong> บริษัทใน IEAT สามารถถือครองที่ดินในนิคมได้ (พ.ร.บ.การนิคมอุตสาหกรรมฯ มาตรา 44)</li>
   <li><strong>Key Estates:</strong> Amata City (Chonburi/Rayong), Eastern Seaboard (Rayong), WHA (Chonburi/Saraburi), Laem Chabang (Chonburi)</li>
 </ul>
 
@@ -432,7 +432,7 @@ tr:nth-child(even) td{background:#f8f9fa}
   <div class="faq-q">Q6: Work Permit สำหรับ BOI Companies ต่างจากปกติอย่างไร?</div>
   <div class="faq-a">BOI Companies ใช้บริการ One-Stop Service ที่ BOI อาคารจัตุรัสจามจุรี ซึ่งออก WP + Non-B VISA พร้อมกันในวันเดียว อนุมัติเร็วกว่าช่องทางปกติ และในบางกรณีผ่อนปรนสัดส่วน 4:1 สำหรับ key executives [T1-Training — ยืนยันกับ BOI ก่อน]</div>
   <div class="faq-q">Q7: ถ้าไม่มี FBA License/BOI ความเสี่ยงทางอาญาคืออะไร?</div>
-  <div class="faq-a">โทษตาม พ.ร.บ.FBA [ต้องยืนยันมาตรา 35]: จำคุก + ปรับ + คำสั่งหยุดกิจการ + เพิกถอนทะเบียน กรรมการและผู้บริหารอาจรับผิดส่วนตัวด้วย ถ้ายังฝ่าฝืนหลังคำสั่ง: ปรับรายวันเพิ่มเติม [ต้องยืนยันมาตรา]</div>
+  <div class="faq-a">โทษตาม พ.ร.บ.การประกอบธุรกิจของคนต่างด้าว พ.ศ. 2542 มาตรา 36-37: จำคุกไม่เกิน 3 ปี หรือปรับ 100,000-1,000,000 บาท + คำสั่งหยุดกิจการ + เพิกถอนทะเบียน กรรมการและผู้บริหารอาจรับผิดส่วนตัวด้วย ถ้ายังฝ่าฝืนหลังคำสั่ง: ปรับรายวัน วันละ 10,000-50,000 บาท (มาตรา 37)</div>
   <div class="faq-q">Q8: ใช้เวลาและงบประมาณเท่าไหร่ในการตั้งบริษัทต่างชาติที่ถูกต้องครบถ้วน?</div>
   <div class="faq-a">FBA Route: 45-90 วัน ค่าใช้จ่ายรัฐ 50,000-100,000 บาท + ค่าที่ปรึกษา | BOI Route: 3-6 เดือน ค่าใช้จ่ายสูงกว่าแต่ได้สิทธิระยะยาวคุ้มค่า ค่าที่ปรึกษาครบ Package (LAS SSCU): ขึ้นกับความซับซ้อน ปรึกษา LAS เพื่อ Quotation [T1-Training — ตัวเลขนี้อาจเปลี่ยนแปลง]</div>
 </div>
@@ -482,7 +482,7 @@ tr:nth-child(even) td{background:#f8f9fa}
 
 <hr style="border:none;border-top:1px solid #ddd;margin:32px 0">
 <p style="font-size:12px;color:#777;line-height:1.7;max-width:960px;margin:0 auto;padding:0 28px">
-  <strong>ข้อจำกัดความรับผิด (Disclaimer):</strong> บทความนี้จัดทำขึ้นเพื่อวัตถุประสงค์ทางวิชาการและการให้ข้อมูลแก่สาธารณชนเท่านั้น ไม่ถือเป็นคำปรึกษาทางกฎหมายสำหรับกรณีเฉพาะใด ข้อมูลกฎหมายในบทความนี้อ้างอิงจากข้อมูล T1-Training ซึ่งอาจมีการเปลี่ยนแปลง มาตราที่มีเครื่องหมาย [ต้องยืนยันมาตรา] ต้องผ่าน PLV Verification ก่อนอ้างอิงในทางกฎหมาย ผู้อ่านควรปรึกษาทนายความที่มีใบอนุญาตก่อนตัดสินใจทางกฎหมาย | Legal Advance Solution Co., Ltd. ไม่รับผิดชอบต่อการกระทำที่อาศัยข้อมูลในบทความนี้ | This article is for academic purposes only and does not constitute legal advice.
+  <strong>ข้อจำกัดความรับผิด (Disclaimer):</strong> บทความนี้จัดทำขึ้นเพื่อวัตถุประสงค์ทางวิชาการและการให้ข้อมูลแก่สาธารณชนเท่านั้น ไม่ถือเป็นคำปรึกษาทางกฎหมายสำหรับกรณีเฉพาะใด ข้อมูลกฎหมายในบทความนี้อ้างอิงจากกฎหมายที่บังคับใช้ ณ วันที่เผยแพร่ ซึ่งอาจมีการแก้ไขเปลี่ยนแปลง ผู้อ่านควรปรึกษาทนายความที่มีใบอนุญาตก่อนตัดสินใจทางกฎหมาย | Legal Advance Solution Co., Ltd. ไม่รับผิดชอบต่อการกระทำที่อาศัยข้อมูลในบทความนี้ | This article is for academic purposes only and does not constitute legal advice.
 </p>
 
 <script src="/js/legal-links.js"></script>
