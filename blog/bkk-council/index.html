@@ -1785,7 +1785,7 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
           var icon=L.divIcon({className:'',html:'<div style="width:14px;height:14px;border-radius:50%;background:'+color+';border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.3);cursor:pointer"></div>',iconSize:[14,14],iconAnchor:[7,7]});
           var marker=L.marker([lat,lng],{icon:icon});
           var pType=Array.isArray(f.properties.problem_type_fondue)?f.properties.problem_type_fondue.join(', '):f.properties.problem_type_fondue;
-          var caseUrl=f.properties.ticket_id?'https://fondue.traffy.in.th/report/'+f.properties.ticket_id:'';
+          var caseUrl=f.properties.ticket_id?'https://bangkok.traffy.in.th/detail?ticketID='+f.properties.ticket_id:'';
           var popupParts=['<div style="font-size:13px;max-width:240px;line-height:1.5">','<b>'+E(pType||'ไม่ระบุ')+'</b>','<br><span style="font-size:11px;color:#6B7280">'+E(f.properties.address||'')+'</span>'];
           if(f.properties.photo_url)popupParts.push('<br><img src="'+E(f.properties.photo_url)+'" style="width:100%;margin-top:6px;border-radius:4px" alt="">');
           if(f.properties.description)popupParts.push('<br><span style="font-size:11px;color:#374151">'+E(f.properties.description.substring(0,80))+(f.properties.description.length>80?'...':'')+'</span>');
@@ -1854,7 +1854,7 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
         items.slice(0,5).forEach(function(f){
           var p=f.properties;
           var pType=Array.isArray(p.problem_type_fondue)?p.problem_type_fondue.join(', '):p.problem_type_fondue;
-          var traffyUrl=p.ticket_id?'https://fondue.traffy.in.th/report/'+p.ticket_id:'';
+          var traffyUrl=p.ticket_id?'https://bangkok.traffy.in.th/detail?ticketID='+p.ticket_id:'';
           var co=f.geometry&&f.geometry.coordinates;
           var lat=co?co[1]:null,lng=co?co[0]:null;
           var row=document.createElement('div');
@@ -2371,8 +2371,7 @@ function setSiteLang(lang) {
 /* Active button */
 #cursorPicker button.active-cursor{border-color:#C9A96E !important;box-shadow:0 0 8px rgba(201,169,110,.5)}
 /* Hide real cursor in custom mode */
-.custom-cursor,.custom-cursor *{cursor:none !important}
-.custom-cursor a,.custom-cursor button,.custom-cursor select,.custom-cursor input,.custom-cursor textarea,.custom-cursor label{cursor:none !important}
+.custom-cursor{cursor:none}.custom-cursor *{cursor:none}.custom-cursor .leaflet-container,.custom-cursor .leaflet-container *{cursor:grab !important}.custom-cursor .leaflet-dragging .leaflet-container,.custom-cursor .leaflet-dragging .leaflet-container *{cursor:grabbing !important}
 </style>
 
 <script>

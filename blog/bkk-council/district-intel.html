@@ -361,14 +361,19 @@ function selectDistrict(name){
   document.getElementById('districtOfficeLink').href='https://webportal.bangkok.go.th/'+slug;
   document.getElementById('districtOfficeName').textContent='สำนักงานเขต'+name;
   renderDistrict();
-  fetchTraffy();
+  // Delay fetchTraffy to ensure map container is visible + sized correctly
+  setTimeout(function(){
+    fetchTraffy();
+    // Fix Leaflet map size after container becomes visible
+    if(window.traffyMap) setTimeout(function(){ window.traffyMap.invalidateSize(); }, 300);
+  }, 100);
 }
 
 // === TRAFFY FONDUE API + MAP ===
 var traffyMap=null,traffyMarkers=[];
 function initTraffyMap(){try{if(traffyMap){traffyMarkers.forEach(function(m){m.remove()});traffyMap.remove();traffyMap=null;}}catch(e){}traffyMarkers=[];var container=document.getElementById('traffyMap');if(!container)return;container.textContent='';container._leaflet_id=null;traffyMap=L.map('traffyMap',{zoomControl:true,scrollWheelZoom:true}).setView([13.756,100.502],12);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'OpenStreetMap',maxZoom:19}).addTo(traffyMap);}
 function flyToIssue(lat,lng){if(!traffyMap)return;traffyMap.flyTo([lat,lng],17,{duration:1.5});traffyMarkers.forEach(function(m){if(Math.abs(m.getLatLng().lat-lat)<0.0001&&Math.abs(m.getLatLng().lng-lng)<0.0001)m.openPopup();});document.getElementById('traffyMap').scrollIntoView({behavior:'smooth',block:'center'});}
-function getTraffyCaseUrl(p){if(p.ticket_id)return'https://fondue.traffy.in.th/report/'+p.ticket_id;if(p.message_id)return'https://fondue.traffy.in.th/report/'+p.message_id;return'https://bangkok.traffy.in.th/?district='+encodeURIComponent(currentDistrict);}
+function getTraffyCaseUrl(p){if(p.ticket_id)return'https://bangkok.traffy.in.th/detail?ticketID='+p.ticket_id;if(p.message_id)return'https://bangkok.traffy.in.th/detail?ticketID='+p.message_id;return'https://bangkok.traffy.in.th/?district='+encodeURIComponent(currentDistrict);}
 function getTraffyPhoto(p){return p.photo_url||p.photo||null;}
 function fetchTraffy(){
   if(!currentDistrict)return;
@@ -603,6 +608,21 @@ function renderDistrict(){
     hdr.appendChild(nameEl);
     hdr.appendChild(dateEl);
     card.appendChild(hdr);
+    // GPS verification badge
+    if(ci.lat && ci.lng){
+      var gpsBadge = document.createElement('div');
+      gpsBadge.style.cssText = 'display:flex;align-items:center;gap:6px;font-size:11px;margin-bottom:6px;padding:4px 8px;border-radius:6px;';
+      var acc = ci.gpsAccuracy || 999;
+      if(acc <= 30){ gpsBadge.style.background='#D1FAE5';gpsBadge.style.color='#14532D';gpsBadge.textContent='✅ GPS ยืนยัน (±'+acc+'m) — '+ci.lat.toFixed(4)+', '+ci.lng.toFixed(4); }
+      else if(acc <= 100){ gpsBadge.style.background='#FEF3C7';gpsBadge.style.color='#92400E';gpsBadge.textContent='⚠️ GPS ±'+acc+'m — '+ci.lat.toFixed(4)+', '+ci.lng.toFixed(4); }
+      else { gpsBadge.style.background='#FEE2E2';gpsBadge.style.color='#991B1B';gpsBadge.textContent='❌ GPS ไม่แม่นยำ (±'+acc+'m)'; }
+      card.appendChild(gpsBadge);
+    } else {
+      var noBadge = document.createElement('div');
+      noBadge.style.cssText = 'font-size:11px;color:var(--text-muted);margin-bottom:6px;padding:4px 8px;background:var(--bg-alt);border-radius:6px';
+      noBadge.textContent = '📡 ไม่มีข้อมูล GPS — ไม่ได้จับพิกัด';
+      card.appendChild(noBadge);
+    }
     if(ci.problem){
       var prob = document.createElement('div');
       prob.className = 'checkin-problem';
@@ -732,13 +752,15 @@ function doCheckin(){
     photos: photos,
     lat: ciLat,
     lng: ciLng,
+    gpsAccuracy: ciGpsAccuracy,
     timestamp: new Date().toISOString()
   });
   D.s('checkins_'+currentDistrict, checkins);
   document.getElementById('ciProblem').value='';
   document.getElementById('ciNeed').value='';
   resetPhotos();
-  ciLat=null;ciLng=null;
+  ciLat=null;ciLng=null;ciGpsAccuracy=null;
+  if(window._gpsPreviewMarker){window._gpsPreviewMarker.remove();window._gpsPreviewMarker=null;}
   var gpsEl=document.getElementById('ciGps');if(gpsEl)gpsEl.value='';
   var gpsStatus=document.getElementById('ciGpsStatus');if(gpsStatus)gpsStatus.textContent='';
   toggleEl('checkinForm');
@@ -818,23 +840,32 @@ function showToast(msg){
 }
 
 // === GPS CAPTURE ===
-var ciLat=null, ciLng=null;
+var ciLat=null, ciLng=null, ciGpsAccuracy=null;
 function captureGPS(){
   var statusEl=document.getElementById('ciGpsStatus');
   var gpsEl=document.getElementById('ciGps');
   if(!navigator.geolocation){statusEl.textContent='เบราว์เซอร์ไม่รองรับ GPS';statusEl.style.color='var(--red)';return;}
-  statusEl.textContent='กำลังจับพิกัด...';statusEl.style.color='var(--teal)';
+  statusEl.textContent='กำลังจับพิกัด GPS...';statusEl.style.color='var(--teal)';
   navigator.geolocation.getCurrentPosition(
     function(pos){
-      ciLat=pos.coords.latitude;ciLng=pos.coords.longitude;
+      ciLat=pos.coords.latitude;ciLng=pos.coords.longitude;ciGpsAccuracy=Math.round(pos.coords.accuracy);
       gpsEl.value=ciLat.toFixed(6)+', '+ciLng.toFixed(6);
-      statusEl.textContent='จับพิกัดสำเร็จ (ความแม่นยำ '+Math.round(pos.coords.accuracy)+' เมตร)';
-      statusEl.style.color='var(--green)';
+      var verifyLevel = ciGpsAccuracy <= 30 ? '✅ ยืนยันได้ (แม่นยำสูง)' : ciGpsAccuracy <= 100 ? '⚠️ พอใช้ได้' : '❌ ไม่แม่นยำ — ลองจับใหม่';
+      var verifyColor = ciGpsAccuracy <= 30 ? 'var(--green)' : ciGpsAccuracy <= 100 ? 'var(--orange)' : 'var(--red)';
+      statusEl.style.color=verifyColor;
+      statusEl.textContent='ความแม่นยำ '+ciGpsAccuracy+' เมตร — '+verifyLevel;
+      // Preview on map
+      if(window.traffyMap){
+        if(window._gpsPreviewMarker) window._gpsPreviewMarker.remove();
+        window._gpsPreviewMarker = L.circleMarker([ciLat,ciLng],{radius:8,fillColor:'#C9A96E',color:'#fff',weight:2,fillOpacity:0.9}).addTo(window.traffyMap);
+        window._gpsPreviewMarker.bindPopup('📡 ตำแหน่งปัจจุบัน (±'+ciGpsAccuracy+'m)').openPopup();
+        window.traffyMap.flyTo([ciLat,ciLng],16,{duration:1});
+      }
     },
     function(err){
-      statusEl.textContent='ไม่สามารถจับพิกัดได้: '+err.message;statusEl.style.color='var(--red)';
+      statusEl.textContent='จับพิกัดไม่ได้ — กรุณาเปิด Location บนมือถือ';statusEl.style.color='var(--red)';
     },
-    {enableHighAccuracy:true,timeout:10000}
+    {enableHighAccuracy:true,timeout:15000,maximumAge:0}
   );
 }
 
@@ -1027,7 +1058,7 @@ function setSiteLang(lang) {
 @keyframes walkArm{from{transform:rotate(-25deg)}to{transform:rotate(25deg)}}@keyframes walkLeg{from{transform:rotate(-20deg)}to{transform:rotate(20deg)}}@keyframes walkBounce{from{transform:translateY(0)}to{transform:translateY(-1.5px)}}
 @keyframes runArm{from{transform:rotate(-40deg)}to{transform:rotate(40deg)}}@keyframes runLeg{from{transform:rotate(-35deg)}to{transform:rotate(35deg)}}@keyframes runBounce{from{transform:translateY(0)}to{transform:translateY(-2.5px)}}
 #cursorPicker button.active-cursor{border-color:#C9A96E !important;box-shadow:0 0 8px rgba(201,169,110,.5)}
-.custom-cursor,.custom-cursor *{cursor:none !important}.custom-cursor a,.custom-cursor button,.custom-cursor select,.custom-cursor input,.custom-cursor textarea,.custom-cursor label{cursor:none !important}
+.custom-cursor{cursor:none}.custom-cursor *{cursor:none}.custom-cursor .leaflet-container,.custom-cursor .leaflet-container *{cursor:grab !important}.custom-cursor .leaflet-dragging .leaflet-container,.custom-cursor .leaflet-dragging .leaflet-container *{cursor:grabbing !important}
 </style>
 <script>
 var walkSVG='<svg viewBox="0 0 40 48" xmlns="http://www.w3.org/2000/svg"><g class="body-bounce"><circle cx="20" cy="8" r="5" fill="#2E7D32"/><line x1="20" y1="13" x2="20" y2="28" stroke="#2E7D32" stroke-width="3.5" stroke-linecap="round"/><line class="limb-left-arm" x1="20" y1="16" x2="12" y2="24" stroke="#2E7D32" stroke-width="2.5" stroke-linecap="round" style="transform-origin:20px 16px"/><line class="limb-right-arm" x1="20" y1="16" x2="28" y2="24" stroke="#2E7D32" stroke-width="2.5" stroke-linecap="round" style="transform-origin:20px 16px"/><line class="limb-left-leg" x1="20" y1="28" x2="13" y2="40" stroke="#2E7D32" stroke-width="3" stroke-linecap="round" style="transform-origin:20px 28px"/><line class="limb-right-leg" x1="20" y1="28" x2="27" y2="40" stroke="#2E7D32" stroke-width="3" stroke-linecap="round" style="transform-origin:20px 28px"/></g></svg>';
