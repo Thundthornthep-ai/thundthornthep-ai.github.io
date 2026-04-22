@@ -19,7 +19,6 @@
 <!-- [[THEME-MIGRATION-v1]] -->
 <link rel="stylesheet" href="/css/wiki-theme.css">
 <!-- [[/THEME-MIGRATION-v1]] -->
-<link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#1B2A4A">
 <style>
 :root{--bg:#FAFAFA;--bg-alt:#F5F5F5;--card:#FFF;--text:#1A1A2E;--text-secondary:#6B7280;--text-muted:#9CA3AF;--navy:#1B2A4A;--navy-dark:#0d1f33;--gold:#C9A96E;--teal:#0D9488;--green:#22C55E;--green-bg:#D1FAE5;--red:#EF4444;--red-bg:#FEE2E2;--red-dark:#991B1B;--orange:#E67E22;--orange-bg:#FEF3C7;--blue:#2563EB;--blue-bg:#DBEAFE;--border:#E5E7EB;--border-light:#F3F4F6;--shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);--shadow-md:0 4px 12px rgba(0,0,0,.06);--radius:12px;--radius-sm:8px;--max-w:960px;--transition:.2s ease}
@@ -119,67 +118,71 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
     </div>
     <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
       <select id="distSel" class="fg" style="padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;font-family:'Sarabun',sans-serif;max-width:320px" onchange="D.set('b',+this.value);render()">
-        <optgroup label="820,000 บาท">
+        <optgroup label="820,000 บาท (5 เขต)">
           <option value="820000">สัมพันธวงศ์</option>
           <option value="820000">ป้อมปราบศัตรูพ่าย</option>
           <option value="820000">บางรัก</option>
           <option value="820000">ปทุมวัน</option>
           <option value="820000">พระนคร</option>
         </optgroup>
-        <optgroup label="900,000 บาท">
+        <optgroup label="900,000 บาท (11 เขต)">
           <option value="900000" selected>ราชเทวี</option>
           <option value="900000">พญาไท</option>
+          <option value="900000">คลองสาน</option>
+          <option value="900000">บางกอกใหญ่</option>
+          <option value="900000">ห้วยขวาง</option>
           <option value="900000">วัฒนา</option>
-          <option value="900000">คลองเตย</option>
-          <option value="900000">สาทร</option>
-          <option value="900000">บางคอแหลม</option>
-          <option value="900000">บึงกุ่ม</option>
+          <option value="900000">ราษฎร์บูรณะ</option>
           <option value="900000">ทุ่งครุ</option>
-          <option value="900000">ดุสิต</option>
-          <option value="900000">ทวีวัฒนา</option>
+          <option value="900000">คลองเตย</option>
+          <option value="900000">ยานนาวา</option>
+          <option value="900000">สาทร</option>
         </optgroup>
-        <optgroup label="1,000,000 บาท">
+        <optgroup label="1,000,000 บาท (18 เขต)">
           <option value="1000000">บางพลัด</option>
           <option value="1000000">สะพานสูง</option>
-          <option value="1000000">ลาดพร้าว</option>
-          <option value="1000000">ธนบุรี</option>
-          <option value="1000000">คลองสาน</option>
-          <option value="1000000">จอมทอง</option>
-          <option value="1000000">ห้วยขวาง</option>
-          <option value="1000000">ยานนาวา</option>
-          <option value="1000000">ตลิ่งชัน</option>
-          <option value="1000000">สวนหลวง</option>
+          <option value="1000000">ทวีวัฒนา</option>
+          <option value="1000000">บางบอน</option>
+          <option value="1000000">คันนายาว</option>
           <option value="1000000">วังทองหลาง</option>
+          <option value="1000000">บางคอแหลม</option>
+          <option value="1000000">บางกอกน้อย</option>
+          <option value="1000000">พระโขนง</option>
+          <option value="1000000">หลักสี่</option>
+          <option value="1000000">ดินแดง</option>
+          <option value="1000000">บางนา</option>
+          <option value="1000000">ลาดพร้าว</option>
+          <option value="1000000">ตลิ่งชัน</option>
+          <option value="1000000">ดุสิต</option>
+          <option value="1000000">ธนบุรี</option>
+          <option value="1000000">มีนบุรี</option>
+          <option value="1000000">สวนหลวง</option>
         </optgroup>
-        <optgroup label="1,050,000 บาท">
+        <optgroup label="1,050,000 บาท (8 เขต)">
           <option value="1050000">ภาษีเจริญ</option>
           <option value="1050000">บางซื่อ</option>
-          <option value="1050000">จตุจักร</option>
+          <option value="1050000">บึงกุ่ม</option>
+          <option value="1050000">บางกะปิ</option>
           <option value="1050000">หนองแขม</option>
-          <option value="1050000">พระโขนง</option>
-          <option value="1050000">บางนา</option>
-          <option value="1050000">ราษฎร์บูรณะ</option>
-          <option value="1050000">ดินแดง</option>
-          <option value="1050000">คันนายาว</option>
-          <option value="1050000">บางบอน</option>
+          <option value="1050000">จอมทอง</option>
+          <option value="1050000">หนองจอก</option>
+          <option value="1050000">จตุจักร</option>
         </optgroup>
-        <optgroup label="1,150,000 บาท">
+        <optgroup label="1,150,000 บาท (8 เขต)">
+          <option value="1150000">บางขุนเทียน</option>
+          <option value="1150000">คลองสามวา</option>
+          <option value="1150000">ลาดกระบัง</option>
+          <option value="1150000">ดอนเมือง</option>
+          <option value="1150000">ประเวศ</option>
+          <option value="1150000">สายไหม</option>
           <option value="1150000">บางเขน</option>
           <option value="1150000">บางแค</option>
-          <option value="1150000">ดอนเมือง</option>
-          <option value="1150000">สายไหม</option>
-          <option value="1150000">มีนบุรี</option>
-          <option value="1150000">หนองจอก</option>
-          <option value="1150000">ลาดกระบัง</option>
-          <option value="1150000">บางกอกน้อย</option>
-          <option value="1150000">หลักสี่</option>
-          <option value="1150000">บางขุนเทียน</option>
         </optgroup>
       </select>
       <div class="bb-pct" id="P">0%</div>
     </div>
   </div>
-  <div class="aw" style="margin-top:10px;margin-bottom:0">⚠️ วงเงินจากประกาศ กกต. เลือกตั้ง 2565 — รอประกาศใหม่สำหรับเลือกตั้ง 2569</div>
+  <div class="aw aw-info" style="margin-top:10px;margin-bottom:0">✓ วงเงินตาม <strong>ประกาศ ผอ.กกต.กทม. ลง 25 พ.ย. 2564</strong> — ยังมีผลใช้บังคับต่อไปจนกว่าจะมีประกาศกำหนดใหม่ (ข้อ 5 ของประกาศ) ยืนยันโดยข่าว กกต. 243/2569 ลง 10 เม.ย. 2569</div>
   <div class="bb-track"><div class="bb-fill" id="F" style="width:0%;background:var(--green)"></div></div>
   <div class="bb-alert" id="A"></div>
 </div>
@@ -211,7 +214,7 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
   <div class="btn-row no-print"><button class="btn btn-p" onclick="toggleForm('tf')">+ เพิ่มทีมงาน</button></div>
   <div id="tf" style="display:none;margin-bottom:16px;padding:16px;background:var(--card);border:1px solid var(--gold);border-radius:var(--radius)">
     <div class="form-row"><div class="fg"><label>ชื่อ-สกุล</label><input id="tn"></div><div class="fg"><label>หน้าที่</label><input id="tr"></div></div>
-    <div class="form-row"><div class="fg"><label>ค่าตอบแทน/วัน</label><input type="number" id="tp"></div><div class="fg"><label>วันเริ่ม</label><input type="date" id="ts"></div></div>
+    <div class="form-row"><div class="fg"><label>ค่าตอบแทน/วัน</label><input type="number" id="tp" min="0" step="1"></div><div class="fg"><label>วันเริ่ม</label><input type="date" id="ts"></div></div>
     <div class="btn-row" style="margin-top:12px"><button class="btn btn-g" onclick="addTeam()">บันทึก</button><button class="btn btn-o" onclick="toggleForm('tf')">ยกเลิก</button></div>
   </div>
   <div id="tT"></div>
@@ -221,7 +224,7 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
   <div class="btn-row no-print"><button class="btn btn-p" onclick="toggleForm('vf')">+ เพิ่มรถ</button></div>
   <div id="vf" style="display:none;margin-bottom:16px;padding:16px;background:var(--card);border:1px solid var(--gold);border-radius:var(--radius)">
     <div class="form-row"><div class="fg"><label>ทะเบียน</label><input id="vp"></div><div class="fg"><label>ประเภท</label><select id="vt"><option>รถเก๋ง</option><option>รถกระบะ</option><option>รถตู้</option><option>มอเตอร์ไซค์</option><option>อื่นๆ</option></select></div></div>
-    <div class="form-row"><div class="fg"><label>ค่าเช่า/วัน</label><input type="number" id="vc"></div><div class="fg"><label>หมายเหตุ</label><input id="vn"></div></div>
+    <div class="form-row"><div class="fg"><label>ค่าเช่า/วัน</label><input type="number" id="vc" min="0" step="1"></div><div class="fg"><label>หมายเหตุ</label><input id="vn"></div></div>
     <div class="btn-row" style="margin-top:12px"><button class="btn btn-g" onclick="addVeh()">บันทึก</button><button class="btn btn-o" onclick="toggleForm('vf')">ยกเลิก</button></div>
   </div>
   <div id="vT"></div>
@@ -231,8 +234,8 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
   <div class="aw">ขนาด: แผ่นป้ายไม่เกิน 130×245 ซม. / ประกาศ A3 — จำนวน: ป้าย ≤5× หน่วยเลือกตั้ง / ประกาศ ≤10× หน่วย</div>
   <div class="btn-row no-print"><button class="btn btn-p" onclick="toggleForm('sf')">+ เพิ่มป้าย</button></div>
   <div id="sf" style="display:none;margin-bottom:16px;padding:16px;background:var(--card);border:1px solid var(--gold);border-radius:var(--radius)">
-    <div class="form-row"><div class="fg"><label>ประเภท</label><select id="sty"><option>แผ่นป้าย (130×245)</option><option>ประกาศ A3</option><option>อื่นๆ</option></select></div><div class="fg"><label>จำนวน</label><input type="number" id="sq"></div></div>
-    <div class="form-row"><div class="fg"><label>สถานที่ติด</label><input id="sl"></div><div class="fg"><label>ราคารวม</label><input type="number" id="sc"></div></div>
+    <div class="form-row"><div class="fg"><label>ประเภท</label><select id="sty"><option>แผ่นป้าย (130×245)</option><option>ประกาศ A3</option><option>อื่นๆ</option></select></div><div class="fg"><label>จำนวน</label><input type="number" id="sq" min="1" step="1"></div></div>
+    <div class="form-row"><div class="fg"><label>สถานที่ติด</label><input id="sl"></div><div class="fg"><label>ราคารวม</label><input type="number" id="sc" min="0" step="1"></div></div>
     <div class="btn-row" style="margin-top:12px"><button class="btn btn-g" onclick="addSign()">บันทึก</button><button class="btn btn-o" onclick="toggleForm('sf')">ยกเลิก</button></div>
   </div>
   <div id="sT2"></div>
@@ -484,7 +487,7 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
     <div class="form-row"><div class="fg"><label>ประเภท</label><select id="xt"><option value="expense">รายจ่าย</option><option value="income">รายรับ</option></select></div><div class="fg"><label>วันที่</label><input type="date" id="xd"></div></div>
     <div class="form-row">
       <div class="fg"><label>หมวดค่าใช้จ่าย (12 ประเภท กกต.)</label><select id="xc"></select></div>
-      <div class="fg"><label>จำนวนเงิน (บาท)</label><input type="number" id="xa" step="0.01"></div>
+      <div class="fg"><label>จำนวนเงิน (บาท)</label><input type="number" id="xa" min="0" step="0.01"></div>
     </div>
     <div class="form-row"><div class="fg" style="grid-column:1/-1"><label>รายละเอียด</label><input id="xm" placeholder="เช่น ค่าจ้างนาย A ติดป้าย 5 จุด"></div></div>
     <div class="form-row"><div class="fg"><label>หมายเลขเอกสาร/ใบเสร็จ</label><input id="xdn" placeholder="เช่น ใบเสร็จ 001"></div><div class="fg"><label>ชื่อผู้รับเงิน</label><input id="xpy" placeholder="ชื่อผู้รับเงิน/บริษัท"></div></div>
@@ -527,13 +530,15 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
         <tr><td><strong>พ.ร.บ. เลือกตั้งท้องถิ่น 2562</strong></td><td><span class="badge badge-navy">ม.61(1)(2)</span></td><td>นิยาม "ค่าใช้จ่ายเลือกตั้ง" รวมค่าใช้จ่ายที่<strong>บุคคลอื่นจ่าย</strong>หรือทรัพย์สินที่ให้ใช้โดยไม่คิดค่าตอบแทน หากผู้สมัคร<u>รับรู้/ยินยอม</u></td><td>16 เม.ย. 2562</td></tr>
         <tr><td><strong>พ.ร.บ. เลือกตั้งท้องถิ่น 2562</strong></td><td><span class="badge badge-navy">ม.64</span></td><td>ระยะเวลาหาเสียง · <strong>ครบวาระ</strong> = เริ่มได้ 180 วันก่อนครบวาระ ถึง 18:00 น. ก่อนวันเลือกตั้ง</td><td>16 เม.ย. 2562</td></tr>
         <tr><td><strong>พ.ร.บ. เลือกตั้งท้องถิ่น 2562</strong></td><td><span class="badge badge-red">ม.65</span></td><td>ข้อห้ามหาเสียง (ให้ทรัพย์สิน · จัดเลี้ยง · โฆษณามหรสพ ฯลฯ) · <strong>ครบวาระ</strong> = ห้ามก่อนวันครบวาระ <u>90 วัน</u> · (1)(2) = ความผิดมูลฐาน ปปง.</td><td>16 เม.ย. 2562</td></tr>
-        <tr><td><strong>พ.ร.บ. เลือกตั้งท้องถิ่น 2562</strong></td><td><span class="badge badge-navy">ม.109</span></td><td>ผู้สมัครต้องยื่นบัญชีรายรับ-รายจ่ายในการเลือกตั้ง ภายใน <strong>90 วัน</strong>หลังวันเลือกตั้ง</td><td>16 เม.ย. 2562</td></tr>
+        <tr><td><strong>พ.ร.บ. เลือกตั้งท้องถิ่น 2562</strong></td><td><span class="badge badge-navy">ม.62</span></td><td>ผู้สมัครต้องยื่นบัญชีรายรับ-รายจ่ายในการเลือกตั้งพร้อมหลักฐาน ต่อ ผอ.กกต.จังหวัด ภายใน <strong>90 วัน</strong> หลังวันเลือกตั้ง (แบบ ส.ถ./ผ.ถ. 1/13)</td><td>16 เม.ย. 2562</td></tr>
+        <tr><td><strong>พ.ร.บ. เลือกตั้งท้องถิ่น 2562</strong></td><td><span class="badge badge-red">ม.63</span></td><td><strong>ห้ามจัดงานรื่นเริง/มหรสพ/การละเล่น</strong> ในช่วง 180 วันก่อนครบวาระ จนถึงวันเลือกตั้ง (กรณีครบวาระ) หรือตั้งแต่วันตำแหน่งว่างจนถึงวันเลือกตั้ง (กรณีอื่น)</td><td>16 เม.ย. 2562</td></tr>
+        <tr><td><strong>ระเบียบ กกต. ว่าด้วยวิธีการหาเสียงและลักษณะต้องห้ามฯ 2563</strong></td><td><span class="badge badge-gold">ข้อ 6–11</span></td><td><strong>หาเสียงอิเล็กทรอนิกส์</strong> (Social media / Website / Email / SMS): ต้องแจ้งรายละเอียดการใช้สื่ออิเล็กทรอนิกส์ต่อ ผอ.กกต. ภายใน <strong>7 วัน</strong> ก่อนวันเลือกตั้ง + ระบุชื่อผู้สมัคร/หมายเลข/ผู้จัดทำในสื่อทุกชิ้น</td><td>2563</td></tr>
         <tr><td><strong>พ.ร.บ. เลือกตั้งท้องถิ่น 2562</strong></td><td><span class="badge badge-red">ม.127</span></td><td>โทษอาญา: <strong>จำคุก 1–10 ปี</strong> ปรับ 20,000–200,000 บาท กรณีฝ่าฝืนข้อห้ามค่าใช้จ่าย</td><td>16 เม.ย. 2562</td></tr>
         <tr><td><strong>พ.ร.บ. เลือกตั้งท้องถิ่น 2562</strong></td><td><span class="badge badge-red">ม.128</span></td><td>โทษ<strong>ชดใช้ค่าใช้จ่าย</strong>การเลือกตั้งใหม่ หากถูกเพิกถอนสิทธิเลือกตั้ง</td><td>16 เม.ย. 2562</td></tr>
         <tr><td><strong>ระเบียบ กกต. ว่าด้วยการเลือกตั้งสมาชิกสภาท้องถิ่น พ.ศ. 2562</strong></td><td><span class="badge badge-gold">ข้อ 230</span></td><td><strong>กำหนดรอบคำนวณ:</strong> กรณี<u>ลาออก/ถูกสั่งพ้นตำแหน่ง</u> = นับตั้งแต่วันตำแหน่งว่าง <strong>ไม่ใช่ 180 วันก่อนวาระ</strong></td><td>บังคับใช้พร้อม พ.ร.บ. 2562</td></tr>
         <tr><td><strong>ประกาศ กกต. เรื่อง ประเภทของค่าใช้จ่ายในการเลือกตั้งสมาชิกสภาท้องถิ่น พ.ศ. 2563</strong></td><td><span class="badge badge-gold">ข้อ 3 (12 ประเภท)</span></td><td>12 ประเภทค่าใช้จ่าย: ค่าโฆษณา/ป้าย/สื่อ · ค่าเช่าพื้นที่ · ค่ายานพาหนะ · ค่าบุคคลช่วยหาเสียง · ค่าจัดงาน ฯลฯ</td><td>25 ก.พ. 2563 <br><small>ราชกิจจาฯ 6 มี.ค. 2563</small></td></tr>
         <tr><td><strong>ระเบียบ กกต. ว่าด้วยการหาเสียงและลักษณะต้องห้ามในการหาเสียงเลือกตั้ง พ.ศ. 2563</strong></td><td><span class="badge badge-navy">ทุกข้อ</span></td><td>กำหนดวิธีหาเสียงที่ทำได้/ห้ามทำ รวม<strong>สื่อดิจิทัล · ป้ายโฆษณา · การรวมกลุ่ม</strong></td><td>2563</td></tr>
-        <tr><td><strong>ประกาศ ผอ.กกต.กทม. เรื่อง กำหนดจำนวนเงินค่าใช้จ่ายในการเลือกตั้ง ส.ก. กทม.</strong></td><td><span class="badge badge-gold">ทุกเขต 50 เขต</span></td><td>เพดานค่าใช้จ่าย ส.ก. รายเขต: <strong>820,000 / 950,000 / 1,150,000 บาท</strong> ตามขนาดประชากร</td><td>25 พ.ย. 2564</td></tr>
+        <tr><td><strong>ประกาศ ผอ.กกต.กทม. เรื่อง กำหนดจำนวนเงินค่าใช้จ่ายในการเลือกตั้ง ส.ก. กทม. + ผู้ว่าฯ กทม.</strong><br><small>(ลงนาม: นายสำราญ ตันพานิช)</small></td><td><span class="badge badge-gold">ข้อ 1–5</span></td><td>เพดาน <strong>ส.ก. 50 เขต</strong> แบ่ง 5 ชั้น: <strong>820,000 / 900,000 / 1,000,000 / 1,050,000 / 1,150,000 บาท</strong> · <strong>ผู้ว่าฯ กทม.</strong> = <strong>49,000,000 บาท</strong> · ข้อ 5: มีผลใช้ต่อไปจนกว่าจะประกาศใหม่</td><td>25 พ.ย. 2564</td></tr>
         <tr style="background:#FEF3C7;"><td><strong>ประกาศ กกต. เลขที่ 243/2569</strong> <small>(ฉบับล่าสุด)</small></td><td><span class="badge badge-red">ข้อ 1, 2, 3</span></td><td><strong>ยืนยันรอบคำนวณ</strong> = <span style="color:#C0392B;font-weight:700;">22 พ.ย. 2568</span> · รอบหาเสียง = 22 พ.ย. 2568 ถึง 18:00 น. ก่อนวันเลือกตั้ง · ห้ามฝ่าฝืน ม.65 + ระเบียบ 2563</td><td><strong>10 เม.ย. 2569</strong></td></tr>
       </tbody>
     </table>
@@ -705,7 +710,7 @@ function showTab(n){
   document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active')});
   document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
   var el=document.getElementById('p-'+n);if(el)el.classList.add('active');
-  var idx={team:0,types:1,ledger:2,law:3,print:4,settings:5}[n];
+  var idx={team:0,types:1,scenarios:2,qa:3,ledger:4,law:5,print:6,settings:7}[n];
   var btns=document.querySelectorAll('.tab-btn');if(btns[idx])btns[idx].classList.add('active');
   if(n==='print')renderPrint();
 }
@@ -716,7 +721,7 @@ function toggleLaw(hd){var body=hd.nextElementSibling;var arrow=hd.querySelector
 function addTeam(){var n=document.getElementById('tn').value.trim();if(!n){alert('กรุณากรอกชื่อ');return}var a=D.get('team');a.push({id:Date.now(),n:n,r:document.getElementById('tr').value.trim(),p:+document.getElementById('tp').value||0,s:document.getElementById('ts').value});D.set('team',a);document.getElementById('tn').value='';document.getElementById('tr').value='';document.getElementById('tp').value='';toggleForm('tf');render()}
 function addVeh(){var p=document.getElementById('vp').value.trim();if(!p){alert('กรุณากรอกทะเบียน');return}var a=D.get('veh');a.push({id:Date.now(),p:p,t:document.getElementById('vt').value,c:+document.getElementById('vc').value||0,n:document.getElementById('vn').value.trim()});D.set('veh',a);document.getElementById('vp').value='';document.getElementById('vc').value='';document.getElementById('vn').value='';toggleForm('vf');render()}
 function addSign(){var q=+document.getElementById('sq').value;if(!q){alert('กรุณากรอกจำนวน');return}var a=D.get('sign');a.push({id:Date.now(),t:document.getElementById('sty').value,q:q,l:document.getElementById('sl').value.trim(),c:+document.getElementById('sc').value||0});D.set('sign',a);document.getElementById('sq').value='';document.getElementById('sl').value='';document.getElementById('sc').value='';toggleForm('sf');render()}
-function addTx(){var amt=+document.getElementById('xa').value;if(!amt){alert('กรุณากรอกจำนวนเงิน');return}var a=D.get('tx');a.push({id:Date.now(),type:document.getElementById('xt').value,date:document.getElementById('xd').value||new Date().toISOString().slice(0,10),cat:document.getElementById('xc').value,amt:amt,memo:document.getElementById('xm').value.trim(),docno:document.getElementById('xdn').value.trim(),payee:document.getElementById('xpy').value.trim()});D.set('tx',a);document.getElementById('xa').value='';document.getElementById('xm').value='';document.getElementById('xdn').value='';document.getElementById('xpy').value='';toggleForm('xf');render()}
+function addTx(){var amt=+document.getElementById('xa').value;if(!amt||amt<0){alert('กรุณากรอกจำนวนเงินเป็นค่าบวก');return}var a=D.get('tx');a.push({id:Date.now(),type:document.getElementById('xt').value,date:document.getElementById('xd').value||new Date().toISOString().slice(0,10),cat:document.getElementById('xc').value,amt:amt,memo:document.getElementById('xm').value.trim(),docno:document.getElementById('xdn').value.trim(),payee:document.getElementById('xpy').value.trim()});D.set('tx',a);document.getElementById('xa').value='';document.getElementById('xm').value='';document.getElementById('xdn').value='';document.getElementById('xpy').value='';toggleForm('xf');render()}
 function del(type,id){if(!confirm('ลบรายการนี้?'))return;D.set(type,D.get(type).filter(function(i){return i.id!==id}));render()}
 
 // === RENDER ===
@@ -881,7 +886,7 @@ function checkBackupReminder(){
   var banner=document.getElementById('backupBanner');
   var msg=document.getElementById('backupMsg');
   // Only show if user has actual data
-  var hasData=D.get('team').length||D.get('vehicles').length||D.get('signs').length||D.get('transactions').length;
+  var hasData=D.get('team').length||D.get('veh').length||D.get('sign').length||D.get('tx').length;
   if(!hasData)return;
   var last=localStorage.getItem('sk_lastExport');
   var now=Date.now();
@@ -920,7 +925,6 @@ checkBackupReminder();
 ⚠️ <strong>ข้อสงวนสิทธิ์:</strong> เครื่องมือนี้เป็นเพียงตัวช่วยจัดการข้อมูลเบื้องต้น — ใช้เป็น draft เท่านั้น ตรวจสอบกับแบบฟอร์ม กกต. จริงก่อนยื่น ผู้พัฒนาไม่รับผิดชอบต่อความถูกต้องของข้อมูล<br>
 จัดทำโดย Legal Advance Solution Co., Ltd. (LAS)
 </div>
-<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('service-worker.js')}</script>
 <!-- Canonical setSiteLang() — see docs/BILINGUAL-CONVENTION.md -->
 <script>
 function setSiteLang(lang) {
