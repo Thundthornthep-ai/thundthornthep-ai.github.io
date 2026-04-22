@@ -19,7 +19,6 @@
 <!-- [[THEME-MIGRATION-v1]] -->
 <link rel="stylesheet" href="/css/wiki-theme.css">
 <!-- [[/THEME-MIGRATION-v1]] -->
-<link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#1B2A4A">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
@@ -237,7 +236,7 @@
 // === DATA ===
 var D={
   g:function(k,d){try{return JSON.parse(localStorage.getItem('di_'+k))||d}catch(e){return d}},
-  s:function(k,v){localStorage.setItem('di_'+k,JSON.stringify(v))}
+  s:function(k,v){try{localStorage.setItem('di_'+k,JSON.stringify(v))}catch(e){alert('พื้นที่จัดเก็บเต็ม — กรุณา Export แล้วลบข้อมูลเก่า')}}
 };
 function E(s){if(!s)return'';var d=document.createElement('div');d.textContent=s;return d.innerHTML}
 
@@ -355,7 +354,7 @@ function selectDistrict(name){
 
 // === TRAFFY FONDUE API + MAP ===
 var traffyMap=null,traffyMarkers=[];
-function initTraffyMap(){try{if(traffyMap){traffyMap.remove();traffyMap=null;}}catch(e){}traffyMarkers=[];var container=document.getElementById('traffyMap');if(!container)return;container.textContent='';container._leaflet_id=null;traffyMap=L.map('traffyMap',{zoomControl:true,scrollWheelZoom:true}).setView([13.756,100.502],12);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'OpenStreetMap',maxZoom:19}).addTo(traffyMap);}
+function initTraffyMap(){try{if(traffyMap){traffyMarkers.forEach(function(m){m.remove()});traffyMap.remove();traffyMap=null;}}catch(e){}traffyMarkers=[];var container=document.getElementById('traffyMap');if(!container)return;container.textContent='';container._leaflet_id=null;traffyMap=L.map('traffyMap',{zoomControl:true,scrollWheelZoom:true}).setView([13.756,100.502],12);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'OpenStreetMap',maxZoom:19}).addTo(traffyMap);}
 function flyToIssue(lat,lng){if(!traffyMap)return;traffyMap.flyTo([lat,lng],17,{duration:1.5});traffyMarkers.forEach(function(m){if(Math.abs(m.getLatLng().lat-lat)<0.0001&&Math.abs(m.getLatLng().lng-lng)<0.0001)m.openPopup();});document.getElementById('traffyMap').scrollIntoView({behavior:'smooth',block:'center'});}
 function getTraffyCaseUrl(p){if(p.ticket_id)return'https://bangkok.traffy.in.th/report/'+p.ticket_id;if(p._id)return'https://bangkok.traffy.in.th/report/'+p._id;return'https://bangkok.traffy.in.th/?district='+encodeURIComponent(currentDistrict);}
 function fetchTraffy(){
@@ -387,8 +386,8 @@ function fetchTraffy(){
       var icon=L.divIcon({className:'',html:'<div style="width:14px;height:14px;border-radius:50%;background:'+sc+';border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.3)"></div>',iconSize:[14,14],iconAnchor:[7,7]});
       var mk=L.marker([lat,lng],{icon:icon}).addTo(traffyMap);
       var ph='<div style="font-size:13px;max-width:220px;line-height:1.5"><b>'+E(p.problem_type_fondue||'ไม่ระบุ')+'</b><br><span style="color:#6B7280;font-size:11px">'+E(p.address||'')+'</span>';
-      if(p.photo)ph+='<br><img src="'+p.photo+'" style="width:100%;margin-top:6px;border-radius:4px" alt="">';
-      ph+='<br><a href="'+getTraffyCaseUrl(p)+'" target="_blank" style="color:#0D9488;font-size:11px;font-weight:600">ดูเคสจริง →</a></div>';
+      if(p.photo)ph+='<br><img src="'+E(p.photo)+'" style="width:100%;margin-top:6px;border-radius:4px" alt="">';
+      ph+='<br><a href="'+E(getTraffyCaseUrl(p))+'" target="_blank" style="color:#0D9488;font-size:11px;font-weight:600">ดูเคสจริง →</a></div>';
       mk.bindPopup(ph,{maxWidth:250});traffyMarkers.push(mk);bounds.push([lat,lng]);
     });
     if(bounds.length)traffyMap.fitBounds(bounds,{padding:[30,30],maxZoom:14});
@@ -424,7 +423,7 @@ function renderDistrict(){
     pois = {};
     var defaults = defaultPois[currentDistrict] || {};
     poiCategories.forEach(function(cat){
-      var items = (defaults[cat.key]||[]).map(function(n){return {id:Date.now()+Math.random(),name:n,addr:'',note:'',visited:false}});
+      var items = (defaults[cat.key]||[]).map(function(n){return {id:Date.now().toString(36)+Math.random().toString(36).slice(2,8),name:n,addr:'',note:'',visited:false}});
       pois[cat.key] = items;
     });
     D.s('pois_'+currentDistrict, pois);
@@ -784,7 +783,7 @@ function generateReportHTML() {
       h.push('<div class="ci-d">'+dd+'</div></div>');
       if(ci.problem) h.push('<div class="ci-f ci-p">ปัญหา: '+E(ci.problem)+'</div>');
       if(ci.need) h.push('<div class="ci-f ci-nd">ต้องการ: '+E(ci.need)+'</div>');
-      if(ci.photos&&ci.photos.length){h.push('<div class="ci-ph">');ci.photos.forEach(function(s){h.push('<img src="'+s+'" alt="">')});h.push('</div>');}
+      if(ci.photos&&ci.photos.length){h.push('<div class="ci-ph">');ci.photos.forEach(function(s){if(s.indexOf('data:image/')===0)h.push('<img src="'+E(s)+'" alt="">')});h.push('</div>');}
       h.push('</div>');
     });
   }
@@ -799,7 +798,7 @@ function printReport() {
   iframe.style.cssText = 'position:fixed;top:-9999px;left:-9999px;width:800px;height:600px';
   document.body.appendChild(iframe);
   iframe.srcdoc = reportHtml;
-  iframe.onload = function(){ iframe.contentWindow.print(); setTimeout(function(){ document.body.removeChild(iframe); }, 1000); };
+  iframe.onload = function(){ try{iframe.contentWindow.onafterprint=function(){document.body.removeChild(iframe)};}catch(e){} iframe.contentWindow.print(); setTimeout(function(){if(iframe.parentNode)document.body.removeChild(iframe);},60000); };
 }
 function downloadReport() {
   if(!currentDistrict){alert('กรุณาเลือกเขตก่อน');return}
