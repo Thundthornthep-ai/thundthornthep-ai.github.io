@@ -484,17 +484,46 @@ function renderDistrict(){
     items.forEach(function(item){
       var row = document.createElement('div');
       row.className = 'poi-item';
-      var dot = document.createElement('span');
-      dot.className = 'status ' + (item.visited ? 'visited' : 'pending');
+      row.style.cursor = 'pointer';
+      if(item.visited){
+        var flag = document.createElement('img');
+        flag.className = 'flag-icon';
+        flag.src = 'img/flag-walk.jpg';
+        flag.alt = 'ปักธงแล้ว';
+        flag.title = 'กดดูข้อมูลการปักธง — ' + item.name;
+        flag.addEventListener('click', function(e){ e.stopPropagation(); showPoiCheckinPopup(item); });
+        row.appendChild(flag);
+      } else {
+        var dot = document.createElement('span');
+        dot.className = 'status pending';
+        row.appendChild(dot);
+      }
       var nameSpan = document.createElement('span');
       nameSpan.style.flex = '1';
       nameSpan.textContent = item.name + (item.addr ? ' — '+item.addr : '');
+      if(item.visited){
+        nameSpan.style.fontWeight = '600';
+        nameSpan.style.color = 'var(--green-dark)';
+      }
+      nameSpan.addEventListener('click', function(){
+        if(item.visited){ showPoiCheckinPopup(item); }
+        else {
+          // Auto-select in checkin form and open
+          var ciSelect = document.getElementById('ciPlace');
+          for(var i=0;i<ciSelect.options.length;i++){
+            if(ciSelect.options[i].textContent===item.name){ciSelect.selectedIndex=i;break;}
+          }
+          var form = document.getElementById('checkinForm');
+          if(form.style.display==='none') toggleEl('checkinForm');
+          captureGPS();
+          form.scrollIntoView({behavior:'smooth'});
+        }
+      });
+      row.appendChild(nameSpan);
       var delBtn = document.createElement('button');
       delBtn.className = 'btn-d no-print';
       delBtn.textContent = 'ลบ';
-      delBtn.addEventListener('click', function(){ if(confirm('ลบ '+item.name+'?')){removePoi(cat.key, item.id)} });
-      row.appendChild(dot);
-      row.appendChild(nameSpan);
+      delBtn.addEventListener('click', function(e){ e.stopPropagation(); if(confirm('ลบ '+item.name+'?')){removePoi(cat.key, item.id)} });
       row.appendChild(delBtn);
       body.appendChild(row);
     });
