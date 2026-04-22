@@ -710,7 +710,7 @@ var CN={};ET.forEach(function(t){CN[t.id]=t.name});CN['in']='รายรับ'
 var D={
   g:function(k,d){try{return JSON.parse(localStorage.getItem('sk_'+k))||d}catch(e){return d}},
   s:function(k,v){localStorage.setItem('sk_'+k,JSON.stringify(v))},
-  get:function(k){return D.g(k,k==='b'?900000:k==='team'||k==='veh'||k==='sign'||k==='tx'?[]:{})},
+  get:function(k){return D.g(k,k==='b'?900000:k==='distIdx'?-1:k==='team'||k==='veh'||k==='sign'||k==='tx'?[]:'')},
   set:function(k,v){D.s(k,v)}
 };
 var fTx='all';
