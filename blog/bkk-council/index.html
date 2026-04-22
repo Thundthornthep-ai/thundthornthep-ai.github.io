@@ -1241,8 +1241,8 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
   <div class="fade-in" style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:8px;">
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
       <div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:18px;color:var(--navy);margin-bottom:4px;">Traffy Fondue Live — ปัญหาจริงในเขต</h3>
-        <p style="font-size:13px;color:var(--text-secondary);margin:0;">เลือกเขต → ดู map + ปัญหาล่าสุด + เปรียบเทียบเร็ว/ช้า · ข้อมูลจาก API อัปเดตทุก 30 นาที</p>
+        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:18px;color:var(--navy);margin-bottom:4px;">Traffy Fondue Live + Fly to Problem</h3>
+        <p style="font-size:13px;color:var(--text-secondary);margin:0;">เลือกเขต → ดู map + กดปักหมุดบินไปจุดเกิดเหตุ + เปรียบเทียบเร็ว/ช้า · ข้อมูลจาก API อัปเดตทุก 30 นาที</p>
       </div>
       <div style="font-size:11px;color:var(--text-muted);text-align:right;">Powered by <a href="https://www.traffy.in.th" target="_blank" rel="noopener noreferrer" style="color:var(--teal);text-decoration:none;">Traffy Fondue</a> Open Data</div>
     </div>
@@ -1274,7 +1274,7 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
       </div>
 
       <!-- Problem list -->
-      <div style="font-weight:600;font-size:14px;margin-bottom:8px;color:var(--navy);">3 ปัญหาล่าสุด</div>
+      <div style="font-weight:600;font-size:14px;margin-bottom:8px;color:var(--navy);">5 ปัญหาล่าสุด — กดปักหมุด 📍 เพื่อบินไปจุดเกิดเหตุ</div>
       <div id="diProblems" style="font-size:13px;"></div>
 
       <!-- Links -->
@@ -1782,8 +1782,16 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
           if(!lat||!lng)return;
           bounds.push([lat,lng]);
           var color=stateColors[f.properties.state]||'#9CA3AF';
-          var marker=L.circleMarker([lat,lng],{radius:6,fillColor:color,color:'#fff',weight:1,fillOpacity:0.8});
-          marker.bindPopup('<b>'+E(f.properties.problem_type_fondue||'')+'</b><br>'+E(f.properties.state||'')+'<br><small>'+E(f.properties.address||'')+'</small>');
+          var icon=L.divIcon({className:'',html:'<div style="width:14px;height:14px;border-radius:50%;background:'+color+';border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.3);cursor:pointer"></div>',iconSize:[14,14],iconAnchor:[7,7]});
+          var marker=L.marker([lat,lng],{icon:icon});
+          var pType=Array.isArray(f.properties.problem_type_fondue)?f.properties.problem_type_fondue.join(', '):f.properties.problem_type_fondue;
+          var caseUrl=f.properties.ticket_id?'https://fondue.traffy.in.th/report/'+f.properties.ticket_id:'';
+          var popupParts=['<div style="font-size:13px;max-width:240px;line-height:1.5">','<b>'+E(pType||'ไม่ระบุ')+'</b>','<br><span style="font-size:11px;color:#6B7280">'+E(f.properties.address||'')+'</span>'];
+          if(f.properties.photo_url)popupParts.push('<br><img src="'+E(f.properties.photo_url)+'" style="width:100%;margin-top:6px;border-radius:4px" alt="">');
+          if(f.properties.description)popupParts.push('<br><span style="font-size:11px;color:#374151">'+E(f.properties.description.substring(0,80))+(f.properties.description.length>80?'...':'')+'</span>');
+          if(caseUrl)popupParts.push('<br><a href="'+E(caseUrl)+'" target="_blank" style="color:#0D9488;font-size:11px;font-weight:600">ดูเคสจริงที่ Traffy →</a>');
+          popupParts.push('</div>');
+          marker.bindPopup(popupParts.join(''),{maxWidth:260});
           marker.addTo(diMap);
           diMarkers.push(marker);
         });
@@ -1805,12 +1813,15 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
           var slow=finished[finished.length-1].properties;
           var fastDays=Math.round(fast.duration_minutes_finished/1440);
           var slowDays=Math.round(slow.duration_minutes_finished/1440);
-          fastEl.textContent=E(fast.problem_type_fondue)+' — แก้ใน '+(fastDays<1?'ไม่ถึง 1':fastDays)+' วัน\nแจ้ง: '+E((fast.timestamp||'').slice(0,10))+'\nที่: '+E(fast.address||'');
-          slowEl.textContent=E(slow.problem_type_fondue)+' — ใช้เวลา '+slowDays+' วัน\nแจ้ง: '+E((slow.timestamp||'').slice(0,10))+'\nที่: '+E(slow.address||'');
+          var _ft=Array.isArray(fast.problem_type_fondue)?fast.problem_type_fondue.join(', '):fast.problem_type_fondue;
+          var _st=Array.isArray(slow.problem_type_fondue)?slow.problem_type_fondue.join(', '):slow.problem_type_fondue;
+          fastEl.textContent=E(_ft)+' — แก้ใน '+(fastDays<1?'ไม่ถึง 1':fastDays)+' วัน\nแจ้ง: '+E((fast.timestamp||'').slice(0,10))+'\nที่: '+E(fast.address||'');
+          slowEl.textContent=E(_st)+' — ใช้เวลา '+slowDays+' วัน\nแจ้ง: '+E((slow.timestamp||'').slice(0,10))+'\nที่: '+E(slow.address||'');
         } else if(finished.length===1){
           var f1=finished[0].properties;
           var f1Days=Math.round(f1.duration_minutes_finished/1440);
-          fastEl.textContent=E(f1.problem_type_fondue)+' — แก้ใน '+(f1Days<1?'ไม่ถึง 1':f1Days)+' วัน\nที่: '+E(f1.address||'');
+          var _f1t=Array.isArray(f1.problem_type_fondue)?f1.problem_type_fondue.join(', '):f1.problem_type_fondue;
+          fastEl.textContent=E(_f1t)+' — แก้ใน '+(f1Days<1?'ไม่ถึง 1':f1Days)+' วัน\nที่: '+E(f1.address||'');
           // Fallback: show top unresolved problem
           var unresolved=items.filter(function(f){return f.properties.state!=='เสร็จสิ้น'});
           if(unresolved.length){
@@ -1839,41 +1850,54 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
         // Problem list (top 3 — AI highlight samples; full list → Traffy website)
         var probEl=document.getElementById('diProblems');
         probEl.textContent='';
-        items.slice(0,3).forEach(function(f){
+        var fmtTs=function(ts){if(!ts)return'';var d=new Date(ts.replace(' ','T'));if(isNaN(d))return ts;var dd=d.getDate(),mm=d.getMonth(),yy=d.getFullYear()+543,hh=('0'+d.getHours()).slice(-2),mi=('0'+d.getMinutes()).slice(-2);var mths=['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];return dd+' '+mths[mm]+' '+yy+' '+hh+':'+mi};
+        items.slice(0,5).forEach(function(f){
           var p=f.properties;
-          var traffyUrl=p.ticket_id?'https://bangkok.traffy.in.th/detail?ticketID='+encodeURIComponent(p.ticket_id):'';
-          var row=document.createElement(traffyUrl?'a':'div');
-          if(traffyUrl){row.href=traffyUrl;row.target='_blank';row.rel='noopener';}
-          row.style.cssText='padding:10px 0;border-bottom:1px solid var(--border-light);display:flex;align-items:flex-start;gap:10px;text-decoration:none;color:inherit;transition:background 0.15s;cursor:'+(traffyUrl?'pointer':'default');
-          if(traffyUrl){row.onmouseenter=function(){this.style.background='var(--bg-alt)'};row.onmouseleave=function(){this.style.background='none'}}
-          // Photo thumbnail
-          if(p.photo_url&&_isSafeImgUrl(p.photo_url)){
+          var pType=Array.isArray(p.problem_type_fondue)?p.problem_type_fondue.join(', '):p.problem_type_fondue;
+          var traffyUrl=p.ticket_id?'https://fondue.traffy.in.th/report/'+p.ticket_id:'';
+          var co=f.geometry&&f.geometry.coordinates;
+          var lat=co?co[1]:null,lng=co?co[0]:null;
+          var row=document.createElement('div');
+          row.style.cssText='padding:12px;border:1px solid var(--border);border-radius:8px;margin-bottom:8px;display:flex;align-items:flex-start;gap:10px;background:#fff;transition:all 0.15s;';
+          row.onmouseenter=function(){this.style.borderColor='var(--teal)';this.style.boxShadow='0 2px 8px rgba(0,0,0,.06)'};
+          row.onmouseleave=function(){this.style.borderColor='var(--border)';this.style.boxShadow='none'};
+          // Photo
+          if(p.photo_url){
             var img=document.createElement('img');
             img.src=p.photo_url;img.alt='';img.loading='lazy';
-            img.style.cssText='width:48px;height:48px;object-fit:cover;border-radius:6px;flex-shrink:0;border:1px solid var(--border);';
+            img.style.cssText='width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:1px solid var(--border);cursor:pointer;';
             img.onerror=function(){this.style.display='none'};
+            if(traffyUrl)(function(u){img.addEventListener('click',function(){window.open(u,'_blank')})})(traffyUrl);
             row.appendChild(img);
           }
+          // Info (clickable to case)
           var mid=document.createElement('div');mid.style.cssText='flex:1;min-width:0;';
-          var typeSpan=document.createElement('div');typeSpan.style.cssText='font-weight:600;font-size:13px;';typeSpan.textContent=E(p.problem_type_fondue||'ไม่ระบุ');
-          var fmtTs=function(ts){if(!ts)return'';var d=new Date(ts.replace(' ','T'));if(isNaN(d))return ts;var dd=d.getDate(),mm=d.getMonth(),yy=d.getFullYear()+543,hh=('0'+d.getHours()).slice(-2),mi=('0'+d.getMinutes()).slice(-2);var mths=['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];return dd+' '+mths[mm]+' '+yy+' เวลา '+hh+':'+mi+' น.'};
-          var addrSpan=document.createElement('div');addrSpan.style.cssText='font-size:11px;color:var(--text-muted);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';addrSpan.textContent=E(p.address||'');
-          var tsSpan=document.createElement('div');tsSpan.style.cssText='font-size:10px;color:var(--teal);margin-top:1px;';tsSpan.textContent='🕐 แจ้งเมื่อ '+fmtTs(p.timestamp);
-          mid.appendChild(typeSpan);mid.appendChild(addrSpan);mid.appendChild(tsSpan);
-          if(traffyUrl){var linkHint=document.createElement('div');linkHint.style.cssText='font-size:10px;color:var(--navy);margin-top:2px;font-weight:600;';linkHint.textContent='🔗 คลิกดูรายละเอียดที่ Traffy →';mid.appendChild(linkHint)}
-          var right=document.createElement('div');right.style.cssText='display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;';
-          var stateSpan=document.createElement('span');
-          var sc=stateColors[p.state]||'var(--text-muted)';
-          stateSpan.style.cssText='font-size:11px;padding:2px 8px;border-radius:10px;white-space:nowrap;font-weight:600;background:'+sc+'20;color:'+sc;
-          stateSpan.textContent=E(p.state||'');
-          right.appendChild(stateSpan);
-          if(p.duration_minutes_finished>0){var dur=document.createElement('span');dur.style.cssText='font-size:10px;color:var(--text-muted);';dur.textContent=Math.round(p.duration_minutes_finished/1440)+' วัน';right.appendChild(dur)}
-          row.appendChild(mid);row.appendChild(right);probEl.appendChild(row);
+          if(traffyUrl){mid.style.cursor='pointer';(function(u){mid.addEventListener('click',function(){window.open(u,'_blank')})})(traffyUrl);}
+          var typeEl=document.createElement('div');typeEl.style.cssText='font-weight:600;font-size:14px;color:var(--navy);';typeEl.textContent=E(pType||'ไม่ระบุ');mid.appendChild(typeEl);
+          if(p.description){var descEl=document.createElement('div');descEl.style.cssText='font-size:12px;color:#374151;margin-top:2px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;';descEl.textContent=p.description;mid.appendChild(descEl);}
+          if(p.address){var addrEl=document.createElement('div');addrEl.style.cssText='font-size:11px;color:var(--text-muted);margin-top:2px;';addrEl.textContent=E(p.address);mid.appendChild(addrEl);}
+          var metaEl=document.createElement('div');metaEl.style.cssText='display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:4px;';
+          var stateSpan=document.createElement('span');var sc=stateColors[p.state]||'#9CA3AF';
+          stateSpan.style.cssText='font-size:11px;padding:2px 8px;border-radius:10px;font-weight:600;background:'+sc+'20;color:'+sc;stateSpan.textContent=E(p.state||'');metaEl.appendChild(stateSpan);
+          var tsSpan=document.createElement('span');tsSpan.style.cssText='font-size:10px;color:var(--text-muted)';tsSpan.textContent=fmtTs(p.timestamp);metaEl.appendChild(tsSpan);
+          mid.appendChild(metaEl);
+          row.appendChild(mid);
+          // Actions: fly-to + link
+          var actDiv=document.createElement('div');actDiv.style.cssText='display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;';
+          if(lat&&lng){var flyBtn=document.createElement('button');flyBtn.style.cssText='background:var(--teal);color:#fff;border:none;border-radius:50%;width:36px;height:36px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.15s;box-shadow:0 1px 3px rgba(0,0,0,.15)';flyBtn.title='บินไปจุดเกิดเหตุ';flyBtn.textContent='📍';
+            flyBtn.onmouseenter=function(){this.style.transform='scale(1.15)';this.style.background='var(--navy)'};
+            flyBtn.onmouseleave=function(){this.style.transform='none';this.style.background='var(--teal)'};
+            (function(a,b){flyBtn.addEventListener('click',function(e){e.stopPropagation();diMap.flyTo([a,b],17,{duration:1.5});diMarkers.forEach(function(m){if(m.getLatLng&&Math.abs(m.getLatLng().lat-a)<0.0001&&Math.abs(m.getLatLng().lng-b)<0.0001)m.openPopup()});document.getElementById('diMap').scrollIntoView({behavior:'smooth',block:'center'})})})(lat,lng);
+            actDiv.appendChild(flyBtn);
+          }
+          if(traffyUrl){var lk=document.createElement('a');lk.href=traffyUrl;lk.target='_blank';lk.style.cssText='font-size:10px;color:var(--teal);font-weight:600;text-decoration:none;white-space:nowrap';lk.textContent='ดูเคส';actDiv.appendChild(lk);}
+          row.appendChild(actDiv);
+          probEl.appendChild(row);
         });
         if(!items.length){
           probEl.textContent='ไม่พบข้อมูลในเขต'+district+' จาก batch ล่าสุด';
           probEl.style.cssText='text-align:center;padding:24px;color:var(--text-muted);';
-        } else if(items.length > 3){
+        } else if(items.length > 5){
           // CTA: link to full list on Traffy website
           var ctaWrap=document.createElement('a');
           ctaWrap.href='https://bangkok.traffy.in.th/?district='+encodeURIComponent(district);
@@ -1886,7 +1910,7 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
           ctaLeft.style.cssText='flex:1;min-width:0;';
           var ctaTitle=document.createElement('div');
           ctaTitle.style.cssText='font-size:14px;font-weight:700;';
-          ctaTitle.textContent='🗺️ ดูข้อมูลครบทั้งหมด '+items.length+' เรื่องที่ Traffy Fondue';
+          ctaTitle.textContent='🗺️ ดูทั้งหมด '+items.length+' เรื่องที่ Traffy Fondue';
           var ctaSub=document.createElement('div');
           ctaSub.style.cssText='font-size:11px;opacity:0.9;margin-top:2px;';
           ctaSub.textContent='แผนที่ + สถิติ + ประเภทปัญหาเชิงลึก — ข้อมูล real-time จากระบบร้องเรียน กทม.';
