@@ -356,7 +356,8 @@ function selectDistrict(name){
 var traffyMap=null,traffyMarkers=[];
 function initTraffyMap(){try{if(traffyMap){traffyMarkers.forEach(function(m){m.remove()});traffyMap.remove();traffyMap=null;}}catch(e){}traffyMarkers=[];var container=document.getElementById('traffyMap');if(!container)return;container.textContent='';container._leaflet_id=null;traffyMap=L.map('traffyMap',{zoomControl:true,scrollWheelZoom:true}).setView([13.756,100.502],12);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'OpenStreetMap',maxZoom:19}).addTo(traffyMap);}
 function flyToIssue(lat,lng){if(!traffyMap)return;traffyMap.flyTo([lat,lng],17,{duration:1.5});traffyMarkers.forEach(function(m){if(Math.abs(m.getLatLng().lat-lat)<0.0001&&Math.abs(m.getLatLng().lng-lng)<0.0001)m.openPopup();});document.getElementById('traffyMap').scrollIntoView({behavior:'smooth',block:'center'});}
-function getTraffyCaseUrl(p){if(p.ticket_id)return'https://bangkok.traffy.in.th/report/'+p.ticket_id;if(p._id)return'https://bangkok.traffy.in.th/report/'+p._id;return'https://bangkok.traffy.in.th/?district='+encodeURIComponent(currentDistrict);}
+function getTraffyCaseUrl(p){if(p.ticket_id)return'https://fondue.traffy.in.th/report/'+p.ticket_id;if(p.message_id)return'https://fondue.traffy.in.th/report/'+p.message_id;return'https://bangkok.traffy.in.th/?district='+encodeURIComponent(currentDistrict);}
+function getTraffyPhoto(p){return p.photo_url||p.photo||null;}
 function fetchTraffy(){
   if(!currentDistrict)return;
   var el=document.getElementById('traffyData');
@@ -385,8 +386,8 @@ function fetchTraffy(){
       var sc=p.state==='เสร็จสิ้น'?'#22C55E':p.state==='กำลังดำเนินการ'?'#E67E22':'#EF4444';
       var icon=L.divIcon({className:'',html:'<div style="width:14px;height:14px;border-radius:50%;background:'+sc+';border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.3)"></div>',iconSize:[14,14],iconAnchor:[7,7]});
       var mk=L.marker([lat,lng],{icon:icon}).addTo(traffyMap);
-      var ph='<div style="font-size:13px;max-width:220px;line-height:1.5"><b>'+E(p.problem_type_fondue||'ไม่ระบุ')+'</b><br><span style="color:#6B7280;font-size:11px">'+E(p.address||'')+'</span>';
-      if(p.photo)ph+='<br><img src="'+E(p.photo)+'" style="width:100%;margin-top:6px;border-radius:4px" alt="">';
+      var ph='<div style="font-size:13px;max-width:220px;line-height:1.5"><b>'+E((Array.isArray(p.problem_type_fondue)?p.problem_type_fondue.join(', '):p.problem_type_fondue)||'ไม่ระบุ')+'</b><br><span style="color:#6B7280;font-size:11px">'+E(p.address||'')+'</span>';
+      var _ph=getTraffyPhoto(p);if(_ph)ph+='<br><img src="'+E(_ph)+'" style="width:100%;margin-top:6px;border-radius:4px" alt="">';
       ph+='<br><a href="'+E(getTraffyCaseUrl(p))+'" target="_blank" style="color:#0D9488;font-size:11px;font-weight:600">ดูเคสจริง →</a></div>';
       mk.bindPopup(ph,{maxWidth:250});traffyMarkers.push(mk);bounds.push([lat,lng]);
     });
@@ -396,10 +397,12 @@ function fetchTraffy(){
     items.slice(0,5).forEach(function(f){
       var p=f.properties,co=f.geometry&&f.geometry.coordinates,lat=co?co[1]:null,lng=co?co[0]:null,url=getTraffyCaseUrl(p);
       var card=document.createElement('div');card.className='traffy-card';
-      if(p.photo){var ph=document.createElement('img');ph.className='traffy-photo';ph.src=p.photo;ph.alt=p.problem_type_fondue||'';ph.loading='lazy';ph.addEventListener('click',function(){window.open(url,'_blank')});card.appendChild(ph);}
+      var _cardPhoto=getTraffyPhoto(p);
+      if(_cardPhoto){var ph=document.createElement('img');ph.className='traffy-photo';ph.src=_cardPhoto;ph.alt=p.problem_type_fondue||'';ph.loading='lazy';ph.addEventListener('click',function(){window.open(url,'_blank')});card.appendChild(ph);}
       else{var pl=document.createElement('div');pl.className='traffy-photo';pl.style.cssText='display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--text-muted)';pl.textContent='📷';card.appendChild(pl);}
       var info=document.createElement('div');info.className='traffy-info';info.addEventListener('click',function(){window.open(url,'_blank')});
-      var ty=document.createElement('div');ty.className='traffy-type';ty.textContent=p.problem_type_fondue||'ไม่ระบุ';info.appendChild(ty);
+      var ty=document.createElement('div');ty.className='traffy-type';ty.textContent=(Array.isArray(p.problem_type_fondue)?p.problem_type_fondue.join(', '):p.problem_type_fondue)||'ไม่ระบุ';info.appendChild(ty);
+      if(p.description){var desc=document.createElement('div');desc.className='traffy-addr';desc.style.color='var(--navy)';desc.textContent=p.description;info.appendChild(desc);}
       if(p.address){var ad=document.createElement('div');ad.className='traffy-addr';ad.textContent=p.address;info.appendChild(ad);}
       var me=document.createElement('div');me.className='traffy-meta';
       var st=document.createElement('span');st.className='traffy-state';var stc=p.state==='เสร็จสิ้น'?'#22C55E':p.state==='กำลังดำเนินการ'?'#E67E22':'#9CA3AF';st.style.cssText='background:'+stc+'20;color:'+stc;st.textContent=p.state||'รอรับเรื่อง';me.appendChild(st);
