@@ -896,6 +896,15 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
 }
 
 @media(max-width:600px){.card-color-grid{grid-template-columns:1fr !important}}
+/* SCOPE: Primary = ส.ก. (BKK Council Member) · Secondary = ผู้ว่า/อื่นๆ (reference) */
+.scope-badge{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:999px;background:linear-gradient(135deg,#C9A96E,#E8C878);color:#1B2A4A;font-size:13px;font-weight:700;letter-spacing:.5px;box-shadow:0 2px 8px rgba(201,169,110,.3)}
+.scope-badge::before{content:'📍';font-size:15px}
+.sk-primary{border-left:3px solid #C9A96E;padding-left:12px;background:rgba(201,169,110,.05)}
+.sk-highlight{background:linear-gradient(180deg,transparent 55%,rgba(201,169,110,.25) 55%);padding:0 2px;font-weight:700}
+.out-of-scope{opacity:.55;color:#6B7280!important;font-weight:400!important;font-style:italic}
+.out-of-scope strong,.out-of-scope b{font-weight:500!important;color:#6B7280!important}
+.out-of-scope .matra-link{color:#9CA3AF!important}
+.out-of-scope-note{display:inline-block;font-size:10px;color:#9CA3AF;background:#F3F4F6;padding:1px 6px;border-radius:4px;margin-left:6px;font-weight:600;letter-spacing:.3px;vertical-align:middle;font-style:normal}
 </style>
 </head>
 <body data-lang="th">
@@ -903,6 +912,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
 
 
 <div class="scroll-progress" id="scrollProgress"></div>
+<div style="text-align:center;padding:12px 16px 0"><span class="scope-badge">ผู้สมัคร ส.ก. กทม. — Focus เฉพาะสมาชิกสภา กทม.</span></div>
 
 <!-- ============ ELECTION DATE BANNER + COUNTDOWN ============ -->
 <div class="election-banner" id="top">
@@ -1174,14 +1184,14 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
       <div class="check-item" onclick="toggleQual(this)">
         <input type="checkbox" onclick="event.stopPropagation();updateQual()">
         <label>
-          <strong>อายุไม่ต่ำกว่า 25 ปี</strong> นับถึงวันเลือกตั้ง (กรณี ส.ก. 2569: ต้องเกิดก่อนหรือในวันที่ 28 มิถุนายน 2544)
+          <strong class="sk-highlight">อายุไม่ต่ำกว่า 25 ปี</strong> นับถึงวันเลือกตั้ง (กรณี ส.ก. 2569: ต้องเกิดก่อนหรือในวันที่ 28 มิถุนายน 2544)
           <span class="cite"><a class="matra-link" href="#law-m49">มาตรา 49(2)</a></span>
         </label>
       </div>
       <div class="check-item" onclick="toggleQual(this)">
         <input type="checkbox" onclick="event.stopPropagation();updateQual()">
         <label>
-          <strong>มีชื่อในทะเบียนบ้าน กทม. ติดต่อกันไม่น้อยกว่า 1 ปี</strong> นับถึงวันสมัครรับเลือกตั้ง — ตรวจวันที่ย้ายเข้าในสำเนาทะเบียนบ้าน
+          <strong class="sk-highlight">มีชื่อในทะเบียนบ้าน กทม. ติดต่อกันไม่น้อยกว่า 1 ปี</strong> นับถึงวันสมัครรับเลือกตั้ง — ตรวจวันที่ย้ายเข้าในสำเนาทะเบียนบ้าน
           <span class="cite"><a class="matra-link" href="#law-m49">มาตรา 49(3)</a></span>
         </label>
       </div>
@@ -1204,7 +1214,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
     <div style="margin-top:20px;padding:18px 22px;background:#fff;border:2px solid var(--gold);border-radius:var(--radius-sm);box-shadow:var(--shadow-sm)">
       <p style="font-size:13px;color:var(--text2)">
         <strong style="color:var(--navy)">ส.ก. vs ผวก.:</strong>
-        ผู้ว่าราชการ กทม. ต้องอายุ ≥ 35 ปี และมีวุฒิปริญญาตรีขึ้นไป — ส่วน <strong style="color:var(--navy)">ส.ก. ต้องอายุ ≥ 25 ปี และไม่มีข้อกำหนดวุฒิการศึกษา</strong>
+        <span class="out-of-scope">ผู้ว่าราชการ กทม. ต้องอายุ ≥ 35 ปี และมีวุฒิปริญญาตรีขึ้นไป</span> — ส่วน <strong class="sk-highlight" style="color:var(--navy)">ส.ก. ต้องอายุ ≥ 25 ปี และไม่มีข้อกำหนดวุฒิการศึกษา</strong>
         <br><br>
         <strong style="color:var(--navy)">เขตเลือกตั้ง ส.ก.:</strong>
         ใช้เขตปกครอง กทม. เป็นเขตเลือกตั้ง เขตละ 1 คน หากเขตใดมีราษฎรเกิน 150,000 คน มี ส.ก. เพิ่มขึ้น 1 คน ต่อ 150,000 คน (เศษเกิน 75,000 คน เพิ่มอีก 1 คน)
@@ -1925,7 +1935,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
       <div class="band-card" style="border-color:#D2B48C;background:#FFF8F0">
         <span class="icon">🗳️</span>
         <h4 style="color:#78350F">บัตร ผวก. = สีน้ำตาล</h4>
-        <p style="color:#78350F">บัตรเลือกตั้งผู้ว่าราชการกรุงเทพมหานคร (ผวก.) ใช้บัตรสีน้ำตาล — ข้อมูลจากการเลือกตั้ง ส.ก. 65 (BangkokBizNews)</p>
+        <p class="out-of-scope" style="color:#6B7280">บัตรเลือกตั้งผู้ว่าราชการกรุงเทพมหานคร (ผวก.) ใช้บัตรสีน้ำตาล <span class="out-of-scope-note">REF</span> — ข้อมูลจากการเลือกตั้ง ส.ก. 65 (BangkokBizNews)</p>
       </div>
     </div>
 
@@ -2215,7 +2225,7 @@ a.matra-link:hover{background:#c7d2fe;text-decoration:underline}
       <div class="band-card green-band">
         <span class="icon">✅</span>
         <h4>ค่าธรรมเนียมสมัคร</h4>
-        <p><strong>10,000 บาท</strong> สำหรับ ส.ก. (ผู้ว่าราชการ กทม. 50,000 บาท) ชำระ ณ จุดรับสมัครในวันยื่นใบสมัคร</p>
+        <p><strong class="sk-highlight">10,000 บาท</strong> สำหรับ ส.ก. <span class="out-of-scope">(ผู้ว่าราชการ กทม. 50,000 บาท)</span> ชำระ ณ จุดรับสมัครในวันยื่นใบสมัคร</p>
       </div>
     </div>
 

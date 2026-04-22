@@ -597,6 +597,13 @@ body::before {
 .delay-3 { animation-delay: 0.3s; }
 .delay-4 { animation-delay: 0.4s; }
 .delay-5 { animation-delay: 0.5s; }
+/* SCOPE: Primary = ส.ก. · Secondary = ผู้ว่า (reference) */
+.scope-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:999px;background:linear-gradient(135deg,#C9A96E,#E8C878);color:#0A1628;font-size:12px;font-weight:700;letter-spacing:.5px;box-shadow:0 2px 12px rgba(201,169,110,.4)}
+.scope-badge::before{content:'📍';font-size:14px}
+.sk-primary{border-left:3px solid #C9A96E;padding-left:12px;background:rgba(201,169,110,.06)}
+.sk-highlight{background:linear-gradient(180deg,transparent 55%,rgba(201,169,110,.3) 55%);padding:0 3px;font-weight:700}
+.out-of-scope{opacity:.55;color:#8B8680 !important;font-weight:400 !important;font-style:italic}
+.out-of-scope-note{display:inline-block;font-size:10px;color:#B8B0A5;background:rgba(255,255,255,.08);padding:1px 6px;border-radius:4px;margin-left:6px;font-weight:600;letter-spacing:.3px;vertical-align:middle;font-style:normal}
 </style>
 </head>
 <body data-lang="th">
@@ -605,7 +612,7 @@ body::before {
 
 <div style="position:fixed;top:0;left:0;right:0;z-index:100;height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:#0A1628;border-bottom:1px solid rgba(201,169,110,.2);font-size:13px">
   <div style="font-family:'Noto Sans Thai',sans-serif;color:rgba(255,255,255,.9);font-weight:500"><a href="index.html" style="color:rgba(255,255,255,.6);text-decoration:none;margin-right:8px">← ส.ก. Navigator</a> Campaign Dashboard</div>
-  <div style="color:rgba(255,255,255,.5);font-size:12px">by <span style="color:#C9A96E">LAS</span></div>
+  <div style="display:flex;align-items:center;gap:12px"><span class="scope-badge">ผู้สมัคร ส.ก. กทม.</span><span style="color:rgba(255,255,255,.5);font-size:12px">by <span style="color:#C9A96E">LAS</span></span></div>
 </div>
 
 <div class="container" style="padding-top:56px">

@@ -92,6 +92,14 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
   .bb-track{height:16px}
 }
 .site-footer{background:var(--navy-dark);color:rgba(255,255,255,.6);text-align:center;padding:24px;font-size:12px;line-height:1.8}.site-footer a{color:var(--gold);text-decoration:none}
+/* SCOPE: Primary = ส.ก. (BKK Council Member) · Secondary = ผู้ว่า/อื่นๆ (reference) */
+.scope-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;background:linear-gradient(135deg,var(--gold),#E8C878);color:#1B2A4A;font-size:12px;font-weight:700;letter-spacing:.5px;margin-bottom:12px;box-shadow:0 2px 8px rgba(201,169,110,.25)}
+.scope-badge::before{content:'📍';font-size:14px}
+.sk-primary{border-left:3px solid var(--gold);padding-left:10px;background:rgba(201,169,110,.04)}
+.out-of-scope{opacity:.55;color:#6B7280!important;font-weight:400!important;font-style:italic}
+.out-of-scope strong{font-weight:500!important;color:#6B7280!important}
+.out-of-scope .law-hl{background:rgba(156,163,175,.15)!important;color:#6B7280!important}
+.out-of-scope-note{display:inline-block;font-size:10px;color:#9CA3AF;background:#F3F4F6;padding:1px 6px;border-radius:4px;margin-left:6px;font-weight:600;letter-spacing:.3px;vertical-align:middle}
 </style>
 </head>
 <body data-lang="th">
@@ -99,6 +107,9 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
 
 <div class="top-bar"><div class="top-bar-left"><a href="index.html">← Dashboard</a> Campaign Tracker</div><div class="top-bar-right"><span>LAS</span> × <span>NIA</span></div></div>
 <div class="main">
+
+<!-- SCOPE BADGE -->
+<div style="text-align:center;margin-bottom:8px"><span class="scope-badge">ผู้สมัคร ส.ก. กทม. — Focus เฉพาะสมาชิกสภา กทม.</span></div>
 
 <!-- BACKUP REMINDER BANNER -->
 <div class="backup-reminder" id="backupBanner" style="display:none">
@@ -307,14 +318,16 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
         <b>⚠️ สำคัญ:</b> การลาออกของ<u>ผู้ว่าฯ</u> ส่งผลต่อ<strong>เฉพาะการเลือกตั้งผู้ว่าฯ</strong> ไม่ส่งผลต่อสถานะ ส.ก. ที่ยังดำรงตำแหน่งครบวาระ 4 ปี
       </div>
 
-      <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:6px;">📍 ผู้ว่าฯ กทม. (ลาออก):</div>
-      <table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:12px;">
-        <tr><td style="padding:4px 0;color:var(--text-secondary);">วันตำแหน่งว่าง</td><td style="padding:4px 0;text-align:right;font-weight:700;">2 พ.ค. 2569</td></tr>
-        <tr><td style="padding:4px 0;color:var(--text-secondary);">เริ่มนับค่าใช้จ่าย</td><td style="padding:4px 0;text-align:right;font-weight:700;color:#C0392B;">2 พ.ค. 2569</td></tr>
-        <tr><td style="padding:4px 0;color:var(--text-secondary);">ต้องเลือกตั้งภายใน</td><td style="padding:4px 0;text-align:right;font-weight:700;">60 วัน (ม.12)</td></tr>
-      </table>
+      <div class="out-of-scope" style="margin-bottom:12px;padding:8px;border:1px dashed #D1D5DB;border-radius:6px;">
+        <div style="font-size:12px;font-weight:700;margin-bottom:6px;">📍 ผู้ว่าฯ กทม. (ลาออก): <span class="out-of-scope-note">REFERENCE</span></div>
+        <table style="width:100%;border-collapse:collapse;font-size:11px;">
+          <tr><td style="padding:4px 0;">วันตำแหน่งว่าง</td><td style="padding:4px 0;text-align:right;">2 พ.ค. 2569</td></tr>
+          <tr><td style="padding:4px 0;">เริ่มนับค่าใช้จ่าย</td><td style="padding:4px 0;text-align:right;">2 พ.ค. 2569</td></tr>
+          <tr><td style="padding:4px 0;">ต้องเลือกตั้งภายใน</td><td style="padding:4px 0;text-align:right;">60 วัน (ม.12)</td></tr>
+        </table>
+      </div>
 
-      <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:6px;">📍 ส.ก. 50 เขต (ยังครบวาระ):</div>
+      <div class="sk-primary" style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:6px;padding:6px 10px;">📍 ส.ก. 50 เขต (ยังครบวาระ) — <span style="color:var(--gold)">FOCUS</span>:</div>
       <table style="width:100%;border-collapse:collapse;font-size:11px;">
         <tr><td style="padding:4px 0;color:var(--text-secondary);">วันครบวาระ</td><td style="padding:4px 0;text-align:right;font-weight:700;">21 พ.ค. 2569</td></tr>
         <tr><td style="padding:4px 0;color:var(--text-secondary);">เริ่มนับค่าใช้จ่าย</td><td style="padding:4px 0;text-align:right;font-weight:700;color:#27AE60;">22 พ.ย. 2568 <small>(ไม่เปลี่ยน)</small></td></tr>
@@ -448,8 +461,8 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
     <div class="law-body">
       <p><strong>ไม่เร็วขึ้น</strong> — ส.ก. ยังยึดวาระครบกำหนด 21 พ.ค. 2569 (4 ปีจาก 22 พ.ค. 2565)</p>
       <ul>
-        <li><strong>ผู้ว่าฯ ลาออก 2 พ.ค. 2569:</strong> ต้องจัดเลือกตั้งผู้ว่าฯ ใหม่ภายใน 60 วัน (ม.12) = <u>ไม่เกิน 1 ก.ค. 2569</u></li>
-        <li><strong>ส.ก. ครบวาระ 21 พ.ค. 2569:</strong> ต้องจัดเลือกตั้งภายใน 45 วัน = <u>ไม่เกิน 5 ก.ค. 2569</u></li>
+        <li class="out-of-scope"><strong>ผู้ว่าฯ ลาออก 2 พ.ค. 2569:</strong> ต้องจัดเลือกตั้งผู้ว่าฯ ใหม่ภายใน 60 วัน (ม.12) = <u>ไม่เกิน 1 ก.ค. 2569</u> <span class="out-of-scope-note">REF</span></li>
+        <li class="sk-primary" style="padding:4px 10px"><strong>ส.ก. ครบวาระ 21 พ.ค. 2569:</strong> ต้องจัดเลือกตั้งภายใน 45 วัน = <u>ไม่เกิน 5 ก.ค. 2569</u></li>
         <li>ช่วงเวลาคาบเกี่ยวกัน → กกต. จึงจัดเลือกตั้งรวมกันในวันเดียว <strong>28 มิ.ย. 2569</strong></li>
       </ul>
       <p class="law-hl" style="margin-top:8px;">📜 ม.11, ม.12 พ.ร.บ.เลือกตั้งท้องถิ่น 2562 · ม.49 พ.ร.บ.ระเบียบบริหาร กทม. 2528</p>
