@@ -128,7 +128,7 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
       <div style="font-size:12px;color:var(--text-muted)">ใช้ไป <span id="S">0</span> / <span id="L">900,000</span> บาท</div>
     </div>
     <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-      <select id="distSel" class="fg" style="padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;font-family:'Sarabun',sans-serif;max-width:320px" onchange="D.set('b',+this.value);render()">
+      <select id="distSel" class="fg" style="padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;font-family:'Sarabun',sans-serif;max-width:320px" onchange="D.set('b',+this.value);D.set('distIdx',this.selectedIndex);render()">
         <optgroup label="820,000 บาท (5 เขต)">
           <option value="820000">สัมพันธวงศ์</option>
           <option value="820000">ป้อมปราบศัตรูพ่าย</option>
@@ -633,14 +633,15 @@ html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px
   </div>
 
   <div class="st" style="margin-top:32px">บทกำหนดโทษ</div>
-  <div class="aw aw-danger" style="margin-bottom:16px">⚠️ <b>โทษสูงสุด: จำคุก 1–5 ปี + เพิกถอนสิทธิเลือกตั้ง 10 ปี</b> — กรณีใช้จ่ายเกินวงเงิน หรือยื่นบัญชีเท็จ/ไม่ครบถ้วน (ม. 127, 129)</div>
+  <div class="aw aw-danger" style="margin-bottom:16px">⚠️ <b>โทษสูงสุด: จำคุก 1–5 ปี + เพิกถอนสิทธิเลือกตั้ง 10 ปี</b> — กรณีใช้จ่ายเกินวงเงิน (ม. 127) หรือยื่นบัญชีเท็จ (ม. 128 วรรคสอง)</div>
   <div style="overflow-x:auto">
     <table class="dt">
       <thead><tr><th>กรณี</th><th>โทษ</th><th>มาตรา</th></tr></thead>
       <tbody>
-        <tr><td style="font-size:13px"><b>ใช้จ่ายเกินวงเงิน</b></td><td style="font-size:13px"><span class="badge badge-red">จำคุก 1–5 ปี</span> หรือปรับ 20,000–100,000 บาท หรือปรับ 3 เท่าของยอดเกิน <span class="badge badge-red">เพิกถอนสิทธิ์ 10 ปี</span></td><td><b>ม. 127</b></td></tr>
-        <tr><td style="font-size:13px"><b>ไม่ยื่นบัญชีภายใน 90 วัน</b></td><td style="font-size:13px">ปรับ 10,000–50,000 บาท <span class="badge badge-orange">เพิกถอนสิทธิ์ 5 ปี</span></td><td><b>ม. 128</b></td></tr>
-        <tr><td style="font-size:13px"><b>ยื่นบัญชีเท็จ / ไม่ครบถ้วน</b></td><td style="font-size:13px"><span class="badge badge-red">จำคุก 1–5 ปี</span> หรือปรับ 20,000–100,000 บาท <span class="badge badge-red">เพิกถอนสิทธิ์ 10 ปี</span></td><td><b>ม. 129</b></td></tr>
+        <tr><td style="font-size:13px"><b>ใช้จ่ายเกินวงเงิน</b></td><td style="font-size:13px"><span class="badge badge-red">จำคุก 1–5 ปี</span> หรือปรับ 20,000–100,000 บาท หรือปรับ 3 เท่าของยอดเกิน (แล้วแต่จำนวนใดมากกว่า) หรือทั้งจำทั้งปรับ <span class="badge badge-red">เพิกถอนสิทธิ์ 10 ปี</span></td><td><b>ม. 127</b></td></tr>
+        <tr><td style="font-size:13px"><b>ไม่ยื่นบัญชีภายใน 90 วัน</b></td><td style="font-size:13px">จำคุกไม่เกิน 2 ปี หรือปรับไม่เกิน 40,000 บาท หรือทั้งจำทั้งปรับ <span class="badge badge-orange">เพิกถอนสิทธิ์ 5 ปี</span></td><td><b>ม. 128 วรรคหนึ่ง</b></td></tr>
+        <tr><td style="font-size:13px"><b>ยื่นบัญชีเท็จ / ไม่ครบถ้วน</b></td><td style="font-size:13px"><span class="badge badge-red">จำคุก 1–5 ปี</span> และปรับ 20,000–100,000 บาท <span class="badge badge-red">เพิกถอนสิทธิ์ 10 ปี</span></td><td><b>ม. 128 วรรคสอง</b></td></tr>
+        <tr><td style="font-size:13px"><b>ฝ่าฝืนคำสั่ง กกต. / ม.66 วรรคสอง / ม.70 / ม.74</b></td><td style="font-size:13px">จำคุกไม่เกิน 6 เดือน หรือปรับไม่เกิน 10,000 บาท หรือทั้งจำทั้งปรับ</td><td><b>ม. 129</b></td></tr>
       </tbody>
     </table>
   </div>
@@ -734,7 +735,7 @@ function toggleLaw(hd){var body=hd.nextElementSibling;var arrow=hd.querySelector
 function addTeam(){var n=document.getElementById('tn').value.trim();if(!n){alert('กรุณากรอกชื่อ');return}var a=D.get('team');a.push({id:Date.now(),n:n,r:document.getElementById('tr').value.trim(),p:+document.getElementById('tp').value||0,s:document.getElementById('ts').value});D.set('team',a);document.getElementById('tn').value='';document.getElementById('tr').value='';document.getElementById('tp').value='';toggleForm('tf');render()}
 function addVeh(){var p=document.getElementById('vp').value.trim();if(!p){alert('กรุณากรอกทะเบียน');return}var a=D.get('veh');a.push({id:Date.now(),p:p,t:document.getElementById('vt').value,c:+document.getElementById('vc').value||0,n:document.getElementById('vn').value.trim()});D.set('veh',a);document.getElementById('vp').value='';document.getElementById('vc').value='';document.getElementById('vn').value='';toggleForm('vf');render()}
 function addSign(){var q=+document.getElementById('sq').value;if(!q){alert('กรุณากรอกจำนวน');return}var a=D.get('sign');a.push({id:Date.now(),t:document.getElementById('sty').value,q:q,l:document.getElementById('sl').value.trim(),c:+document.getElementById('sc').value||0});D.set('sign',a);document.getElementById('sq').value='';document.getElementById('sl').value='';document.getElementById('sc').value='';toggleForm('sf');render()}
-function addTx(){var amt=+document.getElementById('xa').value;if(!amt||amt<0){alert('กรุณากรอกจำนวนเงินเป็นค่าบวก');return}var a=D.get('tx');a.push({id:Date.now(),type:document.getElementById('xt').value,date:document.getElementById('xd').value||new Date().toISOString().slice(0,10),cat:document.getElementById('xc').value,amt:amt,memo:document.getElementById('xm').value.trim(),docno:document.getElementById('xdn').value.trim(),payee:document.getElementById('xpy').value.trim()});D.set('tx',a);document.getElementById('xa').value='';document.getElementById('xm').value='';document.getElementById('xdn').value='';document.getElementById('xpy').value='';toggleForm('xf');render()}
+function addTx(){var amt=+document.getElementById('xa').value;if(!amt||amt<0){alert('กรุณากรอกจำนวนเงินเป็นค่าบวก');return}var cat=document.getElementById('xc').value;if(!cat){alert('กรุณาเลือกหมวดค่าใช้จ่าย');return}var a=D.get('tx');a.push({id:Date.now(),type:document.getElementById('xt').value,date:document.getElementById('xd').value||new Date().toISOString().slice(0,10),cat:cat,amt:amt,memo:document.getElementById('xm').value.trim(),docno:document.getElementById('xdn').value.trim(),payee:document.getElementById('xpy').value.trim()});D.set('tx',a);document.getElementById('xa').value='';document.getElementById('xm').value='';document.getElementById('xdn').value='';document.getElementById('xpy').value='';toggleForm('xf');render()}
 function del(type,id){if(!confirm('ลบรายการนี้?'))return;D.set(type,D.get(type).filter(function(i){return i.id!==id}));render()}
 
 // === RENDER ===
@@ -757,9 +758,11 @@ function render(){
   else if(pct>=90){al.className='bb-alert show';al.style.background='var(--orange-bg)';al.style.color='#92400E';al.textContent='⚠️ ใช้ไป '+pct+'% — เหลืองบไม่ถึง 10%!'}
   else if(pct>=75){al.className='bb-alert show';al.style.background='var(--orange-bg)';al.style.color='#92400E';al.textContent='⚡ ใช้ไป '+pct+'% — ควรระมัดระวังการใช้จ่าย'}
   else{al.className='bb-alert'}
-  // District selector sync
+  // District selector sync (restore exact district, not just budget tier)
   var sel=document.getElementById('distSel');
-  for(var i=0;i<sel.options.length;i++){if(+sel.options[i].value===budget){sel.selectedIndex=i;break}}
+  var distIdx=D.get('distIdx');
+  if(distIdx!==undefined&&distIdx>=0&&distIdx<sel.options.length&&+sel.options[distIdx].value===budget){sel.selectedIndex=distIdx}
+  else{for(var i=0;i<sel.options.length;i++){if(+sel.options[i].value===budget){sel.selectedIndex=i;break}}}
   // Tables
   renderTbl('tT',team,['#','ชื่อ','หน้าที่','ค่า/วัน','วันเริ่ม',''],function(t,i){return '<tr><td>'+(i+1)+'</td><td>'+E(t.n)+'</td><td>'+E(t.r)+'</td><td class="amt">'+N(t.p)+'</td><td>'+E(t.s)+'</td><td class="no-print"><button class="btn-d" onclick="del(\'team\','+t.id+')">ลบ</button></td></tr>'});
   renderTbl('vT',veh,['#','ทะเบียน','ประเภท','ค่าเช่า/วัน','หมายเหตุ',''],function(v,i){return '<tr><td>'+(i+1)+'</td><td>'+E(v.p)+'</td><td>'+E(v.t)+'</td><td class="amt">'+N(v.c)+'</td><td>'+E(v.n)+'</td><td class="no-print"><button class="btn-d" onclick="del(\'veh\','+v.id+')">ลบ</button></td></tr>'});
@@ -891,7 +894,9 @@ function loadSettings(){
   document.getElementById('cNum').value=D.get('num')||'';
   document.getElementById('cED').value=D.get('edate')||'';
   var b=D.get('b');var sel=document.getElementById('distSel');
-  for(var i=0;i<sel.options.length;i++){if(+sel.options[i].value===b){sel.selectedIndex=i;break}}
+  var distIdx=D.get('distIdx');
+  if(distIdx!==undefined&&distIdx>=0&&distIdx<sel.options.length&&+sel.options[distIdx].value===b){sel.selectedIndex=distIdx}
+  else{for(var i=0;i<sel.options.length;i++){if(+sel.options[i].value===b){sel.selectedIndex=i;break}}}
 }
 
 // === BACKUP REMINDER ===
