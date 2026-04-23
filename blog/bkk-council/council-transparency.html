@@ -21,7 +21,7 @@
 :root{--bg:#FAFAFA;--bg-alt:#F5F5F5;--card:#FFF;--text:#1A1A2E;--text-secondary:#6B7280;--text-muted:#9CA3AF;--navy:#1B2A4A;--navy-dark:#0d1f33;--gold:#C9A96E;--teal:#0D9488;--green:#22C55E;--green-bg:#D1FAE5;--red:#EF4444;--red-bg:#FEE2E2;--red-dark:#991B1B;--orange:#E67E22;--orange-bg:#FEF3C7;--blue:#2563EB;--blue-bg:#DBEAFE;--border:#E5E7EB;--border-light:#F3F4F6;--shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);--shadow-md:0 4px 12px rgba(0,0,0,.06);--radius:12px;--radius-sm:8px;--max-w:1200px;--transition:.2s ease}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.7;color:var(--text);background:var(--bg) linear-gradient(135deg,#FAFAFA 0%,#F0F4F8 100%);-webkit-font-smoothing:antialiased;min-height:100vh}
+body{font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.7;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;min-height:100vh}
 .top-bar{position:fixed;top:0;left:0;right:0;z-index:100;height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:var(--navy);border-bottom:1px solid rgba(201,169,110,.2);font-size:13px}
 .top-bar-left{font-family:'Space Grotesk',sans-serif;color:rgba(255,255,255,.9);font-weight:500}
 .top-bar-left a{color:rgba(255,255,255,.6);text-decoration:none;margin-right:8px}
@@ -33,7 +33,7 @@ body{font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.7;color:var(-
 .scope-badge{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:999px;background:linear-gradient(135deg,var(--gold),#E8C878);color:var(--navy);font-size:13px;font-weight:700;letter-spacing:.5px;box-shadow:0 2px 10px rgba(201,169,110,.3);margin-bottom:12px}
 .scope-badge::before{content:'📍';font-size:15px}
 
-.hero{text-align:center;padding:20px 0 40px}
+.hero{text-align:center;padding:20px 0 32px}
 .hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,4vw,42px);font-weight:700;color:var(--navy);line-height:1.25;margin-bottom:12px}
 .hero h1 em{font-style:normal;color:var(--gold)}
 .hero .subtitle{font-size:16px;color:var(--text-secondary);max-width:800px;margin:0 auto;line-height:1.7}
@@ -45,18 +45,6 @@ body{font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.7;color:var(-
 
 .disclaimer{background:#FEF3C7;border:1px solid #F59E0B;border-radius:var(--radius-sm);padding:14px 18px;font-size:14px;color:#92400E;line-height:1.7;margin-bottom:28px}
 .disclaimer strong{display:block;margin-bottom:6px;color:#78350F}
-
-/* PDF Downloads */
-.dl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:14px;margin-bottom:32px}
-.dl-card{background:rgba(255,255,255,.7);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(201,169,110,.3);border-radius:var(--radius);padding:16px;display:flex;gap:12px;align-items:flex-start;transition:all var(--transition);text-decoration:none;color:inherit;box-shadow:0 2px 8px rgba(27,42,74,.06)}
-.dl-card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(27,42,74,.12);border-color:var(--gold);background:rgba(255,255,255,.9)}
-.dl-icon{flex-shrink:0;width:48px;height:48px;background:linear-gradient(135deg,var(--navy),var(--navy-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--gold)}
-.dl-info{flex:1;min-width:0}
-.dl-info .dl-title{font-size:14px;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:3px}
-.dl-info .dl-meta{font-size:11px;color:var(--text-muted);font-family:'Space Grotesk',sans-serif;letter-spacing:.3px;text-transform:uppercase}
-.dl-info .dl-cta{font-size:12px;color:var(--gold);font-weight:600;margin-top:4px}
-.dl-info .dl-cta::after{content:' →';transition:transform var(--transition)}
-.dl-card:hover .dl-info .dl-cta::after{content:' ⬇'}
 
 /* Comparison Table */
 .cmp-wrap{margin-bottom:28px}
@@ -85,8 +73,8 @@ body{font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.7;color:var(-
 .clause-text{font-family:'Sarabun',sans-serif;color:var(--text);white-space:pre-wrap;word-break:break-word}
 .clause-text + .clause-label{margin-top:14px}
 
-/* Glass Box — Summary */
-.glass-box{margin:60px 0 20px;padding:32px 28px;border-radius:20px;background:linear-gradient(135deg,rgba(27,42,74,.08),rgba(201,169,110,.12));backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1.5px solid rgba(201,169,110,.35);box-shadow:0 10px 40px rgba(27,42,74,.08),inset 0 1px 0 rgba(255,255,255,.5);position:relative;overflow:hidden}
+/* Glass Box — Summary (TOP) */
+.glass-box{margin:0 0 44px;padding:32px 28px;border-radius:20px;background:linear-gradient(135deg,rgba(27,42,74,.08),rgba(201,169,110,.12));backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1.5px solid rgba(201,169,110,.35);box-shadow:0 10px 40px rgba(27,42,74,.08),inset 0 1px 0 rgba(255,255,255,.5);position:relative;overflow:hidden}
 .glass-box::before{content:'';position:absolute;top:-50%;right:-30%;width:400px;height:400px;background:radial-gradient(circle,rgba(201,169,110,.15),transparent 70%);pointer-events:none}
 .glass-box::after{content:'';position:absolute;bottom:-30%;left:-20%;width:350px;height:350px;background:radial-gradient(circle,rgba(27,42,74,.1),transparent 70%);pointer-events:none}
 .glass-title{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:var(--navy);text-align:center;margin-bottom:8px;position:relative;z-index:1;line-height:1.3}
@@ -104,6 +92,18 @@ body{font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.7;color:var(-
 
 .glass-footer{margin-top:20px;padding:14px 18px;background:rgba(255,255,255,.4);border-radius:10px;font-size:12px;color:var(--text-secondary);line-height:1.7;position:relative;z-index:1;text-align:center}
 .glass-footer strong{color:var(--navy)}
+
+/* PDF Downloads */
+.dl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:14px;margin-bottom:32px}
+.dl-card{background:rgba(255,255,255,.7);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(201,169,110,.3);border-radius:var(--radius);padding:16px;display:flex;gap:12px;align-items:flex-start;transition:all var(--transition);text-decoration:none;color:inherit;box-shadow:0 2px 8px rgba(27,42,74,.06)}
+.dl-card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(27,42,74,.12);border-color:var(--gold);background:rgba(255,255,255,.9)}
+.dl-icon{flex-shrink:0;width:48px;height:48px;background:linear-gradient(135deg,var(--navy),var(--navy-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--gold)}
+.dl-info{flex:1;min-width:0}
+.dl-info .dl-title{font-size:14px;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:3px}
+.dl-info .dl-meta{font-size:11px;color:var(--text-muted);font-family:'Space Grotesk',sans-serif;letter-spacing:.3px;text-transform:uppercase}
+.dl-info .dl-cta{font-size:12px;color:var(--gold);font-weight:600;margin-top:4px}
+.dl-info .dl-cta::after{content:' →';transition:transform var(--transition)}
+.dl-card:hover .dl-info .dl-cta::after{content:' ⬇'}
 
 .back-link{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:var(--navy);color:#fff;text-decoration:none;border-radius:var(--radius-sm);font-weight:600;font-size:14px;margin-top:24px;transition:all var(--transition)}
 .back-link:hover{background:var(--navy-dark);transform:translateY(-1px);box-shadow:0 4px 10px rgba(27,42,74,.2)}
@@ -152,68 +152,85 @@ body{font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.7;color:var(-
   บทความนี้เป็นการเปรียบเทียบข้อบังคับเท่านั้น — <strong>ไม่ได้มีเจตนาให้ร้าย วิพากษ์ หรือตำหนิฝ่ายใด</strong> · มีวัตถุประสงค์เพื่อการพัฒนาและส่งเสริมความโปร่งใสในระบบประชาธิปไตยระดับท้องถิ่น · ตัวบทแสดงตามฉบับจริงในราชกิจจานุเบกษา ทั้งเลขข้อ เครื่องหมาย วรรคตอน และข้อความครบถ้วน · ไม่มีการแสดงความคิดเห็นหรือตัดสินใจแทนผู้อ่าน
 </div>
 
-<!-- PDF DOWNLOADS -->
-<div class="section">
-  <h2 class="st"><span class="num">📥</span>ดาวน์โหลดไฟล์ PDF ต้นฉบับ</h2>
-  <p class="sd">เอกสารต้นฉบับทั้งหมดจากราชกิจจานุเบกษา · ใช้อ้างอิงและเปรียบเทียบได้</p>
+<!-- GLASS SUMMARY BOX — moved to TOP -->
+<div class="glass-box">
+  <h2 class="glass-title">✨ ความโปร่งและตรวจสอบได้<br>ผ่านข้อบังคับการประชุมสภา กทม. และ สภาผู้แทนฯ</h2>
+  <p class="glass-subtitle">ตารางสรุปข้อแตกต่างเชิงโครงสร้างที่ค้นพบจากการเปรียบเทียบข้อบังคับทั้งสองฉบับ<br>(เฉพาะการระบุไว้ในตัวบทข้อบังคับ — ไม่รวมการปฏิบัติจริง)</p>
 
-  <div class="dl-grid">
-    <a href="downloads/bkk-council-meeting-rules-2562.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📕</div>
-      <div class="dl-info">
-        <div class="dl-title">ข้อบังคับประชุมสภา กทม. 2562</div>
-        <div class="dl-meta">252 KB · ฉบับหลัก</div>
-        <div class="dl-cta">ดาวน์โหลด</div>
-      </div>
-    </a>
-    <a href="downloads/bkk-council-meeting-rules-2563-v2.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📗</div>
-      <div class="dl-info">
-        <div class="dl-title">ฉบับที่ 2 พ.ศ. 2563</div>
-        <div class="dl-meta">78 KB · แก้ไขเพิ่มเติม</div>
-        <div class="dl-cta">ดาวน์โหลด</div>
-      </div>
-    </a>
-    <a href="downloads/bkk-council-meeting-rules-2565-v3.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📘</div>
-      <div class="dl-info">
-        <div class="dl-title">ฉบับที่ 3 พ.ศ. 2565</div>
-        <div class="dl-meta">74 KB · แก้ไขเพิ่มเติม</div>
-        <div class="dl-cta">ดาวน์โหลด</div>
-      </div>
-    </a>
-    <a href="downloads/bkk-council-meeting-rules-2566-v4.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📙</div>
-      <div class="dl-info">
-        <div class="dl-title">ฉบับที่ 4 พ.ศ. 2566</div>
-        <div class="dl-meta">85 KB · แก้ไขเพิ่มเติม</div>
-        <div class="dl-cta">ดาวน์โหลด</div>
-      </div>
-    </a>
-    <a href="downloads/bkk-council-code-of-conduct-2559.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">🛡️</div>
-      <div class="dl-info">
-        <div class="dl-title">จรรยาบรรณ ส.ก. พ.ศ. 2559</div>
-        <div class="dl-meta">49 KB · ข้อบังคับเฉพาะ</div>
-        <div class="dl-cta">ดาวน์โหลด</div>
-      </div>
-    </a>
-    <a href="downloads/bkk-council-complaint-regulation.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">📨</div>
-      <div class="dl-info">
-        <div class="dl-title">ระเบียบรับเรื่องร้องเรียน ส.ก.</div>
-        <div class="dl-meta">59 KB · ระเบียบเฉพาะ</div>
-        <div class="dl-cta">ดาวน์โหลด</div>
-      </div>
-    </a>
-    <a href="downloads/parliament-house-rules-2566.pdf" target="_blank" class="dl-card">
-      <div class="dl-icon">🏛️</div>
-      <div class="dl-info">
-        <div class="dl-title">ข้อบังคับประชุมสภาผู้แทนฯ 2566</div>
-        <div class="dl-meta">5.1 MB · รวม 2562+2563</div>
-        <div class="dl-cta">ดาวน์โหลด</div>
-      </div>
-    </a>
+  <table class="glass-table">
+    <thead>
+      <tr>
+        <th class="th-aspect">ประเด็น</th>
+        <th class="th-bkk">🏛️ สภา กทม. 2562</th>
+        <th class="th-par">🏛️ สภาผู้แทนฯ / รัฐสภา</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="td-aspect" data-label="ประเด็น">การถ่ายทอดสด</td>
+        <td data-label="สภา กทม.">ประธานสภา <strong>"อาจจัดให้มี"</strong> (permissive — ไม่บังคับ) — ข้อ 27</td>
+        <td data-label="สภาผู้แทนฯ">ประธานสภา <strong>"ต้องจัดให้มี"</strong> + ล่ามภาษามือ + fallback clause — ข้อ 18/9</td>
+      </tr>
+      <tr>
+        <td class="td-aspect" data-label="ประเด็น">บันทึกการลงคะแนนรายบุคคล</td>
+        <td data-label="สภา กทม.">ไม่พบข้อบังคับที่กำหนดให้เปิดเผยบันทึกรายบุคคลต่อสาธารณะ</td>
+        <td data-label="สภาผู้แทนฯ"><strong>บังคับเปิดเผยรายบุคคล</strong>ผ่านสื่ออิเล็กทรอนิกส์ — ข้อ 89 + ข้อ 62</td>
+      </tr>
+      <tr>
+        <td class="td-aspect" data-label="ประเด็น">รายงานการประชุม — ประชาชนเข้าถึง</td>
+        <td data-label="สภา กทม.">เฉพาะ "สมาชิกตรวจดูได้" ที่สำนักงานเลขานุการสภา 3 วันก่อนประชุม — ข้อ 32</td>
+        <td data-label="สภาผู้แทนฯ">สมาชิก 7 วัน + <strong>"พิมพ์และโฆษณารายงานการประชุม เพื่อเป็นการเปิดเผยให้ประชาชนทราบได้ทั่วไป"</strong> — ข้อ 43 + ข้อ 28</td>
+      </tr>
+      <tr>
+        <td class="td-aspect" data-label="ประเด็น">รายงานคณะกรรมการ — ประชาชน</td>
+        <td data-label="สภา กทม.">ไม่พบข้อบังคับที่กำหนดให้เปิดเผยรายงานคณะกรรมการต่อประชาชน</td>
+        <td data-label="สภาผู้แทนฯ"><strong>บังคับเปิดเผยให้ประชาชนทราบ</strong> (เว้นแต่มีมติไม่ให้เปิด) — ข้อ 107 + ข้อ 78</td>
+      </tr>
+      <tr>
+        <td class="td-aspect" data-label="ประเด็น">ผู้ฟังบุคคลภายนอก</td>
+        <td data-label="สภา กทม.">ประธานสภา<strong>อนุญาต</strong>เป็นรายกรณี (discretionary) — ข้อ 117 วรรค 4</td>
+        <td data-label="สภาผู้แทนฯ">ระเบียบ 2562 กำหนดขั้นตอน <strong>ยื่นคำขอล่วงหน้า</strong> → เลขาธิการพิจารณา</td>
+      </tr>
+      <tr>
+        <td class="td-aspect" data-label="ประเด็น">ตัวเลขขอประชุมลับ</td>
+        <td data-label="สภา กทม.">ผู้ว่าฯ หรือ ส.ก. <strong>≥ 1/4</strong> ของสมาชิกทั้งหมด — ข้อ 27</td>
+        <td data-label="สภาผู้แทนฯ">ครม. หรือสมาชิก <strong>≥ 1/4</strong> ของที่มีอยู่ — ข้อ 18/9</td>
+      </tr>
+      <tr>
+        <td class="td-aspect" data-label="ประเด็น">ตัวเลขขอลงคะแนนลับ</td>
+        <td data-label="สภา กทม."><strong>≥ 6 คน</strong> เสนอญัตติ + ที่ประชุมเห็นชอบ — ข้อ 74</td>
+        <td data-label="สภาผู้แทนฯ">สภาผู้แทนฯ <strong>≥ 20 คน</strong> | รัฐสภา <strong>≥ 40 คน</strong> — ข้อ 80 + ข้อ 55</td>
+      </tr>
+      <tr>
+        <td class="td-aspect" data-label="ประเด็น">การคัดค้านลงคะแนนลับ</td>
+        <td data-label="สภา กทม.">ไม่พบข้อบังคับว่าด้วยสิทธิคัดค้าน</td>
+        <td data-label="สภาผู้แทนฯ">ผู้คัดค้าน + รับรอง <strong>≥ 1/3</strong> ของที่ประชุม → <strong>"เอกสิทธิ์ที่จะลงคะแนนเปิดเผย"</strong> — ข้อ 80 วรรค 2 + ข้อ 55 วรรค 2</td>
+      </tr>
+      <tr>
+        <td class="td-aspect" data-label="ประเด็น">สิทธิโต้แย้งคำชี้แจง (Right to Reply)</td>
+        <td data-label="สภา กทม.">ไม่พบข้อบังคับว่าด้วยสิทธิโต้แย้งคำชี้แจง</td>
+        <td data-label="สภาผู้แทนฯ">บุคคลภายนอกที่ได้รับความเสียหาย ยื่นต่อประธานสภาใน <strong>3 เดือน</strong> — ข้อ 39-42 + ระเบียบ 2563</td>
+      </tr>
+      <tr>
+        <td class="td-aspect" data-label="ประเด็น">การเปิดเผยร่างกฎหมายต่อประชาชน</td>
+        <td data-label="สภา กทม.">ส่งระเบียบวาระ + เอกสาร ให้ "สมาชิก" — ข้อ 22</td>
+        <td data-label="สภาผู้แทนฯ">ร่าง พ.ร.บ. ต้องมีบันทึกวิเคราะห์ + ผลรับฟังความเห็น (ข้อ 110) · ร่าง รธน. <strong>เปิดเผยให้ประชาชนเข้าถึงได้โดยสะดวก</strong> (ข้อ 115)</td>
+      </tr>
+      <tr>
+        <td class="td-aspect" data-label="ประเด็น">การรับฟังความเห็นประชาชน</td>
+        <td data-label="สภา กทม.">ไม่พบข้อบังคับที่กำหนดให้สภาต้องจัดรับฟังความเห็น</td>
+        <td data-label="สภาผู้แทนฯ">สภา/คณะกรรมาธิการ <strong>จัดให้มีการรับฟังความคิดเห็น</strong>เพิ่มเติมได้ — ข้อ 140</td>
+      </tr>
+      <tr>
+        <td class="td-aspect" data-label="ประเด็น">ล่ามภาษามือ (ผู้พิการการได้ยิน)</td>
+        <td data-label="สภา กทม.">ไม่พบข้อบังคับที่กำหนดให้จัดล่ามภาษามือ</td>
+        <td data-label="สภาผู้แทนฯ"><strong>บังคับจัดล่ามภาษามือ</strong>ทุกการประชุมที่ถ่ายทอดสด — ข้อ 18/9 วรรค 2</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="glass-footer">
+    <strong>ข้อสังเกตเชิงวิชาการ:</strong> ตารางนี้แสดงเฉพาะสิ่งที่<strong>ข้อบังคับ</strong>ระบุไว้ในตัวบทเท่านั้น ไม่ได้สะท้อนการปฏิบัติจริงหรือประสิทธิภาพการบังคับใช้ · ข้อบังคับสภา กทม. ฉบับที่ 2 (2563), 3 (2565), 4 (2566) ที่แก้ไขภายหลัง <strong>ไม่ได้แก้ไข</strong>หมวดว่าด้วย transparency (ข้อ 27/32/117) · ประเด็นที่ข้อบังคับ กทม. ไม่ได้ระบุ อาจมีแนวปฏิบัติภายในของสภา กทม. หรือระเบียบเฉพาะที่ยังไม่ได้รวบรวมในเอกสารชุดนี้ · ดาวน์โหลดเอกสารต้นฉบับได้ที่ด้านล่างของหน้านี้
   </div>
 </div>
 
@@ -260,7 +277,7 @@ body{font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.7;color:var(-
         <span class="clause-label clause-par">ข้อ 9 (รัฐสภา)</span>
         <div class="clause-text">การประชุมรัฐสภาให้เป็นการเปิดเผย เว้นแต่คณะรัฐมนตรีหรือสมาชิกรัฐสภาไม่น้อยกว่าหนึ่งในสี่ของจำนวนสมาชิกรัฐสภาทั้งหมดเท่าที่มีอยู่ร้องขอให้ประชุมลับ ก็ให้ประชุมลับ
 
-ในการประชุมเปิดเผย ให้บุคคลภายนอกเข้าฟังการประชุมรัฐสภาได้ตามระเบียบที่ประธานรัฐสภากำหนด และให้ประธานรัฐสภาจัดให้มีการถ่ายทอดสดการประชุมทางวิทยุกระจายเสียงหรือวิทยุโทรทัศน์หรือทางอื่นใดที่ประชาชนทั่วไปสามารถรับได้อย่างทั่วถึง โดยจัดให้มีล่ามภาษามือด้วยเว้นแต่มีเหตุขัดข้องให้แจ้งที่ประชุมทราบ
+ในการประชุมเปิดเผย ให้บุคคลภายนอกเข้าฟังการประชุมรัฐสภาได้ตามระเบียบที่ประธานรัฐสภากำหนด และให้ประธานรัฐสภาจัดให้มีการถ่ายทอดสดการประชุมทางวิทยุกระจายเสียงหรือวิทยุโทรทัศน์หรือทางอื่นใดที่ประชาชนทั่วไปสามารถรับได้อย่างทั่วถึง โดยจัดให้มีล่ามภาษามือด้วย เว้นแต่มีเหตุขัดข้องให้แจ้งที่ประชุมทราบ
 
 ในกรณีไม่สามารถถ่ายทอดสดการประชุมตามวรรคสองได้ ให้ประธานรัฐสภาจัดให้มีการเผยแพร่บันทึกภาพและเสียงการประชุมดังกล่าวผ่านทางสื่อที่เหมาะสมโดยเร็ว
 
@@ -310,7 +327,8 @@ body{font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.7;color:var(-
         <span class="clause-label clause-bkk">ข้อ 27 วรรคหนึ่ง</span>
         <div class="clause-text">การประชุมสภาย่อมเป็นการเปิดเผย หากเป็นการสมควรประธานสภาอาจจัดให้มีการถ่ายทอดทางวิทยุกระจายเสียงหรือโทรทัศน์หรือวิธีการอื่นใดก็ได้</div>
         <span class="clause-label clause-bkk">ข้อ 83 (1)</span>
-        <div class="clause-text">คณะกรรมการกิจการสภา มีหน้าที่และอำนาจกระทำกิจการ ติดตามมติ ข้อเสนอแนะและข้อสังเกตในเรื่องต่าง ๆ ที่สภาได้เห็นชอบและส่งให้ฝ่ายบริหารนำไปพิจารณาดำเนินการ รวมทั้งติดตามตรวจสอบการดำเนินการที่ฝ่ายบริหารยังไม่ได้ดำเนินการ ประชาสัมพันธ์กิจการงานของสภา รับคำร้องเรียน ข้อเสนอแนะของสมาชิก ส่วนราชการและประชาชนในส่วนที่เกี่ยวข้องกับสมาชิก...</div>
+        <div class="clause-text">ข้อ ๘๓ ให้มีคณะกรรมการสามัญประจำสภา โดยมีหน้าที่และอำนาจ ดังต่อไปนี้
+(๑) คณะกรรมการกิจการสภา มีหน้าที่และอำนาจกระทำกิจการ ติดตามมติ ข้อเสนอแนะและข้อสังเกตในเรื่องต่าง ๆ ที่สภาได้เห็นชอบและส่งให้ฝ่ายบริหารนำไปพิจารณาดำเนินการ รวมทั้งติดตามตรวจสอบการดำเนินการที่ฝ่ายบริหารยังไม่ได้ดำเนินการ ประชาสัมพันธ์กิจการงานของสภา รับคำร้องเรียน ข้อเสนอแนะของสมาชิก ส่วนราชการและประชาชนในส่วนที่เกี่ยวข้องกับสมาชิก กำหนดหลักเกณฑ์และมาตรการในเรื่องสิทธิ หน้าที่ และจรรยาบรรณของสมาชิก สนับสนุนและส่งเสริมการเพิ่มพูนความรู้ ทักษะและประสบการณ์ของสมาชิก และกิจการอื่น ๆ ของสภา แล้วรายงานผลการดำเนินงานต่อสภา</div>
       </div>
       <div class="cmp-col cmp-col-par">
         <span class="clause-label clause-par">ข้อ 18 วรรคสอง (สภาผู้แทนฯ)</span>
@@ -451,7 +469,7 @@ body{font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.7;color:var(-
         <span class="clause-label clause-par">ข้อ 18 วรรคสาม (สภาผู้แทนฯ)</span>
         <div class="clause-text">ในกรณีที่ไม่สามารถถ่ายทอดสดการประชุมตามวรรคสองได้ ให้ประธานสภาจัดให้มีการเผยแพร่บันทึกภาพและเสียงการประชุมดังกล่าวผ่านทางสื่อที่เหมาะสมโดยเร็ว</div>
         <span class="clause-label clause-par">ข้อ 9 วรรคสอง (รัฐสภา) ⭐</span>
-        <div class="clause-text">ในการประชุมเปิดเผย...<strong>ให้ประธานรัฐสภาจัดให้มี</strong>การถ่ายทอดสดการประชุมทางวิทยุกระจายเสียงหรือวิทยุโทรทัศน์หรือทางอื่นใดที่ประชาชนทั่วไปสามารถรับได้อย่างทั่วถึง โดยจัดให้มีล่ามภาษามือด้วยเว้นแต่มีเหตุขัดข้องให้แจ้งที่ประชุมทราบ</div>
+        <div class="clause-text">ในการประชุมเปิดเผย ให้บุคคลภายนอกเข้าฟังการประชุมรัฐสภาได้ตามระเบียบที่ประธานรัฐสภากำหนด และ<strong>ให้ประธานรัฐสภาจัดให้มี</strong>การถ่ายทอดสดการประชุมทางวิทยุกระจายเสียงหรือวิทยุโทรทัศน์หรือทางอื่นใดที่ประชาชนทั่วไปสามารถรับได้อย่างทั่วถึง โดยจัดให้มีล่ามภาษามือด้วย เว้นแต่มีเหตุขัดข้องให้แจ้งที่ประชุมทราบ</div>
       </div>
     </div>
   </div>
@@ -495,7 +513,8 @@ body{font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.7;color:var(-
 
 ให้นำความในวรรคหนึ่ง มาใช้บังคับกับการประชุมของคณะอนุกรรมการ โดยอนุโลม</div>
         <span class="clause-label clause-bkk">ข้อ 83 (1)</span>
-        <div class="clause-text">คณะกรรมการกิจการสภา มีหน้าที่และอำนาจกระทำกิจการ ติดตามมติ ข้อเสนอแนะและข้อสังเกตในเรื่องต่าง ๆ ที่สภาได้เห็นชอบ...ประชาสัมพันธ์กิจการงานของสภา รับคำร้องเรียน ข้อเสนอแนะของสมาชิก ส่วนราชการและประชาชนในส่วนที่เกี่ยวข้องกับสมาชิก...</div>
+        <div class="clause-text">ข้อ ๘๓ ให้มีคณะกรรมการสามัญประจำสภา โดยมีหน้าที่และอำนาจ ดังต่อไปนี้
+(๑) คณะกรรมการกิจการสภา มีหน้าที่และอำนาจกระทำกิจการ ติดตามมติ ข้อเสนอแนะและข้อสังเกตในเรื่องต่าง ๆ ที่สภาได้เห็นชอบและส่งให้ฝ่ายบริหารนำไปพิจารณาดำเนินการ รวมทั้งติดตามตรวจสอบการดำเนินการที่ฝ่ายบริหารยังไม่ได้ดำเนินการ ประชาสัมพันธ์กิจการงานของสภา รับคำร้องเรียน ข้อเสนอแนะของสมาชิก ส่วนราชการและประชาชนในส่วนที่เกี่ยวข้องกับสมาชิก กำหนดหลักเกณฑ์และมาตรการในเรื่องสิทธิ หน้าที่ และจรรยาบรรณของสมาชิก สนับสนุนและส่งเสริมการเพิ่มพูนความรู้ ทักษะและประสบการณ์ของสมาชิก และกิจการอื่น ๆ ของสภา แล้วรายงานผลการดำเนินงานต่อสภา</div>
       </div>
       <div class="cmp-col cmp-col-par">
         <span class="clause-label clause-par">ข้อ 98 (สภาผู้แทนฯ)</span>
@@ -507,7 +526,9 @@ body{font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.7;color:var(-
         <span class="clause-label clause-par">ข้อ 107 (สภาผู้แทนฯ) ⭐</span>
         <div class="clause-text">บันทึกการประชุม รายงานการดำเนินการ รายงานการสอบหาข้อเท็จจริง หรือรายงานการศึกษา แล้วแต่กรณี ของคณะกรรมาธิการให้<strong>เปิดเผยให้ประชาชนทราบ</strong> ตามหลักเกณฑ์ วิธีการ และเงื่อนไขที่ประธานสภากำหนด
 
-ในกรณีที่จะไม่เปิดเผยบันทึกการประชุมหรือรายงานตามวรรคหนึ่ง ให้คณะกรรมาธิการที่เกี่ยวข้องเสนอความเห็นต่อสภาเพื่อให้สภามีมติมิให้เปิดเผย ทั้งนี้ หากสภามีมติมิให้เปิดเผย ให้สำนักงานเลขาธิการสภาผู้แทนราษฎรจัดเก็บบันทึกการประชุมหรือรายงานดังกล่าวไว้...</div>
+ในกรณีที่จะไม่เปิดเผยบันทึกการประชุมหรือรายงานตามวรรคหนึ่ง ให้คณะกรรมาธิการที่เกี่ยวข้องเสนอความเห็นต่อสภาเพื่อให้สภามีมติมิให้เปิดเผย ทั้งนี้ หากสภามีมติมิให้เปิดเผย ให้สำนักงานเลขาธิการสภาผู้แทนราษฎรจัดเก็บบันทึกการประชุมหรือรายงานดังกล่าวไว้ ตามหลักเกณฑ์ วิธีการและเงื่อนไขที่เลขาธิการกำหนด หากสภามิได้มีมติไปตามความเห็นของคณะกรรมาธิการดังกล่าว ให้ดำเนินการตามวรรคหนึ่งต่อไป
+
+การรับรองความถูกต้องของบันทึกการประชุม ให้เป็นไปตามหลักเกณฑ์และวิธีการที่ประธานสภากำหนด</div>
         <span class="clause-label clause-par">ข้อ 78 (รัฐสภา)</span>
         <div class="clause-text">คณะกรรมาธิการต้อง<strong>เปิดเผย</strong>บันทึกการประชุม รายงานการดำเนินการ รายงานการสอบหาข้อเท็จจริง หรือรายงานการศึกษา แล้วแต่กรณี ให้ประชาชนทราบ เว้นแต่รัฐสภามีมติมิให้เปิดเผย</div>
       </div>
@@ -527,7 +548,11 @@ body{font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.7;color:var(-
 
 ให้ประธานสภาบรรจุญัตติที่เสนอมาเข้าระเบียบวาระการประชุมสภาภายในกำหนดเวลาอันสมควรในสมัยประชุมนั้น</div>
         <span class="clause-label clause-bkk">ข้อ 43</span>
-        <div class="clause-text">ญัตติร่างข้อบัญญัติที่ประชุมสภาต้องพิจารณาเป็นสามวาระ แต่ที่ประชุมจะลงมติให้พิจารณาสามวาระรวดเดียวก็ได้ เว้นแต่ญัตติร่างข้อบัญญัติงบประมาณจะพิจารณาสามวาระรวดเดียวไม่ได้...</div>
+        <div class="clause-text">ญัตติร่างข้อบัญญัติที่ประชุมสภาต้องพิจารณาเป็นสามวาระ แต่ที่ประชุมจะลงมติให้พิจารณาสามวาระรวดเดียวก็ได้ เว้นแต่ญัตติร่างข้อบัญญัติงบประมาณจะพิจารณาสามวาระรวดเดียวไม่ได้
+
+ในการพิจารณาสามวาระรวดเดียว ผู้ว่าราชการกรุงเทพมหานคร หรือสมาชิกจะเป็นผู้เสนอก็ได้ โดยให้เสนอล่วงหน้าเป็นหนังสือ ในกรณีที่สมาชิกเป็นผู้เสนอต้องมีผู้เสนอร่วมกันจำนวนไม่น้อยกว่าสี่คน
+
+การพิจารณาวาระที่สองให้ที่ประชุมเป็นกรรมการเต็มสภาโดยให้ประธานของที่ประชุมเป็นประธาน</div>
         <span class="clause-label clause-bkk">ข้อ 94</span>
         <div class="clause-text">ญัตติร่างข้อบัญญัติที่สภาลงมติรับหลักการและมอบหมายให้คณะกรรมการสามัญหรือตั้งคณะกรรมการวิสามัญขึ้นพิจารณา เมื่อคณะกรรมการพิจารณาเสร็จแล้วให้เสนอร่างข้อบัญญัตินั้นตามร่างเดิมและตามที่มีการแก้ไขเพิ่มเติม พร้อมทั้งรายงานยื่นต่อประธานสภา รายงานต่อท้ายอย่างน้อยต้องระบุว่าได้มีหรือไม่มีการแก้ไขเพิ่มเติมในหมวดใดหรือข้อใดบ้าง มีการแปรญัตติและมติของคณะกรรมการวิสามัญเกี่ยวกับการแปรญัตตินั้นเป็นประการใด ตลอดจนการสงวนคำแปรญัตติหรือการสงวนความเห็นดังกล่าวตามข้อ ๑๐4 ด้วย</div>
       </div>
@@ -553,85 +578,68 @@ body{font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.7;color:var(-
 
 </div>
 
-<!-- GLASS SUMMARY BOX -->
-<div class="glass-box">
-  <h2 class="glass-title">✨ ความโปร่งและตรวจสอบได้<br>ผ่านข้อบังคับการประชุมสภา กทม. และ สภาผู้แทนฯ</h2>
-  <p class="glass-subtitle">ตารางสรุปข้อแตกต่างเชิงโครงสร้างที่ค้นพบจากการเปรียบเทียบข้อบังคับทั้งสองฉบับ<br>(เฉพาะการระบุไว้ในตัวบทข้อบังคับ — ไม่รวมการปฏิบัติจริง)</p>
+<!-- PDF DOWNLOADS — moved to BOTTOM -->
+<div class="section">
+  <h2 class="st"><span class="num">📥</span>ดาวน์โหลดเอกสารต้นฉบับ (PDF)</h2>
+  <p class="sd">เอกสารทั้งหมดคัดจากราชกิจจานุเบกษา · ตั้งชื่อไฟล์เป็นภาษาไทยตามชื่อทางการเพื่อใช้อ้างอิงและจัดเก็บได้สะดวก</p>
 
-  <table class="glass-table">
-    <thead>
-      <tr>
-        <th class="th-aspect">ประเด็น</th>
-        <th class="th-bkk">🏛️ สภา กทม. 2562</th>
-        <th class="th-par">🏛️ สภาผู้แทนฯ / รัฐสภา</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="td-aspect" data-label="ประเด็น">การถ่ายทอดสด</td>
-        <td data-label="สภา กทม.">ประธานสภา <strong>"อาจจัดให้มี"</strong> (permissive — ไม่บังคับ) — ข้อ 27</td>
-        <td data-label="สภาผู้แทนฯ">ประธานสภา <strong>"ต้องจัดให้มี"</strong> + ล่ามภาษามือ + fallback clause — ข้อ 18/9</td>
-      </tr>
-      <tr>
-        <td class="td-aspect" data-label="ประเด็น">บันทึกการลงคะแนนรายบุคคล</td>
-        <td data-label="สภา กทม.">ไม่พบข้อบังคับที่กำหนดให้เปิดเผยบันทึกรายบุคคลต่อสาธารณะ</td>
-        <td data-label="สภาผู้แทนฯ"><strong>บังคับเปิดเผยรายบุคคล</strong>ผ่านสื่ออิเล็กทรอนิกส์ — ข้อ 89 + ข้อ 62</td>
-      </tr>
-      <tr>
-        <td class="td-aspect" data-label="ประเด็น">รายงานการประชุม — ประชาชนเข้าถึง</td>
-        <td data-label="สภา กทม.">เฉพาะ "สมาชิกตรวจดูได้" ที่สำนักงานเลขานุการสภา 3 วันก่อนประชุม — ข้อ 32</td>
-        <td data-label="สภาผู้แทนฯ">สมาชิก 7 วัน + <strong>"พิมพ์และโฆษณา...เพื่อให้ประชาชนทราบได้ทั่วไป"</strong> — ข้อ 43 + ข้อ 28</td>
-      </tr>
-      <tr>
-        <td class="td-aspect" data-label="ประเด็น">รายงานคณะกรรมการ — ประชาชน</td>
-        <td data-label="สภา กทม.">ไม่พบข้อบังคับที่กำหนดให้เปิดเผยรายงานคณะกรรมการต่อประชาชน</td>
-        <td data-label="สภาผู้แทนฯ"><strong>บังคับเปิดเผยให้ประชาชนทราบ</strong> (เว้นแต่มีมติไม่ให้เปิด) — ข้อ 107 + ข้อ 78</td>
-      </tr>
-      <tr>
-        <td class="td-aspect" data-label="ประเด็น">ผู้ฟังบุคคลภายนอก</td>
-        <td data-label="สภา กทม.">ประธานสภา<strong>อนุญาต</strong>เป็นรายกรณี (discretionary) — ข้อ 117 วรรค 4</td>
-        <td data-label="สภาผู้แทนฯ">ระเบียบ 2562 กำหนดขั้นตอน <strong>ยื่นคำขอล่วงหน้า</strong> → เลขาธิการพิจารณา</td>
-      </tr>
-      <tr>
-        <td class="td-aspect" data-label="ประเด็น">ตัวเลขขอประชุมลับ</td>
-        <td data-label="สภา กทม.">ผู้ว่าฯ หรือ ส.ก. <strong>≥ 1/4</strong> ของสมาชิกทั้งหมด — ข้อ 27</td>
-        <td data-label="สภาผู้แทนฯ">ครม. หรือสมาชิก <strong>≥ 1/4</strong> ของที่มีอยู่ — ข้อ 18/9</td>
-      </tr>
-      <tr>
-        <td class="td-aspect" data-label="ประเด็น">ตัวเลขขอลงคะแนนลับ</td>
-        <td data-label="สภา กทม."><strong>≥ 6 คน</strong> เสนอญัตติ + ที่ประชุมเห็นชอบ — ข้อ 74</td>
-        <td data-label="สภาผู้แทนฯ">สภาผู้แทนฯ <strong>≥ 20 คน</strong> | รัฐสภา <strong>≥ 40 คน</strong> — ข้อ 80 + ข้อ 55</td>
-      </tr>
-      <tr>
-        <td class="td-aspect" data-label="ประเด็น">การคัดค้านลงคะแนนลับ</td>
-        <td data-label="สภา กทม.">ไม่พบข้อบังคับว่าด้วยสิทธิคัดค้าน</td>
-        <td data-label="สภาผู้แทนฯ">ผู้คัดค้าน + รับรอง <strong>≥ 1/3</strong> ของที่ประชุม → <strong>"เอกสิทธิ์ที่จะลงคะแนนเปิดเผย"</strong> — ข้อ 80 วรรค 2 + ข้อ 55 วรรค 2</td>
-      </tr>
-      <tr>
-        <td class="td-aspect" data-label="ประเด็น">สิทธิโต้แย้งคำชี้แจง (Right to Reply)</td>
-        <td data-label="สภา กทม.">ไม่พบข้อบังคับว่าด้วยสิทธิโต้แย้งคำชี้แจง</td>
-        <td data-label="สภาผู้แทนฯ">บุคคลภายนอกที่ได้รับความเสียหาย ยื่นต่อประธานสภาใน <strong>3 เดือน</strong> — ข้อ 39-42 + ระเบียบ 2563</td>
-      </tr>
-      <tr>
-        <td class="td-aspect" data-label="ประเด็น">การเปิดเผยร่างกฎหมายต่อประชาชน</td>
-        <td data-label="สภา กทม.">ส่งระเบียบวาระ + เอกสาร ให้ "สมาชิก" — ข้อ 22</td>
-        <td data-label="สภาผู้แทนฯ">ร่าง พ.ร.บ. ต้องมีบันทึกวิเคราะห์ + ผลรับฟังความเห็น (ข้อ 110) · ร่าง รธน. <strong>เปิดเผยให้ประชาชนเข้าถึงได้โดยสะดวก</strong> (ข้อ 115)</td>
-      </tr>
-      <tr>
-        <td class="td-aspect" data-label="ประเด็น">การรับฟังความเห็นประชาชน</td>
-        <td data-label="สภา กทม.">ไม่พบข้อบังคับที่กำหนดให้สภาต้องจัดรับฟังความเห็น</td>
-        <td data-label="สภาผู้แทนฯ">สภา/คณะกรรมาธิการ <strong>จัดให้มีการรับฟังความคิดเห็น</strong>เพิ่มเติมได้ — ข้อ 140</td>
-      </tr>
-      <tr>
-        <td class="td-aspect" data-label="ประเด็น">ล่ามภาษามือ (ผู้พิการการได้ยิน)</td>
-        <td data-label="สภา กทม.">ไม่พบข้อบังคับที่กำหนดให้จัดล่ามภาษามือ</td>
-        <td data-label="สภาผู้แทนฯ"><strong>บังคับจัดล่ามภาษามือ</strong>ทุกการประชุมที่ถ่ายทอดสด — ข้อ 18/9 วรรค 2</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="glass-footer">
-    <strong>ข้อสังเกตเชิงวิชาการ:</strong> ตารางนี้แสดงเฉพาะสิ่งที่<strong>ข้อบังคับ</strong>ระบุไว้ในตัวบทเท่านั้น ไม่ได้สะท้อนการปฏิบัติจริงหรือประสิทธิภาพการบังคับใช้ · ข้อบังคับสภา กทม. ฉบับที่ 2 (2563), 3 (2565), 4 (2566) ที่แก้ไขภายหลัง <strong>ไม่ได้แก้ไข</strong>หมวดว่าด้วย transparency (ข้อ 27/32/117) · ประเด็นที่ข้อบังคับ กทม. ไม่ได้ระบุ อาจมีแนวปฏิบัติภายในของสภา กทม. หรือระเบียบเฉพาะที่ยังไม่ได้รวบรวมในเอกสารชุดนี้ · เอกสารทั้งหมดให้ดาวน์โหลดได้ที่ด้านบนของหน้านี้
+  <div class="dl-grid">
+    <a href="downloads/ข้อบังคับการประชุม-สภากทม-2562-ฉบับหลัก.pdf" target="_blank" class="dl-card">
+      <div class="dl-icon">📕</div>
+      <div class="dl-info">
+        <div class="dl-title">ข้อบังคับการประชุมสภา กทม. พ.ศ. 2562</div>
+        <div class="dl-meta">252 KB · ฉบับหลัก</div>
+        <div class="dl-cta">ดาวน์โหลด</div>
+      </div>
+    </a>
+    <a href="downloads/ข้อบังคับการประชุม-สภากทม-2562-ฉบับที่2-2563.pdf" target="_blank" class="dl-card">
+      <div class="dl-icon">📗</div>
+      <div class="dl-info">
+        <div class="dl-title">ข้อบังคับการประชุมสภา กทม. (ฉบับที่ 2) พ.ศ. 2563</div>
+        <div class="dl-meta">78 KB · แก้ไขเพิ่มเติม</div>
+        <div class="dl-cta">ดาวน์โหลด</div>
+      </div>
+    </a>
+    <a href="downloads/ข้อบังคับการประชุม-สภากทม-2562-ฉบับที่3-2565.pdf" target="_blank" class="dl-card">
+      <div class="dl-icon">📘</div>
+      <div class="dl-info">
+        <div class="dl-title">ข้อบังคับการประชุมสภา กทม. (ฉบับที่ 3) พ.ศ. 2565</div>
+        <div class="dl-meta">74 KB · แก้ไขเพิ่มเติม</div>
+        <div class="dl-cta">ดาวน์โหลด</div>
+      </div>
+    </a>
+    <a href="downloads/ข้อบังคับการประชุม-สภากทม-2562-ฉบับที่4-2566.pdf" target="_blank" class="dl-card">
+      <div class="dl-icon">📙</div>
+      <div class="dl-info">
+        <div class="dl-title">ข้อบังคับการประชุมสภา กทม. (ฉบับที่ 4) พ.ศ. 2566</div>
+        <div class="dl-meta">85 KB · แก้ไขเพิ่มเติม</div>
+        <div class="dl-cta">ดาวน์โหลด</div>
+      </div>
+    </a>
+    <a href="downloads/จรรยาบรรณ-สมาชิกสภากทม-2559.pdf" target="_blank" class="dl-card">
+      <div class="dl-icon">🛡️</div>
+      <div class="dl-info">
+        <div class="dl-title">ข้อบังคับจรรยาบรรณสมาชิกสภา กทม. พ.ศ. 2559</div>
+        <div class="dl-meta">49 KB · ข้อบังคับเฉพาะ</div>
+        <div class="dl-cta">ดาวน์โหลด</div>
+      </div>
+    </a>
+    <a href="downloads/ระเบียบ-รับเรื่องร้องเรียน-สมาชิกสภากทม.pdf" target="_blank" class="dl-card">
+      <div class="dl-icon">📨</div>
+      <div class="dl-info">
+        <div class="dl-title">ระเบียบรับเรื่องร้องเรียนสมาชิกสภา กทม.</div>
+        <div class="dl-meta">59 KB · ระเบียบเฉพาะ</div>
+        <div class="dl-cta">ดาวน์โหลด</div>
+      </div>
+    </a>
+    <a href="downloads/ข้อบังคับการประชุม-สภาผู้แทนราษฎร-2562-และ-รัฐสภา-2563.pdf" target="_blank" class="dl-card">
+      <div class="dl-icon">🏛️</div>
+      <div class="dl-info">
+        <div class="dl-title">ข้อบังคับการประชุมสภาผู้แทนราษฎร พ.ศ. 2562 และ รัฐสภา พ.ศ. 2563</div>
+        <div class="dl-meta">5.1 MB · ฉบับรวม</div>
+        <div class="dl-cta">ดาวน์โหลด</div>
+      </div>
+    </a>
   </div>
 </div>
 
