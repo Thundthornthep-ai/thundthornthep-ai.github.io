@@ -104,7 +104,7 @@
 <body data-lang="th">
 
 
-<div class="top-bar"><div class="top-bar-left"><a href="index.html">← Dashboard</a> District Intelligence</div><div class="top-bar-right"><span>LAS</span> × <span>NIA</span></div></div>
+<div class="top-bar"><div class="top-bar-left"><a href="index.html">← Dashboard</a> District Intelligence</div><div class="top-bar-right"></div></div>
 <div class="main">
 
 <!-- DISTRICT SELECTOR -->
@@ -242,7 +242,7 @@
 </div><!-- end districtContent -->
 </div><!-- end .main -->
 
-<footer class="site-footer"><span>Legal Advance Solution Co., Ltd. (LAS)</span> × <span>National Innovation Agency (NIA)</span><br><a href="index.html">Dashboard</a> · <a href="campaign-tracker.html">Campaign Tracker</a><br>Traffy Fondue: <a href="https://bangkok.traffy.in.th" target="_blank">bangkok.traffy.in.th</a></footer>
+<footer class="site-footer"><span>งานวิชาการเพื่อนำเสนอ</span><br><a href="index.html">Dashboard</a> · <a href="campaign-tracker.html">Campaign Tracker</a><br>Traffy Fondue: <a href="https://bangkok.traffy.in.th" target="_blank">bangkok.traffy.in.th</a></footer>
 
 <script>
 // === DATA ===
@@ -807,7 +807,7 @@ function shareCheckin(ci){
   if(ci.problem) text += '⚠️ ปัญหา: '+ci.problem+'\n';
   if(ci.need) text += '💡 ต้องการ: '+ci.need+'\n';
   if(ci.lat&&ci.lng) text += '🗺️ https://www.google.com/maps?q='+ci.lat+','+ci.lng+'\n';
-  text += '\n— ส.ก. Navigator by LAS';
+  text += '\n— ส.ก. Navigator';
   // Try native share first (mobile)
   if(navigator.share){
     navigator.share({title:'ปักธง '+ci.placeName,text:text}).catch(function(){});
@@ -1002,7 +1002,7 @@ function generateReportHTML() {
       h.push('</div>');
     });
   }
-  h.push('<div class="ft"><b style="color:#C9A96E">Legal Advance Solution Co., Ltd. (LAS)</b> x NIA<br>สร้างอัตโนมัติเมื่อ '+dateStr+'</div>');
+  h.push('<div class="ft">สร้างอัตโนมัติเมื่อ '+dateStr+'</div>');
   h.push('</body></html>');
   return h.join('');
 }
