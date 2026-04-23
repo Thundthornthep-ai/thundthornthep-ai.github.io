@@ -45,13 +45,52 @@ const CHECKS = [
   },
   {
     id: 'E2',
-    name: 'No "เพิกถอนสิทธิ มาตรา 63" (ม.63 is not a penalty)',
+    name: 'No "เพิกถอนสิทธิ มาตรา 63" (ม.63 is procedure, not penalty)',
     run: (html) => {
       const re = /เพิกถอนสิทธิ\s*(?:มาตรา|ม\.)\s*63\b/;
       const m = html.match(re);
       return {
         pass: !m,
-        message: m ? `Found "${m[0]}" — ม.63 = ห้ามจัดเลี้ยง. Use ม.127 for penalty.` : null,
+        message: m ? `Found "${m[0]}" — ม.63 = กระบวนการสอบสวน. Use ม.128 for penalty of ม.62 violation.` : null,
+        severity: 'error',
+      };
+    },
+  },
+  {
+    id: 'E6',
+    name: 'No "ม.63" + "ห้ามจัดเลี้ยง/มหรสพ" (ม.63 is not that — use ม.65(3)(4))',
+    run: (html) => {
+      const re = /(?:มาตรา|ม\.)\s*63[^0-9].{0,80}(ห้ามจัดเลี้ยง|ห้ามจัดงานรื่นเริง|ห้ามมหรสพ|จัดเลี้ยง)/;
+      const m = html.match(re);
+      return {
+        pass: !m,
+        message: m ? `Found "${m[0]}" — ม.63 = กระบวนการสอบสวนค่าใช้จ่าย · ห้ามจัดเลี้ยง/มหรสพ = ม.65(3)(4)` : null,
+        severity: 'error',
+      };
+    },
+  },
+  {
+    id: 'E7',
+    name: 'No "ม.127" + "จำคุก 1-10 ปี" (that is ม.126 — ม.127 = 1-5 ปี)',
+    run: (html) => {
+      const re = /(?:มาตรา|ม\.)\s*127[^0-9].{0,80}(1\s*[-–]\s*10\s*ปี|จำคุก\s*1\s*[-–]\s*10)/;
+      const m = html.match(re);
+      return {
+        pass: !m,
+        message: m ? `Found "${m[0]}" — ม.127 = 1-5 ปี (ฝ่าฝืน ม.60 วรรคสาม) · 1-10 ปี คือ ม.126 (ฝ่าฝืน ม.65)` : null,
+        severity: 'error',
+      };
+    },
+  },
+  {
+    id: 'E8',
+    name: 'No "ม.65(4)" + "มหรสพ" (มหรสพ = ม.65(3), not (4))',
+    run: (html) => {
+      const re = /(?:มาตรา|ม\.)\s*65\s*\(4\).{0,30}มหรสพ|มหรสพ.{0,30}(?:มาตรา|ม\.)\s*65\s*\(4\)/;
+      const m = html.match(re);
+      return {
+        pass: !m,
+        message: m ? `Found "${m[0]}" — มหรสพ = ม.65(3) · ม.65(4) = เลี้ยงหรือรับจะจัดเลี้ยง` : null,
         severity: 'error',
       };
     },
