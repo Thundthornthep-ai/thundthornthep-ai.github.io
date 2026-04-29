@@ -4,27 +4,27 @@
   "month": 4,
   "month_th": "เมษายน",
   "buddhist_year": 2569,
-  "total_days": 15,
-  "total_pages": 1153,
-  "total_findings": 442,
-  "total_size_mb": 353.97,
+  "total_days": 17,
+  "total_pages": 1260,
+  "total_findings": 452,
+  "total_size_mb": 389.97,
   "tier_distribution": {
-    "broad": 8,
+    "broad": 9,
     "strict": 3,
-    "context": 4
+    "context": 5
   },
   "top_keywords": [
     {
       "keyword": "เลือกตั้ง",
-      "count": 15
+      "count": 17
     },
     {
       "keyword": "กกต.",
-      "count": 15
+      "count": 17
     },
     {
       "keyword": "กรุงเทพมหานคร",
-      "count": 7
+      "count": 8
     },
     {
       "keyword": "ท้องถิ่น",
@@ -39,11 +39,11 @@
       "count": 7
     },
     {
-      "keyword": "ชัชชาติ",
-      "count": 3
+      "keyword": "ผู้ว่าฯ กทม",
+      "count": 4
     },
     {
-      "keyword": "ผู้ว่าฯ กทม",
+      "keyword": "ชัชชาติ",
       "count": 3
     },
     {
@@ -527,7 +527,53 @@
         "data/ect-news/images/2026-04-26/p002.png",
         "data/ect-news/images/2026-04-26/p052.png"
       ]
+    },
+    {
+      "date": "2026-04-27",
+      "title": "สรุปข่าว กกต. ประจำวันที่ 2026-04-27",
+      "summary": "หน้า 1/54: รวมข่าว กกต. | ภาพกิจกรรมรอบรั้ว กกต. | ของสำนักงานคณะกรรมการการเลือกตั้ง ครั้งที่ 1/2569\n\nหน้า 2/54: รวมข่าว กกต.\n\nหน้า 3/54: ภาพกิจกรรม รอบรั้ว กกต.",
+      "tier": "context",
+      "important": false,
+      "matched_keywords": [
+        "เลือกตั้ง",
+        "กกต."
+      ],
+      "finding_count": 5,
+      "pdf_url": "https://www.ect.go.th/web-upload/1xff0d34e409a13ef56eea54c52a291126/m_document/2703/31736/file_download/08275dd509e23c22273b4171253de641.pdf",
+      "pdf_size_mb": 18.05,
+      "pdf_pages": 54,
+      "source_url": "https://www.ect.go.th/ect_th/th/dailynews2569",
+      "pdf_local": "data/ect-news/pdfs/2026-04-27.pdf",
+      "images": [
+        "data/ect-news/images/2026-04-27/p001.png",
+        "data/ect-news/images/2026-04-27/p002.png",
+        "data/ect-news/images/2026-04-27/p003.png"
+      ]
+    },
+    {
+      "date": "2026-04-28",
+      "title": "สรุปข่าว กกต. ประจำวันที่ 2026-04-28",
+      "summary": "หน้า 1/53: รวมข่าว กกต. | ภาพกิจกรรมรอบรั้ว กกต. | 2 การรายงานผลการปฏิบัติงานของคณะกรรมการการเลือกตั้ง ประจำปีงบประมาณ พ.ศ. 2567 ต่อวุฒิสภา | 2 หนังสือพิมพ์แนวหน้า ปชน. ส่ง 'โจ ชัยวัฒน์' ลงชิงเก้าอี้ผู้ว่าฯ กทม. 2 | 3 หนังสือพิมพ์เดลินิวส์ ปชน. ดันชัยวัฒนช์ ิงเก้าอี้ผู้ว่าฯ กทม. คนใหม่ 5\n\nหน้า 2/53: รวมข่าว กกต. | 8 หนังสือพิมพ์ไทยรัฐ บุคคลในข่าว : กกต. จะมีการชี้ขาดคดฮี ั้ว สว. ภายในสิ้นเดือนเมษายน 46\n\nหน้า 3/53: ภาพกิจกรรม รอบรั้ว กกต.",
+      "tier": "broad",
+      "important": true,
+      "matched_keywords": [
+        "ผู้ว่าฯ กทม",
+        "กรุงเทพมหานคร",
+        "เลือกตั้ง",
+        "กกต."
+      ],
+      "finding_count": 5,
+      "pdf_url": "https://www.ect.go.th/web-upload/1xff0d34e409a13ef56eea54c52a291126/m_document/2703/31738/file_download/ae96bd44a0ccfde5d083f8f74143fd66.pdf",
+      "pdf_size_mb": 17.95,
+      "pdf_pages": 53,
+      "source_url": "https://www.ect.go.th/ect_th/th/dailynews2569",
+      "pdf_local": "data/ect-news/pdfs/2026-04-28.pdf",
+      "images": [
+        "data/ect-news/images/2026-04-28/p001.png",
+        "data/ect-news/images/2026-04-28/p002.png",
+        "data/ect-news/images/2026-04-28/p003.png"
+      ]
     }
   ],
-  "generated_at": "2026-04-28T11:00:45.446544+07:00"
+  "generated_at": "2026-04-29T07:01:02.654125+07:00"
 }
