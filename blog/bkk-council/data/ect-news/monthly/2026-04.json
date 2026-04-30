@@ -4,27 +4,27 @@
   "month": 4,
   "month_th": "เมษายน",
   "buddhist_year": 2569,
-  "total_days": 17,
-  "total_pages": 1260,
-  "total_findings": 452,
-  "total_size_mb": 389.97,
+  "total_days": 18,
+  "total_pages": 1346,
+  "total_findings": 504,
+  "total_size_mb": 418.55,
   "tier_distribution": {
-    "broad": 9,
+    "broad": 10,
     "strict": 3,
     "context": 5
   },
   "top_keywords": [
     {
       "keyword": "เลือกตั้ง",
-      "count": 17
+      "count": 18
     },
     {
       "keyword": "กกต.",
-      "count": 17
+      "count": 18
     },
     {
       "keyword": "กรุงเทพมหานคร",
-      "count": 8
+      "count": 9
     },
     {
       "keyword": "ท้องถิ่น",
@@ -573,7 +573,30 @@
         "data/ect-news/images/2026-04-28/p002.png",
         "data/ect-news/images/2026-04-28/p003.png"
       ]
+    },
+    {
+      "date": "2026-04-29",
+      "title": "สรุปข่าว กกต. ประจำวันที่ 2026-04-29",
+      "summary": "หน้า 1/86: รวมข่าว กกต. | ภาพกิจกรรมรอบรั้ว กกต. | 3 การประชุมหารือแนวทางการจัดกิจกรรมฝึกอบรมกรรมการประจำหน่วยเลือกตั้ง (กปน.) (นำร่อง) | ในการไปปฏิบัติหน้าที่ในการจัดการเลือกตั้งสมาชิกสภาเมืองพัทยา และนายกเมืองพัทยา วั | สำนักงานคณะกรรมการการเลือกตั้ง ครั้งที่ 1/2569\n\nหน้า 2/86: รวมข่าว กกต. | 1 มติชนออนไลน์ สว. ซดั กกต. จัดเลือกตั้งทำคนเสื่อมศรัทธา สวนทางรายงานอ้างโปร่งใส 13 รู้ | 2 แนวหน้าออนไลน์ อังคณา อัด กกต. จัดเลือกตั้ง ทำ ปชช. ไม่เชื่อมั่น ชี้หัวใจหลักอยู่ที่ โปร่งใส 18 | 3 ไทยโพสต์ออนไลน์ สว. รุมอัด กกต. รายงานผลจัดเลือกตั้ง อ้างโปร่งใส สวนทางประชาชน 22 | 4 แนวหน้า\n\nหน้า 3/86: รวมข่าว กกต.",
+      "tier": "broad",
+      "important": true,
+      "matched_keywords": [
+        "กรุงเทพมหานคร",
+        "เลือกตั้ง",
+        "กกต."
+      ],
+      "finding_count": 52,
+      "pdf_url": "https://www.ect.go.th/web-upload/1xff0d34e409a13ef56eea54c52a291126/m_document/2703/31744/file_download/de0e3febe66e5646d14bfc7fa1f7b74b.pdf",
+      "pdf_size_mb": 28.58,
+      "pdf_pages": 86,
+      "source_url": "https://www.ect.go.th/ect_th/th/dailynews2569",
+      "pdf_local": "data/ect-news/pdfs/2026-04-29.pdf",
+      "images": [
+        "data/ect-news/images/2026-04-29/p001.png",
+        "data/ect-news/images/2026-04-29/p002.png",
+        "data/ect-news/images/2026-04-29/p003.png"
+      ]
     }
   ],
-  "generated_at": "2026-04-29T12:26:49.480261+07:00"
+  "generated_at": "2026-04-30T07:01:47.219363+07:00"
 }
