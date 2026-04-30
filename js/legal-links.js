@@ -143,13 +143,13 @@
     'BOI':            { pdf: PDF+'investment-promotion-act-boi.pdf', name: 'พ.ร.บ.ส่งเสริมการลงทุน พ.ศ. 2520' },
 
     // พ.ร.บ. ที่ยังไม่มี PDF — OCS search fallback
-    'เครื่องสำอาง':     { ocs: 'พระราชบัญญัติเครื่องสำอาง', name: 'พ.ร.บ.เครื่องสำอาง พ.ศ. 2558' },
-    'อาหาร':          { ocs: 'พระราชบัญญัติอาหาร', name: 'พ.ร.บ.อาหาร พ.ศ. 2522' },
-    'โรงงาน':          { ocs: 'พระราชบัญญัติโรงงาน', name: 'พ.ร.บ.โรงงาน พ.ศ. 2535' },
-    'ที่ดิน':           { ocs: 'ประมวลกฎหมายที่ดิน', name: 'ประมวลกฎหมายที่ดิน' },
-    'ภาษีที่ดิน':       { ocs: 'พระราชบัญญัติภาษีที่ดินและสิ่งปลูกสร้าง', name: 'พ.ร.บ.ภาษีที่ดินและสิ่งปลูกสร้าง พ.ศ. 2562' },
-    'EEC':            { ocs: 'พระราชบัญญัติเขตพัฒนาพิเศษภาคตะวันออก', name: 'พ.ร.บ.เขตพัฒนาพิเศษภาคตะวันออก พ.ศ. 2561' },
-    'ธุรกรรมอิเล็กทรอนิกส์': { ocs: 'พระราชบัญญัติว่าด้วยธุรกรรมทางอิเล็กทรอนิกส์', name: 'พ.ร.บ.ธุรกรรมทางอิเล็กทรอนิกส์ พ.ศ. 2544' },
+    'เครื่องสำอาง':     { ocs_url: 'https://searchlaw.ocs.go.th/council-of-state/#/public/doc/Vlp6R2lSVVFrVEl0NDg3V2tLM2VHZz09', ocs: 'พระราชบัญญัติเครื่องสำอาง', name: 'พ.ร.บ.เครื่องสำอาง พ.ศ. 2558' },
+    'อาหาร':          { ocs_url: 'https://searchlaw.ocs.go.th/council-of-state/#/public/doc/c3VFL2dDaWdtZ1p5TlZEREduYlRKdz09', ocs: 'พระราชบัญญัติอาหาร', name: 'พ.ร.บ.อาหาร พ.ศ. 2522' },
+    'โรงงาน':          { ocs_url: 'https://searchlaw.ocs.go.th/council-of-state/#/public/doc/TnVxeGxMa0swdVVLSGhQRnZaL3NsQT09', ocs: 'พระราชบัญญัติโรงงาน', name: 'พ.ร.บ.โรงงาน พ.ศ. 2535' },
+    'ที่ดิน':           { ocs_url: 'https://searchlaw.ocs.go.th/council-of-state/#/public/doc/NEZYaG1YMzRiQmJRa0ljV09Na01SQT09', ocs: 'ประมวลกฎหมายที่ดิน', name: 'ประมวลกฎหมายที่ดิน' },
+    'ภาษีที่ดิน':       { ocs_url: 'https://searchlaw.ocs.go.th/council-of-state/#/public/doc/OGxwWDYwR3FUQlowdTlsbTRZQThlQT09', ocs: 'พระราชบัญญัติภาษีที่ดินและสิ่งปลูกสร้าง', name: 'พ.ร.บ.ภาษีที่ดินและสิ่งปลูกสร้าง พ.ศ. 2562' },
+    'EEC':            { ocs_url: 'https://searchlaw.ocs.go.th/council-of-state/#/public/doc/ZXYrZmRuWGJjQzE1WitVYUhET2tPZz09', ocs: 'พระราชบัญญัติเขตพัฒนาพิเศษภาคตะวันออก', name: 'พ.ร.บ.เขตพัฒนาพิเศษภาคตะวันออก พ.ศ. 2561' },
+    'ธุรกรรมอิเล็กทรอนิกส์': { ocs_url: 'https://searchlaw.ocs.go.th/council-of-state/#/public/doc/T3NIcGRKMzZFOWFGaTVucVFZbDZGdz09', ocs: 'พระราชบัญญัติว่าด้วยธุรกรรมทางอิเล็กทรอนิกส์', name: 'พ.ร.บ.ธุรกรรมทางอิเล็กทรอนิกส์ พ.ศ. 2544' },
 
     // Concept cards → internal articles
     'concept:ma':       { article: '/articles/mergers-acquisitions-thailand.html', name: 'Due Diligence & M&A' },
@@ -161,13 +161,13 @@
     'concept:ip':        { article: '/articles/ip-law-business-marketing.html', name: 'Intellectual Property' },
 
     // Missing keys found by Audit Agent (2026-04-08)
-    'ป.ป.ช.':           { ocs: '\u0E1B\u0E49\u0E2D\u0E07\u0E01\u0E31\u0E19\u0E41\u0E25\u0E30\u0E1B\u0E23\u0E32\u0E1A\u0E1B\u0E23\u0E32\u0E21\u0E17\u0E38\u0E08\u0E23\u0E34\u0E15', name: '\u0E1E.\u0E23.\u0E1A.\u0E1B\u0E49\u0E2D\u0E07\u0E01\u0E31\u0E19\u0E41\u0E25\u0E30\u0E1B\u0E23\u0E32\u0E1A\u0E1B\u0E23\u0E32\u0E21\u0E17\u0E38\u0E08\u0E23\u0E34\u0E15 \u0E1E.\u0E28. 2561' },
-    '\u0E08\u0E31\u0E14\u0E0B\u0E37\u0E49\u0E2D\u0E08\u0E31\u0E14\u0E08\u0E49\u0E32\u0E07': { ocs: '\u0E08\u0E31\u0E14\u0E0B\u0E37\u0E49\u0E2D\u0E08\u0E31\u0E14\u0E08\u0E49\u0E32\u0E07', name: '\u0E1E.\u0E23.\u0E1A.\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E0B\u0E37\u0E49\u0E2D\u0E08\u0E31\u0E14\u0E08\u0E49\u0E32\u0E07\u0E20\u0E32\u0E04\u0E23\u0E31\u0E10 \u0E1E.\u0E28. 2560' },
-    '\u0E21\u0E2B\u0E32\u0E0A\u0E19':  { ocs: '\u0E1A\u0E23\u0E34\u0E29\u0E31\u0E17\u0E21\u0E2B\u0E32\u0E0A\u0E19\u0E08\u0E33\u0E01\u0E31\u0E14', name: '\u0E1E.\u0E23.\u0E1A.\u0E1A\u0E23\u0E34\u0E29\u0E31\u0E17\u0E21\u0E2B\u0E32\u0E0A\u0E19\u0E08\u0E33\u0E01\u0E31\u0E14 \u0E1E.\u0E28. 2535' },
-    '\u0E23\u0E31\u0E10\u0E18\u0E23\u0E23\u0E21\u0E19\u0E39\u0E0D': { ocs: '\u0E23\u0E31\u0E10\u0E18\u0E23\u0E23\u0E21\u0E19\u0E39\u0E0D', name: '\u0E23\u0E31\u0E10\u0E18\u0E23\u0E23\u0E21\u0E19\u0E39\u0E0D\u0E41\u0E2B\u0E48\u0E07\u0E23\u0E32\u0E0A\u0E2D\u0E32\u0E13\u0E32\u0E08\u0E31\u0E01\u0E23\u0E44\u0E17\u0E22 \u0E1E.\u0E28. 2560' },
-    '\u0E25\u0E30\u0E40\u0E21\u0E34\u0E14\u0E40\u0E08\u0E49\u0E32\u0E2B\u0E19\u0E49\u0E32\u0E17\u0E35\u0E48': { ocs: '\u0E04\u0E27\u0E32\u0E21\u0E23\u0E31\u0E1A\u0E1C\u0E34\u0E14\u0E17\u0E32\u0E07\u0E25\u0E30\u0E40\u0E21\u0E34\u0E14', name: '\u0E1E.\u0E23.\u0E1A.\u0E04\u0E27\u0E32\u0E21\u0E23\u0E31\u0E1A\u0E1C\u0E34\u0E14\u0E17\u0E32\u0E07\u0E25\u0E30\u0E40\u0E21\u0E34\u0E14\u0E02\u0E2D\u0E07\u0E40\u0E08\u0E49\u0E32\u0E2B\u0E19\u0E49\u0E32\u0E17\u0E35\u0E48 \u0E1E.\u0E28. 2539' },
-    '\u0E2E\u0E31\u0E49\u0E27\u0E1B\u0E23\u0E30\u0E21\u0E39\u0E25': { ocs: '\u0E27\u0E48\u0E32\u0E14\u0E49\u0E27\u0E22\u0E04\u0E27\u0E32\u0E21\u0E1C\u0E34\u0E14\u0E40\u0E01\u0E35\u0E48\u0E22\u0E27\u0E01\u0E31\u0E1A\u0E01\u0E32\u0E23\u0E40\u0E2A\u0E19\u0E2D\u0E23\u0E32\u0E04\u0E32', name: '\u0E1E.\u0E23.\u0E1A.\u0E27\u0E48\u0E32\u0E14\u0E49\u0E27\u0E22\u0E04\u0E27\u0E32\u0E21\u0E1C\u0E34\u0E14\u0E40\u0E01\u0E35\u0E48\u0E22\u0E27\u0E01\u0E31\u0E1A\u0E01\u0E32\u0E23\u0E40\u0E2A\u0E19\u0E2D\u0E23\u0E32\u0E04\u0E32 \u0E1E.\u0E28. 2542' },
-    '\u0E40\u0E0A\u0E48\u0E32\u0E2D\u0E2A\u0E31\u0E07\u0E2B\u0E32\u0E2F': { ocs: '\u0E01\u0E32\u0E23\u0E40\u0E0A\u0E48\u0E32\u0E2D\u0E2A\u0E31\u0E07\u0E2B\u0E32\u0E23\u0E34\u0E21\u0E17\u0E23\u0E31\u0E1E\u0E22\u0E4C', name: '\u0E1E.\u0E23.\u0E1A.\u0E01\u0E32\u0E23\u0E40\u0E0A\u0E48\u0E32\u0E2D\u0E2A\u0E31\u0E07\u0E2B\u0E32\u0E23\u0E34\u0E21\u0E17\u0E23\u0E31\u0E1E\u0E22\u0E4C\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E1E\u0E32\u0E13\u0E34\u0E0A\u0E22\u0E01\u0E23\u0E23\u0E21\u0E41\u0E25\u0E30\u0E2D\u0E38\u0E15\u0E2A\u0E32\u0E2B\u0E01\u0E23\u0E23\u0E21 \u0E1E.\u0E28. 2542' },
+    'ป.ป.ช.':           { ocs_url: 'https://searchlaw.ocs.go.th/council-of-state/#/public/doc/UWZaRlFXOVVuaFZHUnpESDZVRFZMQT09', ocs: '\u0E1B\u0E49\u0E2D\u0E07\u0E01\u0E31\u0E19\u0E41\u0E25\u0E30\u0E1B\u0E23\u0E32\u0E1A\u0E1B\u0E23\u0E32\u0E21\u0E17\u0E38\u0E08\u0E23\u0E34\u0E15', name: '\u0E1E.\u0E23.\u0E1A.\u0E1B\u0E49\u0E2D\u0E07\u0E01\u0E31\u0E19\u0E41\u0E25\u0E30\u0E1B\u0E23\u0E32\u0E1A\u0E1B\u0E23\u0E32\u0E21\u0E17\u0E38\u0E08\u0E23\u0E34\u0E15 \u0E1E.\u0E28. 2561' },
+    '\u0E08\u0E31\u0E14\u0E0B\u0E37\u0E49\u0E2D\u0E08\u0E31\u0E14\u0E08\u0E49\u0E32\u0E07': { ocs_url: 'https://searchlaw.ocs.go.th/council-of-state/#/public/doc/b0dCWUhoUXpuZmNaZXAyRzBnYnhIdz09', ocs: '\u0E08\u0E31\u0E14\u0E0B\u0E37\u0E49\u0E2D\u0E08\u0E31\u0E14\u0E08\u0E49\u0E32\u0E07', name: '\u0E1E.\u0E23.\u0E1A.\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E0B\u0E37\u0E49\u0E2D\u0E08\u0E31\u0E14\u0E08\u0E49\u0E32\u0E07\u0E20\u0E32\u0E04\u0E23\u0E31\u0E10 \u0E1E.\u0E28. 2560' },
+    '\u0E21\u0E2B\u0E32\u0E0A\u0E19':  { ocs_url: 'https://searchlaw.ocs.go.th/council-of-state/#/public/doc/cStNcGZocGh2Qk5aaHVTZkw2Nk9Vdz09', ocs: '\u0E1A\u0E23\u0E34\u0E29\u0E31\u0E17\u0E21\u0E2B\u0E32\u0E0A\u0E19\u0E08\u0E33\u0E01\u0E31\u0E14', name: '\u0E1E.\u0E23.\u0E1A.\u0E1A\u0E23\u0E34\u0E29\u0E31\u0E17\u0E21\u0E2B\u0E32\u0E0A\u0E19\u0E08\u0E33\u0E01\u0E31\u0E14 \u0E1E.\u0E28. 2535' },
+    '\u0E23\u0E31\u0E10\u0E18\u0E23\u0E23\u0E21\u0E19\u0E39\u0E0D': { ocs_url: 'https://searchlaw.ocs.go.th/council-of-state/#/public/doc/WDZlaFpuQ2lZWUlxZmFUdFBwU1V4Zz09', ocs: '\u0E23\u0E31\u0E10\u0E18\u0E23\u0E23\u0E21\u0E19\u0E39\u0E0D', name: '\u0E23\u0E31\u0E10\u0E18\u0E23\u0E23\u0E21\u0E19\u0E39\u0E0D\u0E41\u0E2B\u0E48\u0E07\u0E23\u0E32\u0E0A\u0E2D\u0E32\u0E13\u0E32\u0E08\u0E31\u0E01\u0E23\u0E44\u0E17\u0E22 \u0E1E.\u0E28. 2560' },
+    '\u0E25\u0E30\u0E40\u0E21\u0E34\u0E14\u0E40\u0E08\u0E49\u0E32\u0E2B\u0E19\u0E49\u0E32\u0E17\u0E35\u0E48': { ocs_url: 'https://searchlaw.ocs.go.th/council-of-state/#/public/doc/YkdJaEdEajZYZjFYeXlXa094KzY1UT09', ocs: '\u0E04\u0E27\u0E32\u0E21\u0E23\u0E31\u0E1A\u0E1C\u0E34\u0E14\u0E17\u0E32\u0E07\u0E25\u0E30\u0E40\u0E21\u0E34\u0E14', name: '\u0E1E.\u0E23.\u0E1A.\u0E04\u0E27\u0E32\u0E21\u0E23\u0E31\u0E1A\u0E1C\u0E34\u0E14\u0E17\u0E32\u0E07\u0E25\u0E30\u0E40\u0E21\u0E34\u0E14\u0E02\u0E2D\u0E07\u0E40\u0E08\u0E49\u0E32\u0E2B\u0E19\u0E49\u0E32\u0E17\u0E35\u0E48 \u0E1E.\u0E28. 2539' },
+    '\u0E2E\u0E31\u0E49\u0E27\u0E1B\u0E23\u0E30\u0E21\u0E39\u0E25': { ocs_url: 'https://searchlaw.ocs.go.th/council-of-state/#/public/doc/YkJJMzA4a09CWkl5YzVQbndaLzVWUT09', ocs: '\u0E27\u0E48\u0E32\u0E14\u0E49\u0E27\u0E22\u0E04\u0E27\u0E32\u0E21\u0E1C\u0E34\u0E14\u0E40\u0E01\u0E35\u0E48\u0E22\u0E27\u0E01\u0E31\u0E1A\u0E01\u0E32\u0E23\u0E40\u0E2A\u0E19\u0E2D\u0E23\u0E32\u0E04\u0E32', name: '\u0E1E.\u0E23.\u0E1A.\u0E27\u0E48\u0E32\u0E14\u0E49\u0E27\u0E22\u0E04\u0E27\u0E32\u0E21\u0E1C\u0E34\u0E14\u0E40\u0E01\u0E35\u0E48\u0E22\u0E27\u0E01\u0E31\u0E1A\u0E01\u0E32\u0E23\u0E40\u0E2A\u0E19\u0E2D\u0E23\u0E32\u0E04\u0E32 \u0E1E.\u0E28. 2542' },
+    '\u0E40\u0E0A\u0E48\u0E32\u0E2D\u0E2A\u0E31\u0E07\u0E2B\u0E32\u0E2F': { ocs_url: 'https://searchlaw.ocs.go.th/council-of-state/#/public/doc/b0RzaWRYTU5aYnBMVFJHMzJVMnhtdz09', ocs: '\u0E01\u0E32\u0E23\u0E40\u0E0A\u0E48\u0E32\u0E2D\u0E2A\u0E31\u0E07\u0E2B\u0E32\u0E23\u0E34\u0E21\u0E17\u0E23\u0E31\u0E1E\u0E22\u0E4C', name: '\u0E1E.\u0E23.\u0E1A.\u0E01\u0E32\u0E23\u0E40\u0E0A\u0E48\u0E32\u0E2D\u0E2A\u0E31\u0E07\u0E2B\u0E32\u0E23\u0E34\u0E21\u0E17\u0E23\u0E31\u0E1E\u0E22\u0E4C\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E1E\u0E32\u0E13\u0E34\u0E0A\u0E22\u0E01\u0E23\u0E23\u0E21\u0E41\u0E25\u0E30\u0E2D\u0E38\u0E15\u0E2A\u0E32\u0E2B\u0E01\u0E23\u0E23\u0E21 \u0E1E.\u0E28. 2542' },
     'concept:anticorruption': { article: '/articles/civil-recovery-corruption-thailand.html', name: 'Anti-Corruption & Civil Recovery' },
     'concept:digital':   { article: '/articles/social-media-marketing-law.html', name: 'Digital & Social Media Law' },
     'concept:drafting':  { article: '/articles/art-of-ancient-contract-drafting.html', name: 'Contract Drafting' },
@@ -199,8 +199,15 @@
         if (window.location.pathname.endsWith(entry.article)) return;
         card.href = entry.article;
         if (sourceEl) sourceEl.textContent = '\uD83D\uDD17 \u0E2D\u0E48\u0E32\u0E19\u0E1A\u0E17\u0E04\u0E27\u0E32\u0E21 ' + entry.name;
+      } else if (entry.ocs_url) {
+        card.href = entry.ocs_url;
+        card.target = '_blank';
+        card.rel = 'noopener';
+        if (sourceEl) sourceEl.textContent = '\uD83D\uDD17 \u0E40\u0E1B\u0E34\u0E14\u0E15\u0E31\u0E27\u0E1A\u0E17\u0E01\u0E0E\u0E2B\u0E21\u0E32\u0E22 \u2014 \u0E2A\u0E33\u0E19\u0E31\u0E01\u0E07\u0E32\u0E19\u0E04\u0E13\u0E30\u0E01\u0E23\u0E23\u0E21\u0E01\u0E32\u0E23\u0E01\u0E24\u0E29\u0E0E\u0E35\u0E01\u0E32';
       } else if (entry.ocs) {
         card.href = OCS + '?q=' + encodeURIComponent(entry.ocs);
+        card.target = '_blank';
+        card.rel = 'noopener';
         if (sourceEl) sourceEl.textContent = '\uD83D\uDD17 \u0E04\u0E49\u0E19\u0E2B\u0E32\u0E15\u0E31\u0E27\u0E1A\u0E17\u0E01\u0E0E\u0E2B\u0E21\u0E32\u0E22 \u2014 \u0E2A\u0E33\u0E19\u0E31\u0E01\u0E07\u0E32\u0E19\u0E04\u0E13\u0E30\u0E01\u0E23\u0E23\u0E21\u0E01\u0E32\u0E23\u0E01\u0E24\u0E29\u0E0E\u0E35\u0E01\u0E32';
       }
     });
