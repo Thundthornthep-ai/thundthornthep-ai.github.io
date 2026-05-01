@@ -1,7 +1,7 @@
 // Service Worker for ส.ก. Navigator PWA
-// Version: sk-navigator-v11 (2026-04-11 — CSS restoration + force reload)
+// Version: sk-navigator-v12 (2026-05-01 — bugfix: timer leaks, race conditions, validation)
 
-const CACHE_NAME = 'sk-navigator-v11';
+const CACHE_NAME = 'sk-navigator-v12';
 
 const URLS_TO_CACHE = [
   './',
@@ -58,7 +58,7 @@ self.addEventListener('fetch', function(event) {
   var url = event.request.url;
 
   // Network first for API calls (Traffy Fondue, etc.)
-  if (url.includes('api.') || url.includes('traffy') || url.includes('fondue')) {
+  if (/^https:\/\/(publicapi\.traffy\.in\.th|.*\.fondue\.in\.th)\//.test(url)) {
     event.respondWith(
       fetch(event.request).catch(function() {
         return caches.match(event.request);
