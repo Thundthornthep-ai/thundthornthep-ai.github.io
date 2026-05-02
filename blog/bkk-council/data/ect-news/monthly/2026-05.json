@@ -1,0 +1,70 @@
+{
+  "year_month": "2026-05",
+  "year": 2026,
+  "month": 5,
+  "month_th": "พฤษภาคม",
+  "buddhist_year": 2569,
+  "total_days": 1,
+  "total_pages": 64,
+  "total_findings": 24,
+  "total_size_mb": 21.62,
+  "tier_distribution": {
+    "broad": 1
+  },
+  "top_keywords": [
+    {
+      "keyword": "กรุงเทพมหานคร",
+      "count": 1
+    },
+    {
+      "keyword": "เลือกตั้ง",
+      "count": 1
+    },
+    {
+      "keyword": "ท้องถิ่น",
+      "count": 1
+    },
+    {
+      "keyword": "สมาชิกสภาท้องถิ่น",
+      "count": 1
+    },
+    {
+      "keyword": "ผู้บริหารท้องถิ่น",
+      "count": 1
+    },
+    {
+      "keyword": "กกต.",
+      "count": 1
+    }
+  ],
+  "important_events": [],
+  "daily_briefs": [
+    {
+      "date": "2026-05-01",
+      "title": "สรุปข่าว กกต. ประจำวันที่ 2026-05-01",
+      "summary": "หน้า 1/64: รวมข่าว กกต. | ภาพกิจกรรมรอบรั้ว กกต. | ข่าว สนง.กกต. (Press Release) | สนง.กกต. ที่ วั | 1 253/2569 2 - 3 พฤษภาคม 2569 เลือกตั้งสมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น\n\nหน้า 2/64: รวมข่าว กกต. | 1 หนังสือพิมพ์ ในประเทศ : วิกฤตศรัทธา 'ป.ป.ช. - กกต.' เมื่อบรรทัดฐาน ถูกตั้งคำถาม 40\n\nหน้า 3/64: ภาพกิจกรรม รอบรั้ว กกต.",
+      "tier": "broad",
+      "important": true,
+      "matched_keywords": [
+        "กรุงเทพมหานคร",
+        "เลือกตั้ง",
+        "ท้องถิ่น",
+        "สมาชิกสภาท้องถิ่น",
+        "ผู้บริหารท้องถิ่น",
+        "กกต."
+      ],
+      "finding_count": 24,
+      "pdf_url": "https://www.ect.go.th/web-upload/1xff0d34e409a13ef56eea54c52a291126/m_document/2703/31760/file_download/1e70ce0ebc782e3ee613327e588964b4.pdf",
+      "pdf_size_mb": 21.62,
+      "pdf_pages": 64,
+      "source_url": "https://www.ect.go.th/ect_th/th/dailynews2569",
+      "pdf_local": "data/ect-news/pdfs/2026-05-01.pdf",
+      "images": [
+        "data/ect-news/images/2026-05-01/p001.png",
+        "data/ect-news/images/2026-05-01/p002.png",
+        "data/ect-news/images/2026-05-01/p003.png"
+      ]
+    }
+  ],
+  "generated_at": "2026-05-02T11:01:46.009992+07:00"
+}
