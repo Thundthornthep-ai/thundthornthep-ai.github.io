@@ -628,6 +628,13 @@ a.matra-link:hover { background: #c7d2fe; text-decoration: underline; }
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
+@media print {
+  .top-bar, .sidebar, .bottom-nav, .site-footer, .sidebar-back, .scroll-progress { display: none !important; }
+  .content, .main-content, main { margin-left: 0 !important; padding: 0 !important; max-width: 100% !important; }
+  body { background: #fff !important; color: #000 !important; }
+  a { color: #000 !important; text-decoration: underline; }
+  .topic-section, section { page-break-inside: avoid; }
+}
 </style>
 </head>
 <body data-lang="th">

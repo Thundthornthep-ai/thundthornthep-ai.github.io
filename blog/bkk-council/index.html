@@ -1799,7 +1799,9 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
     );
   }
   tick();
-  setInterval(tick, 1000);
+  if(window._cdTimer)clearInterval(window._cdTimer);
+  window._cdTimer=setInterval(tick, 1000);
+  window.addEventListener('beforeunload',function(){if(window._cdTimer){clearInterval(window._cdTimer);window._cdTimer=null;}});
 })();
 
 
@@ -2301,10 +2303,12 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
   }
 
   // Auto-refresh every 5 min (silent, throttled)
-  var _ectTimer = setInterval(function(){
+  if(window._ectTimer)clearInterval(window._ectTimer);
+  window._ectTimer = setInterval(function(){
     if(document.hidden) return;  // skip while tab hidden
     window.loadEctNews(true);
   }, ECT_AUTO_REFRESH_MS);
+  window.addEventListener('beforeunload',function(){if(window._ectTimer){clearInterval(window._ectTimer);window._ectTimer=null;}});
 
   // Refresh when tab becomes visible if data is stale
   document.addEventListener('visibilitychange', function(){

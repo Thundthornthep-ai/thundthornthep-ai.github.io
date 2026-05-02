@@ -384,12 +384,16 @@ function fetchTraffy(){
   if(sumEl)sumEl.textContent='';
   initTraffyMap();
   if(window._traffyAbort)window._traffyAbort.abort();
+  if(window._traffyTimeout)clearTimeout(window._traffyTimeout);
   window._traffyAbort=new AbortController();
+  var fetchDistrict=currentDistrict;
+  window._traffyTimeout=setTimeout(function(){try{window._traffyAbort.abort()}catch(e){}},10000);
   fetch('https://publicapi.traffy.in.th/teamchadchart-stat-api/geojson/v1?limit=1000',{signal:window._traffyAbort.signal})
   .then(function(r){if(!r.ok)throw new Error('API '+r.status);return r.json();})
   .then(function(data){
+    if(currentDistrict!==fetchDistrict)return;
     if(!data.features||!data.features.length){el.textContent='ไม่พบข้อมูลจาก Traffy API';return;}
-    var items=data.features.filter(function(f){return f.properties&&f.properties.district===currentDistrict;});
+    var items=data.features.filter(function(f){return f&&f.properties&&f.properties.district===fetchDistrict;});
     var totalAll=data.total||data.features.length;
     if(!items.length){el.textContent='';var nd=document.createElement('div');nd.style.cssText='padding:16px;color:var(--text-muted);font-size:13px;text-align:center';nd.textContent='ไม่พบปัญหาในเขต'+currentDistrict+' จาก batch ล่าสุด';el.appendChild(nd);return;}
     // Summary
@@ -433,7 +437,8 @@ function fetchTraffy(){
     });
     if(items.length>5){var mo=document.createElement('a');mo.href='https://bangkok.traffy.in.th/?district='+encodeURIComponent(currentDistrict);mo.target='_blank';mo.style.cssText='display:block;text-align:center;padding:10px;font-size:13px;color:var(--teal);font-weight:600;text-decoration:none';mo.textContent='+ อีก '+(items.length-5)+' เรื่อง — ดูทั้งหมดที่ Traffy Fondue →';el.appendChild(mo);}
   })
-  .catch(function(err){if(err.name==='AbortError')return;el.textContent='ไม่สามารถเชื่อมต่อ Traffy API';el.style.color='var(--red)';});
+  .catch(function(err){if(err.name==='AbortError')return;el.textContent='ไม่สามารถเชื่อมต่อ Traffy API';el.style.color='var(--red)';})
+  .then(function(){if(window._traffyTimeout){clearTimeout(window._traffyTimeout);window._traffyTimeout=null;}});
 }
 
 // === RENDER ===
@@ -700,7 +705,7 @@ function addPoi(){
   var pois = D.g('pois_'+currentDistrict, {});
   if(!pois[cat]) pois[cat] = [];
   pois[cat].push({
-    id: Date.now()+Math.random(),
+    id: Date.now().toString(36)+Math.random().toString(36).slice(2,8),
     name: name,
     addr: document.getElementById('poiAddr').value.trim(),
     note: document.getElementById('poiNote').value.trim(),
@@ -721,7 +726,7 @@ function unflagPoi(catKey, id){
 }
 function removePoi(catKey, id){
   var pois = D.g('pois_'+currentDistrict, {});
-  pois[catKey] = (pois[catKey]||[]).filter(function(p){return p.id!==id});
+  pois[catKey] = (pois[catKey]||[]).filter(function(p){return String(p.id)!==String(id)});
   D.s('pois_'+currentDistrict, pois);
   renderDistrict();
 }
@@ -798,7 +803,7 @@ function doImportDI(ev){
   r.readAsText(f);
 }
 
-function toggleEl(id){var el=document.getElementById(id);el.style.display=el.style.display==='none'?'block':'none'}
+function toggleEl(id){var el=document.getElementById(id);el.style.display=el.style.display==='none'?'block':'none';if(id==='checkinForm'&&el.style.display==='none'&&window._gpsPreviewMarker){try{window._gpsPreviewMarker.remove()}catch(e){}window._gpsPreviewMarker=null}}
 
 // === SHARE CHECKIN ===
 function shareCheckin(ci){

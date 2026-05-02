@@ -482,6 +482,13 @@ a.matra-link:hover { background: #c7d2fe; text-decoration: underline; }
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
+@media print {
+  .top-bar, .sidebar, .bottom-nav, .site-footer, .sidebar-back, .scroll-progress { display: none !important; }
+  .content, .main-content, main { margin-left: 0 !important; padding: 0 !important; max-width: 100% !important; }
+  body { background: #fff !important; color: #000 !important; }
+  a { color: #000 !important; text-decoration: underline; }
+  .topic-section, section { page-break-inside: avoid; }
+}
 </style>
 </head>
 <body data-lang="th">
@@ -513,7 +520,10 @@ a.matra-link:hover { background: #c7d2fe; text-decoration: underline; }
 
   <div class="sidebar-topics">
     <a href="#do-section" class="sidebar-link" data-section="do-section">
-      <span class="num">2.6</span> หาเสียง (DO/DON'T)
+      <span class="num">2.6a</span> สิ่งที่ทำได้ (DO)
+    </a>
+    <a href="#dont-section" class="sidebar-link" data-section="dont-section">
+      <span class="num">2.6b</span> สิ่งที่ห้ามทำ (DON'T)
     </a>
     <a href="#campaign-end" class="sidebar-link" data-section="campaign-end">
       <span class="num">2.7</span> ยุติการหาเสียง

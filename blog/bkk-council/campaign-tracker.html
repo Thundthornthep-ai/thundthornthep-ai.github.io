@@ -740,8 +740,8 @@ function toggleLaw(hd){var body=hd.nextElementSibling;var arrow=hd.querySelector
 // === CRUD ===
 function addTeam(){var n=document.getElementById('tn').value.trim();if(!n){alert('กรุณากรอกชื่อ');return}var a=D.get('team');a.push({id:Date.now(),n:n,r:document.getElementById('tr').value.trim(),p:+document.getElementById('tp').value||0,s:document.getElementById('ts').value});D.set('team',a);document.getElementById('tn').value='';document.getElementById('tr').value='';document.getElementById('tp').value='';toggleForm('tf');render()}
 function addVeh(){var p=document.getElementById('vp').value.trim();if(!p){alert('กรุณากรอกทะเบียน');return}var a=D.get('veh');a.push({id:Date.now(),p:p,t:document.getElementById('vt').value,c:+document.getElementById('vc').value||0,n:document.getElementById('vn').value.trim()});D.set('veh',a);document.getElementById('vp').value='';document.getElementById('vc').value='';document.getElementById('vn').value='';toggleForm('vf');render()}
-function addSign(){var q=+document.getElementById('sq').value;if(!q){alert('กรุณากรอกจำนวน');return}var a=D.get('sign');a.push({id:Date.now(),t:document.getElementById('sty').value,q:q,l:document.getElementById('sl').value.trim(),c:+document.getElementById('sc').value||0});D.set('sign',a);document.getElementById('sq').value='';document.getElementById('sl').value='';document.getElementById('sc').value='';toggleForm('sf');render()}
-function addTx(){var amt=+document.getElementById('xa').value;if(!amt||amt<0){alert('กรุณากรอกจำนวนเงินเป็นค่าบวก');return}var cat=document.getElementById('xc').value;if(!cat){alert('กรุณาเลือกหมวดค่าใช้จ่าย');return}var a=D.get('tx');a.push({id:Date.now(),type:document.getElementById('xt').value,date:document.getElementById('xd').value||new Date().toISOString().slice(0,10),cat:cat,amt:amt,memo:document.getElementById('xm').value.trim(),docno:document.getElementById('xdn').value.trim(),payee:document.getElementById('xpy').value.trim()});D.set('tx',a);document.getElementById('xa').value='';document.getElementById('xm').value='';document.getElementById('xdn').value='';document.getElementById('xpy').value='';toggleForm('xf');render()}
+function addSign(){var q=+document.getElementById('sq').value;if(!q||q<0||!Number.isInteger(q)){alert('กรุณากรอกจำนวนเป็นจำนวนเต็มบวก');return}var a=D.get('sign');a.push({id:Date.now(),t:document.getElementById('sty').value,q:q,l:document.getElementById('sl').value.trim(),c:+document.getElementById('sc').value||0});D.set('sign',a);document.getElementById('sq').value='';document.getElementById('sl').value='';document.getElementById('sc').value='';toggleForm('sf');render()}
+function addTx(){var amt=+document.getElementById('xa').value;if(isNaN(amt)||amt<=0){alert('กรุณากรอกจำนวนเงินเป็นค่าบวก');return}var cat=document.getElementById('xc').value;if(!cat){alert('กรุณาเลือกหมวดค่าใช้จ่าย');return}var a=D.get('tx');a.push({id:Date.now(),type:document.getElementById('xt').value,date:document.getElementById('xd').value||new Date().toISOString().slice(0,10),cat:cat,amt:amt,memo:document.getElementById('xm').value.trim(),docno:document.getElementById('xdn').value.trim(),payee:document.getElementById('xpy').value.trim()});D.set('tx',a);document.getElementById('xa').value='';document.getElementById('xm').value='';document.getElementById('xdn').value='';document.getElementById('xpy').value='';toggleForm('xf');render()}
 function del(type,id){if(!confirm('ลบรายการนี้?'))return;D.set(type,D.get(type).filter(function(i){return i.id!==id}));render()}
 
 // === RENDER ===
@@ -753,7 +753,7 @@ function render(){
   document.getElementById('sS').textContent=sign.reduce(function(s,i){return s+i.q},0);
   document.getElementById('sX').textContent=tx.length;
   // Budget
-  var spent=tx.filter(function(t){return t.type==='expense'}).reduce(function(s,t){return s+t.amt},0);
+  var spent=tx.filter(function(t){return t.type==='expense'}).reduce(function(s,t){return s+(parseFloat(t.amt)||0)},0);
   var pct=budget>0?Math.round(spent/budget*100):0;
   document.getElementById('S').textContent=N(spent);document.getElementById('L').textContent=N(budget);
   document.getElementById('P').textContent=pct+'%';
@@ -775,8 +775,8 @@ function render(){
   renderTbl('sT2',sign,['#','ประเภท','จำนวน','สถานที่','ราคารวม',''],function(s,i){return '<tr><td>'+(i+1)+'</td><td>'+E(s.t)+'</td><td>'+s.q+'</td><td>'+E(s.l)+'</td><td class="amt">'+N(s.c)+'</td><td class="no-print"><button class="btn-d" onclick="del(\'sign\','+s.id+')">ลบ</button></td></tr>'});
   // Tx
   var ftx=fTx==='all'?tx:tx.filter(function(t){return t.type===fTx});
-  ftx.sort(function(a,b){return b.date>a.date?1:-1});
-  var inc=tx.filter(function(t){return t.type==='income'}).reduce(function(s,t){return s+t.amt},0);
+  ftx.sort(function(a,b){if(a.date===b.date)return b.id>a.id?1:-1;return b.date>a.date?1:-1});
+  var inc=tx.filter(function(t){return t.type==='income'}).reduce(function(s,t){return s+(parseFloat(t.amt)||0)},0);
   document.getElementById('xI').textContent=N(inc);document.getElementById('xE').textContent=N(spent);document.getElementById('xB').textContent=N(inc-spent);
   // Summary by type
   renderSummary(tx);
@@ -822,7 +822,7 @@ function renderCatSelect(){
 function renderPrint(){
   var tx=D.get('tx'),budget=D.get('b'),cN=D.get('n')||'(ยังไม่ระบุ)',cD=D.get('d')||'(ยังไม่ระบุ)',cNum=D.get('num')||'-',cED=D.get('edate')||'-';
   var inc=tx.filter(function(t){return t.type==='income'}),exp=tx.filter(function(t){return t.type==='expense'});
-  var tI=inc.reduce(function(s,t){return s+t.amt},0),tE=exp.reduce(function(s,t){return s+t.amt},0);
+  var tI=inc.reduce(function(s,t){return s+(parseFloat(t.amt)||0)},0),tE=exp.reduce(function(s,t){return s+(parseFloat(t.amt)||0)},0);
   exp.sort(function(a,b){return(a.cat||'').localeCompare(b.cat||'')||(a.date||'').localeCompare(b.date||'')});
   var pa=document.getElementById('printArea');
   // Build structured print output
@@ -890,7 +890,7 @@ function exportCSV(){
 }
 
 // === EXPORT/IMPORT JSON ===
-function doExport(){var d={v:'2.0',date:new Date().toISOString(),b:D.get('b'),n:D.get('n'),d:D.get('d'),num:D.get('num'),edate:D.get('edate'),team:D.get('team'),veh:D.get('veh'),sign:D.get('sign'),tx:D.get('tx')};var blob=new Blob([JSON.stringify(d,null,2)],{type:'application/json'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download='campaign-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url);localStorage.setItem('sk_lastExport',Date.now().toString());hideBackupBanner()}
+function doExport(){var d={v:'2.0',date:new Date().toISOString(),b:D.get('b'),n:D.get('n'),d:D.get('d'),num:D.get('num'),edate:D.get('edate'),team:D.get('team'),veh:D.get('veh'),sign:D.get('sign'),tx:D.get('tx')};var blob=new Blob([JSON.stringify(d,null,2)],{type:'application/json'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download='campaign-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url);try{localStorage.setItem('sk_lastExport',Date.now().toString())}catch(e){}hideBackupBanner()}
 function doImport(ev){var f=ev.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(e){try{var d=JSON.parse(e.target.result);if(!d.v){alert('ไฟล์ไม่ถูกต้อง');return}if(!confirm('Import จะทับข้อมูลเดิม ต้องการดำเนินการ?'))return;if(d.b!==undefined)D.set('b',d.b);if(d.n!==undefined)D.set('n',d.n);if(d.d!==undefined)D.set('d',d.d);if(d.num!==undefined)D.set('num',d.num);if(d.edate!==undefined)D.set('edate',d.edate);if(d.team!==undefined)D.set('team',d.team);if(d.veh!==undefined)D.set('veh',d.veh);if(d.sign!==undefined)D.set('sign',d.sign);if(d.tx!==undefined)D.set('tx',d.tx);if(d.settings){D.set('n',d.settings.n||'');D.set('d',d.settings.d||'');D.set('num',d.settings.num||'')}loadSettings();render();alert('Import สำเร็จ!')}catch(err){alert('Error: '+err.message)}};r.readAsText(f)}
 function clearAll(){['sk_b','sk_n','sk_d','sk_num','sk_edate','sk_team','sk_veh','sk_sign','sk_tx'].forEach(function(k){localStorage.removeItem(k)});loadSettings();render()}
 
