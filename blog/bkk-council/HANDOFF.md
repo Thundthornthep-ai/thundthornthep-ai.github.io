@@ -1,8 +1,18 @@
 # ส.ก. Navigator — Bug Review Handoff
 
-**Date:** 2026-05-01
+**Date:** 2026-05-01 (resolved 2026-05-02)
 **Branch:** `claude/review-sknavigator-bugs-MNMBb`
-**Status:** ⚠️ Branch corrupted — needs cleanup before merge
+**Status:** ✅ RESOLVED — all files restored + 15 bugs fixed in commit `2a9ab32`
+
+## RESOLUTION (2026-05-02, Claude Code Windows local)
+
+Continued from sandbox handoff. Branch restored from local Windows machine where the Edit tool talks to local fs (no MCP payload limit). All 15 bugs applied + 5-Point Pre-Deploy Check passed (grep verify + node syntax check + file-size sanity within 2-3% of main + fix delta).
+
+**Final remote file sizes (all match HANDOFF spec):**
+- index.html 110,425 | campaign-tracker.html 111,484 | district-intel.html 118,515
+- phase-a.html 101,072 | phase-b.html 81,367 | phase-c.html 49,031 | phase-d-e.html 125,584
+
+**Branch ready to merge.** History contains the noisy progression (truncate → restore → fix), but final tree state is correct. PR reviewer can squash on merge if they prefer one clean commit.
 
 ---
 
