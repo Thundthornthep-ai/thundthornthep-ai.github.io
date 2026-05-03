@@ -1,9 +1,33 @@
 {
-  "lastUpdated": "2026-05-02T07:17:46.799893+07:00",
-  "lastUpdatedHuman": "02 May 2026 07:17 น. (เวลาไทย)",
+  "lastUpdated": "2026-05-03T07:01:51.035229+07:00",
+  "lastUpdatedHuman": "03 May 2026 07:01 น. (เวลาไทย)",
   "source": "https://www.ect.go.th/ect_th/th/dailynews2569",
   "itemCount": 10,
   "items": [
+    {
+      "date": "2026-05-02",
+      "title": "สรุปข่าว กกต. ประจำวันที่ 2026-05-02",
+      "summary": "หน้า 1/92: รวมข่าว กกต. | ข่าว กกต. / ข่าวผู้บริหารสำนักงาน กกต. / สำนักงาน กกต. จังหวัด | 1 ผู้จัดการออนไลน์ กกต. เชียงใหม่ เตือนผู้สมัคร สส. เลือกตั้ง 8 ก.พ. 69 ต้องยื่นบัญชี 1 | 2 บ้านเมืองออนไลน์ กกต. เชียงใหม่ เตือนผู้สมัคร สส. ยื่นบัญชีรายรับรายจ่ายเลือกตั้ง 6 วั | 10 หนังสือพิมพ์แนวหน้า ยื่นร้อง กกต. ส่\n\nหน้า 2/92: รวมข่าว กกต. | 9 หนังสือพิมพ์ Special Repor t: ศึกชิง ผู้ว่าฯ กทม. เดือด! \"ชัชชาติ\" เต็ง เจอ \"ดร.โจ\" 64\n\nหน้า 4/92: หัวข้อข่าว: กกต.เชียงใหม่เตือนผู้สมัคร สส.เลือกตั้ง8ก.พ.69ต้องยื่นบัญชีรับจ่ายภายใน90วัน ย้ำโทษหนักทั้งจำทั้ง...",
+      "tier": "broad",
+      "important": true,
+      "matched_keywords": [
+        "ชัชชาติ",
+        "ผู้ว่าฯ กทม",
+        "เลือกตั้ง",
+        "กกต."
+      ],
+      "finding_count": 32,
+      "pdf_url": "https://www.ect.go.th/web-upload/1xff0d34e409a13ef56eea54c52a291126/m_document/2703/31762/file_download/fa8834dc11a20233e2005e3f3d2f2a17.pdf",
+      "pdf_size_mb": 15.21,
+      "pdf_pages": 92,
+      "source_url": "https://www.ect.go.th/ect_th/th/dailynews2569",
+      "pdf_local": "data/ect-news/pdfs/2026-05-02.pdf",
+      "images": [
+        "data/ect-news/images/2026-05-02/p001.png",
+        "data/ect-news/images/2026-05-02/p002.png",
+        "data/ect-news/images/2026-05-02/p004.png"
+      ]
+    },
     {
       "date": "2026-05-01",
       "title": "สรุปข่าว กกต. ประจำวันที่ 2026-05-01",
@@ -231,33 +255,6 @@
         "data/ect-news/images/2026-04-23/p001.png",
         "data/ect-news/images/2026-04-23/p002.png",
         "data/ect-news/images/2026-04-23/p003.png"
-      ]
-    },
-    {
-      "date": "2026-04-22",
-      "title": "1 มติชนออนไลน์ กทม. เดินหน้าจัดเลือกตั้ง ส.ก. เคาะแบ่งเขต 50 เขต จ่อเสนอ กกต. 1 นี้",
-      "summary": "หน้า 1/68: รวมข่าว กกต. | ภาพกิจกรรมรอบรั้ว กกต. | 3 การประชุมคณะกรรมการพิจารณาเปิดเผยข้อมูลของสำนักงานคณะกรรมการการเลือกตั้ง ครั้งที่ 3/2569 | ข่าว สนง.กกต. (Press Release) วั | สนง.กกต. ที่\n\nหน้า 2/68: รวมข่าว กกต.\n\nหน้า 3/68: ภาพกิจกรรม รอบรั้ว กกต.",
-      "tier": "strict",
-      "important": true,
-      "matched_keywords": [
-        "ส.ก.",
-        "เลือกตั้ง ส.ก.",
-        "ชัชชาติ",
-        "ผู้ว่าฯ กทม",
-        "กรุงเทพมหานคร",
-        "เลือกตั้ง",
-        "กกต."
-      ],
-      "finding_count": 30,
-      "pdf_url": "https://www.ect.go.th/web-upload/1xff0d34e409a13ef56eea54c52a291126/m_document/2703/31709/file_download/8f49c63e369ce0c5e90f4e9da018b07c.pdf",
-      "pdf_size_mb": 21.73,
-      "pdf_pages": 68,
-      "source_url": "https://www.ect.go.th/ect_th/th/dailynews2569",
-      "pdf_local": "data/ect-news/pdfs/2026-04-22.pdf",
-      "images": [
-        "data/ect-news/images/2026-04-22/p001.png",
-        "data/ect-news/images/2026-04-22/p014.png",
-        "data/ect-news/images/2026-04-22/p015.png"
       ]
     }
   ]
