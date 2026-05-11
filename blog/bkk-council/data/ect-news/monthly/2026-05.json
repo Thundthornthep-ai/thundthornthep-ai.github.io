@@ -4,30 +4,30 @@
   "month": 5,
   "month_th": "พฤษภาคม",
   "buddhist_year": 2569,
-  "total_days": 6,
-  "total_pages": 380,
-  "total_findings": 156,
-  "total_size_mb": 101.59,
+  "total_days": 7,
+  "total_pages": 465,
+  "total_findings": 163,
+  "total_size_mb": 135.55,
   "tier_distribution": {
     "broad": 4,
-    "strict": 2
+    "strict": 3
   },
   "top_keywords": [
     {
       "keyword": "เลือกตั้ง",
-      "count": 6
+      "count": 7
     },
     {
       "keyword": "กกต.",
-      "count": 6
+      "count": 7
     },
     {
       "keyword": "กรุงเทพมหานคร",
-      "count": 5
+      "count": 6
     },
     {
       "keyword": "ผู้ว่าฯ กทม",
-      "count": 4
+      "count": 5
     },
     {
       "keyword": "ท้องถิ่น",
@@ -43,14 +43,14 @@
     },
     {
       "keyword": "ชัชชาติ",
-      "count": 2
-    },
-    {
-      "keyword": "วันเลือกตั้ง",
-      "count": 2
+      "count": 3
     },
     {
       "keyword": "ผู้ว่าราชการกรุงเทพมหานคร",
+      "count": 3
+    },
+    {
+      "keyword": "วันเลือกตั้ง",
       "count": 2
     }
   ],
@@ -125,6 +125,32 @@
         "data/ect-news/images/2026-05-08/p001.png",
         "data/ect-news/images/2026-05-08/p004.png",
         "data/ect-news/images/2026-05-08/p006.png"
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "title": "นักวิชาการต่อสนามการเลือกตั้งผู้ว่าราชการกรุงเทพมหานคร",
+      "summary": "หน้า 1/85: รวมข่าว กกต. | 7 หนังสือพิมพ์ไทยโพสต์ ชัชชาติ นำโด่งม้วนเดียวจบ สก. 50 เขต ผลเลือกตั้ง ได้สภา กทม. 'ส้ม – 21\n\nหน้า 2/85: รวมข่าว กกต. | 15 หนังสือพิมพ์มติชน วิเคราะห์โอกาสของ 'ผู้ท้าชิง' สมรภูมิเลือก ผู้ว่าฯ กทม. : ความเห็น 76 | นักวิชาการต่อสนามการเลือกตั้งผู้ว่าราชการกรุงเทพมหานคร\n\nหน้า 24/85: Ad Rate: (FC) 1,500(BW) 1,200 หัวข้อข่าว: ชัชชาติ นำโด่งม้วนเดียวจบ สก. 50 เขต ผลเลือกตั้ง ได้สภา กทม. 'ส้ม-เขียว-แดง-ฟ้า'",
+      "tier": "strict",
+      "important": true,
+      "matched_keywords": [
+        "ผู้ว่าราชการกรุงเทพมหานคร",
+        "ชัชชาติ",
+        "ผู้ว่าฯ กทม",
+        "กรุงเทพมหานคร",
+        "เลือกตั้ง",
+        "กกต."
+      ],
+      "finding_count": 7,
+      "pdf_url": "https://www.ect.go.th/web-upload/1xff0d34e409a13ef56eea54c52a291126/m_document/2703/31795/file_download/c61e68793b9ee9e2b11205159bb0243d.pdf",
+      "pdf_size_mb": 33.96,
+      "pdf_pages": 85,
+      "source_url": "https://www.ect.go.th/ect_th/th/dailynews2569",
+      "pdf_local": "data/ect-news/pdfs/2026-05-10.pdf",
+      "images": [
+        "data/ect-news/images/2026-05-10/p002.png",
+        "data/ect-news/images/2026-05-10/p001.png",
+        "data/ect-news/images/2026-05-10/p024.png"
       ]
     }
   ],
@@ -299,7 +325,33 @@
         "data/ect-news/images/2026-05-08/p004.png",
         "data/ect-news/images/2026-05-08/p006.png"
       ]
+    },
+    {
+      "date": "2026-05-10",
+      "title": "นักวิชาการต่อสนามการเลือกตั้งผู้ว่าราชการกรุงเทพมหานคร",
+      "summary": "หน้า 1/85: รวมข่าว กกต. | 7 หนังสือพิมพ์ไทยโพสต์ ชัชชาติ นำโด่งม้วนเดียวจบ สก. 50 เขต ผลเลือกตั้ง ได้สภา กทม. 'ส้ม – 21\n\nหน้า 2/85: รวมข่าว กกต. | 15 หนังสือพิมพ์มติชน วิเคราะห์โอกาสของ 'ผู้ท้าชิง' สมรภูมิเลือก ผู้ว่าฯ กทม. : ความเห็น 76 | นักวิชาการต่อสนามการเลือกตั้งผู้ว่าราชการกรุงเทพมหานคร\n\nหน้า 24/85: Ad Rate: (FC) 1,500(BW) 1,200 หัวข้อข่าว: ชัชชาติ นำโด่งม้วนเดียวจบ สก. 50 เขต ผลเลือกตั้ง ได้สภา กทม. 'ส้ม-เขียว-แดง-ฟ้า'",
+      "tier": "strict",
+      "important": true,
+      "matched_keywords": [
+        "ผู้ว่าราชการกรุงเทพมหานคร",
+        "ชัชชาติ",
+        "ผู้ว่าฯ กทม",
+        "กรุงเทพมหานคร",
+        "เลือกตั้ง",
+        "กกต."
+      ],
+      "finding_count": 7,
+      "pdf_url": "https://www.ect.go.th/web-upload/1xff0d34e409a13ef56eea54c52a291126/m_document/2703/31795/file_download/c61e68793b9ee9e2b11205159bb0243d.pdf",
+      "pdf_size_mb": 33.96,
+      "pdf_pages": 85,
+      "source_url": "https://www.ect.go.th/ect_th/th/dailynews2569",
+      "pdf_local": "data/ect-news/pdfs/2026-05-10.pdf",
+      "images": [
+        "data/ect-news/images/2026-05-10/p002.png",
+        "data/ect-news/images/2026-05-10/p001.png",
+        "data/ect-news/images/2026-05-10/p024.png"
+      ]
     }
   ],
-  "generated_at": "2026-05-10T15:01:15.244825+07:00"
+  "generated_at": "2026-05-11T15:01:47.688391+07:00"
 }
