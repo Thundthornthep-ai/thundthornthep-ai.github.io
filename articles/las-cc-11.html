@@ -1,736 +1,633 @@
 <!DOCTYPE html>
+
 <html lang="th">
 <head>
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NN3KX46PVC"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NN3KX46PVC"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NN3KX46PVC');</script>
-<meta charset="UTF-8">
-<link rel="icon" type="image/webp" href="/las-logo.webp">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="การประเมินความเสี่ยงการละเมิดข้อมูลส่วนบุคคลตาม PDPA (ม.37(4)) ครอบคลุม 3 ประเภทการละเมิด, 10 ตัวอย่าง, 72 ชั่วโมงแจ้งเหตุ, Risk Matrix และ DPO Checklist">
-<meta name="keywords" content="Data Breach, PDPA, การละเมิดข้อมูลส่วนบุคคล, Personal Data Breach, Risk Assessment, มาตรา 37, แจ้งเหตุการละเมิด, DPO, PDPC, Confidentiality Breach, Integrity Breach, Availability Breach, Legal Advance Solution">
-<meta name="author" content="ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-<link rel="canonical" href="https://thundthornthep-ai.github.io/articles/las-cc-11.html">
-<link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/las-cc-11.html">
-<link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/las-cc-11.html">
-<link rel="alternate" hreflang="x-default" href="https://thundthornthep-ai.github.io/articles/las-cc-11.html">
-<title>การประเมินความเสี่ยงการละเมิดข้อมูลส่วนบุคคล PDPA | LAS C&C | LAS</title>
-<meta property="og:type" content="article">
-<meta property="og:title" content="การประเมินความเสี่ยงการละเมิดข้อมูลส่วนบุคคล PDPA">
-<meta property="og:description" content="ครอบคลุม 3 ประเภทการละเมิด, Risk Assessment Matrix, 72 ชั่วโมงแจ้งเหตุ, 10 ตัวอย่างกรณีจริง และ DPO Checklist ตามแนวทาง PDPC">
-<meta property="og:url" content="https://thundthornthep-ai.github.io/articles/las-cc-11.html">
-<meta property="og:image" content="https://thundthornthep-ai.github.io/banner-las-nia.jpg">
-<meta property="og:site_name" content="Thundthornthep Yamoutai, Ph.D. — Legal Advance Solution">
-<meta property="og:locale" content="th_TH">
-<meta property="article:author" content="ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.">
-<meta property="article:published_time" content="2026-04-17T09:00:00+07:00">
-<meta property="article:modified_time" content="2026-04-17T09:00:00+07:00">
-<meta property="article:section" content="LAS C&C">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="การประเมินความเสี่ยงการละเมิดข้อมูลส่วนบุคคล PDPA">
-<meta name="twitter:description" content="3 ประเภทการละเมิด + Risk Matrix + 72 ชั่วโมงแจ้งเหตุ + 10 ตัวอย่าง + DPO Checklist ตาม PDPC">
-<meta name="twitter:image" content="https://thundthornthep-ai.github.io/banner-las-nia.jpg">
+<meta charset="utf-8"/>
+<link href="/las-logo.webp" rel="icon" type="image/webp"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="การประเมินความเสี่ยงการละเมิดข้อมูลส่วนบุคคลตาม PDPA (ม.37(4)) ครอบคลุม 3 ประเภทการละเมิด, 10 ตัวอย่าง, 72 ชั่วโมงแจ้งเหตุ, Risk Matrix และ DPO Checklist" name="description"/>
+<meta content="Data Breach, PDPA, การละเมิดข้อมูลส่วนบุคคล, Personal Data Breach, Risk Assessment, มาตรา 37, แจ้งเหตุการละเมิด, DPO, PDPC, Confidentiality Breach, Integrity Breach, Availability Breach, Legal Advance Solution" name="keywords"/>
+<meta content="ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D." name="author"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1" name="robots"/>
+<link href="https://thundthornthep-ai.github.io/articles/las-cc-11.html" rel="canonical"/>
+<link href="https://thundthornthep-ai.github.io/articles/las-cc-11.html" hreflang="th" rel="alternate"/>
+<link href="https://thundthornthep-ai.github.io/en/articles/las-cc-11.html" hreflang="en" rel="alternate"/>
+<link href="https://thundthornthep-ai.github.io/articles/las-cc-11.html" hreflang="x-default" rel="alternate"/>
+<title>การประเมินความเสี่ยงการละเมิดข้อมูลส่วนบุคคล PDPA | LAS C&amp;C | LAS</title>
+<meta content="article" property="og:type"/>
+<meta content="การประเมินความเสี่ยงการละเมิดข้อมูลส่วนบุคคล PDPA" property="og:title"/>
+<meta content="ครอบคลุม 3 ประเภทการละเมิด, Risk Assessment Matrix, 72 ชั่วโมงแจ้งเหตุ, 10 ตัวอย่างกรณีจริง และ DPO Checklist ตามแนวทาง PDPC" property="og:description"/>
+<meta content="https://thundthornthep-ai.github.io/articles/las-cc-11.html" property="og:url"/>
+<meta content="https://thundthornthep-ai.github.io/banner-las-nia.jpg" property="og:image"/>
+<meta content="Thundthornthep Yamoutai, Ph.D. — Legal Advance Solution" property="og:site_name"/>
+<meta content="th_TH" property="og:locale"/>
+<meta content="ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D." property="article:author"/>
+<meta content="2026-04-17T09:00:00+07:00" property="article:published_time"/>
+<meta content="2026-04-17T09:00:00+07:00" property="article:modified_time"/>
+<meta content="LAS C&amp;C" property="article:section"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="การประเมินความเสี่ยงการละเมิดข้อมูลส่วนบุคคล PDPA" name="twitter:title"/>
+<meta content="3 ประเภทการละเมิด + Risk Matrix + 72 ชั่วโมงแจ้งเหตุ + 10 ตัวอย่าง + DPO Checklist ตาม PDPC" name="twitter:description"/>
+<meta content="https://thundthornthep-ai.github.io/banner-las-nia.jpg" name="twitter:image"/>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"การประเมินความเสี่ยงของการละเมิดข้อมูลส่วนบุคคลตาม PDPA","alternativeHeadline":"Personal Data Breach Risk Assessment Under Thailand PDPA","description":"ครอบคลุม 3 ประเภทการละเมิด (Confidentiality/Integrity/Availability), Risk Assessment Matrix, กรอบเวลาแจ้งเหตุ 72 ชั่วโมง, 10 ตัวอย่างกรณีจริง และ DPO Checklist ตามคู่มือแนวทาง PDPC เวอร์ชั่น 1.0","author":{"@type":"Person","name":"ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.","alternateName":"Thundthornthep Yamoutai, Ph.D.","url":"https://thundthornthep-ai.github.io/","jobTitle":"Founder & Managing Director","worksFor":{"@type":"LegalService","name":"Legal Advance Solution Co., Ltd.","sameAs":"https://laslegal.co.th"}},"publisher":{"@type":"Organization","name":"Legal Advance Solution Co., Ltd.","url":"https://laslegal.co.th"},"datePublished":"2026-04-17T09:00:00+07:00","dateModified":"2026-04-17T09:00:00+07:00","mainEntityOfPage":"https://thundthornthep-ai.github.io/articles/las-cc-11.html","image":"https://thundthornthep-ai.github.io/banner-las-nia.jpg","inLanguage":"th","articleSection":"LAS C&C"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"การละเมิดข้อมูลส่วนบุคคลตาม PDPA คืออะไร","acceptedAnswer":{"@type":"Answer","text":"การละเมิดข้อมูลส่วนบุคคล (Personal Data Breach) ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 หมายถึง การละเมิดมาตรการรักษาความมั่นคงปลอดภัยที่ทำให้เกิดการสูญหาย เข้าถึง ใช้ เปลี่ยนแปลง แก้ไข หรือเปิดเผยข้อมูลส่วนบุคคลโดยปราศจากอำนาจหรือโดยมิชอบ แบ่งเป็น 3 ประเภท คือ Confidentiality Breach (การเข้าถึง/เปิดเผยโดยไม่ได้รับอนุญาต), Integrity Breach (การแก้ไขเปลี่ยนแปลงโดยไม่ได้รับอนุญาต) และ Availability Breach (การสูญหาย/ไม่สามารถเข้าถึงข้อมูลได้)"}},{"@type":"Question","name":"ต้องแจ้งเหตุการละเมิดข้อมูลส่วนบุคคลภายในกี่ชั่วโมง","acceptedAnswer":{"@type":"Answer","text":"ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 37(4) ผู้ควบคุมข้อมูลส่วนบุคคลต้องแจ้งเหตุการละเมิดต่อสำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (สคส.) โดยไม่ชักช้าภายใน 72 ชั่วโมง นับแต่ทราบเหตุ เว้นแต่การละเมิดนั้นไม่มีความเสี่ยงที่จะมีผลกระทบต่อสิทธิและเสรีภาพของบุคคล หากไม่สามารถแจ้งได้ภายในเวลาดังกล่าว ต้องจัดทำบันทึกเหตุผลของความล่าช้าไว้ด้วย"}},{"@type":"Question","name":"เมื่อไหร่ต้องแจ้งเจ้าของข้อมูลโดยตรง","acceptedAnswer":{"@type":"Answer","text":"ต้องแจ้งเจ้าของข้อมูลส่วนบุคคลโดยตรงเมื่อการละเมิดนั้นมีความเสี่ยงสูงที่จะมีผลกระทบต่อสิทธิและเสรีภาพของบุคคล ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 37(4) วรรคสอง โดยต้องแจ้งพร้อมกับแนวทางการเยียวยาโดยไม่ชักช้า กรณีที่ถือว่ามีความเสี่ยงสูง เช่น ข้อมูลสุขภาพ ข้อมูลการเงิน หรือข้อมูลที่อาจนำไปสู่การฉ้อโกงหรือการเลือกปฏิบัติ"}},{"@type":"Question","name":"Risk Assessment Matrix สำหรับ Data Breach ประเมินอย่างไร","acceptedAnswer":{"@type":"Answer","text":"ตามคู่มือแนวทางของ PDPC การประเมินความเสี่ยงพิจารณา 2 มิติ คือ ระดับความรุนแรง (Severity) ที่ดูจากประเภทข้อมูล จำนวนเจ้าของข้อมูล และผลกระทบที่อาจเกิดขึ้น กับ ความน่าจะเป็น (Likelihood) ที่ดูจากลักษณะการละเมิด ว่าข้อมูลถูกนำไปใช้จริงหรือไม่ และมีมาตรการเข้ารหัสหรือไม่ นำมาคูณกันเป็น Risk Score แบ่ง 3 ระดับ คือ สูง (ต้องแจ้ง สคส. + เจ้าของข้อมูล), กลาง (ต้องแจ้ง สคส.), ต่ำ (บันทึกภายในเท่านั้น)"}},{"@type":"Question","name":"DPO มีหน้าที่อะไรเมื่อเกิด Data Breach","acceptedAnswer":{"@type":"Answer","text":"เจ้าหน้าที่คุ้มครองข้อมูลส่วนบุคคล (DPO) มีหน้าที่หลัก 5 ประการเมื่อเกิด Data Breach คือ (1) ประสานงานกับทีม Incident Response ทันทีที่ทราบเหตุ (2) ประเมินความเสี่ยงตาม Risk Assessment Matrix (3) จัดทำรายงานแจ้งเหตุต่อ สคส. ภายใน 72 ชั่วโมง (4) พิจารณาว่าต้องแจ้งเจ้าของข้อมูลหรือไม่ และ (5) บันทึกเหตุการณ์ มาตรการแก้ไข และบทเรียนใน Breach Register เพื่อป้องกันการเกิดซ้ำ"}},{"@type":"Question","name":"โทษของการไม่แจ้งเหตุการละเมิดข้อมูลส่วนบุคคลคืออะไร","acceptedAnswer":{"@type":"Answer","text":"การไม่แจ้งเหตุการละเมิดข้อมูลส่วนบุคคลตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มีโทษปรับทางปกครองไม่เกิน 3 ล้านบาท ตามมาตรา 83 (บทลงโทษผู้ควบคุมข้อมูลที่ฝ่าฝืนมาตรา 37) นอกจากนี้ ยังอาจถูกฟ้องเรียกค่าสินไหมทดแทนทางแพ่งจากเจ้าของข้อมูลที่ได้รับความเสียหาย โดยศาลอาจสั่งให้ชดใช้ค่าสินไหมทดแทนเพิ่มขึ้นได้ถึง 2 เท่าของค่าเสียหายจริง ตามมาตรา 78 และยังส่งผลกระทบต่อชื่อเสียงขององค์กรอย่างมีนัยสำคัญ"}}]}
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <!-- [[THEME-MIGRATION-v1]] -->
-<link rel="stylesheet" href="/css/wiki-theme.css">
+<link href="/css/wiki-theme.css" rel="stylesheet"/>
 <!-- [[/THEME-MIGRATION-v1]] -->
 </head>
 <body data-lang="th">
-
-
 <header class="site-header">
-  <div class="brand">Legal Advance Solution &mdash; LAS Legal Knowledge Hub</div>
-  <div class="author-name">by ธันย์ธรณ์เทพ แย้มอุทัย (Thundthornthep Yamoutai, Ph.D.)</div>
-  <nav><a href="https://thundthornthep-ai.github.io/">Home</a><a href="https://thundthornthep-ai.github.io/knowledge-hub.html">Knowledge Hub</a><a href="https://thundthornthep-ai.github.io/media-coverage.html">Media</a></nav>
+<div class="brand">Legal Advance Solution — LAS Legal Knowledge Hub</div>
+<div class="author-name">by ธันย์ธรณ์เทพ แย้มอุทัย (Thundthornthep Yamoutai, Ph.D.)</div>
+<nav><a href="https://thundthornthep-ai.github.io/">Home</a><a href="https://thundthornthep-ai.github.io/knowledge-hub.html">Knowledge Hub</a><a href="https://thundthornthep-ai.github.io/media-coverage.html">Media</a></nav>
 </header>
-
 <section class="hero">
-  <span class="series-badge">LAS C&amp;C</span>
-  <div class="badge">LAS C&amp;C &mdash; Contract &amp; Control #11</div>
-  <h1>การประเมินความเสี่ยงของการละเมิดข้อมูลส่วนบุคคล PDPA</h1>
-  <p class="sub">เมื่อข้อมูลรั่วไหล องค์กรมีเวลาเพียง 72 ชั่วโมง &mdash; ประเมินความเสี่ยงอย่างไร แจ้งใคร และจะป้องกันตัวเองอย่างไรตามแนวทาง PDPC</p>
-  <div class="meta"><span>ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span> | <span>17 เมษายน 2569</span> | <span>Legal Advance Solution Co., Ltd.</span></div>
+<span class="series-badge">LAS C&amp;C</span>
+<div class="badge">LAS C&amp;C — Contract &amp; Control #11</div>
+<h1>การประเมินความเสี่ยงของการละเมิดข้อมูลส่วนบุคคล PDPA</h1>
+<p class="sub">เมื่อข้อมูลรั่วไหล องค์กรมีเวลาเพียง 72 ชั่วโมง — ประเมินความเสี่ยงอย่างไร แจ้งใคร และจะป้องกันตัวเองอย่างไรตามแนวทาง PDPC</p>
+<div class="meta"><span>ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span> | <span>17 เมษายน 2569</span> | <span>Legal Advance Solution Co., Ltd.</span></div>
 </section>
-
 <main class="wrap">
-
 <!-- TOC -->
 <nav class="sb" id="toc" style="background:#f8f9fa;border:1px solid #a2a9b1;border-radius:6px;padding:20px;">
 <h2 style="font-size:1.1em;margin-bottom:12px;">สารบัญ / Table of Contents</h2>
 <ol style="padding-left:20px;line-height:2;">
-  <li><a href="#s1">Data Breach คืออะไร &mdash; ทำไมธุรกิจไทยต้องสนใจ</a></li>
-  <li><a href="#s2">3 ประเภทของการละเมิดข้อมูลส่วนบุคคล</a></li>
-  <li><a href="#s3">กรอบกฎหมาย: มาตรา 37(4) และแนวทาง PDPC</a></li>
-  <li><a href="#s4">Risk Assessment Matrix &mdash; ประเมินความเสี่ยงอย่างเป็นระบบ</a></li>
-  <li><a href="#s5">72 ชั่วโมง &mdash; กรอบเวลาแจ้งเหตุที่ห้ามพลาด</a></li>
-  <li><a href="#s6">10 ตัวอย่างกรณีจริง &mdash; ประเภทและการตอบสนอง</a></li>
-  <li><a href="#s7">DPO Checklist &mdash; รายการตรวจสอบเมื่อเกิด Breach</a></li>
-  <li><a href="#s8">บทลงโทษและผลกระทบทางกฎหมาย</a></li>
-  <li><a href="#s9">LAS Risk Methodology กับ Data Breach</a></li>
-  <li><a href="#s10">คำถามที่พบบ่อย (FAQ)</a></li>
+<li><a href="#s1">Data Breach คืออะไร — ทำไมธุรกิจไทยต้องสนใจ</a></li>
+<li><a href="#s2">3 ประเภทของการละเมิดข้อมูลส่วนบุคคล</a></li>
+<li><a href="#s3">กรอบกฎหมาย: มาตรา 37(4) และแนวทาง PDPC</a></li>
+<li><a href="#s4">Risk Assessment Matrix — ประเมินความเสี่ยงอย่างเป็นระบบ</a></li>
+<li><a href="#s5">72 ชั่วโมง — กรอบเวลาแจ้งเหตุที่ห้ามพลาด</a></li>
+<li><a href="#s6">10 ตัวอย่างกรณีจริง — ประเภทและการตอบสนอง</a></li>
+<li><a href="#s7">DPO Checklist — รายการตรวจสอบเมื่อเกิด Breach</a></li>
+<li><a href="#s8">บทลงโทษและผลกระทบทางกฎหมาย</a></li>
+<li><a href="#s9">LAS Risk Methodology กับ Data Breach</a></li>
+<li><a href="#s10">คำถามที่พบบ่อย (FAQ)</a></li>
 </ol>
 </nav>
-
 <!-- S1: What is Data Breach -->
 <section class="sb" id="s1">
-<h2 class="sh">Data Breach คืออะไร &mdash; ทำไมธุรกิจไทยต้องสนใจ<span class="en">What Is a Personal Data Breach &mdash; Why Thai Businesses Must Care</span></h2>
-
-<p>ลองนึกภาพนี้: เช้าวันจันทร์ ทีม IT ของบริษัท A พบว่าฐานข้อมูลลูกค้ากว่า 50,000 รายถูกเข้าถึงจากภายนอกโดยไม่ได้รับอนุญาต ข้อมูลชื่อ ที่อยู่ เลขบัตรประชาชน และประวัติการสั่งซื้อถูกดาวน์โหลดออกไป นาฬิกาเริ่มเดิน &mdash; บริษัทมีเวลา 72 ชั่วโมงในการประเมินความเสี่ยงและแจ้งเหตุต่อสำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (สคส.) ทุกชั่วโมงที่ผ่านไปโดยไม่ดำเนินการ คือความเสี่ยงทางกฎหมายที่เพิ่มขึ้น</p>
-
+<h2 class="sh">Data Breach คืออะไร — ทำไมธุรกิจไทยต้องสนใจ<span class="en">What Is a Personal Data Breach — Why Thai Businesses Must Care</span></h2>
+<p>ลองนึกภาพนี้: เช้าวันจันทร์ ทีม IT ของบริษัท A พบว่าฐานข้อมูลลูกค้ากว่า 50,000 รายถูกเข้าถึงจากภายนอกโดยไม่ได้รับอนุญาต ข้อมูลชื่อ ที่อยู่ เลขบัตรประชาชน และประวัติการสั่งซื้อถูกดาวน์โหลดออกไป นาฬิกาเริ่มเดิน — บริษัทมีเวลา 72 ชั่วโมงในการประเมินความเสี่ยงและแจ้งเหตุต่อสำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (สคส.) ทุกชั่วโมงที่ผ่านไปโดยไม่ดำเนินการ คือความเสี่ยงทางกฎหมายที่เพิ่มขึ้น</p>
 <p>การละเมิดข้อมูลส่วนบุคคล (Personal Data Breach) ไม่ใช่แค่ปัญหาทาง IT อีกต่อไป แต่เป็นปัญหาทางกฎหมายและธุรกิจที่กรรมการบริษัท ผู้บริหาร และ DPO ต้องเข้าใจอย่างถ่องแท้ เพราะตั้งแต่พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (PDPA) มีผลบังคับใช้เต็มรูปแบบ องค์กรที่ไม่มีกระบวนการประเมินความเสี่ยงและแจ้งเหตุที่ชัดเจน เท่ากับเปิดตัวเองให้ถูกโจมตีจากทั้งกฎหมายและชื่อเสียง</p>
-
 <p>คู่มือแนวทางการประเมินความเสี่ยงและแจ้งเหตุการละเมิดข้อมูลส่วนบุคคล เวอร์ชัน 1.0 ที่ สคส. ออกเมื่อวันที่ 15 ธันวาคม 2565 ได้วางกรอบปฏิบัติที่ชัดเจนว่าองค์กรต้องทำอะไรบ้างเมื่อเกิดเหตุ และบทความนี้จะสรุปสาระสำคัญทั้งหมดในรูปแบบที่นักกฎหมายธุรกิจและ C-Suite สามารถนำไปใช้ได้ทันที</p>
-
-<blockquote>"เมื่อข้อมูลรั่ว &mdash; สิ่งที่สำคัญที่สุดไม่ใช่ว่ารั่วอะไร แต่คือคุณตอบสนองเร็วแค่ไหนและถูกต้องแค่ไหน"</blockquote>
+<blockquote>"เมื่อข้อมูลรั่ว — สิ่งที่สำคัญที่สุดไม่ใช่ว่ารั่วอะไร แต่คือคุณตอบสนองเร็วแค่ไหนและถูกต้องแค่ไหน"</blockquote>
 </section>
-
 <!-- S2: 3 Types of Breach -->
 <section class="sb" id="s2">
 <h2 class="sh">3 ประเภทของการละเมิดข้อมูลส่วนบุคคล<span class="en">Three Types of Personal Data Breach</span></h2>
-
 <p>ตามคู่มือแนวทางของ สคส. และสอดคล้องกับมาตรฐานสากล การละเมิดข้อมูลส่วนบุคคลแบ่งออกเป็น 3 ประเภทหลัก ซึ่งอาจเกิดขึ้นพร้อมกันในเหตุการณ์เดียวกันได้</p>
-
-<h3 class="sub">1. Confidentiality Breach &mdash; การละเมิดด้านการรักษาความลับ</h3>
-
+<h3 class="sub">1. Confidentiality Breach — การละเมิดด้านการรักษาความลับ</h3>
 <p>คือการเข้าถึงหรือเปิดเผยข้อมูลส่วนบุคคลโดยบุคคลที่ไม่มีอำนาจ หรือโดยวัตถุประสงค์ที่ไม่ได้รับอนุญาต เป็นประเภทที่พบบ่อยที่สุดและมักสร้างความเสียหายมากที่สุด</p>
-
 <ul>
-  <li>แฮกเกอร์เจาะระบบและดาวน์โหลดฐานข้อมูลลูกค้า</li>
-  <li>พนักงานส่งอีเมลที่มีข้อมูลลูกค้าไปผิดคน</li>
-  <li>ผู้ประมวลผลข้อมูล (Data Processor) เข้าถึงข้อมูลเกินขอบเขตที่ตกลงไว้ใน DPA</li>
-  <li>เอกสารที่มีข้อมูลส่วนบุคคลถูกทิ้งโดยไม่ทำลายอย่างเหมาะสม</li>
+<li>แฮกเกอร์เจาะระบบและดาวน์โหลดฐานข้อมูลลูกค้า</li>
+<li>พนักงานส่งอีเมลที่มีข้อมูลลูกค้าไปผิดคน</li>
+<li>ผู้ประมวลผลข้อมูล (Data Processor) เข้าถึงข้อมูลเกินขอบเขตที่ตกลงไว้ใน DPA</li>
+<li>เอกสารที่มีข้อมูลส่วนบุคคลถูกทิ้งโดยไม่ทำลายอย่างเหมาะสม</li>
 </ul>
-
-<h3 class="sub">2. Integrity Breach &mdash; การละเมิดด้านความถูกต้องครบถ้วน</h3>
-
+<h3 class="sub">2. Integrity Breach — การละเมิดด้านความถูกต้องครบถ้วน</h3>
 <p>คือการแก้ไข เปลี่ยนแปลง หรือทำลายข้อมูลส่วนบุคคลโดยไม่ได้รับอนุญาต ข้อมูลยังอยู่แต่ถูกเปลี่ยนเนื้อหา ซึ่งอาจส่งผลต่อการตัดสินใจที่ใช้ข้อมูลนั้นเป็นฐาน</p>
-
 <ul>
-  <li>Ransomware เข้ารหัสข้อมูลแล้วเปลี่ยนแปลงเนื้อหาบางส่วนก่อนปลดล็อก</li>
-  <li>พนักงานแก้ไขข้อมูลทางการแพทย์ของผู้ป่วยโดยไม่มีอำนาจ</li>
-  <li>ระบบ Bug ทำให้ข้อมูลที่อยู่ของลูกค้ารายหนึ่งถูกเขียนทับด้วยข้อมูลของลูกค้ารายอื่น</li>
+<li>Ransomware เข้ารหัสข้อมูลแล้วเปลี่ยนแปลงเนื้อหาบางส่วนก่อนปลดล็อก</li>
+<li>พนักงานแก้ไขข้อมูลทางการแพทย์ของผู้ป่วยโดยไม่มีอำนาจ</li>
+<li>ระบบ Bug ทำให้ข้อมูลที่อยู่ของลูกค้ารายหนึ่งถูกเขียนทับด้วยข้อมูลของลูกค้ารายอื่น</li>
 </ul>
-
-<h3 class="sub">3. Availability Breach &mdash; การละเมิดด้านความพร้อมใช้งาน</h3>
-
+<h3 class="sub">3. Availability Breach — การละเมิดด้านความพร้อมใช้งาน</h3>
 <p>คือการสูญหายหรือไม่สามารถเข้าถึงข้อมูลส่วนบุคคลได้ ทั้งชั่วคราวและถาวร แม้ข้อมูลไม่ได้ถูกเปิดเผยต่อภายนอก แต่การที่องค์กรไม่สามารถเข้าถึงข้อมูลได้ก็ถือเป็นการละเมิดเช่นกัน</p>
-
 <ul>
-  <li>ฮาร์ดดิสก์ที่เก็บข้อมูลเสียหายโดยไม่มี Backup</li>
-  <li>Ransomware เข้ารหัสข้อมูลจนเข้าถึงไม่ได้ (แม้ไม่ได้ส่งออกนอกองค์กร)</li>
-  <li>ไฟไหม้ Data Center ทำให้ข้อมูลสูญหายถาวร</li>
-  <li>พนักงานลบข้อมูลโดยไม่ตั้งใจและไม่มีระบบกู้คืน</li>
+<li>ฮาร์ดดิสก์ที่เก็บข้อมูลเสียหายโดยไม่มี Backup</li>
+<li>Ransomware เข้ารหัสข้อมูลจนเข้าถึงไม่ได้ (แม้ไม่ได้ส่งออกนอกองค์กร)</li>
+<li>ไฟไหม้ Data Center ทำให้ข้อมูลสูญหายถาวร</li>
+<li>พนักงานลบข้อมูลโดยไม่ตั้งใจและไม่มีระบบกู้คืน</li>
 </ul>
-
 <div class="hb gold">
 <h4>จุดสำคัญ: เหตุการณ์เดียว อาจเป็นหลายประเภท</h4>
 <p>ในทางปฏิบัติ เหตุการณ์หนึ่งมักเข้าข่ายหลายประเภทพร้อมกัน ตัวอย่างเช่น Ransomware Attack อาจเป็นทั้ง Confidentiality Breach (ถ้าแฮกเกอร์คัดลอกข้อมูลออกไปก่อนเข้ารหัส), Integrity Breach (ถ้ามีการแก้ไขข้อมูลบางส่วน) และ Availability Breach (ถ้าข้อมูลถูกเข้ารหัสจนเข้าถึงไม่ได้) การประเมินต้องพิจารณาทุกมิติ ไม่ใช่เลือกแค่ประเภทเดียว</p>
 </div>
-
 <table class="rt">
-  <thead>
-    <tr>
-      <th>ประเภท</th>
-      <th>ลักษณะ</th>
-      <th>ตัวอย่างทั่วไป</th>
-      <th>ระดับความเสี่ยง</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Confidentiality</strong></td>
-      <td>เข้าถึง/เปิดเผยโดยไม่ได้รับอนุญาต</td>
-      <td>แฮก, อีเมลผิดคน, ขายข้อมูล</td>
-      <td><span style="background:#FADBD8;color:#C0392B;padding:2px 8px;border-radius:4px;font-size:13px;">สูงมาก</span></td>
-    </tr>
-    <tr>
-      <td><strong>Integrity</strong></td>
-      <td>แก้ไข/เปลี่ยนแปลงโดยไม่ได้รับอนุญาต</td>
-      <td>Ransomware แก้ไขข้อมูล, Bug เขียนทับ</td>
-      <td><span style="background:#FDEBD0;color:#E67E22;padding:2px 8px;border-radius:4px;font-size:13px;">สูง</span></td>
-    </tr>
-    <tr>
-      <td><strong>Availability</strong></td>
-      <td>สูญหาย/เข้าถึงไม่ได้</td>
-      <td>HDD เสีย, ไฟไหม้, ลบโดยไม่ตั้งใจ</td>
-      <td><span style="background:#FDEBD0;color:#E67E22;padding:2px 8px;border-radius:4px;font-size:13px;">กลาง-สูง</span></td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>ประเภท</th>
+<th>ลักษณะ</th>
+<th>ตัวอย่างทั่วไป</th>
+<th>ระดับความเสี่ยง</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Confidentiality</strong></td>
+<td>เข้าถึง/เปิดเผยโดยไม่ได้รับอนุญาต</td>
+<td>แฮก, อีเมลผิดคน, ขายข้อมูล</td>
+<td><span style="background:#FADBD8;color:#C0392B;padding:2px 8px;border-radius:4px;font-size:13px;">สูงมาก</span></td>
+</tr>
+<tr>
+<td><strong>Integrity</strong></td>
+<td>แก้ไข/เปลี่ยนแปลงโดยไม่ได้รับอนุญาต</td>
+<td>Ransomware แก้ไขข้อมูล, Bug เขียนทับ</td>
+<td><span style="background:#FDEBD0;color:#E67E22;padding:2px 8px;border-radius:4px;font-size:13px;">สูง</span></td>
+</tr>
+<tr>
+<td><strong>Availability</strong></td>
+<td>สูญหาย/เข้าถึงไม่ได้</td>
+<td>HDD เสีย, ไฟไหม้, ลบโดยไม่ตั้งใจ</td>
+<td><span style="background:#FDEBD0;color:#E67E22;padding:2px 8px;border-radius:4px;font-size:13px;">กลาง-สูง</span></td>
+</tr>
+</tbody>
 </table>
 </section>
-
 <!-- S3: Legal Framework -->
 <section class="sb" id="s3">
 <h2 class="sh">กรอบกฎหมาย: มาตรา 37(4) และแนวทาง PDPC<span class="en">Legal Framework: Section 37(4) and PDPC Guidelines</span></h2>
-
 <p>หัวใจของหน้าที่แจ้งเหตุการละเมิดข้อมูลส่วนบุคคลอยู่ที่ <strong>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 37(4)</strong> ซึ่งกำหนดให้ผู้ควบคุมข้อมูลส่วนบุคคล (Data Controller) มีหน้าที่แจ้งเหตุการละเมิดข้อมูลส่วนบุคคลต่อ สคส. โดยไม่ชักช้า ภายใน 72 ชั่วโมงนับแต่ทราบเหตุ เว้นแต่การละเมิดนั้นไม่มีความเสี่ยงที่จะมีผลกระทบต่อสิทธิและเสรีภาพของบุคคล</p>
-
 <div class="lc">
-<strong>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 37(4):</strong><br>
+<strong>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 37(4):</strong><br/>
 "แจ้งเหตุการละเมิดข้อมูลส่วนบุคคลแก่สำนักงานโดยไม่ชักช้าภายในเจ็ดสิบสองชั่วโมงนับแต่ทราบเหตุเท่าที่จะสามารถกระทำได้ เว้นแต่การละเมิดดังกล่าวไม่มีความเสี่ยงที่จะมีผลกระทบต่อสิทธิและเสรีภาพของบุคคล ในกรณีที่การละเมิดมีความเสี่ยงสูงที่จะมีผลกระทบต่อสิทธิและเสรีภาพของบุคคล ให้แจ้งเหตุการละเมิดให้เจ้าของข้อมูลส่วนบุคคลทราบพร้อมกับแนวทางการเยียวยาโดยไม่ชักช้าด้วย"
 </div>
-
 <p>มาตรานี้มีองค์ประกอบสำคัญ 3 ส่วนที่ผู้ควบคุมข้อมูลต้องเข้าใจ:</p>
-
 <ol>
-  <li><strong>หน้าที่แจ้ง สคส.:</strong> เป็นหน้าที่ทั่วไปที่ต้องแจ้งภายใน 72 ชั่วโมง ยกเว้นกรณีที่ไม่มีความเสี่ยง &mdash; แต่ภาระการพิสูจน์ว่า "ไม่มีความเสี่ยง" ตกอยู่กับผู้ควบคุมข้อมูล</li>
-  <li><strong>หน้าที่แจ้งเจ้าของข้อมูล:</strong> เป็นหน้าที่เพิ่มเติมที่เกิดขึ้นเมื่อการละเมิดมี "ความเสี่ยงสูง" ต่อสิทธิและเสรีภาพ &mdash; ต้องแจ้งพร้อมแนวทางเยียวยา</li>
-  <li><strong>ข้อยกเว้น:</strong> ไม่ต้องแจ้งเฉพาะกรณีที่พิสูจน์ได้ว่า "ไม่มีความเสี่ยง" &mdash; ซึ่งในทางปฏิบัติแทบเป็นไปไม่ได้สำหรับ Confidentiality Breach ที่มีข้อมูลอ่อนไหว</li>
+<li><strong>หน้าที่แจ้ง สคส.:</strong> เป็นหน้าที่ทั่วไปที่ต้องแจ้งภายใน 72 ชั่วโมง ยกเว้นกรณีที่ไม่มีความเสี่ยง — แต่ภาระการพิสูจน์ว่า "ไม่มีความเสี่ยง" ตกอยู่กับผู้ควบคุมข้อมูล</li>
+<li><strong>หน้าที่แจ้งเจ้าของข้อมูล:</strong> เป็นหน้าที่เพิ่มเติมที่เกิดขึ้นเมื่อการละเมิดมี "ความเสี่ยงสูง" ต่อสิทธิและเสรีภาพ — ต้องแจ้งพร้อมแนวทางเยียวยา</li>
+<li><strong>ข้อยกเว้น:</strong> ไม่ต้องแจ้งเฉพาะกรณีที่พิสูจน์ได้ว่า "ไม่มีความเสี่ยง" — ซึ่งในทางปฏิบัติแทบเป็นไปไม่ได้สำหรับ Confidentiality Breach ที่มีข้อมูลอ่อนไหว</li>
 </ol>
-
 <h3 class="sub">คู่มือแนวทาง PDPC เวอร์ชัน 1.0 (15 ธันวาคม 2565)</h3>
-
 <p>คู่มือนี้เป็นเอกสารอ้างอิงหลักที่ สคส. จัดทำขึ้นเพื่อช่วยให้ผู้ควบคุมข้อมูลเข้าใจและปฏิบัติตามมาตรา 37(4) ได้อย่างถูกต้อง สาระสำคัญของคู่มือครอบคลุม:</p>
-
 <ul>
-  <li>นิยามและการจำแนกประเภทของการละเมิดข้อมูลส่วนบุคคล</li>
-  <li>กระบวนการประเมินความเสี่ยง (Risk Assessment) อย่างเป็นระบบ</li>
-  <li>เกณฑ์การตัดสินว่าต้องแจ้ง สคส. หรือไม่ และต้องแจ้งเจ้าของข้อมูลหรือไม่</li>
-  <li>รูปแบบและเนื้อหาของการแจ้งเหตุ</li>
-  <li>ตัวอย่างกรณีศึกษาพร้อมแนวทางตอบสนอง</li>
+<li>นิยามและการจำแนกประเภทของการละเมิดข้อมูลส่วนบุคคล</li>
+<li>กระบวนการประเมินความเสี่ยง (Risk Assessment) อย่างเป็นระบบ</li>
+<li>เกณฑ์การตัดสินว่าต้องแจ้ง สคส. หรือไม่ และต้องแจ้งเจ้าของข้อมูลหรือไม่</li>
+<li>รูปแบบและเนื้อหาของการแจ้งเหตุ</li>
+<li>ตัวอย่างกรณีศึกษาพร้อมแนวทางตอบสนอง</li>
 </ul>
-
 <div class="hb w">
 <h4>ข้อควรระวัง: "ทราบเหตุ" กับ "เกิดเหตุ" ต่างกัน</h4>
 <p>กรอบเวลา 72 ชั่วโมงเริ่มนับจากเมื่อผู้ควบคุมข้อมูล "ทราบเหตุ" ไม่ใช่เมื่อเหตุการณ์เกิดขึ้นจริง แต่อย่าคิดว่าการไม่รู้คือข้อแก้ตัวที่ดี เพราะพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 37(1) กำหนดให้ผู้ควบคุมข้อมูลต้องจัดให้มีมาตรการรักษาความมั่นคงปลอดภัยที่เหมาะสม ซึ่งรวมถึงระบบตรวจจับเหตุการณ์ (Detection) ที่มีประสิทธิภาพด้วย หากระบบตรวจจับไม่ดีจนทำให้รู้ช้า ก็อาจถือว่าไม่ปฏิบัติตามมาตรา 37(1) ได้อีกทาง</p>
 </div>
 </section>
-
 <!-- S4: Risk Assessment Matrix -->
 <section class="sb" id="s4">
-<h2 class="sh">Risk Assessment Matrix &mdash; ประเมินความเสี่ยงอย่างเป็นระบบ<span class="en">Risk Assessment Matrix &mdash; Systematic Risk Evaluation</span></h2>
-
+<h2 class="sh">Risk Assessment Matrix — ประเมินความเสี่ยงอย่างเป็นระบบ<span class="en">Risk Assessment Matrix — Systematic Risk Evaluation</span></h2>
 <p>การประเมินความเสี่ยงเป็นหัวใจสำคัญของกระบวนการตอบสนองต่อ Data Breach เพราะผลการประเมินจะตัดสินว่าองค์กรต้องดำเนินการใดบ้าง ตามแนวทาง PDPC การประเมินใช้ 2 มิติหลัก คือ <strong>ระดับความรุนแรง (Severity)</strong> และ <strong>ความน่าจะเป็น (Likelihood)</strong></p>
-
 <h3 class="sub">มิติที่ 1: ระดับความรุนแรง (Severity)</h3>
-
 <p>พิจารณาจากปัจจัยต่อไปนี้:</p>
-
 <table class="rt">
-  <thead>
-    <tr>
-      <th>ปัจจัย</th>
-      <th>ความรุนแรงต่ำ (1)</th>
-      <th>ความรุนแรงกลาง (2)</th>
-      <th>ความรุนแรงสูง (3)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>ประเภทข้อมูล</strong></td>
-      <td>ข้อมูลพื้นฐาน (ชื่อ, อีเมลธุรกิจ)</td>
-      <td>ข้อมูลส่วนตัว (ที่อยู่, เบอร์โทร, วันเกิด)</td>
-      <td>ข้อมูลอ่อนไหว (สุขภาพ, การเงิน, ชีวมิติ, ประวัติอาชญากรรม)</td>
-    </tr>
-    <tr>
-      <td><strong>จำนวนเจ้าของข้อมูล</strong></td>
-      <td>น้อยกว่า 100 ราย</td>
-      <td>100-10,000 ราย</td>
-      <td>มากกว่า 10,000 ราย</td>
-    </tr>
-    <tr>
-      <td><strong>ผลกระทบที่อาจเกิดขึ้น</strong></td>
-      <td>ความไม่สะดวกเล็กน้อย</td>
-      <td>ความเสียหายทางทรัพย์สิน/ชื่อเสียง</td>
-      <td>อันตรายร้ายแรง (ฉ้อโกง, เลือกปฏิบัติ, คุกคาม)</td>
-    </tr>
-    <tr>
-      <td><strong>กลุ่มเจ้าของข้อมูล</strong></td>
-      <td>บุคคลทั่วไปที่ดูแลตัวเองได้</td>
-      <td>ลูกจ้าง/ลูกค้าประจำ</td>
-      <td>เด็ก/ผู้เยาว์ ผู้ป่วย ผู้เปราะบาง</td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>ปัจจัย</th>
+<th>ความรุนแรงต่ำ (1)</th>
+<th>ความรุนแรงกลาง (2)</th>
+<th>ความรุนแรงสูง (3)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ประเภทข้อมูล</strong></td>
+<td>ข้อมูลพื้นฐาน (ชื่อ, อีเมลธุรกิจ)</td>
+<td>ข้อมูลส่วนตัว (ที่อยู่, เบอร์โทร, วันเกิด)</td>
+<td>ข้อมูลอ่อนไหว (สุขภาพ, การเงิน, ชีวมิติ, ประวัติอาชญากรรม)</td>
+</tr>
+<tr>
+<td><strong>จำนวนเจ้าของข้อมูล</strong></td>
+<td>น้อยกว่า 100 ราย</td>
+<td>100-10,000 ราย</td>
+<td>มากกว่า 10,000 ราย</td>
+</tr>
+<tr>
+<td><strong>ผลกระทบที่อาจเกิดขึ้น</strong></td>
+<td>ความไม่สะดวกเล็กน้อย</td>
+<td>ความเสียหายทางทรัพย์สิน/ชื่อเสียง</td>
+<td>อันตรายร้ายแรง (ฉ้อโกง, เลือกปฏิบัติ, คุกคาม)</td>
+</tr>
+<tr>
+<td><strong>กลุ่มเจ้าของข้อมูล</strong></td>
+<td>บุคคลทั่วไปที่ดูแลตัวเองได้</td>
+<td>ลูกจ้าง/ลูกค้าประจำ</td>
+<td>เด็ก/ผู้เยาว์ ผู้ป่วย ผู้เปราะบาง</td>
+</tr>
+</tbody>
 </table>
-
 <h3 class="sub">มิติที่ 2: ความน่าจะเป็น (Likelihood)</h3>
-
 <p>พิจารณาจากปัจจัยต่อไปนี้:</p>
-
 <table class="rt">
-  <thead>
-    <tr>
-      <th>ปัจจัย</th>
-      <th>ต่ำ (1)</th>
-      <th>กลาง (2)</th>
-      <th>สูง (3)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>ลักษณะการละเมิด</strong></td>
-      <td>สูญหายในพื้นที่ควบคุม/ลบโดยไม่ตั้งใจ</td>
-      <td>ส่งผิดคนแต่ผู้รับน่าเชื่อถือ</td>
-      <td>แฮก/ขโมย/เผยแพร่สาธารณะ</td>
-    </tr>
-    <tr>
-      <td><strong>การนำไปใช้จริง</strong></td>
-      <td>ยังไม่มีหลักฐานว่านำไปใช้</td>
-      <td>อาจนำไปใช้ได้แต่ต้องใช้ความพยายาม</td>
-      <td>มีหลักฐานว่านำไปใช้แล้ว/เผยแพร่ใน Dark Web</td>
-    </tr>
-    <tr>
-      <td><strong>มาตรการป้องกันที่มี</strong></td>
-      <td>ข้อมูลถูกเข้ารหัส (Encrypted)</td>
-      <td>มีการเข้ารหัสบางส่วน</td>
-      <td>ข้อมูลเป็น Plaintext ไม่มีการเข้ารหัส</td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>ปัจจัย</th>
+<th>ต่ำ (1)</th>
+<th>กลาง (2)</th>
+<th>สูง (3)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ลักษณะการละเมิด</strong></td>
+<td>สูญหายในพื้นที่ควบคุม/ลบโดยไม่ตั้งใจ</td>
+<td>ส่งผิดคนแต่ผู้รับน่าเชื่อถือ</td>
+<td>แฮก/ขโมย/เผยแพร่สาธารณะ</td>
+</tr>
+<tr>
+<td><strong>การนำไปใช้จริง</strong></td>
+<td>ยังไม่มีหลักฐานว่านำไปใช้</td>
+<td>อาจนำไปใช้ได้แต่ต้องใช้ความพยายาม</td>
+<td>มีหลักฐานว่านำไปใช้แล้ว/เผยแพร่ใน Dark Web</td>
+</tr>
+<tr>
+<td><strong>มาตรการป้องกันที่มี</strong></td>
+<td>ข้อมูลถูกเข้ารหัส (Encrypted)</td>
+<td>มีการเข้ารหัสบางส่วน</td>
+<td>ข้อมูลเป็น Plaintext ไม่มีการเข้ารหัส</td>
+</tr>
+</tbody>
 </table>
-
 <h3 class="sub">การคำนวณ Risk Score</h3>
-
 <div class="hb gold">
 <h4>สูตรประเมิน: Risk Score = Severity x Likelihood</h4>
 <table class="rt" style="margin:12px 0 0 0;">
-  <thead>
-    <tr>
-      <th>Risk Score</th>
-      <th>ระดับ</th>
-      <th>การดำเนินการ</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>1-2</strong></td>
-      <td><span style="background:#D5F5E3;color:#27AE60;padding:2px 8px;border-radius:4px;font-size:13px;">ต่ำ (Low)</span></td>
-      <td>บันทึกเหตุการณ์ภายใน (Internal Record) &mdash; ไม่ต้องแจ้ง สคส. แต่ต้องมีเอกสารประกอบการตัดสินใจ</td>
-    </tr>
-    <tr>
-      <td><strong>3-4</strong></td>
-      <td><span style="background:#FDEBD0;color:#E67E22;padding:2px 8px;border-radius:4px;font-size:13px;">กลาง (Medium)</span></td>
-      <td>แจ้ง สคส. ภายใน 72 ชั่วโมง &mdash; ไม่ต้องแจ้งเจ้าของข้อมูลโดยตรง (เว้นแต่มีเหตุเฉพาะ)</td>
-    </tr>
-    <tr>
-      <td><strong>6-9</strong></td>
-      <td><span style="background:#FADBD8;color:#C0392B;padding:2px 8px;border-radius:4px;font-size:13px;">สูง (High)</span></td>
-      <td>แจ้ง สคส. ภายใน 72 ชั่วโมง <strong>และ</strong> แจ้งเจ้าของข้อมูลส่วนบุคคลโดยไม่ชักช้า พร้อมแนวทางเยียวยา</td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Risk Score</th>
+<th>ระดับ</th>
+<th>การดำเนินการ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1-2</strong></td>
+<td><span style="background:#D5F5E3;color:#27AE60;padding:2px 8px;border-radius:4px;font-size:13px;">ต่ำ (Low)</span></td>
+<td>บันทึกเหตุการณ์ภายใน (Internal Record) — ไม่ต้องแจ้ง สคส. แต่ต้องมีเอกสารประกอบการตัดสินใจ</td>
+</tr>
+<tr>
+<td><strong>3-4</strong></td>
+<td><span style="background:#FDEBD0;color:#E67E22;padding:2px 8px;border-radius:4px;font-size:13px;">กลาง (Medium)</span></td>
+<td>แจ้ง สคส. ภายใน 72 ชั่วโมง — ไม่ต้องแจ้งเจ้าของข้อมูลโดยตรง (เว้นแต่มีเหตุเฉพาะ)</td>
+</tr>
+<tr>
+<td><strong>6-9</strong></td>
+<td><span style="background:#FADBD8;color:#C0392B;padding:2px 8px;border-radius:4px;font-size:13px;">สูง (High)</span></td>
+<td>แจ้ง สคส. ภายใน 72 ชั่วโมง <strong>และ</strong> แจ้งเจ้าของข้อมูลส่วนบุคคลโดยไม่ชักช้า พร้อมแนวทางเยียวยา</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <div class="hb w">
 <h4>ข้อสังเกตสำคัญ: การตัดสินใจ "ไม่แจ้ง" มีความเสี่ยงสูงกว่าที่คิด</h4>
 <p>ในทางปฏิบัติ ผู้เชี่ยวชาญด้านกฎหมายข้อมูลส่วนบุคคลมักแนะนำให้ "เมื่อสงสัย ให้แจ้ง" (When in doubt, notify) เพราะการตัดสินใจไม่แจ้งแล้วภายหลังพบว่าควรแจ้ง มีผลร้ายแรงกว่าการแจ้งโดยไม่จำเป็น กรณีแรกอาจถูกลงโทษปรับทางปกครองและเสียชื่อเสียงซ้ำ กรณีหลังเพียงแค่สร้างภาระงานเอกสารเพิ่มเติม</p>
 </div>
 </section>
-
 <!-- S5: 72 Hours -->
 <section class="sb" id="s5">
-<h2 class="sh">72 ชั่วโมง &mdash; กรอบเวลาแจ้งเหตุที่ห้ามพลาด<span class="en">72-Hour Notification Timeline</span></h2>
-
+<h2 class="sh">72 ชั่วโมง — กรอบเวลาแจ้งเหตุที่ห้ามพลาด<span class="en">72-Hour Notification Timeline</span></h2>
 <p>กรอบเวลา 72 ชั่วโมงตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 37(4) เป็นกรอบที่แน่นมาก เมื่อเทียบกับมาตรฐานสากล (GDPR ของสหภาพยุโรปกำหนดไว้เท่ากันที่ 72 ชั่วโมง) เวลาจริงที่มีให้ทำงานจึงน้อยกว่าที่คิด เพราะต้องทำหลายอย่างพร้อมกัน</p>
-
 <h3 class="sub">Timeline การตอบสนอง (Incident Response Timeline)</h3>
-
 <table class="rt">
-  <thead>
-    <tr>
-      <th>ชั่วโมงที่</th>
-      <th>การดำเนินการ</th>
-      <th>ผู้รับผิดชอบ</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>0-4</strong></td>
-      <td>ตรวจจับ (Detection) + ยืนยันว่าเป็น Breach จริง + แจ้ง DPO + ผู้บริหาร + เริ่ม Containment</td>
-      <td>IT Security + DPO</td>
-    </tr>
-    <tr>
-      <td><strong>4-12</strong></td>
-      <td>สอบสวนเบื้องต้น: ระบุขอบเขต ประเภทข้อมูล จำนวนเจ้าของข้อมูล สาเหตุ</td>
-      <td>IT + Legal + DPO</td>
-    </tr>
-    <tr>
-      <td><strong>12-24</strong></td>
-      <td>ทำ Risk Assessment ตาม Matrix + ตัดสินใจว่าต้องแจ้ง สคส. หรือไม่ + เตรียมรายงาน</td>
-      <td>DPO + Legal</td>
-    </tr>
-    <tr>
-      <td><strong>24-48</strong></td>
-      <td>ร่างรายงานแจ้งเหตุ + ตรวจสอบความถูกต้อง + อนุมัติโดยผู้บริหาร</td>
-      <td>DPO + Management</td>
-    </tr>
-    <tr>
-      <td><strong>48-72</strong></td>
-      <td>ส่งรายงานแจ้ง สคส. + แจ้งเจ้าของข้อมูล (ถ้า High Risk) + เริ่ม Remediation</td>
-      <td>DPO + Communications</td>
-    </tr>
-    <tr>
-      <td><strong>หลัง 72</strong></td>
-      <td>ส่งรายงานเพิ่มเติม (ถ้าข้อมูลยังไม่ครบ) + Post-Incident Review + ปรับปรุงมาตรการ</td>
-      <td>DPO + All Teams</td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>ชั่วโมงที่</th>
+<th>การดำเนินการ</th>
+<th>ผู้รับผิดชอบ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0-4</strong></td>
+<td>ตรวจจับ (Detection) + ยืนยันว่าเป็น Breach จริง + แจ้ง DPO + ผู้บริหาร + เริ่ม Containment</td>
+<td>IT Security + DPO</td>
+</tr>
+<tr>
+<td><strong>4-12</strong></td>
+<td>สอบสวนเบื้องต้น: ระบุขอบเขต ประเภทข้อมูล จำนวนเจ้าของข้อมูล สาเหตุ</td>
+<td>IT + Legal + DPO</td>
+</tr>
+<tr>
+<td><strong>12-24</strong></td>
+<td>ทำ Risk Assessment ตาม Matrix + ตัดสินใจว่าต้องแจ้ง สคส. หรือไม่ + เตรียมรายงาน</td>
+<td>DPO + Legal</td>
+</tr>
+<tr>
+<td><strong>24-48</strong></td>
+<td>ร่างรายงานแจ้งเหตุ + ตรวจสอบความถูกต้อง + อนุมัติโดยผู้บริหาร</td>
+<td>DPO + Management</td>
+</tr>
+<tr>
+<td><strong>48-72</strong></td>
+<td>ส่งรายงานแจ้ง สคส. + แจ้งเจ้าของข้อมูล (ถ้า High Risk) + เริ่ม Remediation</td>
+<td>DPO + Communications</td>
+</tr>
+<tr>
+<td><strong>หลัง 72</strong></td>
+<td>ส่งรายงานเพิ่มเติม (ถ้าข้อมูลยังไม่ครบ) + Post-Incident Review + ปรับปรุงมาตรการ</td>
+<td>DPO + All Teams</td>
+</tr>
+</tbody>
 </table>
-
 <div class="lc">
-<strong>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 37(4) + ประกาศ สคส. พ.ศ. 2565:</strong><br>
-มาตรา 37(4) กำหนดให้แจ้งเหตุ "โดยไม่ชักช้าภายในเจ็ดสิบสองชั่วโมง" หน้าที่จัดทำ <strong>บันทึกเหตุผลของความล่าช้า</strong> ในกรณีที่ไม่อาจแจ้งได้ภายในกำหนดเวลามาจาก <strong>ประกาศคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2565</strong> และคู่มือแนวทาง PDPC เวอร์ชัน 1.0 &mdash; ซึ่งหมายความว่ากรอบกฎหมายยอมรับว่าบางกรณีอาจแจ้งไม่ทัน แต่ต้องมีเอกสารอธิบายเหตุผลที่ชัดเจน
+<strong>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 37(4) + ประกาศ สคส. พ.ศ. 2565:</strong><br/>
+มาตรา 37(4) กำหนดให้แจ้งเหตุ "โดยไม่ชักช้าภายในเจ็ดสิบสองชั่วโมง" หน้าที่จัดทำ <strong>บันทึกเหตุผลของความล่าช้า</strong> ในกรณีที่ไม่อาจแจ้งได้ภายในกำหนดเวลามาจาก <strong>ประกาศคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2565</strong> และคู่มือแนวทาง PDPC เวอร์ชัน 1.0 — ซึ่งหมายความว่ากรอบกฎหมายยอมรับว่าบางกรณีอาจแจ้งไม่ทัน แต่ต้องมีเอกสารอธิบายเหตุผลที่ชัดเจน
 </div>
-
 <h3 class="sub">เนื้อหาที่ต้องมีในรายงานแจ้งเหตุ</h3>
-
 <p>ตามคู่มือแนวทาง PDPC รายงานแจ้งเหตุต่อ สคส. ต้องมีเนื้อหาอย่างน้อยดังต่อไปนี้:</p>
-
 <ol>
-  <li><strong>ลักษณะของเหตุการณ์:</strong> เกิดอะไร เมื่อไหร่ ทราบเมื่อไหร่ ประเภทการละเมิด</li>
-  <li><strong>ข้อมูลที่ได้รับผลกระทบ:</strong> ประเภทข้อมูล จำนวนรายการ จำนวนเจ้าของข้อมูลที่ได้รับผลกระทบ</li>
-  <li><strong>ผลกระทบที่อาจเกิดขึ้น:</strong> ผลกระทบต่อสิทธิและเสรีภาพของเจ้าของข้อมูล</li>
-  <li><strong>มาตรการที่ดำเนินการแล้ว:</strong> Containment, การแก้ไข, การลดผลกระทบ</li>
-  <li><strong>มาตรการที่จะดำเนินการต่อไป:</strong> การเยียวยา การป้องกันการเกิดซ้ำ</li>
-  <li><strong>ข้อมูล DPO:</strong> ชื่อ ช่องทางติดต่อ DPO หรือผู้ประสานงาน</li>
+<li><strong>ลักษณะของเหตุการณ์:</strong> เกิดอะไร เมื่อไหร่ ทราบเมื่อไหร่ ประเภทการละเมิด</li>
+<li><strong>ข้อมูลที่ได้รับผลกระทบ:</strong> ประเภทข้อมูล จำนวนรายการ จำนวนเจ้าของข้อมูลที่ได้รับผลกระทบ</li>
+<li><strong>ผลกระทบที่อาจเกิดขึ้น:</strong> ผลกระทบต่อสิทธิและเสรีภาพของเจ้าของข้อมูล</li>
+<li><strong>มาตรการที่ดำเนินการแล้ว:</strong> Containment, การแก้ไข, การลดผลกระทบ</li>
+<li><strong>มาตรการที่จะดำเนินการต่อไป:</strong> การเยียวยา การป้องกันการเกิดซ้ำ</li>
+<li><strong>ข้อมูล DPO:</strong> ชื่อ ช่องทางติดต่อ DPO หรือผู้ประสานงาน</li>
 </ol>
 </section>
-
 <!-- S6: 10 Case Studies -->
 <section class="sb" id="s6">
-<h2 class="sh">10 ตัวอย่างกรณีจริง &mdash; ประเภทและการตอบสนอง<span class="en">10 Real-World Scenarios &mdash; Classification and Response</span></h2>
-
+<h2 class="sh">10 ตัวอย่างกรณีจริง — ประเภทและการตอบสนอง<span class="en">10 Real-World Scenarios — Classification and Response</span></h2>
 <p>ตัวอย่างต่อไปนี้จัดทำขึ้นโดยอิงจากรูปแบบเหตุการณ์ที่พบบ่อยในทางปฏิบัติและแนวทางของ PDPC เพื่อช่วยให้ DPO และทีมกฎหมายเข้าใจวิธีจำแนกประเภทและตอบสนองได้อย่างรวดเร็ว ชื่อองค์กรเป็นสมมติทั้งหมด</p>
-
 <div class="hb gold" style="border-left:4px solid #C0392B;background:#FADBD8;">
-<h4>🔴 กรณีที่ 1: Ransomware Attack &mdash; โรงพยาบาล <span style="font-size:11px;background:#C0392B;color:#fff;padding:1px 6px;border-radius:3px;font-weight:normal;margin-left:6px;">HIGH RISK</span></h4>
+<h4>🔴 กรณีที่ 1: Ransomware Attack — โรงพยาบาล <span style="font-size:11px;background:#C0392B;color:#fff;padding:1px 6px;border-radius:3px;font-weight:normal;margin-left:6px;">HIGH RISK</span></h4>
 <p><strong>เหตุการณ์:</strong> ระบบเวชระเบียนของโรงพยาบาล A ถูก Ransomware เข้ารหัส ข้อมูลผู้ป่วย 30,000 รายเข้าถึงไม่ได้ และแฮกเกอร์อ้างว่าได้คัดลอกข้อมูลออกไปแล้ว</p>
 <p><strong>ประเภท:</strong> Confidentiality + Availability Breach</p>
-<p><strong>Risk Score:</strong> Severity 3 (ข้อมูลสุขภาพ + กลุ่มเปราะบาง) x Likelihood 3 (มีหลักฐานว่าข้อมูลถูกส่งออก) = <span style="background:#FADBD8;color:#C0392B;padding:2px 6px;border-radius:4px;font-size:12px;">9 &mdash; สูงมาก</span></p>
+<p><strong>Risk Score:</strong> Severity 3 (ข้อมูลสุขภาพ + กลุ่มเปราะบาง) x Likelihood 3 (มีหลักฐานว่าข้อมูลถูกส่งออก) = <span style="background:#FADBD8;color:#C0392B;padding:2px 6px;border-radius:4px;font-size:12px;">9 — สูงมาก</span></p>
 <p><strong>การดำเนินการ:</strong> แจ้ง สคส. ภายใน 72 ชม. + แจ้งเจ้าของข้อมูลทุกราย + แนะนำให้เปลี่ยนรหัสผ่าน + ตรวจสอบธุรกรรมการเงิน</p>
 </div>
-
 <div class="hb gold" style="border-left:4px solid #E67E22;background:#FDEBD0;">
-<h4>🟡 กรณีที่ 2: อีเมลผิดคน &mdash; บริษัทที่ปรึกษา <span style="font-size:11px;background:#E67E22;color:#fff;padding:1px 6px;border-radius:3px;font-weight:normal;margin-left:6px;">MEDIUM RISK</span></h4>
+<h4>🟡 กรณีที่ 2: อีเมลผิดคน — บริษัทที่ปรึกษา <span style="font-size:11px;background:#E67E22;color:#fff;padding:1px 6px;border-radius:3px;font-weight:normal;margin-left:6px;">MEDIUM RISK</span></h4>
 <p><strong>เหตุการณ์:</strong> พนักงานบริษัท B ส่งไฟล์สเปรดชีตที่มีข้อมูลเงินเดือนพนักงาน 200 คนไปยังอีเมลของบุคคลภายนอกโดยไม่ตั้งใจ ผู้รับยืนยันว่าลบไฟล์แล้วแต่ไม่สามารถตรวจสอบได้</p>
 <p><strong>ประเภท:</strong> Confidentiality Breach</p>
-<p><strong>Risk Score:</strong> Severity 2 (ข้อมูลการเงิน/เงินเดือน) x Likelihood 2 (ผู้รับอ้างว่าลบแต่ไม่ verify ได้) = <span style="background:#FDEBD0;color:#E67E22;padding:2px 6px;border-radius:4px;font-size:12px;">4 &mdash; กลาง</span></p>
+<p><strong>Risk Score:</strong> Severity 2 (ข้อมูลการเงิน/เงินเดือน) x Likelihood 2 (ผู้รับอ้างว่าลบแต่ไม่ verify ได้) = <span style="background:#FDEBD0;color:#E67E22;padding:2px 6px;border-radius:4px;font-size:12px;">4 — กลาง</span></p>
 <p><strong>การดำเนินการ:</strong> แจ้ง สคส. ภายใน 72 ชม. + พิจารณาแจ้งพนักงานที่ได้รับผลกระทบ + ทบทวนมาตรการป้องกันการส่งอีเมลผิด</p>
 </div>
-
 <div class="hb gold" style="border-left:4px solid #27AE60;background:#D5F5E3;">
-<h4>🟢 กรณีที่ 3: Laptop สูญหาย &mdash; พนักงานขาย <span style="font-size:11px;background:#27AE60;color:#fff;padding:1px 6px;border-radius:3px;font-weight:normal;margin-left:6px;">LOW RISK</span></h4>
+<h4>🟢 กรณีที่ 3: Laptop สูญหาย — พนักงานขาย <span style="font-size:11px;background:#27AE60;color:#fff;padding:1px 6px;border-radius:3px;font-weight:normal;margin-left:6px;">LOW RISK</span></h4>
 <p><strong>เหตุการณ์:</strong> Laptop ของพนักงานขายบริษัท C สูญหายระหว่างเดินทาง มีฐานข้อมูลลูกค้า 500 ราย แต่ฮาร์ดดิสก์ถูกเข้ารหัส Full Disk Encryption (BitLocker) และมีรหัสผ่านที่แข็งแรง</p>
 <p><strong>ประเภท:</strong> Confidentiality + Availability Breach (แม้จะมี Backup บน Cloud)</p>
-<p><strong>Risk Score:</strong> Severity 2 (ข้อมูลลูกค้า 500 ราย) x Likelihood 1 (ข้อมูลถูกเข้ารหัส เข้าถึงไม่ได้จริง) = <span style="background:#D5F5E3;color:#27AE60;padding:2px 6px;border-radius:4px;font-size:12px;">2 &mdash; ต่ำ</span></p>
+<p><strong>Risk Score:</strong> Severity 2 (ข้อมูลลูกค้า 500 ราย) x Likelihood 1 (ข้อมูลถูกเข้ารหัส เข้าถึงไม่ได้จริง) = <span style="background:#D5F5E3;color:#27AE60;padding:2px 6px;border-radius:4px;font-size:12px;">2 — ต่ำ</span></p>
 <p><strong>การดำเนินการ:</strong> บันทึกภายใน + Remote Wipe + ไม่ต้องแจ้ง สคส. (เพราะข้อมูลถูกเข้ารหัส ความเสี่ยงต่ำ) แต่ต้องมีเอกสารประกอบการตัดสินใจ</p>
 </div>
-
 <div class="hb gold" style="border-left:4px solid #C0392B;background:#FADBD8;">
-<h4>🔴 กรณีที่ 4: Database Misconfiguration &mdash; E-Commerce <span style="font-size:11px;background:#C0392B;color:#fff;padding:1px 6px;border-radius:3px;font-weight:normal;margin-left:6px;">HIGH RISK</span></h4>
+<h4>🔴 กรณีที่ 4: Database Misconfiguration — E-Commerce <span style="font-size:11px;background:#C0392B;color:#fff;padding:1px 6px;border-radius:3px;font-weight:normal;margin-left:6px;">HIGH RISK</span></h4>
 <p><strong>เหตุการณ์:</strong> เว็บไซต์ E-Commerce ของบริษัท D ปล่อยฐานข้อมูลลูกค้า 100,000 รายเปิดเข้าถึงได้โดยไม่ต้องเข้าสู่ระบบ นานกว่า 2 สัปดาห์ก่อนถูกตรวจพบ มีข้อมูลชื่อ อีเมล เบอร์โทร ที่อยู่จัดส่ง และประวัติการสั่งซื้อ</p>
 <p><strong>ประเภท:</strong> Confidentiality Breach</p>
-<p><strong>Risk Score:</strong> Severity 2 (ข้อมูลส่วนตัว + มากกว่า 10,000 ราย ปรับเป็น 3) x Likelihood 3 (เปิดเข้าถึงได้ 2 สัปดาห์ + ไม่ทราบว่ามีใครเข้าถึงหรือไม่) = <span style="background:#FADBD8;color:#C0392B;padding:2px 6px;border-radius:4px;font-size:12px;">9 &mdash; สูง</span></p>
+<p><strong>Risk Score:</strong> Severity 2 (ข้อมูลส่วนตัว + มากกว่า 10,000 ราย ปรับเป็น 3) x Likelihood 3 (เปิดเข้าถึงได้ 2 สัปดาห์ + ไม่ทราบว่ามีใครเข้าถึงหรือไม่) = <span style="background:#FADBD8;color:#C0392B;padding:2px 6px;border-radius:4px;font-size:12px;">9 — สูง</span></p>
 <p><strong>การดำเนินการ:</strong> แจ้ง สคส. + แจ้งเจ้าของข้อมูลทุกราย + ว่าจ้าง Forensic Audit + ปิดช่องโหว่ทันที</p>
 </div>
-
 <div class="hb gold" style="border-left:4px solid #C0392B;background:#FADBD8;">
-<h4>🔴 กรณีที่ 5: พนักงานลาออกนำข้อมูลไป &mdash; บริษัทอสังหาริมทรัพย์ <span style="font-size:11px;background:#C0392B;color:#fff;padding:1px 6px;border-radius:3px;font-weight:normal;margin-left:6px;">HIGH RISK</span></h4>
+<h4>🔴 กรณีที่ 5: พนักงานลาออกนำข้อมูลไป — บริษัทอสังหาริมทรัพย์ <span style="font-size:11px;background:#C0392B;color:#fff;padding:1px 6px;border-radius:3px;font-weight:normal;margin-left:6px;">HIGH RISK</span></h4>
 <p><strong>เหตุการณ์:</strong> พนักงานขายบริษัท E ลาออกและคัดลอกฐานข้อมูลลูกค้า 3,000 รายไปใช้กับบริษัทคู่แข่ง ตรวจพบจาก USB Log</p>
 <p><strong>ประเภท:</strong> Confidentiality Breach</p>
-<p><strong>Risk Score:</strong> Severity 2 x Likelihood 3 (มีหลักฐานว่านำไปใช้) = <span style="background:#FADBD8;color:#C0392B;padding:2px 6px;border-radius:4px;font-size:12px;">6 &mdash; สูง</span></p>
+<p><strong>Risk Score:</strong> Severity 2 x Likelihood 3 (มีหลักฐานว่านำไปใช้) = <span style="background:#FADBD8;color:#C0392B;padding:2px 6px;border-radius:4px;font-size:12px;">6 — สูง</span></p>
 <p><strong>การดำเนินการ:</strong> แจ้ง สคส. + พิจารณาแจ้งเจ้าของข้อมูล + ดำเนินคดีกับพนักงาน (ทั้งทางแพ่งและอาญา)</p>
 </div>
-
 <div class="hb" style="border-left:4px solid #27AE60;background:#D5F5E3;">
-<h4>🟢 กรณีที่ 6: ระบบ Cloud Backup ล่ม &mdash; Availability Breach <span style="font-size:11px;background:#27AE60;color:#fff;padding:1px 6px;border-radius:3px;font-weight:normal;margin-left:6px;">LOW RISK</span></h4>
+<h4>🟢 กรณีที่ 6: ระบบ Cloud Backup ล่ม — Availability Breach <span style="font-size:11px;background:#27AE60;color:#fff;padding:1px 6px;border-radius:3px;font-weight:normal;margin-left:6px;">LOW RISK</span></h4>
 <p><strong>เหตุการณ์:</strong> Cloud Provider ของบริษัท F ระบบล่ม 48 ชั่วโมง ทำให้ข้อมูลลูกค้า 5,000 รายเข้าถึงไม่ได้ชั่วคราว ข้อมูลไม่ได้ถูกเข้าถึงจากภายนอก</p>
-<p><strong>Risk Score:</strong> Severity 1 x Likelihood 1 = <span style="background:#D5F5E3;color:#27AE60;padding:2px 6px;border-radius:4px;font-size:12px;">1 &mdash; ต่ำ</span> (เว้นแต่ข้อมูลเป็นข้อมูลสุขภาพที่ต้องใช้เร่งด่วน)</p>
+<p><strong>Risk Score:</strong> Severity 1 x Likelihood 1 = <span style="background:#D5F5E3;color:#27AE60;padding:2px 6px;border-radius:4px;font-size:12px;">1 — ต่ำ</span> (เว้นแต่ข้อมูลเป็นข้อมูลสุขภาพที่ต้องใช้เร่งด่วน)</p>
 <p><strong>การดำเนินการ:</strong> บันทึกภายใน + ทบทวน SLA กับ Cloud Provider + พิจารณา Multi-Cloud Strategy</p>
 </div>
-
 <div class="hb" style="border-left:4px solid #C0392B;background:#FADBD8;">
-<h4>🔴 กรณีที่ 7: Phishing Attack สำเร็จ &mdash; ธนาคาร <span style="font-size:11px;background:#C0392B;color:#fff;padding:1px 6px;border-radius:3px;font-weight:normal;margin-left:6px;">HIGH RISK</span></h4>
+<h4>🔴 กรณีที่ 7: Phishing Attack สำเร็จ — ธนาคาร <span style="font-size:11px;background:#C0392B;color:#fff;padding:1px 6px;border-radius:3px;font-weight:normal;margin-left:6px;">HIGH RISK</span></h4>
 <p><strong>เหตุการณ์:</strong> พนักงานธนาคาร G ถูก Phishing ทำให้ Credential ถูกขโมย แฮกเกอร์เข้าถึงข้อมูลบัญชีลูกค้า 800 ราย รวมเลขบัญชีและยอดเงินคงเหลือ</p>
-<p><strong>Risk Score:</strong> Severity 3 (ข้อมูลการเงิน) x Likelihood 3 = <span style="background:#FADBD8;color:#C0392B;padding:2px 6px;border-radius:4px;font-size:12px;">9 &mdash; สูงมาก</span></p>
+<p><strong>Risk Score:</strong> Severity 3 (ข้อมูลการเงิน) x Likelihood 3 = <span style="background:#FADBD8;color:#C0392B;padding:2px 6px;border-radius:4px;font-size:12px;">9 — สูงมาก</span></p>
 <p><strong>การดำเนินการ:</strong> แจ้ง สคส. + แจ้ง ธปท. (ผู้กำกับดูแลเพิ่มเติม) + แจ้งลูกค้าทุกราย + Reset Credential + ตรวจสอบธุรกรรมย้อนหลัง</p>
 </div>
-
 <div class="hb" style="border-left:4px solid #C0392B;background:#FADBD8;">
-<h4>🔴 กรณีที่ 8: เอกสารกระดาษสูญหาย &mdash; คลินิก <span style="font-size:11px;background:#C0392B;color:#fff;padding:1px 6px;border-radius:3px;font-weight:normal;margin-left:6px;">HIGH RISK</span></h4>
+<h4>🔴 กรณีที่ 8: เอกสารกระดาษสูญหาย — คลินิก <span style="font-size:11px;background:#C0392B;color:#fff;padding:1px 6px;border-radius:3px;font-weight:normal;margin-left:6px;">HIGH RISK</span></h4>
 <p><strong>เหตุการณ์:</strong> แฟ้มเอกสารประวัติผู้ป่วย 50 รายของคลินิก H สูญหายระหว่างขนย้ายสำนักงาน</p>
-<p><strong>Risk Score:</strong> Severity 3 (ข้อมูลสุขภาพ) x Likelihood 2 (สูญหาย ไม่รู้ว่าใครพบ) = <span style="background:#FADBD8;color:#C0392B;padding:2px 6px;border-radius:4px;font-size:12px;">6 &mdash; สูง</span></p>
+<p><strong>Risk Score:</strong> Severity 3 (ข้อมูลสุขภาพ) x Likelihood 2 (สูญหาย ไม่รู้ว่าใครพบ) = <span style="background:#FADBD8;color:#C0392B;padding:2px 6px;border-radius:4px;font-size:12px;">6 — สูง</span></p>
 <p><strong>การดำเนินการ:</strong> แจ้ง สคส. + แจ้งผู้ป่วยที่เกี่ยวข้อง + ค้นหาเอกสาร + ทบทวนกระบวนการจัดเก็บเอกสาร</p>
 </div>
-
 <div class="hb" style="border-left:4px solid #C0392B;background:#FADBD8;">
-<h4>🔴 กรณีที่ 9: Data Processor ละเมิด DPA &mdash; บริษัท Outsource <span style="font-size:11px;background:#C0392B;color:#fff;padding:1px 6px;border-radius:3px;font-weight:normal;margin-left:6px;">HIGH RISK</span></h4>
+<h4>🔴 กรณีที่ 9: Data Processor ละเมิด DPA — บริษัท Outsource <span style="font-size:11px;background:#C0392B;color:#fff;padding:1px 6px;border-radius:3px;font-weight:normal;margin-left:6px;">HIGH RISK</span></h4>
 <p><strong>เหตุการณ์:</strong> บริษัท Outsource (Processor) ที่รับประมวลผลข้อมูลให้บริษัท I ถูกพบว่านำข้อมูลลูกค้าไปใช้เพื่อวัตถุประสงค์อื่นที่ไม่ได้ตกลงไว้ใน Data Processing Agreement (DPA)</p>
-<p><strong>Risk Score:</strong> Severity 2 x Likelihood 3 = <span style="background:#FADBD8;color:#C0392B;padding:2px 6px;border-radius:4px;font-size:12px;">6 &mdash; สูง</span></p>
+<p><strong>Risk Score:</strong> Severity 2 x Likelihood 3 = <span style="background:#FADBD8;color:#C0392B;padding:2px 6px;border-radius:4px;font-size:12px;">6 — สูง</span></p>
 <p><strong>การดำเนินการ:</strong> ผู้ควบคุมข้อมูล (บริษัท I) ต้องแจ้ง สคส. + แจ้งเจ้าของข้อมูล + ยุติ DPA + เรียกร้องค่าเสียหายจาก Processor + ทบทวนการตรวจสอบ Processor ทั้งหมด</p>
 </div>
-
 <div class="hb" style="border-left:4px solid #C0392B;background:#FADBD8;">
-<h4>🔴 กรณีที่ 10: Website Defacement + Data Scraping &mdash; มหาวิทยาลัย <span style="font-size:11px;background:#C0392B;color:#fff;padding:1px 6px;border-radius:3px;font-weight:normal;margin-left:6px;">HIGH RISK</span></h4>
+<h4>🔴 กรณีที่ 10: Website Defacement + Data Scraping — มหาวิทยาลัย <span style="font-size:11px;background:#C0392B;color:#fff;padding:1px 6px;border-radius:3px;font-weight:normal;margin-left:6px;">HIGH RISK</span></h4>
 <p><strong>เหตุการณ์:</strong> เว็บไซต์ของมหาวิทยาลัย J ถูก Hack และข้อมูลนักศึกษา 20,000 ราย (ชื่อ รหัสนักศึกษา เกรด) ถูกเผยแพร่ใน Dark Web</p>
-<p><strong>Risk Score:</strong> Severity 2 (ข้อมูลการศึกษา + มากกว่า 10,000 ราย) x Likelihood 3 (เผยแพร่ใน Dark Web แล้ว) = <span style="background:#FADBD8;color:#C0392B;padding:2px 6px;border-radius:4px;font-size:12px;">6 &mdash; สูง</span></p>
+<p><strong>Risk Score:</strong> Severity 2 (ข้อมูลการศึกษา + มากกว่า 10,000 ราย) x Likelihood 3 (เผยแพร่ใน Dark Web แล้ว) = <span style="background:#FADBD8;color:#C0392B;padding:2px 6px;border-radius:4px;font-size:12px;">6 — สูง</span></p>
 <p><strong>การดำเนินการ:</strong> แจ้ง สคส. + แจ้งนักศึกษาทุกราย + ประสานตำรวจไซเบอร์ + Forensic + ปิดช่องโหว่</p>
 </div>
 </section>
-
 <!-- S7: DPO Checklist -->
 <section class="sb" id="s7">
-<h2 class="sh">DPO Checklist &mdash; รายการตรวจสอบเมื่อเกิด Breach<span class="en">DPO Checklist &mdash; Breach Response Action Items</span></h2>
-
+<h2 class="sh">DPO Checklist — รายการตรวจสอบเมื่อเกิด Breach<span class="en">DPO Checklist — Breach Response Action Items</span></h2>
 <p>เมื่อเกิดเหตุการละเมิดข้อมูลส่วนบุคคล DPO (เจ้าหน้าที่คุ้มครองข้อมูลส่วนบุคคล) ต้องดำเนินการตามรายการต่อไปนี้โดยเร่งด่วน</p>
-
-<h3 class="sub">Phase 1: ภายใน 4 ชั่วโมงแรก (Detection & Containment)</h3>
-
+<h3 class="sub">Phase 1: ภายใน 4 ชั่วโมงแรก (Detection &amp; Containment)</h3>
 <ul>
-  <li>&#9744; ยืนยันว่าเกิด Data Breach จริง (ไม่ใช่ False Alarm)</li>
-  <li>&#9744; เปิดใช้ Incident Response Plan (IRP) ทันที</li>
-  <li>&#9744; แจ้งทีม IT Security ให้ดำเนินการ Containment (หยุดการรั่วไหล)</li>
-  <li>&#9744; แจ้งผู้บริหาร (CEO/CFO/COO) ตามลำดับชั้นที่กำหนด</li>
-  <li>&#9744; เริ่มบันทึก Breach Register ทันที (เวลา วันที่ รายละเอียดเบื้องต้น)</li>
-  <li>&#9744; ตรวจสอบว่า Breach ยังดำเนินอยู่หรือหยุดแล้ว</li>
+<li>☐ ยืนยันว่าเกิด Data Breach จริง (ไม่ใช่ False Alarm)</li>
+<li>☐ เปิดใช้ Incident Response Plan (IRP) ทันที</li>
+<li>☐ แจ้งทีม IT Security ให้ดำเนินการ Containment (หยุดการรั่วไหล)</li>
+<li>☐ แจ้งผู้บริหาร (CEO/CFO/COO) ตามลำดับชั้นที่กำหนด</li>
+<li>☐ เริ่มบันทึก Breach Register ทันที (เวลา วันที่ รายละเอียดเบื้องต้น)</li>
+<li>☐ ตรวจสอบว่า Breach ยังดำเนินอยู่หรือหยุดแล้ว</li>
 </ul>
-
-<h3 class="sub">Phase 2: ชั่วโมงที่ 4-24 (Investigation & Assessment)</h3>
-
+<h3 class="sub">Phase 2: ชั่วโมงที่ 4-24 (Investigation &amp; Assessment)</h3>
 <ul>
-  <li>&#9744; ระบุประเภทข้อมูลที่ได้รับผลกระทบ</li>
-  <li>&#9744; ประมาณจำนวนเจ้าของข้อมูลที่ได้รับผลกระทบ</li>
-  <li>&#9744; จำแนกประเภทการละเมิด (Confidentiality / Integrity / Availability)</li>
-  <li>&#9744; ดำเนินการ Risk Assessment ตาม Matrix (Severity x Likelihood)</li>
-  <li>&#9744; ตัดสินใจว่าต้องแจ้ง สคส. หรือไม่ &mdash; พร้อมบันทึกเหตุผล</li>
-  <li>&#9744; ตัดสินใจว่าต้องแจ้งเจ้าของข้อมูลหรือไม่ (ถ้า High Risk)</li>
-  <li>&#9744; ตรวจสอบว่ามีหน้าที่แจ้งหน่วยงานกำกับดูแลอื่นเพิ่มเติมหรือไม่ (เช่น ธปท., กลต., สำนักงาน กสทช.)</li>
+<li>☐ ระบุประเภทข้อมูลที่ได้รับผลกระทบ</li>
+<li>☐ ประมาณจำนวนเจ้าของข้อมูลที่ได้รับผลกระทบ</li>
+<li>☐ จำแนกประเภทการละเมิด (Confidentiality / Integrity / Availability)</li>
+<li>☐ ดำเนินการ Risk Assessment ตาม Matrix (Severity x Likelihood)</li>
+<li>☐ ตัดสินใจว่าต้องแจ้ง สคส. หรือไม่ — พร้อมบันทึกเหตุผล</li>
+<li>☐ ตัดสินใจว่าต้องแจ้งเจ้าของข้อมูลหรือไม่ (ถ้า High Risk)</li>
+<li>☐ ตรวจสอบว่ามีหน้าที่แจ้งหน่วยงานกำกับดูแลอื่นเพิ่มเติมหรือไม่ (เช่น ธปท., กลต., สำนักงาน กสทช.)</li>
 </ul>
-
-<h3 class="sub">Phase 3: ชั่วโมงที่ 24-72 (Notification & Remediation)</h3>
-
+<h3 class="sub">Phase 3: ชั่วโมงที่ 24-72 (Notification &amp; Remediation)</h3>
 <ul>
-  <li>&#9744; ร่างรายงานแจ้งเหตุต่อ สคส. (ตามรูปแบบที่กำหนด)</li>
-  <li>&#9744; ตรวจสอบความถูกต้องของรายงานโดยทีมกฎหมาย</li>
-  <li>&#9744; ผู้บริหารอนุมัติรายงาน</li>
-  <li>&#9744; ส่งรายงานแจ้ง สคส. ผ่านช่องทางที่กำหนด</li>
-  <li>&#9744; ร่างหนังสือแจ้งเจ้าของข้อมูล (ถ้าจำเป็น) พร้อมแนวทางเยียวยา</li>
-  <li>&#9744; เริ่มมาตรการเยียวยา (เปลี่ยนรหัสผ่าน, Credit Monitoring, Hotline)</li>
+<li>☐ ร่างรายงานแจ้งเหตุต่อ สคส. (ตามรูปแบบที่กำหนด)</li>
+<li>☐ ตรวจสอบความถูกต้องของรายงานโดยทีมกฎหมาย</li>
+<li>☐ ผู้บริหารอนุมัติรายงาน</li>
+<li>☐ ส่งรายงานแจ้ง สคส. ผ่านช่องทางที่กำหนด</li>
+<li>☐ ร่างหนังสือแจ้งเจ้าของข้อมูล (ถ้าจำเป็น) พร้อมแนวทางเยียวยา</li>
+<li>☐ เริ่มมาตรการเยียวยา (เปลี่ยนรหัสผ่าน, Credit Monitoring, Hotline)</li>
 </ul>
-
 <h3 class="sub">Phase 4: หลัง 72 ชั่วโมง (Post-Incident)</h3>
-
 <ul>
-  <li>&#9744; ส่งรายงานเพิ่มเติมต่อ สคส. (ถ้าข้อมูลในรายงานแรกยังไม่ครบ)</li>
-  <li>&#9744; จัดทำ Post-Incident Review (Lessons Learned)</li>
-  <li>&#9744; ปรับปรุง Incident Response Plan ตามบทเรียนที่ได้</li>
-  <li>&#9744; ทบทวนมาตรการรักษาความมั่นคงปลอดภัยทั้งหมด</li>
-  <li>&#9744; อัปเดต Data Protection Impact Assessment (DPIA) ถ้าจำเป็น</li>
-  <li>&#9744; จัดฝึกอบรมพนักงานเพิ่มเติม (ถ้าสาเหตุมาจากความผิดพลาดของคน)</li>
-  <li>&#9744; บันทึก Breach Register ให้ครบถ้วน (สำหรับ Audit Trail)</li>
+<li>☐ ส่งรายงานเพิ่มเติมต่อ สคส. (ถ้าข้อมูลในรายงานแรกยังไม่ครบ)</li>
+<li>☐ จัดทำ Post-Incident Review (Lessons Learned)</li>
+<li>☐ ปรับปรุง Incident Response Plan ตามบทเรียนที่ได้</li>
+<li>☐ ทบทวนมาตรการรักษาความมั่นคงปลอดภัยทั้งหมด</li>
+<li>☐ อัปเดต Data Protection Impact Assessment (DPIA) ถ้าจำเป็น</li>
+<li>☐ จัดฝึกอบรมพนักงานเพิ่มเติม (ถ้าสาเหตุมาจากความผิดพลาดของคน)</li>
+<li>☐ บันทึก Breach Register ให้ครบถ้วน (สำหรับ Audit Trail)</li>
 </ul>
-
 <div class="hb w">
 <h4>ข้อควรระวัง: Breach Register เป็นหน้าที่ตามกฎหมายและแนวทาง สคส.</h4>
 <p>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 39 กำหนดให้ผู้ควบคุมข้อมูลต้องบันทึกรายการกิจกรรมการประมวลผลข้อมูล (Records of Processing Activities — ROPA) ซึ่งเป็นบันทึกทั่วไปของกิจกรรมประมวลผลทั้งหมด ส่วนหน้าที่จัดทำ <strong>Breach Register</strong> โดยเฉพาะ (บันทึกเหตุการณ์ Data Breach ทุกครั้ง) มาจาก <strong>ประกาศคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2565</strong> และคู่มือแนวทางของ สคส. แม้จะเป็นเหตุการณ์ที่ประเมินว่า "ความเสี่ยงต่ำ" ไม่ต้องแจ้ง สคส. ก็ต้องบันทึกใน Breach Register เพราะ สคส. อาจขอตรวจสอบได้ทุกเมื่อ</p>
 </div>
 </section>
-
 <!-- S8: Penalties -->
 <section class="sb" id="s8">
 <h2 class="sh">บทลงโทษและผลกระทบทางกฎหมาย<span class="en">Penalties and Legal Consequences</span></h2>
-
 <p>การไม่ปฏิบัติตามหน้าที่แจ้งเหตุการละเมิดข้อมูลส่วนบุคคลมีผลทางกฎหมายหลายมิติ ทั้งทางปกครอง ทางแพ่ง และทางอาญา</p>
-
 <h3 class="sub">โทษทางปกครอง</h3>
-
 <table class="rt">
-  <thead>
-    <tr>
-      <th>ฐานความผิด</th>
-      <th>มาตรา</th>
-      <th>โทษปรับสูงสุด</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>ไม่แจ้งเหตุการละเมิดตามมาตรา 37(4)</td>
-      <td>พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 83</td>
-      <td>ปรับทางปกครองไม่เกิน 3,000,000 บาท</td>
-    </tr>
-    <tr>
-      <td>ไม่จัดให้มีมาตรการรักษาความมั่นคงปลอดภัยที่เหมาะสม (มาตรา 37(1))</td>
-      <td>พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 83</td>
-      <td>ปรับทางปกครองไม่เกิน 3,000,000 บาท</td>
-    </tr>
-    <tr>
-      <td>ไม่จัดทำบันทึกรายการกิจกรรม (มาตรา 39)</td>
-      <td>พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 82</td>
-      <td>ปรับทางปกครองไม่เกิน 1,000,000 บาท</td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>ฐานความผิด</th>
+<th>มาตรา</th>
+<th>โทษปรับสูงสุด</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ไม่แจ้งเหตุการละเมิดตามมาตรา 37(4)</td>
+<td>พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 83</td>
+<td>ปรับทางปกครองไม่เกิน 3,000,000 บาท</td>
+</tr>
+<tr>
+<td>ไม่จัดให้มีมาตรการรักษาความมั่นคงปลอดภัยที่เหมาะสม (มาตรา 37(1))</td>
+<td>พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 83</td>
+<td>ปรับทางปกครองไม่เกิน 3,000,000 บาท</td>
+</tr>
+<tr>
+<td>ไม่จัดทำบันทึกรายการกิจกรรม (มาตรา 39)</td>
+<td>พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 82</td>
+<td>ปรับทางปกครองไม่เกิน 1,000,000 บาท</td>
+</tr>
+</tbody>
 </table>
-
 <h3 class="sub">ความรับผิดทางแพ่ง</h3>
-
 <p>ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 77 ผู้ควบคุมข้อมูลหรือผู้ประมวลผลข้อมูลที่ฝ่าฝืนหรือไม่ปฏิบัติตาม ต้องชดใช้ค่าสินไหมทดแทนสำหรับความเสียหายที่เกิดขึ้น ไม่ว่าจะเป็นความเสียหายที่แท้จริงหรือความเสียหายต่อชื่อเสียง และศาลมีอำนาจสั่งให้ชดใช้ค่าสินไหมทดแทนเพิ่มขึ้นได้ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 78 ได้ถึง 2 เท่าของค่าเสียหายที่แท้จริง (Punitive Damages)</p>
-
 <h3 class="sub">ความรับผิดทางอาญา</h3>
-
 <p>ในกรณีที่การละเมิดข้อมูลเข้าข่ายความผิดฐานเปิดเผยข้อมูลส่วนบุคคลโดยไม่ได้รับความยินยอม อาจมีโทษจำคุกไม่เกิน 6 เดือน หรือปรับไม่เกิน 500,000 บาท หรือทั้งจำทั้งปรับ ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 79 และหากเป็นการเปิดเผยข้อมูลอ่อนไหว โทษจำคุกเพิ่มเป็นไม่เกิน 1 ปี หรือปรับไม่เกิน 1,000,000 บาท หรือทั้งจำทั้งปรับ</p>
-
 <div class="hb w">
 <h4>ผลกระทบที่เงินซื้อไม่ได้: ชื่อเสียง</h4>
 <p>นอกเหนือจากโทษทางกฎหมาย ผลกระทบด้านชื่อเสียง (Reputational Damage) มักสร้างความเสียหายมากกว่าค่าปรับ การที่ข่าว Data Breach ถูกรายงานในสื่อ ความเชื่อมั่นของลูกค้าที่สูญเสีย และผลกระทบต่อราคาหุ้น (สำหรับบริษัทจดทะเบียน) เป็นต้นทุนที่ไม่สามารถคำนวณได้ง่าย การตอบสนองที่รวดเร็ว โปร่งใส และมืออาชีพ คือวิธีเดียวที่จะรักษาความเชื่อมั่นไว้ได้</p>
 </div>
 </section>
-
 <!-- S9: LAS Risk Methodology -->
 <section class="sb" id="s9">
 <h2 class="sh">LAS Risk Methodology กับ Data Breach<span class="en">LAS Risk Methodology Applied to Data Breach</span></h2>
-
-<p>LAS Risk Methodology ใช้หลัก <strong>Eliminate &rarr; Reduce &rarr; Distribute</strong> ในการจัดการความเสี่ยง ซึ่งสามารถนำมาประยุกต์ใช้กับการป้องกันและตอบสนองต่อ Data Breach ได้โดยตรง</p>
-
+<p>LAS Risk Methodology ใช้หลัก <strong>Eliminate → Reduce → Distribute</strong> ในการจัดการความเสี่ยง ซึ่งสามารถนำมาประยุกต์ใช้กับการป้องกันและตอบสนองต่อ Data Breach ได้โดยตรง</p>
 <div class="hb gold">
 <h4>LAS Risk Shield: 3 ระดับ สำหรับ Data Breach</h4>
 <table class="rt" style="margin:12px 0 0 0;">
-  <thead>
-    <tr>
-      <th>ระดับ</th>
-      <th>หลักการ</th>
-      <th>การประยุกต์ใช้กับ Data Breach</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><span class="pill green">Eliminate</span></td>
-      <td>กำจัดความเสี่ยง</td>
-      <td>Data Minimization &mdash; เก็บข้อมูลเท่าที่จำเป็น / ลบข้อมูลที่ไม่ต้องใช้ / Pseudonymization ข้อมูลอ่อนไหว</td>
-    </tr>
-    <tr>
-      <td><span class="pill gold">Reduce</span></td>
-      <td>ลดความเสี่ยง</td>
-      <td>Encryption ทุก Layer / Access Control / MFA / Network Segmentation / Incident Response Plan</td>
-    </tr>
-    <tr>
-      <td><span class="pill red">Distribute</span></td>
-      <td>กระจายความเสี่ยง</td>
-      <td>Cyber Insurance / DPA กับ Processor (กำหนด Indemnity + Liability) / Backup หลาย Location</td>
-    </tr>
-  </tbody>
+<thead>
+<tr>
+<th>ระดับ</th>
+<th>หลักการ</th>
+<th>การประยุกต์ใช้กับ Data Breach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="pill green">Eliminate</span></td>
+<td>กำจัดความเสี่ยง</td>
+<td>Data Minimization — เก็บข้อมูลเท่าที่จำเป็น / ลบข้อมูลที่ไม่ต้องใช้ / Pseudonymization ข้อมูลอ่อนไหว</td>
+</tr>
+<tr>
+<td><span class="pill gold">Reduce</span></td>
+<td>ลดความเสี่ยง</td>
+<td>Encryption ทุก Layer / Access Control / MFA / Network Segmentation / Incident Response Plan</td>
+</tr>
+<tr>
+<td><span class="pill red">Distribute</span></td>
+<td>กระจายความเสี่ยง</td>
+<td>Cyber Insurance / DPA กับ Processor (กำหนด Indemnity + Liability) / Backup หลาย Location</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <h3 class="sub">ข้อสัญญาที่ต้องมีใน DPA (Data Processing Agreement)</h3>
-
 <p>จากมุมมองของ LAS C&amp;C Series สัญญาประมวลผลข้อมูล (DPA) ที่ดีต้องมีข้อสัญญาที่ปกป้ององค์กรในกรณี Breach อย่างน้อยดังต่อไปนี้:</p>
-
 <ul>
-  <li><strong>Breach Notification Obligation:</strong> Processor ต้องแจ้ง Controller ภายในเวลาที่กำหนด (เช่น 24 ชั่วโมงหลังทราบเหตุ) เพื่อให้ Controller มีเวลาเพียงพอในการแจ้ง สคส. ภายใน 72 ชั่วโมง</li>
-  <li><strong>Cooperation Obligation:</strong> Processor ต้องให้ความร่วมมือในการสอบสวนอย่างเต็มที่</li>
-  <li><strong>Indemnification:</strong> Processor ต้องชดใช้ค่าเสียหายหาก Breach เกิดจากความบกพร่องของ Processor</li>
-  <li><strong>Audit Rights:</strong> Controller มีสิทธิตรวจสอบมาตรการรักษาความมั่นคงปลอดภัยของ Processor</li>
-  <li><strong>Sub-Processing Controls:</strong> Processor ต้องได้รับอนุญาตก่อนใช้ Sub-Processor และต้องทำให้ Sub-Processor ปฏิบัติตามมาตรฐานเดียวกัน</li>
+<li><strong>Breach Notification Obligation:</strong> Processor ต้องแจ้ง Controller ภายในเวลาที่กำหนด (เช่น 24 ชั่วโมงหลังทราบเหตุ) เพื่อให้ Controller มีเวลาเพียงพอในการแจ้ง สคส. ภายใน 72 ชั่วโมง</li>
+<li><strong>Cooperation Obligation:</strong> Processor ต้องให้ความร่วมมือในการสอบสวนอย่างเต็มที่</li>
+<li><strong>Indemnification:</strong> Processor ต้องชดใช้ค่าเสียหายหาก Breach เกิดจากความบกพร่องของ Processor</li>
+<li><strong>Audit Rights:</strong> Controller มีสิทธิตรวจสอบมาตรการรักษาความมั่นคงปลอดภัยของ Processor</li>
+<li><strong>Sub-Processing Controls:</strong> Processor ต้องได้รับอนุญาตก่อนใช้ Sub-Processor และต้องทำให้ Sub-Processor ปฏิบัติตามมาตรฐานเดียวกัน</li>
 </ul>
-
 <div class="lc">
-<strong>บทเรียนสำหรับนักกฎหมายธุรกิจ:</strong><br>
-สัญญา DPA ที่ดีไม่ได้แค่คัดลอก Template มา แต่ต้อง "คิดล่วงหน้า" ว่าถ้า Breach เกิดขึ้นจริง ข้อสัญญาแต่ละข้อจะทำงานอย่างไร &mdash; Notification Timeline ของ Processor สั้นพอที่ Controller จะแจ้ง สคส. ทันไหม? Indemnity ครอบคลุม Punitive Damages 2 เท่าตามมาตรา 78 หรือเปล่า? นี่คือ "C&amp;C Thinking" ที่ต้องใส่ลงในทุก DPA
+<strong>บทเรียนสำหรับนักกฎหมายธุรกิจ:</strong><br/>
+สัญญา DPA ที่ดีไม่ได้แค่คัดลอก Template มา แต่ต้อง "คิดล่วงหน้า" ว่าถ้า Breach เกิดขึ้นจริง ข้อสัญญาแต่ละข้อจะทำงานอย่างไร — Notification Timeline ของ Processor สั้นพอที่ Controller จะแจ้ง สคส. ทันไหม? Indemnity ครอบคลุม Punitive Damages 2 เท่าตามมาตรา 78 หรือเปล่า? นี่คือ "C&amp;C Thinking" ที่ต้องใส่ลงในทุก DPA
 </div>
 </section>
-
 <!-- S10: FAQ -->
 <section class="sb" id="s10">
 <h2 class="sh">คำถามที่พบบ่อย<span class="en">Frequently Asked Questions</span></h2>
-
 <div class="faq-item">
-  <div class="faq-q">Q1: การละเมิดข้อมูลส่วนบุคคลตาม PDPA คืออะไร แตกต่างจาก Cybersecurity Incident อย่างไร?</div>
-  <div class="faq-a">การละเมิดข้อมูลส่วนบุคคล (Personal Data Breach) ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 หมายถึง การละเมิดมาตรการรักษาความมั่นคงปลอดภัยที่ทำให้เกิดการสูญหาย เข้าถึง ใช้ เปลี่ยนแปลง แก้ไข หรือเปิดเผยข้อมูลส่วนบุคคลโดยปราศจากอำนาจหรือโดยมิชอบ แบ่งเป็น 3 ประเภท คือ Confidentiality, Integrity และ Availability Breach ส่วน Cybersecurity Incident อาจไม่เกี่ยวกับข้อมูลส่วนบุคคลเลย (เช่น DDoS Attack ที่ไม่มีข้อมูลรั่ว) จุดตัดสินคือ "มีข้อมูลส่วนบุคคลได้รับผลกระทบหรือไม่" ถ้ามี ก็เข้าข่ายหน้าที่ตามมาตรา 37(4)</div>
+<div class="faq-q">Q1: การละเมิดข้อมูลส่วนบุคคลตาม PDPA คืออะไร แตกต่างจาก Cybersecurity Incident อย่างไร?</div>
+<div class="faq-a">การละเมิดข้อมูลส่วนบุคคล (Personal Data Breach) ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 หมายถึง การละเมิดมาตรการรักษาความมั่นคงปลอดภัยที่ทำให้เกิดการสูญหาย เข้าถึง ใช้ เปลี่ยนแปลง แก้ไข หรือเปิดเผยข้อมูลส่วนบุคคลโดยปราศจากอำนาจหรือโดยมิชอบ แบ่งเป็น 3 ประเภท คือ Confidentiality, Integrity และ Availability Breach ส่วน Cybersecurity Incident อาจไม่เกี่ยวกับข้อมูลส่วนบุคคลเลย (เช่น DDoS Attack ที่ไม่มีข้อมูลรั่ว) จุดตัดสินคือ "มีข้อมูลส่วนบุคคลได้รับผลกระทบหรือไม่" ถ้ามี ก็เข้าข่ายหน้าที่ตามมาตรา 37(4)</div>
 </div>
-
 <div class="faq-item">
-  <div class="faq-q">Q2: ต้องแจ้งเหตุการละเมิดข้อมูลส่วนบุคคลภายในกี่ชั่วโมง และแจ้งอย่างไร?</div>
-  <div class="faq-a">ต้องแจ้งสำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (สคส.) ภายใน 72 ชั่วโมงนับแต่ทราบเหตุ ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 37(4) โดยรายงานต้องระบุลักษณะเหตุการณ์ ข้อมูลที่ได้รับผลกระทบ ผลกระทบที่อาจเกิด มาตรการที่ดำเนินการแล้ว และข้อมูล DPO หากแจ้งไม่ทันภายในกำหนด ต้องจัดทำบันทึกเหตุผลของความล่าช้าไว้ด้วย หากเป็น High Risk ต้องแจ้งเจ้าของข้อมูลโดยตรงพร้อมแนวทางเยียวยาด้วย</div>
+<div class="faq-q">Q2: ต้องแจ้งเหตุการละเมิดข้อมูลส่วนบุคคลภายในกี่ชั่วโมง และแจ้งอย่างไร?</div>
+<div class="faq-a">ต้องแจ้งสำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (สคส.) ภายใน 72 ชั่วโมงนับแต่ทราบเหตุ ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 37(4) โดยรายงานต้องระบุลักษณะเหตุการณ์ ข้อมูลที่ได้รับผลกระทบ ผลกระทบที่อาจเกิด มาตรการที่ดำเนินการแล้ว และข้อมูล DPO หากแจ้งไม่ทันภายในกำหนด ต้องจัดทำบันทึกเหตุผลของความล่าช้าไว้ด้วย หากเป็น High Risk ต้องแจ้งเจ้าของข้อมูลโดยตรงพร้อมแนวทางเยียวยาด้วย</div>
 </div>
-
 <div class="faq-item">
-  <div class="faq-q">Q3: กรณีใดที่ไม่ต้องแจ้ง สคส.?</div>
-  <div class="faq-a">ไม่ต้องแจ้ง สคส. เฉพาะกรณีที่พิสูจน์ได้ว่าการละเมิดนั้น "ไม่มีความเสี่ยงที่จะมีผลกระทบต่อสิทธิและเสรีภาพของบุคคล" เช่น ข้อมูลที่สูญหายถูกเข้ารหัสอย่างแข็งแรงจนเข้าถึงไม่ได้จริง หรือข้อมูลที่เปิดเผยเป็นข้อมูลที่เปิดเผยต่อสาธารณะอยู่แล้ว แต่ภาระการพิสูจน์ตกอยู่กับผู้ควบคุมข้อมูล และต้องมีเอกสารประกอบการตัดสินใจเสมอ แม้ไม่แจ้งก็ต้องบันทึกใน Breach Register</div>
+<div class="faq-q">Q3: กรณีใดที่ไม่ต้องแจ้ง สคส.?</div>
+<div class="faq-a">ไม่ต้องแจ้ง สคส. เฉพาะกรณีที่พิสูจน์ได้ว่าการละเมิดนั้น "ไม่มีความเสี่ยงที่จะมีผลกระทบต่อสิทธิและเสรีภาพของบุคคล" เช่น ข้อมูลที่สูญหายถูกเข้ารหัสอย่างแข็งแรงจนเข้าถึงไม่ได้จริง หรือข้อมูลที่เปิดเผยเป็นข้อมูลที่เปิดเผยต่อสาธารณะอยู่แล้ว แต่ภาระการพิสูจน์ตกอยู่กับผู้ควบคุมข้อมูล และต้องมีเอกสารประกอบการตัดสินใจเสมอ แม้ไม่แจ้งก็ต้องบันทึกใน Breach Register</div>
 </div>
-
 <div class="faq-item">
-  <div class="faq-q">Q4: Risk Assessment สำหรับ Data Breach ประเมินอย่างไร?</div>
-  <div class="faq-a">ตามคู่มือแนวทางของ PDPC ใช้ 2 มิติ คือ ระดับความรุนแรง (Severity &mdash; ดูจากประเภทข้อมูล จำนวนเจ้าของข้อมูล ผลกระทบที่อาจเกิด กลุ่มเจ้าของข้อมูล) กับ ความน่าจะเป็น (Likelihood &mdash; ดูจากลักษณะการละเมิด การนำไปใช้จริง มาตรการเข้ารหัส) คูณกันเป็น Risk Score แบ่ง 3 ระดับ: ต่ำ (1-2 บันทึกภายใน), กลาง (3-4 แจ้ง สคส.), สูง (6-9 แจ้ง สคส. + เจ้าของข้อมูล)</div>
+<div class="faq-q">Q4: Risk Assessment สำหรับ Data Breach ประเมินอย่างไร?</div>
+<div class="faq-a">ตามคู่มือแนวทางของ PDPC ใช้ 2 มิติ คือ ระดับความรุนแรง (Severity — ดูจากประเภทข้อมูล จำนวนเจ้าของข้อมูล ผลกระทบที่อาจเกิด กลุ่มเจ้าของข้อมูล) กับ ความน่าจะเป็น (Likelihood — ดูจากลักษณะการละเมิด การนำไปใช้จริง มาตรการเข้ารหัส) คูณกันเป็น Risk Score แบ่ง 3 ระดับ: ต่ำ (1-2 บันทึกภายใน), กลาง (3-4 แจ้ง สคส.), สูง (6-9 แจ้ง สคส. + เจ้าของข้อมูล)</div>
 </div>
-
 <div class="faq-item">
-  <div class="faq-q">Q5: DPO มีหน้าที่อะไรเมื่อเกิด Data Breach?</div>
-  <div class="faq-a">DPO มีหน้าที่ 5 ประการหลัก คือ (1) ประสานงานกับทีม Incident Response ทันทีที่ทราบเหตุ (2) ประเมินความเสี่ยงตาม Risk Assessment Matrix (3) จัดทำรายงานแจ้งเหตุต่อ สคส. ภายใน 72 ชั่วโมง (4) พิจารณาและดำเนินการแจ้งเจ้าของข้อมูลหากเป็น High Risk และ (5) บันทึกเหตุการณ์ มาตรการแก้ไข และบทเรียนใน Breach Register รวมถึงจัด Post-Incident Review เพื่อป้องกันไม่ให้เกิดซ้ำ</div>
+<div class="faq-q">Q5: DPO มีหน้าที่อะไรเมื่อเกิด Data Breach?</div>
+<div class="faq-a">DPO มีหน้าที่ 5 ประการหลัก คือ (1) ประสานงานกับทีม Incident Response ทันทีที่ทราบเหตุ (2) ประเมินความเสี่ยงตาม Risk Assessment Matrix (3) จัดทำรายงานแจ้งเหตุต่อ สคส. ภายใน 72 ชั่วโมง (4) พิจารณาและดำเนินการแจ้งเจ้าของข้อมูลหากเป็น High Risk และ (5) บันทึกเหตุการณ์ มาตรการแก้ไข และบทเรียนใน Breach Register รวมถึงจัด Post-Incident Review เพื่อป้องกันไม่ให้เกิดซ้ำ</div>
 </div>
-
 <div class="faq-item">
-  <div class="faq-q">Q6: โทษของการไม่แจ้งเหตุการละเมิดข้อมูลส่วนบุคคลคืออะไร?</div>
-  <div class="faq-a">มีโทษ 3 มิติ คือ (1) โทษปรับทางปกครองไม่เกิน 3 ล้านบาท ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 83 (ฝ่าฝืนมาตรา 37 ไม่แจ้งเหตุ/ไม่มีมาตรการ) (2) ความรับผิดทางแพ่ง ศาลอาจสั่งชดใช้ค่าสินไหมทดแทนเพิ่มขึ้นได้ถึง 2 เท่าของค่าเสียหายจริง ตามมาตรา 78 และ (3) ถ้าเข้าข่ายเปิดเผยข้อมูลโดยมิชอบ อาจมีโทษจำคุกสูงสุด 1 ปี ปรับสูงสุด 1 ล้านบาท ตามมาตรา 79 นอกจากนี้ยังมีผลกระทบด้านชื่อเสียงที่ประเมินมูลค่าไม่ได้</div>
+<div class="faq-q">Q6: โทษของการไม่แจ้งเหตุการละเมิดข้อมูลส่วนบุคคลคืออะไร?</div>
+<div class="faq-a">มีโทษ 3 มิติ คือ (1) โทษปรับทางปกครองไม่เกิน 3 ล้านบาท ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 83 (ฝ่าฝืนมาตรา 37 ไม่แจ้งเหตุ/ไม่มีมาตรการ) (2) ความรับผิดทางแพ่ง ศาลอาจสั่งชดใช้ค่าสินไหมทดแทนเพิ่มขึ้นได้ถึง 2 เท่าของค่าเสียหายจริง ตามมาตรา 78 และ (3) ถ้าเข้าข่ายเปิดเผยข้อมูลโดยมิชอบ อาจมีโทษจำคุกสูงสุด 1 ปี ปรับสูงสุด 1 ล้านบาท ตามมาตรา 79 นอกจากนี้ยังมีผลกระทบด้านชื่อเสียงที่ประเมินมูลค่าไม่ได้</div>
 </div>
 </section>
-
 <!-- References -->
 <section class="sb" id="ref">
 <h2 class="sh">กฎหมายและแหล่งอ้างอิง<span class="en">Legal References</span></h2>
-
 <div class="legal-tags" style="padding:18px 20px;background:#f8f9fa;border:1px solid #a2a9b1;border-radius:10px;">
-  <div style="font-size:12px;color:#1B2A4A;font-weight:bold;margin-bottom:10px;letter-spacing:1px;">กฎหมายที่อ้างอิงในบทความ</div>
-  <ul style="list-style:none;padding:0;">
-    <li style="margin-bottom:8px;"><strong>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562</strong> &mdash; มาตรา 37(1), 37(4), 39, 77, 78, 79, 82, 83</li>
-    <li style="margin-bottom:8px;"><strong>คู่มือแนวทางการประเมินความเสี่ยงและแจ้งเหตุการละเมิดข้อมูลส่วนบุคคล เวอร์ชัน 1.0</strong> &mdash; สำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (สคส./PDPC), 15 ธันวาคม 2565</li>
-    <li style="margin-bottom:8px;"><strong>General Data Protection Regulation (GDPR)</strong> &mdash; Article 33-34 (อ้างอิงเปรียบเทียบ)</li>
-  </ul>
+<div style="font-size:12px;color:#1B2A4A;font-weight:bold;margin-bottom:10px;letter-spacing:1px;">กฎหมายที่อ้างอิงในบทความ</div>
+<ul style="list-style:none;padding:0;">
+<li style="margin-bottom:8px;"><strong>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562</strong> — มาตรา 37(1), 37(4), 39, 77, 78, 79, 82, 83</li>
+<li style="margin-bottom:8px;"><strong>คู่มือแนวทางการประเมินความเสี่ยงและแจ้งเหตุการละเมิดข้อมูลส่วนบุคคล เวอร์ชัน 1.0</strong> — สำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (สคส./PDPC), 15 ธันวาคม 2565</li>
+<li style="margin-bottom:8px;"><strong>General Data Protection Regulation (GDPR)</strong> — Article 33-34 (อ้างอิงเปรียบเทียบ)</li>
+</ul>
 </div>
 </section>
-
 <!-- Related Articles -->
 <section class="sb" id="related">
 <h2 class="sh">บทความที่เกี่ยวข้อง<span class="en">Related Articles</span></h2>
 <ul>
-  <li><a href="https://thundthornthep-ai.github.io/articles/pdpa-compliance-guide-business.html">PDPA Compliance สำหรับธุรกิจ B2B ในไทย &mdash; คู่มือ C-Suite</a></li>
-  <li><a href="https://thundthornthep-ai.github.io/articles/pdpa-compliance-guide-thailand.html">คู่มือ PDPA ฉบับสมบูรณ์สำหรับธุรกิจไทย</a></li>
-  <li><a href="https://thundthornthep-ai.github.io/articles/las-cc-10.html">LAS C&amp;C #10: First Draft Advantage &mdash; ทำไมผู้ร่างสัญญาได้เปรียบ</a></li>
+<li><a href="https://thundthornthep-ai.github.io/articles/pdpa-compliance-guide-business.html">PDPA Compliance สำหรับธุรกิจ B2B ในไทย — คู่มือ C-Suite</a></li>
+<li><a href="https://thundthornthep-ai.github.io/articles/pdpa-compliance-guide-thailand.html">คู่มือ PDPA ฉบับสมบูรณ์สำหรับธุรกิจไทย</a></li>
+<li><a href="https://thundthornthep-ai.github.io/articles/las-cc-10.html">LAS C&amp;C #10: First Draft Advantage — ทำไมผู้ร่างสัญญาได้เปรียบ</a></li>
 </ul>
 </section>
-
 <!-- Navigation -->
 <div style="margin-top:24px;padding:14px 16px;background:#f0f4f8;border:1px solid #a2a9b1;border-radius:6px;">
-  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
-    <a href="las-cc-10.html" style="font-size:13px;">&larr; ตอนที่ 10: First Draft Advantage</a>
-    <span style="font-size:12px;color:#888;">LAS C&amp;C 11</span>
-    <a href="las-cc-index.html" style="font-size:13px;">ดูสารบัญ C&amp;C ทั้งหมด &rarr;</a>
-  </div>
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+<a href="las-cc-10.html" style="font-size:13px;">← ตอนที่ 10: First Draft Advantage</a>
+<span style="font-size:12px;color:#888;">LAS C&amp;C 11</span>
+<a href="las-cc-index.html" style="font-size:13px;">ดูสารบัญ C&amp;C ทั้งหมด →</a>
 </div>
-
+</div>
 <!-- Law Tags -->
 <div class="legal-tags" style="margin-top:32px;padding:18px 20px;background:#f8f9fa;border:1px solid #a2a9b1;border-radius:10px;">
-  <div style="font-size:12px;color:#1B2A4A;font-weight:bold;margin-bottom:10px;letter-spacing:1px;">กฎหมายที่เกี่ยวข้อง</div>
-  <div style="display:flex;flex-wrap:wrap;gap:6px;">
-    <span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #C9A96E;border-radius:6px;font-size:11px;color:#C9A96E;">PDPA มาตรา 37(4)</span>
-    <span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #C9A96E;border-radius:6px;font-size:11px;color:#C9A96E;">Data Breach</span>
-    <span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #27AE60;border-radius:6px;font-size:11px;color:#27AE60;">Risk Assessment</span>
-    <span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #27AE60;border-radius:6px;font-size:11px;color:#27AE60;">Confidentiality Breach</span>
-    <span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #27AE60;border-radius:6px;font-size:11px;color:#27AE60;">Integrity Breach</span>
-    <span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #27AE60;border-radius:6px;font-size:11px;color:#27AE60;">Availability Breach</span>
-    <span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #C9A96E;border-radius:6px;font-size:11px;color:#C9A96E;">DPO Checklist</span>
-    <span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #27AE60;border-radius:6px;font-size:11px;color:#27AE60;">72-Hour Notification</span>
-    <span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #27AE60;border-radius:6px;font-size:11px;color:#27AE60;">PDPC Guidelines</span>
-    <span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #C9A96E;border-radius:6px;font-size:11px;color:#C9A96E;">DPA Contract</span>
-  </div>
+<div style="font-size:12px;color:#1B2A4A;font-weight:bold;margin-bottom:10px;letter-spacing:1px;">กฎหมายที่เกี่ยวข้อง</div>
+<div style="display:flex;flex-wrap:wrap;gap:6px;">
+<span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #C9A96E;border-radius:6px;font-size:11px;color:#C9A96E;">PDPA มาตรา 37(4)</span>
+<span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #C9A96E;border-radius:6px;font-size:11px;color:#C9A96E;">Data Breach</span>
+<span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #27AE60;border-radius:6px;font-size:11px;color:#27AE60;">Risk Assessment</span>
+<span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #27AE60;border-radius:6px;font-size:11px;color:#27AE60;">Confidentiality Breach</span>
+<span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #27AE60;border-radius:6px;font-size:11px;color:#27AE60;">Integrity Breach</span>
+<span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #27AE60;border-radius:6px;font-size:11px;color:#27AE60;">Availability Breach</span>
+<span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #C9A96E;border-radius:6px;font-size:11px;color:#C9A96E;">DPO Checklist</span>
+<span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #27AE60;border-radius:6px;font-size:11px;color:#27AE60;">72-Hour Notification</span>
+<span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #27AE60;border-radius:6px;font-size:11px;color:#27AE60;">PDPC Guidelines</span>
+<span class="law-tag" style="display:inline-block;padding:4px 10px;background:#162a3e;border:1px solid #C9A96E;border-radius:6px;font-size:11px;color:#C9A96E;">DPA Contract</span>
 </div>
-
-<div class="disc"><strong>Disclaimer / ข้อสงวนสิทธิ์:</strong><br>บทความนี้จัดทำขึ้นเพื่อเผยแพร่ความรู้ทางกฎหมายเท่านั้น ไม่ถือเป็นความเห็นทางกฎหมายหรือคำแนะนำเฉพาะเจาะจง ผู้อ่านควรปรึกษาทนายความก่อนดำเนินการใดๆ ผู้เขียนและ Legal Advance Solution Co., Ltd. ไม่รับผิดชอบต่อความเสียหายใดๆ ที่อาจเกิดจากการนำข้อมูลไปใช้<br><br>This article is published for educational purposes only and does not constitute legal advice. The author and Legal Advance Solution Co., Ltd. accept no liability for any loss arising from reliance on this content.</div>
+</div>
+<div class="disc"><strong>Disclaimer / ข้อสงวนสิทธิ์:</strong><br/>บทความนี้จัดทำขึ้นเพื่อเผยแพร่ความรู้ทางกฎหมายเท่านั้น ไม่ถือเป็นความเห็นทางกฎหมายหรือคำแนะนำเฉพาะเจาะจง ผู้อ่านควรปรึกษาทนายความก่อนดำเนินการใดๆ ผู้เขียนและ Legal Advance Solution Co., Ltd. ไม่รับผิดชอบต่อความเสียหายใดๆ ที่อาจเกิดจากการนำข้อมูลไปใช้<br/><br/>This article is published for educational purposes only and does not constitute legal advice. The author and Legal Advance Solution Co., Ltd. accept no liability for any loss arising from reliance on this content.</div>
 </main>
-
 <footer class="footer">
-  <div class="fb">LAS C&amp;C &mdash; Contract &amp; Control | Legal Advance Solution Co., Ltd.</div>
-  <div class="fa">ธันย์ธรณ์เทพ แย้มอุทัย (Thundthornthep Yamoutai, Ph.D.) &mdash; Managing Director</div>
-  <div class="fl"><a href="https://thundthornthep-ai.github.io/">Home</a><a href="https://thundthornthep-ai.github.io/knowledge-hub.html">Knowledge Hub</a><a href="https://thundthornthep-ai.github.io/media-coverage.html">Media</a></div>
-  <div class="cp">&copy; 2026 Legal Advance Solution Co., Ltd. All rights reserved.</div>
+<div class="fb">LAS C&amp;C — Contract &amp; Control | Legal Advance Solution Co., Ltd.</div>
+<div class="fa">ธันย์ธรณ์เทพ แย้มอุทัย (Thundthornthep Yamoutai, Ph.D.) — Managing Director</div>
+<div class="fl"><a href="https://thundthornthep-ai.github.io/">Home</a><a href="https://thundthornthep-ai.github.io/knowledge-hub.html">Knowledge Hub</a><a href="https://thundthornthep-ai.github.io/media-coverage.html">Media</a></div>
+<div class="cp">© 2026 Legal Advance Solution Co., Ltd. All rights reserved.</div>
 </footer>
 <div style="text-align:center;padding:16px 20px;margin:20px auto;max-width:800px;">
-  <a href="../all-content.html" style="color:#0645ad;font-weight:bold;text-decoration:none;">ดูบทความและบล็อกทั้งหมด / View All Content &rarr;</a>
+<a href="../all-content.html" style="color:#0645ad;font-weight:bold;text-decoration:none;">ดูบทความและบล็อกทั้งหมด / View All Content →</a>
 </div>
 <script src="/js/legal-links.js"></script>
 <!-- Canonical setSiteLang() — see docs/BILINGUAL-CONVENTION.md -->
@@ -749,6 +646,5 @@ function setSiteLang(lang) {
   } catch(e) {}
 })();
 </script>
-
 </body>
 </html>

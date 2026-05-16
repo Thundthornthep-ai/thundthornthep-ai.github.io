@@ -1,27 +1,28 @@
 <!DOCTYPE html>
+
 <html lang="th">
 <head>
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NN3KX46PVC"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NN3KX46PVC"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NN3KX46PVC');</script>
-<meta charset="UTF-8">
-<link rel="icon" type="image/webp" href="/las-logo.webp">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<link href="/las-logo.webp" rel="icon" type="image/webp"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>District Intelligence — ส.ก. Navigator</title>
-<meta name="description" content="GREEN FLAG พื้นที่สำคัญ 50 เขต กทม. — ข้อมูลชุมชน วัด โรงเรียน ตลาด + ปักธง check-in + Traffy Fondue สำหรับผู้สมัคร ส.ก. 2569">
-<meta property="og:title" content="District Intelligence — ส.ก. Navigator">
-<meta property="og:description" content="GREEN FLAG พื้นที่สำคัญ 50 เขต กทม. — ปักธง check-in + Traffy Fondue">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://thundthornthep-ai.github.io/las-logo.webp">
-<link rel="manifest" href="manifest.json">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta content="GREEN FLAG พื้นที่สำคัญ 50 เขต กทม. — ข้อมูลชุมชน วัด โรงเรียน ตลาด + ปักธง check-in + Traffy Fondue สำหรับผู้สมัคร ส.ก. 2569" name="description"/>
+<meta content="District Intelligence — ส.ก. Navigator" property="og:title"/>
+<meta content="GREEN FLAG พื้นที่สำคัญ 50 เขต กทม. — ปักธง check-in + Traffy Fondue" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://thundthornthep-ai.github.io/las-logo.webp" property="og:image"/>
+<link href="manifest.json" rel="manifest"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <!-- [[THEME-MIGRATION-v1]] -->
-<link rel="stylesheet" href="/css/wiki-theme.css">
+<link href="/css/wiki-theme.css" rel="stylesheet"/>
 <!-- [[/THEME-MIGRATION-v1]] -->
-<meta name="theme-color" content="#1B2A4A">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<meta content="#1B2A4A" name="theme-color"/>
+<link crossorigin="" rel="stylesheet"/>
+<script crossorigin="" src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
 :root{--bg:#FAFAFA;--bg-alt:#F5F5F5;--card:#FFF;--text:#1A1A2E;--text-secondary:#6B7280;--text-muted:#9CA3AF;--navy:#1B2A4A;--navy-dark:#0d1f33;--gold:#C9A96E;--teal:#0D9488;--green:#22C55E;--green-dark:#14532D;--red:#EF4444;--red-dark:#991B1B;--orange:#E67E22;--blue:#2563EB;--border:#E5E7EB;--border-light:#F3F4F6;--shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);--radius:12px;--radius-sm:8px;--max-w:900px;--transition:.2s ease}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'Sarabun',sans-serif;font-size:16px;line-height:1.7;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
@@ -102,149 +103,132 @@
 </style>
 </head>
 <body data-lang="th">
-
-
 <div class="top-bar"><div class="top-bar-left"><a href="index.html">← Dashboard</a> District Intelligence</div><div class="top-bar-right"></div></div>
 <div class="main">
-
 <!-- DISTRICT SELECTOR -->
 <div class="st">GREEN FLAG — พื้นที่สำคัญในเขต</div>
 <div class="sd">เลือกเขตเพื่อดูข้อมูลพื้นที่ ปักธง check-in สถานที่ บันทึกปัญหา และส่งรายงานผ่าน Traffy Fondue</div>
-
 <select class="district-select" id="districtPicker" onchange="selectDistrict(this.value)">
-  <option value="">— เลือกเขตที่จะลงสมัคร —</option>
+<option value="">— เลือกเขตที่จะลงสมัคร —</option>
 </select>
-
 <!-- Hidden until district selected -->
 <div id="districtContent" style="display:none">
-
 <!-- PROGRESS -->
 <div class="progress-wrap">
-  <div style="display:flex;justify-content:space-between;align-items:center">
-    <div style="font-weight:600;font-size:14px">ปักธงแล้ว</div>
-    <div style="font-size:13px;color:var(--text-secondary)"><span id="visitedCount">0</span> / <span id="totalPoi">0</span> สถานที่</div>
-  </div>
-  <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+<div style="display:flex;justify-content:space-between;align-items:center">
+<div style="font-weight:600;font-size:14px">ปักธงแล้ว</div>
+<div style="font-size:13px;color:var(--text-secondary)"><span id="visitedCount">0</span> / <span id="totalPoi">0</span> สถานที่</div>
 </div>
-
+<div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+</div>
 <!-- STAT ROW -->
 <div class="stat-row">
-  <div class="stat-box"><div class="sv" id="sPoi">0</div><div class="sl">สถานที่ทั้งหมด</div></div>
-  <div class="stat-box"><div class="sv" id="sVisited">0</div><div class="sl">ปักธงแล้ว</div></div>
-  <div class="stat-box"><div class="sv" id="sProblems">0</div><div class="sl">ปัญหาที่พบ</div></div>
+<div class="stat-box"><div class="sv" id="sPoi">0</div><div class="sl">สถานที่ทั้งหมด</div></div>
+<div class="stat-box"><div class="sv" id="sVisited">0</div><div class="sl">ปักธงแล้ว</div></div>
+<div class="stat-box"><div class="sv" id="sProblems">0</div><div class="sl">ปัญหาที่พบ</div></div>
 </div>
-
 <!-- LINKS -->
 <div class="link-grid">
-  <a id="traffyLink" href="#" target="_blank" class="link-card">
-    <span class="lc-icon">📊</span>
-    <div><div class="lc-text">Traffy Fondue</div><div class="lc-sub">ดูปัญหาจริงในเขต</div></div>
-  </a>
-  <a id="districtOfficeLink" href="#" target="_blank" class="link-card">
-    <span class="lc-icon">🏛️</span>
-    <div><div class="lc-text">สำนักงานเขต</div><div class="lc-sub" id="districtOfficeName">webportal.bangkok.go.th</div></div>
-  </a>
-  <a href="https://www.traffy.in.th" target="_blank" class="link-card">
-    <span class="lc-icon">📱</span>
-    <div><div class="lc-text">รายงานปัญหา Traffy</div><div class="lc-sub">ส่งปัญหาไป กทม. ทันที</div></div>
-  </a>
-</div>
+<a class="link-card" href="#" id="traffyLink" target="_blank">
+<span class="lc-icon">📊</span>
+<div><div class="lc-text">Traffy Fondue</div><div class="lc-sub">ดูปัญหาจริงในเขต</div></div>
+</a>
+<a class="link-card" href="#" id="districtOfficeLink" target="_blank">
+<span class="lc-icon">🏛️</span>
+<div><div class="lc-text">สำนักงานเขต</div><div class="lc-sub" id="districtOfficeName">webportal.bangkok.go.th</div></div>
+</a>
 
+<span class="lc-icon">📱</span>
+<div><div class="lc-text">รายงานปัญหา Traffy</div><div class="lc-sub">ส่งปัญหาไป กทม. ทันที</div></div>
+
+</div>
 <!-- TRAFFY MAP + LIVE DATA -->
 <div id="traffyLiveSection" style="margin-bottom:24px">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-    <div style="font-weight:700;font-size:15px;color:var(--navy)">แผนที่ปัญหา + Traffy Fondue</div>
-    <button class="btn btn-o" style="padding:6px 12px;font-size:12px" onclick="fetchTraffy()">โหลดใหม่</button>
-  </div>
-  <div id="traffyMap" style="width:100%;height:350px;border-radius:12px;border:1px solid #E5E7EB;margin-bottom:16px;z-index:1"></div>
-  <div id="traffySummary" style="font-size:12px;color:#9CA3AF;margin-bottom:8px"></div>
-  <div id="traffyData" style="font-size:13px;color:var(--text-muted);padding:16px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);text-align:center;">กด "โหลดใหม่" หรือเลือกเขตเพื่อดึงข้อมูลจาก Traffy API</div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+<div style="font-weight:700;font-size:15px;color:var(--navy)">แผนที่ปัญหา + Traffy Fondue</div>
+<button class="btn btn-o" onclick="fetchTraffy()" style="padding:6px 12px;font-size:12px">โหลดใหม่</button>
 </div>
-
+<div id="traffyMap" style="width:100%;height:350px;border-radius:12px;border:1px solid #E5E7EB;margin-bottom:16px;z-index:1"></div>
+<div id="traffySummary" style="font-size:12px;color:#9CA3AF;margin-bottom:8px"></div>
+<div id="traffyData" style="font-size:13px;color:var(--text-muted);padding:16px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);text-align:center;">กด "โหลดใหม่" หรือเลือกเขตเพื่อดึงข้อมูลจาก Traffy API</div>
+</div>
 <!-- ADD POI / CHECK-IN -->
 <div class="btn-row no-print">
-  <button class="btn btn-p" onclick="toggleEl('addPoiForm')">+ เพิ่มสถานที่</button>
-  <button class="btn btn-teal" onclick="toggleEl('checkinForm');captureGPS()">ปักธง / Check-in</button>
-  <button class="btn btn-o" onclick="doExportDI()">Export JSON</button>
-  <label class="btn btn-o" style="cursor:pointer"><input type="file" accept=".json" style="display:none" onchange="doImportDI(event)">Import</label>
+<button class="btn btn-p" onclick="toggleEl('addPoiForm')">+ เพิ่มสถานที่</button>
+<button class="btn btn-teal" onclick="toggleEl('checkinForm');captureGPS()">ปักธง / Check-in</button>
+<button class="btn btn-o" onclick="doExportDI()">Export JSON</button>
+<label class="btn btn-o" style="cursor:pointer"><input accept=".json" onchange="doImportDI(event)" style="display:none" type="file"/>Import</label>
 </div>
-
 <!-- ADD POI FORM -->
 <div id="addPoiForm" style="display:none;margin-bottom:16px;padding:16px;background:var(--card);border:1px solid var(--gold);border-radius:var(--radius)">
-  <div style="font-weight:600;margin-bottom:12px">เพิ่มสถานที่ใหม่</div>
-  <div class="form-row">
-    <div class="fg"><label>ชื่อสถานที่</label><input id="poiName" placeholder="เช่น วัดสุวรรณาราม"></div>
-    <div class="fg"><label>ประเภท</label><select id="poiCat"><option>วัด</option><option>ชุมชน</option><option>โรงเรียน</option><option>ตลาด</option><option>หมู่บ้าน/คอนโด</option><option>โรงพยาบาล</option><option>สวนสาธารณะ</option><option>สถานที่ราชการ</option><option>ท่าเรือ/สะพาน</option><option>สถานที่ท่องเที่ยว</option><option>อื่นๆ</option></select></div>
-  </div>
-  <div class="form-row">
-    <div class="fg"><label>ที่อยู่/ตำแหน่ง</label><input id="poiAddr" placeholder="ที่อยู่ หรือ Google Maps link"></div>
-    <div class="fg"><label>หมายเหตุ</label><input id="poiNote" placeholder=""></div>
-  </div>
-  <div class="btn-row" style="margin-top:12px"><button class="btn btn-g" onclick="addPoi()">บันทึก</button><button class="btn btn-o" onclick="toggleEl('addPoiForm')">ยกเลิก</button></div>
+<div style="font-weight:600;margin-bottom:12px">เพิ่มสถานที่ใหม่</div>
+<div class="form-row">
+<div class="fg"><label>ชื่อสถานที่</label><input id="poiName" placeholder="เช่น วัดสุวรรณาราม"/></div>
+<div class="fg"><label>ประเภท</label><select id="poiCat"><option>วัด</option><option>ชุมชน</option><option>โรงเรียน</option><option>ตลาด</option><option>หมู่บ้าน/คอนโด</option><option>โรงพยาบาล</option><option>สวนสาธารณะ</option><option>สถานที่ราชการ</option><option>ท่าเรือ/สะพาน</option><option>สถานที่ท่องเที่ยว</option><option>อื่นๆ</option></select></div>
 </div>
-
+<div class="form-row">
+<div class="fg"><label>ที่อยู่/ตำแหน่ง</label><input id="poiAddr" placeholder="ที่อยู่ หรือ Google Maps link"/></div>
+<div class="fg"><label>หมายเหตุ</label><input id="poiNote" placeholder=""/></div>
+</div>
+<div class="btn-row" style="margin-top:12px"><button class="btn btn-g" onclick="addPoi()">บันทึก</button><button class="btn btn-o" onclick="toggleEl('addPoiForm')">ยกเลิก</button></div>
+</div>
 <!-- CHECK-IN FORM -->
 <div id="checkinForm" style="display:none;margin-bottom:16px;padding:16px;background:var(--card);border:1px solid var(--teal);border-radius:var(--radius)">
-  <div style="font-weight:600;margin-bottom:12px;color:var(--teal)">ปักธง / Check-in</div>
-  <div class="form-row">
-    <div class="fg"><label>สถานที่</label><select id="ciPlace"></select></div>
-    <div class="fg"><label>วันที่</label><input type="date" id="ciDate"></div>
-  </div>
-  <div class="form-row">
-    <div class="fg" style="grid-column:1/-1">
-      <label>พิกัด GPS</label>
-      <div style="display:flex;gap:8px;align-items:center">
-        <input id="ciGps" readonly placeholder="กดปุ่มจับพิกัด →" style="flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;background:var(--bg-alt);color:var(--navy)">
-        <button type="button" class="btn btn-teal" onclick="captureGPS()" style="padding:10px 14px;white-space:nowrap">📡 จับพิกัด</button>
-      </div>
-      <div id="ciGpsStatus" style="font-size:11px;color:var(--text-muted);margin-top:4px"></div>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="fg" style="grid-column:1/-1"><label>ปัญหาที่พบ</label><textarea id="ciProblem" rows="2" placeholder="เช่น ถนนชำรุด ไฟทางดับ น้ำท่วมขัง"></textarea></div>
-  </div>
-  <div class="form-row">
-    <div class="fg" style="grid-column:1/-1"><label>ความต้องการของชุมชน</label><textarea id="ciNeed" rows="2" placeholder="เช่น ต้องการสวนสาธารณะ ทางเท้าที่ดีขึ้น"></textarea></div>
-  </div>
-  <!-- PHOTO UPLOAD -->
-  <div class="form-row">
-    <div class="fg" style="grid-column:1/-1">
-      <label>ภาพถ่ายสถานที่ (สูงสุด 4 รูป)</label>
-      <div id="ciPhotoPreview" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px"></div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <label class="photo-slot" id="photoSlot0"><input type="file" accept="image/*" capture="environment" onchange="handlePhoto(this,0)"><span class="photo-slot-icon">📷 1</span></label>
-        <label class="photo-slot" id="photoSlot1"><input type="file" accept="image/*" capture="environment" onchange="handlePhoto(this,1)"><span class="photo-slot-icon">📷 2</span></label>
-        <label class="photo-slot" id="photoSlot2"><input type="file" accept="image/*" capture="environment" onchange="handlePhoto(this,2)"><span class="photo-slot-icon">📷 3</span></label>
-        <label class="photo-slot" id="photoSlot3"><input type="file" accept="image/*" capture="environment" onchange="handlePhoto(this,3)"><span class="photo-slot-icon">📷 4</span></label>
-      </div>
-      <div style="font-size:11px;color:var(--text-muted);margin-top:4px">กดช่องเพื่อถ่ายรูปหรือเลือกจากอัลบั้ม</div>
-    </div>
-  </div>
-  <div class="btn-row" style="margin-top:12px"><button class="btn btn-teal" onclick="doCheckin()">ปักธง</button><button class="btn btn-o" onclick="toggleEl('checkinForm')">ยกเลิก</button></div>
+<div style="font-weight:600;margin-bottom:12px;color:var(--teal)">ปักธง / Check-in</div>
+<div class="form-row">
+<div class="fg"><label>สถานที่</label><select id="ciPlace"></select></div>
+<div class="fg"><label>วันที่</label><input id="ciDate" type="date"/></div>
 </div>
-
+<div class="form-row">
+<div class="fg" style="grid-column:1/-1">
+<label>พิกัด GPS</label>
+<div style="display:flex;gap:8px;align-items:center">
+<input id="ciGps" placeholder="กดปุ่มจับพิกัด →" readonly="" style="flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;background:var(--bg-alt);color:var(--navy)"/>
+<button class="btn btn-teal" onclick="captureGPS()" style="padding:10px 14px;white-space:nowrap" type="button">📡 จับพิกัด</button>
+</div>
+<div id="ciGpsStatus" style="font-size:11px;color:var(--text-muted);margin-top:4px"></div>
+</div>
+</div>
+<div class="form-row">
+<div class="fg" style="grid-column:1/-1"><label>ปัญหาที่พบ</label><textarea id="ciProblem" placeholder="เช่น ถนนชำรุด ไฟทางดับ น้ำท่วมขัง" rows="2"></textarea></div>
+</div>
+<div class="form-row">
+<div class="fg" style="grid-column:1/-1"><label>ความต้องการของชุมชน</label><textarea id="ciNeed" placeholder="เช่น ต้องการสวนสาธารณะ ทางเท้าที่ดีขึ้น" rows="2"></textarea></div>
+</div>
+<!-- PHOTO UPLOAD -->
+<div class="form-row">
+<div class="fg" style="grid-column:1/-1">
+<label>ภาพถ่ายสถานที่ (สูงสุด 4 รูป)</label>
+<div id="ciPhotoPreview" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px"></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<label class="photo-slot" id="photoSlot0"><input accept="image/*" capture="environment" onchange="handlePhoto(this,0)" type="file"/><span class="photo-slot-icon">📷 1</span></label>
+<label class="photo-slot" id="photoSlot1"><input accept="image/*" capture="environment" onchange="handlePhoto(this,1)" type="file"/><span class="photo-slot-icon">📷 2</span></label>
+<label class="photo-slot" id="photoSlot2"><input accept="image/*" capture="environment" onchange="handlePhoto(this,2)" type="file"/><span class="photo-slot-icon">📷 3</span></label>
+<label class="photo-slot" id="photoSlot3"><input accept="image/*" capture="environment" onchange="handlePhoto(this,3)" type="file"/><span class="photo-slot-icon">📷 4</span></label>
+</div>
+<div style="font-size:11px;color:var(--text-muted);margin-top:4px">กดช่องเพื่อถ่ายรูปหรือเลือกจากอัลบั้ม</div>
+</div>
+</div>
+<div class="btn-row" style="margin-top:12px"><button class="btn btn-teal" onclick="doCheckin()">ปักธง</button><button class="btn btn-o" onclick="toggleEl('checkinForm')">ยกเลิก</button></div>
+</div>
 <!-- POI LIST BY CATEGORY -->
 <div id="poiContainer"></div>
-
 <!-- CHECK-IN LOG -->
 <div style="margin-top:32px">
-  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
-    <div class="st" style="margin-bottom:0;border-bottom:none;padding-bottom:0">บันทึกการลงพื้นที่</div>
-    <div class="btn-row no-print" style="margin-bottom:0">
-      <button class="btn btn-p" onclick="printReport()" style="padding:8px 14px;font-size:13px">🖨️ พิมพ์รายงาน</button>
-      <button class="btn btn-g" onclick="downloadReport()" style="padding:8px 14px;font-size:13px">📥 ดาวน์โหลดรายงาน</button>
-    </div>
-  </div>
-  <div style="border-bottom:2px solid var(--border);margin:8px 0 16px"></div>
-  <div id="checkinLog"></div>
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+<div class="st" style="margin-bottom:0;border-bottom:none;padding-bottom:0">บันทึกการลงพื้นที่</div>
+<div class="btn-row no-print" style="margin-bottom:0">
+<button class="btn btn-p" onclick="printReport()" style="padding:8px 14px;font-size:13px">🖨️ พิมพ์รายงาน</button>
+<button class="btn btn-g" onclick="downloadReport()" style="padding:8px 14px;font-size:13px">📥 ดาวน์โหลดรายงาน</button>
 </div>
-
+</div>
+<div style="border-bottom:2px solid var(--border);margin:8px 0 16px"></div>
+<div id="checkinLog"></div>
+</div>
 </div><!-- end districtContent -->
 </div><!-- end .main -->
-
-<footer class="site-footer"><span>งานวิชาการเพื่อนำเสนอ</span><br><a href="index.html">Dashboard</a> · <a href="campaign-tracker.html">Campaign Tracker</a><br>Traffy Fondue: <a href="https://bangkok.traffy.in.th" target="_blank">bangkok.traffy.in.th</a>  <div style="margin-top:12px;font-size:11px;color:rgba(255,255,255,.4)">สงวนลิขสิทธิ์โดยผู้สร้างสรรค์ พ.ศ.2569</div>
+<footer class="site-footer"><span>งานวิชาการเพื่อนำเสนอ</span><br/><a href="index.html">Dashboard</a> · <a href="campaign-tracker.html">Campaign Tracker</a><br/>Traffy Fondue: bangkok.traffy.in.th <div style="margin-top:12px;font-size:11px;color:rgba(255,255,255,.4)">สงวนลิขสิทธิ์โดยผู้สร้างสรรค์ พ.ศ.2569</div>
 </footer>
-
 <script>
 // === DATA ===
 var D={
@@ -1048,13 +1032,12 @@ function setSiteLang(lang) {
   } catch(e) {}
 })();
 </script>
-
 <!-- CURSOR PICKER: Walk / Work / Normal — uses CSS cursor with logo images -->
 <div id="cursorPicker" style="position:fixed;bottom:16px;left:16px;z-index:500;display:flex;gap:4px;align-items:center;background:rgba(27,42,74,.92);backdrop-filter:blur(8px);padding:6px 10px;border-radius:24px;box-shadow:0 4px 16px rgba(0,0,0,.2)">
-  <button onclick="setCursorMode('walk')" id="cpWalk" title="Walk Walk Walk" style="width:32px;height:32px;border-radius:50%;border:2px solid transparent;background:none;cursor:pointer;padding:0;transition:all .2s"><img src="img/flag-walk.jpg" style="width:100%;height:100%;border-radius:50%;object-fit:cover" alt="Walk"></button>
-  <button onclick="setCursorMode('work')" id="cpWork" title="Work Work Work" style="width:32px;height:32px;border-radius:50%;border:2px solid transparent;background:none;cursor:pointer;padding:0;transition:all .2s"><img src="img/flag-work.jpg" style="width:100%;height:100%;border-radius:50%;object-fit:cover" alt="Work"></button>
-  <button onclick="setCursorMode('normal')" id="cpNormal" title="Normal" style="width:32px;height:32px;border-radius:50%;border:2px solid transparent;background:rgba(255,255,255,.15);cursor:pointer;padding:0;font-size:14px;color:#fff;transition:all .2s">⊙</button>
-  <span style="font-size:9px;color:rgba(255,255,255,.5);margin-left:2px;font-family:'Space Grotesk',sans-serif">cursor</span>
+<button id="cpWalk" onclick="setCursorMode('walk')" style="width:32px;height:32px;border-radius:50%;border:2px solid transparent;background:none;cursor:pointer;padding:0;transition:all .2s" title="Walk Walk Walk"><img alt="Walk" src="img/flag-walk.jpg" style="width:100%;height:100%;border-radius:50%;object-fit:cover"/></button>
+<button id="cpWork" onclick="setCursorMode('work')" style="width:32px;height:32px;border-radius:50%;border:2px solid transparent;background:none;cursor:pointer;padding:0;transition:all .2s" title="Work Work Work"><img alt="Work" src="img/flag-work.jpg" style="width:100%;height:100%;border-radius:50%;object-fit:cover"/></button>
+<button id="cpNormal" onclick="setCursorMode('normal')" style="width:32px;height:32px;border-radius:50%;border:2px solid transparent;background:rgba(255,255,255,.15);cursor:pointer;padding:0;font-size:14px;color:#fff;transition:all .2s" title="Normal">⊙</button>
+<span style="font-size:9px;color:rgba(255,255,255,.5);margin-left:2px;font-family:'Space Grotesk',sans-serif">cursor</span>
 </div>
 <style>
 #cursorPicker button.active-cursor{border-color:#C9A96E !important;box-shadow:0 0 8px rgba(201,169,110,.5)}
@@ -1075,6 +1058,5 @@ function setCursorMode(mode){
 }
 (function(){var s='normal';try{s=localStorage.getItem('bkk_cursor_mode')||'normal'}catch(e){}setCursorMode(s)})();
 </script>
-
 </body>
 </html>
