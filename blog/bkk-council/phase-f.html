@@ -194,6 +194,71 @@ body {
   line-height: 1.8;
 }
 
+/* Index table + download cards (final summary section) */
+.index-grid {
+  display: flex; flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+.index-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+}
+.index-row:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold);
+}
+.index-info {
+  display: flex; gap: 14px; align-items: flex-start;
+  min-width: 0;
+}
+.index-num {
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--navy); color: #fff;
+  border-radius: 50%;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px; font-weight: 700;
+  flex-shrink: 0;
+}
+.index-text { min-width: 0; }
+.index-title {
+  font-size: 14px; font-weight: 700; color: var(--navy);
+  margin-bottom: 4px; line-height: 1.4;
+}
+.index-title a {
+  color: inherit; text-decoration: none;
+}
+.index-title a:hover { color: var(--gold-light); }
+.index-desc {
+  font-size: 12px; color: var(--text-secondary);
+  line-height: 1.6;
+}
+.index-card {
+  display: flex; flex-direction: column;
+  gap: 6px; align-items: flex-end;
+  min-width: 120px;
+}
+.index-card.pending { opacity: 0.7; }
+.ic-meta {
+  font-size: 11px; color: var(--text-muted);
+  font-family: 'Space Grotesk', sans-serif;
+}
+.index-card .btn-dl { padding: 5px 12px; font-size: 12px; }
+
+@media (max-width: 640px) {
+  .index-row { grid-template-columns: 1fr; gap: 10px; }
+  .index-card { align-items: flex-start; }
+}
+
 footer.site-footer {
   background: var(--navy);
   color: rgba(255,255,255,0.7);
@@ -243,7 +308,7 @@ footer.site-footer a:hover { color: var(--gold-light); }
     </div>
     <div class="dl-desc">แผนภาพรวมการดำเนินการเลือกตั้ง 4 ตำแหน่ง (ส.ก. + ผู้ว่าฯ กทม. + สมาชิกสภาเมืองพัทยา + นายกเมืองพัทยา) กรณีดำรงตำแหน่งครบวาระ</div>
     <div class="dl-actions">
-      <a class="btn-dl" href="https://drive.google.com/file/d/1uFUiMtlkelrzJc8YzoMoFNqH6ORWOtKl/view" target="_blank" rel="noopener">เปิดเอกสารและดาวน์โหลด</a>
+      <a class="btn-dl" href="downloads/ect-media-2569/01-plan.pdf" download>เปิดเอกสารและดาวน์โหลด</a>
     </div>
   </div>
 </section>
@@ -281,7 +346,7 @@ footer.site-footer a:hover { color: var(--gold-light); }
     </div>
     <div class="dl-desc">คู่มือฉบับสมบูรณ์โดยสำนักประชาสัมพันธ์ สนง.กกต. — รวมเนื้อหา 20+ หัวข้อ ตั้งแต่การปกครองส่วนท้องถิ่น คุณสมบัติผู้สมัคร 4 ข้อ ลักษณะต้องห้าม 26 ข้อ การเตรียมตัวลงคะแนน การแจ้งเหตุไม่ไปใช้สิทธิ จนถึงการคัดค้านการเลือกตั้ง</div>
     <div class="dl-actions">
-      <a class="btn-dl" href="https://drive.google.com/file/d/1IUhfH_Lpno-97WAKxKcYLWZS3QgjyJ9U/view" target="_blank" rel="noopener">เปิดคู่มือและดาวน์โหลด</a>
+      <a class="btn-dl" href="downloads/ect-media-2569/03-handbook.pdf" download>เปิดคู่มือและดาวน์โหลด</a>
     </div>
   </div>
 </section>
@@ -319,7 +384,7 @@ footer.site-footer a:hover { color: var(--gold-light); }
     </div>
     <div class="dl-desc">เอกสารแบบพับสรุปคุณสมบัติของผู้สมัคร ผู้ว่าฯ กทม. (อายุ 35 ปี + ปริญญาตรี) และ ส.ก. (อายุ 25 ปี) พร้อมลักษณะต้องห้าม 26 ข้อ และคำวินิจฉัยศาลรัฐธรรมนูญ 5/2566 เกี่ยวกับมาตรา 50(21)</div>
     <div class="dl-actions">
-      <a class="btn-dl" href="https://drive.google.com/file/d/18m13-CFcCbYPlou-YKsotoEzdzSmdm6_/view" target="_blank" rel="noopener">เปิดแผ่นพับและดาวน์โหลด</a>
+      <a class="btn-dl" href="downloads/ect-media-2569/05-leaflet-qualifications.pdf" download>เปิดแผ่นพับและดาวน์โหลด</a>
     </div>
   </div>
 </section>
@@ -339,7 +404,7 @@ footer.site-footer a:hover { color: var(--gold-light); }
     </div>
     <div class="dl-desc">สรุปข้อห้าม 5 ประการในการหาเสียงเลือกตั้ง (ห้ามให้ทรัพย์สิน · ห้ามให้เงินชุมชน · ห้ามจัดมหรสพ · ห้ามเลี้ยง · ห้ามหลอกลวง/ใส่ร้าย) พร้อมบทลงโทษ</div>
     <div class="dl-actions">
-      <a class="btn-dl" href="https://drive.google.com/file/d/1I4hRj4IcQqMzMDzf6IlqVlY593AQDiu2/view" target="_blank" rel="noopener">เปิดภาพและดาวน์โหลด</a>
+      <a class="btn-dl" href="downloads/ect-media-2569/06-infographic-11.jpg" download>เปิดภาพและดาวน์โหลด</a>
     </div>
   </div>
 
@@ -352,7 +417,7 @@ footer.site-footer a:hover { color: var(--gold-light); }
     </div>
     <div class="dl-desc">กำหนดขนาดและจำนวนแผ่นประกาศ/แผ่นป้ายหาเสียง — ประกาศ 30 × 42 ซม. ไม่เกิน 10 เท่าของหน่วยเลือกตั้ง · แผ่นป้าย 130 × 245 ซม. ไม่เกิน 5 เท่า</div>
     <div class="dl-actions">
-      <a class="btn-dl" href="https://drive.google.com/file/d/1sFNcgkMiXo9YqfkDIBDu4f-bRuwNC2LS/view" target="_blank" rel="noopener">เปิดภาพและดาวน์โหลด</a>
+      <a class="btn-dl" href="downloads/ect-media-2569/06-infographic-13.jpg" download>เปิดภาพและดาวน์โหลด</a>
     </div>
   </div>
 
@@ -365,7 +430,7 @@ footer.site-footer a:hover { color: var(--gold-light); }
     </div>
     <div class="dl-desc">ผู้ใดจงใจทำให้บัตรเลือกตั้งที่ได้รับมอบจากกรรมการประจำหน่วยเลือกตั้งชำรุด ปรับไม่เกิน 5,000 บาท</div>
     <div class="dl-actions">
-      <a class="btn-dl" href="https://drive.google.com/file/d/1pBHL3IxJieMufwCVpH_5iIiUe0aprqKz/view" target="_blank" rel="noopener">เปิดภาพและดาวน์โหลด</a>
+      <a class="btn-dl" href="downloads/ect-media-2569/06-infographic-16.jpg" download>เปิดภาพและดาวน์โหลด</a>
     </div>
   </div>
 </section>
@@ -403,27 +468,131 @@ footer.site-footer a:hover { color: var(--gold-light); }
     </div>
     <div class="dl-desc">เอกสารแนะนำแอปพลิเคชัน Smart Vote — รวมวัตถุประสงค์ วิธีดาวน์โหลด (App Store / Google Play) วิธีใช้งาน 4 ฟังก์ชันหลัก (รับข่าวสาร · ตรวจสอบเขต · ดูรายชื่อผู้สมัคร · ตรวจสอบผลคะแนน) และประโยชน์การใช้งาน</div>
     <div class="dl-actions">
-      <a class="btn-dl" href="https://drive.google.com/file/d/13Zbtqb6MohtZrpJhPRlfDfecYjQLwwvW/view" target="_blank" rel="noopener">เปิด Presentation และดาวน์โหลด</a>
+      <a class="btn-dl" href="downloads/ect-media-2569/08-smart-vote.pdf" download>เปิด Presentation และดาวน์โหลด</a>
     </div>
   </div>
 </section>
 
-<!-- ============ FOLDER LINK ============ -->
-<section class="topic-section" id="full-folder">
-  <div class="topic-label"><span class="line"></span> Folder ทั้งหมด</div>
-  <h2>เข้าถึง Google Drive Folder ทั้งหมดของ สนง.กกต.</h2>
-  <p class="section-desc">หากต้องการดูเอกสารทั้งหมดที่ สนง.กกต. เผยแพร่ใน Google Drive โดยตรง (รวมเอกสารที่อาจเผยแพร่เพิ่มในอนาคต) สามารถเข้าถึงได้ที่ลิงก์ด้านล่าง</p>
+<!-- ============ INDEX TABLE + DOWNLOAD CARDS ============ -->
+<section class="topic-section" id="index-table">
+  <div class="topic-label"><span class="line"></span> ตารางสรุปดัชนีและดาวน์โหลด</div>
+  <h2>ตารางดัชนีเอกสารทั้งหมด</h2>
+  <p class="section-desc">สรุปทั้ง 8 ลำดับในตารางเดียว เพื่อให้ผู้ใช้สามารถสแกนภาพรวมและเลือกดาวน์โหลดเอกสารที่ต้องการได้อย่างรวดเร็ว — เอกสารเรียงตามลำดับขั้นตอนการเลือกตั้ง</p>
 
-  <div class="dl-card">
-    <div class="dl-title">Google Drive — สื่อประชาสัมพันธ์ กกต. การเลือกตั้ง กทม. 2569</div>
-    <div class="dl-meta">
-      <span>Google Drive Folder</span>
-      <span>เจ้าของ: สำนักประชาสัมพันธ์ สนง.กกต.</span>
+  <div class="index-grid">
+
+    <div class="index-row">
+      <div class="index-info">
+        <div class="index-num">1</div>
+        <div class="index-text">
+          <div class="index-title"><a href="#plan">แผนการเลือกตั้งกรุงเทพมหานคร</a></div>
+          <div class="index-desc">ภาพรวมและกรอบเวลาการจัดเลือกตั้ง 4 ตำแหน่ง — รากฐานของกระบวนการทั้งหมด</div>
+        </div>
+      </div>
+      <div class="index-card">
+        <div class="ic-meta">PDF · 2.0 MB</div>
+        <a class="btn-dl" href="downloads/ect-media-2569/01-plan.pdf" download>ดาวน์โหลด</a>
+      </div>
     </div>
-    <div class="dl-desc">โฟลเดอร์รวมเอกสารทุกประเภท — แผนการเลือกตั้ง คู่มือ แผ่นพับ Infographic Smart Vote และอื่นๆ ที่อาจเพิ่มเติม</div>
-    <div class="dl-actions">
-      <a class="btn-dl" href="https://drive.google.com/drive/folders/1Zp7Rw2tJNgB7oXyDey8J9xm_jyY5kNTP" target="_blank" rel="noopener">เปิด Folder ใน Google Drive</a>
+
+    <div class="index-row">
+      <div class="index-info">
+        <div class="index-num">2</div>
+        <div class="index-text">
+          <div class="index-title"><a href="#calendar">ปฏิทินการเลือกตั้งกรุงเทพมหานคร</a></div>
+          <div class="index-desc">ปฏิทินรายละเอียดของขั้นตอนตั้งแต่ก่อนประกาศจนประกาศผล</div>
+        </div>
+      </div>
+      <div class="index-card pending">
+        <div class="ic-meta">อยู่ระหว่างเผยแพร่</div>
+        <a class="btn-dl btn-dl-secondary" href="phase-a.html#timeline-section">Timeline ทดแทน</a>
+      </div>
     </div>
+
+    <div class="index-row">
+      <div class="index-info">
+        <div class="index-num">3</div>
+        <div class="index-text">
+          <div class="index-title"><a href="#handbook">คู่มือประชาชน การเลือกตั้งกรุงเทพมหานคร</a></div>
+          <div class="index-desc">เอกสารฉบับสมบูรณ์สำหรับประชาชนผู้มีสิทธิเลือกตั้ง 20+ หัวข้อ</div>
+        </div>
+      </div>
+      <div class="index-card">
+        <div class="ic-meta">PDF · 6.2 MB</div>
+        <a class="btn-dl" href="downloads/ect-media-2569/03-handbook.pdf" download>ดาวน์โหลด</a>
+      </div>
+    </div>
+
+    <div class="index-row">
+      <div class="index-info">
+        <div class="index-num">4</div>
+        <div class="index-text">
+          <div class="index-title"><a href="#leaflet-general">แผ่นพับการเลือกตั้งกรุงเทพมหานคร</a></div>
+          <div class="index-desc">แผ่นพับสรุปสำหรับประชาชนทั่วไป พกพาสะดวก</div>
+        </div>
+      </div>
+      <div class="index-card pending">
+        <div class="ic-meta">อยู่ระหว่างเผยแพร่</div>
+        <a class="btn-dl btn-dl-secondary" href="https://www.ect.go.th" target="_blank" rel="noopener">เว็บ กกต.</a>
+      </div>
+    </div>
+
+    <div class="index-row">
+      <div class="index-info">
+        <div class="index-num">5</div>
+        <div class="index-text">
+          <div class="index-title"><a href="#leaflet-qualifications">แผ่นพับคุณสมบัติและลักษณะต้องห้ามของผู้สมัคร</a></div>
+          <div class="index-desc">แผ่นพับสำหรับผู้สมัครรับเลือกตั้ง อ้างอิงมาตรา 49 และ 50</div>
+        </div>
+      </div>
+      <div class="index-card">
+        <div class="ic-meta">PDF · 643 KB</div>
+        <a class="btn-dl" href="downloads/ect-media-2569/05-leaflet-qualifications.pdf" download>ดาวน์โหลด</a>
+      </div>
+    </div>
+
+    <div class="index-row">
+      <div class="index-info">
+        <div class="index-num">6</div>
+        <div class="index-text">
+          <div class="index-title"><a href="#infographic">Infographic การเลือกตั้งกรุงเทพมหานคร</a></div>
+          <div class="index-desc">ภาพสรุป 3 หัวข้อ — ข้อห้ามหาเสียง · ขนาดป้าย · โทษบัตรชำรุด</div>
+        </div>
+      </div>
+      <div class="index-card">
+        <div class="ic-meta">JPG × 3 · 2.3 MB</div>
+        <a class="btn-dl" href="#infographic">ดูทั้ง 3 ภาพ</a>
+      </div>
+    </div>
+
+    <div class="index-row">
+      <div class="index-info">
+        <div class="index-num">7</div>
+        <div class="index-text">
+          <div class="index-title"><a href="#ect-tips">กกต. ขอบอก</a></div>
+          <div class="index-desc">ชุดข้อความสั้นเตือนความจำผู้มีสิทธิเลือกตั้งและผู้สมัคร</div>
+        </div>
+      </div>
+      <div class="index-card pending">
+        <div class="ic-meta">อยู่ระหว่างเผยแพร่</div>
+        <a class="btn-dl btn-dl-secondary" href="#infographic">ดูใน Infographic</a>
+      </div>
+    </div>
+
+    <div class="index-row">
+      <div class="index-info">
+        <div class="index-num">8</div>
+        <div class="index-text">
+          <div class="index-title"><a href="#smart-vote">Application ฉลาดเลือก (Smart Vote)</a></div>
+          <div class="index-desc">แอปพลิเคชันทางการของ สนง.กกต. ตรวจสิทธิ ดูเขต รายชื่อผู้สมัคร ผลคะแนน</div>
+        </div>
+      </div>
+      <div class="index-card">
+        <div class="ic-meta">PDF · 17.7 MB</div>
+        <a class="btn-dl" href="downloads/ect-media-2569/08-smart-vote.pdf" download>ดาวน์โหลด</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
