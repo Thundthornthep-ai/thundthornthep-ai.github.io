@@ -1,0 +1,24 @@
+{
+  "generated": "2026-05-21T22:55:00+07:00",
+  "source": "manual + ect-news-agent",
+  "items": [
+    {
+      "date": "2026-05-21",
+      "title": "เพิ่ม Card G — ใบสมัคร ส.ก. และผู้ว่าฯ กทม. (ฉบับ Update)",
+      "link": "phase-g.html",
+      "is_new": true
+    },
+    {
+      "date": "2026-05-21",
+      "title": "เพิ่ม Card F — สื่อประชาสัมพันธ์ กกต. 8 ลำดับ พร้อมดาวน์โหลด",
+      "link": "phase-f.html",
+      "is_new": false
+    },
+    {
+      "date": "2026-05-21",
+      "title": "เพิ่มกล่อง ป.263/2569 — การดำรงตำแหน่งผู้ว่าฯ กทม. ครบวาระ/พ้นตำแหน่ง",
+      "link": "phase-c.html#post-election",
+      "is_new": false
+    }
+  ]
+}

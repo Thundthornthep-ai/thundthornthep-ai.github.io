@@ -461,6 +461,103 @@ body {
 .phase-letter.pd { background: linear-gradient(135deg, #7C3AED, #6D28D9); }
 .phase-letter.pe { background: linear-gradient(135deg, #BE185D, #9F1239); }
 .phase-letter.pf { background: linear-gradient(135deg, var(--gold), #A88550); }
+.phase-letter.pg { background: linear-gradient(135deg, #DC2626, #991B1B); }
+
+/* Card G "NEW" blinking badge */
+.phase-new-badge {
+  position: absolute;
+  top: 8px; right: 8px;
+  background: #DC2626; color: #fff;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  animation: phase-blink 1.2s infinite;
+  z-index: 2;
+}
+.phase-card.has-new { position: relative; border-color: #DC2626; }
+@keyframes phase-blink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.92); }
+}
+
+/* Update log card (under countdown) */
+.update-log-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin: 16px 0 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.05);
+}
+.update-log-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+.update-log-title {
+  font-size: 12px; font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase; letter-spacing: 1.5px;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.update-log-title .live-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #DC2626;
+  animation: phase-blink 1.2s infinite;
+}
+.update-log-meta {
+  font-size: 10px; color: #9CA3AF;
+  letter-spacing: 0.5px;
+}
+.update-log-list {
+  display: flex; flex-direction: column; gap: 8px;
+  margin: 0; padding: 0; list-style: none;
+}
+.update-log-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 12px;
+  align-items: baseline;
+  padding: 8px 10px;
+  background: #FAFAFA;
+  border-radius: 6px;
+  transition: background .15s ease;
+}
+.update-log-item:hover { background: #FFF7E6; }
+.update-log-item .ul-date {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  color: #6B7280;
+  white-space: nowrap;
+}
+.update-log-item .ul-link {
+  color: #1A1A2E;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+.update-log-item .ul-link:hover { color: var(--navy); text-decoration: underline; }
+.update-log-item .ul-new {
+  display: inline-block;
+  background: #DC2626; color: #fff;
+  font-size: 9px; font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 6px;
+  letter-spacing: 0.5px;
+  vertical-align: middle;
+}
+.update-log-empty {
+  font-size: 12px; color: #9CA3AF;
+  font-style: italic;
+  text-align: center;
+  padding: 8px;
+}
 
 /* Phase A (Zero) + Phase D (Hero) — highlighted borders */
 .phase-card.phase-highlight-a {
@@ -988,6 +1085,93 @@ body {
     </div>
   </div>
 
+  <!-- 2b. UPDATE LOG CARD — 3 รายการล่าสุด -->
+  <div class="update-log-card fade-in" id="updateLogCard">
+    <div class="update-log-header">
+      <span class="update-log-title"><span class="live-dot"></span>การอัปเดตล่าสุด</span>
+      <span class="update-log-meta" id="updateLogMeta">โหลดข้อมูล...</span>
+    </div>
+    <ul class="update-log-list" id="updateLogList">
+      <li class="update-log-empty">กำลังโหลดรายการอัปเดต...</li>
+    </ul>
+  </div>
+  <script>
+  (function(){
+    var listEl = document.getElementById('updateLogList');
+    var metaEl = document.getElementById('updateLogMeta');
+    var THAI_MONTHS = ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
+    function fmtDate(iso){
+      try {
+        var d = new Date(iso);
+        if (isNaN(d.getTime())) return String(iso || '');
+        return d.getDate() + ' ' + THAI_MONTHS[d.getMonth()] + ' ' + (d.getFullYear() + 543);
+      } catch(e){ return String(iso || ''); }
+    }
+    function clearChildren(el){
+      while (el.firstChild) el.removeChild(el.firstChild);
+    }
+    function buildItem(it){
+      var li = document.createElement('li');
+      li.className = 'update-log-item';
+      var dateSpan = document.createElement('span');
+      dateSpan.className = 'ul-date';
+      dateSpan.textContent = fmtDate(it.date);
+      var link = document.createElement('a');
+      link.className = 'ul-link';
+      link.href = (it.link && typeof it.link === 'string') ? it.link : 'index.html';
+      link.textContent = (it.title && typeof it.title === 'string') ? it.title : '';
+      if (it.is_new === true){
+        var tag = document.createElement('span');
+        tag.className = 'ul-new';
+        tag.textContent = 'NEW';
+        link.appendChild(tag);
+      }
+      li.appendChild(dateSpan);
+      li.appendChild(link);
+      return li;
+    }
+    function render(data){
+      var items = (data && Array.isArray(data.items)) ? data.items.slice(0,3) : [];
+      clearChildren(listEl);
+      if (!items.length){
+        var emptyLi = document.createElement('li');
+        emptyLi.className = 'update-log-empty';
+        emptyLi.textContent = 'ยังไม่มีการอัปเดต';
+        listEl.appendChild(emptyLi);
+        metaEl.textContent = '';
+        return;
+      }
+      for (var i = 0; i < items.length; i++){
+        listEl.appendChild(buildItem(items[i]));
+      }
+      metaEl.textContent = data.generated ? ('อัปเดต ' + fmtDate(data.generated)) : '';
+    }
+    function showError(msg){
+      clearChildren(listEl);
+      var li = document.createElement('li');
+      li.className = 'update-log-empty';
+      li.textContent = msg;
+      listEl.appendChild(li);
+      metaEl.textContent = '';
+    }
+    function load(){
+      var url = 'data/updates.json?t=' + Date.now();
+      fetch(url, { cache: 'no-store' })
+        .then(function(r){ if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
+        .then(render)
+        .catch(function(){ showError('ไม่สามารถโหลดข้อมูลได้'); });
+    }
+    load();
+    // Auto-refresh ทุก 5 นาทีเพื่อตรวจอัปเดตใหม่
+    setInterval(load, 5 * 60 * 1000);
+    // Refresh ตอนกลับมาที่หน้านี้
+    window.addEventListener('focus', load);
+    document.addEventListener('visibilitychange', function(){
+      if (!document.hidden) load();
+    });
+  })();
+  </script>
+
   <!-- 3. ตรวจสอบสิทธิ -->
   <a href="https://stat.bora.dopa.go.th/Election/absvote/#/" target="_blank" class="check-rights-card fade-in">
     <div class="check-rights-icon">🔍</div>
@@ -1469,7 +1653,7 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
   </div>
 
   <!-- 7. PHASE CARDS -->
-  <div class="section-divider"><div class="line"></div><span>เนื้อหาทั้ง 6 Phase</span><div class="line"></div></div>
+  <div class="section-divider"><div class="line"></div><span>เนื้อหาทั้ง 7 Phase</span><div class="line"></div></div>
   <div class="phase-grid fade-in">
     <a href="phase-a.html" class="phase-card phase-highlight-a">
       <div class="phase-letter pa">A</div>
@@ -1534,6 +1718,18 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
       </div>
       <div class="phase-meta">
         <div class="phase-topics">8 ลำดับ</div>
+      </div>
+      <span class="phase-arrow">→</span>
+    </a>
+    <a href="phase-g.html" class="phase-card has-new">
+      <span class="phase-new-badge">NEW</span>
+      <div class="phase-letter pg">G</div>
+      <div class="phase-info">
+        <div class="phase-name-th">ใบสมัคร ส.ก.</div>
+        <div class="phase-name-en">Application Forms</div>
+      </div>
+      <div class="phase-meta">
+        <div class="phase-topics">4 ลำดับ</div>
       </div>
       <span class="phase-arrow">→</span>
     </a>
