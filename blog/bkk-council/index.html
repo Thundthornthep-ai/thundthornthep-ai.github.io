@@ -115,6 +115,21 @@ body {
   font-family: 'Space Grotesk', sans-serif;
 }
 .top-bar-right span { color: var(--gold); }
+.top-bar-right .search-btn {
+  display: inline-block;
+  background: var(--gold);
+  color: #1A1A2E;
+  padding: 4px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  margin-right: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: .3px;
+  transition: background .2s ease, transform .2s ease;
+}
+.top-bar-right .search-btn:hover { background: #D6B97A; transform: translateY(-1px); }
 
 /* ============ WARNING MARQUEE ============ */
 .warning-marquee {
@@ -1009,7 +1024,7 @@ body {
 <!-- TOP BAR -->
 <div class="top-bar">
   <div class="top-bar-left">คู่มือเลือกตั้ง ส.ก. กทม. 2569</div>
-  <div class="top-bar-right"><button type="button" class="changepw-btn" id="changePwBtn" style="display:none;" title="เปลี่ยนรหัสผ่าน">เปลี่ยนรหัส</button><button type="button" class="logout-btn" id="logoutBtn" style="display:none;" title="ออกจากระบบ">Logout</button></div>
+  <div class="top-bar-right"><a class="search-btn" href="search.html" title="ค้นหาในคู่มือ" aria-label="ค้นหาในคู่มือ">ค้นหา</a><button type="button" class="changepw-btn" id="changePwBtn" style="display:none;" title="เปลี่ยนรหัสผ่าน">เปลี่ยนรหัส</button><button type="button" class="logout-btn" id="logoutBtn" style="display:none;" title="ออกจากระบบ">Logout</button></div>
 </div>
 
 <!-- CHANGE PASSWORD MODAL -->
@@ -1110,6 +1125,14 @@ body {
     function clearChildren(el){
       while (el.firstChild) el.removeChild(el.firstChild);
     }
+    function daysAgo(dateStr){
+      try {
+        var d = new Date(dateStr);
+        if (isNaN(d.getTime())) return Infinity;
+        var diff = Date.now() - d.getTime();
+        return Math.floor(diff / (1000 * 60 * 60 * 24));
+      } catch(e){ return Infinity; }
+    }
     function buildItem(it){
       var li = document.createElement('li');
       li.className = 'update-log-item';
@@ -1120,7 +1143,8 @@ body {
       link.className = 'ul-link';
       link.href = (it.link && typeof it.link === 'string') ? it.link : 'index.html';
       link.textContent = (it.title && typeof it.title === 'string') ? it.title : '';
-      if (it.is_new === true){
+      // NEW tag: only show if explicitly is_new AND less than 7 days old (auto-expire)
+      if (it.is_new === true && daysAgo(it.date) < 7){
         var tag = document.createElement('span');
         tag.className = 'ul-new';
         tag.textContent = 'NEW';
