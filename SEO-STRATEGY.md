@@ -1,6 +1,7 @@
 # SEO & AI Search Strategy — Dr. Thundthornthep Yamoutai / LAS
 
-**Prepared**: 1 April 2026
+**Prepared**: 1 April 2026  
+**Last Updated**: 2026-07-07 (sitemap refresh + status review)
 **Target site**: thundthornthep-ai.github.io (GitHub Pages)
 **Linked site**: laslegal.co.th
 **Goal**: Maximise visibility for target keywords in Google Search, Bing, and AI Search engines (ChatGPT, Perplexity, Google AI Overview)
@@ -13,14 +14,14 @@
 
 | Asset | Status | SEO Value |
 |-------|--------|-----------|
-| GitHub Pages — 17 HTML pages | Live, indexed | High |
+| GitHub Pages — 29 HTML pages (root + subdirs) | Live, indexed | High |
 | 8 JSON-LD structured data blocks | Valid, no errors | High |
 | FAQ Schema (6 Q&As) | Ready for rich results | High |
 | Google Search Console | Verified | Essential |
 | Bing Webmaster Tools | Verified | Good |
 | IndexNow key | Active | Good |
 | robots.txt — all AI crawlers allowed | Active | High for AI search |
-| Sitemap — 15 URLs | Active (needs ep6) | Essential |
+| Sitemap — 18+ URLs (incl. ep6) | Active, dates refreshed 2026-07-07 | Essential |
 | Siam Rath coverage — 6 articles | Published | Very High |
 | Nation TV — 3 video interviews | Published | Very High |
 | LINE TODAY / THE POINT | Published | High |
@@ -32,7 +33,6 @@
 
 | Gap | Priority | Impact |
 |-----|----------|--------|
-| Sitemap missing ep6.html | Quick fix | Low |
 | No Google Business Profile for LAS | High | Local SEO |
 | No laslegal.co.th Search Console cross-linking | High | Domain authority |
 | No hreflang tags (EN/TH versions) | Medium | International SEO |
@@ -83,9 +83,9 @@
 - [ ] Wait 1-3 days for Google to re-crawl and confirm fix
 
 #### 2. Update Sitemap
-- [ ] Add missing `ep6.html` to sitemap.xml
-- [ ] Update all `<lastmod>` dates to today
-- [ ] Resubmit sitemap in Search Console → Sitemaps → Submit
+- [x] ep6.html present in sitemap
+- [x] All `<lastmod>` dates refreshed to 2026-07-07 (2026-07-07 update)
+- [ ] Resubmit sitemap in Search Console → Sitemaps → Submit (user action)
 
 #### 3. Request Indexing for Updated Pages
 - [ ] Search Console → URL Inspection → paste `https://thundthornthep-ai.github.io/`
@@ -178,7 +178,7 @@ Instead of targeting individual keywords, build **topic clusters** that establis
 ### Quick Wins
 
 #### 1. Fix Sitemap (5 minutes)
-Add ep6.html and update dates.
+✅ ep6.html added and all lastmod dates updated to 2026-07-07 (completed 2026-07-07)
 
 #### 2. Add Breadcrumb JSON-LD to Blog Pages
 Each blog post should have BreadcrumbList schema:
@@ -362,8 +362,8 @@ AI search engines love step-by-step guides they can cite:
 2. ✅ Convert to English-only (DONE)
 3. ✅ Add press coverage + research paper (DONE)
 4. [ ] Validate fix in Search Console
-5. [ ] Fix sitemap (add ep6)
-6. [ ] Request indexing for updated pages
+5. ✅ Fix sitemap (ep6 added + lastmod refreshed 2026-07-07)
+6. [ ] Request indexing for updated pages (user action via GSC)
 
 ### Phase 2 — This Month (Foundation)
 7. [ ] Create Google Business Profile for LAS
