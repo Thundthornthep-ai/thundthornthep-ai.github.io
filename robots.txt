@@ -1,43 +1,71 @@
 User-agent: *
 Allow: /
+Disallow: /docket/
+Disallow: /docket.html
 Sitemap: https://thundthornthep-ai.github.io/sitemap.xml
 
 # Welcome all AI crawlers — LAS x NIA AI Legal Tech
 User-agent: Googlebot
 Allow: /
+Disallow: /docket/
+Disallow: /docket.html
 
 User-agent: Bingbot
 Allow: /
+Disallow: /docket/
+Disallow: /docket.html
 
 User-agent: GPTBot
 Allow: /
+Disallow: /docket/
+Disallow: /docket.html
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /docket/
+Disallow: /docket.html
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /docket/
+Disallow: /docket.html
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /docket/
+Disallow: /docket.html
 
 User-agent: Claude-Web
 Allow: /
+Disallow: /docket/
+Disallow: /docket.html
 
 User-agent: CCBot
 Allow: /
+Disallow: /docket/
+Disallow: /docket.html
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /docket/
+Disallow: /docket.html
 
 User-agent: Bytespider
 Allow: /
+Disallow: /docket/
+Disallow: /docket.html
 
 User-agent: cohere-ai
 Allow: /
+Disallow: /docket/
+Disallow: /docket.html
 
 User-agent: meta-externalagent
 Allow: /
+Disallow: /docket/
+Disallow: /docket.html
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /docket/
+Disallow: /docket.html
