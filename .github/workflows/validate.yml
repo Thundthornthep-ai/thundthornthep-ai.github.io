@@ -79,7 +79,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mapfile -t files < <(git diff --name-only "${{ steps.range.outputs.base }}" "${{ steps.range.outputs.target }}" -- 'articles/las-share-*.html' 'articles/las-shield-*.html' 'articles/las-cc-*.html' 'articles/las-upsize-*.html' 'articles/las-invest-*.html')
+          mapfile -t files < <(git diff --name-only "${{ steps.range.outputs.base }}" "${{ steps.range.outputs.target }}" -- 'articles/las-share-[0-9][0-9].html' 'articles/las-shield-[0-9][0-9].html' 'articles/las-cc-[0-9][0-9].html' 'articles/las-upsize-[0-9][0-9].html' 'articles/las-invest-[0-9][0-9].html')
           if ((${#files[@]} == 0)); then
             echo "No changed LAS series article HTML — exact-slug gate not applicable."
             exit 0
