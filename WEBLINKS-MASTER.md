@@ -66,12 +66,17 @@
 
 | ตอน | URL |
 |---|---|
-| หน้าหลัก | https://thundthornthep-ai.github.io/blog/las-share/ |
-| ตอนที่ 1 | https://thundthornthep-ai.github.io/blog/las-share/ep1.html |
-| ตอนที่ 2 | https://thundthornthep-ai.github.io/blog/las-share/ep2.html |
-| ตอนที่ 3 | https://thundthornthep-ai.github.io/blog/las-share/ep3.html |
-| ตอนที่ 4 | https://thundthornthep-ai.github.io/blog/las-share/ep4.html |
-| ตอนที่ 5 | https://thundthornthep-ai.github.io/blog/las-share/ep5.html |
+| หน้าหลัก | https://thundthornthep-ai.github.io/articles/las-share-index.html |
+| ตอนที่ 1 | https://thundthornthep-ai.github.io/articles/las-share-01.html |
+| ตอนที่ 2 | https://thundthornthep-ai.github.io/articles/las-share-02.html |
+| ตอนที่ 3 | https://thundthornthep-ai.github.io/articles/las-share-03.html |
+| ตอนที่ 4 | https://thundthornthep-ai.github.io/articles/las-share-04.html |
+| ตอนที่ 5 | https://thundthornthep-ai.github.io/articles/las-share-05.html |
+| ตอนที่ 6 | https://thundthornthep-ai.github.io/articles/las-share-06.html |
+| ตอนที่ 7 | https://thundthornthep-ai.github.io/articles/las-share-07.html |
+| ตอนที่ 8 | https://thundthornthep-ai.github.io/articles/las-share-08.html |
+| ตอนที่ 9 | https://thundthornthep-ai.github.io/articles/las-share-09.html |
+| ตอนที่ 10 | https://thundthornthep-ai.github.io/articles/las-share-10.html |
 
 ---
 
