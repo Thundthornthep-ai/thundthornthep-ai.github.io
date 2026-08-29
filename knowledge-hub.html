@@ -783,10 +783,10 @@
       <span class="lang-en">"Your success is our success"</span>
     </p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;">
-      <span style="background:#1e40af;color:#bfdbfe;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;">Share → รากฐาน</span>
-      <span style="background:#9d174d;color:#fbcfe8;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;">Shield → ปกป้อง</span>
-      <span style="background:#92400e;color:#fde68a;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;">C&amp;C → ควบคุม</span>
-      <span style="background:#065f46;color:#6ee7b7;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;">UP → ขยาย</span>
+      <a href="articles/las-share-index.html" style="background:#1e40af;color:#bfdbfe;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;text-decoration:none;">Share → รากฐาน</a>
+      <a href="articles/las-shield-index.html" style="background:#9d174d;color:#fbcfe8;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;text-decoration:none;">Shield → ปกป้อง</a>
+      <a href="articles/las-cc-index.html" style="background:#92400e;color:#fde68a;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;text-decoration:none;">C&amp;C → ควบคุม</a>
+      <a href="articles/las-upsize-index.html" style="background:#065f46;color:#6ee7b7;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;text-decoration:none;">UP → ขยาย</a>
     </div>
   </div>
 </div>
@@ -800,26 +800,26 @@
 
 <!-- FILTER BAR -->
 <div class="filter-bar">
-  <button class="filter-btn active" onclick="filterArticles('all', this)"><span class="lang-th">ทั้งหมด (101)</span><span class="lang-en">All (101)</span></button>
-  <button class="filter-btn" onclick="filterArticles('las-share', this)" style="border-color:#1e40af;color:#1e40af;"><span class="lang-th">LAS Share (10)</span><span class="lang-en">LAS Share (10)</span></button>
-  <button class="filter-btn" onclick="filterArticles('las-shield', this)" style="border-color:#9d174d;color:#9d174d;"><span class="lang-th">LAS Shield (10)</span><span class="lang-en">LAS Shield (10)</span></button>
-  <button class="filter-btn" onclick="filterArticles('las-cc', this)" style="border-color:#92400e;color:#92400e;"><span class="lang-th">LAS C&C (11)</span><span class="lang-en">LAS C&C (11)</span></button>
-  <button class="filter-btn" onclick="filterArticles('las-upsize', this)" style="border-color:#065f46;color:#065f46;"><span class="lang-th">LAS UP (10)</span><span class="lang-en">LAS UP (10)</span></button>
-  <button class="filter-btn" onclick="filterArticles('las-invest', this)" style="border-color:#0891b2;color:#0891b2;"><span class="lang-th">LAS INVEST (2)</span><span class="lang-en">LAS INVEST (2)</span></button>
-  <button class="filter-btn" onclick="filterArticles('corporate', this)"><span class="lang-th">กฎหมายธุรกิจ (14)</span><span class="lang-en">Corporate (14)</span></button>
-  <button class="filter-btn" onclick="filterArticles('contract', this)"><span class="lang-th">สัญญาธุรกิจ (9)</span><span class="lang-en">Contracts (9)</span></button>
-  <button class="filter-btn" onclick="filterArticles('investment', this)"><span class="lang-th">การลงทุน (3)</span><span class="lang-en">Investment (3)</span></button>
-  <button class="filter-btn" onclick="filterArticles('realestate', this)"><span class="lang-th">อสังหาริมทรัพย์ (3)</span><span class="lang-en">Real Estate (3)</span></button>
-  <button class="filter-btn" onclick="filterArticles('labour', this)"><span class="lang-th">แรงงาน (4)</span><span class="lang-en">Labour (4)</span></button>
-  <button class="filter-btn" onclick="filterArticles('pdpa', this)"><span class="lang-th">PDPA (4)</span><span class="lang-en">PDPA (4)</span></button>
-  <button class="filter-btn" onclick="filterArticles('tax', this)"><span class="lang-th">ภาษี (2)</span><span class="lang-en">Tax (2)</span></button>
-  <button class="filter-btn" onclick="filterArticles('ip', this)"><span class="lang-th">ทรัพย์สินทางปัญญา (1)</span><span class="lang-en">IP (1)</span></button>
-  <button class="filter-btn" onclick="filterArticles('digital', this)"><span class="lang-th">การตลาดดิจิทัล (1)</span><span class="lang-en">Digital (1)</span></button>
-  <button class="filter-btn" onclick="filterArticles('consumer', this)"><span class="lang-th">ผู้บริโภค (1)</span><span class="lang-en">Consumer (1)</span></button>
-  <button class="filter-btn" onclick="filterArticles('ai', this)"><span class="lang-th">AI Legal Tech (4)</span><span class="lang-en">AI Legal Tech (4)</span></button>
-  <button class="filter-btn" onclick="filterArticles('anticorruption', this)"><span class="lang-th">ป้องกันทุจริต (3)</span><span class="lang-en">Anti-Corruption (3)</span></button>
-  <button class="filter-btn" onclick="filterArticles('professional', this)"><span class="lang-th">วิชาชีพ (1)</span><span class="lang-en">Professional (1)</span></button>
-  <button class="filter-btn" onclick="filterArticles('bkk', this)" style="border-color:#6366f1;color:#6366f1;"><span class="lang-th">Bangkok Possible (8)</span><span class="lang-en">Bangkok Possible (8)</span></button>
+  <button class="filter-btn active" data-filter="all"><span class="lang-th">ทั้งหมด (101)</span><span class="lang-en">All (101)</span></button>
+  <button class="filter-btn" data-filter="las-share" style="border-color:#1e40af;color:#1e40af;"><span class="lang-th">LAS Share (10)</span><span class="lang-en">LAS Share (10)</span></button>
+  <button class="filter-btn" data-filter="las-shield" style="border-color:#9d174d;color:#9d174d;"><span class="lang-th">LAS Shield (10)</span><span class="lang-en">LAS Shield (10)</span></button>
+  <button class="filter-btn" data-filter="las-cc" style="border-color:#92400e;color:#92400e;"><span class="lang-th">LAS C&C (11)</span><span class="lang-en">LAS C&C (11)</span></button>
+  <button class="filter-btn" data-filter="las-upsize" style="border-color:#065f46;color:#065f46;"><span class="lang-th">LAS UP (10)</span><span class="lang-en">LAS UP (10)</span></button>
+  <button class="filter-btn" data-filter="las-invest" style="border-color:#0891b2;color:#0891b2;"><span class="lang-th">LAS INVEST (2)</span><span class="lang-en">LAS INVEST (2)</span></button>
+  <button class="filter-btn" data-filter="corporate"><span class="lang-th">กฎหมายธุรกิจ (14)</span><span class="lang-en">Corporate (14)</span></button>
+  <button class="filter-btn" data-filter="contract"><span class="lang-th">สัญญาธุรกิจ (9)</span><span class="lang-en">Contracts (9)</span></button>
+  <button class="filter-btn" data-filter="investment"><span class="lang-th">การลงทุน (3)</span><span class="lang-en">Investment (3)</span></button>
+  <button class="filter-btn" data-filter="realestate"><span class="lang-th">อสังหาริมทรัพย์ (3)</span><span class="lang-en">Real Estate (3)</span></button>
+  <button class="filter-btn" data-filter="labour"><span class="lang-th">แรงงาน (4)</span><span class="lang-en">Labour (4)</span></button>
+  <button class="filter-btn" data-filter="pdpa"><span class="lang-th">PDPA (4)</span><span class="lang-en">PDPA (4)</span></button>
+  <button class="filter-btn" data-filter="tax"><span class="lang-th">ภาษี (2)</span><span class="lang-en">Tax (2)</span></button>
+  <button class="filter-btn" data-filter="ip"><span class="lang-th">ทรัพย์สินทางปัญญา (1)</span><span class="lang-en">IP (1)</span></button>
+  <button class="filter-btn" data-filter="digital"><span class="lang-th">การตลาดดิจิทัล (1)</span><span class="lang-en">Digital (1)</span></button>
+  <button class="filter-btn" data-filter="consumer"><span class="lang-th">ผู้บริโภค (1)</span><span class="lang-en">Consumer (1)</span></button>
+  <button class="filter-btn" data-filter="ai"><span class="lang-th">AI Legal Tech (4)</span><span class="lang-en">AI Legal Tech (4)</span></button>
+  <button class="filter-btn" data-filter="anticorruption"><span class="lang-th">ป้องกันทุจริต (3)</span><span class="lang-en">Anti-Corruption (3)</span></button>
+  <button class="filter-btn" data-filter="professional"><span class="lang-th">วิชาชีพ (1)</span><span class="lang-en">Professional (1)</span></button>
+  <button class="filter-btn" data-filter="bkk" style="border-color:#6366f1;color:#6366f1;"><span class="lang-th">Bangkok Possible (8)</span><span class="lang-en">Bangkok Possible (8)</span></button>
 </div>
 
 <!-- LAS BUSINESS LEGAL ADVISORY FRAMEWORK -->
@@ -1846,6 +1846,12 @@ function setLasFwLang(lang) {
    touching the filter bar again.
    ───────────────────────────────────────────────────────────── */
 
+document.addEventListener('click', function(ev) {
+  const btn = ev.target && ev.target.closest && ev.target.closest('.filter-btn[data-filter]');
+  if (!btn) return;
+  filterArticles(btn.getAttribute('data-filter'), btn);
+});
+
 function filterArticles(category, btn) {
   const selectors = ['.article-card', '.series-section', '.las-fw-card'];
   const buttons = document.querySelectorAll('.filter-btn');
@@ -1880,11 +1886,8 @@ function initFilterBar() {
   counts['all'] = totalArticles + totalSeriesLeaves;
 
   document.querySelectorAll('.filter-btn').forEach(btn => {
-    // Extract category from onclick attribute
-    const onclick = btn.getAttribute('onclick') || '';
-    const m = onclick.match(/filterArticles\('([^']+)'/);
-    if (!m) return;
-    const cat = m[1];
+    const cat = btn.getAttribute('data-filter');
+    if (!cat) return;
 
     // Hide dead buttons (no matching content in DOM)
     if (!seen.has(cat)) {
