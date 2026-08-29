@@ -1,34 +1,92 @@
-name: Validate knowledge-hub.html
+name: Validate LAS Knowledge publication gates
 
-# Sustainability guard — runs the validator on every push/PR that touches
-# knowledge-hub.html or articles. Blocks merge if any check fails.
-# See scripts/validate-knowledge-hub.js for the full check list.
+# Fail-closed publication guard. Every article release must pass the citation
+# firewall, exact-slug/series registry checks, and the existing hub checks.
 
 on:
   push:
     branches: [main]
     paths:
       - 'knowledge-hub.html'
+      - 'all-content.html'
+      - 'sitemap.xml'
+      - 'las-*.html'
+      - 'articles/**'
+      - 'en/articles/**'
       - 'scripts/validate-knowledge-hub.js'
+      - 'scripts/validate-knowledge-slugs.js'
+      - 'scripts/verify-legal-citations.sh'
       - '.github/workflows/validate.yml'
   pull_request:
     paths:
       - 'knowledge-hub.html'
+      - 'all-content.html'
+      - 'sitemap.xml'
+      - 'las-*.html'
+      - 'articles/**'
+      - 'en/articles/**'
       - 'scripts/validate-knowledge-hub.js'
+      - 'scripts/validate-knowledge-slugs.js'
+      - 'scripts/verify-legal-citations.sh'
       - '.github/workflows/validate.yml'
   workflow_dispatch:
 
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 2
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve release comparison range
+        id: range
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            base="${{ github.event.pull_request.base.sha }}"
+            target="${{ github.event.pull_request.head.sha }}"
+          else
+            base="${{ github.event.before }}"
+            target="$GITHUB_SHA"
+          fi
+          if [[ -z "$base" || "$base" =~ ^0+$ ]] || ! git cat-file -e "$base^{commit}" 2>/dev/null; then
+            base="$(git rev-list --max-parents=0 "$target" | tail -1)"
+          fi
+          echo "base=$base" >> "$GITHUB_OUTPUT"
+          echo "target=$target" >> "$GITHUB_OUTPUT"
+          echo "Comparing $base..$target"
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      - name: Run citation firewall (fail closed)
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t files < <(git diff --name-only "${{ steps.range.outputs.base }}" "${{ steps.range.outputs.target }}" -- 'articles/*.html' 'en/articles/*.html')
+          if ((${#files[@]} == 0)); then
+            echo "No changed article HTML — citation gate not applicable."
+            exit 0
+          fi
+          bash scripts/verify-legal-citations.sh "${files[@]}"
+
+      - name: Run exact slug and series validator
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t files < <(git diff --name-only "${{ steps.range.outputs.base }}" "${{ steps.range.outputs.target }}" -- 'articles/las-share-[0-9][0-9].html' 'articles/las-shield-[0-9][0-9].html' 'articles/las-cc-[0-9][0-9].html' 'articles/las-upsize-[0-9][0-9].html' 'articles/las-invest-[0-9][0-9].html')
+          if ((${#files[@]} == 0)); then
+            echo "No changed LAS series article HTML — exact-slug gate not applicable."
+            exit 0
+          fi
+          for file in "${files[@]}"; do
+            node scripts/validate-knowledge-slugs.js --slug "${file#articles/}"
+          done
 
       - name: Run knowledge-hub validator
         run: node scripts/validate-knowledge-hub.js
@@ -36,5 +94,5 @@ jobs:
       - name: Summary on failure
         if: failure()
         run: |
-          echo "::error::Knowledge Hub validation failed. Run 'node scripts/validate-knowledge-hub.js' locally to see details."
+          echo "::error::LAS Knowledge publication gate failed. Run the citation, exact-slug, and hub validators locally to see details."
           echo "See docs/BILINGUAL-CONVENTION.md for the bilingual class standard."

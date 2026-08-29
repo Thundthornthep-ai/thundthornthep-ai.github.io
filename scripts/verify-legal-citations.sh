@@ -1,63 +1,114 @@
-#!/bin/bash
-# LAS Legal Citation Pre-Publish Verification
-# Runs Citation Firewall on all staged .html article files before commit
-# Created: 2026-04-20 (after ม.90 incident)
+#!/usr/bin/env bash
+# LAS Legal Citation Firewall — fail-closed pre-publish gate
 #
-# Usage: Called by pre-commit hook or manually:
-#   bash scripts/verify-legal-citations.sh [file.html]
+# Usage:
+#   bash scripts/verify-legal-citations.sh              # changed article HTML
+#   bash scripts/verify-legal-citations.sh --all        # every tracked article
+#   bash scripts/verify-legal-citations.sh file.html …  # explicit files
+#
+# The firewall and its local legal KB are deliberately external to this public
+# repository. Configure LAS_CITATION_FIREWALL and LAS_LEGAL_KB in the
+# execution environment; an absent or unreadable dependency is a hard failure.
 
-set -e
+set -euo pipefail
 
-FIREWALL="$HOME/.claude/skills/las-citation-firewall/verify.py"
-KB="C:/Users/thund/OneDrive/เดสก์ท็อป/ACT LAW/000000000_LAS_Knowledge/las_legal_kb"
+readonly PYTHON_BIN="${PYTHON_BIN:-python3}"
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# A release may override these with the internal LAS verifier/KB locally. The
+# repository defaults are public, release-scoped, and contain no restricted
+# source material, so the GitHub gate remains executable and fail-closed.
+readonly FIREWALL="${LAS_CITATION_FIREWALL:-${SCRIPT_DIR}/public-citation-firewall.py}"
+readonly KB="${LAS_LEGAL_KB:-${SCRIPT_DIR}/legal-kb}"
 
-if [ ! -f "$FIREWALL" ]; then
-    echo "[SKIP] Citation Firewall not found at $FIREWALL"
-    exit 0
-fi
+die() {
+    echo "[CITATION-CHECK] ERROR: $*" >&2
+    exit 1
+}
 
-# If specific file provided, check that file only
-if [ -n "$1" ]; then
-    FILES="$1"
+is_article_html() {
+    case "$1" in
+        articles/*.html|en/articles/*.html) return 0 ;;
+        *) return 1 ;;
+    esac
+}
+
+declare -a FILES=()
+
+if [[ "${1:-}" == "--all" ]]; then
+    shift
+    [[ "$#" -eq 0 ]] || die "--all cannot be combined with file arguments"
+    while IFS= read -r file; do
+        FILES+=("$file")
+    done < <(git ls-files -- 'articles/*.html' 'en/articles/*.html')
+elif [[ "$#" -gt 0 ]]; then
+    while [[ "$#" -gt 0 ]]; do
+        is_article_html "$1" || die "not an article HTML path: $1"
+        FILES+=("$1")
+        shift
+    done
 else
-    # Check all staged article HTML files
-    FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '^(articles|en/articles)/.*\.html$' || true)
+    # HEAD diff covers both staged and unstaged tracked changes. Include
+    # untracked article files so a new article cannot bypass the gate locally.
+    while IFS= read -r file; do
+        if is_article_html "$file"; then
+            FILES+=("$file")
+        fi
+    done < <(
+        {
+            git diff --name-only --diff-filter=ACMR HEAD
+            git ls-files --others --exclude-standard -- 'articles/*.html' 'en/articles/*.html'
+        } | sort -u
+    )
 fi
 
-if [ -z "$FILES" ]; then
-    echo "[CITATION-CHECK] No article files staged — skipping"
+if [[ "${#FILES[@]}" -eq 0 ]]; then
+    echo "[CITATION-CHECK] No changed article HTML — nothing to verify"
     exit 0
 fi
 
+command -v "$PYTHON_BIN" >/dev/null 2>&1 || die "Python interpreter not found: $PYTHON_BIN"
+[[ -f "$FIREWALL" && -r "$FIREWALL" ]] || die "Citation Firewall is missing or unreadable (set LAS_CITATION_FIREWALL)"
+[[ -d "$KB" && -r "$KB" ]] || die "Legal KB is missing or unreadable (set LAS_LEGAL_KB)"
+
 echo "=========================================="
-echo "  LAS Citation Firewall — Pre-Publish QC"
+echo "  LAS Citation Firewall — HARD GATE"
+echo "  Files: ${#FILES[@]}"
 echo "=========================================="
 
-FAILED=0
-for f in $FILES; do
-    echo ""
-    echo "Checking: $f"
-    python -X utf8 "$FIREWALL" --input "$f" --kb "$KB" --mode report 2>&1 || true
-    EXIT_CODE=$?
-    if [ $EXIT_CODE -eq 1 ]; then
-        echo "[BLOCK] $f — Citations failed verification!"
-        FAILED=$((FAILED + 1))
-    elif [ $EXIT_CODE -eq 0 ]; then
-        echo "[PASS] $f — All citations verified"
-    elif [ $EXIT_CODE -eq 2 ]; then
-        echo "[SKIP] $f — No citations detected"
+failed=0
+failure_status=1
+for file in "${FILES[@]}"; do
+    if [[ ! -f "$file" ]]; then
+        echo "[BLOCK] $file — file does not exist" >&2
+        failed=$((failed + 1))
+        continue
+    fi
+
+    echo "Checking: $file"
+    if "$PYTHON_BIN" -X utf8 "$FIREWALL" \
+        --input "$file" \
+        --kb "$KB" \
+        --mode hard-gate \
+        --no-pinecone; then
+        echo "[PASS] $file — citations verified"
+    else
+        status=$?
+        case "$status" in
+            2) echo "[PASS] $file — no statutory citation detected" ;;
+            *)
+                echo "[BLOCK] $file — firewall exit $status" >&2
+                if [[ "$failed" -eq 0 ]]; then
+                    failure_status="$status"
+                fi
+                failed=$((failed + 1))
+                ;;
+        esac
     fi
 done
 
-echo ""
 echo "=========================================="
-if [ $FAILED -gt 0 ]; then
-    echo "  RESULT: $FAILED file(s) FAILED citation check"
-    echo "  ACTION: Fix citations before committing"
-    echo "=========================================="
-    exit 1
-else
-    echo "  RESULT: All files passed citation check"
-    echo "=========================================="
-    exit 0
+if [[ "$failed" -gt 0 ]]; then
+    echo "RESULT: $failed file(s) blocked"
+    exit "$failure_status"
 fi
+echo "RESULT: all files passed citation gate"
