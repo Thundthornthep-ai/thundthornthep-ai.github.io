@@ -12,7 +12,6 @@
   var VALID_USER = 'LAS';
   var VALID_PASS = 'laslegal';
   var SESSION_KEY = 'las_auth_ok';
-  var REMEMBER_KEY = 'las_auth_remember';
 
   // Already authenticated (localStorage = remember me, sessionStorage = this session)
   if (localStorage.getItem(SESSION_KEY) === '1' || sessionStorage.getItem(SESSION_KEY) === '1') return;
@@ -96,6 +95,7 @@
       overlay.remove();
       if (mainEl) mainEl.style.display = '';
       document.documentElement.style.overflow = '';
+      enableCopyProtection();
     } else {
       document.getElementById('las-auth-error').style.display = 'block';
       document.getElementById('las-auth-pass').value = '';
@@ -155,23 +155,4 @@
     });
   }
 
-  // Apply copy protection after auth succeeds (or if already authed)
-  if (localStorage.getItem(SESSION_KEY) === '1' || sessionStorage.getItem(SESSION_KEY) === '1') {
-    enableCopyProtection();
-  } else {
-    // Patch the attempt function to also enable protection after login
-    var origAttempt = attempt;
-    attempt = function () {
-      origAttempt();
-      if (localStorage.getItem(SESSION_KEY) === '1' || sessionStorage.getItem(SESSION_KEY) === '1') {
-        enableCopyProtection();
-      }
-    };
-    document.getElementById('las-auth-btn').removeEventListener('click', origAttempt);
-    document.getElementById('las-auth-btn').addEventListener('click', attempt);
-    document.getElementById('las-auth-pass').removeEventListener('keydown', origAttempt);
-    document.getElementById('las-auth-pass').addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') attempt();
-    });
-  }
 })();
