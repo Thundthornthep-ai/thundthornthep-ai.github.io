@@ -611,7 +611,7 @@ body {
   var passField=document.getElementById('loginPass');
   var errorEl=document.getElementById('loginError');
   var logoutBtn=document.getElementById('logoutBtn');
-  function isLoggedIn(){ try{return sessionStorage.getItem(SESSION_KEY)==='1';}catch(e){return false;} }
+  function isLoggedIn(){ try{ if(sessionStorage.getItem(SESSION_KEY)==='1') return true; var u=null; try{u=localStorage.getItem(SESSION_USER_KEY)||localStorage.getItem('bkk_sk_user');}catch(e2){} if(localStorage.getItem('bkk_sk_remember')==='1' && u){ sessionStorage.setItem(SESSION_KEY,'1'); sessionStorage.setItem(SESSION_USER_KEY,u); return true; } return false; }catch(e){return false;} }
   function showDashboard(){ if(overlay)overlay.classList.add('hidden'); if(logoutBtn)logoutBtn.style.display='inline-block'; }
   function showLogin(){ if(overlay)overlay.classList.remove('hidden'); if(logoutBtn)logoutBtn.style.display='none'; if(userField)userField.value=''; if(passField)passField.value=''; if(errorEl)errorEl.textContent=''; }
   async function sha256(msg){ var b=new TextEncoder().encode(msg); var h=await crypto.subtle.digest('SHA-256',b); return Array.from(new Uint8Array(h)).map(function(x){return x.toString(16).padStart(2,'0');}).join(''); }

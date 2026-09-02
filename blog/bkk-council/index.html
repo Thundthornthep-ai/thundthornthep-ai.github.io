@@ -34,7 +34,7 @@
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#1B2A4A">
 <!-- Security Headers -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; img-src 'self' data: blob: https://*.tile.openstreetmap.org https://publicapi.traffy.in.th https://*.traffy.in.th https://www.googletagmanager.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://publicapi.traffy.in.th https://www.google-analytics.com https://www.googletagmanager.com; frame-src 'none'; object-src 'none'; base-uri 'self';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; img-src 'self' data: blob: https://*.tile.openstreetmap.org https://publicapi.traffy.in.th https://*.traffy.in.th https://storage.googleapis.com https://www.googletagmanager.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://publicapi.traffy.in.th https://www.google-analytics.com https://www.googletagmanager.com; frame-src 'none'; object-src 'none'; base-uri 'self';">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
 <!-- iOS PWA support -->
@@ -1823,7 +1823,9 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
   }
 
   function getCurrentUser(){
-    try { return sessionStorage.getItem(SESSION_USER_KEY) || ''; } catch(e){ return ''; }
+    try {
+      return sessionStorage.getItem(SESSION_USER_KEY) || localStorage.getItem(SESSION_USER_KEY) || '';
+    } catch(e){ return ''; }
   }
 
   var overlay = document.getElementById('loginOverlay');
@@ -1843,8 +1845,18 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
 
   function isLoggedIn(){
     try {
-      if(sessionStorage.getItem(SESSION_KEY) === '1') return true;
-      if(localStorage.getItem(REMEMBER_KEY) === '1') return true;
+      var user = getCurrentUser();
+      if(sessionStorage.getItem(SESSION_KEY) === '1' && user){
+        try { sessionStorage.setItem(SESSION_USER_KEY, user); } catch(e){}
+        return true;
+      }
+      if(localStorage.getItem(REMEMBER_KEY) === '1' && user){
+        try {
+          sessionStorage.setItem(SESSION_KEY, '1');
+          sessionStorage.setItem(SESSION_USER_KEY, user);
+        } catch(e){}
+        return true;
+      }
       return false;
     } catch(e){ return false; }
   }
@@ -2074,6 +2086,7 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
         attribution:'&copy; OpenStreetMap',maxZoom:18
       }).addTo(diMap);
     }
+    setTimeout(function(){ if(diMap) diMap.invalidateSize(); }, 200);
     // Clear markers
     diMarkers.forEach(function(m){diMap.removeLayer(m)});
     diMarkers=[];
@@ -2087,14 +2100,19 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
     }
     var _useCache=window._traffyCache&&window._traffyCache.data&&(Date.now()-window._traffyCache.ts<TRAFFY_TTL);
     var _dataP;
+    window._diFetchDistrict=district;
     if(_useCache){
       _dataP=Promise.resolve(window._traffyCache.data);
     } else {
       if(window._diAbort)window._diAbort.abort();
+      if(window._diTimeout)clearTimeout(window._diTimeout);
       window._diAbort=new AbortController();
+      window._diTimeout=setTimeout(function(){try{window._diAbort.abort()}catch(e){}},15000);
+      var fetchDistrict=district;
       _dataP=fetch('https://publicapi.traffy.in.th/teamchadchart-stat-api/geojson/v1?limit=2000',{signal:window._diAbort.signal})
         .then(function(r){if(!r.ok)throw new Error('API status '+r.status);return r.json()})
         .then(function(data){
+          if(window._diTimeout){clearTimeout(window._diTimeout);window._diTimeout=null;}
           window._traffyCache={data:data,ts:Date.now()};
           // Build district index for O(1) per-district lookup on subsequent switches
           var idx={};
@@ -2103,24 +2121,36 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
           try{sessionStorage.setItem(TRAFFY_CACHE_KEY,JSON.stringify(window._traffyCache));}catch(e){}
           return data;
         });
+      window._diFetchDistrict=fetchDistrict;
     }
     _dataP
       .then(function(data){
+        if(window._diFetchDistrict && window._diFetchDistrict!==district) return;
         document.getElementById('diLoading').style.display='none';
-        if(!data.features){return}
+        if(!data || !data.features){return}
         // Use precomputed index if available (O(1) vs O(N) filter)
         if(!window._traffyIndex){
           var idx={};(data.features||[]).forEach(function(f){var d=f.properties&&f.properties.district;if(!d)return;(idx[d]=idx[d]||[]).push(f);});
           window._traffyIndex=idx;
         }
         var items = window._traffyIndex[district] || [];
-        // Stats
+        // Stats — Traffy states include รับเรื่อง / ส่งต่อ / ยกเลิก besides the 3 legacy labels
         var total=items.length;
-        var done=items.filter(function(f){return f.properties.state==='เสร็จสิ้น'}).length;
-        var pending=items.filter(function(f){return f.properties.state==='รอรับเรื่อง'}).length;
-        var inprog=total-done-pending;
+        var done=0,pending=0,cancel=0,inprog=0;
+        items.forEach(function(f){
+          var st=(f.properties&&f.properties.state)||'';
+          if(st==='เสร็จสิ้น') done++;
+          else if(st==='รอรับเรื่อง'||st==='รับเรื่อง') pending++;
+          else if(st.indexOf('ไม่เกี่ยวข้อง')!==-1||st.indexOf('ยกเลิก')!==-1) cancel++;
+          else inprog++;
+        });
         var types={};
-        items.forEach(function(f){var t=f.properties.problem_type_fondue||'อื่นๆ';types[t]=(types[t]||0)+1});
+        items.forEach(function(f){
+          var t=f.properties&&f.properties.problem_type_fondue;
+          var arr=Array.isArray(t)?t:(t?[String(t)]:['อื่นๆ']);
+          if(!arr.length) arr=['อื่นๆ'];
+          arr.forEach(function(x){x=String(x||'อื่นๆ');types[x]=(types[x]||0)+1});
+        });
         var topTypes=Object.entries(types).sort(function(a,b){return b[1]-a[1]}).slice(0,5);
         // Render stat cards
         var statsEl=document.getElementById('diStats');
@@ -2141,7 +2171,7 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
           rangeEl.textContent='📅 รวมเรื่องตั้งแต่ '+fmt(timestamps[0])+' ถึง '+fmt(timestamps[timestamps.length-1])+' ('+timestamps.length+' เรื่อง)';
         }
         // Map markers
-        var stateColors={'เสร็จสิ้น':'#22C55E','กำลังดำเนินการ':'#E67E22','รอรับเรื่อง':'#EF4444','ส่งต่อ(ใหม่)':'#F59E0B'};
+        var stateColors={'เสร็จสิ้น':'#22C55E','กำลังดำเนินการ':'#E67E22','รอรับเรื่อง':'#EF4444','รับเรื่อง':'#F97316','ส่งต่อ':'#F59E0B','ส่งต่อ(ใหม่)':'#F59E0B','ขั้นตอนทางกฎหมาย':'#8B5CF6','ศึกษาปัญหา':'#6366F1','จัดซื้อจัดจ้าง':'#0EA5E9','จัดทำนโยบาย':'#06B6D4','ของบประมาณ':'#64748B','ไม่เกี่ยวข้อง / ยกเลิก':'#9CA3AF'};
         var bounds=[];
         items.forEach(function(f){
           var g=f.geometry;
@@ -2164,6 +2194,7 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
           diMarkers.push(marker);
         });
         if(bounds.length)diMap.fitBounds(bounds,{padding:[20,20]});
+        setTimeout(function(){ if(diMap) diMap.invalidateSize(); }, 250);
         // Fast vs Slow — with smart fallback
         var finished=items.filter(function(f){return f.properties.state==='เสร็จสิ้น'&&f.properties.duration_minutes_finished>0});
         finished.sort(function(a,b){return a.properties.duration_minutes_finished-b.properties.duration_minutes_finished});
@@ -2294,10 +2325,12 @@ function _isSafeImgUrl(u){if(!u)return false;try{var p=new URL(u,location.href);
           probEl.appendChild(ctaWrap);
         }
       })
-      .catch(function(){
+      .catch(function(err){
+        if(err && err.name==='AbortError') return;
         document.getElementById('diLoading').style.display='none';
         document.getElementById('diProblems').textContent='ไม่สามารถเชื่อมต่อ Traffy API — ลองใหม่';
-      });
+      })
+      .then(function(){if(window._diTimeout){clearTimeout(window._diTimeout);window._diTimeout=null;}});
   };
   function E(s){if(!s)return'';var d=document.createElement('div');d.textContent=s;return d.innerHTML}
 })();

@@ -1,7 +1,7 @@
 // Service Worker for ส.ก. Navigator PWA
-// Version: sk-navigator-v12 (2026-05-01 — bugfix: timer leaks, race conditions, validation)
+// Version: sk-navigator-v13 (2026-05-01 — bugfix: timer leaks, race conditions, validation)
 
-const CACHE_NAME = 'sk-navigator-v12';
+const CACHE_NAME = 'sk-navigator-v13';
 
 const URLS_TO_CACHE = [
   './',
