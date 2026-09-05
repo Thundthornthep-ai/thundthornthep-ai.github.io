@@ -4,6 +4,15 @@
 ## About
 Legal Advance Solution Co., Ltd. (LAS) provides AI-powered legal research and advisory services specializing in Thai corporate law, real estate, PDPA compliance, contract drafting, due diligence, and investment structuring. Founded by Thundthornthep Yamoutai, Ph.D., a business lawyer with 20+ years of experience.
 
+<!-- Profile reviewed 5 September 2026. -->
+
+## Current Professional Work
+- Founder and Managing Director, Legal Advance Solution Co., Ltd. (LAS).
+- Legal Advisor to the First Vice-Chairman of the Bangkok Metropolitan Council, effective 16 July 2026, under Council Order No. 38/2569. Appointment: https://www.laslegal.co.th/News/Detail/110
+- Kelomn.com AI Legal Research development and legal knowledge writing. NIA progress review: https://www.laslegal.co.th/News/Detail/111
+- Legal article writing and knowledge development across LASLegal.co.th, LASLegal.tech Knowledge, and Kelomn.com.
+- Completed IEAT appointments: Subcommittee on Law and Privileges; Working Group on Legal Implementation. Neither is an active appointment.
+
 ## Practice Areas
 - Corporate & Business Law
 - Real Estate & Property Development
@@ -79,3 +88,6 @@ Legal Advance Solution Co., Ltd. (LAS) provides AI-powered legal research and ad
 - Website: https://laslegal.co.th
 - Profile: https://thundthornthep-ai.github.io/profile.html
 - Knowledge Hub: https://thundthornthep-ai.github.io/knowledge-hub.html
+- LAS Digital Knowledge (sign-in may be required): https://laslegal.tech/knowledge
+- Kelomn Knowledge Hub: https://kelomn.com/hub
+- Kelomn AI Legal Research: https://kelomn.com/hub?section=ai-research
