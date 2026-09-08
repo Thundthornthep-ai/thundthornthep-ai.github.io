@@ -98,7 +98,7 @@
 ## 📞 ติดต่อ
 
 - **เจ้าของเว็บ:** ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D. (Managing Director, LAS)
-- **Email:** thundthornthep@gmail.com
+- **Email:** info@laslegal.co.th
 - **Website:** https://laslegal.co.th
 - **Repository:** https://github.com/thundthornthep-ai/thundthornthep-ai.github.io
 

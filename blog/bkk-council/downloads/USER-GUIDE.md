@@ -194,7 +194,7 @@ A: Cron scraper รันทุกวัน 3 รอบ (07:00, 11:00, 15:00) �
 A: ลองที่:
 1. Clear browser cache แล้ว hard refresh (Ctrl+Shift+R)
 2. ตรวจ Console (F12) ดู error
-3. ติดต่อ thundthornthep@gmail.com
+3. ติดต่อ info@laslegal.co.th
 
 ### Q: ขอ API ของเว็บนี้ / ใช้ข้อมูลได้ไหม?
 A: เนื้อหาทั้งหมดเป็น **งานวิชาการฟรี** ใช้งานต่อได้ (non-commercial) โดยอ้างอิง LAS Research × NIA
