@@ -62,7 +62,8 @@
 
     // Broader law names → PDF direct
     { pattern: /^ปพพ\.|^ประมวลกฎหมายแพ่ง/,  url: PDF+'civil-commercial-code-2568.pdf', title: 'ประมวลกฎหมายแพ่งและพาณิชย์ (ฉบับอัปเดต 2568) — PDF' },
-    { pattern: /^พ\.ร\.บ\./,                url: 'https://www.ocs.go.th/searchlaw-law', title: 'ค้นหากฎหมาย — สำนักงานคณะกรรมการกฤษฎีกา', external: true }
+    { pattern: /^พ\.ร\.บ\./,                url: 'https://www.ocs.go.th/searchlaw-law', title: 'ค้นหากฎหมาย — สำนักงานคณะกรรมการกฤษฎีกา', external: true },
+    { pattern: /ฎ(?:ีกาที่|\.)\s*\d+\s*\/\s*\d{4}/, kelomnDeka: true }
   ];
 
   // --- Selectors to scan ---
@@ -80,10 +81,23 @@
       for (var i = 0; i < defined.length; i++) {
         var rule = defined[i];
         if (rule.pattern.test(text)) {
+          var a = document.createElement('a');
+          if (rule.kelomnDeka) {
+            var dm = text.match(/(\d+)\s*\/\s*(\d{4})/);
+            if (!dm) break;
+            a.href = 'https://kelomn.com/deka/' + dm[1] + '-' + dm[2] + '/';
+            a.title = 'คำพิพากษาศาลฎีกาที่ ' + dm[1] + '/' + dm[2] + ' — Kelomn';
+            a.target = '_blank';
+            a.rel = 'noopener';
+            a.textContent = text;
+            a.style.cssText = 'color:inherit;text-decoration:underline dotted;text-underline-offset:2px;';
+            span.textContent = '';
+            span.appendChild(a);
+            break;
+          }
           // Don't link to self (current page)
           if (window.location.pathname.endsWith(rule.url)) break;
 
-          var a = document.createElement('a');
           a.href = rule.url;
           a.title = rule.title;
           a.textContent = text;
