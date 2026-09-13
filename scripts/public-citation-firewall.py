@@ -41,8 +41,6 @@ SOURCE_URL_RE = re.compile(r"https?://", re.IGNORECASE)
 # Trailing covers ``Section 118 of the Personal Data Protection Act``.
 PREFIX_LIMIT = 100
 TRAILING_LIMIT = 60
-# `` of the `` / ``พ.ร.บ.`` sit between the number and a trailing act name.
-TRAILING_ALIAS_AT = 9
 UNRECOGNIZED = "unrecognized"
 CITATION_GLUE = re.compile(
     r"^(?:\s|[.,;:()\[\]'\"“”‘’/-]|B\.?E\.?|พ\.?ศ\.?|\d+|"
@@ -55,7 +53,8 @@ COORDINATION = re.compile(
     re.IGNORECASE,
 )
 EN_NAMED_STATUTE = re.compile(
-    r"\b([A-Z][A-Za-z]+(?:\s+[A-Z][A-Za-z]+)+)\s+(Act|Code)\b"
+    r"\b((?:[A-Z][A-Za-z]+(?:-[A-Z][A-Za-z]+)*)"
+    r"(?:\s+[A-Z][A-Za-z]+(?:-[A-Z][A-Za-z]+)*)*)\s+(Act|Code)\b"
 )
 TH_NAMED_START = re.compile(r"(?:พระราชบัญญัติ|พ\.ร\.บ\.)(?!นี้|ดังกล่าว)")
 SKIP_NAMED_HEADS = {"the", "this", "that", "an"}
@@ -89,7 +88,8 @@ STATUTE_ALIASES: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("bankruptcy", ("พระราชบัญญัติล้มละลาย", "bankruptcy act")),
     ("trademark", ("เครื่องหมายการค้า", "trademark act")),
     ("consumer", ("คุ้มครองผู้บริโภค", "consumer protection act")),
-    ("ccc", ("ประมวลกฎหมายแพ่งและพาณิชย์", "ประมวลกฎหมายแพ่ง", "ป.พ.พ.", "ปพพ.", "tccc", "civil and commercial code", "thai civil code")),
+    ("ccc", ("ประมวลกฎหมายแพ่งและพาณิชย์", "ประมวลกฎหมายแพ่ง", "ป.พ.พ.", "ปพพ.", "tccc", "civil and commercial code", "thai civil code", "civil code")),
+    ("landcode", ("ประมวลกฎหมายที่ดิน", "land code")),
     ("nacc", ("ป้องกันและปราบปรามการทุจริต", "organic act on counter corruption", "ป.ป.ช.", "ปปช.")),
     ("bidrigging", ("เสนอราคาต่อหน่วยงานของรัฐ", "bid rigging act", "anti-bid rigging")),
     ("boi", ("ส่งเสริมการลงทุน", "investment promotion act")),
@@ -115,7 +115,12 @@ STATUTE_ALIASES: tuple[tuple[str, tuple[str, ...]], ...] = (
 
 def prepare_text(text: str) -> str:
     """Normalize published citation text without dropping official recitations."""
-    return HTML_COMMENT.sub(" ", text).translate(THAI_DIGITS)
+    return (
+        HTML_COMMENT.sub(" ", text)
+        .replace("&amp;", "and")
+        .replace("&#38;", "and")
+        .translate(THAI_DIGITS)
+    )
 
 
 def normalize_section_token(token: str) -> str:
@@ -197,13 +202,26 @@ def prefix_statute(prefix: str) -> str | None:
     return key
 
 
+def _trailing_rest(window: str) -> str:
+    """Drop of-the-Act / แห่งพระราชบัญญัติ introducers before the alias."""
+    intro = re.match(
+        r"^\s*(?:(?:of(?:\s+the)?|แห่ง|ของ|ตาม)\s*(?:พระราชบัญญัติ|พ\.ร\.บ\.)?"
+        r"|(?:พระราชบัญญัติ|พ\.ร\.บ\.))",
+        window,
+        re.IGNORECASE,
+    )
+    if intro and intro.end() > 0 and not window[: intro.end()].isspace():
+        return window[intro.end() :]
+    return window
+
+
 def trailing_statute(trailing: str) -> str | None:
-    window = phrase_after(trailing)
-    key = statute_in(window)
+    rest = _trailing_rest(phrase_after(trailing))
+    key = statute_in(rest)
     if key is None:
         return None
-    span = _alias_span(window, key)
-    if span is None or span[0] > TRAILING_ALIAS_AT:
+    span = _alias_span(rest, key)
+    if span is None or span[0] > 0:
         return None
     return key
 
@@ -238,8 +256,10 @@ def unrecognized_named_statute(prefix: str, trailing: str = "") -> bool:
     if _has_unknown_named_statute(before):
         return True
     after = phrase_after(trailing)
-    lead = re.match(r"^\s*(?:of(?:\s+the)?|แห่ง|ของ|ตาม)\s+", after, re.IGNORECASE)
-    return bool(lead) and _has_unknown_named_statute(after[lead.end() :])
+    rest = _trailing_rest(after)
+    if rest == after:
+        return False
+    return _has_unknown_named_statute(rest)
 
 
 def attached_statute(prefix: str, trailing: str = "") -> str | None:

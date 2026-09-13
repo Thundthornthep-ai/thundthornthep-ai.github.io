@@ -41,6 +41,9 @@ class PrepareTextTests(unittest.TestCase):
         self.assertNotIn("SECTION 1", firewall.prepare_text(text))
         self.assertIn("มาตรา 222", firewall.prepare_text(text))
 
+    def test_ampersand_entity_does_not_break_ccc_alias(self) -> None:
+        self.assertIn("and", firewall.prepare_text("Civil &amp; Commercial Code"))
+
 
 class CitationExtractionTests(unittest.TestCase):
     def test_lawquote_thai_numeral_is_a_citation(self) -> None:
@@ -70,6 +73,10 @@ class CitationExtractionTests(unittest.TestCase):
     def test_trailing_of_the_act_binds(self) -> None:
         cites = firewall.extract_citations("Section 118 of the Personal Data Protection Act")
         self.assertEqual(cites, [("pdpa", "118")])
+
+    def test_thai_haeng_introducer_still_binds_lpa(self) -> None:
+        cites = firewall.extract_citations("มาตรา 30 แห่งพระราชบัญญัติคุ้มครองแรงงาน")
+        self.assertEqual(cites, [("lpa", "30")])
 
     def test_later_act_in_same_sentence_does_not_rebind(self) -> None:
         cites = firewall.extract_citations(
@@ -135,6 +142,20 @@ class RegistryAndGateTests(unittest.TestCase):
     def test_named_act_absent_from_alias_map_is_unrecognized(self) -> None:
         cites = firewall.extract_citations("Widget Licensing Act B.E. 2560, Section 3")
         self.assertEqual(cites, [(firewall.UNRECOGNIZED, "3")])
+
+    def test_one_word_and_hyphenated_act_titles_are_unrecognized(self) -> None:
+        self.assertEqual(
+            firewall.extract_citations("Patent Act B.E. 2522, Section 3"),
+            [(firewall.UNRECOGNIZED, "3")],
+        )
+        self.assertEqual(
+            firewall.extract_citations("Section 3 of the Patent Act"),
+            [(firewall.UNRECOGNIZED, "3")],
+        )
+        self.assertEqual(
+            firewall.extract_citations("Anti-Smuggling Act B.E. 2567, Section 4"),
+            [(firewall.UNRECOGNIZED, "4")],
+        )
 
     def test_named_unknown_act_does_not_pass_on_another_registry(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
