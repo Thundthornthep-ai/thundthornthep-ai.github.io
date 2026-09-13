@@ -52,8 +52,47 @@ class CitationExtractionTests(unittest.TestCase):
         self.assertEqual(firewall.cited_sections(html), [])
 
     def test_intervening_section_does_not_inherit_prior_statute(self) -> None:
-        cites = firewall.extract_citations("ปพพ. มาตรา 577 + มาตรา 118 พ.ร.บ.คุ้มครองแรงงาน")
+        cites = firewall.extract_citations("ปพพ. มาตรา 577 + มาตรา 118")
+        self.assertIn(("ccc", "577"), cites)
         self.assertIn((None, "118"), cites)
+
+    def test_trailing_statute_binds_after_section_number(self) -> None:
+        cites = firewall.extract_citations("ปพพ. มาตรา 577 + มาตรา 118 พ.ร.บ.คุ้มครองแรงงาน")
+        self.assertIn(("ccc", "577"), cites)
+        self.assertIn(("lpa", "118"), cites)
+
+    def test_long_english_act_title_still_binds(self) -> None:
+        cites = firewall.extract_citations(
+            "Personal Data Protection Act B.E. 2562 (2019), Section 91"
+        )
+        self.assertEqual(cites, [("pdpa", "91")])
+
+    def test_trailing_of_the_act_binds(self) -> None:
+        cites = firewall.extract_citations("Section 118 of the Personal Data Protection Act")
+        self.assertEqual(cites, [("pdpa", "118")])
+
+    def test_later_act_in_same_sentence_does_not_rebind(self) -> None:
+        cites = firewall.extract_citations(
+            "Foreign Business Act B.E. 2542 (1999), Section 36 and Section 37, "
+            "simulated transactions under the Civil and Commercial Code Section 155"
+        )
+        self.assertIn(("fba", "36"), cites)
+        self.assertIn((None, "37"), cites)
+        self.assertIn(("ccc", "155"), cites)
+
+    def test_contrast_clause_does_not_steal_hire_of_work_section(self) -> None:
+        cites = firewall.extract_citations(
+            "ลูกจ้างได้รับสิทธิตาม พ.ร.บ.คุ้มครองแรงงาน ส่วนจ้างทำของ (Hire of Work) ตามมาตรา 587"
+        )
+        self.assertEqual(cites, [(None, "587")])
+
+    def test_negated_ucta_use_does_not_rebind_ccc_150(self) -> None:
+        cites = firewall.extract_citations(
+            "พระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540 มาตรา 4 "
+            "ไม่ใช่การนำมาตรา 150 มาใช้เป็นบทข้อสัญญาที่ไม่เป็นธรรม"
+        )
+        self.assertIn(("ucta", "4"), cites)
+        self.assertIn((None, "150"), cites)
 
     def test_arabic_lecture_cite_still_counts(self) -> None:
         self.assertIn("222", firewall.cited_sections("ปพพ. มาตรา 222"))
@@ -62,6 +101,11 @@ class CitationExtractionTests(unittest.TestCase):
         html = "FBA Sections 36 / 37 (พ.ร.บ.ประกอบธุรกิจของคนต่างด้าว พ.ศ. 2542 มาตรา 36/37)"
         self.assertEqual(set(firewall.cited_sections(html)), {"36", "37"})
         self.assertEqual(firewall.cited_sections("มาตรา 159/164"), ["159", "164"])
+
+    def test_spaced_and_plural_slash_lists_are_citations(self) -> None:
+        self.assertEqual(set(firewall.cited_sections("FBA มาตรา 36 / 37")), {"36", "37"})
+        self.assertEqual(set(firewall.cited_sections("FBA Sections 36 / 37")), {"36", "37"})
+        self.assertEqual(firewall.cited_sections("Sections 102, 105"), [])
 
     def test_inserted_section_stays_compound(self) -> None:
         self.assertEqual(firewall.cited_sections("มาตรา 41/1"), ["41/1"])
@@ -82,10 +126,15 @@ class RegistryAndGateTests(unittest.TestCase):
             registry = firewall.load_registry(kb)
             self.assertEqual(registry["lpa"], {"118"})
             self.assertNotIn("118", registry.get("pdpa", set()))
-            cites = firewall.extract_citations("Personal Data Protection Act, Section 118")
-            self.assertEqual(cites, [("pdpa", "118")])
-            missing = firewall.missing_citations(cites, registry)
-            self.assertEqual(missing, ["pdpa:118"])
+            for phrase in (
+                "Personal Data Protection Act, Section 118",
+                "Personal Data Protection Act B.E. 2562 (2019), Section 118",
+                "Section 118 of the Personal Data Protection Act",
+            ):
+                cites = firewall.extract_citations(phrase)
+                self.assertEqual(cites, [("pdpa", "118")], phrase)
+                missing = firewall.missing_citations(cites, registry)
+                self.assertEqual(missing, ["pdpa:118"], phrase)
 
     def test_registry_splits_slash_lists_and_does_not_keep_combined_token(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -131,6 +180,17 @@ class RegistryAndGateTests(unittest.TestCase):
             kb = Path(tmp)
             (kb / "reg.md").write_text("statute: ccc\n- มาตรา 213\n", encoding="utf-8")
             with self.assertRaises(RuntimeError):
+                firewall.load_registry(kb)
+
+    def test_each_registry_file_needs_its_own_official_source(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            kb = Path(tmp)
+            (kb / "lpa.md").write_text(
+                "statute: lpa\nOfficial source: https://www.ocs.go.th/searchlaw-law\n- มาตรา 118\n",
+                encoding="utf-8",
+            )
+            (kb / "pdpa.md").write_text("statute: pdpa\n- มาตรา 999\n", encoding="utf-8")
+            with self.assertRaisesRegex(RuntimeError, "pdpa.md"):
                 firewall.load_registry(kb)
 
     def test_registry_without_statute_key_is_rejected(self) -> None:
