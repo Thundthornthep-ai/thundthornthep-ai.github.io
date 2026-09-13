@@ -17,10 +17,12 @@ Official PDF lawquote boxes use Thai numerals. The gate normalizes Thai digits
 to Arabic, ignores HTML outline comments, treats tags and ordinary entities as
 separators, and splits slash-lists such as
 ``มาตรา 36/37`` or ``FBA มาตรา 36 / 37`` into 36 and 37. Plural slash lists
-(``Sections 36 / 37``) are included; comma lists are not, so unrelated
-``Sections 102, 105`` cites stay out of this release's registry. Inserted
-sections (``41/1``, ``193/30``, ``89/23``) stay one identifier. Lawquote boxes and
-lecture cites remain in scope.
+(``Sections 36 / 37``) and plural dash ranges (``Sections 147–166``) are
+included; comma lists are not, so unrelated ``Sections 102, 105`` cites stay
+out of this release's registry. Dash ranges expand to their endpoints only.
+Inserted sections (``41/1``, ``193/30``) stay one identifier. Securities
+``89/*`` inserts stay compound only when the cite is bound as that Act.
+Lawquote boxes and lecture cites remain in scope.
 """
 from __future__ import annotations
 
@@ -32,8 +34,13 @@ from pathlib import Path
 THAI_DIGITS = str.maketrans("๐๑๒๓๔๕๖๗๘๙", "0123456789")
 HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
 HTML_TAG = re.compile(r"<[^>]+>")
-SIBLING_TAGS = re.compile(r"</[a-zA-Z][^>]*>\s*(?=<[a-zA-Z])", re.IGNORECASE)
+SIBLING_GAP = re.compile(
+    r"(?P<close></[a-zA-Z][^>]*>)\s*(?P<open><[a-zA-Z][^>]*>)",
+    re.IGNORECASE,
+)
 HARD_CUT = " ·|· "
+SECTION_LEAD = re.compile(r"^\s*(?:มาตรา|\bsections?\b)", re.IGNORECASE)
+SECTION_TOKEN_IN = re.compile(r"(?:มาตรา|\bsections?\b)", re.IGNORECASE)
 HTML_ENTITY = re.compile(r"&(?:[a-zA-Z][a-zA-Z0-9]*|#\d+|#x[0-9a-fA-F]+);")
 HTML_ENTITIES = {
     "&amp;": "and",
@@ -50,11 +57,15 @@ HTML_ENTITIES = {
     "&lt;": " ",
     "&gt;": " ",
 }
-# Singular section / มาตรา, plus plural only when it is a slash-list.
+# Singular section / มาตรา (no dash ranges — ``มาตรา 32–65`` is not one cite).
+# Plural ``Sections`` matches a slash-list or an en/em/ASCII dash range.
 SECTION_RE = re.compile(
-    r"(?:มาตรา|\bsection)\s+(\d+(?:\s*/\s*\d+)?)|\bsections\s+(\d+\s*/\s*\d+)",
+    r"มาตรา\s+(\d+(?:\s*/\s*\d+)?)"
+    r"|\bsections\s+(\d+\s*/\s*\d+(?:\s*/\s*\d+)*|\d+\s*[–—\-]\s*\d+)"
+    r"|\bsection\s+(\d+(?:\s*/\s*\d+)?)",
     re.IGNORECASE,
 )
+DASH_RANGE_RE = re.compile(r"^(\d+)\s*[–—\-]\s*(\d+)$")
 STATUTE_HEADER_RE = re.compile(r"(?im)^statute:\s*([a-z][a-z0-9_-]*)\s*$")
 SOURCE_URL_RE = re.compile(r"https?://", re.IGNORECASE)
 # Prefix covers ``Personal Data Protection Act B.E. 2562 (2019), Section``.
@@ -82,7 +93,8 @@ NAME_STOP = re.compile(r"\s*(?:พ\.?ศ\.?|B\.?E\.?|มาตรา|\bsection\b
 
 # Official inserted-section identifiers. Other a/b tokens with both sides >= 10
 # are treated as a list of two sections (FBA 36/37, CCC 159/164, PDPA 89/90).
-# The 89/* catch-all applies only when the cite is bound as Securities Act.
+# Securities 89/* compounds are kept only when the bound statute is SEA —
+# they are not in this global set, so ``PDPA Sections 89 / 18`` splits.
 INSERTED_SECTIONS = {
     "4/1",
     "23/1",
@@ -91,12 +103,6 @@ INSERTED_SECTIONS = {
     "59/2",
     "81/1",
     "85/1",
-    "89/8",
-    "89/10",
-    "89/11",
-    "89/15",
-    "89/18",
-    "89/23",
     "91/2",
     "1111/1",
     "681/1",
@@ -116,6 +122,7 @@ STATUTE_ALIASES: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("trademark", ("เครื่องหมายการค้า", "trademark act")),
     ("consumer", ("คุ้มครองผู้บริโภค", "consumer protection act")),
     ("ccc", ("ประมวลกฎหมายแพ่งและพาณิชย์", "ประมวลกฎหมายแพ่ง", "ป.พ.พ.", "ปพพ.", "tccc", "civil and commercial code", "thai civil code", "civil code")),
+    ("criminal", ("ประมวลกฎหมายอาญา", "criminal code")),
     ("landcode", ("ประมวลกฎหมายที่ดิน", "land code")),
     ("nacc", ("ป้องกันและปราบปรามการทุจริต", "organic act on counter corruption", "ป.ป.ช.", "ปปช.")),
     ("bidrigging", ("เสนอราคาต่อหน่วยงานของรัฐ", "bid rigging act", "anti-bid rigging")),
@@ -140,15 +147,65 @@ STATUTE_ALIASES: tuple[tuple[str, tuple[str, ...]], ...] = (
 )
 
 
+def _looks_like_statute_name(text: str) -> bool:
+    if statute_in(text):
+        return True
+    if TH_NAMED_START.search(text):
+        return True
+    return EN_NAMED_STATUTE.search(text) is not None
+
+
+def _sibling_separator(left: str, right: str) -> str:
+    """Join sibling tags that continue a cite; cut when the next pill is unrelated.
+
+    ``<span>ประมวลรัษฎากร</span><span>มาตรา 118</span>`` keeps Revenue scope.
+    ``<span>มาตรา 118</span><span>พ.ร.บ.ความลับทางการค้า</span>`` stays a hard cut
+    so 118 does not trailing-bind the next statute.
+    """
+    left = left.strip()
+    right = right.strip()
+    right_is_section = bool(SECTION_LEAD.match(right))
+    left_is_section = bool(SECTION_TOKEN_IN.search(left))
+    left_is_statute = _looks_like_statute_name(left)
+    right_is_statute = _looks_like_statute_name(right)
+    if left_is_statute and right_is_section:
+        return " "
+    if left_is_section and right_is_section:
+        return " "
+    if left_is_section and right_is_statute:
+        return HARD_CUT
+    return HARD_CUT
+
+
+def _join_or_cut_siblings(text: str) -> str:
+    """Replace only the gap between sibling tags so every pair is inspected.
+
+    The previous pair's inner text must not be consumed, or
+    ``มาตรา 83`` + ``พ.ร.บ.บริษัทมหาชน`` would skip the hard cut.
+    """
+
+    def replace(match: re.Match[str]) -> str:
+        start = match.start()
+        left_gt = text.rfind(">", 0, start)
+        left = text[left_gt + 1 : start] if left_gt >= 0 else text[:start]
+        end = match.end()
+        right_lt = text.find("<", end)
+        right = text[end:right_lt] if right_lt >= 0 else text[end:]
+        sep = _sibling_separator(left, right)
+        return f"{match.group('close')}{sep}{match.group('open')}"
+
+    return SIBLING_GAP.sub(replace, text)
+
+
 def prepare_text(text: str) -> str:
     """Normalize published citation text without dropping official recitations.
 
     Inline wrappers become spaces so ``<strong>PDPA title</strong> &mdash; มาตรา 37``
-    still binds. Adjacent sibling tags become a hard cut so footer pills do not
-    rebind the previous section to the next statute name.
+    still binds. Adjacent sibling tags join when the next element continues the
+    citation and become a hard cut when it is a different statute or topic pill.
     """
     text = HTML_COMMENT.sub(" ", text)
-    text = SIBLING_TAGS.sub(HARD_CUT, text)
+    text = _join_or_cut_siblings(text)
     text = HTML_TAG.sub(" ", text)
     for entity, replacement in HTML_ENTITIES.items():
         text = text.replace(entity, replacement)
@@ -165,6 +222,13 @@ def section_token(match: re.Match[str]) -> str:
 
 
 def expand_section_token(token: str, statute: str | None = None) -> list[str]:
+    raw = token.strip()
+    dash = DASH_RANGE_RE.fullmatch(raw)
+    if dash:
+        left, right = dash.group(1), dash.group(2)
+        if int(left) <= int(right):
+            return [left, right]
+        return [left]
     token = normalize_section_token(token)
     if "/" not in token:
         return [token]
@@ -321,6 +385,7 @@ def extract_citations(
     prepared = prepare_text(text)
     found: list[tuple[str | None, str]] = []
     last_statute: str | None = None
+    last_securities: str | None = None
     for match in SECTION_RE.finditer(prepared):
         prefix = prepared[: match.start()]
         trailing = prepared[match.end() : match.end() + TRAILING_LIMIT]
@@ -331,9 +396,17 @@ def extract_citations(
             statute = UNRECOGNIZED
         if statute == "bankruptcy" and "ไม่ใช่บทล้มละลาย" in trailing:
             statute = None
-        for section in expand_section_token(section_token(match), statute or insert_statute):
+        token = section_token(match)
+        expand_as = statute or insert_statute or last_securities
+        for section in expand_section_token(token, expand_as):
             found.append((statute, section))
             last_statute = statute
+        if statute == "securities":
+            last_securities = "securities"
+        elif statute is not None:
+            last_securities = None
+        elif not normalize_section_token(token).startswith("89/"):
+            last_securities = None
     return found
 
 

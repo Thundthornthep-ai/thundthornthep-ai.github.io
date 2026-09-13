@@ -35,6 +35,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 119
 - มาตรา 120
 - มาตรา 121
+- มาตรา 122
 - มาตรา 123
 - มาตรา 144
 - มาตรา 146

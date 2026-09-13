@@ -143,19 +143,30 @@ class CitationExtractionTests(unittest.TestCase):
         self.assertEqual(firewall.cited_sections("มาตรา 193/30"), ["193/30"])
 
     def test_securities_89_inserts_do_not_split_into_bare_numbers(self) -> None:
-        """SEA 89/8, 89/18, 89/23 are official inserts, not slash-lists."""
+        """SEA 89/* stays compound only when bound (or 89/8, whose insert side is < 10)."""
         self.assertEqual(firewall.cited_sections("มาตรา ๘๙/๘"), ["89/8"])
-        self.assertEqual(firewall.cited_sections("มาตรา ๘๙/๑๘"), ["89/18"])
-        self.assertEqual(firewall.cited_sections("มาตรา ๘๙/๒๓"), ["89/23"])
+        self.assertEqual(firewall.cited_sections("มาตรา ๘๙/๑๘"), ["89", "18"])
         self.assertEqual(
             firewall.extract_citations(
                 "พระราชบัญญัติหลักทรัพย์และตลาดหลักทรัพย์ พ.ศ. ๒๕๓๕ มาตรา ๘๙/๒๓"
             ),
             [("securities", "89/23")],
         )
-        self.assertNotIn("18", firewall.cited_sections("มาตรา ๘๙/๑๘"))
-        self.assertNotIn("23", firewall.cited_sections("มาตรา ๘๙/๒๓"))
-        self.assertNotIn("89", firewall.cited_sections("มาตรา ๘๙/๒๓"))
+        self.assertEqual(
+            firewall.extract_citations(
+                "พระราชบัญญัติหลักทรัพย์และตลาดหลักทรัพย์ พ.ศ. ๒๕๓๕ มาตรา ๘๙/๑๘"
+            ),
+            [("securities", "89/18")],
+        )
+        self.assertNotIn("18", firewall.cited_sections(
+            "พระราชบัญญัติหลักทรัพย์และตลาดหลักทรัพย์ พ.ศ. ๒๕๓๕ มาตรา ๘๙/๑๘"
+        ))
+        self.assertNotIn("23", firewall.cited_sections(
+            "พระราชบัญญัติหลักทรัพย์และตลาดหลักทรัพย์ พ.ศ. ๒๕๓๕ มาตรา ๘๙/๒๓"
+        ))
+        self.assertNotIn("89", firewall.cited_sections(
+            "พระราชบัญญัติหลักทรัพย์และตลาดหลักทรัพย์ พ.ศ. ๒๕๓๕ มาตรา ๘๙/๒๓"
+        ))
 
     def test_upsize_07_sea_box_phrases(self) -> None:
         """Phrases from articles/las-upsize-07.html official boxes."""
@@ -182,12 +193,13 @@ class CitationExtractionTests(unittest.TestCase):
             [("securities", "56")],
         )
         body = (
+            "พระราชบัญญัติหลักทรัพย์และตลาดหลักทรัพย์ พ.ศ. ๒๕๓๕ มาตรา ๘๙/๒๓ "
             "ให้นำความในมาตรา ๘๙/๘ วรรคสอง มาตรา ๘๙/๑๐ มาตรา ๘๙/๑๑ (๒) "
             "และ (๓) และมาตรา ๘๙/๑๘ มาใช้บังคับ โดยอนุโลม"
         )
         self.assertEqual(
             set(firewall.cited_sections(body)),
-            {"89/8", "89/10", "89/11", "89/18"},
+            {"89/23", "89/8", "89/10", "89/11", "89/18"},
         )
 
 
@@ -243,6 +255,64 @@ class RegistryAndGateTests(unittest.TestCase):
         )
         self.assertEqual(firewall.extract_citations(html), [(None, "118")])
 
+    def test_adjacent_statute_and_section_spans_keep_binding(self) -> None:
+        html = "<span>ประมวลรัษฎากร</span><span>มาตรา 118</span>"
+        self.assertEqual(firewall.extract_citations(html), [("revenue", "118")])
+
+    def test_footer_chain_cuts_unrelated_statute_after_section_pills(self) -> None:
+        html = (
+            "<span>พ.ร.บ.หลักทรัพย์และตลาดหลักทรัพย์ พ.ศ. 2535</span>"
+            "<span>มาตรา 65</span>"
+            "<span>มาตรา 83</span>"
+            "<span>พ.ร.บ.บริษัทมหาชนจำกัด พ.ศ. 2535</span>"
+        )
+        cites = firewall.extract_citations(html)
+        self.assertIn(("securities", "65"), cites)
+        self.assertIn((None, "83"), cites)
+        self.assertNotIn(("plc", "83"), cites)
+
+    def test_adjacent_revenue_118_does_not_pass_on_lpa_118(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            kb = write_kb(Path(tmp))
+            registry = firewall.load_registry(kb)
+            html = "<span>ประมวลรัษฎากร</span><span>มาตรา 118</span>"
+            cites = firewall.extract_citations(html)
+            self.assertEqual(cites, [("revenue", "118")])
+            self.assertEqual(firewall.missing_citations(cites, registry), ["revenue:118"])
+
+    def test_plural_section_dash_range_is_detected(self) -> None:
+        self.assertEqual(
+            firewall.extract_citations("Criminal Code Sections 147–166"),
+            [("criminal", "147"), ("criminal", "166")],
+        )
+        self.assertEqual(
+            firewall.extract_citations("Criminal Code Sections 147—166"),
+            [("criminal", "147"), ("criminal", "166")],
+        )
+        self.assertEqual(
+            firewall.extract_citations("PDPA Sections 28-29"),
+            [("pdpa", "28"), ("pdpa", "29")],
+        )
+        self.assertEqual(firewall.cited_sections("กระบวนการ IPO ใช้เวลา 18–36 เดือน"), [])
+        self.assertEqual(firewall.cited_sections("มาตรา 32–65"), ["32"])
+        self.assertEqual(firewall.cited_sections("Sections 102, 105"), [])
+
+    def test_criminal_code_range_does_not_pass_on_ccc(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            kb = Path(tmp)
+            (kb / "ccc.md").write_text(
+                "statute: ccc\nOfficial source: https://www.ocs.go.th/searchlaw-law\n"
+                "- มาตรา 147\n- มาตรา 166\n",
+                encoding="utf-8",
+            )
+            registry = firewall.load_registry(kb)
+            cites = firewall.extract_citations("Criminal Code Sections 147–166")
+            self.assertEqual(cites, [("criminal", "147"), ("criminal", "166")])
+            self.assertEqual(
+                firewall.missing_citations(cites, registry),
+                ["criminal:147", "criminal:166"],
+            )
+
     def test_html_wrapped_pdpa_title_binds_section_37(self) -> None:
         phrase = (
             "<strong>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562</strong> "
@@ -283,6 +353,9 @@ class RegistryAndGateTests(unittest.TestCase):
     def test_pdpa_slash_list_89_90_is_not_a_securities_insert(self) -> None:
         cites = firewall.extract_citations("PDPA Sections 89 / 90")
         self.assertEqual(cites, [("pdpa", "89"), ("pdpa", "90")])
+        cites_18 = firewall.extract_citations("PDPA Sections 89 / 18")
+        self.assertEqual(cites_18, [("pdpa", "89"), ("pdpa", "18")])
+        self.assertNotIn(("pdpa", "89/18"), cites_18)
         with tempfile.TemporaryDirectory() as tmp:
             kb = Path(tmp)
             (kb / "pdpa.md").write_text(
@@ -382,7 +455,7 @@ class RegistryAndGateTests(unittest.TestCase):
             phrases = (
                 "พระราชบัญญัติหลักทรัพย์และตลาดหลักทรัพย์ พ.ศ. ๒๕๓๕ มาตรา ๘๙/๒๓",
                 "มาตรา ๘๙/๘",
-                "มาตรา ๘๙/๑๘",
+                "พระราชบัญญัติหลักทรัพย์และตลาดหลักทรัพย์ พ.ศ. ๒๕๓๕ มาตรา ๘๙/๑๘",
                 "ตามมาตรา ๖๓",
             )
             for phrase in phrases:

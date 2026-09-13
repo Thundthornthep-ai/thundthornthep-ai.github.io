@@ -20,6 +20,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 15
 - มาตรา 16
 - มาตรา 17
+- มาตรา 19
 - มาตรา 20
 - มาตรา 30
 - มาตรา 33
@@ -54,6 +55,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 164
 - มาตรา 167
 - มาตรา 171
+- มาตรา 172
 - มาตรา 173
 - มาตรา 176
 - มาตรา 182
@@ -61,6 +63,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 184
 - มาตรา 185
 - มาตรา 186
+- มาตรา 190
 - มาตรา 193/1
 - มาตรา 193/3
 - มาตรา 193/4
@@ -78,7 +81,9 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 193/32
 - มาตรา 193/33
 - มาตรา 193/34
+- มาตรา 193
 - มาตรา 194
+- มาตรา 198
 - มาตรา 206
 - มาตรา 213
 - มาตรา 215
@@ -112,6 +117,8 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 302
 - มาตรา 303
 - มาตรา 306
+- มาตรา 313
+- มาตรา 348
 - มาตรา 354
 - มาตรา 361
 - มาตรา 366
@@ -130,6 +137,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 394
 - มาตรา 404
 - มาตรา 406
+- มาตรา 419
 - มาตรา 420
 - มาตรา 425
 - มาตรา 426
@@ -147,8 +155,10 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 479
 - มาตรา 480
 - มาตรา 481
+- มาตรา 482
 - มาตรา 483
 - มาตรา 485
+- มาตรา 517
 - มาตรา 537
 - มาตรา 538
 - มาตรา 540
@@ -170,7 +180,11 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 575
 - มาตรา 577
 - มาตรา 583
+- มาตรา 586
 - มาตรา 587
+- มาตรา 603
+- มาตรา 604
+- มาตรา 607
 - มาตรา 650
 - มาตรา 652
 - มาตรา 680
@@ -206,6 +220,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 827
 - มาตรา 828
 - มาตรา 831
+- มาตรา 844
 - มาตรา 850
 - มาตรา 861
 - มาตรา 863
@@ -278,6 +293,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 1250
 - มาตรา 1270
 - มาตรา 1272
+- มาตรา 1336
 - มาตรา 1457
 - มาตรา 1601
 - มาตรา 1734
