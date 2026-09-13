@@ -4,8 +4,11 @@
 This verifier checks that every statutory section cited by a public article is
 present in the release's official-source registry. When the surrounding phrase
 names a statute, the section must be registered under that statute — so
-``PDPA Section 118`` does not pass on Labour Protection Act 118. Bare lecture
-numbers still pass if any official statute file lists them.
+``PDPA Section 118`` does not pass on Labour Protection Act 118. A named
+statute that is not in the alias map is blocked instead of falling back to
+any registry number. Bare lecture numbers still pass if any official
+statute file lists them. Amendment clauses and coordinated
+``Section 36 and Section 37`` forms keep the same statute.
 
 It stores no private source text. A missing verifier, missing registry,
 malformed file, unmatched citation, or named-statute mismatch is a hard failure.
@@ -36,12 +39,27 @@ STATUTE_HEADER_RE = re.compile(r"(?im)^statute:\s*([a-z][a-z0-9_-]*)\s*$")
 SOURCE_URL_RE = re.compile(r"https?://", re.IGNORECASE)
 # Prefix covers ``Personal Data Protection Act B.E. 2562 (2019), Section``.
 # Trailing covers ``Section 118 of the Personal Data Protection Act``.
-PREFIX_LIMIT = 80
+PREFIX_LIMIT = 100
 TRAILING_LIMIT = 60
-# `` B.E. 2562 (2019), `` sits between the act name and Section.
-PREFIX_ALIAS_GAP = 24
 # `` of the `` / ``พ.ร.บ.`` sit between the number and a trailing act name.
 TRAILING_ALIAS_AT = 9
+UNRECOGNIZED = "unrecognized"
+CITATION_GLUE = re.compile(
+    r"^(?:\s|[.,;:()\[\]'\"“”‘’/-]|B\.?E\.?|พ\.?ศ\.?|\d+|"
+    r"แก้ไขเพิ่มเติม(?:โดย)?|ฉบับที่|as\s+amended(?:\s+by)?|amendment|"
+    r"no\.?|and|of|the|under|ตาม)+$",
+    re.IGNORECASE,
+)
+COORDINATION = re.compile(
+    r"^\s*(?:and|or|และ|หรือ|ประกอบ)\s*$",
+    re.IGNORECASE,
+)
+EN_NAMED_STATUTE = re.compile(
+    r"\b([A-Z][A-Za-z]+(?:\s+[A-Z][A-Za-z]+)+)\s+(Act|Code)\b"
+)
+TH_NAMED_START = re.compile(r"(?:พระราชบัญญัติ|พ\.ร\.บ\.)(?!นี้|ดังกล่าว)")
+SKIP_NAMED_HEADS = {"the", "this", "that", "an"}
+NAME_STOP = re.compile(r"\s*(?:พ\.?ศ\.?|B\.?E\.?|มาตรา|\bsection\b|,|$)", re.IGNORECASE)
 
 # Official inserted-section identifiers. Other a/b tokens with both sides >= 10
 # are treated as a list of two sections (FBA 36/37, CCC 159/164).
@@ -61,16 +79,37 @@ INSERTED_SECTIONS = {
 
 # Longer aliases first so PDPA wins over a bare "คุ้มครอง" and LPA over "แรงงาน".
 STATUTE_ALIASES: tuple[tuple[str, tuple[str, ...]], ...] = (
-    ("pdpa", ("คุ้มครองข้อมูลส่วนบุคคล", "personal data protection act", "pdpa")),
+    ("pdpa", ("คุ้มครองข้อมูลส่วนบุคคล", "คุ้มครองข้อมูล", "personal data protection act", "pdpa")),
     ("lpa", ("คุ้มครองแรงงาน", "labour protection act", "labor protection act")),
     ("ucta", ("ข้อสัญญาที่ไม่เป็นธรรม", "unfair contract terms")),
-    ("fba", ("ประกอบธุรกิจของคนต่างด้าว", "foreign business act", "fba")),
+    ("fba", ("ประกอบธุรกิจของคนต่างด้าว", "ธุรกิจต่างด้าว", "foreign business act", "fba")),
+    ("tradesecrets", ("ความลับทางการค้า", "trade secrets act")),
     ("revenue", ("ประมวลรัษฎากร", "revenue code")),
     ("competition", ("แข่งขันทางการค้า", "trade competition act")),
     ("bankruptcy", ("พระราชบัญญัติล้มละลาย", "bankruptcy act")),
     ("trademark", ("เครื่องหมายการค้า", "trademark act")),
     ("consumer", ("คุ้มครองผู้บริโภค", "consumer protection act")),
-    ("ccc", ("ประมวลกฎหมายแพ่งและพาณิชย์", "ประมวลกฎหมายแพ่ง", "ป.พ.พ.", "ปพพ.", "tccc", "civil and commercial code")),
+    ("ccc", ("ประมวลกฎหมายแพ่งและพาณิชย์", "ประมวลกฎหมายแพ่ง", "ป.พ.พ.", "ปพพ.", "tccc", "civil and commercial code", "thai civil code")),
+    ("nacc", ("ป้องกันและปราบปรามการทุจริต", "organic act on counter corruption", "ป.ป.ช.", "ปปช.")),
+    ("bidrigging", ("เสนอราคาต่อหน่วยงานของรัฐ", "bid rigging act", "anti-bid rigging")),
+    ("boi", ("ส่งเสริมการลงทุน", "investment promotion act")),
+    ("officialtort", ("ความรับผิดทางละเมิดของเจ้าหน้าที่", "tort liability of government officials act")),
+    ("eec", ("เขตพัฒนาพิเศษภาคตะวันออก", "eastern economic corridor act", "eec act")),
+    ("condo", ("อาคารชุด", "condominium act")),
+    ("hotel", ("พระราชบัญญัติโรงแรม", "hotel act")),
+    ("adminfines", ("ปรับเป็นพินัย", "administrative fines act")),
+    ("plc", ("บริษัทมหาชนจำกัด", "public limited companies act", "public limited company act")),
+    ("arbitration", ("อนุญาโตตุลาการ", "arbitration act")),
+    ("foreignwork", ("การทำงานของคนต่างด้าว", "foreigners' working act", "foreign workers act")),
+    ("ieat", ("การนิคมอุตสาหกรรม", "industrial estate authority")),
+    ("copyright", ("พระราชบัญญัติลิขสิทธิ์", "copyright act")),
+    ("labourcourt", ("จัดตั้งศาลแรงงาน", "labour court act", "labor court act")),
+    ("securities", ("หลักทรัพย์และตลาดหลักทรัพย์", "securities and exchange act")),
+    ("computercrime", ("กระทำความผิดเกี่ยวกับคอมพิวเตอร์", "computer crime act", "พ.ร.บ.คอมพิวเตอร์")),
+    ("etransactions", ("ธุรกรรมทางอิเล็กทรอนิกส์", "electronic transactions act")),
+    ("civilprocedure", ("วิธีพิจารณาความแพ่ง", "civil procedure code")),
+    ("mediation", ("การไกล่เกลี่ยข้อพิพาท", "dispute mediation act")),
+    ("ukbribery", ("uk bribery act",)),
 )
 
 
@@ -152,7 +191,8 @@ def prefix_statute(prefix: str) -> str | None:
     span = _alias_span(window, key)
     if span is None:
         return None
-    if len(window) - span[1] > PREFIX_ALIAS_GAP:
+    gap = window[span[1] :]
+    if gap and not CITATION_GLUE.match(gap):
         return None
     return key
 
@@ -168,13 +208,49 @@ def trailing_statute(trailing: str) -> str | None:
     return key
 
 
+def _has_unknown_named_statute(window: str) -> bool:
+    """Unknown act name whose remaining gap to the section is citation glue only."""
+    if statute_in(window):
+        return False
+    for match in EN_NAMED_STATUTE.finditer(window):
+        if match.group(1).split()[0].lower() in SKIP_NAMED_HEADS:
+            continue
+        gap = window[match.end() :]
+        if not gap or CITATION_GLUE.match(gap):
+            return True
+    for match in TH_NAMED_START.finditer(window):
+        stop = NAME_STOP.search(window, match.end())
+        name_end = stop.start() if stop else len(window)
+        if name_end - match.end() < 3:
+            continue
+        name = window[match.end() : name_end]
+        if re.match(r"^[\s.]*ฉบับ", name):
+            continue
+        gap = window[name_end:]
+        if not gap or CITATION_GLUE.match(gap):
+            return True
+    return False
+
+
+def unrecognized_named_statute(prefix: str, trailing: str = "") -> bool:
+    """True when this citation phrase names an act missing from the alias map."""
+    before = phrase_before(prefix)
+    if _has_unknown_named_statute(before):
+        return True
+    after = phrase_after(trailing)
+    lead = re.match(r"^\s*(?:of(?:\s+the)?|แห่ง|ของ|ตาม)\s+", after, re.IGNORECASE)
+    return bool(lead) and _has_unknown_named_statute(after[lead.end() :])
+
+
 def attached_statute(prefix: str, trailing: str = "") -> str | None:
     """Bind a statute when its name sits immediately before or after this token.
 
     A prior ``มาตรา`` / ``section`` cuts the prefix so
     ``ปพพ. มาตรา 577 + มาตรา 118`` does not mark 118 as CCC. Trailing names
     such as ``Section 118 of the Personal Data Protection Act`` still bind.
-    A later act in the same sentence does not.
+    A later act in the same sentence does not. Amendment-year glue and
+    ``and`` / ``ประกอบ`` coordination keep the same statute. A named act
+    that is missing from the alias map is ``unrecognized``, not bare.
     """
     return prefix_statute(prefix) or trailing_statute(trailing)
 
@@ -182,13 +258,20 @@ def attached_statute(prefix: str, trailing: str = "") -> str | None:
 def extract_citations(text: str) -> list[tuple[str | None, str]]:
     prepared = prepare_text(text)
     found: list[tuple[str | None, str]] = []
+    last_statute: str | None = None
     for match in SECTION_RE.finditer(prepared):
+        prefix = prepared[: match.start()]
         trailing = prepared[match.end() : match.end() + TRAILING_LIMIT]
-        statute = attached_statute(prepared[: match.start()], trailing)
+        statute = attached_statute(prefix, trailing)
+        if statute is None and COORDINATION.match(phrase_before(prefix)):
+            statute = last_statute
+        if statute is None and unrecognized_named_statute(prefix, trailing):
+            statute = UNRECOGNIZED
         if statute == "bankruptcy" and "ไม่ใช่บทล้มละลาย" in trailing:
             statute = None
         for section in expand_section_token(section_token(match)):
             found.append((statute, section))
+            last_statute = statute
     return found
 
 

@@ -77,8 +77,20 @@ class CitationExtractionTests(unittest.TestCase):
             "simulated transactions under the Civil and Commercial Code Section 155"
         )
         self.assertIn(("fba", "36"), cites)
-        self.assertIn((None, "37"), cites)
+        self.assertIn(("fba", "37"), cites)
         self.assertIn(("ccc", "155"), cites)
+
+    def test_coordinated_and_keeps_statute_scope(self) -> None:
+        cites = firewall.extract_citations(
+            "Foreign Business Act B.E. 2542 (1999), Section 36 and Section 37"
+        )
+        self.assertEqual(cites, [("fba", "36"), ("fba", "37")])
+
+    def test_amendment_clause_still_binds_lpa(self) -> None:
+        cites = firewall.extract_citations(
+            "พระราชบัญญัติคุ้มครองแรงงาน พ.ศ. 2541 แก้ไขเพิ่มเติมโดย ฉบับที่ 9 พ.ศ. 2568 มาตรา 118"
+        )
+        self.assertEqual(cites, [("lpa", "118")])
 
     def test_contrast_clause_does_not_steal_hire_of_work_section(self) -> None:
         cites = firewall.extract_citations(
@@ -119,6 +131,19 @@ class RegistryAndGateTests(unittest.TestCase):
             registry = firewall.load_registry(kb)
             missing = firewall.missing_citations(firewall.extract_citations("ปพพ. มาตรา ๒๑๓"), registry)
             self.assertEqual(missing, [])
+
+    def test_named_act_absent_from_alias_map_is_unrecognized(self) -> None:
+        cites = firewall.extract_citations("Widget Licensing Act B.E. 2560, Section 3")
+        self.assertEqual(cites, [(firewall.UNRECOGNIZED, "3")])
+
+    def test_named_unknown_act_does_not_pass_on_another_registry(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            kb = write_kb(Path(tmp))
+            registry = firewall.load_registry(kb)
+            cites = firewall.extract_citations("Trade Secrets Act B.E. 2545 (2002), Section 3")
+            self.assertEqual(cites, [("tradesecrets", "3")])
+            missing = firewall.missing_citations(cites, registry)
+            self.assertEqual(missing, ["tradesecrets:3"])
 
     def test_pdpa_section_118_does_not_pass_on_lpa_118(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
