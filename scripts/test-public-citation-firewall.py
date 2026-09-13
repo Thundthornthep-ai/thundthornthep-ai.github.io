@@ -61,6 +61,7 @@ class CitationExtractionTests(unittest.TestCase):
     def test_slash_list_splits_into_two_sections(self) -> None:
         html = "FBA Sections 36 / 37 (พ.ร.บ.ประกอบธุรกิจของคนต่างด้าว พ.ศ. 2542 มาตรา 36/37)"
         self.assertEqual(set(firewall.cited_sections(html)), {"36", "37"})
+        self.assertEqual(firewall.cited_sections("มาตรา 159/164"), ["159", "164"])
 
     def test_inserted_section_stays_compound(self) -> None:
         self.assertEqual(firewall.cited_sections("มาตรา 41/1"), ["41/1"])
@@ -79,10 +80,29 @@ class RegistryAndGateTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             kb = write_kb(Path(tmp))
             registry = firewall.load_registry(kb)
+            self.assertEqual(registry["lpa"], {"118"})
+            self.assertNotIn("118", registry.get("pdpa", set()))
             cites = firewall.extract_citations("Personal Data Protection Act, Section 118")
             self.assertEqual(cites, [("pdpa", "118")])
             missing = firewall.missing_citations(cites, registry)
             self.assertEqual(missing, ["pdpa:118"])
+
+    def test_registry_splits_slash_lists_and_does_not_keep_combined_token(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            kb = Path(tmp)
+            (kb / "fba.md").write_text(
+                "statute: fba\nOfficial source: https://www.ocs.go.th/searchlaw-law\n- มาตรา 36/37\n",
+                encoding="utf-8",
+            )
+            (kb / "ccc.md").write_text(
+                "statute: ccc\nOfficial source: https://www.ocs.go.th/searchlaw-law\n- มาตรา 159/164\n",
+                encoding="utf-8",
+            )
+            registry = firewall.load_registry(kb)
+            self.assertEqual(registry["fba"], {"36", "37"})
+            self.assertEqual(registry["ccc"], {"159", "164"})
+            self.assertNotIn("36/37", registry["fba"])
+            self.assertNotIn("159/164", registry["ccc"])
 
     def test_lpa_section_118_passes_on_lpa_registry(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
