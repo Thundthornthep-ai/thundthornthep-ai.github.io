@@ -1,6 +1,10 @@
-# Current-law citation index — Thai Civil and Commercial Code, Book 3
+# Current-law citation index — Thai Civil and Commercial Code, Book 3 (company)
 
-This release-only index records the current official source and section identifiers used by the LAS Share 01 claim ledger. It is not a publication of any private source.
+statute: ccc
+
+Publication-wide CCC identifiers also live in `ccc-sections.md`.
+This file keeps the original Book 3 company-law identifiers and official
+OCS/DBD URLs. It is not a publication of any private source.
 
 Official consolidated source: https://searchlaw.ocs.go.th/council-of-state/#/public/doc/YmVCMjZDR1d4dXFQZ1FReWo2cE5rQT09
 
