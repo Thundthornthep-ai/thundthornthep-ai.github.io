@@ -16,6 +16,9 @@ on:
       - 'scripts/validate-knowledge-hub.js'
       - 'scripts/validate-knowledge-slugs.js'
       - 'scripts/verify-legal-citations.sh'
+      - 'scripts/public-citation-firewall.py'
+      - 'scripts/test-public-citation-firewall.py'
+      - 'scripts/legal-kb/**'
       - '.github/workflows/validate.yml'
   pull_request:
     paths:
@@ -28,6 +31,9 @@ on:
       - 'scripts/validate-knowledge-hub.js'
       - 'scripts/validate-knowledge-slugs.js'
       - 'scripts/verify-legal-citations.sh'
+      - 'scripts/public-citation-firewall.py'
+      - 'scripts/test-public-citation-firewall.py'
+      - 'scripts/legal-kb/**'
       - '.github/workflows/validate.yml'
   workflow_dispatch:
 
@@ -64,16 +70,16 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Run citation firewall unit tests
+        run: python3 scripts/test-public-citation-firewall.py
+
       - name: Run citation firewall (fail closed)
         shell: bash
         run: |
           set -euo pipefail
-          mapfile -t files < <(git diff --name-only "${{ steps.range.outputs.base }}" "${{ steps.range.outputs.target }}" -- 'articles/*.html' 'en/articles/*.html')
-          if ((${#files[@]} == 0)); then
-            echo "No changed article HTML — citation gate not applicable."
-            exit 0
-          fi
-          bash scripts/verify-legal-citations.sh "${files[@]}"
+          # Publication-wide: official PDF-box cites live across the set, so a
+          # registry or firewall change must re-check every tracked article.
+          bash scripts/verify-legal-citations.sh --all
 
       - name: Run exact slug and series validator
         shell: bash
