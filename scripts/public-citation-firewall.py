@@ -2,10 +2,13 @@
 """Public, release-scoped LAS citation gate.
 
 This verifier checks that every statutory section cited by a public article is
-present in the release's official-source registry under the correct statute.
+present in the release's official-source registry. When the surrounding phrase
+names a statute, the section must be registered under that statute — so
+``PDPA Section 118`` does not pass on Labour Protection Act 118. Bare lecture
+numbers still pass if any official statute file lists them.
+
 It stores no private source text. A missing verifier, missing registry,
-malformed file, unmatched citation, or cross-statute number collision without
-a bound statute is a hard failure.
+malformed file, unmatched citation, or named-statute mismatch is a hard failure.
 
 Official PDF lawquote boxes use Thai numerals. The gate normalizes Thai digits
 to Arabic, ignores HTML outline comments, and splits slash-lists such as
