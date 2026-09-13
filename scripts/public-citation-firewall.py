@@ -14,7 +14,8 @@ It stores no private source text. A missing verifier, missing registry,
 malformed file, unmatched citation, or named-statute mismatch is a hard failure.
 
 Official PDF lawquote boxes use Thai numerals. The gate normalizes Thai digits
-to Arabic, ignores HTML outline comments, and splits slash-lists such as
+to Arabic, ignores HTML outline comments, treats tags and ordinary entities as
+separators, and splits slash-lists such as
 ``มาตรา 36/37`` or ``FBA มาตรา 36 / 37`` into 36 and 37. Plural slash lists
 (``Sections 36 / 37``) are included; comma lists are not, so unrelated
 ``Sections 102, 105`` cites stay out of this release's registry. Inserted
@@ -30,6 +31,25 @@ from pathlib import Path
 
 THAI_DIGITS = str.maketrans("๐๑๒๓๔๕๖๗๘๙", "0123456789")
 HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
+HTML_TAG = re.compile(r"<[^>]+>")
+SIBLING_TAGS = re.compile(r"</[a-zA-Z][^>]*>\s*(?=<[a-zA-Z])", re.IGNORECASE)
+HARD_CUT = " ·|· "
+HTML_ENTITY = re.compile(r"&(?:[a-zA-Z][a-zA-Z0-9]*|#\d+|#x[0-9a-fA-F]+);")
+HTML_ENTITIES = {
+    "&amp;": "and",
+    "&#38;": "and",
+    "&mdash;": "—",
+    "&ndash;": "–",
+    "&#8212;": "—",
+    "&#8211;": "–",
+    "&nbsp;": " ",
+    "&#160;": " ",
+    "&quot;": '"',
+    "&apos;": "'",
+    "&#39;": "'",
+    "&lt;": " ",
+    "&gt;": " ",
+}
 # Singular section / มาตรา, plus plural only when it is a slash-list.
 SECTION_RE = re.compile(
     r"(?:มาตรา|\bsection)\s+(\d+(?:\s*/\s*\d+)?)|\bsections\s+(\d+\s*/\s*\d+)",
@@ -43,7 +63,7 @@ PREFIX_LIMIT = 100
 TRAILING_LIMIT = 60
 UNRECOGNIZED = "unrecognized"
 CITATION_GLUE = re.compile(
-    r"^(?:\s|[.,;:()\[\]'\"“”‘’/-]|B\.?E\.?|พ\.?ศ\.?|\d+|"
+    r"^(?:\s|[.,;:()\[\]'\"“”‘’/\-–—]|B\.?E\.?|พ\.?ศ\.?|\d+|"
     r"แก้ไขเพิ่มเติม(?:โดย)?|ฉบับที่|as\s+amended(?:\s+by)?|amendment|"
     r"no\.?|and|of|the|under|ตาม)+$",
     re.IGNORECASE,
@@ -61,9 +81,8 @@ SKIP_NAMED_HEADS = {"the", "this", "that", "an"}
 NAME_STOP = re.compile(r"\s*(?:พ\.?ศ\.?|B\.?E\.?|มาตรา|\bsection\b|,|$)", re.IGNORECASE)
 
 # Official inserted-section identifiers. Other a/b tokens with both sides >= 10
-# are treated as a list of two sections (FBA 36/37, CCC 159/164).
-# Securities Act listed-company inserts (89/8, 89/18, 89/23) stay compound,
-# same as the CCC 193/* family — both sides can be >= 10.
+# are treated as a list of two sections (FBA 36/37, CCC 159/164, PDPA 89/90).
+# The 89/* catch-all applies only when the cite is bound as Securities Act.
 INSERTED_SECTIONS = {
     "4/1",
     "23/1",
@@ -72,6 +91,12 @@ INSERTED_SECTIONS = {
     "59/2",
     "81/1",
     "85/1",
+    "89/8",
+    "89/10",
+    "89/11",
+    "89/15",
+    "89/18",
+    "89/23",
     "91/2",
     "1111/1",
     "681/1",
@@ -116,13 +141,19 @@ STATUTE_ALIASES: tuple[tuple[str, tuple[str, ...]], ...] = (
 
 
 def prepare_text(text: str) -> str:
-    """Normalize published citation text without dropping official recitations."""
-    return (
-        HTML_COMMENT.sub(" ", text)
-        .replace("&amp;", "and")
-        .replace("&#38;", "and")
-        .translate(THAI_DIGITS)
-    )
+    """Normalize published citation text without dropping official recitations.
+
+    Inline wrappers become spaces so ``<strong>PDPA title</strong> &mdash; มาตรา 37``
+    still binds. Adjacent sibling tags become a hard cut so footer pills do not
+    rebind the previous section to the next statute name.
+    """
+    text = HTML_COMMENT.sub(" ", text)
+    text = SIBLING_TAGS.sub(HARD_CUT, text)
+    text = HTML_TAG.sub(" ", text)
+    for entity, replacement in HTML_ENTITIES.items():
+        text = text.replace(entity, replacement)
+    text = HTML_ENTITY.sub(" ", text)
+    return text.translate(THAI_DIGITS)
 
 
 def normalize_section_token(token: str) -> str:
@@ -133,11 +164,13 @@ def section_token(match: re.Match[str]) -> str:
     return next(group for group in match.groups() if group is not None)
 
 
-def expand_section_token(token: str) -> list[str]:
+def expand_section_token(token: str, statute: str | None = None) -> list[str]:
     token = normalize_section_token(token)
     if "/" not in token:
         return [token]
-    if token in INSERTED_SECTIONS or token.startswith("193/") or token.startswith("89/"):
+    if token in INSERTED_SECTIONS or token.startswith("193/"):
+        return [token]
+    if token.startswith("89/") and statute == "securities":
         return [token]
     left, right = token.split("/", 1)
     if left.isdigit() and right.isdigit() and int(left) >= 10 and int(right) >= 10:
@@ -233,7 +266,10 @@ def _has_unknown_named_statute(window: str) -> bool:
     if statute_in(window):
         return False
     for match in EN_NAMED_STATUTE.finditer(window):
-        if match.group(1).split()[0].lower() in SKIP_NAMED_HEADS:
+        words = match.group(1).split()
+        while words and words[0].lower() in SKIP_NAMED_HEADS:
+            words.pop(0)
+        if not words:
             continue
         gap = window[match.end() :]
         if not gap or CITATION_GLUE.match(gap):
@@ -277,7 +313,11 @@ def attached_statute(prefix: str, trailing: str = "") -> str | None:
     return prefix_statute(prefix) or trailing_statute(trailing)
 
 
-def extract_citations(text: str) -> list[tuple[str | None, str]]:
+def extract_citations(
+    text: str,
+    *,
+    insert_statute: str | None = None,
+) -> list[tuple[str | None, str]]:
     prepared = prepare_text(text)
     found: list[tuple[str | None, str]] = []
     last_statute: str | None = None
@@ -291,7 +331,7 @@ def extract_citations(text: str) -> list[tuple[str | None, str]]:
             statute = UNRECOGNIZED
         if statute == "bankruptcy" and "ไม่ใช่บทล้มละลาย" in trailing:
             statute = None
-        for section in expand_section_token(section_token(match)):
+        for section in expand_section_token(section_token(match), statute or insert_statute):
             found.append((statute, section))
             last_statute = statute
     return found
@@ -321,7 +361,7 @@ def load_registry(path: Path) -> dict[str, set[str]]:
         if not header:
             raise RuntimeError(f"citation registry {file.name} is missing a 'statute:' key")
         statute = header.group(1)
-        sections = {section for _bound, section in extract_citations(text)}
+        sections = {section for _bound, section in extract_citations(text, insert_statute=statute)}
         if not sections:
             raise RuntimeError(f"citation registry {file.name} contains no section identifiers")
         by_statute.setdefault(statute, set()).update(sections)

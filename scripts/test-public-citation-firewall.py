@@ -44,6 +44,18 @@ class PrepareTextTests(unittest.TestCase):
     def test_ampersand_entity_does_not_break_ccc_alias(self) -> None:
         self.assertIn("and", firewall.prepare_text("Civil &amp; Commercial Code"))
 
+    def test_html_tags_and_mdash_become_separators(self) -> None:
+        text = (
+            "<strong>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562</strong> "
+            "&mdash; มาตรา 37"
+        )
+        prepared = firewall.prepare_text(text)
+        self.assertNotIn("<strong>", prepared)
+        self.assertNotIn("</strong>", prepared)
+        self.assertNotIn("&mdash;", prepared)
+        self.assertIn("พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล", prepared)
+        self.assertIn("มาตรา 37", prepared)
+
 
 class CitationExtractionTests(unittest.TestCase):
     def test_lawquote_thai_numeral_is_a_citation(self) -> None:
@@ -205,6 +217,16 @@ class RegistryAndGateTests(unittest.TestCase):
             [(firewall.UNRECOGNIZED, "4")],
         )
 
+    def test_sentence_initial_the_patent_act_is_unrecognized(self) -> None:
+        self.assertEqual(
+            firewall.extract_citations("The Patent Act, Section 3"),
+            [(firewall.UNRECOGNIZED, "3")],
+        )
+        self.assertEqual(
+            firewall.extract_citations("The Act, Section 3"),
+            [(None, "3")],
+        )
+
     def test_named_unknown_act_does_not_pass_on_another_registry(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             kb = write_kb(Path(tmp))
@@ -213,6 +235,64 @@ class RegistryAndGateTests(unittest.TestCase):
             self.assertEqual(cites, [("tradesecrets", "3")])
             missing = firewall.missing_citations(cites, registry)
             self.assertEqual(missing, ["tradesecrets:3"])
+
+    def test_sibling_footer_pills_do_not_rebind_next_statute(self) -> None:
+        html = (
+            "<span>มาตรา 118</span>"
+            "<span>พ.ร.บ.ความลับทางการค้า พ.ศ. 2545</span>"
+        )
+        self.assertEqual(firewall.extract_citations(html), [(None, "118")])
+
+    def test_html_wrapped_pdpa_title_binds_section_37(self) -> None:
+        phrase = (
+            "<strong>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562</strong> "
+            "&mdash; มาตรา 37(1), 37(4), 39"
+        )
+        cites = firewall.extract_citations(phrase)
+        self.assertIn(("pdpa", "37"), cites)
+        self.assertNotIn((None, "37"), cites)
+
+    def test_html_wrapped_pdpa_37_does_not_pass_on_arbitration_37(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            kb = Path(tmp)
+            (kb / "arbitration.md").write_text(
+                "statute: arbitration\nOfficial source: https://www.ocs.go.th/searchlaw-law\n- มาตรา 37\n",
+                encoding="utf-8",
+            )
+            registry = firewall.load_registry(kb)
+            phrase = (
+                "<strong>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562</strong> "
+                "&mdash; มาตรา 37"
+            )
+            cites = firewall.extract_citations(phrase)
+            self.assertEqual(cites, [("pdpa", "37")])
+            self.assertEqual(firewall.missing_citations(cites, registry), ["pdpa:37"])
+
+    def test_sentence_initial_patent_act_does_not_pass_on_other_registry(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            kb = write_kb(Path(tmp))
+            (Path(tmp) / "ccc.md").write_text(
+                "statute: ccc\nOfficial source: https://www.ocs.go.th/searchlaw-law\n- มาตรา 3\n",
+                encoding="utf-8",
+            )
+            registry = firewall.load_registry(kb)
+            cites = firewall.extract_citations("The Patent Act, Section 3")
+            self.assertEqual(cites, [(firewall.UNRECOGNIZED, "3")])
+            self.assertEqual(firewall.missing_citations(cites, registry), ["unrecognized:3"])
+
+    def test_pdpa_slash_list_89_90_is_not_a_securities_insert(self) -> None:
+        cites = firewall.extract_citations("PDPA Sections 89 / 90")
+        self.assertEqual(cites, [("pdpa", "89"), ("pdpa", "90")])
+        with tempfile.TemporaryDirectory() as tmp:
+            kb = Path(tmp)
+            (kb / "pdpa.md").write_text(
+                "statute: pdpa\nOfficial source: https://www.ocs.go.th/searchlaw-law\n"
+                "- มาตรา 89\n- มาตรา 90\n",
+                encoding="utf-8",
+            )
+            registry = firewall.load_registry(kb)
+            self.assertEqual(firewall.missing_citations(cites, registry), [])
+            self.assertNotIn("89/90", registry["pdpa"])
 
     def test_pdpa_section_118_does_not_pass_on_lpa_118(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
