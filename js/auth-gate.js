@@ -1,7 +1,7 @@
 /**
  * LAS Knowledge Hub — Auth Gate
  * Client-side password protection for knowledge articles
- * Username: LAS / Password: laslegal
+ * Set or recover credentials at /auth-settings.html (no old password required)
  *
  * Usage: Add <script src="/js/auth-gate.js"></script> before </body>
  */
@@ -12,7 +12,19 @@
   var VALID_USER = 'LAS';
   var VALID_PASS = 'laslegal';
   var SESSION_KEY = 'las_auth_ok';
-  var REMEMBER_KEY = 'las_auth_remember';
+  var CREDS_KEY = 'las_hub_creds';
+  var SETTINGS_URL = '/auth-settings.html';
+
+  function getCreds() {
+    try {
+      var raw = localStorage.getItem(CREDS_KEY);
+      if (raw) {
+        var c = JSON.parse(raw);
+        if (c && c.user && c.pass) return { user: String(c.user), pass: String(c.pass) };
+      }
+    } catch (e) {}
+    return { user: VALID_USER, pass: VALID_PASS };
+  }
 
   // Already authenticated (localStorage = remember me, sessionStorage = this session)
   if (localStorage.getItem(SESSION_KEY) === '1' || sessionStorage.getItem(SESSION_KEY) === '1') return;
@@ -73,6 +85,10 @@
     'onmouseout="this.style.transform=\'none\';this.style.boxShadow=\'none\'">',
     'Log In</button>',
 
+    // Recover credentials without the old password
+    '<div style="margin-top:16px;"><a href="', SETTINGS_URL, '" style="color:#C9A96E;font-size:13px;text-decoration:none;">',
+    'ลืมรหัส — ตั้งชื่อผู้ใช้และรหัสผ่านใหม่ โดยไม่ต้องใส่ของเดิม</a></div>',
+
     // Footer
     '<div style="margin-top:20px;color:#3a5a72;font-size:10px;">',
     '&copy; 2026 Legal Advance Solution Co., Ltd.</div>',
@@ -87,7 +103,8 @@
     var u = document.getElementById('las-auth-user').value.trim();
     var p = document.getElementById('las-auth-pass').value;
     var remember = document.getElementById('las-auth-remember').checked;
-    if (u === VALID_USER && p === VALID_PASS) {
+    var creds = getCreds();
+    if (u === creds.user && p === creds.pass) {
       if (remember) {
         localStorage.setItem(SESSION_KEY, '1');
       } else {

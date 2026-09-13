@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>ตั้งชื่อผู้ใช้และรหัสผ่าน — LAS Knowledge Hub</title>
+<link rel="icon" type="image/webp" href="/las-logo.webp">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'TH Sarabun New', Sarabun, sans-serif;
+    background: linear-gradient(135deg, #0a1628 0%, #162a3e 50%, #0d1b2a 100%);
+    color: #e8eef3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .card {
+    background: #0f1f30;
+    border: 1px solid #1e3a5f;
+    border-radius: 16px;
+    padding: 36px 32px;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  }
+  h1 { margin: 0 0 8px; font-size: 22px; color: #C9A96E; }
+  p { margin: 0 0 18px; font-size: 15px; line-height: 1.5; color: #8ab4d8; }
+  label { display: block; font-size: 13px; color: #8ab4d8; margin: 12px 0 4px; }
+  input {
+    width: 100%;
+    padding: 10px 14px;
+    background: #162a3e;
+    border: 1px solid #1e3a5f;
+    border-radius: 8px;
+    color: #e8eef3;
+    font-size: 16px;
+  }
+  input:focus { outline: none; border-color: #C9A96E; }
+  button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #C9A96E, #b8954f);
+    color: #0d1b2a;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .msg { margin-top: 12px; font-size: 14px; min-height: 20px; }
+  .err { color: #e74c3c; }
+  .ok { color: #27AE60; }
+  a { color: #C9A96E; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>ตั้งชื่อผู้ใช้และรหัสผ่านใหม่</h1>
+    <p>หน้านี้สำหรับอ่านบทความใน Knowledge Hub บนเครื่องนี้ ไม่ต้องใส่ชื่อผู้ใช้หรือรหัสผ่านเดิม</p>
+    <form id="f" autocomplete="off">
+      <label for="user">ชื่อผู้ใช้ใหม่</label>
+      <input id="user" type="text" autocomplete="off" required>
+      <label for="pass">รหัสผ่านใหม่</label>
+      <input id="pass" type="password" autocomplete="new-password" required>
+      <label for="pass2">ยืนยันรหัสผ่านใหม่</label>
+      <input id="pass2" type="password" autocomplete="new-password" required>
+      <button type="submit">บันทึกแล้วเข้าอ่าน Hub</button>
+    </form>
+    <div class="msg" id="msg"></div>
+  </div>
+  <script>
+    var CREDS_KEY = 'las_hub_creds';
+    var SESSION_KEY = 'las_auth_ok';
+    document.getElementById('f').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var user = document.getElementById('user').value.trim();
+      var pass = document.getElementById('pass').value;
+      var pass2 = document.getElementById('pass2').value;
+      var msg = document.getElementById('msg');
+      if (!user || !pass) {
+        msg.className = 'msg err';
+        msg.textContent = 'กรุณาใส่ชื่อผู้ใช้และรหัสผ่านใหม่';
+        return;
+      }
+      if (pass !== pass2) {
+        msg.className = 'msg err';
+        msg.textContent = 'รหัสผ่านใหม่ทั้งสองช่องยังไม่ตรงกัน';
+        return;
+      }
+      localStorage.setItem(CREDS_KEY, JSON.stringify({ user: user, pass: pass }));
+      localStorage.setItem(SESSION_KEY, '1');
+      sessionStorage.setItem(SESSION_KEY, '1');
+      msg.className = 'msg ok';
+      msg.textContent = 'บันทึกแล้ว กำลังเปิด Knowledge Hub';
+      window.location.href = '/knowledge-hub.html';
+    });
+  </script>
+</body>
+</html>
