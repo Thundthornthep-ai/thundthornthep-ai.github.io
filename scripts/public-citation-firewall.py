@@ -18,7 +18,7 @@ to Arabic, ignores HTML outline comments, and splits slash-lists such as
 ``มาตรา 36/37`` or ``FBA มาตรา 36 / 37`` into 36 and 37. Plural slash lists
 (``Sections 36 / 37``) are included; comma lists are not, so unrelated
 ``Sections 102, 105`` cites stay out of this release's registry. Inserted
-sections (``41/1``, ``193/30``) stay one identifier. Lawquote boxes and
+sections (``41/1``, ``193/30``, ``89/23``) stay one identifier. Lawquote boxes and
 lecture cites remain in scope.
 """
 from __future__ import annotations
@@ -62,6 +62,8 @@ NAME_STOP = re.compile(r"\s*(?:พ\.?ศ\.?|B\.?E\.?|มาตรา|\bsection\b
 
 # Official inserted-section identifiers. Other a/b tokens with both sides >= 10
 # are treated as a list of two sections (FBA 36/37, CCC 159/164).
+# Securities Act listed-company inserts (89/8, 89/18, 89/23) stay compound,
+# same as the CCC 193/* family — both sides can be >= 10.
 INSERTED_SECTIONS = {
     "4/1",
     "23/1",
@@ -135,7 +137,7 @@ def expand_section_token(token: str) -> list[str]:
     token = normalize_section_token(token)
     if "/" not in token:
         return [token]
-    if token in INSERTED_SECTIONS or token.startswith("193/"):
+    if token in INSERTED_SECTIONS or token.startswith("193/") or token.startswith("89/"):
         return [token]
     left, right = token.split("/", 1)
     if left.isdigit() and right.isdigit() and int(left) >= 10 and int(right) >= 10:

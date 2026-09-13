@@ -130,6 +130,54 @@ class CitationExtractionTests(unittest.TestCase):
         self.assertEqual(firewall.cited_sections("มาตรา 41/1"), ["41/1"])
         self.assertEqual(firewall.cited_sections("มาตรา 193/30"), ["193/30"])
 
+    def test_securities_89_inserts_do_not_split_into_bare_numbers(self) -> None:
+        """SEA 89/8, 89/18, 89/23 are official inserts, not slash-lists."""
+        self.assertEqual(firewall.cited_sections("มาตรา ๘๙/๘"), ["89/8"])
+        self.assertEqual(firewall.cited_sections("มาตรา ๘๙/๑๘"), ["89/18"])
+        self.assertEqual(firewall.cited_sections("มาตรา ๘๙/๒๓"), ["89/23"])
+        self.assertEqual(
+            firewall.extract_citations(
+                "พระราชบัญญัติหลักทรัพย์และตลาดหลักทรัพย์ พ.ศ. ๒๕๓๕ มาตรา ๘๙/๒๓"
+            ),
+            [("securities", "89/23")],
+        )
+        self.assertNotIn("18", firewall.cited_sections("มาตรา ๘๙/๑๘"))
+        self.assertNotIn("23", firewall.cited_sections("มาตรา ๘๙/๒๓"))
+        self.assertNotIn("89", firewall.cited_sections("มาตรา ๘๙/๒๓"))
+
+    def test_upsize_07_sea_box_phrases(self) -> None:
+        """Phrases from articles/las-upsize-07.html official boxes."""
+        cites = firewall.extract_citations(
+            "พระราชบัญญัติหลักทรัพย์และตลาดหลักทรัพย์ พ.ศ. ๒๕๓๕ มาตรา ๒๖๘"
+        )
+        self.assertEqual(cites, [("securities", "268")])
+        box_33 = (
+            "พระราชบัญญัติหลักทรัพย์และตลาดหลักทรัพย์ พ.ศ. ๒๕๓๕ มาตรา ๓๓ "
+            "มาตรา ๓๓ ห้ามมิให้บริษัทเสนอขายหลักทรัพย์ที่ออกใหม่ "
+            "(๑) เป็นการเสนอขายหลักทรัพย์ที่เข้าลักษณะตามมาตรา ๖๓"
+        )
+        cites = firewall.extract_citations(box_33)
+        self.assertIn(("securities", "33"), cites)
+        self.assertIn((None, "63"), cites)
+        self.assertNotIn("18", firewall.cited_sections("กระบวนการ IPO ใช้เวลา 18–36 เดือน"))
+
+    def test_upsize_08_sea_box_phrases(self) -> None:
+        """Phrases from articles/las-upsize-08.html official boxes."""
+        self.assertEqual(
+            firewall.extract_citations(
+                "พระราชบัญญัติหลักทรัพย์และตลาดหลักทรัพย์ พ.ศ. ๒๕๓๕ มาตรา ๕๖"
+            ),
+            [("securities", "56")],
+        )
+        body = (
+            "ให้นำความในมาตรา ๘๙/๘ วรรคสอง มาตรา ๘๙/๑๐ มาตรา ๘๙/๑๑ (๒) "
+            "และ (๓) และมาตรา ๘๙/๑๘ มาใช้บังคับ โดยอนุโลม"
+        )
+        self.assertEqual(
+            set(firewall.cited_sections(body)),
+            {"89/8", "89/10", "89/11", "89/18"},
+        )
+
 
 class RegistryAndGateTests(unittest.TestCase):
     def test_thai_article_matches_arabic_registry(self) -> None:
@@ -220,6 +268,46 @@ class RegistryAndGateTests(unittest.TestCase):
             registry = firewall.load_registry(kb)
             missing = firewall.missing_citations(firewall.extract_citations("มาตรา 99999"), registry)
             self.assertEqual(missing, ["99999"])
+
+    def test_named_securities_268_does_not_pass_on_ccc_268(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            kb = Path(tmp)
+            (kb / "ccc.md").write_text(
+                "statute: ccc\nOfficial source: https://www.ocs.go.th/searchlaw-law\n- มาตรา 268\n",
+                encoding="utf-8",
+            )
+            (kb / "securities.md").write_text(
+                "statute: securities\nOfficial source: https://www.ocs.go.th/searchlaw-law\n- มาตรา 32\n",
+                encoding="utf-8",
+            )
+            registry = firewall.load_registry(kb)
+            cites = firewall.extract_citations(
+                "พระราชบัญญัติหลักทรัพย์และตลาดหลักทรัพย์ พ.ศ. ๒๕๓๕ มาตรา ๒๖๘"
+            )
+            self.assertEqual(cites, [("securities", "268")])
+            self.assertEqual(firewall.missing_citations(cites, registry), ["securities:268"])
+
+    def test_securities_insert_phrase_does_not_need_bare_23(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            kb = Path(tmp)
+            (kb / "securities.md").write_text(
+                "statute: securities\nOfficial source: https://www.ocs.go.th/searchlaw-law\n"
+                "- มาตรา 89/8\n- มาตรา 89/18\n- มาตรา 89/23\n- มาตรา 63\n",
+                encoding="utf-8",
+            )
+            registry = firewall.load_registry(kb)
+            self.assertNotIn("18", registry["securities"])
+            self.assertNotIn("23", registry["securities"])
+            self.assertNotIn("89", registry["securities"])
+            phrases = (
+                "พระราชบัญญัติหลักทรัพย์และตลาดหลักทรัพย์ พ.ศ. ๒๕๓๕ มาตรา ๘๙/๒๓",
+                "มาตรา ๘๙/๘",
+                "มาตรา ๘๙/๑๘",
+                "ตามมาตรา ๖๓",
+            )
+            for phrase in phrases:
+                cites = firewall.extract_citations(phrase)
+                self.assertEqual(firewall.missing_citations(cites, registry), [], phrase)
 
     def test_registry_without_url_is_rejected(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
