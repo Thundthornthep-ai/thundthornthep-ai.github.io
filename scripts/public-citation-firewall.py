@@ -20,6 +20,8 @@ separators, and splits slash-lists such as
 (``Sections 36 / 37``) and plural dash ranges (``Sections 147–166``) are
 included; comma lists are not, so unrelated ``Sections 102, 105`` cites stay
 out of this release's registry. Dash ranges expand to their endpoints only.
+English Constitution titles and Thai ``ประมวลกฎหมาย`` / ``รัฐธรรมนูญ``
+names bind as named statutes (or ``unrecognized``), not bare numbers.
 Inserted sections (``41/1``, ``193/30``) stay one identifier. Securities
 ``89/*`` inserts stay compound only when the cite is bound as that Act.
 Lawquote boxes and lecture cites remain in scope.
@@ -74,7 +76,7 @@ PREFIX_LIMIT = 100
 TRAILING_LIMIT = 60
 UNRECOGNIZED = "unrecognized"
 CITATION_GLUE = re.compile(
-    r"^(?:\s|[.,;:()\[\]'\"“”‘’/\-–—]|B\.?E\.?|พ\.?ศ\.?|\d+|"
+    r"^(?:\s|[.,;:()\[\]'\"“”‘’/\-–—]|B\.?E\.?|พ\.?ศ\.?|พุทธศักราช|\d+|"
     r"แก้ไขเพิ่มเติม(?:โดย)?|ฉบับที่|as\s+amended(?:\s+by)?|amendment|"
     r"no\.?|and|of|the|under|ตาม)+$",
     re.IGNORECASE,
@@ -87,7 +89,14 @@ EN_NAMED_STATUTE = re.compile(
     r"\b((?:[A-Z][A-Za-z]+(?:-[A-Z][A-Za-z]+)*)"
     r"(?:\s+[A-Z][A-Za-z]+(?:-[A-Z][A-Za-z]+)*)*)\s+(Act|Code)\b"
 )
-TH_NAMED_START = re.compile(r"(?:พระราชบัญญัติ|พ\.ร\.บ\.)(?!นี้|ดังกล่าว)")
+# Whole-word Constitution only — not "Constitutional Court".
+EN_CONSTITUTION_TITLE = re.compile(
+    r"\bConstitution\b(?:\s+of(?:\s+the)?(?:\s+[A-Z][A-Za-z]+)*)?",
+    re.IGNORECASE,
+)
+TH_NAMED_START = re.compile(
+    r"(?:พระราชบัญญัติ|พ\.ร\.บ\.|ประมวลกฎหมาย|รัฐธรรมนูญ)(?!นี้|ดังกล่าว)"
+)
 SKIP_NAMED_HEADS = {"the", "this", "that", "an"}
 NAME_STOP = re.compile(r"\s*(?:พ\.?ศ\.?|B\.?E\.?|มาตรา|\bsection\b|,|$)", re.IGNORECASE)
 
@@ -123,6 +132,7 @@ STATUTE_ALIASES: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("consumer", ("คุ้มครองผู้บริโภค", "consumer protection act")),
     ("ccc", ("ประมวลกฎหมายแพ่งและพาณิชย์", "ประมวลกฎหมายแพ่ง", "ป.พ.พ.", "ปพพ.", "tccc", "civil and commercial code", "thai civil code", "civil code")),
     ("criminal", ("ประมวลกฎหมายอาญา", "criminal code")),
+    ("constitution", ("รัฐธรรมนูญแห่งราชอาณาจักรไทย", "constitution of the kingdom of thailand")),
     ("landcode", ("ประมวลกฎหมายที่ดิน", "land code")),
     ("nacc", ("ป้องกันและปราบปรามการทุจริต", "organic act on counter corruption", "ป.ป.ช.", "ปปช.")),
     ("bidrigging", ("เสนอราคาต่อหน่วยงานของรัฐ", "bid rigging act", "anti-bid rigging")),
@@ -151,6 +161,8 @@ def _looks_like_statute_name(text: str) -> bool:
     if statute_in(text):
         return True
     if TH_NAMED_START.search(text):
+        return True
+    if EN_CONSTITUTION_TITLE.search(text):
         return True
     return EN_NAMED_STATUTE.search(text) is not None
 
@@ -287,18 +299,31 @@ def _alias_span(window: str, key: str) -> tuple[int, int] | None:
     return start, end
 
 
+def _constitution_binds(window: str) -> bool:
+    """True when a whole-word Constitution title sits with only citation glue after it."""
+    last = None
+    for match in EN_CONSTITUTION_TITLE.finditer(window):
+        last = match
+    if last is None:
+        return False
+    gap = window[last.end() :]
+    return not gap or bool(CITATION_GLUE.match(gap))
+
+
 def prefix_statute(prefix: str) -> str | None:
     window = phrase_before(prefix)
     key = statute_in(window)
-    if key is None:
-        return None
-    span = _alias_span(window, key)
-    if span is None:
-        return None
-    gap = window[span[1] :]
-    if gap and not CITATION_GLUE.match(gap):
-        return None
-    return key
+    if key is not None:
+        span = _alias_span(window, key)
+        if span is None:
+            return None
+        gap = window[span[1] :]
+        if gap and not CITATION_GLUE.match(gap):
+            return None
+        return key
+    if _constitution_binds(window):
+        return "constitution"
+    return None
 
 
 def _trailing_rest(window: str) -> str:
@@ -317,12 +342,16 @@ def _trailing_rest(window: str) -> str:
 def trailing_statute(trailing: str) -> str | None:
     rest = _trailing_rest(phrase_after(trailing))
     key = statute_in(rest)
-    if key is None:
-        return None
-    span = _alias_span(rest, key)
-    if span is None or span[0] > 0:
-        return None
-    return key
+    if key is not None:
+        span = _alias_span(rest, key)
+        if span is None or span[0] > 0:
+            return None
+        return key
+    stripped = rest.lstrip()
+    lead = EN_CONSTITUTION_TITLE.match(stripped)
+    if lead is not None:
+        return "constitution"
+    return None
 
 
 def _has_unknown_named_statute(window: str) -> bool:
@@ -338,6 +367,8 @@ def _has_unknown_named_statute(window: str) -> bool:
         gap = window[match.end() :]
         if not gap or CITATION_GLUE.match(gap):
             return True
+    if _constitution_binds(window):
+        return True
     for match in TH_NAMED_START.finditer(window):
         stop = NAME_STOP.search(window, match.end())
         name_end = stop.start() if stop else len(window)

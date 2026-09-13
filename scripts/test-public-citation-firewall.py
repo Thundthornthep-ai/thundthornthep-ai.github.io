@@ -313,6 +313,88 @@ class RegistryAndGateTests(unittest.TestCase):
                 ["criminal:147", "criminal:166"],
             )
 
+    def test_thai_criminal_code_is_not_bare(self) -> None:
+        self.assertEqual(
+            firewall.extract_citations("ประมวลกฎหมายอาญา มาตรา 144"),
+            [("criminal", "144")],
+        )
+        self.assertEqual(
+            firewall.extract_citations("ประมวลกฎหมายอาญา มาตรา 149"),
+            [("criminal", "149")],
+        )
+        self.assertEqual(
+            firewall.extract_citations("ประมวลกฎหมายอาญา มาตรา 95"),
+            [("criminal", "95")],
+        )
+
+    def test_thai_criminal_code_does_not_pass_on_ccc(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            kb = Path(tmp)
+            (kb / "ccc.md").write_text(
+                "statute: ccc\nOfficial source: https://www.ocs.go.th/searchlaw-law\n"
+                "- มาตรา 95\n- มาตรา 144\n- มาตรา 149\n",
+                encoding="utf-8",
+            )
+            registry = firewall.load_registry(kb)
+            for phrase, section in (
+                ("ประมวลกฎหมายอาญา มาตรา 144", "144"),
+                ("ประมวลกฎหมายอาญา มาตรา 149", "149"),
+                ("ประมวลกฎหมายอาญา มาตรา 95", "95"),
+            ):
+                cites = firewall.extract_citations(phrase)
+                self.assertEqual(cites, [("criminal", section)], phrase)
+                self.assertEqual(
+                    firewall.missing_citations(cites, registry),
+                    [f"criminal:{section}"],
+                    phrase,
+                )
+
+    def test_constitution_section_is_named_not_bare(self) -> None:
+        self.assertEqual(
+            firewall.extract_citations(
+                "Constitution of the Kingdom of Thailand B.E. 2560 (2017), Section 234(3)"
+            ),
+            [("constitution", "234")],
+        )
+        self.assertEqual(
+            firewall.extract_citations("Constitution B.E. 2560 — Section 234(3)"),
+            [("constitution", "234")],
+        )
+        self.assertEqual(
+            firewall.extract_citations(
+                "รัฐธรรมนูญแห่งราชอาณาจักรไทย พุทธศักราช 2560 มาตรา 234"
+            ),
+            [("constitution", "234")],
+        )
+        self.assertEqual(
+            firewall.extract_citations("Section 234 of the Constitution"),
+            [("constitution", "234")],
+        )
+
+    def test_constitution_234_does_not_pass_on_ccc_234(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            kb = write_kb(Path(tmp))
+            (Path(tmp) / "ccc.md").write_text(
+                "statute: ccc\nOfficial source: https://www.ocs.go.th/searchlaw-law\n- มาตรา 234\n",
+                encoding="utf-8",
+            )
+            registry = firewall.load_registry(kb)
+            cites = firewall.extract_citations(
+                "Constitution of the Kingdom of Thailand B.E. 2560 (2017), Section 234"
+            )
+            self.assertEqual(cites, [("constitution", "234")])
+            self.assertEqual(firewall.missing_citations(cites, registry), ["constitution:234"])
+
+    def test_unknown_thai_code_is_unrecognized(self) -> None:
+        cites = firewall.extract_citations("ประมวลกฎหมายยาเสพติด มาตรา 5")
+        self.assertEqual(cites, [(firewall.UNRECOGNIZED, "5")])
+
+    def test_constitutional_court_is_not_a_constitution_cite(self) -> None:
+        cites = firewall.extract_citations(
+            "Constitutional Court justices holding specified positions, Section 102"
+        )
+        self.assertNotIn(("constitution", "102"), cites)
+
     def test_html_wrapped_pdpa_title_binds_section_37(self) -> None:
         phrase = (
             "<strong>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562</strong> "
