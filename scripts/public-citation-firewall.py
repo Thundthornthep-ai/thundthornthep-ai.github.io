@@ -6,6 +6,11 @@ present in the release's official-source registry. It deliberately stores no
 private source text. The full semantic legal review remains a separate LAS
 control; a missing verifier, missing registry, malformed file, or unmatched
 citation is a hard failure.
+
+Official PDF lawquote boxes use Thai numerals. The gate therefore normalizes
+Thai digits to Arabic before matching, and it ignores HTML comments so article
+outline markers such as ``<!-- SECTION 1 -->`` are not treated as citations.
+Lawquote boxes and lecture cites remain in scope.
 """
 from __future__ import annotations
 
@@ -14,10 +19,25 @@ import re
 import sys
 from pathlib import Path
 
+THAI_DIGITS = str.maketrans("๐๑๒๓๔๕๖๗๘๙", "0123456789")
+HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
 SECTION_PATTERNS = (
     re.compile(r"มาตรา\s*(\d+(?:/\d+)?)"),
     re.compile(r"(?i)\bsection\s+(\d+(?:/\d+)?)"),
 )
+
+
+def prepare_text(text: str) -> str:
+    """Normalize published citation text without dropping official recitations."""
+    return HTML_COMMENT.sub(" ", text).translate(THAI_DIGITS)
+
+
+def extract_sections(text: str) -> list[str]:
+    prepared = prepare_text(text)
+    found: list[str] = []
+    for pattern in SECTION_PATTERNS:
+        found.extend(match.group(1) for match in pattern.finditer(prepared))
+    return found
 
 
 def load_registry(path: Path) -> set[str]:
@@ -35,7 +55,7 @@ def load_registry(path: Path) -> set[str]:
             raise RuntimeError(f"cannot read citation registry {file}: {exc}") from exc
         if "http://" in text or "https://" in text:
             has_official_source = True
-        sections.update(match.group(1) for pattern in SECTION_PATTERNS for match in pattern.finditer(text))
+        sections.update(extract_sections(text))
     if not has_official_source:
         raise RuntimeError("citation registry contains no official source URL")
     if not sections:
@@ -44,10 +64,7 @@ def load_registry(path: Path) -> set[str]:
 
 
 def cited_sections(text: str) -> list[str]:
-    found: list[str] = []
-    for pattern in SECTION_PATTERNS:
-        found.extend(match.group(1) for match in pattern.finditer(text))
-    return found
+    return extract_sections(text)
 
 
 def main() -> int:
@@ -74,7 +91,7 @@ def main() -> int:
     if not citations:
         print("[PUBLIC-CITATION-GATE] No statutory citations detected.")
         return 2
-    missing = sorted(set(citations) - registry, key=lambda value: (int(value.split('/')[0]), value))
+    missing = sorted(set(citations) - registry, key=lambda value: (int(value.split("/")[0]), value))
     print(f"[PUBLIC-CITATION-GATE] citations={len(citations)} unique={len(set(citations))}")
     if missing:
         for section in missing:
