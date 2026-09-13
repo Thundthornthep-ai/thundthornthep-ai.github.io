@@ -1,29 +1,17 @@
-# Official-source section index — LAS Knowledge publication set
+# Official-source section index — Thai Civil and Commercial Code
 
-This is the public release-scoped registry used by the citation firewall.
-It lists statutory section identifiers cited by published LAS Knowledge
-articles, including official PDF lawquote boxes. It stores no private
-source text.
+statute: ccc
 
-Official sources:
-- Civil and Commercial Code (OCS consolidated): https://searchlaw.ocs.go.th/council-of-state/#/public/doc/YmVCMjZDR1d4dXFQZ1FReWo2cE5rQT09
-- Office of the Council of State search: https://www.ocs.go.th/searchlaw-law
-- Labour Protection Act (OCS search): https://www.ocs.go.th/searchlaw-law
-- Personal Data Protection Act B.E. 2562: https://www.ocs.go.th/searchlaw-law
-- Revenue Department: https://www.rd.go.th
-- Department of Business Development manuals: https://www.dbd.go.th/storage/manual/0097faba-992d-4e07-8f37-d029a4d6c133.pdf
+Publication-wide CCC identifiers cited by LAS Knowledge articles, including official PDF lawquote boxes.
+
+Official source: https://searchlaw.ocs.go.th/council-of-state/#/public/doc/YmVCMjZDR1d4dXFQZ1FReWo2cE5rQT09
 
 Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
-- มาตรา 2
 - มาตรา 3
-- มาตรา 4
-- มาตรา 4/1
 - มาตรา 5
-- มาตรา 6
 - มาตรา 7
 - มาตรา 8
-- มาตรา 9
 - มาตรา 10
 - มาตรา 11
 - มาตรา 12
@@ -32,63 +20,14 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 15
 - มาตรา 16
 - มาตรา 17
-- มาตรา 19
 - มาตรา 20
-- มาตรา 22
-- มาตรา 23
-- มาตรา 23/1
-- มาตรา 24
-- มาตรา 26
-- มาตรา 27
-- มาตรา 28
-- มาตรา 29
 - มาตรา 30
-- มาตรา 31
-- มาตรา 32
 - มาตรา 33
 - มาตรา 34
-- มาตรา 35
-- มาตรา 36
-- มาตรา 36/37
-- มาตรา 37
-- มาตรา 39
-- มาตรา 40
-- มาตรา 41
-- มาตรา 41/1
-- มาตรา 42
-- มาตรา 43
-- มาตรา 44
-- มาตรา 48
-- มาตรา 49
 - มาตรา 51
-- มาตรา 52
-- มาตรา 54
-- มาตรา 56
-- มาตรา 57
-- มาตรา 59
-- มาตรา 59/1
-- มาตรา 59/2
-- มาตรา 65
-- มาตรา 68
 - มาตรา 70
-- มาตรา 71
 - มาตรา 73
-- มาตรา 77
-- มาตรา 77/1
-- มาตรา 77/2
-- มาตรา 78
-- มาตรา 79
-- มาตรา 81/1
-- มาตรา 82
-- มาตรา 83
-- มาตรา 84
-- มาตรา 85
-- มาตรา 85/1
 - มาตรา 86
-- มาตรา 89
-- มาตรา 90
-- มาตรา 91
-- มาตรา 91/2
 - มาตรา 94
 - มาตรา 95
 - มาตรา 102
@@ -96,20 +35,12 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 105
 - มาตรา 106
 - มาตรา 107
-- มาตรา 108
 - มาตรา 109
 - มาตรา 111
 - มาตรา 114
-- มาตรา 118
-- มาตรา 119
-- มาตรา 120
-- มาตรา 121
-- มาตรา 123
 - มาตรา 128
-- มาตรา 130
 - มาตรา 136
 - มาตรา 144
-- มาตรา 146
 - มาตรา 147
 - มาตรา 149
 - มาตรา 150
@@ -119,7 +50,6 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 155
 - มาตรา 156
 - มาตรา 159
-- มาตรา 159/164
 - มาตรา 162
 - มาตรา 164
 - มาตรา 167
@@ -132,6 +62,10 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 185
 - มาตรา 186
 - มาตรา 193/1
+- มาตรา 193/3
+- มาตรา 193/4
+- มาตรา 193/8
+- มาตรา 193/9
 - มาตรา 193/12
 - มาตรา 193/14
 - มาตรา 193/15
@@ -140,14 +74,10 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 193/23
 - มาตรา 193/24
 - มาตรา 193/29
-- มาตรา 193/3
 - มาตรา 193/30
 - มาตรา 193/32
 - มาตรา 193/33
 - มาตรา 193/34
-- มาตรา 193/4
-- มาตรา 193/8
-- มาตรา 193/9
 - มาตรา 194
 - มาตรา 206
 - มาตรา 213

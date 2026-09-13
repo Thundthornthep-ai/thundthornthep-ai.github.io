@@ -1,6 +1,8 @@
 # Current-law citation index — Thai Civil and Commercial Code, Book 3 (company)
 
-Publication-wide section identifiers live in `official-section-index.md`.
+statute: ccc
+
+Publication-wide CCC identifiers also live in `ccc-sections.md`.
 This file keeps the original Book 3 company-law identifiers and official
 OCS/DBD URLs. It is not a publication of any private source.
 
