@@ -237,10 +237,10 @@ def expand_section_token(token: str, statute: str | None = None) -> list[str]:
     raw = token.strip()
     dash = DASH_RANGE_RE.fullmatch(raw)
     if dash:
-        left, right = dash.group(1), dash.group(2)
-        if int(left) <= int(right):
-            return [left, right]
-        return [left]
+        left, right = int(dash.group(1)), int(dash.group(2))
+        if left <= right:
+            return [str(number) for number in range(left, right + 1)]
+        return [str(left)]
     token = normalize_section_token(token)
     if "/" not in token:
         return [token]
@@ -248,9 +248,9 @@ def expand_section_token(token: str, statute: str | None = None) -> list[str]:
         return [token]
     if token.startswith("89/") and statute == "securities":
         return [token]
-    left, right = token.split("/", 1)
-    if left.isdigit() and right.isdigit() and int(left) >= 10 and int(right) >= 10:
-        return [left, right]
+    parts = token.split("/")
+    if len(parts) >= 2 and all(part.isdigit() and int(part) >= 10 for part in parts):
+        return parts
     return [token]
 
 
@@ -310,20 +310,61 @@ def _constitution_binds(window: str) -> bool:
     return not gap or bool(CITATION_GLUE.match(gap))
 
 
+def _named_candidates(window: str) -> list[tuple[int, int, str | None]]:
+    """Named-statute spans as (start, end, known_key_or_None)."""
+    found: list[tuple[int, int, str | None]] = []
+    text = window.lower()
+    for key, aliases in STATUTE_ALIASES:
+        for alias in aliases:
+            start = 0
+            while True:
+                at = text.find(alias, start)
+                if at < 0:
+                    break
+                found.append((at, at + len(alias), key))
+                start = at + 1
+    for match in EN_NAMED_STATUTE.finditer(window):
+        words = match.group(1).split()
+        while words and words[0].lower() in SKIP_NAMED_HEADS:
+            words.pop(0)
+        if not words:
+            continue
+        found.append((match.start(), match.end(), statute_in(match.group(0))))
+    for match in EN_CONSTITUTION_TITLE.finditer(window):
+        found.append((match.start(), match.end(), "constitution"))
+    for match in TH_NAMED_START.finditer(window):
+        stop = NAME_STOP.search(window, match.end())
+        name_end = stop.start() if stop else len(window)
+        if name_end - match.end() < 3:
+            continue
+        name = window[match.end() : name_end]
+        if re.match(r"^[\s.]*ฉบับ", name):
+            continue
+        key = statute_in(window[match.start() : name_end])
+        if key is not None:
+            continue
+        found.append((match.start(), name_end, None))
+    return found
+
+
+def _nearest_named(window: str) -> tuple[int, int, str | None] | None:
+    """The statute name closest to the section token (rightmost end)."""
+    candidates = _named_candidates(window)
+    if not candidates:
+        return None
+    return max(candidates, key=lambda item: (item[1], item[2] is not None, item[1] - item[0]))
+
+
 def prefix_statute(prefix: str) -> str | None:
     window = phrase_before(prefix)
-    key = statute_in(window)
-    if key is not None:
-        span = _alias_span(window, key)
-        if span is None:
-            return None
-        gap = window[span[1] :]
-        if gap and not CITATION_GLUE.match(gap):
-            return None
-        return key
-    if _constitution_binds(window):
-        return "constitution"
-    return None
+    nearest = _nearest_named(window)
+    if nearest is None:
+        return None
+    _start, end, key = nearest
+    gap = window[end:]
+    if gap and not CITATION_GLUE.match(gap):
+        return None
+    return key
 
 
 def _trailing_rest(window: str) -> str:
@@ -355,32 +396,15 @@ def trailing_statute(trailing: str) -> str | None:
 
 
 def _has_unknown_named_statute(window: str) -> bool:
-    """Unknown act name whose remaining gap to the section is citation glue only."""
-    if statute_in(window):
+    """Unknown act nearest the section, even if a known alias appears earlier."""
+    nearest = _nearest_named(window)
+    if nearest is None:
         return False
-    for match in EN_NAMED_STATUTE.finditer(window):
-        words = match.group(1).split()
-        while words and words[0].lower() in SKIP_NAMED_HEADS:
-            words.pop(0)
-        if not words:
-            continue
-        gap = window[match.end() :]
-        if not gap or CITATION_GLUE.match(gap):
-            return True
-    if _constitution_binds(window):
-        return True
-    for match in TH_NAMED_START.finditer(window):
-        stop = NAME_STOP.search(window, match.end())
-        name_end = stop.start() if stop else len(window)
-        if name_end - match.end() < 3:
-            continue
-        name = window[match.end() : name_end]
-        if re.match(r"^[\s.]*ฉบับ", name):
-            continue
-        gap = window[name_end:]
-        if not gap or CITATION_GLUE.match(gap):
-            return True
-    return False
+    _start, end, key = nearest
+    gap = window[end:]
+    if gap and not CITATION_GLUE.match(gap):
+        return False
+    return key is None
 
 
 def unrecognized_named_statute(prefix: str, trailing: str = "") -> bool:
@@ -416,7 +440,6 @@ def extract_citations(
     prepared = prepare_text(text)
     found: list[tuple[str | None, str]] = []
     last_statute: str | None = None
-    last_securities: str | None = None
     for match in SECTION_RE.finditer(prepared):
         prefix = prepared[: match.start()]
         trailing = prepared[match.end() : match.end() + TRAILING_LIMIT]
@@ -428,16 +451,9 @@ def extract_citations(
         if statute == "bankruptcy" and "ไม่ใช่บทล้มละลาย" in trailing:
             statute = None
         token = section_token(match)
-        expand_as = statute or insert_statute or last_securities
-        for section in expand_section_token(token, expand_as):
+        for section in expand_section_token(token, statute or insert_statute):
             found.append((statute, section))
             last_statute = statute
-        if statute == "securities":
-            last_securities = "securities"
-        elif statute is not None:
-            last_securities = None
-        elif not normalize_section_token(token).startswith("89/"):
-            last_securities = None
     return found
 
 

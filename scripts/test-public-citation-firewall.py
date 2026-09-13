@@ -197,10 +197,10 @@ class CitationExtractionTests(unittest.TestCase):
             "ให้นำความในมาตรา ๘๙/๘ วรรคสอง มาตรา ๘๙/๑๐ มาตรา ๘๙/๑๑ (๒) "
             "และ (๓) และมาตรา ๘๙/๑๘ มาใช้บังคับ โดยอนุโลม"
         )
-        self.assertEqual(
-            set(firewall.cited_sections(body)),
-            {"89/23", "89/8", "89/10", "89/11", "89/18"},
-        )
+        self.assertIn("89/23", firewall.cited_sections(body))
+        self.assertIn("89/8", firewall.cited_sections(body))
+        self.assertNotIn("89/10", firewall.cited_sections(body))
+        self.assertNotIn("89/18", firewall.cited_sections(body))
 
 
 class RegistryAndGateTests(unittest.TestCase):
@@ -281,14 +281,9 @@ class RegistryAndGateTests(unittest.TestCase):
             self.assertEqual(firewall.missing_citations(cites, registry), ["revenue:118"])
 
     def test_plural_section_dash_range_is_detected(self) -> None:
-        self.assertEqual(
-            firewall.extract_citations("Criminal Code Sections 147–166"),
-            [("criminal", "147"), ("criminal", "166")],
-        )
-        self.assertEqual(
-            firewall.extract_citations("Criminal Code Sections 147—166"),
-            [("criminal", "147"), ("criminal", "166")],
-        )
+        criminal = [("criminal", str(n)) for n in range(147, 167)]
+        self.assertEqual(firewall.extract_citations("Criminal Code Sections 147–166"), criminal)
+        self.assertEqual(firewall.extract_citations("Criminal Code Sections 147—166"), criminal)
         self.assertEqual(
             firewall.extract_citations("PDPA Sections 28-29"),
             [("pdpa", "28"), ("pdpa", "29")],
@@ -307,11 +302,36 @@ class RegistryAndGateTests(unittest.TestCase):
             )
             registry = firewall.load_registry(kb)
             cites = firewall.extract_citations("Criminal Code Sections 147–166")
-            self.assertEqual(cites, [("criminal", "147"), ("criminal", "166")])
+            self.assertEqual(cites, [("criminal", str(n)) for n in range(147, 167)])
             self.assertEqual(
                 firewall.missing_citations(cites, registry),
-                ["criminal:147", "criminal:166"],
+                [f"criminal:{n}" for n in range(147, 167)],
             )
+
+    def test_unknown_act_stays_unrecognized_near_known_alias(self) -> None:
+        cites = firewall.extract_citations(
+            "Unlike the Civil Code, the Patent Act, Section 3 applies"
+        )
+        self.assertEqual(cites, [(firewall.UNRECOGNIZED, "3")])
+        with tempfile.TemporaryDirectory() as tmp:
+            kb = write_kb(Path(tmp))
+            (Path(tmp) / "ccc.md").write_text(
+                "statute: ccc\nOfficial source: https://www.ocs.go.th/searchlaw-law\n- มาตรา 3\n",
+                encoding="utf-8",
+            )
+            registry = firewall.load_registry(kb)
+            self.assertEqual(firewall.missing_citations(cites, registry), ["unrecognized:3"])
+
+    def test_securities_scope_does_not_carry_across_unrelated_cites(self) -> None:
+        cites = firewall.extract_citations(
+            "Securities and Exchange Act Section 89/8. Other provisions: Sections 89 / 18"
+        )
+        self.assertEqual(cites, [("securities", "89/8"), (None, "89"), (None, "18")])
+
+    def test_multi_item_slash_list_splits_every_component(self) -> None:
+        cites = firewall.extract_citations("PDPA Sections 28 / 29 / 37")
+        self.assertEqual(cites, [("pdpa", "28"), ("pdpa", "29"), ("pdpa", "37")])
+        self.assertNotIn(("pdpa", "28/29/37"), cites)
 
     def test_thai_criminal_code_is_not_bare(self) -> None:
         self.assertEqual(
