@@ -369,6 +369,38 @@ class RegistryAndGateTests(unittest.TestCase):
                     phrase,
                 )
 
+    def test_nacc_organic_act_prefix_binds(self) -> None:
+        self.assertEqual(
+            firewall.extract_citations(
+                "พระราชบัญญัติประกอบรัฐธรรมนูญว่าด้วยการป้องกันและปราบปรามการทุจริต "
+                "พ.ศ. 2561 มาตรา 36"
+            ),
+            [("nacc", "36")],
+        )
+        self.assertEqual(
+            firewall.extract_citations(
+                "พระราชบัญญัติประกอบรัฐธรรมนูญว่าด้วยการป้องกันและปราบปรามการทุจริต "
+                "พ.ศ. 2561 มาตรา 103"
+            ),
+            [("nacc", "103")],
+        )
+        self.assertEqual(
+            firewall.extract_citations(
+                "พระราชบัญญัติประกอบรัฐธรรมนูญว่าด้วยการป้องกันและปราบปรามการทุจริต "
+                "พ.ศ. 2561 มาตรา 128"
+            ),
+            [("nacc", "128")],
+        )
+
+    def test_nacc_organic_act_trailing_of_form_is_not_unrecognized(self) -> None:
+        cites = firewall.extract_citations(
+            "มาตรา 36 ของพระราชบัญญัติประกอบรัฐธรรมนูญว่าด้วยการป้องกันและปราบปรามการทุจริต "
+            "พ.ศ. 2561"
+        )
+        self.assertEqual(len(cites), 1)
+        self.assertEqual(cites[0][1], "36")
+        self.assertNotEqual(cites[0][0], firewall.UNRECOGNIZED)
+
     def test_constitution_section_is_named_not_bare(self) -> None:
         self.assertEqual(
             firewall.extract_citations(

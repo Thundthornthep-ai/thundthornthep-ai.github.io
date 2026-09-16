@@ -22,6 +22,7 @@ included; comma lists are not, so unrelated ``Sections 102, 105`` cites stay
 out of this release's registry. Dash ranges expand to their endpoints only.
 English Constitution titles and Thai ``ประมวลกฎหมาย`` / ``รัฐธรรมนูญ``
 names bind as named statutes (or ``unrecognized``), not bare numbers.
+``ประกอบรัฐธรรมนูญ`` is the organic-act formula, not a Constitution title.
 Inserted sections (``41/1``, ``193/30``) stay one identifier. Securities
 ``89/*`` inserts stay compound only when the cite is bound as that Act.
 Lawquote boxes and lecture cites remain in scope.
@@ -94,8 +95,11 @@ EN_CONSTITUTION_TITLE = re.compile(
     r"\bConstitution\b(?:\s+of(?:\s+the)?(?:\s+[A-Z][A-Za-z]+)*)?",
     re.IGNORECASE,
 )
+# ``ประกอบรัฐธรรมนูญ`` is the organic-act formula (NACC, EC, …), not
+# a Constitution title. A trailing ``มาตรา 36 ของพระราชบัญญัติประกอบ…``
+# cite otherwise truncates into an unknown ``รัฐธรรมนูญ`` name.
 TH_NAMED_START = re.compile(
-    r"(?:พระราชบัญญัติ|พ\.ร\.บ\.|ประมวลกฎหมาย|รัฐธรรมนูญ)(?!นี้|ดังกล่าว)"
+    r"(?:พระราชบัญญัติ|พ\.ร\.บ\.|ประมวลกฎหมาย|(?<!ประกอบ)รัฐธรรมนูญ)(?!นี้|ดังกล่าว)"
 )
 SKIP_NAMED_HEADS = {"the", "this", "that", "an"}
 NAME_STOP = re.compile(r"\s*(?:พ\.?ศ\.?|B\.?E\.?|มาตรา|\bsection\b|,|$)", re.IGNORECASE)
