@@ -15,6 +15,8 @@ on:
       - 'en/articles/**'
       - 'scripts/validate-knowledge-hub.js'
       - 'scripts/validate-knowledge-slugs.js'
+      - 'scripts/resolve-validate-range.sh'
+      - 'scripts/test-resolve-validate-range.sh'
       - 'scripts/verify-legal-citations.sh'
       - 'scripts/public-citation-firewall.py'
       - 'scripts/test-public-citation-firewall.py'
@@ -30,6 +32,8 @@ on:
       - 'en/articles/**'
       - 'scripts/validate-knowledge-hub.js'
       - 'scripts/validate-knowledge-slugs.js'
+      - 'scripts/resolve-validate-range.sh'
+      - 'scripts/test-resolve-validate-range.sh'
       - 'scripts/verify-legal-citations.sh'
       - 'scripts/public-citation-firewall.py'
       - 'scripts/test-public-citation-firewall.py'
@@ -49,26 +53,28 @@ jobs:
       - name: Resolve release comparison range
         id: range
         shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
+          TARGET: ${{ github.sha }}
         run: |
           set -euo pipefail
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            base="${{ github.event.pull_request.base.sha }}"
-            target="${{ github.event.pull_request.head.sha }}"
-          else
-            base="${{ github.event.before }}"
-            target="$GITHUB_SHA"
-          fi
-          if [[ -z "$base" || "$base" =~ ^0+$ ]] || ! git cat-file -e "$base^{commit}" 2>/dev/null; then
-            base="$(git rev-list --max-parents=0 "$target" | tail -1)"
-          fi
-          echo "base=$base" >> "$GITHUB_OUTPUT"
-          echo "target=$target" >> "$GITHUB_OUTPUT"
-          echo "Comparing $base..$target"
+          range_out="$(bash scripts/resolve-validate-range.sh)"
+          printf '%s\n' "$range_out" >> "$GITHUB_OUTPUT"
+          base="$(printf '%s\n' "$range_out" | sed -n 's/^base=//p')"
+          target="$(printf '%s\n' "$range_out" | sed -n 's/^target=//p')"
+          reason="$(printf '%s\n' "$range_out" | sed -n 's/^reason=//p')"
+          echo "Comparing $base..$target ($reason)"
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      - name: Test exact-slug comparison range resolver
+        run: bash scripts/test-resolve-validate-range.sh
 
       - name: Run citation firewall unit tests
         run: python3 scripts/test-public-citation-firewall.py
@@ -85,11 +91,14 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          echo "Exact-slug range ${{ steps.range.outputs.base }}..${{ steps.range.outputs.target }} (${{ steps.range.outputs.reason }})"
           mapfile -t files < <(git diff --name-only "${{ steps.range.outputs.base }}" "${{ steps.range.outputs.target }}" -- 'articles/las-share-[0-9][0-9].html' 'articles/las-shield-[0-9][0-9].html' 'articles/las-cc-[0-9][0-9].html' 'articles/las-upsize-[0-9][0-9].html' 'articles/las-invest-[0-9][0-9].html')
           if ((${#files[@]} == 0)); then
             echo "No changed LAS series article HTML — exact-slug gate not applicable."
             exit 0
           fi
+          echo "Changed LAS series article HTML (${#files[@]}):"
+          printf '  %s\n' "${files[@]}"
           for file in "${files[@]}"; do
             node scripts/validate-knowledge-slugs.js --slug "${file#articles/}"
           done
