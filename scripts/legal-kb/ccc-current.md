@@ -8,6 +8,17 @@ OCS/DBD URLs. It is not a publication of any private source.
 
 Official consolidated source: https://searchlaw.ocs.go.th/council-of-state/#/public/doc/YmVCMjZDR1d4dXFQZ1FReWo2cE5rQT09
 
+Additional verified identifiers: section 193/11 (statutory limitation cannot
+be waived, extended or shortened by agreement), section 193/19 (force majeure
+at limitation expiry), and section 193/21 (specified claims against a legal
+representative). Cross-checked against the OCS consolidation hosted by the
+Department of Internal Trade, PDF pages 37 and 45–46:
+https://law.dit.go.th/Upload/Document/be01e316-b4d6-4a52-a19f-f9cd28e49f1d.pdf
+
+- มาตรา 193/11
+- มาตรา 193/19
+- มาตรา 193/21
+
 - ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 1015 — นิติบุคคลมีขึ้นโดยการจดทะเบียนตามกฎหมาย
 - ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 1096 — บริษัทจำกัดและความรับผิดจำกัดของผู้ถือหุ้น
 - ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 1097 — ผู้เริ่มก่อการตั้งแต่สองคนขึ้นไป (ฉบับปัจจุบัน)
