@@ -1,0 +1,20 @@
+/* Applied only to explicitly marked teaching tables. */
+.las-table-scroll { max-width:100%; overflow-x:auto; margin:1.25rem 0; border-radius:8px; }
+.las-table-scroll:focus-visible { outline:3px solid #5c728a; outline-offset:3px; }
+.las-knowledge-article table.las-reading-table { width:100%; border-collapse:collapse; margin:0; table-layout:fixed; font-size:1rem; line-height:1.75; background:#fffdf8; }
+.las-knowledge-article .las-reading-table :is(th,td) { border:1px solid #a5afa9; padding:14px 16px; text-align:left; vertical-align:top; overflow-wrap:anywhere; }
+.las-knowledge-article .las-reading-table th { background:#e5ebee; color:#33485c; font-weight:700; }
+.las-knowledge-article .las-reading-table tr:nth-child(even) { background:#f5f0e6; }
+.las-knowledge-article .las-reading-table:not(.las-wide-table) th:first-child { width:28%; }
+.las-knowledge-article .las-reading-table.las-checklist th:first-child { width:4.5rem; }
+.las-knowledge-article .las-wide-table { min-width:620px; }
+@media(max-width:600px) {
+ .las-knowledge-article .las-reading-table :is(th,td) { padding:10px; }
+ .las-knowledge-article .las-reading-table.las-checklist th:first-child { width:3.75rem; }
+}
+@media print {
+ .las-table-scroll { overflow:visible; }
+ .las-knowledge-article table.las-reading-table { min-width:0; font-size:10pt; }
+ .las-reading-table thead { display:table-header-group; }
+ .las-reading-table tr { break-inside:avoid; }
+}
