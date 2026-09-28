@@ -10917,7 +10917,7 @@
     },
     {
       "path": "articles/las-shield-05.html",
-      "source_sha256": "715d4046ba199633bc4e0017620cd1360cc9803a6a684234381fecf59153804e",
+      "source_sha256": "c51905355982c14c547289a48bf677ba2b3b2fa7c192021be9ffac5a68d81137",
       "status": "pending_source_and_semantic_review",
       "coverage_units": [
         {
@@ -13160,7 +13160,11 @@
           "isPartOf": {
             "@type": "Blog",
             "name": "LAS Shield",
-            "url": "https://thundthornthep-ai.github.io/articles/"
+            "url": "https://thundthornthep-ai.github.io/articles/las-shield-index.html"
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://thundthornthep-ai.github.io/articles/las-shield-05.html"
           }
         },
         {
@@ -13206,6 +13210,24 @@
                 "@type": "Answer",
                 "text": "ลูกจ้างที่อยู่ในช่วงทดลองงานและถูกเลิกจ้างก่อนครบ 120 วัน ไม่มีสิทธิได้รับค่าชดเชยตามพระราชบัญญัติคุ้มครองแรงงาน พ.ศ. 2541 มาตรา 118 เนื่องจากกำหนดขั้นต่ำไว้ที่ 120 วัน แต่ต้องได้รับค่าจ้างครบถ้วนในวันที่ทำงาน และหากนายจ้างเลิกจ้างโดยไม่บอกกล่าวล่วงหน้า ก็ต้องจ่ายสินจ้างแทนการบอกกล่าว"
               }
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "LAS Shield",
+              "item": "https://thundthornthep-ai.github.io/articles/las-shield-index.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "las-shield-05",
+              "item": "https://thundthornthep-ai.github.io/articles/las-shield-05.html"
             }
           ]
         }

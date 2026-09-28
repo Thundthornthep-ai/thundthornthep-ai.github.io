@@ -34,3 +34,9 @@ Do not label the collection teaching_ready or deploy this partial pilot as if th
 - LAS Shield 05: social-insurance wage ceiling/benefit description and arithmetic; notice-payment worked example; categorical statements about handbook signatures and disciplinary authority; foreign-worker permit/visa generalizations. These were discovered during full-page inspection and remain HOLD.
 - LAS Shield 03: other case-law, compensation and comparative-law assertions still need source review.
 - Four edited routes are targeted corrections, NOT four fully approved articles. No teaching-ready status has been granted. No merge or deployment performed.
+
+## Publication gate diagnosis after 58848bf
+
+Teaching preview CI 36373845314 succeeded. Publication CI 36373845362 failed at the exact-slug/series gate, after citation validation passed. Re-running the same validator against an extracted main e95fb61 snapshot reproduced the identical six failures for each Shield article. This is activation of existing series-discovery/metadata debt, not a citation failure.
+
+The four article metadata failures are repaired without changing visible text: canonical mainEntityOfPage, series isPartOf URL, JSON-LD breadcrumb and x-default language URL. The two remaining checks require real article links from knowledge-hub.html and all-content.html. These protected discovery pages have not been changed, and no check has been skipped or weakened. Consequently full publication validation remains BLOCKED; merge/deploy must not proceed.

@@ -1251,8 +1251,8 @@
     {
       "article_id": "articles/las-shield-05",
       "path": "articles/las-shield-05.html",
-      "article_sha256": "715d4046ba199633bc4e0017620cd1360cc9803a6a684234381fecf59153804e",
-      "input_key": "969483485592944abfad9e9c634c52282931ea9d567e10e5f9926c1e1d3c94f2",
+      "article_sha256": "c51905355982c14c547289a48bf677ba2b3b2fa7c192021be9ffac5a68d81137",
+      "input_key": "95d2db4fc989d5774f164c8b5c4305670cdfbf5a3198033e2a96be1de523f684",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -7294,8 +7294,8 @@
     {
       "article_id": "articles/las-shield-03",
       "path": "articles/las-shield-03.html",
-      "article_sha256": "057609ac7b6699e823b6c14b95855ec6c2ecc5847773af36765bb6ef39f4a351",
-      "input_key": "28117383b8292e5a1831ae81c7f11a69095490e6a20d317e5e4f3c77b8e747ee",
+      "article_sha256": "f01659cb6164f96eeda8595b05c115ef8d937b0814c31e9f7ea097548c4e6c87",
+      "input_key": "53faaf2ecee0101b589641fba8c4e19ed9c365d9637944b56042b91fcee9f5ad",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
