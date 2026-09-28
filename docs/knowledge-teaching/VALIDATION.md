@@ -19,3 +19,7 @@ Release prerequisites: authenticated baseline reconciliation, instructor accepta
 - Standalone preview now uses the shared live LAS theme tokens from `index-CyLyswJz.css`: cream #f8f4ec, slate #5c728a, coral #e46d58, glass cards, IBM Plex Sans Thai headings and Noto Sans Thai body text. Authenticated Knowledge layout parity remains unverified.
 - Browser visual check: desktop 1280px and simulated mobile 390px; document widths equal viewports. Search อายุความ returns 1; PDPA with English returns 4; resetting returns 109.
 - This change touches preview presentation only. No article text, source metadata, production assets, Landing or Link pages changed.
+
+## BTU teaching material — 2026-09-28
+
+User-supplied PDF copied byte-for-byte into `materials/btu-ai-legal-technology.pdf` (19 physical pages). Supplemental `materials.json` preserves its SHA-256 and English display title supplied by the owner; Thai subtitle follows the cover. Metadata author is not used as presenter attribution. Added date is separate from unknown content revision date. No substantive legal review or source-statistic verification is claimed. Original slide numbering is unchanged (earlier pages use /18). Preview totals become 110 items, including 19 resources and 160 variants; original HTML inventory remains unchanged.

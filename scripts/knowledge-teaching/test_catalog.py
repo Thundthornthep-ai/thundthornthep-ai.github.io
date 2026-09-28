@@ -15,6 +15,22 @@ class CatalogueTests(unittest.TestCase):
   baseline_excluded={e['path'] for e in stored['excluded']}
   current_excluded={e['path'] for e in self.data['excluded'] if not e['path'].startswith('docs/knowledge-teaching/')}
   self.assertEqual(baseline_excluded,current_excluded)
+ def test_supplemental_materials_preserve_file_identity_and_local_links(self):
+  import hashlib
+  items=json.loads((ROOT/'docs/knowledge-teaching/materials.json').read_text())
+  self.assertEqual(len({i['id'] for i in items}),len(items))
+  for i in items:
+   self.assertNotIn(i['id'],self.items)
+   self.assertEqual(i['kind'],'resource')
+   self.assertTrue(set(i['tags']).issubset(self.data['categories']))
+   for v in i['variants']:
+    self.assertEqual(v['url'],v['path'])
+    self.assertTrue(v['path'].startswith('materials/'))
+    self.assertNotIn('..',Path(v['path']).parts)
+    content=(ROOT/'docs/knowledge-teaching'/v['path']).read_bytes()
+    self.assertTrue(content.startswith(b'%PDF-'))
+    self.assertEqual(hashlib.sha256(content).hexdigest(),v['sha256'])
+    self.assertEqual(len(content),v['bytes'])
  def test_redirect_is_not_a_lesson(self):
   self.assertNotIn('articles/anti-nominee-thailand',self.items)
   self.assertIn('articles/anti-nominee-thailand-legal-guide',self.items)
