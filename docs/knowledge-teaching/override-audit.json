@@ -1,0 +1,447 @@
+{
+  "scope": "Read-only local checkout snapshot; dirty checkout is not production authority. No content copied or deployed.",
+  "mapped_routes": 44,
+  "heading_mismatches": 33,
+  "items": [
+    {
+      "route": "/articles/ai-legal-tech-thailand.html",
+      "local_title": "AI Legal Technology in Thailand: Pioneering Innovation in Legal Practice",
+      "local_sha256": "588982c723da429cddde28b7fb16de08d283757290c70c1648844997acb8f39b",
+      "status": "runtime-unverified",
+      "github_title": "AI Legal Technology in Thailand: How Thundthornthep Yamoutai, Ph.D. is Pioneering Legal Innovation",
+      "github_sha256": "aad79ee5dec65d54f64dce6cb04435c0d09aadebac5c3af641a4602f25ce5b05",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/ai-replacing-lawyers.html",
+      "local_title": "AI is Not Replacing Lawyers It’s Replacing Lawyers Who Don’t Use AI",
+      "local_sha256": "708891b8177e93ba1354fabab625fea229a082fa581454ea6ddeba90826b9ead",
+      "status": "runtime-unverified",
+      "github_title": "AI is Not Replacing Lawyers — It's Replacing Lawyers Who Don't Use AI",
+      "github_sha256": "77b7b5c3afda8c68744a4d01df9289d57ca434910a60ce04e7cafedfe08bc5ad",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/anti-nominee-thailand-legal-guide.html",
+      "local_title": "Anti-Nominee กฎหมายไทย บทลงโทษและทางเลือกถูกกฎหมาย",
+      "local_sha256": "c0d12f8a3528a3240a98cb16c97e6ea56d43c60455872c54bbc2c28650c7db3f",
+      "status": "runtime-unverified",
+      "github_title": "Anti-Nominee กฎหมายไทย: บทลงโทษและทางเลือกถูกกฎหมาย",
+      "github_sha256": "36b558e2c294f464ca99e16ef178aeb7ffe04d809be9fd0b721eb7c4b1e84fa5",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/art-of-ancient-contract-drafting.html",
+      "local_title": "สัญญาโบราณ — ศิลปะการร่างสัญญาชั้นครู",
+      "local_sha256": "b0ab836538812a4573e0ffefc54462e906f8549a65abae578cdde83cf444d927",
+      "status": "runtime-unverified",
+      "github_title": "สัญญาโบราณ — ศิลปะการร่างสัญญาชั้นครู",
+      "github_sha256": "97db3ab23744f0efb064d1680f168b809aa68e5ac938c9518a821e373dfa18c6",
+      "same_bytes": false,
+      "same_heading": true
+    },
+    {
+      "route": "/articles/asset-declaration-thailand.html",
+      "local_title": "ยื่นบัญชีทรัพย์สิน: หน้าที่ตามกฎหมายที่ข้าราชการต้องรู้",
+      "local_sha256": "2ac6e39eab6085607ed0251e241661b02883322195008dda43dfeb832bce211e",
+      "status": "runtime-unverified",
+      "github_title": "ยื่นบัญชีทรัพย์สิน: หน้าที่ตามกฎหมายที่ข้าราชการต้องรู้",
+      "github_sha256": "bf65b7540a97c6ad7b12121f74c1e97207fbe4dde0f2782e5a89f1e700de035a",
+      "same_bytes": false,
+      "same_heading": true
+    },
+    {
+      "route": "/articles/bid-rigging-thailand.html",
+      "local_title": "ฮั้วประมูล (Bid Rigging) ในประเทศไทย องค์ประกอบความผิด บทลงโทษ และแนวทางป้องกัน",
+      "local_sha256": "1497c13239aac2536c20123fd61a53aa3314aaf02cd74e433d8286e506b0c749",
+      "status": "runtime-unverified",
+      "github_title": "ฮั๊วประมูล (Bid Rigging) ในประเทศไทย: กรอบกฎหมายและแนวทางป้องกัน",
+      "github_sha256": "87c2654d2b81d951a4b557208648584e4a8257b4308bb2a084eb0b4374b90bdb",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/boi-investment-thailand-guide.html",
+      "local_title": "BOI สิทธิประโยชน์การลงทุนไทย BOI Investment Promotion Thailand — Practitioner Guide",
+      "local_sha256": "fa5a1d900092b31c189b550825653fd15d222584607b5896a98b29a943ad6abc",
+      "status": "runtime-unverified",
+      "github_title": "BOI สิทธิประโยชน์การลงทุนไทย: คู่มือฉบับสมบูรณ์",
+      "github_sha256": "ec0f8bb9b6115f5d2d7e790bdbe9ce6e45852540e7c9a69bf3077ecc36dd8a7f",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/business-lawyer-thailand-guide.html",
+      "local_title": "ทนายกฎหมายธุรกิจในประเทศไทย Business Lawyer in Thailand — Practitioner Guide",
+      "local_sha256": "1448c6eecf9ffe800ac5349c5ec0c2514bdd0eb9a997dbe1503bd54eaadd667c",
+      "status": "runtime-unverified",
+      "github_title": "How to Choose a Business Lawyer in Thailand: What Every Entrepreneur Should Know",
+      "github_sha256": "f3ae22f0419d72e86ea2e224d65c1d12db393e3b2bec8cb9f2cfe2501df04180",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/business-tax-essentials.html",
+      "local_title": "ภาษีธุรกิจในไทย คู่มือเชิงปฏิบัติสำหรับนักกฎหมายและที่ปรึกษา",
+      "local_sha256": "ad6ce11fc1bcd95735c93a6dd0defe91044a7feea7c45052a34fdd735ff41de9",
+      "status": "runtime-unverified",
+      "github_title": "ภาษีธุรกิจ: สิ่งที่ผู้ประกอบการต้องรู้",
+      "github_sha256": "d82203c85a28ad8ffedbd1732f6f3f1c72f7341140a20029c9444de6a6213225",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/civil-recovery-corruption-thailand.html",
+      "local_title": "ฟ้องแพ่งเรียกทรัพย์คืนจากเจ้าหน้าที่ทุจริต คู่มือนักปฏิบัติ",
+      "local_sha256": "3084ac285b81a9a6d045eef3cdd4d0725012e8150d7f2f494ed290a7a996b89a",
+      "status": "runtime-unverified",
+      "github_title": "ฟ้องแพ่งเรียกค่าเสียหายจากเจ้าหน้าที่ทุจริต",
+      "github_sha256": "0f5fb97d4d9fcbdcf4140990cde67b2c0b94b2afe87110d2b1f4ec35817a3069",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/company-registration-guide.html",
+      "local_title": "จดทะเบียนบริษัทจำกัด: คู่มือฉบับนักกฎหมาย Thai Company Registration — Practitioner Depth Guide",
+      "local_sha256": "6b2b65927763946e8ce2a4f5fcc269f595fe432d68d35e5f0e39c28c1c8f3d4c",
+      "status": "runtime-unverified",
+      "github_title": "การจัดตั้งบริษัทและจดทะเบียนธุรกิจ: คู่มือครบวงจร",
+      "github_sha256": "e5f56f47d033e20b7fd072cebb19c361b5f997e092ebb59bd03caa844e068936",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/company-registration-thailand-guide.html",
+      "local_title": "จดทะเบียนบริษัทในไทย: คู่มือครบจบ 7 ขั้นตอน (2569)",
+      "local_sha256": "47553f3bcaaa9219738e45b7b1f313941727ba0ac92b1ed56af3f044cf32e3ae",
+      "status": "runtime-unverified",
+      "github_title": "จดทะเบียนบริษัทในไทย: คู่มือครบจบ 7 ขั้นตอน (2569)",
+      "github_sha256": "9634e93d0a9eb054d55eb93f08ae6a984eb0cbcccc760a5e32ec428d652c64bf",
+      "same_bytes": false,
+      "same_heading": true
+    },
+    {
+      "route": "/articles/consumer-protection-marketing.html",
+      "local_title": "กฎหมายคุ้มครองผู้บริโภคและการตลาด คู่มือเชิงลึกสำหรับนักกฎหมายและนักการตลาด",
+      "local_sha256": "8012973f45ab7b98dd0d6d0caf6e024cca46dd4b24c96f30e55a0130755e1126",
+      "status": "runtime-unverified",
+      "github_title": "คุ้มครองผู้บริโภค: กฎหมายที่นักการตลาดต้องรู้",
+      "github_sha256": "75af8480faf02a72ae4cc3e5c4b2baea1a5d05e24ae2daa79bfd02539b55e6e6",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/contract-document-review.html",
+      "local_title": "การอ่านและตรวจสอบเอกสารสัญญาทางกฎหมาย Legal Contract Document Review — Practitioner's Guide",
+      "local_sha256": "08a61a38c0dc6c879fac2eda625e11d20233b7df3d7cfb0e77183b067dcb8ea9",
+      "status": "runtime-unverified",
+      "github_title": "การอ่านและตรวจสอบเอกสารสัญญาทางกฎหมาย",
+      "github_sha256": "02a9698806c83445e6641134ee905833a24c65cc5bedd1178fe844c7303a667f",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/contract-reading-guide.html",
+      "local_title": "คู่มืออ่านสัญญาสำหรับผู้ประกอบการ Contract Reading Guide — Anatomy, Red Flags & 10-Point Checklist",
+      "local_sha256": "d4829fe3a311a81a365b0104cbe0fa158a2a1dbb9fcea70b367e8aed983ca185",
+      "status": "runtime-unverified",
+      "github_title": "คู่มืออ่านสัญญาสำหรับผู้ประกอบการ",
+      "github_sha256": "26270c3939e4c889dabd600b4e0449f3ec586e9dcc7061ad26bce1aa2eecd5a9",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/deep-legal-analytics.html",
+      "local_title": "Deep Legal Analytics: วิธีคิดแบบ AI-First Lawyer",
+      "local_sha256": "00482d2e63ee6f0bbbea5c17b8f58b08249b20265e44f7d6a25e8fa84a99979a",
+      "status": "runtime-unverified",
+      "github_title": "Deep Legal Analytics: วิธีคิดแบบ AI-First Lawyer",
+      "github_sha256": "775601c16f3c03d5e9a005a46755e68b9195b706b51c8e6171c5be88f8fb99cd",
+      "same_bytes": false,
+      "same_heading": true
+    },
+    {
+      "route": "/articles/due-diligence-checklist-thailand.html",
+      "local_title": "Due Diligence Checklist for Thai Business Transactions — LAS DD/CP Methodology",
+      "local_sha256": "9e4aff044f544024bfe8c1825e2a932e40d05218e59ab76089bf698448247584",
+      "status": "runtime-unverified",
+      "github_title": "Due Diligence Checklist for Thai Business Transactions: The LAS DD/CP Methodology",
+      "github_sha256": "a60de1a800862d75c1520edf08db930e6dbdeb1ed0d87505b8f7a128c7d4268b",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/due-diligence-conditions-precedent-thailand.html",
+      "local_title": "Due Diligence & Conditions Precedent ในธุรกรรมไทย",
+      "local_sha256": "23274838fce503123fe1a40bed2644128ff7997a79438eb63366c8abe6c08e96",
+      "status": "runtime-unverified",
+      "github_title": "Due Diligence & Conditions Precedent (CP) สำหรับธุรกรรมธุรกิจในประเทศไทย",
+      "github_sha256": "eaf4bb58875044b6ce1c7cab2835e16b0a41ed33be99ba1ffbe3fd32a32b806b",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/eec-investment-thailand.html",
+      "local_title": "ลงทุน EEC ไทย — สิทธิประโยชน์และขั้นตอนฉบับสมบูรณ์ EEC Thailand Investment — Complete Practitioner Guide",
+      "local_sha256": "ded3931d3b86febbb5a32d09558129f70139c9165c39a164ba409fc4c8ce39a4",
+      "status": "runtime-unverified",
+      "github_title": "ลงทุน EEC ไทย: สิทธิประโยชน์และขั้นตอนฉบับสมบูรณ์",
+      "github_sha256": "19d1bc192377ec0219e208bd8947b84b89ecea2df9e20ae9a9813a01d487d0a4",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/employment-contract-thailand-guide.html",
+      "local_title": "สัญญาจ้างแรงงานในไทย พ.ร.บ.คุ้มครองแรงงาน พ.ศ. 2541 แก้ไขถึงฉบับที่ 9 พ.ศ. 2568",
+      "local_sha256": "b4ed9bf1bc588ccc1c65e45918f22eda73f7db9a64a440d650aa97bafc0f95c7",
+      "status": "runtime-unverified",
+      "github_title": "สัญญาจ้างแรงงานในไทย: พ.ร.บ.คุ้มครองแรงงาน พ.ศ. 2541 (แก้ไขถึงฉบับที่ 9 พ.ศ. 2568)",
+      "github_sha256": "80c2acb9d5b06505806400ced9f7e658ec126ed4323db3c1daa53d039f9ed617",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/foreigner-buy-condo-thailand.html",
+      "local_title": "ต่างชาติซื้อคอนโดในไทย: พ.ร.บ.อาคารชุด กฎ 49% FET และ Anti-Nominee",
+      "local_sha256": "367e3d9934d96c1d74ffcccf7590ea62b68aa9a4e67adf1e6e0192af9c7e4295",
+      "status": "runtime-unverified",
+      "github_title": "ต่างชาติซื้อคอนโดในไทย: กฎ 49% ภาษี และข้อควรระวัง",
+      "github_sha256": "5f6e259602c8211c0d7de88f3b2762b0be50a237a21ee3b9541d58c76ef53c43",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/franchise-agreement-thailand.html",
+      "local_title": "สัญญาแฟรนไชส์ไทย: กรอบกฎหมายและองค์ประกอบสำคัญ",
+      "local_sha256": "ab3b99b0bf3a095db415a74de58d75ded0cbc77782ab83014e5c32d43bc52e72",
+      "status": "runtime-unverified",
+      "github_title": "สัญญาแฟรนไชส์ไทย: กรอบกฎหมายและองค์ประกอบสำคัญ",
+      "github_sha256": "49229ecb43b4a22716c6f4e4a3cd1847420d28b70401dcbc4a506ca2077f7cc3",
+      "same_bytes": false,
+      "same_heading": true
+    },
+    {
+      "route": "/articles/hotel-management-agreement-thailand.html",
+      "local_title": "Hotel Management Agreement (HMA) ในประเทศไทย",
+      "local_sha256": "5038fd25626d19b1df9115f08963fed09e6fa78a9d5393d8bcd33261250a5560",
+      "status": "runtime-unverified",
+      "github_title": "Hotel Management Agreement (HMA) ในประเทศไทย: คู่มือกฎหมายฉบับสมบูรณ์",
+      "github_sha256": "c8923761f7001f288f695818320128c31ecddc99af21f63a3b195277b49ef87d",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/ip-law-business-marketing.html",
+      "local_title": "ทรัพย์สินทางปัญญา: คู่มือกฎหมาย IP สำหรับนักธุรกิจและนักการตลาด",
+      "local_sha256": "ef036a143079c4626cd1f240be9f850b8bf270f6f86c425c937c696f8d8803e2",
+      "status": "runtime-unverified",
+      "github_title": "ทรัพย์สินทางปัญญา: คู่มือกฎหมาย IP สำหรับนักธุรกิจ",
+      "github_sha256": "a660a5052d0a2b401c8998e0ae05068bfc1358ba30b7bc4b2df3450d747a06be",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/joint-venture-agreement-thailand.html",
+      "local_title": "สัญญา Joint Venture ไทย: SHA, Deadlock และกลไก Exit",
+      "local_sha256": "6fb4a4eb78c7f60aa1bdafce22b2e5bc795da46b85393d8d93b3fabcb25e4111",
+      "status": "runtime-unverified",
+      "github_title": "สัญญา Joint Venture ไทย: SHA, Deadlock และกลไก Exit",
+      "github_sha256": "65776f1e62f0c0c742324cced61665ded881ed43fdece139f39cbabf35104155",
+      "same_bytes": false,
+      "same_heading": true
+    },
+    {
+      "route": "/articles/labour-protection-act-amendment-9-2568.html",
+      "local_title": "พ.ร.บ.คุ้มครองแรงงาน ฉบับแก้ไขครั้งที่ 9 พ.ศ. 2568 ลาคลอด 120 วัน · ลาคู่สมรส 15 วัน · จ้างเหมารัฐ",
+      "local_sha256": "15fab1607a657fcf6801f872676b70611c3ccb46bb15733a8d79a15b5f978836",
+      "status": "runtime-unverified",
+      "github_title": "พระราชบัญญัติคุ้มครองแรงงาน พ.ศ. 2541: วิเคราะห์ฉบับสมบูรณ์ รวมการแก้ไขครั้งที่ 1 ถึงครั้งที่ 9 (พ.ศ. 2568)",
+      "github_sha256": "cf4e921e30710382263bf2a80955d171f3e408e2016e85ed3f102a7c3ec90b6f",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/las-cc-11.html",
+      "local_title": "การประเมินความเสี่ยงของการละเมิดข้อมูลส่วนบุคคล PDPA",
+      "local_sha256": "f0c5b2c2a5a2e535edb136eb0c23a1d818145f1cac7ae85902677f5fbb7cfec3",
+      "status": "runtime-unverified",
+      "github_title": "การประเมินความเสี่ยงของการละเมิดข้อมูลส่วนบุคคล PDPA",
+      "github_sha256": "94a8c9a1efa87ac3ee16c6e7deb3b8245fc7d4e9a0d778a5ff0da3a9447da259",
+      "same_bytes": false,
+      "same_heading": true
+    },
+    {
+      "route": "/articles/las-cc-index.html",
+      "local_title": "Contract & Control เจาะลึกข้อสัญญาสำคัญ — พร้อมเทคนิคการร่างและการเจรจา",
+      "local_sha256": "f8f008f09a5a1825b980fc47bc1b7d0103987b89aa4cd2af49e688a26eb9706c",
+      "status": "runtime-unverified",
+      "github_title": "LAS C&C — Contract & Control / Contract & Control",
+      "github_sha256": "8e4b63ea50e2398b5b462d5a223deec5a24ab3fc0218abf2bdad3d41146a6d5f",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/las-invest-01.html",
+      "local_title": "นักลงทุนต่างชาติเข้าไทย — 5 ขั้นตอนก่อนเริ่มธุรกิจ",
+      "local_sha256": "ad1b8eee8b8e94c6f29ed1908db8f9457f3a81b53022faf4d6777d5c904bf587",
+      "status": "runtime-unverified",
+      "github_title": "นักลงทุนต่างชาติเข้าไทย — 5 ขั้นตอนก่อนเริ่มธุรกิจ",
+      "github_sha256": "263da6c604fe7124f962befa8ba0aa97f1f96d8236c9634680e23fecbcf4b483",
+      "same_bytes": false,
+      "same_heading": true
+    },
+    {
+      "route": "/articles/las-invest-02.html",
+      "local_title": "จัดตั้งบริษัทต่างชาติในไทย — กรอบ LAS SSCU ครบวงจร",
+      "local_sha256": "0c1c32b8bcfb54edf4be20fd5e1e27035a42d8853787e4b6e62dde9672d7f444",
+      "status": "runtime-unverified",
+      "github_title": "จัดตั้งบริษัทต่างชาติในไทย — กรอบ LAS SSCU ครบวงจร",
+      "github_sha256": "393dc4b9a15fadcc74e29191c2298662b261f72e6dc33559065e5fa406bac61c",
+      "same_bytes": false,
+      "same_heading": true
+    },
+    {
+      "route": "/articles/las-share-01.html",
+      "local_title": "จ้างทำของ vs จ้างแรงงาน 7 จุดแตกต่างที่นักธุรกิจต้องรู้",
+      "local_sha256": "28c863996379fd773521e568ba71795fee81e7e20f468aeab1be998646ae93fb",
+      "status": "runtime-unverified",
+      "github_title": "อำนาจกรรมการและเงื่อนไขลงนาม — ใครเซ็นแล้วบริษัทผูกพัน?",
+      "github_sha256": "9d0f09c40ec0971b28662f3b59e516bd5778e48bdbe78f75c6c4c3c17a45d75a",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/las-shield-index.html",
+      "local_title": "Shield ธุรกิจของคุณ",
+      "local_sha256": "89ebe982d0953eb53c22d6d92f1b528efe8cdf0a01b1830b837e05d836dbae35",
+      "status": "runtime-unverified",
+      "github_title": "LAS Shield — Shield ธุรกิจของคุณ",
+      "github_sha256": "413fee47fb4a0bd7533c92ec35e811df01f3806b2183ec5d2061df88f8c5097c",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/las-upsize-index.html",
+      "local_title": "Level Up ธุรกิจของคุณ",
+      "local_sha256": "2922b9da0e3339f6465c1649ed61c0676afc47575fdacd9a22517454b73c450d",
+      "status": "runtime-unverified",
+      "github_title": "LAS UP — Level Up ธุรกิจของคุณ",
+      "github_sha256": "fe648a79b9c427a5a0227160a53666cc215be0f5fd8163fd2d50f599ab6fa77a",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/lease-agreement-thailand-guide.html",
+      "local_title": "สัญญาเช่าในกฎหมายไทย: คู่มือเชิงลึกสำหรับนักกฎหมาย",
+      "local_sha256": "0d3ac3101606deface6bf7d0469a140c72afe0e602fea5641cda5e1599976115",
+      "status": "runtime-unverified",
+      "github_title": "สัญญาเช่าในกฎหมายไทย: คู่มือครบจบสำหรับผู้เช่าและผู้ให้เช่า",
+      "github_sha256": "9a49151f1cd1e940df9dcbf5dd06e2edebf64893687ddb67be6d0c6fd55dd8fc",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/marketing-business-contracts.html",
+      "local_title": "สัญญาธุรกิจการตลาด คู่มือเชิงลึกสำหรับนักกฎหมายและนักธุรกิจ",
+      "local_sha256": "7e2e302e5970e446692d6fcf59a192d9e536229ed2c9a36584f24d971b0be18f",
+      "status": "runtime-unverified",
+      "github_title": "สัญญาธุรกิจการตลาด: คู่มือครบวงจร",
+      "github_sha256": "f38f2382bfb60f5c663863708509d2f1f767af88c1e43ca72b5aad96e63ace21",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/mergers-acquisitions-thailand.html",
+      "local_title": "M&A กฎหมายไทย — คู่มือเชิงปฏิบัติสำหรับนักกฎหมาย",
+      "local_sha256": "91be76d7ad72034e716ead4ef3b5b3d5feabda9c86941f5e2197aef748de08ce",
+      "status": "runtime-unverified",
+      "github_title": "M&A กฎหมายไทย: คู่มือ Mergers & Acquisitions ฉบับสมบูรณ์",
+      "github_sha256": "bf0ce6d80f79993682360ade25a9992ad6da5cab96fbb66c53bdd7d2dd97e5eb",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/nda-non-disclosure-agreement-thailand.html",
+      "local_title": "NDA สัญญารักษาความลับไทย: คู่มือเชิงลึกสำหรับนักกฎหมาย",
+      "local_sha256": "ded99e555baff76f6da9e36aa6c67bda53022ab6a8ec5236e8d461f9c71f3a5e",
+      "status": "runtime-unverified",
+      "github_title": "NDA สัญญารักษาความลับ: คู่มือฉบับสมบูรณ์สำหรับธุรกิจไทย",
+      "github_sha256": "178551ec36d5403c61564c02606389d3153e75a01d7d8361fa64c714b6954b75",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/pdpa-compliance-guide-business.html",
+      "local_title": "PDPA คู่มือเชิงปฏิบัติสำหรับผู้ประกอบการ พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562",
+      "local_sha256": "c0028ab24c340c56f876c3ba7014d2eec2a05029307579ae0e38d813c18d39fc",
+      "status": "runtime-unverified",
+      "github_title": "PDPA Compliance สำหรับธุรกิจ B2B: คู่มือระดับ C-Suite",
+      "github_sha256": "2dd322cea76e6b3b7116e3c6d49ee0db69aaa4a114807cd23045cb69de92d64b",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/pdpa-compliance-guide-thailand.html",
+      "local_title": "Complete Guide to PDPA Compliance in Thailand Personal Data Protection Act B.E. 2562 (2019)",
+      "local_sha256": "983146e36a44c369fb746b9a220656ac8c008998ccea6e8d3939be9138bee339",
+      "status": "runtime-unverified",
+      "github_title": "Complete Guide to PDPA Compliance in Thailand",
+      "github_sha256": "2e9b57d9085bee38d3d336da97a86ef7de25ecf4d67877035835b6e9647255cb",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/pdpa-essentials-entrepreneurs.html",
+      "local_title": "PDPA สิ่งที่ผู้ประกอบการต้องรู้",
+      "local_sha256": "4aa190bd1c178bd317c6fce650c6d888b249ad4a1e646b8b3ff25b8e0caf6c6a",
+      "status": "runtime-unverified",
+      "github_title": "PDPA สิ่งที่ผู้ประกอบการต้องรู้",
+      "github_sha256": "b4658b62b7fabdbdcf51b826436b53a719eaca9a200c225d8d38801ec5c49914",
+      "same_bytes": false,
+      "same_heading": true
+    },
+    {
+      "route": "/articles/social-media-marketing-law.html",
+      "local_title": "กฎหมาย Social Media Marketing ไทย คู่มือเชิงลึกสำหรับนักกฎหมายและนักการตลาด",
+      "local_sha256": "d944d51af262a91fdeb8aa183d767e91e86fd5209dcfa74dc0c30e9223198746",
+      "status": "runtime-unverified",
+      "github_title": "กฎหมายการตลาดดิจิทัลและโซเชียลมีเดีย",
+      "github_sha256": "129081154924d05a5facbd3576ee2674be0a36564d8391a13d7112c232878bef",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/solo-practitioner-ai-advantage.html",
+      "local_title": "The Solo Practitioner Advantage: Why AI Makes Small Firms Unbeatable",
+      "local_sha256": "19a127d771b01fdb839cea0fd296ed89981ff9a4097789f9903d6f1932d6bb2d",
+      "status": "runtime-unverified",
+      "github_title": "The Solo Practitioner Advantage: Why AI Makes Small Firms Unbeatable",
+      "github_sha256": "a0e14dc51c214487e01056354793d2f73a6c37d7d108c901974ced3c2750a182",
+      "same_bytes": false,
+      "same_heading": true
+    },
+    {
+      "route": "/articles/transfer-pricing-thailand.html",
+      "local_title": "Transfer Pricing ไทย — Arm's Length และ 5 วิธี TP Transfer Pricing Thailand — Arm's Length & 5 Methods | Practitioner Guide",
+      "local_sha256": "6d91aa20576521f5bfb17a348874dc8698a29c545b0848903b8cd88bb8d3a8b4",
+      "status": "runtime-unverified",
+      "github_title": "Transfer Pricing ไทย: คู่มือ Arm's Length และ 5 วิธี TP",
+      "github_sha256": "686dc48a93d3c27a26cc72165c228870ad9da718fad2f6d95f1f9f2361ce9890",
+      "same_bytes": false,
+      "same_heading": false
+    },
+    {
+      "route": "/articles/why-lawyers-read-contracts-differently.html",
+      "local_title": "ทำไมนักกฎหมายจึงอ่านสัญญา ไม่เหมือนคนปกติ Why Lawyers Read Contracts Differently — 5 Methods That Separate Legal Minds",
+      "local_sha256": "a984f4c7e6333fdc6c8182b78519ddf97b9989215730d91cb793bb007a61a14c",
+      "status": "runtime-unverified",
+      "github_title": "ทำไมนักกฎหมายจึงอ่านสัญญาไม่เหมือนคนปกติ",
+      "github_sha256": "57db576d15980bbfacbe2eda53155c2b44040e6a0b30f66268766812f305cd9c",
+      "same_bytes": false,
+      "same_heading": false
+    }
+  ]
+}

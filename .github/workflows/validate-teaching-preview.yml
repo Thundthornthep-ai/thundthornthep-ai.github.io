@@ -1,0 +1,26 @@
+name: Validate LAS teaching preview
+on:
+  pull_request:
+    paths:
+      - 'docs/knowledge-teaching/**'
+      - 'scripts/knowledge-teaching/**'
+      - '.github/workflows/validate-teaching-preview.yml'
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Check catalogue coverage and curriculum prerequisites
+        run: python3 scripts/knowledge-teaching/test_catalog.py
+      - name: Check preview JavaScript
+        run: node --check docs/knowledge-teaching/app.js
+      - name: Keep existing publication gates intact
+        run: |
+          bash scripts/test-resolve-validate-range.sh
+          python3 scripts/test-public-citation-firewall.py
+          bash scripts/verify-legal-citations.sh --all
+          node scripts/validate-knowledge-hub.js

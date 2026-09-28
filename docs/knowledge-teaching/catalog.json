@@ -1,0 +1,4249 @@
+{
+  "schema_version": 1,
+  "scope": {
+    "tracked_html": 239,
+    "catalogue_variants": 159,
+    "learning_items": 109,
+    "articles": 91,
+    "resources": 18,
+    "excluded": 80,
+    "unlinked_items": 29,
+    "legal_reviewed": 0,
+    "source_tree": "e95fb61eafc61846769f58ed66ccb08bc92b9c3e"
+  },
+  "categories": {
+    "corporate": "บริษัทและธรรมาภิบาล",
+    "contract": "สัญญาและหนี้",
+    "investment": "การลงทุนและการขยายธุรกิจ",
+    "labour": "แรงงานและการจ้างงาน",
+    "privacy": "ข้อมูลส่วนบุคคล",
+    "property": "อสังหาริมทรัพย์",
+    "tax": "ภาษีและการเงิน",
+    "ip": "ทรัพย์สินทางปัญญา",
+    "consumer": "ผู้บริโภคและการตลาด",
+    "public": "กฎหมายมหาชนและท้องถิ่น",
+    "professional": "วิชาชีพและเทคโนโลยีกฎหมาย",
+    "general": "ความรู้ทั่วไปและรอจัดหมวด"
+  },
+  "items": [
+    {
+      "id": "articles/ai-legal-tech-thailand",
+      "kind": "article",
+      "title": "AI Legal Technology in Thailand: How Thundthornthep Yamoutai, Ph.D. is Pioneering Legal Innovation",
+      "variants": [
+        {
+          "path": "articles/ai-legal-tech-thailand.html",
+          "title": "AI Legal Technology in Thailand: How Thundthornthep Yamoutai, Ph.D. is Pioneering Legal Innovation",
+          "language": "en",
+          "sha256": "aad79ee5dec65d54f64dce6cb04435c0d09aadebac5c3af641a4602f25ce5b05",
+          "text_sha256": "9e2acd2884f03c482bc49939936ccce61233d0b53b830ee1417d2f008a400c40",
+          "published": "2026-04-01",
+          "modified": "2026-04-01",
+          "url": "https://thundthornthep-ai.github.io/articles/ai-legal-tech-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/ai-legal-tech-thailand.html",
+          "title": "AI Legal Technology in Thailand: Pioneering Innovation",
+          "language": "en",
+          "sha256": "5a5c1dac0fe5011760e3aed4f69fb476ab68e7e66eae199d647e63cd3212f3e3",
+          "text_sha256": "8b640b7cc5f52f0936d0a8f2fdfb71a1bddcc7deb70c3dd68b0cd26cd632993e",
+          "published": "2026-04-01",
+          "modified": "2026-04-08",
+          "url": "https://thundthornthep-ai.github.io/en/articles/ai-legal-tech-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "professional"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/ai-replacing-lawyers",
+      "kind": "article",
+      "title": "AI is Not Replacing Lawyers — It's Replacing Lawyers Who Don't Use AI",
+      "variants": [
+        {
+          "path": "articles/ai-replacing-lawyers.html",
+          "title": "AI is Not Replacing Lawyers — It's Replacing Lawyers Who Don't Use AI",
+          "language": "th",
+          "sha256": "77b7b5c3afda8c68744a4d01df9289d57ca434910a60ce04e7cafedfe08bc5ad",
+          "text_sha256": "c78e6988405c4a79d57e22bdde63dc22fddeaefeb1518cef20e1a5eceb2d1120",
+          "published": "2026-04-03",
+          "modified": "2026-04-03",
+          "url": "https://thundthornthep-ai.github.io/articles/ai-replacing-lawyers.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/ai-replacing-lawyers.html",
+          "title": "Will AI Replace Lawyers? A Thailand Perspective",
+          "language": "en",
+          "sha256": "8454c9c1d0716522859bbbec0372df47497816171c9be73a97c7c91f2cd5d1e3",
+          "text_sha256": "01755368456bd747d296c49f6bc8e17e75cfd7716815ec2fe63811b2a87b91f6",
+          "published": "2026-04-03",
+          "modified": "2026-04-03",
+          "url": "https://thundthornthep-ai.github.io/en/articles/ai-replacing-lawyers.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "professional"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/anti-nominee-thailand-legal-guide",
+      "kind": "article",
+      "title": "Anti-Nominee กฎหมายไทย: บทลงโทษและทางเลือกถูกกฎหมาย",
+      "variants": [
+        {
+          "path": "articles/anti-nominee-thailand-legal-guide.html",
+          "title": "Anti-Nominee กฎหมายไทย: บทลงโทษและทางเลือกถูกกฎหมาย",
+          "language": "th",
+          "sha256": "36b558e2c294f464ca99e16ef178aeb7ffe04d809be9fd0b721eb7c4b1e84fa5",
+          "text_sha256": "e391aafd2fc2320853f05d574af12499fb6b62bc1e9474858a9ecf49cbf599d0",
+          "published": "2026-04-04",
+          "modified": "2026-04-13",
+          "url": "https://thundthornthep-ai.github.io/articles/anti-nominee-thailand-legal-guide.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/anti-nominee-thailand-legal-guide.html",
+          "title": "Anti-Nominee Shareholder Laws in Thailand: Penalties and Legal Alternatives",
+          "language": "en",
+          "sha256": "816bf21e8bc9575acc0bfbd4528584006373d0987121136f9c034df288ef5a72",
+          "text_sha256": "20cf0dc96197acbc77f11707229982ad8dafe0a3f13762d1761128816fc35666",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/en/articles/anti-nominee-thailand-legal-guide.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "corporate",
+        "investment"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "high",
+      "review_reason": "deadline-liability-or-change-sensitive-topic"
+    },
+    {
+      "id": "articles/art-of-ancient-contract-drafting",
+      "kind": "article",
+      "title": "สัญญาโบราณ — ศิลปะการร่างสัญญาชั้นครู",
+      "variants": [
+        {
+          "path": "articles/art-of-ancient-contract-drafting.html",
+          "title": "สัญญาโบราณ — ศิลปะการร่างสัญญาชั้นครู",
+          "language": "th",
+          "sha256": "97db3ab23744f0efb064d1680f168b809aa68e5ac938c9518a821e373dfa18c6",
+          "text_sha256": "4fddb271f11c5061b1a248759476b281954ac52f1ece8d5b1fb0f2e50ee38f21",
+          "published": "2026-04-03",
+          "modified": "2026-04-03",
+          "url": "https://thundthornthep-ai.github.io/articles/art-of-ancient-contract-drafting.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/art-of-ancient-contract-drafting.html",
+          "title": "The Art of Ancient Contract Drafting",
+          "language": "en",
+          "sha256": "7636d3edb4c9841188a5aae4188d498e5ec92070f796cd0a0fc7521387993988",
+          "text_sha256": "403dbca5af546a28ff40f8ead218bfeba11553263fd84481d78a6e56f5688bdd",
+          "published": "2026-04-03",
+          "modified": "2026-04-03",
+          "url": "https://thundthornthep-ai.github.io/en/articles/art-of-ancient-contract-drafting.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/asset-declaration-thailand",
+      "kind": "article",
+      "title": "ยื่นบัญชีทรัพย์สิน: หน้าที่ตามกฎหมายที่ข้าราชการต้องรู้",
+      "variants": [
+        {
+          "path": "articles/asset-declaration-thailand.html",
+          "title": "ยื่นบัญชีทรัพย์สิน: หน้าที่ตามกฎหมายที่ข้าราชการต้องรู้",
+          "language": "th",
+          "sha256": "bf65b7540a97c6ad7b12121f74c1e97207fbe4dde0f2782e5a89f1e700de035a",
+          "text_sha256": "5ef0eca6b8e47d1b378618e22bf5291495c5b3e147eb3753674f8ee66483da25",
+          "published": "2026-04-03",
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/articles/asset-declaration-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/asset-declaration-thailand.html",
+          "title": "Asset Declaration Laws in Thailand: Legal Guide for Public Officials",
+          "language": "en",
+          "sha256": "606f3a9adc559a367af5a6fc3caeeea0846444005ab2e92fac71f1a2a45d749e",
+          "text_sha256": "c4251132638f7ce042f5f743dc83860614c88f893af43f717e137fcc05085e59",
+          "published": "2026-04-08",
+          "modified": "2026-04-08",
+          "url": "https://thundthornthep-ai.github.io/en/articles/asset-declaration-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/bid-rigging-thailand",
+      "kind": "article",
+      "title": "ฮั๊วประมูล (Bid Rigging) ในประเทศไทย: กรอบกฎหมายและแนวทางป้องกัน",
+      "variants": [
+        {
+          "path": "articles/bid-rigging-thailand.html",
+          "title": "ฮั๊วประมูล (Bid Rigging) ในประเทศไทย: กรอบกฎหมายและแนวทางป้องกัน",
+          "language": "th",
+          "sha256": "87c2654d2b81d951a4b557208648584e4a8257b4308bb2a084eb0b4374b90bdb",
+          "text_sha256": "a313034413433f2588c4fe5dd477812bf7c2475c08ac1fee3583246d97893668",
+          "published": "2026-04-02",
+          "modified": "2026-04-02",
+          "url": "https://thundthornthep-ai.github.io/articles/bid-rigging-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/bid-rigging-thailand.html",
+          "title": "Bid Rigging and Anti-Collusion in Thailand: Legal Framework and Prevention Guide",
+          "language": "en",
+          "sha256": "b3ccd3f01e87d863b1aea53db3b91ae8494916362c5b99b6af698cb5aa92e12a",
+          "text_sha256": "7facd2759ffd7cfe1b46b0644a364b92a617560f6197b83c44b403bce9fa4114",
+          "published": "2026-04-02",
+          "modified": "2026-04-02",
+          "url": "https://thundthornthep-ai.github.io/en/articles/bid-rigging-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/boi-investment-thailand-guide",
+      "kind": "article",
+      "title": "BOI สิทธิประโยชน์การลงทุนไทย: คู่มือฉบับสมบูรณ์",
+      "variants": [
+        {
+          "path": "articles/boi-investment-thailand-guide.html",
+          "title": "BOI สิทธิประโยชน์การลงทุนไทย: คู่มือฉบับสมบูรณ์",
+          "language": "th",
+          "sha256": "ec0f8bb9b6115f5d2d7e790bdbe9ce6e45852540e7c9a69bf3077ecc36dd8a7f",
+          "text_sha256": "c247460734b3aa7f413015f71d825358c22af6082fb19dfff787006e0d016e90",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/articles/boi-investment-thailand-guide.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/boi-investment-thailand-guide.html",
+          "title": "BOI Investment Promotion in Thailand: Complete Legal Guide",
+          "language": "en",
+          "sha256": "90150916ee5593900938504d2bfa60f0fa5860758585383d564fcac8d083096d",
+          "text_sha256": "8ffb74d7e4f52e8667a1c21c634489e17702a0f5495f94ea5a55036a07593523",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/en/articles/boi-investment-thailand-guide.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "investment"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/business-lawyer-thailand-guide",
+      "kind": "article",
+      "title": "How to Choose a Business Lawyer in Thailand: What Every Entrepreneur Should Know",
+      "variants": [
+        {
+          "path": "articles/business-lawyer-thailand-guide.html",
+          "title": "How to Choose a Business Lawyer in Thailand: What Every Entrepreneur Should Know",
+          "language": "en",
+          "sha256": "f3ae22f0419d72e86ea2e224d65c1d12db393e3b2bec8cb9f2cfe2501df04180",
+          "text_sha256": "a51e054acc6ce8f8fc4adac6e06b4093116bbfbcc0cef9e446537b4b13968045",
+          "published": "2026-04-01",
+          "modified": "2026-04-01",
+          "url": "https://thundthornthep-ai.github.io/articles/business-lawyer-thailand-guide.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/business-lawyer-thailand-guide.html",
+          "title": "Business Lawyer in Thailand: Complete Guide",
+          "language": "en",
+          "sha256": "af7dd3b12b290a8c7f61847c63e244d72f466f8c2ff86587a779730f549fbec5",
+          "text_sha256": "c3d238320e98f8c7dd48ee201a9f4bdfbc4cb72ab8fbadf84d9dcf969177074a",
+          "published": "2026-04-01",
+          "modified": "2026-04-08",
+          "url": "https://thundthornthep-ai.github.io/en/articles/business-lawyer-thailand-guide.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "professional"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/business-tax-essentials",
+      "kind": "article",
+      "title": "ภาษีธุรกิจ: สิ่งที่ผู้ประกอบการต้องรู้",
+      "variants": [
+        {
+          "path": "articles/business-tax-essentials.html",
+          "title": "ภาษีธุรกิจ: สิ่งที่ผู้ประกอบการต้องรู้",
+          "language": "th",
+          "sha256": "d82203c85a28ad8ffedbd1732f6f3f1c72f7341140a20029c9444de6a6213225",
+          "text_sha256": "96cc0727635ba4ea73e48c1f35c5f0b35d81a4f5187464697e38442f543f396a",
+          "published": "2026-03-31",
+          "modified": "2026-03-31",
+          "url": "https://thundthornthep-ai.github.io/articles/business-tax-essentials.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/business-tax-essentials.html",
+          "title": "Business Tax Essentials in Thailand",
+          "language": "en",
+          "sha256": "0e26252fefcebb0deb0bae5799e65b0fc8790c7dad61116c1d32fc6c74126e35",
+          "text_sha256": "298a9e08951825729e1dd5c7f92ddd7d5eccff29629e17a4443fcb7c7d03648b",
+          "published": "2026-03-31",
+          "modified": "2026-03-31",
+          "url": "https://thundthornthep-ai.github.io/en/articles/business-tax-essentials.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "tax"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/civil-recovery-corruption-thailand",
+      "kind": "article",
+      "title": "ฟ้องแพ่งเรียกค่าเสียหายจากเจ้าหน้าที่ทุจริต",
+      "variants": [
+        {
+          "path": "articles/civil-recovery-corruption-thailand.html",
+          "title": "ฟ้องแพ่งเรียกค่าเสียหายจากเจ้าหน้าที่ทุจริต",
+          "language": "th",
+          "sha256": "0f5fb97d4d9fcbdcf4140990cde67b2c0b94b2afe87110d2b1f4ec35817a3069",
+          "text_sha256": "15fd17b4899bec0f31dbd839a7a4827cd0537d07dc9126c3d5d04226b33c73d7",
+          "published": "2026-04-03",
+          "modified": "2026-04-03",
+          "url": "https://thundthornthep-ai.github.io/articles/civil-recovery-corruption-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/civil-recovery-corruption-thailand.html",
+          "title": "Civil Recovery from Corruption in Thailand",
+          "language": "en",
+          "sha256": "ff4ce3495e1efbabe8bd7b42614b13a0cb06b46435a20cb1241a1f51afdd06d4",
+          "text_sha256": "698de6629a962a848294e280a9582ba6bf151540258a5b5e859841790357e386",
+          "published": "2026-04-03",
+          "modified": "2026-04-03",
+          "url": "https://thundthornthep-ai.github.io/en/articles/civil-recovery-corruption-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/company-registration-guide",
+      "kind": "article",
+      "title": "การจัดตั้งบริษัทและจดทะเบียนธุรกิจ: คู่มือครบวงจร",
+      "variants": [
+        {
+          "path": "articles/company-registration-guide.html",
+          "title": "การจัดตั้งบริษัทและจดทะเบียนธุรกิจ: คู่มือครบวงจร",
+          "language": "th",
+          "sha256": "e5f56f47d033e20b7fd072cebb19c361b5f997e092ebb59bd03caa844e068936",
+          "text_sha256": "c2ba19b6530ee38abc785143fdda6ce19863755fe109d6db0dd492076da5a940",
+          "published": "2026-03-31",
+          "modified": "2026-03-31",
+          "url": "https://thundthornthep-ai.github.io/articles/company-registration-guide.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/company-registration-guide.html",
+          "title": "Company Registration in Thailand: Complete Legal Guide",
+          "language": "en",
+          "sha256": "11b4ced461f3d19141a5116984be2f168c1ea218d082c5b04f623d8b1936bbbf",
+          "text_sha256": "345c270f22bac34a620f7132a365abf6da538d3fb956b1e66fca11573e5a3e0f",
+          "published": "2026-03-31",
+          "modified": "2026-03-31",
+          "url": "https://thundthornthep-ai.github.io/en/articles/company-registration-guide.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "corporate"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/company-registration-thailand-guide",
+      "kind": "article",
+      "title": "จดทะเบียนบริษัทในไทย: คู่มือครบจบ 7 ขั้นตอน (2569)",
+      "variants": [
+        {
+          "path": "articles/company-registration-thailand-guide.html",
+          "title": "จดทะเบียนบริษัทในไทย: คู่มือครบจบ 7 ขั้นตอน (2569)",
+          "language": "th",
+          "sha256": "9634e93d0a9eb054d55eb93f08ae6a984eb0cbcccc760a5e32ec428d652c64bf",
+          "text_sha256": "28b7937e4084ac4e31937fc45ec55ede1b3635b167d33e130e35d3b345b05f29",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/articles/company-registration-thailand-guide.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/company-registration-thailand-guide.html",
+          "title": "Company Registration in Thailand: Complete Legal Guide",
+          "language": "en",
+          "sha256": "9a105593f8703e4014d57227ae61ca690a0885fcac97860c0bafaf260250e2c4",
+          "text_sha256": "08c39c1789592ed68c117c6e86c632b62ed70fcd20c79297acea96374904417d",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/en/articles/company-registration-thailand-guide.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "corporate"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/consumer-protection-marketing",
+      "kind": "article",
+      "title": "คุ้มครองผู้บริโภค: กฎหมายที่นักการตลาดต้องรู้",
+      "variants": [
+        {
+          "path": "articles/consumer-protection-marketing.html",
+          "title": "คุ้มครองผู้บริโภค: กฎหมายที่นักการตลาดต้องรู้",
+          "language": "th",
+          "sha256": "75af8480faf02a72ae4cc3e5c4b2baea1a5d05e24ae2daa79bfd02539b55e6e6",
+          "text_sha256": "1b1387fadaa2cf672bbece787b500771cfa2bc63be4a1af50813a3c232e76277",
+          "published": "2026-03-31",
+          "modified": "2026-03-31",
+          "url": "https://thundthornthep-ai.github.io/articles/consumer-protection-marketing.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/consumer-protection-marketing.html",
+          "title": "Consumer Protection and Marketing Law in Thailand",
+          "language": "en",
+          "sha256": "e1d68e869079342a4315e70b26d31837f14f56c2b7c8e83c0cc92170710b5b08",
+          "text_sha256": "945c73098fd65680ffc421907296f6f0a2f8d1ea455139c2ece4cc44a00cf005",
+          "published": "2026-03-31",
+          "modified": "2026-03-31",
+          "url": "https://thundthornthep-ai.github.io/en/articles/consumer-protection-marketing.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "consumer"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "high",
+      "review_reason": "deadline-liability-or-change-sensitive-topic"
+    },
+    {
+      "id": "articles/contract-document-review",
+      "kind": "article",
+      "title": "การอ่านและตรวจสอบเอกสารสัญญาทางกฎหมาย",
+      "variants": [
+        {
+          "path": "articles/contract-document-review.html",
+          "title": "การอ่านและตรวจสอบเอกสารสัญญาทางกฎหมาย",
+          "language": "th",
+          "sha256": "02a9698806c83445e6641134ee905833a24c65cc5bedd1178fe844c7303a667f",
+          "text_sha256": "f7085fbfa8bb88c970f7e3a49593fd7c64a7e641043286b757ccfcf3fe63a605",
+          "published": "2026-03-31",
+          "modified": "2026-03-31",
+          "url": "https://thundthornthep-ai.github.io/articles/contract-document-review.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/contract-document-review.html",
+          "title": "Contract and Document Review in Thailand: A Practical Legal Guide",
+          "language": "en",
+          "sha256": "6a044ef8f68ed25b1b498d61f38e4e726eff4dd3324b4aba44524a0fcf8be53d",
+          "text_sha256": "58cf6f88adcf8eeab7f014170371449f3df3da0a9206bb85e16619693ce2580f",
+          "published": "2026-03-31",
+          "modified": "2026-03-31",
+          "url": "https://thundthornthep-ai.github.io/en/articles/contract-document-review.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/contract-reading-guide",
+      "kind": "article",
+      "title": "คู่มืออ่านสัญญาสำหรับผู้ประกอบการ",
+      "variants": [
+        {
+          "path": "articles/contract-reading-guide.html",
+          "title": "คู่มืออ่านสัญญาสำหรับผู้ประกอบการ",
+          "language": "th",
+          "sha256": "26270c3939e4c889dabd600b4e0449f3ec586e9dcc7061ad26bce1aa2eecd5a9",
+          "text_sha256": "2572eb7e72a8d37aa7ffd581c403bfda285a975ea8638728b072eea443122945",
+          "published": "2026-04-03",
+          "modified": "2026-04-03",
+          "url": "https://thundthornthep-ai.github.io/articles/contract-reading-guide.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/contract-reading-guide.html",
+          "title": "Contract Reading Guide for Business Owners",
+          "language": "en",
+          "sha256": "13ef71b44b81a9a075e264819b621c9224e21304da07129f3238e442ffe72677",
+          "text_sha256": "6d13a027c1abd925dd3ca62d0ebfb0c044ea520cb2e30a3f4a088d3e4e2c26dc",
+          "published": "2026-04-03",
+          "modified": "2026-04-03",
+          "url": "https://thundthornthep-ai.github.io/en/articles/contract-reading-guide.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/deep-legal-analytics",
+      "kind": "article",
+      "title": "Deep Legal Analytics: วิธีคิดแบบ AI-First Lawyer",
+      "variants": [
+        {
+          "path": "articles/deep-legal-analytics.html",
+          "title": "Deep Legal Analytics: วิธีคิดแบบ AI-First Lawyer",
+          "language": "th",
+          "sha256": "775601c16f3c03d5e9a005a46755e68b9195b706b51c8e6171c5be88f8fb99cd",
+          "text_sha256": "984f0ce3f793761ae9d03c90ed617b07d3f869acfbf0c90fd225ac04c2d21391",
+          "published": "2026-04-03",
+          "modified": "2026-04-03",
+          "url": "https://thundthornthep-ai.github.io/articles/deep-legal-analytics.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/deep-legal-analytics.html",
+          "title": "Deep Legal Analytics AI-Powered Legal Research",
+          "language": "en",
+          "sha256": "2891a808b66eaa13cc9b1d67ed517d48ffd44aaf2a369c9fbce3fa42a69ed471",
+          "text_sha256": "7ecf4087e4f4a3dfad83fb7910abbe341ccaa34726dd852e7a4dfb7216792310",
+          "published": "2026-04-03",
+          "modified": "2026-04-03",
+          "url": "https://thundthornthep-ai.github.io/en/articles/deep-legal-analytics.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "professional"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/due-diligence-checklist-thailand",
+      "kind": "article",
+      "title": "Due Diligence Checklist for Thai Business Transactions: The LAS DD/CP Methodology",
+      "variants": [
+        {
+          "path": "articles/due-diligence-checklist-thailand.html",
+          "title": "Due Diligence Checklist for Thai Business Transactions: The LAS DD/CP Methodology",
+          "language": "en",
+          "sha256": "a60de1a800862d75c1520edf08db930e6dbdeb1ed0d87505b8f7a128c7d4268b",
+          "text_sha256": "27bcd0b9675371cfd1198f8b049262642686d63ad649d2f0e3dc8f73544793ac",
+          "published": "2026-04-01",
+          "modified": "2026-04-01",
+          "url": "https://thundthornthep-ai.github.io/articles/due-diligence-checklist-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/due-diligence-checklist-thailand.html",
+          "title": "Due Diligence Checklist for Thailand: The LAS DD/CP Methodology",
+          "language": "en",
+          "sha256": "ec3b7965bb69902bc52e61aa82c81875e15dbb019769e8fe20686e3862bedcb4",
+          "text_sha256": "27b51f84a8ab842150a935c6728eae7a4bd27dd5145c9c5e3df1c7df317968d0",
+          "published": "2026-04-01",
+          "modified": "2026-04-08",
+          "url": "https://thundthornthep-ai.github.io/en/articles/due-diligence-checklist-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "investment"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/due-diligence-conditions-precedent-thailand",
+      "kind": "article",
+      "title": "Due Diligence & Conditions Precedent (CP) สำหรับธุรกรรมธุรกิจในประเทศไทย",
+      "variants": [
+        {
+          "path": "articles/due-diligence-conditions-precedent-thailand.html",
+          "title": "Due Diligence & Conditions Precedent (CP) สำหรับธุรกรรมธุรกิจในประเทศไทย",
+          "language": "th",
+          "sha256": "eaf4bb58875044b6ce1c7cab2835e16b0a41ed33be99ba1ffbe3fd32a32b806b",
+          "text_sha256": "4aacbe253160089903a5111c4d839f3ef81c29ff07776d6e12727638e6086c6e",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/articles/due-diligence-conditions-precedent-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/due-diligence-conditions-precedent-thailand.html",
+          "title": "Due Diligence & Conditions Precedent in Thailand",
+          "language": "en",
+          "sha256": "0b9e0fb76d5db7e8ef4522e431ac3746526451ce8ca5e6270c40152a5bea2085",
+          "text_sha256": "cfc7caa22ca425161b94a76c98ec54ebd88c757d1bfe6e1e534439f819359857",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/en/articles/due-diligence-conditions-precedent-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract",
+        "investment"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/eec-investment-thailand",
+      "kind": "article",
+      "title": "ลงทุน EEC ไทย: สิทธิประโยชน์และขั้นตอนฉบับสมบูรณ์",
+      "variants": [
+        {
+          "path": "articles/eec-investment-thailand.html",
+          "title": "ลงทุน EEC ไทย: สิทธิประโยชน์และขั้นตอนฉบับสมบูรณ์",
+          "language": "th",
+          "sha256": "19d1bc192377ec0219e208bd8947b84b89ecea2df9e20ae9a9813a01d487d0a4",
+          "text_sha256": "7c793137e982a5a0cbf677775e18c21b105b5f1b236d59d9ec56eaf043a2f5ad",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/articles/eec-investment-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/eec-investment-thailand.html",
+          "title": "EEC Investment in Thailand: Complete Legal Guide",
+          "language": "en",
+          "sha256": "8ad5aca6ecae976ee6bb9f42d12ae6c023be5b416cee0bc7ff68c2694b9badff",
+          "text_sha256": "dbc4c8e655f9a32f94623ca941b2fe4b90d23e15dfa32dbf7e5a989542f5cacb",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/en/articles/eec-investment-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "investment"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/employment-contract-thailand-guide",
+      "kind": "article",
+      "title": "สัญญาจ้างแรงงานในไทย: พ.ร.บ.คุ้มครองแรงงาน พ.ศ. 2541 (แก้ไขถึงฉบับที่ 9 พ.ศ. 2568)",
+      "variants": [
+        {
+          "path": "articles/employment-contract-thailand-guide.html",
+          "title": "สัญญาจ้างแรงงานในไทย: พ.ร.บ.คุ้มครองแรงงาน พ.ศ. 2541 (แก้ไขถึงฉบับที่ 9 พ.ศ. 2568)",
+          "language": "th",
+          "sha256": "80c2acb9d5b06505806400ced9f7e658ec126ed4323db3c1daa53d039f9ed617",
+          "text_sha256": "d2b386fbbf575ed083a94e063e38c9c40a6dd0b87e9ab5a428cdd0364ed5a4c5",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/articles/employment-contract-thailand-guide.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/employment-contract-thailand-guide.html",
+          "title": "Employment Contract in Thailand: Labour Protection Act B.E. 2541 (as amended through No. 9 / B.E. 2568)",
+          "language": "en",
+          "sha256": "23916662b3a851852a1ef3a095ef6993a94726a8e2193aefd713a62a417eaec7",
+          "text_sha256": "ccad3d36b6306c9769e63ecea687d3308ae78166da3344fd06f42f060d786a9d",
+          "published": "2026-04-08",
+          "modified": "2026-04-08",
+          "url": "https://thundthornthep-ai.github.io/en/articles/employment-contract-thailand-guide.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract",
+        "labour"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "high",
+      "review_reason": "deadline-liability-or-change-sensitive-topic"
+    },
+    {
+      "id": "articles/foreigner-buy-condo-thailand",
+      "kind": "article",
+      "title": "ต่างชาติซื้อคอนโดในไทย: กฎ 49% ภาษี และข้อควรระวัง",
+      "variants": [
+        {
+          "path": "articles/foreigner-buy-condo-thailand.html",
+          "title": "ต่างชาติซื้อคอนโดในไทย: กฎ 49% ภาษี และข้อควรระวัง",
+          "language": "th",
+          "sha256": "5f6e259602c8211c0d7de88f3b2762b0be50a237a21ee3b9541d58c76ef53c43",
+          "text_sha256": "c80b854d26ad3c2b6a195a01f5349904dbff75ea77d940e4759a6e111610ca38",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/articles/foreigner-buy-condo-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/foreigner-buy-condo-thailand.html",
+          "title": "Foreigner Buying a Condo in Thailand: Complete Legal Guide",
+          "language": "en",
+          "sha256": "b9d5b482b591fdd3d19ad2b2542995f31042a0205a6011fc4e9e8e37480e4cb5",
+          "text_sha256": "12a41504663e7181c4fbb3fe60f1eabb22059a0d312aabd2cc024d9eaa7313a9",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/en/articles/foreigner-buy-condo-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "investment",
+        "property",
+        "tax"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/franchise-agreement-thailand",
+      "kind": "article",
+      "title": "สัญญาแฟรนไชส์ไทย: กรอบกฎหมายและองค์ประกอบสำคัญ",
+      "variants": [
+        {
+          "path": "articles/franchise-agreement-thailand.html",
+          "title": "สัญญาแฟรนไชส์ไทย: กรอบกฎหมายและองค์ประกอบสำคัญ",
+          "language": "th",
+          "sha256": "49229ecb43b4a22716c6f4e4a3cd1847420d28b70401dcbc4a506ca2077f7cc3",
+          "text_sha256": "480ba9eac7cc721fa6814d3628e2dec3ef322180afb9f31175c87b884c8299df",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/articles/franchise-agreement-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/franchise-agreement-thailand.html",
+          "title": "Franchise Agreement in Thailand: Legal Framework and Key Elements",
+          "language": "en",
+          "sha256": "7ca9d718437ae356c6db1edb9e676ed56b26e92f10e7d9db82df1bbf779fe332",
+          "text_sha256": "b3986c88fbe9da667c1fee52189de18788a6f2ff3846adff1f74440ec6fba744",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/en/articles/franchise-agreement-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract",
+        "investment"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/hotel-management-agreement-thailand",
+      "kind": "article",
+      "title": "Hotel Management Agreement (HMA) ในประเทศไทย: คู่มือกฎหมายฉบับสมบูรณ์",
+      "variants": [
+        {
+          "path": "articles/hotel-management-agreement-thailand.html",
+          "title": "Hotel Management Agreement (HMA) ในประเทศไทย: คู่มือกฎหมายฉบับสมบูรณ์",
+          "language": "th",
+          "sha256": "c8923761f7001f288f695818320128c31ecddc99af21f63a3b195277b49ef87d",
+          "text_sha256": "95a5c7fb0ac4d43391d33998c70edb40dde3c1c8277f76da07b0b01be849c58b",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/articles/hotel-management-agreement-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/hotel-management-agreement-thailand.html",
+          "title": "Hotel Management Agreements in Thailand — Legal Guide",
+          "language": "en",
+          "sha256": "b31cc1876f987c56a6c36aa77009870c8373c20daeb27f6ba4e09f549197b99d",
+          "text_sha256": "2ea3a29941c0ceeea5a9a10cfa83730869cdd486502b278c84dd625f8689fed2",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/en/articles/hotel-management-agreement-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract",
+        "property"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/ip-law-business-marketing",
+      "kind": "article",
+      "title": "ทรัพย์สินทางปัญญา: คู่มือกฎหมาย IP สำหรับนักธุรกิจ",
+      "variants": [
+        {
+          "path": "articles/ip-law-business-marketing.html",
+          "title": "ทรัพย์สินทางปัญญา: คู่มือกฎหมาย IP สำหรับนักธุรกิจ",
+          "language": "th",
+          "sha256": "a660a5052d0a2b401c8998e0ae05068bfc1358ba30b7bc4b2df3450d747a06be",
+          "text_sha256": "04b27658b36e998c93413ac29d3dabad0b82add5c955e271b4f6dbe8b73b98f3",
+          "published": "2026-03-31",
+          "modified": "2026-03-31",
+          "url": "https://thundthornthep-ai.github.io/articles/ip-law-business-marketing.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/ip-law-business-marketing.html",
+          "title": "IP Law for Business Marketing in Thailand: Complete Legal Guide",
+          "language": "en",
+          "sha256": "5b50fe6acefd53cb3ba068e3472f4c67d845d6d49485199f0c27412d6d0a4b00",
+          "text_sha256": "7aad32fdf3120664cd5b7bcf83be36521d1543fd5f7dbd07d5332f4567f04eaa",
+          "published": "2026-03-31",
+          "modified": "2026-03-31",
+          "url": "https://thundthornthep-ai.github.io/en/articles/ip-law-business-marketing.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "consumer",
+        "ip"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/joint-venture-agreement-thailand",
+      "kind": "article",
+      "title": "สัญญา Joint Venture ไทย: SHA, Deadlock และกลไก Exit",
+      "variants": [
+        {
+          "path": "articles/joint-venture-agreement-thailand.html",
+          "title": "สัญญา Joint Venture ไทย: SHA, Deadlock และกลไก Exit",
+          "language": "th",
+          "sha256": "65776f1e62f0c0c742324cced61665ded881ed43fdece139f39cbabf35104155",
+          "text_sha256": "dd918531eccb6bedb35bd53bb21b88642643ee76a57d70db126b78f12a0585bf",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/articles/joint-venture-agreement-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/joint-venture-agreement-thailand.html",
+          "title": "Joint Venture Agreement in Thailand: SHA, Deadlock, and Exit Mechanisms",
+          "language": "en",
+          "sha256": "b4c85d101c185173bab7b9b90155bc3fe9f71bb7b09d5811a1d71f7451e3413d",
+          "text_sha256": "7f691e113a45b5d9d9cb712ee3771c5be89f576d0417f58f7267292ff3b20703",
+          "published": "2026-04-04",
+          "modified": "2026-04-08",
+          "url": "https://thundthornthep-ai.github.io/en/articles/joint-venture-agreement-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract",
+        "corporate",
+        "investment"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/labour-protection-act-amendment-9-2568",
+      "kind": "article",
+      "title": "พระราชบัญญัติคุ้มครองแรงงาน พ.ศ. 2541: วิเคราะห์ฉบับสมบูรณ์ รวมการแก้ไขครั้งที่ 1 ถึงครั้งที่ 9 (พ.ศ. 2568)",
+      "variants": [
+        {
+          "path": "articles/labour-protection-act-amendment-9-2568.html",
+          "title": "พระราชบัญญัติคุ้มครองแรงงาน พ.ศ. 2541: วิเคราะห์ฉบับสมบูรณ์ รวมการแก้ไขครั้งที่ 1 ถึงครั้งที่ 9 (พ.ศ. 2568)",
+          "language": "th",
+          "sha256": "cf4e921e30710382263bf2a80955d171f3e408e2016e85ed3f102a7c3ec90b6f",
+          "text_sha256": "f0e9121f7ca85720eaca6246887f5cdcb6ece242469cb42517648ac883de0096",
+          "published": "2026-04-04",
+          "modified": "2026-04-11",
+          "url": "https://thundthornthep-ai.github.io/articles/labour-protection-act-amendment-9-2568.html",
+          "legal_status": "unreviewed",
+          "article_schema": false
+        },
+        {
+          "path": "en/articles/labour-protection-act-amendment-9-2568.html",
+          "title": "Labour Protection Act B.E. 2541 (1998): Complete Thailand Legal Guide — Parent Act + 8 Amendments Through No. 9 (B.E. 2568 / 2025)",
+          "language": "en",
+          "sha256": "73362ff7741bbddac1dba1866dfa25003e2996c0a04bda3d34318bec41129d93",
+          "text_sha256": "6c71e955572acfc7e560dd17e50f6bc02a00973158672446574c757d56a2759c",
+          "published": "2026-04-08",
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/en/articles/labour-protection-act-amendment-9-2568.html",
+          "legal_status": "unreviewed",
+          "article_schema": false
+        }
+      ],
+      "tags": [
+        "labour"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "high",
+      "review_reason": "deadline-liability-or-change-sensitive-topic"
+    },
+    {
+      "id": "articles/las-cc-01",
+      "kind": "article",
+      "title": "โครงสร้างสัญญาไทย — 8 ส่วนหลักที่ต้องรู้",
+      "variants": [
+        {
+          "path": "articles/las-cc-01.html",
+          "title": "โครงสร้างสัญญาไทย — 8 ส่วนหลักที่ต้องรู้",
+          "language": "th",
+          "sha256": "80e0fa612442a635135c9bb8edffe4c8731200695ee764d59974d4226bf7cd8c",
+          "text_sha256": "0fe5fc59434b8d90824f281814815f88782acb9fae479ab600b3560f10cf39b3",
+          "published": "2026-04-03",
+          "modified": "2026-04-08",
+          "url": "https://thundthornthep-ai.github.io/articles/las-cc-01.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": "cc",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 1,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-cc-02",
+      "kind": "article",
+      "title": "Definitions — หัวใจของสัญญา",
+      "variants": [
+        {
+          "path": "articles/las-cc-02.html",
+          "title": "Definitions — หัวใจของสัญญา",
+          "language": "th",
+          "sha256": "e56860abbc99a255c747e5fecde18f723f374adb909dd0881fc9631ed24a439a",
+          "text_sha256": "f20bd36c1303f8895361ead784fe80f70b740b51e41d69995b0256c3238a994c",
+          "published": "2026-04-03",
+          "modified": "2026-09-13",
+          "url": "https://thundthornthep-ai.github.io/articles/las-cc-02.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": "cc",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 2,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-cc-03",
+      "kind": "article",
+      "title": "Conditions Precedent — เงื่อนไขบังคับก่อน",
+      "variants": [
+        {
+          "path": "articles/las-cc-03.html",
+          "title": "Conditions Precedent — เงื่อนไขบังคับก่อน",
+          "language": "th",
+          "sha256": "fbbe5a2730e5e68f77b6f69838d95455d0470dc68e2752024b38f403203c0946",
+          "text_sha256": "66ea6a24ff97d5ce735f8935ff79e82ec27c0d49116ee82aa666c60ebe7382b4",
+          "published": "2026-04-03",
+          "modified": "2026-09-12",
+          "url": "https://thundthornthep-ai.github.io/articles/las-cc-03.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": "cc",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 3,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-cc-04",
+      "kind": "article",
+      "title": "Representations & Warranties — คำรับรองและรับประกัน",
+      "variants": [
+        {
+          "path": "articles/las-cc-04.html",
+          "title": "Representations & Warranties — คำรับรองและรับประกัน",
+          "language": "th",
+          "sha256": "780b0ea17ea1ba2b707a3ba067090d0ea246fd6fac8656e8af886847af7f302e",
+          "text_sha256": "b5342c0a86eb9e85b99b755eb99e91be8e804ffdb394adb0ed80eee34aeda2d8",
+          "published": "2026-04-03",
+          "modified": "2026-04-08",
+          "url": "https://thundthornthep-ai.github.io/articles/las-cc-04.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": "cc",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 4,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-cc-05",
+      "kind": "article",
+      "title": "Limitation of Liability — จำกัดความรับผิด",
+      "variants": [
+        {
+          "path": "articles/las-cc-05.html",
+          "title": "Limitation of Liability — จำกัดความรับผิด",
+          "language": "th",
+          "sha256": "14ee530fc557ee32fbe34aaa9dde225f2563961abd64a80916316cce54f585ad",
+          "text_sha256": "c88f4fdbc2b97fee3bd10a3341bf921bed4e15998021ce39c1b347dcef1bb5dc",
+          "published": "2026-04-03",
+          "modified": "2026-04-08",
+          "url": "https://thundthornthep-ai.github.io/articles/las-cc-05.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": "cc",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 5,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "high",
+      "review_reason": "deadline-liability-or-change-sensitive-topic"
+    },
+    {
+      "id": "articles/las-cc-06",
+      "kind": "article",
+      "title": "Termination — เลิกสัญญาที่ไม่เสียเปรียบ",
+      "variants": [
+        {
+          "path": "articles/las-cc-06.html",
+          "title": "Termination — เลิกสัญญาที่ไม่เสียเปรียบ",
+          "language": "th",
+          "sha256": "b1cf8001888ea06031ccaf78553ec0e4a5ea59a52ea7ba68d1e1502a9f716a3e",
+          "text_sha256": "fce88d7cb51983f752b71cdac8df568bd0c520dabd4b567b8a8a5e0e56030685",
+          "published": "2026-04-03",
+          "modified": "2026-04-08",
+          "url": "https://thundthornthep-ai.github.io/articles/las-cc-06.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": "cc",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 6,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "high",
+      "review_reason": "deadline-liability-or-change-sensitive-topic"
+    },
+    {
+      "id": "articles/las-cc-07",
+      "kind": "article",
+      "title": "Indemnification — ชดใช้ค่าเสียหาย",
+      "variants": [
+        {
+          "path": "articles/las-cc-07.html",
+          "title": "Indemnification — ชดใช้ค่าเสียหาย",
+          "language": "th",
+          "sha256": "5288ed1e00fcf2e312f0b8e1a76290e6fc6142df4e148c4dc292229945e06020",
+          "text_sha256": "211baca87e41666acb9cbf91844cb0edebfb68c8a75e67a43ec65e607a038810",
+          "published": "2026-04-03",
+          "modified": "2026-04-08",
+          "url": "https://thundthornthep-ai.github.io/articles/las-cc-07.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": "cc",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 7,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-cc-08",
+      "kind": "article",
+      "title": "Governing Law & Dispute Resolution กฎหมายที่ใช้บังคับและการระงับข้อพิพาท",
+      "variants": [
+        {
+          "path": "articles/las-cc-08.html",
+          "title": "Governing Law & Dispute Resolution กฎหมายที่ใช้บังคับและการระงับข้อพิพาท",
+          "language": "th",
+          "sha256": "db31c3b18a82b729674803f4f23235b9d7a2d3dc436ce7098ee0232f278ddf84",
+          "text_sha256": "9241432d65c00a6154ac23fb184552b22b8452017790000044a9703aae935320",
+          "published": "2026-04-03",
+          "modified": "2026-04-08",
+          "url": "https://thundthornthep-ai.github.io/articles/las-cc-08.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": "cc",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 8,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-cc-09",
+      "kind": "article",
+      "title": "Force Majeure vs Hardship — เหตุสุดวิสัยกับการเปลี่ยนแปลงพื้นฐาน",
+      "variants": [
+        {
+          "path": "articles/las-cc-09.html",
+          "title": "Force Majeure vs Hardship — เหตุสุดวิสัยกับการเปลี่ยนแปลงพื้นฐาน",
+          "language": "th",
+          "sha256": "2e4f72181cb1a75dd9584b5883f1461ba199a7196135662f22be3c1b0a254386",
+          "text_sha256": "553b7325ba410fd2208c41964be3494d6641107949535cde6986242b2b35e118",
+          "published": "2026-04-03",
+          "modified": "2026-04-08",
+          "url": "https://thundthornthep-ai.github.io/articles/las-cc-09.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": "cc",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 9,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-cc-10",
+      "kind": "article",
+      "title": "First Draft Advantage — ทำไมผู้ร่างสัญญาได้เปรียบ",
+      "variants": [
+        {
+          "path": "articles/las-cc-10.html",
+          "title": "First Draft Advantage — ทำไมผู้ร่างสัญญาได้เปรียบ",
+          "language": "th",
+          "sha256": "27d5d3bfc6667ee3eba181ed04bbe39016520b51f7005961361a6f0b5ca4b75f",
+          "text_sha256": "517df49203c3bdfdbb28d85d358544c8ffb32bdae8b84829a95528e9e58e5e45",
+          "published": "2026-04-03",
+          "modified": "2026-04-08",
+          "url": "https://thundthornthep-ai.github.io/articles/las-cc-10.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": "cc",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 10,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-cc-11",
+      "kind": "article",
+      "title": "การประเมินความเสี่ยงของการละเมิดข้อมูลส่วนบุคคล PDPA",
+      "variants": [
+        {
+          "path": "articles/las-cc-11.html",
+          "title": "การประเมินความเสี่ยงของการละเมิดข้อมูลส่วนบุคคล PDPA",
+          "language": "th",
+          "sha256": "94a8c9a1efa87ac3ee16c6e7deb3b8245fc7d4e9a0d778a5ff0da3a9447da259",
+          "text_sha256": "8ace736e49ac19e3d19f3e529512b20139618744320b3739c5866facbecf14eb",
+          "published": "2026-04-17T09:00:00+07:00",
+          "modified": "2026-04-17T09:00:00+07:00",
+          "url": "https://thundthornthep-ai.github.io/articles/las-cc-11.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/las-cc-11.html",
+          "title": "Personal Data Breach Risk Assessment Under Thailand PDPA",
+          "language": "en",
+          "sha256": "de606180776764a114fa070ef5735add5e0e8f06015a90b6139888313d5f5454",
+          "text_sha256": "1e916d27488c1131f45ae04ed91975a15f1e61b2147f3588a6b5a826e995fcb7",
+          "published": "2026-04-17T09:00:00+07:00",
+          "modified": "2026-04-17T09:00:00+07:00",
+          "url": "https://thundthornthep-ai.github.io/en/articles/las-cc-11.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract",
+        "privacy"
+      ],
+      "series": "cc",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 11,
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "high",
+      "review_reason": "deadline-liability-or-change-sensitive-topic"
+    },
+    {
+      "id": "articles/las-invest-01",
+      "kind": "article",
+      "title": "นักลงทุนต่างชาติเข้าไทย — 5 ขั้นตอนก่อนเริ่มธุรกิจ",
+      "variants": [
+        {
+          "path": "articles/las-invest-01.html",
+          "title": "นักลงทุนต่างชาติเข้าไทย — 5 ขั้นตอนก่อนเริ่มธุรกิจ",
+          "language": "th",
+          "sha256": "263da6c604fe7124f962befa8ba0aa97f1f96d8236c9634680e23fecbcf4b483",
+          "text_sha256": "a61479299ec0657e3e9b6213a8b06244b3c6bd2577fdbee4451b36272c41d1b8",
+          "published": "2026-04-15",
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/articles/las-invest-01.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/las-invest-01.html",
+          "title": "Foreign Investors in Thailand — 5 Steps Before Starting a Business",
+          "language": "en",
+          "sha256": "19fef7c1d018aa0611e23f99b29b18b0b3cac2ea2ef59b5667c37a2efcb9c531",
+          "text_sha256": "53a6ee0dc775b8c5ca31dcd062ea73220c841e4a5fe10b8aceec835a64e5f05d",
+          "published": "2026-04-15",
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/en/articles/las-invest-01.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "investment"
+      ],
+      "series": "invest",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 1,
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-invest-02",
+      "kind": "article",
+      "title": "จัดตั้งบริษัทต่างชาติในไทย — กรอบ LAS SSCU ครบวงจร",
+      "variants": [
+        {
+          "path": "articles/las-invest-02.html",
+          "title": "จัดตั้งบริษัทต่างชาติในไทย — กรอบ LAS SSCU ครบวงจร",
+          "language": "th",
+          "sha256": "393dc4b9a15fadcc74e29191c2298662b261f72e6dc33559065e5fa406bac61c",
+          "text_sha256": "c78c55ce5c5ad4988dcad65bc63c48fc7c87e6de2f7d353bd750e7e39de97083",
+          "published": "2026-04-15",
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/articles/las-invest-02.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/las-invest-02.html",
+          "title": "Establishing a Foreign Company in Thailand — LAS SSCU Comprehensive Legal Framework",
+          "language": "en",
+          "sha256": "2406ca38c4eb246900303da7d5e72735926814353c7794bca5c01f199210bc07",
+          "text_sha256": "1af8b7e665e434cbfd1fb9e31d3961e0faef4bad3266e80caabefd99c43d65b9",
+          "published": "2026-04-15",
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/en/articles/las-invest-02.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "corporate",
+        "investment"
+      ],
+      "series": "invest",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 2,
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-share-01",
+      "kind": "article",
+      "title": "อำนาจกรรมการและเงื่อนไขลงนาม — ใครเซ็นแล้วบริษัทผูกพัน?",
+      "variants": [
+        {
+          "path": "articles/las-share-01.html",
+          "title": "อำนาจกรรมการและเงื่อนไขลงนาม — ใครเซ็นแล้วบริษัทผูกพัน?",
+          "language": "th",
+          "sha256": "9d0f09c40ec0971b28662f3b59e516bd5778e48bdbe78f75c6c4c3c17a45d75a",
+          "text_sha256": "e361dff8086e0de4da2f2b9dfd187d4c2bcc2cc344e426d63e8a3f8103c9c244",
+          "published": "2026-08-29",
+          "modified": "2026-09-12",
+          "url": "https://thundthornthep-ai.github.io/articles/las-share-01.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "corporate"
+      ],
+      "series": "share",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 1,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-share-02",
+      "kind": "article",
+      "title": "หนังสือบริคณห์สนธิ — DNA ของบริษัท",
+      "variants": [
+        {
+          "path": "articles/las-share-02.html",
+          "title": "หนังสือบริคณห์สนธิ — DNA ของบริษัท",
+          "language": "th",
+          "sha256": "16d35c17136ed0047b6447c1800e559410ef11d4d6394c2136c1d80e604a3b6e",
+          "text_sha256": "f58e0bd7425f7e805a7a72585c0ecb84fe6b7aed44a04caa9c6f28e2320373b3",
+          "published": "2026-04-03",
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/articles/las-share-02.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "corporate"
+      ],
+      "series": "share",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 2,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-share-03",
+      "kind": "article",
+      "title": "มติที่ประชุม — ธรรมดา vs พิเศษ ต่างกันอย่างไร",
+      "variants": [
+        {
+          "path": "articles/las-share-03.html",
+          "title": "มติที่ประชุม — ธรรมดา vs พิเศษ ต่างกันอย่างไร",
+          "language": "th",
+          "sha256": "b90da2ef467102621a153cbe7a1c867abbdbb6f91666b0109f1a143f0b20a304",
+          "text_sha256": "2099d59ae3434fe9da36190b88dd58dfd486dcac27a419fe75fc9624d52f40c8",
+          "published": "2026-04-03",
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/articles/las-share-03.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "corporate"
+      ],
+      "series": "share",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 3,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-share-04",
+      "kind": "article",
+      "title": "อายุความ — เวลาที่กฎหมายให้คุณ",
+      "variants": [
+        {
+          "path": "articles/las-share-04.html",
+          "title": "อายุความ — เวลาที่กฎหมายให้คุณ",
+          "language": "th",
+          "sha256": "9e2e489df0d59d99dbd7265a6d80c2200e1dc133856d1f447cd2aaeea9150cc3",
+          "text_sha256": "ab7eb113ff85cd703cda7ac59474e6c346c981927d3b21534a6a89683985ecd4",
+          "published": "2026-04-03",
+          "modified": "2026-09-28",
+          "url": "https://thundthornthep-ai.github.io/articles/las-share-04.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": "share",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 4,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "high",
+      "review_reason": "deadline-liability-or-change-sensitive-topic"
+    },
+    {
+      "id": "articles/las-share-05",
+      "kind": "article",
+      "title": "สัญญาค้ำประกัน — สิ่งที่ผู้ค้ำต้องรู้ก่อนเซ็น",
+      "variants": [
+        {
+          "path": "articles/las-share-05.html",
+          "title": "สัญญาค้ำประกัน — สิ่งที่ผู้ค้ำต้องรู้ก่อนเซ็น",
+          "language": "th",
+          "sha256": "7998e9438a740c63785a75c2e0f6d43ef73a0cb921723470eb2ef84df8bbbf2e",
+          "text_sha256": "3724f723717ba6d3463c5403e2be99a16cfe6c469f35c68dcf4f6eb5a515e3cd",
+          "published": "2026-04-03",
+          "modified": "2026-09-28",
+          "url": "https://thundthornthep-ai.github.io/articles/las-share-05.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": "share",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 5,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "high",
+      "review_reason": "deadline-liability-or-change-sensitive-topic"
+    },
+    {
+      "id": "articles/las-share-06",
+      "kind": "article",
+      "title": "สัญญาเช่าพาณิชย์ — 10 ข้อต้องเช็คก่อนเซ็น",
+      "variants": [
+        {
+          "path": "articles/las-share-06.html",
+          "title": "สัญญาเช่าพาณิชย์ — 10 ข้อต้องเช็คก่อนเซ็น",
+          "language": "th",
+          "sha256": "432c141aac8f88816626e1d1b019ca330ae6b05549aff53589361a1289bff2a4",
+          "text_sha256": "da5d2145974557557670c16fc9525b1ec0e4b4553f2bfaab3ec5bbd5370d8318",
+          "published": "2026-04-03",
+          "modified": "2026-09-12",
+          "url": "https://thundthornthep-ai.github.io/articles/las-share-06.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract",
+        "property"
+      ],
+      "series": "share",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 6,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-share-07",
+      "kind": "article",
+      "title": "การโอนหุ้นบริษัทจำกัด — ขั้นตอนและข้อจำกัดครบถ้วน",
+      "variants": [
+        {
+          "path": "articles/las-share-07.html",
+          "title": "การโอนหุ้นบริษัทจำกัด — ขั้นตอนและข้อจำกัดครบถ้วน",
+          "language": "th",
+          "sha256": "77208d183a30dc251e231cae9bb3a9bc7405f270df3fdd5dc70c08c4fed924b5",
+          "text_sha256": "59f3f24f2fee41cf3c57bc0f29530c5e4a47fd781d58ac87166102ac559ad9f2",
+          "published": "2026-04-03",
+          "modified": "2026-09-12",
+          "url": "https://thundthornthep-ai.github.io/articles/las-share-07.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "corporate"
+      ],
+      "series": "share",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 7,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-share-08",
+      "kind": "article",
+      "title": "หนังสือมอบอำนาจ — ทำอย่างไรให้ถูกกฎหมายครบถ้วน",
+      "variants": [
+        {
+          "path": "articles/las-share-08.html",
+          "title": "หนังสือมอบอำนาจ — ทำอย่างไรให้ถูกกฎหมายครบถ้วน",
+          "language": "th",
+          "sha256": "511afd5f501eae65f34cd7a70e34462a7796c2d873c0be6ea987268356f791a7",
+          "text_sha256": "a0d700f99aab14ac50c8974db3140c6a92c6a21ec4c5622bbd2be7de7f26b05c",
+          "published": "2026-04-03",
+          "modified": "2026-09-12",
+          "url": "https://thundthornthep-ai.github.io/articles/las-share-08.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": "share",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 8,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-share-09",
+      "kind": "article",
+      "title": "หนี้ร่วม vs หนี้ลำพัง — ผลทางกฎหมายที่ต่างกัน",
+      "variants": [
+        {
+          "path": "articles/las-share-09.html",
+          "title": "หนี้ร่วม vs หนี้ลำพัง — ผลทางกฎหมายที่ต่างกัน",
+          "language": "th",
+          "sha256": "58656f552eab62ed7a64021f17861fc4811a51810e439614b55b256587589279",
+          "text_sha256": "1e7c0484cb06f808e72d032b6ad703df643968b81076f463da9b52700a48f981",
+          "published": "2026-04-03",
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/articles/las-share-09.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/las-share-09.html",
+          "title": "Joint and Several Liability vs Several Liability — Key Legal Differences",
+          "language": "en",
+          "sha256": "a071cbdcdc66e8d2eaccf4de66a40a10537f9356f3bc36e76043f7412ea2f17d",
+          "text_sha256": "6eb6c54dce4ef3bc2f47f01080a310089d85a622dd039738edb8a0fcf63a2964",
+          "published": "2026-04-03",
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/en/articles/las-share-09.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": "share",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 9,
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-share-10",
+      "kind": "article",
+      "title": "ข้อสัญญาที่ไม่เป็นธรรม — 5 ตัวอย่างสมมติเพื่อฝึกอ่านสัญญา",
+      "variants": [
+        {
+          "path": "articles/las-share-10.html",
+          "title": "ข้อสัญญาที่ไม่เป็นธรรม — 5 ตัวอย่างสมมติเพื่อฝึกอ่านสัญญา",
+          "language": "th",
+          "sha256": "1144c7a303671512c14088655995fbb030a9b6b1cccd526559b3d62975d08715",
+          "text_sha256": "60598236592a7b589f60a37e3b1430d195fa610c19fc975cebd05ae33a211a00",
+          "published": "2026-04-03",
+          "modified": "2026-09-28",
+          "url": "https://thundthornthep-ai.github.io/articles/las-share-10.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract",
+        "corporate"
+      ],
+      "series": "share",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 10,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-shield-01",
+      "kind": "article",
+      "title": "5 สัญญาที่ทุกธุรกิจต้องมี — โล่ป้องกันพื้นฐาน",
+      "variants": [
+        {
+          "path": "articles/las-shield-01.html",
+          "title": "5 สัญญาที่ทุกธุรกิจต้องมี — โล่ป้องกันพื้นฐาน",
+          "language": "th",
+          "sha256": "57486e4624d6f28b9d1a51c0cf311ae437bc88c54775f7eabe2a03cda7f4ec61",
+          "text_sha256": "be06fe536f01e1077eb12c5e8e201fcced8605434c75f272db5257a0eef10738",
+          "published": "2026-04-03",
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/articles/las-shield-01.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": "shield",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 1,
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-shield-02",
+      "kind": "article",
+      "title": "NDA — ข้อตกลงรักษาความลับ 7 องค์ประกอบที่ต้องมี",
+      "variants": [
+        {
+          "path": "articles/las-shield-02.html",
+          "title": "NDA — ข้อตกลงรักษาความลับ 7 องค์ประกอบที่ต้องมี",
+          "language": "th",
+          "sha256": "596166fb9a0f62c256e59c90f3cdbea77f988a406e13be34948eea4b50b29cc1",
+          "text_sha256": "9baf56c0e231887a169a59a74813ce999c6766f6ab38aa80b028fa4f3e0c3c79",
+          "published": "2026-04-03",
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/articles/las-shield-02.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": "shield",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 2,
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-shield-03",
+      "kind": "article",
+      "title": "Non-Compete — ข้อห้ามแข่งขันในกฎหมายไทย บังคับใช้ได้แค่ไหน?",
+      "variants": [
+        {
+          "path": "articles/las-shield-03.html",
+          "title": "Non-Compete — ข้อห้ามแข่งขันในกฎหมายไทย บังคับใช้ได้แค่ไหน?",
+          "language": "th",
+          "sha256": "d4aedc38a49ecda6aee0e13f9f879ff3d112e65ca3f5ba995ad7547aee6352ce",
+          "text_sha256": "2cc22c8299c1a94302a504777789e599b48dd8eb79944c47c12f92b0a9bec417",
+          "published": "2026-04-03",
+          "modified": "2026-09-13",
+          "url": "https://thundthornthep-ai.github.io/articles/las-shield-03.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": "shield",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 3,
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-shield-04",
+      "kind": "article",
+      "title": "PDPA Checklist — 10 ข้อที่ SME ต้องทำ (ฉบับสมบูรณ์)",
+      "variants": [
+        {
+          "path": "articles/las-shield-04.html",
+          "title": "PDPA Checklist — 10 ข้อที่ SME ต้องทำ (ฉบับสมบูรณ์)",
+          "language": "th",
+          "sha256": "a59743833ca3a5bb2aae7f0843552fc20bffb9333ab410d5dbc86eb28fe5df44",
+          "text_sha256": "7fa04eb50eccc93db89afb4280ae8079c612f4c2f5a07ca379fdabc6539afd3d",
+          "published": "2026-04-03",
+          "modified": "2026-04-08",
+          "url": "https://thundthornthep-ai.github.io/articles/las-shield-04.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "privacy"
+      ],
+      "series": "shield",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 4,
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "high",
+      "review_reason": "deadline-liability-or-change-sensitive-topic"
+    },
+    {
+      "id": "articles/las-shield-05",
+      "kind": "article",
+      "title": "กฎหมายแรงงานสำหรับนายจ้าง — พ.ร.บ.คุ้มครองแรงงาน พ.ศ. 2541 (แก้ไขเพิ่มเติมถึงฉบับที่ 9 พ.ศ. 2568)",
+      "variants": [
+        {
+          "path": "articles/las-shield-05.html",
+          "title": "กฎหมายแรงงานสำหรับนายจ้าง — พ.ร.บ.คุ้มครองแรงงาน พ.ศ. 2541 (แก้ไขเพิ่มเติมถึงฉบับที่ 9 พ.ศ. 2568)",
+          "language": "th",
+          "sha256": "3ee6f4e253dc437bb0cb1e5b0905f7b9dfc7a79a1ecc838b8b4fe6cf7dcc04f2",
+          "text_sha256": "ca506ea5cd9dfff6f6c51f842c5abbe780a1f1d91da2ffcf332c0f430c7e3f63",
+          "published": "2026-04-03",
+          "modified": "2026-04-11",
+          "url": "https://thundthornthep-ai.github.io/articles/las-shield-05.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "labour"
+      ],
+      "series": "shield",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 5,
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "high",
+      "review_reason": "deadline-liability-or-change-sensitive-topic"
+    },
+    {
+      "id": "articles/las-shield-06",
+      "kind": "article",
+      "title": "Force Majeure — เหตุสุดวิสัย ใช้อ้างได้เมื่อไหร่? (ฉบับสมบูรณ์)",
+      "variants": [
+        {
+          "path": "articles/las-shield-06.html",
+          "title": "Force Majeure — เหตุสุดวิสัย ใช้อ้างได้เมื่อไหร่? (ฉบับสมบูรณ์)",
+          "language": "th",
+          "sha256": "605b5067d63d393d3fd6affb87f5e1c2ed95b52893eb9b714ddc5fa88ed8388f",
+          "text_sha256": "0b92c17d582918e0c5ab06c35e0d8d3445dbfa876e7fc4a666d931eef944a673",
+          "published": "2026-04-03",
+          "modified": "2026-04-17",
+          "url": "https://thundthornthep-ai.github.io/articles/las-shield-06.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/las-shield-06.html",
+          "title": "Force Majeure in Thai Law — When Can You Invoke It? (Complete Guide)",
+          "language": "en",
+          "sha256": "6cd66cd814f834475f0201bb3fc51f72ad265236cafc42db915dcb0990277ebb",
+          "text_sha256": "d01f7c5e996f88f532e3b30f14fc81676116f2a3fdd009a5db9e3a1598dff250",
+          "published": "2026-04-03",
+          "modified": "2026-09-28",
+          "url": "https://thundthornthep-ai.github.io/en/articles/las-shield-06.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": "shield",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 6,
+      "hub_linked": false,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-shield-07",
+      "kind": "article",
+      "title": "Warranty vs Guarantee — รับประกันและค้ำประกันตามกฎหมายไทย (ฉบับสมบูรณ์)",
+      "variants": [
+        {
+          "path": "articles/las-shield-07.html",
+          "title": "Warranty vs Guarantee — รับประกันและค้ำประกันตามกฎหมายไทย (ฉบับสมบูรณ์)",
+          "language": "th",
+          "sha256": "af6a29fb13fdbc29fab911276ab7abc0ba4a9aeba97dc90bad7eae02decd8b2b",
+          "text_sha256": "d9b6007a7a83d260a063cdfa1dd7910691d0afbab05714db453d37ebb0e4d972",
+          "published": "2026-04-03",
+          "modified": "2026-09-12",
+          "url": "https://thundthornthep-ai.github.io/articles/las-shield-07.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/las-shield-07.html",
+          "title": "Warranty vs Guarantee Under Thai Law — Complete Guide",
+          "language": "en",
+          "sha256": "03586c7980257f822997acd15b18786a6de64dd83d89f070142a28ea057b9d5e",
+          "text_sha256": "6d94206b8a5830f20171b6566ee83bfb638c630315c5cc4d554a88b8c255f366",
+          "published": "2026-04-03",
+          "modified": "2026-09-28",
+          "url": "https://thundthornthep-ai.github.io/en/articles/las-shield-07.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": "shield",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 7,
+      "hub_linked": false,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "high",
+      "review_reason": "deadline-liability-or-change-sensitive-topic"
+    },
+    {
+      "id": "articles/las-shield-08",
+      "kind": "article",
+      "title": "Compliance 101 — ป้องกันทุจริตในองค์กร",
+      "variants": [
+        {
+          "path": "articles/las-shield-08.html",
+          "title": "Compliance 101 — ป้องกันทุจริตในองค์กร",
+          "language": "th",
+          "sha256": "4c92c4daa3e3c0a9515ce4d51880abc8d14ee39817a5f3876287a1bf5e221b2c",
+          "text_sha256": "f6ecbcb530e84423dbc7e09a125a60c2bf1f09152a7d08ab96c667831fef2854",
+          "published": "2026-04-03",
+          "modified": "2026-09-16",
+          "url": "https://thundthornthep-ai.github.io/articles/las-shield-08.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": "shield",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 8,
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-shield-09",
+      "kind": "article",
+      "title": "ประกันภัยธุรกิจ — กฎหมายและการบริหารความเสี่ยง",
+      "variants": [
+        {
+          "path": "articles/las-shield-09.html",
+          "title": "ประกันภัยธุรกิจ — กฎหมายและการบริหารความเสี่ยง",
+          "language": "th",
+          "sha256": "c4e145ee8107a90c4a096d021bd6f9bddcc9d0865ea854a649f939a8e2bbcebe",
+          "text_sha256": "c99bee841855b91c2f4237bcba3f4bc22a4e071d7fccdbf901447719f1323a23",
+          "published": "2026-04-03",
+          "modified": "2026-09-13",
+          "url": "https://thundthornthep-ai.github.io/articles/las-shield-09.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/las-shield-09.html",
+          "title": "Business Insurance — Thai Law and Risk Management",
+          "language": "en",
+          "sha256": "507338db6f553a2f0c5549b7ba88ed4c1e01b7557fcbcb19809af54bd4816688",
+          "text_sha256": "8f739a6a79bc9b5a79fb60af29b8a247d63488608b0cd353638d640b911b4490",
+          "published": null,
+          "modified": "2026-09-13",
+          "url": "https://thundthornthep-ai.github.io/en/articles/las-shield-09.html",
+          "legal_status": "unreviewed",
+          "article_schema": false
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": "shield",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 9,
+      "hub_linked": false,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-shield-10",
+      "kind": "article",
+      "title": "Dispute Resolution — ศาล vs อนุญาโตตุลาการ: คู่มือเชิงปฏิบัติ",
+      "variants": [
+        {
+          "path": "articles/las-shield-10.html",
+          "title": "Dispute Resolution — ศาล vs อนุญาโตตุลาการ: คู่มือเชิงปฏิบัติ",
+          "language": "th",
+          "sha256": "28835467d99ba38f6399023c3cd08cf11861b63f04df0f06b7ad5913c2801f65",
+          "text_sha256": "196c83ddb78d155e312dcf9aa849fa99764e5755a0a805a43b14f8d9b6900ac5",
+          "published": "2026-04-03",
+          "modified": "2026-04-08",
+          "url": "https://thundthornthep-ai.github.io/articles/las-shield-10.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": "shield",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 10,
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-upsize-01",
+      "kind": "article",
+      "title": "จากร้านเดียว สู่บริษัท — เมื่อไหร่ต้องจดทะเบียน?",
+      "variants": [
+        {
+          "path": "articles/las-upsize-01.html",
+          "title": "จากร้านเดียว สู่บริษัท — เมื่อไหร่ต้องจดทะเบียน?",
+          "language": "th",
+          "sha256": "854c844c85e12091048b9d8ac88090333b8c917c369991eee1a990077586dea1",
+          "text_sha256": "f612d56ff6bb28cffa60f0b181eafc88f9af98407423e7e1ada1394453f9f12c",
+          "published": "2026-04-03",
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/articles/las-upsize-01.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "corporate"
+      ],
+      "series": "upsize",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 1,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-upsize-02",
+      "kind": "article",
+      "title": "Shareholders' Agreement — ทำไมต้องมี?",
+      "variants": [
+        {
+          "path": "articles/las-upsize-02.html",
+          "title": "Shareholders' Agreement — ทำไมต้องมี?",
+          "language": "th",
+          "sha256": "587769b3e988904c0e3b07c5679d45b675e6450089b8c28c17d0c88e203d8659",
+          "text_sha256": "c06df5d57009e5b22337bbf46d02de6266df8859803d84efee4a4d192b505a78",
+          "published": "2026-04-03",
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/articles/las-upsize-02.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract",
+        "corporate"
+      ],
+      "series": "upsize",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 2,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-upsize-03",
+      "kind": "article",
+      "title": "สัญญาแฟรนไชส์ — กฎหมายที่ต้องรู้ก่อนซื้อ",
+      "variants": [
+        {
+          "path": "articles/las-upsize-03.html",
+          "title": "สัญญาแฟรนไชส์ — กฎหมายที่ต้องรู้ก่อนซื้อ",
+          "language": "th",
+          "sha256": "c615631941b6a002c2527a1f5d5da8a76c2649fc49629ab133954b0882c10fcb",
+          "text_sha256": "490d6cd2a7ef0e61207a80b897cca2bfbc8519fc2edeb4332ad110c011af0a63",
+          "published": "2026-04-03",
+          "modified": "2026-09-28",
+          "url": "https://thundthornthep-ai.github.io/articles/las-upsize-03.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/las-upsize-03.html",
+          "title": "Franchise Agreement — What Every Buyer Must Know About Thai Law",
+          "language": "en",
+          "sha256": "4ab13fe23f2dcfac5da3b98822301381a37f3b64619663553a568fe622a0c98a",
+          "text_sha256": "f16b9e2dc2b98e6716d2dd76b650f89f579e831bc23e15e07d0805f2d46c0b5e",
+          "published": "2026-04-03",
+          "modified": "2026-04-17",
+          "url": "https://thundthornthep-ai.github.io/en/articles/las-upsize-03.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract",
+        "investment"
+      ],
+      "series": "upsize",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 3,
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-upsize-04",
+      "kind": "article",
+      "title": "Joint Venture — ร่วมทุนอย่างไรไม่เสียเปรียบ",
+      "variants": [
+        {
+          "path": "articles/las-upsize-04.html",
+          "title": "Joint Venture — ร่วมทุนอย่างไรไม่เสียเปรียบ",
+          "language": "th",
+          "sha256": "68f1831491f6c0913624c72d750237cad3698117b11a328c387ae5d31bf04181",
+          "text_sha256": "b2746d44ee05369e6aa30ddbbb54b11d5a50404c98c243c955688a26629e95cd",
+          "published": "2026-04-03",
+          "modified": "2026-09-28",
+          "url": "https://thundthornthep-ai.github.io/articles/las-upsize-04.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/las-upsize-04.html",
+          "title": "Joint Venture — Structuring a JV Without Losing Your Position",
+          "language": "en",
+          "sha256": "e51573aff099c2da13e1fced4d95ea2d85b92bf54aaae3e544f6ff67df5bcb05",
+          "text_sha256": "82e93bcb261461f707a862bae41e8c43aa7258b6ac12b6247ab3cf8c999c1ac0",
+          "published": "2026-04-03",
+          "modified": "2026-04-17",
+          "url": "https://thundthornthep-ai.github.io/en/articles/las-upsize-04.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "corporate"
+      ],
+      "series": "upsize",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 4,
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-upsize-05",
+      "kind": "article",
+      "title": "Due Diligence เบื้องต้น — ตรวจอะไรก่อนลงทุน?",
+      "variants": [
+        {
+          "path": "articles/las-upsize-05.html",
+          "title": "Due Diligence เบื้องต้น — ตรวจอะไรก่อนลงทุน?",
+          "language": "th",
+          "sha256": "aaf9698ef2c4076a05d9174c28729e0cee105b2d997303592a9838c194df10e7",
+          "text_sha256": "6e15fe4ccae1965b7f466e1dccebac06344b7356561ec85435c1b3d56cd8fdd4",
+          "published": "2026-04-03",
+          "modified": "2026-04-17",
+          "url": "https://thundthornthep-ai.github.io/articles/las-upsize-05.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/las-upsize-05.html",
+          "title": "Due Diligence Basics — What to Check Before Investing?",
+          "language": "en",
+          "sha256": "4f677f7f8785ad3317775e3425fddd9a7effbb40fd687ad685dbf0758a7bf8c5",
+          "text_sha256": "73a29da213675f760d2106f80c353918912493e6af3ef2ae09f932291b3e6223",
+          "published": "2026-04-03",
+          "modified": "2026-04-17",
+          "url": "https://thundthornthep-ai.github.io/en/articles/las-upsize-05.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "investment"
+      ],
+      "series": "upsize",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 5,
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-upsize-06",
+      "kind": "article",
+      "title": "M&A Asset Deal vs Share Deal — เปรียบเทียบครบ ภาษี พนักงาน สัญญา",
+      "variants": [
+        {
+          "path": "articles/las-upsize-06.html",
+          "title": "M&A Asset Deal vs Share Deal — เปรียบเทียบครบ ภาษี พนักงาน สัญญา",
+          "language": "th",
+          "sha256": "2100ba80b909953ecba371c06011e063fcf7395833750f6c24852335b4c23f20",
+          "text_sha256": "a2695b95648323fdc92ddb6c5700be92f989bbb6a096d844b95acabe3188bd1d",
+          "published": "2026-04-03",
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/articles/las-upsize-06.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract",
+        "tax"
+      ],
+      "series": "upsize",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 6,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-upsize-07",
+      "kind": "article",
+      "title": "ระดมทุน — สินเชื่อ vs ขายหุ้น: กฎหมายที่ต้องรู้",
+      "variants": [
+        {
+          "path": "articles/las-upsize-07.html",
+          "title": "ระดมทุน — สินเชื่อ vs ขายหุ้น: กฎหมายที่ต้องรู้",
+          "language": "th",
+          "sha256": "55ea136419c617110c4527e875be93a7057e18c49b8c5d9013954dfca747e3c1",
+          "text_sha256": "754adb2dbc99a549f0b1d4ba3e5c8ca6157a2b1ca93b62d47108a95685526cf5",
+          "published": "2026-04-03",
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/articles/las-upsize-07.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "corporate",
+        "investment"
+      ],
+      "series": "upsize",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 7,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-upsize-08",
+      "kind": "article",
+      "title": "เตรียมพร้อม IPO — เส้นทางสู่ตลาดหลักทรัพย์",
+      "variants": [
+        {
+          "path": "articles/las-upsize-08.html",
+          "title": "เตรียมพร้อม IPO — เส้นทางสู่ตลาดหลักทรัพย์",
+          "language": "th",
+          "sha256": "24093b685e96201f503d1fc52d0f4c336cd11863c3735ac60f9ad0425f762b63",
+          "text_sha256": "d1cadf473cd4157869876d6e6e667bf98f0dd4c25f3231a81a790e12895d34a6",
+          "published": "2026-04-03",
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/articles/las-upsize-08.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "investment"
+      ],
+      "series": "upsize",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 8,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-upsize-09",
+      "kind": "article",
+      "title": "Cross-Border Business — FBA BOI และกฎหมายข้ามพรมแดน",
+      "variants": [
+        {
+          "path": "articles/las-upsize-09.html",
+          "title": "Cross-Border Business — FBA BOI และกฎหมายข้ามพรมแดน",
+          "language": "th",
+          "sha256": "852f05cabc2b84b73f076fcbf8e521112ea9bbd1f32a36ca7353436d6cf327a6",
+          "text_sha256": "2c7857e7974bb1790474985ab647875f33669e37658600274a2bf700cd636cab",
+          "published": "2026-04-03",
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/articles/las-upsize-09.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "investment"
+      ],
+      "series": "upsize",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 9,
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/las-upsize-10",
+      "kind": "article",
+      "title": "Exit Strategy — วางแผนทางออกตั้งแต่วันแรก",
+      "variants": [
+        {
+          "path": "articles/las-upsize-10.html",
+          "title": "Exit Strategy — วางแผนทางออกตั้งแต่วันแรก",
+          "language": "th",
+          "sha256": "b876365862ab833589cc622a141f2b23455d3a934458c63082dd3c4b21c31ae8",
+          "text_sha256": "676f6b4e461f53f46e99e65f474236f2a144058a7763640f7c8dfa6fe946a04d",
+          "published": "2026-04-03",
+          "modified": "2026-04-17",
+          "url": "https://thundthornthep-ai.github.io/articles/las-upsize-10.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/las-upsize-10.html",
+          "title": "Exit Strategy — Plan Your Way Out from Day One",
+          "language": "en",
+          "sha256": "e5c722f36a58797f43c5b0f71e79a897437399d483518cf145faa75b6a64bc53",
+          "text_sha256": "2895e559a2949826e567e21b64d2835fff4b2893a7fe4bb8ee99a261927f2e0f",
+          "published": "2026-04-03",
+          "modified": "2026-04-17",
+          "url": "https://thundthornthep-ai.github.io/en/articles/las-upsize-10.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "investment"
+      ],
+      "series": "upsize",
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "episode": 10,
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/lease-agreement-thailand-guide",
+      "kind": "article",
+      "title": "สัญญาเช่าในกฎหมายไทย: คู่มือครบจบสำหรับผู้เช่าและผู้ให้เช่า",
+      "variants": [
+        {
+          "path": "articles/lease-agreement-thailand-guide.html",
+          "title": "สัญญาเช่าในกฎหมายไทย: คู่มือครบจบสำหรับผู้เช่าและผู้ให้เช่า",
+          "language": "th",
+          "sha256": "9a49151f1cd1e940df9dcbf5dd06e2edebf64893687ddb67be6d0c6fd55dd8fc",
+          "text_sha256": "c3bbcc0fe8b6a971d4d4f523b8f43650a63e401c20b492f810650c3537138cfb",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/articles/lease-agreement-thailand-guide.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/lease-agreement-thailand-guide.html",
+          "title": "Lease Agreement in Thailand: Complete Legal Guide for Lessors and Lessees",
+          "language": "en",
+          "sha256": "1c96cc084a09166d1b3f25bf414136812c251b628d7f883812f5777a6972318f",
+          "text_sha256": "004088db00bb297d8e12678f844757d344de4e4c12af3452d29268d0255d5640",
+          "published": "2026-04-08",
+          "modified": "2026-04-08",
+          "url": "https://thundthornthep-ai.github.io/en/articles/lease-agreement-thailand-guide.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract",
+        "property"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/marketing-business-contracts",
+      "kind": "article",
+      "title": "สัญญาธุรกิจการตลาด: คู่มือครบวงจร",
+      "variants": [
+        {
+          "path": "articles/marketing-business-contracts.html",
+          "title": "สัญญาธุรกิจการตลาด: คู่มือครบวงจร",
+          "language": "th",
+          "sha256": "f38f2382bfb60f5c663863708509d2f1f767af88c1e43ca72b5aad96e63ace21",
+          "text_sha256": "676f7052db3b8a3311e8a9e704325ab00abf8e9e492985776cb3db8e2ab16248",
+          "published": "2026-03-31",
+          "modified": "2026-03-31",
+          "url": "https://thundthornthep-ai.github.io/articles/marketing-business-contracts.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/marketing-business-contracts.html",
+          "title": "Marketing and Business Contracts in Thailand: Complete Legal Guide",
+          "language": "en",
+          "sha256": "9949cd3735c39accb472b8f36ada4898be3d66195600be139fa781fbfb03ca54",
+          "text_sha256": "14da7b91667bb8a3d2222a5ed5fd93a0aca5bfbf7090166e084fca9643067671",
+          "published": "2026-03-31",
+          "modified": "2026-03-31",
+          "url": "https://thundthornthep-ai.github.io/en/articles/marketing-business-contracts.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "consumer",
+        "contract",
+        "investment"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/mergers-acquisitions-thailand",
+      "kind": "article",
+      "title": "M&A กฎหมายไทย: คู่มือ Mergers & Acquisitions ฉบับสมบูรณ์",
+      "variants": [
+        {
+          "path": "articles/mergers-acquisitions-thailand.html",
+          "title": "M&A กฎหมายไทย: คู่มือ Mergers & Acquisitions ฉบับสมบูรณ์",
+          "language": "th",
+          "sha256": "bf0ce6d80f79993682360ade25a9992ad6da5cab96fbb66c53bdd7d2dd97e5eb",
+          "text_sha256": "9b0a6af84928c1321202a7c20bd1c4decadfafd6f283eba6f3220907a7801dda",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/articles/mergers-acquisitions-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/mergers-acquisitions-thailand.html",
+          "title": "Mergers and Acquisitions in Thailand: Complete Legal Guide",
+          "language": "en",
+          "sha256": "44c3e348582ab98f956cb1b1c91e6c4865eeceeb9bc9010271a6be4e95488290",
+          "text_sha256": "67551547721e351d501068e9efe9b9420446636198e39686cd1228114cf505a0",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/en/articles/mergers-acquisitions-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "investment"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/nda-non-disclosure-agreement-thailand",
+      "kind": "article",
+      "title": "NDA สัญญารักษาความลับ: คู่มือฉบับสมบูรณ์สำหรับธุรกิจไทย",
+      "variants": [
+        {
+          "path": "articles/nda-non-disclosure-agreement-thailand.html",
+          "title": "NDA สัญญารักษาความลับ: คู่มือฉบับสมบูรณ์สำหรับธุรกิจไทย",
+          "language": "th",
+          "sha256": "178551ec36d5403c61564c02606389d3153e75a01d7d8361fa64c714b6954b75",
+          "text_sha256": "4999c45f193e43f9b294ea2ed292cbcd248cd0a497d61ebd9386a61cfbf3d933",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/articles/nda-non-disclosure-agreement-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/nda-non-disclosure-agreement-thailand.html",
+          "title": "NDA Non-Disclosure Agreement in Thailand: Complete Legal Guide",
+          "language": "en",
+          "sha256": "7135c38bf7ebfe5ed9dc17da69a1deec810fddf5b6610c5f28a9019be5b37e41",
+          "text_sha256": "574d1829ac4193ebe770edcbe87ec2c626f315997591f58f12dd14aba3741234",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/en/articles/nda-non-disclosure-agreement-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/pdpa-compliance-guide-business",
+      "kind": "article",
+      "title": "PDPA Compliance สำหรับธุรกิจ B2B: คู่มือระดับ C-Suite",
+      "variants": [
+        {
+          "path": "articles/pdpa-compliance-guide-business.html",
+          "title": "PDPA Compliance สำหรับธุรกิจ B2B: คู่มือระดับ C-Suite",
+          "language": "th",
+          "sha256": "2dd322cea76e6b3b7116e3c6d49ee0db69aaa4a114807cd23045cb69de92d64b",
+          "text_sha256": "3514253ca8e9a0951781d5d5a9313f71049fc7a181183f2525863c8dfe7d098e",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/articles/pdpa-compliance-guide-business.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/pdpa-compliance-guide-business.html",
+          "title": "PDPA Compliance Guide for Business in Thailand: The C-Suite Legal Guide",
+          "language": "en",
+          "sha256": "d0cebf99a7436396b9704da58d7bf52fd61739aa7a2ae353eacb307684c9d20d",
+          "text_sha256": "8dc8995fb3390cf6ce43c2506142c1e5cb65a6783878ba5fc9fe2834f06c88e8",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/en/articles/pdpa-compliance-guide-business.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "privacy"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "high",
+      "review_reason": "deadline-liability-or-change-sensitive-topic"
+    },
+    {
+      "id": "articles/pdpa-compliance-guide-thailand",
+      "kind": "article",
+      "title": "Complete Guide to PDPA Compliance in Thailand",
+      "variants": [
+        {
+          "path": "articles/pdpa-compliance-guide-thailand.html",
+          "title": "Complete Guide to PDPA Compliance in Thailand",
+          "language": "en",
+          "sha256": "2e9b57d9085bee38d3d336da97a86ef7de25ecf4d67877035835b6e9647255cb",
+          "text_sha256": "36c5df9115c4aec4dd490474dc172c43e03671b2fd40ee9ed31bb2c0045577d7",
+          "published": "2026-04-01",
+          "modified": "2026-04-01",
+          "url": "https://thundthornthep-ai.github.io/articles/pdpa-compliance-guide-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/pdpa-compliance-guide-thailand.html",
+          "title": "Complete Guide to PDPA Compliance in Thailand",
+          "language": "en",
+          "sha256": "e696c43e02bde18080d004c64c7461c744ea1d50fb8783a5a1375b565afbb5ca",
+          "text_sha256": "8f9d69d3a085f28c6b0f5581f387301c6ba6e7afd0dd13f90da1be4959baa7d9",
+          "published": "2026-04-01",
+          "modified": "2026-04-08",
+          "url": "https://thundthornthep-ai.github.io/en/articles/pdpa-compliance-guide-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "privacy"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "high",
+      "review_reason": "deadline-liability-or-change-sensitive-topic"
+    },
+    {
+      "id": "articles/pdpa-essentials-entrepreneurs",
+      "kind": "article",
+      "title": "PDPA สิ่งที่ผู้ประกอบการต้องรู้",
+      "variants": [
+        {
+          "path": "articles/pdpa-essentials-entrepreneurs.html",
+          "title": "PDPA สิ่งที่ผู้ประกอบการต้องรู้",
+          "language": "th",
+          "sha256": "b4658b62b7fabdbdcf51b826436b53a719eaca9a200c225d8d38801ec5c49914",
+          "text_sha256": "a0f6e78d236b1fa1322d81d33fbf2f45e723f6e375fccd7cbfb343b8d83aed94",
+          "published": "2026-04-03",
+          "modified": "2026-04-03",
+          "url": "https://thundthornthep-ai.github.io/articles/pdpa-essentials-entrepreneurs.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/pdpa-essentials-entrepreneurs.html",
+          "title": "PDPA Essentials Every Thai Business Must Know",
+          "language": "en",
+          "sha256": "c1690532dbbb43a039881554fdd003796d4e09b43bc33d6ced322a393a621cc9",
+          "text_sha256": "ad0f698e151f7057f0bbeea99b5bc0c5cd8799f350d8b3b119ff7522c166d11f",
+          "published": "2026-04-03",
+          "modified": "2026-04-03",
+          "url": "https://thundthornthep-ai.github.io/en/articles/pdpa-essentials-entrepreneurs.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "privacy"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "high",
+      "review_reason": "deadline-liability-or-change-sensitive-topic"
+    },
+    {
+      "id": "articles/social-media-marketing-law",
+      "kind": "article",
+      "title": "กฎหมายการตลาดดิจิทัลและโซเชียลมีเดีย",
+      "variants": [
+        {
+          "path": "articles/social-media-marketing-law.html",
+          "title": "กฎหมายการตลาดดิจิทัลและโซเชียลมีเดีย",
+          "language": "th",
+          "sha256": "129081154924d05a5facbd3576ee2674be0a36564d8391a13d7112c232878bef",
+          "text_sha256": "a4b4725fc5d1526e8ead80971384aa0479e29eeba9df828edcf3f6686e94045a",
+          "published": "2026-03-31",
+          "modified": "2026-03-31",
+          "url": "https://thundthornthep-ai.github.io/articles/social-media-marketing-law.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/social-media-marketing-law.html",
+          "title": "Social Media Marketing Law in Thailand",
+          "language": "en",
+          "sha256": "19a35a525aaddccc3e4f6be1cbd30a90328dd84499762ed9cc74d6e978c904be",
+          "text_sha256": "9ab82bb7688ecd4fa1e7287a3c9b2d997167425bf6f6e9fa7d012237cc089c89",
+          "published": "2026-03-31",
+          "modified": "2026-03-31",
+          "url": "https://thundthornthep-ai.github.io/en/articles/social-media-marketing-law.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "consumer"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/solo-practitioner-ai-advantage",
+      "kind": "article",
+      "title": "The Solo Practitioner Advantage: Why AI Makes Small Firms Unbeatable",
+      "variants": [
+        {
+          "path": "articles/solo-practitioner-ai-advantage.html",
+          "title": "The Solo Practitioner Advantage: Why AI Makes Small Firms Unbeatable",
+          "language": "th",
+          "sha256": "a0e14dc51c214487e01056354793d2f73a6c37d7d108c901974ced3c2750a182",
+          "text_sha256": "5301c2d56387ff6d67c7a7d218a9f1f42b174a76cb9973c07f67a2a8ed5dc1ae",
+          "published": "2026-04-03",
+          "modified": "2026-04-03",
+          "url": "https://thundthornthep-ai.github.io/articles/solo-practitioner-ai-advantage.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/solo-practitioner-ai-advantage.html",
+          "title": "The Solo Practitioner AI Advantage: Why AI Makes Small Firms Unbeatable",
+          "language": "en",
+          "sha256": "9ee4bb625f5d5bd60aae816360ebb2f2e8ec30a77099d7d529087d7630fb09fb",
+          "text_sha256": "23b2ad9e939dcbccdf7dc44dd23cbbfc73ce9e2d046789922a47d92447ab1f2a",
+          "published": "2026-04-03",
+          "modified": "2026-04-03",
+          "url": "https://thundthornthep-ai.github.io/en/articles/solo-practitioner-ai-advantage.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "professional"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/transfer-pricing-thailand",
+      "kind": "article",
+      "title": "Transfer Pricing ไทย: คู่มือ Arm's Length และ 5 วิธี TP",
+      "variants": [
+        {
+          "path": "articles/transfer-pricing-thailand.html",
+          "title": "Transfer Pricing ไทย: คู่มือ Arm's Length และ 5 วิธี TP",
+          "language": "th",
+          "sha256": "686dc48a93d3c27a26cc72165c228870ad9da718fad2f6d95f1f9f2361ce9890",
+          "text_sha256": "fb97ae2474fd537cdf39854a2ed9f7239d49fd35a8433de8cffce31d8c6d6926",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/articles/transfer-pricing-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/transfer-pricing-thailand.html",
+          "title": "Transfer Pricing in Thailand: Arm's Length Principle and 5 TP Methods",
+          "language": "en",
+          "sha256": "c6448559e0867741f61d82d8d393354a0b87da69635288dafd37ee7d7fb17d32",
+          "text_sha256": "3f225314d5c41fbb276c8d35f0b8fa73f4bc56846fd082df332399bae9a793ab",
+          "published": "2026-04-04",
+          "modified": "2026-04-04",
+          "url": "https://thundthornthep-ai.github.io/en/articles/transfer-pricing-thailand.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "tax"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "articles/why-lawyers-read-contracts-differently",
+      "kind": "article",
+      "title": "ทำไมนักกฎหมายจึงอ่านสัญญาไม่เหมือนคนปกติ",
+      "variants": [
+        {
+          "path": "articles/why-lawyers-read-contracts-differently.html",
+          "title": "ทำไมนักกฎหมายจึงอ่านสัญญาไม่เหมือนคนปกติ",
+          "language": "th",
+          "sha256": "57db576d15980bbfacbe2eda53155c2b44040e6a0b30f66268766812f305cd9c",
+          "text_sha256": "6150473f95e1d44344b5c12115fd805c7acc3fd68d8cd67405a93f81b5896dcd",
+          "published": "2026-04-03",
+          "modified": "2026-04-03",
+          "url": "https://thundthornthep-ai.github.io/articles/why-lawyers-read-contracts-differently.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/articles/why-lawyers-read-contracts-differently.html",
+          "title": "Why Lawyers Read Contracts Differently",
+          "language": "en",
+          "sha256": "28e2725fe11495d6fe0c525ae63ebc9b3b7eaedf52fd37e40a475b3c16fa8c70",
+          "text_sha256": "371a8fe3cf38e0f30ab788c8d7f4dc59e556e361a1be03655f8bdd91e14d9d63",
+          "published": "2026-04-03",
+          "modified": "2026-04-03",
+          "url": "https://thundthornthep-ai.github.io/en/articles/why-lawyers-read-contracts-differently.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract",
+        "professional"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/311-decision-report-v7",
+      "kind": "resource",
+      "title": "รายงานการตรวจสอบข้อบัญญัติกรุงเทพมหานคร ๓๑๑ ฉบับ",
+      "variants": [
+        {
+          "path": "blog/bkk-council/311-decision-report-v7.html",
+          "title": "รายงานการตรวจสอบข้อบัญญัติกรุงเทพมหานคร ๓๑๑ ฉบับ",
+          "language": "th",
+          "sha256": "7bdbcf964c91577708867ca47c0b2fd32c81829e0edcda808b99843253bfe30f",
+          "text_sha256": "74d16557ab1fb4a19af0a8f9ca94599f5bf10bb40a6a49d964d93b40b20b449e",
+          "published": null,
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/311-decision-report-v7.html",
+          "legal_status": "unreviewed",
+          "article_schema": false
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/311-ordinances-dashboard",
+      "kind": "resource",
+      "title": "311 ข้อบัญญัติ กทม. ถึงเวลาปฏิรูป",
+      "variants": [
+        {
+          "path": "blog/bkk-council/311-ordinances-dashboard.html",
+          "title": "311 ข้อบัญญัติ กทม. ถึงเวลาปฏิรูป",
+          "language": "th",
+          "sha256": "1a17b2fca1e9e34dd808cd6b3bf8e84b3e5c3c718d32c415fc03a74ee215c2a3",
+          "text_sha256": "82dd816acf23f17a271292a9b98811c7de99554d831ac87b161c4fbcf949f488",
+          "published": null,
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/311-ordinances-dashboard.html",
+          "legal_status": "unreviewed",
+          "article_schema": false
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/bkk-oss",
+      "kind": "resource",
+      "title": "BKK One Stop Service ศูนย์บริการแบบเบ็ดเสร็จ ณ จุดเดียว กรุงเทพมหานคร",
+      "variants": [
+        {
+          "path": "blog/bkk-council/bkk-oss.html",
+          "title": "BKK One Stop Service ศูนย์บริการแบบเบ็ดเสร็จ ณ จุดเดียว กรุงเทพมหานคร",
+          "language": "th",
+          "sha256": "db5f2975563f0544cb22783a6bc061b68910dca934fceec4245c108414b346c4",
+          "text_sha256": "3423529c8c4f2c202af81700ca1a7265b9c6cba0d1b20ecdd613cb8b8edb9d7d",
+          "published": null,
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/bkk-oss.html",
+          "legal_status": "unreviewed",
+          "article_schema": false
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/bkk-universe",
+      "kind": "resource",
+      "title": "จักรวาล กทม. ระบบดิจิทัลกรุงเทพมหานคร",
+      "variants": [
+        {
+          "path": "blog/bkk-council/bkk-universe.html",
+          "title": "จักรวาล กทม. ระบบดิจิทัลกรุงเทพมหานคร",
+          "language": "th",
+          "sha256": "41b8cf9f3a5739971ede2210dd516c35f775dfea6d68faf527c54a0240b4bbae",
+          "text_sha256": "c5d9ab3d411a6edc9d2a5a207326ade0e6327e2bea4c5822f969b643aaa39f4b",
+          "published": null,
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/bkk-universe.html",
+          "legal_status": "unreviewed",
+          "article_schema": false
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/campaign-dashboard",
+      "kind": "resource",
+      "title": "เลือกตั้ง สก. ชุดที่ 14",
+      "variants": [
+        {
+          "path": "blog/bkk-council/campaign-dashboard.html",
+          "title": "เลือกตั้ง สก. ชุดที่ 14",
+          "language": "th",
+          "sha256": "c8ddd36e399fa1521f425af32275315a5d627498d397fe0059ca16fef99cf395",
+          "text_sha256": "aadf994d42922f01873f38697583ef235cbcb5372283fa4889abc79483aada9d",
+          "published": null,
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/campaign-dashboard.html",
+          "legal_status": "unreviewed",
+          "article_schema": false
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/campaign-tracker",
+      "kind": "resource",
+      "title": "Campaign Tracker — ส.ก. Navigator",
+      "variants": [
+        {
+          "path": "blog/bkk-council/campaign-tracker.html",
+          "title": "Campaign Tracker — ส.ก. Navigator",
+          "language": "th",
+          "sha256": "35e43b028c61f4e2061949877663fc4eef82beaac9ab3055bdfbd0ccd8b924c1",
+          "text_sha256": "5c8e29ff5da40035ca21111d02962de055d280c1c776c4f7f2b0ba75e1062db5",
+          "published": null,
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/campaign-tracker.html",
+          "legal_status": "unreviewed",
+          "article_schema": false
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/council-rules-amendment-2569",
+      "kind": "article",
+      "title": "ตารางเปรียบเทียบการเสนอร่างแก้ไขข้อบังคับสภากรุงเทพมหานคร กรกฎาคม พ.ศ. 2569",
+      "variants": [
+        {
+          "path": "blog/bkk-council/council-rules-amendment-2569.html",
+          "title": "ตารางเปรียบเทียบการเสนอร่างแก้ไขข้อบังคับสภากรุงเทพมหานคร กรกฎาคม พ.ศ. 2569",
+          "language": "th",
+          "sha256": "d823c481633b4d091ea5247799acb59b1c6eef1418201e4121c30214dddfaa14",
+          "text_sha256": "a12a2584484ab9fefa69df842fd65101640d80e3e93abc9199b694646cc07857",
+          "published": "2026-07-18",
+          "modified": "2026-07-18",
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/council-rules-amendment-2569.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/council-transparency",
+      "kind": "resource",
+      "title": "ความโปร่งใสและตรวจสอบได้ ผ่านข้อบังคับการประชุม สภา กทม. และ สภาผู้แทนราษฎร",
+      "variants": [
+        {
+          "path": "blog/bkk-council/council-transparency.html",
+          "title": "ความโปร่งใสและตรวจสอบได้ ผ่านข้อบังคับการประชุม สภา กทม. และ สภาผู้แทนราษฎร",
+          "language": "th",
+          "sha256": "396e1743b93e24bed3cf00937722b4c9f3d323fcdc7ff8f76de3f3764943f22b",
+          "text_sha256": "7133064fa3ea02cff9a4e945ef229e64fb172e431ea165820baa76bfc2c6f8ff",
+          "published": null,
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/council-transparency.html",
+          "legal_status": "unreviewed",
+          "article_schema": false
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/district-intel",
+      "kind": "resource",
+      "title": "District Intelligence — ส.ก. Navigator",
+      "variants": [
+        {
+          "path": "blog/bkk-council/district-intel.html",
+          "title": "District Intelligence — ส.ก. Navigator",
+          "language": "th",
+          "sha256": "6ba1687b29241220bc0e0f5db365f717bb8b321fec30ba401e4de898326ebe92",
+          "text_sha256": "afd26e1df01303fd8c131a0683af131f417fd87bc1224df8bd5c7e6b9e477f4e",
+          "published": null,
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/district-intel.html",
+          "legal_status": "unreviewed",
+          "article_schema": false
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/ep1",
+      "kind": "article",
+      "title": "ส.ก. คือใคร? ทำไมคน กทม. ต้องรู้จักก่อนเลือกตั้งปี 2569",
+      "variants": [
+        {
+          "path": "blog/bkk-council/ep1.html",
+          "title": "ส.ก. คือใคร? ทำไมคน กทม. ต้องรู้จักก่อนเลือกตั้งปี 2569",
+          "language": "th",
+          "sha256": "a245d37264bb614238315e740a7c9da7490005550c9cfd6dde65ae5cd9e8fe5f",
+          "text_sha256": "48f638f53b12edbe4b7ca8997e7198a4cc1a954dab91a5e7e1e026dc1b84f474",
+          "published": "2026-03-31",
+          "modified": "2026-03-31",
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/ep1.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/ep2",
+      "kind": "article",
+      "title": "Traffy Fondue บอกอะไรเราได้บ้าง? และ ส.ก. ต้องทำอะไรกับข้อมูลเหล่านี้",
+      "variants": [
+        {
+          "path": "blog/bkk-council/ep2.html",
+          "title": "Traffy Fondue บอกอะไรเราได้บ้าง? และ ส.ก. ต้องทำอะไรกับข้อมูลเหล่านี้",
+          "language": "th",
+          "sha256": "4506cee88d21ad48d0981b2d2fa279bda3831d9042f6715ed83119377baf15e1",
+          "text_sha256": "ffc0d5c07a9208e5810188d5aebc06cc725b754963933dcb99bb47177372c9eb",
+          "published": "2026-03-31",
+          "modified": "2026-03-31",
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/ep2.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/ep3",
+      "kind": "article",
+      "title": "\"นวัตกรรมนิติบัญญัติชิงรุก\" คืออะไร? ทำไม กทม. ต้องการสิ่งนี้",
+      "variants": [
+        {
+          "path": "blog/bkk-council/ep3.html",
+          "title": "\"นวัตกรรมนิติบัญญัติชิงรุก\" คืออะไร? ทำไม กทม. ต้องการสิ่งนี้",
+          "language": "th",
+          "sha256": "9b82d307a4920b6b9e9e29c5858616bdd427c1cd78ecc5ca9a06a7a866df1852",
+          "text_sha256": "c686948523d608e4f98816ca8f07e94622c50997d97d37bff0c34c0a61ffbd6b",
+          "published": "2026-03-31",
+          "modified": "2026-03-31",
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/ep3.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/ep4",
+      "kind": "article",
+      "title": "4 เหตุผลที่คน กทม. ต้องออกไปเลือก ส.ก. ให้ถูกต้องในปี 2569",
+      "variants": [
+        {
+          "path": "blog/bkk-council/ep4.html",
+          "title": "4 เหตุผลที่คน กทม. ต้องออกไปเลือก ส.ก. ให้ถูกต้องในปี 2569",
+          "language": "th",
+          "sha256": "215ff4e3638cf3dfe2ec09c3af48520407a10bd087d055e8f06093dbc5a043bc",
+          "text_sha256": "15c259bfa3de43141175443d3661570877393a2a79376d4798de9dea274a1d92",
+          "published": "2026-03-31",
+          "modified": "2026-03-31",
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/ep4.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/ep5",
+      "kind": "article",
+      "title": "ถ้าสภา กทม. ประชุมก่อน สส. จะดีกว่าไหม?",
+      "variants": [
+        {
+          "path": "blog/bkk-council/ep5.html",
+          "title": "ถ้าสภา กทม. ประชุมก่อน สส. จะดีกว่าไหม?",
+          "language": "th",
+          "sha256": "19e44f9e65477d562c3b7a9d9f108099c2cea52a6dc2675d5c4900eff0fb5a3f",
+          "text_sha256": "15d4a5b49e56f1a00db5ac753f383bfe62a16876932fc2c5eb2f4cfd759c2585",
+          "published": "2026-03-31",
+          "modified": "2026-03-31",
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/ep5.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/ep6",
+      "kind": "article",
+      "title": "ทำไม ส.ก. ถึงสำคัญต่อการพัฒนาเมือง?",
+      "variants": [
+        {
+          "path": "blog/bkk-council/ep6.html",
+          "title": "ทำไม ส.ก. ถึงสำคัญต่อการพัฒนาเมือง?",
+          "language": "th",
+          "sha256": "3f63e45fd7afa4f75bf45361e520e45e117acff1eb93d97ca0bc3c20954d8b4b",
+          "text_sha256": "9e70086370ae3b4573cffdc55953522a3243f74a571ae386daa8fce9d18a33dd",
+          "published": "2026-03-31",
+          "modified": "2026-03-31",
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/ep6.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/ep7",
+      "kind": "article",
+      "title": "311 ข้อบัญญัติ กทม. — 44% ล้าสมัยเกิน 30 ปี ทำไมต้องปฏิรูป?",
+      "variants": [
+        {
+          "path": "blog/bkk-council/ep7.html",
+          "title": "311 ข้อบัญญัติ กทม. — 44% ล้าสมัยเกิน 30 ปี ทำไมต้องปฏิรูป?",
+          "language": "th",
+          "sha256": "3733dfd77c1b53fa4fde04d80a3cb0fee2f8f547d3c1aded43f8a2d2f96db52f",
+          "text_sha256": "3956261a14ad5be68c241f68ffef084698411643af17ddad9f400078629a735b",
+          "published": "2026-04-02",
+          "modified": "2026-05-13",
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/ep7.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/field-techniques",
+      "kind": "resource",
+      "title": "เทคนิคลงพื้นที่ หาเสียง ส.ก.",
+      "variants": [
+        {
+          "path": "blog/bkk-council/field-techniques.html",
+          "title": "เทคนิคลงพื้นที่ หาเสียง ส.ก.",
+          "language": "th",
+          "sha256": "61b2d5f6c653d9fc6894de5affbeba441895aa4e67079c5736420ed32d2d4ee2",
+          "text_sha256": "52b317e27943ad482130556409c5c3d7aeb0e46610c4ed219f43b6e84f682a97",
+          "published": null,
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/field-techniques.html",
+          "legal_status": "unreviewed",
+          "article_schema": false
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/index",
+      "kind": "resource",
+      "title": "คู่มือผู้สมัคร สมาชิกสภากรุงเทพมหานคร",
+      "variants": [
+        {
+          "path": "blog/bkk-council/index.html",
+          "title": "คู่มือผู้สมัคร สมาชิกสภากรุงเทพมหานคร",
+          "language": "th",
+          "sha256": "c9586da892fab8004a2e76d1c289423d87ae182ca20e7d436eed5633379606c5",
+          "text_sha256": "92af4624da676bed156e0c6eea22ca69c6665800c8cf41aa8a25b76ec9d14be4",
+          "published": null,
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/index.html",
+          "legal_status": "unreviewed",
+          "article_schema": false
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/phase-a",
+      "kind": "resource",
+      "title": "ก่อนเลือกตั้ง",
+      "variants": [
+        {
+          "path": "blog/bkk-council/phase-a.html",
+          "title": "ก่อนเลือกตั้ง",
+          "language": "th",
+          "sha256": "ba0b7d7e317413c327a63ab1043a0dcd6533b1d896ab1273e534068cc7b9b1e6",
+          "text_sha256": "067b37b110d76564271cd568033d6c2ac89c9d592d63c071027a6676108f2419",
+          "published": null,
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/phase-a.html",
+          "legal_status": "unreviewed",
+          "article_schema": false
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/phase-b",
+      "kind": "resource",
+      "title": "ระหว่างเลือกตั้ง",
+      "variants": [
+        {
+          "path": "blog/bkk-council/phase-b.html",
+          "title": "ระหว่างเลือกตั้ง",
+          "language": "th",
+          "sha256": "5022a0f72bdf28b90fa5298fc2f6edf367ceb063c9c671d69589010b4435b73c",
+          "text_sha256": "8b1497def59ed38561810c5f7ae27e5b093f6fce7364bafeef25d98fb2a7bc41",
+          "published": null,
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/phase-b.html",
+          "legal_status": "unreviewed",
+          "article_schema": false
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/phase-c",
+      "kind": "resource",
+      "title": "หลังเลือกตั้ง",
+      "variants": [
+        {
+          "path": "blog/bkk-council/phase-c.html",
+          "title": "หลังเลือกตั้ง",
+          "language": "th",
+          "sha256": "e6635c9a8f488ad8b30b66d15ce6dce63e4eb2f173e216bc3babc8b489fcb43c",
+          "text_sha256": "ba22afa6450b7829a372a254cabf71cf37be3fff301bdfdc2f0f8d7b8edcce7c",
+          "published": null,
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/phase-c.html",
+          "legal_status": "unreviewed",
+          "article_schema": false
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/phase-d-e",
+      "kind": "resource",
+      "title": "ปฏิบัติหน้าที่ในสภา + คลังข้อมูลอ้างอิง",
+      "variants": [
+        {
+          "path": "blog/bkk-council/phase-d-e.html",
+          "title": "ปฏิบัติหน้าที่ในสภา + คลังข้อมูลอ้างอิง",
+          "language": "th",
+          "sha256": "80c247bf809677a36237f3f8ff599c2e80359b570a0b51ef46d7ab6fc96aeaf0",
+          "text_sha256": "b4ab1f179d6df8e9fd2e615bdc6c9412644b4bc73f131d0510261937c077e042",
+          "published": null,
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/phase-d-e.html",
+          "legal_status": "unreviewed",
+          "article_schema": false
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/phase-f",
+      "kind": "resource",
+      "title": "รวมสื่อประชาสัมพันธ์การเลือกตั้งกรุงเทพมหานคร 2569",
+      "variants": [
+        {
+          "path": "blog/bkk-council/phase-f.html",
+          "title": "รวมสื่อประชาสัมพันธ์การเลือกตั้งกรุงเทพมหานคร 2569",
+          "language": "th",
+          "sha256": "805da1eb711a1cd5643d02ba982a55d8cd3e9461e263dd6df466baeb0324b888",
+          "text_sha256": "259ec4859b7c956cd09088679ead5b4b0cb13c3db537198c097bf7b4ef215ae3",
+          "published": null,
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/phase-f.html",
+          "legal_status": "unreviewed",
+          "article_schema": false
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/phase-g",
+      "kind": "resource",
+      "title": "ใบสมัคร ส.ก. และ ผู้ว่าราชการ กทม. 2569",
+      "variants": [
+        {
+          "path": "blog/bkk-council/phase-g.html",
+          "title": "ใบสมัคร ส.ก. และ ผู้ว่าราชการ กทม. 2569",
+          "language": "th",
+          "sha256": "5a520ec495329d62af52d5c84e327f1cf57740cd7a468563fbd78a2543418f31",
+          "text_sha256": "72ef462b231c615c96c76451b6c08f82a80687bd15ba62c3272c1026abb7e3a7",
+          "published": null,
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/phase-g.html",
+          "legal_status": "unreviewed",
+          "article_schema": false
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/qa-ect",
+      "kind": "resource",
+      "title": "คำถาม-คำตอบ จากคณะกรรมการการเลือกตั้ง",
+      "variants": [
+        {
+          "path": "blog/bkk-council/qa-ect.html",
+          "title": "คำถาม-คำตอบ จากคณะกรรมการการเลือกตั้ง",
+          "language": "th",
+          "sha256": "7523dcd9d1fa08047fb2f580a0de65c25ca8c23d4cde44a85c66ba71145812fe",
+          "text_sha256": "f6db48c9e58a6a10e24c1e8f2076bb6eb763657289208665e480023e07000251",
+          "published": null,
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/qa-ect.html",
+          "legal_status": "unreviewed",
+          "article_schema": false
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/search",
+      "kind": "resource",
+      "title": "ค้นหาข้อมูลในคู่มือเลือกตั้ง ส.ก. กทม. 2569",
+      "variants": [
+        {
+          "path": "blog/bkk-council/search.html",
+          "title": "ค้นหาข้อมูลในคู่มือเลือกตั้ง ส.ก. กทม. 2569",
+          "language": "th",
+          "sha256": "c64b4b3d2cb2ac0ba603f1010d39d44d3aea9ac545bcb3fca883564720000bc8",
+          "text_sha256": "369e698484d50b4125935dbb52d9f979f02b192966f8c3931b49666c2745b103",
+          "published": null,
+          "modified": null,
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/search.html",
+          "legal_status": "unreviewed",
+          "article_schema": false
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": false,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/shareholding-article1",
+      "kind": "article",
+      "title": "ฝากหุ้นชื่อคนอื่น: ความเสี่ยงทางกฎหมายที่ผู้ประกอบการไทยต้องรู้",
+      "variants": [
+        {
+          "path": "blog/bkk-council/shareholding-article1.html",
+          "title": "ฝากหุ้นชื่อคนอื่น: ความเสี่ยงทางกฎหมายที่ผู้ประกอบการไทยต้องรู้",
+          "language": "th",
+          "sha256": "b4b80efa99b4b7fef8cf553a6a333411e73d4d9d9c18137c921f7efd88881528",
+          "text_sha256": "50d9bc755bfd7b731a7ee074c628372403131dd77aa1b86369c8466ff0658f3d",
+          "published": "2026-04-02",
+          "modified": "2026-04-02",
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article1.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/blog/bkk-council/shareholding-article1.html",
+          "title": "Nominee Shareholding in Thailand: Legal Risks Every Business Owner Must Know",
+          "language": "en",
+          "sha256": "96bbba78135678754f83c40e7721be2a2a0cad629c19aede72ea41d19045d00d",
+          "text_sha256": "ee4a34d236a8db2f9e2e27fa48e12ca070d0358a948486f60a71be62622805a7",
+          "published": "2026-04-02",
+          "modified": "2026-04-03",
+          "url": "https://thundthornthep-ai.github.io/en/blog/bkk-council/shareholding-article1.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "corporate",
+        "investment",
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/shareholding-article2",
+      "kind": "article",
+      "title": "ลงชื่อเป็นกรรมการ \"แค่ชื่อ\": ความรับผิดที่ตามมาทั้งแพ่งและอาญา",
+      "variants": [
+        {
+          "path": "blog/bkk-council/shareholding-article2.html",
+          "title": "ลงชื่อเป็นกรรมการ \"แค่ชื่อ\": ความรับผิดที่ตามมาทั้งแพ่งและอาญา",
+          "language": "th",
+          "sha256": "1d6351dc8d6af94466b30a7ee65051aa7ee0468ad24fac5df90f7c110c41aaa9",
+          "text_sha256": "142e13e1fe14033dcb3e0abc67ddd973139f4d9bb5f91b98778b099327a22945",
+          "published": "2026-04-02",
+          "modified": "2026-04-02",
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article2.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        },
+        {
+          "path": "en/blog/bkk-council/shareholding-article2.html",
+          "title": "Nominee Directors in Thailand: Civil, Criminal and Tax Liability",
+          "language": "en",
+          "sha256": "2dbd89bc21290201165a902e213819d081c0d16c91f9c32bf38abaabe1d58f02",
+          "text_sha256": "55c1ac88a9b96f75f34d3ef9b048e89280625bfd0bd3e43fea453f8b978ff0f4",
+          "published": "2026-04-02",
+          "modified": "2026-04-03",
+          "url": "https://thundthornthep-ai.github.io/en/blog/bkk-council/shareholding-article2.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "contract",
+        "corporate",
+        "investment",
+        "public",
+        "tax"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "same-route-family-not-semantic-parity-verified",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    },
+    {
+      "id": "blog/bkk-council/sk-candidate-guide",
+      "kind": "article",
+      "title": "คู่มือผู้สมัคร สมาชิกสภากรุงเทพมหานคร (ส.ก.) พ.ศ. 2569",
+      "variants": [
+        {
+          "path": "blog/bkk-council/sk-candidate-guide.html",
+          "title": "คู่มือผู้สมัคร สมาชิกสภากรุงเทพมหานคร (ส.ก.) พ.ศ. 2569",
+          "language": "th",
+          "sha256": "9540cb7bcd6745f00e51125fddea6e49423b34fdd2868c5ebdaef4e5b721ac30",
+          "text_sha256": "c455763bd6ea37340135b85c0b4b11b9cbd33af541821141b87b45c6e6a12328",
+          "published": "2026-04-04",
+          "modified": "2026-04-05",
+          "url": "https://thundthornthep-ai.github.io/blog/bkk-council/sk-candidate-guide.html",
+          "legal_status": "unreviewed",
+          "article_schema": true
+        }
+      ],
+      "tags": [
+        "public"
+      ],
+      "series": null,
+      "legal_status": "unreviewed",
+      "taxonomy_status": "proposed",
+      "hub_linked": true,
+      "variant_relation": "single",
+      "review_priority": "normal",
+      "review_reason": "baseline-review-required"
+    }
+  ],
+  "excluded": [
+    {
+      "path": "404.html",
+      "reason": "navigation-template-service-or-profile"
+    },
+    {
+      "path": "_archived-media-coverage-20260403.html",
+      "reason": "navigation-template-service-or-profile"
+    },
+    {
+      "path": "all-content.html",
+      "reason": "navigation-template-service-or-profile"
+    },
+    {
+      "path": "articles/anti-nominee-thailand.html",
+      "reason": "redirect",
+      "target": "0;url=https://thundthornthep-ai.github.io/articles/anti-nominee-thailand-legal-guide.html"
+    },
+    {
+      "path": "articles/boi-investment-thailand.html",
+      "reason": "redirect",
+      "target": "0;url=https://thundthornthep-ai.github.io/articles/boi-investment-thailand-guide.html"
+    },
+    {
+      "path": "articles/company-registration-thailand.html",
+      "reason": "redirect",
+      "target": "0;url=https://thundthornthep-ai.github.io/articles/company-registration-thailand-guide.html"
+    },
+    {
+      "path": "articles/condominium-act-thailand.html",
+      "reason": "redirect",
+      "target": "0;url=https://thundthornthep-ai.github.io/articles/foreigner-buy-condo-thailand.html"
+    },
+    {
+      "path": "articles/employment-contract-guide.html",
+      "reason": "redirect",
+      "target": "0;url=https://thundthornthep-ai.github.io/articles/employment-contract-thailand-guide.html"
+    },
+    {
+      "path": "articles/foreign-business-act-thailand.html",
+      "reason": "redirect",
+      "target": "0;url=https://thundthornthep-ai.github.io/articles/las-invest-01.html"
+    },
+    {
+      "path": "articles/las-cc-index.html",
+      "reason": "navigation-template-service-or-profile"
+    },
+    {
+      "path": "articles/las-share-index.html",
+      "reason": "navigation-template-service-or-profile"
+    },
+    {
+      "path": "articles/las-shield-index.html",
+      "reason": "navigation-template-service-or-profile"
+    },
+    {
+      "path": "articles/las-upsize-index.html",
+      "reason": "navigation-template-service-or-profile"
+    },
+    {
+      "path": "articles/ma-share-purchase-agreement-thailand.html",
+      "reason": "redirect",
+      "target": "0;url=https://thundthornthep-ai.github.io/articles/mergers-acquisitions-thailand.html"
+    },
+    {
+      "path": "articles/pdpa-b2b-compliance-guide.html",
+      "reason": "redirect",
+      "target": "0;url=https://thundthornthep-ai.github.io/articles/pdpa-compliance-guide-business.html"
+    },
+    {
+      "path": "articles/pdpa-compliance-business-thailand.html",
+      "reason": "redirect",
+      "target": "0;url=https://thundthornthep-ai.github.io/articles/pdpa-compliance-guide-business.html"
+    },
+    {
+      "path": "articles/pdpa-thailand.html",
+      "reason": "redirect",
+      "target": "0;url=https://thundthornthep-ai.github.io/articles/pdpa-compliance-guide-thailand.html"
+    },
+    {
+      "path": "articles/real-estate-due-diligence.html",
+      "reason": "redirect",
+      "target": "0;url=https://thundthornthep-ai.github.io/articles/due-diligence-conditions-precedent-thailand.html"
+    },
+    {
+      "path": "articles/real-estate-title-due-diligence-thailand.html",
+      "reason": "redirect",
+      "target": "0;url=https://thundthornthep-ai.github.io/articles/foreigner-buy-condo-thailand.html"
+    },
+    {
+      "path": "articles/social-security-employer-guide.html",
+      "reason": "redirect",
+      "target": "0;url=https://thundthornthep-ai.github.io/articles/employment-contract-thailand-guide.html"
+    },
+    {
+      "path": "articles/withholding-tax-guide.html",
+      "reason": "redirect",
+      "target": "0;url=https://thundthornthep-ai.github.io/articles/business-tax-essentials.html"
+    },
+    {
+      "path": "auth-settings.html",
+      "reason": "navigation-template-service-or-profile"
+    },
+    {
+      "path": "blog/bkk-council/dashboard.html",
+      "reason": "redirect",
+      "target": "0;url=311-ordinances-dashboard.html"
+    },
+    {
+      "path": "blog/las-share/index.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-share-index.html"
+    },
+    {
+      "path": "en/bkk-council/index.html",
+      "reason": "navigation-template-service-or-profile"
+    },
+    {
+      "path": "index.html",
+      "reason": "navigation-template-service-or-profile"
+    },
+    {
+      "path": "knowledge-hub.html",
+      "reason": "navigation-template-service-or-profile"
+    },
+    {
+      "path": "las-cc-01.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-cc-01.html"
+    },
+    {
+      "path": "las-cc-02.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-cc-02.html"
+    },
+    {
+      "path": "las-cc-03.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-cc-03.html"
+    },
+    {
+      "path": "las-cc-04.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-cc-04.html"
+    },
+    {
+      "path": "las-cc-05.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-cc-05.html"
+    },
+    {
+      "path": "las-cc-06.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-cc-06.html"
+    },
+    {
+      "path": "las-cc-07.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-cc-07.html"
+    },
+    {
+      "path": "las-cc-08.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-cc-08.html"
+    },
+    {
+      "path": "las-cc-09.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-cc-09.html"
+    },
+    {
+      "path": "las-cc-10.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-cc-10.html"
+    },
+    {
+      "path": "las-cc-11.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-cc-11.html"
+    },
+    {
+      "path": "las-cc-index.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-cc-index.html"
+    },
+    {
+      "path": "las-invest-01.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-invest-01.html"
+    },
+    {
+      "path": "las-invest-02.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-invest-02.html"
+    },
+    {
+      "path": "las-share-01.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-share-01.html"
+    },
+    {
+      "path": "las-share-02.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-share-02.html"
+    },
+    {
+      "path": "las-share-03.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-share-03.html"
+    },
+    {
+      "path": "las-share-04.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-share-04.html"
+    },
+    {
+      "path": "las-share-05.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-share-05.html"
+    },
+    {
+      "path": "las-share-06.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-share-06.html"
+    },
+    {
+      "path": "las-share-07.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-share-07.html"
+    },
+    {
+      "path": "las-share-08.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-share-08.html"
+    },
+    {
+      "path": "las-share-09.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-share-09.html"
+    },
+    {
+      "path": "las-share-10.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-share-10.html"
+    },
+    {
+      "path": "las-share-index.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-share-index.html"
+    },
+    {
+      "path": "las-shield-01.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-shield-01.html"
+    },
+    {
+      "path": "las-shield-02.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-shield-02.html"
+    },
+    {
+      "path": "las-shield-03.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-shield-03.html"
+    },
+    {
+      "path": "las-shield-04.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-shield-04.html"
+    },
+    {
+      "path": "las-shield-05.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-shield-05.html"
+    },
+    {
+      "path": "las-shield-06.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-shield-06.html"
+    },
+    {
+      "path": "las-shield-07.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-shield-07.html"
+    },
+    {
+      "path": "las-shield-08.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-shield-08.html"
+    },
+    {
+      "path": "las-shield-09.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-shield-09.html"
+    },
+    {
+      "path": "las-shield-10.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-shield-10.html"
+    },
+    {
+      "path": "las-shield-index.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-shield-index.html"
+    },
+    {
+      "path": "las-upsize-01.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-upsize-01.html"
+    },
+    {
+      "path": "las-upsize-02.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-upsize-02.html"
+    },
+    {
+      "path": "las-upsize-03.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-upsize-03.html"
+    },
+    {
+      "path": "las-upsize-04.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-upsize-04.html"
+    },
+    {
+      "path": "las-upsize-05.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-upsize-05.html"
+    },
+    {
+      "path": "las-upsize-06.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-upsize-06.html"
+    },
+    {
+      "path": "las-upsize-07.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-upsize-07.html"
+    },
+    {
+      "path": "las-upsize-08.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-upsize-08.html"
+    },
+    {
+      "path": "las-upsize-09.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-upsize-09.html"
+    },
+    {
+      "path": "las-upsize-10.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-upsize-10.html"
+    },
+    {
+      "path": "las-upsize-index.html",
+      "reason": "redirect",
+      "target": "0;url=https://laslegal.tech/hub/articles/las-upsize-index.html"
+    },
+    {
+      "path": "media-coverage.html",
+      "reason": "redirect",
+      "target": "0;url=https://thundthornthep-ai.github.io/"
+    },
+    {
+      "path": "pdpa-advisory.html",
+      "reason": "navigation-template-service-or-profile"
+    },
+    {
+      "path": "profile.html",
+      "reason": "navigation-template-service-or-profile"
+    },
+    {
+      "path": "templates/article-wiki-template.html",
+      "reason": "navigation-template-service-or-profile"
+    },
+    {
+      "path": "th/knowledge-hub.html",
+      "reason": "navigation-template-service-or-profile"
+    },
+    {
+      "path": "th/profile.html",
+      "reason": "navigation-template-service-or-profile"
+    }
+  ],
+  "coverage_boundary": "All tracked HTML in this GitHub snapshot accounted for. Other repositories, authenticated runtime overrides and external links require reconciliation. No full legal or translation review claimed."
+}
