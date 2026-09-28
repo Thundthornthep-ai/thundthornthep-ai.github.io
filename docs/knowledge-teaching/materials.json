@@ -1,0 +1,27 @@
+[
+  {
+    "id": "materials/btu-ai-legal-technology",
+    "kind": "resource",
+    "title": "AI Legal Technology in Thailand: How Thundthornthep Yamoutai, Ph.D. is Pioneering Legal Innovation",
+    "description": "นักกฎหมายยุค AI: จากนักศึกษาถึงนักกฎหมาย · เอกสารประกอบการสอน BTU",
+    "tags": [
+      "professional"
+    ],
+    "series": null,
+    "legal_status": "unreviewed",
+    "added": "2026-09-28",
+    "variants": [
+      {
+        "path": "materials/btu-ai-legal-technology.pdf",
+        "url": "materials/btu-ai-legal-technology.pdf",
+        "title": "นักกฎหมายยุค AI: จากนักศึกษาถึงนักกฎหมาย",
+        "language": "th",
+        "format": "pdf",
+        "pages": 19,
+        "bytes": 1501556,
+        "sha256": "d0760a67e84ed987861c89e14fd0a8865347193571113390e166e8bc12ad540a",
+        "modified": null
+      }
+    ]
+  }
+]

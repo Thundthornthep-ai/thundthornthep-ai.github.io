@@ -1,0 +1,26 @@
+[
+  {
+    "path": "articles/ai-legal-tech-thailand.html",
+    "before_sha256": "aad79ee5dec65d54f64dce6cb04435c0d09aadebac5c3af641a4602f25ce5b05",
+    "after_sha256": "13d6b13a9b612886b9b0764578e858f75b5351722b802bac40c3f0a58dd38683",
+    "text_unchanged": true,
+    "structured_data_unchanged": true,
+    "status": "theme_pilot_pending_browser"
+  },
+  {
+    "path": "articles/las-share-04.html",
+    "before_sha256": "9e2e489df0d59d99dbd7265a6d80c2200e1dc133856d1f447cd2aaeea9150cc3",
+    "after_sha256": "cb18c76fb8db56b75a13603413a7ed14c584385b31e320704a155959f76c476b",
+    "text_unchanged": true,
+    "structured_data_unchanged": true,
+    "status": "theme_pilot_pending_browser"
+  },
+  {
+    "path": "en/articles/ai-legal-tech-thailand.html",
+    "before_sha256": "5a5c1dac0fe5011760e3aed4f69fb476ab68e7e66eae199d647e63cd3212f3e3",
+    "after_sha256": "d09d2ab4f6390278689d8c3f9671a0cf1160dff158c6eb43c89455814e2ac917",
+    "text_unchanged": true,
+    "structured_data_unchanged": true,
+    "status": "theme_pilot_pending_browser"
+  }
+]

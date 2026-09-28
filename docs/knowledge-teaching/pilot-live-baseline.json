@@ -1,0 +1,92 @@
+[
+  {
+    "path": "articles/las-share-04.html",
+    "live_url": "https://thundthornthep-ai.github.io/articles/las-share-04.html",
+    "live_sha256": "9e2e489df0d59d99dbd7265a6d80c2200e1dc133856d1f447cd2aaeea9150cc3",
+    "local_sha256": "cb18c76fb8db56b75a13603413a7ed14c584385b31e320704a155959f76c476b",
+    "same_bytes": false,
+    "surface": "github-pages-not-las-proxy",
+    "matches_baseline_main": true
+  },
+  {
+    "path": "articles/las-share-05.html",
+    "live_url": "https://thundthornthep-ai.github.io/articles/las-share-05.html",
+    "live_sha256": "7998e9438a740c63785a75c2e0f6d43ef73a0cb921723470eb2ef84df8bbbf2e",
+    "local_sha256": "7998e9438a740c63785a75c2e0f6d43ef73a0cb921723470eb2ef84df8bbbf2e",
+    "same_bytes": true,
+    "surface": "github-pages-not-las-proxy",
+    "matches_baseline_main": true
+  },
+  {
+    "path": "articles/las-cc-05.html",
+    "live_url": "https://thundthornthep-ai.github.io/articles/las-cc-05.html",
+    "live_sha256": "14ee530fc557ee32fbe34aaa9dde225f2563961abd64a80916316cce54f585ad",
+    "local_sha256": "14ee530fc557ee32fbe34aaa9dde225f2563961abd64a80916316cce54f585ad",
+    "same_bytes": true,
+    "surface": "github-pages-not-las-proxy",
+    "matches_baseline_main": true
+  },
+  {
+    "path": "articles/las-cc-06.html",
+    "live_url": "https://thundthornthep-ai.github.io/articles/las-cc-06.html",
+    "live_sha256": "b1cf8001888ea06031ccaf78553ec0e4a5ea59a52ea7ba68d1e1502a9f716a3e",
+    "local_sha256": "b1cf8001888ea06031ccaf78553ec0e4a5ea59a52ea7ba68d1e1502a9f716a3e",
+    "same_bytes": true,
+    "surface": "github-pages-not-las-proxy",
+    "matches_baseline_main": true
+  },
+  {
+    "path": "articles/las-shield-04.html",
+    "live_url": "https://thundthornthep-ai.github.io/articles/las-shield-04.html",
+    "live_sha256": "a59743833ca3a5bb2aae7f0843552fc20bffb9333ab410d5dbc86eb28fe5df44",
+    "local_sha256": "a59743833ca3a5bb2aae7f0843552fc20bffb9333ab410d5dbc86eb28fe5df44",
+    "same_bytes": true,
+    "surface": "github-pages-not-las-proxy",
+    "matches_baseline_main": true
+  },
+  {
+    "path": "articles/las-shield-05.html",
+    "live_url": "https://thundthornthep-ai.github.io/articles/las-shield-05.html",
+    "live_sha256": "3ee6f4e253dc437bb0cb1e5b0905f7b9dfc7a79a1ecc838b8b4fe6cf7dcc04f2",
+    "local_sha256": "3ee6f4e253dc437bb0cb1e5b0905f7b9dfc7a79a1ecc838b8b4fe6cf7dcc04f2",
+    "same_bytes": true,
+    "surface": "github-pages-not-las-proxy",
+    "matches_baseline_main": true
+  },
+  {
+    "path": "articles/las-shield-07.html",
+    "live_url": "https://thundthornthep-ai.github.io/articles/las-shield-07.html",
+    "live_sha256": "af6a29fb13fdbc29fab911276ab7abc0ba4a9aeba97dc90bad7eae02decd8b2b",
+    "local_sha256": "af6a29fb13fdbc29fab911276ab7abc0ba4a9aeba97dc90bad7eae02decd8b2b",
+    "same_bytes": true,
+    "surface": "github-pages-not-las-proxy",
+    "matches_baseline_main": true
+  },
+  {
+    "path": "en/articles/las-shield-07.html",
+    "live_url": "https://thundthornthep-ai.github.io/en/articles/las-shield-07.html",
+    "live_sha256": "03586c7980257f822997acd15b18786a6de64dd83d89f070142a28ea057b9d5e",
+    "local_sha256": "03586c7980257f822997acd15b18786a6de64dd83d89f070142a28ea057b9d5e",
+    "same_bytes": true,
+    "surface": "github-pages-not-las-proxy",
+    "matches_baseline_main": true
+  },
+  {
+    "path": "articles/ai-legal-tech-thailand.html",
+    "live_url": "https://thundthornthep-ai.github.io/articles/ai-legal-tech-thailand.html",
+    "live_sha256": "aad79ee5dec65d54f64dce6cb04435c0d09aadebac5c3af641a4602f25ce5b05",
+    "local_sha256": "13d6b13a9b612886b9b0764578e858f75b5351722b802bac40c3f0a58dd38683",
+    "same_bytes": false,
+    "surface": "github-pages-not-las-proxy",
+    "matches_baseline_main": true
+  },
+  {
+    "path": "en/articles/ai-legal-tech-thailand.html",
+    "live_url": "https://thundthornthep-ai.github.io/en/articles/ai-legal-tech-thailand.html",
+    "live_sha256": "5a5c1dac0fe5011760e3aed4f69fb476ab68e7e66eae199d647e63cd3212f3e3",
+    "local_sha256": "d09d2ab4f6390278689d8c3f9671a0cf1160dff158c6eb43c89455814e2ac917",
+    "same_bytes": false,
+    "surface": "github-pages-not-las-proxy",
+    "matches_baseline_main": true
+  }
+]
