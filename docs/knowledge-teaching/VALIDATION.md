@@ -13,3 +13,9 @@ Scope: isolated teaching preview, not an integrated `/knowledge` release.
 - Legal review queue: 141 article variants, 24 high-priority by conservative keyword triage, 1,556 unique candidate statute/section keys. Extractor limitations disclosed; candidates are neither confirmed sections nor audited claims.
 
 Release prerequisites: authenticated baseline reconciliation, instructor acceptance, source and semantic review of selected teaching articles, scoped LAS integration with flag off, independent legal review where required, fresh production approval.
+
+## Theme alignment — 2026-09-28
+
+- Standalone preview now uses the shared live LAS theme tokens from `index-CyLyswJz.css`: cream #f8f4ec, slate #5c728a, coral #e46d58, glass cards, IBM Plex Sans Thai headings and Noto Sans Thai body text. Authenticated Knowledge layout parity remains unverified.
+- Browser visual check: desktop 1280px and simulated mobile 390px; document widths equal viewports. Search อายุความ returns 1; PDPA with English returns 4; resetting returns 109.
+- This change touches preview presentation only. No article text, source metadata, production assets, Landing or Link pages changed.

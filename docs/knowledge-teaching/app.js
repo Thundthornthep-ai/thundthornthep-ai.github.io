@@ -11,7 +11,20 @@ function renderCatalog() {
  if(!list.length)$('catalog').append(el('p','ไม่พบเรื่องที่ตรงกับตัวกรอง ลองเปลี่ยนคำค้นหรือหมวดหมู่','empty'));
 }
 function showPath(path){const target=$('lesson');target.hidden=false;target.replaceChildren(el('h3',path.title),el('p',`ควรทบทวนก่อน: ${path.prerequisites.map(id=>paths.find(p=>p.id===id).title).join(' → ')||'เริ่มได้จากบทแรก'}`));const ol=el('ol');path.lessons.forEach(id=>{const item=data.items.find(i=>i.id===id);const li=el('li');const a=link(item.variants[0]);a.textContent=item.title;li.append(a);ol.append(li);});target.append(ol,el('h4','งานฝึกท้ายเส้นทาง'),el('p',path.exercise),el('p','เกณฑ์ประเมิน: ระบุประเด็นครบ อ้างหลักฐานตรงเรื่อง แยกข้อเท็จจริงกับข้อสรุป และระบุสิ่งที่ยังไม่ทราบ','muted'));}
-function renderPaths(){ $('paths').replaceChildren();for(const id of preferredPaths($('audience').value)){const p=paths.find(x=>x.id===id);const card=el('article',null,'path');card.append(el('small',`${p.lessons.length} บทเรียน · ลำดับเสนอสำหรับผู้สอน`),el('h3',p.title),el('p',p.outcome));const b=el('button','ดูลำดับบทเรียน');b.addEventListener('click',()=>showPath(p));card.append(b);$('paths').append(card);}}
+function pathIcon(id) {
+ const shapes = {
+  foundation: 'M4 4h6a3 3 0 0 1 3 3v14a4 4 0 0 0-4-2H4zM13 7a3 3 0 0 1 3-3h4v15h-4a3 3 0 0 0-3 2',
+  corporate: 'M4 21V5h10v16M14 11h6v10M7 8h4M7 12h4M7 16h4M2 21h20',
+  drafting: 'M6 3h9l4 4v14H6zM14 3v5h5M9 12h7M9 16h5',
+  risk: 'M12 3l8 3v6c0 5-8 9-8 9s-8-4-8-9V6zM8 12l3 3 5-6',
+  growth: 'M4 17l6-6 4 3 6-9M14 5h6v6'
+ };
+ const chip = el('span',null,'cute-icon'); chip.setAttribute('aria-hidden','true');
+ const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+ for (const [key,value] of Object.entries({viewBox:'0 0 24 24',fill:'none',stroke:'currentColor','stroke-width':'1.7','stroke-linecap':'round','stroke-linejoin':'round'})) svg.setAttribute(key,value);
+ const path = document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',shapes[id]);svg.append(path);chip.append(svg);return chip;
+}
+function renderPaths(){ $('paths').replaceChildren();for(const id of preferredPaths($('audience').value)){const p=paths.find(x=>x.id===id);const card=el('article',null,'path');card.append(pathIcon(p.id),el('small',`${p.lessons.length} บทเรียน · ลำดับเสนอสำหรับผู้สอน`),el('h3',p.title),el('p',p.outcome));const b=el('button','ดูลำดับบทเรียน');b.addEventListener('click',()=>showPath(p));card.append(b);$('paths').append(card);}}
 async function start(){
  const responses=await Promise.all(['catalog.json','learning-paths.json','override-audit.json'].map(p=>fetch(p).then(r=>{if(!r.ok)throw Error(`อ่าน ${p} ไม่สำเร็จ`);return r.json();})));
  [data,paths]=responses;const overrides=responses[2];
