@@ -31,6 +31,12 @@ class CatalogueTests(unittest.TestCase):
     self.assertTrue(content.startswith(b'%PDF-'))
     self.assertEqual(hashlib.sha256(content).hexdigest(),v['sha256'])
     self.assertEqual(len(content),v['bytes'])
+ def test_saved_revision_dates_match_article_metadata(self):
+  stored=json.loads((ROOT/'docs/knowledge-teaching/catalog.json').read_text())
+  for item in stored['items']:
+   for v in item['variants']:
+    _,current=read_variant(ROOT,v['path'])
+    self.assertEqual(v['modified'],current['modified'],v['path'])
  def test_redirect_is_not_a_lesson(self):
   self.assertNotIn('articles/anti-nominee-thailand',self.items)
   self.assertIn('articles/anti-nominee-thailand-legal-guide',self.items)

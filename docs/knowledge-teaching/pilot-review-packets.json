@@ -21073,7 +21073,7 @@
     },
     {
       "path": "en/articles/ai-legal-tech-thailand.html",
-      "source_sha256": "59e22d107f795d93bd7b39c411066130c06b1c1e220b70f811a6c7626f85e0b5",
+      "source_sha256": "97d9dd3886b01aad05bf2f20f1427e4cfd69d61df04fa2d0afbbb80a9e30efc9",
       "status": "pending_source_and_semantic_review",
       "coverage_units": [
         {
@@ -22276,7 +22276,7 @@
             "url": "https://laslegal.co.th"
           },
           "datePublished": "2026-04-01",
-          "dateModified": "2026-04-08",
+          "dateModified": "2026-09-28",
           "mainEntityOfPage": "https://thundthornthep-ai.github.io/en/articles/ai-legal-tech-thailand.html",
           "image": "https://thundthornthep-ai.github.io/banner-las-nia.jpg",
           "inLanguage": "en",
