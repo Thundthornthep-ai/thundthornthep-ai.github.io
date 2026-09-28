@@ -44,3 +44,9 @@ The four article metadata failures are repaired without changing visible text: c
 ## Shield theme follow-up — 2026-09-28
 
 Applied the existing opt-in Knowledge theme to Shield 03 and 05, with scoped neutral surface adapters. Cream page/paper, slate links/badge, warm table headers and Thai fonts now match the teaching library. Warning backgrounds retained; medium/low warning text darkened for readability. Text, article hrefs and JSON-LD compared with 609ae64 and unchanged. Browser preview checked at 1280x900 and 390x844 for both pages; no horizontal overflow. Catalogue 13 tests and historical theme pilot 2 tests passed. This does not resolve the existing two protected discovery-page publication blockers or confer legal approval. No production deploy.
+
+## Discovery blocker repair — 2026-09-28
+
+Owner requested fixing deployment readiness after the previously reported publication failure. Added one bottom library card to each static discovery page (knowledge-hub.html and all-content.html), before its footer, with a real library link and an expandable ten-episode Shield list. Removing the added block reproduces each prior file byte-for-byte. No validator was skipped or weakened. LAS runtime /knowledge has not been changed by this static-site patch.
+
+Local exact-slug checks for all three modified series articles now pass 40/40; Hub passes 8/8; catalogue passes 13/13. Browser preview verified one card per page, ten links, disclosure expansion and real Shield03 click-through. This closes the two static discovery blockers. Broader source/semantic review and authenticated LAS runtime integration remain separate incomplete work; no whole-library legal approval is implied.

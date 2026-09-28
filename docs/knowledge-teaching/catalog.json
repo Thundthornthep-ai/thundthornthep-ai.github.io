@@ -7,7 +7,7 @@
     "articles": 91,
     "resources": 18,
     "excluded": 80,
-    "unlinked_items": 29,
+    "unlinked_items": 19,
     "legal_reviewed": 0,
     "source_tree": "e95fb61eafc61846769f58ed66ccb08bc92b9c3e"
   },
@@ -1869,7 +1869,7 @@
       "legal_status": "unreviewed",
       "taxonomy_status": "proposed",
       "episode": 1,
-      "hub_linked": false,
+      "hub_linked": true,
       "variant_relation": "single",
       "review_priority": "normal",
       "review_reason": "baseline-review-required"
@@ -1899,7 +1899,7 @@
       "legal_status": "unreviewed",
       "taxonomy_status": "proposed",
       "episode": 2,
-      "hub_linked": false,
+      "hub_linked": true,
       "variant_relation": "single",
       "review_priority": "normal",
       "review_reason": "baseline-review-required"
@@ -1929,7 +1929,7 @@
       "legal_status": "unreviewed",
       "taxonomy_status": "proposed",
       "episode": 3,
-      "hub_linked": false,
+      "hub_linked": true,
       "variant_relation": "single",
       "review_priority": "normal",
       "review_reason": "baseline-review-required"
@@ -1959,7 +1959,7 @@
       "legal_status": "unreviewed",
       "taxonomy_status": "proposed",
       "episode": 4,
-      "hub_linked": false,
+      "hub_linked": true,
       "variant_relation": "single",
       "review_priority": "high",
       "review_reason": "deadline-liability-or-change-sensitive-topic"
@@ -1989,7 +1989,7 @@
       "legal_status": "unreviewed",
       "taxonomy_status": "proposed",
       "episode": 5,
-      "hub_linked": false,
+      "hub_linked": true,
       "variant_relation": "single",
       "review_priority": "high",
       "review_reason": "deadline-liability-or-change-sensitive-topic"
@@ -2031,7 +2031,7 @@
       "legal_status": "unreviewed",
       "taxonomy_status": "proposed",
       "episode": 6,
-      "hub_linked": false,
+      "hub_linked": true,
       "variant_relation": "same-route-family-not-semantic-parity-verified",
       "review_priority": "normal",
       "review_reason": "baseline-review-required"
@@ -2073,7 +2073,7 @@
       "legal_status": "unreviewed",
       "taxonomy_status": "proposed",
       "episode": 7,
-      "hub_linked": false,
+      "hub_linked": true,
       "variant_relation": "same-route-family-not-semantic-parity-verified",
       "review_priority": "high",
       "review_reason": "deadline-liability-or-change-sensitive-topic"
@@ -2103,7 +2103,7 @@
       "legal_status": "unreviewed",
       "taxonomy_status": "proposed",
       "episode": 8,
-      "hub_linked": false,
+      "hub_linked": true,
       "variant_relation": "single",
       "review_priority": "normal",
       "review_reason": "baseline-review-required"
@@ -2145,7 +2145,7 @@
       "legal_status": "unreviewed",
       "taxonomy_status": "proposed",
       "episode": 9,
-      "hub_linked": false,
+      "hub_linked": true,
       "variant_relation": "same-route-family-not-semantic-parity-verified",
       "review_priority": "normal",
       "review_reason": "baseline-review-required"
@@ -2175,7 +2175,7 @@
       "legal_status": "unreviewed",
       "taxonomy_status": "proposed",
       "episode": 10,
-      "hub_linked": false,
+      "hub_linked": true,
       "variant_relation": "single",
       "review_priority": "normal",
       "review_reason": "baseline-review-required"

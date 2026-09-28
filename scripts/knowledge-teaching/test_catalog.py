@@ -45,9 +45,11 @@ class CatalogueTests(unittest.TestCase):
   self.assertIn('not-semantic-parity-verified',x['variant_relation'])
  def test_no_legal_approval_inferred(self):
   self.assertTrue(all(i['legal_status']=='unreviewed' for i in self.items.values()))
- def test_discovery_does_not_drop_unlinked_shield(self):
-  self.assertIn('articles/las-shield-03',self.items)
-  self.assertFalse(self.items['articles/las-shield-03']['hub_linked'])
+ def test_shield_discovery_card_links_all_ten_episodes(self):
+  for number in range(1,11):
+   key=f'articles/las-shield-{number:02}'
+   self.assertIn(key,self.items)
+   self.assertTrue(self.items[key]['hub_linked'],key)
  def test_paths_exist_unique_and_acyclic(self):
   paths=json.loads((ROOT/'docs/knowledge-teaching/learning-paths.json').read_text());byid={p['id']:p for p in paths}
   def visit(id,ancestors):
