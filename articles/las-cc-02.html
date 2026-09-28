@@ -45,6 +45,7 @@
 <link rel="stylesheet" href="/css/wiki-theme.css">
 <!-- [[/THEME-MIGRATION-v1]] -->
 <link rel="stylesheet" href="/css/article-brand.css">
+<link rel="stylesheet" href="/css/learning-tables.css?v=20260929">
 </head>
 <body data-lang="th">
 
@@ -59,7 +60,8 @@
   <span class="series-badge">LAS C&C</span>
   <div class="badge">LAS C&C &mdash; Contract &amp; Control #02</div>
   <a class="las-article-brand" href="https://laslegal.tech/learning-hub/index.html" aria-label="LAS Learning Hub"><img src="/images/learning-hub/las-logo.jpg" width="72" height="72" alt="LAS" decoding="async"></a>
-<h1>Definitions &mdash; หัวใจของสัญญา</h1>
+<h1>Definitions &mdash; หัวใจของสัญญา <span class="las-reviewed-mark" role="img" aria-label="ตรวจทบทวนข้อกฎหมายแล้ว" title="ตรวจทบทวนข้อกฎหมายแล้ว">✓</span></h1>
+<p class="las-review-date"><b>✓ ตรวจทบทวนข้อกฎหมายล่าสุด 28 ก.ย. 2569</b> · แก้บนเว็บ 29 ก.ย. 2569</p>
   <p class="sub">คำนิยามกำหนดทุกอย่าง &mdash; "วันทำการ" กับ "วัน" ต่างกันแค่คำเดียว แต่ผลลัพธ์ต่างกันเป็นล้าน</p>
   <div class="meta"><span>ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D.</span> | <span>13 กันยายน 2569</span> | <span>Legal Advance Solution Co., Ltd.</span></div>
 </section>
@@ -99,13 +101,15 @@
 <section class="sb" id="s2">
 <h2 class="sh">ตัวอย่าง: "วันทำการ" vs "วัน"<span class="en">Example: "Business Day" vs "Day"</span></h2>
 
-<table class="rt">
-<thead><tr><th>คำ</th><th>ความหมายทั่วไป</th><th>ผลกระทบ</th></tr></thead>
+<div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="rt las-reading-table las-checklist">
+<thead><tr><th scope="col">คำ</th><th scope="col">ความหมายทั่วไป</th><th scope="col">ผลกระทบ</th></tr></thead>
 <tbody>
 <tr><td><b>"วัน" (Day)</b></td><td>ทุกวันในปฏิทิน รวมเสาร์-อาทิตย์และวันหยุด</td><td>5 วัน = 5 วันปฏิทิน (อาจรวมวันหยุด)</td></tr>
 <tr><td><b>"วันทำการ" (Business Day)</b></td><td>วันจันทร์-ศุกร์ ยกเว้นวันหยุดราชการ</td><td>5 วันทำการ = อาจเป็น 7-9 วันปฏิทินจริง</td></tr>
 </tbody>
 </table>
+</div>
 
 <p>ในสัญญาซื้อขายกิจการ (M&A) ที่มีมูลค่าหลายร้อยล้านบาท ความแตกต่างระหว่าง "5 วัน" กับ "5 วันทำการ" อาจหมายถึงเวลาเพิ่มอีก 2-4 วัน ซึ่งส่งผลต่อกำหนดการ Closing ทั้งหมด</p>
 
@@ -372,53 +376,54 @@
 
 <p>ตารางต่อไปนี้เปรียบเทียบตัวอย่างคำนิยามที่ดีและไม่ดีสำหรับคำที่พบบ่อยในสัญญาธุรกิจไทย พร้อมระดับความเสี่ยงที่ประเมินจากประสบการณ์จริง</p>
 
-<table class="rt">
+<div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="rt las-reading-table las-checklist las-wide-table">
 <thead>
   <tr>
-    <th style="width:18%">คำ</th>
-    <th style="width:33%">คำนิยามที่ดี</th>
-    <th style="width:33%">คำนิยามที่แย่</th>
-    <th style="width:16%">ระดับความเสี่ยง</th>
+    <th scope="col" style="width:18%">คำ</th>
+    <th scope="col" style="width:33%">คำนิยามที่ดี</th>
+    <th scope="col" style="width:33%">คำนิยามที่แย่</th>
+    <th scope="col" style="width:16%">ระดับความเสี่ยง</th>
   </tr>
 </thead>
 <tbody>
-  <tr>
+  <tr class="las-risk-high">
     <td><b>วันทำการ</b></td>
     <td class="good">"วันจันทร์ถึงวันศุกร์ ยกเว้นวันเสาร์ วันอาทิตย์ และวันหยุดนักขัตฤกษ์ตามที่ราชการไทยประกาศ"</td>
     <td class="bad">"วันทำงานตามปกติ"</td>
     <td class="risk-h">🔴 สูง</td>
   </tr>
-  <tr>
+  <tr class="las-risk-high">
     <td><b>ข้อมูลลับ</b></td>
     <td class="good">"ข้อมูลใดๆ ที่ฝ่ายเปิดเผยระบุเป็นลายลักษณ์อักษรว่าเป็นความลับ ยกเว้นข้อมูลที่เป็นสาธารณะ ข้อมูลที่ฝ่ายรับทราบก่อนแล้ว หรือข้อมูลที่ได้จากบุคคลที่สาม"</td>
     <td class="bad">"ข้อมูลทุกอย่างที่รับทราบจากกันและกัน"</td>
     <td class="risk-h">🔴 สูง</td>
   </tr>
-  <tr>
+  <tr class="las-risk-high">
     <td><b>เหตุสุดวิสัย</b></td>
     <td class="good">"เหตุการณ์ที่อยู่นอกเหนือการควบคุมของคู่สัญญา ได้แก่ ภัยธรรมชาติ สงคราม โรคระบาด คำสั่งของรัฐ หรือเหตุการณ์อื่นที่คู่สัญญาไม่สามารถคาดการณ์และป้องกันได้ตามมาตรฐานสมเหตุสมผล"</td>
     <td class="bad">"เหตุการณ์ที่อยู่เหนือการควบคุม"</td>
     <td class="risk-h">🔴 สูง</td>
   </tr>
-  <tr>
+  <tr class="las-risk-high">
     <td><b>รายได้</b></td>
     <td class="good">"ยอดขายรวม (Gross Revenue) ที่ได้รับจริงจากการจำหน่ายสินค้าและบริการ ก่อนหักค่าใช้จ่ายทุกประเภท"</td>
     <td class="bad">"รายได้จากการดำเนินธุรกิจ"</td>
     <td class="risk-h">🔴 สูง</td>
   </tr>
-  <tr>
+  <tr class="las-risk-med">
     <td><b>ทรัพย์สิน</b></td>
     <td class="good">"ทรัพย์สินทุกประเภทที่ระบุในบัญชีแนบท้าย ก. รวมถึงเครื่องจักร อุปกรณ์ สินค้าคงคลัง สิทธิบัตร เครื่องหมายการค้า และสัญญาที่มีอยู่ ณ วันโอน"</td>
     <td class="bad">"ทรัพย์สินทั้งหมดของบริษัท"</td>
     <td class="risk-m">🟡 กลาง</td>
   </tr>
-  <tr>
+  <tr class="las-risk-med">
     <td><b>Affiliate</b></td>
     <td class="good">"นิติบุคคลที่ควบคุมโดย ถูกควบคุมโดย หรืออยู่ภายใต้การควบคุมร่วมกันกับคู่สัญญา โดย 'การควบคุม' หมายถึงการถือหุ้นโดยตรงหรือโดยอ้อมเกินกว่า 50%"</td>
     <td class="bad">"บริษัทในเครือ"</td>
     <td class="risk-m">🟡 กลาง</td>
   </tr>
-  <tr>
+  <tr class="las-risk-low">
     <td><b>ความเสียหาย</b></td>
     <td class="good">"ความสูญเสียทางตรง (Direct Loss) ที่เกิดขึ้นจริงและพิสูจน์ได้ แต่ไม่รวมถึง Indirect Loss, Consequential Loss, Loss of Profit, หรือ Special Damages"</td>
     <td class="bad">"ความเสียหายทุกประเภทที่เกิดขึ้น"</td>
@@ -426,6 +431,7 @@
   </tr>
 </tbody>
 </table>
+</div>
 </section>
 
 <!-- ─── SECTION 10: FAQ ─── -->
@@ -502,8 +508,9 @@
 
 <h3 class="sub">ประโยชน์ของ Definitions ที่รัดกุม — สรุป LAS View</h3>
 
-<table class="rt">
-<thead><tr><th>มิติ</th><th>สัญญาที่ไม่มี / มีคำนิยามแย่</th><th>สัญญาที่มีคำนิยามดี</th></tr></thead>
+<div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="rt las-reading-table">
+<thead><tr><th scope="col">มิติ</th><th scope="col">สัญญาที่ไม่มี / มีคำนิยามแย่</th><th scope="col">สัญญาที่มีคำนิยามดี</th></tr></thead>
 <tbody>
   <tr>
     <td>ความเสี่ยงพิพาท</td>
@@ -532,6 +539,7 @@
   </tr>
 </tbody>
 </table>
+</div>
 
 <blockquote>"Definitions ที่ดีไม่ใช่ภาระ — แต่คือหลักประกัน ที่ทำให้สัญญาทำหน้าที่ของมันได้จริง"<br><span style="font-size:.85rem;opacity:.7;">— ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D. | LAS</span></blockquote>
 </section>
