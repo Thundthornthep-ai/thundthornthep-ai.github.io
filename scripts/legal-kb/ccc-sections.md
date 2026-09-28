@@ -513,6 +513,8 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 607
 - มาตรา 650
 - มาตรา 652
+- มาตรา 653
+- มาตรา 654
 - มาตรา 680
 - มาตรา 681
 - มาตรา 681/1
