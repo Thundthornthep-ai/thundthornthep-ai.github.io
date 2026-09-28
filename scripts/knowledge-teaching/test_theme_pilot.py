@@ -7,7 +7,7 @@ class ThemePilotTests(unittest.TestCase):
   records=json.loads((ROOT/'docs/knowledge-teaching/theme-pilot.json').read_text())
   for r in records:
    before=subprocess.check_output(['git','show',f"ebc851b:{r['path']}"],cwd=ROOT,text=True)
-   after=(ROOT/r['path']).read_text()
+   after=subprocess.check_output(['git','show',f"ce01ba8:{r['path']}"],cwd=ROOT,text=True)
    self.assertEqual(hashlib.sha256(before.encode()).hexdigest(),r['before_sha256'])
    self.assertEqual(clean(' '.join(Page(before).text)),clean(' '.join(Page(after).text)))
    self.assertEqual(Page(before).ld,Page(after).ld)

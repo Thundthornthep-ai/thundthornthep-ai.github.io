@@ -3573,8 +3573,8 @@
     {
       "article_id": "articles/ai-legal-tech-thailand",
       "path": "articles/ai-legal-tech-thailand.html",
-      "article_sha256": "13d6b13a9b612886b9b0764578e858f75b5351722b802bac40c3f0a58dd38683",
-      "input_key": "f6b46981726cca1e62dcf98251fcd2b0e83a069d05d080553117980bf8ba40c3",
+      "article_sha256": "9375d5e45ab1b6410ee455ca4359c60a37983e5e830552c7915c28d8a693b3fe",
+      "input_key": "09b7e01ad4c69905420637b91e331885dbab29e41f2db6834a9bb8278d45ee6c",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -3584,7 +3584,7 @@
           "binding_status": "candidate"
         }
       ],
-      "text_utf8_bytes": 23609,
+      "text_utf8_bytes": 23766,
       "source_verified": false,
       "semantic_reviewed": false
     },
@@ -9908,8 +9908,8 @@
     {
       "article_id": "articles/ai-legal-tech-thailand",
       "path": "en/articles/ai-legal-tech-thailand.html",
-      "article_sha256": "d09d2ab4f6390278689d8c3f9671a0cf1160dff158c6eb43c89455814e2ac917",
-      "input_key": "e9271aa419a33f55432fd34dfec07b97ea19ee94778d62e79ae9324864d7468c",
+      "article_sha256": "59e22d107f795d93bd7b39c411066130c06b1c1e220b70f811a6c7626f85e0b5",
+      "input_key": "c7d46d9f6db13b6061453cc2e35ad6b2cfcff53d93642ddd39e91db3c37de2ba",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -9919,7 +9919,7 @@
           "binding_status": "candidate"
         }
       ],
-      "text_utf8_bytes": 23849,
+      "text_utf8_bytes": 24006,
       "source_verified": false,
       "semantic_reviewed": false
     },

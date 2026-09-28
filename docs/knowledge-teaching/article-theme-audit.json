@@ -11,7 +11,7 @@
     {
       "path": "articles/ai-legal-tech-thailand.html",
       "kind": "article",
-      "source_sha256": "13d6b13a9b612886b9b0764578e858f75b5351722b802bac40c3f0a58dd38683",
+      "source_sha256": "9375d5e45ab1b6410ee455ca4359c60a37983e5e830552c7915c28d8a693b3fe",
       "embedded_css_sha256": "981877ce4b174437eb47807ac26cea89b4beb1d72eecb911efafa6bfad6b4649",
       "template_hint": "wiki-wrapper",
       "inline_style_count": 8,
@@ -41,7 +41,7 @@
     {
       "path": "en/articles/ai-legal-tech-thailand.html",
       "kind": "article",
-      "source_sha256": "d09d2ab4f6390278689d8c3f9671a0cf1160dff158c6eb43c89455814e2ac917",
+      "source_sha256": "59e22d107f795d93bd7b39c411066130c06b1c1e220b70f811a6c7626f85e0b5",
       "embedded_css_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "template_hint": "other",
       "inline_style_count": 11,

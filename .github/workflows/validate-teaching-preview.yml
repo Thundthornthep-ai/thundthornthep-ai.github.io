@@ -17,7 +17,9 @@ jobs:
         with:
           node-version: '20'
       - name: Check catalogue coverage and curriculum prerequisites
-        run: python3 scripts/knowledge-teaching/test_catalog.py
+        run: |
+          python3 scripts/knowledge-teaching/test_catalog.py
+          python3 scripts/knowledge-teaching/test_theme_pilot.py
       - name: Check preview JavaScript
         run: node --check docs/knowledge-teaching/app.js
       - name: Keep existing publication gates intact
