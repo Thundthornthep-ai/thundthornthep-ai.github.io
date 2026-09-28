@@ -10,6 +10,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
 - มาตรา 3
 - มาตรา 44
+- มาตรา 46
 - มาตรา 54
 - มาตรา 56
 - มาตรา 57

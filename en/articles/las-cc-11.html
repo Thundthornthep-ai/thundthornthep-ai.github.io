@@ -26,7 +26,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="Thundthornthep Yamoutai, Ph.D.">
 <meta property="article:published_time" content="2026-04-17T09:00:00+07:00">
-<meta property="article:modified_time" content="2026-04-17T09:00:00+07:00">
+<meta property="article:modified_time" content="2026-09-28">
 <meta property="article:section" content="LAS C&amp;C">
 
 <!-- Twitter Card -->
@@ -61,7 +61,7 @@
     "url": "https://laslegal.co.th"
   },
   "datePublished": "2026-04-17T09:00:00+07:00",
-  "dateModified": "2026-04-17T09:00:00+07:00",
+  "dateModified": "2026-09-28",
   "mainEntityOfPage": "https://thundthornthep-ai.github.io/en/articles/las-cc-11.html",
   "image": "https://thundthornthep-ai.github.io/banner-las-nia.jpg",
   "inLanguage": "en",
@@ -88,7 +88,7 @@
       "name": "How many hours does a Data Controller have to notify a personal data breach under Thailand PDPA?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Under Section 37(4) of the Personal Data Protection Act B.E. 2562 (2019), the Data Controller must notify the Office of the Personal Data Protection Committee (PDPC) without delay and within 72 hours of becoming aware of the breach, unless the breach is unlikely to result in a risk to the rights and freedoms of individuals. If notification cannot be made within that timeframe, a documented explanation of the delay must be prepared."
+        "text": "Under Section 37(4) of the Personal Data Protection Act B.E. 2562 (2019), the Data Controller must notify the Office of the Personal Data Protection Committee (PDPC) without delay and within 72 hours of becoming aware of the breach, unless the breach is unlikely to result in a risk to the rights and freedoms of individuals. If notification cannot be made within that timeframe, the Data Controller must notify without delay together with the reasons for the delay, and no later than 15 days from becoming aware (PDPC Notification B.E. 2565)."
       }
     },
     {
@@ -104,7 +104,7 @@
       "name": "How is the Risk Assessment Matrix for a data breach calculated?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Under PDPC Guidelines v1.0, risk is assessed across two dimensions: Severity (based on data type, number of data subjects affected, and potential harm) and Likelihood (based on the nature of the breach, whether data was actually exploited, and whether encryption was in place). These two scores are multiplied to produce a Risk Score. Low (1-2) requires internal record only; Medium (3-4) requires notification to PDPC; High (6-9) requires notification to both PDPC and affected data subjects."
+        "text": "The PDPC Notification and Guidelines set qualitative risk factors without numerical scores; the LAS matrix converts them into two dimensions: Severity (based on data type, number of data subjects affected, and potential harm) and Likelihood (based on the nature of the breach, whether data was actually exploited, and whether encryption was in place). These two scores are multiplied to produce a LAS Risk Score. Low (1-2) requires internal record only; Medium (3-4) requires notification to PDPC; High (6-9) requires notification to both PDPC and affected data subjects."
       }
     },
     {
@@ -120,7 +120,7 @@
       "name": "What are the penalties for failing to report a personal data breach in Thailand?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Failure to report a personal data breach under the Personal Data Protection Act B.E. 2562 (2019) carries an administrative fine of up to THB 3,000,000 under Section 83 (for violation of Section 37(4) breach notification duty). In addition, the organization may face civil liability — courts may order compensatory damages plus punitive damages of up to twice the actual loss under Section 78. In cases involving unlawful disclosure, criminal penalties of imprisonment not exceeding one year and/or a fine not exceeding THB 1,000,000 may also apply under Section 79."
+        "text": "Failure to report a personal data breach under the Personal Data Protection Act B.E. 2562 (2019) carries an administrative fine of up to THB 3,000,000 under Section 83 (for violation of Section 37(4) breach notification duty). In addition, the organization may face civil liability — courts may order compensatory damages plus punitive damages of up to twice the actual loss under Section 78. Where sensitive personal data are used or disclosed unlawfully, criminal penalties under Section 79 may also apply: imprisonment not exceeding 6 months and/or a fine not exceeding THB 500,000, rising to imprisonment not exceeding one year and/or a fine not exceeding THB 1,000,000 where the purpose is to obtain an unlawful benefit."
       }
     }
   ]
@@ -178,7 +178,8 @@ th{background:#dde5ee}
 
 <span class="series-badge">LAS C&amp;C</span>
 <a class="las-article-brand" href="https://laslegal.tech/learning-hub/index.html" aria-label="LAS Learning Hub"><img src="/images/learning-hub/las-logo.jpg" width="72" height="72" alt="LAS" decoding="async"></a>
-<h1 class="page-title">Personal Data Breach Risk Assessment Under Thailand PDPA</h1>
+<h1 class="page-title">Personal Data Breach Risk Assessment Under Thailand PDPA <span class="las-reviewed-mark" role="img" aria-label="Legal content reviewed" title="Legal content reviewed">✓</span></h1>
+<p class="las-review-date"><b>✓ Legal content last reviewed 29 September 2026</b> · synced with the audited Thai edition</p>
 <p style="font-size:12px;color:#555;">Thundthornthep Yamoutai, Ph.D. | Legal Advance Solution Co., Ltd. | 17 April 2026 | <a href="/articles/las-cc-11.html">ภาษาไทย (Thai Version)</a></p>
 <p style="font-size:12px;color:#555;margin-top:4px;"><em>LAS C&amp;C — Contract &amp; Control #11</em></p>
 
@@ -189,7 +190,7 @@ th{background:#dde5ee}
   <li><a href="#s1">What Is a Personal Data Breach — Why Thai Businesses Must Care</a></li>
   <li><a href="#s2">Three Types of Personal Data Breach</a></li>
   <li><a href="#s3">Legal Framework: Section 37(4) and PDPC Guidelines</a></li>
-  <li><a href="#s4">Risk Assessment Matrix — Systematic Risk Evaluation</a></li>
+  <li><a href="#s4">Risk Assessment Matrix — LAS Matrix Adapted from the PDPC Risk Factors</a></li>
   <li><a href="#s5">The 72-Hour Notification Timeline</a></li>
   <li><a href="#s6">10 Real-World Scenarios — Classification and Response</a></li>
   <li><a href="#s7">DPO Checklist — Breach Response Action Items</a></li>
@@ -206,14 +207,14 @@ th{background:#dde5ee}
 
 <p>A personal data breach is no longer merely an IT problem. It is a legal and business issue that directors, executives, and DPOs must understand thoroughly. Since the Personal Data Protection Act B.E. 2562 (2019) (PDPA) came into full force, organizations without clear breach assessment and notification procedures have exposed themselves to attacks on two fronts: legal liability and reputational damage.</p>
 
-<p>The PDPC's Guidelines on Personal Data Breach Risk Assessment and Notification, Version 1.0 (published 15 December 2022), establish a clear operational framework for what organizations must do when a breach occurs. This article summarizes all key points in a format that business lawyers and C-Suite executives can apply immediately.</p>
+<p>The PDPC Notification on the Criteria and Procedures for Personal Data Breach Notification B.E. 2565 (2022), issued under Section 37(4), and the PDPC Office's Guidelines on Personal Data Breach Risk Assessment and Notification, Version 1.0 (published 15 December 2022), establish a clear operational framework for what organizations must do when a breach occurs. This article summarizes all key points in a format that business lawyers and C-Suite executives can apply immediately.</p>
 
 <blockquote style="border-left:4px solid #C9A96E;padding:8px 16px;margin:12px 0;font-style:italic;color:#555;">"When data leaks — what matters most is not what leaked, but how fast and how correctly you respond."</blockquote>
 
 <!-- S2 -->
 <h2 id="s2">Three Types of Personal Data Breach</h2>
 
-<p>Under the PDPC Guidelines and consistent with international standards, personal data breaches are divided into three principal categories, which may occur simultaneously within a single incident.</p>
+<p>Under the definition in the PDPC Notification B.E. 2565 (issued under Section 37(4)) and consistent with international standards, personal data breaches are divided into three principal categories, which may occur simultaneously within a single incident.</p>
 
 <h3>1. Confidentiality Breach — Unauthorized Access or Disclosure</h3>
 
@@ -288,7 +289,7 @@ th{background:#dde5ee}
 <!-- S3 -->
 <h2 id="s3">Legal Framework: Section 37(4) and PDPC Guidelines</h2>
 
-<p>The foundation of the data breach notification obligation is <strong>Section 37(4) of the Personal Data Protection Act B.E. 2562 (2019)</strong>, which requires the Data Controller to notify the PDPC of a personal data breach without delay and within 72 hours of becoming aware, unless the breach is unlikely to result in any risk to the rights and freedoms of individuals.</p>
+<p>The foundation of the data breach notification obligation is <strong>Section 37(4) of the Personal Data Protection Act B.E. 2562 (2019)</strong>, which requires the Data Controller to notify the PDPC of a personal data breach without delay and within 72 hours of becoming aware, as far as that is possible, unless the breach is unlikely to result in any risk to the rights and freedoms of individuals.</p>
 
 <div class="lawquote">
   <div class="head">พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. ๒๕๖๒ มาตรา ๓๗ · <a href="/laws/pdpa-2562.pdf" target="_blank" rel="noopener">PDF Personal Data Protection Act</a></div>
@@ -325,7 +326,7 @@ th{background:#dde5ee}
 
 <h3>PDPC Guidelines Version 1.0 (15 December 2022)</h3>
 
-<p>This document is the primary reference issued by the PDPC to assist Data Controllers in understanding and complying with Section 37(4). Its key content covers:</p>
+<p>This document, published by the Office of the PDPC to assist Data Controllers in understanding and complying with Section 37(4), works alongside the PDPC Notification B.E. 2565, which sets the definition of a personal data breach, the risk factors, the content of the notification and the 15-day ceiling for a delayed notification. The Guidelines' key content covers:</p>
 
 <ul>
   <li>Definitions and classification of personal data breach types</li>
@@ -337,13 +338,13 @@ th{background:#dde5ee}
 
 <div class="warning-box">
 <h4 style="margin-bottom:6px;">Critical Distinction: "Becoming Aware" vs "When the Breach Occurred"</h4>
-<p>The 72-hour window begins when the Data Controller "becomes aware" of the breach — not from when it actually occurred. However, ignorance is not a valid defense. Section 37(1) of the PDPA requires Data Controllers to implement appropriate security measures, including effective detection systems. If poor detection causes delayed discovery, the organization may also be found in breach of Section 37(1) on a separate basis.</p>
+<p>The 72-hour window begins when the Data Controller "becomes aware" of the breach — not from when it actually occurred. However, ignorance is not a valid defense. Section 37(1) of the PDPA requires Data Controllers to implement appropriate security measures meeting the minimum standards in the PDPC Notification on Security Measures of Personal Data Controllers B.E. 2565 (2022), including effective detection systems. If poor detection causes delayed discovery, the organization may also be found in breach of Section 37(1) on a separate basis.</p>
 </div>
 
 <!-- S4 -->
-<h2 id="s4">Risk Assessment Matrix — Systematic Risk Evaluation</h2>
+<h2 id="s4">Risk Assessment Matrix — LAS Matrix Adapted from the PDPC Risk Factors</h2>
 
-<p>Risk assessment is the cornerstone of the breach response process. The outcome determines what actions the organization must take. Under the PDPC Guidelines, the assessment uses two primary dimensions: <strong>Severity</strong> and <strong>Likelihood</strong>.</p>
+<p>Risk assessment is the cornerstone of the breach response process. The outcome determines what actions the organization must take. The PDPC Notification B.E. 2565 and the PDPC Guidelines set the factors to be considered qualitatively (nature of the breach, type and volume of data, status of the data subjects, severity of the impact, and effectiveness of protective or remedial measures) and do not prescribe numerical scores. The matrix below is a LAS tool that converts those factors into two primary dimensions, <strong>Severity</strong> and <strong>Likelihood</strong>, so that decisions are systematic and documented.</p>
 
 <h3>Dimension 1: Severity</h3>
 
@@ -364,7 +365,7 @@ th{background:#dde5ee}
       <td><strong>Data Type</strong></td>
       <td>Basic data (name, business email)</td>
       <td>Personal data (address, phone, date of birth)</td>
-      <td>Sensitive data (health, financial, biometric, criminal history)</td>
+      <td>Sensitive data under Section 26 (health, biometric, criminal history), and financial data or national ID numbers</td>
     </tr>
     <tr>
       <td><strong>Number of Data Subjects</strong></td>
@@ -516,13 +517,13 @@ th{background:#dde5ee}
 </div>
 
 <div class="citation-box">
-<strong>Personal Data Protection Act B.E. 2562 (2019), Section 37(4), paragraph one — and PDPC Notification on Personal Data Breach Risk Assessment and Notification B.E. 2565 (2022):</strong><br>
-Where notification cannot be made within the 72-hour deadline, the Data Controller must prepare a documented explanation of the reasons for the delay. While Section 37(4) paragraph one establishes the 72-hour duty and the general notification framework, the specific requirement to document delayed notifications (including the form and content of such explanation) is elaborated in the PDPC Notification B.E. 2565. A clear written justification is mandatory in all cases.
+<strong>Personal Data Protection Act B.E. 2562 (2019), Section 37(4), paragraph one — and PDPC Notification on the Criteria and Procedures for Personal Data Breach Notification B.E. 2565 (2022):</strong><br>
+Section 37(4) paragraph one requires notification within 72 hours of becoming aware, as far as that is possible. Where notification cannot be made within the 72-hour deadline, the PDPC Notification B.E. 2565 requires the Data Controller to notify without delay, together with the reasons for the delay, and in any event no later than 15 days from the date it became aware. A clear written justification of the delay is therefore mandatory.
 </div>
 
 <h3>Required Content of the Breach Notification Report</h3>
 
-<p>Under PDPC Guidelines v1.0, a notification to the PDPC must contain at minimum the following elements:</p>
+<p>Under the PDPC Notification B.E. 2565 and Guidelines v1.0, a notification to the PDPC must contain at minimum the following elements:</p>
 
 <ol>
   <li><strong>Nature of the incident:</strong> What happened, when, when it was discovered, type of breach</li>
@@ -677,7 +678,7 @@ Where notification cannot be made within the 72-hour deadline, the Data Controll
 <div class="warning-box">
 <h4 style="margin-bottom:6px;">Important: ROPA and the Breach Register Are Separate Obligations</h4>
 <p><strong>Section 39 of the Personal Data Protection Act B.E. 2562 (2019)</strong> requires Data Controllers to maintain Records of Processing Activities (ROPA) — a comprehensive register of all data processing operations. This is a distinct obligation from the Breach Register.</p>
-<p style="margin-top:6px;">The requirement to maintain a <strong>Breach Register</strong> (recording every data breach event, including "Low Risk" incidents not requiring PDPC notification) derives from the <strong>PDPC Notification on Personal Data Breach Risk Assessment and Notification B.E. 2565 (2022)</strong>, not directly from Section 39 of the Act. Even where PDPC notification is not required, all incidents must be recorded in the Breach Register, because the PDPC may request inspection at any time.</p>
+<p style="margin-top:6px;">The requirement to maintain a <strong>Breach Register</strong> (recording every data breach event, including "Low Risk" incidents not requiring PDPC notification) derives from the <strong>PDPC Notification on the Criteria and Procedures for Personal Data Breach Notification B.E. 2565 (2022)</strong>, not directly from Section 39 of the Act. Even where PDPC notification is not required, all incidents must be recorded in the Breach Register, because the PDPC may request inspection at any time.</p>
 </div>
 
 <!-- S8 -->
@@ -722,7 +723,7 @@ Where notification cannot be made within the 72-hour deadline, the Data Controll
 
 <h3>Criminal Liability</h3>
 
-<p>Where the breach constitutes unlawful disclosure of personal data without consent, criminal penalties may apply: imprisonment not exceeding 6 months and/or a fine not exceeding THB 500,000 under Section 79 of the Personal Data Protection Act B.E. 2562 (2019). For disclosure of sensitive personal data, the penalty increases to imprisonment not exceeding 1 year and/or a fine not exceeding THB 1,000,000.</p>
+<p>Criminal penalties under Section 79 of the Personal Data Protection Act B.E. 2562 (2019) apply where a Data Controller violates Section 27 paragraph one or two, or fails to comply with Section 28, in respect of sensitive personal data under Section 26 in a manner likely to cause damage, loss of reputation, contempt, hatred or shame to others: imprisonment not exceeding 6 months and/or a fine not exceeding THB 500,000. Where the purpose is to obtain an unlawful benefit for oneself or another, the penalty is imprisonment not exceeding 1 year and/or a fine not exceeding THB 1,000,000. These offences are compoundable. A violation of Section 27 in respect of other personal data carries the administrative fine under Section 83.</p>
 
 <div class="warning-box">
 <h4 style="margin-bottom:6px;">The Impact Money Cannot Repair: Reputational Damage</h4>
@@ -788,12 +789,12 @@ A good DPA is not simply a copied template. It must "think ahead" — if a breac
 
 <div class="faq-item">
   <div class="faq-q">Q1: What is the difference between a personal data breach under PDPA and a general cybersecurity incident?</div>
-  <div class="faq-a">A personal data breach under the Personal Data Protection Act B.E. 2562 (2019) specifically involves a breach of security measures that results in the loss, unauthorized access, use, modification, or disclosure of <em>personal data</em>. It is classified into three types: Confidentiality, Integrity, and Availability Breach. A cybersecurity incident may have nothing to do with personal data (e.g., a DDoS attack that does not involve any data leak). The determining question is: "Were personal data affected?" If yes, Section 37(4) obligations apply.</div>
+  <div class="faq-a">A personal data breach, as defined in the PDPC Notification on the Criteria and Procedures for Personal Data Breach Notification B.E. 2565 (2022) (issued under Section 37(4) of the Personal Data Protection Act B.E. 2562 (2019)), specifically involves a breach of security measures that results in the loss, unauthorized access, use, modification, or disclosure of <em>personal data</em>. It is classified into three types: Confidentiality, Integrity, and Availability Breach. A cybersecurity incident may have nothing to do with personal data (e.g., a DDoS attack that does not involve any data leak). The determining question is: "Were personal data affected?" If yes, Section 37(4) obligations apply.</div>
 </div>
 
 <div class="faq-item">
   <div class="faq-q">Q2: How must a data breach be reported to the PDPC, and within what timeframe?</div>
-  <div class="faq-a">Notification must be submitted to the Office of the Personal Data Protection Committee (PDPC) within 72 hours of becoming aware of the breach, under Section 37(4) of the Personal Data Protection Act B.E. 2562 (2019). The report must describe the nature of the incident, data affected, likely consequences, measures taken, and DPO contact details. If notification cannot be made within 72 hours, a written explanation of the delay must be prepared. Where the breach poses high risk, data subjects must also be directly notified with recommended remedial actions.</div>
+  <div class="faq-a">Notification must be submitted to the Office of the Personal Data Protection Committee (PDPC) within 72 hours of becoming aware of the breach, under Section 37(4) of the Personal Data Protection Act B.E. 2562 (2019). The report must describe the nature of the incident, data affected, likely consequences, measures taken, and DPO contact details. If notification cannot be made within 72 hours, the Data Controller must notify without delay together with the reasons for the delay, and no later than 15 days from becoming aware (PDPC Notification B.E. 2565). Where the breach poses high risk, data subjects must also be directly notified with recommended remedial actions.</div>
 </div>
 
 <div class="faq-item">
@@ -803,7 +804,7 @@ A good DPA is not simply a copied template. It must "think ahead" — if a breac
 
 <div class="faq-item">
   <div class="faq-q">Q4: How is the Risk Assessment for a data breach conducted?</div>
-  <div class="faq-a">Under PDPC Guidelines v1.0, two dimensions are assessed: Severity (based on data type, number of data subjects, potential consequences, and vulnerability of the affected group) and Likelihood (based on the nature of the breach, evidence of actual exploitation, and encryption in place). These are multiplied to generate a Risk Score across three levels: Low (1–2: internal record only), Medium (3–4: notify PDPC), and High (6–9: notify both PDPC and data subjects).</div>
+  <div class="faq-a">The PDPC Notification and Guidelines set qualitative risk factors without numerical scores; the LAS matrix converts them into two dimensions: Severity (based on data type, number of data subjects, potential consequences, and vulnerability of the affected group) and Likelihood (based on the nature of the breach, evidence of actual exploitation, and encryption in place). These are multiplied to generate a LAS Risk Score across three levels: Low (1–2: internal record only), Medium (3–4: notify PDPC), and High (6–9: notify both PDPC and data subjects).</div>
 </div>
 
 <div class="faq-item">
@@ -813,7 +814,7 @@ A good DPA is not simply a copied template. It must "think ahead" — if a breac
 
 <div class="faq-item">
   <div class="faq-q">Q6: What are the penalties for failing to report a personal data breach?</div>
-  <div class="faq-a">Penalties operate across three concurrent dimensions: (1) Administrative fine of up to THB 3,000,000 under Section 83 of the Personal Data Protection Act B.E. 2562 (2019) for violation of the breach notification duty under Section 37(4); failure to maintain ROPA under Section 39 carries a separate fine of up to THB 1,000,000 under Section 82; (2) Civil liability — courts may order compensation plus punitive damages of up to twice the actual loss under Section 78; and (3) Where unlawful disclosure is involved, criminal penalties of imprisonment up to 1 year and/or a fine up to THB 1,000,000 under Section 79. Note: Section 90 grants the Expert Committee power to issue orders — it is not a penalty provision. Reputational damage is an additional consequence that cannot be quantified.</div>
+  <div class="faq-a">Penalties operate across three concurrent dimensions: (1) Administrative fine of up to THB 3,000,000 under Section 83 of the Personal Data Protection Act B.E. 2562 (2019) for violation of the breach notification duty under Section 37(4); failure to maintain ROPA under Section 39 carries a separate fine of up to THB 1,000,000 under Section 82; (2) Civil liability — courts may order compensation plus punitive damages of up to twice the actual loss under Section 78; and (3) Where sensitive personal data are used or disclosed unlawfully, criminal penalties under Section 79 apply: imprisonment up to 6 months and/or a fine up to THB 500,000, rising to imprisonment up to 1 year and/or a fine up to THB 1,000,000 where the purpose is to obtain an unlawful benefit. Note: Section 90 grants the Expert Committee power to issue orders — it is not a penalty provision. Reputational damage is an additional consequence that cannot be quantified.</div>
 </div>
 
 <!-- References -->
@@ -823,7 +824,8 @@ A good DPA is not simply a copied template. It must "think ahead" — if a breac
   <div style="font-size:12px;color:#1B2A4A;font-weight:bold;margin-bottom:10px;letter-spacing:1px;">Laws and References Cited in This Article</div>
   <ul>
     <li style="margin-bottom:8px;"><strong>Personal Data Protection Act B.E. 2562 (2019)</strong> — Sections 37(1), 37(4), 39, 77, 78, 79, 82, 83, 90</li>
-    <li style="margin-bottom:8px;"><strong>PDPC Notification on Personal Data Breach Risk Assessment and Notification B.E. 2565 (2022)</strong> — Office of the Personal Data Protection Committee (PDPC)</li>
+    <li style="margin-bottom:8px;"><strong>PDPC Notification on the Criteria and Procedures for Personal Data Breach Notification B.E. 2565 (2022)</strong> (issued under Sections 16(4) and 37(4)) — Office of the Personal Data Protection Committee (PDPC)</li>
+    <li style="margin-bottom:8px;"><strong>PDPC Notification on Security Measures of Personal Data Controllers B.E. 2565 (2022)</strong> (Section 37(1)) — Office of the Personal Data Protection Committee (PDPC)</li>
     <li style="margin-bottom:8px;"><strong>PDPC Guidelines on Personal Data Breach Risk Assessment and Notification, Version 1.0</strong> — Office of the Personal Data Protection Committee (PDPC), 15 December 2022</li>
     <li style="margin-bottom:8px;"><strong>General Data Protection Regulation (GDPR)</strong> — Articles 33–34 (referenced for comparative purposes)</li>
   </ul>
