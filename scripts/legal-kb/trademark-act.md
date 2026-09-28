@@ -14,3 +14,4 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 56
 - มาตรา 57
 - มาตรา 68
+- มาตรา 109
