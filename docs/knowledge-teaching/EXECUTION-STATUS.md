@@ -15,7 +15,22 @@ Owner authorized deployment after work is complete. This is not a deployment con
 
 1. /knowledge redirects the current browser to /login; authenticated existing-page/card placement and click-through cannot yet be verified.
 2. Production /opt/las-billing is not a Git checkout; its live KnowledgeHubPage-C4c-ChPL.js SHA256 is 98481f1d9280bfad0d768a5a2e7d51accf25a1490d164aba45fc3fb40a6a78eb. Local source has unrelated edits. Do not rebuild/deploy that local tree over production. Reconcile current runtime before additive card integration.
-3. AI article claims about fine-tuning and automatically compliant documents require product evidence or carefully qualified replacement. A targeted question is pending with the owner. Other biography, funding, performance and product claims still require their own evidence; no adverse finding is inferred merely from an unsuccessful search.
+3. AI fine-tuning and automatic-compliance claims have been qualified in visible text and FAQ JSON-LD. Other biography, funding, performance and product claims still require evidence; no adverse finding is inferred merely from an unsuccessful search.
 4. Remaining semantic review, independent calibration, full source reconciliation, wider article-theme rollout, print/browser checks and the actual bottom-card runtime integration are not complete.
 
 Do not label the collection teaching_ready or deploy this partial pilot as if the complete review passed. No production files have been written by this execution.
+
+## Continued execution — targeted content corrections
+
+- Both AI routes now explain source verification and lawyer review without claiming demonstrated model fine-tuning or automatic legal compliance.
+- LAS Shield 03: UCTA section 5 corrections across explanatory text, headings and FAQ JSON-LD. Official Ministry of Justice PDF downloaded and pages 2–3 visually read. Foreign-law generalizations removed; existing anchor IDs, links and CSS preserved.
+- LAS Shield 05: LPA section 9 interest versus conditional surcharge and deposit exception corrected. OCS local consolidation page 4 visually read and Ministry of Labour source corroborated. Leave, holiday-pay and notice-payment table errors and civil-fine labeling corrected against the consolidated source. Revision date updated.
+- ORST: replacement Thai text checked clean before applying. Catalogue hashes/dates refreshed. Local catalogue 13 and theme isolation 2 tests passed after the changes.
+- Registry additions 17/1, 57, 57/1 and 62 are source-backed identifiers only; they do not approve article reasoning. Queue now contains 1,560 unique citation candidates across 141 jobs.
+- Browser readback: AI revised text and date present; old training assertion absent. Labour revised date, interest and paid business leave visible; old criminal label absent; no horizontal overflow at the tested default viewport. This remains an isolated presentation preview, not production/auth verification.
+
+### Findings still requiring review before release
+
+- LAS Shield 05: social-insurance wage ceiling/benefit description and arithmetic; notice-payment worked example; categorical statements about handbook signatures and disciplinary authority; foreign-worker permit/visa generalizations. These were discovered during full-page inspection and remain HOLD.
+- LAS Shield 03: other case-law, compensation and comparative-law assertions still need source review.
+- Four edited routes are targeted corrections, NOT four fully approved articles. No teaching-ready status has been granted. No merge or deployment performed.

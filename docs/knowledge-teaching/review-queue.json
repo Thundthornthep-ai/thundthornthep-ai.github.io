@@ -1,6 +1,6 @@
 {
   "policy": "source-bound-review-v1",
-  "registry_sha256": "742008bdcd341f93f89d842939839d640dcfebeda218dc922600bad340fd2939",
+  "registry_sha256": "3a7467b2d418700d4a544f11bebe6e53e4089a8b83eb6524a9c0df38c9f7e0ae",
   "source_tree": "e95fb61eafc61846769f58ed66ccb08bc92b9c3e",
   "warning": "Citation candidates inherit extractor limitations: unbound sections, comma lists and range interiors require full-text review. Registry membership is not legal correctness. No model was called.",
   "required_cache_fields": [
@@ -18,7 +18,7 @@
       "article_id": "articles/anti-nominee-thailand-legal-guide",
       "path": "articles/anti-nominee-thailand-legal-guide.html",
       "article_sha256": "36b558e2c294f464ca99e16ef178aeb7ffe04d809be9fd0b721eb7c4b1e84fa5",
-      "input_key": "5cc2481a33cc26073aa4893cef41a28e3067b78e0e0097bef44520b94a295831",
+      "input_key": "0d8632eb9b393e19cb453264875a87666dc6da650969324062511bec32ed91ba",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -81,7 +81,7 @@
       "article_id": "articles/consumer-protection-marketing",
       "path": "articles/consumer-protection-marketing.html",
       "article_sha256": "75af8480faf02a72ae4cc3e5c4b2baea1a5d05e24ae2daa79bfd02539b55e6e6",
-      "input_key": "28e8be56646ce434baa5629f255d445f0724305eaa01ce78fac7169a6f25030d",
+      "input_key": "35dbcafcbb967ff813e163ce16910a4bfb11bcf3b294fd784ba6d93edc712870",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [],
@@ -93,7 +93,7 @@
       "article_id": "articles/employment-contract-thailand-guide",
       "path": "articles/employment-contract-thailand-guide.html",
       "article_sha256": "80c2acb9d5b06505806400ced9f7e658ec126ed4323db3c1daa53d039f9ed617",
-      "input_key": "cd9fe07fe449f58670fc11409a06b80ac0fef7c3949672b8c4769216802e0766",
+      "input_key": "55d29deb7c5b4a63bdf2e07c8c033037aaa4b65046eb2b273fe3cde16d824c0d",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -236,7 +236,7 @@
       "article_id": "articles/labour-protection-act-amendment-9-2568",
       "path": "articles/labour-protection-act-amendment-9-2568.html",
       "article_sha256": "cf4e921e30710382263bf2a80955d171f3e408e2016e85ed3f102a7c3ec90b6f",
-      "input_key": "610f45842d6aba69f153c0286e4693ad1ad4a73cfc33260f5cca39b89cfc3925",
+      "input_key": "127bf1313378f484e9addfb8340ea419cdf87621750b137d94d8ee068d214bf3",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -364,7 +364,7 @@
       "article_id": "articles/las-cc-05",
       "path": "articles/las-cc-05.html",
       "article_sha256": "14ee530fc557ee32fbe34aaa9dde225f2563961abd64a80916316cce54f585ad",
-      "input_key": "a0cf75fd3f78d4511aadf97c38ea0eb8b78b27a185f48e2794faeb6674acef1d",
+      "input_key": "e43e62e4744e242994e4589f1aa666f6a95403572742993401a138b180801a54",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -427,7 +427,7 @@
       "article_id": "articles/las-cc-06",
       "path": "articles/las-cc-06.html",
       "article_sha256": "b1cf8001888ea06031ccaf78553ec0e4a5ea59a52ea7ba68d1e1502a9f716a3e",
-      "input_key": "5cd5676e916029b6daeaedcadea419476f4a190d30e0cac9e02db6d34ebcd44d",
+      "input_key": "9dc2a5d7eb11e727b1ffb022f15756a8cc032756c6847726439f2b83d1da1dd4",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -540,7 +540,7 @@
       "article_id": "articles/las-cc-11",
       "path": "articles/las-cc-11.html",
       "article_sha256": "94a8c9a1efa87ac3ee16c6e7deb3b8245fc7d4e9a0d778a5ff0da3a9447da259",
-      "input_key": "ea6e2f85bf287ce5323c2ebde1c65e13ddc45a4bf780abfe20d54df02b052541",
+      "input_key": "24e0db1961b0b6ea67e635e84038d9285f9ecd3433699d8e7bfd4dd57072d4db",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -643,7 +643,7 @@
       "article_id": "articles/las-share-04",
       "path": "articles/las-share-04.html",
       "article_sha256": "cb18c76fb8db56b75a13603413a7ed14c584385b31e320704a155959f76c476b",
-      "input_key": "61dd68c38edf09775c58bdacb95174b6ed8e5b8048c82e0af86175146abd52b3",
+      "input_key": "883f6788abff8da982ae750c36e3b7a62e433a8cd1484f2d030a30514885ed23",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -841,7 +841,7 @@
       "article_id": "articles/las-share-05",
       "path": "articles/las-share-05.html",
       "article_sha256": "7998e9438a740c63785a75c2e0f6d43ef73a0cb921723470eb2ef84df8bbbf2e",
-      "input_key": "bca87568126cebcf9f31957f54a17ed54bbc18360a22b22d6203bca5c72478e6",
+      "input_key": "4c92b46036ecd1cd77b95a939602fda5528525a675aa90bfbfc22cc1cdba2006",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -1029,7 +1029,7 @@
       "article_id": "articles/las-shield-04",
       "path": "articles/las-shield-04.html",
       "article_sha256": "a59743833ca3a5bb2aae7f0843552fc20bffb9333ab410d5dbc86eb28fe5df44",
-      "input_key": "7a2d09a40ebfce46876f3b51a6f3f044961c445b851e0017d627cb65c81b7ccd",
+      "input_key": "0453a86778f74e4cbd13b1a3581e9821ce28863ab5b42b3ce737066754fb5528",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -1251,8 +1251,8 @@
     {
       "article_id": "articles/las-shield-05",
       "path": "articles/las-shield-05.html",
-      "article_sha256": "3ee6f4e253dc437bb0cb1e5b0905f7b9dfc7a79a1ecc838b8b4fe6cf7dcc04f2",
-      "input_key": "a146bc96f8a0e6ba7f19853f8173e94cfbb48f9fb2eeec7e34a42e5d3d50e1dd",
+      "article_sha256": "715d4046ba199633bc4e0017620cd1360cc9803a6a684234381fecf59153804e",
+      "input_key": "969483485592944abfad9e9c634c52282931ea9d567e10e5f9926c1e1d3c94f2",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -1298,12 +1298,22 @@
         },
         {
           "statute": null,
+          "section": "17/1",
+          "binding_status": "unresolved"
+        },
+        {
+          "statute": null,
           "section": "23",
           "binding_status": "unresolved"
         },
         {
           "statute": null,
           "section": "30",
+          "binding_status": "unresolved"
+        },
+        {
+          "statute": null,
+          "section": "34",
           "binding_status": "unresolved"
         },
         {
@@ -1333,6 +1343,11 @@
         },
         {
           "statute": null,
+          "section": "57/1",
+          "binding_status": "unresolved"
+        },
+        {
+          "statute": null,
           "section": "59",
           "binding_status": "unresolved"
         },
@@ -1343,18 +1358,13 @@
         },
         {
           "statute": null,
-          "section": "7",
+          "section": "62",
           "binding_status": "unresolved"
         },
         {
           "statute": null,
           "section": "9",
           "binding_status": "unresolved"
-        },
-        {
-          "statute": "ccc",
-          "section": "224",
-          "binding_status": "candidate"
         },
         {
           "statute": "ccc",
@@ -1398,6 +1408,11 @@
         },
         {
           "statute": "lpa",
+          "section": "17/1",
+          "binding_status": "candidate"
+        },
+        {
+          "statute": "lpa",
           "section": "4/1",
           "binding_status": "candidate"
         },
@@ -1425,9 +1440,14 @@
           "statute": "lpa",
           "section": "59/2",
           "binding_status": "candidate"
+        },
+        {
+          "statute": "lpa",
+          "section": "9",
+          "binding_status": "candidate"
         }
       ],
-      "text_utf8_bytes": 75538,
+      "text_utf8_bytes": 77577,
       "source_verified": false,
       "semantic_reviewed": false
     },
@@ -1435,7 +1455,7 @@
       "article_id": "articles/las-shield-07",
       "path": "articles/las-shield-07.html",
       "article_sha256": "af6a29fb13fdbc29fab911276ab7abc0ba4a9aeba97dc90bad7eae02decd8b2b",
-      "input_key": "84983fb61da59284db2fde7e128367da03c9ff6ba21cac0c53cc8971989a5ca6",
+      "input_key": "d0d2c323cc59fb15dabd5f3f863e6026f4b7a4667bbc1d17b6908a53a8218c94",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -1668,7 +1688,7 @@
       "article_id": "articles/pdpa-compliance-guide-business",
       "path": "articles/pdpa-compliance-guide-business.html",
       "article_sha256": "2dd322cea76e6b3b7116e3c6d49ee0db69aaa4a114807cd23045cb69de92d64b",
-      "input_key": "427c7c866abc4d78b8de96414f7b95d4af29e6c8560ced264756e8934ff7ddc9",
+      "input_key": "a6256193a0e629fbe381a0c5f7654ba22adfc5e97375b25d2e2dd629bbed9a93",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -1866,7 +1886,7 @@
       "article_id": "articles/pdpa-compliance-guide-thailand",
       "path": "articles/pdpa-compliance-guide-thailand.html",
       "article_sha256": "2e9b57d9085bee38d3d336da97a86ef7de25ecf4d67877035835b6e9647255cb",
-      "input_key": "d341c0e609f39c5c89ed352e2fac4e7ab0c632bf27e85146eedf6fd4fca334b4",
+      "input_key": "4fd1943d9e9097a46907182f6be99f7f678f6191be5e5d8dc58f475ae75bb67d",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -2009,7 +2029,7 @@
       "article_id": "articles/pdpa-essentials-entrepreneurs",
       "path": "articles/pdpa-essentials-entrepreneurs.html",
       "article_sha256": "b4658b62b7fabdbdcf51b826436b53a719eaca9a200c225d8d38801ec5c49914",
-      "input_key": "aa0e993a22e392ee13ec9bc9ff9bc59c6becda4b1da894ff22c4f232dd9db24e",
+      "input_key": "445fec502b7d7b21b2245c52fbd7d85a8b5be945138c3f072ed36030ec83c11b",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -2117,7 +2137,7 @@
       "article_id": "articles/anti-nominee-thailand-legal-guide",
       "path": "en/articles/anti-nominee-thailand-legal-guide.html",
       "article_sha256": "816bf21e8bc9575acc0bfbd4528584006373d0987121136f9c034df288ef5a72",
-      "input_key": "2b5e47a94540d2d5af2585fbbe5665dbc8aa3d6349b51de3be6a3f066e845000",
+      "input_key": "767679c9661369a1e875c8cc5a0580b3f676c033585f7d1e4ba3197969979739",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -2160,7 +2180,7 @@
       "article_id": "articles/consumer-protection-marketing",
       "path": "en/articles/consumer-protection-marketing.html",
       "article_sha256": "e1d68e869079342a4315e70b26d31837f14f56c2b7c8e83c0cc92170710b5b08",
-      "input_key": "083502f455ff9129d6a6c3022f73710780aca4dc0e68592bf6b343949410c8e4",
+      "input_key": "6bfbdd41cdf349ce6897cb577bafec0812879042f9a3a67577415d37a224b9f4",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -2178,7 +2198,7 @@
       "article_id": "articles/employment-contract-thailand-guide",
       "path": "en/articles/employment-contract-thailand-guide.html",
       "article_sha256": "23916662b3a851852a1ef3a095ef6993a94726a8e2193aefd713a62a417eaec7",
-      "input_key": "942ec216a7439fe264d9d7d30d4ce48a815bae617a496c2fe9b8d385a0a46c7f",
+      "input_key": "d7e4be741ba879d6c808ced13cc676fd8713cdbf5980935b649da2d1487de218",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -2466,7 +2486,7 @@
       "article_id": "articles/labour-protection-act-amendment-9-2568",
       "path": "en/articles/labour-protection-act-amendment-9-2568.html",
       "article_sha256": "73362ff7741bbddac1dba1866dfa25003e2996c0a04bda3d34318bec41129d93",
-      "input_key": "ad2fcb0431452cd5a1ed8705c7b0764b6bcb0a3ccc602bab4755b1e0467351e8",
+      "input_key": "0cdf7ee608c1a6ffb671bad0c4cbcab5c351972a8f38608f6591c6f5ead1a049",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -2594,7 +2614,7 @@
       "article_id": "articles/las-cc-11",
       "path": "en/articles/las-cc-11.html",
       "article_sha256": "de606180776764a114fa070ef5735add5e0e8f06015a90b6139888313d5f5454",
-      "input_key": "b3d99442af5082024d9c4ca8761887720a7589e2800a3f4e062507357d7eafc3",
+      "input_key": "4487a2845796f6ca94678a0d353ce27012041218597fbbe8453aad7e6693276a",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -2692,7 +2712,7 @@
       "article_id": "articles/las-shield-07",
       "path": "en/articles/las-shield-07.html",
       "article_sha256": "03586c7980257f822997acd15b18786a6de64dd83d89f070142a28ea057b9d5e",
-      "input_key": "562487a57452c97ddb53b8f2510b588b1dfd84ebc2b46889a475599375211b0c",
+      "input_key": "21c6a834b3720c9f858cbf4a7ba7088d3692e38056c7a39a0580c5e96a64a393",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -3060,7 +3080,7 @@
       "article_id": "articles/pdpa-compliance-guide-business",
       "path": "en/articles/pdpa-compliance-guide-business.html",
       "article_sha256": "d0cebf99a7436396b9704da58d7bf52fd61739aa7a2ae353eacb307684c9d20d",
-      "input_key": "d0cd8f592565b9553be26026f39e0972718de748552dcb7875c4e6709f4ad8af",
+      "input_key": "57a50b9403763dacd0969c614cab3ce40252a34f9805d316947f1f25c3ff087f",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -3303,7 +3323,7 @@
       "article_id": "articles/pdpa-compliance-guide-thailand",
       "path": "en/articles/pdpa-compliance-guide-thailand.html",
       "article_sha256": "e696c43e02bde18080d004c64c7461c744ea1d50fb8783a5a1375b565afbb5ca",
-      "input_key": "8a2029c0138a3860c7be0670058b08e71ac286ac87cd31cbf31279e8018978e4",
+      "input_key": "7b2de66281aef764e65076b35f12f188ce08071525357053b5d5ab96089445ea",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -3446,7 +3466,7 @@
       "article_id": "articles/pdpa-essentials-entrepreneurs",
       "path": "en/articles/pdpa-essentials-entrepreneurs.html",
       "article_sha256": "c1690532dbbb43a039881554fdd003796d4e09b43bc33d6ced322a393a621cc9",
-      "input_key": "949057db03cc398535dd2b567b8239dea63da5b9416fcafddf8cecd51e5923a1",
+      "input_key": "fa1890248f0da9b17ed8346290e34958536af4df1e4963a6361eaf9637df87be",
       "priority": "high",
       "status": "pending_source_packet",
       "citations": [
@@ -3573,8 +3593,8 @@
     {
       "article_id": "articles/ai-legal-tech-thailand",
       "path": "articles/ai-legal-tech-thailand.html",
-      "article_sha256": "9375d5e45ab1b6410ee455ca4359c60a37983e5e830552c7915c28d8a693b3fe",
-      "input_key": "09b7e01ad4c69905420637b91e331885dbab29e41f2db6834a9bb8278d45ee6c",
+      "article_sha256": "c54b09bef96df8ef963398550d8908260c21fc6d76e5d20d324387dc2f0dcfa3",
+      "input_key": "018a664f06f1b3b28bf29775857ae156b601b57278262760b70ce15f72037e97",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -3584,7 +3604,7 @@
           "binding_status": "candidate"
         }
       ],
-      "text_utf8_bytes": 23766,
+      "text_utf8_bytes": 23907,
       "source_verified": false,
       "semantic_reviewed": false
     },
@@ -3592,7 +3612,7 @@
       "article_id": "articles/ai-replacing-lawyers",
       "path": "articles/ai-replacing-lawyers.html",
       "article_sha256": "77b7b5c3afda8c68744a4d01df9289d57ca434910a60ce04e7cafedfe08bc5ad",
-      "input_key": "7f96d943e9a6713d0bebed192eb38ceb0708d7085846e717b2c0816290471562",
+      "input_key": "3e7280c46ab99a92352a54b79c235c956284c1a9c9c47d2b6d9c8f140572b84e",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [],
@@ -3604,7 +3624,7 @@
       "article_id": "articles/art-of-ancient-contract-drafting",
       "path": "articles/art-of-ancient-contract-drafting.html",
       "article_sha256": "97db3ab23744f0efb064d1680f168b809aa68e5ac938c9518a821e373dfa18c6",
-      "input_key": "9e9c3f5912a0103df9b8802f695ac8b6a3b88b742b813ca7e8d0ede16facb139",
+      "input_key": "35a0303418db9b655c79759f688a1892c124a7f53dd87774989be7c0479f0a77",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -3667,7 +3687,7 @@
       "article_id": "articles/asset-declaration-thailand",
       "path": "articles/asset-declaration-thailand.html",
       "article_sha256": "bf65b7540a97c6ad7b12121f74c1e97207fbe4dde0f2782e5a89f1e700de035a",
-      "input_key": "304c15646224148d357eeff20ddae8c49ddb8597368066964c35e2ec8ee18002",
+      "input_key": "c6fd8a8e2f744f8be73d117fe120ef8a045b16e4b77b8ef6a7ef69363a1b6de2",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -3730,7 +3750,7 @@
       "article_id": "articles/bid-rigging-thailand",
       "path": "articles/bid-rigging-thailand.html",
       "article_sha256": "87c2654d2b81d951a4b557208648584e4a8257b4308bb2a084eb0b4374b90bdb",
-      "input_key": "53ec9e0bdf9dfcc1e9424425d7b7b34e6a95827d51adbc047dd02e241644e398",
+      "input_key": "ca7e7e58ef212136e716acd2164090501696ee7b50c3d220a83383edd98868d4",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -3803,7 +3823,7 @@
       "article_id": "articles/boi-investment-thailand-guide",
       "path": "articles/boi-investment-thailand-guide.html",
       "article_sha256": "ec0f8bb9b6115f5d2d7e790bdbe9ce6e45852540e7c9a69bf3077ecc36dd8a7f",
-      "input_key": "edda67fe94fa8c4330f81fb7b10848a793d84df1712a270e5c426faf967fefee",
+      "input_key": "9a239b7d9ed4942217de0e40e78288f00fbce9fc14767abc36a31635d44b0d38",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -3831,7 +3851,7 @@
       "article_id": "articles/business-lawyer-thailand-guide",
       "path": "articles/business-lawyer-thailand-guide.html",
       "article_sha256": "f3ae22f0419d72e86ea2e224d65c1d12db393e3b2bec8cb9f2cfe2501df04180",
-      "input_key": "34c3b8a9208678053770793eccdda04b7ec164736d18d0c78b236946a5c4cffa",
+      "input_key": "99d7db887d3b6b4f9a47022e189c16d8e9d086915b7e93904bdb0a2218754234",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [],
@@ -3843,7 +3863,7 @@
       "article_id": "articles/business-tax-essentials",
       "path": "articles/business-tax-essentials.html",
       "article_sha256": "d82203c85a28ad8ffedbd1732f6f3f1c72f7341140a20029c9444de6a6213225",
-      "input_key": "0cc161d692947de9a43231faa662297e4e66200af344dcc32c48132538d78ee9",
+      "input_key": "fdc28b282d2e95081767b6b2e01b0de3691cb87c2e44818392e7171374bb8c21",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -3861,7 +3881,7 @@
       "article_id": "articles/civil-recovery-corruption-thailand",
       "path": "articles/civil-recovery-corruption-thailand.html",
       "article_sha256": "0f5fb97d4d9fcbdcf4140990cde67b2c0b94b2afe87110d2b1f4ec35817a3069",
-      "input_key": "c6ed262049ec2be16245c33774eddef97abcf86ecd54ce04fcbf2c7595d29d3a",
+      "input_key": "a025d0b9b38848afd51c8ef0ccc1a151bee9e4bcb2e26675f9aeb924f9f0a72d",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -3934,7 +3954,7 @@
       "article_id": "articles/company-registration-guide",
       "path": "articles/company-registration-guide.html",
       "article_sha256": "e5f56f47d033e20b7fd072cebb19c361b5f997e092ebb59bd03caa844e068936",
-      "input_key": "db3832c0e75d9e5db8d499a4831323bca2d51e23fba305cb3d0b85f687084483",
+      "input_key": "1518c1dd611585d6df1acfbf699844c8c49b8fa6667028aaa3b6a3df94f17498",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [],
@@ -3946,7 +3966,7 @@
       "article_id": "articles/company-registration-thailand-guide",
       "path": "articles/company-registration-thailand-guide.html",
       "article_sha256": "9634e93d0a9eb054d55eb93f08ae6a984eb0cbcccc760a5e32ec428d652c64bf",
-      "input_key": "f0db3d07d8f4088665e497053489b48abda565e91d687078a4859695559b5908",
+      "input_key": "85b5543e76a8a59ffe85b1589beb66aabe904a3bef554fd71f25762f07b53e4d",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -4064,7 +4084,7 @@
       "article_id": "articles/contract-document-review",
       "path": "articles/contract-document-review.html",
       "article_sha256": "02a9698806c83445e6641134ee905833a24c65cc5bedd1178fe844c7303a667f",
-      "input_key": "09fa4dd449b75546db6bdb01dc11f555670b3ffbb0986143f4332ac84692a8ff",
+      "input_key": "cbad9de168cd4235fd4dae8d33cfdd91e984e441146630fc39abf5aef2b8553a",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -4912,7 +4932,7 @@
       "article_id": "articles/contract-reading-guide",
       "path": "articles/contract-reading-guide.html",
       "article_sha256": "26270c3939e4c889dabd600b4e0449f3ec586e9dcc7061ad26bce1aa2eecd5a9",
-      "input_key": "ba3c1602092b5935ed0729814ef20cafaa961ed42e81d7eb68080bba8aef5fc8",
+      "input_key": "4747dd9cccfc7bd4922fb62c42f3fc1175096a0a0567365dfefea8d1e46694b5",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -5065,7 +5085,7 @@
       "article_id": "articles/deep-legal-analytics",
       "path": "articles/deep-legal-analytics.html",
       "article_sha256": "775601c16f3c03d5e9a005a46755e68b9195b706b51c8e6171c5be88f8fb99cd",
-      "input_key": "03fa021c5647ef7273a63a90174764c3d26f7fc1c9c3f91f7a2d4f1921729d29",
+      "input_key": "bc8b3713a42f7872a74cb9fab5bf04d7bcf13de9e4f5b9ff468afb5ba23708f1",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [],
@@ -5077,7 +5097,7 @@
       "article_id": "articles/due-diligence-checklist-thailand",
       "path": "articles/due-diligence-checklist-thailand.html",
       "article_sha256": "a60de1a800862d75c1520edf08db930e6dbdeb1ed0d87505b8f7a128c7d4268b",
-      "input_key": "c7b59a654365e5ff6e1217962d96bdccda1e37ced85415b02b1f822414db4473",
+      "input_key": "2d780050776a4730c93fb5d84fc912305ad68803d2313b09ad2019a5da94e321",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -5110,7 +5130,7 @@
       "article_id": "articles/due-diligence-conditions-precedent-thailand",
       "path": "articles/due-diligence-conditions-precedent-thailand.html",
       "article_sha256": "eaf4bb58875044b6ce1c7cab2835e16b0a41ed33be99ba1ffbe3fd32a32b806b",
-      "input_key": "538af96be517789dc49373cb4e7342b29ebec7f8e460d4e1321d73fd3dc4e900",
+      "input_key": "bc5f786c450d288d63251a48c3e8ee93e5e15f6b0ec26026484bec122be76849",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -5153,7 +5173,7 @@
       "article_id": "articles/eec-investment-thailand",
       "path": "articles/eec-investment-thailand.html",
       "article_sha256": "19d1bc192377ec0219e208bd8947b84b89ecea2df9e20ae9a9813a01d487d0a4",
-      "input_key": "25232f50f868776e3f7e14637c417c378b0d47a9c146b20b1a64da73cc1a175e",
+      "input_key": "31caaac88c2743b2c4d031ec45a2b574732ff6a2679e176372704beca82c8d9b",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -5171,7 +5191,7 @@
       "article_id": "articles/foreigner-buy-condo-thailand",
       "path": "articles/foreigner-buy-condo-thailand.html",
       "article_sha256": "5f6e259602c8211c0d7de88f3b2762b0be50a237a21ee3b9541d58c76ef53c43",
-      "input_key": "d452983f1cde7eedf1977c76abdec0bac92cf4541ee3f4cfd524b4748327355b",
+      "input_key": "7afa015757b0e8fec79b4e14e16baf2fd4e757badfc775d13befe7ab4a8a88fb",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -5199,7 +5219,7 @@
       "article_id": "articles/franchise-agreement-thailand",
       "path": "articles/franchise-agreement-thailand.html",
       "article_sha256": "49229ecb43b4a22716c6f4e4a3cd1847420d28b70401dcbc4a506ca2077f7cc3",
-      "input_key": "9e89bb62e1e8d5bacf107bbf31b237a5fec07826ceccfb900dbb6dc7f719d515",
+      "input_key": "eceab04394d76210610036dc616a4ec9af12d2b73bdcfb95b34838e75889ce2e",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -5312,7 +5332,7 @@
       "article_id": "articles/hotel-management-agreement-thailand",
       "path": "articles/hotel-management-agreement-thailand.html",
       "article_sha256": "c8923761f7001f288f695818320128c31ecddc99af21f63a3b195277b49ef87d",
-      "input_key": "a46bad9cc5cb9b5ec199b2a5333edfe180d36411a919a6dfcb98fdf0d0f7189f",
+      "input_key": "42a1c6541ead1e0ea0f0341db1a2d3d993664ed22723fa48b2efd3f71bc0f769",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -5380,7 +5400,7 @@
       "article_id": "articles/ip-law-business-marketing",
       "path": "articles/ip-law-business-marketing.html",
       "article_sha256": "a660a5052d0a2b401c8998e0ae05068bfc1358ba30b7bc4b2df3450d747a06be",
-      "input_key": "e57654fecccff95b4fccbb7e06c8425501fdff60c6358e7703c45546f3b10b80",
+      "input_key": "21a528aafd8b0a3a1dd9b724683a470a72a4d6c2403b11eabd1df040ddf6f5df",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [],
@@ -5392,7 +5412,7 @@
       "article_id": "articles/joint-venture-agreement-thailand",
       "path": "articles/joint-venture-agreement-thailand.html",
       "article_sha256": "65776f1e62f0c0c742324cced61665ded881ed43fdece139f39cbabf35104155",
-      "input_key": "9e5da4bf45c5657bf64a0c3e312b147fb1fcc859c7664103389b235d9710e7d4",
+      "input_key": "127b7138e92b2cb39f3d33ced9da8d30a258bf9a94a6c56a7e3fff79552d7f5a",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -5425,7 +5445,7 @@
       "article_id": "articles/las-cc-01",
       "path": "articles/las-cc-01.html",
       "article_sha256": "80e0fa612442a635135c9bb8edffe4c8731200695ee764d59974d4226bf7cd8c",
-      "input_key": "fea6b5b92907e5e34dd9c868439569a5ea6bcaeb0f2a21ffd6fa0f75f1cd32f2",
+      "input_key": "525fbe3a014d3d55e608354f0e2a6e507f0f025e46471c774e1ff973c45c685f",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -5513,7 +5533,7 @@
       "article_id": "articles/las-cc-02",
       "path": "articles/las-cc-02.html",
       "article_sha256": "e56860abbc99a255c747e5fecde18f723f374adb909dd0881fc9631ed24a439a",
-      "input_key": "7f565c96fa79103274ae01b929c828062ca27f403eea2761488d0900b56a0490",
+      "input_key": "301deb54a1701037d7096958f9d50e228ef4ebd8654f1c62dcb6ecd21468259c",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -5586,7 +5606,7 @@
       "article_id": "articles/las-cc-03",
       "path": "articles/las-cc-03.html",
       "article_sha256": "fbbe5a2730e5e68f77b6f69838d95455d0470dc68e2752024b38f403203c0946",
-      "input_key": "dd27b5a85bf2057e56320dd9964b45569712a398b25cf3982c7e978ca81ff673",
+      "input_key": "1f04ec1b340e422798b0bbc95c19e17da8df5021546bbaece3425cce36b09faf",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -5669,7 +5689,7 @@
       "article_id": "articles/las-cc-04",
       "path": "articles/las-cc-04.html",
       "article_sha256": "780b0ea17ea1ba2b707a3ba067090d0ea246fd6fac8656e8af886847af7f302e",
-      "input_key": "777e861ff86da9e8b3bf1fd1435960f40083e1a362b7f7169c5f974f9d10e97a",
+      "input_key": "9114be501e8ad75863f09ac2a572203ad30e12585009148df8967a5e12597e7e",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -5742,7 +5762,7 @@
       "article_id": "articles/las-cc-07",
       "path": "articles/las-cc-07.html",
       "article_sha256": "5288ed1e00fcf2e312f0b8e1a76290e6fc6142df4e148c4dc292229945e06020",
-      "input_key": "57cc3b4d7a3b6701a67955fa037e0c043189a72bb32f29a2c44330f11857f7f7",
+      "input_key": "b888e31214846c1ab860787ba869a1a2d0319c17dab611551e7c2e9eaba483bb",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -5800,7 +5820,7 @@
       "article_id": "articles/las-cc-08",
       "path": "articles/las-cc-08.html",
       "article_sha256": "db31c3b18a82b729674803f4f23235b9d7a2d3dc436ce7098ee0232f278ddf84",
-      "input_key": "df74f119f5558d32744f529f2cabdead1d33d64d3cb70c9c8ee5f3cb69546ea5",
+      "input_key": "77be65ce2bd0b2201056b0b1ee16abb060617263399772ce4ef1060e7134a4f0",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -5863,7 +5883,7 @@
       "article_id": "articles/las-cc-09",
       "path": "articles/las-cc-09.html",
       "article_sha256": "2e4f72181cb1a75dd9584b5883f1461ba199a7196135662f22be3c1b0a254386",
-      "input_key": "55d013287717fb6d484ceca4f15a08a5fbada114c87ee63fd002472c04a0f70d",
+      "input_key": "42c46486708eada6c37725805f47d0e575b8a520b8c597b788f40300bfbf8bfe",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -5896,7 +5916,7 @@
       "article_id": "articles/las-cc-10",
       "path": "articles/las-cc-10.html",
       "article_sha256": "27d5d3bfc6667ee3eba181ed04bbe39016520b51f7005961361a6f0b5ca4b75f",
-      "input_key": "22eb183addf7814a0a128e240986d99d7f5b8227469569e7bd9a528ea4ea794b",
+      "input_key": "0160e95dd2f15b91bb3dc3959f55c39dcbdec921fb82d89fd1725aca292ff0e1",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -5924,7 +5944,7 @@
       "article_id": "articles/las-invest-01",
       "path": "articles/las-invest-01.html",
       "article_sha256": "263da6c604fe7124f962befa8ba0aa97f1f96d8236c9634680e23fecbcf4b483",
-      "input_key": "dc3b69ea0fd1bf8bf5d5fa1d1f32c98c243e369a1ccff399473a67c9c2d90028",
+      "input_key": "4b1886f1c94313b0946ea1f9ba99b7a35b5a40c1b95c53828561357ab0efd00d",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -5967,7 +5987,7 @@
       "article_id": "articles/las-invest-02",
       "path": "articles/las-invest-02.html",
       "article_sha256": "393dc4b9a15fadcc74e29191c2298662b261f72e6dc33559065e5fa406bac61c",
-      "input_key": "544981d60e6c0356e81531e265febc17f047686d2986dd40bc9d209a5535c2ca",
+      "input_key": "de70118b9be881b341841e0ea83b4fb8fc70eb707466379818aacce0109ab35c",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -6025,7 +6045,7 @@
       "article_id": "articles/las-share-01",
       "path": "articles/las-share-01.html",
       "article_sha256": "9d0f09c40ec0971b28662f3b59e516bd5778e48bdbe78f75c6c4c3c17a45d75a",
-      "input_key": "7e55da2b8e629d0fbac38791c0f0f95fe3f5e14b479433b2411d7e5606cd99cd",
+      "input_key": "d1ce3770b216bc27625d977788e53053b9c9a5dd237f9c31edd6faa0f0d815d5",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -6143,7 +6163,7 @@
       "article_id": "articles/las-share-02",
       "path": "articles/las-share-02.html",
       "article_sha256": "16d35c17136ed0047b6447c1800e559410ef11d4d6394c2136c1d80e604a3b6e",
-      "input_key": "9acc795699d52f40a37e13149fc8bb869785a83a23947532eb0304ef48af3c66",
+      "input_key": "c33bcf7123628dcd04666c1c711f5934df89a5e2eb80952e1e475850ca3b140a",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -6266,7 +6286,7 @@
       "article_id": "articles/las-share-03",
       "path": "articles/las-share-03.html",
       "article_sha256": "b90da2ef467102621a153cbe7a1c867abbdbb6f91666b0109f1a143f0b20a304",
-      "input_key": "6057d9f5f26d5766a328616fbe446a44aca57056fb971f10e3d55d058dbd3700",
+      "input_key": "a4bd93796672990d60a4037fa1974d84f0c95fab4a76464a1b548dccaf5aefc7",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -6404,7 +6424,7 @@
       "article_id": "articles/las-share-06",
       "path": "articles/las-share-06.html",
       "article_sha256": "432c141aac8f88816626e1d1b019ca330ae6b05549aff53589361a1289bff2a4",
-      "input_key": "ebe3eea0c0a1dcb96db150f4ff42bf5c41a8b8bf5cee1d3f077ebedcaee0a098",
+      "input_key": "fad7e23db23a7517264148fac6826c6ce1f17e122aa3bf3ad623292e9304db2c",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -6562,7 +6582,7 @@
       "article_id": "articles/las-share-07",
       "path": "articles/las-share-07.html",
       "article_sha256": "77208d183a30dc251e231cae9bb3a9bc7405f270df3fdd5dc70c08c4fed924b5",
-      "input_key": "3d3c1361c9dfefee9735c83635fb4db27694417b39685f448921bf88c289a50f",
+      "input_key": "338911b46064fc2d7c3ec39a6bcf722f6d446485f03e8860eb3a1081c1af2697",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -6625,7 +6645,7 @@
       "article_id": "articles/las-share-08",
       "path": "articles/las-share-08.html",
       "article_sha256": "511afd5f501eae65f34cd7a70e34462a7796c2d873c0be6ea987268356f791a7",
-      "input_key": "28ca23372c1ee38d174fb2b9838261e1c830c1ec408017c3870106dd78593ef4",
+      "input_key": "20d7a69342708b5db5ecd332105868f5d29e1ab96e7c691c7ed5f2cdfd61e8ad",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -6743,7 +6763,7 @@
       "article_id": "articles/las-share-09",
       "path": "articles/las-share-09.html",
       "article_sha256": "58656f552eab62ed7a64021f17861fc4811a51810e439614b55b256587589279",
-      "input_key": "aee9bf1c794f36da4fb134589c0e0ac9e290d8b298977886f3605c25561ccb6c",
+      "input_key": "e3c4c2575cbfbca0ffda3f5ee1fae3913d4021040fe8cbd624f8990d097ae209",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -6981,7 +7001,7 @@
       "article_id": "articles/las-share-10",
       "path": "articles/las-share-10.html",
       "article_sha256": "1144c7a303671512c14088655995fbb030a9b6b1cccd526559b3d62975d08715",
-      "input_key": "1e8394df1f25268610c7ab9fce97d760972e918505eeb791b54af8632dead9e2",
+      "input_key": "c8bd18ecbd6b8b3addbd46144f76fdac828ad4ee98b935495e04238ccc00519e",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -7044,7 +7064,7 @@
       "article_id": "articles/las-shield-01",
       "path": "articles/las-shield-01.html",
       "article_sha256": "57486e4624d6f28b9d1a51c0cf311ae437bc88c54775f7eabe2a03cda7f4ec61",
-      "input_key": "db364ee3f53c10c884b7b8b76d5551a59109c90b66d45de5945c84d2c6fb79de",
+      "input_key": "c788c58aca0cc34387331e8b315fe87da6f326066712e01ce4fe94446d3b87e2",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -7167,7 +7187,7 @@
       "article_id": "articles/las-shield-02",
       "path": "articles/las-shield-02.html",
       "article_sha256": "596166fb9a0f62c256e59c90f3cdbea77f988a406e13be34948eea4b50b29cc1",
-      "input_key": "dfad8a871ef48476ef44bf08834403a075cd1b96bca700d763a99adf3387c87d",
+      "input_key": "24741477a0f7fa081b8548ecf7ee6865e7a78cfc48b20705f10607351343e776",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -7274,8 +7294,8 @@
     {
       "article_id": "articles/las-shield-03",
       "path": "articles/las-shield-03.html",
-      "article_sha256": "d4aedc38a49ecda6aee0e13f9f879ff3d112e65ca3f5ba995ad7547aee6352ce",
-      "input_key": "4b64a1e796edb8d373046b6454f3d9e7870e55c563a28c30c10e11ad5643da28",
+      "article_sha256": "057609ac7b6699e823b6c14b95855ec6c2ecc5847773af36765bb6ef39f4a351",
+      "input_key": "28117383b8292e5a1831ae81c7f11a69095490e6a20d317e5e4f3c77b8e747ee",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -7302,6 +7322,11 @@
         {
           "statute": null,
           "section": "383",
+          "binding_status": "unresolved"
+        },
+        {
+          "statute": null,
+          "section": "5",
           "binding_status": "unresolved"
         },
         {
@@ -7333,9 +7358,14 @@
           "statute": "lpa",
           "section": "17",
           "binding_status": "candidate"
+        },
+        {
+          "statute": "ucta",
+          "section": "5",
+          "binding_status": "candidate"
         }
       ],
-      "text_utf8_bytes": 59750,
+      "text_utf8_bytes": 63096,
       "source_verified": false,
       "semantic_reviewed": false
     },
@@ -7343,7 +7373,7 @@
       "article_id": "articles/las-shield-06",
       "path": "articles/las-shield-06.html",
       "article_sha256": "605b5067d63d393d3fd6affb87f5e1c2ed95b52893eb9b714ddc5fa88ed8388f",
-      "input_key": "6d313009745e677380cdb26ce124df5918fa44156090d24c44f3466e842c4287",
+      "input_key": "52163aae3ef5cd48342bdaa7b609f544d751d7b9d9fa8d36812438487a11fd97",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -7441,7 +7471,7 @@
       "article_id": "articles/las-shield-08",
       "path": "articles/las-shield-08.html",
       "article_sha256": "4c92c4daa3e3c0a9515ce4d51880abc8d14ee39817a5f3876287a1bf5e221b2c",
-      "input_key": "c13dfcef33f53482706ea2ac07c101793a224b030e433699ff722fd136206ea7",
+      "input_key": "e295eeba2e3a81794a75fb2ed2383bd565d8acf9453ff0b48c6470dd0922c2d4",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -7534,7 +7564,7 @@
       "article_id": "articles/las-shield-09",
       "path": "articles/las-shield-09.html",
       "article_sha256": "c4e145ee8107a90c4a096d021bd6f9bddcc9d0865ea854a649f939a8e2bbcebe",
-      "input_key": "c287d6060046b4c2172f3e60595f06c4910f095fbac35f4e8cfcf33a6f4e7c91",
+      "input_key": "9c1c07fc2ce377dc45437ba8b4629ba06932b5268073033dcbfeea1e5e2f37bb",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -7637,7 +7667,7 @@
       "article_id": "articles/las-shield-10",
       "path": "articles/las-shield-10.html",
       "article_sha256": "28835467d99ba38f6399023c3cd08cf11861b63f04df0f06b7ad5913c2801f65",
-      "input_key": "2221e9bdd91b7d6ea09ad5cb1f3800445eee5fb81c146433c1d6947da7668a4c",
+      "input_key": "d9b92117d659ea24a7ce39df7ace55ba53e76b2a02d0cd6bea072284cbc96db2",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -7735,7 +7765,7 @@
       "article_id": "articles/las-upsize-01",
       "path": "articles/las-upsize-01.html",
       "article_sha256": "854c844c85e12091048b9d8ac88090333b8c917c369991eee1a990077586dea1",
-      "input_key": "0fe382ccc421635dd989e1da4669d938bcaea0432857e9e6f2baa9b898110c51",
+      "input_key": "b64008cd80f5dff9ad6fd2db20527f98c2d559259e5e205b42a65b7970f2abcb",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -7913,7 +7943,7 @@
       "article_id": "articles/las-upsize-02",
       "path": "articles/las-upsize-02.html",
       "article_sha256": "587769b3e988904c0e3b07c5679d45b675e6450089b8c28c17d0c88e203d8659",
-      "input_key": "0c95b82353e065eddd6138011c346e3ad16b1fc9a1eb51bc5cd4eb652a061913",
+      "input_key": "b789a0cdff88f6636305d21a1427f15b826dd23e39f5865e8cd8d0645f60240b",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -8036,7 +8066,7 @@
       "article_id": "articles/las-upsize-03",
       "path": "articles/las-upsize-03.html",
       "article_sha256": "c615631941b6a002c2527a1f5d5da8a76c2649fc49629ab133954b0882c10fcb",
-      "input_key": "f380fc1e47b9bf83b843b377bde0d41acf51eb78cec88380916f75b3480cd579",
+      "input_key": "5da886811661fbbe7883fbe14423135d51ffcf64c0310575ed183fba6770caea",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -8154,7 +8184,7 @@
       "article_id": "articles/las-upsize-04",
       "path": "articles/las-upsize-04.html",
       "article_sha256": "68f1831491f6c0913624c72d750237cad3698117b11a328c387ae5d31bf04181",
-      "input_key": "38c919c609195fb4a4e20da5fa0278a52ae3f1e81621e5bd2715a4d7a5bdcb5e",
+      "input_key": "a2bc52187370b9043d9e887b0168838fc7bb6dae7fd8a1425442f0557b05b4ea",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -8267,7 +8297,7 @@
       "article_id": "articles/las-upsize-05",
       "path": "articles/las-upsize-05.html",
       "article_sha256": "aaf9698ef2c4076a05d9174c28729e0cee105b2d997303592a9838c194df10e7",
-      "input_key": "cc9a2b92a76fc72f677097a034f8ab783356e7fe1ed9101e39c4e817911bdad5",
+      "input_key": "b56719fbada3f44082fd77e685981cfc629d900c78770f6425db90426cbd3ed4",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -8350,7 +8380,7 @@
       "article_id": "articles/las-upsize-06",
       "path": "articles/las-upsize-06.html",
       "article_sha256": "2100ba80b909953ecba371c06011e063fcf7395833750f6c24852335b4c23f20",
-      "input_key": "336eafc8c52c4e80eaca98657927a1f3a34a4aaebe75625296da056edcab7447",
+      "input_key": "4952d0a0a7c1c64e0cc1a52da32acbaaf9c1abe44284deb9b65e9048b8cbb071",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -8428,7 +8458,7 @@
       "article_id": "articles/las-upsize-07",
       "path": "articles/las-upsize-07.html",
       "article_sha256": "55ea136419c617110c4527e875be93a7057e18c49b8c5d9013954dfca747e3c1",
-      "input_key": "6255ea1451bbe905ef1c7e6b38297cc13cf269d27f602dc6c6bae2d9827084b9",
+      "input_key": "28bfdb838be9f2ec6e59eaee1d908934e106edc69bb78e7d58d50489d5deb3e4",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -8531,7 +8561,7 @@
       "article_id": "articles/las-upsize-08",
       "path": "articles/las-upsize-08.html",
       "article_sha256": "24093b685e96201f503d1fc52d0f4c336cd11863c3735ac60f9ad0425f762b63",
-      "input_key": "12b478c7e4c5d9ab09d066deb357b1d90232f59bae34783981a17e3448b4f0a4",
+      "input_key": "197f3b3ef07582b9a6313af020c6719b4f2f87fdbc40fae542c58793f6d9807b",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -8649,7 +8679,7 @@
       "article_id": "articles/las-upsize-09",
       "path": "articles/las-upsize-09.html",
       "article_sha256": "852f05cabc2b84b73f076fcbf8e521112ea9bbd1f32a36ca7353436d6cf327a6",
-      "input_key": "9c640292733d466cd3e6e589a36fbe898a66177590d961d64736e989bdf79c66",
+      "input_key": "6ec5de5fd21c3b438672155de29947ccab4d0e7371409f95a58402abc31623b6",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -8707,7 +8737,7 @@
       "article_id": "articles/las-upsize-10",
       "path": "articles/las-upsize-10.html",
       "article_sha256": "b876365862ab833589cc622a141f2b23455d3a934458c63082dd3c4b21c31ae8",
-      "input_key": "8576911c7873e6ad0d15062ec6a489384f4f9be702285bca24006e4c643f5823",
+      "input_key": "d1c11fe9332f47cdc1e4349ef67d9c1d7e94d2b7016571439940a52a63ca6b16",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -8805,7 +8835,7 @@
       "article_id": "articles/lease-agreement-thailand-guide",
       "path": "articles/lease-agreement-thailand-guide.html",
       "article_sha256": "9a49151f1cd1e940df9dcbf5dd06e2edebf64893687ddb67be6d0c6fd55dd8fc",
-      "input_key": "2d027b08de97adb91ed6dc154dd3d6ee244d8b82bf8c56cb8bab12f50f6f3da2",
+      "input_key": "5ded6f2a848c14b3b9ec698c1353ea42319b6bcd57050229f134e44cb835fd50",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -8908,7 +8938,7 @@
       "article_id": "articles/marketing-business-contracts",
       "path": "articles/marketing-business-contracts.html",
       "article_sha256": "f38f2382bfb60f5c663863708509d2f1f767af88c1e43ca72b5aad96e63ace21",
-      "input_key": "9b0d19d8a8e9f70561395dc1089e2adaac8a4f83c202285b4ac7c4065f46f8c3",
+      "input_key": "63a2d124737ac86d6da1a6f402380681f252b874ebbf6953762560f7f268ae37",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [],
@@ -8920,7 +8950,7 @@
       "article_id": "articles/mergers-acquisitions-thailand",
       "path": "articles/mergers-acquisitions-thailand.html",
       "article_sha256": "bf0ce6d80f79993682360ade25a9992ad6da5cab96fbb66c53bdd7d2dd97e5eb",
-      "input_key": "6618170583d3952e6af171fd250be56e95b3c41ef44306e78d80f0cb22488412",
+      "input_key": "cfc375d14e2d12eeda0cca8facbab243b919a4cc12ed7ffdd574c939fbb76f25",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -9003,7 +9033,7 @@
       "article_id": "articles/nda-non-disclosure-agreement-thailand",
       "path": "articles/nda-non-disclosure-agreement-thailand.html",
       "article_sha256": "178551ec36d5403c61564c02606389d3153e75a01d7d8361fa64c714b6954b75",
-      "input_key": "25556e799d4a82e36f2a661726759b82731ff8951db53e7127e7509ce8c89fc0",
+      "input_key": "1fb4c901c285c2bc999ed7bec4423865c1c9da330bc7a06eca1357e6daa142ff",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -9096,7 +9126,7 @@
       "article_id": "articles/social-media-marketing-law",
       "path": "articles/social-media-marketing-law.html",
       "article_sha256": "129081154924d05a5facbd3576ee2674be0a36564d8391a13d7112c232878bef",
-      "input_key": "0fdcf35200fcf150c0b786a9604341e1e6c2de1ccf6da76c69a33c38cbd59c5c",
+      "input_key": "b803b9d5ff71ea0d2d72194f361a4c25f55893dcf426e4aba5d18d98b084487e",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -9124,7 +9154,7 @@
       "article_id": "articles/solo-practitioner-ai-advantage",
       "path": "articles/solo-practitioner-ai-advantage.html",
       "article_sha256": "a0e14dc51c214487e01056354793d2f73a6c37d7d108c901974ced3c2750a182",
-      "input_key": "0a9f39939728c31af527e8b28ca83b1cd1aaf293b0de87ad7f0ae0fe5e336284",
+      "input_key": "7129f99ff4fdc337768390f6ece3510c95246ac63723e48b2613c3256167fb06",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [],
@@ -9136,7 +9166,7 @@
       "article_id": "articles/transfer-pricing-thailand",
       "path": "articles/transfer-pricing-thailand.html",
       "article_sha256": "686dc48a93d3c27a26cc72165c228870ad9da718fad2f6d95f1f9f2361ce9890",
-      "input_key": "4f6a6a651672b82b358bb1ff19ace67ceaf271aecafee534f5dc74fd5074bae2",
+      "input_key": "a1f24e6aff3fcdd057d31d7680175acbaab3a1568fb0fb47a04c4894a327f56d",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -9199,7 +9229,7 @@
       "article_id": "articles/why-lawyers-read-contracts-differently",
       "path": "articles/why-lawyers-read-contracts-differently.html",
       "article_sha256": "57db576d15980bbfacbe2eda53155c2b44040e6a0b30f66268766812f305cd9c",
-      "input_key": "b7f6878267de008efb1b6a2c01d50b72427e5d01eec5fc23e607c23a8bf8bc7f",
+      "input_key": "4af1e48d53667517d8713734506d6eefc2a4f6ad6a5ee5a35dc5c9c106d276f4",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -9252,7 +9282,7 @@
       "article_id": "blog/bkk-council/council-rules-amendment-2569",
       "path": "blog/bkk-council/council-rules-amendment-2569.html",
       "article_sha256": "d823c481633b4d091ea5247799acb59b1c6eef1418201e4121c30214dddfaa14",
-      "input_key": "50d0426155ca53ac8e13ef1282c2599372e84b52f04ef019036490cddbd0d3f6",
+      "input_key": "41c97667088f66621956c4a28b33457d4660c9e4ed8accf2325f787f9497cf7c",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -9270,7 +9300,7 @@
       "article_id": "blog/bkk-council/ep1",
       "path": "blog/bkk-council/ep1.html",
       "article_sha256": "a245d37264bb614238315e740a7c9da7490005550c9cfd6dde65ae5cd9e8fe5f",
-      "input_key": "2ee43356be0876a7e6dd3bf73b037a4490d7a2f3ed7c7284a4c322f25ba89d92",
+      "input_key": "ce3b4bab8759f65acad91d7bf955dba596273e27ebe4ac013b3c8279d4be32d7",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [],
@@ -9282,7 +9312,7 @@
       "article_id": "blog/bkk-council/ep2",
       "path": "blog/bkk-council/ep2.html",
       "article_sha256": "4506cee88d21ad48d0981b2d2fa279bda3831d9042f6715ed83119377baf15e1",
-      "input_key": "ab0265afae0b27f237432b34f745cfc560d625a5597ea30cf7ce3a4a4b1aedf8",
+      "input_key": "aef5e32fbc835264fe6c907681085ff04718d34643e0c53e23b4b80e73ed0448",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [],
@@ -9294,7 +9324,7 @@
       "article_id": "blog/bkk-council/ep3",
       "path": "blog/bkk-council/ep3.html",
       "article_sha256": "9b82d307a4920b6b9e9e29c5858616bdd427c1cd78ecc5ca9a06a7a866df1852",
-      "input_key": "dc073f443a1b06a9fe5e4e1c942a7570d89360c5965e068443a9a041c9b2d5b6",
+      "input_key": "96a36825e04d4535430082b8f2f043e9857dedc9610cee11d33f6dc155aff2e0",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [],
@@ -9306,7 +9336,7 @@
       "article_id": "blog/bkk-council/ep4",
       "path": "blog/bkk-council/ep4.html",
       "article_sha256": "215ff4e3638cf3dfe2ec09c3af48520407a10bd087d055e8f06093dbc5a043bc",
-      "input_key": "2034f0749f5c8c0437a58195a014390aba1cda3ac5530151e5bc7d2bd1d9145a",
+      "input_key": "de0a76cfc5895b4a24c1097c82af82a1596c87026f8b83c581b13b3cc07f9816",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [],
@@ -9318,7 +9348,7 @@
       "article_id": "blog/bkk-council/ep5",
       "path": "blog/bkk-council/ep5.html",
       "article_sha256": "19e44f9e65477d562c3b7a9d9f108099c2cea52a6dc2675d5c4900eff0fb5a3f",
-      "input_key": "b37fdc22f6d5e00b6713d19de37f5a6b9883963dc1ff8a54ea46a2d3db406c04",
+      "input_key": "38d5684a681e438ce5411951182a7bd7790703882ada0eff8a998ea49b1d69e5",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -9341,7 +9371,7 @@
       "article_id": "blog/bkk-council/ep6",
       "path": "blog/bkk-council/ep6.html",
       "article_sha256": "3f63e45fd7afa4f75bf45361e520e45e117acff1eb93d97ca0bc3c20954d8b4b",
-      "input_key": "a61b7117394424ba923481a1859994dd4b65f60111d671b3e97f47c571c0129a",
+      "input_key": "ae3befe583235fbf175719a8e46baf0ce85d4af5a8bd1535d9a1eadf4f75c250",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [],
@@ -9353,7 +9383,7 @@
       "article_id": "blog/bkk-council/ep7",
       "path": "blog/bkk-council/ep7.html",
       "article_sha256": "3733dfd77c1b53fa4fde04d80a3cb0fee2f8f547d3c1aded43f8a2d2f96db52f",
-      "input_key": "ef9760e69f426246a17cd308b2452c40911704eedc40be4b8b0b8cd6dcb7c936",
+      "input_key": "e76457c36b745d272909edb9862c22fe57693c3462d346f7f3e0cee01224ed53",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [],
@@ -9365,7 +9395,7 @@
       "article_id": "blog/bkk-council/shareholding-article1",
       "path": "blog/bkk-council/shareholding-article1.html",
       "article_sha256": "b4b80efa99b4b7fef8cf553a6a333411e73d4d9d9c18137c921f7efd88881528",
-      "input_key": "f88cc971e89940ebf2e19c41e862d09127c3bc6f1dafaa64446b219a45d4ccdd",
+      "input_key": "230b34d3c13ae6d91c441e3f7b1ba6f85dbd9dbc6e871ce28db5df6d453ac73e",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -9433,7 +9463,7 @@
       "article_id": "blog/bkk-council/shareholding-article2",
       "path": "blog/bkk-council/shareholding-article2.html",
       "article_sha256": "1d6351dc8d6af94466b30a7ee65051aa7ee0468ad24fac5df90f7c110c41aaa9",
-      "input_key": "3951f53461253203572a2a4311ba50e34077622d338ccd38d07847dc452cf670",
+      "input_key": "490ee420f983855222cb9b4d8ebe401be43948e4c751dff9d7601ef263270661",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -9516,7 +9546,7 @@
       "article_id": "blog/bkk-council/sk-candidate-guide",
       "path": "blog/bkk-council/sk-candidate-guide.html",
       "article_sha256": "9540cb7bcd6745f00e51125fddea6e49423b34fdd2868c5ebdaef4e5b721ac30",
-      "input_key": "d87a1de237ec10dfd30d35e2cd0757b93d3c5c2874c85d189d93dfa32112f8e3",
+      "input_key": "ac305a430fb8bd224c8bc7954ed5db07e924215f800fb0a451130c008a011330",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -9908,8 +9938,8 @@
     {
       "article_id": "articles/ai-legal-tech-thailand",
       "path": "en/articles/ai-legal-tech-thailand.html",
-      "article_sha256": "97d9dd3886b01aad05bf2f20f1427e4cfd69d61df04fa2d0afbbb80a9e30efc9",
-      "input_key": "5913618dd253fd369de7f6a3ee8a4a15209734052fff3a9dee3b1d7ac7f64bc6",
+      "article_sha256": "34710507633a2f812f4778fe0b8de616c74857019bf49ba7e0af1b91b7a950f0",
+      "input_key": "d8b1bcd90d7baf6befe85254d8ee370540b9cad725a4b963bc963591ec844d22",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -9919,7 +9949,7 @@
           "binding_status": "candidate"
         }
       ],
-      "text_utf8_bytes": 24006,
+      "text_utf8_bytes": 24147,
       "source_verified": false,
       "semantic_reviewed": false
     },
@@ -9927,7 +9957,7 @@
       "article_id": "articles/ai-replacing-lawyers",
       "path": "en/articles/ai-replacing-lawyers.html",
       "article_sha256": "8454c9c1d0716522859bbbec0372df47497816171c9be73a97c7c91f2cd5d1e3",
-      "input_key": "536d00f64e76c1579ee486fd14112c8d7f7ea7ec07ea5ea58602c114e9ac0a6f",
+      "input_key": "b06ff6c5ed3322593d69bd9b0e7e9b0291589c1e429a6ae284df9025e4cea1e7",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [],
@@ -9939,7 +9969,7 @@
       "article_id": "articles/art-of-ancient-contract-drafting",
       "path": "en/articles/art-of-ancient-contract-drafting.html",
       "article_sha256": "7636d3edb4c9841188a5aae4188d498e5ec92070f796cd0a0fc7521387993988",
-      "input_key": "151efcbad58301a9ce0f6a25d5fe70e49d1b18392afb13115cbb1f8c74fac478",
+      "input_key": "6bddf8d4c5c522873c4c41042b092e8ef5218c4f4febc4e3666070f9bcf5f79a",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -10002,7 +10032,7 @@
       "article_id": "articles/asset-declaration-thailand",
       "path": "en/articles/asset-declaration-thailand.html",
       "article_sha256": "606f3a9adc559a367af5a6fc3caeeea0846444005ab2e92fac71f1a2a45d749e",
-      "input_key": "21cb125c4f71d00f46be13512efc925734b6eaa8d43f9ba88c9c79f1d73ac1c4",
+      "input_key": "eed3b9ab2ec4cabd131d25c3fb6801763e8d7519393dd7f56b686af29eca754f",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -10065,7 +10095,7 @@
       "article_id": "articles/bid-rigging-thailand",
       "path": "en/articles/bid-rigging-thailand.html",
       "article_sha256": "b3ccd3f01e87d863b1aea53db3b91ae8494916362c5b99b6af698cb5aa92e12a",
-      "input_key": "ef583c0ad9cbcf398d6a10935f00a37e09bb8802629655e4572401f85000d91a",
+      "input_key": "cc26551751a877ca4dcb9ded7bfd5684ec93affbbc212355cf0ee5fc8e4f33e2",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -10123,7 +10153,7 @@
       "article_id": "articles/boi-investment-thailand-guide",
       "path": "en/articles/boi-investment-thailand-guide.html",
       "article_sha256": "90150916ee5593900938504d2bfa60f0fa5860758585383d564fcac8d083096d",
-      "input_key": "094927c1b44557f0d91cadca0957dfd0938931f866c0c95f2286a1e6213f3539",
+      "input_key": "db7dcab9eaae523fc9aa578ec5c49aa3d85f40e9e59c72d441ac8d9f0d652f14",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [],
@@ -10135,7 +10165,7 @@
       "article_id": "articles/business-lawyer-thailand-guide",
       "path": "en/articles/business-lawyer-thailand-guide.html",
       "article_sha256": "af7dd3b12b290a8c7f61847c63e244d72f466f8c2ff86587a779730f549fbec5",
-      "input_key": "ef84997db22964709bb9039b8e6544041dc903a6ee1dd79c42cba71e9546e81b",
+      "input_key": "0a8c74e0b5be6ebeded9f437830bfb0fa5d418b0589cd9019d76f4af8dd76613",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [],
@@ -10147,7 +10177,7 @@
       "article_id": "articles/business-tax-essentials",
       "path": "en/articles/business-tax-essentials.html",
       "article_sha256": "0e26252fefcebb0deb0bae5799e65b0fc8790c7dad61116c1d32fc6c74126e35",
-      "input_key": "0929d6a47b30522d6f0b6c825049cb4714a3577172463ed1ea2d02522853cc70",
+      "input_key": "ac6360f287ad514ac9ed7329b3c43f3fb645cf749575e94553929bc2dd2ca138",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -10165,7 +10195,7 @@
       "article_id": "articles/civil-recovery-corruption-thailand",
       "path": "en/articles/civil-recovery-corruption-thailand.html",
       "article_sha256": "ff4ce3495e1efbabe8bd7b42614b13a0cb06b46435a20cb1241a1f51afdd06d4",
-      "input_key": "266680dfe907578a1e85177c8e0d50b6581f36ac548f1bf9dda3fbbd209d53bc",
+      "input_key": "814bbbbba0ad0f8b0d0eefca10887a91795a195f582217a4aeae0e79221c6b5a",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -10313,7 +10343,7 @@
       "article_id": "articles/company-registration-guide",
       "path": "en/articles/company-registration-guide.html",
       "article_sha256": "11b4ced461f3d19141a5116984be2f168c1ea218d082c5b04f623d8b1936bbbf",
-      "input_key": "3a1a86c112035ade0250920c289d98ce448ae884fcdb06315afd17949a263915",
+      "input_key": "ed9fb5d180fbc5e4c97b84e92abc76b1586f1b839da7217aa551976a056d39c0",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -11551,7 +11581,7 @@
       "article_id": "articles/company-registration-thailand-guide",
       "path": "en/articles/company-registration-thailand-guide.html",
       "article_sha256": "9a105593f8703e4014d57227ae61ca690a0885fcac97860c0bafaf260250e2c4",
-      "input_key": "2ae4e1b9ae2433311c5e22faad55a2c762cd90f5357baa0112c4b7767ed81033",
+      "input_key": "9f08041ce731761c7410ae4f0f5b33e497b9ef0c17262cd3ff94ebd778c0e468",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -12774,7 +12804,7 @@
       "article_id": "articles/contract-document-review",
       "path": "en/articles/contract-document-review.html",
       "article_sha256": "6a044ef8f68ed25b1b498d61f38e4e726eff4dd3324b4aba44524a0fcf8be53d",
-      "input_key": "56eaeb1600926b65fef4c4c923169986833e0ce0faa94d9441db186e5af234e1",
+      "input_key": "1f0c5be079e32c3a801f127734947e01b338109de83309cf18544e9f2bda2d61",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -15117,7 +15147,7 @@
       "article_id": "articles/contract-reading-guide",
       "path": "en/articles/contract-reading-guide.html",
       "article_sha256": "13ef71b44b81a9a075e264819b621c9224e21304da07129f3238e442ffe72677",
-      "input_key": "1b7e90c178226aa43185201047062aab43f34c89128bb01f34beb61de7dc4322",
+      "input_key": "f9dfee3f7ed99953ea17ab7f9ff6d590437c57b928fc8502c25a3b249ad3f755",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -15260,7 +15290,7 @@
       "article_id": "articles/deep-legal-analytics",
       "path": "en/articles/deep-legal-analytics.html",
       "article_sha256": "2891a808b66eaa13cc9b1d67ed517d48ffd44aaf2a369c9fbce3fa42a69ed471",
-      "input_key": "42a469b6178e038fe5bb169870835eec487423b503eedc75e33599d74a6bb10c",
+      "input_key": "bb072f8c2a50b05ffe6d7d0ea036d3c6bfaa48a645310c0dc15cd09b78c091d5",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [],
@@ -15272,7 +15302,7 @@
       "article_id": "articles/due-diligence-checklist-thailand",
       "path": "en/articles/due-diligence-checklist-thailand.html",
       "article_sha256": "ec3b7965bb69902bc52e61aa82c81875e15dbb019769e8fe20686e3862bedcb4",
-      "input_key": "037d6cb4e40225493764b400bbc49b3b4fdbf8c21d1db8ab43b4c7f14c2b62ad",
+      "input_key": "a16fa2a5ebbde45116491dff30e17baf1cb81e2c6566fe4b17dd62919a7f933b",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -15305,7 +15335,7 @@
       "article_id": "articles/due-diligence-conditions-precedent-thailand",
       "path": "en/articles/due-diligence-conditions-precedent-thailand.html",
       "article_sha256": "0b9e0fb76d5db7e8ef4522e431ac3746526451ce8ca5e6270c40152a5bea2085",
-      "input_key": "66768b6382bdf0207875cfb5edc954d96ce567675211964a885eabdb397a0956",
+      "input_key": "a11605aa7b0959c186b2af7741112cc8a69d38cbf48c34709876a108a397f1f7",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -15383,7 +15413,7 @@
       "article_id": "articles/eec-investment-thailand",
       "path": "en/articles/eec-investment-thailand.html",
       "article_sha256": "8ad5aca6ecae976ee6bb9f42d12ae6c023be5b416cee0bc7ff68c2694b9badff",
-      "input_key": "d09096c1fd492d904a1753c6f0a7028f1aaf77edcca39f45f5797962a7b03496",
+      "input_key": "658838aa70e91620ae2b554657c838959aa54c146452f6e56a60ec2d5f578a5c",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -15406,7 +15436,7 @@
       "article_id": "articles/foreigner-buy-condo-thailand",
       "path": "en/articles/foreigner-buy-condo-thailand.html",
       "article_sha256": "b9d5b482b591fdd3d19ad2b2542995f31042a0205a6011fc4e9e8e37480e4cb5",
-      "input_key": "c07d44592eb0a845ce3b63dbea7e7d996534402a92d464cc877f859d18f7ad6a",
+      "input_key": "78fd289f58ba620c45435e687d64f7959c76662f646e34867cc2246e616292e8",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -15434,7 +15464,7 @@
       "article_id": "articles/franchise-agreement-thailand",
       "path": "en/articles/franchise-agreement-thailand.html",
       "article_sha256": "7ca9d718437ae356c6db1edb9e676ed56b26e92f10e7d9db82df1bbf779fe332",
-      "input_key": "1872e5e9d4a9e91335149f755c68a0c3a38b34a5c889ce43a477112daf010ce1",
+      "input_key": "ec14c4f2eb8b51ed52452b9c67dda6178ad7e661ca2070840825735295ee22af",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -16777,7 +16807,7 @@
       "article_id": "articles/hotel-management-agreement-thailand",
       "path": "en/articles/hotel-management-agreement-thailand.html",
       "article_sha256": "b31cc1876f987c56a6c36aa77009870c8373c20daeb27f6ba4e09f549197b99d",
-      "input_key": "ceb732a4f37992b4fd8a4588487c301ed9a35a2e31f210b224ff18b472bad578",
+      "input_key": "a82ca4b8658f6f30d6649bc9b9ce1a66ed87e0d545bc0df3872bc40b478500bd",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -17425,7 +17455,7 @@
       "article_id": "articles/ip-law-business-marketing",
       "path": "en/articles/ip-law-business-marketing.html",
       "article_sha256": "5b50fe6acefd53cb3ba068e3472f4c67d845d6d49485199f0c27412d6d0a4b00",
-      "input_key": "4c43819bc994d2bd82d8743806f5da6a1ad27eb12c0b5f3bbc8882dcd40f9306",
+      "input_key": "15a9875436cb34aa416a1f2c43cf261d9bc7bc38ce9a70a6f275047306d30994",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [],
@@ -17437,7 +17467,7 @@
       "article_id": "articles/joint-venture-agreement-thailand",
       "path": "en/articles/joint-venture-agreement-thailand.html",
       "article_sha256": "b4c85d101c185173bab7b9b90155bc3fe9f71bb7b09d5811a1d71f7451e3413d",
-      "input_key": "beb55d14c7df8991d9e8a5e4dc258adcd3d265f8b95d8766136061dbd480d961",
+      "input_key": "17e6056147193e03ddb0829f0943f0aa79beea5967f2ef216b377d218df583c5",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -18695,7 +18725,7 @@
       "article_id": "articles/las-invest-01",
       "path": "en/articles/las-invest-01.html",
       "article_sha256": "19fef7c1d018aa0611e23f99b29b18b0b3cac2ea2ef59b5667c37a2efcb9c531",
-      "input_key": "ff8102a655156dd173bdace316eed6f99819dd2795ae43813d91f1c7de0664d0",
+      "input_key": "15511fadd87874f1ac1cd78b71be7d3493adb26be15f7c7a4160d07aa69fdbf6",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -18713,7 +18743,7 @@
       "article_id": "articles/las-invest-02",
       "path": "en/articles/las-invest-02.html",
       "article_sha256": "2406ca38c4eb246900303da7d5e72735926814353c7794bca5c01f199210bc07",
-      "input_key": "6d6900214d376830d4f79a3147fcd15fd6b101f4c1e0e2dfe105722fc793f9db",
+      "input_key": "ab5aba326afea60840950dcc0efb3275f129ee577ef818f0076866eed2474b84",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -18731,7 +18761,7 @@
       "article_id": "articles/las-share-09",
       "path": "en/articles/las-share-09.html",
       "article_sha256": "a071cbdcdc66e8d2eaccf4de66a40a10537f9356f3bc36e76043f7412ea2f17d",
-      "input_key": "94aa043ee3fc69f7955ecb91493d38d5d124dbae430e9f68e2ac371943d2b774",
+      "input_key": "a13b1ead69c3868e804ed2d68af1350550e387c63ff16b382c80562634657a4e",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -18989,7 +19019,7 @@
       "article_id": "articles/las-shield-06",
       "path": "en/articles/las-shield-06.html",
       "article_sha256": "6cd66cd814f834475f0201bb3fc51f72ad265236cafc42db915dcb0990277ebb",
-      "input_key": "ad0377fe4b96b112951e9e1cd087d6ef163fac44b1f34f17576c97fe1bd1aaeb",
+      "input_key": "81bf5583849c143b73c487665ff3523da95361892882ae539c7598dddbb8eacd",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -19217,7 +19247,7 @@
       "article_id": "articles/las-shield-09",
       "path": "en/articles/las-shield-09.html",
       "article_sha256": "507338db6f553a2f0c5549b7ba88ed4c1e01b7557fcbcb19809af54bd4816688",
-      "input_key": "e195a0e0773e2cb161e653b12a0ef76554eb22ceafbc08b302a9d7d8ed612735",
+      "input_key": "8d8e781e0efd0e86bf29afa2ad32eb13fbc632ac782a36f0c9de90592f525f62",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -19300,7 +19330,7 @@
       "article_id": "articles/las-upsize-03",
       "path": "en/articles/las-upsize-03.html",
       "article_sha256": "4ab13fe23f2dcfac5da3b98822301381a37f3b64619663553a568fe622a0c98a",
-      "input_key": "e3a80c1ef08b32dd2c083937fe33d14f6b26be2f5e93a16bf18697d3b538d2fd",
+      "input_key": "ae4ae7285444607eda30c1042b9ba85748a3a9b5155fc414748f7b0043244082",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -19403,7 +19433,7 @@
       "article_id": "articles/las-upsize-04",
       "path": "en/articles/las-upsize-04.html",
       "article_sha256": "e51573aff099c2da13e1fced4d95ea2d85b92bf54aaae3e544f6ff67df5bcb05",
-      "input_key": "a00b36b2f0447e69aa07d3b1e654abedcc00b52dae71050e8f3dc8021615faed",
+      "input_key": "db496e7cd2e9d41c66f6504fdb562dc16da98e65efd393e1a8351942b1cdfb70",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -19491,7 +19521,7 @@
       "article_id": "articles/las-upsize-05",
       "path": "en/articles/las-upsize-05.html",
       "article_sha256": "4f677f7f8785ad3317775e3425fddd9a7effbb40fd687ad685dbf0758a7bf8c5",
-      "input_key": "e3176807865b805273ee0590affd1e7cf0a7026b051999870cc7644405b0e83d",
+      "input_key": "3a463ffd2bade611e69f1bdd6facb97862de0b061460676d1910761ee2d64565",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -19554,7 +19584,7 @@
       "article_id": "articles/las-upsize-10",
       "path": "en/articles/las-upsize-10.html",
       "article_sha256": "e5c722f36a58797f43c5b0f71e79a897437399d483518cf145faa75b6a64bc53",
-      "input_key": "0093b85068493fa7b592eda954949314e11c9665dbd8d0dbce0f35bb356e928e",
+      "input_key": "f9507a1f509ea14f6f47e8c538820dece1a2c5b5174f6ccd673f0670f1f0b07e",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -19662,7 +19692,7 @@
       "article_id": "articles/lease-agreement-thailand-guide",
       "path": "en/articles/lease-agreement-thailand-guide.html",
       "article_sha256": "1c96cc084a09166d1b3f25bf414136812c251b628d7f883812f5777a6972318f",
-      "input_key": "9c24a16faeb26bd750740f09e1259f0ae93b1ef9f3e49e11cb882e4846877e74",
+      "input_key": "9a31ba6aeb0467a5084572397c1f63fe4de59a4cb8113505b6c6faf7354139c7",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -19880,7 +19910,7 @@
       "article_id": "articles/marketing-business-contracts",
       "path": "en/articles/marketing-business-contracts.html",
       "article_sha256": "9949cd3735c39accb472b8f36ada4898be3d66195600be139fa781fbfb03ca54",
-      "input_key": "e508854da813aa3bedd0091fe2f15d3d19a3fb3f8235144fbb5e41057c426c39",
+      "input_key": "99e9e79fc25b1db07d22948d5381fc7dbbe927ea58820c2c05acc7b2741a018c",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -19903,7 +19933,7 @@
       "article_id": "articles/mergers-acquisitions-thailand",
       "path": "en/articles/mergers-acquisitions-thailand.html",
       "article_sha256": "44c3e348582ab98f956cb1b1c91e6c4865eeceeb9bc9010271a6be4e95488290",
-      "input_key": "6c919fcf9f51b4aaf61f645c5876ab8a27accc9b67e35eaafbcf48c9a18679c9",
+      "input_key": "e4e4a43dd52ad4a56e78239f41e1bab68bc7cfc176b1193a045a08178231273d",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -21311,7 +21341,7 @@
       "article_id": "articles/nda-non-disclosure-agreement-thailand",
       "path": "en/articles/nda-non-disclosure-agreement-thailand.html",
       "article_sha256": "7135c38bf7ebfe5ed9dc17da69a1deec810fddf5b6610c5f28a9019be5b37e41",
-      "input_key": "140c655de6910b3263c05cd0149b00644828ff24bf2d14603851597ac639e3d0",
+      "input_key": "5fbf1c8851623dfef2281a7c7a72319fb5c52938171b54a04d784d9ad0d82c4b",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -21579,7 +21609,7 @@
       "article_id": "articles/social-media-marketing-law",
       "path": "en/articles/social-media-marketing-law.html",
       "article_sha256": "19a35a525aaddccc3e4f6be1cbd30a90328dd84499762ed9cc74d6e978c904be",
-      "input_key": "addf411e8a98a1fcde98ae9bb81ac6418e76a79c1e6dae4f281ec6430e7092d9",
+      "input_key": "56aa571c44f4fca906f47096bca5f4e7da7045c8550a2cf603cb6b45b4786209",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -21627,7 +21657,7 @@
       "article_id": "articles/solo-practitioner-ai-advantage",
       "path": "en/articles/solo-practitioner-ai-advantage.html",
       "article_sha256": "9ee4bb625f5d5bd60aae816360ebb2f2e8ec30a77099d7d529087d7630fb09fb",
-      "input_key": "fa80300d9aea60a5b3da283cb11d36965e307571cf9c034ab8fa87e82f19ac7d",
+      "input_key": "a9939d387c9ca062f7775ccc6338be0d0382fbca0d6038f673baff7f3bacfe85",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [],
@@ -21639,7 +21669,7 @@
       "article_id": "articles/transfer-pricing-thailand",
       "path": "en/articles/transfer-pricing-thailand.html",
       "article_sha256": "c6448559e0867741f61d82d8d393354a0b87da69635288dafd37ee7d7fb17d32",
-      "input_key": "1b7bb0ad3d85eb9f061df7cf43a6a71e93c2a0dd4f02027e16a1b1d6e203a628",
+      "input_key": "7b07f18cc12ddafbf1a6cadd38ac012ea71fbe5f841936248aac8adbc8250d60",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -21677,7 +21707,7 @@
       "article_id": "articles/why-lawyers-read-contracts-differently",
       "path": "en/articles/why-lawyers-read-contracts-differently.html",
       "article_sha256": "28e2725fe11495d6fe0c525ae63ebc9b3b7eaedf52fd37e40a475b3c16fa8c70",
-      "input_key": "108f9368b9c80c663abce6c8d84c050c0bdeca0f14ee68f7e1675770b65069de",
+      "input_key": "6edc478bd5c5743e96ca08f7c05a4b61b49d6773b7ca4a4284c32f45b4a75a36",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -21990,7 +22020,7 @@
       "article_id": "blog/bkk-council/shareholding-article1",
       "path": "en/blog/bkk-council/shareholding-article1.html",
       "article_sha256": "96bbba78135678754f83c40e7721be2a2a0cad629c19aede72ea41d19045d00d",
-      "input_key": "6dcca1efdad7a444845e05f905f20bc83f2ec9cdab62087a5cb1d44b9098b35e",
+      "input_key": "92b4b1553ae957218cfbf4c4b24e83860d8cfe96c94f0929e4ade9668e47f9f8",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -22928,7 +22958,7 @@
       "article_id": "blog/bkk-council/shareholding-article2",
       "path": "en/blog/bkk-council/shareholding-article2.html",
       "article_sha256": "2dbd89bc21290201165a902e213819d081c0d16c91f9c32bf38abaabe1d58f02",
-      "input_key": "75e6667be069b24207e1e8d16a9ec450ed62dc2b481429150186d334071b27af",
+      "input_key": "70166b536841bd9a3f39c920fb53e5e1fb7e2d9bef7b4ac1512464d3dbbc55a0",
       "priority": "normal",
       "status": "pending_source_packet",
       "citations": [
@@ -23097,8 +23127,7 @@
       "en/articles/pdpa-essentials-entrepreneurs.html"
     ],
     "UNBOUND:7": [
-      "articles/anti-nominee-thailand-legal-guide.html",
-      "articles/las-shield-05.html"
+      "articles/anti-nominee-thailand-legal-guide.html"
     ],
     "UNBOUND:8": [
       "articles/anti-nominee-thailand-legal-guide.html",
@@ -23418,6 +23447,7 @@
       "articles/las-cc-06.html",
       "articles/las-cc-11.html",
       "en/articles/las-cc-11.html",
+      "articles/las-shield-03.html",
       "articles/las-shield-04.html",
       "articles/las-shield-05.html",
       "articles/las-upsize-03.html",
@@ -23517,8 +23547,7 @@
     ],
     "ccc:224": [
       "articles/civil-recovery-corruption-thailand.html",
-      "articles/las-share-06.html",
-      "articles/las-shield-05.html"
+      "articles/las-share-06.html"
     ],
     "ccc:420": [
       "articles/civil-recovery-corruption-thailand.html",
@@ -26223,6 +26252,7 @@
       "en/articles/labour-protection-act-amendment-9-2568.html",
       "articles/las-shield-02.html",
       "articles/las-shield-04.html",
+      "articles/las-shield-05.html",
       "articles/las-upsize-07.html",
       "articles/pdpa-compliance-guide-business.html",
       "en/articles/pdpa-compliance-guide-business.html",
@@ -26400,6 +26430,7 @@
     "UNBOUND:62": [
       "articles/contract-document-review.html",
       "en/articles/contract-document-review.html",
+      "articles/las-shield-05.html",
       "blog/bkk-council/sk-candidate-guide.html"
     ],
     "UNBOUND:63": [
@@ -29542,7 +29573,8 @@
       "articles/las-share-10.html"
     ],
     "ucta:5": [
-      "articles/las-share-10.html"
+      "articles/las-share-10.html",
+      "articles/las-shield-03.html"
     ],
     "copyright:9": [
       "articles/las-shield-01.html"
@@ -29619,13 +29651,25 @@
     "UNBOUND:146": [
       "articles/las-shield-05.html"
     ],
+    "UNBOUND:17/1": [
+      "articles/las-shield-05.html"
+    ],
+    "UNBOUND:57/1": [
+      "articles/las-shield-05.html"
+    ],
     "ccc:583": [
       "articles/las-shield-05.html"
     ],
     "foreignwork:102": [
       "articles/las-shield-05.html"
     ],
+    "lpa:17/1": [
+      "articles/las-shield-05.html"
+    ],
     "lpa:5": [
+      "articles/las-shield-05.html"
+    ],
+    "lpa:9": [
       "articles/las-shield-05.html"
     ],
     "UNBOUND:406": [

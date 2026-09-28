@@ -10917,7 +10917,7 @@
     },
     {
       "path": "articles/las-shield-05.html",
-      "source_sha256": "3ee6f4e253dc437bb0cb1e5b0905f7b9dfc7a79a1ecc838b8b4fe6cf7dcc04f2",
+      "source_sha256": "715d4046ba199633bc4e0017620cd1360cc9803a6a684234381fecf59153804e",
       "status": "pending_source_and_semantic_review",
       "coverage_units": [
         {
@@ -10937,7 +10937,7 @@
         },
         {
           "id": "u0004",
-          "text": "ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D. | LAS Legal | อัปเดต 11 เมษายน 2569",
+          "text": "ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D. | LAS Legal | ปรับปรุงล่าสุด 28 กันยายน 2569",
           "status": "unreviewed"
         },
         {
@@ -11467,7 +11467,7 @@
         },
         {
           "id": "u0110",
-          "text": "เท่ากับค่าจ้าง 1 งวดการจ่าย",
+          "text": "คำนวณตั้งแต่วันที่ให้ออกจากงานถึงวันที่การเลิกสัญญามีผลตามมาตรา 17 วรรคสอง โดยจ่ายในวันที่ให้ออกจากงานตามมาตรา 17/1",
           "status": "unreviewed"
         },
         {
@@ -11752,7 +11752,7 @@
         },
         {
           "id": "u0167",
-          "text": "การอ้างมาตรา 119 เพื่อไม่จ่ายค่าชดเชยต้องเข้ากรณีตามวรรคหนึ่ง และถ้านายจ้างไม่ได้ระบุข้อเท็จจริงอันเป็นเหตุเลิกจ้างไว้ในหนังสือบอกเลิกหรือไม่ได้แจ้งในขณะเลิกจ้าง จะยกเหตุนั้นขึ้นอ้างในภายหลังไม่ได้ พระราชบัญญัติคุ้มครองแรงงานไม่มีอัตราเพิ่มร้อยละสิบห้าเมื่ออ้างมาตรา 119 ไม่ได้ หากต้องจ่ายค่าชดเชย ให้จ่ายตามมาตรา 118 ดอกเบี้ยผิดนัดของหนี้เงินถ้ามี อยู่ที่ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 224 คืออัตราตามมาตรา 7 บวกด้วยร้อยละสองต่อปี ไม่ใช่ร้อยละสิบห้าคงที่ในกฎหมายคุ้มครองแรงงาน Option A: บันทึกวินัยเป็นหนังสือให้ตรงอนุมาตรา | Option B: ตรวจเหตุเลิกจ้างกับทนายความก่อนออกหนังสือ",
+          "text": "การอ้างมาตรา 119 เพื่อไม่จ่ายค่าชดเชยต้องเข้ากรณีตามวรรคหนึ่ง และถ้านายจ้างไม่ได้ระบุข้อเท็จจริงอันเป็นเหตุเลิกจ้างไว้ในหนังสือบอกเลิกหรือไม่ได้แจ้งในขณะเลิกจ้าง จะยกเหตุนั้นขึ้นอ้างในภายหลังไม่ได้ พระราชบัญญัติคุ้มครองแรงงาน พ.ศ. 2541 มาตรา 9 วรรคหนึ่งกำหนดดอกเบี้ยระหว่างผิดนัดร้อยละสิบห้าต่อปีสำหรับเงินที่นายจ้างต้องจ่าย รวมถึงค่าชดเชยตามมาตรา 118 ส่วนเงินเพิ่มร้อยละสิบห้าทุกระยะเวลาเจ็ดวันตามวรรคสองมีเงื่อนไขว่านายจ้างจงใจไม่จ่ายโดยปราศจากเหตุผลอันสมควรและพ้นกำหนดเจ็ดวันนับแต่วันที่ถึงกำหนดจ่าย ต้องแยกดอกเบี้ยกับเงินเพิ่มดังกล่าว ทั้งนี้ วรรคสามกำหนดให้นายจ้างไม่ต้องเสียดอกเบี้ยหรือเงินเพิ่มตั้งแต่วันที่นำเงินไปมอบไว้แก่อธิบดีหรือผู้ซึ่งอธิบดีมอบหมายเพื่อจ่ายให้แก่ลูกจ้าง Option A: บันทึกวินัยเป็นหนังสือให้ตรงอนุมาตรา | Option B: ตรวจเหตุเลิกจ้างกับทนายความก่อนออกหนังสือ",
           "status": "unreviewed"
         },
         {
@@ -11842,12 +11842,12 @@
         },
         {
           "id": "u0185",
-          "text": "ตามที่ป่วยจริง สูงสุด 30 วัน/ปี (ได้ค่าจ้าง)",
+          "text": "ลาได้เท่าที่ป่วยจริง ส่วนสิทธิได้รับค่าจ้างจำกัดไม่เกิน 30 วันทำงานต่อปี",
           "status": "unreviewed"
         },
         {
           "id": "u0186",
-          "text": "ได้ค่าจ้าง 30 วัน",
+          "text": "ได้ค่าจ้างไม่เกิน 30 วันทำงานต่อปี",
           "status": "unreviewed"
         },
         {
@@ -11857,22 +11857,22 @@
         },
         {
           "id": "u0188",
-          "text": "ลาเพื่อกิจส่วนตัว (ลากิจ)",
+          "text": "ลาเพื่อกิจธุระอันจำเป็น",
           "status": "unreviewed"
         },
         {
           "id": "u0189",
-          "text": "ตามที่ตกลงกัน อย่างน้อย 3 วัน/ปี",
+          "text": "อย่างน้อย 3 วันทำงานต่อปี",
           "status": "unreviewed"
         },
         {
           "id": "u0190",
-          "text": "ตามที่ตกลง",
+          "text": "ได้รับค่าจ้างไม่เกิน 3 วันทำงานต่อปี",
           "status": "unreviewed"
         },
         {
           "id": "u0191",
-          "text": "ม.34",
+          "text": "มาตรา 34 และมาตรา 57/1",
           "status": "unreviewed"
         },
         {
@@ -11967,7 +11967,7 @@
         },
         {
           "id": "u0210",
-          "text": "ตามที่ตกลงกัน",
+          "text": "ตามหลักเกณฑ์และวิธีการที่กำหนดในกฎกระทรวง",
           "status": "unreviewed"
         },
         {
@@ -12182,12 +12182,12 @@
         },
         {
           "id": "u0253",
-          "text": "ทำงานในวันหยุด (วันหยุดประจำสัปดาห์)",
+          "text": "ทำงานในวันหยุด กรณีมีสิทธิได้รับค่าจ้างในวันหยุด",
           "status": "unreviewed"
         },
         {
           "id": "u0254",
-          "text": "1 เท่าเพิ่มเติม (รวมเป็น 2 เท่า)",
+          "text": "จ่ายเพิ่มจากค่าจ้างอีกไม่น้อยกว่า 1 เท่าตามชั่วโมงหรือผลงานที่ทำ ตามมาตรา 62 (1)",
           "status": "unreviewed"
         },
         {
@@ -12202,12 +12202,12 @@
         },
         {
           "id": "u0257",
-          "text": "ทำงานในวันหยุดตามประเพณี",
+          "text": "ทำงานในวันหยุด กรณีไม่มีสิทธิได้รับค่าจ้างในวันหยุด",
           "status": "unreviewed"
         },
         {
           "id": "u0258",
-          "text": "2 เท่าเพิ่มเติม (รวมเป็น 3 เท่า)",
+          "text": "จ่ายไม่น้อยกว่า 2 เท่าตามชั่วโมงหรือผลงานที่ทำ ตามมาตรา 62 (2)",
           "status": "unreviewed"
         },
         {
@@ -12267,7 +12267,7 @@
         },
         {
           "id": "u0270",
-          "text": "ผิด ม.59 ฉบับที่ 9 โทษอาญา",
+          "text": "ไม่ปฏิบัติตามมาตรา 59 มีความผิดทางพินัยตามมาตรา 146 ค่าปรับเป็นพินัยไม่เกิน 20,000 บาท",
           "status": "unreviewed"
         },
         {
@@ -12307,7 +12307,7 @@
         },
         {
           "id": "u0278",
-          "text": "ต้องจ่ายตาม ม.118 ให้ครบ ดอกเบี้ยผิดนัดถ้ามีใช้ ป.พ.พ. ม.224 ไม่ใช่ 15% ใน LPA",
+          "text": "จ่ายค่าชดเชยตามมาตรา 118 และดอกเบี้ยผิดนัดร้อยละสิบห้าต่อปีตามมาตรา 9 วรรคหนึ่ง ส่วนเงินเพิ่มตามวรรคสองต้องตรวจเงื่อนไขแยกต่างหาก",
           "status": "unreviewed"
         },
         {
@@ -12657,7 +12657,7 @@
         },
         {
           "id": "u0348",
-          "text": "สอดคล้อง ปพพ. ม.17",
+          "text": "ตรวจสอบตามพระราชบัญญัติคุ้มครองแรงงาน พ.ศ. 2541 มาตรา 17 และมาตรา 17/1",
           "status": "unreviewed"
         },
         {
@@ -13149,7 +13149,7 @@
             "url": "https://laslegal.co.th"
           },
           "datePublished": "2026-04-03",
-          "dateModified": "2026-04-11",
+          "dateModified": "2026-09-28",
           "inLanguage": "th",
           "about": {
             "@type": "Legislation",
@@ -13253,12 +13253,22 @@
         },
         {
           "statute": null,
+          "section": "17/1",
+          "binding_status": "unresolved"
+        },
+        {
+          "statute": null,
           "section": "23",
           "binding_status": "unresolved"
         },
         {
           "statute": null,
           "section": "30",
+          "binding_status": "unresolved"
+        },
+        {
+          "statute": null,
+          "section": "34",
           "binding_status": "unresolved"
         },
         {
@@ -13288,6 +13298,11 @@
         },
         {
           "statute": null,
+          "section": "57/1",
+          "binding_status": "unresolved"
+        },
+        {
+          "statute": null,
           "section": "59",
           "binding_status": "unresolved"
         },
@@ -13298,18 +13313,13 @@
         },
         {
           "statute": null,
-          "section": "7",
+          "section": "62",
           "binding_status": "unresolved"
         },
         {
           "statute": null,
           "section": "9",
           "binding_status": "unresolved"
-        },
-        {
-          "statute": "ccc",
-          "section": "224",
-          "binding_status": "candidate"
         },
         {
           "statute": "ccc",
@@ -13353,6 +13363,11 @@
         },
         {
           "statute": "lpa",
+          "section": "17/1",
+          "binding_status": "candidate"
+        },
+        {
+          "statute": "lpa",
           "section": "4/1",
           "binding_status": "candidate"
         },
@@ -13379,6 +13394,11 @@
         {
           "statute": "lpa",
           "section": "59/2",
+          "binding_status": "candidate"
+        },
+        {
+          "statute": "lpa",
+          "section": "9",
           "binding_status": "candidate"
         }
       ],
@@ -19759,7 +19779,7 @@
     },
     {
       "path": "articles/ai-legal-tech-thailand.html",
-      "source_sha256": "9375d5e45ab1b6410ee455ca4359c60a37983e5e830552c7915c28d8a693b3fe",
+      "source_sha256": "c54b09bef96df8ef963398550d8908260c21fc6d76e5d20d324387dc2f0dcfa3",
       "status": "pending_source_and_semantic_review",
       "coverage_units": [
         {
@@ -19769,7 +19789,7 @@
         },
         {
           "id": "u0002",
-          "text": "Content updated: 28 September 2026 — lease-duration clarification.",
+          "text": "Content updated: 28 September 2026 — lease-duration and AI-assistance clarifications.",
           "status": "unreviewed"
         },
         {
@@ -20339,7 +20359,7 @@
         },
         {
           "id": "u0116",
-          "text": "— The system is trained and fine-tuned specifically for Thai legal texts, including the unique terminology, citation conventions, and reasoning patterns of Thai courts. This is not a generic English-language legal AI with a translation layer; it understands Thai law natively.",
+          "text": "— Thai legal research requires checking terminology, citations, and context against the original Thai sources. Retrieval of legal material does not, by itself, establish that a model has been trained or fine-tuned for Thai law. Lawyers must verify the sources and the resulting analysis before relying on an output.",
           "status": "unreviewed"
         },
         {
@@ -20424,7 +20444,7 @@
         },
         {
           "id": "u0133",
-          "text": "— Creating compliant consent notices tailored to specific data collection purposes",
+          "text": "— Preparing draft consent notices tailored to specific data collection purposes, subject to legal review of the facts and applicable requirements",
           "status": "unreviewed"
         },
         {
@@ -20809,7 +20829,7 @@
         },
         {
           "id": "u0210",
-          "text": "AI assists with Thailand's Personal Data Protection Act (PDPA) compliance by automating privacy impact assessments, scanning data processing agreements for gaps, generating compliant consent forms, mapping data flows across organizations, and monitoring regulatory updates from the PDPC. The LAS system integrates PDPA advisory as a core module, helping businesses maintain continuous compliance rather than relying on one-time audits.",
+          "text": "AI assists with Thailand's Personal Data Protection Act (PDPA) compliance by automating privacy impact assessments, scanning data processing agreements for gaps, preparing draft consent notices for review by a lawyer, mapping data flows across organizations, and monitoring regulatory updates from the PDPC. The LAS system integrates PDPA advisory as a core module, helping businesses maintain continuous compliance rather than relying on one-time audits.",
           "status": "unreviewed"
         },
         {
@@ -21023,7 +21043,7 @@
               "name": "How does AI help with PDPA compliance in Thailand?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "AI assists with Thailand's Personal Data Protection Act (PDPA) compliance by automating privacy impact assessments, scanning data processing agreements for gaps, generating compliant consent forms, mapping data flows across organizations, and monitoring regulatory updates from the PDPC (Personal Data Protection Committee). Thundthornthep Yamoutai, Ph.D.'s LAS system integrates PDPA advisory as a core module, helping businesses maintain continuous compliance rather than relying on one-time audits."
+                "text": "AI assists with Thailand's Personal Data Protection Act (PDPA) compliance by automating privacy impact assessments, scanning data processing agreements for gaps, preparing draft consent notices for review by a lawyer, mapping data flows across organizations, and monitoring regulatory updates from the PDPC (Personal Data Protection Committee). Thundthornthep Yamoutai, Ph.D.'s LAS system integrates PDPA advisory as a core module, helping businesses maintain continuous compliance rather than relying on one-time audits."
               }
             },
             {
@@ -21073,7 +21093,7 @@
     },
     {
       "path": "en/articles/ai-legal-tech-thailand.html",
-      "source_sha256": "97d9dd3886b01aad05bf2f20f1427e4cfd69d61df04fa2d0afbbb80a9e30efc9",
+      "source_sha256": "34710507633a2f812f4778fe0b8de616c74857019bf49ba7e0af1b91b7a950f0",
       "status": "pending_source_and_semantic_review",
       "coverage_units": [
         {
@@ -21148,7 +21168,7 @@
         },
         {
           "id": "u0015",
-          "text": "Content updated: 28 September 2026 — lease-duration clarification.",
+          "text": "Content updated: 28 September 2026 — lease-duration and AI-assistance clarifications.",
           "status": "unreviewed"
         },
         {
@@ -21623,7 +21643,7 @@
         },
         {
           "id": "u0110",
-          "text": "— The system is trained and fine-tuned specifically for Thai legal texts, including the unique terminology, citation conventions, and reasoning patterns of Thai courts. This is not a generic English-language legal AI with a translation layer; it understands Thai law natively.",
+          "text": "— Thai legal research requires checking terminology, citations, and context against the original Thai sources. Retrieval of legal material does not, by itself, establish that a model has been trained or fine-tuned for Thai law. Lawyers must verify the sources and the resulting analysis before relying on an output.",
           "status": "unreviewed"
         },
         {
@@ -21703,7 +21723,7 @@
         },
         {
           "id": "u0126",
-          "text": "— Creating compliant consent notices tailored to specific data collection purposes",
+          "text": "— Preparing draft consent notices tailored to specific data collection purposes, subject to legal review of the facts and applicable requirements",
           "status": "unreviewed"
         },
         {
@@ -22098,7 +22118,7 @@
         },
         {
           "id": "u0205",
-          "text": "AI assists with Thailand's Personal Data Protection Act (PDPA) compliance by automating privacy impact assessments, scanning data processing agreements for gaps, generating compliant consent forms, mapping data flows across organizations, and monitoring regulatory updates from the PDPC. The LAS system integrates PDPA advisory as a core module, helping businesses maintain continuous compliance rather than relying on one-time audits.",
+          "text": "AI assists with Thailand's Personal Data Protection Act (PDPA) compliance by automating privacy impact assessments, scanning data processing agreements for gaps, preparing draft consent notices for review by a lawyer, mapping data flows across organizations, and monitoring regulatory updates from the PDPC. The LAS system integrates PDPA advisory as a core module, helping businesses maintain continuous compliance rather than relying on one-time audits.",
           "status": "unreviewed"
         },
         {
@@ -22330,7 +22350,7 @@
               "name": "How does AI help with PDPA compliance in Thailand?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "AI assists with Thailand's Personal Data Protection Act (PDPA) compliance by automating privacy impact assessments, scanning data processing agreements for gaps, generating compliant consent forms, mapping data flows across organizations, and monitoring regulatory updates from the PDPC. The LAS system integrates PDPA advisory as a core module, helping businesses maintain continuous compliance rather than relying on one-time audits."
+                "text": "AI assists with Thailand's Personal Data Protection Act (PDPA) compliance by automating privacy impact assessments, scanning data processing agreements for gaps, preparing draft consent notices for review by a lawyer, mapping data flows across organizations, and monitoring regulatory updates from the PDPC. The LAS system integrates PDPA advisory as a core module, helping businesses maintain continuous compliance rather than relying on one-time audits."
               }
             },
             {

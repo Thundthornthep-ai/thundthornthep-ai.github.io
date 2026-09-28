@@ -11,7 +11,7 @@
     {
       "path": "articles/ai-legal-tech-thailand.html",
       "kind": "article",
-      "source_sha256": "9375d5e45ab1b6410ee455ca4359c60a37983e5e830552c7915c28d8a693b3fe",
+      "source_sha256": "c54b09bef96df8ef963398550d8908260c21fc6d76e5d20d324387dc2f0dcfa3",
       "embedded_css_sha256": "981877ce4b174437eb47807ac26cea89b4beb1d72eecb911efafa6bfad6b4649",
       "template_hint": "wiki-wrapper",
       "inline_style_count": 8,
@@ -41,7 +41,7 @@
     {
       "path": "en/articles/ai-legal-tech-thailand.html",
       "kind": "article",
-      "source_sha256": "97d9dd3886b01aad05bf2f20f1427e4cfd69d61df04fa2d0afbbb80a9e30efc9",
+      "source_sha256": "34710507633a2f812f4778fe0b8de616c74857019bf49ba7e0af1b91b7a950f0",
       "embedded_css_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "template_hint": "other",
       "inline_style_count": 11,
@@ -2559,7 +2559,7 @@
     {
       "path": "articles/las-shield-03.html",
       "kind": "article",
-      "source_sha256": "d4aedc38a49ecda6aee0e13f9f879ff3d112e65ca3f5ba995ad7547aee6352ce",
+      "source_sha256": "057609ac7b6699e823b6c14b95855ec6c2ecc5847773af36765bb6ef39f4a351",
       "embedded_css_sha256": "1b444cdde70d01e77ba69f802b3f1df8d06cda62cb7b8d54a5fdf72368f685bc",
       "template_hint": "wiki-wrapper",
       "inline_style_count": 23,
@@ -2649,7 +2649,7 @@
     {
       "path": "articles/las-shield-05.html",
       "kind": "article",
-      "source_sha256": "3ee6f4e253dc437bb0cb1e5b0905f7b9dfc7a79a1ecc838b8b4fe6cf7dcc04f2",
+      "source_sha256": "715d4046ba199633bc4e0017620cd1360cc9803a6a684234381fecf59153804e",
       "embedded_css_sha256": "93feb916f8a15ff6ae1767184234bae3f55a991ba8c41c0d689d866d731fc92d",
       "template_hint": "wiki-wrapper",
       "inline_style_count": 23,
