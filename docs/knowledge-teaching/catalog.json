@@ -1971,10 +1971,10 @@
       "variants": [
         {
           "path": "articles/las-shield-05.html",
-          "title": "กฎหมายแรงงานสำหรับนายจ้าง — พ.ร.บ.คุ้มครองแรงงาน พ.ศ. 2541 (แก้ไขเพิ่มเติมถึงฉบับที่ 9 พ.ศ. 2568)",
+          "title": "กฎหมายแรงงานสำหรับนายจ้าง — พระราชบัญญัติคุ้มครองแรงงาน พ.ศ. 2541 (แก้ไขเพิ่มเติมถึงฉบับที่ 9 พ.ศ. 2568)",
           "language": "th",
-          "sha256": "fbd0b6e2fce6fc200dd8d32cc28286e50f7a883f421281e77d660f0d1a6137f0",
-          "text_sha256": "12f034c22b56a323eeaefe3ded21079a798ca070b16bbe2af9b85bba698b0fc9",
+          "sha256": "269d7be9ec744bfe92f1edd4ae08a7f84ef70d386209f046abc5366707b14aec",
+          "text_sha256": "dc5ed8d0a52fb2fb9891b7cd0d3fc747966f4e2da8728ffba6549b432646c0dd",
           "published": "2026-04-03",
           "modified": "2026-09-28",
           "url": "https://thundthornthep-ai.github.io/articles/las-shield-05.html",

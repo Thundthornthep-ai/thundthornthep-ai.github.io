@@ -39,13 +39,20 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 123
 - มาตรา 144
 - มาตรา 146
-
+- มาตรา 4
 - มาตรา 17/1
-
+- มาตรา 24
+- มาตรา 25
+- มาตรา 33
+- มาตรา 35
+- มาตรา 36
+- มาตรา 56
 - มาตรา 57
-
 - มาตรา 57/1
-
+- มาตรา 58
+- มาตรา 61
 - มาตรา 62
+- มาตรา 63
+- มาตรา 65
 
-Source note (2026-09-28): additions 17/1, 57, 57/1 and 62 checked in the OCS consolidated PDF `laws/labour-protection-act-2541-amendment9.pdf`. Corroborating Ministry of Labour copy: https://www.mol.go.th/wp-content/uploads/sites/2/1998/01/labour_protection_2541_new62.pdf (older consolidation; used only for these unchanged provisions, not maternity amendments). Registry membership does not approve article interpretation.
+Index additions checked against the OCS consolidated text (11 December 2568 print), physical pages 1, 6–10, 14–16. See docs/legal-reviews/shield05-2026-09-28.md. Section existence does not certify explanatory claims.
