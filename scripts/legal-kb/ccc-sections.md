@@ -153,6 +153,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 193/24
 - มาตรา 193/29
 - มาตรา 193/30
+- มาตรา 193/31
 - มาตรา 193/32
 - มาตรา 193/33
 - มาตรา 193/34

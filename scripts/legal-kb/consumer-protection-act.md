@@ -11,4 +11,6 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 4
 - มาตรา 22
 - มาตรา 24
+- มาตรา 26
 - มาตรา 35
+- มาตรา 47

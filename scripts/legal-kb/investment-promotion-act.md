@@ -8,6 +8,8 @@ Official source: https://www.ocs.go.th/searchlaw-law
 
 Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
+- มาตรา 16
+- มาตรา 17
 - มาตรา 25
 - มาตรา 27
 - มาตรา 28
@@ -16,3 +18,5 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 35
 - มาตรา 36
 - มาตรา 37
+- มาตรา 55
+- มาตรา 55/1
