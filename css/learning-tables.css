@@ -18,3 +18,13 @@
  .las-reading-table thead { display:table-header-group; }
  .las-reading-table tr { break-inside:avoid; }
 }
+
+/* LAS review marks + risk rows — scripts/legal/format-learning-tables.py (las-billing), 29 ก.ย. 2569 */
+.las-knowledge-article .las-reading-table tr.las-risk-high > td { background:#fbe9e7; border-left:4px solid #C0392B; }
+.las-knowledge-article .las-reading-table tr.las-risk-med > td { background:#fdf1e3; border-left:4px solid #E67E22; }
+.las-knowledge-article .las-reading-table tr.las-risk-low > td { background:#e9f6ec; border-left:4px solid #27AE60; }
+.las-knowledge-article .las-reading-table tr:is(.las-risk-high,.las-risk-med,.las-risk-low) > td:not(:first-child) { border-left:1px solid #a5afa9; }
+.las-reviewed-mark { display:inline-block; margin-left:.35em; padding:0 .45em; border-radius:999px; background:#27AE60; color:#fff; font-size:.55em; line-height:1.7; vertical-align:middle; font-weight:700; }
+.las-review-date { margin:.25rem 0 1rem; font-size:.95rem; color:#5c728a; }
+.las-review-date b { color:#27AE60; }
+a .las-reviewed-mark { font-size:.75em; margin-left:.3em; }

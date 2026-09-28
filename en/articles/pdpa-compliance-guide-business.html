@@ -119,6 +119,7 @@
 <link rel="stylesheet" href="/css/wiki-theme.css">
 <!-- [[/THEME-MIGRATION-v1]] -->
 <link rel="stylesheet" href="/css/article-brand.css">
+<link rel="stylesheet" href="/css/learning-tables.css?v=20260929">
 </head>
 <body data-lang="th">
 
@@ -537,53 +538,54 @@
 
     <p>The Personal Data Protection Act B.E. 2562 (2019) establishes penalties across three distinct legal tracks — administrative, civil, and criminal — which may all apply concurrently to the same violation. The potential cumulative financial exposure is therefore substantially greater than any single penalty category suggests.</p>
 
-    <table class="penalty-table">
+    <div class="las-table-scroll" role="region" aria-label="Article table — scroll horizontally to read" tabindex="0">
+<table class="penalty-table las-reading-table las-wide-table">
       <thead>
         <tr>
-          <th>Penalty Type</th>
-          <th>Offense</th>
-          <th>Maximum Penalty</th>
-          <th>Section</th>
+          <th scope="col">Penalty Type</th>
+          <th scope="col">Offense</th>
+          <th scope="col">Maximum Penalty</th>
+          <th scope="col">Section</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr class="las-risk-high">
           <td><span class="risk-high">🔴 Criminal</span></td>
           <td>Collecting sensitive personal data without lawful basis or misusing it for personal gain</td>
           <td>Imprisonment up to 1 year and/or fine up to THB 1,000,000</td>
           <td>Section 90</td>
         </tr>
-        <tr>
+        <tr class="las-risk-high">
           <td><span class="risk-high">🔴 Criminal</span></td>
           <td>Intentional violation of data subject rights, disclosure of data known to be confidential</td>
           <td>Imprisonment up to 6 months and/or fine up to THB 500,000</td>
           <td>Section 89</td>
         </tr>
-        <tr>
+        <tr class="las-risk-med">
           <td><span class="risk-medium">🟡 Civil</span></td>
           <td>Unlawful processing of personal data causing damage to a data subject</td>
           <td>Actual compensatory damages + punitive damages up to 2x actual loss</td>
           <td>Section 86</td>
         </tr>
-        <tr>
+        <tr class="las-risk-med">
           <td><span class="risk-medium">🟡 Administrative</span></td>
           <td>Failure to implement appropriate security measures to protect personal data</td>
           <td>Fine up to THB 1,000,000</td>
           <td>Section 83</td>
         </tr>
-        <tr>
+        <tr class="las-risk-med">
           <td><span class="risk-medium">🟡 Administrative</span></td>
           <td>Failure to maintain a RoPA or to appoint a DPO where mandatory</td>
           <td>Fine up to THB 1,000,000</td>
           <td>Section 82</td>
         </tr>
-        <tr>
+        <tr class="las-risk-high">
           <td><span class="risk-high">🔴 Administrative</span></td>
           <td>Collecting, using, or disclosing sensitive personal data without a lawful basis</td>
           <td>Fine up to THB 5,000,000</td>
           <td>Section 84</td>
         </tr>
-        <tr>
+        <tr class="las-risk-high">
           <td><span class="risk-high">🔴 Administrative</span></td>
           <td>Unlawful cross-border transfer of personal data</td>
           <td>Fine up to THB 5,000,000</td>
@@ -591,6 +593,7 @@
         </tr>
       </tbody>
     </table>
+</div>
 
     <div class="warning-box">
       <div class="label">⚠ Cumulative Risk Warning</div>

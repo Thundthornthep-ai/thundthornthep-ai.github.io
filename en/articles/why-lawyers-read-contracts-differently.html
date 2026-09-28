@@ -112,6 +112,7 @@
   @media (max-width: 640px) { .wiki-wrapper { padding: 12px 10px 24px; } }
 </style>
 <link rel="stylesheet" href="/css/article-brand.css">
+<link rel="stylesheet" href="/css/learning-tables.css?v=20260929">
 </head>
 <body>
 <div class="wiki-wrapper">
@@ -188,14 +189,16 @@
 
 <p>Risk allocation is frequently embedded in seemingly innocuous language that non-lawyers read past without a second thought.</p>
 
-<table>
-  <tr><th>Contract Language</th><th>Hidden Meaning</th><th>Risk Level</th></tr>
+<div class="las-table-scroll" role="region" aria-label="Article table — scroll horizontally to read" tabindex="0">
+<table class="las-reading-table">
+  <tr><th scope="col">Contract Language</th><th scope="col">Hidden Meaning</th><th scope="col">Risk Level</th></tr>
   <tr><td>"The Contractor warrants that..."</td><td>The Contractor assumes all risk on this point</td><td><span class="risk-high">High</span></td></tr>
   <tr><td>"To the best of its knowledge"</td><td>Limits liability to what the party actually knew &mdash; no duty to investigate or discover</td><td><span class="risk-med">Medium</span></td></tr>
   <tr><td>"Reasonable efforts"</td><td>Very different from "Best efforts" &mdash; a lower standard that requires only commercially sensible attempts</td><td><span class="risk-med">Medium</span></td></tr>
   <tr><td>"Under no circumstances whatsoever"</td><td>Absolute exclusion with no exceptions &mdash; extremely broad carve-out</td><td><span class="risk-high">High</span></td></tr>
   <tr><td>"The Parties mutually agree..."</td><td>Both parties share the burden equally</td><td><span class="risk-low">Low</span></td></tr>
 </table>
+</div>
 
 <p>Lawyers read every clause through the lens of risk allocation, categorizing each provision as favoring one party or the other, and then assessing whether the <b>overall balance</b> of the contract is fair. A contract where 80% of the risk sits on one side is not inherently wrong &mdash; but the party bearing that risk should at least be aware of it before signing.</p>
 

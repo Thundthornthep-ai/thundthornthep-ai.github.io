@@ -45,6 +45,7 @@
 <link rel="stylesheet" href="/css/wiki-theme.css">
 <!-- [[/THEME-MIGRATION-v1]] -->
 <link rel="stylesheet" href="/css/article-brand.css">
+<link rel="stylesheet" href="/css/learning-tables.css?v=20260929">
 </head>
 <body data-lang="th">
 
@@ -139,13 +140,14 @@
 <p>ในทางปฏิบัติ เหตุการณ์หนึ่งมักเข้าข่ายหลายประเภทพร้อมกัน ตัวอย่างเช่น Ransomware Attack อาจเป็นทั้ง Confidentiality Breach (ถ้าแฮกเกอร์คัดลอกข้อมูลออกไปก่อนเข้ารหัส), Integrity Breach (ถ้ามีการแก้ไขข้อมูลบางส่วน) และ Availability Breach (ถ้าข้อมูลถูกเข้ารหัสจนเข้าถึงไม่ได้) การประเมินต้องพิจารณาทุกมิติ ไม่ใช่เลือกแค่ประเภทเดียว</p>
 </div>
 
-<table class="rt">
+<div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="rt las-reading-table las-wide-table">
   <thead>
     <tr>
-      <th>ประเภท</th>
-      <th>ลักษณะ</th>
-      <th>ตัวอย่างทั่วไป</th>
-      <th>ระดับความเสี่ยง</th>
+      <th scope="col">ประเภท</th>
+      <th scope="col">ลักษณะ</th>
+      <th scope="col">ตัวอย่างทั่วไป</th>
+      <th scope="col">ระดับความเสี่ยง</th>
     </tr>
   </thead>
   <tbody>
@@ -169,6 +171,7 @@
     </tr>
   </tbody>
 </table>
+</div>
 </section>
 
 <!-- S3: Legal Framework -->
@@ -238,13 +241,14 @@
 
 <p>พิจารณาจากปัจจัยต่อไปนี้:</p>
 
-<table class="rt">
+<div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="rt las-reading-table las-wide-table">
   <thead>
     <tr>
-      <th>ปัจจัย</th>
-      <th>ความรุนแรงต่ำ (1)</th>
-      <th>ความรุนแรงกลาง (2)</th>
-      <th>ความรุนแรงสูง (3)</th>
+      <th scope="col">ปัจจัย</th>
+      <th scope="col">ความรุนแรงต่ำ (1)</th>
+      <th scope="col">ความรุนแรงกลาง (2)</th>
+      <th scope="col">ความรุนแรงสูง (3)</th>
     </tr>
   </thead>
   <tbody>
@@ -274,18 +278,20 @@
     </tr>
   </tbody>
 </table>
+</div>
 
 <h3 class="sub">มิติที่ 2: ความน่าจะเป็น (Likelihood)</h3>
 
 <p>พิจารณาจากปัจจัยต่อไปนี้:</p>
 
-<table class="rt">
+<div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="rt las-reading-table las-wide-table">
   <thead>
     <tr>
-      <th>ปัจจัย</th>
-      <th>ต่ำ (1)</th>
-      <th>กลาง (2)</th>
-      <th>สูง (3)</th>
+      <th scope="col">ปัจจัย</th>
+      <th scope="col">ต่ำ (1)</th>
+      <th scope="col">กลาง (2)</th>
+      <th scope="col">สูง (3)</th>
     </tr>
   </thead>
   <tbody>
@@ -309,17 +315,19 @@
     </tr>
   </tbody>
 </table>
+</div>
 
 <h3 class="sub">การคำนวณ Risk Score</h3>
 
 <div class="hb gold">
 <h4>สูตรประเมิน: Risk Score = Severity x Likelihood</h4>
-<table class="rt" style="margin:12px 0 0 0;">
+<div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="rt las-reading-table" style="margin:12px 0 0 0;">
   <thead>
     <tr>
-      <th>Risk Score</th>
-      <th>ระดับ</th>
-      <th>การดำเนินการ</th>
+      <th scope="col">Risk Score</th>
+      <th scope="col">ระดับ</th>
+      <th scope="col">การดำเนินการ</th>
     </tr>
   </thead>
   <tbody>
@@ -341,6 +349,7 @@
   </tbody>
 </table>
 </div>
+</div>
 
 <div class="hb w">
 <h4>ข้อสังเกตสำคัญ: การตัดสินใจ "ไม่แจ้ง" มีความเสี่ยงสูงกว่าที่คิด</h4>
@@ -356,12 +365,13 @@
 
 <h3 class="sub">Timeline การตอบสนอง (Incident Response Timeline)</h3>
 
-<table class="rt">
+<div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="rt las-reading-table">
   <thead>
     <tr>
-      <th>ชั่วโมงที่</th>
-      <th>การดำเนินการ</th>
-      <th>ผู้รับผิดชอบ</th>
+      <th scope="col">ชั่วโมงที่</th>
+      <th scope="col">การดำเนินการ</th>
+      <th scope="col">ผู้รับผิดชอบ</th>
     </tr>
   </thead>
   <tbody>
@@ -397,6 +407,7 @@
     </tr>
   </tbody>
 </table>
+</div>
 
 <div class="lc">
 <strong>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 37(4) + ประกาศ สคส. พ.ศ. 2565:</strong><br>
@@ -565,12 +576,13 @@
 
 <h3 class="sub">โทษทางปกครอง</h3>
 
-<table class="rt">
+<div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="rt las-reading-table">
   <thead>
     <tr>
-      <th>ฐานความผิด</th>
-      <th>มาตรา</th>
-      <th>โทษปรับสูงสุด</th>
+      <th scope="col">ฐานความผิด</th>
+      <th scope="col">มาตรา</th>
+      <th scope="col">โทษปรับสูงสุด</th>
     </tr>
   </thead>
   <tbody>
@@ -591,6 +603,7 @@
     </tr>
   </tbody>
 </table>
+</div>
 
 <h3 class="sub">ความรับผิดทางแพ่ง</h3>
 
@@ -614,12 +627,13 @@
 
 <div class="hb gold">
 <h4>LAS Risk Shield: 3 ระดับ สำหรับ Data Breach</h4>
-<table class="rt" style="margin:12px 0 0 0;">
+<div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="rt las-reading-table" style="margin:12px 0 0 0;">
   <thead>
     <tr>
-      <th>ระดับ</th>
-      <th>หลักการ</th>
-      <th>การประยุกต์ใช้กับ Data Breach</th>
+      <th scope="col">ระดับ</th>
+      <th scope="col">หลักการ</th>
+      <th scope="col">การประยุกต์ใช้กับ Data Breach</th>
     </tr>
   </thead>
   <tbody>
@@ -640,6 +654,7 @@
     </tr>
   </tbody>
 </table>
+</div>
 </div>
 
 <h3 class="sub">ข้อสัญญาที่ต้องมีใน DPA (Data Processing Agreement)</h3>
