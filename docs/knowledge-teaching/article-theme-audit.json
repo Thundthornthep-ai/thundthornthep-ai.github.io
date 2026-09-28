@@ -2559,7 +2559,7 @@
     {
       "path": "articles/las-shield-03.html",
       "kind": "article",
-      "source_sha256": "f01659cb6164f96eeda8595b05c115ef8d937b0814c31e9f7ea097548c4e6c87",
+      "source_sha256": "1b681500885bdd87145973a6c4c332282504b90b35f9ef23beb30b55e5e973d6",
       "embedded_css_sha256": "1b444cdde70d01e77ba69f802b3f1df8d06cda62cb7b8d54a5fdf72368f685bc",
       "template_hint": "wiki-wrapper",
       "inline_style_count": 23,
@@ -2592,7 +2592,9 @@
         "#888": 1,
         "#777": 1
       },
-      "stylesheets": [],
+      "stylesheets": [
+        "/css/knowledge-article-theme.css"
+      ],
       "semantic_risk_classes": [
         "success-box",
         "verdict-risk",
@@ -2649,7 +2651,7 @@
     {
       "path": "articles/las-shield-05.html",
       "kind": "article",
-      "source_sha256": "c51905355982c14c547289a48bf677ba2b3b2fa7c192021be9ffac5a68d81137",
+      "source_sha256": "fbd0b6e2fce6fc200dd8d32cc28286e50f7a883f421281e77d660f0d1a6137f0",
       "embedded_css_sha256": "93feb916f8a15ff6ae1767184234bae3f55a991ba8c41c0d689d866d731fc92d",
       "template_hint": "wiki-wrapper",
       "inline_style_count": 23,
@@ -2679,7 +2681,9 @@
         "#ddd": 1,
         "#777": 1
       },
-      "stylesheets": [],
+      "stylesheets": [
+        "/css/knowledge-article-theme.css"
+      ],
       "semantic_risk_classes": [
         "risk-high",
         "risk-high-title",

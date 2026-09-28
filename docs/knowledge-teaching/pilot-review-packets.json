@@ -10917,7 +10917,7 @@
     },
     {
       "path": "articles/las-shield-05.html",
-      "source_sha256": "c51905355982c14c547289a48bf677ba2b3b2fa7c192021be9ffac5a68d81137",
+      "source_sha256": "fbd0b6e2fce6fc200dd8d32cc28286e50f7a883f421281e77d660f0d1a6137f0",
       "status": "pending_source_and_semantic_review",
       "coverage_units": [
         {

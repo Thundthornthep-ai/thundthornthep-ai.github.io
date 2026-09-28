@@ -32,6 +32,16 @@ body.las-knowledge-article {
 .las-knowledge-article .article-hero h1 { color: var(--las-ink); }
 .las-knowledge-article .article-hero :is(.subtitle,.meta,.category-badge) { color: var(--las-link); }
 .las-knowledge-article .article-hero .category-badge { background: var(--las-paper); border-color: var(--las-border); }
+/* Shield reading surfaces; semantic warning backgrounds remain unchanged. */
+.las-knowledge-article.las-shield-reading :is(.highlight-box,.checklist-box,.las-shield-box) {
+  background: #f5f0e6; color: var(--las-ink); border: 1px solid var(--las-border);
+  border-left: 4px solid var(--las-primary);
+}
+.las-knowledge-article.las-shield-reading :is(h4,.checklist-box h4,.las-shield-box h4) { color: var(--las-link); }
+.las-knowledge-article.las-shield-reading :is(.faq-item,.faq-a,.wiki-footer) { border-color: var(--las-border); }
+.las-knowledge-article.las-shield-reading tr:nth-child(even) { background: #f5f0e6; }
+.las-knowledge-article.las-shield-reading :is(.medium-box strong,.risk-medium-title) { color: #784212; }
+.las-knowledge-article.las-shield-reading :is(.success-box,.success-box strong,.risk-low-title) { color: #17643a; }
 @media print {
   body.las-knowledge-article,
   .las-knowledge-article :is(.wiki-wrapper,.article-container) { background: #fff; color: #000; }
