@@ -15,6 +15,11 @@
   var CREDS_KEY = 'las_hub_creds';
   var SETTINGS_URL = '/auth-settings.html';
 
+  // Local previews are restricted to this machine by the loopback address.
+  // Keep the production gate unchanged for every non-loopback hostname.
+  var LOCAL_HOSTS = ['localhost', '127.0.0.1', '::1', '[::1]'];
+  if (LOCAL_HOSTS.indexOf(window.location.hostname) !== -1) return;
+
   function getCreds() {
     try {
       var raw = localStorage.getItem(CREDS_KEY);
