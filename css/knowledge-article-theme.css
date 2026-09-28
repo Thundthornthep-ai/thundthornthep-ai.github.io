@@ -1,0 +1,39 @@
+/* Opt-in article reading theme. Risk/alert/status classes retain their own colors. */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap');
+body.las-knowledge-article {
+  --las-page: #f8f4ec; --las-paper: #fffdf8; --las-ink: #2c303a;
+  --las-primary: #5c728a; --las-link: #40536a; --las-border: #ded4c4;
+  background: var(--las-page); color: var(--las-ink);
+  font-family: 'Noto Sans Thai', system-ui, sans-serif;
+}
+.las-knowledge-article :is(.wiki-wrapper,.article-container) {
+  background: var(--las-paper); border-color: var(--las-border);
+}
+.las-knowledge-article :is(h1,h2,h3,h4) {
+  font-family: 'IBM Plex Sans Thai','Noto Sans Thai',system-ui,sans-serif;
+  border-color: var(--las-border);
+}
+.las-knowledge-article :is(.wiki-wrapper,.article-container,.breadcrumb) a {
+  color: var(--las-link); text-decoration: underline; text-underline-offset: .18em;
+}
+.las-knowledge-article a:focus-visible {
+  outline: 2px solid var(--las-link); outline-offset: 3px;
+}
+.las-knowledge-article :is(.info-box,.section-box,.toc,.faq-section,.legal-tags,.lawquote) {
+  background: #f5f0e6; border-color: var(--las-border); color: var(--las-ink);
+}
+.las-knowledge-article :is(.info-box,.lawquote) { border-left-color: var(--las-primary); }
+.las-knowledge-article :is(.faq-q,.lawquote .head,.legal-tags span) { color: var(--las-link); }
+.las-knowledge-article .legal-tags span { background: var(--las-paper); border-color: var(--las-border); }
+.las-knowledge-article :is(th,td) { border-color: var(--las-border); }
+.las-knowledge-article th { background: #eee7dc; color: var(--las-ink); }
+.las-knowledge-article .series-badge { background: var(--las-primary); color: var(--las-paper); }
+.las-knowledge-article .article-hero { background: #eee7dc; border-color: var(--las-border); }
+.las-knowledge-article .article-hero h1 { color: var(--las-ink); }
+.las-knowledge-article .article-hero :is(.subtitle,.meta,.category-badge) { color: var(--las-link); }
+.las-knowledge-article .article-hero .category-badge { background: var(--las-paper); border-color: var(--las-border); }
+@media print {
+  body.las-knowledge-article,
+  .las-knowledge-article :is(.wiki-wrapper,.article-container) { background: #fff; color: #000; }
+  .las-knowledge-article a { color: #000; }
+}

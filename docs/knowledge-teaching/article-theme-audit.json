@@ -11,7 +11,7 @@
     {
       "path": "articles/ai-legal-tech-thailand.html",
       "kind": "article",
-      "source_sha256": "aad79ee5dec65d54f64dce6cb04435c0d09aadebac5c3af641a4602f25ce5b05",
+      "source_sha256": "13d6b13a9b612886b9b0764578e858f75b5351722b802bac40c3f0a58dd38683",
       "embedded_css_sha256": "981877ce4b174437eb47807ac26cea89b4beb1d72eecb911efafa6bfad6b4649",
       "template_hint": "wiki-wrapper",
       "inline_style_count": 8,
@@ -32,20 +32,23 @@
         "#ddd": 1,
         "#777": 1
       },
-      "stylesheets": [],
+      "stylesheets": [
+        "/css/knowledge-article-theme.css"
+      ],
       "semantic_risk_classes": [],
       "status": "pending_rendered_review"
     },
     {
       "path": "en/articles/ai-legal-tech-thailand.html",
       "kind": "article",
-      "source_sha256": "5a5c1dac0fe5011760e3aed4f69fb476ab68e7e66eae199d647e63cd3212f3e3",
+      "source_sha256": "d09d2ab4f6390278689d8c3f9671a0cf1160dff158c6eb43c89455814e2ac917",
       "embedded_css_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "template_hint": "other",
       "inline_style_count": 11,
       "hex_colors": {},
       "stylesheets": [
-        "/css/wiki-theme.css"
+        "/css/wiki-theme.css",
+        "/css/knowledge-article-theme.css"
       ],
       "semantic_risk_classes": [],
       "status": "pending_rendered_review"
@@ -2143,7 +2146,7 @@
     {
       "path": "articles/las-share-04.html",
       "kind": "article",
-      "source_sha256": "9e2e489df0d59d99dbd7265a6d80c2200e1dc133856d1f447cd2aaeea9150cc3",
+      "source_sha256": "cb18c76fb8db56b75a13603413a7ed14c584385b31e320704a155959f76c476b",
       "embedded_css_sha256": "eb8662ef950c444400a958465e29cdbc32d2509a474b29341efba04cfd5af341",
       "template_hint": "wiki-wrapper",
       "inline_style_count": 28,
@@ -2173,7 +2176,9 @@
         "#ddd": 1,
         "#777": 1
       },
-      "stylesheets": [],
+      "stylesheets": [
+        "/css/knowledge-article-theme.css"
+      ],
       "semantic_risk_classes": [
         "risk-high",
         "risk-label",
