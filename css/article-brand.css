@@ -1,0 +1,16 @@
+/* Scoped brand mark: article text, legal status and navigation are unchanged. */
+.las-article-brand {
+  display: flex; justify-content: center; align-items: center;
+  margin: 20px auto 24px; width: 88px; height: 88px;
+  border: 1px solid #ded4c4; border-radius: 50%; background: #fff;
+  box-shadow: 0 5px 18px rgb(44 48 58 / .08); box-sizing: border-box;
+}
+.las-article-brand img {
+  display: block; width: 72px; height: 72px; margin: 0; padding: 0;
+  border: 0; border-radius: 50%; object-fit: contain; box-shadow: none;
+}
+.las-article-brand:focus-visible { outline: 3px solid #5c728a; outline-offset: 4px; }
+@media (max-width: 560px) {
+  .las-article-brand { width: 72px; height: 72px; margin: 16px auto 20px; }
+  .las-article-brand img { width: 58px; height: 58px; }
+}
