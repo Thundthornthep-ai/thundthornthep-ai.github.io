@@ -342,7 +342,7 @@
   <!-- FILTER -->
   <div class="filter-bar">
     <button class="filter-btn active" onclick="filterAll()">ทั้งหมด</button>
-    <button class="filter-btn" onclick="filterSection('sec-articles')">บทความกฎหมาย</button>
+    <button class="filter-btn" onclick="filterGroup('legal')">บทความกฎหมาย</button>
     <button class="filter-btn" onclick="filterSection('sec-blue-ocean')">Blue Ocean Series</button>
     <button class="filter-btn" onclick="filterSection('sec-las-share-dr')">LAS Share Deep Research</button>
     <button class="filter-btn" onclick="filterSection('sec-bkk')">Bangkok Possible</button>
@@ -353,7 +353,7 @@
   <!-- ═══════════════════════════════════════════════════
        SECTION 1: บทความกฎหมาย (Articles)
        ═══════════════════════════════════════════════════ -->
-  <section id="sec-articles">
+  <section id="sec-articles" data-group="legal">
     <h2 class="section-title">
       บทความกฎหมายธุรกิจ
     </h2>
@@ -566,7 +566,7 @@
   <!-- ═══════════════════════════════════════════════════
        SECTION 1b: Blue Ocean Legal Articles (16 บทความใหม่)
        ═══════════════════════════════════════════════════ -->
-  <section id="sec-blue-ocean">
+  <section id="sec-blue-ocean" data-group="legal">
     <h2 class="section-title">
       <span class="section-icon">🔵</span>Blue Ocean Series — บทความกฎหมายธุรกิจเชิงลึก
     </h2>
@@ -799,7 +799,7 @@
     </div>
   </section>
 <!-- DRIVE-WAVE-SECTION:START audit-2026-09-29 -->
-  <section id="sec-las-share-dr">
+  <section id="sec-las-share-dr" data-group="legal">
     <h2 class="section-title">
       <span class="section-icon">📘</span>LAS Share Deep Research — M04 กฎหมายบริษัทจำกัด
     </h2>
@@ -1094,6 +1094,13 @@
     document.querySelectorAll('section').forEach(s => s.style.display = '');
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     document.querySelector('.filter-btn').classList.add('active');
+  }
+  function filterGroup(group) {  /* every legal-article section: general, Blue Ocean, LAS Share Deep Research */
+    document.querySelectorAll('section').forEach(s => {
+      s.style.display = (s.dataset.group === group) ? '' : 'none';
+    });
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
   }
   function filterSection(id) {
     document.querySelectorAll('section').forEach(s => {
