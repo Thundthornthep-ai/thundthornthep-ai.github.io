@@ -16,6 +16,8 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 65
 - มาตรา 82
 - มาตรา 83
+- มาตรา 89/1
+- มาตรา 89/7
 - มาตรา 89/8
 - มาตรา 89/10
 - มาตรา 89/11

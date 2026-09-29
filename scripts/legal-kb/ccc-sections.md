@@ -10,6 +10,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
 - มาตรา 3
 - มาตรา 5
+- มาตรา 6
 - มาตรา 7
 - มาตรา 8
 - มาตรา 10
@@ -142,6 +143,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 193/1
 - มาตรา 193/3
 - มาตรา 193/4
+- มาตรา 193/5
 - มาตรา 193/8
 - มาตรา 193/9
 - มาตรา 193/12
@@ -541,6 +543,9 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 699
 - มาตรา 700
 - มาตรา 701
+- มาตรา 732
+- มาตรา 733
+- มาตรา 767
 - มาตรา 797
 - มาตรา 798
 - มาตรา 799
@@ -602,14 +607,24 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 1002
 - มาตรา 1012
 - มาตรา 1015
+- มาตรา 1021
+- มาตรา 1022
 - มาตรา 1023
 - มาตรา 1025
+- มาตรา 1038
 - มาตรา 1054
 - มาตรา 1055
 - มาตรา 1061
+- มาตรา 1067
 - มาตรา 1068
 - มาตรา 1070
 - มาตรา 1077
+- มาตรา 1080
+- มาตรา 1081
+- มาตรา 1082
+- มาตรา 1084
+- มาตรา 1088
+- มาตรา 1095
 - มาตรา 1096
 - มาตรา 1097
 - มาตรา 1098
@@ -678,6 +693,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 1160
 - มาตรา 1161
 - มาตรา 1162
+- มาตรา 1162/1
 - มาตรา 1163
 - มาตรา 1164
 - มาตรา 1165
@@ -762,6 +778,13 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 1244
 - มาตรา 1245
 - มาตรา 1246
+- มาตรา 1246/1
+- มาตรา 1246/2
+- มาตรา 1246/3
+- มาตรา 1246/4
+- มาตรา 1246/5
+- มาตรา 1246/6
+- มาตรา 1246/7
 - มาตรา 1247
 - มาตรา 1248
 - มาตรา 1249
@@ -789,6 +812,9 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 1271
 - มาตรา 1272
 - มาตรา 1273
+- มาตรา 1273/1
+- มาตรา 1273/3
+- มาตรา 1273/4
 - มาตรา 1274
 - มาตรา 1275
 - มาตรา 1276
