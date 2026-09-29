@@ -1,0 +1,260 @@
+/*
+ * las-template-theme.css — LASLegal.tech article theme
+ * Source: "LASLegal.tech Template for Knowledge" v1.0.0 (LAS, 2026-08-29), adopted by the owner on 2026-09-29 as the
+ * standard look of every Knowledge Hub article. Opt-in: applies only under <body class="las-knowledge-article">.
+ * Semantic risk / warning colours keep their own rules; this file sets the shared reading surface, headings,
+ * masthead, tables, boxes and print rules. Thai text is never broken inside a word (no overflow-wrap:anywhere).
+ */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap');
+
+body.las-knowledge-article {
+  --ink: #243047; --muted: #667085; --paper: #fffdfa; --canvas: #f4efe7; --line: #ded5c7;
+  --gold: #c89d52; --coral: #e9785e; --sage: #6f8b7a; --navy: #344967;
+  --soft-gold: #fbf3e4; --soft-coral: #fff0eb; --soft-blue: #eef3f8;
+  --shadow: 0 18px 55px rgba(36, 48, 71, .10);
+  --risk-high: #C0392B; --risk-med: #E67E22; --risk-low: #27AE60;
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 90% 4%, rgba(233,120,94,.12), transparent 27rem),
+    radial-gradient(circle at 10% 30%, rgba(200,157,82,.11), transparent 30rem),
+    var(--canvas);
+  background-attachment: fixed;
+  font-family: "Noto Sans Thai", -apple-system, BlinkMacSystemFont, "Thonburi", "Leelawadee UI", "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.78;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+body.las-knowledge-article :is(p, li, td, th, dd, dt, blockquote, figcaption) { word-break: normal; overflow-wrap: break-word; }
+
+/* ── links ── */
+body.las-knowledge-article a { color: #315d84; text-underline-offset: .18em; }
+body.las-knowledge-article a:hover { color: var(--coral); }
+body.las-knowledge-article a:focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; border-radius: 3px; }
+
+/* ── site bar (cream app bar, as on laslegal.tech) ── */
+body.las-knowledge-article > header.site-header,
+body.las-knowledge-article .site-header {
+  background: rgba(255,253,250,.94); color: var(--ink);
+  border-bottom: 1px solid var(--line); box-shadow: 0 6px 20px rgba(36,48,71,.05);
+}
+body.las-knowledge-article > header.site-header {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px 18px; padding: 10px clamp(16px, 4vw, 40px);
+  font-size: 14px; line-height: 1.5; position: sticky; top: 0; z-index: 20; backdrop-filter: blur(6px);
+}
+body.las-knowledge-article > header.site-header .brand { font-weight: 800; letter-spacing: .02em; }
+body.las-knowledge-article > header.site-header .author-name { color: var(--muted); }
+body.las-knowledge-article > header.site-header nav { margin-left: auto; display: flex; flex-wrap: wrap; gap: 4px; }
+body.las-knowledge-article .site-header :is(a, .brand, .author-name) { color: var(--ink); }
+body.las-knowledge-article .site-header nav a {
+  color: var(--navy); text-decoration: none; border-radius: 999px; padding: 4px 12px;
+}
+body.las-knowledge-article .site-header nav a:hover { background: var(--soft-gold); color: var(--coral); }
+
+/* ── masthead: the block that carries the H1 ── */
+body.las-knowledge-article :is(.article-hero, section.hero, header.article-header, header.wiki-header, .masthead),
+body.las-knowledge-article .wiki-wrapper > h1.page-title,
+body.las-knowledge-article .wiki-wrapper > h1:first-of-type,
+body.las-knowledge-article :is(main.article-wrap, .article-wrap, main.article-body, body > main.container, body > div.article-container) > h1:first-of-type {
+  position: relative;
+  color: #fff;
+  background: linear-gradient(128deg, rgba(52,73,103,.98), rgba(41,57,81,.96)), var(--navy);
+  border: 0;
+  border-bottom: 6px solid var(--gold);
+  border-radius: 18px 18px 6px 6px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+body.las-knowledge-article :is(.article-hero, section.hero, header.article-header, header.wiki-header, .masthead) {
+  padding: clamp(28px, 5vw, 56px) clamp(22px, 5vw, 60px);
+  margin: 0 0 28px;
+}
+body.las-knowledge-article .wiki-wrapper > :is(h1.page-title, h1:first-of-type),
+body.las-knowledge-article :is(main.article-wrap, .article-wrap, main.article-body, body > main.container, body > div.article-container) > h1:first-of-type {
+  padding: clamp(22px, 4vw, 40px) clamp(20px, 4vw, 44px);
+  margin: 4px 0 16px;
+  font-size: clamp(26px, 3.6vw, 40px);
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -.01em;
+}
+body.las-knowledge-article :is(.article-hero, section.hero, header.article-header, header.wiki-header, .masthead)::after {
+  content: ""; position: absolute; width: 360px; height: 360px; right: -90px; top: -180px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 0 0 45px rgba(255,255,255,.035), 0 0 0 90px rgba(255,255,255,.025);
+  pointer-events: none;
+}
+body.las-knowledge-article :is(.article-hero, section.hero, header.article-header, header.wiki-header, .masthead) h1 {
+  color: #fff; font-size: clamp(28px, 4.2vw, 48px); line-height: 1.18; letter-spacing: -.02em; margin: 6px 0 12px;
+  border: 0; font-weight: 800;
+}
+body.las-knowledge-article :is(.article-hero, section.hero, header.article-header, header.wiki-header, .masthead)
+  :is(p, div, span, time, .meta, .subtitle, .hero-meta, .article-meta, .kicker) { color: rgba(255,255,255,.86); }
+body.las-knowledge-article :is(.article-hero, section.hero, header.article-header, header.wiki-header, .masthead) a { color: #f2cc8a; }
+body.las-knowledge-article :is(.article-hero, section.hero, header.article-header, header.wiki-header, .masthead)
+  :is(.category-badge, .series-badge, .tag, .category, .category-tag, .kicker) {
+  display: inline-block; color: #f2cc8a; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.23);
+  border-radius: 999px; padding: 3px 12px; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+}
+body.las-knowledge-article :is(.article-hero, section.hero, header.article-header, header.wiki-header, .masthead) .las-review-date,
+body.las-knowledge-article :is(.article-hero, section.hero, header.article-header, header.wiki-header, .masthead) .las-review-date * { color: #bfe8cc; }
+
+/* review mark + review date line (added to reviewed articles) */
+body.las-knowledge-article .las-reviewed-mark {
+  display: inline-block; margin-left: .35em; padding: 0 .5em; border-radius: 999px; background: var(--risk-low); color: #fff;
+  font-size: .5em; line-height: 1.8; vertical-align: middle; font-weight: 800;
+}
+body.las-knowledge-article .las-review-date { margin: .25rem 0 1.1rem; font-size: .95rem; color: var(--navy); }
+body.las-knowledge-article .las-review-date b { color: #1f7a45; }
+
+/* ── paper card for the reading column ── */
+body.las-knowledge-article :is(.wiki-wrapper, main.article-container, .article-container, .article-wrapper, .page-wrap,
+  .article-wrap, main.article-body, .article-body),
+body.las-knowledge-article > :is(main.container, div.container, main:not([class])) {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+body.las-knowledge-article :is(.wiki-wrapper, main.article-container, .article-wrapper, .page-wrap, main.article-wrap),
+body.las-knowledge-article > :is(main.container, div.container, main:not([class])) {
+  width: min(1000px, calc(100% - 28px));
+  max-width: 1000px;
+  margin: 28px auto 64px;
+  padding: clamp(22px, 4.5vw, 60px);
+}
+body.las-knowledge-article :is(.article-wrapper, .page-wrap, .article-container) :is(.article-wrap, .article-body, main.article-container) {
+  border: 0; box-shadow: none; background: transparent; padding-left: 0; padding-right: 0;
+}
+body.las-knowledge-article > :is(section.article-hero, section.hero) {
+  width: min(1000px, calc(100% - 28px)); margin: 28px auto 0; border-radius: 22px 22px 6px 6px;
+}
+body.las-knowledge-article > section.article-hero + main.article-container { margin-top: 18px; }
+
+/* ── headings ── */
+body.las-knowledge-article :is(h1, h2, h3, h4) {
+  font-family: "Noto Sans Thai", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink); line-height: 1.35; word-break: normal; overflow-wrap: break-word;
+}
+body.las-knowledge-article :is(main, .wiki-wrapper, .article-container, .article-wrapper, .page-wrap, .article-body) h2 {
+  font-size: clamp(24px, 2.8vw, 32px); font-weight: 800; letter-spacing: -.02em;
+  margin: 3rem 0 1.1rem; padding: .6rem 0 0; border: 0; border-top: 1px solid var(--line); background: none; color: var(--ink);
+}
+body.las-knowledge-article :is(main, .wiki-wrapper, .article-container, .article-wrapper, .page-wrap, .article-body) h2::before {
+  content: ""; display: inline-block; width: 7px; height: .95em; border-radius: 6px; background: var(--coral);
+  margin-right: .45em; vertical-align: -.08em;
+}
+body.las-knowledge-article :is(.toc, .toc-box, .faq-section, .episode-card, .series-nav, .las-fw-card) h2 { border-top: 0; margin-top: .4rem; }
+body.las-knowledge-article :is(.toc, .toc-box) h2::before { display: none; }
+body.las-knowledge-article :is(main, .wiki-wrapper, .article-container, .article-wrapper, .page-wrap, .article-body) h3 {
+  font-size: 21px; font-weight: 700; margin: 2rem 0 .7rem; color: var(--navy); border: 0; background: none;
+}
+body.las-knowledge-article :is(main, .wiki-wrapper, .article-container, .article-wrapper, .page-wrap, .article-body) h4 {
+  font-size: 17px; font-weight: 700; margin-top: 1.5rem;
+}
+body.las-knowledge-article p { margin: .9em 0; }
+body.las-knowledge-article strong, body.las-knowledge-article b { color: #263a58; }
+
+/* ── table of contents ── */
+body.las-knowledge-article :is(.toc, .toc-box, nav.toc) {
+  background: rgba(255,253,250,.96); border: 1px solid var(--line); border-radius: 18px;
+  padding: 18px 20px; box-shadow: 0 12px 35px rgba(36,48,71,.06); font-size: 14.5px; line-height: 1.6;
+}
+body.las-knowledge-article.las-knowledge-article :is(.toc-title, .toc > h2, .toc-box > h2, .toc-box > h3, .toc > h3) {
+  font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; color: var(--coral);
+  border-bottom: 1px solid var(--line); padding-bottom: 8px; margin: 0 0 10px;
+}
+body.las-knowledge-article :is(.toc, .toc-box) a { color: var(--muted); text-decoration: none; }
+body.las-knowledge-article :is(.toc, .toc-box) a:hover { color: var(--coral); }
+
+/* ── boxes (neutral ones only; warning/risk boxes keep their colours) ── */
+body.las-knowledge-article blockquote,
+body.las-knowledge-article :is(.info-box, .insight-box, .quote-box, .highlight-box, .section-box, .key-point, .practice-note, .las-note) {
+  background: var(--soft-gold); border: 1px solid #ead7ae; border-left: 5px solid var(--gold);
+  border-radius: 5px 14px 14px 5px; color: #3f4857; padding: 16px 20px; margin: 1.5rem 0; font-style: normal;
+}
+body.las-knowledge-article :is(.lawquote, .law-cite, .law-box, .statute-box, .legal-ref) {
+  background: var(--soft-blue); border: 1px solid #d7e1ea; border-left: 5px solid var(--navy);
+  border-radius: 5px 14px 14px 5px; color: var(--ink); padding: 14px 18px; margin: 1.2rem 0;
+}
+body.las-knowledge-article :is(.lawquote .head, .law-cite strong:first-child) { color: var(--navy); font-weight: 700; }
+body.las-knowledge-article :is(.lawquote pre, .law-cite pre) {
+  background: transparent; color: var(--ink); border: 0; padding: 0; white-space: pre-wrap; font-family: inherit; font-size: 15px;
+}
+body.las-knowledge-article :is(.faq-item, .faq-section) { border-color: var(--line); }
+body.las-knowledge-article .faq-q { color: var(--navy); font-weight: 700; }
+
+/* ── tables (template §8: header #eee7dc, soft rows, rounded wrapper) ── */
+body.las-knowledge-article .las-table-scroll {
+  contain: inline-size; max-width: 100%; min-width: 0;
+  overflow-x: auto; margin: 1.4rem 0 2rem; border: 1px solid var(--line); border-radius: 12px; background: #fff;
+}
+body.las-knowledge-article table.las-reading-table,
+body.las-knowledge-article :is(main, .wiki-wrapper, .article-container, .article-wrapper, .page-wrap, .article-body) table {
+  width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.6; background: #fff; table-layout: auto;
+}
+body.las-knowledge-article .las-reading-table :is(th, td),
+body.las-knowledge-article :is(main, .wiki-wrapper, .article-container, .article-wrapper, .page-wrap, .article-body) table :is(th, td) {
+  border: 0; border-bottom: 1px solid #e9e2d7; border-right: 1px solid #eee8df;
+  padding: 12px 14px; text-align: left; vertical-align: top; word-break: normal; overflow-wrap: break-word;
+}
+body.las-knowledge-article .las-reading-table :is(th, td):last-child { border-right: 0; }
+body.las-knowledge-article .las-reading-table tr:last-child > td { border-bottom: 0; }
+body.las-knowledge-article .las-reading-table th,
+body.las-knowledge-article :is(main, .wiki-wrapper, .article-container, .article-wrapper, .page-wrap, .article-body) table th {
+  background: #eee7dc; color: #283750; font-weight: 700;
+}
+body.las-knowledge-article .las-reading-table tr:nth-child(even) > td { background: #fcfaf6; }
+body.las-knowledge-article .las-reading-table.las-wide-table { min-width: 640px; }
+body.las-knowledge-article .las-reading-table tr.las-risk-high > td { background: #fbe9e7; }
+body.las-knowledge-article .las-reading-table tr.las-risk-med > td { background: #fdf1e3; }
+body.las-knowledge-article .las-reading-table tr.las-risk-low > td { background: #e9f6ec; }
+body.las-knowledge-article .las-reading-table tr.las-risk-high > td:first-child { box-shadow: inset 4px 0 0 var(--risk-high); }
+body.las-knowledge-article .las-reading-table tr.las-risk-med > td:first-child { box-shadow: inset 4px 0 0 var(--risk-med); }
+body.las-knowledge-article .las-reading-table tr.las-risk-low > td:first-child { box-shadow: inset 4px 0 0 var(--risk-low); }
+
+/* ── code, rules, footer, series navigation ── */
+body.las-knowledge-article code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: .9em;
+  color: #9a4637; background: var(--soft-coral); border-radius: 5px; padding: .1em .35em;
+}
+body.las-knowledge-article hr { border: 0; border-top: 1px solid var(--line); margin: 2.6rem 0; }
+body.las-knowledge-article :is(footer, .wiki-footer, .site-footer, .article-footer) { color: var(--muted); border-color: var(--line); }
+body.las-knowledge-article :is(.disclaimer, .endnote) {
+  background: var(--soft-blue); border: 1px solid #d7e1ea; border-radius: 14px; color: var(--muted); padding: 18px 20px; font-size: 14px;
+}
+body.las-knowledge-article .las-series-nav a { color: var(--navy); font-weight: 600; text-decoration: none; }
+body.las-knowledge-article .las-series-nav a:hover { color: var(--coral); }
+
+@media (max-width: 768px) {
+  body.las-knowledge-article .article-layout > :is(main, .article-main, article) { align-self: stretch; width: 100%; min-width: 0; }
+}
+@media (max-width: 620px) {
+  body.las-knowledge-article :is(.step-box, .steps, .flow, .process-flow, .timeline-row) { flex-wrap: wrap; max-width: 100%; }
+  body.las-knowledge-article :is(.step-box, .steps, .flow, .process-flow, .timeline-row) > * { min-width: 0; flex: 1 1 140px; }
+  body.las-knowledge-article { font-size: 15.5px; }
+  body.las-knowledge-article :is(.wiki-wrapper, main.article-container, .article-wrapper, .page-wrap) {
+    width: calc(100% - 16px); margin: 12px auto 40px; padding: 20px 16px; border-radius: 14px;
+  }
+  body.las-knowledge-article > :is(section.article-hero, section.hero) { width: calc(100% - 16px); margin-top: 12px; }
+  body.las-knowledge-article :is(main, .wiki-wrapper, .article-container, .article-wrapper, .page-wrap, .article-body) h2 { font-size: 23px; }
+  body.las-knowledge-article :is(main, .wiki-wrapper, .article-container, .article-wrapper, .page-wrap, .article-body) h3 { font-size: 19px; }
+  body.las-knowledge-article .las-reading-table :is(th, td) { padding: 10px; }
+}
+
+@media print {
+  body.las-knowledge-article { background: #fff; font-size: 10.4pt; line-height: 1.55; }
+  body.las-knowledge-article :is(.wiki-wrapper, main.article-container, .article-container, .article-wrapper, .page-wrap) {
+    border: 0; box-shadow: none; border-radius: 0; padding: 0; margin: 0; width: 100%; max-width: none;
+  }
+  body.las-knowledge-article :is(.article-hero, section.hero, header.article-header, header.wiki-header, .masthead),
+  body.las-knowledge-article .wiki-wrapper > h1.page-title { -webkit-print-color-adjust: exact; print-color-adjust: exact; box-shadow: none; }
+  body.las-knowledge-article :is(h2, h3, h4) { break-after: avoid-page; }
+  body.las-knowledge-article :is(p, li) { orphans: 3; widows: 3; }
+  body.las-knowledge-article :is(.las-table-scroll, blockquote, .lawquote, .law-cite) { overflow: visible; break-inside: avoid; }
+  body.las-knowledge-article tr { break-inside: avoid; }
+  body.las-knowledge-article a { color: inherit; text-decoration: none; }
+}

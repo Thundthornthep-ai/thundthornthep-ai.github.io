@@ -217,11 +217,11 @@ class RegistryAndGateTests(unittest.TestCase):
 
     def test_one_word_and_hyphenated_act_titles_are_unrecognized(self) -> None:
         self.assertEqual(
-            firewall.extract_citations("Patent Act B.E. 2522, Section 3"),
+            firewall.extract_citations("Plant Variety Protection Act B.E. 2542, Section 3"),
             [(firewall.UNRECOGNIZED, "3")],
         )
         self.assertEqual(
-            firewall.extract_citations("Section 3 of the Patent Act"),
+            firewall.extract_citations("Section 3 of the Plant Variety Protection Act"),
             [(firewall.UNRECOGNIZED, "3")],
         )
         self.assertEqual(
@@ -229,15 +229,31 @@ class RegistryAndGateTests(unittest.TestCase):
             [(firewall.UNRECOGNIZED, "4")],
         )
 
-    def test_sentence_initial_the_patent_act_is_unrecognized(self) -> None:
+    def test_sentence_initial_the_plant_variety_act_is_unrecognized(self) -> None:
         self.assertEqual(
-            firewall.extract_citations("The Patent Act, Section 3"),
+            firewall.extract_citations("The Plant Variety Protection Act, Section 3"),
             [(firewall.UNRECOGNIZED, "3")],
         )
         self.assertEqual(
             firewall.extract_citations("The Act, Section 3"),
             [(None, "3")],
         )
+
+    def test_thai_abbreviated_act_names_bind(self) -> None:
+        self.assertEqual(firewall.extract_citations("ตาม พ.ร.บ.โรงแรม พ.ศ. 2547 มาตรา 15"), [("hotel", "15")])
+        self.assertEqual(firewall.extract_citations("พ.ร.บ.ลิขสิทธิ์ พ.ศ. 2537 มาตรา 19"), [("copyright", "19")])
+        self.assertEqual(firewall.extract_citations("พ.ร.บ.สิทธิบัตร พ.ศ. 2522 มาตรา 65 สัตต"), [("patent", "65")])
+        self.assertEqual(firewall.extract_citations("Patent Act B.E. 2522, Section 35"), [("patent", "35")])
+        self.assertEqual(firewall.extract_citations("ตาม พ.ร.บ.การบัญชี พ.ศ. 2543 มาตรา 11"), [("accounting", "11")])
+        self.assertEqual(
+            firewall.extract_citations("พระราชบัญญัติว่าด้วยการขัดกันแห่งกฎหมาย พ.ศ. 2481 มาตรา 8"),
+            [("conflictlaws", "8")],
+        )
+        self.assertEqual(firewall.extract_citations("พระราชบัญญัติประกันสังคม พ.ศ. 2533 มาตรา 67"), [("socialsecurity", "67")])
+
+    def test_social_security_word_alone_is_not_the_act(self) -> None:
+        cites = firewall.extract_citations("พ.ร.บ.คุ้มครองแรงงาน เงินประกันสังคม มาตรา 118")
+        self.assertNotIn(("socialsecurity", "118"), cites)
 
     def test_named_unknown_act_does_not_pass_on_another_registry(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -310,7 +326,7 @@ class RegistryAndGateTests(unittest.TestCase):
 
     def test_unknown_act_stays_unrecognized_near_known_alias(self) -> None:
         cites = firewall.extract_citations(
-            "Unlike the Civil Code, the Patent Act, Section 3 applies"
+            "Unlike the Civil Code, the Plant Variety Protection Act, Section 3 applies"
         )
         self.assertEqual(cites, [(firewall.UNRECOGNIZED, "3")])
         with tempfile.TemporaryDirectory() as tmp:
@@ -472,7 +488,7 @@ class RegistryAndGateTests(unittest.TestCase):
             self.assertEqual(cites, [("pdpa", "37")])
             self.assertEqual(firewall.missing_citations(cites, registry), ["pdpa:37"])
 
-    def test_sentence_initial_patent_act_does_not_pass_on_other_registry(self) -> None:
+    def test_sentence_initial_plant_variety_act_does_not_pass_on_other_registry(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             kb = write_kb(Path(tmp))
             (Path(tmp) / "ccc.md").write_text(
@@ -480,7 +496,7 @@ class RegistryAndGateTests(unittest.TestCase):
                 encoding="utf-8",
             )
             registry = firewall.load_registry(kb)
-            cites = firewall.extract_citations("The Patent Act, Section 3")
+            cites = firewall.extract_citations("The Plant Variety Protection Act, Section 3")
             self.assertEqual(cites, [(firewall.UNRECOGNIZED, "3")])
             self.assertEqual(firewall.missing_citations(cites, registry), ["unrecognized:3"])
 
