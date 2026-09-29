@@ -29,3 +29,4 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 35 ตรี
 - มาตรา 54
 - มาตรา 91/4
+- มาตรา 50
