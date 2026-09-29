@@ -23,3 +23,9 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 118
 - มาตรา 119
 - มาตรา 122
+- มาตรา 131
+- มาตรา 132
+- มาตรา 132/1
+- มาตรา 132/2
+- มาตรา 132/3
+- มาตรา 133
