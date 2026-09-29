@@ -24,3 +24,8 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 85
 - มาตรา 85/1
 - มาตรา 91/2
+- มาตรา 19
+- มาตรา 26
+- มาตรา 35 ตรี
+- มาตรา 54
+- มาตรา 91/4

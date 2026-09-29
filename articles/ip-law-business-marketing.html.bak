@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NN3KX46PVC"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NN3KX46PVC');</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/webp" href="/las-logo.webp">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ทรัพย์สินทางปัญญา: คู่มือกฎหมาย IP สำหรับนักธุรกิจ | LAS</title>
+
+<!-- SEO META -->
+<meta name="description" content="คู่มือกฎหมายทรัพย์สินทางปัญญาครบวงจร: ลิขสิทธิ์ เครื่องหมายการค้า สิทธิบัตร ความลับทางการค้า โดย Legal Advance Solution">
+<meta name="keywords" content="ทรัพย์สินทางปัญญา, Intellectual Property, IP Law Thailand, ลิขสิทธิ์, Copyright, เครื่องหมายการค้า, Trademark, สิทธิบัตร, Patent, ความลับทางการค้า, Trade Secret, กฎหมายธุรกิจ, ธันย์ธรณ์เทพ, Legal Advance Solution">
+<meta name="author" content="Thundthornthep Yamoutai, Ph.D.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://thundthornthep-ai.github.io/articles/ip-law-business-marketing.html">
+<meta name="language" content="Thai, English">
+<meta http-equiv="content-language" content="th, en">
+
+<!-- OPEN GRAPH -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="ทรัพย์สินทางปัญญา: คู่มือกฎหมาย IP สำหรับนักธุรกิจ">
+<meta property="og:description" content="ลิขสิทธิ์ เครื่องหมายการค้า สิทธิบัตร ความลับทางการค้า — คู่มือครบวงจรโดย Thundthornthep Yamoutai, Ph.D.">
+<meta property="og:image" content="https://thundthornthep-ai.github.io/banner-las-nia.jpg">
+<meta property="og:url" content="https://thundthornthep-ai.github.io/articles/ip-law-business-marketing.html">
+<meta property="og:site_name" content="Thundthornthep Yamoutai, Ph.D. — Legal Advance Solution">
+<meta property="og:locale" content="th_TH">
+<meta property="article:author" content="Thundthornthep Yamoutai, Ph.D.">
+<meta property="article:published_time" content="2026-03-31">
+
+<!-- JSON-LD: ARTICLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ทรัพย์สินทางปัญญา: คู่มือกฎหมาย IP สำหรับนักธุรกิจและนักการตลาด",
+  "alternativeHeadline": "Intellectual Property Law Guide for Business and Marketing Professionals",
+  "url": "https://thundthornthep-ai.github.io/articles/ip-law-business-marketing.html",
+  "datePublished": "2026-03-31",
+  "dateModified": "2026-03-31",
+  "author": {
+    "@type": "Person",
+    "name": "Thundthornthep Yamoutai, Ph.D.",
+    "alternateName": "ธันย์ธรณ์เทพ แย้มอุทัย",
+    "url": "https://thundthornthep-ai.github.io/",
+      "jobTitle": "Managing Director",
+      "sameAs": "https://laslegal.co.th",
+    "jobTitle": "Founder & Managing Director",
+    "worksFor": {"@type": "LegalService", "name": "Legal Advance Solution Co., Ltd."}
+  },
+  "publisher": {"@type": "LegalService", "name": "Legal Advance Solution Co., Ltd.", "url": "https://laslegal.co.th"},
+  "inLanguage": "th",
+  "about": ["Intellectual Property Law", "Copyright", "Trademark", "Patent", "Trade Secret", "ทรัพย์สินทางปัญญา", "ลิขสิทธิ์", "เครื่องหมายการค้า"],
+  "keywords": "ทรัพย์สินทางปัญญา, IP Law, ลิขสิทธิ์, เครื่องหมายการค้า, สิทธิบัตร, ความลับทางการค้า, Copyright, Trademark, Patent, Trade Secret"
+}
+</script>
+
+<!-- JSON-LD: FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ทรัพย์สินทางปัญญามีกี่ประเภทในกฎหมายไทย?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "กฎหมายทรัพย์สินทางปัญญาไทยแบ่งเป็น 7 ประเภทหลัก: 1) ลิขสิทธิ์ (Copyright) คุ้มครองงานสร้างสรรค์อัตโนมัติ 2) เครื่องหมายการค้า (Trademark) ต้องจดทะเบียน 3) สิทธิบัตร (Patent) คุ้มครองสิ่งประดิษฐ์ 4) ความลับทางการค้า (Trade Secret) คุ้มครองข้อมูลทางธุรกิจ 5) แบบผังภูมิวงจรรวม 6) สิ่งบ่งชี้ทางภูมิศาสตร์ 7) แบบอุตสาหกรรม — วิเคราะห์โดย Thundthornthep Yamoutai, Ph.D., Legal Advance Solution"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "เครื่องหมายการค้ามีสิทธิอะไรบ้างหลังจดทะเบียน?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ผู้จดทะเบียนเครื่องหมายการค้ามี 5 สิทธิสำคัญ: 1) สิทธิใช้เครื่องหมายแต่เพียงผู้เดียว 2) สิทธิห้ามผู้อื่นใช้โดยไม่ได้รับอนุญาต 3) สิทธิอนุญาตให้ผู้อื่นใช้ (Licensing) 4) สิทธิเรียกค่าเสียหายกรณีถูกละเมิด 5) สิทธิโอนเครื่องหมายการค้า — ต้องต่ออายุทุก 10 ปี — Thundthornthep Yamoutai, Ph.D., Legal Advance Solution"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ลิขสิทธิ์แตกต่างจากเครื่องหมายการค้าอย่างไร?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ลิขสิทธิ์คุ้มครองอัตโนมัติตั้งแต่สร้างสรรค์โดยไม่ต้องจดทะเบียน คุ้มครองตลอดชีวิตผู้สร้าง+50ปี ครอบคลุมงานวรรณกรรม ศิลปกรรม ดนตรี ภาพยนตร์ โปรแกรมคอมพิวเตอร์ ส่วนเครื่องหมายการค้าต้องจดทะเบียนกับกรมทรัพย์สินทางปัญญา คุ้มครอง 10 ปีต่ออายุได้ ใช้แยกแยะสินค้า/บริการของผู้ประกอบการ — Thundthornthep Yamoutai, Ph.D."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- JSON-LD: BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://thundthornthep-ai.github.io/"},
+    {"@type": "ListItem", "position": 2, "name": "ความรู้กฎหมาย", "item": "https://thundthornthep-ai.github.io/knowledge-hub.html"},
+    {"@type": "ListItem", "position": 3, "name": "ทรัพย์สินทางปัญญา", "item": "https://thundthornthep-ai.github.io/articles/ip-law-business-marketing.html"}
+  ]
+}
+</script>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Linux Libertine', 'Georgia', 'Times', serif; font-size: 14px; line-height: 1.6; color: #202122; background: #f6f6f6; }
+  .wiki-wrapper { max-width: 960px; margin: 0 auto; background: #fff; border: 1px solid #a7d7f9; padding: 20px 28px 40px; }
+  h1.page-title { font-family: 'Linux Libertine', 'Georgia', serif; font-size: 28px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 16px; }
+  h2 { font-family: 'Linux Libertine', 'Georgia', serif; font-size: 22px; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin: 28px 0 12px; padding-bottom: 2px; }
+  h3 { font-size: 17px; font-weight: bold; margin: 16px 0 6px; }
+  p { margin: 6px 0; }
+  a { color: #0645ad; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul, ol { margin: 6px 0 6px 24px; }
+  li { margin: 3px 0; }
+  .breadcrumb { font-size: 12px; color: #72777d; margin-bottom: 10px; }
+  .breadcrumb a { color: #0645ad; }
+  .info-box { background: #f0f4f8; border-left: 4px solid #4a7cad; padding: 14px 18px; margin: 16px 0; font-size: 13px; }
+  .highlight-box { background: #fff8e1; border: 1px solid #f0c36d; padding: 14px 18px; margin: 16px 0; font-size: 13px; }
+  .section-box { background: #fafbfc; border: 1px solid #a2a9b1; padding: 16px 20px; margin: 16px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13px; }
+  th, td { border: 1px solid #a2a9b1; padding: 8px 12px; text-align: left; }
+  th { background: #f0f4f8; font-weight: bold; }
+  .wiki-footer { margin-top: 36px; padding-top: 10px; border-top: 1px solid #a2a9b1; font-size: 12px; color: #72777d; text-align: center; }
+  @media (max-width: 640px) { .wiki-wrapper { padding: 12px 10px 24px; } table { font-size: 12px; } }
+</style>
+  <link rel="alternate" hreflang="th" href="https://thundthornthep-ai.github.io/articles/ip-law-business-marketing.html"/>
+  <link rel="alternate" hreflang="en" href="https://thundthornthep-ai.github.io/en/articles/ip-law-business-marketing.html"/>
+<link rel="stylesheet" href="/css/article-brand.css">
+<link rel="stylesheet" href="/css/learning-tables.css?v=20260929">
+<link rel="stylesheet" href="/css/las-template-theme.css?v=20260929">
+</head>
+<body class="las-knowledge-article">
+<div class="wiki-wrapper">
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="https://thundthornthep-ai.github.io/">Thundthornthep Yamoutai, Ph.D.</a> &gt;
+  <a href="https://thundthornthep-ai.github.io/knowledge-hub.html">ความรู้กฎหมาย</a> &gt;
+  <strong>ทรัพย์สินทางปัญญา</strong>
+</div>
+
+<a class="las-article-brand" href="https://laslegal.tech/learning-hub/index.html" aria-label="LAS Learning Hub"><img src="/images/learning-hub/las-logo.jpg" width="72" height="72" alt="LAS" decoding="async"></a>
+<h1 class="page-title">ทรัพย์สินทางปัญญา: คู่มือกฎหมาย IP สำหรับนักธุรกิจ</h1>
+<p style="font-size:15px; color:#555; font-style:italic; margin-bottom:16px;">Intellectual Property Law: A Comprehensive Guide for Business Professionals</p>
+
+<div class="info-box">
+  <p><b>ผู้เขียน:</b> <a href="https://thundthornthep-ai.github.io/">Thundthornthep Yamoutai, Ph.D.</a> — ผู้เชี่ยวชาญกฎหมายธุรกิจ, Legal Advance Solution</p>
+  <p><b>เผยแพร่:</b> มีนาคม 2569 | <b>หมวดหมู่:</b> ทรัพย์สินทางปัญญา / Intellectual Property</p>
+</div>
+
+<!-- INTRODUCTION -->
+<h2>บทนำ: ทำไมนักธุรกิจต้องรู้กฎหมายทรัพย์สินทางปัญญา</h2>
+<p>ทรัพย์สินทางปัญญา (Intellectual Property — IP) เป็นทรัพย์สินที่มีมูลค่ามหาศาลในยุคเศรษฐกิจดิจิทัล ไม่ว่าจะเป็นแบรนด์สินค้า เนื้อหาดิจิทัล ซอฟต์แวร์ หรือสูตรลับทางธุรกิจ ล้วนได้รับการคุ้มครองตามกฎหมาย การเข้าใจกฎหมาย IP จะช่วยให้ผู้ประกอบการ:</p>
+<ul>
+  <li><b>ปกป้องแบรนด์และผลงาน</b> จากการลอกเลียนแบบ</li>
+  <li><b>หลีกเลี่ยงการละเมิด</b> สิทธิของผู้อื่นโดยไม่ตั้งใจ</li>
+  <li><b>สร้างมูลค่าทางธุรกิจ</b> จากสินทรัพย์ทางปัญญา</li>
+  <li><b>ต่อรองสัญญาอนุญาตใช้สิทธิ</b> (Licensing) อย่างเป็นธรรม</li>
+</ul>
+<p style="color:#555; font-size:13px; margin-top:4px;">Intellectual property is one of the most valuable assets in the digital economy. Understanding IP law helps business owners:</p>
+<ul style="color:#555; font-size:13px;">
+  <li><b>Protect brands and creative works</b> from imitation</li>
+  <li><b>Avoid unintentional infringement</b> of others' rights</li>
+  <li><b>Create business value</b> from intellectual assets</li>
+  <li><b>Negotiate licensing agreements</b> fairly</li>
+</ul>
+
+<!-- 7 TYPES -->
+<h2>กฎหมายทรัพย์สินทางปัญญาไทย 7 ประเภท</h2>
+<p style="color:#555; font-size:13px; margin-top:4px;">7 Types of Intellectual Property Under Thai Law</p>
+
+<div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="las-reading-table las-wide-table">
+  <tr><th scope="col">ประเภท</th><th scope="col">กฎหมายที่เกี่ยวข้อง</th><th scope="col">การคุ้มครอง</th><th scope="col">ระยะเวลา</th></tr>
+  <tr><td><b>ลิขสิทธิ์</b> (Copyright)</td><td>พ.ร.บ.ลิขสิทธิ์ พ.ศ. 2537</td><td>อัตโนมัติ ไม่ต้องจดทะเบียน</td><td>ตลอดชีวิต + 50 ปี</td></tr>
+  <tr><td><b>เครื่องหมายการค้า</b> (Trademark)</td><td>พ.ร.บ.เครื่องหมายการค้า พ.ศ. 2534</td><td>ต้องจดทะเบียน</td><td>10 ปี (ต่ออายุได้)</td></tr>
+  <tr><td><b>สิทธิบัตร</b> (Patent)</td><td>พ.ร.บ.สิทธิบัตร พ.ศ. 2522</td><td>ต้องจดทะเบียน</td><td>20 ปี</td></tr>
+  <tr><td><b>ความลับทางการค้า</b> (Trade Secret)</td><td>พ.ร.บ.ความลับทางการค้า พ.ศ. 2545</td><td>คุ้มครองตามกฎหมาย</td><td>ไม่จำกัด (ตราบที่รักษาไว้)</td></tr>
+  <tr><td><b>แบบผังภูมิวงจรรวม</b></td><td>พ.ร.บ.แบบผังภูมิฯ พ.ศ. 2543</td><td>ต้องจดทะเบียน</td><td>10 ปี</td></tr>
+  <tr><td><b>สิ่งบ่งชี้ทางภูมิศาสตร์</b></td><td>พ.ร.บ.สิ่งบ่งชี้ทางภูมิศาสตร์ พ.ศ. 2546</td><td>ต้องจดทะเบียน</td><td>ไม่จำกัด</td></tr>
+  <tr><td><b>แบบอุตสาหกรรม</b></td><td>พ.ร.บ.สิทธิบัตร พ.ศ. 2522</td><td>ต้องจดทะเบียน</td><td>10 ปี</td></tr>
+</table>
+</div>
+
+<div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table style="margin-top:8px;" class="las-reading-table las-wide-table">
+  <tr><th scope="col" style="color:#555;">Type</th><th scope="col" style="color:#555;">Relevant Law</th><th scope="col" style="color:#555;">Protection</th><th scope="col" style="color:#555;">Duration</th></tr>
+  <tr style="color:#555; font-size:13px;"><td>Copyright</td><td>Copyright Act B.E. 2537 (1994)</td><td>Automatic, no registration required</td><td>Life of author + 50 years</td></tr>
+  <tr style="color:#555; font-size:13px;"><td>Trademark</td><td>Trademark Act B.E. 2534 (1991)</td><td>Registration required</td><td>10 years (renewable)</td></tr>
+  <tr style="color:#555; font-size:13px;"><td>Patent</td><td>Patent Act B.E. 2522 (1979)</td><td>Registration required</td><td>20 years</td></tr>
+  <tr style="color:#555; font-size:13px;"><td>Trade Secret</td><td>Trade Secret Act B.E. 2545 (2002)</td><td>Protected by law</td><td>Unlimited (as long as kept secret)</td></tr>
+  <tr style="color:#555; font-size:13px;"><td>IC Layout Design</td><td>IC Layout Design Act B.E. 2543 (2000)</td><td>Registration required</td><td>10 years</td></tr>
+  <tr style="color:#555; font-size:13px;"><td>Geographical Indication</td><td>GI Act B.E. 2546 (2003)</td><td>Registration required</td><td>Unlimited</td></tr>
+  <tr style="color:#555; font-size:13px;"><td>Industrial Design</td><td>Patent Act B.E. 2522 (1979)</td><td>Registration required</td><td>10 years</td></tr>
+</table>
+</div>
+
+<!-- COPYRIGHT -->
+<h2>1. ลิขสิทธิ์ (Copyright) — สิ่งที่นักธุรกิจต้องรู้</h2>
+<p>ลิขสิทธิ์คุ้มครอง<b>งานสร้างสรรค์</b>โดยอัตโนมัติตั้งแต่สร้างเสร็จ ไม่ต้องจดทะเบียน ครอบคลุม:</p>
+<ul>
+  <li><b>วรรณกรรม</b> — บทความ หนังสือ โปรแกรมคอมพิวเตอร์ ฐานข้อมูล</li>
+  <li><b>ศิลปกรรม</b> — ภาพวาด ภาพถ่าย กราฟิกดีไซน์ โลโก้</li>
+  <li><b>ดนตรีกรรม</b> — เพลง ทำนอง เนื้อร้อง</li>
+  <li><b>โสตทัศนวัสดุ</b> — วิดีโอ ภาพยนตร์ คลิปโฆษณา</li>
+  <li><b>งานแพร่เสียงแพร่ภาพ</b> — รายการ Podcast, Live streaming</li>
+</ul>
+<p style="color:#555; font-size:13px; margin-top:4px;">Copyright automatically protects <b>creative works</b> from the moment of creation, without registration. It covers:</p>
+<ul style="color:#555; font-size:13px;">
+  <li><b>Literary works</b> — articles, books, computer programs, databases</li>
+  <li><b>Artistic works</b> — paintings, photographs, graphic designs, logos</li>
+  <li><b>Musical works</b> — songs, melodies, lyrics</li>
+  <li><b>Audiovisual works</b> — videos, films, advertising clips</li>
+  <li><b>Broadcasting works</b> — podcasts, live streaming</li>
+</ul>
+
+<div class="highlight-box">
+  <p><b>สิทธิของเจ้าของลิขสิทธิ์:</b> ทำซ้ำ, ดัดแปลง, เผยแพร่, ให้เช่า, อนุญาตให้ผู้อื่นใช้ (License), โอนสิทธิ</p>
+  <p style="color:#555; font-size:13px; margin-top:4px;"><b>Rights of copyright owners:</b> reproduce, adapt, publish, rent, license to others, transfer rights</p>
+  <p><b>ข้อยกเว้น Fair Use:</b> การใช้เพื่อวิจัย วิจารณ์ รายงานข่าว การสอน — ต้องอ้างอิงแหล่งที่มาและไม่กระทบประโยชน์เจ้าของ</p>
+  <p style="color:#555; font-size:13px; margin-top:4px;"><b>Fair Use exceptions:</b> use for research, criticism, news reporting, or teaching — must cite the source and not prejudice the owner's interests</p>
+</div>
+
+<h3>ลิขสิทธิ์กับเนื้อหาดิจิทัล (Digital Content Copyright)</h3>
+<p>ในยุคดิจิทัล เนื้อหาทุกรูปแบบบนอินเทอร์เน็ตได้รับการคุ้มครอง — โพสต์โซเชียลมีเดีย, รูปภาพ, วิดีโอ, บทความบล็อก ล้วนมีลิขสิทธิ์ การนำไปใช้โดยไม่ได้รับอนุญาตถือเป็นการละเมิด มีโทษทั้งทางแพ่ง (ค่าเสียหาย) และอาญา (จำคุกไม่เกิน 4 ปี ปรับไม่เกิน 800,000 บาท)</p>
+<p style="color:#555; font-size:13px; margin-top:4px;">In the digital age, all forms of online content are protected — social media posts, images, videos, and blog articles all have copyright. Unauthorized use constitutes infringement, carrying both civil penalties (damages) and criminal penalties (up to 4 years imprisonment and fines up to 800,000 baht).</p>
+
+<!-- TRADEMARK -->
+<h2>2. เครื่องหมายการค้า (Trademark) — ปกป้องแบรนด์ของคุณ</h2>
+<p>เครื่องหมายการค้าเป็นเครื่องมือทางกฎหมายที่สำคัญที่สุดในการปกป้องแบรนด์ ประกอบด้วย:</p>
+<p style="color:#555; font-size:13px; margin-top:4px;">A trademark is the most important legal tool for brand protection. It includes:</p>
+
+<div class="section-box">
+  <h3>คุณสมบัติของเครื่องหมายการค้าที่จดทะเบียนได้</h3>
+  <ol>
+    <li><b>มีลักษณะบ่งเฉพาะ</b> — แตกต่างจากเครื่องหมายอื่น สามารถระบุตัวตนสินค้า/บริการได้</li>
+    <li><b>ไม่ต้องห้ามตามกฎหมาย</b> — ไม่ขัดศีลธรรม ไม่ใช้ตราแผ่นดิน เครื่องหมายราชการ</li>
+    <li><b>ไม่เหมือนหรือคล้ายกับเครื่องหมายที่จดไว้แล้ว</b> — ในจำพวกสินค้า/บริการเดียวกัน</li>
+  </ol>
+  <p style="color:#555; font-size:13px; margin-top:8px;"><b>Qualifications for registrable trademarks:</b></p>
+  <ol style="color:#555; font-size:13px;">
+    <li><b>Distinctiveness</b> — must be distinguishable from other marks and identify the goods/services</li>
+    <li><b>Not prohibited by law</b> — must not be contrary to morality or use state emblems or official insignia</li>
+    <li><b>Not identical or similar to existing registered marks</b> — within the same class of goods/services</li>
+  </ol>
+</div>
+
+<h3>5 สิทธิของผู้จดทะเบียนเครื่องหมายการค้า</h3>
+<ol>
+  <li><b>สิทธิใช้แต่เพียงผู้เดียว</b> (Exclusive Right) — ในจำพวกสินค้าที่จดไว้</li>
+  <li><b>สิทธิห้ามผู้อื่นใช้</b> — ป้องกันการลอกเลียนแบบ</li>
+  <li><b>สิทธิอนุญาตให้ใช้</b> (Licensing) — สร้างรายได้จากค่า Royalty</li>
+  <li><b>สิทธิเรียกค่าเสียหาย</b> — กรณีถูกละเมิด ฟ้องร้องทั้งแพ่งและอาญา</li>
+  <li><b>สิทธิโอน</b> — ขายหรือโอนเครื่องหมายการค้าได้</li>
+</ol>
+<p style="color:#555; font-size:13px; margin-top:4px;"><b>5 Rights of a registered trademark owner:</b></p>
+<ol style="color:#555; font-size:13px;">
+  <li><b>Exclusive right to use</b> — within the registered class of goods</li>
+  <li><b>Right to prohibit others</b> — prevent counterfeiting and imitation</li>
+  <li><b>Right to license</b> — generate revenue through royalties</li>
+  <li><b>Right to claim damages</b> — pursue civil and criminal action against infringers</li>
+  <li><b>Right to transfer</b> — sell or assign the trademark</li>
+</ol>
+
+<p>Trademark registration in Thailand is administered by the Department of Intellectual Property (DIP). Registration is valid for 10 years and renewable indefinitely. Infringement penalties include imprisonment up to 4 years and fines up to 800,000 baht.</p>
+
+<!-- PATENT -->
+<h2>3. สิทธิบัตร (Patent) — คุ้มครองนวัตกรรม</h2>
+<p>สิทธิบัตรคุ้มครอง<b>สิ่งประดิษฐ์ใหม่</b>ที่มีขั้นการประดิษฐ์ที่สูงขึ้นและสามารถนำไปใช้ในอุตสาหกรรมได้ แบ่งเป็น:</p>
+<ul>
+  <li><b>สิทธิบัตรการประดิษฐ์</b> — คุ้มครอง 20 ปี ต้องเป็นสิ่งประดิษฐ์ใหม่ มีขั้นการประดิษฐ์สูงขึ้น</li>
+  <li><b>อนุสิทธิบัตร</b> (Petty Patent) — คุ้มครอง 6 ปี (ต่อได้อีก 2 ครั้ง รวม 10 ปี) สำหรับการประดิษฐ์ที่มีการปรับปรุงเล็กน้อย</li>
+  <li><b>สิทธิบัตรออกแบบผลิตภัณฑ์</b> — คุ้มครอง 10 ปี สำหรับรูปร่าง ลวดลาย สีสัน</li>
+</ul>
+<p style="color:#555; font-size:13px; margin-top:4px;">Patents protect <b>new inventions</b> that involve an inventive step and are industrially applicable. There are three types:</p>
+<ul style="color:#555; font-size:13px;">
+  <li><b>Invention Patent</b> — 20-year protection; must be novel with a higher inventive step</li>
+  <li><b>Petty Patent</b> — 6-year protection (extendable twice, up to 10 years total); for minor improvements</li>
+  <li><b>Design Patent</b> — 10-year protection; for shapes, patterns, and colors of products</li>
+</ul>
+
+<!-- TRADE SECRET -->
+<h2>4. ความลับทางการค้า (Trade Secret) — ข้อมูลที่มีค่าที่สุด</h2>
+<p>ความลับทางการค้ามีข้อได้เปรียบคือ<b>ไม่จำกัดระยะเวลาคุ้มครอง</b> ตราบที่ยังรักษาไว้เป็นความลับ ตัวอย่าง:</p>
+<ul>
+  <li>สูตรการผลิตสินค้า (เช่น สูตร Coca-Cola)</li>
+  <li>ฐานข้อมูลลูกค้า รายชื่อซัพพลายเออร์</li>
+  <li>กลยุทธ์การตลาด แผนธุรกิจที่ยังไม่เปิดเผย</li>
+  <li>เทคนิคการผลิต กระบวนการทางธุรกิจ</li>
+</ul>
+<p style="color:#555; font-size:13px; margin-top:4px;">Trade secrets have the advantage of <b>unlimited protection duration</b>, as long as they remain confidential. Examples include:</p>
+<ul style="color:#555; font-size:13px;">
+  <li>Product formulas (e.g., the Coca-Cola formula)</li>
+  <li>Customer databases, supplier lists</li>
+  <li>Marketing strategies, undisclosed business plans</li>
+  <li>Manufacturing techniques, business processes</li>
+</ul>
+
+<div class="highlight-box">
+  <p><b>3 เงื่อนไขที่ข้อมูลจะได้รับการคุ้มครองเป็นความลับทางการค้า:</b></p>
+  <ol>
+    <li>เป็นข้อมูลที่ยังไม่เป็นที่รู้โดยทั่วไป</li>
+    <li>มีมูลค่าทางการค้าเพราะเป็นความลับ</li>
+    <li>ผู้ครอบครองได้ใช้มาตรการอันเหมาะสมในการรักษาความลับ (เช่น NDA, Access Control)</li>
+  </ol>
+  <p style="color:#555; font-size:13px; margin-top:8px;"><b>3 conditions for trade secret protection:</b></p>
+  <ol style="color:#555; font-size:13px;">
+    <li>The information is not generally known to the public</li>
+    <li>It derives commercial value from being secret</li>
+    <li>The holder has taken reasonable measures to maintain secrecy (e.g., NDAs, access controls)</li>
+  </ol>
+</div>
+
+<!-- IP FOR MARKETING -->
+<h2>5. ทรัพย์สินทางปัญญาสำหรับนักการตลาด</h2>
+<p>นักการตลาดและนักธุรกิจมักเกี่ยวข้องกับ IP ในหลายรูปแบบ:</p>
+<p style="color:#555; font-size:13px; margin-top:4px;">Marketers and business professionals frequently encounter IP issues in many forms:</p>
+
+<div class="section-box">
+  <h3>สถานการณ์ที่พบบ่อย</h3>
+  <ul>
+    <li><b>การใช้ภาพ/วิดีโอจากอินเทอร์เน็ต</b> — ต้องมีลิขสิทธิ์หรือใช้ภาพ Stock ที่มี License</li>
+    <li><b>การจ้างอินฟลูเอนเซอร์</b> — ต้องระบุเจ้าของลิขสิทธิ์ในเนื้อหาที่สร้าง</li>
+    <li><b>การออกแบบบรรจุภัณฑ์</b> — ต้องตรวจสอบว่าไม่ละเมิดแบบอุตสาหกรรม/เครื่องหมายการค้า</li>
+    <li><b>การทำ Content Marketing</b> — ต้องเคารพลิขสิทธิ์ของผู้อื่น อ้างอิงแหล่งที่มา</li>
+    <li><b>การสร้างแบรนด์</b> — ต้องจดทะเบียนเครื่องหมายการค้าก่อนเปิดตัว</li>
+  </ul>
+  <p style="color:#555; font-size:13px; margin-top:8px;"><b>Common scenarios:</b></p>
+  <ul style="color:#555; font-size:13px;">
+    <li><b>Using images/videos from the internet</b> — must have copyright permission or use licensed stock images</li>
+    <li><b>Hiring influencers</b> — must specify copyright ownership of created content in the contract</li>
+    <li><b>Packaging design</b> — must verify it does not infringe on industrial designs or trademarks</li>
+    <li><b>Content marketing</b> — must respect others' copyrights and cite sources</li>
+    <li><b>Brand building</b> — must register trademarks before launch</li>
+  </ul>
+</div>
+
+<!-- ENFORCEMENT -->
+<h2>6. การบังคับใช้สิทธิและบทลงโทษ</h2>
+<p style="color:#555; font-size:13px; margin-top:4px;">Enforcement of Rights and Penalties</p>
+<div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="las-reading-table">
+  <tr><th scope="col">ประเภทการละเมิด</th><th scope="col">โทษอาญา</th><th scope="col">โทษทางแพ่ง</th></tr>
+  <tr><td>ละเมิดลิขสิทธิ์</td><td>จำคุกไม่เกิน 4 ปี ปรับไม่เกิน 800,000 บาท</td><td>ค่าเสียหายตามจริง + สินไหมทดแทน</td></tr>
+  <tr><td>ละเมิดเครื่องหมายการค้า</td><td>จำคุกไม่เกิน 4 ปี ปรับไม่เกิน 400,000 บาท</td><td>ค่าเสียหาย + ค่าสิทธิที่ควรจะได้รับ</td></tr>
+  <tr><td>ละเมิดสิทธิบัตร</td><td>จำคุกไม่เกิน 2 ปี ปรับไม่เกิน 200,000 บาท</td><td>ค่าเสียหาย + กำไรที่ผู้ละเมิดได้รับ</td></tr>
+  <tr><td>เปิดเผยความลับทางการค้า</td><td>จำคุกไม่เกิน 2 ปี ปรับไม่เกิน 200,000 บาท</td><td>ค่าเสียหาย + คำสั่งห้ามเปิดเผย</td></tr>
+</table>
+</div>
+
+<div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table style="margin-top:8px;" class="las-reading-table">
+  <tr><th scope="col" style="color:#555;">Type of Infringement</th><th scope="col" style="color:#555;">Criminal Penalty</th><th scope="col" style="color:#555;">Civil Penalty</th></tr>
+  <tr style="color:#555; font-size:13px;"><td>Copyright infringement</td><td>Up to 4 years imprisonment, fine up to 800,000 baht</td><td>Actual damages + compensation</td></tr>
+  <tr style="color:#555; font-size:13px;"><td>Trademark infringement</td><td>Up to 4 years imprisonment, fine up to 400,000 baht</td><td>Damages + royalties owed</td></tr>
+  <tr style="color:#555; font-size:13px;"><td>Patent infringement</td><td>Up to 2 years imprisonment, fine up to 200,000 baht</td><td>Damages + infringer's profits</td></tr>
+  <tr style="color:#555; font-size:13px;"><td>Trade secret disclosure</td><td>Up to 2 years imprisonment, fine up to 200,000 baht</td><td>Damages + injunction against disclosure</td></tr>
+</table>
+</div>
+
+<!-- PRACTICAL RECOMMENDATIONS -->
+<h2>7. คำแนะนำสำหรับผู้ประกอบการ</h2>
+<ol>
+  <li><b>จดทะเบียนเครื่องหมายการค้า</b>ก่อนเปิดตัวแบรนด์ — ป้องกันผู้อื่นจดก่อน</li>
+  <li><b>ทำสัญญา NDA</b> กับพนักงาน พาร์ทเนอร์ และผู้รับจ้าง — รักษาความลับทางการค้า</li>
+  <li><b>ระบุเจ้าของลิขสิทธิ์</b>ในสัญญาจ้างทำเนื้อหา — ใครเป็นเจ้าของผลงาน?</li>
+  <li><b>สำรวจ IP ของบริษัท</b> (IP Audit) อย่างน้อยปีละครั้ง</li>
+  <li><b>ใช้ License ถูกต้อง</b>สำหรับภาพ เพลง ซอฟต์แวร์ ที่ใช้ในธุรกิจ</li>
+  <li><b>ปรึกษาทนายความ</b>ก่อนทำสัญญาที่เกี่ยวกับ IP — โดยเฉพาะ Licensing, Franchise, Joint Venture</li>
+</ol>
+<p style="color:#555; font-size:13px; margin-top:4px;"><b>Recommendations for Business Owners:</b></p>
+<ol style="color:#555; font-size:13px;">
+  <li><b>Register your trademark</b> before brand launch — prevent others from registering first</li>
+  <li><b>Execute NDAs</b> with employees, partners, and contractors — protect trade secrets</li>
+  <li><b>Specify copyright ownership</b> in content creation contracts — who owns the work?</li>
+  <li><b>Conduct an IP audit</b> at least once a year</li>
+  <li><b>Use proper licenses</b> for images, music, and software used in your business</li>
+  <li><b>Consult a lawyer</b> before entering IP-related agreements — especially licensing, franchise, and joint venture deals</li>
+</ol>
+
+<!-- ============ LAW REFERENCE CARDS ============ -->
+<style>
+  .law-ref-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:12px}
+  .law-ref-card{display:flex;align-items:center;gap:12px;padding:14px 16px;background:#0f2133;border:1px solid #a2a9b1;border-radius:10px;text-decoration:none;color:#c8dce8;transition:all .25s ease;cursor:pointer}
+  .law-ref-card:hover{background:#162d45;border-color:#C9A96E;transform:translateY(-2px);box-shadow:0 4px 16px rgba(201,169,110,.15)}
+  .law-ref-card .law-icon{flex-shrink:0;width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:bold}
+  .law-ref-card .law-info{flex:1;min-width:0}
+  .law-ref-card .law-name{font-size:13px;font-weight:600;color:#e8eef3;line-height:1.3}
+  .law-ref-card .law-source{font-size:10px;color:#6a8da8;margin-top:3px}
+  .law-ref-card .law-arrow{flex-shrink:0;color:#4a6a82;font-size:16px;transition:color .2s}
+  .law-ref-card:hover .law-arrow{color:#C9A96E}
+  .law-ref-card.cat-act{border-left:3px solid #27AE60}.law-ref-card.cat-act .law-icon{background:rgba(39,174,96,.15);color:#27AE60}
+  .law-ref-card.cat-code{border-left:3px solid #C9A96E}.law-ref-card.cat-code .law-icon{background:rgba(201,169,110,.15);color:#C9A96E}
+  .law-ref-card.cat-reg{border-left:3px solid #4a9eff}.law-ref-card.cat-reg .law-icon{background:rgba(74,158,255,.15);color:#4a9eff}
+  .law-ref-card.cat-concept{border-left:3px solid #9b59b6}.law-ref-card.cat-concept .law-icon{background:rgba(155,89,182,.15);color:#9b59b6}
+</style>
+<div style="margin-top:32px;padding:18px 20px;background:#f8f9fa;border:1px solid #a2a9b1;border-radius:10px;">
+  <div style="font-size:12px;color:#1B2A4A;font-weight:bold;margin-bottom:10px;letter-spacing:1px;">กฎหมายที่เกี่ยวข้อง</div>
+  <div class="law-ref-grid">
+    <span style="cursor:default" class="law-ref-card cat-concept">
+      <span class="law-icon">&#9733;</span>
+      <span class="law-info"><span class="law-name">ทรัพย์สินทางปัญญา</span><span class="law-source">แนวคิดกฎหมาย</span></span>
+    </span>
+    <a href="/laws/copyright-act.pdf" data-law="ลิขสิทธิ์" target="_blank" rel="noopener" class="law-ref-card cat-act">
+      <span class="law-icon">&#9878;</span>
+      <span class="law-info"><span class="law-name">พ.ร.บ.ลิขสิทธิ์ 2537</span><span class="law-source">&#128279; ดาวน์โหลด PDF พ.ร.บ.ลิขสิทธิ์</span></span>
+      <span class="law-arrow">&#8250;</span>
+    </a>
+    <a href="/laws/trademark-act.pdf" data-law="เครื่องหมายการค้า" target="_blank" rel="noopener" class="law-ref-card cat-act">
+      <span class="law-icon">&#9878;</span>
+      <span class="law-info"><span class="law-name">พ.ร.บ.เครื่องหมายการค้า 2534</span><span class="law-source">&#128279; ดาวน์โหลด PDF พ.ร.บ.เครื่องหมายการค้า</span></span>
+      <span class="law-arrow">&#8250;</span>
+    </a>
+    <a href="/laws/patent-act.pdf" data-law="สิทธิบัตร" target="_blank" rel="noopener" class="law-ref-card cat-act">
+      <span class="law-icon">&#9878;</span>
+      <span class="law-info"><span class="law-name">พ.ร.บ.สิทธิบัตร 2522</span><span class="law-source">&#128279; ดาวน์โหลด PDF พ.ร.บ.สิทธิบัตร</span></span>
+      <span class="law-arrow">&#8250;</span>
+    </a>
+    <a href="/laws/trade-secrets-act-2545.pdf" data-law="ความลับทางการค้า" target="_blank" rel="noopener" class="law-ref-card cat-act">
+      <span class="law-icon">&#9878;</span>
+      <span class="law-info"><span class="law-name">พ.ร.บ.ความลับทางการค้า 2545</span><span class="law-source">&#128279; ดาวน์โหลด PDF พ.ร.บ.ความลับทางการค้า</span></span>
+      <span class="law-arrow">&#8250;</span>
+    </a>
+  </div>
+</div>
+
+<hr style="border:none;border-top:1px solid #ddd;margin:32px 0">
+<p style="font-size:12px;color:#777;line-height:1.7"><strong>Disclaimer:</strong> บทความนี้จัดทำเพื่อวัตถุประสงค์ทางวิชาการและให้ความรู้ทั่วไปเท่านั้น ไม่ถือเป็นคำแนะนำทางกฎหมายเฉพาะราย ผู้อ่านควรปรึกษาที่ปรึกษากฎหมายก่อนตัดสินใจดำเนินการใด ๆ</p>
+
+<!-- AUTHOR -->
+<h2>เกี่ยวกับผู้เขียน</h2>
+<div style="background:#f0f4f8; border:1px solid #a2a9b1; padding:16px 20px;">
+  <p><b>Thundthornthep Yamoutai, Ph.D.</b></p>
+  <p style="font-size:13px;">ทนายความและนักวิจัยกฎหมาย ผู้เชี่ยวชาญด้านกฎหมายธุรกิจ ทรัพย์สินทางปัญญา สัญญา และ PDPA — ผู้ก่อตั้ง Legal Advance Solution Co., Ltd. อาจารย์พิเศษวิชากฎหมายธุรกิจ มหาวิทยาลัยเกษตรศาสตร์</p>
+  <p style="font-size:13px; margin-top:6px;"><a href="https://thundthornthep-ai.github.io/">Official Profile</a> | <a href="https://thundthornthep-ai.github.io/knowledge-hub.html">ความรู้กฎหมาย</a> | <a href="https://laslegal.co.th" target="_blank">LAS Website</a></p>
+</div>
+
+<div class="wiki-footer">
+  <a href="https://thundthornthep-ai.github.io/knowledge-hub.html">&larr; กลับหน้าความรู้กฎหมาย</a><br>
+  Thundthornthep Yamoutai, Ph.D. | <a href="https://laslegal.co.th" target="_blank">Legal Advance Solution Co., Ltd.</a><br>
+  Last updated: March 2026
+</div>
+
+</div>
+<div style="text-align:center;padding:16px 20px;margin:20px auto;max-width:800px;">
+  <a href="../all-content.html" style="color:#0645ad;font-weight:bold;text-decoration:none;">ดูบทความและบล็อกทั้งหมด / View All Content &rarr;</a>
+</div>
+<script src="/js/auth-gate.js"></script>
+<script src="/js/legal-links.js"></script>
+</body>
+</html>

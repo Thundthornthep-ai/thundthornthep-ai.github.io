@@ -1186,4 +1186,32 @@
     <priority>0.85</priority>
   </url>
 
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-invest-01.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-invest-02.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/las-invest-index.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/hire-of-work-vs-employment-thailand.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
 </urlset>
