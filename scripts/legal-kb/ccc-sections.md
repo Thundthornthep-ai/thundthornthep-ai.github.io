@@ -772,7 +772,10 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 1237
 - มาตรา 1238
 - มาตรา 1239
+- มาตรา 1239/1
 - มาตรา 1240
+- มาตรา 1240/1
+- มาตรา 1240/2
 - มาตรา 1241
 - มาตรา 1242
 - มาตรา 1243
