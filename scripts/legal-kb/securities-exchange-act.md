@@ -21,6 +21,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 89/8
 - มาตรา 89/10
 - มาตรา 89/11
+- มาตรา 89/12
 - มาตรา 89/15
 - มาตรา 89/18
 - มาตรา 89/23

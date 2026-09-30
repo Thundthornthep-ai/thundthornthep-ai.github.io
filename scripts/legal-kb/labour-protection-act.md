@@ -33,6 +33,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 59
 - มาตรา 59/1
 - มาตรา 59/2
+- มาตรา 70
 - มาตรา 90
 - มาตรา 108
 - มาตรา 118

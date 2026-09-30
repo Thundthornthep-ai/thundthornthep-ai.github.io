@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+<meta property="og:url" content="https://thundthornthep-ai.github.io/articles/tax-due-diligence-thailand.html" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NN3KX46PVC"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NN3KX46PVC');</script>
+<link rel="icon" type="image/webp" href="/las-logo.webp">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ตรวจสอบสถานะความเสี่ยงด้านภาษีอากรเชิงลึก (Tax Legal Due Diligence) | LAS C&amp;C Deep Research EP15 | LAS Legal Hub</title>
+  <meta name="description" content="การตรวจสอบความเสี่ยงทางภาษีอากร (Tax Legal Due Diligence) ในการเข้าซื้อกิจการ (M&amp;A) ของบริษัทไทย มักพบ &quot;ระเบิดเวลาทางภาษี&quot; (Tax Exposure) ที่ซ่อนอยู่นอกงบดุล 4 จุดตายหลัก: (1) กรอบเวลาการตรวจสอบภาษีของกรมสรรพากร: ตาม ประมวลรัษฎากร มาตรา 19 [ต้องยืนยันมาตรา]…" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Thundthornthep Yamoutai, Ph.D." />
+  <meta property="og:title" content="ตรวจสอบสถานะความเสี่ยงด้านภาษีอากรเชิงลึก (Tax Legal Due Diligence)" />
+  <meta property="og:description" content="การตรวจสอบความเสี่ยงทางภาษีอากร (Tax Legal Due Diligence) ในการเข้าซื้อกิจการ (M&amp;A) ของบริษัทไทย มักพบ &quot;ระเบิดเวลาทางภาษี&quot; (Tax Exposure) ที่ซ่อนอยู่นอกงบดุล 4 จุดตายหลัก: (1) กรอบเวลาการตรวจสอบภาษีของกรมสรรพากร: ตาม ประมวลรัษฎากร มาตรา 19 [ต้องยืนยันมาตรา]…" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="th_TH" />
+  <link rel="canonical" href="https://thundthornthep-ai.github.io/articles/tax-due-diligence-thailand.html" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ตรวจสอบสถานะความเสี่ยงด้านภาษีอากรเชิงลึก (Tax Legal Due Diligence): เช็กลิสต์ภาษีเงินได้นิติบุคคล ภาษีหัก ณ ที่จ่าย ภาษีมูลค่าเพิ่ม และธุรกรรมระหว่างกัน (Transfer Pricing)",
+    "alternativeHeadline": "Tax Legal Due Diligence in M&A: Corporate Income Tax, Withholding Taxes, VAT Fraud Exposure, and Transfer Pricing Compliance under the Thai Revenue Code",
+    "author": {"@type": "Person", "name": "Thundthornthep Yamoutai, Ph.D.", "affiliation": "Legal Advance Solution Co., Ltd."},
+    "publisher": {"@type": "Organization", "name": "Legal Advance Solution Co., Ltd."},
+    "datePublished": "2026-10-01",
+    "dateModified": "2026-09-30",
+    "inLanguage": "th",
+    "isPartOf": {"@type": "CreativeWorkSeries", "name": "LAS C&C — Deep Research"}
+  }
+  </script>
+  <style>
+    :root {
+      --gold: #C9A96E;
+      --navy: #1B2A4A;
+      --red-bg: #FADBD8;
+      --red-border: #C0392B;
+      --orange-bg: #FDEBD0;
+      --orange-border: #E67E22;
+      --green-bg: #D5F5E3;
+      --green-border: #27AE60;
+      --blue-bg: #D6EAF8;
+      --blue-border: #2471A3;
+      --gray-bg: #F4F6F7;
+      --text: #2C303A;
+      --muted: #6C7A89;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Sarabun', 'TH Sarabun New', sans-serif;
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text);
+      background: #FAFAFA;
+    }
+    .article-header {
+      background: linear-gradient(135deg, var(--navy) 0%, #2C3E6A 100%);
+      color: #fff;
+      padding: 48px 24px 36px;
+      text-align: center;
+    }
+    .article-header .category-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .article-header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .article-header .subtitle {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 20px;
+    }
+    .article-header .meta {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+    }
+    .article-body {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+    /* TOC */
+    .toc-box {
+      background: var(--blue-bg);
+      border-left: 4px solid var(--blue-border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+    }
+    .toc-box h3 {
+      font-size: 1rem;
+      color: var(--blue-border);
+      margin-bottom: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .toc-box ol { padding-left: 22px; }
+    .toc-box li { margin-bottom: 6px; }
+    .toc-box a { color: var(--navy); text-decoration: none; font-size: 15px; }
+    .toc-box a:hover { text-decoration: underline; color: var(--blue-border); }
+    /* Section blocks */
+    .section-block { margin-bottom: 48px; }
+    .section-heading {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--navy);
+      border-bottom: 3px solid var(--gold);
+      padding-bottom: 8px;
+      margin-bottom: 6px;
+    }
+    .section-heading .en {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--muted);
+      margin-left: 10px;
+      letter-spacing: 0.3px;
+    }
+    .sub-heading {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 24px 0 10px;
+      padding-left: 10px;
+      border-left: 3px solid var(--gold);
+    }
+    p { margin-bottom: 14px; }
+    /* Compare table */
+    .compare-table {
+      overflow-x: auto;
+      margin: 24px 0 28px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    table.article-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    table.article-table thead th {
+      background: var(--navy);
+      color: #fff;
+      padding: 13px 16px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+    }
+    table.article-table thead th:first-child { border-radius: 10px 0 0 0; }
+    table.article-table thead th:last-child { border-radius: 0 10px 0 0; }
+    table.article-table tbody tr:hover { filter: brightness(0.96); transition: filter 0.15s; }
+    table.article-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #E5E8EB;
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    table.article-table td:first-child {
+      font-weight: 700;
+      color: var(--navy);
+      white-space: nowrap;
+      background: #F0F3F7 !important;
+      min-width: 140px;
+    }
+    table.article-table .col-hiree { background: #FDEBD0; }
+    table.article-table .col-labor { background: #D5F5E3; }
+    table.article-table .col-risk-high { background: #FADBD8; }
+    table.article-table .col-risk-med { background: #FDEBD0; }
+    table.article-table .col-risk-low { background: #D5F5E3; }
+    /* Practice note */
+    .practice-note {
+      background: var(--orange-bg);
+      border-left: 4px solid var(--orange-border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+    .practice-note.alert {
+      background: var(--red-bg);
+      border-left-color: var(--red-border);
+    }
+    .practice-note.tip {
+      background: var(--green-bg);
+      border-left-color: var(--green-border);
+    }
+    .pn-label {
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .practice-note .pn-label { color: var(--orange-border); }
+    .practice-note.alert .pn-label { color: var(--red-border); }
+    .practice-note.tip .pn-label { color: var(--green-border); }
+    /* Law ref cards */
+    .law-ref-cards { display: flex; flex-wrap: wrap; gap: 14px; margin: 20px 0; }
+    .law-ref-card {
+      flex: 1 1 260px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #fff;
+      border: 1.5px solid #DDE3EA;
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    }
+    .law-ref-card.cat-civil { border-left: 4px solid #2471A3; }
+    .law-ref-card.cat-labor { border-left: 4px solid #117A65; }
+    .law-ref-card.cat-tax { border-left: 4px solid #884EA0; }
+    .law-icon {
+      font-size: 22px;
+      min-width: 28px;
+      text-align: center;
+      margin-top: 2px;
+    }
+    .law-info .law-name {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+    .law-info .law-source {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    /* Content list */
+    .content-list { padding-left: 22px; margin-bottom: 16px; }
+    .content-list li { margin-bottom: 8px; }
+    /* FAQ */
+    .faq-item {
+      border: 1px solid #DDE3EA;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+    .faq-item .faq-q {
+      background: var(--navy);
+      color: #fff;
+      padding: 13px 18px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .faq-item .faq-q::before { content: "Q: "; color: var(--gold); }
+    .faq-item .faq-a {
+      padding: 14px 18px;
+      background: #fff;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    /* Law quote (verbatim) */
+    .law-quote {
+      background: #F0F3F7;
+      border-left: 4px solid var(--navy);
+      border-radius: 6px;
+      padding: 14px 18px;
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: var(--navy);
+      margin: 14px 0;
+      white-space: pre-wrap;
+      font-family: 'Sarabun', 'TH Sarabun New', monospace;
+    }
+    /* Risk badge */
+    .risk-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .risk-high { background: var(--red-bg); color: var(--red-border); border: 1px solid var(--red-border); }
+    .risk-med  { background: var(--orange-bg); color: var(--orange-border); border: 1px solid var(--orange-border); }
+    .risk-low  { background: var(--green-bg); color: var(--green-border); border: 1px solid var(--green-border); }
+    /* Summary card */
+    .summary-card {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 24px 0;
+    }
+    .summary-card h3 { color: var(--gold); margin-bottom: 14px; font-size: 1.1rem; }
+    .summary-card ul { padding-left: 22px; }
+    .summary-card li { margin-bottom: 8px; font-size: 15px; opacity: 0.92; }
+    /* References */
+    .ref-section {
+      background: var(--gray-bg);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-top: 40px;
+    }
+    .ref-section h3 { color: var(--navy); margin-bottom: 14px; font-size: 1rem; font-weight: 700; }
+    .ref-section ul { padding-left: 20px; }
+    .ref-section li { font-size: 14px; margin-bottom: 6px; color: var(--muted); }
+    .ref-section a { color: var(--blue-border); }
+    /* Related */
+    .related-articles {
+      display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px;
+    }
+    .related-card {
+      flex: 1 1 200px;
+      background: #fff;
+      border: 1.5px solid #DDE3EA;
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 14px;
+      color: var(--navy);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover { border-color: var(--gold); }
+    .related-card .rel-tag { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+    /* Disclaimer */
+    .disclaimer {
+      margin-top: 40px;
+      padding: 16px 20px;
+      background: #F4F6F7;
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    /* Responsive */
+    @media (max-width: 640px) {
+      .article-header h1 { font-size: 1.45rem; }
+      .section-heading { font-size: 1.25rem; }
+      table.article-table td:first-child { min-width: 110px; }
+    }
+    /* ── Deep-Research extras (LAS Legal Master Template v1.0.0) ── */
+    .article-header .h1-sub { display:block; font-size:1.15rem; font-weight:600; color:rgba(255,255,255,0.9); margin-top:8px; line-height:1.5; }
+    .meta-chips { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:14px; }
+    .chip { display:inline-block; background:rgba(255,255,255,0.12); color:#fff; font-size:12px; padding:3px 12px; border-radius:14px; letter-spacing:0.2px; }
+    .chip-gold { background:var(--gold); color:var(--navy); font-weight:700; }
+    .quick-answer { background:var(--green-bg); border-left:4px solid var(--green-border); border-radius:8px; padding:18px 22px; margin-bottom:24px; }
+    .quick-answer .pn-label { color:var(--green-border); }
+    .quick-answer p { margin:0; font-size:16px; }
+    .hook-box { background:#fff; border:1.5px solid #DDE3EA; border-left:4px solid var(--navy); border-radius:10px; padding:18px 22px; margin-bottom:28px; }
+    .hook-box h3 { font-size:1rem; color:var(--navy); margin-bottom:10px; font-weight:800; }
+    .hook-box ol { padding-left:22px; }
+    .hook-box li { margin-bottom:8px; }
+    .checklist { list-style:none; padding-left:0; margin:12px 0 18px; }
+    .checklist li { display:flex; gap:12px; align-items:flex-start; padding:10px 14px; margin-bottom:8px; background:#fff; border:1px solid #DDE3EA; border-radius:8px; }
+    .checklist .cb { flex:0 0 18px; width:18px; height:18px; margin-top:4px; border:2px solid var(--navy); border-radius:4px; background:#fff; }
+    .compare-table.claim-ledger table.article-table td:first-child { white-space:nowrap; font-family:'Consolas','Menlo',monospace; font-size:13px; }
+    .compare-table.claim-ledger table.article-table td { font-size:14px; }
+    .law-ref-card.cat-pdpa { border-left:4px solid #C0392B; }
+    .law-ref-card.cat-other { border-left:4px solid #7F8C8D; }
+    .practice-note p { margin-bottom:8px; }
+    .practice-note p:last-child { margin-bottom:0; }
+    @media (max-width: 640px) { .article-header .h1-sub { font-size:0.98rem; } }
+  </style>
+<link rel="stylesheet" href="/css/learning-tables.css?v=20260929">
+<link rel="stylesheet" href="/css/las-template-theme.css?v=20260929">
+</head>
+<body class="las-knowledge-article">
+
+<!-- HEADER -->
+<header class="article-header">
+  <div class="category-tag">LAS C&amp;C Deep Research · EP15 · Due Diligence · Tax</div>
+  <h1>ตรวจสอบสถานะความเสี่ยงด้านภาษีอากรเชิงลึก (Tax Legal Due Diligence)<br><span class="h1-sub">เช็กลิสต์ภาษีเงินได้นิติบุคคล ภาษีหัก ณ ที่จ่าย ภาษีมูลค่าเพิ่ม และธุรกรรมระหว่างกัน (Transfer Pricing)</span> <span class="las-reviewed-mark" role="img" aria-label="ตรวจทบทวนข้อกฎหมายแล้ว" title="ตรวจทบทวนข้อกฎหมายแล้ว">✓</span></h1>
+<p class="las-review-date"><b>✓ ตรวจทบทวนข้อกฎหมายล่าสุดเมื่อวันที่ 1 ตุลาคม 2569</b> · เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 1 ตุลาคม 2569</p>
+  <p class="subtitle">Tax Legal Due Diligence in M&amp;A: Corporate Income Tax, Withholding Taxes, VAT Fraud Exposure, and Transfer Pricing Compliance under the Thai Revenue Code</p>
+  <div class="meta">โดย ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D. &nbsp;|&nbsp; Legal Advance Solution Co., Ltd. &nbsp;|&nbsp; ตัวบทกฎหมาย ณ 1 ตุลาคม 2569</div>
+  <div class="meta-chips">
+    <span class="chip">Series: LAS C&amp;C Deep Research</span>
+    <span class="chip">ตอนที่ 15</span>
+    <span class="chip">Jurisdiction: ประเทศไทย</span>
+    <span class="chip chip-gold">LAS Legal Audit ✓ 1 ตุลาคม 2569</span>
+  </div>
+</header>
+
+<div class="article-body">
+
+  <!-- QUICK ANSWER -->
+  <div class="quick-answer" id="quick-answer">
+    <span class="pn-label">คำตอบสั้น — Quick Answer / TL;DR</span>
+    <p>การตรวจสอบความเสี่ยงทางภาษีอากร (Tax Legal Due Diligence) ในการเข้าซื้อกิจการ (M&amp;A) ของบริษัทไทย มักพบ "ระเบิดเวลาทางภาษี" (Tax Exposure) ที่ซ่อนอยู่นอกงบดุล 4 จุดตายหลัก: (1) <strong>กรอบเวลาการตรวจสอบภาษีของกรมสรรพากร:</strong> ตาม <strong>ประมวลรัษฎากร มาตรา 19</strong> [ต้องยืนยันมาตรา] เจ้าพนักงานประเมินมีอำนาจออกหมายเรียกตรวจสอบภาษีย้อนหลังได้ <strong>2 ปี</strong> (ขยายได้เป็น <strong>5 ปี</strong> หากมีเหตุสงสัยว่าแสดงรายการเท็จเพื่อหลีกเลี่ยงภาษี) ทั้งนี้ อำนาจออกหมายเรียกตรวจสอบเป็นเรื่องหนึ่ง ส่วนระยะเวลาที่เจ้าพนักงานประเมินมีอำนาจประเมินภาษีตามประมวลรัษฎากรเป็นอีกเรื่องหนึ่งซึ่งต้องตรวจแยกกัน [ต้องยืนยันมาตรา] และหากไม่เคยยื่นแบบ ภ.ง.ด. เลย ระยะเวลาที่กรมสรรพากรประเมินและเรียกเก็บภาษีเป็นไปตามประมวลรัษฎากรโดยเฉพาะ [ต้องยืนยันมาตรา] ส่วนประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 193/30 กำหนดอายุความสิบปีไว้เฉพาะกรณีที่ประมวลกฎหมายนี้หรือกฎหมายอื่นมิได้บัญญัติไว้โดยเฉพาะเท่านั้น (2) <strong>ความเสี่ยงใบกำกับภาษีปลอม (Fake Tax Invoices):</strong> ตามประมวลรัษฎากร [ต้องยืนยันมาตรา] การนำใบกำกับภาษีปลอมมาใช้ทำให้ต้องเสียเบี้ยปรับสองเท่าของภาษีตามใบกำกับภาษีนั้น และเงินเพิ่มร้อยละ 1.5 ต่อเดือนหรือเศษของเดือน รวมถึงอาจมีความรับผิดทางอาญาเป็นโทษปรับหรือโทษจำคุก ซึ่งต้องตรวจอัตราโทษและตัวผู้กระทำ (ผู้ออกหรือผู้ใช้ใบกำกับภาษี) จากตัวบทประมวลรัษฎากรฉบับทางการ [ต้องยืนยันมาตรา] (3) <strong>ภาษีหัก ณ ที่จ่าย (WHT) ข้ามพรมแดน:</strong> การจ่ายเงินได้พึงประเมินที่มีแหล่งเงินได้ในประเทศไทยให้แก่นิติบุคคลต่างประเทศที่ไม่ได้ประกอบกิจการในประเทศไทย เช่น ค่าสิทธิ์ ค่าบริการ หรือค่าซอฟต์แวร์ ต้องหักภาษี ณ ที่จ่ายและนำส่งตามอัตราและกำหนดเวลาที่ประมวลรัษฎากรกำหนดสำหรับเงินได้แต่ละประเภท โดยอัตราอาจลดลงตามอนุสัญญาภาษีซ้อน (DTA) ที่ใช้บังคับ การไม่หักภาษีในอัตราร้อยละ 15 ตามมาตรา 70 [ต้องยืนยันมาตรา] หรือการใช้สิทธิอนุสัญญาภาษีซ้อนโดยไม่เข้าเงื่อนไขจึงเป็นความเสี่ยง ทั้งนี้ อัตราร้อยละ 15 มิใช่อัตราเดียวสำหรับเงินได้ทุกประเภท (4) <strong>เกณฑ์ Transfer Pricing ตามประมวลรัษฎากร มาตรา 71 ทวิ [ต้องยืนยันมาตรา]:</strong> ประมวลรัษฎากรกำหนดหน้าที่ยื่นรายงานข้อมูลเกี่ยวกับนิติบุคคลที่มีความสัมพันธ์กันเมื่อเข้าเกณฑ์ (เช่น เกณฑ์รายได้เกิน 200 ล้านบาท) [ต้องยืนยันมาตรา] ส่วนเอกสารประกอบราคาโอน (Transfer Pricing Local File) เป็นหน้าที่ตามประกาศหรือคำสั่งของอธิบดีกรมสรรพากรซึ่งต้องตรวจแยกต่างหาก [ต้องยืนยันมาตรา] [ต้องยืนยันแหล่งที่มา] ทั้งนี้ หากกำหนดราคาไม่เป็นไปตามราคาตลาด (Arm's Length Principle) สรรพากรมีอำนาจประเมินปรับปรุงรายได้ย้อนหลัง</p>
+  </div>
+
+  <!-- PROBLEM HOOK -->
+  <div class="hook-box" id="hook">
+    <h3>สถานการณ์ที่ผู้ประกอบการมักพบจริง</h3>
+    <ol>
+      <li><strong>เหตุการณ์:</strong> กองทุน Private Equity เข้าซื้อหุ้น 100% ในบริษัทจัดจำหน่ายสินค้าอุปโภคบริโภคในไทยมูลค่า 100 ล้านบาท โดยดูเฉพาะรายงานงบการเงินที่ผ่านการตรวจสอบโดยผู้สอบบัญชีรับอนุญาต (CPA) ซึ่งระบุว่าบริษัทมีกำไรสุทธิต่อเนื่อง</li>
+      <li><strong>ความเข้าใจผิด:</strong> ผู้ซื้อเข้าใจว่างบการเงินที่มี CPA ลงนามรับรองโดยไม่มีเงื่อนไข (Unqualified Opinion) ย่อมหมายความว่าบริษัทไม่มีความเสี่ยงด้านภาษี</li>
+      <li><strong>จุดพลิก:</strong> หลังปิดดีล 1 ปี กรมสรรพากรส่งหมายเรียกตรวจสอบภาษีย้อนหลัง 4 ปี พบว่าบริษัทซื้อใบกำกับภาษีปลอมจากคู่ค้ารายย่อยเพื่อเพิ่มภาษีซื้อ (Input VAT) และลงรายจ่ายต้องห้ามตามมาตรา 65 ตรี [ต้องยืนยันมาตรา] สรรพากรประเมินภาษีมูลค่าเพิ่มที่ขาดพร้อมเบี้ยปรับสองเท่าของภาษีตามใบกำกับภาษีปลอมและเงินเพิ่มร้อยละ 1.5 ต่อเดือน ส่วนภาษีเงินได้นิติบุคคลจากรายจ่ายต้องห้ามใช้เบี้ยปรับตามอัตราของหมวดภาษีเงินได้นิติบุคคล รวมเป็นยอดหนี้ภาษีสูงถึง 38 ล้านบาท ผู้ซื้อเรียกร้องให้ผู้ขายเดิมรับผิดชอบ แต่ผู้ขายได้ยักย้ายทรัพย์สินหนีไปแล้ว ผู้ซื้อจึงต้องรับภาระจ่ายหนี้ภาษี 38 ล้านบาทแทน ทำให้ผลตอบแทนจากการลงทุนติดลบทันที</li>
+      <li><strong>สิ่งที่ได้จากบทความ:</strong> แผนผังตรวจสอบภาษี 4 ชั้น (CIT, WHT, VAT, TP), วิธีสแกนใบกำกับภาษีต้องสงสัย, เทคนิคการคำนวณเงินเพิ่มและเบี้ยปรับสรรพากร, การร่างข้อสัญญา Specific Tax Indemnity และ Tax Escrow Holdback ในสัญญา SPA</li>
+    </ol>
+  </div>
+
+  <!-- TOC -->
+  <nav class="toc-box" aria-label="สารบัญ">
+    <h3>สารบัญ</h3>
+    <ol>
+      <li><a href="#s1">Audit ทางบัญชีกับ Tax Legal Due Diligence</a></li>
+      <li><a href="#s2">ผลกระทบเชิงธุรกิจ</a></li>
+      <li><a href="#s3">กรอบกฎหมายและ Claim Ledger</a></li>
+      <li><a href="#s4">ตารางเปรียบเทียบความเสี่ยงภาษี 4 ประเภทหลัก</a></li>
+      <li><a href="#s5">ข้อต่อสู้ของเจ้าพนักงานสรรพากรกับบริษัทผู้ถูกประเมิน</a></li>
+      <li><a href="#s6">ตัวอย่างสถานการณ์จำลอง</a></li>
+      <li><a href="#s7">ขั้นตอนการทำ Tax Legal Due Diligence</a></li>
+      <li><a href="#s8">Checklist 10 จุดตรวจความเสี่ยงภาษีอากรในการเข้าซื้อกิจการ</a></li>
+
+
+      <li><a href="#faq">คำถามที่พบบ่อย</a></li>
+      <li><a href="#refs">อ้างอิง</a></li>
+    </ol>
+  </nav>
+
+  <section class="section-block" id="s1">
+    <h2 class="section-heading">Audit ทางบัญชีกับ Tax Legal Due Diligence</h2>
+<p>ผู้ซื้อจำนวนมากเข้าใจผิดว่างบการเงินที่ผ่านการตรวจโดย CPA ยืนยันความปลอดภัยทางภาษีแล้ว แต่ในความเป็นจริง ผู้สอบบัญชีตรวจงบการเงินภายใต้ "เกณฑ์ความมีสาระสำคัญ" (Materiality) และตรวจโดยการสุ่มตัวอย่าง (Sampling) เท่านั้น ในขณะที่เจ้าพนักงานสรรพากรตรวจตาม "ตัวบทกฎหมายภาษีอากรที่เข้มงวด" หากพบรายจ่ายต้องห้ามตามมาตรา 65 ตรี [ต้องยืนยันมาตรา] หรือใบกำกับภาษีปลอม แม้เพียงใบเดียว สรรพากรสามารถขยายผลประเมินย้อนหลังได้ภายในกรอบเวลาที่ประมวลรัษฎากรกำหนด [ต้องยืนยันมาตรา] การทำ Tax DD ทางกฎหมายจึงเป็นการตรวจเจาะลึกเพื่อปิดช่องว่างนี้</p>
+  </section>
+
+  <section class="section-block" id="s2">
+    <h2 class="section-heading">ผลกระทบเชิงธุรกิจ <span class="en">Business Consequences</span></h2>
+<ul class="content-list"><li><strong>Money (เบี้ยปรับและเงินเพิ่มที่พุ่งสูง):</strong> เบี้ยปรับภาษีมูลค่าเพิ่มคือหนึ่งถึงสองเท่าของภาษีที่ขาด และเงินเพิ่มคิดในอัตราร้อยละ 1.5 ต่อเดือนหรือเศษของเดือนของภาษีที่ต้องเสียตามประมวลรัษฎากร เมื่อรวมเบี้ยปรับซึ่งเป็นอีกส่วนหนึ่งแยกต่างหากเข้ากับเงินเพิ่ม ยอดหนี้ภาษีจึงอาจสูงกว่าภาษีที่ขาดได้หลายเท่า</li><li><strong>Control (การถูกอายัดบัญชีและยึดทรัพย์สิน):</strong> เมื่อมีภาษีค้างชำระและครบเงื่อนไขตามประมวลรัษฎากร [ต้องยืนยันมาตรา] อธิบดีมีอำนาจสั่งยึดและอายัดทรัพย์สินของผู้ค้างภาษีได้โดยไม่ต้องฟ้องคดีต่อศาลก่อน แต่ผู้ถูกประเมินยังมีสิทธิอุทธรณ์การประเมินตามที่กฎหมายกำหนด</li><li><strong>Evidence/Timing:</strong> การตรวจภาษีย้อนหลัง 5 ปี กำหนดให้ผู้ซื้อต้องรวบรวมเอกสารทางภาษี ใบกำกับภาษี และใบเสร็จรับเงินย้อนหลังอย่างน้อย 5-7 ปี ซึ่งระยะเวลาเก็บรักษาเอกสารมีฐานตามกฎหมายว่าด้วยการบัญชีและประมวลรัษฎากร [ต้องยืนยันมาตรา]</li></ul>
+  </section>
+
+  <section class="section-block" id="s3">
+    <h2 class="section-heading">กรอบกฎหมายและ Claim Ledger <span class="en">Legal Framework</span></h2>
+<div class="compare-table claim-ledger"><div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="article-table las-reading-table las-wide-table"><thead><tr><th scope="col">Claim ID</th><th scope="col">ข้อความทางกฎหมายที่ยืนยัน</th><th scope="col">ฐานกฎหมายปฐมภูมิ</th><th scope="col">ตำแหน่งในแหล่ง</th><th scope="col">สถานะ</th></tr></thead><tbody><tr><td>C-CC-15-01</td><td>เจ้าพนักงานประเมินมีอำนาจออกหมายเรียกตรวจสอบภาษีได้ภายใน 2 ปีนับแต่วันยื่นแบบ แต่ถ้ามีเหตุอันควรเชื่อว่าแสดงรายการเท็จ อธิบดีอาจอนุมัติให้ขยายเวลาได้ไม่เกิน 5 ปี ทั้งนี้ อำนาจออกหมายเรียกตรวจสอบเป็นคนละเรื่องกับระยะเวลาที่เจ้าพนักงานประเมินมีอำนาจประเมินภาษี ซึ่งต้องตรวจแยกต่างหาก</td><td>ประมวลรัษฎากร มาตรา 19 [ต้องยืนยันมาตรา]</td><td>ลักษณะ 2 วิธีการเกี่ยวแก่ภาษีอากร</td><td class="col-risk-low">แก้ไขแล้ว — LAS Audit [ต้องยืนยันมาตรา]</td></tr><tr><td>C-CC-15-02</td><td>ผู้ใดนำใบกำกับภาษีปลอมมาใช้ในการคำนวณภาษี ต้องเสียเบี้ยปรับอีกสองเท่าของจำนวนภาษีตามใบกำกับภาษีนั้น</td><td>ประมวลรัษฎากร [ต้องยืนยันมาตรา]</td><td>หมวด 4 ภาษีมูลค่าเพิ่ม</td><td class="col-risk-low">แก้ไขแล้ว — LAS Audit [ต้องยืนยันมาตรา]</td></tr><tr><td>C-CC-15-03</td><td>บุคคลใดไม่เสียภาษีภายในกำหนดเวลา ต้องเสียเงินเพิ่มอีกร้อยละ 1.5 ต่อเดือนหรือเศษของเดือนของเงินภาษีที่ต้องเสีย</td><td>ประมวลรัษฎากร [ต้องยืนยันมาตรา]</td><td>หมวด 4 ภาษีมูลค่าเพิ่ม</td><td class="col-risk-low">แก้ไขแล้ว — LAS Audit [ต้องยืนยันมาตรา]</td></tr><tr><td>C-CC-15-04</td><td>นิติบุคคลที่มีความสัมพันธ์กันและมีรายได้เกิน 200 ล้านบาท [ต้องยืนยันมาตรา] ต้องยื่นรายงานข้อมูลเกี่ยวกับนิติบุคคลที่มีความสัมพันธ์กัน (Transfer Pricing Disclosure) ตามที่อธิบดีกำหนด ส่วนเอกสารประกอบราคาโอน (Local File) เป็นหน้าที่ตามประกาศหรือคำสั่งของอธิบดีซึ่งต้องตรวจแยกต่างหาก [ต้องยืนยันแหล่งที่มา]</td><td>ประมวลรัษฎากร มาตรา 71 ทวิ, 71 ตรี [ต้องยืนยันมาตรา]</td><td>หมวด 3 ภาษีเงินได้นิติบุคคล</td><td class="col-risk-low">แก้ไขแล้ว — LAS Audit [ต้องยืนยันมาตรา]</td></tr><tr><td>C-CC-15-05</td><td>บริษัทที่จ่ายเงินได้พึงประเมินที่มีแหล่งเงินได้ในประเทศไทยให้แก่นิติบุคคลต่างประเทศที่ไม่ได้ประกอบกิจการในประเทศไทย ต้องหักภาษี ณ ที่จ่ายและนำส่งตามอัตราและกำหนดเวลาที่ประมวลรัษฎากรกำหนดสำหรับเงินได้แต่ละประเภท โดยอัตราอาจลดลงตามอนุสัญญาภาษีซ้อนที่ใช้บังคับ (อัตราร้อยละ 15 อัตราของเงินปันผล และกำหนดเวลานำส่ง [ต้องยืนยันมาตรา])</td><td>ประมวลรัษฎากร มาตรา 70 [ต้องยืนยันมาตรา]</td><td>หมวด 3 ภาษีเงินได้นิติบุคคล</td><td class="col-risk-low">แก้ไขแล้ว — LAS Audit [ต้องยืนยันมาตรา]</td></tr></tbody></table>
+</div></div>
+  </section>
+
+  <section class="section-block" id="s4">
+    <h2 class="section-heading">ตารางเปรียบเทียบความเสี่ยงภาษี 4 ประเภทหลัก</h2>
+<div class="compare-table"><div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="article-table las-reading-table las-wide-table"><thead><tr><th scope="col">ประเภทภาษี</th><th scope="col">จุดตายที่พบบ่อยใน Due Diligence</th><th scope="col">บทลงโทษตามกฎหมาย</th><th scope="col">กลไกป้องกันในสัญญา SPA</th></tr></thead><tbody><tr><td><strong>1. ภาษีเงินได้นิติบุคคล (CIT)</strong></td><td>ลงรายจ่ายต้องห้ามตามมาตรา 65 ตรี [ต้องยืนยันมาตรา] (ค่าใช้จ่ายส่วนตัวกรรมการ, รายจ่ายไม่มีใบเสร็จ)</td><td>ประเมินกำไรสุทธิใหม่ + เบี้ยปรับตามอัตราของหมวดภาษีเงินได้นิติบุคคล [ต้องยืนยันมาตรา] + เงินเพิ่ม 1.5%/เดือน</td><td>Tax Warranties ย้อนหลัง 5 ปี</td></tr><tr><td><strong>2. ภาษีมูลค่าเพิ่ม (VAT)</strong></td><td>นำใบกำกับภาษีปลอมมาเคลมภาษีซื้อ หรือออกใบกำกับภาษีไม่ตรงรอบ</td><td><strong>เบี้ยปรับสองเท่าของภาษีตามใบกำกับภาษีปลอม + โทษปรับหรือโทษจำคุกตามประมวลรัษฎากร</strong> [ต้องยืนยันมาตรา]</td><td>Specific Indemnity + Escrow Holdback</td></tr><tr><td><strong>3. ภาษีหัก ณ ที่จ่าย (WHT)</strong></td><td>ไม่หักภาษีค่าจ้างทำของ (ร้อยละ 3 [ต้องยืนยันมาตรา]) หรือจ่ายเงินไปต่างประเทศโดยไม่หักภาษีตามอัตราที่กำหนด (ร้อยละ 15 ตามมาตรา 70 [ต้องยืนยันมาตรา] ซึ่งมิใช่อัตราเดียวสำหรับเงินได้ทุกประเภท)</td><td>ผู้จ่ายต้องรับผิดร่วมชดใช้เงินภาษี + เงินเพิ่ม 1.5%/เดือน</td><td>Tax Clearance Review</td></tr><tr><td><strong>4. ราคาโอน (Transfer Pricing)</strong></td><td>ขายสินค้าหรือให้กู้ยืมเงินบริษัทในเครือต่ำกว่าราคาตลาด (มาตรา 65 ทวิ (4) และมาตรา 71 ทวิ [ต้องยืนยันมาตรา])</td><td>ปรับปรุงรายได้ย้อนหลัง + โทษปรับ 200,000 บาทกรณีไม่ยื่นเอกสารประกอบราคาโอน (Local File) [ต้องยืนยันมาตรา] [ต้องยืนยันแหล่งที่มา]</td><td>Arm's length TP Study Report</td></tr></tbody></table>
+</div></div>
+<div class="practice-note tip"><span class="pn-label">LAS Practice Note — การกำหนดระยะเวลาคุ้มครองของ Tax Indemnity ใน SPA</span><p>ในการเจรจาซื้อขายกิจการ ผู้ขายมักขอให้คำรับรองทั่วไป (General Warranties) มีระยะเวลาคุ้มครอง (Survival Period) เพียง 12-18 เดือน แต่สำหรับ <strong>ความรับผิดด้านภาษีอากร (Tax Warranties &amp; Tax Indemnity)</strong> ควรกำหนดในสัญญาซื้อขายหุ้นให้ผู้ขายรับผิดตามคำรับรองและข้อสัญญาชดใช้ด้านภาษีภายในระยะเวลาคุ้มครอง (Survival Period) ที่ยาวกว่าระยะเวลาที่เจ้าพนักงานประเมินอาจตรวจสอบได้ โดยพิจารณาทั้งกรอบเวลาออกหมายเรียกตรวจสอบตามประมวลรัษฎากร มาตรา 19 [ต้องยืนยันมาตรา] ซึ่งขยายได้ไม่เกิน 5 ปี และกรณีไม่ยื่นแบบหรือแสดงรายการเท็จ ซึ่งระยะเวลาที่เจ้าพนักงานประเมินมีอำนาจประเมินภาษีอาจยาวกว่า 5 ปี [ต้องยืนยันมาตรา] ทั้งนี้ ตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 193/11 อายุความที่กฎหมายกำหนดไว้นั้น คู่กรณีจะตกลงกันให้งด ใช้หรือขยายออกหรือย่นเข้าไม่ได้ ข้อสัญญาจึงกำหนดได้เพียงระยะเวลาที่ผู้ขายรับผิดหรือระยะเวลาที่ผู้ซื้อต้องแจ้งเรียกร้อง มิใช่การขยายหรือย่นอายุความ หากกำหนดระยะเวลาคุ้มครองสั้นเพียง 1 ปี แล้วสรรพากรเข้าตรวจในปีที่ 3 ผู้ซื้อจะไม่สามารถเรียกให้ผู้ขายเดิมชดใช้ตามข้อสัญญานั้นได้</p></div>
+  </section>
+
+  <section class="section-block" id="s5">
+    <h2 class="section-heading">ข้อต่อสู้ของเจ้าพนักงานสรรพากรกับบริษัทผู้ถูกประเมิน <span class="en">Devil's Advocate</span></h2>
+<div class="compare-table"><div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="article-table las-reading-table"><thead><tr><th scope="col">ข้ออ้างของบริษัทผู้ซื้อ</th><th scope="col">ข้อต่อสู้ของเจ้าพนักงานสรรพากร</th><th scope="col">หลักฐานที่ชี้ขาด</th></tr></thead><tbody><tr><td>ตนเป็นผู้ซื้อหุ้นรายใหม่ ไม่รู้เห็นกับการใช้ใบกำกับภาษีปลอมของเจ้าของเดิม</td><td>หนี้ภาษีผูกพันตัวนิติบุคคล (บริษัท) นิติบุคคลยังคงมีหน้าที่ชำระภาษีพร้อมเบี้ยปรับครบถ้วน</td><td>หนังสือรับรองนิติบุคคลและใบประเมินภาษีอากร</td></tr><tr><td>การกู้ยืมเงินระหว่างบริษัทในเครือคิดดอกเบี้ย 0% เพราะเป็นนโยบายกลุ่ม</td><td>การให้กู้ยืมโดยไม่มีดอกเบี้ยหรือต่ำกว่าราคาตลาดโดยไม่มีเหตุอันสมควร ไม่สอดคล้องกับหลักราคาตลาดตามมาตรา 65 ทวิ (4) แห่งประมวลรัษฎากร [ต้องยืนยันมาตรา]</td><td>คำสั่งกรมสรรพากรที่ ป.96/2543 [ต้องยืนยันแหล่งที่มา] และสัญญาเงินกู้ยืม</td></tr><tr><td>พ้นกำหนด 2 ปีแล้ว สรรพากรไม่มีอำนาจออกหมายเรียกตรวจสอบ</td><td>อธิบดีได้อนุมัติขยายเวลาเป็น 5 ปีแล้ว เนื่องจากพบพฤติการณ์ส่อเจตนาหลีกเลี่ยงภาษี</td><td>คำสั่งอนุมัติขยายเวลาตรวจสอบของอธิบดีกรมสรรพากรตามมาตรา 19 [ต้องยืนยันมาตรา]</td></tr></tbody></table>
+</div></div>
+  </section>
+
+  <section class="section-block" id="s6">
+    <h2 class="section-heading">ตัวอย่างสถานการณ์จำลอง <span class="en">Worked Example</span></h2>
+<p><strong>ข้อเท็จจริงสมมติ:</strong> ผู้ซื้อตกลงซื้อหุ้น บริษัท A จำกัด มูลค่า 50 ล้านบาท ในการทำ Tax DD พบว่าบริษัทมีประวัติการใช้บริการจากซัพพลายเออร์น้ำมันที่ถูกกรมสรรพากรขึ้นบัญชีดำ (Blacklist) ฐานออกใบกำกับภาษีปลอม ยอดภาษีซื้อรวม 4 ล้านบาท ตัวเลขทั้งหมดในตัวอย่างนี้เป็นข้อเท็จจริงสมมติและเป็นเพียงตัวอย่างการต่อรองทางพาณิชย์ มิใช่ข้อเสนอเฉพาะกรณี อัตราเบี้ยปรับและเงินเพิ่มที่ใช้ในตัวอย่างต้องตรวจจากตัวบทประมวลรัษฎากรฉบับทางการ [ต้องยืนยันมาตรา]</p>
+<p><strong>การบริหารความเสี่ยง:</strong> (1) คำนวณ Tax Exposure ตัวอย่าง (เงินเพิ่มคำนวณ 24 เดือน): ภาษีต้นทาง 4 ล้าน + เบี้ยปรับสองเท่า (8 ล้าน) + เงินเพิ่มร้อยละ 1.5 ต่อเดือนเป็นเวลา 24 เดือน (1.44 ล้าน) รวมเป็นความเสี่ยงตัวอย่าง 13.44 ล้านบาท, (2) ทำข้อสัญญา Specific Tax Indemnity ให้ผู้ขายรับผิดชอบยอดนี้แบบ 100%, (3) กันเงินค่าหุ้น 15 ล้านบาทไว้ในบัญชี Escrow เป็นเวลา 5 ปีตามสมมติฐานของตัวอย่าง เพื่อเป็นหลักประกันความเสียหายทางภาษี จำนวนที่กันไว้นี้คิดเป็นร้อยละ 30 ของมูลค่าหุ้น 50 ล้านบาท ซึ่งสูงกว่าช่วงร้อยละ 10 ถึง 20 ที่กล่าวไว้ในคำถามที่พบบ่อยข้อ 3 เพราะความเสี่ยงที่คำนวณได้ในตัวอย่างนี้ (13.44 ล้านบาท) เพียงรายการเดียวก็เท่ากับประมาณร้อยละ 27 ของมูลค่าหุ้นแล้ว และสัดส่วนที่เหมาะสมในแต่ละดีลเป็นผลของการต่อรองทางพาณิชย์</p>
+  </section>
+
+  <section class="section-block" id="s7">
+    <h2 class="section-heading">ขั้นตอนการทำ Tax Legal Due Diligence <span class="en">Action Steps</span></h2>
+<div class="compare-table"><div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="article-table las-reading-table las-wide-table"><thead><tr><th scope="col">ขั้นตอน</th><th scope="col">การดำเนินงาน</th><th scope="col">ผู้รับผิดชอบ</th><th scope="col">เอกสารผลลัพธ์</th><th scope="col">กำหนดเวลา</th></tr></thead><tbody><tr><td>1</td><td>ขอแบบ ภ.ง.ด.50, ภ.พ.30, ภ.ง.ด.53, 54 ย้อนหลัง 5 ปี</td><td>บริษัทเป้าหมาย</td><td>Tax Returns &amp; Filing Receipts (5 ปี)</td><td>สัปดาห์ที่ 1</td></tr><tr><td>2</td><td>สุ่มตรวจใบกำกับภาษีซื้อกับฐานข้อมูลผู้ประกอบการ VAT กรมสรรพากร</td><td>ผู้เชี่ยวชาญภาษี</td><td>VAT Audit &amp; Supplier Blacklist Check</td><td>สัปดาห์ที่ 2</td></tr><tr><td>3</td><td>ตรวจสอบรายการเชื่อมโยงและสัญญาระหว่างกัน (Related Party &amp; TP)</td><td>ฝ่ายกฎหมาย LAS</td><td>Transfer Pricing Risk Assessment Memo</td><td>สัปดาห์ที่ 2-3</td></tr><tr><td>4</td><td>ยกร่างข้อสัญญา Specific Tax Indemnity และ Tax Escrow ใน SPA</td><td>ทนายความผู้ดูแลดีล</td><td>Tax Covenants &amp; Indemnity Clauses</td><td>ขั้นตอนเจรจา SPA</td></tr></tbody></table>
+</div></div>
+  </section>
+
+  <section class="section-block" id="s8">
+    <h2 class="section-heading">Checklist 10 จุดตรวจความเสี่ยงภาษีอากรในการเข้าซื้อกิจการ</h2>
+<ul class="checklist"><li><span class="cb" aria-hidden="true"></span><span>มีการยื่นแบบ ภ.ง.ด.50 ครบถ้วนทุกปีภาษีย้อนหลัง 5 ปี และไม่มีหนี้ภาษีค้างชำระ</span></li><li><span class="cb" aria-hidden="true"></span><span>ไม่มีหนังสือเตือน หนังสือขอตรวจค้น หรือหมายเรียกตรวจสอบภาษีจากกรมสรรพากรค้างอยู่</span></li><li><span class="cb" aria-hidden="true"></span><span>สุ่มตรวจใบกำกับภาษีซื้อของผู้ขายรายใหญ่ ไม่พบประวัติการซื้อใบกำกับภาษีปลอม</span></li><li><span class="cb" aria-hidden="true"></span><span>มีการหักและนำส่งภาษีหัก ณ ที่จ่าย (ภ.ง.ด.3, 53) ตามอัตราที่ถูกต้องตามกฎหมาย</span></li><li><span class="cb" aria-hidden="true"></span><span>การจ่ายเงินค่าบริการ ค่าซอฟต์แวร์ หรือค่าสิทธิ์ไปต่างประเทศ มีการหักภาษีตามมาตรา 70 [ต้องยืนยันมาตรา] และยื่น ภ.ง.ด.54 ถูกต้อง</span></li><li><span class="cb" aria-hidden="true"></span><span>เงินกู้ยืมระหว่างบริษัทกับกรรมการหรือบริษัทในเครือ มีการคิดดอกเบี้ยตามราคาตลาด (คำสั่ง ป.96/2543 [ต้องยืนยันแหล่งที่มา])</span></li><li><span class="cb" aria-hidden="true"></span><span>ตรวจว่ากิจการของบริษัทเป้าหมายเข้าประเภทกิจการที่ต้องเสียภาษีธุรกิจเฉพาะ (SBT) สำหรับดอกเบี้ยรับหรือไม่ และหากเข้า ได้เสียถูกต้องตามอัตราที่กฎหมายกำหนดหรือไม่ (อัตราร้อยละ 3.3 [ต้องยืนยันมาตรา])</span></li><li><span class="cb" aria-hidden="true"></span><span>มีการยื่นรายงานข้อมูลเกี่ยวกับนิติบุคคลที่มีความสัมพันธ์กัน (Transfer Pricing Disclosure Form) เมื่อเข้าเกณฑ์ (เกณฑ์รายได้เกิน 200 ล้านบาท [ต้องยืนยันมาตรา]) และได้ตรวจแยกต่างหากแล้วว่าต้องจัดทำเอกสารประกอบราคาโอน (Local File) ตามประกาศหรือคำสั่งของอธิบดีหรือไม่ [ต้องยืนยันแหล่งที่มา]</span></li><li><span class="cb" aria-hidden="true"></span><span>สัญญาการค้าและตราสารสำคัญของบริษัทมีการปิดอากรแสตมป์บริบูรณ์ตามประมวลรัษฎากร</span></li><li><span class="cb" aria-hidden="true"></span><span>สัญญา SPA มีข้อสัญญา Tax Indemnity ที่กำหนดระยะเวลาคุ้มครอง (Survival Period) ยาวกว่าระยะเวลาที่เจ้าพนักงานประเมินอาจตรวจสอบได้ พร้อมหลักประกัน Escrow</span></li></ul>
+  </section>
+
+
+
+  <!-- FAQ -->
+  <section class="section-block" id="faq">
+    <h2 class="section-heading">คำถามที่พบบ่อย <span class="en">Frequently Asked Questions</span></h2>
+    <div class="faq-item">
+      <div class="faq-q">การซื้อกิจการแบบ Asset Sale (ซื้อเฉพาะทรัพย์สิน) ปลอดภัยจากหนี้ภาษีของบริษัทเดิมหรือไม่?</div>
+      <div class="faq-a"><strong>คำตอบ:</strong> โดยหลักการ Asset Sale มีความเสี่ยงภาษีในอดีตต่ำกว่า Share Sale เพราะหนี้ภาษีติดอยู่กับนิติบุคคลผู้ขาย แต่ต้องระวังภาระภาษีจากการโอนทรัพย์สิน เช่น ภาษีมูลค่าเพิ่มจากการขายสินค้า/เครื่องจักร และค่าธรรมเนียมโอนอสังหาริมทรัพย์ รวมถึงข้อสัญญาต้องไม่มีลักษณะเป็นการโอนกิจการทั้งหมดเพื่อหลบเลี่ยงหนี้ภาษี ทั้งนี้ แม้ในดีลซื้อทรัพย์สิน เจ้าหนี้ของผู้ขายซึ่งรวมถึงกรมสรรพากรอาจขอให้ศาลเพิกถอนการโอนที่ลูกหนี้ทำทั้งรู้อยู่ว่าจะเป็นทางให้เจ้าหนี้เสียเปรียบได้ตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 237 เว้นแต่ผู้ได้ลาภงอกมิได้รู้ถึงความจริงนั้นในขณะทำนิติกรรม ผู้ซื้อจึงควรตรวจสถานะหนี้ภาษีของผู้ขายและราคาโอนก่อนทำสัญญา</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">เงินเพิ่มภาษีร้อยละ 1.5 ต่อเดือน มีเพดานสูงสุดหรือไม่?</div>
+      <div class="faq-a"><strong>คำตอบ:</strong> ตามประมวลรัษฎากร [ต้องยืนยันมาตรา] เงินเพิ่มคิดในอัตราร้อยละ 1.5 ต่อเดือนหรือเศษของเดือนของภาษีที่ต้องเสียหรือนำส่ง นับจนถึงวันชำระ ส่วนประมวลรัษฎากรกำหนดเพดานของเงินเพิ่มไว้หรือไม่ และในจำนวนเท่าใด ต้องตรวจจากตัวบทฉบับทางการก่อนนำไปคำนวณยอดหนี้ภาษี [ต้องยืนยันมาตรา] ทั้งนี้ เบี้ยปรับเป็นอีกส่วนหนึ่งแยกต่างหากจากเงินเพิ่ม และอาจสูงได้ถึงสองเท่าของภาษีที่ขาด</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">หากผู้ขายเดิมยินยอมทำ Tax Indemnity แต่ไม่มีเงินจ่ายเมื่อสรรพากรประเมิน จะทำอย่างไร?</div>
+      <div class="faq-a"><strong>คำตอบ:</strong> นี่คือสาเหตุที่ผู้ซื้อต้องเรียกร้องกลไก <strong>Tax Escrow Holdback</strong> โดยหักเงินค่าหุ้นส่วนหนึ่ง (เช่น 10-20% ซึ่งเป็นตัวอย่างเชิงพาณิชย์ที่ต้องต่อรองเป็นรายดีล มิใช่อัตราที่กฎหมายกำหนด) ฝากไว้ที่ธนาคารตัวกลาง (Escrow Agent) หรือขอหนังสือค้ำประกันของธนาคาร (Bank Guarantee) เพื่อเป็นหลักประกันจริง ไม่พึ่งพาเพียงคำสัญญาบนกระดาษ</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">กรมสรรพากรสามารถฟ้องล้มละลายบริษัทที่มีหนี้ภาษีค้างชำระได้หรือไม่?</div>
+      <div class="faq-a"><strong>คำตอบ:</strong> กรมสรรพากรอาจฟ้องบริษัทที่มีหนี้ภาษีค้างชำระเป็นคดีล้มละลายได้เมื่อครบเงื่อนไขตามพระราชบัญญัติล้มละลาย พ.ศ. 2483 ซึ่งรวมถึงเกณฑ์จำนวนหนี้ที่กฎหมายกำหนดสำหรับลูกหนี้ที่เป็นนิติบุคคล (เกณฑ์ 2,000,000 บาท [ต้องยืนยันมาตรา]) และการเป็นหนี้สินล้นพ้นตัว</div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <div class="ref-section" id="refs">
+    <h3>อ้างอิง — References</h3>
+    <ul>
+      <li>ประมวลรัษฎากร มาตรา 19, 65 ทวิ, 65 ตรี, 70, 71 ทวิ และ 71 ตรี [ต้องยืนยันมาตรา]</li>
+      <li>ประมวลรัษฎากร ในส่วนอำนาจยึดและอายัดทรัพย์สิน ระยะเวลาที่เจ้าพนักงานประเมินมีอำนาจประเมินภาษี และความรับผิดทางอาญาเกี่ยวกับใบกำกับภาษีปลอม [ต้องยืนยันมาตรา]</li>
+      <li>ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 193/11, 193/30 และ 237</li>
+      <li>พระราชบัญญัติแก้ไขเพิ่มเติมประมวลรัษฎากร (ฉบับที่ 47) พ.ศ. 2561 (Transfer Pricing) [ต้องยืนยันแหล่งที่มา]</li>
+      <li>คำสั่งกรมสรรพากรที่ ป.96/2543 (ดอกเบี้ยเงินกู้ยืมกรรมการและบริษัทในเครือ) [ต้องยืนยันแหล่งที่มา]</li>
+      <li>ประมวลรัษฎากร ในส่วนเบี้ยปรับและเงินเพิ่มจากการใช้ใบกำกับภาษีปลอม [ต้องยืนยันมาตรา]</li>
+      <li>สำนักงานคณะกรรมการกฤษฎีกา — <a href="https://www.ocs.go.th/searchlaw-law" target="_blank" rel="noopener">ระบบสืบค้นกฎหมาย (OCS)</a></li>
+    </ul>
+  </div>
+
+
+  <!-- RELATED ARTICLES (drive-publish.py) -->
+  <div style="margin-top:36px;">
+    <h3 style="color:var(--navy);margin-bottom:16px;font-size:1rem;font-weight:700;">บทความที่เกี่ยวข้อง</h3>
+    <div class="related-articles">
+      <a class="related-card" href="/articles/director-loans-tax-criminal-liability-thailand.html"><div class="rel-tag">Corporate Law · Director Loans</div>ผู้ถือหุ้นกู้ยืมเงินบริษัทกับบริษัทกู้ยืมเงินกรรมการ</a>
+      <a class="related-card" href="/articles/customs-trade-tax-due-diligence-thailand.html"><div class="rel-tag">Due Diligence · Customs</div>ตรวจสอบสถานะความเสี่ยงด้านกฎหมายศุลกากรและสิทธิประโยชน์ทางภาษีอากร (Customs Compliance &amp; Trade Duty Due Diligence)</a>
+      <a class="related-card" href="/articles/land-building-tax-due-diligence-thailand.html"><div class="rel-tag">Due Diligence · Land Tax</div>ตรวจสอบสถานะความเสี่ยงด้านภาษีที่ดินและสิ่งปลูกสร้างและการใช้ประโยชน์อสังหาริมทรัพย์ (Land &amp; Building Tax and Real Estate Regulatory Due Diligence)</a>
+      <a class="related-card" href="/articles/business-tax-essentials.html"><div class="rel-tag">Tax</div>ภาษีธุรกิจในไทย</a>
+      <a class="related-card" href="/articles/las-cc-index.html"><div class="rel-tag">LAS C&amp;C</div>สารบัญชุด LAS C&amp;C</a>
+    </div>
+  </div>
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <strong>ข้อสงวน (Disclaimer):</strong> บทความนี้จัดทำโดย Legal Advance Solution Co., Ltd. เพื่อเป็นข้อมูลทั่วไปด้านกฎหมายเท่านั้น ไม่ถือเป็นคำปรึกษากฎหมายเฉพาะกรณี และไม่ก่อให้เกิดความสัมพันธ์ทนาย-ลูกความ กฎหมายอาจมีการเปลี่ยนแปลง กรุณาปรึกษาทนายความที่มีใบอนุญาตก่อนดำเนินการใด ๆ ตามกฎหมาย | <em>LAS Legal Hub — ข้อมูลกฎหมายเพื่อธุรกิจ</em>
+  </div>
+
+</div><!-- end article-body -->
+<footer class="las-author-footer" style="text-align:center;padding:24px 16px;font-size:13px;color:#1B2A4A;">
+  <p class="las-author-credit">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D. — Legal Advance Solution Co., Ltd. (LAS)</p>
+</footer>
+</body>
+</html>

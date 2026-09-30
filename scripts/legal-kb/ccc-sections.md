@@ -93,6 +93,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 134
 - มาตรา 135
 - มาตรา 136
+- มาตรา 138
 - มาตรา 144
 - มาตรา 147
 - มาตรา 149
@@ -520,6 +521,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 652
 - มาตรา 653
 - มาตรา 654
+- มาตรา 655
 - มาตรา 680
 - มาตรา 681
 - มาตรา 681/1
@@ -882,6 +884,10 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 1334
 - มาตรา 1335
 - มาตรา 1336
+- มาตรา 1356
+- มาตรา 1357
+- มาตรา 1358
+- มาตรา 1361
 - มาตรา 1457
 - มาตรา 1601
 - มาตรา 1734

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+<meta property="og:url" content="https://thundthornthep-ai.github.io/articles/pdpa-cross-border-transfer-due-diligence-thailand.html" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NN3KX46PVC"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NN3KX46PVC');</script>
+<link rel="icon" type="image/webp" href="/las-logo.webp">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ตรวจสอบสถานะการคุ้มครองข้อมูลข้ามพรมแดน (Cross-Border Data Transfer Due Diligence) | LAS INVEST Deep Research EP02 | LAS Legal Hub</title>
+  <meta name="description" content="การส่งหรือโอนข้อมูลส่วนบุคคลไปต่างประเทศ (Cross-Border Data Transfer) ไม่ว่าจะเป็นการใช้บริการ Cloud ต่างประเทศ (เช่น AWS, Microsoft Azure, Google Cloud) หรือการแชร์ข้อมูลลูกค้าและพนักงานไปยังบริษัทแม่ในต่างประเทศ เป็นจุดตรวจความเสี่ยงคดีความและค่าปรับสูงสุดของ พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล…" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Thundthornthep Yamoutai, Ph.D." />
+  <meta property="og:title" content="ตรวจสอบสถานะการคุ้มครองข้อมูลข้ามพรมแดน (Cross-Border Data Transfer Due Diligence)" />
+  <meta property="og:description" content="การส่งหรือโอนข้อมูลส่วนบุคคลไปต่างประเทศ (Cross-Border Data Transfer) ไม่ว่าจะเป็นการใช้บริการ Cloud ต่างประเทศ (เช่น AWS, Microsoft Azure, Google Cloud) หรือการแชร์ข้อมูลลูกค้าและพนักงานไปยังบริษัทแม่ในต่างประเทศ เป็นจุดตรวจความเสี่ยงคดีความและค่าปรับสูงสุดของ พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล…" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="th_TH" />
+  <link rel="canonical" href="https://thundthornthep-ai.github.io/articles/pdpa-cross-border-transfer-due-diligence-thailand.html" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ตรวจสอบสถานะการคุ้มครองข้อมูลข้ามพรมแดน (Cross-Border Data Transfer Due Diligence): เจาะลึกเกณฑ์การส่งข้อมูลส่วนบุคคลไปต่างประเทศตาม PDPA มาตรา 28 และ 29",
+    "alternativeHeadline": "Cross-Border Data Transfer Due Diligence under Thai PDPA: Sections 28 and 29 Adequacy Standards, Binding Corporate Rules (BCRs), and Standard Contractual Clauses (SCCs)",
+    "author": {"@type": "Person", "name": "Thundthornthep Yamoutai, Ph.D.", "affiliation": "Legal Advance Solution Co., Ltd."},
+    "publisher": {"@type": "Organization", "name": "Legal Advance Solution Co., Ltd."},
+    "datePublished": "2026-10-01",
+    "dateModified": "2026-09-30",
+    "inLanguage": "th",
+    "isPartOf": {"@type": "CreativeWorkSeries", "name": "LAS INVEST — Deep Research"}
+  }
+  </script>
+  <style>
+    :root {
+      --gold: #C9A96E;
+      --navy: #1B2A4A;
+      --red-bg: #FADBD8;
+      --red-border: #C0392B;
+      --orange-bg: #FDEBD0;
+      --orange-border: #E67E22;
+      --green-bg: #D5F5E3;
+      --green-border: #27AE60;
+      --blue-bg: #D6EAF8;
+      --blue-border: #2471A3;
+      --gray-bg: #F4F6F7;
+      --text: #2C303A;
+      --muted: #6C7A89;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Sarabun', 'TH Sarabun New', sans-serif;
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text);
+      background: #FAFAFA;
+    }
+    .article-header {
+      background: linear-gradient(135deg, var(--navy) 0%, #2C3E6A 100%);
+      color: #fff;
+      padding: 48px 24px 36px;
+      text-align: center;
+    }
+    .article-header .category-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .article-header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .article-header .subtitle {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 20px;
+    }
+    .article-header .meta {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+    }
+    .article-body {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+    /* TOC */
+    .toc-box {
+      background: var(--blue-bg);
+      border-left: 4px solid var(--blue-border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+    }
+    .toc-box h3 {
+      font-size: 1rem;
+      color: var(--blue-border);
+      margin-bottom: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .toc-box ol { padding-left: 22px; }
+    .toc-box li { margin-bottom: 6px; }
+    .toc-box a { color: var(--navy); text-decoration: none; font-size: 15px; }
+    .toc-box a:hover { text-decoration: underline; color: var(--blue-border); }
+    /* Section blocks */
+    .section-block { margin-bottom: 48px; }
+    .section-heading {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--navy);
+      border-bottom: 3px solid var(--gold);
+      padding-bottom: 8px;
+      margin-bottom: 6px;
+    }
+    .section-heading .en {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--muted);
+      margin-left: 10px;
+      letter-spacing: 0.3px;
+    }
+    .sub-heading {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 24px 0 10px;
+      padding-left: 10px;
+      border-left: 3px solid var(--gold);
+    }
+    p { margin-bottom: 14px; }
+    /* Compare table */
+    .compare-table {
+      overflow-x: auto;
+      margin: 24px 0 28px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    table.article-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    table.article-table thead th {
+      background: var(--navy);
+      color: #fff;
+      padding: 13px 16px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+    }
+    table.article-table thead th:first-child { border-radius: 10px 0 0 0; }
+    table.article-table thead th:last-child { border-radius: 0 10px 0 0; }
+    table.article-table tbody tr:hover { filter: brightness(0.96); transition: filter 0.15s; }
+    table.article-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #E5E8EB;
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    table.article-table td:first-child {
+      font-weight: 700;
+      color: var(--navy);
+      white-space: nowrap;
+      background: #F0F3F7 !important;
+      min-width: 140px;
+    }
+    table.article-table .col-hiree { background: #FDEBD0; }
+    table.article-table .col-labor { background: #D5F5E3; }
+    table.article-table .col-risk-high { background: #FADBD8; }
+    table.article-table .col-risk-med { background: #FDEBD0; }
+    table.article-table .col-risk-low { background: #D5F5E3; }
+    /* Practice note */
+    .practice-note {
+      background: var(--orange-bg);
+      border-left: 4px solid var(--orange-border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+    .practice-note.alert {
+      background: var(--red-bg);
+      border-left-color: var(--red-border);
+    }
+    .practice-note.tip {
+      background: var(--green-bg);
+      border-left-color: var(--green-border);
+    }
+    .pn-label {
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .practice-note .pn-label { color: var(--orange-border); }
+    .practice-note.alert .pn-label { color: var(--red-border); }
+    .practice-note.tip .pn-label { color: var(--green-border); }
+    /* Law ref cards */
+    .law-ref-cards { display: flex; flex-wrap: wrap; gap: 14px; margin: 20px 0; }
+    .law-ref-card {
+      flex: 1 1 260px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #fff;
+      border: 1.5px solid #DDE3EA;
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    }
+    .law-ref-card.cat-civil { border-left: 4px solid #2471A3; }
+    .law-ref-card.cat-labor { border-left: 4px solid #117A65; }
+    .law-ref-card.cat-tax { border-left: 4px solid #884EA0; }
+    .law-icon {
+      font-size: 22px;
+      min-width: 28px;
+      text-align: center;
+      margin-top: 2px;
+    }
+    .law-info .law-name {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+    .law-info .law-source {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    /* Content list */
+    .content-list { padding-left: 22px; margin-bottom: 16px; }
+    .content-list li { margin-bottom: 8px; }
+    /* FAQ */
+    .faq-item {
+      border: 1px solid #DDE3EA;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+    .faq-item .faq-q {
+      background: var(--navy);
+      color: #fff;
+      padding: 13px 18px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .faq-item .faq-q::before { content: "Q: "; color: var(--gold); }
+    .faq-item .faq-a {
+      padding: 14px 18px;
+      background: #fff;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    /* Law quote (verbatim) */
+    .law-quote {
+      background: #F0F3F7;
+      border-left: 4px solid var(--navy);
+      border-radius: 6px;
+      padding: 14px 18px;
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: var(--navy);
+      margin: 14px 0;
+      white-space: pre-wrap;
+      font-family: 'Sarabun', 'TH Sarabun New', monospace;
+    }
+    /* Risk badge */
+    .risk-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .risk-high { background: var(--red-bg); color: var(--red-border); border: 1px solid var(--red-border); }
+    .risk-med  { background: var(--orange-bg); color: var(--orange-border); border: 1px solid var(--orange-border); }
+    .risk-low  { background: var(--green-bg); color: var(--green-border); border: 1px solid var(--green-border); }
+    /* Summary card */
+    .summary-card {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 24px 0;
+    }
+    .summary-card h3 { color: var(--gold); margin-bottom: 14px; font-size: 1.1rem; }
+    .summary-card ul { padding-left: 22px; }
+    .summary-card li { margin-bottom: 8px; font-size: 15px; opacity: 0.92; }
+    /* References */
+    .ref-section {
+      background: var(--gray-bg);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-top: 40px;
+    }
+    .ref-section h3 { color: var(--navy); margin-bottom: 14px; font-size: 1rem; font-weight: 700; }
+    .ref-section ul { padding-left: 20px; }
+    .ref-section li { font-size: 14px; margin-bottom: 6px; color: var(--muted); }
+    .ref-section a { color: var(--blue-border); }
+    /* Related */
+    .related-articles {
+      display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px;
+    }
+    .related-card {
+      flex: 1 1 200px;
+      background: #fff;
+      border: 1.5px solid #DDE3EA;
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 14px;
+      color: var(--navy);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover { border-color: var(--gold); }
+    .related-card .rel-tag { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+    /* Disclaimer */
+    .disclaimer {
+      margin-top: 40px;
+      padding: 16px 20px;
+      background: #F4F6F7;
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    /* Responsive */
+    @media (max-width: 640px) {
+      .article-header h1 { font-size: 1.45rem; }
+      .section-heading { font-size: 1.25rem; }
+      table.article-table td:first-child { min-width: 110px; }
+    }
+    /* ── Deep-Research extras (LAS Legal Master Template v1.0.0) ── */
+    .article-header .h1-sub { display:block; font-size:1.15rem; font-weight:600; color:rgba(255,255,255,0.9); margin-top:8px; line-height:1.5; }
+    .meta-chips { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:14px; }
+    .chip { display:inline-block; background:rgba(255,255,255,0.12); color:#fff; font-size:12px; padding:3px 12px; border-radius:14px; letter-spacing:0.2px; }
+    .chip-gold { background:var(--gold); color:var(--navy); font-weight:700; }
+    .quick-answer { background:var(--green-bg); border-left:4px solid var(--green-border); border-radius:8px; padding:18px 22px; margin-bottom:24px; }
+    .quick-answer .pn-label { color:var(--green-border); }
+    .quick-answer p { margin:0; font-size:16px; }
+    .hook-box { background:#fff; border:1.5px solid #DDE3EA; border-left:4px solid var(--navy); border-radius:10px; padding:18px 22px; margin-bottom:28px; }
+    .hook-box h3 { font-size:1rem; color:var(--navy); margin-bottom:10px; font-weight:800; }
+    .hook-box ol { padding-left:22px; }
+    .hook-box li { margin-bottom:8px; }
+    .checklist { list-style:none; padding-left:0; margin:12px 0 18px; }
+    .checklist li { display:flex; gap:12px; align-items:flex-start; padding:10px 14px; margin-bottom:8px; background:#fff; border:1px solid #DDE3EA; border-radius:8px; }
+    .checklist .cb { flex:0 0 18px; width:18px; height:18px; margin-top:4px; border:2px solid var(--navy); border-radius:4px; background:#fff; }
+    .compare-table.claim-ledger table.article-table td:first-child { white-space:nowrap; font-family:'Consolas','Menlo',monospace; font-size:13px; }
+    .compare-table.claim-ledger table.article-table td { font-size:14px; }
+    .law-ref-card.cat-pdpa { border-left:4px solid #C0392B; }
+    .law-ref-card.cat-other { border-left:4px solid #7F8C8D; }
+    .practice-note p { margin-bottom:8px; }
+    .practice-note p:last-child { margin-bottom:0; }
+    @media (max-width: 640px) { .article-header .h1-sub { font-size:0.98rem; } }
+  </style>
+<link rel="stylesheet" href="/css/learning-tables.css?v=20260929">
+<link rel="stylesheet" href="/css/las-template-theme.css?v=20260929">
+</head>
+<body class="las-knowledge-article">
+
+<!-- HEADER -->
+<header class="article-header">
+  <div class="category-tag">LAS INVEST Deep Research · EP02 · Due Diligence · PDPA</div>
+  <h1>ตรวจสอบสถานะการคุ้มครองข้อมูลข้ามพรมแดน (Cross-Border Data Transfer Due Diligence)<br><span class="h1-sub">เจาะลึกเกณฑ์การส่งข้อมูลส่วนบุคคลไปต่างประเทศตาม PDPA มาตรา 28 และ 29</span> <span class="las-reviewed-mark" role="img" aria-label="ตรวจทบทวนข้อกฎหมายแล้ว" title="ตรวจทบทวนข้อกฎหมายแล้ว">✓</span></h1>
+<p class="las-review-date"><b>✓ ตรวจทบทวนข้อกฎหมายล่าสุดเมื่อวันที่ 1 ตุลาคม 2569</b> · เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 1 ตุลาคม 2569</p>
+  <p class="subtitle">Cross-Border Data Transfer Due Diligence under Thai PDPA: Sections 28 and 29 Adequacy Standards, Binding Corporate Rules (BCRs), and Standard Contractual Clauses (SCCs)</p>
+  <div class="meta">โดย ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D. &nbsp;|&nbsp; Legal Advance Solution Co., Ltd. &nbsp;|&nbsp; ตัวบทกฎหมาย ณ 1 ตุลาคม 2569</div>
+  <div class="meta-chips">
+    <span class="chip">Series: LAS INVEST Deep Research</span>
+    <span class="chip">ตอนที่ 02</span>
+    <span class="chip">Jurisdiction: ประเทศไทย</span>
+    <span class="chip chip-gold">LAS Legal Audit ✓ 1 ตุลาคม 2569</span>
+  </div>
+</header>
+
+<div class="article-body">
+
+  <!-- QUICK ANSWER -->
+  <div class="quick-answer" id="quick-answer">
+    <span class="pn-label">คำตอบสั้น — Quick Answer / TL;DR</span>
+    <p>การส่งหรือโอนข้อมูลส่วนบุคคลไปต่างประเทศ (Cross-Border Data Transfer) ไม่ว่าจะเป็นการใช้บริการ Cloud ต่างประเทศ (เช่น AWS, Microsoft Azure, Google Cloud) หรือการแชร์ข้อมูลลูกค้าและพนักงานไปยังบริษัทแม่ในต่างประเทศ เป็นจุดตรวจความเสี่ยงคดีความและค่าปรับสูงสุดของ <strong>พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (PDPA)</strong>: (1) <strong>เกณฑ์ประเทศปลายทางมีมาตรฐานเพียงพอตามมาตรา 28:</strong> โดยหลักการ ประเทศปลายทางต้องมีมาตรฐานการคุ้มครองข้อมูลที่เพียงพอตามหลักเกณฑ์ที่คณะกรรมการคุ้มครองข้อมูลส่วนบุคคลประกาศกำหนด (มาตรา 16 (5)) เว้นแต่เข้าข้อยกเว้นตามมาตรา 28 (1) ถึง (6) หรือได้รับยกเว้นตามมาตรา 29; (2) <strong>การโอนข้อมูลภายในกลุ่มธุรกิจตามมาตรา 29 วรรคหนึ่ง (BCRs):</strong> การส่งหรือโอนข้อมูลไปยังผู้ควบคุมหรือผู้ประมวลผลในต่างประเทศซึ่งอยู่ในเครือกิจการหรือเครือธุรกิจเดียวกันเพื่อประกอบกิจการร่วมกัน อาจอาศัยนโยบายในการคุ้มครองข้อมูลส่วนบุคคลของกลุ่ม (Binding Corporate Rules: BCRs) ที่สำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคลตรวจสอบและรับรองแล้ว ซึ่งได้รับยกเว้นไม่ต้องปฏิบัติตามมาตรา 28 (มาตรา 29 วรรคหนึ่ง) หากยังไม่ได้รับรอง ต้องอาศัยเหตุอื่น; (3) <strong>การจัดให้มีมาตรการคุ้มครองที่เหมาะสมตามมาตรา 29 วรรคสาม (SCCs):</strong> หากยังไม่มีคำวินิจฉัยของคณะกรรมการตามมาตรา 28 หรือยังไม่มีนโยบาย BCRs ที่รับรองแล้ว ผู้ส่งข้อมูลต้องจัดให้มีมาตรการคุ้มครองที่เหมาะสมซึ่งบังคับตามสิทธิของเจ้าของข้อมูลส่วนบุคคลได้ รวมทั้งมีมาตรการเยียวยาทางกฎหมายที่มีประสิทธิภาพตามหลักเกณฑ์ที่คณะกรรมการประกาศกำหนด ซึ่งในทางปฏิบัติอาจทำโดยใช้ <strong>ข้อสัญญามาตรฐาน (Standard Contractual Clauses: SCCs)</strong> เช่น ASEAN Model Contractual Clauses หรือ EU SCCs ที่ปรับปรุงให้สอดคล้องกับกฎหมายไทย [ต้องยืนยันแหล่งที่มา] หรืออาศัยข้อยกเว้นตามมาตรา 28 (เช่น ได้รับความยินยอมโดยแจ้งความเสี่ยงแล้ว, จำเป็นเพื่อปฏิบัติตามสัญญา) หากฝ่าฝืนมีโทษปรับทางปกครองไม่เกิน <strong>3,000,000 บาท</strong> และไม่เกิน <strong>5,000,000 บาท</strong> หากเป็นข้อมูลส่วนบุคคลตามมาตรา 26 (พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 83 และมาตรา 84)</p>
+  </div>
+
+  <!-- PROBLEM HOOK -->
+  <div class="hook-box" id="hook">
+    <h3>สถานการณ์ที่ผู้ประกอบการมักพบจริง</h3>
+    <ol>
+      <li><strong>เหตุการณ์:</strong> สตาร์ทอัพอีคอมเมิร์ซในไทยที่มีฐานลูกค้า 500,000 ราย กำลังปิดดีล M&amp;A กับกลุ่มทุนระดับภูมิภาค โดยระบบทั้งหมดของสตาร์ทอัพจัดเก็บบนเซิร์ฟเวอร์คลาวด์ในสหรัฐอเมริกา และมีการส่งข้อมูลพฤติกรรมการซื้อของผู้ใช้ไปยัง Data Analytics Platform ในสิงคโปร์</li>
+      <li><strong>ความเข้าใจผิด:</strong> ผู้ก่อตั้งคิดว่าผู้ให้บริการคลาวด์ระดับโลกย่อมปฏิบัติตามกฎหมายสากลอยู่แล้ว และตนได้เขียน Privacy Policy ระบุว่า "ข้อมูลอาจถูกส่งไปประมวลผลในต่างประเทศ" ย่อมชอบด้วยกฎหมาย</li>
+      <li><strong>จุดพลิก:</strong> ทีมทนายความของผู้ซื้อตรวจพบว่า นโยบายความเป็นส่วนตัวของสตาร์ทอัพไม่ได้แจ้งประเทศปลายทาง ไม่ได้แจ้งว่าประเทศปลายทางมีมาตรฐานไม่เพียงพอ และไม่มีการทำข้อสัญญา Standard Contractual Clauses (SCCs) หรือจัดให้มีมาตรการคุ้มครองที่เหมาะสมกับผู้ให้บริการในต่างประเทศตามมาตรา 29 วรรคสามและหลักเกณฑ์ที่คณะกรรมการประกาศกำหนด ทำให้การโอนข้อมูลตลอด 2 ปีที่ผ่านมาเข้าข่ายไม่เป็นไปตามมาตรา 28 และมาตรา 29 จึงมีความเสี่ยงที่คณะกรรมการผู้เชี่ยวชาญจะสั่งลงโทษปรับทางปกครองไม่เกิน 3 ล้านบาทตามมาตรา 83 และอาจสั่งให้แก้ไขหรือสั่งห้ามกระทำการที่ก่อให้เกิดความเสียหายแก่เจ้าของข้อมูลตามมาตรา 74 วรรคสาม หลังจากพิจารณาเรื่องร้องเรียนหรือตรวจสอบแล้ว ผู้ซื้อจึงขอหักมูลค่าดีลลง 20 ล้านบาทเพื่อเป็นเงินสำรองความเสี่ยง</li>
+      <li><strong>สิ่งที่ได้จากบทความ:</strong> แผนผังตรวจสอบ Cross-Border Transfer 4 เส้นทาง, เกณฑ์การใช้ Standard Contractual Clauses (SCCs), ข้อกำหนดข้อยกเว้นความยินยอม (Consent Derogation), การตรวจสัญญา Cloud Service Provider, และ Checklist 10 จุดตรวจการส่งข้อมูลข้ามพรมแดน</li>
+    </ol>
+  </div>
+
+  <!-- TOC -->
+  <nav class="toc-box" aria-label="สารบัญ">
+    <h3>สารบัญ</h3>
+    <ol>
+      <li><a href="#s1">แกนหลักของการส่งข้อมูลข้ามพรมแดน</a></li>
+      <li><a href="#s2">ผลกระทบเชิงธุรกิจ</a></li>
+      <li><a href="#s3">กรอบกฎหมายและ Claim Ledger</a></li>
+      <li><a href="#s4">4 ช่องทางกฎหมายในการโอนข้อมูลไปต่างประเทศ</a></li>
+      <li><a href="#s5">ตารางเปรียบเทียบกลไกการโอนข้อมูลข้ามพรมแดน</a></li>
+      <li><a href="#s6">ข้อต่อสู้ของบริษัทกับสำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล</a></li>
+      <li><a href="#s7">ตัวอย่างสถานการณ์จำลอง</a></li>
+      <li><a href="#s8">ขั้นตอนการทำ Cross-Border Data Audit</a></li>
+      <li><a href="#s9">Checklist 10 จุดตรวจการคุ้มครองข้อมูลข้ามพรมแดน</a></li>
+
+
+      <li><a href="#faq">คำถามที่พบบ่อย</a></li>
+      <li><a href="#refs">อ้างอิง</a></li>
+    </ol>
+  </nav>
+
+  <section class="section-block" id="s1">
+    <h2 class="section-heading">แกนหลักของการส่งข้อมูลข้ามพรมแดน</h2>
+<p>ภายใต้ PDPA ข้อมูลส่วนบุคคลของคนไทยต้องได้รับการคุ้มครองในมาตรฐานเดียวกันไม่ว่าจะถูกส่งไปประมวลผล ณ ที่ใดในโลก กฎหมายจึงวางหลักว่า เมื่อผู้ควบคุมข้อมูลส่วนบุคคลส่งหรือโอนข้อมูลไปยังต่างประเทศ ประเทศปลายทางหรือองค์การระหว่างประเทศที่รับข้อมูลต้องมีมาตรฐานการคุ้มครองที่เพียงพอตามหลักเกณฑ์ที่คณะกรรมการประกาศกำหนด เว้นแต่เข้าข้อยกเว้นตามมาตรา 28 (1) ถึง (6) หรือได้รับยกเว้นตามมาตรา 29 เพื่อป้องกันมิให้ผู้ประกอบการใช้ช่องทางต่างประเทศเป็นสวรรค์ในการหลบเลี่ยงการบังคับใช้กฎหมายคุ้มครองข้อมูลส่วนบุคคล</p>
+  </section>
+
+  <section class="section-block" id="s2">
+    <h2 class="section-heading">ผลกระทบเชิงธุรกิจ <span class="en">Business Consequences</span></h2>
+<ul class="content-list"><li><strong>Money (โทษปรับทางปกครองสูงสุด):</strong> ผู้ควบคุมข้อมูลส่วนบุคคลที่ฝ่าฝืนมาตรา 28 หรือส่งหรือโอนข้อมูลส่วนบุคคลโดยไม่เป็นไปตามมาตรา 29 วรรคหนึ่งหรือวรรคสาม ต้องระวางโทษปรับทางปกครองไม่เกิน 3,000,000 บาท (พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 83) หากเป็นการฝ่าฝืนมาตรา 28 อันเกี่ยวกับข้อมูลส่วนบุคคลตามมาตรา 26 หรือส่งหรือโอนข้อมูลส่วนบุคคลตามมาตรา 26 โดยไม่เป็นไปตามมาตรา 29 วรรคหนึ่งหรือวรรคสาม ต้องระวางโทษปรับทางปกครองไม่เกิน 5,000,000 บาท (มาตรา 84) ส่วนผู้ประมวลผลข้อมูลส่วนบุคคลที่ส่งหรือโอนข้อมูลส่วนบุคคลโดยไม่เป็นไปตามมาตรา 29 วรรคหนึ่งหรือวรรคสาม ต้องระวางโทษปรับทางปกครองไม่เกิน 3,000,000 บาท (มาตรา 86) และไม่เกิน 5,000,000 บาทหากเป็นข้อมูลส่วนบุคคลตามมาตรา 26 (มาตรา 87)</li><li><strong>Control (การถูกสั่งระงับการใช้ระบบคลาวด์):</strong> คณะกรรมการผู้เชี่ยวชาญมีอำนาจสั่งลงโทษปรับทางปกครอง และเมื่อพิจารณาเรื่องร้องเรียนแล้วมีอำนาจสั่งให้แก้ไข หรือสั่งห้ามกระทำการที่ก่อให้เกิดความเสียหายแก่เจ้าของข้อมูล (มาตรา 74 และมาตรา 90) โดยอาจสั่งให้แก้ไขหรือตักเตือนก่อนก็ได้ หากคำสั่งดังกล่าวส่งผลให้สตาร์ทอัพต้องหยุดส่งข้อมูลไปยังระบบคลาวด์ ระบบไอทีทั้งหมดอาจไม่สามารถให้บริการลูกค้าได้</li><li><strong>Evidence/Timing:</strong> การทำ Binding Corporate Rules (BCRs) ต้องใช้เวลาในการยื่นขอให้สำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคลตรวจสอบและรับรองนโยบาย (มาตรา 29 วรรคหนึ่ง) เป็นเวลาหลายเดือน การใช้ Standard Contractual Clauses (SCCs) จึงเป็นทางเลือกที่รวดเร็วและใช้ได้จริงมากที่สุด</li></ul>
+  </section>
+
+  <section class="section-block" id="s3">
+    <h2 class="section-heading">กรอบกฎหมายและ Claim Ledger <span class="en">Legal Framework</span></h2>
+<div class="compare-table claim-ledger"><div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="article-table las-reading-table las-wide-table"><thead><tr><th scope="col">Claim ID</th><th scope="col">ข้อความทางกฎหมายที่ยืนยัน</th><th scope="col">ฐานกฎหมายปฐมภูมิ</th><th scope="col">ตำแหน่งในแหล่ง</th><th scope="col">สถานะการตรวจ</th></tr></thead><tbody><tr><td>C-INVEST-02-01</td><td>ในกรณีที่ผู้ควบคุมข้อมูลส่วนบุคคลส่งหรือโอนข้อมูลส่วนบุคคลไปยังต่างประเทศ ประเทศปลายทางหรือองค์การระหว่างประเทศที่รับข้อมูลต้องมีมาตรฐานการคุ้มครองข้อมูลส่วนบุคคลที่เพียงพอ</td><td>พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 28 วรรคหนึ่ง</td><td>หมวด 2 การคุ้มครองข้อมูลส่วนบุคคล</td><td class="col-risk-low">ตรวจตรงตัวบท — LAS Audit</td></tr><tr><td>C-INVEST-02-02</td><td>การส่งหรือโอนข้อมูลส่วนบุคคลไปยังต่างประเทศที่เป็นไปตามนโยบายการคุ้มครองข้อมูลส่วนบุคคลภายในกลุ่มกิจการ (BCRs) ที่ได้รับการตรวจสอบและรับรองจากสำนักงาน ย่อมกระทำได้</td><td>พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 29 วรรคหนึ่ง</td><td>หมวด 2 การคุ้มครองข้อมูลส่วนบุคคล</td><td class="col-risk-low">ตรวจตรงตัวบท — LAS Audit</td></tr><tr><td>C-INVEST-02-03</td><td>ในกรณีที่ยังไม่มีคำวินิจฉัยของคณะกรรมการตามมาตรา 28 หรือยังไม่มีนโยบาย BCRs ผู้ส่งข้อมูลอาจส่งหรือโอนข้อมูลได้โดยได้รับยกเว้นไม่ต้องปฏิบัติตามมาตรา 28 เมื่อจัดให้มีมาตรการคุ้มครองที่เหมาะสมซึ่งสามารถบังคับตามสิทธิของเจ้าของข้อมูลได้ รวมทั้งมีมาตรการเยียวยาทางกฎหมายที่มีประสิทธิภาพตามหลักเกณฑ์และวิธีการที่คณะกรรมการประกาศกำหนด (เช่น SCCs)</td><td>พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 29 วรรคสาม</td><td>หมวด 2 การคุ้มครองข้อมูลส่วนบุคคล</td><td class="col-risk-low">แก้ไขแล้ว — LAS Audit</td></tr><tr><td>C-INVEST-02-04</td><td>การส่งข้อมูลโดยอาศัยความยินยอม ต้องแจ้งให้เจ้าของข้อมูลทราบถึงมาตรฐานการคุ้มครองข้อมูลที่ไม่เพียงพอของประเทศปลายทางก่อนให้ความยินยอม</td><td>พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 28 (2)</td><td>หมวด 2 การคุ้มครองข้อมูลส่วนบุคคล</td><td class="col-risk-low">แก้ไขแล้ว — LAS Audit</td></tr><tr><td>C-INVEST-02-05</td><td>ผู้ควบคุมข้อมูลส่วนบุคคลที่ฝ่าฝืนมาตรา 28 หรือส่งหรือโอนข้อมูลส่วนบุคคลโดยไม่เป็นไปตามมาตรา 29 วรรคหนึ่งหรือวรรคสาม ต้องระวางโทษปรับทางปกครองไม่เกินสามล้านบาท และไม่เกินห้าล้านบาทหากเป็นข้อมูลส่วนบุคคลตามมาตรา 26</td><td>พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 83 และมาตรา 84</td><td>หมวด 7 บทกำหนดโทษ ส่วนที่ 2 โทษทางปกครอง</td><td class="col-risk-low">แก้ไขแล้ว — LAS Audit</td></tr></tbody></table>
+</div></div>
+  </section>
+
+  <section class="section-block" id="s4">
+    <h2 class="section-heading">4 ช่องทางกฎหมายในการโอนข้อมูลไปต่างประเทศ</h2>
+<ol class="content-list"><li><strong>Path 1: Adequacy Decision (มาตรา 28):</strong> โอนไปยังประเทศหรือองค์การระหว่างประเทศที่มีมาตรฐานเพียงพอตามหลักเกณฑ์ที่คณะกรรมการคุ้มครองข้อมูลส่วนบุคคลประกาศกำหนด (มาตรา 28 และมาตรา 16 (5)) (ณ วันที่ 30 กันยายน 2569 ยังไม่มีการประกาศรายชื่อประเทศที่เป็นทางการ จึงยังไม่อาจใช้ช่องทางนี้เป็นช่องทางเดียวได้ [ต้องยืนยันแหล่งที่มา])</li><li><strong>Path 2: Binding Corporate Rules - BCRs (มาตรา 29 วรรคหนึ่ง):</strong> เหมาะสำหรับกลุ่มบริษัทข้ามชาติที่มีนโยบายคุ้มครองข้อมูลร่วมกันและผ่านการตรวจสอบและรับรองจากสำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล</li><li><strong>Path 3: Appropriate Safeguards / SCCs (มาตรา 29 วรรคสาม):</strong> <strong>ช่องทางที่นิยมที่สุด</strong> โดยการทำสัญญาถ่ายโอนข้อมูลระหว่างผู้ส่งและผู้รับปลายทางตามแบบข้อสัญญามาตรฐาน (Standard Contractual Clauses: SCCs)</li><li><strong>Path 4: Legal Derogations (ข้อยกเว้นตามมาตรา 28):</strong> ใช้เฉพาะกรณีจำเป็น เช่น เพื่อปฏิบัติตามสัญญาที่เจ้าของข้อมูลเป็นคู่สัญญา, ป้องกันอันตรายต่อชีวิต, หรือได้รับความยินยอมโดยแจ้งสภาพมาตรฐานไม่เพียงพอแล้ว</li></ol>
+  </section>
+
+  <section class="section-block" id="s5">
+    <h2 class="section-heading">ตารางเปรียบเทียบกลไกการโอนข้อมูลข้ามพรมแดน</h2>
+<div class="compare-table"><div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="article-table las-reading-table las-wide-table"><thead><tr><th scope="col">กลไกทางกฎหมาย</th><th scope="col">ความพร้อมในการใช้งาน</th><th scope="col">ความยุ่งยากในกระบวนการ</th><th scope="col">ระดับความปลอดภัยทางกฎหมาย</th></tr></thead><tbody><tr><td><strong>1. ข้อสัญญามาตรฐาน (SCCs)</strong></td><td><strong>พร้อมใช้ได้ทันที</strong></td><td>ปานกลาง (แนบท้ายสัญญาการค้า/DPA)</td><td><strong>สูงมาก (ความเสี่ยงทางกฎหมายต่ำสุด)</strong></td></tr><tr><td><strong>2. นโยบายกลุ่มบริษัท (BCRs)</strong></td><td>ต้องรอการตรวจสอบและรับรองจากสำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล</td><td>สูงมาก (ต้องจัดทำเอกสารทั้งเครือข่าย)</td><td>สูงมากสำหรับกลุ่มบริษัทข้ามชาติ</td></tr><tr><td><strong>3. ข้อยกเว้นเพื่อปฏิบัติตามสัญญา</strong></td><td>ใช้ได้ทันที</td><td>ต่ำ (แต่ต้องพิสูจน์ความจำเป็นแท้จริง)</td><td>ปานกลาง (ตีความแคบ หากไม่จำเป็นจริงถือว่าผิด)</td></tr><tr><td><strong>4. ความยินยอมโดยได้แจ้งมาตรฐานการคุ้มครองที่ไม่เพียงพอของประเทศปลายทาง (มาตรา 28 (2))</strong></td><td>ใช้ได้ทันที</td><td>สูง (เจ้าของข้อมูลถอนความยินยอมได้ตลอดเวลา)</td><td><strong>ต่ำสุด</strong> ไม่แนะนำให้ใช้เป็นฐานหลัก</td></tr></tbody></table>
+</div></div>
+<div class="practice-note tip"><span class="pn-label">LAS Practice Note — การตรวจและปรับปรุงสัญญา Cloud Service Provider</span><p>ผู้ให้บริการคลาวด์ชั้นนำ (AWS, Google Cloud, Microsoft Azure) มีเอกสาร <em>Data Processing Addendum (DPA)</em> และ <em>Cross-Border Transfer Addendum</em> สำเร็จรูปอยู่แล้ว [ต้องยืนยันแหล่งที่มา: ควรระบุเวอร์ชันและวันที่ตรวจสัญญาของผู้ให้บริการ] แต่ฝ่ายกฎหมายของไทยต้องตรวจสอบ 2 จุดสำคัญ: (1) ผู้ให้บริการได้ผนวกข้อสัญญามาตรฐาน (SCCs) ที่ครอบคลุมการโอนข้อมูลออกจากประเทศไทยตามกฎหมายไทยหรือไม่ และข้อสัญญานั้นเข้าหลักเกณฑ์ที่คณะกรรมการประกาศตามมาตรา 29 วรรคสามหรือไม่, และ (2) ผู้ให้บริการเปิดให้ลูกค้าสามารถเลือก Data Residency ให้จัดเก็บและประมวลผลข้อมูลในศูนย์ข้อมูลในประเทศไทยได้หรือไม่ ซึ่งช่วยลดการโอนข้อมูลไปต่างประเทศ ส่วนการเก็บที่ศูนย์ข้อมูลนอกประเทศไทย รวมถึงสิงคโปร์ ยังเป็นการโอนข้อมูลไปยังต่างประเทศที่ต้องมีเหตุตามมาตรา 28 หรือมาตรา 29</p></div>
+<h3 class="sub-heading">Clause-Law-Consequence Map (การเชื่อมโยงข้อกำหนดใน Cloud DPA)</h3>
+<div class="compare-table"><div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="article-table las-reading-table"><thead><tr><th scope="col">ข้อกำหนดในสัญญา Cloud DPA</th><th scope="col">ฐานกฎหมาย PDPA</th><th scope="col">ผลกระทบทางกฎหมายและความเสี่ยง</th></tr></thead><tbody><tr><td>Standard Contractual Clauses (SCCs) Addendum</td><td>มาตรา 29 วรรคสาม</td><td>ช่วยให้การส่งหรือโอนข้อมูลไปยังผู้ให้บริการ Cloud ในต่างประเทศชอบด้วยกฎหมาย ลดความเสี่ยงโทษปรับทางปกครองไม่เกิน 3,000,000 บาท ตามมาตรา 83 (และไม่เกิน 5,000,000 บาทสำหรับข้อมูลตามมาตรา 26 ตามมาตรา 84)</td></tr><tr><td>Data Residency &amp; Location Selection Clause</td><td>มาตรา 28 / มาตรา 29</td><td>การเลือกจัดเก็บและประมวลผลข้อมูลในศูนย์ข้อมูลในประเทศไทยช่วยลดการโอนข้อมูลไปต่างประเทศ ส่วนการเก็บที่ศูนย์ข้อมูลนอกประเทศไทย รวมถึงสิงคโปร์ ยังเป็นการโอนข้อมูลไปยังต่างประเทศที่ต้องมีเหตุตามมาตรา 28 หรือมาตรา 29</td></tr><tr><td>Binding Corporate Rules (BCRs) Clause</td><td>มาตรา 29 วรรคหนึ่ง</td><td>รองรับการถ่ายโอนข้อมูลระหว่างบริษัทในเครือเดียวกันได้อย่างชอบด้วยกฎหมาย เมื่อได้รับการตรวจสอบและรับรองจากสำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล</td></tr></tbody></table>
+</div></div>
+  </section>
+
+  <section class="section-block" id="s6">
+    <h2 class="section-heading">ข้อต่อสู้ของบริษัทกับสำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล <span class="en">Devil's Advocate</span></h2>
+<div class="compare-table"><div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="article-table las-reading-table"><thead><tr><th scope="col">ข้อกล่าวหาของเจ้าพนักงานคุ้มครองข้อมูล</th><th scope="col">ข้อต่อสู้ของบริษัทตามกฎหมายไทย</th><th scope="col">หลักฐานที่ชี้ขาด</th></tr></thead><tbody><tr><td>บริษัทส่งข้อมูลลูกค้าไปยังสิงคโปร์โดยมิได้รับความยินยอม</td><td>การส่งข้อมูลเป็นการปฏิบัติตามสัญญาซื้อขายสินค้าข้ามพรมแดนที่ลูกค้าเป็นคู่สัญญาตามมาตรา 28 (3)</td><td>บันทึกคำสั่งซื้อสินค้าและข้อกำหนดการจัดส่งสินค้าระหว่างประเทศ</td></tr><tr><td>การใช้ระบบคลาวด์ในต่างประเทศถือเป็นการส่งข้อมูลโดยไม่มีมาตรการคุ้มครอง</td><td>บริษัทได้ทำสัญญา Data Processing Agreement โดยผนวกข้อสัญญามาตรฐาน SCCs ครบถ้วนตามมาตรา 29 วรรคสาม</td><td>สัญญา Cloud DPA และภาคผนวก Standard Contractual Clauses ฉบับลงนาม</td></tr><tr><td>บริษัทแม่ในต่างประเทศเข้าถึงฐานข้อมูลพนักงานในไทยโดยมิชอบ</td><td>กลุ่มบริษัทได้จัดทำนโยบาย BCRs ซึ่งสำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคลตรวจสอบและรับรองแล้ว (มาตรา 29 วรรคหนึ่ง) และมีข้อสัญญา Intercompany Data Transfer Agreement รองรับ</td><td>เอกสาร Intercompany DPA และนโยบายความมั่นคงปลอดภัยสารสนเทศของกลุ่ม</td></tr></tbody></table>
+</div></div>
+  </section>
+
+  <section class="section-block" id="s7">
+    <h2 class="section-heading">ตัวอย่างสถานการณ์จำลอง <span class="en">Worked Example</span></h2>
+<p><strong>ข้อเท็จจริงสมมติ:</strong> โรงพยาบาลเอกชนในไทยร่วมมือกับสถาบันวิจัยการแพทย์ในญี่ปุ่น เพื่อส่งข้อมูลภาพถ่ายเอกซเรย์ปอดของผู้ป่วยไปประมวลผลด้วยระบบ AI ในโตเกียว</p>
+<p><strong>ขั้นตอนการจัดทำให้ถูกต้องตาม PDPA:</strong> (1) ข้อมูลภาพถ่ายเอกซเรย์เป็นข้อมูลสุขภาพ (Sensitive Data) ซึ่งเป็นข้อมูลตามมาตรา 26 ต้องได้รับความยินยอมโดยชัดแจ้ง (Explicit Consent) เว้นแต่เข้าข้อยกเว้นตามมาตรา 26 (1) ถึง (5) เช่น เป็นการจำเป็นในการปฏิบัติตามกฎหมายเพื่อให้บรรลุวัตถุประสงค์เกี่ยวกับการวินิจฉัยโรคทางการแพทย์ (มาตรา 26 (5) (ก) ซึ่งหากมิใช่การปฏิบัติตามกฎหมาย และข้อมูลนั้นอยู่ในความรับผิดชอบของผู้ประกอบอาชีพหรือวิชาชีพหรือผู้มีหน้าที่รักษาข้อมูลไว้เป็นความลับตามกฎหมาย ต้องเป็นการปฏิบัติตามสัญญาระหว่างเจ้าของข้อมูลกับผู้ประกอบวิชาชีพทางการแพทย์) หรือเพื่อการศึกษาวิจัยทางวิทยาศาสตร์ ประวัติศาสตร์ หรือสถิติเพียงเท่าที่จำเป็น โดยได้จัดให้มีมาตรการที่เหมาะสมตามที่คณะกรรมการประกาศกำหนด (มาตรา 26 (5) (ง)), (2) การโอนไปญี่ปุ่นต้องมีเหตุตามมาตรา 28 หรือมาตรา 29 ต่างหากจากฐานตามมาตรา 26 และหากฝ่าฝืนในกรณีข้อมูลตามมาตรา 26 ผู้ควบคุมข้อมูลต้องระวางโทษปรับทางปกครองไม่เกิน 5,000,000 บาทตามมาตรา 84 ทั้งนี้ ในการส่งข้อมูลข้ามพรมแดน โรงพยาบาลจัดทำ <em>Cross-Border Data Transfer Agreement</em> ร่วมกับสถาบันวิจัยญี่ปุ่น โดยผนวกข้อสัญญามาตรฐาน (SCCs) และข้อกำหนดการเข้ารหัสข้อมูล (Encryption in Transit and at Rest), (3) ทำการตัดชื่อและข้อมูลระบุตัวตนออก (Pseudonymization) ก่อนส่งออกนอกประเทศ เพื่อลดความเสี่ยงการรั่วไหล ทั้งนี้ ข้อมูลที่ตัดชื่อแต่ยังระบุตัวบุคคลได้ทางอ้อมยังเป็นข้อมูลส่วนบุคคลตามมาตรา 6 จึงยังต้องปฏิบัติตามมาตรา 28 และมาตรา 29</p>
+  </section>
+
+  <section class="section-block" id="s8">
+    <h2 class="section-heading">ขั้นตอนการทำ Cross-Border Data Audit <span class="en">Action Steps</span></h2>
+<div class="compare-table"><div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="article-table las-reading-table las-wide-table"><thead><tr><th scope="col">ขั้นตอน</th><th scope="col">การดำเนินงาน</th><th scope="col">ผู้รับผิดชอบ</th><th scope="col">เอกสารผลลัพธ์</th><th scope="col">กำหนดเวลา</th></tr></thead><tbody><tr><td>1</td><td>ทำ Data Flow Mapping สำรวจข้อมูลที่ไหลออกนอกประเทศทั้งหมด</td><td>DPO / ทีม IT</td><td>Cross-Border Data Flow Inventory</td><td>สัปดาห์ที่ 1</td></tr><tr><td>2</td><td>ตรวจสอบสัญญาและข้อตกลง DPA กับผู้ให้บริการในต่างประเทศทุกราย</td><td>ฝ่ายกฎหมาย LAS</td><td>Vendor DPA Compliance Review Memo</td><td>สัปดาห์ที่ 2</td></tr><tr><td>3</td><td>จัดทำและลงนามในข้อสัญญามาตรฐาน (SCCs Addendum) กับคู่ค้า</td><td>ฝ่ายกฎหมายและผู้บริหาร</td><td>Signed Standard Contractual Clauses (SCCs)</td><td>สัปดาห์ที่ 3</td></tr><tr><td>4</td><td>ปรับปรุงนโยบายความเป็นส่วนตัว (Privacy Notice) ระบุรายละเอียดการส่งข้อมูล</td><td>ทีม DPO</td><td>Updated Privacy Notice บนเว็บไซต์</td><td>ภายใน 30 วัน</td></tr></tbody></table>
+</div></div>
+  </section>
+
+  <section class="section-block" id="s9">
+    <h2 class="section-heading">Checklist 10 จุดตรวจการคุ้มครองข้อมูลข้ามพรมแดน</h2>
+<ul class="checklist"><li><span class="cb" aria-hidden="true"></span><span>มีการจัดทำ Data Flow Mapping ระบุระบบ คลาวด์ และผู้รับข้อมูลในต่างประเทศทั้งหมด</span></li><li><span class="cb" aria-hidden="true"></span><span>มีการลงนามในสัญญา Data Processing Agreement (DPA) กับผู้ให้บริการต่างประเทศทุกราย</span></li><li><span class="cb" aria-hidden="true"></span><span>สัญญามีการผนวกข้อสัญญามาตรฐาน (Standard Contractual Clauses: SCCs) ตามเกณฑ์มาตรา 29</span></li><li><span class="cb" aria-hidden="true"></span><span>มีการประเมินความเสี่ยงด้านความมั่นคงปลอดภัยสารสนเทศของผู้รับข้อมูลปลายทาง (Transfer Impact Assessment)</span></li><li><span class="cb" aria-hidden="true"></span><span>มีการเข้ารหัสข้อมูล (Encryption) ทั้งในระหว่างการส่งผ่านโครงข่ายและขณะจัดเก็บในคลาวด์</span></li><li><span class="cb" aria-hidden="true"></span><span>นโยบายความเป็นส่วนตัว (Privacy Notice) ระบุประเภทข้อมูลและประเทศปลายทางไว้อย่างโปร่งใส</span></li><li><span class="cb" aria-hidden="true"></span><span>กรณีอาศัยฐานความยินยอม มีการแจ้งให้ทราบชัดเจนถึงสภาพความคุ้มครองของประเทศปลายทางตามมาตรา 28 (2)</span></li><li><span class="cb" aria-hidden="true"></span><span>ตรวจสอบว่ามีนโยบายกลุ่มบริษัท (Binding Corporate Rules: BCRs) ที่สำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคลตรวจสอบและรับรองแล้ว หรือมีเหตุอื่นตามมาตรา 28 และมาตรา 29 รองรับกรณีส่งข้อมูลระหว่างบริษัทในเครือ</span></li><li><span class="cb" aria-hidden="true"></span><span>มีข้อสัญญาให้ผู้ประมวลผลในต่างประเทศแจ้งเหตุละเมิดข้อมูล (Data Breach Notification) แก่ผู้ควบคุมข้อมูลภายในเวลาที่สั้นพอ (เช่น 24 ชั่วโมงตามที่คู่สัญญาตกลง) เพื่อให้ผู้ควบคุมข้อมูลปฏิบัติตามหน้าที่แจ้งสำนักงานภายในเจ็ดสิบสองชั่วโมงนับแต่ทราบเหตุตามมาตรา 37 (4)</span></li><li><span class="cb" aria-hidden="true"></span><span>มีบันทึกกิจกรรมการประมวลผล (ROPA) บันทึกรายละเอียดการส่งข้อมูลข้ามพรมแดนครบถ้วน</span></li></ul>
+<h3 class="sub-heading">Key Takeaways</h3>
+<ul class="checklist"><li><span class="cb" aria-hidden="true"></span><span><strong>1. ตรวจสอบการส่งข้อมูลออกนอกพรมแดน:</strong> การใช้ Cloud ต่างประเทศหรือแชร์ข้อมูลไปยังบริษัทแม่ เป็นจุดตรวจความเสี่ยงคดีความและโทษปรับทางปกครองไม่เกิน 3,000,000 บาท (ไม่เกิน 5,000,000 บาทสำหรับข้อมูลตามมาตรา 26) ตาม PDPA มาตรา 83 และมาตรา 84</span></li><li><span class="cb" aria-hidden="true"></span><span><strong>2. เลือกใช้กลไกการโอนข้อมูลที่เหมาะสม:</strong> ใช้ Standard Contractual Clauses (SCCs) สำหรับคู่ค้าทั่วไป, Binding Corporate Rules (BCRs) สำหรับบริษัทในเครือ, หรืออาศัยข้อยกเว้นตามกฎหมาย</span></li><li><span class="cb" aria-hidden="true"></span><span><strong>3. ตรวจสอบสัญญา Cloud Provider และ Privacy Notice:</strong> เร่งตรวจสอบ Data Processing Addendum (DPA) ของผู้ให้บริการ และระบุการส่งข้อมูลปลายทางใน Privacy Notice ให้โปร่งใส</span></li></ul>
+  </section>
+
+
+
+  <!-- FAQ -->
+  <section class="section-block" id="faq">
+    <h2 class="section-heading">คำถามที่พบบ่อย <span class="en">Frequently Asked Questions</span></h2>
+    <div class="faq-item">
+      <div class="faq-q">การใช้บริการ Google Workspace หรือ Microsoft 365 ถือเป็นการส่งข้อมูลไปต่างประเทศหรือไม่?</div>
+      <div class="faq-a"><strong>คำตอบ:</strong> ถือเป็นการส่งหรือโอนข้อมูลไปต่างประเทศหากเซิร์ฟเวอร์ตั้งอยู่นอกประเทศไทย ผู้ให้บริการทั้งสองรายมีข้อกำหนด SCCs และ DPA มาตรฐานสากลรองรับ และบริษัทต้องเข้าไปตรวจสอบและกดยอมรับ DPA ในหน้า Admin Console เพื่อให้เกิดผลผูกพันทางกฎหมาย [ต้องยืนยันแหล่งที่มา: ควรระบุเวอร์ชันและวันที่ตรวจสัญญาของผู้ให้บริการ] ทั้งนี้ ผู้ควบคุมข้อมูลต้องตรวจว่าข้อสัญญาของผู้ให้บริการเข้าหลักเกณฑ์ที่คณะกรรมการประกาศตามมาตรา 29 วรรคสามด้วย</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">การที่นักท่องเที่ยวต่างชาติมาซื้อของในไทย แล้วบริษัทส่งใบเสร็จไปที่อีเมลของเขา ถือเป็น Cross-Border Transfer หรือไม่?</div>
+      <div class="faq-a"><strong>คำตอบ:</strong> การส่งข้อมูลกลับไปยังเจ้าของข้อมูลเองโดยตรงเป็นประเด็นที่ตัวบทมิได้บัญญัติไว้ชัดแจ้ง [ต้องยืนยันแหล่งที่มา] ส่วนการจัดส่งผ่านผู้ให้บริการในต่างประเทศ (เช่น ผู้ให้บริการอีเมล) ต้องพิจารณาตามมาตรา 28 และมาตรา 29</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">หากประเทศปลายทางไม่มีกฎหมายคุ้มครองข้อมูลส่วนบุคคลเลย จะสามารถส่งข้อมูลไปได้หรือไม่?</div>
+      <div class="faq-a"><strong>คำตอบ:</strong> ส่งได้เมื่อเข้าข้อยกเว้นตามมาตรา 28 (เช่น ความยินยอมโดยแจ้งมาตรฐานที่ไม่เพียงพอ หรือการปฏิบัติตามสัญญากับเจ้าของข้อมูล) หรือเมื่อยังไม่มีคำวินิจฉัยตามมาตรา 28 หรือนโยบายกลุ่มกิจการที่รับรองแล้ว และผู้ส่งจัดให้มีมาตรการคุ้มครองที่เหมาะสม บังคับตามสิทธิของเจ้าของข้อมูลได้ และมีมาตรการเยียวยาทางกฎหมายที่มีประสิทธิภาพตามหลักเกณฑ์ที่คณะกรรมการประกาศ (มาตรา 29 วรรคสาม)</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">โทษปรับทางปกครองตามมาตรา 83 (ไม่เกิน 3 ล้านบาท) และมาตรา 84 (ไม่เกิน 5 ล้านบาทสำหรับข้อมูลตามมาตรา 26) เป็นโทษต่อครั้ง หรือต่อปี?</div>
+      <div class="faq-a"><strong>คำตอบ:</strong> ตัวบทกำหนดเพดานค่าปรับทางปกครองต่อการฝ่าฝืนแต่ละกรณีโดยมิได้ระบุว่าเป็นรายครั้งหรือรายปี และให้คณะกรรมการผู้เชี่ยวชาญคำนึงถึงความร้ายแรง ขนาดกิจการ และพฤติการณ์ตามมาตรา 90 ผู้ใดไม่ปฏิบัติตามคำสั่งของคณะกรรมการผู้เชี่ยวชาญหรือไม่มาชี้แจงข้อเท็จจริงตามมาตรา 75 ต้องระวางโทษปรับทางปกครองไม่เกิน 500,000 บาทตามมาตรา 89 ส่วนกรณีที่ผู้ควบคุมข้อมูลไม่ดำเนินการตามคำสั่งให้แก้ไขหรือคำสั่งห้ามตามมาตรา 74 วรรคสาม ให้นำบทบัญญัติเกี่ยวกับการบังคับทางปกครองตามกฎหมายว่าด้วยวิธีปฏิบัติราชการทางปกครองมาใช้บังคับโดยอนุโลม (มาตรา 74 วรรคสี่)</div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <div class="ref-section" id="refs">
+    <h3>อ้างอิง — References</h3>
+    <ul>
+      <li>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 6, 16, 26, 28, 29, 37, 74, 75, 83, 84, 86, 87, 89, 90</li>
+      <li>ประกาศคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล เรื่อง หลักเกณฑ์การให้ความคุ้มครองข้อมูลส่วนบุคคลที่ส่งหรือโอนไปยังต่างประเทศตามมาตรา 28 [ต้องยืนยันแหล่งที่มา: ชื่อ ปี เลขที่ และวันที่ประกาศในราชกิจจานุเบกษา]</li>
+      <li>ประกาศคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล เรื่อง หลักเกณฑ์การให้ความคุ้มครองข้อมูลส่วนบุคคลที่ส่งหรือโอนไปยังต่างประเทศตามมาตรา 29 [ต้องยืนยันแหล่งที่มา: ชื่อ ปี เลขที่ และวันที่ประกาศในราชกิจจานุเบกษา]</li>
+      <li>ASEAN Model Contractual Clauses for Cross Border Data Flows (ASEAN MCCs)</li>
+      <li>สำนักงานคณะกรรมการกฤษฎีกา — <a href="https://www.ocs.go.th/searchlaw-law" target="_blank" rel="noopener">ระบบสืบค้นกฎหมาย (OCS)</a></li>
+    </ul>
+  </div>
+
+
+  <!-- RELATED ARTICLES (drive-publish.py) -->
+  <div style="margin-top:36px;">
+    <h3 style="color:var(--navy);margin-bottom:16px;font-size:1rem;font-weight:700;">บทความที่เกี่ยวข้อง</h3>
+    <div class="related-articles">
+      <a class="related-card" href="/articles/cloud-hrms-payroll-outsourcing-contract-thailand.html"><div class="rel-tag">Contract · HR Technology</div>ดักจุดตายสัญญาให้บริการระบบบริหารจัดการทรัพยากรบุคคลบนคลาวด์และจ่ายเงินเดือน (Cloud HRMS &amp; Payroll Outsourcing Services Agreement)</a>
+      <a class="related-card" href="/articles/pdpa-compliance-guide-business.html"><div class="rel-tag">PDPA</div>PDPA คู่มือเชิงปฏิบัติสำหรับผู้ประกอบการ</a>
+      <a class="related-card" href="/articles/las-invest-index.html"><div class="rel-tag">LAS INVEST</div>สารบัญชุด LAS INVEST</a>
+    </div>
+  </div>
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <strong>ข้อสงวน (Disclaimer):</strong> บทความนี้จัดทำโดย Legal Advance Solution Co., Ltd. เพื่อเป็นข้อมูลทั่วไปด้านกฎหมายเท่านั้น ไม่ถือเป็นคำปรึกษากฎหมายเฉพาะกรณี และไม่ก่อให้เกิดความสัมพันธ์ทนาย-ลูกความ กฎหมายอาจมีการเปลี่ยนแปลง กรุณาปรึกษาทนายความที่มีใบอนุญาตก่อนดำเนินการใด ๆ ตามกฎหมาย | <em>LAS Legal Hub — ข้อมูลกฎหมายเพื่อธุรกิจ</em>
+  </div>
+
+</div><!-- end article-body -->
+<footer class="las-author-footer" style="text-align:center;padding:24px 16px;font-size:13px;color:#1B2A4A;">
+  <p class="las-author-credit">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D. — Legal Advance Solution Co., Ltd. (LAS)</p>
+</footer>
+</body>
+</html>
