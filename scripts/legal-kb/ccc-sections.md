@@ -378,6 +378,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 420
 - มาตรา 425
 - มาตรา 426
+- มาตรา 427
 - มาตรา 428
 - มาตรา 432
 - มาตรา 438

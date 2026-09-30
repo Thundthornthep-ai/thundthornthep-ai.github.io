@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+<meta property="og:url" content="https://thundthornthep-ai.github.io/articles/ip-technology-due-diligence-thailand.html" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NN3KX46PVC"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NN3KX46PVC');</script>
+<link rel="icon" type="image/webp" href="/las-logo.webp">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ตรวจสอบสถานะทรัพย์สินทางปัญญาและเทคโนโลยี (IP &amp; Tech Due Diligence) | LAS C&amp;C Deep Research EP07 | LAS Legal Hub</title>
+  <meta name="description" content="การเข้าซื้อกิจการสตาร์ทอัพหรือบริษัทเทคโนโลยี (Tech M&amp;A) มักเผชิญ &quot;ความเสี่ยงที่มองไม่เห็น&quot; ในแกนทรัพย์สินทางปัญญา 4 ประการที่ต้องทำ IP Due Diligence อย่างเข้มงวด: (1) การขาดห่วงโซ่แห่งกรรมสิทธิ์ (Chain of Title): ตาม พ.ร.บ.ลิขสิทธิ์ พ.ศ. 2537 มาตรา 9…" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Thundthornthep Yamoutai, Ph.D." />
+  <meta property="og:title" content="ตรวจสอบสถานะทรัพย์สินทางปัญญาและเทคโนโลยี (IP &amp; Tech Due Diligence)" />
+  <meta property="og:description" content="การเข้าซื้อกิจการสตาร์ทอัพหรือบริษัทเทคโนโลยี (Tech M&amp;A) มักเผชิญ &quot;ความเสี่ยงที่มองไม่เห็น&quot; ในแกนทรัพย์สินทางปัญญา 4 ประการที่ต้องทำ IP Due Diligence อย่างเข้มงวด: (1) การขาดห่วงโซ่แห่งกรรมสิทธิ์ (Chain of Title): ตาม พ.ร.บ.ลิขสิทธิ์ พ.ศ. 2537 มาตรา 9…" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="th_TH" />
+  <link rel="canonical" href="https://thundthornthep-ai.github.io/articles/ip-technology-due-diligence-thailand.html" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ตรวจสอบสถานะทรัพย์สินทางปัญญาและเทคโนโลยี (IP & Tech Due Diligence): เช็กลิขสิทธิ์ ซอร์สโค้ด Open Source และสิทธิบัตรก่อนเข้าซื้อกิจการ",
+    "alternativeHeadline": "Intellectual Property & Technology Due Diligence: Source Code Audits, Open Source GPL Risks, and Chain of Title Verification",
+    "author": {"@type": "Person", "name": "Thundthornthep Yamoutai, Ph.D.", "affiliation": "Legal Advance Solution Co., Ltd."},
+    "publisher": {"@type": "Organization", "name": "Legal Advance Solution Co., Ltd."},
+    "datePublished": "2026-09-30",
+    "dateModified": "2026-09-30",
+    "inLanguage": "th",
+    "isPartOf": {"@type": "CreativeWorkSeries", "name": "LAS C&C — Deep Research"}
+  }
+  </script>
+  <style>
+    :root {
+      --gold: #C9A96E;
+      --navy: #1B2A4A;
+      --red-bg: #FADBD8;
+      --red-border: #C0392B;
+      --orange-bg: #FDEBD0;
+      --orange-border: #E67E22;
+      --green-bg: #D5F5E3;
+      --green-border: #27AE60;
+      --blue-bg: #D6EAF8;
+      --blue-border: #2471A3;
+      --gray-bg: #F4F6F7;
+      --text: #2C303A;
+      --muted: #6C7A89;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Sarabun', 'TH Sarabun New', sans-serif;
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text);
+      background: #FAFAFA;
+    }
+    .article-header {
+      background: linear-gradient(135deg, var(--navy) 0%, #2C3E6A 100%);
+      color: #fff;
+      padding: 48px 24px 36px;
+      text-align: center;
+    }
+    .article-header .category-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .article-header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .article-header .subtitle {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 20px;
+    }
+    .article-header .meta {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+    }
+    .article-body {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+    /* TOC */
+    .toc-box {
+      background: var(--blue-bg);
+      border-left: 4px solid var(--blue-border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+    }
+    .toc-box h3 {
+      font-size: 1rem;
+      color: var(--blue-border);
+      margin-bottom: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .toc-box ol { padding-left: 22px; }
+    .toc-box li { margin-bottom: 6px; }
+    .toc-box a { color: var(--navy); text-decoration: none; font-size: 15px; }
+    .toc-box a:hover { text-decoration: underline; color: var(--blue-border); }
+    /* Section blocks */
+    .section-block { margin-bottom: 48px; }
+    .section-heading {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--navy);
+      border-bottom: 3px solid var(--gold);
+      padding-bottom: 8px;
+      margin-bottom: 6px;
+    }
+    .section-heading .en {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--muted);
+      margin-left: 10px;
+      letter-spacing: 0.3px;
+    }
+    .sub-heading {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 24px 0 10px;
+      padding-left: 10px;
+      border-left: 3px solid var(--gold);
+    }
+    p { margin-bottom: 14px; }
+    /* Compare table */
+    .compare-table {
+      overflow-x: auto;
+      margin: 24px 0 28px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    table.article-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    table.article-table thead th {
+      background: var(--navy);
+      color: #fff;
+      padding: 13px 16px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+    }
+    table.article-table thead th:first-child { border-radius: 10px 0 0 0; }
+    table.article-table thead th:last-child { border-radius: 0 10px 0 0; }
+    table.article-table tbody tr:hover { filter: brightness(0.96); transition: filter 0.15s; }
+    table.article-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #E5E8EB;
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    table.article-table td:first-child {
+      font-weight: 700;
+      color: var(--navy);
+      white-space: nowrap;
+      background: #F0F3F7 !important;
+      min-width: 140px;
+    }
+    table.article-table .col-hiree { background: #FDEBD0; }
+    table.article-table .col-labor { background: #D5F5E3; }
+    table.article-table .col-risk-high { background: #FADBD8; }
+    table.article-table .col-risk-med { background: #FDEBD0; }
+    table.article-table .col-risk-low { background: #D5F5E3; }
+    /* Practice note */
+    .practice-note {
+      background: var(--orange-bg);
+      border-left: 4px solid var(--orange-border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+    .practice-note.alert {
+      background: var(--red-bg);
+      border-left-color: var(--red-border);
+    }
+    .practice-note.tip {
+      background: var(--green-bg);
+      border-left-color: var(--green-border);
+    }
+    .pn-label {
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .practice-note .pn-label { color: var(--orange-border); }
+    .practice-note.alert .pn-label { color: var(--red-border); }
+    .practice-note.tip .pn-label { color: var(--green-border); }
+    /* Law ref cards */
+    .law-ref-cards { display: flex; flex-wrap: wrap; gap: 14px; margin: 20px 0; }
+    .law-ref-card {
+      flex: 1 1 260px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #fff;
+      border: 1.5px solid #DDE3EA;
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    }
+    .law-ref-card.cat-civil { border-left: 4px solid #2471A3; }
+    .law-ref-card.cat-labor { border-left: 4px solid #117A65; }
+    .law-ref-card.cat-tax { border-left: 4px solid #884EA0; }
+    .law-icon {
+      font-size: 22px;
+      min-width: 28px;
+      text-align: center;
+      margin-top: 2px;
+    }
+    .law-info .law-name {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+    .law-info .law-source {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    /* Content list */
+    .content-list { padding-left: 22px; margin-bottom: 16px; }
+    .content-list li { margin-bottom: 8px; }
+    /* FAQ */
+    .faq-item {
+      border: 1px solid #DDE3EA;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+    .faq-item .faq-q {
+      background: var(--navy);
+      color: #fff;
+      padding: 13px 18px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .faq-item .faq-q::before { content: "Q: "; color: var(--gold); }
+    .faq-item .faq-a {
+      padding: 14px 18px;
+      background: #fff;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    /* Law quote (verbatim) */
+    .law-quote {
+      background: #F0F3F7;
+      border-left: 4px solid var(--navy);
+      border-radius: 6px;
+      padding: 14px 18px;
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: var(--navy);
+      margin: 14px 0;
+      white-space: pre-wrap;
+      font-family: 'Sarabun', 'TH Sarabun New', monospace;
+    }
+    /* Risk badge */
+    .risk-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .risk-high { background: var(--red-bg); color: var(--red-border); border: 1px solid var(--red-border); }
+    .risk-med  { background: var(--orange-bg); color: var(--orange-border); border: 1px solid var(--orange-border); }
+    .risk-low  { background: var(--green-bg); color: var(--green-border); border: 1px solid var(--green-border); }
+    /* Summary card */
+    .summary-card {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 24px 0;
+    }
+    .summary-card h3 { color: var(--gold); margin-bottom: 14px; font-size: 1.1rem; }
+    .summary-card ul { padding-left: 22px; }
+    .summary-card li { margin-bottom: 8px; font-size: 15px; opacity: 0.92; }
+    /* References */
+    .ref-section {
+      background: var(--gray-bg);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-top: 40px;
+    }
+    .ref-section h3 { color: var(--navy); margin-bottom: 14px; font-size: 1rem; font-weight: 700; }
+    .ref-section ul { padding-left: 20px; }
+    .ref-section li { font-size: 14px; margin-bottom: 6px; color: var(--muted); }
+    .ref-section a { color: var(--blue-border); }
+    /* Related */
+    .related-articles {
+      display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px;
+    }
+    .related-card {
+      flex: 1 1 200px;
+      background: #fff;
+      border: 1.5px solid #DDE3EA;
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 14px;
+      color: var(--navy);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover { border-color: var(--gold); }
+    .related-card .rel-tag { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+    /* Disclaimer */
+    .disclaimer {
+      margin-top: 40px;
+      padding: 16px 20px;
+      background: #F4F6F7;
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    /* Responsive */
+    @media (max-width: 640px) {
+      .article-header h1 { font-size: 1.45rem; }
+      .section-heading { font-size: 1.25rem; }
+      table.article-table td:first-child { min-width: 110px; }
+    }
+    /* ── Deep-Research extras (LAS Legal Master Template v1.0.0) ── */
+    .article-header .h1-sub { display:block; font-size:1.15rem; font-weight:600; color:rgba(255,255,255,0.9); margin-top:8px; line-height:1.5; }
+    .meta-chips { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:14px; }
+    .chip { display:inline-block; background:rgba(255,255,255,0.12); color:#fff; font-size:12px; padding:3px 12px; border-radius:14px; letter-spacing:0.2px; }
+    .chip-gold { background:var(--gold); color:var(--navy); font-weight:700; }
+    .quick-answer { background:var(--green-bg); border-left:4px solid var(--green-border); border-radius:8px; padding:18px 22px; margin-bottom:24px; }
+    .quick-answer .pn-label { color:var(--green-border); }
+    .quick-answer p { margin:0; font-size:16px; }
+    .hook-box { background:#fff; border:1.5px solid #DDE3EA; border-left:4px solid var(--navy); border-radius:10px; padding:18px 22px; margin-bottom:28px; }
+    .hook-box h3 { font-size:1rem; color:var(--navy); margin-bottom:10px; font-weight:800; }
+    .hook-box ol { padding-left:22px; }
+    .hook-box li { margin-bottom:8px; }
+    .checklist { list-style:none; padding-left:0; margin:12px 0 18px; }
+    .checklist li { display:flex; gap:12px; align-items:flex-start; padding:10px 14px; margin-bottom:8px; background:#fff; border:1px solid #DDE3EA; border-radius:8px; }
+    .checklist .cb { flex:0 0 18px; width:18px; height:18px; margin-top:4px; border:2px solid var(--navy); border-radius:4px; background:#fff; }
+    .compare-table.claim-ledger table.article-table td:first-child { white-space:nowrap; font-family:'Consolas','Menlo',monospace; font-size:13px; }
+    .compare-table.claim-ledger table.article-table td { font-size:14px; }
+    .law-ref-card.cat-pdpa { border-left:4px solid #C0392B; }
+    .law-ref-card.cat-other { border-left:4px solid #7F8C8D; }
+    .practice-note p { margin-bottom:8px; }
+    .practice-note p:last-child { margin-bottom:0; }
+    @media (max-width: 640px) { .article-header .h1-sub { font-size:0.98rem; } }
+  </style>
+<link rel="stylesheet" href="/css/learning-tables.css?v=20260929">
+<link rel="stylesheet" href="/css/las-template-theme.css?v=20260929">
+</head>
+<body class="las-knowledge-article">
+
+<!-- HEADER -->
+<header class="article-header">
+  <div class="category-tag">LAS C&amp;C Deep Research · EP07 · Due Diligence · IP and Technology</div>
+  <h1>ตรวจสอบสถานะทรัพย์สินทางปัญญาและเทคโนโลยี (IP &amp; Tech Due Diligence)<br><span class="h1-sub">เช็กลิขสิทธิ์ ซอร์สโค้ด Open Source และสิทธิบัตรก่อนเข้าซื้อกิจการ</span> <span class="las-reviewed-mark" role="img" aria-label="ตรวจทบทวนข้อกฎหมายแล้ว" title="ตรวจทบทวนข้อกฎหมายแล้ว">✓</span></h1>
+<p class="las-review-date"><b>✓ ตรวจทบทวนข้อกฎหมายล่าสุดเมื่อวันที่ 30 กันยายน 2569</b> · เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 30 กันยายน 2569</p>
+  <p class="subtitle">Intellectual Property &amp; Technology Due Diligence: Source Code Audits, Open Source GPL Risks, and Chain of Title Verification</p>
+  <div class="meta">โดย ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D. &nbsp;|&nbsp; Legal Advance Solution Co., Ltd. &nbsp;|&nbsp; ตัวบทกฎหมาย ณ 30 กันยายน 2569</div>
+  <div class="meta-chips">
+    <span class="chip">Series: LAS C&amp;C Deep Research</span>
+    <span class="chip">ตอนที่ 07</span>
+    <span class="chip">Jurisdiction: ประเทศไทย</span>
+    <span class="chip chip-gold">LAS Legal Audit ✓ 30 กันยายน 2569</span>
+  </div>
+</header>
+
+<div class="article-body">
+
+  <!-- QUICK ANSWER -->
+  <div class="quick-answer" id="quick-answer">
+    <span class="pn-label">คำตอบสั้น — Quick Answer / TL;DR</span>
+    <p>การเข้าซื้อกิจการสตาร์ทอัพหรือบริษัทเทคโนโลยี (Tech M&amp;A) มักเผชิญ "ความเสี่ยงที่มองไม่เห็น" ในแกนทรัพย์สินทางปัญญา 4 ประการที่ต้องทำ IP Due Diligence อย่างเข้มงวด: (1) <strong>การขาดห่วงโซ่แห่งกรรมสิทธิ์ (Chain of Title):</strong> ตาม พ.ร.บ.ลิขสิทธิ์ พ.ศ. 2537 มาตรา 9 งานที่ลูกจ้างสร้างขึ้นลิขสิทธิ์ยังเป็นของลูกจ้าง เว้นแต่จะมีสัญญาเป็นหนังสือระบุไว้เป็นอย่างอื่น และมาตรา 10 งานจ้างทำของเป็นของผู้ว่าจ้างเว้นแต่ตกลงเป็นอย่างอื่น, (2) <strong>การปนเปื้อนของ Open Source (GPL Copyleft Contamination):</strong> หากนำโค้ดที่ใช้สัญญาอนุญาต GPL มารวมเป็นงานเดียวกันกับโค้ดของบริษัทและแจกจ่ายสำเนาแก่ผู้อื่น ต้องเสนอซอร์สโค้ดของงานทั้งหมดแก่ผู้รับสำเนาภายใต้เงื่อนไขเดียวกัน ความเสี่ยงจึงขึ้นอยู่กับวิธีเชื่อมต่อและการแจกจ่าย ต้องตรวจเป็นรายโมดูล [ต้องยืนยันข้อความสัญญาอนุญาตฉบับที่ใช้จริง], (3) <strong>การโอนสิทธิบัตรที่อาจเป็นโมฆะ:</strong> ตาม พ.ร.บ.สิทธิบัตร พ.ศ. 2522 มาตรา 41 ประกอบมาตรา 38 การโอนสิทธิบัตรต้องทำเป็นหนังสือและจดทะเบียนต่อพนักงานเจ้าหน้าที่ตามหลักเกณฑ์ วิธีการ และเงื่อนไขที่กำหนดในกฎกระทรวง (ใช้กับอนุสิทธิบัตรโดยอนุโลมตามมาตรา 65 ทศ) ส่วนการโอนสิทธิขอรับสิทธิบัตรก่อนมีการออกสิทธิบัตรต้องทำเป็นหนังสือลงลายมือชื่อผู้โอนและผู้รับโอนตามมาตรา 10 แห่ง พ.ร.บ.สิทธิบัตร หากมิได้ปฏิบัติตามแบบดังกล่าว การโอนอาจเป็นโมฆะตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 152 [ต้องยืนยันมาตรา: ผลของการโอนที่ทำเป็นหนังสือแล้วแต่ยังมิได้จดทะเบียน], และ (4) <strong>ความลับทางการค้าที่ขาดระบบควบคุม</strong> จนสูญเสียสภาพความคุ้มครองตาม พ.ร.บ.ความลับทางการค้า พ.ศ. 2545 [ต้องยืนยันมาตรา: นิยามความลับทางการค้าตามมาตรา 3 ต้องตรวจจากตัวบทฉบับทางการและเขียนให้ครบทุกองค์ประกอบ]</p>
+  </div>
+
+  <!-- PROBLEM HOOK -->
+  <div class="hook-box" id="hook">
+    <h3>สถานการณ์ที่ผู้ประกอบการมักพบจริง</h3>
+    <ol>
+      <li><strong>เหตุการณ์:</strong> บริษัทผู้ลงทุนเข้าซื้อกิจการสตาร์ทอัพด้าน FinTech มูลค่า 100 ล้านบาท โดยดูเฉพาะงบการเงิน งบดุล และยอดผู้ใช้งาน โดยตรวจสอบสัญญาเบื้องต้นเท่านั้น</li>
+      <li><strong>ความเข้าใจผิด:</strong> คิดว่าสตาร์ทอัพจ้างโปรแกรมเมอร์เขียนโค้ดทั้งหมด และบริษัทจ่ายเงินเดือนแล้ว ทรัพย์สินทางปัญญาในซอฟต์แวร์ย่อมตกเป็นของบริษัทโดยสมบูรณ์</li>
+      <li><strong>จุดพลิก:</strong> หลังปิดดีล 3 เดือน อดีต Lead Developer ลาออกและยื่นโนติสแจ้งว่าตนเป็นเจ้าของลิขสิทธิ์ใน Core Engine ตาม พ.ร.บ.ลิขสิทธิ์ มาตรา 9 เพราะสัญญาจ้างแรงงานเดิมไม่ได้เขียนข้อความโอนลิขสิทธิ์ไว้ (ตามมาตรา 9 ลิขสิทธิ์ในงานของลูกจ้างเป็นของผู้สร้างสรรค์ แต่นายจ้างยังมีสิทธินำงานนั้นออกเผยแพร่ต่อสาธารณชนได้ตามวัตถุประสงค์แห่งการจ้างแรงงาน) พร้อมกันนั้น เมื่อตรวจสอบโค้ดพบว่ามีการนำโค้ด Open Source สัญญาอนุญาต GNU GPL v3 มาคอมไพล์รวม ทำให้ชุมชนนักพัฒนาเรียกร้องให้เปิดเผย Source Code ตามเงื่อนไขของสัญญาอนุญาต ดีลมูลค่า 100 ล้านบาทแทบกลายเป็นศูนย์ในชั่วข้ามคืน</li>
+      <li><strong>สิ่งที่ได้จากบทความ:</strong> แผนผังตรวจสอบ IP Chain of Title 5 ขั้นตอน, วิธีตรวจจับ Open Source License Risk (Permissive vs Copyleft), เช็กลิสต์การตรวจสัญญาจ้างฟรีแลนซ์/เอาท์ซอร์ส, และเงื่อนไขการวาง IP Escrow / Indemnity ในสัญญาซื้อขายหุ้น</li>
+    </ol>
+  </div>
+
+  <!-- TOC -->
+  <nav class="toc-box" aria-label="สารบัญ">
+    <h3>สารบัญ</h3>
+    <ol>
+      <li><a href="#s1">ทำไม IP Due Diligence จึงเป็นหัวใจของธุรกิจยุคดิจิทัล</a></li>
+      <li><a href="#s2">ผลกระทบเชิงธุรกิจ</a></li>
+      <li><a href="#s3">กรอบกฎหมายและ Claim Ledger</a></li>
+      <li><a href="#s4">4 แกนหลักในการสแกน IP &amp; Technology</a></li>
+      <li><a href="#s5">ตารางเปรียบเทียบประเภทสัญญาอนุญาต Open Source</a></li>
+      <li><a href="#s6">ข้อต่อสู้ของสตาร์ทอัพกับมุมมองผู้ลงทุน</a></li>
+      <li><a href="#s7">ตัวอย่างสถานการณ์จำลอง</a></li>
+      <li><a href="#s8">ขั้นตอนการทำ IP &amp; Tech Due Diligence</a></li>
+      <li><a href="#s9">Checklist 10 จุดตรวจ IP &amp; Tech Due Diligence</a></li>
+
+
+      <li><a href="#faq">คำถามที่พบบ่อย</a></li>
+      <li><a href="#refs">อ้างอิง</a></li>
+    </ol>
+  </nav>
+
+  <section class="section-block" id="s1">
+    <h2 class="section-heading">ทำไม IP Due Diligence จึงเป็นหัวใจของธุรกิจยุคดิจิทัล</h2>
+<p>สำหรับบริษัทเทคโนโลยี ทรัพย์สินที่มีค่าที่สุดไม่ใช่ที่ดินหรืออาคาร แต่คือ "ทรัพย์สินทางปัญญา" (Intangible Assets) ได้แก่ ซอร์สโค้ด อัลกอริทึม สิทธิบัตร ฐานข้อมูล และเครื่องหมายการค้า หากบริษัทเป้าหมายไม่มีสิทธิเด็ดขาดในทรัพย์สินเหล่านี้ ผู้ซื้อจะไม่ได้รับสิ่งใดเลยนอกจากเปลือกของบริษัท การทำ Due Diligence จึงต้องเจาะลึกถึงสัญญาการว่าจ้างและที่มาของโค้ดทุกบรรทัด</p>
+  </section>
+
+  <section class="section-block" id="s2">
+    <h2 class="section-heading">ผลกระทบเชิงธุรกิจ <span class="en">Business Consequences</span></h2>
+<ul class="content-list"><li><strong>Money (มูลค่าประเมินลดลงหรือเป็นศูนย์):</strong> หากพบว่าโค้ดหลักติดสิทธิ์ของบุคคลภายนอก หรือเสี่ยงต่อการถูกฟ้องละเมิดลิขสิทธิ์ มูลค่าของดีลจะต้องถูกหักลด (Valuation Haircut) หรือต้องตั้งเงินกันไว้ใน Escrow Account เพื่อรองรับความเสียหาย</li><li><strong>Control (สิทธิขาดในการต่อยอดเชิงพาณิชย์):</strong> หากนำโค้ดที่ใช้สัญญาอนุญาต GPL มารวมเป็นงานเดียวกันกับซอฟต์แวร์ของบริษัทและแจกจ่ายสำเนา บริษัทอาจไม่สามารถปิดซอร์สโค้ดของงานทั้งหมดหรือรักษาเป็นความลับทางการค้าได้ เพราะเงื่อนไขของสัญญาอนุญาตกำหนดให้ต้องเสนอซอร์สโค้ดแก่ผู้รับสำเนา ทั้งนี้ ความเสี่ยงขึ้นอยู่กับวิธีเชื่อมต่อและการแจกจ่าย ต้องตรวจเป็นรายโมดูล [ต้องยืนยันข้อความสัญญาอนุญาตฉบับที่ใช้จริง]</li><li><strong>Evidence/Timing:</strong> การจดทะเบียนโอนสิทธิบัตรต้องผ่านการตรวจของพนักงานเจ้าหน้าที่ จึงควรกันเวลาไว้ในกำหนดการปิดดีล มาตรา 41 แห่ง พ.ร.บ.สิทธิบัตร พ.ศ. 2522 กำหนดให้การโอนสิทธิบัตรต้องทำเป็นหนังสือและจดทะเบียน หากมิได้ปฏิบัติตามแบบดังกล่าว การโอนอาจเป็นโมฆะตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 152 [ต้องยืนยันมาตรา: ผลของการโอนที่ทำเป็นหนังสือแล้วแต่ยังมิได้จดทะเบียน]</li></ul>
+  </section>
+
+  <section class="section-block" id="s3">
+    <h2 class="section-heading">กรอบกฎหมายและ Claim Ledger <span class="en">Legal Framework</span></h2>
+<div class="compare-table claim-ledger"><div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="article-table las-reading-table las-wide-table"><thead><tr><th scope="col">Claim ID</th><th scope="col">ข้อความทางกฎหมายที่ยืนยัน</th><th scope="col">ฐานกฎหมายปฐมภูมิ</th><th scope="col">ตำแหน่งในแหล่ง</th><th scope="col">สถานะ</th></tr></thead><tbody><tr><td>C-CC-07-01</td><td>งานที่ผู้สร้างสรรค์ได้ทำขึ้นในฐานะพนักงานหรือลูกจ้าง ให้ผู้สร้างสรรค์มีลิขสิทธิ์ในงานนั้น เว้นแต่จะได้ทำเป็นหนังสือตกลงกันไว้เป็นอย่างอื่น</td><td>พ.ร.บ.ลิขสิทธิ์ พ.ศ. 2537 มาตรา 9</td><td>หมวด 1 ลิขสิทธิ์ ส่วนที่ 1</td><td class="col-risk-low">ตรวจตรงตัวบท — LAS Audit</td></tr><tr><td>C-CC-07-02</td><td>งานที่ผู้สร้างสรรค์ได้ทำขึ้นโดยการรับจ้างบุคคลอื่น ให้ผู้ว่าจ้างเป็นผู้มีลิขสิทธิ์ในงานนั้น เว้นแต่ผู้สร้างสรรค์และผู้ว่าจ้างจะได้ตกลงกันไว้เป็นอย่างอื่น</td><td>พ.ร.บ.ลิขสิทธิ์ พ.ศ. 2537 มาตรา 10</td><td>หมวด 1 ลิขสิทธิ์ ส่วนที่ 1</td><td class="col-risk-low">ตรวจตรงตัวบท — LAS Audit</td></tr><tr><td>C-CC-07-03</td><td>การโอนสิทธิบัตรหรืออนุสิทธิบัตรต้องทำเป็นหนังสือและจดทะเบียนต่อพนักงานเจ้าหน้าที่ตามหลักเกณฑ์ วิธีการ และเงื่อนไขที่กำหนดในกฎกระทรวง หากมิได้ปฏิบัติตามแบบดังกล่าว การโอนอาจเป็นโมฆะ [ต้องยืนยันมาตรา: ผลของการโอนที่ทำเป็นหนังสือแล้วแต่ยังมิได้จดทะเบียน]</td><td>พ.ร.บ.สิทธิบัตร พ.ศ. 2522 มาตรา 41 ประกอบมาตรา 38 (ใช้กับอนุสิทธิบัตรโดยอนุโลมตามมาตรา 65 ทศ) และประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 152</td><td>หมวด 2 สิทธิบัตรการประดิษฐ์</td><td class="col-risk-low">แก้ไขแล้ว — LAS Audit</td></tr><tr><td>C-CC-07-04</td><td>ข้อมูลความลับทางการค้าต้องเป็นข้อมูลที่มีการรักษาความลับตามสมควร เพื่อมิให้ผู้อื่นล่วงรู้ได้โดยง่าย จึงจะได้รับความคุ้มครอง [ต้องยืนยันมาตรา: นิยามความลับทางการค้าตามมาตรา 3 ต้องตรวจจากตัวบทฉบับทางการและเขียนให้ครบทุกองค์ประกอบ]</td><td>พ.ร.บ. ความลับทางการค้า พ.ศ. 2545 มาตรา 3 [ต้องยืนยันมาตรา]</td><td>หมวด 1 บททั่วไป</td><td class="col-risk-low">[ต้องยืนยันมาตรา]</td></tr><tr><td>C-CC-07-05</td><td>สิทธิขอรับสิทธิบัตรสำหรับการประดิษฐ์ที่ลูกจ้างทำขึ้นโดยการปฏิบัติงานตามสัญญาจ้าง ย่อมตกเป็นของนายจ้าง เว้นแต่สัญญาระบุไว้เป็นอย่างอื่น</td><td>พ.ร.บ.สิทธิบัตร พ.ศ. 2522 มาตรา 11</td><td>หมวด 2 สิทธิบัตรการประดิษฐ์</td><td class="col-risk-low">ตรวจตรงตัวบท — LAS Audit</td></tr></tbody></table>
+</div></div>
+  </section>
+
+  <section class="section-block" id="s4">
+    <h2 class="section-heading">4 แกนหลักในการสแกน IP &amp; Technology</h2>
+<ol class="content-list"><li><strong>Copyright &amp; Software Code:</strong> ตรวจสัญญาจ้างพนักงานทุกคนย้อนหลังว่ามีข้อความ "Assign all copyright to the Company" หรือไม่ และสัญญาจ้าง Outsource มีข้อตกลงเรื่องผลงานอย่างไร</li><li><strong>Open Source Software (OSS) Audit:</strong> ใช้เครื่องมือสแกนโค้ด (เช่น Black Duck หรือ FOSSA) เพื่อค้นหาไลบรารี Third-Party และเงื่อนไข License</li><li><strong>Patents &amp; Trademarks:</strong> ตรวจสอบสถานะการจดทะเบียนกับกรมทรัพย์สินทางปัญญา (DIP) ว่าใครเป็นเจ้าของสิทธิบัตร มีการชำระค่าธรรมเนียมรายปีตั้งแต่ปีที่ห้าครบถ้วนหรือไม่ (พ.ร.บ.สิทธิบัตร พ.ศ. 2522 มาตรา 43) ทั้งนี้ มาตรา 43 ใช้กับอนุสิทธิบัตรโดยอนุโลมตามมาตรา 65 ทศ และอนุสิทธิบัตรมีอายุหกปีนับแต่วันขอรับ ต่ออายุได้สองคราว คราวละสองปี โดยยื่นคำขอภายในเก้าสิบวันก่อนวันสิ้นอายุ (มาตรา 65 สัตต) ส่วนเครื่องหมายการค้าให้ตรวจการต่ออายุ ซึ่งต้องยื่นคำขอภายในเก้าสิบวันก่อนวันสิ้นอายุ (พ.ร.บ.เครื่องหมายการค้า พ.ศ. 2534 มาตรา 53 และมาตรา 54)</li><li><strong>Trade Secrets &amp; Cybersecurity:</strong> ตรวจสอบมาตรการควบคุมการเข้าถึง (Access Control), NDA สำหรับพนักงานและพาร์ทเนอร์, และนโยบายความมั่นคงปลอดภัยสารสนเทศ</li></ol>
+  </section>
+
+  <section class="section-block" id="s5">
+    <h2 class="section-heading">ตารางเปรียบเทียบประเภทสัญญาอนุญาต Open Source <span class="en">Risk Matrix</span></h2>
+<div class="compare-table"><div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="article-table las-reading-table las-wide-table"><thead><tr><th scope="col">ประเภท License</th><th scope="col">ตัวอย่าง License</th><th scope="col">ระดับความเสี่ยงต่อ Commercial Software</th><th scope="col">ผลกระทบและข้อกำหนดทางกฎหมาย</th></tr></thead><tbody><tr><td><strong>Permissive</strong></td><td>MIT, Apache 2.0, BSD</td><td><strong>ต่ำ (Low)</strong></td><td>อนุญาตให้นำไปใช้ในเชิงพาณิชย์ ปิด Source Code ได้ เพียงแต่ต้องปฏิบัติตามเงื่อนไขเรื่องประกาศลิขสิทธิ์และข้อความอนุญาตของสัญญาอนุญาตแต่ละฉบับ ซึ่งโดยทั่วไปต้องคงไว้ในสำเนาที่แจกจ่าย [ต้องยืนยันข้อความสัญญาอนุญาตฉบับที่ใช้จริง]</td></tr><tr><td><strong>Weak Copyleft</strong></td><td>LGPL</td><td><strong>ปานกลาง (Medium)</strong></td><td>ความเสี่ยงผูกกับวิธีเชื่อมต่อและสิทธิของผู้ใช้ในการเปลี่ยนไลบรารี หากนำมาใช้แบบ Dynamic Linking โค้ดของบริษัทอาจไม่ถูกกระทบ แต่ต้องแสดงประกาศตามสัญญาอนุญาต และต้องให้ผู้ใช้เปลี่ยนไลบรารีหรือเชื่อมต่อใหม่ได้ ส่วนหากแก้ไขตัวไลบรารี ต้องเปิดเผยโค้ดส่วนที่แก้ไขนั้น [ต้องยืนยันข้อความสัญญาอนุญาตฉบับที่ใช้จริง]</td></tr><tr><td><strong>Weak Copyleft</strong></td><td>MPL</td><td><strong>ปานกลาง (Medium)</strong></td><td>เป็น Copyleft ระดับไฟล์ ผูกกับไฟล์ที่มีการแก้ไข มิได้ผูกกับวิธีเชื่อมต่อ หากแก้ไขไฟล์ที่อยู่ภายใต้ MPL ต้องเปิดเผยโค้ดของไฟล์ที่แก้ไขนั้น [ต้องยืนยันข้อความสัญญาอนุญาตฉบับที่ใช้จริง]</td></tr><tr><td><strong>Strong Copyleft (Viral)</strong></td><td>GPL v2, GPL v3</td><td><strong>สูงมาก (Critical)</strong></td><td>หากนำมารวมเป็นงานเดียวกันกับ Proprietary Code และแจกจ่ายสำเนาแก่ผู้อื่น สัญญาอนุญาตกำหนดให้ต้องเสนอซอร์สโค้ดของงานทั้งหมดแก่ผู้รับสำเนาภายใต้เงื่อนไข GPL เดียวกัน ความเสี่ยงจึงขึ้นอยู่กับวิธีเชื่อมต่อและการแจกจ่าย ต้องตรวจเป็นรายโมดูล [ต้องยืนยันข้อความสัญญาอนุญาตฉบับที่ใช้จริง]</td></tr><tr><td><strong>Network / Cloud Copyleft</strong></td><td>AGPL v3</td><td><strong>วิกฤติต่อ SaaS (Fatal)</strong></td><td>หากบริษัทดัดแปลงโปรแกรมที่ใช้สัญญาอนุญาต AGPL v3 และเปิดให้ผู้ใช้โต้ตอบผ่านเครือข่าย สัญญาอนุญาตกำหนดให้ต้องเสนอซอร์สโค้ดของฉบับที่ดัดแปลงแก่ผู้ใช้เหล่านั้น การฝ่าฝืนอาจเป็นการใช้งานเกินขอบเขตที่ได้รับอนุญาตและเป็นการละเมิดลิขสิทธิ์ (พ.ร.บ.ลิขสิทธิ์ พ.ศ. 2537 มาตรา 15 (5) และมาตรา 30) [ต้องยืนยันข้อความสัญญาอนุญาตฉบับที่ใช้จริง]</td></tr></tbody></table>
+</div></div>
+<div class="practice-note tip"><span class="pn-label">LAS Practice Note — กับดักมาตรา 9 และมาตรา 10 แห่ง พ.ร.บ.ลิขสิทธิ์ พ.ศ. 2537</span><p>นักกฎหมายและผู้บริหารมักจำสับสน: ตาม พ.ร.บ.ลิขสิทธิ์ มาตรา 9 (สัญญาจ้างแรงงาน) กฎหมายกำหนดให้ <em>ลูกจ้างเป็นผู้ถือลิขสิทธิ์</em> เว้นแต่จะทำเป็นหนังสือตกลงกันไว้เป็นอย่างอื่น ดังนั้น หากสัญญาจ้างงานเขียนกว้างๆ ว่า "ปฏิบัติงานทั่วไป" โดยไม่มีข้อสัญญา IP Assignment ลิขสิทธิ์ในงานของลูกจ้างย่อมเป็นของผู้สร้างสรรค์ แต่นายจ้างยังมีสิทธินำงานนั้นออกเผยแพร่ต่อสาธารณชนได้ตามวัตถุประสงค์แห่งการจ้างแรงงาน ซึ่งเป็นสิทธิที่จำกัดกว่าการเป็นเจ้าของลิขสิทธิ์ จึงยังต้องมีข้อตกลงเป็นหนังสือหรือการโอนตามมาตรา 17 ในทางตรงกันข้าม มาตรา 10 (สัญญาจ้างทำของ) กฎหมายกำหนดให้ <em>ผู้ว่าจ้างเป็นผู้ถือลิขสิทธิ์</em> เว้นแต่จะตกลงเป็นอย่างอื่น ในการทำ Due Diligence จึงต้องแยกสถานะของบุคลากรให้ออก และหากพบช่องว่าง ต้องจัดทำ "Confirmatory IP Assignment Agreement" ให้ผู้พัฒนาลงนามย้อนหลังก่อนปิดดีลเสมอ ทั้งนี้ ข้อตกลงเป็นหนังสือตามมาตรา 9 ที่ให้ลิขสิทธิ์เป็นของนายจ้างตั้งแต่เริ่มสร้างสรรค์ แตกต่างจากการโอนลิขสิทธิ์ภายหลังตามมาตรา 17 ซึ่งมิใช่ทางมรดกต้องทำเป็นหนังสือลงลายมือชื่อผู้โอนและผู้รับโอน และหากมิได้กำหนดระยะเวลาไว้ให้ถือว่าโอนมีกำหนดสิบปี (พ.ร.บ.ลิขสิทธิ์ พ.ศ. 2537 มาตรา 17) จึงควรระบุ "ตลอดอายุแห่งการคุ้มครองลิขสิทธิ์" ไว้โดยชัดแจ้ง</p></div>
+  </section>
+
+  <section class="section-block" id="s6">
+    <h2 class="section-heading">ข้อต่อสู้ของสตาร์ทอัพกับมุมมองผู้ลงทุน <span class="en">Devil's Advocate</span></h2>
+<div class="compare-table"><div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="article-table las-reading-table"><thead><tr><th scope="col">ข้ออ้างของบริษัทเป้าหมาย (Target)</th><th scope="col">ข้อโต้แย้งของผู้ตรวจสอบ (Buyer / Legal)</th><th scope="col">หลักฐานเอกสารที่ชี้ขาด</th></tr></thead><tbody><tr><td>ผู้ก่อตั้ง (Founder) เป็นคนเขียนโค้ดเองทั้งหมด และเป็นเจ้าของหุ้นใหญ่ ย่อมไม่มีปัญหาเรื่องลิขสิทธิ์</td><td>บริษัทที่จดทะเบียนแล้วเป็นนิติบุคคลต่างหากจากผู้ถือหุ้นตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 1015 หากผู้ก่อตั้งไม่เคยโอนสิทธิให้บริษัท ลิขสิทธิ์ยังเป็นของผู้ก่อตั้งเป็นส่วนตัว</td><td>สัญญาโอนสิทธิในทรัพย์สินทางปัญญา (IP Assignment Agreement) จาก Founder เข้าสู่บริษัท</td></tr><tr><td>ใช้ Open Source แค่เล็กน้อยในส่วนที่ไม่สำคัญ ไม่กระทบต่อระบบหลัก</td><td>หากนำโค้ดที่ใช้สัญญาอนุญาต GPL มารวมเป็นงานเดียวกันกับโค้ดของบริษัทและแจกจ่ายสำเนาแก่ผู้อื่น ต้องเสนอซอร์สโค้ดของงานทั้งหมดแก่ผู้รับสำเนาภายใต้เงื่อนไขเดียวกัน ความเสี่ยงจึงขึ้นอยู่กับวิธีเชื่อมต่อและการแจกจ่าย ต้องตรวจเป็นรายโมดูล [ต้องยืนยันข้อความสัญญาอนุญาตฉบับที่ใช้จริง]</td><td>รายงาน Software Bill of Materials (SBOM) และ Dependency Tree Audit</td></tr><tr><td>สิทธิบัตรยื่นจดทะเบียนแล้ว อยู่ในขั้นตอนพิจารณา ถือว่าได้รับความคุ้มครองแล้ว</td><td>คำขอรับสิทธิบัตรยังไม่ใช่สิทธิบัตร อาจถูกปฏิเสธหรือถูกคัดค้านได้ ต้องประเมินความเสี่ยงอิสระ (Freedom to Operate: FTO)</td><td>รายงานสถานะคำขอรับสิทธิบัตรจากกรมทรัพย์สินทางปัญญา และรายงานสืบค้น FTO</td></tr></tbody></table>
+</div></div>
+  </section>
+
+  <section class="section-block" id="s7">
+    <h2 class="section-heading">ตัวอย่างสถานการณ์จำลอง <span class="en">Worked Example</span></h2>
+<p><strong>ข้อเท็จจริงสมมติ:</strong> บริษัท แกมม่า โฮลดิ้งส์ จำกัด ต้องการเข้าซื้อหุ้น 80% ในบริษัท โค้ดแล็บ จำกัด ซึ่งทำธุรกิจแพลตฟอร์มโลจิสติกส์ ทีมกฎหมายเข้าทำ Due Diligence พบว่า:</p>
+<ul class="content-list"><li>ระบบ Routing อัลกอริทึมหลัก พัฒนาโดยโปรแกรมเมอร์ชาวต่างชาติที่ว่าจ้างผ่านแพลตฟอร์มฟรีแลนซ์ แต่ไม่มีสัญญาจ้างทำของเป็นลายลักษณ์อักษร</li><li>ระบบจัดการฐานข้อมูลมีการใช้โมดูลที่ติดสัญญาอนุญาต AGPL v3</li></ul>
+<p><strong>การบริหารความเสี่ยงและการตัดสินใจ:</strong> (1) สั่งให้ระงับการโอนเงินค่าหุ้นชั่วคราว, (2) กำหนดให้เป็นเงื่อนไขบังคับก่อน (Condition Precedent) ว่าบริษัทเป้าหมายต้องติดตามตัวฟรีแลนซ์มาลงนามใน Confirmatory IP Assignment ให้เสร็จสิ้น โดยต้องตรวจก่อนว่าความสัมพันธ์เป็นการรับจ้างตามมาตรา 10 แห่ง พ.ร.บ.ลิขสิทธิ์ พ.ศ. 2537 หรือไม่ ข้อกำหนดของแพลตฟอร์มฟรีแลนซ์ตกลงเป็นอย่างอื่นหรือไม่ และกฎหมายที่ใช้บังคับกับสัญญาที่ทำกับบุคคลต่างประเทศ [ต้องยืนยันมาตรา: พ.ร.บ.ว่าด้วยการขัดกันแห่งกฎหมาย พ.ศ. 2481], (3) กำหนดให้ทีมพัฒนาทำการ Refactor โค้ดส่วนที่ติด AGPL v3 ออก และเขียนโมดูลใหม่ทดแทนก่อนปิดดีล, และ (4) กำหนดวงเงิน Indemnity เฉพาะเรื่อง IP ไว้อีก 30% ของมูลค่าซื้อขายเป็นเวลา 2 ปี</p>
+  </section>
+
+  <section class="section-block" id="s8">
+    <h2 class="section-heading">ขั้นตอนการทำ IP &amp; Tech Due Diligence <span class="en">Action Steps</span></h2>
+<div class="compare-table"><div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="article-table las-reading-table las-wide-table"><thead><tr><th scope="col">ขั้นตอน</th><th scope="col">การดำเนินงาน</th><th scope="col">ผู้รับผิดชอบ</th><th scope="col">ผลลัพธ์ที่ต้องได้รับ (Output)</th><th scope="col">กำหนดเวลา</th></tr></thead><tbody><tr><td>1</td><td>ขอรายการทรัพย์สินทางปัญญาทั้งหมด (IP Register)</td><td>เป้าหมาย (Target)</td><td>เอกสารรายการเครื่องหมายการค้า สิทธิบัตร ลิขสิทธิ์ โดเมนเนม</td><td>สัปดาห์ที่ 1</td></tr><tr><td>2</td><td>ตรวจสอบสัญญาจ้างแรงงานและสัญญา Outsource ทุกฉบับ</td><td>ฝ่ายกฎหมายผู้ซื้อ</td><td>ตารางวิเคราะห์ Chain of Title และระบุจุดโอนสิทธิ์ที่ขาดหาย</td><td>สัปดาห์ที่ 2</td></tr><tr><td>3</td><td>รันซอฟต์แวร์สแกนหา Open Source และ Vulnerability</td><td>ผู้เชี่ยวชาญ Technical Due Diligence</td><td>รายงาน SBOM, ใบอนุญาตที่พบ, และระดับความเสี่ยง GPL/AGPL</td><td>สัปดาห์ที่ 2-3</td></tr><tr><td>4</td><td>สืบค้นสถานะทางทะเบียนกับกรมทรัพย์สินทางปัญญา</td><td>ทนายความทรัพย์สินทางปัญญา</td><td>หนังสือรับรองสถานะคำขอ/สิทธิบัตร/เครื่องหมายการค้าจาก DIP</td><td>สัปดาห์ที่ 3</td></tr><tr><td>5</td><td>สรุปผลและสะท้อนความเสี่ยงลงในสัญญาซื้อขายหุ้น (SPA)</td><td>M&amp;A Counsel</td><td>ร่าง CP, Covenants, IP Reps &amp; Warranties, และ Specific Indemnity</td><td>ก่อนลงนาม SPA</td></tr></tbody></table>
+</div></div>
+  </section>
+
+  <section class="section-block" id="s9">
+    <h2 class="section-heading">Checklist 10 จุดตรวจ IP &amp; Tech Due Diligence</h2>
+<ul class="checklist"><li><span class="cb" aria-hidden="true"></span><span>สัญญาจ้างพนักงานทุกคนมีข้อกำหนด IP Assignment ชัดเจนว่าลิขสิทธิ์ทั้งหมดตกเป็นของบริษัทตาม พ.ร.บ.ลิขสิทธิ์ มาตรา 9 หรือมีการโอนลิขสิทธิ์เป็นหนังสือตามมาตรา 17</span></li><li><span class="cb" aria-hidden="true"></span><span>สัญญาจ้างฟรีแลนซ์และสัญญาจ้างภายนอกทุกฉบับต้องตรวจว่าเป็นการรับจ้างตามมาตรา 10 และไม่มีข้อตกลงให้ลิขสิทธิ์เป็นของผู้รับจ้าง หากไม่แน่ชัดให้จัดทำหนังสือยืนยันหรือโอนตามมาตรา 17</span></li><li><span class="cb" aria-hidden="true"></span><span>มีสัญญาโอนสิทธิ์ (Assignment Agreement) จากผู้ก่อตั้ง (Founders) เข้าสู่บริษัท สำหรับโค้ดที่เขียนก่อนจดทะเบียนบริษัท โดยทำเป็นหนังสือลงลายมือชื่อผู้โอนและผู้รับโอน และระบุระยะเวลาโอนไว้ชัดเจนตามมาตรา 17</span></li><li><span class="cb" aria-hidden="true"></span><span>มีการจัดทำรายงาน Software Bill of Materials (SBOM) และไม่พบไลบรารีที่มีความเสี่ยงสูง เช่น GPL / AGPL ใน Proprietary Code</span></li><li><span class="cb" aria-hidden="true"></span><span>สิทธิบัตรและอนุสิทธิบัตรมีการทำสัญญาโอนเป็นหนังสือและจดทะเบียนต่อกรมทรัพย์สินทางปัญญาถูกต้องตามกฎหมาย</span></li><li><span class="cb" aria-hidden="true"></span><span>เครื่องหมายการค้า (Trademarks) จดทะเบียนครอบคลุมจำพวกสินค้า/บริการที่ดำเนินธุรกิจจริง และมีการต่ออายุตามกำหนด</span></li><li><span class="cb" aria-hidden="true"></span><span>ชื่อโดเมนเนม (Domain Names) และ Social Media Accounts จดทะเบียนในนามบริษัท มิใช่ในนามส่วนตัวของพนักงาน</span></li><li><span class="cb" aria-hidden="true"></span><span>มีระบบการรักษาความลับทางการค้า (Trade Secrets Protection) นโยบายการเข้าถึงรหัสผ่าน และข้อสัญญา NDA ครบถ้วน</span></li><li><span class="cb" aria-hidden="true"></span><span>ตรวจสอบประวัติข้อพิพาท การถูกฟ้องร้อง หรือการได้รับหนังสือแจ้งเตือน (Cease &amp; Desist Letter) เรื่องการละเมิดทรัพย์สินทางปัญญา</span></li><li><span class="cb" aria-hidden="true"></span><span>ซอฟต์แวร์และเครื่องมือที่ใช้ในการพัฒนาทั้งหมดมีใบอนุญาตถูกต้องตามกฎหมาย (ไม่ใช้ซอฟต์แวร์เถื่อนในกระบวนการพัฒนา)</span></li></ul>
+  </section>
+
+
+
+  <!-- FAQ -->
+  <section class="section-block" id="faq">
+    <h2 class="section-heading">คำถามที่พบบ่อย <span class="en">Frequently Asked Questions</span></h2>
+    <div class="faq-item">
+      <div class="faq-q">หากพนักงานลาออกไปแล้ว และพบว่าสัญญาจ้างเดิมไม่มีข้อสัญญาโอนลิขสิทธิ์ จะแก้ไขอย่างไรได้บ้าง?</div>
+      <div class="faq-a"><strong>คำตอบ:</strong> ต้องติดต่ออดีตพนักงานเพื่อขอให้ลงนามใน "Confirmatory Assignment of Copyright" โดยอาจต้องจ่ายค่าตอบแทนพิเศษ (Consideration) ตามสมควร หากพนักงานปฏิเสธ บริษัทอาจต้องทำการเขียนโค้ดส่วนนั้นขึ้นมาใหม่ทั้งหมด (Clean-room Rewrite) เพื่อตัดความเสี่ยง ทั้งนี้ การโอนลิขสิทธิ์ซึ่งมิใช่ทางมรดกต้องทำเป็นหนังสือลงลายมือชื่อผู้โอนและผู้รับโอน และหากมิได้กำหนดระยะเวลาไว้ให้ถือว่าโอนมีกำหนดสิบปี (พ.ร.บ.ลิขสิทธิ์ พ.ศ. 2537 มาตรา 17) จึงควรระบุ "ตลอดอายุแห่งการคุ้มครองลิขสิทธิ์" ไว้โดยชัดแจ้ง</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">การใช้โค้ด Open Source สัญญาอนุญาต MIT License ปลอดภัยสำหรับบริษัทพาณิชย์หรือไม่?</div>
+      <div class="faq-a"><strong>คำตอบ:</strong> ปลอดภัยสูงมาก MIT License เป็นแบบ Permissive อนุญาตให้นำไปใช้ ปรับปรุง และขายเชิงพาณิชย์โดยไม่ต้องเปิดเผย Source Code ของตนเอง เพียงแต่ต้องคงประกาศลิขสิทธิ์และข้อความอนุญาตไว้ในสำเนาที่แจกจ่าย [ต้องยืนยันข้อความสัญญาอนุญาตฉบับที่ใช้จริง]</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">การจดทะเบียนลิขสิทธิ์ในประเทศไทยจำเป็นหรือไม่?</div>
+      <div class="faq-a"><strong>คำตอบ:</strong> ลิขสิทธิ์เกิดขึ้นทันทีที่มีการสร้างสรรค์ผลงานโดยไม่ต้องจดทะเบียน แต่การนำไป "แจ้งข้อมูลลิขสิทธิ์" ต่อกรมทรัพย์สินทางปัญญา จะช่วยให้มีหนังสือรับรองเพื่อใช้เป็นพยานหลักฐานเบื้องต้นในการพิสูจน์ความเป็นเจ้าของต่อศาลและคู่ค้า [ต้องยืนยันแหล่งที่มา: กฎกระทรวงและแนวปฏิบัติของกรมทรัพย์สินทางปัญญา]</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">หากพบว่าซอฟต์แวร์ติดสัญญาอนุญาต AGPL v3 ผู้ซื้อควรทำอย่างไรในดีล M&amp;A?</div>
+      <div class="faq-a"><strong>คำตอบ:</strong> ควรแยกแยะว่าโมดูลนั้นเชื่อมต่อกับระบบหลักอย่างไร หากเป็นระบบแกนกลางที่แยกไม่ออก ต้องสั่งให้ผู้ขายทำการ Refactor หรือเปลี่ยนไปใช้ไลบรารีอื่นที่มี License แบบ Permissive ให้เสร็จสิ้นก่อนการปิดดีล (Pre-closing Condition) มิฉะนั้นต้องหักลดมูลค่าซื้อขายลง</div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <div class="ref-section" id="refs">
+    <h3>อ้างอิง — References</h3>
+    <ul>
+      <li>พระราชบัญญัติลิขสิทธิ์ พ.ศ. 2537 และที่แก้ไขเพิ่มเติม มาตรา 9, 10, 15, 17, 30</li>
+      <li>พระราชบัญญัติสิทธิบัตร พ.ศ. 2522 และที่แก้ไขเพิ่มเติม มาตรา 10, 11, 38, 41, 43, 65 ทศ และ 65 สัตต</li>
+      <li>พระราชบัญญัติเครื่องหมายการค้า พ.ศ. 2534 และที่แก้ไขเพิ่มเติม มาตรา 53 และ 54</li>
+      <li>พระราชบัญญัติความลับทางการค้า พ.ศ. 2545 มาตรา 3 [ต้องยืนยันมาตรา]</li>
+      <li>ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 152, 1015</li>
+      <li>สำนักงานคณะกรรมการกฤษฎีกา — <a href="https://www.ocs.go.th/searchlaw-law" target="_blank" rel="noopener">ระบบสืบค้นกฎหมาย (OCS)</a></li>
+    </ul>
+  </div>
+
+
+  <!-- RELATED ARTICLES (drive-publish.py) -->
+  <div style="margin-top:36px;">
+    <h3 style="color:var(--navy);margin-bottom:16px;font-size:1rem;font-weight:700;">บทความที่เกี่ยวข้อง</h3>
+    <div class="related-articles">
+      <a class="related-card" href="/articles/business-licence-regulatory-due-diligence-thailand.html"><div class="rel-tag">Due Diligence · Licences</div>ตรวจสอบสถานะใบอนุญาตประกอบธุรกิจและกฎหมายเฉพาะทาง (Regulatory &amp; Licensing Due Diligence)</a>
+      <a class="related-card" href="/articles/ip-law-business-marketing.html"><div class="rel-tag">IP</div>ทรัพย์สินทางปัญญา: คู่มือกฎหมายสำหรับธุรกิจ</a>
+      <a class="related-card" href="/articles/las-cc-index.html"><div class="rel-tag">LAS C&amp;C</div>สารบัญชุด LAS C&amp;C</a>
+    </div>
+  </div>
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <strong>ข้อสงวน (Disclaimer):</strong> บทความนี้จัดทำโดย Legal Advance Solution Co., Ltd. เพื่อเป็นข้อมูลทั่วไปด้านกฎหมายเท่านั้น ไม่ถือเป็นคำปรึกษากฎหมายเฉพาะกรณี และไม่ก่อให้เกิดความสัมพันธ์ทนาย-ลูกความ กฎหมายอาจมีการเปลี่ยนแปลง กรุณาปรึกษาทนายความที่มีใบอนุญาตก่อนดำเนินการใด ๆ ตามกฎหมาย | <em>LAS Legal Hub — ข้อมูลกฎหมายเพื่อธุรกิจ</em>
+  </div>
+
+</div><!-- end article-body -->
+<footer class="las-author-footer" style="text-align:center;padding:24px 16px;font-size:13px;color:#1B2A4A;">
+  <p class="las-author-credit">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D. — Legal Advance Solution Co., Ltd. (LAS)</p>
+</footer>
+</body>
+</html>
