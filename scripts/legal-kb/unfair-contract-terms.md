@@ -15,6 +15,8 @@ https://www.moj.go.th/attachments/20240213160438_79575.pdf
 
 Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
+- มาตรา 3
 - มาตรา 4
 - มาตรา 5
+- มาตรา 8
 - มาตรา 10
