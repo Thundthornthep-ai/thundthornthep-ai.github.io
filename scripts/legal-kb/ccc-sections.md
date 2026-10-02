@@ -96,6 +96,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 138
 - มาตรา 144
 - มาตรา 147
+- มาตรา 148
 - มาตรา 149
 - มาตรา 150
 - มาตรา 151
@@ -521,6 +522,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 606
 - มาตรา 607
 - มาตรา 650
+- มาตรา 651
 - มาตรา 652
 - มาตรา 653
 - มาตรา 654
@@ -568,7 +570,14 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 735
 - มาตรา 745
 - มาตรา 746
+- มาตรา 750
+- มาตรา 753
+- มาตรา 756
+- มาตรา 761
+- มาตรา 764
+- มาตรา 765
 - มาตรา 767
+- มาตรา 768
 - มาตรา 797
 - มาตรา 798
 - มาตรา 799
@@ -619,6 +628,8 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 844
 - มาตรา 845
 - มาตรา 850
+- มาตรา 851
+- มาตรา 852
 - มาตรา 861
 - มาตรา 863
 - มาตรา 865
@@ -627,6 +638,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 879
 - มาตรา 880
 - มาตรา 882
+- มาตรา 887
 - มาตรา 1001
 - มาตรา 1002
 - มาตรา 1012

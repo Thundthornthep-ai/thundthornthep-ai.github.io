@@ -25,7 +25,11 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 89/15
 - มาตรา 89/18
 - มาตรา 89/23
+- มาตรา 239
 - มาตรา 241
 - มาตรา 242
 - มาตรา 247
 - มาตรา 268
+- มาตรา 296
+- มาตรา 296/2
+- มาตรา 317/1
