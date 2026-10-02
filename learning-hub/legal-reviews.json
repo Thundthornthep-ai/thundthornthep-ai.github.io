@@ -1,0 +1,2646 @@
+{
+  "schema_version": 1,
+  "generated": "2026-10-02",
+  "source_tree": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+  "generator": "scripts/knowledge-teaching/build-library-data.py (las-billing)",
+  "variants": {
+    "articles/ai-legal-tech-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "c65a4a645ac72b73b853f37bb6745d54885f6417e7ca9bb4a8d0ea53de3ee462",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำการแก้ไขจากการตรวจขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/ai-replacing-lawyers.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "c9f38dc8692dd8fc464356c477e2f5c18da239f3505e706b7ecf34e8361987c7",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำการแก้ไขจากการตรวจขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/aml-cft-sanctions-due-diligence-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-02",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "8d1ceab949a598f2324a49796126633c9cc324445b9193489f68e7e8a348259d",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m11-m12-2026-10-01.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/37"
+      ],
+      "wave": "audit-2026-10-02",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 1 ตุลาคม 2569"
+    },
+    "articles/anti-nominee-thailand-legal-guide.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "cdec6a9952ea78bfc100800f4173557317a2e7ce274eae73d2ec6c5abc64d381",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/antitrust-merger-control-due-diligence-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-30",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "a1e1d98425e791d98a960653e540f3ba0263d79e48a4b93656f9c664fbfa1a3a",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/34",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/35"
+      ],
+      "wave": "audit-2026-09-30",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 30 กันยายน 2569"
+    },
+    "articles/arbitration-dispute-resolution-clause-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-02",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "f7be5d75c9c19e32ee3e6ba8bd1835e0ea989eecf60009b7aa8b8d8fae3356da",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m11-m12-2026-10-01.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/37"
+      ],
+      "wave": "audit-2026-10-02",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 1 ตุลาคม 2569"
+    },
+    "articles/art-of-ancient-contract-drafting.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "d6d4cc6dbb3542ae52d5224e7e97a195d745e881089d3ebf258793625bf92177",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำการแก้ไขจากการตรวจขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/asset-declaration-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "7ead109779982de5cc0413515089f38b93cc9f70dbd919dd0e06de16a8142980",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำการแก้ไขจากการตรวจขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/assignment-novation-clause-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-03",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "0d6c7d601040f0a6b15a5dddca8e14503641968e81573f5820b39890af129f71",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38"
+      ],
+      "wave": "audit-2026-10-03",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 2 ตุลาคม 2569"
+    },
+    "articles/bid-rigging-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "131a07c3c0a7ea031d7b42994eecb64425d00b2e9cea144ee0b2d9dc3e830355",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/boi-investment-thailand-guide.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "4d135216604abb2aeff834319a37fff8f4f6a7ad039ef1d450a7e7c85c74d5b9",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/business-lawyer-thailand-guide.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "76b853237ca72f5275384351b9562b18327f031686ec30005ee2fdde570966dd",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/business-licence-regulatory-due-diligence-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-30",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "91d4929db398ac24b8ba431c8f41ccf8f0d36e7fc15f6b78029d20955bce7694",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/34",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/35"
+      ],
+      "wave": "audit-2026-09-30",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 30 กันยายน 2569"
+    },
+    "articles/business-tax-essentials.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "5f45216ad0a8452ee69ac63bb1c7a2b57f0c9218f5c501e049850be1c51ee792",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/capital-reduction-accumulated-losses-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "cc8870a5e5d99ee7822a26732eb73a5c89b419f61761ffa8f5c0d3458e86e5c3",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/32",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/33"
+      ],
+      "wave": "audit-2026-09-29",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/capital-reduction-creditor-protection-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "659f67ed620a0925bc5b91c3318226a94add1cf06f17bc06557c095f86d2deef",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/32",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/33"
+      ],
+      "wave": "audit-2026-09-29",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/civil-recovery-corruption-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "ed620e27fc924ebcf33f7f7128c0ab0df55dea0d39a046bbbbb5b3e39c0bc052",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/cloud-hrms-payroll-outsourcing-contract-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-01",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "08b5fb97ff8486417f5004b691a5e68c40f10ea9e6a572727f04ee7e0b0b0d3d",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36"
+      ],
+      "wave": "audit-2026-10-01",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 1 ตุลาคม 2569"
+    },
+    "articles/commercial-land-sale-purchase-agreement-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-02",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "1b6df2e181777487dc139043bb691543c795acf73422a3f32aac1fb8fc6908cb",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m11-m12-2026-10-01.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/37"
+      ],
+      "wave": "audit-2026-10-02",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 1 ตุลาคม 2569"
+    },
+    "articles/commercial-lease-agreement-checklist-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-02",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "82903b1f21d8e06575790d307702365a4014648ffedf0204d0d34a7804f22c32",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m11-m12-2026-10-01.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/37"
+      ],
+      "wave": "audit-2026-10-02",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 1 ตุลาคม 2569"
+    },
+    "articles/commercial-loan-default-interest-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-03",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "83a2bbc8ced6a76833bc193527e82d815d9e4de7e6bb27edef63dd154653b84b",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38"
+      ],
+      "wave": "audit-2026-10-03",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 2 ตุลาคม 2569"
+    },
+    "articles/commercial-mortgage-agreement-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-02",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "77c58e0acf119ba586cf0c0094ba01d44fce09b489a9617a999981cc13e46cf7",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m11-m12-2026-10-01.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/37"
+      ],
+      "wave": "audit-2026-10-02",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 1 ตุลาคม 2569"
+    },
+    "articles/company-amalgamation-merger-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-30",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "d13efab49c584bb262581a093047585b2666468e082ebafdbbccce05b9bdc324",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/34",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/35"
+      ],
+      "wave": "audit-2026-09-30",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 30 กันยายน 2569"
+    },
+    "articles/company-dissolution-liquidation-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "08b41a3c4e2480bb7c50d2484d2198e55dd6d4424c511aec96a6dad0f48c6f51",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/32",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/33"
+      ],
+      "wave": "audit-2026-09-29",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/company-liquidator-duties-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "6ba2a3c49fdcb6362e35b52d42a74d6dcaf17b8fead67c71329ee834cfeef49d",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/32",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/33"
+      ],
+      "wave": "audit-2026-09-29",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/company-registration-guide.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "ee7d73b471e778ac4f2b62cbe1821ba6f1135f09831258e6ebebe805ed10dafd",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/company-registration-thailand-guide.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "6bcd687b064ea85847906cb7940089b8d0da75b3c3422492b52c4deda1c3df44",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำการแก้ไขจากการตรวจขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/confidentiality-publicity-clause-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-03",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "6335bdc139cf5e0cbc638483e7b509c10af44976e95ef41892ded5f5dc18332f",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38"
+      ],
+      "wave": "audit-2026-10-03",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 2 ตุลาคม 2569"
+    },
+    "articles/consumer-protection-marketing.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "0ffa237f326b5a6440ad3850db354fa3c4ecbb372dbccc03fe99064d520129e6",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/contract-document-review.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "27ebfdf36e454a7c9739bf8fccb8ed00964e978b6c114ceb18c137e126dd14b7",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/contract-reading-guide.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "17ae8be9d65fe920b769968a2583afaec6748d14fd4ed9894fe3e2f6af7063f8",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำการแก้ไขจากการตรวจขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/customs-trade-tax-due-diligence-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-01",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "3f07e80ea71091da09034d8ed8d30293070d99f347389c010bd2ef1460ddc726",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36"
+      ],
+      "wave": "audit-2026-10-01",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 1 ตุลาคม 2569"
+    },
+    "articles/cybersecurity-data-breach-due-diligence-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-30",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "03efcb9943662f52102b2d5b3be4bb08ed7530e532bd9d03ece7e34e84e56a71",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/34",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/35"
+      ],
+      "wave": "audit-2026-09-30",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 30 กันยายน 2569"
+    },
+    "articles/deep-legal-analytics.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "b4e0db6a78fa093a4e049cd99c81427abef4865e4b7d535d230ccd709d026983",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำการแก้ไขจากการตรวจขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/director-authority-binding-transactions-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "0ffe77fc930bb48b44099d9eff5b242ded88525825bfd921a6957410d2797efb",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/32",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/33"
+      ],
+      "wave": "audit-2026-09-29",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/director-company-contracts-conflict-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "c77102f20d4a574e7e46a35b2ee9a2b0328ef7d26ebf212e4dced036d60c60d5",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/32",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/33"
+      ],
+      "wave": "audit-2026-09-29",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/director-liability-derivative-action-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "8423c2225b099e4f8a25defb6ff85b8e08eb102e987adcc6329f568b15bff521",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/32",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/33"
+      ],
+      "wave": "audit-2026-09-29",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/director-loans-tax-criminal-liability-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-01",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "c4417ecdbdbfc98d1c08eb2cec5dd1b9240494b3d12be209f299c6f5c856c412",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36"
+      ],
+      "wave": "audit-2026-10-01",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 1 ตุลาคม 2569"
+    },
+    "articles/dividend-payment-rules-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "124285b802e091a6c15c743eceb325d1c627b59ee2a6582d50f21ae7a2f4f7c4",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/32",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/33"
+      ],
+      "wave": "audit-2026-09-29",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/due-diligence-checklist-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "3bf40f3e09461bb4e8b99e7e670a02279fb1275621a0f6d076e60f0028914a96",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/due-diligence-conditions-precedent-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "81e3f64d264d7e0af45e70cfb28441abce3061e08aadc4bc0a215a9605e91acb",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/eec-investment-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "8351ae5433008c6ab4ffc95c7bb86bcc0931d86f48e8c674993e665b90ff364b",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/electronic-shareholder-meeting-notice-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "fe28f5fd8a5641d5da08dd145e4b88e3f2b241e3020fad40b9b38403adbb25c7",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/32",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/33"
+      ],
+      "wave": "audit-2026-09-29",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/employment-contract-thailand-guide.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "46b9d25165ad922eeabfd3f438b8027990c9baf499cf090fbc32f41b1b8c1e54",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำการแก้ไขจากการตรวจขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/entire-agreement-clause-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-03",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "f5261fbc95445e31c0f14b7c51f96bd3eac8291e277760764407a2c840988722",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38"
+      ],
+      "wave": "audit-2026-10-03",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 2 ตุลาคม 2569"
+    },
+    "articles/food-safety-fda-due-diligence-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-30",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "c38af47400896b61972fa188a9859c6ed9fc16802cc431b2910106cc03d61821",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/34",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/35"
+      ],
+      "wave": "audit-2026-09-30",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 30 กันยายน 2569"
+    },
+    "articles/foreign-business-nominee-domination-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-01",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "36cd2d95fab592a7ac4cd0ba89e7924cc614c922fa0637d12185838d7b5f1654",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36"
+      ],
+      "wave": "audit-2026-10-01",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 1 ตุลาคม 2569"
+    },
+    "articles/foreign-investment-boi-due-diligence-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-01",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "444c4e37ef67b420ea52f66dce85a6ea1ddf8495a57c689cd1d8cec540c27c4a",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36"
+      ],
+      "wave": "audit-2026-10-01",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 1 ตุลาคม 2569"
+    },
+    "articles/foreigner-buy-condo-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "6b46f77b62cd6a08e4a847d4b143b90733e72bca6042a71e2e3fd91d50a89bd5",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/franchise-agreement-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "47c2a774fadec208cf5d7a0d5f2a5ab1339ff7a4732de08b0d96d02df52fbfbb",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/guarantee-share-pledge-checklist-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-03",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "656022d4030a5f0df09e24fc90f6e3ecc48306a9e4adf2433e0d4e17abf6fe4b",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38"
+      ],
+      "wave": "audit-2026-10-03",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 2 ตุลาคม 2569"
+    },
+    "articles/hire-of-work-vs-employment-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "eb4f371f2b39a977c66dd5a37de9b9af64e7be9cbc76a920787731cec93dec3c",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/hospital-healthcare-licence-due-diligence-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-30",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "76fcf3bd5af6eb63e7bfe300e0a0e3bdf0c6bf10721148b8a6a80b772628a3a4",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/34",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/35"
+      ],
+      "wave": "audit-2026-09-30",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 30 กันยายน 2569"
+    },
+    "articles/hotel-acquisition-due-diligence-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-30",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "a3aee053fce7734af1a32e3e7ad760f95aaa02bece07a3416c90251cf8f6d236",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/34",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/35"
+      ],
+      "wave": "audit-2026-09-30",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 30 กันยายน 2569"
+    },
+    "articles/hotel-management-agreement-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "0b2d47f1f9070830611a4fe0ec89340b45f03d8ef8f40eb16664711d3d458790",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/indemnity-clause-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-03",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "23ae2c02529536ed48cee0e8888ec6593a2c311786a14bc9a890fe813dd84bf5",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38"
+      ],
+      "wave": "audit-2026-10-03",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 2 ตุลาคม 2569"
+    },
+    "articles/ip-assignment-agreement-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-01",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "7360fdea7c78d4a9b35fdb40a16cc6754c38f45ee0768a721a2fc083aa241af7",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36"
+      ],
+      "wave": "audit-2026-10-01",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 1 ตุลาคม 2569"
+    },
+    "articles/ip-law-business-marketing.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "9ecc08ab6fd61b2cebde9ce3e9fabe6f41e44513ad28eecb7c15d6ea779debe5",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/ip-technology-due-diligence-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-30",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "983da7d93a09710a275da862407ce7aa4d8dbbdc51382f717421d7885194b386",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/34",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/35"
+      ],
+      "wave": "audit-2026-09-30",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 30 กันยายน 2569"
+    },
+    "articles/joint-rd-agreement-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-01",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "1cbe5be298a59d6a8bf33ab9346e3ec4a8bf428ae799782dc19ec2138ba6ec2f",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36"
+      ],
+      "wave": "audit-2026-10-01",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 1 ตุลาคม 2569"
+    },
+    "articles/joint-venture-agreement-structure-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-03",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "a4fec4fe1ba2dafc1afcf846edf09da8a5d59ef3da04e2798bdcfe1959be1703",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38"
+      ],
+      "wave": "audit-2026-10-03",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 2 ตุลาคม 2569"
+    },
+    "articles/joint-venture-agreement-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "e07901af18377712f1fe601b24d71de13f415619d4a1b57eab94919b1e3ccedf",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำการแก้ไขจากการตรวจขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/labour-protection-act-amendment-9-2568.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "7ad9e9eb74dc1259a28691c69d4fff21bc7ed28b399c4c84ec2058833a65e95f",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/land-building-tax-due-diligence-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-01",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "a9451fdf31ea60882e722478132e5bee849b7e53d3368d02c5cb7bc7fdb82e48",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36"
+      ],
+      "wave": "audit-2026-10-01",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 1 ตุลาคม 2569"
+    },
+    "articles/las-cc-01.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "692be5c6e9de5b77d79e869ac58e898a2a8d136d08e00e66e94755d8c4414104",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-cc-02.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "f0b69514e61c322516f166a730402f625d8959d257bd17e0d0153fb8cc4be986",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-cc-03.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "6f4497ae539b46f1f00e39d0adfae3e2e17e9cdeeb595d2ceec21096b713b5b0",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-cc-04.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "4b2ad9f1d2c2385352b61e8de2dd4a3ef40946828fbbf5629eeed93c9bd834bd",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-cc-05.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "efa1187bca3adf55904895c7ecbca6f2dfeaac945666c7f505bf2673888fdcaa",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-cc-06.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "3a473f63fd80a90d55b07a1c81c9cd9c4d8fe6009fdfcedc4eae140aed235326",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-cc-07.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "ec76bdaa81c9fe9cef64fd349ca1792c9f1bfdba626077e995d13fd6ff95d816",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-cc-08.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "03e2d3d04d634db977023b2189ae177e0a9f01631aae84d37108cc2c81d29c97",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-cc-09.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "0e58350d1a4cd3c952f45cadf57089b9853ec3340923dff53be48e4cc65caad9",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-cc-10.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "af17883f2f86daca6cd075a86ba7120265474cebc60b118605c04f0b325d2c7b",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-cc-11.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "5c79b05e5ea516e66f2be33133cbe1ba17bbecf6d084d8e31d61ce607bf4f6fe",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำการแก้ไขจากการตรวจขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-invest-01.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "3ea554960ea3bcd49280a60ce1a2a97baedc3e655def87fd413cd18bad12162c",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-invest-02.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "d5f78c62831bb9c04c1b1cc02e2ee128f0b949da2e662aaf77d7138274fed054",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-share-01.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "6f5243c541983215b3ec65655567c34af4a5deb0d7fc8e087840e14b3b3c3ba1",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-share-02.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "86562226f828bc15f81b4dcdc083c84ca696f4c0400c1f5555eaabeb383df1d3",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-share-03.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "a081604cd87409e720b5a98deff50d7a94815dd49703999c3140c022a66b3a90",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-share-04.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "7d76eec4bd259ba407f5724824e9c6d800d577c10c57eb5608e418802264532d",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-share-05.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "fff6833520095c2d73544cbc19e0688ba761449eb3a0387bb47377d0518dd59d",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-share-06.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "342daa4a68916ba6814d6dc15a59cdfaed4bdcdd08ee7163a574e6691d9d5699",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-share-07.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "acfa3f5898413104ff228de9482f8e7a502452e4031d68f091efa6a37397bfcd",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-share-08.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "403e105f61b835374093b697b03aa95619a9263a38696c9c965230bc16d9c080",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-share-09.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "6603e2c3d09f28f7f2d4a8cfaa5810610ee4bf5fffc97607438d5b207fd5c209",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-share-10.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "e18b0d6d6497cf0b878561d87a73773e90830ba4fc467f3f87ca52538ac1ce02",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-shield-01.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "79111f806d3dec1800cb598ed3590e88149d52f2b9c3649410446558dc5a02d3",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-shield-02.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "a5ecf6fa28ac355203720c2b1ff536e64e5b196153fd701022d250403d0fc6dd",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-shield-03.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "Codex",
+      "sha256": "7d8893e9ecc304a5e57eb146961a89cb0b4b7a8a24519ef5ed2e8b0b50eb44d8",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/4ccc7f18729fd1c212ebf806f917d309247e5d8d/docs/legal-reviews/shield03-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/c0b5e9366f12aaee24cd9ba395153b2a0e44fbd9/docs/legal-reviews/learning-table-format-2026-09-29.md"
+      ],
+      "wave": "reviewed-2026-09-28-gh"
+    },
+    "articles/las-shield-04.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "8258837e240c2b44e4f3923137ee8ae0be0c6c2de471dc7d49b45f0fce8e2746",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-shield-05.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "Codex",
+      "sha256": "da7d9941e572d6f1f4b0c13b69c9bdeb656cf2b33267d8065bc0e632e967bf7d",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/4ccc7f18729fd1c212ebf806f917d309247e5d8d/docs/legal-reviews/shield05-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/c0b5e9366f12aaee24cd9ba395153b2a0e44fbd9/docs/legal-reviews/learning-table-format-2026-09-29.md"
+      ],
+      "wave": "reviewed-2026-09-28-gh"
+    },
+    "articles/las-shield-06.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "055453495c213347079428298a095d23db686a361b26812da4fe26a20c665c4f",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-shield-07.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "93c44ce404e4d20b6ce96037988eebf7ffc411feab14c0856b5bd0fed4a00681",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-shield-08.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "c0646f1ecca36b728e569627b6063869104a20eaef98364573acc0fb6ab14fe2",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-shield-09.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "513cae172f9a86ab701d415ef1b0528e49cbcf4b186eaf8ebcb5ed6c740ff653",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-shield-10.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "61a4cf6c2b56b44df65db86e4274733bbfd02841f56d41dc1062e16a163a645d",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-upsize-01.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "126a79fa8f47d749a738707951d60356d12fca6589b94e1b688edb0777a9d66a",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-upsize-02.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "d3453b6e9352cc1117204df3e114141fc9a852becf467e218de4204cd511699b",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-upsize-03.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "c0aca9a5172b5288eacb9b30bad424031775886dcbb0518ec3792bcfeab7418a",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-upsize-04.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "28375abf08e15b13ed318b8796d484f590dda4908dc94e430380cc6a43e0be5f",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-upsize-05.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "3e2e6bd8b3b05b8278b93b051d42029beb76f099c69d0c8b24235d252b0b0e72",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-upsize-06.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "c7d7c1556b9db6be987c7342aaab9b74e2d5db73b13c77d17dd4ef7c93abcbfd",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-upsize-07.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "20420ab9834b5e12775c7e8e4870313511f34c2386391414aa291a76d3411dea",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-upsize-08.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "917098749ff46c6d7096ae32b418708566fafd535dc098b1f95137d7428e6fd5",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-upsize-09.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "6021d310019d17dd8de627090c063585b57bb6dda741b36430b27f0e15698646",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/las-upsize-10.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-28",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "60cf922e9397dc51ddd72b23292d83e871ae1587d895985fd6ff05e636d4ef53",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
+      ],
+      "wave": "audit-2026-09-28",
+      "review_note": "ปรับปรุงเนื้อหาบนเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/lease-agreement-thailand-guide.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "Codex",
+      "sha256": "4c197ca086f15f2ec1beab0987113c0cbfca3316b4b02d22171534753f82b199",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำการแก้ไขจากการตรวจขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/limited-partnership-conversion-to-company-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "021a99e1c156637c264c2c0449878261d69a11a0cf7f84a31fc767faa91d8dcb",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/32",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/33"
+      ],
+      "wave": "audit-2026-09-29",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/liquidated-damages-penalty-deposit-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-03",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "7b2d89aa271e4e7d12c6f5364a9d96f74d732b036743e46796b153f7eaa26439",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38"
+      ],
+      "wave": "audit-2026-10-03",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 2 ตุลาคม 2569"
+    },
+    "articles/litigation-dispute-due-diligence-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-02",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "4521a6b28c7396bd416d9c6bb197deaf4ff1d36d1ac7e224e5179f5186bd366d",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m11-m12-2026-10-01.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/37"
+      ],
+      "wave": "audit-2026-10-02",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 1 ตุลาคม 2569"
+    },
+    "articles/marketing-business-contracts.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "f7fc0ac7d908ff5d962d360ef435f3491cd81caae2108b4ad98e82a8e29939e3",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/media-copyright-coproduction-agreement-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-01",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "286b7c18114b9f3fd132df5c52e593d635e7748c4d60dfdc1c790a3d295f8e60",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36"
+      ],
+      "wave": "audit-2026-10-01",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 1 ตุลาคม 2569"
+    },
+    "articles/mergers-acquisitions-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "b96f6ab730a6550160913bd0cc3515a7b771c9158b637738b7ad6baca01f5543",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/mining-concession-due-diligence-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-30",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "834589bbde8d2ea4cb2d51eca53529ec49ac98d2246301a8c559ae8cd21aa36e",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/34",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/35"
+      ],
+      "wave": "audit-2026-09-30",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 30 กันยายน 2569"
+    },
+    "articles/nda-non-disclosure-agreement-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "1b34c612ae21da0e6652ebfbc973359a7e93267deb68f242bd403658ef47d1f4",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำการแก้ไขจากการตรวจขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/non-compete-clause-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-03",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "f58799a32dbf4676f8970a53d35ab21cb0e0d9a480a1e730170ef29b95903451",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38"
+      ],
+      "wave": "audit-2026-10-03",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 2 ตุลาคม 2569"
+    },
+    "articles/pdpa-compliance-guide-business.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "86061799ab92da61aa5d6b905e001aa02d48745f267e26e8adf3baed1385d4f0",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/pdpa-compliance-guide-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "be1b0b278218c2bc7c60fc8a89d3b82fff45d58acbb48e42f3d6777142b9640f",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำการแก้ไขจากการตรวจขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/pdpa-cross-border-transfer-due-diligence-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-01",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "794b90ee476ec7a4584f5d8fed24d3d0adca76f984a059269fe6452dbf6403de",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36"
+      ],
+      "wave": "audit-2026-10-01",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 1 ตุลาคม 2569"
+    },
+    "articles/pdpa-essentials-entrepreneurs.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "79082887f0fa52640599a92bc9dd5b1b295ce56a6956b9f010f42b94b0b541f2",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำการแก้ไขจากการตรวจขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/power-plant-ppa-due-diligence-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-30",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "18454b3f7c87ad46dff76109d121c9ab811c70c974090f527ef2f7331de0055a",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/34",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/35"
+      ],
+      "wave": "audit-2026-09-30",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 30 กันยายน 2569"
+    },
+    "articles/property-management-agreement-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-02",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "14dc15955e97aeccb9411c2f86c6adb9904edfc6c6f30b948aa338055c76e322",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m11-m12-2026-10-01.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/37"
+      ],
+      "wave": "audit-2026-10-02",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 1 ตุลาคม 2569"
+    },
+    "articles/public-procurement-concession-due-diligence-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-30",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "15bc6cd97d8e88d526d36cb413b4efff969c9319ac581e78f1292e991f370061",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/34",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/35"
+      ],
+      "wave": "audit-2026-09-30",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 30 กันยายน 2569"
+    },
+    "articles/revoking-shareholder-resolutions-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "f6fcd63460b90c9f9a0a0c6167cbf449bf6db5c8c353c3dc45f6645384d14b3e",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/32",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/33"
+      ],
+      "wave": "audit-2026-09-29",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/share-calls-forfeiture-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "fc908d81b48c60964a9af17d67db5f377a2afdb3b1d560f094ff573033417b03",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/32",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/33"
+      ],
+      "wave": "audit-2026-09-29",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/share-purchase-agreement-blueprint-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-03",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "8a29c7e32246820067db34aa3b6ab670820f6ce3bb0b0dfcc42ac1669dcb35b5",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38"
+      ],
+      "wave": "audit-2026-10-03",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 2 ตุลาคม 2569"
+    },
+    "articles/share-purchase-dispute-settlement-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-03",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "89ddae11f641543cb5fefbfa4608534c0fafe430000608b031ead57e62aac0e3",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38"
+      ],
+      "wave": "audit-2026-10-03",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 2 ตุลาคม 2569"
+    },
+    "articles/shareholder-inspection-rights-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "9e0b16d47023be39bcc8d34bc29a8fee1da8ef7b9b75a298d9c0063f27588051",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/32",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/33"
+      ],
+      "wave": "audit-2026-09-29",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/social-media-marketing-law.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "4ed4ecf1a4d51c7519328e458850d283967cbc25071a68d041d80c0c2b75d965",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/solo-practitioner-ai-advantage.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "834499dccd7170fa71d203df31c83c93d2174baa5e09ee68612fa54db4340ddf",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำการแก้ไขจากการตรวจขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/tag-along-drag-along-rights-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-03",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "2ffe19a78449b12433e7168ec79299c2210b868af992641c7b9e497fac635c0a",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38"
+      ],
+      "wave": "audit-2026-10-03",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 2 ตุลาคม 2569"
+    },
+    "articles/tax-due-diligence-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-01",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "5f987ed7fc0301c8895bf6d80775a08b7824bf16a805bf3257e7872e63e9c12b",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36"
+      ],
+      "wave": "audit-2026-10-01",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 1 ตุลาคม 2569"
+    },
+    "articles/trademark-licence-franchise-agreement-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-01",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "3d092bdff4a694560f5ceb2e2fc98aa06d7212ac57a8ac80442e9b85b4e66477",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36"
+      ],
+      "wave": "audit-2026-10-01",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 1 ตุลาคม 2569"
+    },
+    "articles/transfer-pricing-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "4f7232f1f504f0b3138343eaa5789bcf9afdb7f0728b5996b347b96532a77dd1",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำฉบับที่ตรวจแล้วขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/treasury-stock-share-buyback-ban-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "b175cd3a12e38e8d131df576b2df9ff76c7cd00459ce253d3a933f6d4da2e469",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/32",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/33"
+      ],
+      "wave": "audit-2026-09-29",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 29 กันยายน 2569"
+    },
+    "articles/why-lawyers-read-contracts-differently.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-11",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "56b8ea4d0321b53da050fa183b028b19c2664246c609b0d0504843339e667921",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
+      ],
+      "wave": "r1-single-source",
+      "review_note": "นำการแก้ไขจากการตรวจขึ้นเว็บไซต์เมื่อวันที่ 29 กันยายน 2569"
+    },
+    "en/articles/ai-legal-tech-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "7649472b7c6bf625a6d193b3e1accf2251436ec62f7bd77e6f375f1bc38a9c14",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/ai-replacing-lawyers.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "0b90cbaa875cd591d0cbd849f08032c60fd20cdf72db26c98fafcf02e0279543",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/anti-nominee-thailand-legal-guide.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "86a7a73807cbe3938f2a7273a8b8300fc74221ae8cfcba569b7fff8eb7f21bb0",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/art-of-ancient-contract-drafting.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "0096ec3abe6f5b13164412fb128599e80926eed1d3a09ecd9ecec525ed531cf1",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/asset-declaration-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "d34088482e8df8e113b36aadb29681c7124bae68521de6842a2977e6c42358e4",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/bid-rigging-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "c6b898a60dea5f499f2173d6f29d9697b92f4c88afe589ff5e2b5e1cb6c6976f",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/boi-investment-thailand-guide.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "62afec0ebde1820cb4d47259089a8374ce1daebe69b067ffc48fcf10046ec274",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/business-lawyer-thailand-guide.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "6ae9ac6b642111c787fb15b4a2ca4d135631ee0ab7d11a0072dcd3e7e9987d55",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/business-tax-essentials.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "341589f25f8c9d563894e59b95845a24a1df9de33e46af0a142b2cce9aaa55ff",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/civil-recovery-corruption-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "05dc15f4dcdb23b1860b40a35ce0f4845cbad7e2a1224c0ad7c635d1da65e0de",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/company-registration-guide.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "009c1ba8928f4b689036072f87831bb666b77019bd5b4201c0e48454baf021bf",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/company-registration-thailand-guide.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "bb2ae0e221c7c417a8e5d80b81943b10f294dc3226be2d10d9b700691d32c0b4",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/consumer-protection-marketing.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "731b2e28cc7367167ebad25e9f9c94673370eb39a2773fb0ec04d30d8bcca47f",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/contract-document-review.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "998f7f36d12bdae1197f3f1a861107101f672043c260b70786791b603958b67d",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/contract-reading-guide.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "d29c6a8f693998f11fa110f06a8ee974c2b35780bdc51fa6e48d6610b144ba08",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/deep-legal-analytics.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "ca3fdee684415fa4b56ccb17a017660f40cd1c1629dd1e613eb2145e5801e3bc",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/due-diligence-checklist-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "a7d7c364951d5fc6e05b6f5e14ea46159a3b320fbae26c8919b2f0624e4f019f",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/due-diligence-conditions-precedent-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "2642dde5a9488f9e5429e29eadeb057e969ab1e9cf4b15a56f5b56912654da5d",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/eec-investment-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "a94dac0bfd53d9c438aab2bbdc0f7d3292152801cdb7611368869fd1b439c2b8",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/employment-contract-thailand-guide.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "2c2c99f2af7e65a4f6d9559c0b60f88f9055ff999b8dc8026aa6eeef5cb5f43d",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/foreigner-buy-condo-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "0c23d00d5d26c69e96b175452883202cca2727cf4ff760fce1388da12476e1bd",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/franchise-agreement-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "98074214df41940cb702bb310e9b529a24afb11c7168d485f1082e06da34ecc8",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/hotel-management-agreement-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "72eb19c12eebb3d864c0f8f79b9c5b2d3999572f1f9d4dc8bcc8fc8ef3a8ee96",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/ip-law-business-marketing.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "0a458faca417b59b7b415dbe8443ba17ca12afef295d9c85de4109495249ee03",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/joint-venture-agreement-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "058adc9671f14aadf087ee4f0da778d0788c120f4d167f863edd22977d54fdf0",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/labour-protection-act-amendment-9-2568.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "a6c732c3453725955e5136ce5c4039d1c09a928b92af9b9c8a8393dffee957b3",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/las-cc-11.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "07b882ae67c592929d8e5f236e508a5934a7ac97349fdbbcdb71c283b72d071a",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/las-invest-01.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "183d72dbf950163e7ebe9822c67d7ddf00f7429579d707d45a4bc2928ce2b422",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/las-invest-02.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "a22584a2bac40b87bfb122911947b3f124952c17283fa28b68d4b5e82205af94",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/las-share-09.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "72f2c1c4335d1c18f56594f83138498c0555e22b4a9ba7789fd252187e4093ec",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/las-shield-06.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "588825b9de005cc46583f151c559e4e9e5460fbbccf7b091f47df93bf944c880",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/las-shield-07.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "4110b93a5028e284dbd93991366b418d122458181cf42f4385692e6dbb58f5a5",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/las-shield-09.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "f91a0b2a275ea50d61c53e32f9714938af5d349433eaa5d3c1433cb272362306",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/las-upsize-03.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "c9473568dbe58ecddcdbf243bb7f2e9487c41ad87bb8cfba2c2a66e352f3e10f",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/las-upsize-04.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "3525005e4c9f7e5612be6001bbff3cc1dad25abd489fe011cc16cf8c08ae1563",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/las-upsize-05.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "c085091793bd721a0120a43c5bab847ff23367c6e6fee9629fe2dd5b98e3361d",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/las-upsize-10.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "093e86d09704580e522d75010b767a4392f0d565f540351c05cb7704b4d95956",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/lease-agreement-thailand-guide.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "Codex",
+      "sha256": "80429027b3ff615226d792288ada515b9bfe6546ffe9540073f5e2c21fa3f259",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/marketing-business-contracts.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "c95d8b5b3f4c33676e0ea7c219c2ed10ee2ed73e0a4f56f4eac21f13e999e670",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/mergers-acquisitions-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "2330bbf27fcef42d47fee6102c565306cbc56c88ca1900ecb6e568304ec852f2",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/nda-non-disclosure-agreement-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "c65e78970921ed231f3aaed1457e1e7b5136a96d66115afc9c439006a05561e9",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/pdpa-compliance-guide-business.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "791e6359af7e957cf3db46435f23cb83e16c51a1e6c47c7c5db583bab7184b8c",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/pdpa-compliance-guide-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "16eb174058b950850eb15b9137b8066c6a5c34e9ed949e374109c6f9a3aff5c6",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/pdpa-essentials-entrepreneurs.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "c91dd420efcaa347670072a006ae2df09ea636b0685d6893ddf1f8d97a262243",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/social-media-marketing-law.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "6e4934c300efdde95716b366cb5c16fa07a771821b626a61ae25674944b0bbb6",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/solo-practitioner-ai-advantage.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "93794fb095b835b8da2ea6e5f2797c5bc7aebd616dfb8577b416007fe54e9ba7",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/transfer-pricing-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "b0fd3be33c6baa21e200da290a32d279adfcf9674147b7e01024bd261ec04c06",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    },
+    "en/articles/why-lawyers-read-contracts-differently.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-09-29",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "1f74f94b5a44b18d95fab182530795d6c3dcc632fccc121f07a96d417a74fff5",
+      "source_commit": "de10dfb1e3f56bd269b9ad67faedfe377e85a2ac",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
+      ],
+      "wave": "en-sync-2026-09-28",
+      "review_note": "synced with the audited Thai edition"
+    }
+  }
+}
