@@ -3,15 +3,15 @@
  "generated": "2026-10-03",
  "generator": "scripts/knowledge-teaching/build-library-data.py (las-billing)",
  "scope": {
-  "tracked_html": 259,
-  "catalogue_variants": 238,
-  "learning_items": 188,
-  "articles": 170,
+  "tracked_html": 263,
+  "catalogue_variants": 242,
+  "learning_items": 192,
+  "articles": 174,
   "resources": 18,
   "excluded": 21,
   "unlinked_items": 19,
-  "legal_reviewed": 207,
-  "source_tree": "b4da98bdc108d6b5d35af26d20ae0fd122384bff"
+  "legal_reviewed": 211,
+  "source_tree": "f502f777dc008843a74c5963254eab3b08b12a5e"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -5686,6 +5686,134 @@
    "module": "M13",
    "level": "L3",
    "series_label": "LAS Up Deep Research · ตอนที่ 10"
+  },
+  {
+   "id": "articles/electronics-manufacturing-services-agreement-template-thailand",
+   "kind": "article",
+   "title": "พิมพ์เขียวและแม่แบบสัญญาจ้างผลิตและประกอบสินค้าอิเล็กทรอนิกส์และเทคโนโลยีขั้นสูง (Electronics Manufacturing Services & Assembly Agreement Template - EMS)",
+   "variants": [
+    {
+     "path": "articles/electronics-manufacturing-services-agreement-template-thailand.html",
+     "title": "พิมพ์เขียวและแม่แบบสัญญาจ้างผลิตและประกอบสินค้าอิเล็กทรอนิกส์และเทคโนโลยีขั้นสูง (Electronics Manufacturing Services & Assembly Agreement Template - EMS)",
+     "language": "th",
+     "sha256": "217fc4e8de89f7765b49ee6ffc2d1b5a9c3b645d3ae347121a96311e3e2e1a07",
+     "text_sha256": "7144fe64c66bb241c480cee8c4e12e612717c684e0d6812e49b471fe5c69d2c1",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/electronics-manufacturing-services-agreement-template-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Up Deep Research · ตอนที่ 7"
+  },
+  {
+   "id": "articles/employee-transport-fleet-service-agreement-checklist-thailand",
+   "kind": "article",
+   "title": "Checklist 10 จุดตรวจสัญญาจ้างเหมาบริการขนส่งพนักงานและยานพาหนะพาณิชย์ (Corporate Employee Transportation & Fleet Services Agreement)",
+   "variants": [
+    {
+     "path": "articles/employee-transport-fleet-service-agreement-checklist-thailand.html",
+     "title": "Checklist 10 จุดตรวจสัญญาจ้างเหมาบริการขนส่งพนักงานและยานพาหนะพาณิชย์ (Corporate Employee Transportation & Fleet Services Agreement)",
+     "language": "th",
+     "sha256": "0f6aad5c8618dd1c58d376b0c748a0e128580c08fa48f79ee59413a44c325b7b",
+     "text_sha256": "3a74999dc4ca7523c5c329947f0863f81af14c3b5ba4bccc88622b64cc37003d",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/employee-transport-fleet-service-agreement-checklist-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L2",
+   "series_label": "LAS C&C Deep Research · ตอนที่ 21"
+  },
+  {
+   "id": "articles/equipment-lease-hire-purchase-checklist-thailand",
+   "kind": "article",
+   "title": "Checklist 10 จุดตรวจสัญญาเช่าซื้อและเช่าดำเนินงานเครื่องจักรและยานพาหนะ (Commercial Equipment Lease & Hire-Purchase)",
+   "variants": [
+    {
+     "path": "articles/equipment-lease-hire-purchase-checklist-thailand.html",
+     "title": "Checklist 10 จุดตรวจสัญญาเช่าซื้อและเช่าดำเนินงานเครื่องจักรและยานพาหนะ (Commercial Equipment Lease & Hire-Purchase)",
+     "language": "th",
+     "sha256": "a21daff839e8fe66d97f7adb49554f2facc693f45ed5fedf02001820abfecb35",
+     "text_sha256": "19f1b718095ec7e15f057ba17062bf1ee52c249b04d8448185d85b4c2012c6c6",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/equipment-lease-hire-purchase-checklist-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L2",
+   "series_label": "LAS C&C Deep Research · ตอนที่ 18"
+  },
+  {
+   "id": "articles/industrial-waste-disposal-agreement-checklist-thailand",
+   "kind": "article",
+   "title": "Checklist 10 จุดตรวจสัญญาจ้างบริการรับกำจัดและบำบัดกากของเสียอุตสาหกรรม (Hazardous Industrial Waste Treatment & Disposal Services Agreement)",
+   "variants": [
+    {
+     "path": "articles/industrial-waste-disposal-agreement-checklist-thailand.html",
+     "title": "Checklist 10 จุดตรวจสัญญาจ้างบริการรับกำจัดและบำบัดกากของเสียอุตสาหกรรม (Hazardous Industrial Waste Treatment & Disposal Services Agreement)",
+     "language": "th",
+     "sha256": "7112861eee5b017c28146b34bba9a95a6c3b0d9fa49e504b1a1ce686ab31a51b",
+     "text_sha256": "8121efee19cbbc77d5be0579eea0d52e2e9c9dbf91016891b02303e8c2bece5f",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/industrial-waste-disposal-agreement-checklist-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L2",
+   "series_label": "LAS C&C Deep Research · ตอนที่ 28"
   },
   {
    "id": "blog/bkk-council/311-decision-report-v7",
