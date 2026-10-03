@@ -11,7 +11,7 @@
   "excluded": 21,
   "unlinked_items": 19,
   "legal_reviewed": 217,
-  "source_tree": "e8bb2aa16b89ae23fbdc547df379c049a3aa7ce5"
+  "source_tree": "07dc24702f107c807b7dd7703ac3724a67f01866"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -989,8 +989,8 @@
      "path": "articles/hotel-management-agreement-thailand.html",
      "title": "Hotel Management Agreement (HMA) ไทย — คู่มือเจ้าของโรงแรม",
      "language": "th",
-     "sha256": "e53c20547fc7df80ab490ae96e5c61f7d0d7523f279f86ec3d6fc739d50f7cf9",
-     "text_sha256": "7bbc2cf3a25a0ed81c76324b48e4944c3d93af4d1d06e3b03ee8c55c885c7deb",
+     "sha256": "2139960c22877725e6c721626f6c3450cea469a986bd05c5567d64fc3efc85f0",
+     "text_sha256": "a023e9c13123e3d851bb3fc4d9cce1820bc727df3535e3eca7b71f1a80de31b9",
      "published": "2026-04-04",
      "modified": "2026-10-04",
      "url": "https://thundthornthep-ai.github.io/articles/hotel-management-agreement-thailand.html",
@@ -1261,8 +1261,8 @@
      "path": "articles/las-cc-04.html",
      "title": "Representations & Warranties — คำรับรองและรับประกัน ฉบับสมบูรณ์",
      "language": "th",
-     "sha256": "32f5b3684c93ac176e93352faccd45447a58646763e738d0019c9cf7bfb05eff",
-     "text_sha256": "e274dcaa9a1ea0778b0606b02187a3bc49a4525a25122fa4305c27030e7472e5",
+     "sha256": "dc06aa3b01bb25ed7252a8ab988681415edbe21651c9f2ea9073d36cf66a4431",
+     "text_sha256": "89b6d6c0f41f45aeeb67cfe5635958a2078cf1c264402480ae335ecb80eb99b1",
      "published": "2026-04-03",
      "modified": "2026-10-03",
      "url": "https://thundthornthep-ai.github.io/articles/las-cc-04.html",
@@ -2312,7 +2312,7 @@
      "sha256": "18df9fdda6bd62d97bfb68af44f9c46f93875209c3f7be7d930d254484e79c61",
      "text_sha256": "4081127f1002737d7cc4c7b14eda38fb7fac094f001af96f77a292daa9c141e8",
      "published": "2026-04-03",
-     "modified": "2026-10-04",
+     "modified": "2026-10-03",
      "url": "https://thundthornthep-ai.github.io/articles/las-upsize-01.html",
      "legal_status": "reviewed",
      "article_schema": true
