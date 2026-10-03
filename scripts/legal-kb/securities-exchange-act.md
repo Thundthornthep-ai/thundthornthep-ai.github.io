@@ -45,3 +45,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 296
 - มาตรา 296/2
 - มาตรา 317/1
+- มาตรา 317/3
+- มาตรา 317/6
+- มาตรา 317/7
+- มาตรา 317/8

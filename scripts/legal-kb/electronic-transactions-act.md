@@ -9,3 +9,5 @@ Official source: https://www.ocs.go.th/searchlaw-law
 Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
 - มาตรา 7
+- มาตรา 8
+- มาตรา 9

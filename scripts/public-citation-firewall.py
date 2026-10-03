@@ -62,8 +62,13 @@ HTML_ENTITIES = {
 }
 # Singular section / มาตรา (no dash ranges — ``มาตรา 32–65`` is not one cite).
 # Plural ``Sections`` matches a slash-list or an en/em/ASCII dash range.
+# Thai inserted-section suffixes ("มาตรา 32 ทวิ", "มาตรา 19 เตรส") are part of the section identifier; a suffix
+# must end the word, so "มาตรา 5 ฉบับ…" or "มาตรา 5 นวัตกรรม" keep the bare number.
+THAI_SECTION_SUFFIX = (
+    r"(?:\s*(?:ทวาทศ|เอกาทศ|จตุทศ|ปัณรส|โสฬส|สัตตรส|อัฏฐารส|เตรส|จัตวา|เบญจ|สัตต|อัฏฐ|ทวิ|ตรี|นว|ทศ|ฉ)(?![\u0E01-\u0E4E]))?"
+)
 SECTION_RE = re.compile(
-    r"มาตรา\s+(\d+(?:\s*/\s*\d+)?)"
+    r"มาตรา\s+(\d+(?:\s*/\s*\d+)?" + THAI_SECTION_SUFFIX + r")"
     r"|\bsections\s+(\d+\s*/\s*\d+(?:\s*/\s*\d+)*|\d+\s*[–—\-]\s*\d+)"
     r"|\bsection\s+(\d+(?:\s*/\s*\d+)?)",
     re.IGNORECASE,
@@ -74,6 +79,7 @@ SOURCE_URL_RE = re.compile(r"https?://", re.IGNORECASE)
 # Prefix covers ``Personal Data Protection Act B.E. 2562 (2019), Section``.
 # Trailing covers ``Section 118 of the Personal Data Protection Act``.
 PREFIX_LIMIT = 100
+PHRASE_LOOKBACK = PREFIX_LIMIT + 500
 TRAILING_LIMIT = 60
 UNRECOGNIZED = "unrecognized"
 CITATION_GLUE = re.compile(
@@ -102,6 +108,13 @@ TH_NAMED_START = re.compile(
     r"(?:พระราชบัญญัติ|พ\.ร\.บ\.|ประมวลกฎหมาย|(?<!ประกอบ)รัฐธรรมนูญ)(?!นี้|ดังกล่าว)"
 )
 SKIP_NAMED_HEADS = {"the", "this", "that", "an"}
+# Words that may lead a capitalised English title without being part of it: the country, and function words that
+# open a sentence or clause ("Under Revenue Code Section 71"). Any other capitalised word belongs to the title.
+EN_TITLE_LEADS = {
+    "thai", "thailand", "under", "per", "see", "pursuant", "in", "by", "of", "and", "or", "as", "with", "from",
+    "according", "a", "an", "the", "this", "that", "its", "their", "both", "each", "also", "while", "where", "when",
+    "if", "unlike", "like", "then", "but", "for", "to", "on", "at", "after", "before", "following", "is", "are",
+}
 NAME_STOP = re.compile(r"\s*(?:พ\.?ศ\.?|B\.?E\.?|มาตรา|\bsection\b|,|$)", re.IGNORECASE)
 
 # Official inserted-section identifiers. Other a/b tokens with both sides >= 10
@@ -149,7 +162,7 @@ STATUTE_ALIASES: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("plc", ("บริษัทมหาชนจำกัด", "public limited companies act", "public limited company act")),
     ("arbitration", ("อนุญาโตตุลาการ", "arbitration act")),
     ("foreignwork", ("การทำงานของคนต่างด้าว", "foreigners' working act", "foreign workers act")),
-    ("ieat", ("การนิคมอุตสาหกรรม", "industrial estate authority")),
+    ("ieat", ("การนิคมอุตสาหกรรมแห่งประเทศไทย", "การนิคมอุตสาหกรรม", "industrial estate authority")),
     ("copyright", ("พระราชบัญญัติลิขสิทธิ์", "พ.ร.บ.ลิขสิทธิ์", "copyright act")),
     ("patent", ("พระราชบัญญัติสิทธิบัตร", "พ.ร.บ.สิทธิบัตร", "patent act")),
     ("accounting", ("พระราชบัญญัติการบัญชี", "พ.ร.บ.การบัญชี", "accounting act")),
@@ -162,6 +175,44 @@ STATUTE_ALIASES: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("etransactions", ("ธุรกรรมทางอิเล็กทรอนิกส์", "electronic transactions act")),
     ("civilprocedure", ("วิธีพิจารณาความแพ่ง", "civil procedure code")),
     ("mediation", ("การไกล่เกลี่ยข้อพิพาท", "dispute mediation act")),
+    # Master plan item 9 (3 October 2026): Acts verified against the Office of the Council of State database. Each
+    # alias carries the Act's own title with its พระราชบัญญัติ / พ.ร.บ. prefix, so a phrase that only describes the
+    # subject ("กฎหมายว่าด้วยการรับขนของทางทะเลตามมาตรา 609" of the Civil and Commercial Code) never binds.
+    ("customs", ("พระราชบัญญัติศุลกากร", "พ.ร.บ.ศุลกากร", "customs act",)),
+    ("aircarriage", ("พระราชบัญญัติการรับขนทางอากาศระหว่างประเทศ", "พ.ร.บ.การรับขนทางอากาศระหว่างประเทศ", "international carriage by air act",)),
+    ("seacarriage", ("พระราชบัญญัติการรับขนของทางทะเล", "พ.ร.บ.การรับขนของทางทะเล", "carriage of goods by sea act",)),
+    ("landtransport", ("พระราชบัญญัติการขนส่งทางบก", "พ.ร.บ.การขนส่งทางบก", "land transport act",)),
+    ("warehouse", ("พระราชบัญญัติคลังสินค้า ไซโล และห้องเย็น", "พ.ร.บ.คลังสินค้า ไซโล และห้องเย็น", "warehouses, silos and cold storages act",)),
+    ("multimodal", ("พระราชบัญญัติการขนส่งต่อเนื่องหลายรูปแบบ", "พ.ร.บ.การขนส่งต่อเนื่องหลายรูปแบบ", "multimodal transport act",)),
+    ("unsafeproducts", ("พระราชบัญญัติความรับผิดต่อความเสียหายที่เกิดขึ้นจากสินค้าที่ไม่ปลอดภัย", "พ.ร.บ.ความรับผิดต่อความเสียหายที่เกิดขึ้นจากสินค้าที่ไม่ปลอดภัย", "liability for damages arising from unsafe products act",)),
+    ("factory", ("พระราชบัญญัติโรงงาน", "พ.ร.บ.โรงงาน", "factory act",)),
+    ("enqa", ("พระราชบัญญัติส่งเสริมและรักษาคุณภาพสิ่งแวดล้อมแห่งชาติ", "พ.ร.บ.ส่งเสริมและรักษาคุณภาพสิ่งแวดล้อมแห่งชาติ", "national environmental quality act",)),
+    ("building", ("พระราชบัญญัติควบคุมอาคาร", "พ.ร.บ.ควบคุมอาคาร", "building control act",)),
+    ("minerals", ("พระราชบัญญัติแร่", "พ.ร.บ.แร่", "minerals act",)),
+    ("energy", ("พระราชบัญญัติการประกอบกิจการพลังงาน", "พ.ร.บ.การประกอบกิจการพลังงาน", "energy industry act",)),
+    ("hazardous", ("พระราชบัญญัติวัตถุอันตราย", "พ.ร.บ.วัตถุอันตราย", "hazardous substance act", "hazardous substances act",)),
+    ("forest", ("พระราชบัญญัติป่าสงวนแห่งชาติ", "พ.ร.บ.ป่าสงวนแห่งชาติ", "national reserved forest act",)),
+    ("food", ("พระราชบัญญัติอาหาร", "พ.ร.บ.อาหาร", "food act",)),
+    ("drug", ("พระราชบัญญัติยา พ.ศ.", "พ.ร.บ.ยา พ.ศ.", "drug act",)),
+    ("healthfacility", ("พระราชบัญญัติสถานพยาบาล พ.ศ.", "พ.ร.บ.สถานพยาบาล พ.ศ.", "medical facilities act", "healthcare facilities act",)),
+    ("landtax", ("พระราชบัญญัติภาษีที่ดินและสิ่งปลูกสร้าง", "พ.ร.บ.ภาษีที่ดินและสิ่งปลูกสร้าง", "land and building tax act",)),
+    ("aml", ("พระราชบัญญัติป้องกันและปราบปรามการฟอกเงิน", "พ.ร.บ.ป้องกันและปราบปรามการฟอกเงิน", "anti-money laundering act",)),
+    ("payment", ("พระราชบัญญัติระบบการชำระเงิน", "พ.ร.บ.ระบบการชำระเงิน", "payment systems act",)),
+    # The full title runs past the 100-character window before "มาตรา", so the title's own ending binds too
+    # ("ความผิดเกี่ยวกับห้างหุ้นส่วนจดทะเบียน … และมูลนิธิ"); the bare list of entity types does not.
+    ("partnershipoffences", ("พระราชบัญญัติกำหนดความผิดเกี่ยวกับห้างหุ้นส่วน", "พ.ร.บ.กำหนดความผิดเกี่ยวกับห้างหุ้นส่วน",
+                             "ความผิดเกี่ยวกับห้างหุ้นส่วนจดทะเบียน ห้างหุ้นส่วนจำกัด บริษัทจำกัด สมาคม และมูลนิธิ")),
+    ("debtcollection", ("พระราชบัญญัติการทวงถามหนี้", "พ.ร.บ.การทวงถามหนี้", "debt collection act",)),
+    ("bizsecurity", ("พระราชบัญญัติหลักประกันทางธุรกิจ", "พ.ร.บ.หลักประกันทางธุรกิจ", "business security act",)),
+    ("fiinterest", ("พระราชบัญญัติดอกเบี้ยเงินให้กู้ยืมของสถาบันการเงิน", "พ.ร.บ.ดอกเบี้ยเงินให้กู้ยืมของสถาบันการเงิน",)),
+    ("commerciallease", ("พระราชบัญญัติการเช่าอสังหาริมทรัพย์เพื่อพาณิชยกรรมและอุตสาหกรรม", "พ.ร.บ.การเช่าอสังหาริมทรัพย์เพื่อพาณิชยกรรมและอุตสาหกรรม",)),
+    ("cyber", ("พระราชบัญญัติการรักษาความมั่นคงปลอดภัยไซเบอร์", "พ.ร.บ.การรักษาความมั่นคงปลอดภัยไซเบอร์", "cybersecurity act",)),
+    ("procurement", ("พระราชบัญญัติการจัดซื้อจัดจ้างและการบริหารพัสดุภาครัฐ", "พ.ร.บ.การจัดซื้อจัดจ้างและการบริหารพัสดุภาครัฐ", "public procurement and supplies administration act",)),
+    ("telecom", ("พระราชบัญญัติการประกอบกิจการโทรคมนาคม", "พ.ร.บ.การประกอบกิจการโทรคมนาคม", "telecommunications business act",)),
+    ("securityguard", ("พระราชบัญญัติธุรกิจรักษาความปลอดภัย", "พ.ร.บ.ธุรกิจรักษาความปลอดภัย", "security guard business act",)),
+    ("consumercase", ("พระราชบัญญัติวิธีพิจารณาคดีผู้บริโภค", "พ.ร.บ.วิธีพิจารณาคดีผู้บริโภค", "consumer case procedure act",)),
+    ("emeeting", ("พระราชกำหนดว่าด้วยการประชุมผ่านสื่ออิเล็กทรอนิกส์", "พ.ร.ก.ว่าด้วยการประชุมผ่านสื่ออิเล็กทรอนิกส์",
+                  "พ.ร.ก.การประชุมผ่านสื่ออิเล็กทรอนิกส์", "emergency decree on electronic meetings")),
     ("ukbribery", ("uk bribery act",)),
 )
 
@@ -235,7 +286,8 @@ def prepare_text(text: str) -> str:
 
 
 def normalize_section_token(token: str) -> str:
-    return re.sub(r"\s*/\s*", "/", token.strip())
+    token = re.sub(r"\s*/\s*", "/", token.strip())
+    return re.sub(r"(?<=\d)\s*(?=[\u0E01-\u0E4E])", " ", token)
 
 
 def section_token(match: re.Match[str]) -> str:
@@ -277,9 +329,15 @@ def statute_in(window: str) -> str | None:
 
 
 def phrase_before(prefix: str) -> str:
-    """Citation phrase after the previous section token."""
-    last_end = 0
-    for match in SECTION_RE.finditer(prefix):
+    """Citation phrase after the previous section token.
+
+    Only a section token ending inside the last PREFIX_LIMIT characters can shorten the phrase, so the scan starts
+    PHRASE_LOOKBACK characters back instead of at the start of the text (the registry files and long pages made the
+    full rescan quadratic).
+    """
+    start = max(0, len(prefix) - PHRASE_LOOKBACK)
+    last_end = start
+    for match in SECTION_RE.finditer(prefix, start):
         last_end = match.end()
     return prefix[last_end:][-PREFIX_LIMIT:]
 
@@ -338,7 +396,7 @@ def _named_candidates(window: str) -> list[tuple[int, int, str | None]]:
             words.pop(0)
         if not words:
             continue
-        found.append((match.start(), match.end(), statute_in(match.group(0))))
+        found.append((match.start(), match.end(), _en_title_key(words, match.group(2))))
     for match in EN_CONSTITUTION_TITLE.finditer(window):
         found.append((match.start(), match.end(), "constitution"))
     for match in TH_NAMED_START.finditer(window):
@@ -356,12 +414,25 @@ def _named_candidates(window: str) -> list[tuple[int, int, str | None]]:
     return found
 
 
+def _en_title_key(words: list[str], kind: str) -> str | None:
+    """Known key of a capitalised English title only when the whole title is a known one (after leading words in
+    EN_TITLE_LEADS), so "Controlled Drug Act" is an unknown Act, not the Drug Act."""
+    while words and words[0].lower() in EN_TITLE_LEADS:
+        words = words[1:]
+    name = " ".join(words + [kind]).lower()
+    for key, aliases in STATUTE_ALIASES:
+        if any(name == alias or name == f"{alias} {kind.lower()}" for alias in aliases):
+            return key
+    return None
+
+
 def _nearest_named(window: str) -> tuple[int, int, str | None] | None:
-    """The statute name closest to the section token (rightmost end)."""
+    """The statute name closest to the section token (rightmost end); at the same end the longer name wins, so a
+    known title inside a longer unknown one ("Controlled Drug Act") does not bind."""
     candidates = _named_candidates(window)
     if not candidates:
         return None
-    return max(candidates, key=lambda item: (item[1], item[2] is not None, item[1] - item[0]))
+    return max(candidates, key=lambda item: (item[1], item[1] - item[0], item[2] is not None))
 
 
 def prefix_statute(prefix: str) -> str | None:
@@ -499,13 +570,31 @@ def load_registry(path: Path) -> dict[str, set[str]]:
     return by_statute
 
 
+# Statutes whose registry was compiled at the level of the base section number, with no consolidated text in the repo
+# to check inserted sections against (the Revenue Code: rd.go.th, master plan item 9 lists its text as missing). For
+# these a suffixed citation ("มาตรา 65 ทวิ") resolves on its base number, as every citation did before suffixes were
+# kept. Remove a statute from this set once its text is in laws/ and its suffixed sections are registered.
+BASE_NUMBER_STATUTES = {"revenue"}
+
+
+def section_base(section: str) -> str:
+    return section.split(" ", 1)[0]
+
+
 def resolve_key(statute: str | None, section: str, registry: dict[str, set[str]]) -> str | None:
     if statute:
         if section in registry.get(statute, ()):
             return f"{statute}:{section}"
+        if statute in BASE_NUMBER_STATUTES and section_base(section) in {
+            section_base(known) for known in registry.get(statute, ())
+        }:
+            return f"{statute}:{section}"
         return None
     for name, sections in registry.items():
         if section in sections:
+            return f"{name}:{section}"
+    for name in sorted(BASE_NUMBER_STATUTES & registry.keys()):
+        if section_base(section) in {section_base(known) for known in registry[name]}:
             return f"{name}:{section}"
     return None
 

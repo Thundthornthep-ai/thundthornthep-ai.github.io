@@ -30,6 +30,8 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 164
 - มาตรา 165
 - มาตรา 166
+- มาตรา 291
 - มาตรา 326
 - มาตรา 328
 - มาตรา 350
+- มาตรา 352

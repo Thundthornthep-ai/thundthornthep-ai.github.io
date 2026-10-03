@@ -242,7 +242,7 @@ class RegistryAndGateTests(unittest.TestCase):
     def test_thai_abbreviated_act_names_bind(self) -> None:
         self.assertEqual(firewall.extract_citations("ตาม พ.ร.บ.โรงแรม พ.ศ. 2547 มาตรา 15"), [("hotel", "15")])
         self.assertEqual(firewall.extract_citations("พ.ร.บ.ลิขสิทธิ์ พ.ศ. 2537 มาตรา 19"), [("copyright", "19")])
-        self.assertEqual(firewall.extract_citations("พ.ร.บ.สิทธิบัตร พ.ศ. 2522 มาตรา 65 สัตต"), [("patent", "65")])
+        self.assertEqual(firewall.extract_citations("พ.ร.บ.สิทธิบัตร พ.ศ. 2522 มาตรา 65 สัตต"), [("patent", "65 สัตต")])
         self.assertEqual(firewall.extract_citations("Patent Act B.E. 2522, Section 35"), [("patent", "35")])
         self.assertEqual(firewall.extract_citations("ตาม พ.ร.บ.การบัญชี พ.ศ. 2543 มาตรา 11"), [("accounting", "11")])
         self.assertEqual(
@@ -250,6 +250,94 @@ class RegistryAndGateTests(unittest.TestCase):
             [("conflictlaws", "8")],
         )
         self.assertEqual(firewall.extract_citations("พระราชบัญญัติประกันสังคม พ.ศ. 2533 มาตรา 67"), [("socialsecurity", "67")])
+
+    def test_item9_act_titles_bind(self) -> None:
+        self.assertEqual(firewall.extract_citations("พระราชบัญญัติศุลกากร พ.ศ. 2560 มาตรา 52"), [("customs", "52")])
+        self.assertEqual(
+            firewall.extract_citations("พระราชบัญญัติการรักษาความมั่นคงปลอดภัยไซเบอร์ พ.ศ. 2562 มาตรา 3"), [("cyber", "3")]
+        )
+        self.assertEqual(
+            firewall.extract_citations("พระราชกำหนดว่าด้วยการประชุมผ่านสื่ออิเล็กทรอนิกส์ พ.ศ. 2563 มาตรา 9"),
+            [("emeeting", "9")],
+        )
+        self.assertEqual(firewall.extract_citations("พระราชบัญญัติสถานพยาบาล พ.ศ. 2541 มาตรา 16"), [("healthfacility", "16")])
+        self.assertEqual(
+            firewall.extract_citations(
+                "พระราชบัญญัติกำหนดความผิดเกี่ยวกับห้างหุ้นส่วนจดทะเบียน ห้างหุ้นส่วนจำกัด บริษัทจำกัด สมาคม และมูลนิธิ"
+                " พ.ศ. 2499 มาตรา 41"
+            ),
+            [("partnershipoffences", "41")],
+        )
+
+    def test_item9_subject_phrase_without_act_title_does_not_bind(self) -> None:
+        cites = firewall.extract_citations(
+            "ส่วนการรับขนของทางทะเลต้องใช้กฎหมายว่าด้วยการรับขนของทางทะเลตามมาตรา 609 ของประมวลกฎหมายแพ่งและพาณิชย์"
+        )
+        self.assertNotIn(("seacarriage", "609"), cites)
+        self.assertNotIn(("drug", "5"), firewall.extract_citations("พระราชบัญญัติยาเสพติดให้โทษ มาตรา 5"))
+
+    def test_entity_list_without_partnership_offences_title_does_not_bind(self) -> None:
+        cites = firewall.extract_citations("ห้างหุ้นส่วนจำกัด บริษัทจำกัด สมาคม และมูลนิธิ มาตรา 41")
+        self.assertNotIn(("partnershipoffences", "41"), cites)
+        full = (
+            "พระราชบัญญัติกำหนดความผิดเกี่ยวกับห้างหุ้นส่วนจดทะเบียน ห้างหุ้นส่วนจำกัด บริษัทจำกัด สมาคม "
+            "และมูลนิธิ พ.ศ. 2499 มาตรา 41"
+        )
+        self.assertEqual(firewall.extract_citations(full), [("partnershipoffences", "41")])
+
+    def test_longer_english_title_ending_in_known_act_is_unrecognized(self) -> None:
+        self.assertEqual(
+            firewall.extract_citations("Controlled Drug Act B.E. 2550 Section 21"),
+            [(firewall.UNRECOGNIZED, "21")],
+        )
+        self.assertEqual(
+            firewall.extract_citations("Section 21 of the Controlled Drug Act"),
+            [(firewall.UNRECOGNIZED, "21")],
+        )
+        self.assertEqual(firewall.extract_citations("Drug Act B.E. 2510, Section 21"), [("drug", "21")])
+        self.assertEqual(
+            firewall.extract_citations("Thai Labour Protection Act, Section 118"), [("lpa", "118")]
+        )
+        self.assertEqual(
+            firewall.extract_citations("Civil and Commercial Code Section 420"), [("ccc", "420")]
+        )
+        self.assertEqual(
+            firewall.extract_citations("Unfair Contract Terms Act B.E. 2540, Section 4"), [("ucta", "4")]
+        )
+
+    def test_thai_inserted_section_suffix_is_part_of_the_section(self) -> None:
+        self.assertEqual(
+            firewall.extract_citations("พระราชบัญญัติควบคุมอาคาร พ.ศ. 2522 มาตรา 32 ทวิ และมาตรา 65 ทวิ"),
+            [("building", "32 ทวิ"), ("building", "65 ทวิ")],
+        )
+        self.assertEqual(
+            firewall.extract_citations("พระราชบัญญัติอาคารชุด พ.ศ. 2522 มาตรา 19 เตรส"), [("condo", "19 เตรส")]
+        )
+        self.assertEqual(firewall.extract_citations("พระราชบัญญัติควบคุมอาคาร พ.ศ. 2522 มาตรา 5 ฉบับนี้"), [("building", "5")])
+        with tempfile.TemporaryDirectory() as tmp:
+            kb = Path(tmp)
+            (kb / "building.md").write_text(
+                "statute: building\nhttps://searchlaw.ocs.go.th/\n- มาตรา 32\n- มาตรา 32 ทวิ\n", encoding="utf-8"
+            )
+            registry = firewall.load_registry(kb)
+            self.assertEqual(registry["building"], {"32", "32 ทวิ"})
+            cites = firewall.extract_citations("พระราชบัญญัติควบคุมอาคาร พ.ศ. 2522 มาตรา 32 ตรี")
+            self.assertEqual(firewall.missing_citations(cites, registry), ["building:32 ตรี"])
+
+    def test_revenue_code_suffixes_resolve_on_the_base_number(self) -> None:
+        registry = {"revenue": {"65", "35 ตรี"}, "building": {"32"}}
+        self.assertEqual(firewall.resolve_key("revenue", "65 ทวิ", registry), "revenue:65 ทวิ")
+        self.assertEqual(firewall.resolve_key("revenue", "35", registry), "revenue:35")
+        self.assertIsNone(firewall.resolve_key("building", "32 ทวิ", registry))
+        self.assertIsNone(firewall.resolve_key("revenue", "66 ทวิ", registry))
+
+    def test_phrase_before_matches_a_full_scan(self) -> None:
+        text = ("ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 1 " * 60) + ("ก" * 700) + " มาตรา 2 ข้อความ " + ("ข" * 30)
+        last_end = 0
+        for match in firewall.SECTION_RE.finditer(text):
+            last_end = match.end()
+        self.assertEqual(firewall.phrase_before(text), text[last_end:][-firewall.PREFIX_LIMIT:])
+        self.assertEqual(firewall.phrase_before("ก" * 900), ("ก" * 900)[-firewall.PREFIX_LIMIT:])
 
     def test_social_security_word_alone_is_not_the_act(self) -> None:
         cites = firewall.extract_citations("พ.ร.บ.คุ้มครองแรงงาน เงินประกันสังคม มาตรา 118")
