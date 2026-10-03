@@ -379,6 +379,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 418
 - มาตรา 419
 - มาตรา 420
+- มาตรา 421
 - มาตรา 425
 - มาตรา 426
 - มาตรา 427
@@ -386,6 +387,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 432
 - มาตรา 434
 - มาตรา 436
+- มาตรา 437
 - มาตรา 438
 - มาตรา 448
 - มาตรา 453
@@ -920,6 +922,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 1356
 - มาตรา 1357
 - มาตรา 1358
+- มาตรา 1360
 - มาตรา 1361
 - มาตรา 1457
 - มาตรา 1600
