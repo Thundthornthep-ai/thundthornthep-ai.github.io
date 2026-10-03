@@ -11,3 +11,4 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 4
 - มาตรา 19
 - มาตรา 6
+- มาตรา 19 ทวิ
