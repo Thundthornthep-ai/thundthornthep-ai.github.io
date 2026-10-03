@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+<meta property="og:url" content="https://thundthornthep-ai.github.io/articles/payment-gateway-merchant-agreement-thailand.html" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NN3KX46PVC"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NN3KX46PVC');</script>
+<link rel="icon" type="image/webp" href="/las-logo.webp">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ดักจุดตายสัญญาให้บริการระบบประมวลผลการชำระเงินและ Payment Gateway (Payment Gateway &amp; Merchant Acquiring Master Services Agreement) | LAS Shield Deep Research EP34 | LAS Legal Hub</title>
+  <meta name="description" content="การกำกับดูแลสถานะของผู้ให้บริการตามพระราชบัญญัติระบบการชำระเงิน พ.ศ. 2560 [ต้องยืนยันมาตรา]: ผู้ให้บริการ Payment Gateway ต้องมีสถานะที่ถูกต้องตามประเภทบริการ (ใบอนุญาต การขึ้นทะเบียน หรือการแจ้ง) ตามที่พระราชบัญญัติดังกล่าวและประกาศของธนาคารแห่งประเทศไทย (ธปท.) กำหนด [ต้องยืนยันแหล่งที่มา]…" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Thundthornthep Yamoutai, Ph.D." />
+  <meta property="og:title" content="ดักจุดตายสัญญาให้บริการระบบประมวลผลการชำระเงินและ Payment Gateway (Payment Gateway &amp; Merchant Acquiring Master Services Agreement)" />
+  <meta property="og:description" content="การกำกับดูแลสถานะของผู้ให้บริการตามพระราชบัญญัติระบบการชำระเงิน พ.ศ. 2560 [ต้องยืนยันมาตรา]: ผู้ให้บริการ Payment Gateway ต้องมีสถานะที่ถูกต้องตามประเภทบริการ (ใบอนุญาต การขึ้นทะเบียน หรือการแจ้ง) ตามที่พระราชบัญญัติดังกล่าวและประกาศของธนาคารแห่งประเทศไทย (ธปท.) กำหนด [ต้องยืนยันแหล่งที่มา]…" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="th_TH" />
+  <link rel="canonical" href="https://thundthornthep-ai.github.io/articles/payment-gateway-merchant-agreement-thailand.html" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ดักจุดตายสัญญาให้บริการระบบประมวลผลการชำระเงินและ Payment Gateway (Payment Gateway & Merchant Acquiring Master Services Agreement): วิเคราะห์การกำกับดูแลภายใต้พระราชบัญญัติระบบการชำระเงิน พ.ศ. 2560 (สถานะใบอนุญาต การขึ้นทะเบียน หรือการแจ้งของผู้ให้บริการ), ข้อตกลงระดับการให้บริการ (SLA) อัตราความสำเร็จในการทำธุรกรรม (Authorization Rate & Uptime 99.95%), การจัดสรรความรับผิดกรณี Chargeback & Fraud, นโยบายเงินประกันสำรอง (Rolling Reserve), การหักกลบลบหนี้ การระงับบัญชี และมาตรฐาน PCI-DSS",
+    "alternativeHeadline": "Payment Gateway & Merchant Acquiring Master Services Agreement: Payment Systems Act B.E. 2560 Regulatory Framework (Licensing, Registration or Notification Status by Service Type), 99.95% Availability SLAs, Chargeback Indemnities & Rolling Reserve Mechanics, Set-off, Account Suspension, and PCI-DSS Compliance",
+    "author": {"@type": "Person", "name": "Thundthornthep Yamoutai, Ph.D.", "affiliation": "Legal Advance Solution Co., Ltd."},
+    "publisher": {"@type": "Organization", "name": "Legal Advance Solution Co., Ltd."},
+    "datePublished": "2026-10-03",
+    "dateModified": "2026-10-03",
+    "inLanguage": "th",
+    "isPartOf": {"@type": "CreativeWorkSeries", "name": "LAS Shield — Deep Research"}
+  }
+  </script>
+  <style>
+    :root {
+      --gold: #C9A96E;
+      --navy: #1B2A4A;
+      --red-bg: #FADBD8;
+      --red-border: #C0392B;
+      --orange-bg: #FDEBD0;
+      --orange-border: #E67E22;
+      --green-bg: #D5F5E3;
+      --green-border: #27AE60;
+      --blue-bg: #D6EAF8;
+      --blue-border: #2471A3;
+      --gray-bg: #F4F6F7;
+      --text: #2C303A;
+      --muted: #6C7A89;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Sarabun', 'TH Sarabun New', sans-serif;
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text);
+      background: #FAFAFA;
+    }
+    .article-header {
+      background: linear-gradient(135deg, var(--navy) 0%, #2C3E6A 100%);
+      color: #fff;
+      padding: 48px 24px 36px;
+      text-align: center;
+    }
+    .article-header .category-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .article-header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .article-header .subtitle {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 20px;
+    }
+    .article-header .meta {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+    }
+    .article-body {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+    /* TOC */
+    .toc-box {
+      background: var(--blue-bg);
+      border-left: 4px solid var(--blue-border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+    }
+    .toc-box h3 {
+      font-size: 1rem;
+      color: var(--blue-border);
+      margin-bottom: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .toc-box ol { padding-left: 22px; }
+    .toc-box li { margin-bottom: 6px; }
+    .toc-box a { color: var(--navy); text-decoration: none; font-size: 15px; }
+    .toc-box a:hover { text-decoration: underline; color: var(--blue-border); }
+    /* Section blocks */
+    .section-block { margin-bottom: 48px; }
+    .section-heading {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--navy);
+      border-bottom: 3px solid var(--gold);
+      padding-bottom: 8px;
+      margin-bottom: 6px;
+    }
+    .section-heading .en {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--muted);
+      margin-left: 10px;
+      letter-spacing: 0.3px;
+    }
+    .sub-heading {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 24px 0 10px;
+      padding-left: 10px;
+      border-left: 3px solid var(--gold);
+    }
+    p { margin-bottom: 14px; }
+    /* Compare table */
+    .compare-table {
+      overflow-x: auto;
+      margin: 24px 0 28px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    table.article-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    table.article-table thead th {
+      background: var(--navy);
+      color: #fff;
+      padding: 13px 16px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+    }
+    table.article-table thead th:first-child { border-radius: 10px 0 0 0; }
+    table.article-table thead th:last-child { border-radius: 0 10px 0 0; }
+    table.article-table tbody tr:hover { filter: brightness(0.96); transition: filter 0.15s; }
+    table.article-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #E5E8EB;
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    table.article-table td:first-child {
+      font-weight: 700;
+      color: var(--navy);
+      white-space: nowrap;
+      background: #F0F3F7 !important;
+      min-width: 140px;
+    }
+    table.article-table .col-hiree { background: #FDEBD0; }
+    table.article-table .col-labor { background: #D5F5E3; }
+    table.article-table .col-risk-high { background: #FADBD8; }
+    table.article-table .col-risk-med { background: #FDEBD0; }
+    table.article-table .col-risk-low { background: #D5F5E3; }
+    /* Practice note */
+    .practice-note {
+      background: var(--orange-bg);
+      border-left: 4px solid var(--orange-border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+    .practice-note.alert {
+      background: var(--red-bg);
+      border-left-color: var(--red-border);
+    }
+    .practice-note.tip {
+      background: var(--green-bg);
+      border-left-color: var(--green-border);
+    }
+    .pn-label {
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .practice-note .pn-label { color: var(--orange-border); }
+    .practice-note.alert .pn-label { color: var(--red-border); }
+    .practice-note.tip .pn-label { color: var(--green-border); }
+    /* Law ref cards */
+    .law-ref-cards { display: flex; flex-wrap: wrap; gap: 14px; margin: 20px 0; }
+    .law-ref-card {
+      flex: 1 1 260px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #fff;
+      border: 1.5px solid #DDE3EA;
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    }
+    .law-ref-card.cat-civil { border-left: 4px solid #2471A3; }
+    .law-ref-card.cat-labor { border-left: 4px solid #117A65; }
+    .law-ref-card.cat-tax { border-left: 4px solid #884EA0; }
+    .law-icon {
+      font-size: 22px;
+      min-width: 28px;
+      text-align: center;
+      margin-top: 2px;
+    }
+    .law-info .law-name {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+    .law-info .law-source {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    /* Content list */
+    .content-list { padding-left: 22px; margin-bottom: 16px; }
+    .content-list li { margin-bottom: 8px; }
+    /* FAQ */
+    .faq-item {
+      border: 1px solid #DDE3EA;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+    .faq-item .faq-q {
+      background: var(--navy);
+      color: #fff;
+      padding: 13px 18px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .faq-item .faq-q::before { content: "Q: "; color: var(--gold); }
+    .faq-item .faq-a {
+      padding: 14px 18px;
+      background: #fff;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    /* Law quote (verbatim) */
+    .law-quote {
+      background: #F0F3F7;
+      border-left: 4px solid var(--navy);
+      border-radius: 6px;
+      padding: 14px 18px;
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: var(--navy);
+      margin: 14px 0;
+      white-space: pre-wrap;
+      font-family: 'Sarabun', 'TH Sarabun New', monospace;
+    }
+    /* Risk badge */
+    .risk-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .risk-high { background: var(--red-bg); color: var(--red-border); border: 1px solid var(--red-border); }
+    .risk-med  { background: var(--orange-bg); color: var(--orange-border); border: 1px solid var(--orange-border); }
+    .risk-low  { background: var(--green-bg); color: var(--green-border); border: 1px solid var(--green-border); }
+    /* Summary card */
+    .summary-card {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 24px 0;
+    }
+    .summary-card h3 { color: var(--gold); margin-bottom: 14px; font-size: 1.1rem; }
+    .summary-card ul { padding-left: 22px; }
+    .summary-card li { margin-bottom: 8px; font-size: 15px; opacity: 0.92; }
+    /* References */
+    .ref-section {
+      background: var(--gray-bg);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-top: 40px;
+    }
+    .ref-section h3 { color: var(--navy); margin-bottom: 14px; font-size: 1rem; font-weight: 700; }
+    .ref-section ul { padding-left: 20px; }
+    .ref-section li { font-size: 14px; margin-bottom: 6px; color: var(--muted); }
+    .ref-section a { color: var(--blue-border); }
+    /* Related */
+    .related-articles {
+      display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px;
+    }
+    .related-card {
+      flex: 1 1 200px;
+      background: #fff;
+      border: 1.5px solid #DDE3EA;
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 14px;
+      color: var(--navy);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover { border-color: var(--gold); }
+    .related-card .rel-tag { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+    /* Disclaimer */
+    .disclaimer {
+      margin-top: 40px;
+      padding: 16px 20px;
+      background: #F4F6F7;
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    /* Responsive */
+    @media (max-width: 640px) {
+      .article-header h1 { font-size: 1.45rem; }
+      .section-heading { font-size: 1.25rem; }
+      table.article-table td:first-child { min-width: 110px; }
+    }
+    /* ── Deep-Research extras (LAS Legal Master Template v1.0.0) ── */
+    .article-header .h1-sub { display:block; font-size:1.15rem; font-weight:600; color:rgba(255,255,255,0.9); margin-top:8px; line-height:1.5; }
+    .meta-chips { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:14px; }
+    .chip { display:inline-block; background:rgba(255,255,255,0.12); color:#fff; font-size:12px; padding:3px 12px; border-radius:14px; letter-spacing:0.2px; }
+    .chip-gold { background:var(--gold); color:var(--navy); font-weight:700; }
+    .quick-answer { background:var(--green-bg); border-left:4px solid var(--green-border); border-radius:8px; padding:18px 22px; margin-bottom:24px; }
+    .quick-answer .pn-label { color:var(--green-border); }
+    .quick-answer p { margin:0; font-size:16px; }
+    .hook-box { background:#fff; border:1.5px solid #DDE3EA; border-left:4px solid var(--navy); border-radius:10px; padding:18px 22px; margin-bottom:28px; }
+    .hook-box h3 { font-size:1rem; color:var(--navy); margin-bottom:10px; font-weight:800; }
+    .hook-box ol { padding-left:22px; }
+    .hook-box li { margin-bottom:8px; }
+    .checklist { list-style:none; padding-left:0; margin:12px 0 18px; }
+    .checklist li { display:flex; gap:12px; align-items:flex-start; padding:10px 14px; margin-bottom:8px; background:#fff; border:1px solid #DDE3EA; border-radius:8px; }
+    .checklist .cb { flex:0 0 18px; width:18px; height:18px; margin-top:4px; border:2px solid var(--navy); border-radius:4px; background:#fff; }
+    .compare-table.claim-ledger table.article-table td:first-child { white-space:nowrap; font-family:'Consolas','Menlo',monospace; font-size:13px; }
+    .compare-table.claim-ledger table.article-table td { font-size:14px; }
+    .law-ref-card.cat-pdpa { border-left:4px solid #C0392B; }
+    .law-ref-card.cat-other { border-left:4px solid #7F8C8D; }
+    .practice-note p { margin-bottom:8px; }
+    .practice-note p:last-child { margin-bottom:0; }
+    @media (max-width: 640px) { .article-header .h1-sub { font-size:0.98rem; } }
+  </style>
+<link rel="stylesheet" href="/css/learning-tables.css?v=20260929">
+<link rel="stylesheet" href="/css/las-template-theme.css?v=20260929">
+<script src="/js/las-back.js?v=20261002" defer></script>
+</head>
+<body class="las-knowledge-article">
+
+<!-- HEADER -->
+<header class="article-header">
+  <div class="category-tag">LAS Shield Deep Research · EP34 · Contract Pitfalls · Payments</div>
+  <h1>ดักจุดตายสัญญาให้บริการระบบประมวลผลการชำระเงินและ Payment Gateway (Payment Gateway &amp; Merchant Acquiring Master Services Agreement)<br><span class="h1-sub">วิเคราะห์การกำกับดูแลภายใต้พระราชบัญญัติระบบการชำระเงิน พ.ศ. 2560 (สถานะใบอนุญาต การขึ้นทะเบียน หรือการแจ้งของผู้ให้บริการ), ข้อตกลงระดับการให้บริการ (SLA) อัตราความสำเร็จในการทำธุรกรรม (Authorization Rate &amp; Uptime 99.95%), การจัดสรรความรับผิดกรณี Chargeback &amp; Fraud, นโยบายเงินประกันสำรอง (Rolling Reserve), การหักกลบลบหนี้ การระงับบัญชี และมาตรฐาน PCI-DSS</span> <span class="las-reviewed-mark" role="img" aria-label="ตรวจทบทวนข้อกฎหมายแล้ว" title="ตรวจทบทวนข้อกฎหมายแล้ว">✓</span></h1>
+<p class="las-review-date"><b>✓ ตรวจทบทวนข้อกฎหมายล่าสุดเมื่อวันที่ 3 ตุลาคม 2569</b> · เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 3 ตุลาคม 2569</p>
+  <p class="subtitle">Payment Gateway &amp; Merchant Acquiring Master Services Agreement: Payment Systems Act B.E. 2560 Regulatory Framework (Licensing, Registration or Notification Status by Service Type), 99.95% Availability SLAs, Chargeback Indemnities &amp; Rolling Reserve Mechanics, Set-off, Account Suspension, and PCI-DSS Compliance</p>
+  <div class="meta">โดย ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D. &nbsp;|&nbsp; Legal Advance Solution Co., Ltd. &nbsp;|&nbsp; ตัวบทกฎหมาย ณ 2 ตุลาคม 2569</div>
+  <div class="meta-chips">
+    <span class="chip">Series: LAS Shield Deep Research</span>
+    <span class="chip">ตอนที่ 34</span>
+    <span class="chip">Jurisdiction: ประเทศไทย</span>
+    <span class="chip chip-gold">LAS Legal Audit ✓ 2 ตุลาคม 2569</span>
+  </div>
+</header>
+
+<div class="article-body">
+
+  <!-- QUICK ANSWER -->
+  <div class="quick-answer" id="quick-answer">
+    <span class="pn-label">คำตอบสั้น — Quick Answer / TL;DR</span>
+    <ol class="content-list"><li><strong>การกำกับดูแลสถานะของผู้ให้บริการตามพระราชบัญญัติระบบการชำระเงิน พ.ศ. 2560 [ต้องยืนยันมาตรา]:</strong> ผู้ให้บริการ Payment Gateway ต้องมีสถานะที่ถูกต้องตามประเภทบริการ (ใบอนุญาต การขึ้นทะเบียน หรือการแจ้ง) ตามที่พระราชบัญญัติดังกล่าวและประกาศของธนาคารแห่งประเทศไทย (ธปท.) กำหนด [ต้องยืนยันแหล่งที่มา] ร้านค้าผู้ว่าจ้างจึงควรตรวจสอบสถานะดังกล่าวก่อนเข้าทำสัญญา เพราะหากผู้ให้บริการไม่มีใบอนุญาตที่กฎหมายกำหนด ร้านค้าอาจเสี่ยงต่อการหยุดชะงักของบริการและข้อพิพาทเรื่องความสมบูรณ์ของสัญญา</li><li><strong>การจัดสรรความรับผิดกรณีการปฏิเสธการจ่ายเงิน (Chargeback) และการฉ้อโกง (Fraud Liability Allocation):</strong> ข้อกำหนดมาตรฐานมักผลักภาระหนี้สูญจากการปฏิเสธชำระเงินของผู้ถือบัตรให้แก่ร้านค้าเพียงฝ่ายเดียว สัญญาที่ดีจึงควรรับเอากติกาการย้ายความรับผิด (Liability Shift) ของเครือข่ายบัตรไว้ด้วย กล่าวคือ หากรายการผ่านการยืนยันตัวตนด้วย 3-D Secure (OTP / Biometric Authentication) ร้านค้าไม่ต้องรับผิดต่อ Chargeback ประเภทฉ้อโกงตามเงื่อนไขของกติกานั้น [ต้องยืนยันแหล่งที่มา] ทั้งนี้ การย้ายความรับผิดเป็นกติกาของเครือข่ายบัตรที่ผูกพันผ่านสัญญา มิใช่บทบัญญัติของกฎหมายไทย</li><li><strong>กลไกเงินประกันสำรองและกำหนดเวลาชำระเงิน (Rolling Reserve &amp; Settlement Timeline):</strong> ข้อกำหนด Rolling Reserve ร้อยละ 5-10 กักไว้เป็นเวลา 90-180 วัน เพื่อรองรับความเสี่ยง Chargeback ต้องมีเพดานและเงื่อนไขการปลดล็อกที่ชัดเจน และรอบระยะเวลา Settlement (T+1 ถึง T+3) ต้องมีดอกเบี้ยผิดนัดหากผู้ให้บริการโอนเงินรายได้ล่าช้า ทั้งนี้ ตัวเลขร้อยละ ระยะเวลากัก และรอบการโอนเงินข้างต้นเป็นข้อเสนอเริ่มต้นในการเจรจา มิใช่ข้อบังคับของกฎหมายไทย [ต้องยืนยันแหล่งที่มา]</li></ol>
+  </div>
+
+  <!-- PROBLEM HOOK -->
+  <div class="hook-box" id="hook">
+    <h3>สถานการณ์ที่ผู้ประกอบการมักพบจริง</h3>
+    <ol>
+      <li><strong>เหตุการณ์:</strong> แพลตฟอร์มอีคอมเมิร์ซเติบโตอย่างรวดเร็ว แต่มักพบปัญหาระบบ Payment Gateway ล่มในวันจัดโปรโมชันใหญ่ เงินรายได้ถูกกักไว้ในระบบด้วยเงื่อนไข Rolling Reserve โดยไม่มีกำหนดปลดล็อกที่ชัดเจน และถูกหักเงินคืนจากการปฏิเสธชำระเงิน (Chargeback) ของผู้ถือบัตรเครดิตฉ้อโกง</li>
+      <li><strong>ความเข้าใจผิด:</strong> คิดว่าสัญญาให้บริการรับชำระเงินเป็นเพียงข้อตกลงมาตรฐาน (Standardized Form Agreement) ที่ปรับแก้ไม่ได้ และเข้าใจผิดว่าผู้ให้บริการ Payment Gateway ต้องรับผิดชอบความเสียหายทั้งหมดเมื่อระบบล่มหรือเกิดการทำธุรกรรมฉ้อโกง</li>
+      <li><strong>จุดพลิก:</strong> การตรวจสอบสถานะของผู้ให้บริการตามพระราชบัญญัติระบบการชำระเงิน พ.ศ. 2560 [ต้องยืนยันมาตรา] (ใบอนุญาต การขึ้นทะเบียน หรือการแจ้งตามประเภทบริการ) และการเจรจาโครงสร้างสัญญา โดยรับเอากติกา 3-D Secure Liability Shift ของเครือข่ายบัตร กำหนดเพดาน Rolling Reserve และปรับปรุงข้อตกลงระดับการให้บริการ (SLA) พร้อมเบี้ยปรับ</li>
+      <li><strong>สิ่งที่ได้จากบทความ:</strong> แนวทางเจรจาและแก้ไขสัญญา Payment Gateway &amp; Merchant Acquiring Agreement, ข้อต่อสู้ทางกฎหมาย, และ Checklist 10 จุดตรวจสัญญาเพื่อป้องกันการถูกลอยแพและถูกกักเงินทุนหมุนเวียน</li>
+    </ol>
+  </div>
+
+  <!-- TOC -->
+  <nav class="toc-box" aria-label="สารบัญ">
+    <h3>สารบัญ</h3>
+    <ol>
+      <li><a href="#s1">ภูมิทัศน์สัญญาให้บริการระบบรับชำระเงินดิจิทัลและกฎหมายระบบการชำระเงินในประเทศไทย</a></li>
+      <li><a href="#s2">ผลกระทบเชิงธุรกิจ</a></li>
+      <li><a href="#s3">กรอบกฎหมายและ Claim Ledger</a></li>
+      <li><a href="#s4">วิเคราะห์ System Availability SLA และการันตี Authorization Processing Speed</a></li>
+      <li><a href="#s5">กลไก Chargeback Handling และการย้ายความรับผิดด้วยมาตรฐาน 3-D Secure 2.0</a></li>
+      <li><a href="#s6">การควบคุมเงินประกัน Rolling Reserve, Minimum Balance Hold และกำหนดเวลาโอนเงินสุทธิ</a></li>
+      <li><a href="#s7">LAS Practice Note: การออกแบบข้อสัญญา Merchant Protection, Security Incident Indemnity และเงื่อนไขการเลิกสัญญาแบบทันที</a></li>
+      <li><a href="#s8">ข้อต่อสู้ของผู้ให้บริการ Payment Gateway กับร้านค้าพาณิชย์อิเล็กทรอนิกส์</a></li>
+      <li><a href="#s9">ตัวอย่างสถานการณ์จำลอง</a></li>
+      <li><a href="#s10">Checklist 10 จุดตรวจสัญญา Payment Gateway &amp; Merchant Acquiring Agreement</a></li>
+
+
+      <li><a href="#faq">คำถามที่พบบ่อย</a></li>
+      <li><a href="#refs">อ้างอิง</a></li>
+    </ol>
+  </nav>
+
+  <section class="section-block" id="s1">
+    <h2 class="section-heading">ภูมิทัศน์สัญญาให้บริการระบบรับชำระเงินดิจิทัลและกฎหมายระบบการชำระเงินในประเทศไทย</h2>
+<p>โครงสร้างพื้นฐานของระบบชำระเงินดิจิทัลในประเทศไทยเชื่อมโยงระหว่าง ร้านค้า (Merchant), ผู้ให้บริการระบบประมวลผลและรับชำระเงิน (Payment Gateway / Payment Facilitator), ธนาคารผู้รับบัตร (Acquiring Bank), เครือข่ายบัตรชำระเงิน (Card Networks - Visa, Mastercard, JCB, UnionPay) และธนาคารผู้ออกบัตร (Issuing Bank)</p>
+<p>การเข้าทำสัญญา Payment Gateway &amp; Merchant Acquiring Master Services Agreement อยู่ภายใต้การกำกับดูแลของพระราชบัญญัติระบบการชำระเงิน พ.ศ. 2560 [ต้องยืนยันมาตรา] และประกาศธนาคารแห่งประเทศไทยที่เกี่ยวข้อง [ต้องยืนยันแหล่งที่มา] ผู้ให้บริการต้องมีสถานะที่ถูกต้องตามประเภทบริการ (ใบอนุญาต การขึ้นทะเบียน หรือการแจ้ง) หากผู้ให้บริการไม่มีใบอนุญาตที่กฎหมายกำหนด ผู้ให้บริการอาจมีความรับผิดตามพระราชบัญญัติดังกล่าว และสัญญากับร้านค้าอาจถูกโต้แย้งว่าตกเป็นโมฆะตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 150 หากกฎหมายห้ามการทำนิติกรรมนั้นชัดแจ้ง [ต้องยืนยันมาตรา] ซึ่งโมฆะกรรมไม่อาจให้สัตยาบันได้ และการคืนทรัพย์สินอันเกิดจากโมฆะกรรมใช้หลักลาภมิควรได้ตามมาตรา 172</p>
+<p>[ผู้ถือบัตร / ผู้ซื้อ]</p>
+<p>│</p>
+<p>(ชำระเงิน)</p>
+<p>▼</p>
+<p>[ร้านค้า (Merchant)] ◄─── (สัญญา Merchant Services Agreement) ───► [Payment Gateway / Merchant Acquirer]</p>
+<p>│</p>
+<p>(ประมวลผล &amp; ตัดบัญชี)</p>
+<p>▼</p>
+<p>[ธนาคาร / Card Networks / ธปท.]</p>
+<h3 class="sub-heading">รูปแบบการให้บริการรับชำระเงิน การแยกเงินของร้านค้า และหน้าที่ของผู้ประมวลผลข้อมูลส่วนบุคคล</h3>
+<p>ผู้ให้บริการที่ร้านค้าเรียกรวมกันว่า Payment Gateway มีรูปแบบการให้บริการที่แตกต่างกัน ซึ่งส่งผลต่อการถือครองเงินของร้านค้าและสถานะตามกฎหมาย ตารางต่อไปนี้แสดงรูปแบบหลักสามรูปแบบ</p>
+<div class="compare-table"><div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="article-table las-reading-table las-wide-table"><thead><tr><th scope="col">มิติการพิจารณา</th><th scope="col">Payment Gateway (ผู้ให้บริการด้านเทคโนโลยี)</th><th scope="col">Payment Facilitator</th><th scope="col">ผู้ให้บริการเงินอิเล็กทรอนิกส์ (e-Money)</th></tr></thead><tbody><tr><td><strong>การถือครองเงินของร้านค้า</strong></td><td>โดยทั่วไปส่งต่อคำสั่งชำระเงินไปยังธนาคารโดยมิได้รับเงินไว้เอง</td><td>รับเงินรวมไว้พักแล้วจ่ายต่อให้แก่ร้านค้า</td><td>รับเงินล่วงหน้าจากผู้ใช้เพื่อนำไปใช้ซื้อสินค้าหรือบริการ</td></tr><tr><td><strong>สถานะตามพระราชบัญญัติระบบการชำระเงิน พ.ศ. 2560</strong></td><td>ต้องตรวจว่าต้องได้รับใบอนุญาต ขึ้นทะเบียน หรือแจ้ง [ต้องยืนยันมาตรา]</td><td>ต้องตรวจว่าการรับเงินแทนผู้อื่นเข้าลักษณะบริการที่ต้องได้รับใบอนุญาตหรือขึ้นทะเบียนหรือไม่ [ต้องยืนยันมาตรา]</td><td>ต้องตรวจประเภทใบอนุญาตหรือการขึ้นทะเบียนสำหรับเงินอิเล็กทรอนิกส์ [ต้องยืนยันมาตรา]</td></tr><tr><td><strong>ความเสี่ยงหลักที่ต้องจัดสรรในสัญญา</strong></td><td>Chargeback ตามข้อสัญญาและกติกาเครือข่ายบัตร [ต้องยืนยันแหล่งที่มา]</td><td>รับความเสี่ยง Chargeback โดยตรง จึงมักกักเงินสำรอง [ต้องยืนยันแหล่งที่มา]</td><td>ความเสี่ยงการฉ้อโกงบัญชี e-Wallet</td></tr></tbody></table>
+</div></div>
+<p>ร้านค้าไม่ควรสันนิษฐานว่าเงินที่ค้างอยู่ในระบบของผู้ให้บริการได้รับความคุ้มครองเสมอไป ความคุ้มครองขึ้นอยู่กับบทบัญญัติของพระราชบัญญัติระบบการชำระเงิน พ.ศ. 2560 [ต้องยืนยันมาตรา] และประกาศของธนาคารแห่งประเทศไทยที่ใช้บังคับแก่บริการประเภทนั้น [ต้องยืนยันแหล่งที่มา] เฉพาะกรณีที่ผู้ให้บริการรับเงินไว้แทนและมีหน้าที่แยกเงินตามที่กฎหมายกำหนด เงินส่วนนั้นอาจไม่อยู่ในความรับผิดแห่งการบังคับคดีของเจ้าหนี้ของผู้ให้บริการ ส่วนเงินสำรองหมุนเวียนต้องพิจารณาจากข้อสัญญาและลักษณะของบัญชีที่เก็บเงิน ร้านค้าจึงควรกำหนดในสัญญาให้ผู้ให้บริการรับรองว่าเก็บเงินของร้านค้าไว้ในบัญชีที่แยกต่างหาก และให้ร้านค้ามีสิทธิตรวจสอบ</p>
+<p>ในด้านข้อมูลส่วนบุคคล ผู้ให้บริการที่ประมวลผลข้อมูลบัตรหรือข้อมูลผู้ซื้อตามคำสั่งของร้านค้าอาจมีฐานะเป็นผู้ประมวลผลข้อมูลส่วนบุคคล ซึ่งพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 40 กำหนดหน้าที่ไว้สามประการ คือ ดำเนินการตามคำสั่งที่ได้รับจากผู้ควบคุมข้อมูลเท่านั้น จัดให้มีมาตรการรักษาความมั่นคงปลอดภัยที่เหมาะสมพร้อมทั้งแจ้งเหตุละเมิดแก่ผู้ควบคุมข้อมูล และจัดทำและเก็บรักษาบันทึกรายการของกิจกรรมการประมวลผล ผู้ประมวลผลที่ดำเนินการนอกคำสั่งให้ถือเป็นผู้ควบคุมข้อมูลสำหรับการเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลนั้น (มาตรา 40 วรรคสอง) และผู้ควบคุมข้อมูลต้องจัดให้มีข้อตกลงกับผู้ประมวลผล (มาตรา 40 วรรคสาม) เมื่อมาตรา 40 (2) มิได้กำหนดเวลาแจ้งเหตุ สัญญาจึงควรกำหนดเวลาให้สั้นพอที่ผู้ควบคุมข้อมูลจะแจ้งสำนักงานได้ตามมาตรา 37 (4) ส่วนมาตรฐาน PCI-DSS เป็นมาตรฐานเอกชนและข้อกำหนดทางสัญญา มิใช่ผลโดยตรงของมาตรา 40</p>
+  </section>
+
+  <section class="section-block" id="s2">
+    <h2 class="section-heading">ผลกระทบเชิงธุรกิจ <span class="en">Business Consequences</span></h2>
+<p>การลงนามในสัญญาให้บริการระบบรับชำระเงินโดยขาดการตรวจสอบเงื่อนไขทางกฎหมาย อาจส่งผลกระทบต่อการดำเนินธุรกิจดังนี้:</p>
+<ul class="content-list"><li><strong>ร้านค้าถูกกักเงินในบัญชี Settlement หลักสิบล้านเพราะข้อพิพาท Chargeback:</strong> ข้อสัญญามาตรฐานมักให้อำนาจผู้ให้บริการสั่งระงับ (Hold) การโอนเงินรายได้ทั้งหมดทันทีเมื่อเกิดอัตราการปฏิเสธชำระเงินสูงเกินเกณฑ์ ส่งผลกระทบต่อสภาพคล่องทางการเงินของร้านค้า</li><li><strong>ระบบ Gateway ล่มในวันแคมเปญใหญ่ จนสูญเสียยอดขายมหาศาล:</strong> แม้สัญญามิได้กำหนด Service Level Agreement (SLA) และค่าชดเชยความเสียหาย (Penalty/Service Credit) ไว้ หากผู้ให้บริการไม่ชำระหนี้ให้ต้องตามความประสงค์อันแท้จริงแห่งมูลหนี้ ร้านค้ายังเรียกค่าสินไหมทดแทนได้ตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 215 ภายในขอบเขตของมาตรา 222 คือความเสียหายเช่นที่ตามปกติย่อมเกิดขึ้นแต่การไม่ชำระหนี้ และความเสียหายอันเกิดแต่พฤติการณ์พิเศษหากคู่กรณีได้คาดเห็นหรือควรจะได้คาดเห็นพฤติการณ์นั้นล่วงหน้า แต่เมื่อไม่มี SLA ร้านค้าจะพิสูจน์ได้ยากว่าผู้ให้บริการไม่ชำระหนี้ตามสัญญาและความเสียหายมีจำนวนเท่าใด ทั้งสิทธินั้นยังอาจถูกจำกัดโดยข้อสัญญาจำกัดความรับผิด แต่ข้อสัญญาดังกล่าวเป็นโมฆะในส่วนที่ยกเว้นความรับผิดเพื่อกลฉ้อฉลหรือความประมาทเลินเล่ออย่างร้ายแรงของผู้ให้บริการตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 373 และในส่วนที่ไม่เป็นโมฆะมีผลบังคับได้เพียงเท่าที่เป็นธรรมและพอสมควรแก่กรณีตามพระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540 มาตรา 8 วรรคสอง รวมทั้งมาตรา 4 หากเป็นสัญญาสำเร็จรูป</li><li><strong>ข้อพิพาทค่าธรรมเนียม MDR แฝง:</strong> การคิดค่าธรรมเนียม Merchant Discount Rate (MDR) ที่ไม่มีการระบุโครงสร้างชัดเจน รวมถึงค่าธรรมเนียมย้อนหลังจากการปรับเกณฑ์ของ Card Networks</li></ul>
+  </section>
+
+  <section class="section-block" id="s3">
+    <h2 class="section-heading">กรอบกฎหมายและ Claim Ledger <span class="en">Legal Framework</span></h2>
+<div class="compare-table claim-ledger"><div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="article-table las-reading-table las-wide-table"><thead><tr><th scope="col">Claim ID</th><th scope="col">ประเด็นข้อพิพาททางกฎหมาย</th><th scope="col">ฐานกฎหมายอ้างอิง</th><th scope="col">ผลทางกฎหมายและแนวทางแก้ไข</th></tr></thead><tbody><tr><td><strong>C-SHIELD-34-01</strong></td><td>ผู้ให้บริการไม่มีใบอนุญาตประกอบธุรกิจระบบการชำระเงิน</td><td>พระราชบัญญัติระบบการชำระเงิน พ.ศ. 2560 [ต้องยืนยันมาตรา] และประกาศของธนาคารแห่งประเทศไทย [ต้องยืนยันแหล่งที่มา] ประกอบกับประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 150 และมาตรา 172</td><td>หากผู้ให้บริการไม่มีใบอนุญาตที่กฎหมายกำหนด ผู้ให้บริการอาจมีความรับผิดตามพระราชบัญญัติระบบการชำระเงิน พ.ศ. 2560 และสัญญากับร้านค้าอาจถูกโต้แย้งว่าตกเป็นโมฆะตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 150 หากกฎหมายห้ามการทำนิติกรรมนั้นชัดแจ้ง [ต้องยืนยันมาตรา] โมฆะกรรมไม่อาจให้สัตยาบันได้ และการคืนทรัพย์ใช้หลักลาภมิควรได้ (มาตรา 172) ร้านค้าจึงควรตรวจสอบสถานะของผู้ให้บริการตามประเภทบริการก่อนเข้าทำสัญญา</td></tr><tr><td><strong>C-SHIELD-34-02</strong></td><td>ระบบล่ม/ประมวลผลล่าช้าทำให้ร้านค้าสูญเสียยอดขาย</td><td>ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 204 มาตรา 215 มาตรา 222 และมาตรา 368</td><td>เมื่อลูกหนี้ไม่ชำระหนี้ให้ต้องตามความประสงค์อันแท้จริงแห่งมูลหนี้ ร้านค้าเรียกค่าสินไหมทดแทนได้ตามมาตรา 215 ภายในขอบเขตของมาตรา 222 แม้สัญญามิได้กำหนด SLA แต่การกำหนด SLA และ Service Credit ไว้ล่วงหน้าช่วยให้พิสูจน์การไม่ชำระหนี้และจำนวนความเสียหายได้ง่ายขึ้น (Uptime 99.95% เป็นข้อเสนอเริ่มต้นในการเจรจา [ต้องยืนยันแหล่งที่มา])</td></tr><tr><td><strong>C-SHIELD-34-03</strong></td><td>การผลักภาระ Chargeback &amp; Fraud ให้ร้านค้าฝ่ายเดียว</td><td>พระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540 มาตรา 4 สำหรับข้อสัญญาสำเร็จรูปที่ผลักภาระให้ร้านค้าฝ่ายเดียว และประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 373 เฉพาะประเด็นข้อยกเว้นความรับผิดเพื่อกลฉ้อฉลหรือความประมาทเลินเล่ออย่างร้ายแรงของผู้ให้บริการ</td><td>หากสัญญารับเอากติกาการย้ายความรับผิด (Liability Shift) ของเครือข่ายบัตรไว้ และรายการผ่านการยืนยันตัวตนด้วย 3-D Secure ร้านค้าไม่ต้องรับผิดต่อ Chargeback ประเภทฉ้อโกงตามเงื่อนไขของกติกานั้น [ต้องยืนยันแหล่งที่มา] การย้ายความรับผิดเป็นกติกาของเครือข่ายบัตรที่ผูกพันผ่านสัญญา มิใช่บทบัญญัติของกฎหมายไทย</td></tr><tr><td><strong>C-SHIELD-34-04</strong></td><td>การกักเงินประกันสำรอง (Rolling Reserve) โดยไม่มีกำหนด</td><td>ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 379 และมาตรา 383 (หากข้อสัญญามีลักษณะเป็นเบี้ยปรับ) หรือมาตรา 377 และมาตรา 378 (หากมีลักษณะเป็นมัดจำ ซึ่งตามมาตรา 377 ต้องเป็นสิ่งที่ให้ไว้เมื่อเข้าทำสัญญา)</td><td>การกักเงินสำรองหมุนเวียนต้องวินิจฉัยลักษณะตามข้อสัญญาว่าเป็นหลักประกัน เบี้ยปรับ หรือมัดจำ ซึ่งมีผลต่างกันในเรื่องการริบและการลดจำนวน ข้อเสนอของ LAS คือกำหนดเพดานอัตรา Rolling Reserve (ไม่เกินร้อยละ 5 ถึง 10) และระยะเวลากักเก็บที่แน่นอน (ไม่เกิน 90 ถึง 180 วัน) พร้อมดอกเบี้ยกรณีคืนล่าช้า ซึ่งเป็นข้อเสนอเชิงพาณิชย์สำหรับการเจรจา มิใช่เกณฑ์ที่กฎหมายกำหนด [ต้องยืนยันแหล่งที่มา]</td></tr><tr><td><strong>C-SHIELD-34-05</strong></td><td>การรั่วไหลของข้อมูลบัตรชำระเงินและการไม่ปฏิบัติตาม PCI-DSS</td><td>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 37 และมาตรา 40 รวมทั้งข้อกำหนด PCI-DSS ซึ่งเป็นมาตรฐานของอุตสาหกรรมบัตรที่เอกชนจัดทำขึ้น</td><td>กฎหมายคุ้มครองข้อมูลส่วนบุคคลกำหนดหน้าที่รักษาความมั่นคงปลอดภัยและแจ้งเหตุละเมิด (มาตรา 37 และมาตรา 40) ส่วนการรับรองมาตรฐาน PCI-DSS และการชดใช้ค่าเสียหายเป็นข้อสัญญาที่ร้านค้าควรเจรจา มิใช่ผลโดยตรงของตัวบท ทั้งนี้ ระดับ (Level) ของผู้ให้บริการตามมาตรฐาน PCI-DSS มักกำหนดโดยเครือข่ายบัตรตามปริมาณธุรกรรม [ต้องยืนยันแหล่งที่มา]</td></tr></tbody></table>
+</div></div>
+  </section>
+
+  <section class="section-block" id="s4">
+    <h2 class="section-heading">วิเคราะห์ System Availability SLA และการันตี Authorization Processing Speed</h2>
+<p>ข้อตกลงระดับการให้บริการ (Service Level Agreement - SLA) เป็นส่วนสำคัญของสัญญา Payment Gateway เพื่อรักษาความต่อเนื่องทางธุรกิจ</p>
+<ul class="content-list"><li><strong>Uptime Standard:</strong> ควรเสนอให้กำหนด System Availability ไว้ไม่ต่ำกว่า <strong>99.95%</strong> ต่อเดือน (ไม่รวม Scheduled Maintenance ที่แจ้งล่วงหน้าไม่น้อยกว่า 7 วัน และต้องทำในช่วงเวลาที่มีปริมาณการใช้บริการต่ำ)</li><li><strong>Latency &amp; Authorization Speed:</strong> ควรเสนอให้กำหนดระยะเวลาประมวลผล (API Response Time) ไม่เกิน <strong>2 วินาที</strong> สำหรับการส่งคำขออนุมัติรายการ (Authorization Request)</li><li><strong>Service Credit Mechanics:</strong> หาก Uptime ต่ำกว่าเกณฑ์ที่กำหนด ให้หักลดค่าธรรมเนียมบริการ (MDR Fee Credit) ในเดือนถัดไปตามอัตราส่วนขั้นบันได</li></ul>
+<p>[System Availability ต่อเดือน]</p>
+<p>├── &gt;= 99.95% ---&gt; บริการปกติ (No Credit)</p>
+<p>├── 99.00% - 99.94% ---&gt; หักส่วนลดค่าบริการ 10% ของ MDR ในเดือนนั้น</p>
+<p>├── 95.00% - 98.99% ---&gt; หักส่วนลดค่าบริการ 25% ของ MDR ในเดือนนั้น</p>
+<p>└── &lt; 95.00% ---&gt; หักส่วนลดค่าบริการ 50% และร้านค้ามีสิทธิเลิกสัญญาได้ทันที</p>
+<p>ตัวเลข Uptime ระยะแจ้งบำรุงรักษาล่วงหน้า เวลาตอบสนอง และอัตราส่วนลดข้างต้นเป็นข้อเสนอเริ่มต้นในการเจรจา มิใช่ข้อบังคับของกฎหมายไทย [ต้องยืนยันแหล่งที่มา]</p>
+<p>ข้อสัญญาที่ทำไว้ล่วงหน้าเพื่อยกเว้นหรือจำกัดความรับผิด รวมทั้ง Service Credit ที่กำหนดให้เป็นการเยียวยาเพียงอย่างเดียว หากไม่เป็นโมฆะ มีผลบังคับได้เพียงเท่าที่เป็นธรรมและพอสมควรแก่กรณีตามพระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540 มาตรา 8 วรรคสอง ไม่ว่าจะอยู่ในสัญญาสำเร็จรูปหรือไม่ และหากเป็นสัญญาสำเร็จรูปตามบทนิยามในมาตรา 3 ข้อตกลงยกเว้นหรือจำกัดความรับผิดที่เกิดจากการผิดสัญญายังเป็นข้อตกลงที่อาจถือได้ว่าทำให้ผู้กำหนดสัญญาได้เปรียบตามมาตรา 4 (1) โดยศาลพิเคราะห์ถึงพฤติการณ์ทั้งปวงตามมาตรา 10 ด้วยเหตุนี้ สัญญาจึงควรระบุให้ชัดว่า Service Credit เป็นการเยียวยาเพียงอย่างเดียวหรือไม่ เพราะข้อนี้ชี้ขาดว่าร้านค้าเรียกค่าสินไหมทดแทนตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 215 เพิ่มเติมได้หรือไม่ นอกจากนี้ หาก Service Credit มีลักษณะเป็นเบี้ยปรับตามมาตรา 379 ศาลลดได้ตามมาตรา 383 หากสูงเกินส่วน</p>
+  </section>
+
+  <section class="section-block" id="s5">
+    <h2 class="section-heading">กลไก Chargeback Handling และการย้ายความรับผิดด้วยมาตรฐาน 3-D Secure 2.0 <span class="en">Liability Shift</span></h2>
+<p>การปฏิเสธชำระเงิน (Chargeback) เกิดขึ้นเมื่อผู้ถือบัตรแจ้งต่อธนาคารผู้ออกบัตรว่าไม่ได้ทำรายการหรือได้รับสินค้าไม่ถูกต้อง 3-D Secure 2.0 Liability Shift</p>
+<p>───────────────────────────────</p>
+<p>[ผู้ถือบัตรทำรายการ] ──► [ยืนยันตัวตนด้วย OTP/Biometric] ──► [ระบบประมวลผลสำเร็จ]</p>
+<p>│</p>
+<p>(เกิดกรณี Fraud/บัตรถูกขโมย)</p>
+<p>│</p>
+<p>▼</p>
+<p>[Liability Shift สู่ธนาคารผู้ออกบัตร]</p>
+<p>(ร้านค้าได้รับคุ้มครอง ไม่ถูกดึงเงินคืน)</p>
+<ol class="content-list"><li><strong>3-D Secure Protocol:</strong> สัญญาต้องระบุให้ระบบรองรับ 3-D Secure 2.0 (EMV 3DS) เพื่อยืนยันตัวตนผู้ถือบัตรด้วย OTP หรือ Biometric Data</li><li><strong>Liability Shift Rule:</strong> หากสัญญารับเอากติกาการย้ายความรับผิดของเครือข่ายบัตรไว้ และรายการรับชำระเงินผ่านการยืนยันตัวตนด้วย 3-D Secure แล้ว ภาระความรับผิดกรณี Chargeback ประเภทฉ้อโกงหรือผู้ถือบัตรปฏิเสธว่าไม่ได้ทำรายการ (Fraudulent Transaction) จะย้ายจากร้านค้าไปเป็นของธนาคารผู้ออกบัตร (Issuing Bank) ตามเงื่อนไขของกติกานั้น [ต้องยืนยันแหล่งที่มา] ทั้งนี้ การย้ายความรับผิดมักครอบคลุมเฉพาะ Chargeback ประเภทดังกล่าว มิใช่ทุกกรณี</li><li><strong>Dispute Window &amp; Evidence Submission:</strong> สัญญาต้องกำหนดระยะเวลาให้ร้านค้าโต้แย้งข้อพิพาท Chargeback ไม่น้อยกว่า <strong>10-14 วันทำการ</strong> นับแต่วันที่ได้รับแจ้ง (เป็นข้อเสนอเริ่มต้นในการเจรจา [ต้องยืนยันแหล่งที่มา]) พร้อมระบุเอกสารหลักฐานที่ยอมรับได้ (เช่น หลักฐานการจัดส่งสินค้าจากผู้ให้บริการขนส่ง)</li></ol>
+  </section>
+
+  <section class="section-block" id="s6">
+    <h2 class="section-heading">การควบคุมเงินประกัน Rolling Reserve, Minimum Balance Hold และกำหนดเวลาโอนเงินสุทธิ <span class="en">Settlement Cut-off</span></h2>
+<p>ผู้ให้บริการ Payment Gateway มักใช้กลไกทางสัญญาเพื่อกักเงินรายได้ของร้านค้าไว้ป้องกันความเสี่ยง</p>
+<ul class="content-list"><li><strong>Rolling Reserve:</strong> การหักเงินรายได้ในอัตราร้อยละที่แน่นอน (เช่น 5% - 10%) จากยอดขายแต่ละวัน และกักไว้เป็นระยะเวลาที่กำหนด (เช่น 90 ถึง 180 วัน ซึ่งเป็นตัวเลขตัวอย่างสำหรับการเจรจา มิใช่เกณฑ์ที่กฎหมายกำหนด [ต้องยืนยันแหล่งที่มา]) สัญญาที่ดีต้องกำหนดให้ปลดล็อกเงินคืนตามรอบระยะเวลาโดยอัตโนมัติ</li><li><strong>Settlement Timeline (T+N):</strong> รอบการโอนเงินเข้าบัญชีร้านค้า เช่น T+1 (วันทำการถัดไป) หรือ T+3 สัญญาต้องระบุเวลา Cut-off Time ที่ชัดเจน</li><li><strong>Interest on Delayed Settlement:</strong> หากผู้ให้บริการโอนเงินล่าช้ากว่ากำหนด T+N โดยไม่มีเหตุอันชอบด้วยกฎหมาย ผู้ให้บริการต้องเสียดอกเบี้ยระหว่างเวลาผิดนัดตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 224 ในอัตราตามมาตรา 7 บวกด้วยอัตราเพิ่มร้อยละสองต่อปี ซึ่งตามตัวบทปัจจุบันเท่ากับร้อยละห้าต่อปี เว้นแต่คู่สัญญาได้ตกลงอัตราที่สูงกว่านั้นไว้โดยชอบด้วยกฎหมาย อัตราตามมาตรา 7 อาจถูกปรับเปลี่ยนโดยพระราชกฤษฎีกา จึงต้องตรวจอัตราที่ใช้บังคับก่อนกำหนดข้อสัญญา [ต้องยืนยันแหล่งที่มา: พระราชกฤษฎีกาปรับอัตราดอกเบี้ยตามมาตรา 7 ฉบับล่าสุด]</li></ul>
+<h3 class="sub-heading">การหักกลบลบหนี้ Chargeback กับยอดโอนงวดถัดไป เกณฑ์การระงับบัญชี และการแจ้งก่อนกักเงินเพิ่ม</h3>
+<p>ผู้ให้บริการมักกำหนดให้หักเงิน Chargeback จากยอดโอนงวดถัดไปของร้านค้าโดยอัตโนมัติ ข้อสัญญาเช่นนี้มีผลตามเจตนาของคู่สัญญาตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 341 วรรคสอง แต่ยกขึ้นต่อสู้บุคคลภายนอกผู้กระทำการโดยสุจริตไม่ได้ ส่วนการหักกลบลบหนี้ตามมาตรา 341 วรรคหนึ่ง หนี้ทั้งสองรายต้องมีวัตถุอย่างเดียวกันและถึงกำหนดชำระ หักได้เพียงเท่าจำนวนที่ตรงกัน เว้นแต่สภาพแห่งหนี้จะไม่เปิดช่องให้หักกลบลบกันได้ โดยฝ่ายหนึ่งแสดงเจตนาแก่อีกฝ่ายตามมาตรา 342 และทำไม่ได้กับสิทธิเรียกร้องที่ยังมีข้อต่อสู้อยู่ตามมาตรา 344 ร้านค้าจึงควรกำหนดกลไกโต้แย้ง Chargeback ไว้ในสัญญา และกำหนดลำดับการหักระหว่างยอดโอนกับเงินสำรองให้ชัดเจน เพราะเงินสำรองมีไว้เพื่อประกันหนี้ประเภทนี้อยู่แล้ว ขณะที่การหักจากยอดโอนกระทบสภาพคล่องของร้านค้าทันที หนี้ที่นำมาหักกลบต้องเป็นหนี้ระหว่างคู่สัญญาเดียวกัน จึงต้องตรวจข้อสัญญาที่ให้หักเงินในบัญชีอื่นที่ผูกไว้</p>
+<p>ผู้ให้บริการมักอ้างเกณฑ์ความสงสัยอันสมควรเพื่อระงับบัญชี เกณฑ์ที่พบโดยทั่วไป ได้แก่ อัตรา Chargeback เกินเกณฑ์ที่สัญญากำหนดซึ่งควรระบุให้ชัดว่านับจากจำนวนรายการหรือจากมูลค่า [ต้องยืนยันแหล่งที่มา] ยอดขายเพิ่มขึ้นผิดปกติโดยไม่มีเหตุทางการตลาดรองรับ รายการจากต่างประเทศที่มีความเสี่ยงสูงเป็นจำนวนมาก และข้อมูลการรู้จักลูกค้า (KYC) ของร้านค้าไม่เป็นปัจจุบันหรือน่าสงสัย ผู้ให้บริการมีหน้าที่ตามพระราชบัญญัติป้องกันและปราบปรามการฟอกเงิน พ.ศ. 2542 [ต้องยืนยันมาตรา] ในการตรวจสอบลูกค้าและรายงานธุรกรรมที่มีเหตุอันควรสงสัย ส่วนการระงับธุรกรรมโดยอาศัยข้อสัญญาเป็นสิทธิที่ต้องมีข้อสัญญารองรับ ผู้ให้บริการอาจอ้างว่าตนต้องบริหารความเสี่ยงตามพระราชบัญญัติระบบการชำระเงิน พ.ศ. 2560 [ต้องยืนยันมาตรา] และประกาศของธนาคารแห่งประเทศไทย [ต้องยืนยันแหล่งที่มา] แต่สิทธิของผู้ให้บริการที่จะกักเงินของร้านค้ายังต้องมีฐานจากข้อสัญญา</p>
+<p>ก่อนกักเงินเพิ่มหรือระงับบัญชี สัญญาควรกำหนดให้ผู้ให้บริการแจ้งเป็นลายลักษณ์อักษรล่วงหน้าตามระยะเวลาที่ตกลงกัน (ข้อเสนอเริ่มต้น เช่น ไม่น้อยกว่าสามวันทำการ [ต้องยืนยันแหล่งที่มา]) กำหนดจำนวนเงินสำรองสูงสุดเป็นตัวเลขที่แน่นอน และกำหนดวันคืนเงินสำรองไว้ในสัญญา ผู้ให้บริการระงับบัญชีได้เท่าที่ข้อสัญญาให้สิทธิไว้ และต้องใช้สิทธิโดยสุจริตตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 5 การใช้สิทธิซึ่งมีแต่จะให้เกิดเสียหายแก่ร้านค้าเป็นการอันมิชอบด้วยกฎหมายตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 421 และการกักเงินเกินสิทธิตามสัญญาเป็นการไม่ชำระหนี้ ร้านค้าจึงเรียกค่าสินไหมทดแทนได้ตามมาตรา 215 ภายในขอบเขตของมาตรา 222</p>
+  </section>
+
+  <section class="section-block" id="s7">
+    <h2 class="section-heading">LAS Practice Note: การออกแบบข้อสัญญา Merchant Protection, Security Incident Indemnity และเงื่อนไขการเลิกสัญญาแบบทันที</h2>
+<h3 class="sub-heading">1 ข้อสัญญาคุ้มครองร้านค้า (Merchant Protection Clause)</h3>
+<p>"ผู้ให้บริการตกลงว่า ในกรณีที่การปฏิเสธชำระเงิน (Chargeback) ประเภทฉ้อโกงหรือผู้ถือบัตรปฏิเสธว่าไม่ได้ทำรายการ เกิดขึ้นจากรายการที่ผ่านการอนุมัติระบบ 3-D Secure เรียบร้อยแล้วตามเงื่อนไขของกติกาการย้ายความรับผิดของเครือข่ายบัตร ผู้ให้บริการไม่มีสิทธิหักเงิน หักทบ หรือเรียกร้องให้ร้านค้าชำระเงินคืนสำหรับรายการดังกล่าว และต้องทำการ Settlement เงินรายได้ให้แก่ร้านค้าตามกำหนดเวลาปกติ"</p>
+<p>ข้อสัญญานี้ควรอ้างอิงเงื่อนไขของกติกาเครือข่ายบัตรที่ใช้บังคับ ณ วันทำสัญญา เพราะกติกาดังกล่าวเป็นกฎของเอกชน มิใช่กฎหมายไทย [ต้องยืนยันแหล่งที่มา]</p>
+<h3 class="sub-heading">2 ข้อสัญญาความรับผิดกรณีความไม่ปลอดภัยของข้อมูล (Security Incident Indemnity)</h3>
+<p>"หากเกิดเหตุการณ์ข้อมูลรั่วไหล (Data Breach) หรือการละเมิดระบบความปลอดภัยอันเนื่องมาจากความบกพร่องของผู้ให้บริการ หรือการไม่ปฏิบัติตามมาตรฐาน PCI-DSS ผู้ให้บริการตกลงจะชดใช้ค่าเสียหายเต็มจำนวนที่เกิดขึ้นแก่ร้านค้า รวมถึงค่าปรับจากหน่วยงานกำกับดูแล ค่าธรรมเนียม Card Networks และค่าใช้จ่ายในการเยียวยาผู้บริโภค"</p>
+<p>ข้อสัญญานี้เป็นข้อเสนอสำหรับการเจรจา มิใช่ผลโดยตรงของตัวบท พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 กำหนดหน้าที่รักษาความมั่นคงปลอดภัยและแจ้งเหตุละเมิด แต่มิได้กำหนดให้ผู้ให้บริการชดใช้ค่าเสียหายแก่ร้านค้า การชดใช้ ค่าปรับจากเครือข่ายบัตร และการรับรองมาตรฐาน PCI-DSS จึงต้องกำหนดไว้ในสัญญา ก่อนกำหนดข้อสัญญา ร้านค้าต้องวิเคราะห์ว่าผู้ให้บริการเป็นผู้ควบคุมข้อมูลส่วนบุคคลหรือผู้ประมวลผลข้อมูลส่วนบุคคลสำหรับข้อมูลบัตรและข้อมูลผู้ซื้อ ผู้ควบคุมข้อมูลมีหน้าที่แจ้งเหตุละเมิดแก่สำนักงานโดยไม่ชักช้าภายในเจ็ดสิบสองชั่วโมงนับแต่ทราบเหตุเท่าที่จะกระทำได้ตามมาตรา 37 (4) และเมื่อมีการส่งหรือโอนข้อมูลไปยังเครือข่ายบัตรหรือธนาคารในต่างประเทศ ต้องพิจารณามาตรา 28 และมาตรา 29 ด้วย</p>
+<h3 class="sub-heading">3 เงื่อนไขการเลิกสัญญาแบบทันที (Immediate Termination Clause)</h3>
+<p>"ร้านค้ามีสิทธิบอกเลิกสัญญานี้ได้ทันทีโดยไม่ต้องบอกกล่าวล่วงหน้า หากปรากฏว่า: (ก) ผู้ให้บริการถูกเพิกถอนหรือระงับสถานะหรือใบอนุญาตที่ต้องมีตามพระราชบัญญัติระบบการชำระเงิน พ.ศ. 2560 [ต้องยืนยันมาตรา] หรือ (ข) ผู้ให้บริการไม่สามารถรักษา System Availability ให้อยู่ในระดับไม่ต่ำกว่า 95.00% ภายในรอบเดือนใดเดือนหนึ่ง"</p>
+<p>สิทธิเลิกสัญญาทันทีเป็นสิทธิโดยข้อสัญญาตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 386 ซึ่งต้องแสดงเจตนาแก่อีกฝ่ายหนึ่งและถอนไม่ได้ หากสัญญามิได้กำหนดไว้ การเลิกสัญญาเพราะผู้ให้บริการไม่ชำระหนี้ต้องกำหนดระยะเวลาพอสมควรแล้วบอกกล่าวให้ชำระหนี้ภายในระยะเวลานั้นก่อนตามมาตรา 387 เว้นแต่เข้ากรณีตามมาตรา 388 เมื่อเลิกสัญญาแล้ว คู่สัญญาแต่ละฝ่ายต้องให้อีกฝ่ายหนึ่งกลับคืนสู่ฐานะดังที่เป็นอยู่เดิมตามมาตรา 391 โดยไม่กระทบสิทธิเรียกร้องค่าเสียหาย ส่วนข้อสัญญาที่ให้ผู้ให้บริการเลิกสัญญาได้โดยร้านค้ามิได้ผิดสัญญาในข้อสาระสำคัญ อาจเป็นข้อสัญญาที่ไม่เป็นธรรมตามพระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540 มาตรา 4 (3) หากเป็นสัญญาสำเร็จรูป</p>
+  </section>
+
+  <section class="section-block" id="s8">
+    <h2 class="section-heading">ข้อต่อสู้ของผู้ให้บริการ Payment Gateway กับร้านค้าพาณิชย์อิเล็กทรอนิกส์ <span class="en">Devil's Advocate</span></h2>
+<p>┌──────────────────────────────────────────────┬──────────────────────────────────────────────┐</p>
+<p>│ ข้อต่อสู้ฝั่งผู้ให้บริการ Payment Gateway │ ข้อโต้แย้งฝั่งร้านค้าพาณิชย์อิเล็กทรอนิกส์ │</p>
+<p>├──────────────────────────────────────────────┼──────────────────────────────────────────────┤</p>
+<p>│ 1. จำเป็นต้องกัก Rolling Reserve 10% │ 1. ต้องมีเพดานวงเงินประกันสูงสุด (Cap) และ │</p>
+<p>│ เนื่องจากร้านค้ามีความเสี่ยงสูงในการเกิด │ กำหนดระยะเวลาปลดคืนเงินอย่างชัดเจน ไม่ใช่ │</p>
+<p>│ Chargeback จากผู้ซื้อ │ การกักเงินไว้โดยไม่มีกำหนด │</p>
+<p>├──────────────────────────────────────────────┼──────────────────────────────────────────────┤</p>
+<p>│ 2. ไม่สามารถรับประกัน Uptime 100% ได้ │ 2. ยอมรับ Uptime 99.95% แต่หากระบบล่ม │</p>
+<p>│ เนื่องจากขึ้นอยู่กับโครงสร้าง Card Networks │ ต้องมี Service Credit ชดเชย และยกเว้น │</p>
+<p>│ และสัญญาณอินเทอร์เน็ต │ ความรับผิดเฉพาะกรณี Force Majeure จริงๆ │</p>
+<p>├──────────────────────────────────────────────┼──────────────────────────────────────────────┤</p>
+<p>│ 3. มีสิทธิระงับการ Settlement ได้ทันทีเมื่อ │ 3. การระงับการโอนเงินต้องทำเฉพาะรายการที่มี │</p>
+<p>│ สงสัยว่าเกิด Fraud Transaction │ เหตุสงสัยสมควร ไม่ใช่การกักบัญชี Settlement │</p>
+<p>│ │ ทั้งหมดของร้านค้า │</p>
+<p>└──────────────────────────────────────────────┴──────────────────────────────────────────────┘</p>
+<p>ตัวเลขในตารางข้างต้น (เช่น เงินสำรองร้อยละ 10 และ Uptime 99.95%) เป็นข้อเสนอเริ่มต้นในการเจรจา [ต้องยืนยันแหล่งที่มา] ทั้งนี้ การกักเงินหรือระงับการโอนตามข้อสัญญามิใช่การอายัด เพราะการอายัดเป็นมาตรการบังคับโดยอำนาจตามกฎหมายของเจ้าหน้าที่หรือศาล</p>
+  </section>
+
+  <section class="section-block" id="s9">
+    <h2 class="section-heading">ตัวอย่างสถานการณ์จำลอง <span class="en">Worked Example</span></h2>
+<h3 class="sub-heading">บริบท</h3>
+<p>แพลตฟอร์มอีคอมเมิร์ซรายหนึ่ง มียอดขายรวมเดือนละ 50 ล้านบาท เกิดคลื่นการโจรกรรมนำบัตรเครดิตฉ้อโกงมาทดลองซื้อสินค้า (Card-Testing &amp; Fraud Analysis) ผู้ให้บริการ Payment Gateway สั่งระงับการโอนเงิน Settlement ยอด 15 ล้านบาท พร้อมสั่งปรับเพิ่มอัตรา Rolling Reserve จาก 5% เป็น 20% โดยอ้างดุลพินิจในการบริหารความเสี่ยงของตน ทั้งที่ข้อสัญญามาตรฐานของผู้ให้บริการไม่มีข้อให้ปรับอัตราฝ่ายเดียว</p>
+<h3 class="sub-heading">การวิเคราะห์และการดำเนินกลยุทธ์ทางกฎหมาย</h3>
+<ol class="content-list"><li><strong>การตรวจสอบรายการ 3-D Secure:</strong> ตรวจสอบพบว่า รายการชำระเงินจำนวน 12 ล้านบาท จากยอด 15 ล้านบาท ผ่านการอนุมัติ 3-D Secure 2.0 (OTP) เรียบร้อยแล้ว หากสัญญารับเอากติกา Liability Shift ของเครือข่ายบัตรไว้ ภาระความเสี่ยงกรณี Fraud ของยอด 12 ล้านบาทจึงเป็นของธนาคารผู้ออกบัตร [ต้องยืนยันแหล่งที่มา] ผู้ให้บริการจึงไม่มีเหตุกักเงินจำนวนนี้เพื่อประกัน Chargeback ประเภทดังกล่าว ร้านค้ามีสิทธิเรียกร้องให้ปล่อยเงิน Settlement จำนวนดังกล่าวตามสัญญา ส่วนการระงับ Settlement เพราะสงสัยการฉ้อโกงซึ่งยังไม่มี Chargeback เกิดขึ้นนั้น ผู้ให้บริการต้องมีข้อสัญญารองรับและต้องใช้สิทธิโดยสุจริต</li><li><strong>การโต้แย้งการปรับเพิ่ม Rolling Reserve:</strong> ผู้ให้บริการไม่สามารถปรับเพิ่ม Rolling Reserve เป็น 20% ได้โดยลำพัง เนื่องจากข้อสัญญามาตรฐานของผู้ให้บริการไม่มีข้อให้ปรับอัตราฝ่ายเดียว (Unilateral Amendment) การเปลี่ยนข้อสัญญาต้องได้รับความตกลงของคู่สัญญา และหากสัญญามีข้อให้ปรับฝ่ายเดียวในสัญญาสำเร็จรูป ข้อนั้นมีผลบังคับได้เพียงเท่าที่เป็นธรรมและพอสมควรแก่กรณีตามพระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540 มาตรา 4 (5)</li><li><strong>ผลลัพธ์การเจรจา:</strong> ผู้ให้บริการยอมปลดล็อกเงิน Settlement จำนวน 12 ล้านบาททันที ส่วนยอด 3 ล้านบาทที่ไม่ได้ผ่าน 3-D Secure ให้เข้าสู่กระบวนการ Dispute Resolution ตามระยะเวลา 14 วันทำการตามที่สัญญากำหนด พร้อมคงอัตรา Rolling Reserve ไว้ที่ 5% ตามเดิม</li></ol>
+  </section>
+
+  <section class="section-block" id="s10">
+    <h2 class="section-heading">Checklist 10 จุดตรวจสัญญา Payment Gateway &amp; Merchant Acquiring Agreement</h2>
+<ul class="checklist"><li><span class="cb" aria-hidden="true"></span><span><strong>1. License Verification:</strong> ผู้ให้บริการมีสถานะที่ถูกต้องตามประเภทบริการ (ใบอนุญาต การขึ้นทะเบียน หรือการแจ้ง) ตามพระราชบัญญัติระบบการชำระเงิน พ.ศ. 2560 [ต้องยืนยันมาตรา] ครบถ้วน</span></li><li><span class="cb" aria-hidden="true"></span><span><strong>2. PCI-DSS Compliance:</strong> ระบุให้ผู้ให้บริการปฏิบัติตามมาตรฐาน PCI-DSS ซึ่งเป็นมาตรฐานเอกชนของอุตสาหกรรมบัตร พร้อมหลักฐานการรับรองและระดับที่ใช้กับผู้ให้บริการ [ต้องยืนยันแหล่งที่มา] และระบุความรับผิดชอบกรณี Data Breach ไว้ในสัญญา</span></li><li><span class="cb" aria-hidden="true"></span><span><strong>3. System Uptime SLA:</strong> กำหนด Uptime ไม่ต่ำกว่า 99.95% (ข้อเสนอเริ่มต้นในการเจรจา [ต้องยืนยันแหล่งที่มา]) พร้อมโครงสร้าง Service Credit ที่ชัดเจน</span></li><li><span class="cb" aria-hidden="true"></span><span><strong>4. Processing Latency:</strong> กำหนดระยะเวลาตอบสนอง API Authorization ไม่เกิน 2 วินาที (ข้อเสนอเริ่มต้นในการเจรจา [ต้องยืนยันแหล่งที่มา])</span></li><li><span class="cb" aria-hidden="true"></span><span><strong>5. 3-D Secure Liability Shift:</strong> มีข้อระบุชัดเจนว่าเมื่อรายการผ่าน 3DS ให้ Liability Shift สำหรับ Chargeback ประเภทฉ้อโกงหรือผู้ถือบัตรปฏิเสธว่าไม่ได้ทำรายการตกเป็นของผู้ออกบัตร ตามเงื่อนไขของกติกาเครือข่ายบัตรที่สัญญารับเอาไว้ [ต้องยืนยันแหล่งที่มา]</span></li><li><span class="cb" aria-hidden="true"></span><span><strong>6. Rolling Reserve Cap:</strong> กำหนดอัตรา Rolling Reserve ไม่เกิน 5-10% และกักไว้ไม่เกิน 90-180 วัน (ข้อเสนอเริ่มต้นในการเจรจา [ต้องยืนยันแหล่งที่มา]) พร้อมระบุลักษณะของเงินสำรองว่าเป็นหลักประกัน เบี้ยปรับ หรือมัดจำ</span></li><li><span class="cb" aria-hidden="true"></span><span><strong>7. Settlement Schedule:</strong> ระบุรอบการโอนเงิน (T+N) และ Cut-off Time ที่แน่นอน พร้อมดอกเบี้ยผิดนัด</span></li><li><span class="cb" aria-hidden="true"></span><span><strong>8. Chargeback Dispute Window:</strong> มีระยะเวลาให้ร้านค้ายื่นหลักฐานสู้คดี Chargeback ไม่น้อยกว่า 10 วันทำการ (ข้อเสนอเริ่มต้นในการเจรจา [ต้องยืนยันแหล่งที่มา])</span></li><li><span class="cb" aria-hidden="true"></span><span><strong>9. Fee Structure Transparency:</strong> ระบุค่าธรรมเนียม MDR และค่าบริการอื่นๆ ไว้ชัดเจน ไม่มีค่าธรรมเนียมแฝง</span></li><li><span class="cb" aria-hidden="true"></span><span><strong>10. Termination Rights:</strong> ร้านค้ามีสิทธิบอกเลิกสัญญาได้ทันทีโดยข้อสัญญา (ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 386) หากผู้ให้บริการถูกเพิกถอนหรือระงับสถานะหรือใบอนุญาต หรือระบบล่มร้ายแรง</span></li></ul>
+  </section>
+
+
+
+  <!-- FAQ -->
+  <section class="section-block" id="faq">
+    <h2 class="section-heading">คำถามที่พบบ่อย <span class="en">Frequently Asked Questions</span></h2>
+    <div class="faq-item">
+      <div class="faq-q">หากผู้ให้บริการ Payment Gateway ระบบล่มจนร้านค้าสูญเสียยอดขาย สามารถฟ้องเรียกค่าขาดประโยชน์ได้หรือไม่?</div>
+      <div class="faq-a">ร้านค้าเรียกค่าสินไหมทดแทนเพื่อความเสียหายตามปกติได้ตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 215 และมาตรา 222 และเรียกค่าเสียหายจากพฤติการณ์พิเศษ เช่น ยอดขายในวันแคมเปญ ได้เมื่อผู้ให้บริการคาดเห็นหรือควรคาดเห็นล่วงหน้า ซึ่งควรระบุไว้ในสัญญา และจำนวนที่เรียกอาจลดลงตามมาตรา 223 ในทางปฏิบัติผู้ให้บริการมักเขียนข้อสัญญาจำกัดความรับผิด (Limitation of Liability) ไว้ ข้อสัญญาที่ยกเว้นหรือจำกัดความรับผิดล่วงหน้าเป็นโมฆะในส่วนที่ยกเว้นความรับผิดเพื่อกลฉ้อฉลหรือความประมาทเลินเล่ออย่างร้ายแรงของผู้ให้บริการ (มาตรา 373) สำหรับส่วนที่ไม่เป็นโมฆะ ข้อสัญญานั้นมีผลบังคับได้เพียงเท่าที่เป็นธรรมและพอสมควรแก่กรณีตามพระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540 มาตรา 8 วรรคสอง การกำหนด SLA และ Service Credit ไว้ในสัญญาจึงเป็นแนวทางคุ้มครองร้านค้าที่ดีที่สุด</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">เงินที่ถูกกักไว้ใน Rolling Reserve สามารถยึดไปเลยได้หรือไม่?</div>
+      <div class="faq-a">ผู้ให้บริการไม่สามารถยึดไปได้โดยมิชอบ ลักษณะทางกฎหมายของ Rolling Reserve ต้องวินิจฉัยจากข้อสัญญาว่าเป็นหลักประกัน เบี้ยปรับ หรือมัดจำ ซึ่งมีผลต่างกันในเรื่องการริบและการลดจำนวน สัญญาจึงควรกำหนดให้ผู้ให้บริการคืนเงินสำรองที่เหลือเมื่อพ้นระยะกักที่ตกลงกัน (เช่น 180 วัน ซึ่งเป็นตัวเลขเริ่มต้นในการเจรจา [ต้องยืนยันแหล่งที่มา]) โดยหักได้เฉพาะหนี้ Chargeback ที่เกิดขึ้นจริงตามข้อสัญญา</div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <div class="ref-section" id="refs">
+    <h3>อ้างอิง — References</h3>
+    <ul>
+      <li><strong>พระราชบัญญัติระบบการชำระเงิน พ.ศ. 2560:</strong> [ต้องยืนยันมาตรา] (ประเภทบริการและสถานะของผู้ให้บริการที่ต้องมีใบอนุญาต ขึ้นทะเบียน หรือแจ้ง)</li>
+      <li><strong>ประกาศธนาคารแห่งประเทศไทย:</strong> ที่เกี่ยวข้องกับการประกอบธุรกิจระบบการชำระเงินภายใต้การกำกับ [ต้องยืนยันแหล่งที่มา] (เลขที่ วันที่ และชื่อประกาศต้องตรวจจากฉบับทางการ)</li>
+      <li><strong>ประมวลกฎหมายแพ่งและพาณิชย์:</strong> มาตรา 5 (การใช้สิทธิโดยสุจริต), มาตรา 7 และมาตรา 224 (ดอกเบี้ยผิดนัด), มาตรา 150 (โมฆะกรรม), มาตรา 172 (ผลของโมฆะกรรม), มาตรา 204 (การผิดนัด), มาตรา 215 (ค่าสินไหมทดแทนเมื่อลูกหนี้ไม่ชำระหนี้), มาตรา 222 และมาตรา 223 (ขอบเขตและการลดค่าสินไหมทดแทน), มาตรา 341 มาตรา 342 และมาตรา 344 (หักกลบลบหนี้), มาตรา 368 (การตีความสัญญา), มาตรา 373 (ความตกลงล่วงหน้าเว้นความรับผิด), มาตรา 377 ถึงมาตรา 379 และมาตรา 383 (มัดจำและเบี้ยปรับ), มาตรา 386 ถึงมาตรา 388 และมาตรา 391 (การเลิกสัญญา) รวมทั้งประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 421 (การใช้สิทธิที่มีแต่จะให้เกิดความเสียหายแก่ผู้อื่น)</li>
+      <li><strong>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562:</strong> มาตรา 28 และมาตรา 29 (การส่งหรือโอนข้อมูลไปต่างประเทศ), มาตรา 37 (หน้าที่ของผู้ควบคุมข้อมูล) และมาตรา 40 (หน้าที่ของผู้ประมวลผลข้อมูล)</li>
+      <li><strong>พระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540:</strong> มาตรา 3, มาตรา 4, มาตรา 8 และมาตรา 10</li>
+      <li><strong>พระราชบัญญัติป้องกันและปราบปรามการฟอกเงิน พ.ศ. 2542:</strong> [ต้องยืนยันมาตรา]</li>
+      <li>สำนักงานคณะกรรมการกฤษฎีกา — <a href="https://www.ocs.go.th/searchlaw-law" target="_blank" rel="noopener">ระบบสืบค้นกฎหมาย (OCS)</a></li>
+    </ul>
+  </div>
+
+
+  <!-- RELATED ARTICLES (drive-publish.py) -->
+  <div style="margin-top:36px;">
+    <h3 style="color:var(--navy);margin-bottom:16px;font-size:1rem;font-weight:700;">บทความที่เกี่ยวข้อง</h3>
+    <div class="related-articles">
+      <a class="related-card" href="/articles/pdpa-compliance-guide-thailand.html"><div class="rel-tag">PDPA</div>คู่มือ PDPA</a>
+      <a class="related-card" href="/articles/liquidated-damages-penalty-deposit-thailand.html"><div class="rel-tag">เบี้ยปรับ</div>เบี้ยปรับและการริบมัดจำ</a>
+      <a class="related-card" href="/articles/commercial-loan-default-interest-thailand.html"><div class="rel-tag">ดอกเบี้ยผิดนัด</div>ดอกเบี้ยผิดนัดในสัญญากู้เพื่อการพาณิชย์</a>
+      <a class="related-card" href="/articles/las-shield-index.html"><div class="rel-tag">LAS Shield</div>สารบัญชุด LAS Shield</a>
+    </div>
+  </div>
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <strong>ข้อสงวน (Disclaimer):</strong> บทความนี้จัดทำโดย Legal Advance Solution Co., Ltd. เพื่อเป็นข้อมูลทั่วไปด้านกฎหมายเท่านั้น ไม่ถือเป็นคำปรึกษากฎหมายเฉพาะกรณี และไม่ก่อให้เกิดความสัมพันธ์ทนาย-ลูกความ กฎหมายอาจมีการเปลี่ยนแปลง กรุณาปรึกษาทนายความที่มีใบอนุญาตก่อนดำเนินการใด ๆ ตามกฎหมาย | <em>LAS Legal Hub — ข้อมูลกฎหมายเพื่อธุรกิจ</em>
+  </div>
+
+</div><!-- end article-body -->
+<footer class="las-author-footer" style="text-align:center;padding:24px 16px;font-size:13px;color:#1B2A4A;">
+  <p class="las-author-credit">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D. — Legal Advance Solution Co., Ltd. (LAS)</p>
+</footer>
+</body>
+</html>

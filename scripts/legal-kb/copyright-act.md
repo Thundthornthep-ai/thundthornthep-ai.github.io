@@ -13,6 +13,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 9
 - มาตรา 10
 - มาตรา 12
+- มาตรา 14
 - มาตรา 15
 - มาตรา 17
 - มาตรา 18
