@@ -11,7 +11,7 @@
   "excluded": 21,
   "unlinked_items": 19,
   "legal_reviewed": 203,
-  "source_tree": "1b8ca6272160e8a2288131cc461bc4f7ff2ecfde"
+  "source_tree": "34809d995a63a03d0940222985a6a547ce7ffbef"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -3212,7 +3212,7 @@
    "review_reason": "legal-review-registered",
    "module": "M05",
    "level": "L3",
-   "series_label": "LAS Invest Deep Research · ตอนที่ 6"
+   "series_label": "LAS Invest Deep Research · ตอนที่ 3"
   },
   {
    "id": "articles/arbitration-dispute-resolution-clause-thailand",
@@ -3566,7 +3566,7 @@
    "review_reason": "legal-review-registered",
    "module": "M05",
    "level": "L2",
-   "series_label": "LAS Share Deep Research · ตอนที่ 12"
+   "series_label": "LAS Share Deep Research · ตอนที่ 8"
   },
   {
    "id": "articles/company-dissolution-liquidation-thailand",
@@ -4177,7 +4177,7 @@
    "review_reason": "legal-review-registered",
    "module": "M05",
    "level": "L3",
-   "series_label": "LAS Invest Deep Research · ตอนที่ 15"
+   "series_label": "LAS Invest Deep Research · ตอนที่ 4"
   },
   {
    "id": "articles/indemnity-clause-thailand",
@@ -4466,7 +4466,7 @@
    "review_reason": "legal-review-registered",
    "module": "M12",
    "level": "L3",
-   "series_label": "LAS Invest Deep Research · ตอนที่ 11"
+   "series_label": "LAS C&C Deep Research · ตอนที่ 12"
   },
   {
    "id": "articles/media-copyright-coproduction-agreement-thailand",
@@ -5440,8 +5440,8 @@
      "path": "articles/medical-aesthetic-service-contract-thailand.html",
      "title": "ดักจุดตายสัญญาให้บริการทางการแพทย์และความงามตามประกาศ สคบ. ใหม่ (Medical & Aesthetic Services Consumer Contracts)",
      "language": "th",
-     "sha256": "4272e98206cb996b6fbdb702abb08b6b823d6e6050f98caa685fc103f2a97594",
-     "text_sha256": "6ac44918af70f126f8171cbd027b8cba62c516ca21ed936d5613e6034abc9bbd",
+     "sha256": "03db0b386e8f15f649e99c74aa5ada3ded8e270d1f3526a27df6587f34b626f6",
+     "text_sha256": "4b0a59866498e9098703d8d64bc5db1b3e22f7fc34ea7102b9af426ee195005f",
      "published": "2026-10-03",
      "modified": "2026-10-03",
      "url": "https://thundthornthep-ai.github.io/articles/medical-aesthetic-service-contract-thailand.html",
@@ -5461,7 +5461,7 @@
    "review_reason": "legal-review-registered",
    "module": "M13",
    "level": "L3",
-   "series_label": "LAS Shield Deep Research · ตอนที่ 33"
+   "series_label": "LAS Shield Deep Research · ตอนที่ 22"
   },
   {
    "id": "articles/physician-medical-staff-contract-checklist-thailand",
