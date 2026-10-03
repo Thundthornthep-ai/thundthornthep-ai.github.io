@@ -35,3 +35,5 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 328
 - มาตรา 350
 - มาตรา 352
+- มาตรา 96
+- มาตรา 351

@@ -84,3 +84,4 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 83/6
 - มาตรา 91/3
 - มาตรา 90/5
+- มาตรา 3 ปัณรส
