@@ -11,7 +11,7 @@
   "excluded": 21,
   "unlinked_items": 19,
   "legal_reviewed": 207,
-  "source_tree": "4f466b572007884786bcfc76bd9bec8e6c0c0141"
+  "source_tree": "b4da98bdc108d6b5d35af26d20ae0fd122384bff"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -5434,14 +5434,14 @@
   {
    "id": "articles/medical-aesthetic-service-contract-thailand",
    "kind": "article",
-   "title": "ดักจุดตายสัญญาให้บริการทางการแพทย์และความงามตามประกาศ สคบ. ใหม่ (Medical & Aesthetic Services Consumer Contracts)",
+   "title": "ดักจุดตายสัญญาคอร์สเสริมความงามในคลินิกตามประกาศ สคบ. ใหม่ (Aesthetic Clinic Course Contracts)",
    "variants": [
     {
      "path": "articles/medical-aesthetic-service-contract-thailand.html",
-     "title": "ดักจุดตายสัญญาให้บริการทางการแพทย์และความงามตามประกาศ สคบ. ใหม่ (Medical & Aesthetic Services Consumer Contracts)",
+     "title": "ดักจุดตายสัญญาคอร์สเสริมความงามในคลินิกตามประกาศ สคบ. ใหม่ (Aesthetic Clinic Course Contracts)",
      "language": "th",
-     "sha256": "2ccae914a880e20c730527fa27bd4151e801a4968286b769c6a865e3febf7005",
-     "text_sha256": "c5ac0cb9b5a3a293552af857e44cbf44e8b7374a24c715be3a24dad378fb319c",
+     "sha256": "d068fe5c04bbe023e2905221660b1b6d85b71960d438e173dbea0bd2f8385d99",
+     "text_sha256": "350a97ffbcbab95a3f00e13014e0b3773da9b42c56c602292c9195dadbdb2532",
      "published": "2026-10-03",
      "modified": "2026-10-03",
      "url": "https://thundthornthep-ai.github.io/articles/medical-aesthetic-service-contract-thailand.html",
@@ -5472,8 +5472,8 @@
      "path": "articles/physician-medical-staff-contract-checklist-thailand.html",
      "title": "Checklist 10 จุดตรวจสัญญาจ้างแพทย์และบุคลากรวิชาชีพทางการแพทย์ในสถานพยาบาลเอกชน",
      "language": "th",
-     "sha256": "b7b1cc89cf98562441451ddf66e33e7e300224c160e49747532b641c8ca84cd7",
-     "text_sha256": "ecbaa6aca96bc1adac4ad326bc70f3ec96a692fb9e41c9349cb6e4bb4f5d23db",
+     "sha256": "4b0ff886e596cc987cba3b82d3a50232e3ed8fa26e369bbbd8cacec29583d146",
+     "text_sha256": "8ed5e8b41709c0faf77993d96a374176f13f929eeecbb8a088af8b4b690bc9d4",
      "published": "2026-10-03",
      "modified": "2026-10-03",
      "url": "https://thundthornthep-ai.github.io/articles/physician-medical-staff-contract-checklist-thailand.html",
@@ -5664,8 +5664,8 @@
      "path": "articles/telemedicine-services-agreement-template-thailand.html",
      "title": "พิมพ์เขียวและแม่แบบสัญญาบริการด้านการแพทย์ทางไกลและการปรึกษาสุขภาพดิจิทัล (Telemedicine & Digital Health Platform Master Services Agreement Template)",
      "language": "th",
-     "sha256": "6e31b1b3f9a28d6c77628c6db3b73c3028da7af5b204abf6c664068fbb90b185",
-     "text_sha256": "1c97312f67961fdf3c4fcac122a9bfd607b119fcb84754828459f6d42c148fa0",
+     "sha256": "79841342dee57e7fa5571ec653a2c41d629874bcb82d12cedebff14c31163a1e",
+     "text_sha256": "3e857bad9299b28b998fb5734ef7fc73ccd4b49b7bc97087cb4525aa9cad2151",
      "published": "2026-10-03",
      "modified": "2026-10-03",
      "url": "https://thundthornthep-ai.github.io/articles/telemedicine-services-agreement-template-thailand.html",
