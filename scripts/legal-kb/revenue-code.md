@@ -73,3 +73,6 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 124
 - มาตรา 85/14
 - มาตรา 91/21
+- มาตรา 37 ตรี
+- มาตรา 69 ตรี
+- มาตรา 111
