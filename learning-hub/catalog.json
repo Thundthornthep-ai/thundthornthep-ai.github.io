@@ -11,7 +11,7 @@
   "excluded": 21,
   "unlinked_items": 19,
   "legal_reviewed": 217,
-  "source_tree": "37cd10e2fdde908da4653769547680bef4a78b69"
+  "source_tree": "a925b24bca8064dc46bcf153e256618c9bf15c1d"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -1812,8 +1812,8 @@
      "path": "articles/las-share-07.html",
      "title": "การโอนหุ้นบริษัทจำกัด — ขั้นตอนและข้อจำกัดครบถ้วน",
      "language": "th",
-     "sha256": "2a33543f1474913a4879de6378f44b24087f9c445dfdcd36ac87a40869a420eb",
-     "text_sha256": "d4b3cb8515d7bf22694e71fea412dbbe890e2cb60c171ad4057675320765a3be",
+     "sha256": "ad89bce1619dab34b2e02aa488b27befac2ec13f34f23dd916d70b6ab21c1b89",
+     "text_sha256": "9409df2fa603a3734efa750b1a1b4fb5629928d2b4da8b1e0b6055cf113d0d8d",
      "published": "2026-04-03",
      "modified": "2026-10-03",
      "url": "https://thundthornthep-ai.github.io/articles/las-share-07.html",
