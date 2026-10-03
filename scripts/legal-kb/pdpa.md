@@ -48,3 +48,4 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 89
 - มาตรา 90
 - มาตรา 91
+- มาตรา 21

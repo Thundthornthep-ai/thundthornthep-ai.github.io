@@ -979,3 +979,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 1600
 - มาตรา 1601
 - มาตรา 1734
+- มาตรา 747
+- มาตรา 754
+- มาตรา 1044
+- มาตรา 1362
