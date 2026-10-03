@@ -3,15 +3,15 @@
  "generated": "2026-10-03",
  "generator": "scripts/knowledge-teaching/build-library-data.py (las-billing)",
  "scope": {
-  "tracked_html": 255,
-  "catalogue_variants": 234,
-  "learning_items": 184,
-  "articles": 166,
+  "tracked_html": 259,
+  "catalogue_variants": 238,
+  "learning_items": 188,
+  "articles": 170,
   "resources": 18,
   "excluded": 21,
   "unlinked_items": 19,
-  "legal_reviewed": 203,
-  "source_tree": "34809d995a63a03d0940222985a6a547ce7ffbef"
+  "legal_reviewed": 207,
+  "source_tree": "b6d69a706f3be62a97c21feddabcad5878df026d"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -5376,8 +5376,8 @@
      "path": "articles/debt-collection-asset-management-service-agreement-thailand.html",
      "title": "ดักจุดตายสัญญาให้บริการบริหารสินทรัพย์และติดตามทวงถามหนี้ (Debt Collection & Non-Performing Asset Servicing Agreement)",
      "language": "th",
-     "sha256": "b88e221784fde59fccf6e748a00c0d92c0d5225e499776433477c399daca204b",
-     "text_sha256": "c9e780036cc34bea1aedd3e2651aff2ab8fdb048985a8357327589e92a662467",
+     "sha256": "a958d1beb44eca93528c61505d9b0bd9fec2d80a771f7820a0d69ee354aa7d94",
+     "text_sha256": "ee9449febedced70c864585063b2b1b23a5c95eea0732824283f622d3bab1c2d",
      "published": "2026-10-03",
      "modified": "2026-10-03",
      "url": "https://thundthornthep-ai.github.io/articles/debt-collection-asset-management-service-agreement-thailand.html",
@@ -5440,8 +5440,8 @@
      "path": "articles/medical-aesthetic-service-contract-thailand.html",
      "title": "ดักจุดตายสัญญาให้บริการทางการแพทย์และความงามตามประกาศ สคบ. ใหม่ (Medical & Aesthetic Services Consumer Contracts)",
      "language": "th",
-     "sha256": "03db0b386e8f15f649e99c74aa5ada3ded8e270d1f3526a27df6587f34b626f6",
-     "text_sha256": "4b0a59866498e9098703d8d64bc5db1b3e22f7fc34ea7102b9af426ee195005f",
+     "sha256": "2ccae914a880e20c730527fa27bd4151e801a4968286b769c6a865e3febf7005",
+     "text_sha256": "c5ac0cb9b5a3a293552af857e44cbf44e8b7374a24c715be3a24dad378fb319c",
      "published": "2026-10-03",
      "modified": "2026-10-03",
      "url": "https://thundthornthep-ai.github.io/articles/medical-aesthetic-service-contract-thailand.html",
@@ -5472,8 +5472,8 @@
      "path": "articles/physician-medical-staff-contract-checklist-thailand.html",
      "title": "Checklist 10 จุดตรวจสัญญาจ้างแพทย์และบุคลากรวิชาชีพทางการแพทย์ในสถานพยาบาลเอกชน",
      "language": "th",
-     "sha256": "55386655fd088f80cea823d0394a5e163900ba165e518088035734ecdc15f420",
-     "text_sha256": "514f34f95b76d4304e8e95450cbdf5b07a05156935693632659302447c26a659",
+     "sha256": "b7b1cc89cf98562441451ddf66e33e7e300224c160e49747532b641c8ca84cd7",
+     "text_sha256": "ecbaa6aca96bc1adac4ad326bc70f3ec96a692fb9e41c9349cb6e4bb4f5d23db",
      "published": "2026-10-03",
      "modified": "2026-10-03",
      "url": "https://thundthornthep-ai.github.io/articles/physician-medical-staff-contract-checklist-thailand.html",
@@ -5504,8 +5504,8 @@
      "path": "articles/private-fund-management-agreement-thailand.html",
      "title": "ดักจุดตายสัญญาบริหารจัดการกองทุนส่วนบุคคลและสัญญาจัดการการลงทุน (Private Fund Management & Discretionary Investment Agreement)",
      "language": "th",
-     "sha256": "d6eef415166719f317608b09f538cc7229896655465bbfc8dc94054cb9b887b8",
-     "text_sha256": "134725f427eaeeb460fa61cfa0e2913baffcfd4caf8b93e8137138fac9f1b3ba",
+     "sha256": "27f5d83d1a87eae26755275f018abbdbdbb343a2c3c7999242f9162edd5f5e58",
+     "text_sha256": "2f6a97fcd570eaf8e62286d9a16173bbf1e7193ebc5f55f2da652d6e060bac87",
      "published": "2026-10-03",
      "modified": "2026-10-03",
      "url": "https://thundthornthep-ai.github.io/articles/private-fund-management-agreement-thailand.html",
@@ -5558,6 +5558,134 @@
    "module": "M13",
    "level": "L3",
    "series_label": "LAS Up Deep Research · ตอนที่ 9"
+  },
+  {
+   "id": "articles/convertible-debentures-safe-notes-thailand",
+   "kind": "article",
+   "title": "หุ้นกู้แปลงสภาพ (Convertible Debentures) และ SAFE Notes ในสตาร์ทอัพไทย",
+   "variants": [
+    {
+     "path": "articles/convertible-debentures-safe-notes-thailand.html",
+     "title": "หุ้นกู้แปลงสภาพ (Convertible Debentures) และ SAFE Notes ในสตาร์ทอัพไทย",
+     "language": "th",
+     "sha256": "60b9bf6fce8868373c030c20bc6c5985f3bedf11a93f337b1fb73b7c74838027",
+     "text_sha256": "33df9e0c31b338b7cccb9ca96bbe92ef17d148b0691d52c4d6a6daba6b7c39f7",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/convertible-debentures-safe-notes-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Up Deep Research · ตอนที่ 2"
+  },
+  {
+   "id": "articles/debt-to-equity-swap-agreement-thailand",
+   "kind": "article",
+   "title": "สัญญาแปลงหนี้เป็นทุน (Debt-to-Equity Swap)",
+   "variants": [
+    {
+     "path": "articles/debt-to-equity-swap-agreement-thailand.html",
+     "title": "สัญญาแปลงหนี้เป็นทุน (Debt-to-Equity Swap)",
+     "language": "th",
+     "sha256": "ffd75f08fd82cd099f149a55c5245f9391109a97c081f41377cf5c8a6812050a",
+     "text_sha256": "d55fb9f88ceaa2fe56186252a46f113df2164fb2491f9f3a7fd063d6ba8a8910",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/debt-to-equity-swap-agreement-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Up Deep Research · ตอนที่ 1"
+  },
+  {
+   "id": "articles/esop-employee-share-option-agreement-thailand",
+   "kind": "article",
+   "title": "พิมพ์เขียวสัญญาจัดสรรสิทธิการซื้อหุ้นของพนักงาน (Employee Stock Ownership Plan: ESOP & Stock Option Agreement)",
+   "variants": [
+    {
+     "path": "articles/esop-employee-share-option-agreement-thailand.html",
+     "title": "พิมพ์เขียวสัญญาจัดสรรสิทธิการซื้อหุ้นของพนักงาน (Employee Stock Ownership Plan: ESOP & Stock Option Agreement)",
+     "language": "th",
+     "sha256": "15a499d321158fe6e9bc943b2f76dfe01d80c812a4c5fafc24ae8d5e47d12065",
+     "text_sha256": "1a87ad76d882508b2a03e47c725e81b85a7cf31bf3c97072c0a3f0aa958837e2",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/esop-employee-share-option-agreement-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Up Deep Research · ตอนที่ 3"
+  },
+  {
+   "id": "articles/telemedicine-services-agreement-template-thailand",
+   "kind": "article",
+   "title": "พิมพ์เขียวและแม่แบบสัญญาบริการด้านการแพทย์ทางไกลและการปรึกษาสุขภาพดิจิทัล (Telemedicine & Digital Health Platform Master Services Agreement Template)",
+   "variants": [
+    {
+     "path": "articles/telemedicine-services-agreement-template-thailand.html",
+     "title": "พิมพ์เขียวและแม่แบบสัญญาบริการด้านการแพทย์ทางไกลและการปรึกษาสุขภาพดิจิทัล (Telemedicine & Digital Health Platform Master Services Agreement Template)",
+     "language": "th",
+     "sha256": "d6c730bb2d777e7f731e46c25567e8e5986b0b55bbc4cea54f4e664e38feef48",
+     "text_sha256": "4caa4609ecceaf73a1b72f28ff1316b5550898ee321ee80fb1483c1365ecdf61",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/telemedicine-services-agreement-template-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Up Deep Research · ตอนที่ 10"
   },
   {
    "id": "blog/bkk-council/311-decision-report-v7",
