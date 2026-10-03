@@ -25,3 +25,4 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 108
 - มาตรา 109
 - มาตรา 110
+- มาตรา 6

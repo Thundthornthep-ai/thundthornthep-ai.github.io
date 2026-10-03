@@ -23,3 +23,4 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 62
 - มาตรา 65 สัตต
 - มาตรา 65 ทศ
+- มาตรา 65 ฉ

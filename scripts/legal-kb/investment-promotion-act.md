@@ -25,3 +25,10 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 55
 - มาตรา 55/1
 - มาตรา 56
+- มาตรา 30/1
+- มาตรา 31/2
+- มาตรา 32/1
+- มาตรา 43
+- มาตรา 44
+- มาตรา 45
+- มาตรา 46

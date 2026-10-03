@@ -61,5 +61,6 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 62
 - มาตรา 63
 - มาตรา 65
+- มาตรา 118/1
 
 Index additions checked against the OCS consolidated text (11 December 2568 print), physical pages 1, 6–10, 14–16. See docs/legal-reviews/shield05-2026-09-28.md. Section existence does not certify explanatory claims.

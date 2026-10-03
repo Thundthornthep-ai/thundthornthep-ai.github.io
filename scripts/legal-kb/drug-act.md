@@ -10,3 +10,6 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
 - มาตรา 21
 - มาตรา 39
+- มาตรา 88
+- มาตรา 88 ทวิ
+- มาตรา 124
