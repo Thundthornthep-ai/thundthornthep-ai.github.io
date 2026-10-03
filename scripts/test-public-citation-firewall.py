@@ -334,6 +334,11 @@ class RegistryAndGateTests(unittest.TestCase):
             self.assertIsNone(firewall.resolve_key("building", "32 ทวิ", registry))
             self.assertIsNone(firewall.resolve_key("revenue", "66 ทวิ", registry))
 
+    def test_revenue_code_inserted_sections_stay_whole(self) -> None:
+        self.assertEqual(firewall.extract_citations("ประมวลรัษฎากร มาตรา 91/10"), [("revenue", "91/10")])
+        self.assertEqual(firewall.extract_citations("ประมวลรัษฎากร มาตรา 85/14"), [("revenue", "85/14")])
+        self.assertEqual(firewall.extract_citations("FBA Sections 36/37"), [("fba", "36"), ("fba", "37")])
+
     def test_phrase_before_matches_a_full_scan(self) -> None:
         text = ("ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 1 " * 60) + ("ก" * 700) + " มาตรา 2 ข้อความ " + ("ข" * 30)
         last_end = 0

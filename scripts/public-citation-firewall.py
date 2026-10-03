@@ -309,6 +309,10 @@ def expand_section_token(token: str, statute: str | None = None) -> list[str]:
         return [token]
     if token.startswith("89/") and statute == "securities":
         return [token]
+    # The Revenue Code numbers its inserted sections a/b throughout (มาตรา 85/14, 91/10, 91/21): bound to the Code, an
+    # a/b token is one section, never a list of two.
+    if statute == "revenue":
+        return [token]
     parts = token.split("/")
     if len(parts) >= 2 and all(part.isdigit() and int(part) >= 10 for part in parts):
         return parts
