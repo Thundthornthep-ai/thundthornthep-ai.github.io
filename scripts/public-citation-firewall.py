@@ -309,6 +309,10 @@ def expand_section_token(token: str, statute: str | None = None) -> list[str]:
         return [token]
     if token.startswith("89/") and statute == "securities":
         return [token]
+    # The Revenue Code numbers its inserted sections a/b throughout (มาตรา 85/14, 91/10, 91/21): bound to the Code, an
+    # a/b token is one section, never a list of two.
+    if statute == "revenue":
+        return [token]
     parts = token.split("/")
     if len(parts) >= 2 and all(part.isdigit() and int(part) >= 10 for part in parts):
         return parts
@@ -571,10 +575,10 @@ def load_registry(path: Path) -> dict[str, set[str]]:
 
 
 # Statutes whose registry was compiled at the level of the base section number, with no consolidated text in the repo
-# to check inserted sections against (the Revenue Code: rd.go.th, master plan item 9 lists its text as missing). For
-# these a suffixed citation ("มาตรา 65 ทวิ") resolves on its base number, as every citation did before suffixes were
-# kept. Remove a statute from this set once its text is in laws/ and its suffixed sections are registered.
-BASE_NUMBER_STATUTES = {"revenue"}
+# to check inserted sections against. For these a suffixed citation ("มาตรา 65 ทวิ") resolves on its base number, as
+# every citation did before suffixes were kept. Empty since the Revenue Code text arrived (laws/revenue-code-2569.pdf,
+# 3 October 2026); add a statute only while its text is missing, and remove it once its suffixed sections are registered.
+BASE_NUMBER_STATUTES: set[str] = set()
 
 
 def section_base(section: str) -> str:

@@ -9,6 +9,7 @@ from __future__ import annotations
 import importlib.util
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 SPEC = importlib.util.spec_from_file_location(
@@ -324,12 +325,19 @@ class RegistryAndGateTests(unittest.TestCase):
             cites = firewall.extract_citations("พระราชบัญญัติควบคุมอาคาร พ.ศ. 2522 มาตรา 32 ตรี")
             self.assertEqual(firewall.missing_citations(cites, registry), ["building:32 ตรี"])
 
-    def test_revenue_code_suffixes_resolve_on_the_base_number(self) -> None:
+    def test_base_number_statutes_resolve_suffixes_on_the_base_number(self) -> None:
         registry = {"revenue": {"65", "35 ตรี"}, "building": {"32"}}
-        self.assertEqual(firewall.resolve_key("revenue", "65 ทวิ", registry), "revenue:65 ทวิ")
-        self.assertEqual(firewall.resolve_key("revenue", "35", registry), "revenue:35")
-        self.assertIsNone(firewall.resolve_key("building", "32 ทวิ", registry))
-        self.assertIsNone(firewall.resolve_key("revenue", "66 ทวิ", registry))
+        self.assertIsNone(firewall.resolve_key("revenue", "65 ทวิ", registry))  # the Revenue Code is exact now
+        with mock.patch.object(firewall, "BASE_NUMBER_STATUTES", {"revenue"}):
+            self.assertEqual(firewall.resolve_key("revenue", "65 ทวิ", registry), "revenue:65 ทวิ")
+            self.assertEqual(firewall.resolve_key("revenue", "35", registry), "revenue:35")
+            self.assertIsNone(firewall.resolve_key("building", "32 ทวิ", registry))
+            self.assertIsNone(firewall.resolve_key("revenue", "66 ทวิ", registry))
+
+    def test_revenue_code_inserted_sections_stay_whole(self) -> None:
+        self.assertEqual(firewall.extract_citations("ประมวลรัษฎากร มาตรา 91/10"), [("revenue", "91/10")])
+        self.assertEqual(firewall.extract_citations("ประมวลรัษฎากร มาตรา 85/14"), [("revenue", "85/14")])
+        self.assertEqual(firewall.extract_citations("FBA Sections 36/37"), [("fba", "36"), ("fba", "37")])
 
     def test_phrase_before_matches_a_full_scan(self) -> None:
         text = ("ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 1 " * 60) + ("ก" * 700) + " มาตรา 2 ข้อความ " + ("ข" * 30)
