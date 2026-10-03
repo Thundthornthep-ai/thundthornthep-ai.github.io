@@ -8,9 +8,12 @@ Official source: https://www.ocs.go.th/searchlaw-law
 
 Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
+- มาตรา 4
 - มาตรา 32
 - มาตรา 33
 - มาตรา 34
+- มาตรา 35
+- มาตรา 37
 - มาตรา 56
 - มาตรา 63
 - มาตรา 65
@@ -25,11 +28,20 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 89/15
 - มาตรา 89/18
 - มาตรา 89/23
+- มาตรา 133
+- มาตรา 134
+- มาตรา 135
+- มาตรา 136
+- มาตรา 137
+- มาตรา 138
+- มาตรา 139
 - มาตรา 239
 - มาตรา 241
 - มาตรา 242
 - มาตรา 247
 - มาตรา 268
+- มาตรา 282
+- มาตรา 286 ทวิ
 - มาตรา 296
 - มาตรา 296/2
 - มาตรา 317/1
