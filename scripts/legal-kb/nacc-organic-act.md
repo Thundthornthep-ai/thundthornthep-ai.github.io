@@ -29,3 +29,4 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 132/2
 - มาตรา 132/3
 - มาตรา 133
+- มาตรา 125
