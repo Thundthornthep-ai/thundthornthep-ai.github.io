@@ -251,6 +251,31 @@ class RegistryAndGateTests(unittest.TestCase):
         )
         self.assertEqual(firewall.extract_citations("พระราชบัญญัติประกันสังคม พ.ศ. 2533 มาตรา 67"), [("socialsecurity", "67")])
 
+    def test_item9_act_titles_bind(self) -> None:
+        self.assertEqual(firewall.extract_citations("พระราชบัญญัติศุลกากร พ.ศ. 2560 มาตรา 52"), [("customs", "52")])
+        self.assertEqual(
+            firewall.extract_citations("พระราชบัญญัติการรักษาความมั่นคงปลอดภัยไซเบอร์ พ.ศ. 2562 มาตรา 3"), [("cyber", "3")]
+        )
+        self.assertEqual(
+            firewall.extract_citations("พระราชกำหนดว่าด้วยการประชุมผ่านสื่ออิเล็กทรอนิกส์ พ.ศ. 2563 มาตรา 9"),
+            [("emeeting", "9")],
+        )
+        self.assertEqual(firewall.extract_citations("พระราชบัญญัติสถานพยาบาล พ.ศ. 2541 มาตรา 16"), [("healthfacility", "16")])
+        self.assertEqual(
+            firewall.extract_citations(
+                "พระราชบัญญัติกำหนดความผิดเกี่ยวกับห้างหุ้นส่วนจดทะเบียน ห้างหุ้นส่วนจำกัด บริษัทจำกัด สมาคม และมูลนิธิ"
+                " พ.ศ. 2499 มาตรา 41"
+            ),
+            [("partnershipoffences", "41")],
+        )
+
+    def test_item9_subject_phrase_without_act_title_does_not_bind(self) -> None:
+        cites = firewall.extract_citations(
+            "ส่วนการรับขนของทางทะเลต้องใช้กฎหมายว่าด้วยการรับขนของทางทะเลตามมาตรา 609 ของประมวลกฎหมายแพ่งและพาณิชย์"
+        )
+        self.assertNotIn(("seacarriage", "609"), cites)
+        self.assertNotIn(("drug", "5"), firewall.extract_citations("พระราชบัญญัติยาเสพติดให้โทษ มาตรา 5"))
+
     def test_social_security_word_alone_is_not_the_act(self) -> None:
         cites = firewall.extract_citations("พ.ร.บ.คุ้มครองแรงงาน เงินประกันสังคม มาตรา 118")
         self.assertNotIn(("socialsecurity", "118"), cites)
