@@ -3,15 +3,15 @@
  "generated": "2026-10-03",
  "generator": "scripts/knowledge-teaching/build-library-data.py (las-billing)",
  "scope": {
-  "tracked_html": 263,
-  "catalogue_variants": 242,
-  "learning_items": 192,
-  "articles": 174,
+  "tracked_html": 269,
+  "catalogue_variants": 248,
+  "learning_items": 198,
+  "articles": 180,
   "resources": 18,
   "excluded": 21,
   "unlinked_items": 19,
-  "legal_reviewed": 211,
-  "source_tree": "f502f777dc008843a74c5963254eab3b08b12a5e"
+  "legal_reviewed": 217,
+  "source_tree": "fa94f9a0a01d56a29e6914e08ccc6b95d2b5c758"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -5728,8 +5728,8 @@
      "path": "articles/employee-transport-fleet-service-agreement-checklist-thailand.html",
      "title": "Checklist 10 จุดตรวจสัญญาจ้างเหมาบริการขนส่งพนักงานและยานพาหนะพาณิชย์ (Corporate Employee Transportation & Fleet Services Agreement)",
      "language": "th",
-     "sha256": "0f6aad5c8618dd1c58d376b0c748a0e128580c08fa48f79ee59413a44c325b7b",
-     "text_sha256": "3a74999dc4ca7523c5c329947f0863f81af14c3b5ba4bccc88622b64cc37003d",
+     "sha256": "5fb90f1ad0d1517e1c1db05c8fc72d62af600e01699b381f4b45a130133c0457",
+     "text_sha256": "f1b28f027dbc975589cebfdde65851978329df713ada8eb3565e9b4c57240f36",
      "published": "2026-10-03",
      "modified": "2026-10-03",
      "url": "https://thundthornthep-ai.github.io/articles/employee-transport-fleet-service-agreement-checklist-thailand.html",
@@ -5814,6 +5814,198 @@
    "module": "M13",
    "level": "L2",
    "series_label": "LAS C&C Deep Research · ตอนที่ 28"
+  },
+  {
+   "id": "articles/air-cargo-acmi-charter-agreement-template-thailand",
+   "kind": "article",
+   "title": "พิมพ์เขียวและแม่แบบสัญญาบริการเช่าเหมาลำและขนส่งสินค้าทางอากาศ (Air Cargo Charter & Aircraft Wet Lease / ACMI Services Agreement Template)",
+   "variants": [
+    {
+     "path": "articles/air-cargo-acmi-charter-agreement-template-thailand.html",
+     "title": "พิมพ์เขียวและแม่แบบสัญญาบริการเช่าเหมาลำและขนส่งสินค้าทางอากาศ (Air Cargo Charter & Aircraft Wet Lease / ACMI Services Agreement Template)",
+     "language": "th",
+     "sha256": "e932306218d0e3dc7e2986396e1abe95d0eff1a1ad5b8fa0b1024082703ad4ab",
+     "text_sha256": "d4f41a733b933ff71ee0de414a39b59c5b3a82f4c407b32cdf8c1f550feb1089",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/air-cargo-acmi-charter-agreement-template-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Up Deep Research · ตอนที่ 12"
+  },
+  {
+   "id": "articles/bonded-warehouse-free-zone-agreement-thailand",
+   "kind": "article",
+   "title": "ดักจุดตายสัญญาให้บริการคลังสินค้าทัณฑ์บนและศูนย์กระจายสินค้าเขตปลอดอากร (Bonded Warehouse & Free Zone Logistics Agreement)",
+   "variants": [
+    {
+     "path": "articles/bonded-warehouse-free-zone-agreement-thailand.html",
+     "title": "ดักจุดตายสัญญาให้บริการคลังสินค้าทัณฑ์บนและศูนย์กระจายสินค้าเขตปลอดอากร (Bonded Warehouse & Free Zone Logistics Agreement)",
+     "language": "th",
+     "sha256": "d4fc82da3fcc9a92b371cbfdd4c13bc7c9aed3900600104c957470cb6a1641cb",
+     "text_sha256": "e261ea2c4850143282df9dbb7a1079be8484258cb6bfefd46fb799394aa4be29",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/bonded-warehouse-free-zone-agreement-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Shield Deep Research · ตอนที่ 27"
+  },
+  {
+   "id": "articles/hotel-management-agreement-blueprint-thailand",
+   "kind": "article",
+   "title": "พิมพ์เขียวสัญญาบริหารจัดการโรงแรม (Hotel Management Agreement: HMA)",
+   "variants": [
+    {
+     "path": "articles/hotel-management-agreement-blueprint-thailand.html",
+     "title": "พิมพ์เขียวสัญญาบริหารจัดการโรงแรม (Hotel Management Agreement: HMA)",
+     "language": "th",
+     "sha256": "10f4a9c512927beae89a360f94b4da5592987ad2014bf8f1d5970897a2fdd386",
+     "text_sha256": "a0dfe8f3208043a757790e93868b2176f1537c756dfc3c592201e589cc6d557e",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/hotel-management-agreement-blueprint-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Shield Deep Research · ตอนที่ 21"
+  },
+  {
+   "id": "articles/logistics-3pl-warehouse-agreement-thailand",
+   "kind": "article",
+   "title": "พิมพ์เขียวสัญญาบริการโลจิสติกส์และคลังสินค้า (3PL Logistics & Warehousing Agreement)",
+   "variants": [
+    {
+     "path": "articles/logistics-3pl-warehouse-agreement-thailand.html",
+     "title": "พิมพ์เขียวสัญญาบริการโลจิสติกส์และคลังสินค้า (3PL Logistics & Warehousing Agreement)",
+     "language": "th",
+     "sha256": "7738f125248c0fead062722a6f04e178f853d6b9d7111ce12b9edc331b97bc83",
+     "text_sha256": "e182cdecd20f4940b9571b0b6642e309ed472056e9d5d22fa587f2a9cb858460",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/logistics-3pl-warehouse-agreement-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Shield Deep Research · ตอนที่ 23"
+  },
+  {
+   "id": "articles/port-terminal-bulk-cargo-handling-agreement-template-thailand",
+   "kind": "article",
+   "title": "พิมพ์เขียวและแม่แบบสัญญาบริการบริหารจัดการท่าเทียบเรือและการขนถ่ายสินค้าเทกอง (Port Operations & Bulk Terminal Cargo Handling Services Agreement Template)",
+   "variants": [
+    {
+     "path": "articles/port-terminal-bulk-cargo-handling-agreement-template-thailand.html",
+     "title": "พิมพ์เขียวและแม่แบบสัญญาบริการบริหารจัดการท่าเทียบเรือและการขนถ่ายสินค้าเทกอง (Port Operations & Bulk Terminal Cargo Handling Services Agreement Template)",
+     "language": "th",
+     "sha256": "be9ca62980a16a3a1b9a507cd827bca436e44d45d0e9f32e5dfed209337859e9",
+     "text_sha256": "14d654ac041371b2d60916e4b09cf592dc43fb48c37e973f9535d5d39ec24ec6",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/port-terminal-bulk-cargo-handling-agreement-template-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Up Deep Research · ตอนที่ 13"
+  },
+  {
+   "id": "articles/renewable-energy-om-agreement-template-thailand",
+   "kind": "article",
+   "title": "พิมพ์เขียวและแม่แบบสัญญาบริหารจัดการและเดินเครื่องโรงไฟฟ้าพลังงานหมุนเวียน (Operations & Maintenance Agreement for Solar & Wind Power Plants - O&M)",
+   "variants": [
+    {
+     "path": "articles/renewable-energy-om-agreement-template-thailand.html",
+     "title": "พิมพ์เขียวและแม่แบบสัญญาบริหารจัดการและเดินเครื่องโรงไฟฟ้าพลังงานหมุนเวียน (Operations & Maintenance Agreement for Solar & Wind Power Plants - O&M)",
+     "language": "th",
+     "sha256": "ed37469c8fb0440382925137436fe8e1004ff5f6f12880f9ba3e5d8166ea342b",
+     "text_sha256": "862900672d007bc2d4773a7b11f0d49e76c9e111ba3b3ca42fb1bc77cc48e61b",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/renewable-energy-om-agreement-template-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Up Deep Research · ตอนที่ 14"
   },
   {
    "id": "blog/bkk-council/311-decision-report-v7",
