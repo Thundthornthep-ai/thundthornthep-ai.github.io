@@ -173,7 +173,16 @@ STATUTE_ALIASES: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("securities", ("หลักทรัพย์และตลาดหลักทรัพย์", "securities and exchange act")),
     ("computercrime", ("กระทำความผิดเกี่ยวกับคอมพิวเตอร์", "computer crime act", "พ.ร.บ.คอมพิวเตอร์")),
     ("etransactions", ("ธุรกรรมทางอิเล็กทรอนิกส์", "electronic transactions act")),
-    ("civilprocedure", ("วิธีพิจารณาความแพ่ง", "civil procedure code")),
+    ("civilprocedure", ("วิธีพิจารณาความแพ่ง", "ป.วิ.พ.", "civil procedure code")),
+    # Owner-supplied OCS consolidated texts (3 October 2026). The Criminal Procedure Code is matched by its full
+    # prefixed title or ป.วิ.อ., so "ประมวลกฎหมายอาญา" keeps binding the Criminal Code; the Labour Relations Act only
+    # with its พระราชบัญญัติ / พ.ร.บ. prefix, so "คุ้มครองแรงงาน" keeps binding the Labour Protection Act.
+    ("criminalprocedure", ("ประมวลกฎหมายวิธีพิจารณาความอาญา", "ป.วิ.อ.", "criminal procedure code")),
+    ("lawyers", ("พระราชบัญญัติทนายความ", "พ.ร.บ.ทนายความ", "lawyers act")),
+    ("cosmetics", ("พระราชบัญญัติเครื่องสำอาง", "พ.ร.บ.เครื่องสำอาง", "cosmetics act")),
+    ("directsales", ("พระราชบัญญัติขายตรงและตลาดแบบตรง", "พ.ร.บ.ขายตรงและตลาดแบบตรง", "พ.ร.บ.ขายตรง",
+                     "direct sales and direct marketing act")),
+    ("labourrelations", ("พระราชบัญญัติแรงงานสัมพันธ์", "พ.ร.บ.แรงงานสัมพันธ์", "labour relations act")),
     ("mediation", ("การไกล่เกลี่ยข้อพิพาท", "dispute mediation act")),
     # Master plan item 9 (3 October 2026): Acts verified against the Office of the Council of State database. Each
     # alias carries the Act's own title with its พระราชบัญญัติ / พ.ร.บ. prefix, so a phrase that only describes the

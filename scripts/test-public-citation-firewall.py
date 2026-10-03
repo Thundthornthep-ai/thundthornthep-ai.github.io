@@ -252,6 +252,20 @@ class RegistryAndGateTests(unittest.TestCase):
         )
         self.assertEqual(firewall.extract_citations("พระราชบัญญัติประกันสังคม พ.ศ. 2533 มาตรา 67"), [("socialsecurity", "67")])
 
+    def test_owner_supplied_act_titles_bind(self) -> None:
+        self.assertEqual(firewall.extract_citations("พระราชบัญญัติทนายความ พ.ศ. 2528 มาตรา 33"), [("lawyers", "33")])
+        self.assertEqual(firewall.extract_citations("พระราชบัญญัติเครื่องสำอาง พ.ศ. 2558 มาตรา 41"), [("cosmetics", "41")])
+        self.assertEqual(
+            firewall.extract_citations("พระราชบัญญัติขายตรงและตลาดแบบตรง พ.ศ. 2545 มาตรา 33"), [("directsales", "33")]
+        )
+        self.assertEqual(firewall.extract_citations("พระราชบัญญัติแรงงานสัมพันธ์ พ.ศ. 2518 มาตรา 13"), [("labourrelations", "13")])
+        self.assertEqual(firewall.extract_citations("ประมวลกฎหมายวิธีพิจารณาความอาญา มาตรา 126"), [("criminalprocedure", "126")])
+        self.assertEqual(firewall.extract_citations("ป.วิ.พ. มาตรา 173"), [("civilprocedure", "173")])
+
+    def test_owner_supplied_aliases_do_not_steal_neighbours(self) -> None:
+        self.assertEqual(firewall.extract_citations("ประมวลกฎหมายอาญา มาตรา 352"), [("criminal", "352")])
+        self.assertEqual(firewall.extract_citations("พระราชบัญญัติคุ้มครองแรงงาน พ.ศ. 2541 มาตรา 118"), [("lpa", "118")])
+
     def test_item9_act_titles_bind(self) -> None:
         self.assertEqual(firewall.extract_citations("พระราชบัญญัติศุลกากร พ.ศ. 2560 มาตรา 52"), [("customs", "52")])
         self.assertEqual(

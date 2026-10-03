@@ -9,3 +9,8 @@ Official source: https://www.ocs.go.th/searchlaw-law
 Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
 - มาตรา 32/1
+- มาตรา 32/2
+- มาตรา 32/3
+- มาตรา 32/4
+- มาตรา 43/1
+- มาตรา 43
