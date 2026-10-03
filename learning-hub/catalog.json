@@ -3,15 +3,15 @@
  "generated": "2026-10-03",
  "generator": "scripts/knowledge-teaching/build-library-data.py (las-billing)",
  "scope": {
-  "tracked_html": 247,
-  "catalogue_variants": 226,
-  "learning_items": 176,
-  "articles": 158,
+  "tracked_html": 255,
+  "catalogue_variants": 234,
+  "learning_items": 184,
+  "articles": 166,
   "resources": 18,
   "excluded": 21,
   "unlinked_items": 19,
-  "legal_reviewed": 195,
-  "source_tree": "e05fc842cd0b236c319e325f924a760e3b082459"
+  "legal_reviewed": 203,
+  "source_tree": "1b8ca6272160e8a2288131cc461bc4f7ff2ecfde"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -5302,6 +5302,262 @@
    "module": "M13",
    "level": "L2",
    "series_label": "LAS C&C Deep Research · ตอนที่ 23"
+  },
+  {
+   "id": "articles/agency-distribution-agreement-checklist-thailand",
+   "kind": "article",
+   "title": "Checklist 10 จุดตรวจสัญญาแต่งตั้งตัวแทนและผู้จัดจำหน่าย (Agency vs Distribution Agreement)",
+   "variants": [
+    {
+     "path": "articles/agency-distribution-agreement-checklist-thailand.html",
+     "title": "Checklist 10 จุดตรวจสัญญาแต่งตั้งตัวแทนและผู้จัดจำหน่าย (Agency vs Distribution Agreement)",
+     "language": "th",
+     "sha256": "cc5a4ddf006542e5acd3cabae547219deef8c596269a82921dd413b9f5e161fb",
+     "text_sha256": "3922c2a5b541952ae1f6ae6a27e393c0210372076cc4ee24e34a11d65fd72ca0",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/agency-distribution-agreement-checklist-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L2",
+   "series_label": "LAS C&C Deep Research · ตอนที่ 8"
+  },
+  {
+   "id": "articles/commercial-brokerage-agreement-checklist-thailand",
+   "kind": "article",
+   "title": "Checklist 10 จุดตรวจสัญญาบริการนายหน้าและคนกลางพาณิชย์ (Commercial Brokerage & Commission Agreement)",
+   "variants": [
+    {
+     "path": "articles/commercial-brokerage-agreement-checklist-thailand.html",
+     "title": "Checklist 10 จุดตรวจสัญญาบริการนายหน้าและคนกลางพาณิชย์ (Commercial Brokerage & Commission Agreement)",
+     "language": "th",
+     "sha256": "18bc44464162f3788571152e75cd8c7717b06f8c70b49bdda92cfa048df8a5c0",
+     "text_sha256": "c3c19189f0281614bee3526f05fd51d458ed8662797502100a79a0ef6cd971b0",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/commercial-brokerage-agreement-checklist-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L2",
+   "series_label": "LAS C&C Deep Research · ตอนที่ 20"
+  },
+  {
+   "id": "articles/debt-collection-asset-management-service-agreement-thailand",
+   "kind": "article",
+   "title": "ดักจุดตายสัญญาให้บริการบริหารสินทรัพย์และติดตามทวงถามหนี้ (Debt Collection & Non-Performing Asset Servicing Agreement)",
+   "variants": [
+    {
+     "path": "articles/debt-collection-asset-management-service-agreement-thailand.html",
+     "title": "ดักจุดตายสัญญาให้บริการบริหารสินทรัพย์และติดตามทวงถามหนี้ (Debt Collection & Non-Performing Asset Servicing Agreement)",
+     "language": "th",
+     "sha256": "b88e221784fde59fccf6e748a00c0d92c0d5225e499776433477c399daca204b",
+     "text_sha256": "c9e780036cc34bea1aedd3e2651aff2ab8fdb048985a8357327589e92a662467",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/debt-collection-asset-management-service-agreement-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Shield Deep Research · ตอนที่ 26"
+  },
+  {
+   "id": "articles/engineering-architectural-design-services-agreement-thailand",
+   "kind": "article",
+   "title": "Checklist 10 จุดตรวจสัญญาจ้างออกแบบวิศวกรรมและสถาปัตยกรรม (Architectural & Engineering Design Services Agreement)",
+   "variants": [
+    {
+     "path": "articles/engineering-architectural-design-services-agreement-thailand.html",
+     "title": "Checklist 10 จุดตรวจสัญญาจ้างออกแบบวิศวกรรมและสถาปัตยกรรม (Architectural & Engineering Design Services Agreement)",
+     "language": "th",
+     "sha256": "63672a478b272df8496becd73b632b71accc0aa744916e20c37124bbfcc04d50",
+     "text_sha256": "8c110cf3ebe659e528b261b32fe111c4414b6415ae207ab4e6875ae1800a3381",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/engineering-architectural-design-services-agreement-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L2",
+   "series_label": "LAS C&C Deep Research · ตอนที่ 25"
+  },
+  {
+   "id": "articles/medical-aesthetic-service-contract-thailand",
+   "kind": "article",
+   "title": "ดักจุดตายสัญญาให้บริการทางการแพทย์และความงามตามประกาศ สคบ. ใหม่ (Medical & Aesthetic Services Consumer Contracts)",
+   "variants": [
+    {
+     "path": "articles/medical-aesthetic-service-contract-thailand.html",
+     "title": "ดักจุดตายสัญญาให้บริการทางการแพทย์และความงามตามประกาศ สคบ. ใหม่ (Medical & Aesthetic Services Consumer Contracts)",
+     "language": "th",
+     "sha256": "4272e98206cb996b6fbdb702abb08b6b823d6e6050f98caa685fc103f2a97594",
+     "text_sha256": "6ac44918af70f126f8171cbd027b8cba62c516ca21ed936d5613e6034abc9bbd",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/medical-aesthetic-service-contract-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Shield Deep Research · ตอนที่ 33"
+  },
+  {
+   "id": "articles/physician-medical-staff-contract-checklist-thailand",
+   "kind": "article",
+   "title": "Checklist 10 จุดตรวจสัญญาจ้างแพทย์และบุคลากรวิชาชีพทางการแพทย์ในสถานพยาบาลเอกชน",
+   "variants": [
+    {
+     "path": "articles/physician-medical-staff-contract-checklist-thailand.html",
+     "title": "Checklist 10 จุดตรวจสัญญาจ้างแพทย์และบุคลากรวิชาชีพทางการแพทย์ในสถานพยาบาลเอกชน",
+     "language": "th",
+     "sha256": "55386655fd088f80cea823d0394a5e163900ba165e518088035734ecdc15f420",
+     "text_sha256": "514f34f95b76d4304e8e95450cbdf5b07a05156935693632659302447c26a659",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/physician-medical-staff-contract-checklist-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L2",
+   "series_label": "LAS C&C Deep Research · ตอนที่ 17"
+  },
+  {
+   "id": "articles/private-fund-management-agreement-thailand",
+   "kind": "article",
+   "title": "ดักจุดตายสัญญาบริหารจัดการกองทุนส่วนบุคคลและสัญญาจัดการการลงทุน (Private Fund Management & Discretionary Investment Agreement)",
+   "variants": [
+    {
+     "path": "articles/private-fund-management-agreement-thailand.html",
+     "title": "ดักจุดตายสัญญาบริหารจัดการกองทุนส่วนบุคคลและสัญญาจัดการการลงทุน (Private Fund Management & Discretionary Investment Agreement)",
+     "language": "th",
+     "sha256": "d6eef415166719f317608b09f538cc7229896655465bbfc8dc94054cb9b887b8",
+     "text_sha256": "134725f427eaeeb460fa61cfa0e2913baffcfd4caf8b93e8137138fac9f1b3ba",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/private-fund-management-agreement-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Shield Deep Research · ตอนที่ 28"
+  },
+  {
+   "id": "articles/security-guard-services-agreement-template-thailand",
+   "kind": "article",
+   "title": "พิมพ์เขียวและแม่แบบสัญญาบริการด้านการรักษาความปลอดภัยและระบบรักษาความปลอดภัยอิเล็กทรอนิกส์ (Security Guard & Electronic Surveillance Services Agreement Template)",
+   "variants": [
+    {
+     "path": "articles/security-guard-services-agreement-template-thailand.html",
+     "title": "พิมพ์เขียวและแม่แบบสัญญาบริการด้านการรักษาความปลอดภัยและระบบรักษาความปลอดภัยอิเล็กทรอนิกส์ (Security Guard & Electronic Surveillance Services Agreement Template)",
+     "language": "th",
+     "sha256": "037ef9ac2f3a9ab66bc1c972edaa940b738c3b53f2df70c00f1923cdf83c3a58",
+     "text_sha256": "f2f6008a9ca1b8bb4c5ccad090804c65adeaf29a007b4b3b03bc92d058b7a71a",
+     "published": "2026-10-03",
+     "modified": "2026-10-03",
+     "url": "https://thundthornthep-ai.github.io/articles/security-guard-services-agreement-template-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Up Deep Research · ตอนที่ 9"
   },
   {
    "id": "blog/bkk-council/311-decision-report-v7",

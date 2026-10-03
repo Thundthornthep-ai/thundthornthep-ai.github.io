@@ -148,6 +148,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 193/5
 - มาตรา 193/8
 - มาตรา 193/9
+- มาตรา 193/10
 - มาตรา 193/12
 - มาตรา 193/14
 - มาตรา 193/15
@@ -155,6 +156,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 193/22
 - มาตรา 193/23
 - มาตรา 193/24
+- มาตรา 193/28
 - มาตรา 193/29
 - มาตรา 193/30
 - มาตรา 193/31
@@ -389,6 +391,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 436
 - มาตรา 437
 - มาตรา 438
+- มาตรา 442
 - มาตรา 448
 - มาตรา 453
 - มาตรา 454
@@ -629,6 +632,10 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 843
 - มาตรา 844
 - มาตรา 845
+- มาตรา 846
+- มาตรา 847
+- มาตรา 848
+- มาตรา 849
 - มาตรา 850
 - มาตรา 851
 - มาตรา 852
