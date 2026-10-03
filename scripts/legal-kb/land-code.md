@@ -16,3 +16,4 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 97
 - มาตรา 98
 - มาตรา 113
+- มาตรา 96 ตรี
