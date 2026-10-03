@@ -19,3 +19,4 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 44
 - มาตรา 55
 - มาตรา 57
+- มาตรา 54
