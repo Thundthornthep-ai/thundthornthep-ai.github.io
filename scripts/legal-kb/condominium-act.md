@@ -12,3 +12,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 19
 - มาตรา 6
 - มาตรา 19 ทวิ
+- มาตรา 19 ตรี
+- มาตรา 19 จัตวา
+- มาตรา 19 เบญจ
+- มาตรา 19 ฉ
