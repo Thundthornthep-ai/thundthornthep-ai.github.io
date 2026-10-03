@@ -983,3 +983,4 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 754
 - มาตรา 1044
 - มาตรา 1362
+- มาตรา 989

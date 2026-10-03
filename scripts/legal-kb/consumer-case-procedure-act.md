@@ -10,3 +10,4 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
 - มาตรา 29
 - มาตรา 42
+- มาตรา 18

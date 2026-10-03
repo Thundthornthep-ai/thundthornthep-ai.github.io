@@ -24,3 +24,4 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 60
 - มาตรา 70
 - มาตรา 74
+- มาตรา 41
