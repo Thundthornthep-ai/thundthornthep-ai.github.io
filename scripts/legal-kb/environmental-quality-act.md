@@ -8,6 +8,7 @@ Official source: https://searchlaw.ocs.go.th/council-of-state/#/public/doc/SXU5b
 
 Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
+- มาตรา 4
 - มาตรา 48
 - มาตรา 50
 - มาตรา 51/5

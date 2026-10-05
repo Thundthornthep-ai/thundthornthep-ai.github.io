@@ -981,6 +981,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 1358
 - มาตรา 1360
 - มาตรา 1361
+- มาตรา 1368
 - มาตรา 1457
 - มาตรา 1600
 - มาตรา 1601
