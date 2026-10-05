@@ -8,10 +8,21 @@ Official source: https://searchlaw.ocs.go.th/council-of-state/#/public/doc/MnBqV
 
 Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
+- มาตรา 5
 - มาตรา 47
+- มาตรา 48
 - มาตรา 49
+- มาตรา 51
 - มาตรา 54
 - มาตรา 56
+- มาตรา 64
+- มาตรา 65
+- มาตรา 81
+- มาตรา 82
+- มาตรา 83
+- มาตรา 84
+- มาตรา 85
+- มาตรา 86
 - มาตรา 96
 - มาตรา 127
 - มาตรา 128

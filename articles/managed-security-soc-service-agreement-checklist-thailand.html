@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+<meta property="og:url" content="https://thundthornthep-ai.github.io/articles/managed-security-soc-service-agreement-checklist-thailand.html" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NN3KX46PVC"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NN3KX46PVC');</script>
+<link rel="icon" type="image/webp" href="/las-logo.webp">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checklist 10 จุดตรวจสัญญาจ้างบริการรักษาความปลอดภัยทางไซเบอร์และการเฝ้าระวัง SOC 24/7 (Managed Security Service Provider - MSSP &amp; Managed SOC Agreement) | LAS C&amp;C Deep Research EP31 | LAS Legal Hub</title>
+  <meta name="description" content="ผู้ให้บริการ MSSP ที่ประมวลผลข้อมูลส่วนบุคคลตามคำสั่งของผู้ว่าจ้างมีหน้าที่แจ้งเหตุการละเมิดข้อมูลส่วนบุคคลให้ผู้ว่าจ้างทราบตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 40 (2) โดยกฎหมายมิได้กำหนดระยะเวลาไว้…" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Thundthornthep Yamoutai, Ph.D." />
+  <meta property="og:title" content="Checklist 10 จุดตรวจสัญญาจ้างบริการรักษาความปลอดภัยทางไซเบอร์และการเฝ้าระวัง SOC 24/7 (Managed Security Service Provider - MSSP &amp; Managed SOC Agreement)" />
+  <meta property="og:description" content="ผู้ให้บริการ MSSP ที่ประมวลผลข้อมูลส่วนบุคคลตามคำสั่งของผู้ว่าจ้างมีหน้าที่แจ้งเหตุการละเมิดข้อมูลส่วนบุคคลให้ผู้ว่าจ้างทราบตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 40 (2) โดยกฎหมายมิได้กำหนดระยะเวลาไว้…" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="th_TH" />
+  <link rel="canonical" href="https://thundthornthep-ai.github.io/articles/managed-security-soc-service-agreement-checklist-thailand.html" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Checklist 10 จุดตรวจสัญญาจ้างบริการรักษาความปลอดภัยทางไซเบอร์และการเฝ้าระวัง SOC 24/7 (Managed Security Service Provider - MSSP & Managed SOC Agreement): วิเคราะห์ Mean Time to Detect (MTTD) และ Mean Time to Respond (MTTR) ที่ต้องตกลงในสัญญา (เช่น 15 นาทีและ 1 ชั่วโมง), หน้าที่รายงานเหตุภัยคุกคามทางไซเบอร์ของหน่วยงานโครงสร้างพื้นฐานสำคัญทางสารสนเทศตาม พ.ร.บ.การรักษาความมั่นคงปลอดภัยไซเบอร์ พ.ศ. 2562 และหน้าที่แจ้งเหตุการละเมิดข้อมูลส่วนบุคคลตาม PDPA มาตรา 37 (4), การจำกัดความรับผิดกรณีถูก Ransomware โจมตี, สิทธิการเข้าตรวจสอบ Forensic Audit, และ Cyber Insurance Interlock",
+    "alternativeHeadline": "Managed Security Service Provider (MSSP) & 24/7 Managed SOC Master Services Agreement Checklist: Operational SLAs (MTTD < 15 Mins / MTTR < 1 Hour), Statutory Incident Reporting under Cybersecurity Act 2019 & PDPA Section 37(4), Ransomware Liability Carve-Outs, Digital Forensic Audit Rights, and Cyber Insurance Alignment",
+    "author": {"@type": "Person", "name": "Thundthornthep Yamoutai, Ph.D.", "affiliation": "Legal Advance Solution Co., Ltd."},
+    "publisher": {"@type": "Organization", "name": "Legal Advance Solution Co., Ltd."},
+    "datePublished": "2026-10-05",
+    "dateModified": "2026-10-05",
+    "inLanguage": "th",
+    "isPartOf": {"@type": "CreativeWorkSeries", "name": "LAS C&C — Deep Research"}
+  }
+  </script>
+  <style>
+    :root {
+      --gold: #C9A96E;
+      --navy: #1B2A4A;
+      --red-bg: #FADBD8;
+      --red-border: #C0392B;
+      --orange-bg: #FDEBD0;
+      --orange-border: #E67E22;
+      --green-bg: #D5F5E3;
+      --green-border: #27AE60;
+      --blue-bg: #D6EAF8;
+      --blue-border: #2471A3;
+      --gray-bg: #F4F6F7;
+      --text: #2C303A;
+      --muted: #6C7A89;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Sarabun', 'TH Sarabun New', sans-serif;
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text);
+      background: #FAFAFA;
+    }
+    .article-header {
+      background: linear-gradient(135deg, var(--navy) 0%, #2C3E6A 100%);
+      color: #fff;
+      padding: 48px 24px 36px;
+      text-align: center;
+    }
+    .article-header .category-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .article-header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .article-header .subtitle {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 20px;
+    }
+    .article-header .meta {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+    }
+    .article-body {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+    /* TOC */
+    .toc-box {
+      background: var(--blue-bg);
+      border-left: 4px solid var(--blue-border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+    }
+    .toc-box h3 {
+      font-size: 1rem;
+      color: var(--blue-border);
+      margin-bottom: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .toc-box ol { padding-left: 22px; }
+    .toc-box li { margin-bottom: 6px; }
+    .toc-box a { color: var(--navy); text-decoration: none; font-size: 15px; }
+    .toc-box a:hover { text-decoration: underline; color: var(--blue-border); }
+    /* Section blocks */
+    .section-block { margin-bottom: 48px; }
+    .section-heading {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--navy);
+      border-bottom: 3px solid var(--gold);
+      padding-bottom: 8px;
+      margin-bottom: 6px;
+    }
+    .section-heading .en {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--muted);
+      margin-left: 10px;
+      letter-spacing: 0.3px;
+    }
+    .sub-heading {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 24px 0 10px;
+      padding-left: 10px;
+      border-left: 3px solid var(--gold);
+    }
+    p { margin-bottom: 14px; }
+    /* Compare table */
+    .compare-table {
+      overflow-x: auto;
+      margin: 24px 0 28px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    table.article-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    table.article-table thead th {
+      background: var(--navy);
+      color: #fff;
+      padding: 13px 16px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+    }
+    table.article-table thead th:first-child { border-radius: 10px 0 0 0; }
+    table.article-table thead th:last-child { border-radius: 0 10px 0 0; }
+    table.article-table tbody tr:hover { filter: brightness(0.96); transition: filter 0.15s; }
+    table.article-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #E5E8EB;
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    table.article-table td:first-child {
+      font-weight: 700;
+      color: var(--navy);
+      white-space: nowrap;
+      background: #F0F3F7 !important;
+      min-width: 140px;
+    }
+    table.article-table .col-hiree { background: #FDEBD0; }
+    table.article-table .col-labor { background: #D5F5E3; }
+    table.article-table .col-risk-high { background: #FADBD8; }
+    table.article-table .col-risk-med { background: #FDEBD0; }
+    table.article-table .col-risk-low { background: #D5F5E3; }
+    /* Practice note */
+    .practice-note {
+      background: var(--orange-bg);
+      border-left: 4px solid var(--orange-border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+    .practice-note.alert {
+      background: var(--red-bg);
+      border-left-color: var(--red-border);
+    }
+    .practice-note.tip {
+      background: var(--green-bg);
+      border-left-color: var(--green-border);
+    }
+    .pn-label {
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .practice-note .pn-label { color: var(--orange-border); }
+    .practice-note.alert .pn-label { color: var(--red-border); }
+    .practice-note.tip .pn-label { color: var(--green-border); }
+    /* Law ref cards */
+    .law-ref-cards { display: flex; flex-wrap: wrap; gap: 14px; margin: 20px 0; }
+    .law-ref-card {
+      flex: 1 1 260px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #fff;
+      border: 1.5px solid #DDE3EA;
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    }
+    .law-ref-card.cat-civil { border-left: 4px solid #2471A3; }
+    .law-ref-card.cat-labor { border-left: 4px solid #117A65; }
+    .law-ref-card.cat-tax { border-left: 4px solid #884EA0; }
+    .law-icon {
+      font-size: 22px;
+      min-width: 28px;
+      text-align: center;
+      margin-top: 2px;
+    }
+    .law-info .law-name {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+    .law-info .law-source {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    /* Content list */
+    .content-list { padding-left: 22px; margin-bottom: 16px; }
+    .content-list li { margin-bottom: 8px; }
+    /* FAQ */
+    .faq-item {
+      border: 1px solid #DDE3EA;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+    .faq-item .faq-q {
+      background: var(--navy);
+      color: #fff;
+      padding: 13px 18px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .faq-item .faq-q::before { content: "Q: "; color: var(--gold); }
+    .faq-item .faq-a {
+      padding: 14px 18px;
+      background: #fff;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    /* Law quote (verbatim) */
+    .law-quote {
+      background: #F0F3F7;
+      border-left: 4px solid var(--navy);
+      border-radius: 6px;
+      padding: 14px 18px;
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: var(--navy);
+      margin: 14px 0;
+      white-space: pre-wrap;
+      font-family: 'Sarabun', 'TH Sarabun New', monospace;
+    }
+    /* Risk badge */
+    .risk-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .risk-high { background: var(--red-bg); color: var(--red-border); border: 1px solid var(--red-border); }
+    .risk-med  { background: var(--orange-bg); color: var(--orange-border); border: 1px solid var(--orange-border); }
+    .risk-low  { background: var(--green-bg); color: var(--green-border); border: 1px solid var(--green-border); }
+    /* Summary card */
+    .summary-card {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 24px 0;
+    }
+    .summary-card h3 { color: var(--gold); margin-bottom: 14px; font-size: 1.1rem; }
+    .summary-card ul { padding-left: 22px; }
+    .summary-card li { margin-bottom: 8px; font-size: 15px; opacity: 0.92; }
+    /* References */
+    .ref-section {
+      background: var(--gray-bg);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-top: 40px;
+    }
+    .ref-section h3 { color: var(--navy); margin-bottom: 14px; font-size: 1rem; font-weight: 700; }
+    .ref-section ul { padding-left: 20px; }
+    .ref-section li { font-size: 14px; margin-bottom: 6px; color: var(--muted); }
+    .ref-section a { color: var(--blue-border); }
+    /* Related */
+    .related-articles {
+      display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px;
+    }
+    .related-card {
+      flex: 1 1 200px;
+      background: #fff;
+      border: 1.5px solid #DDE3EA;
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 14px;
+      color: var(--navy);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover { border-color: var(--gold); }
+    .related-card .rel-tag { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+    /* Disclaimer */
+    .disclaimer {
+      margin-top: 40px;
+      padding: 16px 20px;
+      background: #F4F6F7;
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    /* Responsive */
+    @media (max-width: 640px) {
+      .article-header h1 { font-size: 1.45rem; }
+      .section-heading { font-size: 1.25rem; }
+      table.article-table td:first-child { min-width: 110px; }
+    }
+    /* ── Deep-Research extras (LAS Legal Master Template v1.0.0) ── */
+    .article-header .h1-sub { display:block; font-size:1.15rem; font-weight:600; color:rgba(255,255,255,0.9); margin-top:8px; line-height:1.5; }
+    .meta-chips { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:14px; }
+    .chip { display:inline-block; background:rgba(255,255,255,0.12); color:#fff; font-size:12px; padding:3px 12px; border-radius:14px; letter-spacing:0.2px; }
+    .chip-gold { background:var(--gold); color:var(--navy); font-weight:700; }
+    .quick-answer { background:var(--green-bg); border-left:4px solid var(--green-border); border-radius:8px; padding:18px 22px; margin-bottom:24px; }
+    .quick-answer .pn-label { color:var(--green-border); }
+    .quick-answer p { margin:0; font-size:16px; }
+    .hook-box { background:#fff; border:1.5px solid #DDE3EA; border-left:4px solid var(--navy); border-radius:10px; padding:18px 22px; margin-bottom:28px; }
+    .hook-box h3 { font-size:1rem; color:var(--navy); margin-bottom:10px; font-weight:800; }
+    .hook-box ol { padding-left:22px; }
+    .hook-box li { margin-bottom:8px; }
+    .checklist { list-style:none; padding-left:0; margin:12px 0 18px; }
+    .checklist li { display:flex; gap:12px; align-items:flex-start; padding:10px 14px; margin-bottom:8px; background:#fff; border:1px solid #DDE3EA; border-radius:8px; }
+    .checklist .cb { flex:0 0 18px; width:18px; height:18px; margin-top:4px; border:2px solid var(--navy); border-radius:4px; background:#fff; }
+    .compare-table.claim-ledger table.article-table td:first-child { white-space:nowrap; font-family:'Consolas','Menlo',monospace; font-size:13px; }
+    .compare-table.claim-ledger table.article-table td { font-size:14px; }
+    .law-ref-card.cat-pdpa { border-left:4px solid #C0392B; }
+    .law-ref-card.cat-other { border-left:4px solid #7F8C8D; }
+    .practice-note p { margin-bottom:8px; }
+    .practice-note p:last-child { margin-bottom:0; }
+    @media (max-width: 640px) { .article-header .h1-sub { font-size:0.98rem; } }
+  </style>
+<link rel="stylesheet" href="/css/learning-tables.css?v=20260929">
+<link rel="stylesheet" href="/css/las-template-theme.css?v=20260929">
+<script src="/js/las-back.js?v=20261002" defer></script>
+</head>
+<body class="las-knowledge-article">
+
+<!-- HEADER -->
+<header class="article-header">
+  <div class="category-tag">LAS C&amp;C Deep Research · EP31 · Contract Review · MSSP &amp; SOC</div>
+  <h1>Checklist 10 จุดตรวจสัญญาจ้างบริการรักษาความปลอดภัยทางไซเบอร์และการเฝ้าระวัง SOC 24/7 (Managed Security Service Provider - MSSP &amp; Managed SOC Agreement)<br><span class="h1-sub">วิเคราะห์ Mean Time to Detect (MTTD) และ Mean Time to Respond (MTTR) ที่ต้องตกลงในสัญญา (เช่น 15 นาทีและ 1 ชั่วโมง), หน้าที่รายงานเหตุภัยคุกคามทางไซเบอร์ของหน่วยงานโครงสร้างพื้นฐานสำคัญทางสารสนเทศตาม พ.ร.บ.การรักษาความมั่นคงปลอดภัยไซเบอร์ พ.ศ. 2562 และหน้าที่แจ้งเหตุการละเมิดข้อมูลส่วนบุคคลตาม PDPA มาตรา 37 (4), การจำกัดความรับผิดกรณีถูก Ransomware โจมตี, สิทธิการเข้าตรวจสอบ Forensic Audit, และ Cyber Insurance Interlock</span> <span class="las-reviewed-mark" role="img" aria-label="ตรวจทบทวนข้อกฎหมายแล้ว" title="ตรวจทบทวนข้อกฎหมายแล้ว">✓</span></h1>
+<p class="las-review-date"><b>✓ ตรวจทบทวนข้อกฎหมายล่าสุดเมื่อวันที่ 5 ตุลาคม 2569</b> · เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 5 ตุลาคม 2569</p>
+  <p class="subtitle">Managed Security Service Provider (MSSP) &amp; 24/7 Managed SOC Master Services Agreement Checklist: Operational SLAs (MTTD &lt; 15 Mins / MTTR &lt; 1 Hour), Statutory Incident Reporting under Cybersecurity Act 2019 &amp; PDPA Section 37(4), Ransomware Liability Carve-Outs, Digital Forensic Audit Rights, and Cyber Insurance Alignment</p>
+  <div class="meta">โดย ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D. &nbsp;|&nbsp; Legal Advance Solution Co., Ltd. &nbsp;|&nbsp; ตัวบทกฎหมาย ณ 5 ตุลาคม 2569</div>
+  <div class="meta-chips">
+    <span class="chip">Series: LAS C&amp;C Deep Research</span>
+    <span class="chip">ตอนที่ 31</span>
+    <span class="chip">Jurisdiction: ประเทศไทย</span>
+    <span class="chip chip-gold">LAS Legal Audit ✓ 5 ตุลาคม 2569</span>
+  </div>
+</header>
+
+<div class="article-body">
+
+  <!-- QUICK ANSWER -->
+  <div class="quick-answer" id="quick-answer">
+    <span class="pn-label">คำตอบสั้น — Quick Answer / TL;DR</span>
+    <p>ผู้ให้บริการ MSSP ที่ประมวลผลข้อมูลส่วนบุคคลตามคำสั่งของผู้ว่าจ้างมีหน้าที่แจ้งเหตุการละเมิดข้อมูลส่วนบุคคลให้ผู้ว่าจ้างทราบตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 มาตรา 40 (2) โดยกฎหมายมิได้กำหนดระยะเวลาไว้ ส่วนผู้ว่าจ้างในฐานะผู้ควบคุมข้อมูลส่วนบุคคลต้องแจ้งเหตุแก่สำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคลโดยไม่ชักช้าภายใน 72 ชั่วโมงนับแต่ทราบเหตุเท่าที่จะสามารถกระทำได้ตามมาตรา 37 (4) เว้นแต่การละเมิดนั้นไม่มีความเสี่ยงที่จะมีผลกระทบต่อสิทธิและเสรีภาพของบุคคล สัญญาจึงควรกำหนดเวลาแจ้งเหตุของ MSSP ให้สั้นกว่า 72 ชั่วโมงอย่างมาก</p>
+    <p>สรุป 3 ประเด็นทางกฎหมายสำคัญ:</p>
+    <ol class="content-list"><li><strong>การกำหนด SLAs ด้านความปลอดภัยเชิงปฏิบัติการ (Operational Cyber SLAs):</strong> ผู้ว่าจ้างและ MSSP ควรตกลงระยะเวลาตรวจจับภัยคุกคาม (Mean Time to Detect: MTTD) และระยะเวลาตอบสนองหรือยับยั้งภัยคุกคาม (Mean Time to Respond: MTTR) ตามระดับความรุนแรงไว้ในสัญญา เช่น 15 นาทีและ 1 ชั่วโมงสำหรับเหตุระดับวิกฤต (P1/Critical) ซึ่งเป็นตัวอย่างข้อตกลงทางการค้าที่นิยมใช้ โดยไม่มีกฎหมายไทยกำหนดตัวเลขเหล่านี้ สัญญาควรแยกให้ชัดว่าเป็นกำหนดเวลาต่อเหตุการณ์แต่ละครั้งหรือค่าเฉลี่ยรายเดือน และกำหนดผลของการไม่เป็นไปตามเงื่อนไข พร้อมระบบเฝ้าระวังตลอด 24 ชั่วโมง 365 วัน (24/7/365 Monitoring)</li><li><strong>หน้าที่การแจ้งเตือนตามกฎหมายความมั่นคงไซเบอร์และ PDPA (Statutory Breach Notification Protocols):</strong> เมื่อตรวจพบเหตุภัยคุกคามไซเบอร์ระดับร้ายแรง ผู้ให้บริการ MSSP ต้องแจ้งผู้ว่าจ้างทันทีตามเวลาที่ตกลงในสัญญา เพื่อให้ผู้ว่าจ้างปฏิบัติตามหน้าที่ของตนได้ทัน หากผู้ว่าจ้างเป็นหน่วยงานโครงสร้างพื้นฐานสำคัญทางสารสนเทศ ผู้ว่าจ้างต้องรายงานต่อสำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ (สกมช.) และหน่วยงานควบคุมหรือกำกับดูแลเมื่อมีเหตุภัยคุกคามทางไซเบอร์เกิดขึ้นอย่างมีนัยสำคัญตามพระราชบัญญัติการรักษาความมั่นคงปลอดภัยไซเบอร์ พ.ศ. 2562 มาตรา 57 และต้องตรวจสอบ รับมือ และแจ้งโดยเร็วตามมาตรา 58 ส่วนในฐานะผู้ควบคุมข้อมูลส่วนบุคคล ผู้ว่าจ้างต้องแจ้งสำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (สคส.) ตามมาตรา 37 (4) แห่งพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 และหากการละเมิดมีความเสี่ยงสูงที่จะมีผลกระทบต่อสิทธิและเสรีภาพของบุคคล ต้องแจ้งเจ้าของข้อมูลส่วนบุคคลพร้อมแนวทางการเยียวยาโดยไม่ชักช้าด้วย ทั้งนี้ ตามหลักเกณฑ์และวิธีการที่คณะกรรมการคุ้มครองข้อมูลส่วนบุคคลประกาศกำหนด</li><li><strong>การจัดสรรความรับผิดกรณีถูกโจมตีด้วยมัลแวร์เรียกค่าไถ่ (Ransomware Liability &amp; Forensic Audits):</strong> ข้อสัญญายกเว้นความรับผิดของผู้ให้บริการ MSSP มักอ้างว่าความปลอดภัย 100% ไม่มีอยู่จริง แต่ความตกลงทำไว้ล่วงหน้าที่ยกเว้นมิให้ MSSP ต้องรับผิดเพื่อกลฉ้อฉลหรือความประมาทเลินเล่ออย่างร้ายแรงของตนเป็นโมฆะตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 373 และข้อจำกัดความรับผิดในกรณีอื่นมีผลบังคับได้เพียงเท่าที่เป็นธรรมและพอสมควรแก่กรณีตามพระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540 มาตรา 8 วรรคสอง สัญญาที่ดีจึงต้องระบุข้อยกเว้นดังกล่าวให้ชัดเจน และต้องให้สิทธิผู้ว่าจ้างนำผู้เชี่ยวชาญอิสระเข้ามาตรวจพิสูจน์พยานหลักฐานดิจิทัล (Forensic Audit Rights) พร้อมบังคับให้ MSSP ต้องมีกรมธรรม์ประกันภัยความรับผิดทางไซเบอร์ (Cyber Liability Insurance) คุ้มครองความเสียหาย</li></ol>
+  </div>
+
+  <!-- PROBLEM HOOK -->
+  <div class="hook-box" id="hook">
+    <h3>สถานการณ์ที่ผู้ประกอบการมักพบจริง</h3>
+    <ol>
+      <li><strong>เหตุการณ์:</strong> องค์กรว่าจ้างผู้ให้บริการ MSSP เพื่อเฝ้าระวัง SOC ตลอด 24 ชั่วโมง แต่กลับถูกมัลแวร์เรียกค่าไถ่ (Ransomware) โจมตีฐานข้อมูลสำคัญกลางดึก โดย MSSP ตรวจพบความผิดปกติแต่แจ้งเตือนล่าช้าไปหลายชั่วโมง ส่งผลให้ระบบล่ม และเกิดข้อมูลรั่วไหล</li>
+      <li><strong>ความเข้าใจผิด:</strong> ผู้ว่าจ้างมักเข้าใจผิดว่าการจ้าง MSSP และมีสัญญา Managed SOC จะทำให้ MSSP ต้องรับผิดชอบความเสียหายทั้งหมดเต็มจำนวนโดยอัตโนมัติหากถูก Ransomware โจมตี ขณะที่ MSSP มักอ้างข้อจำกัดความรับผิด (Limitation of Liability) ว่ารับผิดชอบไม่เกินค่าบริการที่ได้รับ</li>
+      <li><strong>จุดพลิก:</strong> ศาลและหน่วยงานกำกับดูแลพิจารณาจากเงื่อนไขในสัญญา (SLAs) และการพิสูจน์ความประมาทเลินเล่ออย่างร้ายแรง (Gross Negligence) หากสัญญาไม่ได้ระบุค่า MTTD/MTTR ที่ชัดเจน หรือขาดข้อกำหนดเรื่องสิทธิการตรวจพิสูจน์พยานหลักฐานดิจิทัล (Forensic Audit) จะทำให้ผู้ว่าจ้างไม่สามารถพิสูจน์ความบกพร่องของ MSSP ได้ และอาจต้องรับโทษปรับตามกฎหมายเพียงลำพัง</li>
+      <li><strong>สิ่งที่ได้จากบทความ:</strong> โครงสร้างสัญญาและ Checklist 10 จุดตรวจ เพื่อปิดช่องโหว่ทางกฎหมาย จัดทำ SLA เชิงปฏิบัติการ จัดสรรความรับผิด รองรับการแจ้งเหตุตามพระราชบัญญัติการรักษาความมั่นคงปลอดภัยไซเบอร์ พ.ศ. 2562 และพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (PDPA) พร้อมกลไก Cyber Insurance Interlock</li>
+    </ol>
+  </div>
+
+  <!-- TOC -->
+  <nav class="toc-box" aria-label="สารบัญ">
+    <h3>สารบัญ</h3>
+    <ol>
+      <li><a href="#s1">ภูมิทัศน์สัญญาให้บริการเฝ้าระวังความมั่นคงปลอดภัยทางไซเบอร์ (MSSP &amp; SOC) ในประเทศไทย</a></li>
+      <li><a href="#s2">ผลกระทบเชิงธุรกิจ</a></li>
+      <li><a href="#s3">กรอบกฎหมายและ Claim Ledger</a></li>
+      <li><a href="#s4">วิเคราะห์ตัวชี้วัดความมั่นคงปลอดภัย: MTTD, MTTR, False Positive Rate และ SIEM/SOAR Rule Tuning</a></li>
+      <li><a href="#s5">ระเบียบวิธีปฏิบัติเมื่อเกิดเหตุการณ์ละเมิด (Incident Response Plan - IRP) และการประสานงาน CERT</a></li>
+      <li><a href="#s6">หน้าที่ของ MSSP ในฐานะ Data Processor ตาม PDPA และการเก็บรักษาข้อมูลจราจรทางคอมพิวเตอร์ (Log) ตามพระราชบัญญัติว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ พ.ศ. 2550 มาตรา 26</a></li>
+      <li><a href="#s7">LAS Practice Note: การออกแบบข้อสัญญา Forensic Investigation Cooperation, Chain of Custody และ Cyber Insurance Interlock</a></li>
+      <li><a href="#s8">ข้อต่อสู้ของผู้ให้บริการ MSSP กับองค์กรผู้ว่าจ้าง</a></li>
+      <li><a href="#s9">ตัวอย่างสถานการณ์จำลอง</a></li>
+      <li><a href="#s10">Checklist 10 จุดตรวจสัญญา MSSP &amp; Managed SOC Agreement</a></li>
+
+
+      <li><a href="#faq">คำถามที่พบบ่อย</a></li>
+      <li><a href="#refs">อ้างอิง</a></li>
+    </ol>
+  </nav>
+
+  <section class="section-block" id="s1">
+    <h2 class="section-heading">ภูมิทัศน์สัญญาให้บริการเฝ้าระวังความมั่นคงปลอดภัยทางไซเบอร์ (MSSP &amp; SOC) ในประเทศไทย</h2>
+<p>การเอาต์ซอร์ส (Outsourcing) งานด้านความมั่นคงปลอดภัยทางไซเบอร์ให้แก่ผู้ให้บริการ Managed Security Service Provider (MSSP) และ Security Operations Center (SOC) ตลอด 24 ชั่วโมง ได้กลายเป็นมาตรฐานสำคัญสำหรับองค์กรในประเทศไทย อย่างไรก็ดี รูปแบบสัญญามักมีความซับซ้อน เพราะลักษณะของสัญญา MSSP ต้องวินิจฉัยจากสาระของบริการที่ตกลงกันจริง ซึ่งอาจเป็นสัญญาจ้างทำของตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 587 หรือสัญญาอื่นที่มีลักษณะผสมกับการให้บริการเชิงเทคนิคอย่างต่อเนื่อง</p>
+<p>ปัญหาหลักในภูมิทัศน์ปัจจุบันคือ ช่องว่างระหว่างความคาดหวังเชิงธุรกิจและข้อกำหนดทางกฎหมายในสัญญา สัญญามาตรฐานของ MSSP มักออกแบบมาเพื่อจำกัดความรับผิดชอบของผู้ให้บริการ (Limitation of Liability) และกำหนดเงื่อนไขการรับประกันที่แคบ ในขณะที่หน้าที่ของผู้ว่าจ้างในฐานะผู้ควบคุมข้อมูลส่วนบุคคลต่อหน่วยงานกำกับดูแลยังคงเป็นของผู้ว่าจ้าง แม้จะจ้าง MSSP ดำเนินการแทนก็ตาม (Non-delegable Statutory Duties) ส่วน MSSP ในฐานะผู้ประมวลผลข้อมูลส่วนบุคคลมีหน้าที่และความรับผิดของตนเองตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (PDPA) มาตรา 40 มาตรา 77 และมาตรา 86</p>
+<p>สำหรับพระราชบัญญัติการรักษาความมั่นคงปลอดภัยไซเบอร์ พ.ศ. 2562 หน้าที่ประเมินความเสี่ยงและตรวจสอบตามมาตรา 54 หน้าที่จัดให้มีกลไกเฝ้าระวังตามมาตรา 56 และหน้าที่รายงานเหตุภัยคุกคามทางไซเบอร์ต่อสำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติตามมาตรา 57 เป็นหน้าที่ของหน่วยงานโครงสร้างพื้นฐานสำคัญทางสารสนเทศ คือหน่วยงานที่มีภารกิจหรือให้บริการในด้านที่คณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติประกาศกำหนดลักษณะไว้ตามมาตรา 49 เช่น ด้านการเงินการธนาคาร หรือด้านสาธารณสุข องค์กรผู้ว่าจ้างทั่วไปจึงไม่มีหน้าที่รายงานตามมาตรา 57 เสมอไป และต้องตรวจสอบก่อนว่าตนเข้าลักษณะดังกล่าวตามประกาศของคณะกรรมการหรือไม่ [ต้องยืนยันแหล่งที่มา]</p>
+  </section>
+
+  <section class="section-block" id="s2">
+    <h2 class="section-heading">ผลกระทบเชิงธุรกิจ <span class="en">Business Consequences</span></h2>
+<p>ความบกพร่องในการจัดทำสัญญา MSSP &amp; Managed SOC นำมาซึ่งผลกระทบเชิงธุรกิจที่ร้ายแรง 3 ประการ:</p>
+<ul class="content-list"><li><strong>เซิร์ฟเวอร์องค์กรถูกแรนซัมแวร์ล็อกข้อมูลทั้งระบบเพราะ SOC ละเลย Alert:</strong> หากสัญญาไม่กำหนดหน้าที่การวิเคราะห์ Alert และระดับความสำคัญ (Severity Levels) ทีม SOC อาจมองข้ามสัญญาณเตือนภัยต้นทาง (Early Warning Indicators) ส่งผลให้ Ransomware แพร่กระจายและล็อกระบบเซิร์ฟเวอร์หลัก ก่อให้เกิดความเสียหายต่อการดำเนินธุรกิจหยุดชะงัก (Business Interruption)</li><li><strong>ถูกลงโทษปรับเพราะแจ้งเหตุล่าช้า:</strong> หาก MSSP ไม่แจ้งเตือนผู้ว่าจ้างทันทีเมื่อเกิดเหตุการณ์ละเมิด ผู้ว่าจ้างอาจไม่สามารถแจ้ง สคส. หรือรายงาน สกมช. ได้ภายในระยะเวลาที่กฎหมายกำหนด ผู้ควบคุมข้อมูลส่วนบุคคลที่ไม่แจ้งเหตุละเมิดตามมาตรา 37 (4) แห่งพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 ต้องระวางโทษปรับทางปกครองไม่เกิน 3,000,000 บาทตามมาตรา 83 โดยคณะกรรมการผู้เชี่ยวชาญเป็นผู้มีอำนาจสั่งลงโทษตามมาตรา 90 ส่วนหน่วยงานโครงสร้างพื้นฐานสำคัญทางสารสนเทศที่ไม่รายงานตามมาตรา 57 แห่งพระราชบัญญัติการรักษาความมั่นคงปลอดภัยไซเบอร์ พ.ศ. 2562 โดยไม่มีเหตุอันสมควร ต้องระวางโทษปรับไม่เกิน 200,000 บาทตามมาตรา 73</li><li><strong>ข้อมูลลูกค้าหลุดขายใน Dark Web:</strong> การรั่วไหลของข้อมูลส่วนบุคคลหรือข้อมูลความลับทางธุรกิจ นำไปสู่การสูญเสียความเชื่อมั่น ชื่อเสียงองค์กรถูกทำลาย และการถูกฟ้องร้องดำเนินคดีแบบกลุ่ม (Class Action) จากเจ้าของข้อมูลส่วนบุคคล</li></ul>
+  </section>
+
+  <section class="section-block" id="s3">
+    <h2 class="section-heading">กรอบกฎหมายและ Claim Ledger <span class="en">Legal Framework</span></h2>
+<div class="compare-table claim-ledger"><div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="article-table las-reading-table las-wide-table"><thead><tr><th scope="col">Claim ID</th><th scope="col">ฐานกฎหมาย (Statutory Provision)</th><th scope="col">สิทธิ/หน้าที่ทางกฎหมาย (Legal Right/Duty)</th><th scope="col">ผลทางกฎหมายกรณีผิดสัญญา/ฝ่าฝืน</th></tr></thead><tbody><tr><td><strong>C-CC-31-01</strong></td><td>พระราชบัญญัติการรักษาความมั่นคงปลอดภัยไซเบอร์ พ.ศ. 2562 มาตรา 49 มาตรา 54 มาตรา 57 มาตรา 58 และมาตรา 73</td><td>หน่วยงานโครงสร้างพื้นฐานสำคัญทางสารสนเทศตามลักษณะที่คณะกรรมการประกาศกำหนดตามมาตรา 49 ต้องประเมินความเสี่ยงและตรวจสอบด้านความมั่นคงปลอดภัยไซเบอร์อย่างน้อยปีละหนึ่งครั้งตามมาตรา 54 ต้องรายงานต่อสำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติและหน่วยงานควบคุมหรือกำกับดูแลเมื่อมีเหตุภัยคุกคามทางไซเบอร์เกิดขึ้นอย่างมีนัยสำคัญตามมาตรา 57 และต้องตรวจสอบ รับมือตามประมวลแนวทางปฏิบัติ และแจ้งโดยเร็วตามมาตรา 58</td><td>หน่วยงานโครงสร้างพื้นฐานสำคัญทางสารสนเทศที่ไม่รายงานตามมาตรา 57 โดยไม่มีเหตุอันสมควรต้องระวางโทษปรับไม่เกิน 200,000 บาทตามมาตรา 73</td></tr><tr><td><strong>C-CC-31-02</strong></td><td>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (PDPA) มาตรา 37 (4) มาตรา 40 (2) มาตรา 78 มาตรา 83 มาตรา 86 และมาตรา 90</td><td>ผู้ควบคุมข้อมูลส่วนบุคคลมีหน้าที่แจ้งเหตุละเมิดแก่สำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคลโดยไม่ชักช้าภายใน 72 ชั่วโมงนับแต่ทราบเหตุเท่าที่จะสามารถกระทำได้ตามมาตรา 37 (4) ส่วนผู้ประมวลผลข้อมูลส่วนบุคคลมีหน้าที่แจ้งให้ผู้ควบคุมข้อมูลส่วนบุคคลทราบถึงเหตุละเมิดตามมาตรา 40 (2) ระยะเวลาที่ MSSP ต้องแจ้งผู้ว่าจ้างจึงเป็นเรื่องที่ต้องกำหนดในสัญญา</td><td>ผู้ควบคุมข้อมูลส่วนบุคคลที่ไม่ปฏิบัติตามมาตรา 37 ต้องระวางโทษปรับทางปกครองไม่เกิน 3,000,000 บาทตามมาตรา 83 ผู้ประมวลผลข้อมูลส่วนบุคคลที่ไม่ปฏิบัติตามมาตรา 40 โดยไม่มีเหตุอันควรต้องระวางโทษปรับทางปกครองไม่เกิน 3,000,000 บาทตามมาตรา 86 โดยคณะกรรมการผู้เชี่ยวชาญเป็นผู้มีอำนาจสั่งลงโทษตามมาตรา 90 และศาลมีอำนาจสั่งให้จ่ายค่าสินไหมทดแทนเพื่อการลงโทษเพิ่มขึ้นได้ไม่เกินสองเท่าของค่าสินไหมทดแทนที่แท้จริงตามมาตรา 78</td></tr><tr><td><strong>C-CC-31-03</strong></td><td>ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 373</td><td>ความตกลงทำไว้ล่วงหน้าเป็นข้อความยกเว้นมิให้ลูกหนี้ต้องรับผิดเพื่อกลฉ้อฉลหรือความประมาทเลินเล่ออย่างร้ายแรงของตนเป็นโมฆะ</td><td>MSSP ไม่อาจอ้างข้อตกลงยกเว้นความรับผิดเพื่อกลฉ้อฉลหรือความประมาทเลินเล่ออย่างร้ายแรงของตนเองได้ การนำหลักนี้ไปใช้กับเพดานความรับผิดเป็นเรื่องการตีความ และข้อจำกัดความรับผิดในกรณีอื่นอยู่ภายใต้พระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540 (ดูแถว C-CC-31-06)</td></tr><tr><td><strong>C-CC-31-04</strong></td><td>ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 368 และมาตรา 587</td><td>มาตรา 587 นิยามสัญญาจ้างทำของ และมาตรา 368 กำหนดให้ตีความสัญญาไปตามความประสงค์ในทางสุจริต โดยพิเคราะห์ถึงปกติประเพณีด้วย</td><td>มาตรฐานการให้บริการและความระมัดระวังของ MSSP (Professional Standard of Care) ควรกำหนดไว้ในสัญญา และลักษณะของสัญญา MSSP ต้องวินิจฉัยจากสาระของบริการจริง ซึ่งอาจเป็นสัญญาจ้างทำของหรือสัญญาอื่นที่มีลักษณะผสมกัน</td></tr><tr><td><strong>C-CC-31-05</strong></td><td>พ.ร.บ.ว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ พ.ศ. 2550 มาตรา 26</td><td>ผู้ให้บริการตามนิยามในมาตรา 3 ที่อยู่ในประเภทซึ่งรัฐมนตรีประกาศกำหนด [ต้องยืนยันแหล่งที่มา] ต้องเก็บรักษาข้อมูลจราจรทางคอมพิวเตอร์ไว้ไม่น้อยกว่า 90 วันนับแต่วันที่ข้อมูลเข้าสู่ระบบคอมพิวเตอร์ และพนักงานเจ้าหน้าที่อาจสั่งให้เก็บเกิน 90 วันแต่ไม่เกินสองปีเป็นกรณีพิเศษเฉพาะรายและเฉพาะคราว</td><td>ผู้ให้บริการที่ไม่ปฏิบัติตามมาตรา 26 ต้องระวางโทษปรับไม่เกิน 500,000 บาท ส่วนระยะเวลาเก็บบันทึกด้านความมั่นคงปลอดภัยประเภทอื่นของระบบ SIEM ให้กำหนดตามสัญญา</td></tr><tr><td><strong>C-CC-31-06</strong></td><td>พระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540 มาตรา 4 มาตรา 8 และมาตรา 10</td><td>หากสัญญาของ MSSP เป็นสัญญาสำเร็จรูป ข้อตกลงยกเว้นหรือจำกัดความรับผิดที่เกิดจากการผิดสัญญาเป็นข้อตกลงที่อาจถือได้ว่าทำให้ได้เปรียบคู่สัญญาอีกฝ่ายหนึ่งตามมาตรา 4 และข้อตกลงที่ทำไว้ล่วงหน้าเพื่อยกเว้นหรือจำกัดความรับผิดซึ่งไม่เป็นโมฆะมีผลบังคับได้เพียงเท่าที่เป็นธรรมและพอสมควรแก่กรณีตามมาตรา 8 วรรคสอง</td><td>ศาลวินิจฉัยว่าข้อจำกัดความรับผิดของ MSSP มีผลบังคับเพียงใดโดยพิเคราะห์ถึงพฤติการณ์ทั้งปวงตามมาตรา 10 เช่น อำนาจต่อรอง ปกติประเพณีของสัญญาชนิดนั้น และการรับภาระที่หนักกว่ามากของคู่สัญญาฝ่ายหนึ่ง</td></tr></tbody></table>
+</div></div>
+  </section>
+
+  <section class="section-block" id="s4">
+    <h2 class="section-heading">วิเคราะห์ตัวชี้วัดความมั่นคงปลอดภัย: MTTD, MTTR, False Positive Rate และ SIEM/SOAR Rule Tuning</h2>
+<p>การแปลงภาระผูกพันทางกฎหมายให้เป็นตัวชี้วัดเชิงปฏิบัติการ (Operational Metrics) เป็นหัวใจสำคัญของ Managed SOC Agreement:</p>
+<h3 class="sub-heading">Mean Time to Detect (MTTD) &amp; Mean Time to Respond (MTTR)</h3>
+<p>ไม่มีกฎหมายไทยกำหนดตัวเลขระยะเวลาตรวจจับและตอบสนองต่อภัยคุกคาม ผู้ว่าจ้างและ MSSP จึงควรตกลงระยะเวลาเหล่านี้ตามระดับความรุนแรงไว้ในสัญญา ตัวเลข 15 นาทีและ 1 ชั่วโมงด้านล่างเป็นตัวอย่างข้อตกลงทางการค้าที่นิยมใช้ และเนื่องจากคำว่า Mean Time ในทางเทคนิคหมายถึงค่าเฉลี่ย สัญญาควรแยกให้ชัดว่าเป็นกำหนดเวลาต่อเหตุการณ์แต่ละครั้งหรือค่าเฉลี่ยรายเดือน พร้อมกำหนดผลของการไม่เป็นไปตามเงื่อนไข เพราะหากใช้ค่าเฉลี่ยอาจพิสูจน์การผิดสัญญาจากเหตุการณ์เดียวได้ยาก</p>
+<ul class="content-list"><li><strong>MTTD (Mean Time to Detect):</strong> ตัวอย่างข้อตกลง: MSSP ต้องตรวจพบภัยคุกคามระดับวิกฤต (P1 / Critical Incident) ภายในเวลา <strong>ไม่เกิน 15 นาที</strong> นับตั้งแต่ Event Log ถูกบันทึกเข้าสู่ระบบ SIEM (Security Information and Event Management)</li><li><strong>MTTR (Mean Time to Respond):</strong> MSSP ต้องดำเนินการตอบสนองและยับยั้งภัยคุกคาม (Containment &amp; Mitigation) ภายในเวลา <strong>ไม่เกิน 1 ชั่วโมง</strong> นับตั้งแต่ตรวจพบ</li></ul>
+<h3 class="sub-heading">False Positive Rate &amp; SIEM/SOAR Rule Tuning</h3>
+<ul class="content-list"><li>สัญญาต้องกำหนดภาระของ MSSP ในการปรับแต่ง กฎเกณฑ์ (Rule Tuning) ของ SIEM และ SOAR (Security Orchestration, Automation, and Response) อย่างสม่ำเสมอ</li><li>การมี False Positive Rate ที่สูงเกินไป จนเกิด Alert Fatigue ถือเป็นความบกพร่องในการให้บริการตามมาตรฐานวิชาชีพ หากเป็นเหตุให้มองข้าม Alert จริง MSSP จะปฏิเสธความรับผิดไม่ได้</li></ul>
+  </section>
+
+  <section class="section-block" id="s5">
+    <h2 class="section-heading">ระเบียบวิธีปฏิบัติเมื่อเกิดเหตุการณ์ละเมิด (Incident Response Plan - IRP) และการประสานงาน CERT</h2>
+<p>เมื่อเกิดเหตุการณ์ภัยคุกคามไซเบอร์ สัญญาต้องกำหนดให้ MSSP ปฏิบัติตาม Incident Response Plan (IRP) ที่สอดคล้องกับมาตรฐานสากล:</p>
+<ol class="content-list"><li><strong>Detection &amp; Triaging:</strong> วิเคราะห์และจัดลำดับความสำคัญของเหตุการณ์ทันทีตาม Matrix ที่ตกลงกัน</li><li><strong>Notification Protocol:</strong> แจ้งเตือนผู้ว่าจ้างผ่านช่องทางด่วน (Primary &amp; Secondary Contact Channels) ที่ระบุในสัญญา</li><li><strong>Containment &amp; Eradication:</strong> ตัดการเชื่อมต่อระบบที่ติดเชื้อ ปิดกั้น IP/Domain ที่เป็นอันตราย และล้างมัลแวร์ตามขั้นตอน</li><li><strong>Coordination with CERT:</strong> สนับสนุนข้อมูลทางเทคนิคแก่ผู้ว่าจ้างในการประสานงานกับ ThaiCERT หรือ สกมช. ตามกฎหมาย</li></ol>
+  </section>
+
+  <section class="section-block" id="s6">
+    <h2 class="section-heading">หน้าที่ของ MSSP ในฐานะ Data Processor ตาม PDPA และการเก็บรักษาข้อมูลจราจรทางคอมพิวเตอร์ (Log) ตามพระราชบัญญัติว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ พ.ศ. 2550 มาตรา 26</h2>
+<p>ในบริบทของการเฝ้าระวัง SOC และ MSSP:</p>
+<ul class="content-list"><li><strong>Data Processor Duties:</strong> ในกรณีที่ Log หรือ Traffic ที่ MSSP ตรวจสอบมีข้อมูลส่วนบุคคล MSSP จะมีฐานะเป็น "ผู้ประมวลผลข้อมูลส่วนบุคคล" (Data Processor) ตาม PDPA มาตรา 40 สัญญาต้องมีข้อตกลงประมวลผลข้อมูล (Data Processing Agreement - DPA) ที่บังคับให้ MSSP ประมวลผลข้อมูลตามคำสั่งของผู้ว่าจ้างเท่านั้น และต้องแจ้งเหตุละเมิดแก่ผู้ว่าจ้าง <strong>ทันทีโดยไม่ช้า</strong> (Without Undue Delay)</li><li><strong>Log Retention Compliance:</strong> มาตรา 26 แห่งพระราชบัญญัติว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ พ.ศ. 2550 ใช้กับผู้ให้บริการตามนิยามในมาตรา 3 ที่อยู่ในประเภทซึ่งรัฐมนตรีประกาศกำหนด [ต้องยืนยันแหล่งที่มา] ผู้ให้บริการดังกล่าวต้องเก็บรักษาข้อมูลจราจรทางคอมพิวเตอร์ไว้ <strong>ไม่น้อยกว่า 90 วัน</strong> นับแต่วันที่ข้อมูลเข้าสู่ระบบคอมพิวเตอร์ และพนักงานเจ้าหน้าที่อาจสั่งให้เก็บเกิน 90 วันแต่ไม่เกินสองปีเป็นกรณีพิเศษเฉพาะรายและเฉพาะคราว ผู้ว่าจ้างและ MSSP จึงต้องวินิจฉัยก่อนว่าตนเป็นผู้ให้บริการดังกล่าวหรือไม่ ส่วนระยะเวลาเก็บบันทึกด้านความมั่นคงปลอดภัยประเภทอื่นให้กำหนดตามสัญญา โดย Log ต้องถูกจัดเก็บแบบไม่สามารถแก้ไขเปลี่ยนแปลงได้ (Integrity Preserved) และมีการลงตราเวลา (Timestamp) ที่เที่ยงตรง</li></ul>
+  </section>
+
+  <section class="section-block" id="s7">
+    <h2 class="section-heading">LAS Practice Note: การออกแบบข้อสัญญา Forensic Investigation Cooperation, Chain of Custody และ Cyber Insurance Interlock</h2>
+<h3 class="sub-heading">Forensic Investigation Cooperation &amp; Chain of Custody</h3>
+<p>สัญญาต้องระบุสิทธิของผู้ว่าจ้างในการเข้าตรวจสอบและแต่งตั้งผู้เชี่ยวชาญอิสระ (Third-Party Forensic Auditor) เข้าทำการตรวจพิสูจน์พยานหลักฐานดิจิทัลทันทีที่เกิดเหตุการณ์ MSSP ต้องมอบ Log Files, Memory Dumps และ System Snapshots โดยต้องรักษากระบวนการสั่งสมและจัดเก็บพยานหลักฐาน (Chain of Custody) ตามมาตรฐานสากลเพื่อใช้เป็นพยานหลักฐานในชั้นศาล</p>
+<h3 class="sub-heading">Cyber Insurance Interlock</h3>
+<p>เพื่อลดความเสี่ยงทางการเงิน สัญญา MSSP ต้องมีข้อกำหนด Interlock กับกรมธรรม์ประกันภัยไซเบอร์ (Cyber Insurance Alignment):</p>
+<ul class="content-list"><li>บังคับให้ MSSP ต้องถือครองกรมธรรม์ Cyber Liability Insurance และ Professional Indemnity Insurance วงเงินคุ้มครองไม่ต่ำกว่าที่ตกลงกัน</li><li>กำหนดให้ MSSP ต้องปฏิบัติตามเงื่อนไขของบริษัทประกันภัยของผู้ว่าจ้าง ในการจัดเก็บและส่งมอบหลักฐาน เพื่อไม่ให้สิทธิการเคลมประกันภัยของผู้ว่าจ้างต้องเสียไป</li></ul>
+  </section>
+
+  <section class="section-block" id="s8">
+    <h2 class="section-heading">ข้อต่อสู้ของผู้ให้บริการ MSSP กับองค์กรผู้ว่าจ้าง <span class="en">Devil's Advocate</span></h2>
+<p><strong>ข้อต่อสู้ทางกฎหมายและสัญญา</strong></p>
+<div class="compare-table"><div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="article-table las-reading-table"><thead><tr><th scope="col">ฝ่าย MSSP (ผู้ให้บริการ)</th><th scope="col">ฝ่ายผู้ว่าจ้าง (องค์กร)</th></tr></thead><tbody><tr><td>1. "ไม่มีระบบความปลอดภัยใด 100%" อ้างข้อจำกัดความรับผิด (Cap Limit) เท่ากับค่าบริการที่ได้รับ 2. "ผู้ว่าจ้างไม่ปฏิบัติตามคำแนะนำ ในการ Patch ระบบ หรือเป็นข้อผิดพลาด ของพนักงานภายใน (Internal Threat)"</td><td>1. "MSSP ตกเป็นผู้ผิดสัญญาหากละเลย Alert ตาม SLA และหากความประมาทเลินเล่ออย่างร้ายแรงเป็นของ MSSP เอง MSSP จะอ้างข้อตกลงยกเว้นความรับผิดไม่ได้ (ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 373)" 2. "MSSP ต้องพิสูจน์ว่าได้เตือนและ ดำเนินการยับยั้ง (Containment) ตาม มาตรฐานวิชาชีพแล้วอย่างครบถ้วน"</td></tr></tbody></table>
+</div></div>
+<p><strong>ข้อวิเคราะห์ของ LAS:</strong> ความตกลงทำไว้ล่วงหน้าที่ยกเว้นมิให้ MSSP ต้องรับผิดเพื่อกลฉ้อฉลหรือความประมาทเลินเล่ออย่างร้ายแรงของตนเองเป็นโมฆะตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 373 แต่สำหรับความผิดของเจ้าหน้าที่ที่ MSSP ใช้ในการชำระหนี้ มาตรา 220 ให้ MSSP รับผิดเสมือนเป็นความผิดของตนเอง โดยมิให้นำมาตรา 373 มาใช้บังคับ ส่วนเพดานความรับผิด (Cap) ที่ไม่เป็นโมฆะมีผลบังคับได้เพียงเท่าที่เป็นธรรมและพอสมควรแก่กรณีตามพระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540 มาตรา 8 วรรคสอง และหากสัญญาของ MSSP เป็นสัญญาสำเร็จรูป ข้อตกลงยกเว้นหรือจำกัดความรับผิดที่เกิดจากการผิดสัญญาเป็นข้อตกลงที่อาจถือได้ว่าทำให้ได้เปรียบคู่สัญญาอีกฝ่ายหนึ่งตามมาตรา 4 โดยศาลพิเคราะห์ถึงพฤติการณ์ทั้งปวงตามมาตรา 10</p>
+  </section>
+
+  <section class="section-block" id="s9">
+    <h2 class="section-heading">ตัวอย่างสถานการณ์จำลอง <span class="en">Worked Example</span></h2>
+<ul class="content-list"><li><strong>เหตุการณ์ (ตัวอย่างสมมติ):</strong> โรงพยาบาลเอกชนแห่งหนึ่ง ทำสัญญาจ้าง MSSP เพื่อเฝ้าระวัง SOC 24/7 ต่อมาเวลา 02:00 น. ระบบของโรงพยาบาลถูก Ransomware เข้าโจมตีล็อกฐานข้อมูลผู้ป่วย ระบบ SIEM ของ MSSP ได้รับ Alert ระดับ Critical แต่เจ้าหน้าที่ SOC ของ MSSP ไม่ได้เข้าตรวจสอบเนื่องจากเข้าใจว่าเป็น False Positive จนกระทั่งเวลา 08:00 น. จึงแจ้งเตือนโรงพยาบาล เหตุการณ์นี้ทำให้เกิดความเสียหายรวม 33 ล้านบาท ได้แก่ ค่ากู้ระบบ 10 ล้านบาท ค่าปรับทางปกครองที่คณะกรรมการผู้เชี่ยวชาญสั่งลงโทษโรงพยาบาลในฐานะผู้ควบคุมข้อมูลส่วนบุคคลตามมาตรา 83 แห่งพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 ซึ่งมีอัตราไม่เกิน 3,000,000 บาท โดยสมมติว่าถูกปรับเต็มอัตรา 3 ล้านบาท และความเสียหายเชิงธุรกิจ 20 ล้านบาท</li><li><strong>การดำเนินคดีและการพิสูจน์ความรับผิด:</strong></li></ul>
+<ol class="content-list"><li>โรงพยาบาลใช้สิทธิตามสัญญาแต่งตั้ง Forensic Auditor เข้าตรวจสอบ Log ในระบบ SIEM ของ MSSP</li><li>ผล Forensic พิสูจน์ได้ว่า Alert แจ้งเตือนเกิดขึ้นตั้งแต่ 02:05 น. แต่เจ้าหน้าที่ MSSP ละเลย ไม่ดำเนินการตาม SLA (MTTD/MTTR) ซึ่งกำหนดไว้ที่ 15 นาที และ 1 ชั่วโมง</li><li>สมมติว่าศาลพิจารณาว่า การมองข้าม Alert ระดับ Critical ในช่วงเวลาดังกล่าวโดยไม่ตรวจสอบถือเป็น <strong>"ความประมาทเลินเล่ออย่างร้ายแรง" (Gross Negligence)</strong> ตาม ป.พ.พ. มาตรา 373</li><li>ผลทางกฎหมาย: หากความประมาทเลินเล่ออย่างร้ายแรงเป็นของ MSSP เอง เช่น การจัดกำลังคนหรือระบบงานของ SOC ไม่เป็นไปตามที่สัญญากำหนด ข้อตกลงจำกัดความรับผิด (Limitation of Liability Cap) ที่กำหนดให้รับผิดไม่เกินค่าบริการ 3 เดือนย่อมตกเป็นโมฆะในส่วนนั้นตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 373 และผลต่อส่วนที่เหลือของข้อตกลงเป็นไปตามมาตรา 173 แต่หากความประมาทเป็นของเจ้าหน้าที่ SOC ซึ่ง MSSP ใช้ในการชำระหนี้ มาตรา 220 ให้ MSSP รับผิดเสมือนเป็นความผิดของตนเอง โดยมิให้นำมาตรา 373 มาใช้บังคับ ผลบังคับของเพดานความรับผิดในกรณีนี้จึงต้องพิจารณาตามพระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540 มาตรา 8 วรรคสอง ซึ่งให้มีผลบังคับได้เพียงเท่าที่เป็นธรรมและพอสมควรแก่กรณี ไม่ว่ากรณีใด MSSP ต้องชดใช้เฉพาะความเสียหายที่พิสูจน์ได้ว่าเป็นความเสียหายเช่นที่ตามปกติย่อมเกิดขึ้นแต่การไม่ชำระหนี้ หรือเกิดแต่พฤติการณ์พิเศษที่คู่กรณีได้คาดเห็นหรือควรจะได้คาดเห็นล่วงหน้าตามมาตรา 222 มิใช่เต็มจำนวนเสมอไป ส่วนการที่ผู้รับประกันภัยตามกรมธรรม์ Cyber Liability ของ MSSP ต้องจ่ายหรือไม่ เป็นไปตามเงื่อนไขและข้อยกเว้นในกรมธรรม์</li></ol>
+  </section>
+
+  <section class="section-block" id="s10">
+    <h2 class="section-heading">Checklist 10 จุดตรวจสัญญา MSSP &amp; Managed SOC Agreement</h2>
+<ul class="checklist"><li><span class="cb" aria-hidden="true"></span><span><strong>[ ] Scope of Monitoring &amp; Coverage:</strong> ระบุ Scope ของ Asset, IP, Log Sources, และ cloud environments ที่ต้องได้รับการเฝ้าระวังอย่างชัดเจน</span></li><li><span class="cb" aria-hidden="true"></span><span><strong>[ ] Operational SLAs (MTTD &amp; MTTR):</strong> ตกลง MTTD และ MTTR แยกตามระดับความรุนแรงของภัยคุกคาม (Severity Matrix) เช่น 15 นาทีและ 1 ชั่วโมงสำหรับเหตุระดับวิกฤต ซึ่งเป็นข้อตกลงทางการค้า มิใช่ตัวเลขที่กฎหมายกำหนด และระบุให้ชัดว่าเป็นกำหนดเวลาต่อเหตุการณ์หรือค่าเฉลี่ยรายเดือน พร้อมผลของการไม่เป็นไปตามเงื่อนไข</span></li><li><span class="cb" aria-hidden="true"></span><span><strong>[ ] 24/7/365 SOC Availability:</strong> ระบุข้อตกลงการทำงานของเจ้าหน้าที่ Tier 1, Tier 2, และ Tier 3 ตลอด 24 ชั่วโมง ไม่มีวันหยุด</span></li><li><span class="cb" aria-hidden="true"></span><span><strong>[ ] SIEM/SOAR Tuning &amp; False Positive Reduction:</strong> กำหนดหน้าที่ของ MSSP ในการปรับปรุง Tuning Rule ทุกเดือนเพื่อลด False Positive Rate</span></li><li><span class="cb" aria-hidden="true"></span><span><strong>[ ] Statutory Breach Notification Protocol:</strong> กำหนดเวลาที่ MSSP ต้องแจ้งเหตุละเมิดแก่ผู้ว่าจ้างให้สั้นกว่า 72 ชั่วโมงอย่างมาก และให้ MSSP ส่งข้อมูลที่ผู้ว่าจ้างต้องใช้ประเมินว่าการละเมิดมีความเสี่ยงหรือมีความเสี่ยงสูงที่จะมีผลกระทบต่อสิทธิและเสรีภาพของบุคคลหรือไม่ เพื่อให้ผู้ว่าจ้างแจ้งสำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคลและเจ้าของข้อมูลส่วนบุคคลได้ทันตามมาตรา 37 (4) แห่งพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 และรายงานตามมาตรา 57 แห่งพระราชบัญญัติการรักษาความมั่นคงปลอดภัยไซเบอร์ พ.ศ. 2562 หากผู้ว่าจ้างเป็นหน่วยงานโครงสร้างพื้นฐานสำคัญทางสารสนเทศ</span></li><li><span class="cb" aria-hidden="true"></span><span><strong>[ ] Data Processor &amp; DPA Terms:</strong> มีข้อตกลงการประมวลผลข้อมูลส่วนบุคคล รักษาความลับ และห้ามนำข้อมูลไปใช้นอกเหนือคำสั่ง</span></li><li><span class="cb" aria-hidden="true"></span><span><strong>[ ] Log Retention Compliance:</strong> วินิจฉัยก่อนว่าผู้ว่าจ้างหรือ MSSP เป็นผู้ให้บริการที่ต้องเก็บรักษาข้อมูลจราจรทางคอมพิวเตอร์ไม่น้อยกว่า 90 วันตามมาตรา 26 แห่งพระราชบัญญัติว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ พ.ศ. 2550 หรือไม่ และกำหนดระยะเวลาเก็บบันทึกด้านความมั่นคงปลอดภัยอื่นตามสัญญา พร้อม Integrity &amp; Timestamp Verification</span></li><li><span class="cb" aria-hidden="true"></span><span><strong>[ ] Forensic Audit &amp; Chain of Custody Rights:</strong> ให้สิทธิผู้ว่าจ้างและ Third-Party Auditor เข้าตรวจสอบและขอรับข้อมูลหลักฐานดิจิทัลทันทีเมื่อเกิดเหตุ</span></li><li><span class="cb" aria-hidden="true"></span><span><strong>[ ] Ransomware &amp; Gross Negligence Exception:</strong> ข้อสัญญาจำกัดความรับผิดต้องระบุยกเว้นกรณีกลฉ้อฉลหรือความประมาทเลินเล่ออย่างร้ายแรงของ MSSP ตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 373 และควรระบุให้ครอบคลุมความประมาทเลินเล่ออย่างร้ายแรงของเจ้าหน้าที่ที่ MSSP ใช้ในการชำระหนี้ด้วย เพราะมาตรา 220 ไม่ให้นำมาตรา 373 มาใช้บังคับแก่กรณีนั้น และตรวจว่าเพดานความรับผิดเป็นธรรมและพอสมควรแก่กรณีตามพระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540</span></li><li><span class="cb" aria-hidden="true"></span><span><strong>[ ] Cyber Insurance Interlock:</strong> บังคับให้ MSSP ต้องทำประกันภัย Cyber / Professional Indemnity Insurance และให้ความร่วมมือในการเคลมประกันของผู้ว่าจ้าง</span></li></ul>
+  </section>
+
+
+
+  <!-- FAQ -->
+  <section class="section-block" id="faq">
+    <h2 class="section-heading">คำถามที่พบบ่อย <span class="en">Frequently Asked Questions</span></h2>
+    <div class="faq-item">
+      <div class="faq-q">หาก MSSP อ้างว่า Ransomware เป็น Zero-day Attack ที่ไม่มี Signature ในระบบ MSSP จะหลุดพ้นจากความรับผิดหรือไม่?</div>
+      <div class="faq-a">ไม่เสมอไป แม้จะเป็น Zero-day แต่หากระบบเฝ้าระวัง SOC แสดงพฤติกรรมความผิดปกติ (Behavioral Anomaly / Threat Intelligence Alert) แล้วเจ้าหน้าที่ SOC ไม่เข้าตรวจสอบตาม SLA หรือล่าช้าเกินกว่ามาตรฐาน MSSP ยังคงต้องรับผิดในความบกพร่องเชิงปฏิบัติการและการละเว้นหน้าที่</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">ค่าปรับทางปกครองที่ผู้ว่าจ้างถูกลงโทษตาม PDPA สามารถผลักภาระไปให้ MSSP ชดใช้ได้หรือไม่?</div>
+      <div class="faq-a">คู่สัญญาอาจกำหนดในข้อสัญญาชดใช้ความเสียหาย (Indemnification Clause) ให้ MSSP ชดใช้ความเสียหายที่เกิดจากการผิดสัญญาของตน เช่น การแจ้งเหตุละเมิดล่าช้ากว่าที่สัญญากำหนดได้ แต่ผลบังคับของข้อสัญญาที่ให้ MSSP ชดใช้ค่าปรับทางปกครองซึ่งคณะกรรมการผู้เชี่ยวชาญสั่งลงโทษผู้ว่าจ้างในฐานะผู้ควบคุมข้อมูลส่วนบุคคลเพราะการฝ่าฝืนหน้าที่ของผู้ว่าจ้างเอง ยังไม่มีบทบัญญัติรองรับโดยตรง และอาจถูกโต้แย้งว่าขัดต่อความสงบเรียบร้อยของประชาชนตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 150 [ต้องยืนยันแหล่งที่มา]</div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <div class="ref-section" id="refs">
+    <h3>อ้างอิง — References</h3>
+    <ul>
+      <li><strong>พระราชบัญญัติการรักษาความมั่นคงปลอดภัยไซเบอร์ พ.ศ. 2562:</strong> มาตรา 49 มาตรา 54 มาตรา 56 มาตรา 57 มาตรา 58 และมาตรา 73 (การประกาศกำหนดลักษณะหน่วยงานโครงสร้างพื้นฐานสำคัญทางสารสนเทศ การประเมินความเสี่ยง กลไกเฝ้าระวัง หน้าที่รายงานและรับมือเหตุภัยคุกคามทางไซเบอร์ และโทษกรณีไม่รายงาน)</li>
+      <li><strong>พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (PDPA):</strong> มาตรา 37 (4) มาตรา 40 มาตรา 77 มาตรา 78 มาตรา 83 มาตรา 86 และมาตรา 90 (หน้าที่แจ้งเหตุการละเมิดข้อมูลส่วนบุคคล หน้าที่ของผู้ประมวลผลข้อมูลส่วนบุคคล ความรับผิดทางแพ่ง และโทษปรับทางปกครอง)</li>
+      <li><strong>พ.ร.บ.ว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ พ.ศ. 2550 (และที่แก้ไขเพิ่มเติม):</strong> มาตรา 26 (การเก็บบันทึกข้อมูลจราจรทางคอมพิวเตอร์)</li>
+      <li><strong>ประมวลกฎหมายแพ่งและพาณิชย์:</strong> มาตรา 150 มาตรา 173 มาตรา 220 มาตรา 222 มาตรา 368 มาตรา 373 และมาตรา 587 (โมฆะกรรม ความรับผิดของลูกหนี้ในความผิดของบุคคลที่ตนใช้ในการชำระหนี้ ค่าสินไหมทดแทน การตีความสัญญา ความตกลงทำไว้ล่วงหน้ายกเว้นความรับผิดเพื่อกลฉ้อฉลหรือความประมาทเลินเล่ออย่างร้ายแรงของลูกหนี้เอง และสัญญาจ้างทำของ)</li>
+      <li><strong>พระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540:</strong> มาตรา 4 มาตรา 8 และมาตรา 10 (ข้อจำกัดความรับผิดในสัญญาสำเร็จรูปและข้อตกลงยกเว้นหรือจำกัดความรับผิดที่ไม่เป็นโมฆะมีผลบังคับได้เพียงเท่าที่เป็นธรรมและพอสมควรแก่กรณี ส่วนข้อตกลงล่วงหน้าที่ยกเว้นความรับผิดเพื่อกลฉ้อฉลหรือความประมาทเลินเล่ออย่างร้ายแรงของลูกหนี้เองเป็นโมฆะตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 373 บทความนี้ไม่อ้างคำพิพากษาในประเด็นมาตรฐานความระมัดระวังของผู้มีวิชาชีพ)</li>
+      <li>สำนักงานคณะกรรมการกฤษฎีกา — <a href="https://www.ocs.go.th/searchlaw-law" target="_blank" rel="noopener">ระบบสืบค้นกฎหมาย (OCS)</a></li>
+    </ul>
+  </div>
+
+
+  <!-- RELATED ARTICLES (drive-publish.py) -->
+  <div style="margin-top:36px;">
+    <h3 style="color:var(--navy);margin-bottom:16px;font-size:1rem;font-weight:700;">บทความที่เกี่ยวข้อง</h3>
+    <div class="related-articles">
+      <a class="related-card" href="/articles/hyperscale-data-center-due-diligence-thailand.html"><div class="rel-tag">Due Diligence · Data Center</div>ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการศูนย์ข้อมูลไฮเปอร์สเกลและคลาวด์คอมพิวติ้ง (Hyperscale Data Center &amp; Cloud Infrastructure M&amp;A Due Diligence)</a>
+      <a class="related-card" href="/articles/e-marketplace-platform-agreement-thailand.html"><div class="rel-tag">Contract Review · E-Marketplace</div>ดักจุดตายสัญญาให้บริการแพลตฟอร์มตลาดกลางพาณิชย์อิเล็กทรอนิกส์ (E-Marketplace Platform &amp; Merchant Agreement)</a>
+      <a class="related-card" href="/articles/cloud-gaming-streaming-agreement-thailand.html"><div class="rel-tag">Contract Review · Cloud Gaming</div>ดักจุดตายสัญญาให้บริการคลาวด์เกมมิ่งและการสตรีมมิ่งมัลติมีเดีย (Cloud Gaming &amp; Interactive Media Streaming Services Agreement)</a>
+      <a class="related-card" href="/articles/penetration-testing-service-agreement-template-thailand.html"><div class="rel-tag">Contract Template · Penetration Testing</div>พิมพ์เขียวและแม่แบบสัญญาบริการทดสอบและตรวจสอบความปลอดภัยของระบบสารสนเทศ (Penetration Testing &amp; Red Teaming Master Services Agreement Template)</a>
+      <a class="related-card" href="/articles/cybersecurity-data-breach-due-diligence-thailand.html"><div class="rel-tag">ความมั่นคงปลอดภัยไซเบอร์</div>ตรวจสอบสถานะความเสี่ยงด้านความมั่นคงปลอดภัยไซเบอร์</a>
+      <a class="related-card" href="/articles/las-cc-index.html"><div class="rel-tag">LAS C&amp;C</div>สารบัญชุด LAS C&amp;C</a>
+    </div>
+  </div>
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <strong>ข้อสงวน (Disclaimer):</strong> บทความนี้จัดทำโดย Legal Advance Solution Co., Ltd. เพื่อเป็นข้อมูลทั่วไปด้านกฎหมายเท่านั้น ไม่ถือเป็นคำปรึกษากฎหมายเฉพาะกรณี และไม่ก่อให้เกิดความสัมพันธ์ทนาย-ลูกความ กฎหมายอาจมีการเปลี่ยนแปลง กรุณาปรึกษาทนายความที่มีใบอนุญาตก่อนดำเนินการใด ๆ ตามกฎหมาย | <em>LAS Legal Hub — ข้อมูลกฎหมายเพื่อธุรกิจ</em>
+  </div>
+
+</div><!-- end article-body -->
+<footer class="las-author-footer" style="text-align:center;padding:24px 16px;font-size:13px;color:#1B2A4A;">
+  <p class="las-author-credit">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D. — Legal Advance Solution Co., Ltd. (LAS)</p>
+</footer>
+</body>
+</html>

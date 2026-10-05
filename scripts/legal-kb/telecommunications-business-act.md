@@ -8,5 +8,17 @@ Official source: https://searchlaw.ocs.go.th/council-of-state/#/public/doc/bENsW
 
 Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
+- มาตรา 4
 - มาตรา 7
+- มาตรา 8
+- มาตรา 10
+- มาตรา 22
 - มาตรา 39
+- มาตรา 49
+- มาตรา 51
+- มาตรา 54
+- มาตรา 64
+- มาตรา 65
+- มาตรา 66
+- มาตรา 67
+- มาตรา 74
