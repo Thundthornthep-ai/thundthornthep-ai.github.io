@@ -21,5 +21,13 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 27
 - มาตรา 30
 - มาตรา 31
+- มาตรา 43/1
+- มาตรา 43/4
+- มาตรา 43/7
+- มาตรา 43/8
+- มาตรา 53/1
+- มาตรา 53/4
+- มาตรา 53/5
+- มาตรา 53/6
 - มาตรา 64
 - มาตรา 69

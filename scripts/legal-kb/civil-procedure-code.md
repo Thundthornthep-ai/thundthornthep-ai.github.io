@@ -8,6 +8,7 @@ Official source: https://www.ocs.go.th/searchlaw-law
 
 Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
+- มาตรา 55
 - มาตรา 254
 - มาตรา 271
 - มาตรา 54

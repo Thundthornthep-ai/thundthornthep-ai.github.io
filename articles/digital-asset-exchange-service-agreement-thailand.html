@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+<meta property="og:url" content="https://thundthornthep-ai.github.io/articles/digital-asset-exchange-service-agreement-thailand.html" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NN3KX46PVC"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NN3KX46PVC');</script>
+<link rel="icon" type="image/webp" href="/las-logo.webp">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ดักจุดตายสัญญาให้บริการแพลตฟอร์มสินทรัพย์ดิจิทัลและศูนย์ซื้อขายคริปโทเคอร์เรนซี (Digital Asset Exchange &amp; Brokerage Master Services Agreement) | LAS Shield Deep Research EP38 | LAS Legal Hub</title>
+  <meta name="description" content="ปัญหาข้อสัญญาและ SLA ในช่วงระบบล่ม (Peak Trading Outage &amp; Exemption of Liability): ข้อสัญญาที่ตกลงกันไว้ล่วงหน้าเพื่อยกเว้นมิให้ผู้ให้บริการต้องรับผิดเพื่อกลฉ้อฉลหรือความประมาทเลินเล่ออย่างร้ายแรงของตนเองเป็นโมฆะตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 373…" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Thundthornthep Yamoutai, Ph.D." />
+  <meta property="og:title" content="ดักจุดตายสัญญาให้บริการแพลตฟอร์มสินทรัพย์ดิจิทัลและศูนย์ซื้อขายคริปโทเคอร์เรนซี (Digital Asset Exchange &amp; Brokerage Master Services Agreement)" />
+  <meta property="og:description" content="ปัญหาข้อสัญญาและ SLA ในช่วงระบบล่ม (Peak Trading Outage &amp; Exemption of Liability): ข้อสัญญาที่ตกลงกันไว้ล่วงหน้าเพื่อยกเว้นมิให้ผู้ให้บริการต้องรับผิดเพื่อกลฉ้อฉลหรือความประมาทเลินเล่ออย่างร้ายแรงของตนเองเป็นโมฆะตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 373…" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="th_TH" />
+  <link rel="canonical" href="https://thundthornthep-ai.github.io/articles/digital-asset-exchange-service-agreement-thailand.html" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ดักจุดตายสัญญาให้บริการแพลตฟอร์มสินทรัพย์ดิจิทัลและศูนย์ซื้อขายคริปโทเคอร์เรนซี (Digital Asset Exchange & Brokerage Master Services Agreement): วิเคราะห์การกำกับดูแลตาม พ.ร.ก.การประกอบธุรกิจสินทรัพย์ดิจิทัล พ.ศ. 2561 (ก.ล.ต.), ข้อกำหนดมาตรการแยกเก็บรักษาทรัพย์สินของลูกค้า (Client Asset Custody & Segregation), ระบบ Matching Engine & Latency SLA, การจัดสรรความรับผิดกรณีระบบล่มช่วงตลาดผันผวนสูง (Peak Trading Outage), ข้อจำกัดความรับผิดจากการถูกเจาะระบบ (Cyber Hack & Private Key Compromise), และหน้าที่ปฏิบัติตามกฎหมายฟอกเงิน (AML/CFT & Travel Rule)",
+    "alternativeHeadline": "Digital Asset Exchange & Custodial Architecture: SEC Thailand Regulatory Mandates, Client Fund Segregation, Trading Engine Uptime SLAs, Cyber Incident Liability Allocation, and Travel Rule Compliance",
+    "author": {"@type": "Person", "name": "Thundthornthep Yamoutai, Ph.D.", "affiliation": "Legal Advance Solution Co., Ltd."},
+    "publisher": {"@type": "Organization", "name": "Legal Advance Solution Co., Ltd."},
+    "datePublished": "2026-10-05",
+    "dateModified": "2026-10-05",
+    "inLanguage": "th",
+    "isPartOf": {"@type": "CreativeWorkSeries", "name": "LAS Shield — Deep Research"}
+  }
+  </script>
+  <style>
+    :root {
+      --gold: #C9A96E;
+      --navy: #1B2A4A;
+      --red-bg: #FADBD8;
+      --red-border: #C0392B;
+      --orange-bg: #FDEBD0;
+      --orange-border: #E67E22;
+      --green-bg: #D5F5E3;
+      --green-border: #27AE60;
+      --blue-bg: #D6EAF8;
+      --blue-border: #2471A3;
+      --gray-bg: #F4F6F7;
+      --text: #2C303A;
+      --muted: #6C7A89;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Sarabun', 'TH Sarabun New', sans-serif;
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text);
+      background: #FAFAFA;
+    }
+    .article-header {
+      background: linear-gradient(135deg, var(--navy) 0%, #2C3E6A 100%);
+      color: #fff;
+      padding: 48px 24px 36px;
+      text-align: center;
+    }
+    .article-header .category-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .article-header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .article-header .subtitle {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 20px;
+    }
+    .article-header .meta {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+    }
+    .article-body {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+    /* TOC */
+    .toc-box {
+      background: var(--blue-bg);
+      border-left: 4px solid var(--blue-border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+    }
+    .toc-box h3 {
+      font-size: 1rem;
+      color: var(--blue-border);
+      margin-bottom: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .toc-box ol { padding-left: 22px; }
+    .toc-box li { margin-bottom: 6px; }
+    .toc-box a { color: var(--navy); text-decoration: none; font-size: 15px; }
+    .toc-box a:hover { text-decoration: underline; color: var(--blue-border); }
+    /* Section blocks */
+    .section-block { margin-bottom: 48px; }
+    .section-heading {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--navy);
+      border-bottom: 3px solid var(--gold);
+      padding-bottom: 8px;
+      margin-bottom: 6px;
+    }
+    .section-heading .en {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--muted);
+      margin-left: 10px;
+      letter-spacing: 0.3px;
+    }
+    .sub-heading {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 24px 0 10px;
+      padding-left: 10px;
+      border-left: 3px solid var(--gold);
+    }
+    p { margin-bottom: 14px; }
+    /* Compare table */
+    .compare-table {
+      overflow-x: auto;
+      margin: 24px 0 28px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    table.article-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    table.article-table thead th {
+      background: var(--navy);
+      color: #fff;
+      padding: 13px 16px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+    }
+    table.article-table thead th:first-child { border-radius: 10px 0 0 0; }
+    table.article-table thead th:last-child { border-radius: 0 10px 0 0; }
+    table.article-table tbody tr:hover { filter: brightness(0.96); transition: filter 0.15s; }
+    table.article-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #E5E8EB;
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    table.article-table td:first-child {
+      font-weight: 700;
+      color: var(--navy);
+      white-space: nowrap;
+      background: #F0F3F7 !important;
+      min-width: 140px;
+    }
+    table.article-table .col-hiree { background: #FDEBD0; }
+    table.article-table .col-labor { background: #D5F5E3; }
+    table.article-table .col-risk-high { background: #FADBD8; }
+    table.article-table .col-risk-med { background: #FDEBD0; }
+    table.article-table .col-risk-low { background: #D5F5E3; }
+    /* Practice note */
+    .practice-note {
+      background: var(--orange-bg);
+      border-left: 4px solid var(--orange-border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+    .practice-note.alert {
+      background: var(--red-bg);
+      border-left-color: var(--red-border);
+    }
+    .practice-note.tip {
+      background: var(--green-bg);
+      border-left-color: var(--green-border);
+    }
+    .pn-label {
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .practice-note .pn-label { color: var(--orange-border); }
+    .practice-note.alert .pn-label { color: var(--red-border); }
+    .practice-note.tip .pn-label { color: var(--green-border); }
+    /* Law ref cards */
+    .law-ref-cards { display: flex; flex-wrap: wrap; gap: 14px; margin: 20px 0; }
+    .law-ref-card {
+      flex: 1 1 260px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #fff;
+      border: 1.5px solid #DDE3EA;
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    }
+    .law-ref-card.cat-civil { border-left: 4px solid #2471A3; }
+    .law-ref-card.cat-labor { border-left: 4px solid #117A65; }
+    .law-ref-card.cat-tax { border-left: 4px solid #884EA0; }
+    .law-icon {
+      font-size: 22px;
+      min-width: 28px;
+      text-align: center;
+      margin-top: 2px;
+    }
+    .law-info .law-name {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+    .law-info .law-source {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    /* Content list */
+    .content-list { padding-left: 22px; margin-bottom: 16px; }
+    .content-list li { margin-bottom: 8px; }
+    /* FAQ */
+    .faq-item {
+      border: 1px solid #DDE3EA;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+    .faq-item .faq-q {
+      background: var(--navy);
+      color: #fff;
+      padding: 13px 18px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .faq-item .faq-q::before { content: "Q: "; color: var(--gold); }
+    .faq-item .faq-a {
+      padding: 14px 18px;
+      background: #fff;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    /* Law quote (verbatim) */
+    .law-quote {
+      background: #F0F3F7;
+      border-left: 4px solid var(--navy);
+      border-radius: 6px;
+      padding: 14px 18px;
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: var(--navy);
+      margin: 14px 0;
+      white-space: pre-wrap;
+      font-family: 'Sarabun', 'TH Sarabun New', monospace;
+    }
+    /* Risk badge */
+    .risk-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .risk-high { background: var(--red-bg); color: var(--red-border); border: 1px solid var(--red-border); }
+    .risk-med  { background: var(--orange-bg); color: var(--orange-border); border: 1px solid var(--orange-border); }
+    .risk-low  { background: var(--green-bg); color: var(--green-border); border: 1px solid var(--green-border); }
+    /* Summary card */
+    .summary-card {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 24px 0;
+    }
+    .summary-card h3 { color: var(--gold); margin-bottom: 14px; font-size: 1.1rem; }
+    .summary-card ul { padding-left: 22px; }
+    .summary-card li { margin-bottom: 8px; font-size: 15px; opacity: 0.92; }
+    /* References */
+    .ref-section {
+      background: var(--gray-bg);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-top: 40px;
+    }
+    .ref-section h3 { color: var(--navy); margin-bottom: 14px; font-size: 1rem; font-weight: 700; }
+    .ref-section ul { padding-left: 20px; }
+    .ref-section li { font-size: 14px; margin-bottom: 6px; color: var(--muted); }
+    .ref-section a { color: var(--blue-border); }
+    /* Related */
+    .related-articles {
+      display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px;
+    }
+    .related-card {
+      flex: 1 1 200px;
+      background: #fff;
+      border: 1.5px solid #DDE3EA;
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 14px;
+      color: var(--navy);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover { border-color: var(--gold); }
+    .related-card .rel-tag { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+    /* Disclaimer */
+    .disclaimer {
+      margin-top: 40px;
+      padding: 16px 20px;
+      background: #F4F6F7;
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    /* Responsive */
+    @media (max-width: 640px) {
+      .article-header h1 { font-size: 1.45rem; }
+      .section-heading { font-size: 1.25rem; }
+      table.article-table td:first-child { min-width: 110px; }
+    }
+    /* ── Deep-Research extras (LAS Legal Master Template v1.0.0) ── */
+    .article-header .h1-sub { display:block; font-size:1.15rem; font-weight:600; color:rgba(255,255,255,0.9); margin-top:8px; line-height:1.5; }
+    .meta-chips { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:14px; }
+    .chip { display:inline-block; background:rgba(255,255,255,0.12); color:#fff; font-size:12px; padding:3px 12px; border-radius:14px; letter-spacing:0.2px; }
+    .chip-gold { background:var(--gold); color:var(--navy); font-weight:700; }
+    .quick-answer { background:var(--green-bg); border-left:4px solid var(--green-border); border-radius:8px; padding:18px 22px; margin-bottom:24px; }
+    .quick-answer .pn-label { color:var(--green-border); }
+    .quick-answer p { margin:0; font-size:16px; }
+    .hook-box { background:#fff; border:1.5px solid #DDE3EA; border-left:4px solid var(--navy); border-radius:10px; padding:18px 22px; margin-bottom:28px; }
+    .hook-box h3 { font-size:1rem; color:var(--navy); margin-bottom:10px; font-weight:800; }
+    .hook-box ol { padding-left:22px; }
+    .hook-box li { margin-bottom:8px; }
+    .checklist { list-style:none; padding-left:0; margin:12px 0 18px; }
+    .checklist li { display:flex; gap:12px; align-items:flex-start; padding:10px 14px; margin-bottom:8px; background:#fff; border:1px solid #DDE3EA; border-radius:8px; }
+    .checklist .cb { flex:0 0 18px; width:18px; height:18px; margin-top:4px; border:2px solid var(--navy); border-radius:4px; background:#fff; }
+    .compare-table.claim-ledger table.article-table td:first-child { white-space:nowrap; font-family:'Consolas','Menlo',monospace; font-size:13px; }
+    .compare-table.claim-ledger table.article-table td { font-size:14px; }
+    .law-ref-card.cat-pdpa { border-left:4px solid #C0392B; }
+    .law-ref-card.cat-other { border-left:4px solid #7F8C8D; }
+    .practice-note p { margin-bottom:8px; }
+    .practice-note p:last-child { margin-bottom:0; }
+    @media (max-width: 640px) { .article-header .h1-sub { font-size:0.98rem; } }
+  </style>
+<link rel="stylesheet" href="/css/learning-tables.css?v=20260929">
+<link rel="stylesheet" href="/css/las-template-theme.css?v=20260929">
+<script src="/js/las-back.js?v=20261002" defer></script>
+</head>
+<body class="las-knowledge-article">
+
+<!-- HEADER -->
+<header class="article-header">
+  <div class="category-tag">LAS Shield Deep Research · EP38 · Contract Review · Digital Asset Exchange</div>
+  <h1>ดักจุดตายสัญญาให้บริการแพลตฟอร์มสินทรัพย์ดิจิทัลและศูนย์ซื้อขายคริปโทเคอร์เรนซี (Digital Asset Exchange &amp; Brokerage Master Services Agreement)<br><span class="h1-sub">วิเคราะห์การกำกับดูแลตาม พ.ร.ก.การประกอบธุรกิจสินทรัพย์ดิจิทัล พ.ศ. 2561 (ก.ล.ต.), ข้อกำหนดมาตรการแยกเก็บรักษาทรัพย์สินของลูกค้า (Client Asset Custody &amp; Segregation), ระบบ Matching Engine &amp; Latency SLA, การจัดสรรความรับผิดกรณีระบบล่มช่วงตลาดผันผวนสูง (Peak Trading Outage), ข้อจำกัดความรับผิดจากการถูกเจาะระบบ (Cyber Hack &amp; Private Key Compromise), และหน้าที่ปฏิบัติตามกฎหมายฟอกเงิน (AML/CFT &amp; Travel Rule)</span> <span class="las-reviewed-mark" role="img" aria-label="ตรวจทบทวนข้อกฎหมายแล้ว" title="ตรวจทบทวนข้อกฎหมายแล้ว">✓</span></h1>
+<p class="las-review-date"><b>✓ ตรวจทบทวนข้อกฎหมายล่าสุดเมื่อวันที่ 5 ตุลาคม 2569</b> · เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 5 ตุลาคม 2569</p>
+  <p class="subtitle">Digital Asset Exchange &amp; Custodial Architecture: SEC Thailand Regulatory Mandates, Client Fund Segregation, Trading Engine Uptime SLAs, Cyber Incident Liability Allocation, and Travel Rule Compliance</p>
+  <div class="meta">โดย ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D. &nbsp;|&nbsp; Legal Advance Solution Co., Ltd. &nbsp;|&nbsp; ตัวบทกฎหมาย ณ 5 ตุลาคม 2569</div>
+  <div class="meta-chips">
+    <span class="chip">Series: LAS Shield Deep Research</span>
+    <span class="chip">ตอนที่ 38</span>
+    <span class="chip">Jurisdiction: ประเทศไทย</span>
+    <span class="chip chip-gold">LAS Legal Audit ✓ 5 ตุลาคม 2569</span>
+  </div>
+</header>
+
+<div class="article-body">
+
+  <!-- QUICK ANSWER -->
+  <div class="quick-answer" id="quick-answer">
+    <span class="pn-label">คำตอบสั้น — Quick Answer / TL;DR</span>
+    <ol class="content-list"><li><strong>ปัญหาข้อสัญญาและ SLA ในช่วงระบบล่ม (Peak Trading Outage &amp; Exemption of Liability):</strong> ข้อสัญญาที่ตกลงกันไว้ล่วงหน้าเพื่อยกเว้นมิให้ผู้ให้บริการต้องรับผิดเพื่อกลฉ้อฉลหรือความประมาทเลินเล่ออย่างร้ายแรงของตนเองเป็นโมฆะตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 373 ส่วนข้อตกลงที่ทำไว้ล่วงหน้าเพื่อยกเว้นหรือจำกัดความรับผิดในกรณีอื่นซึ่งไม่เป็นโมฆะ มีผลบังคับได้เพียงเท่าที่เป็นธรรมและพอสมควรแก่กรณีตามมาตรา 8 วรรคสอง แห่งพระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540 และหากเป็นข้อตกลงในสัญญาสำเร็จรูปหรือในสัญญาระหว่างผู้บริโภคกับผู้ประกอบธุรกิจที่ทำให้ผู้ประกอบธุรกิจหรือผู้กำหนดสัญญาสำเร็จรูปได้เปรียบคู่สัญญาอีกฝ่ายหนึ่งเกินสมควร ย่อมเป็นข้อสัญญาที่ไม่เป็นธรรมซึ่งมีผลบังคับได้เพียงเท่าที่เป็นธรรมและพอสมควรแก่กรณีตามมาตรา 4 แห่งพระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540 ทั้งมาตรา 4 และมาตรา 8 วรรคสอง ไม่ได้ทำให้ข้อสัญญาตกเป็นโมฆะ อนึ่ง การที่ระบบล่มมิได้เป็นความประมาทเลินเล่ออย่างร้ายแรงโดยอัตโนมัติ ผู้ลงทุนต้องพิสูจน์ว่าผู้ให้บริการเองประมาทเลินเล่ออย่างร้ายแรง และความผิดของตัวแทนหรือบุคคลที่ผู้ให้บริการใช้ในการชำระหนี้เป็นกรณีตาม ป.พ.พ. มาตรา 220 ซึ่งมาตรา 373 ไม่ใช้บังคับ สัญญาควรกำหนดเกณฑ์ Uptime SLA (เช่น 99.9%) และกลไกชดเชยค่าเสียหาย (System Credit / Compensation Pool)</li><li><strong>การกำกับดูแลและการแยกทรัพย์สินลูกค้าตามกฎหมาย ก.ล.ต. (Client Asset Custody &amp; Segregation):</strong> ผู้ประกอบธุรกิจศูนย์ซื้อขายสินทรัพย์ดิจิทัลต้องได้รับใบอนุญาตและต้องแยกทรัพย์สินของลูกค้าออกจากทรัพย์สินของตนตามพระราชกำหนดการประกอบธุรกิจสินทรัพย์ดิจิทัล พ.ศ. 2561 [ต้องยืนยันมาตรา] ส่วนสัดส่วนการเก็บรักษาสินทรัพย์ดิจิทัลของลูกค้าไว้ในระบบ Cold Storage (ออฟไลน์) อย่างน้อยร้อยละ 90 และข้อห้ามนำทรัพย์สินของลูกค้าไปหาดอกผลหรือแสวงหาประโยชน์ส่วนตน เป็นรายละเอียดที่ต้องตรวจสอบจากประกาศของคณะกรรมการกำกับหลักทรัพย์และตลาดหลักทรัพย์ฉบับที่ใช้บังคับ [ต้องยืนยันแหล่งที่มา]</li><li><strong>การจัดสรรความรับผิดต่อภัยคุกคามไซเบอร์และกฎหมายฟอกเงิน (Cyber Incident &amp; Travel Rule):</strong> ผู้ให้บริการต้องกำหนดหน้าที่รับผิดชอบกรณี Private Key รั่วไหลหรือถูกเจาะระบบ และควรมีประกันภัยคุ้มครองความเสียหายทางไซเบอร์ (Cybercrime Insurance) ซึ่งเป็นตัวอย่างตามแนวปฏิบัติของอุตสาหกรรมที่คู่สัญญาตกลงกันเอง หากกฎหมายหรือประกาศของหน่วยงานกำกับดูแลไม่ได้กำหนดไว้ ในด้านการป้องกันการฟอกเงิน ผู้ประกอบธุรกิจสินทรัพย์ดิจิทัลอาจมีหน้าที่แสดงตนลูกค้าและรายงานธุรกรรมตามพระราชบัญญัติป้องกันและปราบปรามการฟอกเงิน พ.ศ. 2542 รวมทั้งกฎหมายลำดับรอง ซึ่งต้องตรวจสอบจากแหล่งทางการ ส่วนหลักเกณฑ์การส่งต่อข้อมูลผู้โอนและผู้รับโอน (Travel Rule) ของสำนักงานป้องกันและปราบปรามการฟอกเงินต้องตรวจสอบก่อนนำไปกำหนดในสัญญา [ต้องยืนยันแหล่งที่มา]</li></ol>
+  </div>
+
+  <!-- PROBLEM HOOK -->
+  <div class="hook-box" id="hook">
+    <h3>สถานการณ์ที่ผู้ประกอบการมักพบจริง</h3>
+    <ol>
+      <li><strong>เหตุการณ์:</strong> ในช่วงที่ปริมาณการซื้อขายในตลาดคริปโทเคอร์เรนซีพุ่งสูงขึ้นอย่างฉับพลัน แพลตฟอร์มเกิดปัญหาระบบจับคู่คำสั่ง (Matching Engine) ขัดข้องและระบบล่มเป็นเวลาหลายชั่วโมง ส่งผลให้นักลงทุนไม่สามารถส่งคำสั่งขายเพื่อตัดขาดทุน (Stop-loss) ได้ ทรัพย์สินของลูกค้าสูญเสียมูลค่ามหาศาล ขณะเดียวกันตรวจพบการโจมตีทางไซเบอร์ซึ่งทำให้เกิดความเสี่ยงต่อการรักษา Private Key</li>
+      <li><strong>ความเข้าใจผิด:</strong> ผู้ประกอบการมักเชื่อว่า การระบุข้อความจำกัดความรับผิดในสัญญา Master Services Agreement (MSA) หรือ Terms of Service ว่า <em>"บริษัทไม่ต้องรับผิดชอบต่อความเสียหายทุกกรณีที่เกิดจากระบบขัดข้อง การโจมตีทางไซเบอร์ หรือความล่าช้าของเครือข่ายบล็อกเชน"</em> จะสามารถใช้เป็นเกราะคุ้มกันทางกฎหมายได้สมบูรณ์</li>
+      <li><strong>จุดพลิก:</strong> กฎหมายไทยควบคุมข้อสัญญาจำกัดความรับผิดสองทาง ทางแรก ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 373 บัญญัติให้ความตกลงที่ทำไว้ล่วงหน้าเพื่อยกเว้นมิให้ลูกหนี้ต้องรับผิดเพื่อกลฉ้อฉลหรือความประมาทเลินเล่ออย่างร้ายแรงของตนเป็นโมฆะ ทางที่สอง พระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540 มาตรา 4 และมาตรา 8 วรรคสอง ให้ข้อสัญญาที่ไม่เป็นธรรมและข้อตกลงยกเว้นหรือจำกัดความรับผิดซึ่งไม่เป็นโมฆะมีผลบังคับได้เพียงเท่าที่เป็นธรรมและพอสมควรแก่กรณี โดยไม่ทำให้ข้อสัญญาตกเป็นโมฆะ นอกจากนี้ หากระบบงานไม่มั่นคงเพียงพอ ผู้ประกอบธุรกิจอาจถูกหน่วยงานกำกับดูแลสั่งให้แก้ไขหรือถูกดำเนินการตามพระราชกำหนดการประกอบธุรกิจสินทรัพย์ดิจิทัล พ.ศ. 2561 [ต้องยืนยันมาตรา]</li>
+      <li><strong>สิ่งที่ได้จากบทความ:</strong> แนวทางการจัดร่างสัญญา Digital Asset MSA ที่ถูกต้องตามกฎหมาย โครงสร้าง SLA มาตรการจัดสรรความรับผิด การแยกทรัพย์สินใน Cold Storage ตามสัดส่วนที่ประกาศของหน่วยงานกำกับดูแลกำหนด (บทความนี้อ้างร้อยละ 90 [ต้องยืนยันแหล่งที่มา]) และแนวปฏิบัติ AML/CFT Travel Rule เพื่อป้องกันข้อพิพาทและคดีความ</li>
+    </ol>
+  </div>
+
+  <!-- TOC -->
+  <nav class="toc-box" aria-label="สารบัญ">
+    <h3>สารบัญ</h3>
+    <ol>
+      <li><a href="#s1">ภาพรวมอุตสาหกรรมศูนย์ซื้อขายสินทรัพย์ดิจิทัลและกฎหมายกำกับดูแลของ ก.ล.ต. ไทย</a></li>
+      <li><a href="#s2">ผลกระทบเชิงธุรกิจ</a></li>
+      <li><a href="#s3">กรอบกฎหมายและ Claim Ledger</a></li>
+      <li><a href="#s4">การออกแบบโครงสร้างมาตรการแยกเก็บรักษาทรัพย์สินลูกค้า</a></li>
+      <li><a href="#s5">ปัญหาระบบจับคู่คำสั่งซื้อขาย (Matching Engine Latency) และการกำหนดข้อจำกัดความรับผิดช่วง Outage</a></li>
+      <li><a href="#s6">การจัดการภัยคุกคามทางไซเบอร์</a></li>
+      <li><a href="#s7">LAS Practice Note: การร่างข้อสัญญา Digital Asset MSA, ข้อกำหนด Force Majeure ยุคบล็อกเชน, และ Travel Rule</a></li>
+      <li><a href="#s8">ข้อต่อสู้ของผู้ให้บริการศูนย์ซื้อขายกับผู้ใช้บริการ/นักลงทุนสถาบัน</a></li>
+      <li><a href="#s9">ตัวอย่างสถานการณ์จำลอง</a></li>
+      <li><a href="#s10">Checklist 10 จุดตรวจสัญญา Digital Asset Exchange &amp; Custodial Services Agreement</a></li>
+
+
+      <li><a href="#faq">คำถามที่พบบ่อย</a></li>
+      <li><a href="#refs">อ้างอิง</a></li>
+    </ol>
+  </nav>
+
+  <section class="section-block" id="s1">
+    <h2 class="section-heading">ภาพรวมอุตสาหกรรมศูนย์ซื้อขายสินทรัพย์ดิจิทัลและกฎหมายกำกับดูแลของ ก.ล.ต. ไทย</h2>
+<p>การประกอบธุรกิจศูนย์ซื้อขายสินทรัพย์ดิจิทัล (Digital Asset Exchange) และนายหน้าซื้อขายสินทรัพย์ดิจิทัล (Digital Asset Broker) ในประเทศไทย อยู่ภายใต้การกำกับดูแลอย่างเข้มงวดตาม <strong>พระราชกำหนดการประกอบธุรกิจสินทรัพย์ดิจิทัล พ.ศ. 2561</strong> โดยมีสำนักงานคณะกรรมการกำกับหลักทรัพย์และตลาดหลักทรัพย์ (ก.ล.ต.) เป็นหน่วยงานกำกับดูแลหลัก</p>
+<p>ผู้ประกอบธุรกิจต้องได้รับใบอนุญาตตาม <strong>พระราชกำหนดการประกอบธุรกิจสินทรัพย์ดิจิทัล พ.ศ. 2561</strong> [ต้องยืนยันมาตรา] และต้องปฏิบัติตามมาตรฐานการบริหารจัดการระบบงาน ความมั่นคงปลอดภัยทางไซเบอร์ (Cybersecurity) การจัดเก็บรักษาทรัพย์สินของลูกค้า และการกำกับดูแลการปฏิบัติงาน (Compliance) อย่างเคร่งครัด สัญญาให้บริการ Master Services Agreement (MSA) จึงต้องออกแบบให้สอดคล้องกับหลักเกณฑ์ที่ ก.ล.ต. กำหนดอย่างครบถ้วน</p>
+  </section>
+
+  <section class="section-block" id="s2">
+    <h2 class="section-heading">ผลกระทบเชิงธุรกิจ <span class="en">Business Consequences</span></h2>
+<p>หากผู้ประกอบธุรกิจสินทรัพย์ดิจิทัลไม่สามารถบริหารจัดการระบบและสัญญาให้บริการให้เป็นไปตามมาตรฐาน อาจส่งผลกระทบทางธุรกิจอย่างร้ายแรง ได้แก่:</p>
+<ol class="content-list"><li><strong>การถูกหน่วยงานกำกับดูแลสั่งให้แก้ไขระบบงาน:</strong> ปัญหาระบบล่มบ่อยครั้งในช่วง Peak Trading อาจทำให้ผู้ประกอบธุรกิจถูกหน่วยงานกำกับดูแลสั่งให้แก้ไขระบบงานหรือถูกดำเนินการตามพระราชกำหนดการประกอบธุรกิจสินทรัพย์ดิจิทัล พ.ศ. 2561 ส่วนผู้มีอำนาจ มาตรการ และโทษที่ใช้ได้ต้องตรวจสอบจากตัวบท [ต้องยืนยันมาตรา]</li><li><strong>การถูกฟ้องคดีแบบกลุ่ม (Class Action):</strong> นักลงทุนรวมตัวกันฟ้องเรียกค่าเสียหายหลายร้อยล้านบาทจากกรณีไม่สามารถส่งคำสั่งขายได้ทันช่วงตลาดผันผวน</li><li><strong>ความเสี่ยงต่อใบอนุญาตประกอบธุรกิจ:</strong> การละเลยมาตรการแยกทรัพย์สินลูกค้า หรือมีข้อบกพร่องร้ายแรงด้าน Cybersecurity อาจทำให้ผู้ประกอบธุรกิจถูกดำเนินการตามพระราชกำหนดการประกอบธุรกิจสินทรัพย์ดิจิทัล พ.ศ. 2561 ซึ่งอาจกระทบต่อใบอนุญาตประกอบธุรกิจ [ต้องยืนยันมาตรา]</li><li><strong>ความเสียหายต่อชื่อเสียงและวิกฤตความเชื่อมั่น:</strong> การถูกเจาะระบบ (Cyber Hack) หรือการรั่วไหลของ Private Key ส่งผลให้ผู้ใช้บริการรายย่อยย้ายไปใช้บริการรายอื่นและนักลงทุนสถาบันถอนเงินออกจากแพลตฟอร์มทันที</li></ol>
+  </section>
+
+  <section class="section-block" id="s3">
+    <h2 class="section-heading">กรอบกฎหมายและ Claim Ledger <span class="en">Legal Framework</span></h2>
+<div class="compare-table claim-ledger"><div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
+<table class="article-table las-reading-table las-wide-table"><thead><tr><th scope="col">Claim ID</th><th scope="col">ประเด็นข้อกฎหมาย / ข้อพิพาท</th><th scope="col">ฐานกฎหมายและประกาศที่เกี่ยวข้อง</th><th scope="col">สาระสำคัญทางกฎหมาย</th><th scope="col">ผลลัพธ์ในสัญญา/ข้อบังคับ</th></tr></thead><tbody><tr><td><strong>C-SH-38-01</strong></td><td>หน้าที่แยกทรัพย์สินลูกค้าและการจัดเก็บ Cold Storage</td><td>พระราชกำหนดการประกอบธุรกิจสินทรัพย์ดิจิทัล พ.ศ. 2561 [ต้องยืนยันมาตรา] / ประกาศของคณะกรรมการกำกับหลักทรัพย์และตลาดหลักทรัพย์ว่าด้วยการเก็บรักษาทรัพย์สินของลูกค้า [ต้องยืนยันแหล่งที่มา]</td><td>ผู้ประกอบธุรกิจต้องแยกทรัพย์สินของลูกค้าออกจากทรัพย์สินของตน ส่วนสัดส่วนการเก็บรักษาใน Cold Storage อย่างน้อยร้อยละ 90 ต้องตรวจสอบจากประกาศที่ใช้บังคับ [ต้องยืนยันแหล่งที่มา]</td><td class="col-risk-low">ต้องระบุโครงสร้าง Segregated Account และสัดส่วน Cold/Hot Wallet ชัดเจน</td></tr><tr><td><strong>C-SH-38-02</strong></td><td>ความรับผิดกรณีระบบล่มช่วงตลาดผันผวน (Peak Outage)</td><td>ป.พ.พ. มาตรา 373 / พ.ร.บ.ว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540 มาตรา 4 และมาตรา 8</td><td>ข้อสัญญาที่ยกเว้นความรับผิดเพื่อกลฉ้อฉลหรือความประมาทเลินเล่ออย่างร้ายแรงของผู้ให้บริการเองเป็นโมฆะตาม ป.พ.พ. มาตรา 373 (ไม่ใช้กับความผิดของบุคคลที่ผู้ให้บริการใช้ในการชำระหนี้ตาม ป.พ.พ. มาตรา 220) ส่วนข้อตกลงยกเว้นหรือจำกัดความรับผิดในกรณีอื่นไม่เป็นโมฆะ แต่มีผลบังคับได้เพียงเท่าที่เป็นธรรมและพอสมควรแก่กรณีตามมาตรา 4 และมาตรา 8 วรรคสอง แห่ง พ.ร.บ.ว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540</td><td class="col-risk-low">กำหนด Latency SLA, Uptime 99.9% และ System Credit Compensation</td></tr><tr><td><strong>C-SH-38-03</strong></td><td>หน้าที่ความระมัดระวังกรณี Private Key ถูกเจาะ (Cyber Hack)</td><td>ป.พ.พ. มาตรา 657 และมาตรา 659 (ฝากทรัพย์) และมาตรา 672 (ฝากเงิน) / พระราชกำหนดการประกอบธุรกิจสินทรัพย์ดิจิทัล พ.ศ. 2561 [ต้องยืนยันมาตรา]</td><td>หากความสัมพันธ์ในส่วนสินทรัพย์ดิจิทัลเข้าลักษณะฝากทรัพย์ [ต้องยืนยันแหล่งที่มา] ผู้รับฝากที่มีบำเหน็จและเป็นผู้มีวิชาชีพเฉพาะกิจการค้าขายต้องใช้ความระมัดระวังและฝีมือเท่าที่เป็นธรรมดาจะต้องใช้และสมควรจะต้องใช้ในกิจการนั้น ส่วนเงินบาทที่ลูกค้าฝากไว้เป็นการฝากเงินซึ่งผู้รับฝากต้องคืนให้ครบจำนวน</td><td class="col-risk-low">กำหนดมาตรฐาน Multi-Sig, HSM และประกันภัย Cybercrime Insurance</td></tr><tr><td><strong>C-SH-38-04</strong></td><td>เหตุสุดวิสัยทางเทคโนโลยี (Fork / 51% Attack / Network Congestion)</td><td>ป.พ.พ. มาตรา 8 / หลักทั่วไปว่าด้วยเหตุสุดวิสัย</td><td>ความผิดปกติของเครือข่ายบล็อกเชนภายนอกอาจเป็นเหตุสุดวิสัยตามมาตรา 8 แห่ง ป.พ.พ. ได้เมื่อพิสูจน์ได้ว่าเป็นเหตุที่ไม่อาจป้องกันได้แม้ได้จัดการระมัดระวังตามสมควรแล้ว</td><td class="col-risk-low">ระบุเงื่อนไข Hard Fork, Soft Fork, 51% Attack และ Network Congestion ในหมวด Force Majeure ด้วยถ้อยคำที่ชัดเจน เพราะเป็นข้อตกลงของคู่สัญญา</td></tr><tr><td><strong>C-SH-38-05</strong></td><td>หน้าที่การตรวจสอบตัวตนและการส่งข้อมูล (AML / Travel Rule)</td><td>พระราชบัญญัติป้องกันและปราบปรามการฟอกเงิน พ.ศ. 2542 และกฎหมายลำดับรอง / หลักเกณฑ์ Travel Rule ของสำนักงานป้องกันและปราบปรามการฟอกเงิน [ต้องยืนยันแหล่งที่มา]</td><td>ผู้ประกอบธุรกิจสินทรัพย์ดิจิทัลอาจมีหน้าที่แสดงตนลูกค้าและรายงานธุรกรรมตามพระราชบัญญัติและกฎหมายลำดับรองดังกล่าว ซึ่งต้องตรวจสอบจากแหล่งทางการ ส่วนหน้าที่ส่งต่อข้อมูลผู้โอนและผู้รับโอนสำหรับการโอนสินทรัพย์ดิจิทัลต้องยืนยันจากหลักเกณฑ์ที่ใช้บังคับ [ต้องยืนยันแหล่งที่มา]</td><td class="col-risk-low">กำหนดเงื่อนไขการระงับธุรกรรมหากข้อมูล AML/Travel Rule ไม่ครบถ้วน</td></tr></tbody></table>
+</div></div>
+  </section>
+
+  <section class="section-block" id="s4">
+    <h2 class="section-heading">การออกแบบโครงสร้างมาตรการแยกเก็บรักษาทรัพย์สินลูกค้า <span class="en">Client Asset Segregation &amp; Cold Storage Custody</span></h2>
+<p>ตามพระราชกำหนดการประกอบธุรกิจสินทรัพย์ดิจิทัล พ.ศ. 2561 [ต้องยืนยันมาตรา] ผู้ประกอบธุรกิจสินทรัพย์ดิจิทัลมีหน้าที่แยกทรัพย์สินของลูกค้าออกจากทรัพย์สินของตนและดูแลรักษาทรัพย์สินของลูกค้าอย่างเคร่งครัด ส่วนรายละเอียดต่อไปนี้มาจากประกาศของคณะกรรมการกำกับหลักทรัพย์และตลาดหลักทรัพย์ซึ่งต้องตรวจสอบฉบับที่ใช้บังคับก่อนนำไปใช้ [ต้องยืนยันแหล่งที่มา]:</p>
+<ul class="content-list"><li><strong>การแยกบัญชี (Segregation of Assets):</strong> เงินฝากและสินทรัพย์ดิจิทัลของลูกค้าต้องถูกแยกออกจากทรัพย์สินของผู้ประกอบธุรกิจ ส่วนข้อห้ามนำไปปะปน ใช้เป็นหลักประกัน หรือหาประโยชน์ส่วนตน ต้องตรวจสอบจากประกาศที่ใช้บังคับ [ต้องยืนยันแหล่งที่มา] ในทางแพ่ง เงินบาทที่ลูกค้าฝากไว้เข้าลักษณะฝากเงินตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 672 ซึ่งผู้รับฝากต้องคืนเงินให้ครบจำนวน แม้เงินนั้นจะสูญหายไปด้วยเหตุสุดวิสัย ส่วนสินทรัพย์ดิจิทัลจะเข้าลักษณะฝากทรัพย์ตามมาตรา 657 หรือไม่ ต้องพิจารณาจากข้อสัญญาและข้อเท็จจริง [ต้องยืนยันแหล่งที่มา]</li><li><strong>สัดส่วน Cold Storage:</strong> สินทรัพย์ดิจิทัลของลูกค้าอย่างน้อยร้อยละ 90 [ต้องยืนยันแหล่งที่มา] ต้องถูกเก็บรักษาไว้ในระบบ Cold Storage ซึ่งเป็นระบบที่เชื่อมต่อกับเครือข่ายอินเทอร์เน็ตเฉพาะเวลาที่จำเป็นต้องทำรายการ และมีความมั่นคงปลอดภัยสูงสุด</li><li><strong>สัดส่วน Hot Storage:</strong> อนุญาตให้เก็บสินทรัพย์ดิจิทัลใน Hot Storage (ระบบที่เชื่อมต่ออินเทอร์เน็ต) ได้ไม่เกินร้อยละ 10 [ต้องยืนยันแหล่งที่มา] เพื่อรองรับการทำธุรกรรมสภาพคล่องประจำวันของลูกค้า</li></ul>
+  </section>
+
+  <section class="section-block" id="s5">
+    <h2 class="section-heading">ปัญหาระบบจับคู่คำสั่งซื้อขาย (Matching Engine Latency) และการกำหนดข้อจำกัดความรับผิดช่วง Outage</h2>
+<p>ปัญหาทางกฎหมายที่สำคัญที่สุดประการหนึ่งในข้อตกลง MSA คือ การจำกัดความรับผิดเมื่อเกิดภาวะ Peak Trading Outage:</p>
+<ol class="content-list"><li><strong>โมฆะกรรมของข้อสัญญาแบบ Blanket Exemption:</strong> ข้อสัญญาที่ระบุว่า <em>"ผู้ให้บริการไม่ต้องรับผิดชอบต่อความเสียหายใด ๆ ทั้งสิ้น ไม่ว่าจะเกิดจากสาเหตุใด"</em> ถือเป็นโมฆะตาม <strong>ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 373</strong> ในส่วนที่เป็นความตกลงล่วงหน้าเพื่อยกเว้นมิให้ลูกหนี้ต้องรับผิดเพื่อกลฉ้อฉลหรือความประมาทเลินเล่ออย่างร้ายแรงของตน (เช่น การไม่เตรียมความพร้อมของเซิร์ฟเวอร์ทั้งที่คาดหมายได้) ส่วนที่ไม่เป็นโมฆะมีผลบังคับได้เพียงเท่าที่เป็นธรรมและพอสมควรแก่กรณีตามมาตรา 8 วรรคสอง และมาตรา 4 แห่งพระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540 (มาตรา 4 ใช้เมื่อเป็นสัญญาสำเร็จรูปหรือสัญญาที่ทำกับผู้บริโภค)</li><li><strong>การกำหนด Service Level Agreement (SLA):</strong> ควรกำหนดมาตรฐาน Uptime (เช่น 99.9% Availability) และ Latency Threshold สำหรับ Matching Engine ชัดเจน</li><li><strong>การจัดทำ Compensation Framework:</strong> กำหนดเกณฑ์การชดเชยเยียวยาหากระบบขัดข้องอันเนื่องมาจากความบกพร่องของผู้ให้บริการ เช่น การคืนค่าธรรมเนียมการทำธุรกรรม หรือการตั้งก้อนเงินกองทุนชดเชย (Compensation Pool)</li></ol>
+  </section>
+
+  <section class="section-block" id="s6">
+    <h2 class="section-heading">การจัดการภัยคุกคามทางไซเบอร์ <span class="en">Cyber Security, Multi-Sig Keys, and Incident Response</span></h2>
+<p>เพื่อป้องกันความเสี่ยงจากการถูกเจาะระบบ (Cyber Hack) และการรั่วไหลของ Private Key ผู้ประกอบธุรกิจควรกำหนดมาตรการทางเทคนิคและข้อสัญญาดังต่อไปนี้ ซึ่งเป็นตัวอย่างตามแนวปฏิบัติของอุตสาหกรรมที่คู่สัญญาตกลงกันเอง หากกฎหมายหรือประกาศของหน่วยงานกำกับดูแลไม่ได้กำหนดไว้:</p>
+<ul class="content-list"><li><strong>Hardware Security Module (HSM) &amp; Multi-Signature:</strong> ควรกำหนดให้การอนุมัติธุรกรรมถอนสินทรัพย์ดิจิทัลมูลค่าสูงใช้การลงนามแบบ Multi-Sig จากหลายฝ่าย และเก็บรักษา Key ใน HSM ที่ได้มาตรฐานซึ่งคู่สัญญาตกลงกัน เช่น ISO/IEC 15408 หรือ FIPS 140-2</li><li><strong>Cybercrime Insurance:</strong> ควรจัดให้มีกรมธรรม์ประกันภัยความเสี่ยงทางไซเบอร์เพื่อคุ้มครองมูลค่าความเสียหายหากเกิดเหตุการณ์ Private Key Compromise</li><li><strong>Incident Response &amp; Notification Protocol:</strong> ในสัญญาควรระบุหน้าที่ในการแจ้งเตือนผู้ใช้บริการและสำนักงาน ก.ล.ต. ภายในระยะเวลาที่คู่สัญญาตกลงกัน (เช่น ภายใน 24 ชั่วโมง) เมื่อเกิดเหตุการณ์ละเมิดความปลอดภัยทางไซเบอร์</li></ul>
+  </section>
+
+  <section class="section-block" id="s7">
+    <h2 class="section-heading">LAS Practice Note: การร่างข้อสัญญา Digital Asset MSA, ข้อกำหนด Force Majeure ยุคบล็อกเชน, และ Travel Rule</h2>
+<h3 class="sub-heading">1 การกำหนดเงื่อนไข Force Majeure ในยุคบล็อกเชน</h3>
+<p>ความผิดปกติของเครือข่ายบล็อกเชนภายนอกอาจเป็นเหตุสุดวิสัยตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 8 ได้เมื่อพิสูจน์ได้ว่าเป็นเหตุที่ไม่อาจป้องกันได้แม้ได้จัดการระมัดระวังตามสมควรแล้ว ส่วนการระบุ Hard Fork, 51% Attack และ Network Congestion ไว้ในข้อสัญญาเหตุสุดวิสัยเป็นข้อตกลงของคู่สัญญาที่ต้องใช้ถ้อยคำให้ชัดเจน ข้อสัญญาเหตุสุดวิสัย (Force Majeure) แบบดั้งเดิมไม่ครอบคลุมปรากฏการณ์เฉพาะของเทคโนโลยีบล็อกเชน ร่างสัญญาที่ดีจึงควรระบุถึง:</p>
+<ul class="content-list"><li><strong>Blockchain Hard Fork / Soft Fork:</strong> การเปลี่ยนแปลงกฎเกณฑ์ของเครือข่ายบล็อกเชนต้นทาง</li><li><strong>51% Attack / Consensus Failure:</strong> การที่เครือข่ายถูกโจมตีโดยผู้ถือพลังการประมวลผลฝั่งตรงข้าม</li><li><strong>Network Congestion &amp; Gas Fee Spikes:</strong> ภาวะเครือข่ายแออัดจนทำให้การยืนยันบล็อกล่าช้าเกินควบคุม</li></ul>
+<h3 class="sub-heading">2 หน้าที่ปฏิบัติตามกฎหมายฟอกเงิน (AML/CFT &amp; Travel Rule)</h3>
+<p>ผู้ประกอบธุรกิจสินทรัพย์ดิจิทัลอาจมีหน้าที่แสดงตนลูกค้าและรายงานธุรกรรมตามพระราชบัญญัติป้องกันและปราบปรามการฟอกเงิน พ.ศ. 2542 รวมทั้งกฎหมายลำดับรอง ซึ่งต้องตรวจสอบจากแหล่งทางการ สัญญา MSA จึงควรระบุสิทธิของผู้ให้บริการในการระงับธุรกรรม หรือระงับการถอนสินทรัพย์ดิจิทัล หาก:</p>
+<ul class="content-list"><li>ผู้ใช้บริการไม่ผ่านกระบวนการยืนยันตัวตน (KYC/CDD)</li><li>การโอนสินทรัพย์ดิจิทัลข้ามสถาบันไม่สามารถส่งต่อข้อมูลต้นทางและปลายทางตามเกณฑ์ <strong>Travel Rule</strong> ได้ครบถ้วน (หลักเกณฑ์ดังกล่าวของสำนักงานป้องกันและปราบปรามการฟอกเงินต้องตรวจสอบจากแหล่งทางการ [ต้องยืนยันแหล่งที่มา])</li></ul>
+  </section>
+
+  <section class="section-block" id="s8">
+    <h2 class="section-heading">ข้อต่อสู้ของผู้ให้บริการศูนย์ซื้อขายกับผู้ใช้บริการ/นักลงทุนสถาบัน <span class="en">Devil's Advocate</span></h2>
+<ul class="content-list"><li><strong>ฝั่งผู้ให้บริการ (Exchange Provider):</strong> อ้างว่าเทคโนโลยีบล็อกเชนมีความผันผวนและเป็นระบบกระจายศูนย์ (Decentralized) ความล่าช้าในการยืนยันธุรกรรมเกิดจากเครือข่ายสาธารณะภายนอก ไม่ใช่ความบกพร่องของ Matching Engine ของบริษัท จึงอาจอ้างเหตุสุดวิสัยตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 8 ได้หากพิสูจน์ได้ว่าเป็นเหตุที่ไม่อาจป้องกันได้แม้ได้จัดการระมัดระวังตามสมควรแล้ว ส่วนผลบังคับของข้อสัญญาจำกัดความรับผิดเป็นอีกประเด็นหนึ่ง ซึ่งพิจารณาตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 373 และพระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540 มาตรา 4 และมาตรา 8</li><li><strong>ฝั่งผู้ใช้บริการ / นักลงทุนสถาบัน:</strong> อ้างว่าผู้ให้บริการมีหน้าที่ตามสัญญา และหากความสัมพันธ์เข้าลักษณะฝากทรัพย์ตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 657 [ต้องยืนยันแหล่งที่มา] ผู้ให้บริการมีหน้าที่ใช้ความระมัดระวัง (Duty of Care) ตามมาตรา 659 ทั้งนี้ การที่ระบบ Matching Engine ล่มในขณะที่ตลาดมีความผันผวนมิได้เป็นความประมาทเลินเล่ออย่างร้ายแรงโดยอัตโนมัติ หากผู้ลงทุนพิสูจน์ได้ว่าผู้ให้บริการเองประมาทเลินเล่ออย่างร้ายแรงในการจัดสรรทรัพยากร IT Infrastructure ข้อสัญญาที่ยกเว้นความรับผิดเพื่อความประมาทเลินเล่ออย่างร้ายแรงนั้นเป็นโมฆะตาม ป.พ.พ. มาตรา 373 แต่ความผิดของตัวแทนหรือบุคคลที่ผู้ให้บริการใช้ในการชำระหนี้เป็นกรณีตาม ป.พ.พ. มาตรา 220 ซึ่งมาตรา 373 ไม่ใช้บังคับ และข้อจำกัดความรับผิดส่วนที่เหลือในสัญญาสำเร็จรูปมีผลบังคับได้เพียงเท่าที่เป็นธรรมและพอสมควรแก่กรณีตามมาตรา 4 แห่งพระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540</li></ul>
+  </section>
+
+  <section class="section-block" id="s9">
+    <h2 class="section-heading">ตัวอย่างสถานการณ์จำลอง <span class="en">Worked Example</span></h2>
+<p><strong>สถานการณ์:</strong> ราคา Bitcoin พุ่งสูงทำสถิติใหม่ ส่งผลให้มีปริมาณคำสั่งซื้อขายเข้าสู่แพลตฟอร์มพุ่งสูงขึ้น 500% แพลตฟอร์มเกิด Latency Spike และระบบจับคู่คำสั่งขัดข้องนาน 3 ชั่วโมง นักลงทุนไม่สามารถส่งคำสั่ง Stop-loss ได้ ทำให้เกิดความเสียหายรวม 50 ล้านบาท นักลงทุนร้องเรียนต่อสำนักงาน ก.ล.ต. และขู่ฟ้องคดีแบบกลุ่ม</p>
+<p><strong>Walkthrough การจัดการและเยียวยา:</strong></p>
+<ol class="content-list"><li><strong>การตั้งคณะกรรมการไต่สวนทางเทคนิค (Technical Audit):</strong> ตรวจสอบ Root Cause ว่าเกิดจากระบบภายนอก (Network Congestion) หรือเกิดจากการบริหารจัดการเซิร์ฟเวอร์ของบริษัทไม่เพียงพอ</li><li><strong>การเจรจาเยียวยา (Negotiation &amp; Settlement):</strong> แยกแยะกลุ่มผู้ได้รับผลกระทบ หากพบว่าเกิดจากข้อบกพร่องของ Matching Engine บริษัทนำเงินจากกองทุนชดเชย (Compensation Fund) เข้าเยียวยาตามระดับความเสียหายจริง</li><li><strong>การรับมือข้อร้องเรียน ก.ล.ต.:</strong> ชี้แจงมาตรการแก้ไขปรับปรุงระบบ Infrastructure และการปรับเพิ่ม Auto-scaling Capacity เพื่อให้สอดคล้องกับเกณฑ์กำกับดูแล</li></ol>
+  </section>
+
+  <section class="section-block" id="s10">
+    <h2 class="section-heading">Checklist 10 จุดตรวจสัญญา Digital Asset Exchange &amp; Custodial Services Agreement</h2>
+<ul class="checklist"><li><span class="cb" aria-hidden="true"></span><span>มีข้อกำหนดแยกบัญชีทรัพย์สินลูกค้าออกจากบริษัทอย่างชัดเจนตามกฎหมาย ก.ล.ต.</span></li><li><span class="cb" aria-hidden="true"></span><span>ระบุสัดส่วนการจัดเก็บ Cold Storage และ Hot Storage ให้ตรงกับประกาศของหน่วยงานกำกับดูแลที่ใช้บังคับ (บทความนี้อ้างร้อยละ 90 และร้อยละ 10 [ต้องยืนยันแหล่งที่มา])</span></li><li><span class="cb" aria-hidden="true"></span><span>กำหนดเกณฑ์ Uptime SLA (เช่น 99.9%) และ Latency Standard ของ Matching Engine</span></li><li><span class="cb" aria-hidden="true"></span><span>มีกลไกการเยียวยาและชดเชยความเสียหาย (Compensation Framework) กรณีระบบล่ม</span></li><li><span class="cb" aria-hidden="true"></span><span>ข้อจำกัดความรับผิดไม่ยกเว้นความรับผิดเพื่อกลฉ้อฉลหรือความประมาทเลินเล่ออย่างร้ายแรงของผู้ให้บริการเอง (ป.พ.พ. มาตรา 373) และเป็นธรรมและพอสมควรแก่กรณีตามพระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540 มาตรา 4 และมาตรา 8</span></li><li><span class="cb" aria-hidden="true"></span><span>ระบุมาตรฐานความมั่นคงปลอดภัยทางไซเบอร์ เช่น Multi-Sig และ HSM</span></li><li><span class="cb" aria-hidden="true"></span><span>กำหนดหน้าที่การแจ้งเตือนเหตุการณ์ Cyber Attack ภายในระยะเวลาที่กำหนด</span></li><li><span class="cb" aria-hidden="true"></span><span>มีข้อกำหนด Force Majeure ที่ครอบคลุม Hard Fork, 51% Attack และ Network Congestion</span></li><li><span class="cb" aria-hidden="true"></span><span>รองรับหน้าที่แสดงตนลูกค้าและรายงานธุรกรรมตามพระราชบัญญัติป้องกันและปราบปรามการฟอกเงิน พ.ศ. 2542 และกฎหมายลำดับรอง รวมทั้งหลักเกณฑ์ Travel Rule ที่ตรวจสอบแล้วจากแหล่งทางการ [ต้องยืนยันแหล่งที่มา]</span></li><li><span class="cb" aria-hidden="true"></span><span>สัญญากำหนดให้ใช้กฎหมายไทยและศาลไทยเป็นข้อตกลงยุติข้อพิพาท</span></li></ul>
+  </section>
+
+
+
+  <!-- FAQ -->
+  <section class="section-block" id="faq">
+    <h2 class="section-heading">คำถามที่พบบ่อย <span class="en">Frequently Asked Questions</span></h2>
+    <div class="faq-item">
+      <div class="faq-q">หากแพลตฟอร์มถูกแฮกจนสินทรัพย์ดิจิทัลของลูกค้าหายไป ผู้ประกอบธุรกิจต้องรับผิดชอบอย่างไร?</div>
+      <div class="faq-a">หากความสัมพันธ์ระหว่างศูนย์ซื้อขายกับลูกค้าในส่วนสินทรัพย์ดิจิทัลเข้าลักษณะฝากทรัพย์ตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 657 [ต้องยืนยันแหล่งที่มา] ผู้รับฝากที่มีบำเหน็จและเป็นผู้มีวิชาชีพเฉพาะกิจการค้าขายต้องใช้ความระมัดระวังและฝีมือเท่าที่เป็นธรรมดาจะต้องใช้และสมควรจะต้องใช้ในกิจการนั้นตาม ป.พ.พ. มาตรา 659 หากสินทรัพย์สูญหายเพราะผู้ประกอบธุรกิจไม่ใช้ความระมัดระวังตามมาตรฐานดังกล่าว ผู้ประกอบธุรกิจต้องรับผิดชดใช้ความเสียหาย โดยขอบเขตความรับผิดขึ้นกับการผิดมาตรฐานความระมัดระวังและข้อสัญญาที่ใช้บังคับได้ ส่วนเงินบาทที่ลูกค้าฝากไว้เข้าลักษณะฝากเงินตาม ป.พ.พ. มาตรา 672 ซึ่งผู้รับฝากต้องคืนเงินให้ครบจำนวน แม้เงินนั้นจะสูญหายไปด้วยเหตุสุดวิสัย</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">สัญญาจำกัดความรับผิดกรณีระบบล่มช่วง Peak Trading สามารถบังคับใช้ได้จริงหรือไม่?</div>
+      <div class="faq-a">ต้องแยกพิจารณาเป็นสองประเด็น ประเด็นแรก คือ ระบบล่มเพราะเหตุสุดวิสัยตามประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 8 หรือไม่ ซึ่งต้องพิสูจน์ว่าเป็นเหตุที่ไม่อาจป้องกันได้แม้ผู้ให้บริการได้จัดการระมัดระวังตามสมควรอันพึงคาดหมายได้จากบุคคลในฐานะและภาวะเช่นนั้นแล้ว ประเด็นที่สอง คือ ข้อสัญญาจำกัดความรับผิดมีผลเพียงใด กล่าวคือ ข้อสัญญาเป็นโมฆะตาม ป.พ.พ. มาตรา 373 เฉพาะในส่วนที่ยกเว้นความรับผิดเพื่อกลฉ้อฉลหรือความประมาทเลินเล่ออย่างร้ายแรงของผู้ให้บริการเอง ซึ่งผู้ลงทุนต้องพิสูจน์ และมาตรา 373 ไม่ใช้บังคับแก่ความผิดของตัวแทนหรือบุคคลที่ผู้ให้บริการใช้ในการชำระหนี้ตาม ป.พ.พ. มาตรา 220 ส่วนข้อจำกัดความรับผิดที่ไม่เป็นโมฆะมีผลบังคับได้เพียงเท่าที่เป็นธรรมและพอสมควรแก่กรณีตามมาตรา 8 วรรคสอง และมาตรา 4 แห่งพระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540</div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <div class="ref-section" id="refs">
+    <h3>อ้างอิง — References</h3>
+    <ul>
+      <li>พระราชกำหนดการประกอบธุรกิจสินทรัพย์ดิจิทัล พ.ศ. 2561</li>
+      <li>ประกาศของคณะกรรมการกำกับหลักทรัพย์และตลาดหลักทรัพย์ว่าด้วยหลักเกณฑ์ เงื่อนไข และวิธีการประกอบธุรกิจสินทรัพย์ดิจิทัล [ต้องยืนยันแหล่งที่มา]</li>
+      <li>พระราชบัญญัติป้องกันและปราบปรามการฟอกเงิน พ.ศ. 2542 และกฎหมายลำดับรอง ส่วนหลักเกณฑ์ Travel Rule ของสำนักงานป้องกันและปราบปรามการฟอกเงิน [ต้องยืนยันแหล่งที่มา]</li>
+      <li>ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 8 มาตรา 220 มาตรา 373 มาตรา 657 มาตรา 659 และมาตรา 672 และพระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม พ.ศ. 2540 มาตรา 4 และมาตรา 8</li>
+      <li>สำนักงานคณะกรรมการกฤษฎีกา — <a href="https://www.ocs.go.th/searchlaw-law" target="_blank" rel="noopener">ระบบสืบค้นกฎหมาย (OCS)</a></li>
+    </ul>
+  </div>
+
+
+  <!-- RELATED ARTICLES (drive-publish.py) -->
+  <div style="margin-top:36px;">
+    <h3 style="color:var(--navy);margin-bottom:16px;font-size:1rem;font-weight:700;">บทความที่เกี่ยวข้อง</h3>
+    <div class="related-articles">
+      <a class="related-card" href="/articles/gold-bullion-vaulting-custody-agreement-checklist-thailand.html"><div class="rel-tag">Contract Review · Gold Vaulting</div>Checklist 10 จุดตรวจสัญญาบริการรับฝาก เก็บรักษา และส่งมอบโลหะมีค่าและทองคำแท่งเพื่อการพาณิชย์ (Precious Metals &amp; Gold Bullion Custody and Vaulting Master Services Agreement)</a>
+      <a class="related-card" href="/articles/las-shield-index.html"><div class="rel-tag">LAS Shield</div>สารบัญชุด LAS Shield</a>
+    </div>
+  </div>
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <strong>ข้อสงวน (Disclaimer):</strong> บทความนี้จัดทำโดย Legal Advance Solution Co., Ltd. เพื่อเป็นข้อมูลทั่วไปด้านกฎหมายเท่านั้น ไม่ถือเป็นคำปรึกษากฎหมายเฉพาะกรณี และไม่ก่อให้เกิดความสัมพันธ์ทนาย-ลูกความ กฎหมายอาจมีการเปลี่ยนแปลง กรุณาปรึกษาทนายความที่มีใบอนุญาตก่อนดำเนินการใด ๆ ตามกฎหมาย | <em>LAS Legal Hub — ข้อมูลกฎหมายเพื่อธุรกิจ</em>
+  </div>
+
+</div><!-- end article-body -->
+<footer class="las-author-footer" style="text-align:center;padding:24px 16px;font-size:13px;color:#1B2A4A;">
+  <p class="las-author-credit">ธันย์ธรณ์เทพ แย้มอุทัย, Ph.D. — Legal Advance Solution Co., Ltd. (LAS)</p>
+</footer>
+</body>
+</html>

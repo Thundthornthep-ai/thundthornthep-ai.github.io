@@ -8,9 +8,11 @@ Official source: https://searchlaw.ocs.go.th/council-of-state/#/public/doc/by9sS
 
 Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
+- มาตรา 10
 - มาตรา 11
 - มาตรา 18
 - มาตรา 25
+- มาตรา 26
 - มาตรา 28
 - มาตรา 32
 - มาตรา 33
