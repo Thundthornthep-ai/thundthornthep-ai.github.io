@@ -3,15 +3,15 @@
  "generated": "2026-10-05",
  "generator": "scripts/knowledge-teaching/build-library-data.py (las-billing)",
  "scope": {
-  "tracked_html": 298,
-  "catalogue_variants": 277,
-  "learning_items": 227,
-  "articles": 209,
+  "tracked_html": 300,
+  "catalogue_variants": 279,
+  "learning_items": 229,
+  "articles": 211,
   "resources": 18,
   "excluded": 21,
   "unlinked_items": 19,
-  "legal_reviewed": 246,
-  "source_tree": "ecd08df99783f842bc15ec06e65b30714feec71c"
+  "legal_reviewed": 248,
+  "source_tree": "4b3a0914b1bc351f8b5aaf96cbcfa94c3864e8dc"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -6941,6 +6941,70 @@
    "module": "M13",
    "level": "L2",
    "series_label": "LAS C&C Deep Research · ตอนที่ 37"
+  },
+  {
+   "id": "articles/private-to-public-company-conversion-thailand",
+   "kind": "article",
+   "title": "การแปรสภาพบริษัทจำกัดเป็นบริษัทมหาชนจำกัด (Conversion of Private Company to Public Limited Company)",
+   "variants": [
+    {
+     "path": "articles/private-to-public-company-conversion-thailand.html",
+     "title": "การแปรสภาพบริษัทจำกัดเป็นบริษัทมหาชนจำกัด (Conversion of Private Company to Public Limited Company)",
+     "language": "th",
+     "sha256": "c45486f91ad4fc133fbe2148b6426f62b343263efc22f3d32e45bded7d8d05c8",
+     "text_sha256": "b0d4a1390e54a8cd2a206ced00f9a55ce33d6f403139834f559108db31e7afec",
+     "published": "2026-10-05",
+     "modified": "2026-10-05",
+     "url": "https://thundthornthep-ai.github.io/articles/private-to-public-company-conversion-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "corporate"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M04",
+   "level": "L2",
+   "series_label": "LAS Share Deep Research · ตอนที่ 25"
+  },
+  {
+   "id": "articles/radioactive-waste-radiation-safety-agreement-checklist-thailand",
+   "kind": "article",
+   "title": "Checklist 10 จุดตรวจสัญญาบริการกำจัดกากกัมมันตรังสีและบริการความปลอดภัยทางรังสี (Radioactive Waste Management & Radiation Protection Services Agreement)",
+   "variants": [
+    {
+     "path": "articles/radioactive-waste-radiation-safety-agreement-checklist-thailand.html",
+     "title": "Checklist 10 จุดตรวจสัญญาบริการกำจัดกากกัมมันตรังสีและบริการความปลอดภัยทางรังสี (Radioactive Waste Management & Radiation Protection Services Agreement)",
+     "language": "th",
+     "sha256": "582b17827f89d8bf8afba3437026692983d41bf8613c941fef36ba7ef37487aa",
+     "text_sha256": "9fa4d10ca3ba663a0bd9a96396f2eaca4a7b5d7dfdc20254ae598a6c0c2e1bff",
+     "published": "2026-10-05",
+     "modified": "2026-10-05",
+     "url": "https://thundthornthep-ai.github.io/articles/radioactive-waste-radiation-safety-agreement-checklist-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L2",
+   "series_label": "LAS C&C Deep Research · ตอนที่ 33"
   },
   {
    "id": "blog/bkk-council/311-decision-report-v7",
