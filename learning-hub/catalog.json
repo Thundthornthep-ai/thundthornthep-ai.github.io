@@ -3,15 +3,15 @@
  "generated": "2026-10-06",
  "generator": "scripts/knowledge-teaching/build-library-data.py (las-billing)",
  "scope": {
-  "tracked_html": 302,
-  "catalogue_variants": 281,
-  "learning_items": 231,
-  "articles": 213,
+  "tracked_html": 304,
+  "catalogue_variants": 283,
+  "learning_items": 233,
+  "articles": 215,
   "resources": 18,
   "excluded": 21,
   "unlinked_items": 19,
-  "legal_reviewed": 250,
-  "source_tree": "510a227711f4c5fa22b479e14603cb31b21de6f2"
+  "legal_reviewed": 252,
+  "source_tree": "86aed56afe11ff6235ea6c03e87a3a2f36a56076"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -7070,6 +7070,70 @@
    "module": "M13",
    "level": "L2",
    "series_label": "LAS C&C Deep Research · ตอนที่ 38"
+  },
+  {
+   "id": "articles/ems-pricing-forecast-quality-agreement-template-thailand",
+   "kind": "article",
+   "title": "แม่แบบสัญญาจ้างผลิตและประกอบผลิตภัณฑ์อิเล็กทรอนิกส์ (EMS) ส่วนว่าด้วยราคา การพยากรณ์ยอดสั่งซื้อ และคุณภาพ (EMS Agreement Template: Pricing, Forecast and Quality)",
+   "variants": [
+    {
+     "path": "articles/ems-pricing-forecast-quality-agreement-template-thailand.html",
+     "title": "แม่แบบสัญญาจ้างผลิตและประกอบผลิตภัณฑ์อิเล็กทรอนิกส์ (EMS) ส่วนว่าด้วยราคา การพยากรณ์ยอดสั่งซื้อ และคุณภาพ (EMS Agreement Template: Pricing, Forecast and Quality)",
+     "language": "th",
+     "sha256": "0567e0deab470190d69863db5853fb1c811d41fd9af6e0cef6ae7b852734d1d9",
+     "text_sha256": "69079b5279b3bc05bdfafe30130a196781bdd4ab9b9a17f8389db4766584c906",
+     "published": "2026-10-06",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/ems-pricing-forecast-quality-agreement-template-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Up Deep Research · ตอนที่ 22"
+  },
+  {
+   "id": "articles/smart-pos-merchant-acquiring-agreement-thailand",
+   "kind": "article",
+   "title": "สาระสำคัญในสัญญาให้บริการเครื่องรับชำระเงินอัจฉริยะ (Smart POS) สำหรับร้านค้า",
+   "variants": [
+    {
+     "path": "articles/smart-pos-merchant-acquiring-agreement-thailand.html",
+     "title": "สาระสำคัญในสัญญาให้บริการเครื่องรับชำระเงินอัจฉริยะ (Smart POS) สำหรับร้านค้า",
+     "language": "th",
+     "sha256": "c07a86199aa5fb86d277b1c4231484cde1c6b0a15db176eee37e48019720f938",
+     "text_sha256": "7651670c253c12bc619d4d6a1ce7ca5d967c36f5accce2f3cbb91368e5771901",
+     "published": "2026-10-06",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/smart-pos-merchant-acquiring-agreement-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Shield Deep Research · ตอนที่ 42"
   },
   {
    "id": "blog/bkk-council/311-decision-report-v7",

@@ -8,6 +8,7 @@ Official source: https://searchlaw.ocs.go.th/council-of-state/#/public/doc/TXVYM
 
 Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
+- มาตรา 5
 - มาตรา 7
 - มาตรา 8
 - มาตรา 12
