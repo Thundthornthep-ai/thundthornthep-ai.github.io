@@ -546,6 +546,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 618
 - มาตรา 619
 - มาตรา 620
+- มาตรา 621
 - มาตรา 623
 - มาตรา 624
 - มาตรา 625
