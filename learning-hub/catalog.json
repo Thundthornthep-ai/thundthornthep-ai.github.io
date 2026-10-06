@@ -3,15 +3,15 @@
  "generated": "2026-10-06",
  "generator": "scripts/knowledge-teaching/build-library-data.py (las-billing)",
  "scope": {
-  "tracked_html": 300,
-  "catalogue_variants": 279,
-  "learning_items": 229,
-  "articles": 211,
+  "tracked_html": 302,
+  "catalogue_variants": 281,
+  "learning_items": 231,
+  "articles": 213,
   "resources": 18,
   "excluded": 21,
   "unlinked_items": 19,
-  "legal_reviewed": 248,
-  "source_tree": "7ccbe4047987d4aa9be07d3dcb119f73fd765ec1"
+  "legal_reviewed": 250,
+  "source_tree": "510a227711f4c5fa22b479e14603cb31b21de6f2"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -3706,10 +3706,10 @@
      "path": "articles/director-liability-derivative-action-thailand.html",
      "title": "ความรับผิดของกรรมการบริษัทในการกระทำละเมิดและฝ่าฝืนหน้าที่ไว้วางใจ (Directors' Fiduciary Duties & Piercing the Corporate Veil)",
      "language": "th",
-     "sha256": "74c2f57e0cd0bc013545803022831c1f1a1239470a9a88b5958782b6c2861e04",
-     "text_sha256": "b6ea0992e5f55b5be99a6be25a6643c67495d19645820827ef0934915861fac6",
+     "sha256": "9148a52ca9fc4555868bb94c761e7a28a9e3d20a12b7751da8e6c5e80044420b",
+     "text_sha256": "799f11e2ccd50d933cbaf215dd2a97930a183ca4a3f89ca52fd285c65927d048",
      "published": "2026-09-29",
-     "modified": "2026-10-03",
+     "modified": "2026-10-06",
      "url": "https://thundthornthep-ai.github.io/articles/director-liability-derivative-action-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -5727,10 +5727,10 @@
      "path": "articles/bonded-warehouse-free-zone-agreement-thailand.html",
      "title": "ดักจุดตายสัญญาให้บริการคลังสินค้าทัณฑ์บนและศูนย์กระจายสินค้าเขตปลอดอากร (Bonded Warehouse & Free Zone Logistics Agreement)",
      "language": "th",
-     "sha256": "a9e054a38669a427050b9150715f4c40c25f1578b6e76a3c13dc8e2362f4ab39",
-     "text_sha256": "cd7436a80886f85960b2d001c8cfd0d2419f1e54f3d2f69efae60b5bd8fde189",
+     "sha256": "854b1a787708d301d4087d4348285e90ad68d5c123458e50134461ef9de78d09",
+     "text_sha256": "da4d6ef66614c1c4a7949cf02e1211b2a2adaf829cba0099a47262653054d13e",
      "published": "2026-10-03",
-     "modified": "2026-10-03",
+     "modified": "2026-10-06",
      "url": "https://thundthornthep-ai.github.io/articles/bonded-warehouse-free-zone-agreement-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -7005,6 +7005,71 @@
    "module": "M13",
    "level": "L2",
    "series_label": "LAS C&C Deep Research · ตอนที่ 33"
+  },
+  {
+   "id": "articles/bonded-warehouse-free-zone-acquisition-due-diligence-thailand",
+   "kind": "article",
+   "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการธุรกิจคลังสินค้าทัณฑ์บนและเขตปลอดอากร (Bonded Warehouse & Free Trade Zone Due Diligence)",
+   "variants": [
+    {
+     "path": "articles/bonded-warehouse-free-zone-acquisition-due-diligence-thailand.html",
+     "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการธุรกิจคลังสินค้าทัณฑ์บนและเขตปลอดอากร (Bonded Warehouse & Free Trade Zone Due Diligence)",
+     "language": "th",
+     "sha256": "01cf55e40ce376eb50edaa6592d76b39352ad173b34a0b6eb501ca0969cf6352",
+     "text_sha256": "074a730c521dd38c3dfde0b2bc127ea69a9cc8b07ebedc46ac9018679ca12f2f",
+     "published": "2026-10-06",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/bonded-warehouse-free-zone-acquisition-due-diligence-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "investment",
+    "corporate"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M05",
+   "level": "L3",
+   "series_label": "LAS Invest Deep Research · ตอนที่ 24"
+  },
+  {
+   "id": "articles/last-mile-express-delivery-courier-agreement-checklist-thailand",
+   "kind": "article",
+   "title": "Checklist 10 จุดตรวจสัญญาบริการจัดส่งพัสดุด่วนและโลจิสติกส์ระยะทางสุดท้าย (Last-Mile Express Delivery & Courier Master Services Agreement)",
+   "variants": [
+    {
+     "path": "articles/last-mile-express-delivery-courier-agreement-checklist-thailand.html",
+     "title": "Checklist 10 จุดตรวจสัญญาบริการจัดส่งพัสดุด่วนและโลจิสติกส์ระยะทางสุดท้าย (Last-Mile Express Delivery & Courier Master Services Agreement)",
+     "language": "th",
+     "sha256": "067e9b5496d91b177121bda7b22a935c7b295689353e91e836863e563cc3a5a3",
+     "text_sha256": "aac81bf48a707487214f60189fc3ac7d46da7f7ac03145a7a27f78b3fc614e01",
+     "published": "2026-10-06",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/last-mile-express-delivery-courier-agreement-checklist-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L2",
+   "series_label": "LAS C&C Deep Research · ตอนที่ 38"
   },
   {
    "id": "blog/bkk-council/311-decision-report-v7",
