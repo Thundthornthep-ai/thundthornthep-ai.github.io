@@ -25,7 +25,7 @@
     "author": {"@type": "Person", "name": "Thundthornthep Yamoutai, Ph.D.", "affiliation": "Legal Advance Solution Co., Ltd."},
     "publisher": {"@type": "Organization", "name": "Legal Advance Solution Co., Ltd."},
     "datePublished": "2026-10-05",
-    "dateModified": "2026-10-05",
+    "dateModified": "2026-10-06",
     "inLanguage": "th",
     "isPartOf": {"@type": "CreativeWorkSeries", "name": "LAS UP — Deep Research"}
   }
@@ -416,7 +416,7 @@
       <li><a href="#s2">ผลกระทบเชิงธุรกิจ</a></li>
       <li><a href="#s3">กรอบกฎหมายและ Claim Ledger</a></li>
       <li><a href="#s4">การเปรียบเทียบมาตรฐาน T-VER (ไทย) กับ Verra VCS / Gold Standard (สากล)</a></li>
-      <li><a href="#s5">โครงสร้างสัญญาซื้อขายคาร์บอนเครดิต: Spot vs Forward Offtake vs Carbon Streaming</a></li>
+      <li><a href="#s5">โครงสร้างสัญญาซื้อขายคาร์บอนเครดิตแบบ Spot แบบ Forward Offtake และแบบ Carbon Streaming</a></li>
       <li><a href="#s6">การจัดสรรความเสี่ยง Non-Permanence Reversal และกลไก Buffer Pool</a></li>
       <li><a href="#s7">LAS Practice Note: แม่แบบสัญญาฉบับสมบูรณ์</a></li>
       <li><a href="#s8">ข้อต่อสู้ของผู้พัฒนาโครงการ (Project Developer) กับผู้ซื้อ/องค์กรธุรกิจ</a></li>
@@ -452,12 +452,12 @@
   <section class="section-block" id="s4">
     <h2 class="section-heading">การเปรียบเทียบมาตรฐาน T-VER (ไทย) กับ Verra VCS / Gold Standard (สากล)</h2>
 <div class="compare-table"><div class="las-table-scroll" role="region" aria-label="ตารางประกอบบทความ เลื่อนในแนวนอนเพื่ออ่านได้" tabindex="0">
-<table class="article-table las-reading-table"><thead><tr><th scope="col">ประเด็นเปรียบเทียบ</th><th scope="col">T-VER (โดย อบก. ประเทศไทย)</th><th scope="col">Verra VCS / Gold Standard (สากล)</th></tr></thead><tbody><tr><td><strong>หน่วยงานผู้ออกและกำกับดูแล</strong></td><td>องค์การบริหารจัดการก๊าซเรือนกระจก (องค์การมหาชน) (อบก.)</td><td>Verra (VCS) / Gold Standard Foundation</td></tr><tr><td><strong>ระบบทะเบียน (Registry)</strong></td><td>T-VER Registry System (อบก.)</td><td>Verra Registry / Gold Standard Impact Registry</td></tr><tr><td><strong>ประเภทมาตรฐาน</strong></td><td>มาตรฐานระดับชาติ (National Standard / Premium T-VER)</td><td>มาตรฐานภาคสมัครใจระดับสากล (International Standard)</td></tr><tr><td><strong>การยอมรับในตลาดต่างประเทศ</strong></td><td>ใช้ในประเทศไทยเป็นหลัก / ต้องทำ Article 6 หากโอนออก</td><td>ได้รับการยอมรับในตลาดคาร์บอนสากลทั่วโลก</td></tr><tr><td><strong>กลไกการรับมือ Reversal Risk</strong></td><td>มาตรการตามหลักเกณฑ์โครงการ Premium T-VER ที่ใช้บังคับ [ต้องยืนยันแหล่งที่มา]</td><td>การหักเครดิตเข้าบัญชีสำรอง (Non-Permanence Buffer Pool) ตามกติกาของแต่ละมาตรฐาน [ต้องยืนยันแหล่งที่มา]</td></tr><tr><td><strong>หน่วยนับเครดิต</strong></td><td>tCO2e (ตันคาร์บอนไดออกไซด์เทียบเท่า) พร้อม Serial Number</td><td>tCO2e พร้อม Serial Number เฉพาะใน Registry สากล</td></tr></tbody></table>
+<table class="article-table las-reading-table"><thead><tr><th scope="col">ประเด็นเปรียบเทียบ</th><th scope="col">T-VER (โดย อบก. ประเทศไทย)</th><th scope="col">Verra VCS / Gold Standard (สากล)</th></tr></thead><tbody><tr><td><strong>หน่วยงานผู้ออกและกำกับดูแล</strong></td><td>องค์การบริหารจัดการก๊าซเรือนกระจก (องค์การมหาชน) (อบก.)</td><td>Verra (VCS) / Gold Standard Foundation</td></tr><tr><td><strong>ระบบทะเบียน (Registry)</strong></td><td>T-VER Registry System (อบก.)</td><td>Verra Registry / Gold Standard Impact Registry</td></tr><tr><td><strong>ประเภทมาตรฐาน</strong></td><td>มาตรฐานระดับชาติ (National Standard / Premium T-VER)</td><td>มาตรฐานภาคสมัครใจระดับสากล (International Standard)</td></tr><tr><td><strong>การยอมรับในตลาดต่างประเทศ</strong></td><td>ใช้ในประเทศไทยเป็นหลัก ส่วนการโอนออกเพื่อใช้กับเป้าหมาย NDC ของประเทศอื่น หรือเพื่อการชดเชยตามข้อกำหนดข้ามพรมแดนที่บังคับให้ต้องมี Article 6 Authorization ต้องได้รับการอนุญาตและการปรับปรุงบัญชีที่สอดคล้องกันตามข้อ 6 ของความตกลงปารีส [ต้องยืนยันแหล่งที่มา]</td><td>ได้รับการยอมรับในตลาดคาร์บอนสากลทั่วโลก</td></tr><tr><td><strong>กลไกการรับมือ Reversal Risk</strong></td><td>มาตรการตามหลักเกณฑ์โครงการ Premium T-VER ที่ใช้บังคับ [ต้องยืนยันแหล่งที่มา]</td><td>การหักเครดิตเข้าบัญชีสำรอง (Non-Permanence Buffer Pool) ตามกติกาของแต่ละมาตรฐาน [ต้องยืนยันแหล่งที่มา]</td></tr><tr><td><strong>หน่วยนับเครดิต</strong></td><td>tCO2e (ตันคาร์บอนไดออกไซด์เทียบเท่า) พร้อม Serial Number</td><td>tCO2e พร้อม Serial Number เฉพาะใน Registry สากล</td></tr></tbody></table>
 </div></div>
   </section>
 
   <section class="section-block" id="s5">
-    <h2 class="section-heading">โครงสร้างสัญญาซื้อขายคาร์บอนเครดิต: Spot vs Forward Offtake vs Carbon Streaming</h2>
+    <h2 class="section-heading">โครงสร้างสัญญาซื้อขายคาร์บอนเครดิตแบบ Spot แบบ Forward Offtake และแบบ Carbon Streaming</h2>
 <ol class="content-list"><li><strong>Spot Purchase Agreement (การซื้อขายทันที):</strong> เป็นการซื้อขายคาร์บอนเครดิตที่ได้รับการรับรองและมี Serial Number อยู่ในระบบทะเบียนแล้ว ชำระเงินและโอน Serial Number หรือทำการ Retirement ทันที ความเสี่ยงต่ำที่สุด</li><li><strong>Forward Offtake Agreement (สัญญาจองซื้อล่วงหน้า):</strong> ผู้ซื้อตกลงจะซื้อคาร์บอนเครดิตที่จะเกิดขึ้นในอนาคตจากโครงการตามราคาและปริมาณที่กำหนดไว้ล่วงหน้า ชำระเงินเมื่อส่งมอบแต่ละรอบ (Vintage) ผู้ซื้อแบกรับความเสี่ยงเรื่องระยะเวลาโครงการ และความเสี่ยงที่โครงการจะได้ปริมาณเครดิตน้อยกว่าคาด</li><li><strong>Carbon Streaming Agreement (สัญญาสตรีมมิ่งคาร์บอน):</strong> ผู้ซื้อ (Streamer) ชำระเงินก้อน upfront financing ให้แก่ผู้พัฒนาโครงการเพื่อใช้ในการก่อสร้างหรือดำเนินโครงการ โดยได้รับสิทธิในการซื้อคาร์บอนเครดิตที่จะเกิดขึ้นในอนาคตทั้งหมดหรือตามสัดส่วนในราคาที่ส่วนลดพิเศษ (Discounted Price) ตลอดอายุสัญญา</li></ol>
 <p>สัญญาข้างต้นเป็นสัญญาซื้อขายที่มีวัตถุประสงค์เพื่อส่งมอบคาร์บอนเครดิตจริง จึงวิเคราะห์ตามประมวลกฎหมายแพ่งและพาณิชย์ ผู้ร่างควรตรวจว่าโครงสร้างที่ชำระราคาเป็นเงินแทนการส่งมอบ หรือที่ซื้อขายผ่านตลาดกลาง เข้านิยามสัญญาซื้อขายล่วงหน้าตามกฎหมายเฉพาะหรือไม่ [ต้องยืนยันแหล่งที่มา]</p>
   </section>
@@ -531,7 +531,7 @@
     </div>
     <div class="faq-item">
       <div class="faq-q">หากรัฐบาลไทยไม่อนุมัติ Corresponding Adjustment สำหรับการโอนข้ามพรมแดน เครดิตนั้นยังใช้ได้หรือไม่?</div>
-      <div class="faq-a"><em>A3: ยังคงใช้ชดเชยในระดับองค์กรภาคสมัครใจภายในประเทศไทยได้ แต่จะไม่สามารถนำไปใช้อ้างอิงเพื่อเป้าหมาย NDC ของประเทศอื่น หรือการชดเชยตามข้อกำหนดข้ามพรมแดนที่บังคับให้ต้องมี Article 6 Authorization ได้</em></div>
+      <div class="faq-a"><em>A3: การอนุญาตและการปรับปรุงบัญชีที่สอดคล้องกันตามข้อ 6 ของความตกลงปารีสเป็นกลไกระหว่างรัฐตามที่อธิบายในกรอบกฎหมาย เครดิตที่ไม่ได้รับการปรับปรุงบัญชีที่สอดคล้องกันจึงอาจยังใช้ชดเชยในระดับองค์กรภาคสมัครใจภายในประเทศไทยได้ แต่ไม่อาจนำไปใช้เพื่อเป้าหมาย NDC ของประเทศอื่น หรือเพื่อการชดเชยตามข้อกำหนดข้ามพรมแดนที่บังคับให้ต้องมี Article 6 Authorization ทั้งนี้ ขอบเขตการใช้ต้องตรวจกับมติของที่ประชุมรัฐภาคีความตกลงปารีสและข้อกำหนดของมาตรฐานคาร์บอนเครดิตที่ใช้บังคับ [ต้องยืนยันแหล่งที่มา]</em></div>
     </div>
   </section>
 
