@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "generated": "2026-10-05",
+ "generated": "2026-10-06",
  "generator": "scripts/knowledge-teaching/build-library-data.py (las-billing)",
  "scope": {
   "tracked_html": 300,
@@ -11,7 +11,7 @@
   "excluded": 21,
   "unlinked_items": 19,
   "legal_reviewed": 248,
-  "source_tree": "4b3a0914b1bc351f8b5aaf96cbcfa94c3864e8dc"
+  "source_tree": "7ccbe4047987d4aa9be07d3dcb119f73fd765ec1"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -1804,39 +1804,6 @@
    "level": "L1"
   },
   {
-   "id": "articles/las-share-07",
-   "kind": "article",
-   "title": "การโอนหุ้นบริษัทจำกัด — ขั้นตอนและข้อจำกัดครบถ้วน",
-   "variants": [
-    {
-     "path": "articles/las-share-07.html",
-     "title": "การโอนหุ้นบริษัทจำกัด — ขั้นตอนและข้อจำกัดครบถ้วน",
-     "language": "th",
-     "sha256": "65eb44398accd65746a1594097d1ac2043d26e748d4eb93642e80c5c9d99dff8",
-     "text_sha256": "ce4bbbba925cc5f3fd52abfa9793897c7de6a31f49f7acb627fef9cece2d9199",
-     "published": "2026-04-03",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/las-share-07.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "corporate"
-   ],
-   "series": "share",
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "episode": 7,
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M04",
-   "level": "L1",
-   "series_label": "LAS Share Deep Research · ตอนที่ 26"
-  },
-  {
    "id": "articles/las-share-08",
    "kind": "article",
    "title": "หนังสือมอบอำนาจ — ทำอย่างไรให้ถูกกฎหมายครบถ้วน",
@@ -3570,70 +3537,6 @@
    "series_label": "LAS Share Deep Research · ตอนที่ 8"
   },
   {
-   "id": "articles/company-dissolution-liquidation-thailand",
-   "kind": "article",
-   "title": "การเลิกบริษัทจำกัดและการชำระบัญชี (Corporate Dissolution & Liquidation Process)",
-   "variants": [
-    {
-     "path": "articles/company-dissolution-liquidation-thailand.html",
-     "title": "การเลิกบริษัทจำกัดและการชำระบัญชี (Corporate Dissolution & Liquidation Process)",
-     "language": "th",
-     "sha256": "f12a41b23ec93d5cf7aeb09a96a80dbb79e023b6f1d04e08c3920f186d27036f",
-     "text_sha256": "e64345b8bda99af1c5178c6342c25713e6337ce739c63818f614b123cd51c217",
-     "published": "2026-09-29",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/company-dissolution-liquidation-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "corporate"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M04",
-   "level": "L2",
-   "series_label": "LAS Share Deep Research · ตอนที่ 13"
-  },
-  {
-   "id": "articles/company-liquidator-duties-thailand",
-   "kind": "article",
-   "title": "การจัดการทรัพย์สินและหน้าที่ความรับผิดชอบของผู้ชำระบัญชี (Company Liquidation & Dissolution)",
-   "variants": [
-    {
-     "path": "articles/company-liquidator-duties-thailand.html",
-     "title": "การจัดการทรัพย์สินและหน้าที่ความรับผิดชอบของผู้ชำระบัญชี (Company Liquidation & Dissolution)",
-     "language": "th",
-     "sha256": "7d523a3d0f25c90884fb7dd1c0c26e0dc2aa08cc816cf4a2f9779c771c5bafdd",
-     "text_sha256": "bb618d7f04fe3d19316dfd1457d7c9160702bc2c598b577ca350ca3b191f11cc",
-     "published": "2026-09-29",
-     "modified": "2026-10-03",
-     "url": "https://thundthornthep-ai.github.io/articles/company-liquidator-duties-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "corporate"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M04",
-   "level": "L2",
-   "series_label": "LAS Share Deep Research · ตอนที่ 9"
-  },
-  {
    "id": "articles/confidentiality-publicity-clause-thailand",
    "kind": "article",
    "title": "ดักจุดตายข้อสัญญาคุ้มครองข้อมูลความลับและการเปิดเผยต่อสาธารณะ (Confidentiality & Publicity in M&A)",
@@ -4243,39 +4146,6 @@
    "module": "M09",
    "level": "L3",
    "series_label": "LAS Shield Deep Research · ตอนที่ 14"
-  },
-  {
-   "id": "articles/ip-technology-due-diligence-thailand",
-   "kind": "article",
-   "title": "ตรวจสอบสถานะทรัพย์สินทางปัญญาและเทคโนโลยี (IP & Tech Due Diligence)",
-   "variants": [
-    {
-     "path": "articles/ip-technology-due-diligence-thailand.html",
-     "title": "ตรวจสอบสถานะทรัพย์สินทางปัญญาและเทคโนโลยี (IP & Tech Due Diligence)",
-     "language": "th",
-     "sha256": "510760be535bf111e6927c2c269b5c37eda730fcf470400256113a6db6aae380",
-     "text_sha256": "6afd30d69b20cab443e80d01b35cc2aa6e599be11e0eca29aad94c4a6c6ab4c9",
-     "published": "2026-09-30",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/ip-technology-due-diligence-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "investment",
-    "corporate"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M05",
-   "level": "L2",
-   "series_label": "LAS C&C Deep Research · ตอนที่ 7"
   },
   {
    "id": "articles/joint-rd-agreement-thailand",
@@ -6009,167 +5879,6 @@
    "series_label": "LAS Up Deep Research · ตอนที่ 14"
   },
   {
-   "id": "articles/agricultural-biotech-plant-variety-licence-template-thailand",
-   "kind": "article",
-   "title": "พิมพ์เขียวและแม่แบบสัญญาการให้บริการเทคโนโลยีชีวภาพด้านการเกษตรและสิทธิในพันธุ์พืชใหม่ (Agri-Biotech Licensing & Plant Variety Commercialization Agreement Template)",
-   "variants": [
-    {
-     "path": "articles/agricultural-biotech-plant-variety-licence-template-thailand.html",
-     "title": "พิมพ์เขียวและแม่แบบสัญญาการให้บริการเทคโนโลยีชีวภาพด้านการเกษตรและสิทธิในพันธุ์พืชใหม่ (Agri-Biotech Licensing & Plant Variety Commercialization Agreement Template)",
-     "language": "th",
-     "sha256": "4e970b0e3b0c753dc2c9de94c4bd80ceff276f94e172e5c2a9f15ac997261cc9",
-     "text_sha256": "657e7721632e5519a6c082c3c3acc41d25d66acf9b02b1481b8db91893d434af",
-     "published": "2026-10-05",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/agricultural-biotech-plant-variety-licence-template-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "contract"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M13",
-   "level": "L3",
-   "series_label": "LAS Up Deep Research · ตอนที่ 21"
-  },
-  {
-   "id": "articles/aircraft-mro-service-agreement-checklist-thailand",
-   "kind": "article",
-   "title": "Checklist 10 จุดตรวจสัญญาบริการบำรุงรักษาและซ่อมบำรุงอากาศยาน (Aircraft Maintenance, Repair & Overhaul - MRO Master Services Agreement)",
-   "variants": [
-    {
-     "path": "articles/aircraft-mro-service-agreement-checklist-thailand.html",
-     "title": "Checklist 10 จุดตรวจสัญญาบริการบำรุงรักษาและซ่อมบำรุงอากาศยาน (Aircraft Maintenance, Repair & Overhaul - MRO Master Services Agreement)",
-     "language": "th",
-     "sha256": "37e4d8d5674d81bdb1c37d20bcd90a4587eea1e8be6ecedd68f0e955547fe7a1",
-     "text_sha256": "812b58ffadc41896c292b7eea6c9acdb602488305e0bb131db1a261cf5e30817",
-     "published": "2026-10-05",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/aircraft-mro-service-agreement-checklist-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "contract"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M13",
-   "level": "L2",
-   "series_label": "LAS C&C Deep Research · ตอนที่ 32"
-  },
-  {
-   "id": "articles/airline-acquisition-due-diligence-thailand",
-   "kind": "article",
-   "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการสายการบินพาณิชย์และธุรกิจการบินพลเรือน (Aviation M&A & Airline Regulatory Due Diligence)",
-   "variants": [
-    {
-     "path": "articles/airline-acquisition-due-diligence-thailand.html",
-     "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการสายการบินพาณิชย์และธุรกิจการบินพลเรือน (Aviation M&A & Airline Regulatory Due Diligence)",
-     "language": "th",
-     "sha256": "90a9959cb4e4bc2f5f438aa9fe44138c2f551c743a0a67d2a8ac980fa0fc2028",
-     "text_sha256": "2c5726860f2af03697597351b2b2ed7a67952334cfd23c478719c9996b439e2d",
-     "published": "2026-10-05",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/airline-acquisition-due-diligence-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "investment",
-    "corporate"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M05",
-   "level": "L3",
-   "series_label": "LAS Invest Deep Research · ตอนที่ 21"
-  },
-  {
-   "id": "articles/autonomous-vehicle-testing-agreement-template-thailand",
-   "kind": "article",
-   "title": "พิมพ์เขียวและแม่แบบสัญญาการให้บริการพัฒนาระบบนิเวศยานยนต์ไร้คนขับและการทดสอบเทคโนโลยีการขับขี่อัตโนมัติ (Autonomous Vehicle Testing & Autonomous Driving System Development Agreement Template)",
-   "variants": [
-    {
-     "path": "articles/autonomous-vehicle-testing-agreement-template-thailand.html",
-     "title": "พิมพ์เขียวและแม่แบบสัญญาการให้บริการพัฒนาระบบนิเวศยานยนต์ไร้คนขับและการทดสอบเทคโนโลยีการขับขี่อัตโนมัติ (Autonomous Vehicle Testing & Autonomous Driving System Development Agreement Template)",
-     "language": "th",
-     "sha256": "7ff251ab9354446f20877bb664dcdf7c21548b0d57372c4303554e74f8a4765f",
-     "text_sha256": "6c7147c2d057bc41fe0e237211f615790173b291ae1e106fe3797e5c5aa4bee5",
-     "published": "2026-10-05",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/autonomous-vehicle-testing-agreement-template-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "contract"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M13",
-   "level": "L3",
-   "series_label": "LAS Up Deep Research · ตอนที่ 20"
-  },
-  {
-   "id": "articles/carbon-credit-offtake-agreement-template-thailand",
-   "kind": "article",
-   "title": "พิมพ์เขียวและแม่แบบสัญญาการให้บริการศูนย์กักเก็บและซื้อขายคาร์บอนเครดิต (Carbon Credit Offtake & Streaming Agreement Template)",
-   "variants": [
-    {
-     "path": "articles/carbon-credit-offtake-agreement-template-thailand.html",
-     "title": "พิมพ์เขียวและแม่แบบสัญญาการให้บริการศูนย์กักเก็บและซื้อขายคาร์บอนเครดิต (Carbon Credit Offtake & Streaming Agreement Template)",
-     "language": "th",
-     "sha256": "3b957232e11af76b61f61d69491f8d19a84ac2abdd45d50238e7247caf530807",
-     "text_sha256": "64df4b7c7939634a9b443ea16fd4b9ba1a5a5ee2ad39b3f7333266b432a6fb03",
-     "published": "2026-10-05",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/carbon-credit-offtake-agreement-template-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "contract"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M13",
-   "level": "L3",
-   "series_label": "LAS Up Deep Research · ตอนที่ 19"
-  },
-  {
    "id": "articles/cloud-gaming-streaming-agreement-thailand",
    "kind": "article",
    "title": "ดักจุดตายสัญญาให้บริการคลาวด์เกมมิ่งและการสตรีมมิ่งมัลติมีเดีย (Cloud Gaming & Interactive Media Streaming Services Agreement)",
@@ -6266,38 +5975,6 @@
    "series_label": "LAS Shield Deep Research · ตอนที่ 38"
   },
   {
-   "id": "articles/e-marketplace-platform-agreement-thailand",
-   "kind": "article",
-   "title": "ดักจุดตายสัญญาให้บริการแพลตฟอร์มตลาดกลางพาณิชย์อิเล็กทรอนิกส์ (E-Marketplace Platform & Merchant Agreement)",
-   "variants": [
-    {
-     "path": "articles/e-marketplace-platform-agreement-thailand.html",
-     "title": "ดักจุดตายสัญญาให้บริการแพลตฟอร์มตลาดกลางพาณิชย์อิเล็กทรอนิกส์ (E-Marketplace Platform & Merchant Agreement)",
-     "language": "th",
-     "sha256": "5c9cff2447ed9253ae8f61cad5bb797daaa2f2ec4b1c8960e2f2158949b120ef",
-     "text_sha256": "f51fcfe7ca1ba16efce52030c01485b1d392386a82298a7db376042fbe99b5fe",
-     "published": "2026-10-05",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/e-marketplace-platform-agreement-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "contract"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M13",
-   "level": "L3",
-   "series_label": "LAS Shield Deep Research · ตอนที่ 36"
-  },
-  {
    "id": "articles/ev-charging-network-agreement-thailand",
    "kind": "article",
    "title": "ดักจุดตายสัญญาให้บริการระบบโครงข่ายชาร์จยานยนต์ไฟฟ้าและการบริหารสถานีอัดประจุไฟฟ้า (Electric Vehicle - EV Charging Station & CPO Master Services Agreement)",
@@ -6330,135 +6007,6 @@
    "series_label": "LAS Shield Deep Research · ตอนที่ 40"
   },
   {
-   "id": "articles/family-holding-company-constitution-thailand",
-   "kind": "article",
-   "title": "การจัดตั้งและบริหารจัดการ Family Holding Company สำหรับการส่งต่อธุรกิจครอบครัว (Family Holding Company Governance & Wealth Succession)",
-   "variants": [
-    {
-     "path": "articles/family-holding-company-constitution-thailand.html",
-     "title": "การจัดตั้งและบริหารจัดการ Family Holding Company สำหรับการส่งต่อธุรกิจครอบครัว (Family Holding Company Governance & Wealth Succession)",
-     "language": "th",
-     "sha256": "6c280c9f1af2470656c962f2a5888081f6ccf951cc0b3ff40285c4a5568d240b",
-     "text_sha256": "1182d91fa7756cd500144ee0f4cef5b2efcd2a1cb37a07a1db5511f637847e95",
-     "published": "2026-10-05",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/family-holding-company-constitution-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "corporate"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M04",
-   "level": "L2",
-   "series_label": "LAS Share Deep Research · ตอนที่ 28"
-  },
-  {
-   "id": "articles/fulfillment-dropshipping-agreement-thailand",
-   "kind": "article",
-   "title": "ดักจุดตายสัญญาให้บริการคลังเก็บสินค้าและศูนย์กระจายสินค้าแบบดรอปชิปปิงอัตโนมัติ (Automated Fulfillment & Dropshipping Cross-Border Master Services Agreement)",
-   "variants": [
-    {
-     "path": "articles/fulfillment-dropshipping-agreement-thailand.html",
-     "title": "ดักจุดตายสัญญาให้บริการคลังเก็บสินค้าและศูนย์กระจายสินค้าแบบดรอปชิปปิงอัตโนมัติ (Automated Fulfillment & Dropshipping Cross-Border Master Services Agreement)",
-     "language": "th",
-     "sha256": "54556f6de934f3c600c009b844bd0950a9e250ab4d80240d42d0e4e656ffb733",
-     "text_sha256": "ed6e0a182c9f6d5ab0dbdef8916cb159e6721bc831d85fdfd4af58d800fe0b43",
-     "published": "2026-10-05",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/fulfillment-dropshipping-agreement-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "contract"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M13",
-   "level": "L3",
-   "series_label": "LAS Shield Deep Research · ตอนที่ 41"
-  },
-  {
-   "id": "articles/gold-bullion-vaulting-custody-agreement-checklist-thailand",
-   "kind": "article",
-   "title": "Checklist 10 จุดตรวจสัญญาบริการรับฝาก เก็บรักษา และส่งมอบโลหะมีค่าและทองคำแท่งเพื่อการพาณิชย์ (Precious Metals & Gold Bullion Custody and Vaulting Master Services Agreement)",
-   "variants": [
-    {
-     "path": "articles/gold-bullion-vaulting-custody-agreement-checklist-thailand.html",
-     "title": "Checklist 10 จุดตรวจสัญญาบริการรับฝาก เก็บรักษา และส่งมอบโลหะมีค่าและทองคำแท่งเพื่อการพาณิชย์ (Precious Metals & Gold Bullion Custody and Vaulting Master Services Agreement)",
-     "language": "th",
-     "sha256": "4ab337f16d211c44f0ddea518258229e934d1b5f5233b2c54adf3f40c5540fe0",
-     "text_sha256": "e7afc2b14eca0f3b1bbb6b1c365781dcc46b86d25cec04f2817b4bdbef93a5a6",
-     "published": "2026-10-05",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/gold-bullion-vaulting-custody-agreement-checklist-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "contract"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M13",
-   "level": "L2",
-   "series_label": "LAS C&C Deep Research · ตอนที่ 35"
-  },
-  {
-   "id": "articles/hyperscale-data-center-due-diligence-thailand",
-   "kind": "article",
-   "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการศูนย์ข้อมูลไฮเปอร์สเกลและคลาวด์คอมพิวติ้ง (Hyperscale Data Center & Cloud Infrastructure M&A Due Diligence)",
-   "variants": [
-    {
-     "path": "articles/hyperscale-data-center-due-diligence-thailand.html",
-     "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการศูนย์ข้อมูลไฮเปอร์สเกลและคลาวด์คอมพิวติ้ง (Hyperscale Data Center & Cloud Infrastructure M&A Due Diligence)",
-     "language": "th",
-     "sha256": "2220157a57a09469674a374efb5cb0e9e9ae790407c57bc91106b9cf8a563c96",
-     "text_sha256": "56f941349707e6f7af22a0f23bd3b1f636cc77836b46e8aa15f1aca8ce8e48a0",
-     "published": "2026-10-05",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/hyperscale-data-center-due-diligence-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "investment",
-    "corporate"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M05",
-   "level": "L3",
-   "series_label": "LAS Invest Deep Research · ตอนที่ 23"
-  },
-  {
    "id": "articles/installment-share-purchase-pledge-agreement-thailand",
    "kind": "article",
    "title": "สัญญาซื้อขายหุ้นแบบผ่อนชำระและสิทธิของผู้ถือหุ้นในระหว่างผ่อนชำระ (Installment Share Purchase Agreement & Intermediate Rights)",
@@ -6489,70 +6037,6 @@
    "module": "M04",
    "level": "L2",
    "series_label": "LAS Share Deep Research · ตอนที่ 24"
-  },
-  {
-   "id": "articles/leo-satellite-connectivity-agreement-thailand",
-   "kind": "article",
-   "title": "ดักจุดตายสัญญาให้บริการระบบเชื่อมต่อสัญญาณดาวเทียมวงโคจรต่ำและการสื่อสารบรอดแบนด์ผ่านอวกาศ (Low Earth Orbit - LEO Satellite Broadband Services Agreement)",
-   "variants": [
-    {
-     "path": "articles/leo-satellite-connectivity-agreement-thailand.html",
-     "title": "ดักจุดตายสัญญาให้บริการระบบเชื่อมต่อสัญญาณดาวเทียมวงโคจรต่ำและการสื่อสารบรอดแบนด์ผ่านอวกาศ (Low Earth Orbit - LEO Satellite Broadband Services Agreement)",
-     "language": "th",
-     "sha256": "2d823a44892691ca9b06847105c68f47ab25a16d02e363b9e6d776add7f4a351",
-     "text_sha256": "1f254b4a829a92fada3168ffd62b60b904ac7dc5aa04e848b5f658d79839be0c",
-     "published": "2026-10-05",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/leo-satellite-connectivity-agreement-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "contract"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M13",
-   "level": "L3",
-   "series_label": "LAS Shield Deep Research · ตอนที่ 39"
-  },
-  {
-   "id": "articles/lng-sale-purchase-terminal-agreement-template-thailand",
-   "kind": "article",
-   "title": "พิมพ์เขียวและแม่แบบสัญญาบริการจัดหา ขนส่ง และซื้อขายก๊าซธรรมชาติเหลว (Liquefied Natural Gas - LNG Master Sale and Purchase Agreement & Regasification Terminal Services Template)",
-   "variants": [
-    {
-     "path": "articles/lng-sale-purchase-terminal-agreement-template-thailand.html",
-     "title": "พิมพ์เขียวและแม่แบบสัญญาบริการจัดหา ขนส่ง และซื้อขายก๊าซธรรมชาติเหลว (Liquefied Natural Gas - LNG Master Sale and Purchase Agreement & Regasification Terminal Services Template)",
-     "language": "th",
-     "sha256": "e03f86f3a10937276e73d7d21739ae9120c8d1532bf7f536cc5996fe38c99888",
-     "text_sha256": "26f4e59bb06b2c8cb537daa4c88c1dd6541c1aafbb9f6e421d1cf0bfdc2f3594",
-     "published": "2026-10-05",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/lng-sale-purchase-terminal-agreement-template-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "contract"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M13",
-   "level": "L3",
-   "series_label": "LAS Up Deep Research · ตอนที่ 18"
   },
   {
    "id": "articles/managed-security-soc-service-agreement-checklist-thailand",
@@ -6620,167 +6104,6 @@
    "series_label": "LAS Invest Deep Research · ตอนที่ 18"
   },
   {
-   "id": "articles/multimodal-transport-3pl-agreement-template-thailand",
-   "kind": "article",
-   "title": "พิมพ์เขียวและแม่แบบสัญญาบริการขนส่งต่อเนื่องหลายรูปแบบและการบริหารโลจิสติกส์แบบ 3PL (Multimodal Transport & Third-Party Logistics Services Agreement Template)",
-   "variants": [
-    {
-     "path": "articles/multimodal-transport-3pl-agreement-template-thailand.html",
-     "title": "พิมพ์เขียวและแม่แบบสัญญาบริการขนส่งต่อเนื่องหลายรูปแบบและการบริหารโลจิสติกส์แบบ 3PL (Multimodal Transport & Third-Party Logistics Services Agreement Template)",
-     "language": "th",
-     "sha256": "6d6a5acc40addffcfd5f0bc7bc9f922c67b60621bd35c13060ad7173ad141a56",
-     "text_sha256": "0c1fdffb677644aec502d6b1aae51b77a0500722a1fa0d8f898664ce03c9e91a",
-     "published": "2026-10-05",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/multimodal-transport-3pl-agreement-template-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "contract"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M13",
-   "level": "L3",
-   "series_label": "LAS Up Deep Research · ตอนที่ 15"
-  },
-  {
-   "id": "articles/offshore-support-vessel-charter-checklist-thailand",
-   "kind": "article",
-   "title": "Checklist 10 จุดตรวจสัญญาบริการเดินเรือและให้บริการเรือสนับสนุนแท่นขุดเจาะปิโตรเลียมกลางอ่าวไทย (Offshore Support Vessel - OSV & Marine Master Time Charter Party Agreement)",
-   "variants": [
-    {
-     "path": "articles/offshore-support-vessel-charter-checklist-thailand.html",
-     "title": "Checklist 10 จุดตรวจสัญญาบริการเดินเรือและให้บริการเรือสนับสนุนแท่นขุดเจาะปิโตรเลียมกลางอ่าวไทย (Offshore Support Vessel - OSV & Marine Master Time Charter Party Agreement)",
-     "language": "th",
-     "sha256": "4b51a95f987ef911ee52e8ef1b35707274756a24585fb35f5105294096a70e2d",
-     "text_sha256": "f0101065671769047dbb870664982369817a91574c5ebd88a94fc7c834b38138",
-     "published": "2026-10-05",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/offshore-support-vessel-charter-checklist-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "contract"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M13",
-   "level": "L2",
-   "series_label": "LAS C&C Deep Research · ตอนที่ 34"
-  },
-  {
-   "id": "articles/penetration-testing-service-agreement-template-thailand",
-   "kind": "article",
-   "title": "พิมพ์เขียวและแม่แบบสัญญาบริการทดสอบและตรวจสอบความปลอดภัยของระบบสารสนเทศ (Penetration Testing & Red Teaming Master Services Agreement Template)",
-   "variants": [
-    {
-     "path": "articles/penetration-testing-service-agreement-template-thailand.html",
-     "title": "พิมพ์เขียวและแม่แบบสัญญาบริการทดสอบและตรวจสอบความปลอดภัยของระบบสารสนเทศ (Penetration Testing & Red Teaming Master Services Agreement Template)",
-     "language": "th",
-     "sha256": "61945b85916e3f3faa66927df6680bc803939da1268b261e998e7357e535ba26",
-     "text_sha256": "15c7f1d64e884f5afc26b38b35eeb25364b4ff39b95bc1ae0ea47c840410a6bc",
-     "published": "2026-10-05",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/penetration-testing-service-agreement-template-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "contract"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M13",
-   "level": "L3",
-   "series_label": "LAS Up Deep Research · ตอนที่ 16"
-  },
-  {
-   "id": "articles/pharmaceutical-acquisition-due-diligence-thailand",
-   "kind": "article",
-   "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการธุรกิจผลิตและจำหน่ายยา เวชภัณฑ์ และผลิตภัณฑ์ชีววัตถุ (Pharmaceutical & Biopharmaceutical Regulatory Due Diligence)",
-   "variants": [
-    {
-     "path": "articles/pharmaceutical-acquisition-due-diligence-thailand.html",
-     "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการธุรกิจผลิตและจำหน่ายยา เวชภัณฑ์ และผลิตภัณฑ์ชีววัตถุ (Pharmaceutical & Biopharmaceutical Regulatory Due Diligence)",
-     "language": "th",
-     "sha256": "3544f4f7546434c83249ca7114d2c9e4a48ffe78a441d0ba73f4237ac0326c58",
-     "text_sha256": "a1ba4cf313d1fa69df480f21e971b0c6b3e9f790de90770eb846d02354b650ab",
-     "published": "2026-10-05",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/pharmaceutical-acquisition-due-diligence-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "investment",
-    "corporate"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M05",
-   "level": "L3",
-   "series_label": "LAS Invest Deep Research · ตอนที่ 22"
-  },
-  {
-   "id": "articles/port-crane-cargo-handling-agreement-checklist-thailand",
-   "kind": "article",
-   "title": "Checklist 10 จุดตรวจสัญญาบริการบริหารจัดการระบบเครนและอุปกรณ์ยกขนสินค้าในท่าเรือและลานตู้คอนเทนเนอร์ (Port Cranes & Container Handling Equipment Maintenance and Operations Agreement)",
-   "variants": [
-    {
-     "path": "articles/port-crane-cargo-handling-agreement-checklist-thailand.html",
-     "title": "Checklist 10 จุดตรวจสัญญาบริการบริหารจัดการระบบเครนและอุปกรณ์ยกขนสินค้าในท่าเรือและลานตู้คอนเทนเนอร์ (Port Cranes & Container Handling Equipment Maintenance and Operations Agreement)",
-     "language": "th",
-     "sha256": "bdf8ef39fbc1fbd62262c631cab87616355e6e2da5c20375fed5870a5f984e7b",
-     "text_sha256": "22b76c2859653e807a2da42ea6f4c7ea34e2ad6a69513e6fb7ce6113103b801e",
-     "published": "2026-10-05",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/port-crane-cargo-handling-agreement-checklist-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "contract"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M13",
-   "level": "L2",
-   "series_label": "LAS C&C Deep Research · ตอนที่ 36"
-  },
-  {
    "id": "articles/pre-emptive-rights-capital-increase-thailand",
    "kind": "article",
    "title": "สิทธิของผู้ถือหุ้นในการซื้อหุ้นเพิ่มทุนตามสัดส่วน (Pre-emptive Rights) และการจัดสรรหุ้นที่เหลือแก่บุคคลภายนอก",
@@ -6846,39 +6169,6 @@
    "series_label": "LAS Invest Deep Research · ตอนที่ 20"
   },
   {
-   "id": "articles/satellite-licence-orbit-due-diligence-thailand",
-   "kind": "article",
-   "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายโทรคมนาคมและสิทธิการใช้วงโคจรดาวเทียม (Satellite & Orbital Slot Regulatory Due Diligence)",
-   "variants": [
-    {
-     "path": "articles/satellite-licence-orbit-due-diligence-thailand.html",
-     "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายโทรคมนาคมและสิทธิการใช้วงโคจรดาวเทียม (Satellite & Orbital Slot Regulatory Due Diligence)",
-     "language": "th",
-     "sha256": "8a00b6b717554e191669ad7022bf6f5b34cf3e0508e299ca0528437f414860cf",
-     "text_sha256": "9a3b267aa247dc62e8294dc4ad8badca57fe06636fe2bbdd0fb46bf66a8b57fd",
-     "published": "2026-10-05",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/satellite-licence-orbit-due-diligence-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "investment",
-    "corporate"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M05",
-   "level": "L3",
-   "series_label": "LAS Invest Deep Research · ตอนที่ 19"
-  },
-  {
    "id": "articles/waste-heat-recovery-epc-agreement-template-thailand",
    "kind": "article",
    "title": "พิมพ์เขียวและแม่แบบสัญญาบริการจัดหาและติดตั้งระบบผลิตไฟฟ้าพลังงานความร้อนเหลือทิ้งในโรงงานอุตสาหกรรม (Waste Heat Recovery Power Generation EPC & Performance Contracting Agreement Template)",
@@ -6909,38 +6199,6 @@
    "module": "M13",
    "level": "L3",
    "series_label": "LAS Up Deep Research · ตอนที่ 17"
-  },
-  {
-   "id": "articles/wind-turbine-om-agreement-checklist-thailand",
-   "kind": "article",
-   "title": "Checklist 10 จุดตรวจสัญญาบริการบำรุงรักษาและเดินเครื่องกังหันลมผลิตไฟฟ้าในโครงการฟาร์มกังหันลมนอกชายฝั่งและบนบก (Wind Turbine Generator - WTG Operations & Maintenance Agreement)",
-   "variants": [
-    {
-     "path": "articles/wind-turbine-om-agreement-checklist-thailand.html",
-     "title": "Checklist 10 จุดตรวจสัญญาบริการบำรุงรักษาและเดินเครื่องกังหันลมผลิตไฟฟ้าในโครงการฟาร์มกังหันลมนอกชายฝั่งและบนบก (Wind Turbine Generator - WTG Operations & Maintenance Agreement)",
-     "language": "th",
-     "sha256": "a8ff0748cfe1b88f7e95e90b60d38f48d9049d0a5ac290f4397eb94f8f4fe11b",
-     "text_sha256": "2b715560cd7ab60a4f31cd60823569b097e4bcf4989e15aa2bf337cd424dc9bf",
-     "published": "2026-10-05",
-     "modified": "2026-10-05",
-     "url": "https://thundthornthep-ai.github.io/articles/wind-turbine-om-agreement-checklist-thailand.html",
-     "legal_status": "reviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "contract"
-   ],
-   "series": null,
-   "legal_status": "reviewed",
-   "taxonomy_status": "assigned",
-   "hub_linked": true,
-   "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "legal-review-registered",
-   "module": "M13",
-   "level": "L2",
-   "series_label": "LAS C&C Deep Research · ตอนที่ 37"
   },
   {
    "id": "articles/private-to-public-company-conversion-thailand",
@@ -6975,6 +6233,748 @@
    "series_label": "LAS Share Deep Research · ตอนที่ 25"
   },
   {
+   "id": "articles/las-share-07",
+   "kind": "article",
+   "title": "การโอนหุ้นบริษัทจำกัด — ขั้นตอนและข้อจำกัดครบถ้วน",
+   "variants": [
+    {
+     "path": "articles/las-share-07.html",
+     "title": "การโอนหุ้นบริษัทจำกัด — ขั้นตอนและข้อจำกัดครบถ้วน",
+     "language": "th",
+     "sha256": "2b54413549b82e37df5d767ec29c681e2fd9ed66610c9e7de88556ca1b097388",
+     "text_sha256": "65b2bde2a5d5c3bbf451dc8071ead38f27a2f5412abaac909c1b81e522d9f5f9",
+     "published": "2026-04-03",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/las-share-07.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "corporate"
+   ],
+   "series": "share",
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "episode": 7,
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M04",
+   "level": "L1",
+   "series_label": "LAS Share Deep Research · ตอนที่ 26"
+  },
+  {
+   "id": "articles/company-dissolution-liquidation-thailand",
+   "kind": "article",
+   "title": "การเลิกบริษัทจำกัดและการชำระบัญชี (Corporate Dissolution & Liquidation Process)",
+   "variants": [
+    {
+     "path": "articles/company-dissolution-liquidation-thailand.html",
+     "title": "การเลิกบริษัทจำกัดและการชำระบัญชี (Corporate Dissolution & Liquidation Process)",
+     "language": "th",
+     "sha256": "2f60e3daf575716727b8b0f0c4dd693a6d5b734e47b8598e09765910c33f9f3d",
+     "text_sha256": "c52361dda5becd4e942900da84a31cd117993e1ddd8be939e70dff6cc2cbc996",
+     "published": "2026-09-29",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/company-dissolution-liquidation-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "corporate"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M04",
+   "level": "L2",
+   "series_label": "LAS Share Deep Research · ตอนที่ 13"
+  },
+  {
+   "id": "articles/company-liquidator-duties-thailand",
+   "kind": "article",
+   "title": "การจัดการทรัพย์สินและหน้าที่ความรับผิดชอบของผู้ชำระบัญชี (Company Liquidation & Dissolution)",
+   "variants": [
+    {
+     "path": "articles/company-liquidator-duties-thailand.html",
+     "title": "การจัดการทรัพย์สินและหน้าที่ความรับผิดชอบของผู้ชำระบัญชี (Company Liquidation & Dissolution)",
+     "language": "th",
+     "sha256": "c51628ddadc3127c23a9c8085665cd5e1b65176841ebe89d569564ca462890b8",
+     "text_sha256": "7c1130633d2d07ea25dfb4058d59b52f091d06b8c5b53b2fa2e4aa3f2f67ec58",
+     "published": "2026-09-29",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/company-liquidator-duties-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "corporate"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M04",
+   "level": "L2",
+   "series_label": "LAS Share Deep Research · ตอนที่ 9"
+  },
+  {
+   "id": "articles/ip-technology-due-diligence-thailand",
+   "kind": "article",
+   "title": "ตรวจสอบสถานะทรัพย์สินทางปัญญาและเทคโนโลยี (IP & Tech Due Diligence)",
+   "variants": [
+    {
+     "path": "articles/ip-technology-due-diligence-thailand.html",
+     "title": "ตรวจสอบสถานะทรัพย์สินทางปัญญาและเทคโนโลยี (IP & Tech Due Diligence)",
+     "language": "th",
+     "sha256": "83282d763458013dabd5cd21e4b515482af82a2c95e501f2b28826d151d5d435",
+     "text_sha256": "fce5de19e02c8d69576a226d59b0dae1771046be16c08ea38427de10e88e6fa6",
+     "published": "2026-09-30",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/ip-technology-due-diligence-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "investment",
+    "corporate"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M05",
+   "level": "L2",
+   "series_label": "LAS C&C Deep Research · ตอนที่ 7"
+  },
+  {
+   "id": "articles/agricultural-biotech-plant-variety-licence-template-thailand",
+   "kind": "article",
+   "title": "พิมพ์เขียวและแม่แบบสัญญาการให้บริการเทคโนโลยีชีวภาพด้านการเกษตรและสิทธิในพันธุ์พืชใหม่ (Agri-Biotech Licensing & Plant Variety Commercialization Agreement Template)",
+   "variants": [
+    {
+     "path": "articles/agricultural-biotech-plant-variety-licence-template-thailand.html",
+     "title": "พิมพ์เขียวและแม่แบบสัญญาการให้บริการเทคโนโลยีชีวภาพด้านการเกษตรและสิทธิในพันธุ์พืชใหม่ (Agri-Biotech Licensing & Plant Variety Commercialization Agreement Template)",
+     "language": "th",
+     "sha256": "be92dc8eb5d2bc81a36e5cbad4611bc610bf43f8f4ffd742a89adad12f880f5f",
+     "text_sha256": "8307f3568a2bea44b73a00a6b3b9292e8a1fd6cdade51f99c2d2b0623e490c40",
+     "published": "2026-10-05",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/agricultural-biotech-plant-variety-licence-template-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Up Deep Research · ตอนที่ 21"
+  },
+  {
+   "id": "articles/aircraft-mro-service-agreement-checklist-thailand",
+   "kind": "article",
+   "title": "Checklist 10 จุดตรวจสัญญาบริการบำรุงรักษาและซ่อมบำรุงอากาศยาน (Aircraft Maintenance, Repair & Overhaul - MRO Master Services Agreement)",
+   "variants": [
+    {
+     "path": "articles/aircraft-mro-service-agreement-checklist-thailand.html",
+     "title": "Checklist 10 จุดตรวจสัญญาบริการบำรุงรักษาและซ่อมบำรุงอากาศยาน (Aircraft Maintenance, Repair & Overhaul - MRO Master Services Agreement)",
+     "language": "th",
+     "sha256": "d7381f5158558eb5dca68275134536cee919b07cbdf8d699b5eaaf612d823ea7",
+     "text_sha256": "4d509defc216add0342f531b3f089d595a7820d07423fbb61fa5a3ea321b275c",
+     "published": "2026-10-05",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/aircraft-mro-service-agreement-checklist-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L2",
+   "series_label": "LAS C&C Deep Research · ตอนที่ 32"
+  },
+  {
+   "id": "articles/airline-acquisition-due-diligence-thailand",
+   "kind": "article",
+   "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการสายการบินพาณิชย์และธุรกิจการบินพลเรือน (Aviation M&A & Airline Regulatory Due Diligence)",
+   "variants": [
+    {
+     "path": "articles/airline-acquisition-due-diligence-thailand.html",
+     "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการสายการบินพาณิชย์และธุรกิจการบินพลเรือน (Aviation M&A & Airline Regulatory Due Diligence)",
+     "language": "th",
+     "sha256": "49434f33ae8c0d137105101e09210bba8ff2cc1fef77fa066eb0b7156bb09bda",
+     "text_sha256": "24b1a3c2125f0ca3d7d0e3356cc175c86c0ba06b28128a635aea4640deaa2aaa",
+     "published": "2026-10-05",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/airline-acquisition-due-diligence-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "investment",
+    "corporate"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M05",
+   "level": "L3",
+   "series_label": "LAS Invest Deep Research · ตอนที่ 21"
+  },
+  {
+   "id": "articles/autonomous-vehicle-testing-agreement-template-thailand",
+   "kind": "article",
+   "title": "พิมพ์เขียวและแม่แบบสัญญาการให้บริการพัฒนาระบบนิเวศยานยนต์ไร้คนขับและการทดสอบเทคโนโลยีการขับขี่อัตโนมัติ (Autonomous Vehicle Testing & Autonomous Driving System Development Agreement Template)",
+   "variants": [
+    {
+     "path": "articles/autonomous-vehicle-testing-agreement-template-thailand.html",
+     "title": "พิมพ์เขียวและแม่แบบสัญญาการให้บริการพัฒนาระบบนิเวศยานยนต์ไร้คนขับและการทดสอบเทคโนโลยีการขับขี่อัตโนมัติ (Autonomous Vehicle Testing & Autonomous Driving System Development Agreement Template)",
+     "language": "th",
+     "sha256": "b2c1417c7aa3268275aae95e4a42a1d8e24a36f6905217cc0716ecdb80816248",
+     "text_sha256": "24eba714ee96b06c1a4da363130614053e35b1982cef08053d2973a4aa9a7b5f",
+     "published": "2026-10-05",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/autonomous-vehicle-testing-agreement-template-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Up Deep Research · ตอนที่ 20"
+  },
+  {
+   "id": "articles/carbon-credit-offtake-agreement-template-thailand",
+   "kind": "article",
+   "title": "พิมพ์เขียวและแม่แบบสัญญาการให้บริการศูนย์กักเก็บและซื้อขายคาร์บอนเครดิต (Carbon Credit Offtake & Streaming Agreement Template)",
+   "variants": [
+    {
+     "path": "articles/carbon-credit-offtake-agreement-template-thailand.html",
+     "title": "พิมพ์เขียวและแม่แบบสัญญาการให้บริการศูนย์กักเก็บและซื้อขายคาร์บอนเครดิต (Carbon Credit Offtake & Streaming Agreement Template)",
+     "language": "th",
+     "sha256": "6b5048ff730f9e7dcb1711cf526f3f66f0a6ac5cdf515a60aa02afec08649e50",
+     "text_sha256": "a01f6e3f40eb6453c2e12393e56be0924bd14002e2af481232fcea7e95cbdd76",
+     "published": "2026-10-05",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/carbon-credit-offtake-agreement-template-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Up Deep Research · ตอนที่ 19"
+  },
+  {
+   "id": "articles/e-marketplace-platform-agreement-thailand",
+   "kind": "article",
+   "title": "ดักจุดตายสัญญาให้บริการแพลตฟอร์มตลาดกลางพาณิชย์อิเล็กทรอนิกส์ (E-Marketplace Platform & Merchant Agreement)",
+   "variants": [
+    {
+     "path": "articles/e-marketplace-platform-agreement-thailand.html",
+     "title": "ดักจุดตายสัญญาให้บริการแพลตฟอร์มตลาดกลางพาณิชย์อิเล็กทรอนิกส์ (E-Marketplace Platform & Merchant Agreement)",
+     "language": "th",
+     "sha256": "4db64a91e4983ed44639bb46428b101b1c5438e5830707c5e49d294375d56d04",
+     "text_sha256": "f4c8be21cfe254b3663fe8c6f8badaf8a308e756ddc8f698aa8413e56a755d11",
+     "published": "2026-10-05",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/e-marketplace-platform-agreement-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Shield Deep Research · ตอนที่ 36"
+  },
+  {
+   "id": "articles/family-holding-company-constitution-thailand",
+   "kind": "article",
+   "title": "การจัดตั้งและบริหารจัดการ Family Holding Company สำหรับการส่งต่อธุรกิจครอบครัว (Family Holding Company Governance & Wealth Succession)",
+   "variants": [
+    {
+     "path": "articles/family-holding-company-constitution-thailand.html",
+     "title": "การจัดตั้งและบริหารจัดการ Family Holding Company สำหรับการส่งต่อธุรกิจครอบครัว (Family Holding Company Governance & Wealth Succession)",
+     "language": "th",
+     "sha256": "b5bf4f2b5fe52426a5ace89b8942e456ee313844aea3fa71d94cfe20e2fab213",
+     "text_sha256": "5766cfeaded61581ae3b9229f317b97a37bec2efa241bd33f1ff57f102756abe",
+     "published": "2026-10-05",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/family-holding-company-constitution-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "corporate"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M04",
+   "level": "L2",
+   "series_label": "LAS Share Deep Research · ตอนที่ 28"
+  },
+  {
+   "id": "articles/fulfillment-dropshipping-agreement-thailand",
+   "kind": "article",
+   "title": "ดักจุดตายสัญญาให้บริการคลังเก็บสินค้าและศูนย์กระจายสินค้าแบบดรอปชิปปิงอัตโนมัติ (Automated Fulfillment & Dropshipping Cross-Border Master Services Agreement)",
+   "variants": [
+    {
+     "path": "articles/fulfillment-dropshipping-agreement-thailand.html",
+     "title": "ดักจุดตายสัญญาให้บริการคลังเก็บสินค้าและศูนย์กระจายสินค้าแบบดรอปชิปปิงอัตโนมัติ (Automated Fulfillment & Dropshipping Cross-Border Master Services Agreement)",
+     "language": "th",
+     "sha256": "01cccae4134f918547a853b096ac34e6658cc92b0a95d1f21ff5d81b18f53e11",
+     "text_sha256": "3a6c37a01e20325219abe392b17f4e541d7482ea352ec3ac8661f599a6e9e94f",
+     "published": "2026-10-05",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/fulfillment-dropshipping-agreement-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Shield Deep Research · ตอนที่ 41"
+  },
+  {
+   "id": "articles/gold-bullion-vaulting-custody-agreement-checklist-thailand",
+   "kind": "article",
+   "title": "Checklist 10 จุดตรวจสัญญาบริการรับฝาก เก็บรักษา และส่งมอบโลหะมีค่าและทองคำแท่งเพื่อการพาณิชย์ (Precious Metals & Gold Bullion Custody and Vaulting Master Services Agreement)",
+   "variants": [
+    {
+     "path": "articles/gold-bullion-vaulting-custody-agreement-checklist-thailand.html",
+     "title": "Checklist 10 จุดตรวจสัญญาบริการรับฝาก เก็บรักษา และส่งมอบโลหะมีค่าและทองคำแท่งเพื่อการพาณิชย์ (Precious Metals & Gold Bullion Custody and Vaulting Master Services Agreement)",
+     "language": "th",
+     "sha256": "607f1c5e38a5c08ae01a06acff638929b7e6e6d41bad380ca8eb9d5c00b324e0",
+     "text_sha256": "ceba8125608884041ef951be51cc2d804eea5ccfebbdb2810f32befa40b2c613",
+     "published": "2026-10-05",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/gold-bullion-vaulting-custody-agreement-checklist-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L2",
+   "series_label": "LAS C&C Deep Research · ตอนที่ 35"
+  },
+  {
+   "id": "articles/hyperscale-data-center-due-diligence-thailand",
+   "kind": "article",
+   "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการศูนย์ข้อมูลไฮเปอร์สเกลและคลาวด์คอมพิวติ้ง (Hyperscale Data Center & Cloud Infrastructure M&A Due Diligence)",
+   "variants": [
+    {
+     "path": "articles/hyperscale-data-center-due-diligence-thailand.html",
+     "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการศูนย์ข้อมูลไฮเปอร์สเกลและคลาวด์คอมพิวติ้ง (Hyperscale Data Center & Cloud Infrastructure M&A Due Diligence)",
+     "language": "th",
+     "sha256": "4ee8552e3213425afb41ceff8517e3679274d4fe628e9f8038f3920137d877e0",
+     "text_sha256": "7a92524e279177f91773edcda4ea668bb3d04ea8d4db414bde73448ded78185a",
+     "published": "2026-10-05",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/hyperscale-data-center-due-diligence-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "investment",
+    "corporate"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M05",
+   "level": "L3",
+   "series_label": "LAS Invest Deep Research · ตอนที่ 23"
+  },
+  {
+   "id": "articles/leo-satellite-connectivity-agreement-thailand",
+   "kind": "article",
+   "title": "ดักจุดตายสัญญาให้บริการระบบเชื่อมต่อสัญญาณดาวเทียมวงโคจรต่ำและการสื่อสารบรอดแบนด์ผ่านอวกาศ (Low Earth Orbit - LEO Satellite Broadband Services Agreement)",
+   "variants": [
+    {
+     "path": "articles/leo-satellite-connectivity-agreement-thailand.html",
+     "title": "ดักจุดตายสัญญาให้บริการระบบเชื่อมต่อสัญญาณดาวเทียมวงโคจรต่ำและการสื่อสารบรอดแบนด์ผ่านอวกาศ (Low Earth Orbit - LEO Satellite Broadband Services Agreement)",
+     "language": "th",
+     "sha256": "f6f7f23c22cbd0c8585e0a4f8a88ae917e6fc7f5f6b15ff90e4d2b35ed33dbe2",
+     "text_sha256": "08e77bdae06889dec46c7f97ac442785efed5e649c6da6c40fadc840dc1f7264",
+     "published": "2026-10-05",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/leo-satellite-connectivity-agreement-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Shield Deep Research · ตอนที่ 39"
+  },
+  {
+   "id": "articles/lng-sale-purchase-terminal-agreement-template-thailand",
+   "kind": "article",
+   "title": "พิมพ์เขียวและแม่แบบสัญญาบริการจัดหา ขนส่ง และซื้อขายก๊าซธรรมชาติเหลว (Liquefied Natural Gas - LNG Master Sale and Purchase Agreement & Regasification Terminal Services Template)",
+   "variants": [
+    {
+     "path": "articles/lng-sale-purchase-terminal-agreement-template-thailand.html",
+     "title": "พิมพ์เขียวและแม่แบบสัญญาบริการจัดหา ขนส่ง และซื้อขายก๊าซธรรมชาติเหลว (Liquefied Natural Gas - LNG Master Sale and Purchase Agreement & Regasification Terminal Services Template)",
+     "language": "th",
+     "sha256": "a8c0f6c694127eed6752a7f5bee49ad37504ebdcc6847640c9c26aaa68955d50",
+     "text_sha256": "fe24a9d55326b5515c64357207d60874523c29549817dda794dd919915978e64",
+     "published": "2026-10-05",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/lng-sale-purchase-terminal-agreement-template-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Up Deep Research · ตอนที่ 18"
+  },
+  {
+   "id": "articles/multimodal-transport-3pl-agreement-template-thailand",
+   "kind": "article",
+   "title": "พิมพ์เขียวและแม่แบบสัญญาบริการขนส่งต่อเนื่องหลายรูปแบบและการบริหารโลจิสติกส์แบบ 3PL (Multimodal Transport & Third-Party Logistics Services Agreement Template)",
+   "variants": [
+    {
+     "path": "articles/multimodal-transport-3pl-agreement-template-thailand.html",
+     "title": "พิมพ์เขียวและแม่แบบสัญญาบริการขนส่งต่อเนื่องหลายรูปแบบและการบริหารโลจิสติกส์แบบ 3PL (Multimodal Transport & Third-Party Logistics Services Agreement Template)",
+     "language": "th",
+     "sha256": "79777b4b992b8a52057f8c04f936c1d7be199b0cc892c9568b2191076cbf8100",
+     "text_sha256": "5824f9535f24373828ef1b41ade9aee52e3f6d86d8f22952d96a141b9ff8b601",
+     "published": "2026-10-05",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/multimodal-transport-3pl-agreement-template-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Up Deep Research · ตอนที่ 15"
+  },
+  {
+   "id": "articles/offshore-support-vessel-charter-checklist-thailand",
+   "kind": "article",
+   "title": "Checklist 10 จุดตรวจสัญญาบริการเดินเรือและให้บริการเรือสนับสนุนแท่นขุดเจาะปิโตรเลียมกลางอ่าวไทย (Offshore Support Vessel - OSV & Marine Master Time Charter Party Agreement)",
+   "variants": [
+    {
+     "path": "articles/offshore-support-vessel-charter-checklist-thailand.html",
+     "title": "Checklist 10 จุดตรวจสัญญาบริการเดินเรือและให้บริการเรือสนับสนุนแท่นขุดเจาะปิโตรเลียมกลางอ่าวไทย (Offshore Support Vessel - OSV & Marine Master Time Charter Party Agreement)",
+     "language": "th",
+     "sha256": "4b398507f442de562fa5e702e5ee8924245cbb0f4f085d764d3ba8923e30e0fa",
+     "text_sha256": "b6566c95d8b20ab2c17261036c854f193e4385bfb2ca1a22df3c4530e3ba3265",
+     "published": "2026-10-05",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/offshore-support-vessel-charter-checklist-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L2",
+   "series_label": "LAS C&C Deep Research · ตอนที่ 34"
+  },
+  {
+   "id": "articles/penetration-testing-service-agreement-template-thailand",
+   "kind": "article",
+   "title": "พิมพ์เขียวและแม่แบบสัญญาบริการทดสอบและตรวจสอบความปลอดภัยของระบบสารสนเทศ (Penetration Testing & Red Teaming Master Services Agreement Template)",
+   "variants": [
+    {
+     "path": "articles/penetration-testing-service-agreement-template-thailand.html",
+     "title": "พิมพ์เขียวและแม่แบบสัญญาบริการทดสอบและตรวจสอบความปลอดภัยของระบบสารสนเทศ (Penetration Testing & Red Teaming Master Services Agreement Template)",
+     "language": "th",
+     "sha256": "3f4e108c023f0fd509023dc8c695241e3140db6383d8c6c597c69048c8da4536",
+     "text_sha256": "bfe98a97cdfeca1ab672170ed8544f01ee32a3bc8fc6470df088b9a1257bd746",
+     "published": "2026-10-05",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/penetration-testing-service-agreement-template-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Up Deep Research · ตอนที่ 16"
+  },
+  {
+   "id": "articles/pharmaceutical-acquisition-due-diligence-thailand",
+   "kind": "article",
+   "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการธุรกิจผลิตและจำหน่ายยา เวชภัณฑ์ และผลิตภัณฑ์ชีววัตถุ (Pharmaceutical & Biopharmaceutical Regulatory Due Diligence)",
+   "variants": [
+    {
+     "path": "articles/pharmaceutical-acquisition-due-diligence-thailand.html",
+     "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการธุรกิจผลิตและจำหน่ายยา เวชภัณฑ์ และผลิตภัณฑ์ชีววัตถุ (Pharmaceutical & Biopharmaceutical Regulatory Due Diligence)",
+     "language": "th",
+     "sha256": "8e736efb2994e60877cb95ca666fdcbc85634e0a024fbea624671d523d778baa",
+     "text_sha256": "63f5519a08040ab743ebfce37f96cbfc06287dcb297cfaf0181a11b0377bcd59",
+     "published": "2026-10-05",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/pharmaceutical-acquisition-due-diligence-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "investment",
+    "corporate"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M05",
+   "level": "L3",
+   "series_label": "LAS Invest Deep Research · ตอนที่ 22"
+  },
+  {
+   "id": "articles/port-crane-cargo-handling-agreement-checklist-thailand",
+   "kind": "article",
+   "title": "Checklist 10 จุดตรวจสัญญาบริการบริหารจัดการระบบเครนและอุปกรณ์ยกขนสินค้าในท่าเรือและลานตู้คอนเทนเนอร์ (Port Cranes & Container Handling Equipment Maintenance and Operations Agreement)",
+   "variants": [
+    {
+     "path": "articles/port-crane-cargo-handling-agreement-checklist-thailand.html",
+     "title": "Checklist 10 จุดตรวจสัญญาบริการบริหารจัดการระบบเครนและอุปกรณ์ยกขนสินค้าในท่าเรือและลานตู้คอนเทนเนอร์ (Port Cranes & Container Handling Equipment Maintenance and Operations Agreement)",
+     "language": "th",
+     "sha256": "9bbe6ad5236e529c7a67f41a19133d53f2cfaaf780e5168f509eed976600ecc0",
+     "text_sha256": "388bd3fc4b1069dd2e0ffad356ec090a3906510bbf914636852ad963effe1953",
+     "published": "2026-10-05",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/port-crane-cargo-handling-agreement-checklist-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L2",
+   "series_label": "LAS C&C Deep Research · ตอนที่ 36"
+  },
+  {
+   "id": "articles/satellite-licence-orbit-due-diligence-thailand",
+   "kind": "article",
+   "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายโทรคมนาคมและสิทธิการใช้วงโคจรดาวเทียม (Satellite & Orbital Slot Regulatory Due Diligence)",
+   "variants": [
+    {
+     "path": "articles/satellite-licence-orbit-due-diligence-thailand.html",
+     "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายโทรคมนาคมและสิทธิการใช้วงโคจรดาวเทียม (Satellite & Orbital Slot Regulatory Due Diligence)",
+     "language": "th",
+     "sha256": "4af9a1325175baebd9c99114c13908235e3a7711114a2628a590b7a008367fcd",
+     "text_sha256": "7f843cefed66967e3fb89cc47f673a99826847678d9bcc4cfad46b5b3d72e753",
+     "published": "2026-10-05",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/satellite-licence-orbit-due-diligence-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "investment",
+    "corporate"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M05",
+   "level": "L3",
+   "series_label": "LAS Invest Deep Research · ตอนที่ 19"
+  },
+  {
+   "id": "articles/wind-turbine-om-agreement-checklist-thailand",
+   "kind": "article",
+   "title": "Checklist 10 จุดตรวจสัญญาบริการบำรุงรักษาและเดินเครื่องกังหันลมผลิตไฟฟ้าในโครงการฟาร์มกังหันลมนอกชายฝั่งและบนบก (Wind Turbine Generator - WTG Operations & Maintenance Agreement)",
+   "variants": [
+    {
+     "path": "articles/wind-turbine-om-agreement-checklist-thailand.html",
+     "title": "Checklist 10 จุดตรวจสัญญาบริการบำรุงรักษาและเดินเครื่องกังหันลมผลิตไฟฟ้าในโครงการฟาร์มกังหันลมนอกชายฝั่งและบนบก (Wind Turbine Generator - WTG Operations & Maintenance Agreement)",
+     "language": "th",
+     "sha256": "46c2df22879b384543feb6a3ab1f3125422c3289b1b6988cf11283f69fa9fdc7",
+     "text_sha256": "d052be6665d82dc4eb7ef8347885b5a36279a8e78b3c0f8ebf5307c662b6c152",
+     "published": "2026-10-05",
+     "modified": "2026-10-06",
+     "url": "https://thundthornthep-ai.github.io/articles/wind-turbine-om-agreement-checklist-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L2",
+   "series_label": "LAS C&C Deep Research · ตอนที่ 37"
+  },
+  {
    "id": "articles/radioactive-waste-radiation-safety-agreement-checklist-thailand",
    "kind": "article",
    "title": "Checklist 10 จุดตรวจสัญญาบริการกำจัดกากกัมมันตรังสีและบริการความปลอดภัยทางรังสี (Radioactive Waste Management & Radiation Protection Services Agreement)",
@@ -6983,10 +6983,10 @@
      "path": "articles/radioactive-waste-radiation-safety-agreement-checklist-thailand.html",
      "title": "Checklist 10 จุดตรวจสัญญาบริการกำจัดกากกัมมันตรังสีและบริการความปลอดภัยทางรังสี (Radioactive Waste Management & Radiation Protection Services Agreement)",
      "language": "th",
-     "sha256": "582b17827f89d8bf8afba3437026692983d41bf8613c941fef36ba7ef37487aa",
-     "text_sha256": "9fa4d10ca3ba663a0bd9a96396f2eaca4a7b5d7dfdc20254ae598a6c0c2e1bff",
+     "sha256": "723e2b3d6e3f9e0d2d9eccf3534116fbce4416e162e6fc03d046d644fd70bbdc",
+     "text_sha256": "5e38b48a900f14ca8ace9203184dcb8704e65f6cef2231220ff1f1cb4a5d7c00",
      "published": "2026-10-05",
-     "modified": "2026-10-05",
+     "modified": "2026-10-06",
      "url": "https://thundthornthep-ai.github.io/articles/radioactive-waste-radiation-safety-agreement-checklist-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true

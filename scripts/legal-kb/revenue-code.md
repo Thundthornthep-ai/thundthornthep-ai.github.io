@@ -28,6 +28,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 71 ตรี
 - มาตรา 72
 - มาตรา 82
+- มาตรา 83
 - มาตรา 85/15
 - มาตรา 118
 - มาตรา 77/1
