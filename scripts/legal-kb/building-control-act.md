@@ -8,6 +8,7 @@ Official source: https://searchlaw.ocs.go.th/council-of-state/#/public/doc/RUpyU
 
 Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
+- มาตรา 4
 - มาตรา 13 ตรี
 - มาตรา 21
 - มาตรา 26

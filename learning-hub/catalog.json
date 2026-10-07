@@ -3,15 +3,15 @@
  "generated": "2026-10-07",
  "generator": "scripts/knowledge-teaching/build-library-data.py (las-billing)",
  "scope": {
-  "tracked_html": 307,
-  "catalogue_variants": 286,
-  "learning_items": 236,
-  "articles": 218,
+  "tracked_html": 308,
+  "catalogue_variants": 287,
+  "learning_items": 237,
+  "articles": 219,
   "resources": 18,
   "excluded": 21,
   "unlinked_items": 19,
-  "legal_reviewed": 255,
-  "source_tree": "53421eb8313643c214468c19a6fe24b472b0e008"
+  "legal_reviewed": 256,
+  "source_tree": "578fb2742fd44c43e70612d79ac714ae1291fb2c"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -5983,8 +5983,8 @@
      "path": "articles/ev-charging-network-agreement-thailand.html",
      "title": "ดักจุดตายสัญญาให้บริการระบบโครงข่ายชาร์จยานยนต์ไฟฟ้าและการบริหารสถานีอัดประจุไฟฟ้า (Electric Vehicle - EV Charging Station & CPO Master Services Agreement)",
      "language": "th",
-     "sha256": "37b1662ae51838ea7ed32de4c917ceb9463db0804a26d93f404facea32550e3c",
-     "text_sha256": "3e093cf4b3487b25d820a633a0f1d9c6774949d5f5c20a61e0ee735b447212ca",
+     "sha256": "f83c09bf9803baccb369eff0f115b8d70f3c145150014257e59b3df34297a1fe",
+     "text_sha256": "5aed596dc6bc43be4b99264ed3950a3cdef2b80bc556d9bdda00de60d9f4acc0",
      "published": "2026-10-05",
      "modified": "2026-10-07",
      "url": "https://thundthornthep-ai.github.io/articles/ev-charging-network-agreement-thailand.html",
@@ -7231,6 +7231,38 @@
    "module": "M13",
    "level": "L3",
    "series_label": "LAS Shield Deep Research · ตอนที่ 43"
+  },
+  {
+   "id": "articles/ev-charging-site-hosting-agreement-template-thailand",
+   "kind": "article",
+   "title": "พิมพ์เขียวและแม่แบบสัญญาให้ใช้พื้นที่ติดตั้งสถานีชาร์จรถยนต์ไฟฟ้าและแบ่งรายได้สำหรับเจ้าของพื้นที่ (EV Charging Site Hosting & Revenue Sharing Agreement for Site Hosts)",
+   "variants": [
+    {
+     "path": "articles/ev-charging-site-hosting-agreement-template-thailand.html",
+     "title": "พิมพ์เขียวและแม่แบบสัญญาให้ใช้พื้นที่ติดตั้งสถานีชาร์จรถยนต์ไฟฟ้าและแบ่งรายได้สำหรับเจ้าของพื้นที่ (EV Charging Site Hosting & Revenue Sharing Agreement for Site Hosts)",
+     "language": "th",
+     "sha256": "38132ddc8f58e534700a6e091373b604396f0abb177fdfc888a9bd93e74e5381",
+     "text_sha256": "683b2f0ec0c0541db87cf3494cc74ee4e06900dea6833c0517883a7d60d96bba",
+     "published": "2026-10-07",
+     "modified": "2026-10-07",
+     "url": "https://thundthornthep-ai.github.io/articles/ev-charging-site-hosting-agreement-template-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Up Deep Research · ตอนที่ 23"
   },
   {
    "id": "blog/bkk-council/311-decision-report-v7",
