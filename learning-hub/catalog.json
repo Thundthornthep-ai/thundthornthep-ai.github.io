@@ -3,15 +3,15 @@
  "generated": "2026-10-07",
  "generator": "scripts/knowledge-teaching/build-library-data.py (las-billing)",
  "scope": {
-  "tracked_html": 304,
-  "catalogue_variants": 283,
-  "learning_items": 233,
-  "articles": 215,
+  "tracked_html": 307,
+  "catalogue_variants": 286,
+  "learning_items": 236,
+  "articles": 218,
   "resources": 18,
   "excluded": 21,
   "unlinked_items": 19,
-  "legal_reviewed": 252,
-  "source_tree": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d"
+  "legal_reviewed": 255,
+  "source_tree": "53421eb8313643c214468c19a6fe24b472b0e008"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -3802,10 +3802,10 @@
      "path": "articles/electronic-shareholder-meeting-notice-thailand.html",
      "title": "การประชุมผู้ถือหุ้นผ่านสื่ออิเล็กทรอนิกส์ (E-Meeting) และการบอกกล่าวเชิญประชุม",
      "language": "th",
-     "sha256": "e868d44c0a6205bc2905368170e0028b5a979901575b40746f9875fe6b7bde88",
-     "text_sha256": "ff9e13832c6a33dce57a05c90c1966a7675df7ec3cbb03b2a3dd3b3aade61d32",
+     "sha256": "4703678b299a15e4fa0a09e329ac03def1cb15f0684e1b04e86c5662d4846128",
+     "text_sha256": "194119fe73a647f3e796c65525df3aa01d4b54dc8c92514e255b66b19d2c7cb4",
      "published": "2026-09-29",
-     "modified": "2026-10-03",
+     "modified": "2026-10-07",
      "url": "https://thundthornthep-ai.github.io/articles/electronic-shareholder-meeting-notice-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -5983,10 +5983,10 @@
      "path": "articles/ev-charging-network-agreement-thailand.html",
      "title": "ดักจุดตายสัญญาให้บริการระบบโครงข่ายชาร์จยานยนต์ไฟฟ้าและการบริหารสถานีอัดประจุไฟฟ้า (Electric Vehicle - EV Charging Station & CPO Master Services Agreement)",
      "language": "th",
-     "sha256": "ed09dd3e8d20759bef87e1c7d7898eda5d179d46139b91f2eb0d8077782124ca",
-     "text_sha256": "983e06ccc712db95f42868762c56f6f1e71cc3fa5d028cc2a938f59a59b9b2dd",
+     "sha256": "37b1662ae51838ea7ed32de4c917ceb9463db0804a26d93f404facea32550e3c",
+     "text_sha256": "3e093cf4b3487b25d820a633a0f1d9c6774949d5f5c20a61e0ee735b447212ca",
      "published": "2026-10-05",
-     "modified": "2026-10-05",
+     "modified": "2026-10-07",
      "url": "https://thundthornthep-ai.github.io/articles/ev-charging-network-agreement-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -7134,6 +7134,103 @@
    "module": "M13",
    "level": "L3",
    "series_label": "LAS Shield Deep Research · ตอนที่ 42"
+  },
+  {
+   "id": "articles/ev-charging-operator-acquisition-due-diligence-thailand",
+   "kind": "article",
+   "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการสถานีชาร์จยานยนต์ไฟฟ้า (EV Charging & CPO M&A Due Diligence)",
+   "variants": [
+    {
+     "path": "articles/ev-charging-operator-acquisition-due-diligence-thailand.html",
+     "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการสถานีชาร์จยานยนต์ไฟฟ้า (EV Charging & CPO M&A Due Diligence)",
+     "language": "th",
+     "sha256": "249196dc5c8e33bbeffe9fc7a5eb322aa3f966e2dacc6ae64822e19412d058fe",
+     "text_sha256": "66661d89cacb3996d88324fecd3431f21aa14fe28d81645d3f2aa68b1c085ddf",
+     "published": "2026-10-07",
+     "modified": "2026-10-07",
+     "url": "https://thundthornthep-ai.github.io/articles/ev-charging-operator-acquisition-due-diligence-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "investment",
+    "corporate"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M05",
+   "level": "L3",
+   "series_label": "LAS Invest Deep Research · ตอนที่ 25"
+  },
+  {
+   "id": "articles/fleet-management-telematics-agreement-checklist-thailand",
+   "kind": "article",
+   "title": "Checklist 10 จุดตรวจสัญญาบริการบริหารจัดการยานพาหนะและระบบติดตามจีพีเอส (Commercial Fleet Management & Telematics Agreement)",
+   "variants": [
+    {
+     "path": "articles/fleet-management-telematics-agreement-checklist-thailand.html",
+     "title": "Checklist 10 จุดตรวจสัญญาบริการบริหารจัดการยานพาหนะและระบบติดตามจีพีเอส (Commercial Fleet Management & Telematics Agreement)",
+     "language": "th",
+     "sha256": "a2e299a4071d01f5dab6c0a9d4bda85557659fb728807a61b450de2d964f4b6d",
+     "text_sha256": "fa3207ace07084ec97ecba62c71355fc3ede067ea635b16aab0b7c49eff2965a",
+     "published": "2026-10-07",
+     "modified": "2026-10-07",
+     "url": "https://thundthornthep-ai.github.io/articles/fleet-management-telematics-agreement-checklist-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L2",
+   "series_label": "LAS C&C Deep Research · ตอนที่ 39"
+  },
+  {
+   "id": "articles/ride-hailing-delivery-platform-agreement-thailand",
+   "kind": "article",
+   "title": "สาระสำคัญในสัญญาให้บริการแพลตฟอร์มจับคู่ขนส่งและบริการเรียกรถผ่านแอปพลิเคชัน (On-Demand Ride-Hailing & Logistics Platform MSA)",
+   "variants": [
+    {
+     "path": "articles/ride-hailing-delivery-platform-agreement-thailand.html",
+     "title": "สาระสำคัญในสัญญาให้บริการแพลตฟอร์มจับคู่ขนส่งและบริการเรียกรถผ่านแอปพลิเคชัน (On-Demand Ride-Hailing & Logistics Platform MSA)",
+     "language": "th",
+     "sha256": "3b7d608972e08ad62d2520d048c32573d892d205ca713f0733c501eee3b904a4",
+     "text_sha256": "4e56eb85aa31c30e8ebc38118f40f8b55709b86b870c6e3cb9c48255cb90dc7f",
+     "published": "2026-10-07",
+     "modified": "2026-10-07",
+     "url": "https://thundthornthep-ai.github.io/articles/ride-hailing-delivery-platform-agreement-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Shield Deep Research · ตอนที่ 43"
   },
   {
    "id": "blog/bkk-council/311-decision-report-v7",

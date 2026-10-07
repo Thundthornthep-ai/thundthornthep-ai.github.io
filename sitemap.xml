@@ -2075,4 +2075,25 @@
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/ev-charging-operator-acquisition-due-diligence-thailand.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/ride-hailing-delivery-platform-agreement-thailand.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://thundthornthep-ai.github.io/articles/fleet-management-telematics-agreement-checklist-thailand.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
 </urlset>

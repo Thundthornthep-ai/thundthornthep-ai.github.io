@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "generated": "2026-10-07",
-  "source_tree": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+  "source_tree": "53421eb8313643c214468c19a6fe24b472b0e008",
   "generator": "scripts/knowledge-teaching/build-library-data.py (las-billing)",
   "variants": {
     "articles/agency-distribution-agreement-checklist-thailand.html": {
@@ -10,7 +10,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "87c43413ff44389229d596e9813b9218861bc036c0fe87c570e5e9de5e902820",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13c-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/41",
@@ -30,7 +30,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "be92dc8eb5d2bc81a36e5cbad4611bc610bf43f8f4ffd742a89adad12f880f5f",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57",
@@ -46,7 +46,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "bd5056cee216a66000d5b98436f47777d065f464af2364cd7938235d25e33289",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
@@ -60,7 +60,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "45668618c795a6f5fb777d5cced207c5ca1a20bc7706fa6ca6aec46746361cce",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
@@ -74,7 +74,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "04558883b4ff60607762a87de7ad1cdd34ea1888635467908ac4ad9f0a888f3b",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13d-b-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/45",
@@ -92,7 +92,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "d7381f5158558eb5dca68275134536cee919b07cbdf8d699b5eaaf612d823ea7",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57",
@@ -108,7 +108,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "49434f33ae8c0d137105101e09210bba8ff2cc1fef77fa066eb0b7156bb09bda",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57",
@@ -124,7 +124,7 @@
       "reviewed_at": "2026-10-01",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "84675bc1abb18227f4c1065a0c4180559cff7464f4f9dfff951464c23f270c7f",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m11-m12-2026-10-01.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/37",
@@ -140,7 +140,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "1cb4420dd27559170e58822924f93c25c0fd1366aca54785c40aba7c15dfb1fa",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -156,7 +156,7 @@
       "reviewed_at": "2026-09-30",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "2b9af840afc0cb4b41455172fec3d71a21ebb5930bfb064d99659abaeba05090",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
@@ -174,7 +174,7 @@
       "reviewed_at": "2026-10-01",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "c4beed57f98b9563ef0faa50ed522d3fc473892d3d822c8a9860afaa381b9d9e",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m11-m12-2026-10-01.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/37",
@@ -190,7 +190,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "02fe37e79c0fe77190eacba009522b4884ff54e1af7307305f4f327756d40864",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -206,7 +206,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "fd5db669ff41d4ec1d0b747d7c9e52fe289d5ba5a8e43956a39dfabd9bf2bc7a",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -222,7 +222,7 @@
       "reviewed_at": "2026-10-02",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "008f5b8be6e980dcc03fdad221cefc777e00b9982945945e03d4db1426c2993a",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38",
@@ -240,7 +240,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "b2c1417c7aa3268275aae95e4a42a1d8e24a36f6905217cc0716ecdb80816248",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57",
@@ -256,7 +256,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "e821a94b1c3d93e67482f3198afb0233ad3a7b9098b6c3990a3083ee46703eb1",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -272,7 +272,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "f9321f7c7016f9d2951d06156de36e31888453e0c28de2c8a46e7ef5bf76a782",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -288,11 +288,12 @@
       "reviewed_at": "2026-10-06",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "9eaf85db0b7c6a8aa86a8291cdea62b423f9239d9b0e310d36740e374e58f836",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-151-155-2026-10-06.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/60",
-        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-polish-2-2026-10-07.md"
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-polish-2-2026-10-07.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/62"
       ],
       "wave": "audit-2026-10-21",
       "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 6 ตุลาคม 2569"
@@ -303,7 +304,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "e6a1354795f42a1f800468f1456297baba75256e827e46d0fdddb61953f790bb",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13d-b-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/45",
@@ -312,6 +313,7 @@
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-language-l3-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/51",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-polish-2-2026-10-07.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/62",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-151-155-2026-10-06.md"
       ],
       "wave": "audit-2026-10-06",
@@ -323,7 +325,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "ceb18547d24bb03265c49459f1331e511f93f67e74a267dc2d6402a316826313",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -341,7 +343,7 @@
       "reviewed_at": "2026-09-30",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "d1235b87f22b3a4e1b8a6eac3b1d915742543fb52deabba29c4d7b63f5c0e844",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
@@ -359,7 +361,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "2ae4a35e7453b4321284d96a0d968d974455679d0b35072e3174fd4bff88c3f3",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -375,7 +377,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "fcaee95a9c14132ab93d5fce48c290e0f93dc102bd6aa0fcd1b3d0adf45f67e4",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
@@ -397,7 +399,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "6bb88497f7c93fbb75d553add015b774ac0c33b57e0b2efe94dfba8e839c8f1e",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
@@ -415,7 +417,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "6b5048ff730f9e7dcb1711cf526f3f66f0a6ac5cdf515a60aa02afec08649e50",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57",
@@ -431,7 +433,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "1ebe4be16572b15c5158c1a16acae209f6db9f1b408890eaff9913f8f515e5df",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -449,7 +451,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "c8420a5d35af8044b002ed953d0a41232890da34e86bf4c6584e4f796fefc24a",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13b-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/40"
@@ -463,7 +465,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "3e27ad9dbdd5bdd7d028166755b6b8a52f679f78fc80dfb1110f3d654d3cf3ba",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57"
@@ -477,7 +479,7 @@
       "reviewed_at": "2026-10-01",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "dd0a10e345ea961a40f9c948d3ca314de5e3605e1d607d90c95f804c1471c431",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36",
@@ -497,7 +499,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "996d5cac184e91ebedd2dbcbeb9f1f3d5e4763f0496228885c8163a5ef37546e",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57"
@@ -511,7 +513,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "f6a2f974ee1c350bf51a0712522b34998f28d857ac06a1b8aa7243e9d16628f8",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13c-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/41"
@@ -525,7 +527,7 @@
       "reviewed_at": "2026-10-01",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "7184aadcca79aafc74c2f8a3eff3fbfc1918494ebf1c38ad0d74e284185e096d",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m11-m12-2026-10-01.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/37",
@@ -547,7 +549,7 @@
       "reviewed_at": "2026-10-01",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "ad20782d8d73645d4d5fa24269ff045f607243570427ce9b81c2d6888bdbe75e",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m11-m12-2026-10-01.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/37",
@@ -567,7 +569,7 @@
       "reviewed_at": "2026-10-02",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "9c0c04201e7b298a10aee65caa7bce8453c675dca6468901c47fbba327871ca9",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38",
@@ -585,7 +587,7 @@
       "reviewed_at": "2026-10-01",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "a8449cacf5769147280f0ec5e6224937a0557c05672cec9844928d6c6e1049d1",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m11-m12-2026-10-01.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/37",
@@ -601,7 +603,7 @@
       "reviewed_at": "2026-09-30",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "27fc89d24b9b8daedc907a06240b7788cc6a6494477fc0d6c58d824cf644b729",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
@@ -623,7 +625,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "2f60e3daf575716727b8b0f0c4dd693a6d5b734e47b8598e09765910c33f9f3d",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
@@ -650,7 +652,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "c51628ddadc3127c23a9c8085665cd5e1b65176841ebe89d569564ca462890b8",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
@@ -676,7 +678,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "8d447ec9efee7af64c07517b55987866ddb03ba7351e5765425b9f2c94fb7224",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -692,7 +694,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "8f443a4f6c3aedda7432e95fe6abcd32e210cb4db0167f8defa56d5b3f98fbd9",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -708,7 +710,7 @@
       "reviewed_at": "2026-10-02",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "83435063d569cfa768b58652a833d0bd02c8267f40215a6e1a8e0d7a4d3f1a05",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38",
@@ -726,7 +728,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "33a3ec6fce1c29e348496c7790ba0767f394189493b288f5d24058c37a08c3f1",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -744,7 +746,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "e869243be1570fe6e3f6f9f7eb68ab0bdf1ce8caf8fd77e693613f130d49631f",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13b-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/40",
@@ -760,7 +762,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "3db5d050e058b1c842d053adc0e4b2af7e36197cea78a4f1eb0958fc19f0e441",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -776,7 +778,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "f520771907f11b43a2a131c26cb3749254d58389ba5d45180878bdb41e4381cb",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -792,7 +794,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "6a09c02abe4c6f2d19d302d09d5707701c11280c8a41e62d675de8c8aa404ee0",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13c-b-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/42",
@@ -810,7 +812,7 @@
       "reviewed_at": "2026-10-01",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "0deb4ff4d87e7278000c79a6f16e1c89322fbe64e882d3125844e13358ed7a21",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36",
@@ -826,7 +828,7 @@
       "reviewed_at": "2026-09-30",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "12cecb8ceb81c96b32c15d466b493958e974548b2f1d223a98a1b1fb44f61447",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
@@ -848,7 +850,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "425564878e12126d004ccbfe7bf4eb02d7dbaed88b03d46d2aef01da3748b8ea",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13b-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/40",
@@ -864,7 +866,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "8a746611450185e61960348517c71ce102ea65c38921b7ce4982da291f55146a",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13c-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/41",
@@ -882,7 +884,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "891677e24966fc807582fdcfb623f50256dee958efb1918f47ee7ed56de30e66",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13c-b-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/42",
@@ -902,7 +904,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "fea1a87f25e3e1c3d7b23e26db086340205edeb863b5535cb58b1c6b35fe4034",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
@@ -916,7 +918,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "b10815ac5f2ef7a0ac1c5069e881e7764e8af2958d184476ce3ff09361ea029f",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57"
@@ -930,7 +932,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "97d85c9a70b8ebb69eda82535ada0445fd40db95ecbd2e83ded39a62962e9210",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
@@ -948,7 +950,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "42c10427218d3a4dc4ffbae549287df7447987ed15fc205d2118e8fdca3a3a6a",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
@@ -964,7 +966,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "c025b0f4d4380274e954efa023c49e1706c5b518be5eff8503cc10dcf4a123c4",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
@@ -975,6 +977,7 @@
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-language-l2a-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/52",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-polish-2-2026-10-07.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/62",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-151-155-2026-10-06.md"
       ],
       "wave": "audit-2026-09-29",
@@ -986,7 +989,7 @@
       "reviewed_at": "2026-10-01",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "8e2903307a36e1a931a5aaa355be28ccea3b9d72439abbbc24798d2c785ac77b",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36",
@@ -1008,7 +1011,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "34c1d1aeb4ec67bcf11f8f402227d7c10f254a5160f958ebb0aa13051f9d0609",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
@@ -1026,7 +1029,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "8b124fe445e410edcb815f35e26167c99e3a6c62defe9dc4784904465083fc03",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -1042,7 +1045,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "6d089a6f473c8fd5a86e70a086911f422ebe64de2dd50c98134c607941088e7a",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -1058,7 +1061,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "4db64a91e4983ed44639bb46428b101b1c5438e5830707c5e49d294375d56d04",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57",
@@ -1074,7 +1077,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "ab4bb3bc75770aa40c9c68a20cdb8eea69eba6c07f04b1d023b0275b9d7412df",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -1089,15 +1092,16 @@
       "scope": "article-legal-review",
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
-      "sha256": "e868d44c0a6205bc2905368170e0028b5a979901575b40746f9875fe6b7bde88",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "sha256": "4703678b299a15e4fa0a09e329ac03def1cb15f0684e1b04e86c5662d4846128",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/32",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/33",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-item9-statutes-2026-10-03.md",
-        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/46"
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/46",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-156-160-2026-10-07.md"
       ],
       "wave": "audit-2026-09-29",
       "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 29 กันยายน 2569"
@@ -1108,7 +1112,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "98b8b54eb9a934e8b65c53cb830b03ddbef3d8e46c6fcc544e0283c34c9cd451",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13d-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/44",
@@ -1116,7 +1120,8 @@
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/46",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-language-l3-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/51",
-        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-polish-2-2026-10-07.md"
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-polish-2-2026-10-07.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/62"
       ],
       "wave": "audit-2026-10-06",
       "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 3 ตุลาคม 2569"
@@ -1127,7 +1132,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "447187c7c7d129a103e115d9d48faf00a9c87fab82b15fa36082d0a9520b5d57",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13d-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/44",
@@ -1143,7 +1148,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "c03d07be115602ecaa024833fb70d9f649d2178feeeaa6edd3b3ad114c2a13a0",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -1159,11 +1164,12 @@
       "reviewed_at": "2026-10-06",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "32b7e65ea9744b659420a9097d97b4bb4d0b314caad55e636dcc85b856668416",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-r26-r28-2026-10-06.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/61",
-        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-polish-2-2026-10-07.md"
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-polish-2-2026-10-07.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/62"
       ],
       "wave": "audit-2026-10-23",
       "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 6 ตุลาคม 2569"
@@ -1174,7 +1180,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "571daac915c3fdc2b8b7ebf711eabf5571d83f9c4967c48fef115d95b9a77f03",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13c-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/41",
@@ -1190,7 +1196,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "37e93460b071ab3c458d24f96231b03b8e36678d3c6e3a5733fead66ebf0500f",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13b-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/40",
@@ -1206,7 +1212,7 @@
       "reviewed_at": "2026-10-02",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "5924ee76bf89dc03ff8b81ce32fc54a4c707aad44d7e9ef43067b42ff6f9c865",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38",
@@ -1224,7 +1230,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "a13fece26924a241358857f47b981c40bd5855f2378e49954a4913575a91acbb",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13d-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/44",
@@ -1242,7 +1248,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "4be906140be720b2a9107748167208774c1023a8adf29b6a96cec652c3e8c8a0",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13c-b-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/42",
@@ -1261,14 +1267,28 @@
       "scope": "article-legal-review",
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
-      "sha256": "ed09dd3e8d20759bef87e1c7d7898eda5d179d46139b91f2eb0d8077782124ca",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "sha256": "37b1662ae51838ea7ed32de4c917ceb9463db0804a26d93f404facea32550e3c",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
-        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57"
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-156-160-2026-10-07.md"
       ],
       "wave": "audit-2026-10-19",
       "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 5 ตุลาคม 2569"
+    },
+    "articles/ev-charging-operator-acquisition-due-diligence-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-07",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "249196dc5c8e33bbeffe9fc7a5eb322aa3f966e2dacc6ae64822e19412d058fe",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-156-160-2026-10-07.md"
+      ],
+      "wave": "audit-2026-10-25",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 7 ตุลาคม 2569"
     },
     "articles/family-holding-company-constitution-thailand.html": {
       "status": "reviewed",
@@ -1276,7 +1296,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "b5bf4f2b5fe52426a5ace89b8942e456ee313844aea3fa71d94cfe20e2fab213",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57",
@@ -1286,13 +1306,26 @@
       "wave": "audit-2026-10-19",
       "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 5 ตุลาคม 2569"
     },
+    "articles/fleet-management-telematics-agreement-checklist-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-07",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "a2e299a4071d01f5dab6c0a9d4bda85557659fb728807a61b450de2d964f4b6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-156-160-2026-10-07.md"
+      ],
+      "wave": "audit-2026-10-25",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 7 ตุลาคม 2569"
+    },
     "articles/food-safety-fda-due-diligence-thailand.html": {
       "status": "reviewed",
       "scope": "article-legal-review",
       "reviewed_at": "2026-09-30",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "d913054dfb1ba07ea81cfbc30f0b00431f43de40dbf4c6c9bb0c1b16e4949977",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
@@ -1314,7 +1347,7 @@
       "reviewed_at": "2026-10-01",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "2c9dcc9c881314a52800ac63330f9c424cd01dbda62494d7ab7418aee7cec48b",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36",
@@ -1332,7 +1365,7 @@
       "reviewed_at": "2026-10-01",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "ee2d45e6ffc42d2a3d48fab8373df5adf35b607481f8da07f8a214aa621af74d",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36",
@@ -1350,7 +1383,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "377d333ca952ae70bb844b9df9364bb83e232cafc3e3813384351e74afcf6393",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -1366,7 +1399,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "1d2a9da7641c1672f569c855125deeaffb4f7f81431301e17832d47a181dda31",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -1382,7 +1415,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "01cccae4134f918547a853b096ac34e6658cc92b0a95d1f21ff5d81b18f53e11",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57",
@@ -1398,7 +1431,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "607f1c5e38a5c08ae01a06acff638929b7e6e6d41bad380ca8eb9d5c00b324e0",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57",
@@ -1414,7 +1447,7 @@
       "reviewed_at": "2026-10-02",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "830ef45db2472825cdf0d8ba528f1e3b9785fd714c65f6e4be4c196c3e6a63ea",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38",
@@ -1434,7 +1467,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "e10dd453b18a0d945448baa880fff859f77914549c67d9bba70c4d9ff6f29923",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -1450,7 +1483,7 @@
       "reviewed_at": "2026-09-30",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "9bceb6cfe3e52461fd3938d071144f25b097fa52c16a410ea0dea24df93823ff",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
@@ -1468,7 +1501,7 @@
       "reviewed_at": "2026-09-30",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "057a8d4d0ed3fe90332d467066e2d20edf785d3c2c3d98f8ecc3263c5fb7e31e",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
@@ -1486,7 +1519,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "0ec450ef9404ba3333748661884be442e0f84bcc52095662c3e029b684e3e60a",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13d-b-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/45"
@@ -1500,7 +1533,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "2139960c22877725e6c721626f6c3450cea469a986bd05c5567d64fc3efc85f0",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -1520,7 +1553,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "4ee8552e3213425afb41ceff8517e3679274d4fe628e9f8038f3920137d877e0",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57",
@@ -1536,7 +1569,7 @@
       "reviewed_at": "2026-10-02",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "b9e8761447d2499a13d0579c6fdd9b87f6e98f5a9306c0df9758dab4fce5c724",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38",
@@ -1552,7 +1585,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "f55967c9c0e7b9a5a4fef78378e9519e02d44db70af115ee4dc7683c57276c90",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13d-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/44",
@@ -1570,7 +1603,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "618fd227050e5eb5061922bfe4b82c3bf2ffda591ec22acaa0cae2acd046af46",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57"
@@ -1584,7 +1617,7 @@
       "reviewed_at": "2026-10-01",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "37a607f09dcfbb16a52c851f35407cc56c7222d25b64bb7f59242419a0aca056",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36",
@@ -1600,7 +1633,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "4d1e5b9349c463b01647f00d70c948ab174719a7cc6a74fc7885350d4cf50b5e",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -1616,7 +1649,7 @@
       "reviewed_at": "2026-09-30",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "83282d763458013dabd5cd21e4b515482af82a2c95e501f2b28826d151d5d435",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
@@ -1639,7 +1672,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "8392295302bb5be12678efaa4a23c5198c46fcdd26b17674767f675552c4e782",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13b-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/40",
@@ -1655,7 +1688,7 @@
       "reviewed_at": "2026-10-01",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "8fdc105ea041a1d341023c4e968cd0b0b31b275cc30f31220601cdcc6a19bf77",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36",
@@ -1671,7 +1704,7 @@
       "reviewed_at": "2026-10-02",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "3273f10d16066743334e7f30abbf10ec1cad150219fe0fd002971a0324c86086",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38",
@@ -1687,7 +1720,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "7872d8c393ddc59ac69a498838cf7f19fb0ec431a5c0d679a33641dfc1569c63",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -1703,7 +1736,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "d84c3f8fcbadb94559d94c7ff37d4f8ae61d30464caf4256dcf55a5b8f8d7375",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -1721,7 +1754,7 @@
       "reviewed_at": "2026-10-01",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "9b4eaf195b771fab6a9d5d509bc690333988d88fb0644d45fec2faf74d86234b",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36",
@@ -1737,7 +1770,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "b835d71df52e1b73f15abbe1920ad3339c65f8b1d343e27ab2cedd745d482020",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -1755,7 +1788,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "f94d02ce0f46744e4614829521de20886b710dfb774e889643601fb6870387e1",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -1771,7 +1804,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "15ffc3a83e8cc7ef3d7483ae071631e07b2510e938bc8e779d96b929cd4799db",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -1787,7 +1820,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "dc06aa3b01bb25ed7252a8ab988681415edbe21651c9f2ea9073d36cf66a4431",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -1805,7 +1838,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "28bb58cf86dbc27f8428c3529f4723f94206be58f2c64e62eeb47657746eb197",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -1823,7 +1856,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "20512ac9d64b37f5c2cceec7263231aec3fddf04df39b0ac82cfe290263f40bb",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -1839,7 +1872,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "fcf5c625b426ad6b01a213347a154df77435c6948d5655cb885cdeffafa55fd6",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -1855,7 +1888,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "42325ac0b45b0e4a194e55116bc8817eba639cfd88d1e0bd2c362dd17485e1f4",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -1871,7 +1904,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "f47f1d15d6f48f9f47fbc5fc5a60d3a26c4551c04132347583e033566bbb5cdb",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -1887,7 +1920,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "74a6cf97634ef470713d250a6fa83a86a1a3ad7b3d4d9e3b76aaa2fd476d8b26",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -1903,7 +1936,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "71e9c3fce9ceaab2e371a4090f0066ff4ad871a7f528859f289875fda750c205",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -1919,7 +1952,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "3f359ef50aaa63d59e2766510a38403b36785006390513374055efb5d72acabe",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -1935,7 +1968,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "1284a98e4e65c30d8ae028c552416012ca1117da27ddc0a2d8117946683cf44a",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -1951,7 +1984,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "18850d1f8db3396f9b512fabff5ee7703282b1f6d77dc67ad391a066bff27e4d",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
@@ -1965,7 +1998,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "b98cb5efb04187d77572b0ec19b57537e6cfc79bb7ae0c87d9d5f3459a10468f",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -1983,7 +2016,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "bcf06071b760b704a6dc22da40fc5fb55473c2c83c1f6e85a009a0ba164d6bdc",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2001,7 +2034,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "ff97728cddbe98010eafb2529c87c0427cc9ba48b6201521f29e15a25391de46",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2017,7 +2050,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "1f6f79a466d20b27b76cfc948e3656494df0f3d653a4de14f0be8eb8a17a8342",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2033,7 +2066,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "d91d8223f4aa9ee842873355d03d6f79c7e0a8705ad5176d2e5b6cce0982e30f",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2051,7 +2084,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "2b54413549b82e37df5d767ec29c681e2fd9ed66610c9e7de88556ca1b097388",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2074,7 +2107,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "77eee66ae59b1651822dec7c1851570aa95a99d96cacced7330614693f6919c3",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2090,7 +2123,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "2f559417d8128d440fa920563611e46007d961d0214ac48782b1c6e3a86c6695",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2106,7 +2139,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "512a7f5ec59bd85e394ceae5262700142540478bc06222768aab5a8b4029632c",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2124,7 +2157,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "48049e267a0ebb2acc058094f16e71e40f5524b57d831b257b16037380b4d77a",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2140,7 +2173,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "e69838d60fb8b7313aa6150b432e1aa64beb53f01fb1ea776d89808ca9658b4f",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2156,7 +2189,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "Codex",
       "sha256": "515ba6e5b1550055a6d421dcd502e6359e664b1e23363e039dad42cecfba87a5",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/4ccc7f18729fd1c212ebf806f917d309247e5d8d/docs/legal-reviews/shield03-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/c0b5e9366f12aaee24cd9ba395153b2a0e44fbd9/docs/legal-reviews/learning-table-format-2026-09-29.md",
@@ -2171,7 +2204,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "3b8e04f02c50a347be9db615eb7053410448b33ec80ab91624a183a2bd111f91",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2187,7 +2220,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "Codex",
       "sha256": "f25f75ed130ded92281488b278ac220b38c7169fbfa509878ece0a98f86e384a",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/4ccc7f18729fd1c212ebf806f917d309247e5d8d/docs/legal-reviews/shield05-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/c0b5e9366f12aaee24cd9ba395153b2a0e44fbd9/docs/legal-reviews/learning-table-format-2026-09-29.md",
@@ -2202,7 +2235,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "62508b2a30266f1316ccf754c73e1d7bce3fde1f7a460831773fd2bb12555d10",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2218,7 +2251,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "6addbfb8757c9aa9e37f5a164aadb8806f66a196242e0654dd26b9ac868d5889",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2234,7 +2267,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "068d006d240b1e93a54e406ef2b846a04a15f7f64bd4a08e927b941506714676",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2250,7 +2283,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "d2e7cbde995dbe4ab538704e809c879d6ea367842450ec51aba10b45377a0782",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2266,7 +2299,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "baa400efc3d1eee3f0f4cab0d87df30eafb7495c95bd3841ed89a85f7d612b7b",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2284,7 +2317,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "18df9fdda6bd62d97bfb68af44f9c46f93875209c3f7be7d930d254484e79c61",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2306,7 +2339,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "b96820b8487160a5f7c604a966204ab26ce6d2b340e5b185128711d9bd81e26d",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2322,7 +2355,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "15646725394e966f841b1522fb06709bbd3ce8cbb95de74dc45af4968c52dce3",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2338,7 +2371,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "98080bdc385e0a7c1835187b9150d0c5860c345bfecbfdc1dcac8b75a30c02df",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2354,7 +2387,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "fb39f9c0f92585ef30f7d33a50e47e239ab923fc6de930f37ef8990a56a1b918",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2370,7 +2403,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "4972e174aff5dfb11583d2a9cfd656e56d90f0cfddb3d8874d52fb3222af3478",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2386,7 +2419,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "16e8beeef8550464b860075701d33b32accb04ecd9f99276fd221519d8b7b079",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2402,7 +2435,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "fa00fdb40adf7d0335975d73a83c8150e6664e4de2e8bba2be8c31ba47d6627e",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2418,7 +2451,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "dfb43c1885f8c9117280abeeaf5cc1b71e34608e2d29934829684dab11b1c105",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21"
@@ -2432,7 +2465,7 @@
       "reviewed_at": "2026-09-28",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "f7300aeef134cc0101cf33f1a9e28840b013b722fa0f25e188f6319b1e2b513e",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/audit-2026-09-28.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/21",
@@ -2448,11 +2481,12 @@
       "reviewed_at": "2026-10-06",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "a0cdfa6315b8da130b3225009aed835800917b8cbe80d96ff69387906595bf9b",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-151-155-2026-10-06.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/60",
-        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-polish-2-2026-10-07.md"
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-polish-2-2026-10-07.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/62"
       ],
       "wave": "audit-2026-10-21",
       "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 6 ตุลาคม 2569"
@@ -2463,7 +2497,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "Codex",
       "sha256": "e702733c614e2a62544e6639a95cc67f51bc26bf906a2c962ecb7e684258be64",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -2479,7 +2513,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "f6f7f23c22cbd0c8585e0a4f8a88ae917e6fc7f5f6b15ff90e4d2b35ed33dbe2",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57",
@@ -2495,7 +2529,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "ee625177f320f64e71fb478cf7389262f251d21c867b382a74ceef065de1a67a",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
@@ -2511,7 +2545,7 @@
       "reviewed_at": "2026-10-02",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "484c2767d65a085c93078405b4a73c2a24179f7c1fd1fd8ab51054059f4e5dca",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38",
@@ -2531,7 +2565,7 @@
       "reviewed_at": "2026-10-01",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "8746a190f26c543b2602bc7cdf6da0ae54d1bb8460b92db5318869092b115be3",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m11-m12-2026-10-01.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/37",
@@ -2549,7 +2583,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "a8c0f6c694127eed6752a7f5bee49ad37504ebdcc6847640c9c26aaa68955d50",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57",
@@ -2565,7 +2599,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "ab8bf3e7702929204ee35de33a3b675808ff6fdcc4215e96497d1999c31dd1c8",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13d-b-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/45",
@@ -2583,7 +2617,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "c59a343475ebeace77e1835bcfb34ae516cf4a1bdeb23caf33a0b919c0dde3d0",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57"
@@ -2597,7 +2631,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "29b413b3db04647199e3c8513c76d598739fcb853df5c55369cbc0a142448cbf",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -2613,7 +2647,7 @@
       "reviewed_at": "2026-10-01",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "56a0e976013b0643e4eff59195529784aafc950ec6e1b65066a9f09e9a405e6f",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36"
@@ -2627,7 +2661,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "66bcba32601ad63d4c4c628055e369703cfc4b2410639c7ae9c2305aa99c16a6",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13c-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/41",
@@ -2643,7 +2677,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "8053c23569b7f2e0f749577d21c12733dd33893f01f411c3f02600982acd8f70",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57"
@@ -2657,7 +2691,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "0d0a59d015ccb6dc8054794574295be0d89cadb1712f78fba3080f2e59a72337",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -2675,7 +2709,7 @@
       "reviewed_at": "2026-09-30",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "26d833ff7a4075558c79788c6a41b6533b7fe7763765a819f8857e44f7b2ce49",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
@@ -2697,7 +2731,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "79777b4b992b8a52057f8c04f936c1d7be199b0cc892c9568b2191076cbf8100",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57",
@@ -2713,7 +2747,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "e2ee7cb02c61f6241071f2d9bfe24335d07dc4830bb1de7813ba441b79f3b45e",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -2729,7 +2763,7 @@
       "reviewed_at": "2026-10-02",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "4e2180d987c121e12ad413a78fe06bbaa0c9a3e6ab8b7caff5bb4b0fa926afa9",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38",
@@ -2747,7 +2781,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "4b398507f442de562fa5e702e5ee8924245cbb0f4f085d764d3ba8923e30e0fa",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57",
@@ -2763,7 +2797,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "2a80e061b5ea957c0e19f93d61f9b5e4e7af73069069ce2124b7f0c4bc431ced",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13b-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/40",
@@ -2773,7 +2807,8 @@
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/51",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-language-l2b-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/53",
-        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-polish-2-2026-10-07.md"
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-polish-2-2026-10-07.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/62"
       ],
       "wave": "audit-2026-10-04",
       "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 3 ตุลาคม 2569"
@@ -2784,7 +2819,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "b0aeb0a8cd13741060c9e8bc22ec881a0abda2fc3decb66d8f23c516131640ee",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -2800,7 +2835,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "6a76ae5de076856e641a1a6e0a027340fffb6f3915d4c3dc291f838785040473",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
@@ -2814,7 +2849,7 @@
       "reviewed_at": "2026-10-01",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "baa48a3b3c4eafd1b14f00eeada23a986e3f6267e04339c7d9210cdf56a8df57",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36"
@@ -2828,7 +2863,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "e32853d3e8edfb2d8176f06ba7b49da4e67f3ccee9c17310e91dfb68d88ac537",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -2844,7 +2879,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "3f4e108c023f0fd509023dc8c695241e3140db6383d8c6c597c69048c8da4536",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57",
@@ -2860,7 +2895,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "8e736efb2994e60877cb95ca666fdcbc85634e0a024fbea624671d523d778baa",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57",
@@ -2876,7 +2911,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "1d2336dd571edff50d6dd734a29870874c47d144128ec0f2cf6daea5d4e06999",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13c-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/41",
@@ -2896,13 +2931,14 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "e0f5af4a745054b906020908e736fd2805720685ca47686fc0b9191fcf9af7eb",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-polish-2026-10-06.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/59",
-        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-polish-2-2026-10-07.md"
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-polish-2-2026-10-07.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/62"
       ],
       "wave": "audit-2026-10-19",
       "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 5 ตุลาคม 2569"
@@ -2913,7 +2949,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "894898aab53d6dd1941f58a3ed4fe44813c8f80ba65a28370bed70d34155741f",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13d-b-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/45",
@@ -2931,7 +2967,7 @@
       "reviewed_at": "2026-09-30",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "3b4efa38403a0dbdbc590a06556289313877e55a004c987288c067b48499f7c9",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
@@ -2951,7 +2987,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "7f4832508ac8aa391b6651ad87887eff01fc478002a9f2e1600bba4a72bc8b94",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57"
@@ -2965,7 +3001,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "420d4db80ff8354592a1dabe1248bcbc8b9b86bb63328bc5e28b00352bbdad20",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13c-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/41"
@@ -2979,7 +3015,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "7883293b0d49393dd3b2298783d3b56293598f2ea58bee0f3dfbaf7111de4619",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57"
@@ -2993,7 +3029,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "c45486f91ad4fc133fbe2148b6426f62b343263efc22f3d32e45bded7d8d05c8",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-r23-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/58"
@@ -3007,7 +3043,7 @@
       "reviewed_at": "2026-10-01",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "899916cc57cb0b7538059c4c8c1380a5f459ee5742603cc8fc87f28c08b7a8e4",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m11-m12-2026-10-01.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/37",
@@ -3023,7 +3059,7 @@
       "reviewed_at": "2026-09-30",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "3f9dbe23c207884da24c29550f25fc586f391b4a5474a5c82a729f819b411f23",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-a-2026-09-30.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m05-b-2026-09-30.md",
@@ -3045,7 +3081,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "723e2b3d6e3f9e0d2d9eccf3534116fbce4416e162e6fc03d046d644fd70bbdc",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-r23-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/58",
@@ -3061,7 +3097,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "7b01cf8a17885a278f37e3a050bf81629d59c643fa7538337fa51679e9a52ac9",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13d-b-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/45",
@@ -3077,7 +3113,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "247b468db919d9ae3d20541cf8e44725e1bd1c5fbd1b30903df0fcdf1e86a8cf",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
@@ -3091,13 +3127,26 @@
       "wave": "audit-2026-09-29",
       "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 29 กันยายน 2569"
     },
+    "articles/ride-hailing-delivery-platform-agreement-thailand.html": {
+      "status": "reviewed",
+      "scope": "article-legal-review",
+      "reviewed_at": "2026-10-07",
+      "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
+      "sha256": "3b7d608972e08ad62d2520d048c32573d892d205ca713f0733c501eee3b904a4",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
+      "evidence": [
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-156-160-2026-10-07.md"
+      ],
+      "wave": "audit-2026-10-25",
+      "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 7 ตุลาคม 2569"
+    },
     "articles/robotics-automation-agreement-thailand.html": {
       "status": "reviewed",
       "scope": "article-legal-review",
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "9a25eae337aa1bf8c76eb921692ec8707f08744b5905cecf1f35ed987d0c0a63",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13b-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/40",
@@ -3113,7 +3162,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "5ed26be4b463baa93a275c823a4f0d0fbc0b3cbb4a4f785fe23e105b4459c83e",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13b-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/40",
@@ -3129,7 +3178,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "4af9a1325175baebd9c99114c13908235e3a7711114a2628a590b7a008367fcd",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57",
@@ -3145,7 +3194,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "1d9878aca8a187a492027b7d64b426479c552d602950fb064687f10e70ad82bc",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13c-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/41",
@@ -3163,7 +3212,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "c278711c38e518d881ce3d04356d839a735131eadf0cc33d77b0332ff22aad49",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
@@ -3181,7 +3230,7 @@
       "reviewed_at": "2026-10-02",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "467642b58a328167040d09c8147c2f053402aba6663efed6acbc4242086422f4",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38",
@@ -3201,7 +3250,7 @@
       "reviewed_at": "2026-10-02",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "8842c2e88e207b91b9279e7edc2bbd70016e2aef60d589d50c2972d9a30a103a",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38",
@@ -3219,7 +3268,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "6f762e4c47eaefcc4e1d2c8f1f9f7d8eb812cfee82e47ab2bc9709b794378f60",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
@@ -3239,11 +3288,12 @@
       "reviewed_at": "2026-10-06",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "8c1f6afab831da978cf2c5c8541f0cc75abde644488beb1c6c021ae63bb620e5",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-r26-r28-2026-10-06.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/61",
-        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-polish-2-2026-10-07.md"
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-polish-2-2026-10-07.md",
+        "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/62"
       ],
       "wave": "audit-2026-10-23",
       "review_note": "เผยแพร่ครั้งแรกหลังแก้ไขตามผลตรวจเมื่อวันที่ 6 ตุลาคม 2569"
@@ -3254,7 +3304,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "727b1909d9c4888c112da00ad548b0969fd89b78b3eb219e44e3a213d5f025db",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -3272,7 +3322,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "3b11a1011c2d305f72786379f3acaad85e1fdfbacc669fe4f9652e2cd9632ab9",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13b-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/40",
@@ -3288,7 +3338,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "160d89345646d8915afa8c12680e97fd75ea551102b544102dc5320e6aa12f76",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13b-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/40"
@@ -3302,7 +3352,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "a5fa5e82e95f20d42bf692c7803b84afb7064685e94ad5edc8f60894daf2d502",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md"
@@ -3316,7 +3366,7 @@
       "reviewed_at": "2026-10-02",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "7784910211f72069913a30acf480b085b7cce4dbea252daed63bab664ec7a6f9",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13a-2026-10-02.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/38",
@@ -3332,7 +3382,7 @@
       "reviewed_at": "2026-10-01",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "9c0ba1b94ccd531cebe6cebb8deef0f2a2383e843819c220e7dcc9c42e840d5d",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36",
@@ -3354,7 +3404,7 @@
       "reviewed_at": "2026-10-03",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "b036b532ee428bd145d7fe86a3ab6ebc04efb4851b8888e999af58019aeaef8b",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m13c-b-2026-10-03.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/42",
@@ -3370,7 +3420,7 @@
       "reviewed_at": "2026-10-01",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "93dc2604e54ce597d10ee893bc2cfa19d9a97ef0a38c15919ce7360a458832b1",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-m06-m10-2026-10-01.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/36",
@@ -3392,7 +3442,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "4abf70f6a35698d42c1e0aba754e9d93b52a471d81076d264762601c6665eadf",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -3408,7 +3458,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "f7c416dadc46dc1b80f22db5523c018186401ea1bfaba641ee7075eb2d1cc70f",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-share-m04-b-2026-09-29.md",
@@ -3430,7 +3480,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "3197a16edc9371da03468d887f441bf6bdc983630a1cafd428b2329b9af1e2a9",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57"
@@ -3444,7 +3494,7 @@
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "a213ffa28e991b365a28ef5a135bd82e3e93f545a97b5aaeaf111ec021068e20",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-part2-2026-09-29.md",
@@ -3460,7 +3510,7 @@
       "reviewed_at": "2026-10-05",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "46c2df22879b384543feb6a3ab1f3125422c3289b1b6988cf11283f69fa9fdc7",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/las-dr-116-150-2026-10-05.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/57",
@@ -3476,7 +3526,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "29acf885c70270be115a379b2f212c1dd4ae98e73858f3354e11d59a0acaf774",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3490,7 +3540,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "c0c2154acb102843dc25775268a7434eef6d089dce55d58935a659bb86021e56",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3504,7 +3554,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "989eac89d38c4283abf07249652e220900bd926be5e6d88b63e09665cd97b8c1",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3518,7 +3568,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "4395ea3c4e71d3891117e3078c27363ba74cba5273d94b21cc010e4155be4867",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3532,7 +3582,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "7c86e316c98bea077cca8a0fb0fa91bba7f558f7a82e6629eb21b51c56336961",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3546,7 +3596,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "21c814942831112d8b1087da7ce0d94489a7505b7224408b62803a7a3a70d02a",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3560,7 +3610,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "4d522bda906efc0fb629bdeaf0601bf763c7d3bd120f2c7c1feb95b936bc883e",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3574,7 +3624,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "69d56afc76be87b20e0e1248f0c809892b1989c12a757a062c2cd9403d09b4b7",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3588,7 +3638,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "c3c710f1ba3e9ff151e2d150a0e3f07b24c1eef70a535a03e7dea437e511f327",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3602,7 +3652,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "ab3cc07421d1342e9951347163393fff96e42acecd7da2b47f0a700925923679",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3616,7 +3666,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "c754dca96a592fe50cc5756b6cebdb8eb9c12b891125b6e2accfa64641a8f562",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3630,7 +3680,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "859d53b0268e577f81d5778cae12efe08be2af44fc66a3849f586b6c43d1d515",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3644,7 +3694,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "b46b2edf73f2eb394c7c9bb7791810888174d0dc28f4c48f9dae409b0b94198a",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3658,7 +3708,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "4e7053330bdadfd7099c66efd3d1cd3a01a2699e793a774212e510005ffb10a1",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3672,7 +3722,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "f18d3f164889483e8c0b246c99e12c963f5cfaa0551af8bb978c08ffa7e17edf",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3686,7 +3736,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "efcfa0f4a0a135cb6b5c3979fa261b5708827b83abe70fb3036170c4e79a8e05",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3700,7 +3750,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "01acd57f6c3589c8e758ba02ab80ce284de166958d71bf0c656389646163cb3d",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3714,7 +3764,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "26355f65ee7d5a3d43b461861a9800743256830d0b0dcd62ed5b5b42f5d962d0",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3728,7 +3778,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "3b03b1fd69827cc3c4747a4c3fc4324f233e06c4a1db9844afed61cc39075a64",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3742,7 +3792,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "e81c5f2abc8858af5953bb958b4246f0725309365e08af885a6441e9bdfd39a9",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3756,7 +3806,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "27987eeeab984d13f5075a829220eaa4545ef4ce55af285b43a68f86867171c6",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3770,7 +3820,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "d785ad369f483092e225579bf24368b95ff1480cb5c9c964ba9e354cda9a3cc0",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3784,7 +3834,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "b632ac7fb8f82ab4a6f5030d80840c0edf59e606fe796089d3d35aad9eed3958",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3798,7 +3848,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "e4aba22f9f418a84e1b119981938423400df9783e9b7e499435bbd5e0ee70dac",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3812,7 +3862,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "7801e8dabad7b0aca15ed2f4907263aa0998d4e4b1819a99523abe99837d0f10",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3826,7 +3876,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "c18c565dc1f3d4310e301af196acee3ce496239cb9afe21715e86c47fd5e34b7",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3840,7 +3890,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "987c3663eda1e0a152941d2d642edc2de25b605de2cef67271897b033c6f547a",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3854,7 +3904,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "080e072b54a10d04bbee16efdbc51dcd56cac59d5c998f2f79ab47f9277f53fa",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3868,7 +3918,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "304da18bbc574d930bc7d312a9e90e9edb5f35c58c09d326069a66f5fc2d7500",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3882,7 +3932,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "41226d95efa57b9c0e39f0d9cab90f1fce0457dcb73fd792b27467793eeed981",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3896,7 +3946,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "cd69d9626df84a734586f2515f55266dca3789f851ef0dd908e40ebcd97fb45f",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3910,7 +3960,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "9ed7adff4082a10b1932a7106f5ca282158caa98707c8f90960418f6e6243c76",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3924,7 +3974,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "271648b768f5c71ad5e404ce0e553293fa5e807f680bc557fc5798ad7a7f8f0d",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3938,7 +3988,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "109db995a8cf24a6b5ff4744a5e1f992554694ddd70ea09efed82fe1b246e30c",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3952,7 +4002,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "22a9d9e5d733051014c611751132f0dcbfcdacee3d983f533aacf79112736577",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3966,7 +4016,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "2647ad400236b8922585718a5a2f214527f734511c715bbb8bebacc88d0e9406",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3980,7 +4030,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "ba831f04dd2d0e62ddd9539791f93f720484c009368dffd8c7029891051ba0e8",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -3994,7 +4044,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "Codex",
       "sha256": "7fc38945943ee58441d1192785192538db466bb7aba49ca439e27d1f7604f5e9",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -4008,7 +4058,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "0569286f667346f43cfd07eaf7f7963b0996d86475717b80e430cdaa8588ebad",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -4022,7 +4072,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "15d5966fe82e2566702fd1f326c99bc38451747019f657d6b12df644956bad36",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -4036,7 +4086,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "e891d7083d6e8efc49478395bb2a1b58c1c4e3d08cbae7690cc90b9f33f7bc87",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -4050,7 +4100,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "20abe813f31a87049df6a0fa5965ca15bb9935e0c6bf28bea86b8489d552c296",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -4064,7 +4114,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "493e012d3e49339a71a151167c0efb16dbff1e94675155c66b0302575fbd042c",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -4078,7 +4128,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "00a7e20b0017913480b72bcea0684e219b91cb7f9211f8613548a1e2a2165441",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -4092,7 +4142,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "33c6f7b96b3fc9dc21cf408e3c0117f9cd21bcc88ad9231417cc482ca662c457",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -4106,7 +4156,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "2fe14fc8c0e73245f09ef4639e1e09d7f38ab244d4797c5ab126c4b401eef559",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -4120,7 +4170,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "a615ff7ff7c5ee4d44c2acdcada4366c5c4a19c3d314e85d917b72de0dc03175",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
@@ -4134,7 +4184,7 @@
       "reviewed_at": "2026-09-29",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
       "sha256": "e50c17bed62f1fd83001f56e3bafeaaec785012d046da82b5bb33fd143e9a533",
-      "source_commit": "a13252b945c5f8f5ab9ac66fd3c49e2668a7ea6d",
+      "source_commit": "53421eb8313643c214468c19a6fe24b472b0e008",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/en-sync-2026-09-29.md",
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/pull/26"
