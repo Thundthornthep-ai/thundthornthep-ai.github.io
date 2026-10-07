@@ -8,8 +8,18 @@ Official source: https://searchlaw.ocs.go.th/council-of-state/#/public/doc/ZVdHZ
 
 Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
+- มาตรา 4
+- มาตรา 5
 - มาตรา 23
 - มาตรา 28
 - มาตรา 36
+- มาตรา 46
+- มาตรา 56
+- มาตรา 59
+- มาตรา 65
+- มาตรา 71
 - มาตรา 102
+- มาตรา 103 ทวิ
 - มาตรา 111
+- มาตรา 131
+- มาตรา 148
