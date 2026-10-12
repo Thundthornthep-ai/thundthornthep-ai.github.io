@@ -1,17 +1,17 @@
 {
  "schema_version": 1,
- "generated": "2026-10-07",
+ "generated": "2026-10-12",
  "generator": "scripts/knowledge-teaching/build-library-data.py (las-billing)",
  "scope": {
-  "tracked_html": 308,
-  "catalogue_variants": 287,
-  "learning_items": 237,
-  "articles": 219,
+  "tracked_html": 311,
+  "catalogue_variants": 290,
+  "learning_items": 240,
+  "articles": 222,
   "resources": 18,
   "excluded": 21,
   "unlinked_items": 19,
-  "legal_reviewed": 256,
-  "source_tree": "578fb2742fd44c43e70612d79ac714ae1291fb2c"
+  "legal_reviewed": 259,
+  "source_tree": "5ae737742f3f9b5c4f2cde06ec01a07b5fdad273"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -4477,10 +4477,10 @@
      "path": "articles/power-plant-ppa-due-diligence-thailand.html",
      "title": "ตรวจสอบสถานะความเสี่ยงด้านการกำกับดูแลธุรกิจพลังงานและโรงไฟฟ้าชีวมวล/โซลาร์ (Energy Regulatory & Power Plant Due Diligence: ERC & PPA Compliance)",
      "language": "th",
-     "sha256": "3b4efa38403a0dbdbc590a06556289313877e55a004c987288c067b48499f7c9",
-     "text_sha256": "7e3aafdd0376780b25ba7347d609b1e89cbff5f97a8e1e6ba3900cc29af32d64",
+     "sha256": "80a3338a966f0c4bce2beecbe5688d8c92ac05571ab87f97f53b860b7f1a89dd",
+     "text_sha256": "ffb2f0e88864f70e1b9bee58203482eb55cf9513039426d6b141416ce002ca3f",
      "published": "2026-09-30",
-     "modified": "2026-10-03",
+     "modified": "2026-10-12",
      "url": "https://thundthornthep-ai.github.io/articles/power-plant-ppa-due-diligence-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -4863,10 +4863,10 @@
      "path": "articles/cloud-data-center-agreement-thailand.html",
      "title": "ดักจุดตายสัญญาให้บริการระบบคลาวด์และบริหารจัดการศูนย์ข้อมูล (Data Center Colocation & Managed Cloud Services Agreement)",
      "language": "th",
-     "sha256": "c8420a5d35af8044b002ed953d0a41232890da34e86bf4c6584e4f796fefc24a",
-     "text_sha256": "328edfa85f17bca6bf2c056e817d25d0e0499a63cfab7415f4a3ab4f52515f3f",
+     "sha256": "287b5178c3e5af39f06ae870e79f7bfaedb3d7ce6a20ade9b18d11a1774e42d6",
+     "text_sha256": "2ea88702fa14213982bc0aeab62d8b3ed3e3e5413f333b766f81cfa01495c3f1",
      "published": "2026-10-03",
-     "modified": "2026-10-03",
+     "modified": "2026-10-12",
      "url": "https://thundthornthep-ai.github.io/articles/cloud-data-center-agreement-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -5471,10 +5471,10 @@
      "path": "articles/debt-to-equity-swap-agreement-thailand.html",
      "title": "สัญญาแปลงหนี้เป็นทุน (Debt-to-Equity Swap)",
      "language": "th",
-     "sha256": "891677e24966fc807582fdcfb623f50256dee958efb1918f47ee7ed56de30e66",
-     "text_sha256": "8fa20fd8eaed6a113cb55ab0d82ce76503574ba4cacf980311f83a06a7938fce",
+     "sha256": "50fefbd1a04bc08ac3703201ef113a8c563bbf6fd59ca2cae9949687a658edf4",
+     "text_sha256": "c3ef687332ec82e55df1e62b60a67ef1666eb37d28470f89b3d6d5a6b0ece3ec",
      "published": "2026-10-03",
-     "modified": "2026-10-03",
+     "modified": "2026-10-12",
      "url": "https://thundthornthep-ai.github.io/articles/debt-to-equity-swap-agreement-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -5663,10 +5663,10 @@
      "path": "articles/industrial-waste-disposal-agreement-checklist-thailand.html",
      "title": "Checklist 10 จุดตรวจสัญญาจ้างบริการรับกำจัดและบำบัดกากของเสียอุตสาหกรรม (Hazardous Industrial Waste Treatment & Disposal Services Agreement)",
      "language": "th",
-     "sha256": "f55967c9c0e7b9a5a4fef78378e9519e02d44db70af115ee4dc7683c57276c90",
-     "text_sha256": "e770fa59b5e88050ee1f2fb512e0c68ccf91b5831de51338a18539a67a1e1b98",
+     "sha256": "82f520d26c6dece7a3b9e76eb1aeab924aa0665b47fd4c7a35dd2af8104db690",
+     "text_sha256": "2aec4166ab8ade923d7d778584d5c248d3301f21ec9c2857cd8be43aabcdfe90",
      "published": "2026-10-03",
-     "modified": "2026-10-03",
+     "modified": "2026-10-12",
      "url": "https://thundthornthep-ai.github.io/articles/industrial-waste-disposal-agreement-checklist-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -6403,10 +6403,10 @@
      "path": "articles/aircraft-mro-service-agreement-checklist-thailand.html",
      "title": "Checklist 10 จุดตรวจสัญญาบริการบำรุงรักษาและซ่อมบำรุงอากาศยาน (Aircraft Maintenance, Repair & Overhaul - MRO Master Services Agreement)",
      "language": "th",
-     "sha256": "d7381f5158558eb5dca68275134536cee919b07cbdf8d699b5eaaf612d823ea7",
-     "text_sha256": "4d509defc216add0342f531b3f089d595a7820d07423fbb61fa5a3ea321b275c",
+     "sha256": "c1fbb1aa10822209e70f7da2369946d2db3b27b75cbb9e01a6850a14b51fcd51",
+     "text_sha256": "e043cb1b6a49286e9f370502fddef86a691f33b4f6f73c004d76cafb29e25241",
      "published": "2026-10-05",
-     "modified": "2026-10-06",
+     "modified": "2026-10-12",
      "url": "https://thundthornthep-ai.github.io/articles/aircraft-mro-service-agreement-checklist-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -7263,6 +7263,103 @@
    "module": "M13",
    "level": "L3",
    "series_label": "LAS Up Deep Research · ตอนที่ 23"
+  },
+  {
+   "id": "articles/ai-gpu-cloud-cluster-agreement-thailand",
+   "kind": "article",
+   "title": "สาระสำคัญในสัญญาให้บริการโครงสร้างพื้นฐานคลาวด์ GPU และคลัสเตอร์ประมวลผลสมรรถนะสูง (AI GPU Cloud Cluster & HPC MSA)",
+   "variants": [
+    {
+     "path": "articles/ai-gpu-cloud-cluster-agreement-thailand.html",
+     "title": "สาระสำคัญในสัญญาให้บริการโครงสร้างพื้นฐานคลาวด์ GPU และคลัสเตอร์ประมวลผลสมรรถนะสูง (AI GPU Cloud Cluster & HPC MSA)",
+     "language": "th",
+     "sha256": "cee443b5fb31dd9bd678dc9682b52af122a8b90d5dda18d0c6527f221264408d",
+     "text_sha256": "d8d5f321aa7d1110cace3b5f6f9dce13f9896520ca378adc36916be87dcbff35",
+     "published": "2026-10-12",
+     "modified": "2026-10-12",
+     "url": "https://thundthornthep-ai.github.io/articles/ai-gpu-cloud-cluster-agreement-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Shield Deep Research · ตอนที่ 44"
+  },
+  {
+   "id": "articles/biogas-bio-cng-plant-acquisition-due-diligence-thailand",
+   "kind": "article",
+   "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการโรงงานก๊าซชีวภาพและไบโอซีเอ็นจี (Biogas & Bio-CNG Infrastructure M&A Due Diligence)",
+   "variants": [
+    {
+     "path": "articles/biogas-bio-cng-plant-acquisition-due-diligence-thailand.html",
+     "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการโรงงานก๊าซชีวภาพและไบโอซีเอ็นจี (Biogas & Bio-CNG Infrastructure M&A Due Diligence)",
+     "language": "th",
+     "sha256": "6a4a17e0cc6c5f259a111d2f9bbe2a129d94b6d3894bafeff03cddeab4c85583",
+     "text_sha256": "80de17860ccc2ef70cfd077706600b54043ac233b5b99c77e38b878cc73e4cfb",
+     "published": "2026-10-12",
+     "modified": "2026-10-12",
+     "url": "https://thundthornthep-ai.github.io/articles/biogas-bio-cng-plant-acquisition-due-diligence-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "investment",
+    "corporate"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M05",
+   "level": "L3",
+   "series_label": "LAS Invest Deep Research · ตอนที่ 26"
+  },
+  {
+   "id": "articles/industrial-wastewater-zld-operations-agreement-checklist-thailand",
+   "kind": "article",
+   "title": "Checklist 10 จุดตรวจสัญญาจ้างเดินระบบบำบัดน้ำเสียอุตสาหกรรมและการรีไซเคิลน้ำ (Wastewater Treatment & ZLD Operations Agreement)",
+   "variants": [
+    {
+     "path": "articles/industrial-wastewater-zld-operations-agreement-checklist-thailand.html",
+     "title": "Checklist 10 จุดตรวจสัญญาจ้างเดินระบบบำบัดน้ำเสียอุตสาหกรรมและการรีไซเคิลน้ำ (Wastewater Treatment & ZLD Operations Agreement)",
+     "language": "th",
+     "sha256": "96970c0cea9f5778747517ff5cd9bd17926a8d926dfa2d0fd2e9a3fcf52fb774",
+     "text_sha256": "dcc7e01f26427fa135df10386342d49da5d6575b630dab7f0743d30dc8b17baf",
+     "published": "2026-10-12",
+     "modified": "2026-10-12",
+     "url": "https://thundthornthep-ai.github.io/articles/industrial-wastewater-zld-operations-agreement-checklist-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L2",
+   "series_label": "LAS C&C Deep Research · ตอนที่ 40"
   },
   {
    "id": "blog/bkk-council/311-decision-report-v7",

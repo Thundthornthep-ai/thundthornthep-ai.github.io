@@ -322,6 +322,9 @@ def expand_section_token(token: str, statute: str | None = None) -> list[str]:
     # a/b token is one section, never a list of two.
     if statute == "revenue":
         return [token]
+    # The Bankruptcy Act numbers its business-rehabilitation chapter 90/1 to 90/90 (มาตรา 90/41): one section each.
+    if statute == "bankruptcy" and token.startswith("90/"):
+        return [token]
     parts = token.split("/")
     if len(parts) >= 2 and all(part.isdigit() and int(part) >= 10 for part in parts):
         return parts
