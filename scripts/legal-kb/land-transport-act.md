@@ -18,6 +18,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 59
 - มาตรา 65
 - มาตรา 71
+- มาตรา 95
 - มาตรา 102
 - มาตรา 103 ทวิ
 - มาตรา 111

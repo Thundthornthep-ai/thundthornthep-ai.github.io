@@ -353,6 +353,13 @@ class RegistryAndGateTests(unittest.TestCase):
         self.assertEqual(firewall.extract_citations("ประมวลรัษฎากร มาตรา 85/14"), [("revenue", "85/14")])
         self.assertEqual(firewall.extract_citations("FBA Sections 36/37"), [("fba", "36"), ("fba", "37")])
 
+    def test_bankruptcy_rehabilitation_sections_stay_whole(self) -> None:
+        self.assertEqual(
+            firewall.extract_citations("พระราชบัญญัติล้มละลาย พุทธศักราช 2483 มาตรา 90/41"), [("bankruptcy", "90/41")]
+        )
+        self.assertEqual(firewall.expand_section_token("90/41", "bankruptcy"), ["90/41"])
+        self.assertEqual(firewall.expand_section_token("36/37", "fba"), ["36", "37"])
+
     def test_phrase_before_matches_a_full_scan(self) -> None:
         text = ("ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 1 " * 60) + ("ก" * 700) + " มาตรา 2 ข้อความ " + ("ข" * 30)
         last_end = 0
