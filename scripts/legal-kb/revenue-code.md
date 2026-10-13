@@ -10,6 +10,7 @@ Official source: https://www.krisdika.go.th · https://www.rd.go.th
 
 Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
+- มาตรา 3
 - มาตรา 22
 - มาตรา 27
 - มาตรา 35

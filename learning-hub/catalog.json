@@ -3,15 +3,15 @@
  "generated": "2026-10-13",
  "generator": "scripts/knowledge-teaching/build-library-data.py (las-billing)",
  "scope": {
-  "tracked_html": 317,
-  "catalogue_variants": 296,
-  "learning_items": 246,
-  "articles": 228,
+  "tracked_html": 318,
+  "catalogue_variants": 297,
+  "learning_items": 247,
+  "articles": 229,
   "resources": 18,
   "excluded": 21,
   "unlinked_items": 19,
-  "legal_reviewed": 265,
-  "source_tree": "bf1eb12162f572dea2f38cebfdb0f762cffd070d"
+  "legal_reviewed": 266,
+  "source_tree": "dcca90972e79bb531a63646a4084881e924bb725"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -3512,10 +3512,10 @@
      "path": "articles/company-amalgamation-merger-thailand.html",
      "title": "การควบรวมกิจการตามประมวลกฎหมายแพ่งและพาณิชย์ใหม่ (Amalgamation & Merger)",
      "language": "th",
-     "sha256": "27fc89d24b9b8daedc907a06240b7788cc6a6494477fc0d6c58d824cf644b729",
-     "text_sha256": "a74f2b60b8faa117edd46aa98a707bb5cfe94a50c4face9ee87835f60d77b363",
+     "sha256": "f89333279c3e9aa591c6699df078ce776388c47fc1aa50b6c7b2bacc0f0cf94f",
+     "text_sha256": "95e61387c6a032442668004b6804be214f09863bfbc99c535070ce9f2d255a6c",
      "published": "2026-09-30",
-     "modified": "2026-10-03",
+     "modified": "2026-10-13",
      "url": "https://thundthornthep-ai.github.io/articles/company-amalgamation-merger-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -7554,6 +7554,38 @@
    "module": "M13",
    "level": "L2",
    "series_label": "LAS C&C Deep Research · ตอนที่ 42"
+  },
+  {
+   "id": "articles/entire-partial-business-transfer-thailand",
+   "kind": "article",
+   "title": "การโอนกิจการทั้งหมดและบางส่วนของบริษัทจำกัด",
+   "variants": [
+    {
+     "path": "articles/entire-partial-business-transfer-thailand.html",
+     "title": "การโอนกิจการทั้งหมดและบางส่วนของบริษัทจำกัด",
+     "language": "th",
+     "sha256": "240fbabd73df662d905313c904285067fec258ef9c44711b0ea84b720e9619d1",
+     "text_sha256": "e442a2be2b6a74fec945112cafdf62f391c435c1a8bd8c29dd7589a76324f7d8",
+     "published": "2026-10-13",
+     "modified": "2026-10-13",
+     "url": "https://thundthornthep-ai.github.io/articles/entire-partial-business-transfer-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "corporate"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M04",
+   "level": "L2",
+   "series_label": "LAS Share Deep Research · ตอนที่ 33"
   },
   {
    "id": "blog/bkk-council/311-decision-report-v7",
