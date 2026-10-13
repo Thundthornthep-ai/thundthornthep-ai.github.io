@@ -11,12 +11,14 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 5
 - มาตรา 7
 - มาตรา 8
+- มาตรา 11
 - มาตรา 12
 - มาตรา 13
 - มาตรา 18
 - มาตรา 19
 - มาตรา 21
 - มาตรา 27
+- มาตรา 30
 - มาตรา 37
 - มาตรา 39
 - มาตรา 45

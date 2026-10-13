@@ -1,17 +1,17 @@
 {
  "schema_version": 1,
- "generated": "2026-10-12",
+ "generated": "2026-10-13",
  "generator": "scripts/knowledge-teaching/build-library-data.py (las-billing)",
  "scope": {
-  "tracked_html": 311,
-  "catalogue_variants": 290,
-  "learning_items": 240,
-  "articles": 222,
+  "tracked_html": 313,
+  "catalogue_variants": 292,
+  "learning_items": 242,
+  "articles": 224,
   "resources": 18,
   "excluded": 21,
   "unlinked_items": 19,
-  "legal_reviewed": 259,
-  "source_tree": "5ae737742f3f9b5c4f2cde06ec01a07b5fdad273"
+  "legal_reviewed": 261,
+  "source_tree": "bd35601e09a7270c1fa84526e3e436f58c64605b"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -4863,10 +4863,10 @@
      "path": "articles/cloud-data-center-agreement-thailand.html",
      "title": "ดักจุดตายสัญญาให้บริการระบบคลาวด์และบริหารจัดการศูนย์ข้อมูล (Data Center Colocation & Managed Cloud Services Agreement)",
      "language": "th",
-     "sha256": "287b5178c3e5af39f06ae870e79f7bfaedb3d7ce6a20ade9b18d11a1774e42d6",
-     "text_sha256": "2ea88702fa14213982bc0aeab62d8b3ed3e3e5413f333b766f81cfa01495c3f1",
+     "sha256": "a264018e27542e8b7e09c8ec0be0c10fa2de788ef102acc94c5381e0210cf69a",
+     "text_sha256": "6d1bfab6cee015b089af3a61b879410245c7b8cceb22b558dcdb27eff830dda2",
      "published": "2026-10-03",
-     "modified": "2026-10-12",
+     "modified": "2026-10-13",
      "url": "https://thundthornthep-ai.github.io/articles/cloud-data-center-agreement-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -5055,10 +5055,10 @@
      "path": "articles/robotics-automation-agreement-thailand.html",
      "title": "ดักจุดตายสัญญาให้บริการระบบอัตโนมัติและหุ่นยนต์อุตสาหกรรม (Industrial Robotics & Automation Integration Agreement)",
      "language": "th",
-     "sha256": "9a25eae337aa1bf8c76eb921692ec8707f08744b5905cecf1f35ed987d0c0a63",
-     "text_sha256": "c8a0834dada41413c980d86ee5903c70f52c600498c467ae23a2d4b089f15918",
+     "sha256": "e4ab3256df893942bda7659b1060a0bfdc8cd0060b33ea697f6fe8dc05f43386",
+     "text_sha256": "aed5a8ac8377b1de2cc628c3d93353cf9674da653c75cd406c2bf96082061cb4",
      "published": "2026-10-03",
-     "modified": "2026-10-03",
+     "modified": "2026-10-13",
      "url": "https://thundthornthep-ai.github.io/articles/robotics-automation-agreement-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -5663,10 +5663,10 @@
      "path": "articles/industrial-waste-disposal-agreement-checklist-thailand.html",
      "title": "Checklist 10 จุดตรวจสัญญาจ้างบริการรับกำจัดและบำบัดกากของเสียอุตสาหกรรม (Hazardous Industrial Waste Treatment & Disposal Services Agreement)",
      "language": "th",
-     "sha256": "82f520d26c6dece7a3b9e76eb1aeab924aa0665b47fd4c7a35dd2af8104db690",
-     "text_sha256": "2aec4166ab8ade923d7d778584d5c248d3301f21ec9c2857cd8be43aabcdfe90",
+     "sha256": "ffe442485f1f7d7c3ef8c2b68d11f020356d33cc14cb76b6cc9f19aa6c0edfd3",
+     "text_sha256": "5e0de378cb3e4da7def2287b846da77f5e1db5674f3ceb33b02621d4a33554cd",
      "published": "2026-10-03",
-     "modified": "2026-10-12",
+     "modified": "2026-10-13",
      "url": "https://thundthornthep-ai.github.io/articles/industrial-waste-disposal-agreement-checklist-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -6564,10 +6564,10 @@
      "path": "articles/family-holding-company-constitution-thailand.html",
      "title": "การจัดตั้งและบริหารจัดการ Family Holding Company สำหรับการส่งต่อธุรกิจครอบครัว (Family Holding Company Governance & Wealth Succession)",
      "language": "th",
-     "sha256": "b5bf4f2b5fe52426a5ace89b8942e456ee313844aea3fa71d94cfe20e2fab213",
-     "text_sha256": "5766cfeaded61581ae3b9229f317b97a37bec2efa241bd33f1ff57f102756abe",
+     "sha256": "78d6fd5e22f838c80aa35a045b32290ac4ac51319678004409fae6592628e2f2",
+     "text_sha256": "967ddd7097eaf049d35135b368b18a4423ad5d8f335c37d42cd71d025de3d35b",
      "published": "2026-10-05",
-     "modified": "2026-10-06",
+     "modified": "2026-10-13",
      "url": "https://thundthornthep-ai.github.io/articles/family-holding-company-constitution-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -7015,10 +7015,10 @@
      "path": "articles/bonded-warehouse-free-zone-acquisition-due-diligence-thailand.html",
      "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการธุรกิจคลังสินค้าทัณฑ์บนและเขตปลอดอากร (Bonded Warehouse & Free Trade Zone Due Diligence)",
      "language": "th",
-     "sha256": "9eaf85db0b7c6a8aa86a8291cdea62b423f9239d9b0e310d36740e374e58f836",
-     "text_sha256": "95bdd4f9d8f619a2c7299180c76a01eee7ba16aeacfdb51eb004eeb18165de55",
+     "sha256": "1dd3b0198bef74ea3c97d88f6a3777df2a59af3ce2f7564cb8116fc79732c0d0",
+     "text_sha256": "60c5258ba0fd40a43c05b1cb05cb7d03c5c748ddd102a49a35bc5719c6f4978e",
      "published": "2026-10-06",
-     "modified": "2026-10-07",
+     "modified": "2026-10-13",
      "url": "https://thundthornthep-ai.github.io/articles/bonded-warehouse-free-zone-acquisition-due-diligence-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -7360,6 +7360,71 @@
    "module": "M13",
    "level": "L2",
    "series_label": "LAS C&C Deep Research · ตอนที่ 40"
+  },
+  {
+   "id": "articles/ev-battery-recycling-hazardous-waste-agreement-checklist-thailand",
+   "kind": "article",
+   "title": "Checklist 10 จุดตรวจสัญญาบริการกำจัดของเสียอันตรายและรีไซเคิลแบตเตอรี่รถยนต์ไฟฟ้า (EV Battery Recycling & Hazardous Waste Management Agreement)",
+   "variants": [
+    {
+     "path": "articles/ev-battery-recycling-hazardous-waste-agreement-checklist-thailand.html",
+     "title": "Checklist 10 จุดตรวจสัญญาบริการกำจัดของเสียอันตรายและรีไซเคิลแบตเตอรี่รถยนต์ไฟฟ้า (EV Battery Recycling & Hazardous Waste Management Agreement)",
+     "language": "th",
+     "sha256": "857479f8b7699630f64cd07a69a08ebf9d4b61567b4377f4a380c739bd930abe",
+     "text_sha256": "f8ab183be1bf1c6309ba8318686583b6e9c0f6775f3acea22563988868fc1f84",
+     "published": "2026-10-13",
+     "modified": "2026-10-13",
+     "url": "https://thundthornthep-ai.github.io/articles/ev-battery-recycling-hazardous-waste-agreement-checklist-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L2",
+   "series_label": "LAS C&C Deep Research · ตอนที่ 41"
+  },
+  {
+   "id": "articles/industrial-estate-acquisition-due-diligence-thailand",
+   "kind": "article",
+   "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการนิคมอุตสาหกรรมและเขตประกอบการอุตสาหกรรม (Industrial Estate & Eco-Industrial Town M&A Due Diligence)",
+   "variants": [
+    {
+     "path": "articles/industrial-estate-acquisition-due-diligence-thailand.html",
+     "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการนิคมอุตสาหกรรมและเขตประกอบการอุตสาหกรรม (Industrial Estate & Eco-Industrial Town M&A Due Diligence)",
+     "language": "th",
+     "sha256": "48ec8bc1ccbee28f4c21dcab57e2c5d16a9d5b8266f2015f60926bfffb18c3d2",
+     "text_sha256": "67f22e0e219fc81717eadcd9854f0150e801975e626038f973eddb46db21b5fb",
+     "published": "2026-10-13",
+     "modified": "2026-10-13",
+     "url": "https://thundthornthep-ai.github.io/articles/industrial-estate-acquisition-due-diligence-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "investment",
+    "corporate"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M05",
+   "level": "L3",
+   "series_label": "LAS Invest Deep Research · ตอนที่ 27"
   },
   {
    "id": "blog/bkk-council/311-decision-report-v7",
