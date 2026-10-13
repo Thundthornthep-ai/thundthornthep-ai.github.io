@@ -17,6 +17,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 40
 - มาตรา 42
 - มาตรา 48
+- มาตรา 50 ทวิ
 - มาตรา 51
 - มาตรา 65
 - มาตรา 65 ทวิ

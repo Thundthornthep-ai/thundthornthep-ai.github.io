@@ -26,3 +26,6 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 60
 - มาตรา 61
 - มาตรา 62
+- มาตรา 63
+- มาตรา 64
+- มาตรา 64/1

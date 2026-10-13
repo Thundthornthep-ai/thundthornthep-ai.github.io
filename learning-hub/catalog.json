@@ -3,15 +3,15 @@
  "generated": "2026-10-13",
  "generator": "scripts/knowledge-teaching/build-library-data.py (las-billing)",
  "scope": {
-  "tracked_html": 313,
-  "catalogue_variants": 292,
-  "learning_items": 242,
-  "articles": 224,
+  "tracked_html": 317,
+  "catalogue_variants": 296,
+  "learning_items": 246,
+  "articles": 228,
   "resources": 18,
   "excluded": 21,
   "unlinked_items": 19,
-  "legal_reviewed": 261,
-  "source_tree": "bd35601e09a7270c1fa84526e3e436f58c64605b"
+  "legal_reviewed": 265,
+  "source_tree": "bf1eb12162f572dea2f38cebfdb0f762cffd070d"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -2693,10 +2693,10 @@
      "path": "articles/marketing-business-contracts.html",
      "title": "สัญญาธุรกิจการตลาด: คู่มือเชิงลึกสำหรับนักกฎหมาย",
      "language": "th",
-     "sha256": "29b413b3db04647199e3c8513c76d598739fcb853df5c55369cbc0a142448cbf",
-     "text_sha256": "7b9f753f9a8b9b48fbd913a0eb40d153db19ba3fc00df31b09648bfff67e25c5",
+     "sha256": "80942540de3b2234394ec6215f2bdd4e1a75fe4e3f5e434e14752ac6b3c9d2e8",
+     "text_sha256": "4efc9505e4f86478bba67ccea85adff659afb725d9309106fbd0f9ca337d3c17",
      "published": "2026-03-01",
-     "modified": "2026-10-03",
+     "modified": "2026-10-13",
      "url": "https://thundthornthep-ai.github.io/articles/marketing-business-contracts.html",
      "legal_status": "reviewed",
      "article_schema": false
@@ -5951,10 +5951,10 @@
      "path": "articles/digital-asset-exchange-service-agreement-thailand.html",
      "title": "ดักจุดตายสัญญาให้บริการแพลตฟอร์มสินทรัพย์ดิจิทัลและศูนย์ซื้อขายคริปโทเคอร์เรนซี (Digital Asset Exchange & Brokerage Master Services Agreement)",
      "language": "th",
-     "sha256": "b10815ac5f2ef7a0ac1c5069e881e7764e8af2958d184476ce3ff09361ea029f",
-     "text_sha256": "55553ad44a1cedeb74abb4df370d7eb876643f681766bc316adc3d544843f920",
+     "sha256": "708e333b357708fa5bb568580aee0ac63ac366d534facc99c86e2ba095b961a3",
+     "text_sha256": "7c215745613173e470b20c893ac9accb5f61ec9abf0e525ea1cc76076407777e",
      "published": "2026-10-05",
-     "modified": "2026-10-05",
+     "modified": "2026-10-13",
      "url": "https://thundthornthep-ai.github.io/articles/digital-asset-exchange-service-agreement-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -6177,10 +6177,10 @@
      "path": "articles/waste-heat-recovery-epc-agreement-template-thailand.html",
      "title": "พิมพ์เขียวและแม่แบบสัญญาบริการจัดหาและติดตั้งระบบผลิตไฟฟ้าพลังงานความร้อนเหลือทิ้งในโรงงานอุตสาหกรรม (Waste Heat Recovery Power Generation EPC & Performance Contracting Agreement Template)",
      "language": "th",
-     "sha256": "3197a16edc9371da03468d887f441bf6bdc983630a1cafd428b2329b9af1e2a9",
-     "text_sha256": "e3a1cce352ab5bfaa2784ad73974829f37160301ba37372aca9abde386b00b7d",
+     "sha256": "cfb33409e382cccf7c7ac1f7154b67b4c15654f609956d081587319d8f664d2b",
+     "text_sha256": "038a2dc702b77131247af99f13ed8c1d6abf9e3b4c9c53d8683a94dfa1e4cf0d",
      "published": "2026-10-05",
-     "modified": "2026-10-05",
+     "modified": "2026-10-13",
      "url": "https://thundthornthep-ai.github.io/articles/waste-heat-recovery-epc-agreement-template-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -7241,10 +7241,10 @@
      "path": "articles/ev-charging-site-hosting-agreement-template-thailand.html",
      "title": "พิมพ์เขียวและแม่แบบสัญญาให้ใช้พื้นที่ติดตั้งสถานีชาร์จรถยนต์ไฟฟ้าและแบ่งรายได้สำหรับเจ้าของพื้นที่ (EV Charging Site Hosting & Revenue Sharing Agreement for Site Hosts)",
      "language": "th",
-     "sha256": "38132ddc8f58e534700a6e091373b604396f0abb177fdfc888a9bd93e74e5381",
-     "text_sha256": "683b2f0ec0c0541db87cf3494cc74ee4e06900dea6833c0517883a7d60d96bba",
+     "sha256": "4aeadd7dd77a55b019fa8659361098fa29dbaf8006b97808b0d119a69a824520",
+     "text_sha256": "4887083689441639e3a3270bb989256e2edbed6a0f41646074874ef4b556b704",
      "published": "2026-10-07",
-     "modified": "2026-10-07",
+     "modified": "2026-10-13",
      "url": "https://thundthornthep-ai.github.io/articles/ev-charging-site-hosting-agreement-template-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -7425,6 +7425,135 @@
    "module": "M05",
    "level": "L3",
    "series_label": "LAS Invest Deep Research · ตอนที่ 27"
+  },
+  {
+   "id": "articles/bess-battery-energy-storage-epc-agreement-thailand",
+   "kind": "article",
+   "title": "สาระสำคัญในสัญญาจัดหาและติดตั้งระบบกักเก็บพลังงานด้วยแบตเตอรี่เชิงอุตสาหกรรม (Industrial Battery Energy Storage System: BESS EPC & Battery Degradation Warranty Agreement)",
+   "variants": [
+    {
+     "path": "articles/bess-battery-energy-storage-epc-agreement-thailand.html",
+     "title": "สาระสำคัญในสัญญาจัดหาและติดตั้งระบบกักเก็บพลังงานด้วยแบตเตอรี่เชิงอุตสาหกรรม (Industrial Battery Energy Storage System: BESS EPC & Battery Degradation Warranty Agreement)",
+     "language": "th",
+     "sha256": "d86d141ba8a2f3587be23d6df3d545ffa06e2dc138b6468fd41489b73673121d",
+     "text_sha256": "5ead284b42fc7b022b2dc902f4a2c66022b5c20778857e8067613a4af75be59a",
+     "published": "2026-10-13",
+     "modified": "2026-10-13",
+     "url": "https://thundthornthep-ai.github.io/articles/bess-battery-energy-storage-epc-agreement-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Shield Deep Research · ตอนที่ 46"
+  },
+  {
+   "id": "articles/corporate-solar-rooftop-ppa-agreement-template-thailand",
+   "kind": "article",
+   "title": "พิมพ์เขียวและแม่แบบสัญญาซื้อขายไฟฟ้าจากพลังงานแสงอาทิตย์บนหลังคาภาคเอกชน (Private Corporate Power Purchase Agreement Template: Solar Rooftop PPA / Energy-as-a-Service)",
+   "variants": [
+    {
+     "path": "articles/corporate-solar-rooftop-ppa-agreement-template-thailand.html",
+     "title": "พิมพ์เขียวและแม่แบบสัญญาซื้อขายไฟฟ้าจากพลังงานแสงอาทิตย์บนหลังคาภาคเอกชน (Private Corporate Power Purchase Agreement Template: Solar Rooftop PPA / Energy-as-a-Service)",
+     "language": "th",
+     "sha256": "2544c9946e643cdf40f7fcc62db3bbfaee81633cc153298ebf5f36cedb52c208",
+     "text_sha256": "216f1509985911e371ce2327813d036c40c88a6347abfe73f26c17a7e3531c64",
+     "published": "2026-10-13",
+     "modified": "2026-10-13",
+     "url": "https://thundthornthep-ai.github.io/articles/corporate-solar-rooftop-ppa-agreement-template-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Up Deep Research · ตอนที่ 26"
+  },
+  {
+   "id": "articles/digital-asset-exchange-acquisition-due-diligence-thailand",
+   "kind": "article",
+   "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการศูนย์ซื้อขายและตัวแทนสินทรัพย์ดิจิทัลที่ได้รับใบอนุญาตภายใต้การกำกับของ ก.ล.ต. (Digital Asset Exchange & Broker M&A Due Diligence)",
+   "variants": [
+    {
+     "path": "articles/digital-asset-exchange-acquisition-due-diligence-thailand.html",
+     "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการศูนย์ซื้อขายและตัวแทนสินทรัพย์ดิจิทัลที่ได้รับใบอนุญาตภายใต้การกำกับของ ก.ล.ต. (Digital Asset Exchange & Broker M&A Due Diligence)",
+     "language": "th",
+     "sha256": "6b43b5d4a28307a297b47d9147fedf31c285c0f5ceb59ddf4457623591120f95",
+     "text_sha256": "09314e4e42bf0918265a40ddd7b3995db19e4e8390a6a0aa7a3df9b78ea78258",
+     "published": "2026-10-13",
+     "modified": "2026-10-13",
+     "url": "https://thundthornthep-ai.github.io/articles/digital-asset-exchange-acquisition-due-diligence-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "investment",
+    "corporate"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M05",
+   "level": "L3",
+   "series_label": "LAS Invest Deep Research · ตอนที่ 28"
+  },
+  {
+   "id": "articles/influencer-creator-marketing-agreement-checklist-thailand",
+   "kind": "article",
+   "title": "Checklist 10 จุดตรวจสัญญาจ้างบริการการตลาดผ่านอินฟลูเอนเซอร์และการบริหารครีเอเตอร์ (Influencer Marketing & Creator Management Agreement Checklist)",
+   "variants": [
+    {
+     "path": "articles/influencer-creator-marketing-agreement-checklist-thailand.html",
+     "title": "Checklist 10 จุดตรวจสัญญาจ้างบริการการตลาดผ่านอินฟลูเอนเซอร์และการบริหารครีเอเตอร์ (Influencer Marketing & Creator Management Agreement Checklist)",
+     "language": "th",
+     "sha256": "a06b6a8991fa9828d5292661d54040a7c1734686582b1068a6e511428e9ba3dc",
+     "text_sha256": "d71f0954e7a99c5e899cdda4c392cd3c62058ce9f17686895b4507d2877d51c8",
+     "published": "2026-10-13",
+     "modified": "2026-10-13",
+     "url": "https://thundthornthep-ai.github.io/articles/influencer-creator-marketing-agreement-checklist-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L2",
+   "series_label": "LAS C&C Deep Research · ตอนที่ 42"
   },
   {
    "id": "blog/bkk-council/311-decision-report-v7",
