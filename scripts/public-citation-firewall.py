@@ -222,6 +222,15 @@ STATUTE_ALIASES: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("consumercase", ("พระราชบัญญัติวิธีพิจารณาคดีผู้บริโภค", "พ.ร.บ.วิธีพิจารณาคดีผู้บริโภค", "consumer case procedure act",)),
     ("emeeting", ("พระราชกำหนดว่าด้วยการประชุมผ่านสื่ออิเล็กทรอนิกส์", "พ.ร.ก.ว่าด้วยการประชุมผ่านสื่ออิเล็กทรอนิกส์",
                   "พ.ร.ก.การประชุมผ่านสื่ออิเล็กทรอนิกส์", "emergency decree on electronic meetings")),
+    # Laws added on 13 October 2026 (LAS Deep Research 176-180), verified against the Office of the Council of State
+    # database: the Air Navigation Act with amending Act No. 14 B.E. 2562 merged section by section in las-billing.
+    ("airnav", ("พระราชบัญญัติการเดินอากาศ", "พ.ร.บ.การเดินอากาศ", "air navigation act",)),
+    ("radio", ("พระราชบัญญัติวิทยุคมนาคม", "พ.ร.บ.วิทยุคมนาคม", "radio communications act", "radiocommunications act",)),
+    ("osh", ("พระราชบัญญัติความปลอดภัย อาชีวอนามัย และสภาพแวดล้อมในการทำงาน", "พ.ร.บ.ความปลอดภัย อาชีวอนามัย และสภาพแวดล้อมในการทำงาน",
+             "occupational safety, health and environment act",)),
+    ("tgo", ("พระราชกฤษฎีกาจัดตั้งองค์การบริหารจัดการก๊าซเรือนกระจก", "พ.ร.ฎ.จัดตั้งองค์การบริหารจัดการก๊าซเรือนกระจก",)),
+    ("digitalasset", ("พระราชกำหนดการประกอบธุรกิจสินทรัพย์ดิจิทัล", "พ.ร.ก.การประกอบธุรกิจสินทรัพย์ดิจิทัล",
+                      "emergency decree on digital asset businesses",)),
     ("ukbribery", ("uk bribery act",)),
 )
 

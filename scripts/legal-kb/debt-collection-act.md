@@ -8,6 +8,7 @@ Official source: https://searchlaw.ocs.go.th/council-of-state/#/public/doc/ZmhCc
 
 Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
+- มาตรา 3
 - มาตรา 5
 - มาตรา 8
 - มาตรา 9
