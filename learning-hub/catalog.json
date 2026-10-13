@@ -3,15 +3,15 @@
  "generated": "2026-10-13",
  "generator": "scripts/knowledge-teaching/build-library-data.py (las-billing)",
  "scope": {
-  "tracked_html": 318,
-  "catalogue_variants": 297,
-  "learning_items": 247,
-  "articles": 229,
+  "tracked_html": 320,
+  "catalogue_variants": 299,
+  "learning_items": 249,
+  "articles": 231,
   "resources": 18,
   "excluded": 21,
   "unlinked_items": 19,
-  "legal_reviewed": 266,
-  "source_tree": "dcca90972e79bb531a63646a4084881e924bb725"
+  "legal_reviewed": 268,
+  "source_tree": "89301724ff21a0e3c7dcdbabbdd0858ca842e36a"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -4895,10 +4895,10 @@
      "path": "articles/contact-center-bpo-agreement-thailand.html",
      "title": "Checklist 10 จุดตรวจสัญญาบริการศูนย์บริการลูกค้าและระบบ Contact Center Outsourcing (Customer Contact Center & BPO Master Services Agreement)",
      "language": "th",
-     "sha256": "e869243be1570fe6e3f6f9f7eb68ab0bdf1ce8caf8fd77e693613f130d49631f",
-     "text_sha256": "1cb865216ac29592cbf18ba4d80eb1a1d1438825c0425362c6243d5fc7478694",
+     "sha256": "7c11f7396d8b5fd07b85052b2f711918aa87c03301333bc8c73414963eb98b77",
+     "text_sha256": "b3b0c9dd5eac7bf7e5c75aacfbcf35f8e24497373984de16a3752e538dea14aa",
      "published": "2026-10-03",
-     "modified": "2026-10-03",
+     "modified": "2026-10-13",
      "url": "https://thundthornthep-ai.github.io/articles/contact-center-bpo-agreement-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -5439,10 +5439,10 @@
      "path": "articles/convertible-debentures-safe-notes-thailand.html",
      "title": "หุ้นกู้แปลงสภาพ (Convertible Debentures) และ SAFE Notes ในสตาร์ทอัพไทย",
      "language": "th",
-     "sha256": "6a09c02abe4c6f2d19d302d09d5707701c11280c8a41e62d675de8c8aa404ee0",
-     "text_sha256": "bde5f8e0f7264561d004c63e7af1a8c966d0e59f24c5a2341a7d382365684e9f",
+     "sha256": "9e87153851bad949826bb9ebc3c5a9df71123d43c730137ec49171f33033035d",
+     "text_sha256": "dd902d2f9dbd3e993ce10b2389cae7e89541b26228a557870ab99b9438eac1ea",
      "published": "2026-10-03",
-     "modified": "2026-10-03",
+     "modified": "2026-10-13",
      "url": "https://thundthornthep-ai.github.io/articles/convertible-debentures-safe-notes-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -6500,10 +6500,10 @@
      "path": "articles/carbon-credit-offtake-agreement-template-thailand.html",
      "title": "พิมพ์เขียวและแม่แบบสัญญาการให้บริการศูนย์กักเก็บและซื้อขายคาร์บอนเครดิต (Carbon Credit Offtake & Streaming Agreement Template)",
      "language": "th",
-     "sha256": "6b5048ff730f9e7dcb1711cf526f3f66f0a6ac5cdf515a60aa02afec08649e50",
-     "text_sha256": "a01f6e3f40eb6453c2e12393e56be0924bd14002e2af481232fcea7e95cbdd76",
+     "sha256": "60732731725dc10605deca2c5790932dfdc2b98f2d83042aff7f486741679cea",
+     "text_sha256": "770a0085aae0c4670b4e90666dd433e5fdeac53ff0e6473212152adf207f163b",
      "published": "2026-10-05",
-     "modified": "2026-10-06",
+     "modified": "2026-10-13",
      "url": "https://thundthornthep-ai.github.io/articles/carbon-credit-offtake-agreement-template-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -7015,8 +7015,8 @@
      "path": "articles/bonded-warehouse-free-zone-acquisition-due-diligence-thailand.html",
      "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการธุรกิจคลังสินค้าทัณฑ์บนและเขตปลอดอากร (Bonded Warehouse & Free Trade Zone Due Diligence)",
      "language": "th",
-     "sha256": "1dd3b0198bef74ea3c97d88f6a3777df2a59af3ce2f7564cb8116fc79732c0d0",
-     "text_sha256": "60c5258ba0fd40a43c05b1cb05cb7d03c5c748ddd102a49a35bc5719c6f4978e",
+     "sha256": "ca9d14e6fdf03cef553dc5bdf15b12155a07886de7eb6759c9186d62ef33a29c",
+     "text_sha256": "fe131cdc14b4042a392cbb137e44a081e1be000f928fe4ea54876598edf75702",
      "published": "2026-10-06",
      "modified": "2026-10-13",
      "url": "https://thundthornthep-ai.github.io/articles/bonded-warehouse-free-zone-acquisition-due-diligence-thailand.html",
@@ -7499,8 +7499,8 @@
      "path": "articles/digital-asset-exchange-acquisition-due-diligence-thailand.html",
      "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการศูนย์ซื้อขายและตัวแทนสินทรัพย์ดิจิทัลที่ได้รับใบอนุญาตภายใต้การกำกับของ ก.ล.ต. (Digital Asset Exchange & Broker M&A Due Diligence)",
      "language": "th",
-     "sha256": "6b43b5d4a28307a297b47d9147fedf31c285c0f5ceb59ddf4457623591120f95",
-     "text_sha256": "09314e4e42bf0918265a40ddd7b3995db19e4e8390a6a0aa7a3df9b78ea78258",
+     "sha256": "0392c140bbbbc2a458de9e9fb2f4b3600b558ed1915a34d11c0c3d75581a9123",
+     "text_sha256": "e769821cbb9c821897336ba03ae9f0db48374e6c300171c87a5eb617207b3f65",
      "published": "2026-10-13",
      "modified": "2026-10-13",
      "url": "https://thundthornthep-ai.github.io/articles/digital-asset-exchange-acquisition-due-diligence-thailand.html",
@@ -7586,6 +7586,70 @@
    "module": "M04",
    "level": "L2",
    "series_label": "LAS Share Deep Research · ตอนที่ 33"
+  },
+  {
+   "id": "articles/ai-voicebot-cloud-contact-center-agreement-checklist-thailand",
+   "kind": "article",
+   "title": "Checklist 10 จุดตรวจสัญญาจ้างบริการคลาวด์คอลเซ็นเตอร์และการใช้ปัญญาประดิษฐ์เสียงสนทนา (AI Voicebot & Cloud Contact Center Agreement Checklist)",
+   "variants": [
+    {
+     "path": "articles/ai-voicebot-cloud-contact-center-agreement-checklist-thailand.html",
+     "title": "Checklist 10 จุดตรวจสัญญาจ้างบริการคลาวด์คอลเซ็นเตอร์และการใช้ปัญญาประดิษฐ์เสียงสนทนา (AI Voicebot & Cloud Contact Center Agreement Checklist)",
+     "language": "th",
+     "sha256": "7502be8828553bfa537023f73638434e40815f549c1f6dbb10a6f809103749b6",
+     "text_sha256": "e1fed6433197ae688ee16ce96f2c4cf346aff85645c7665668d24fdca9ff7f23",
+     "published": "2026-10-13",
+     "modified": "2026-10-13",
+     "url": "https://thundthornthep-ai.github.io/articles/ai-voicebot-cloud-contact-center-agreement-checklist-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "public"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M12",
+   "level": "L2",
+   "series_label": "LAS C&C Deep Research · ตอนที่ 43"
+  },
+  {
+   "id": "articles/drone-inspection-environmental-monitoring-service-agreement-thailand",
+   "kind": "article",
+   "title": "พิมพ์เขียวและแม่แบบสัญญาจ้างให้บริการวิศวกรรมความปลอดภัยและการเฝ้าระวังสิ่งแวดล้อมอัตโนมัติด้วยโดรน (Commercial Autonomous Drone Inspection & Aerial Telemetry Services Agreement Template)",
+   "variants": [
+    {
+     "path": "articles/drone-inspection-environmental-monitoring-service-agreement-thailand.html",
+     "title": "พิมพ์เขียวและแม่แบบสัญญาจ้างให้บริการวิศวกรรมความปลอดภัยและการเฝ้าระวังสิ่งแวดล้อมอัตโนมัติด้วยโดรน (Commercial Autonomous Drone Inspection & Aerial Telemetry Services Agreement Template)",
+     "language": "th",
+     "sha256": "0ca969c766db0dd31a59038695f43a6bcf96493430cf9cf1cceafa9efca00834",
+     "text_sha256": "b304385d399199fac980847a8636688d3ba32eec9dcbda6e7a05860896e293d9",
+     "published": "2026-10-13",
+     "modified": "2026-10-13",
+     "url": "https://thundthornthep-ai.github.io/articles/drone-inspection-environmental-monitoring-service-agreement-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "assigned",
+   "hub_linked": true,
+   "variant_relation": "single",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered",
+   "module": "M13",
+   "level": "L3",
+   "series_label": "LAS Up Deep Research · ตอนที่ 27"
   },
   {
    "id": "blog/bkk-council/311-decision-report-v7",
