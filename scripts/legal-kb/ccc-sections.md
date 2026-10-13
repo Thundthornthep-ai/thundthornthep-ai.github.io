@@ -95,6 +95,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 134
 - มาตรา 135
 - มาตรา 136
+- มาตรา 137
 - มาตรา 138
 - มาตรา 140
 - มาตรา 144
