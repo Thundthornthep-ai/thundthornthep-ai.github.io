@@ -15,8 +15,10 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 51/3
 - มาตรา 51/5
 - มาตรา 51/6
+- มาตรา 55
 - มาตรา 70
 - มาตรา 73
+- มาตรา 80
 - มาตรา 96
 - มาตรา 97
 - มาตรา 101/1

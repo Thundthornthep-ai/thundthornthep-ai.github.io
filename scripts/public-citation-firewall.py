@@ -232,6 +232,13 @@ STATUTE_ALIASES: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("digitalasset", ("พระราชกำหนดการประกอบธุรกิจสินทรัพย์ดิจิทัล", "พ.ร.ก.การประกอบธุรกิจสินทรัพย์ดิจิทัล",
                       "emergency decree on digital asset businesses",)),
     ("medicaldevice", ("พระราชบัญญัติเครื่องมือแพทย์", "พ.ร.บ.เครื่องมือแพทย์", "medical device act",)),
+    # wave audit-2026-11-07 (14 October 2026): Acts imported into the statute corpus (las-billing LOOKUPS.md)
+    ("nbtc", ("พระราชบัญญัติองค์กรจัดสรรคลื่นความถี่", "พ.ร.บ.องค์กรจัดสรรคลื่นความถี่", "frequency allocation act",)),
+    ("publichealth", ("พระราชบัญญัติการสาธารณสุข", "พ.ร.บ.การสาธารณสุข", "public health act",)),
+    ("roadcarriage", ("พระราชบัญญัติการรับขนของทางถนนระหว่างประเทศ", "พ.ร.บ.การรับขนของทางถนนระหว่างประเทศ", "international carriage of goods by road act",)),
+    ("wmd", ("พระราชบัญญัติการควบคุมสินค้าที่เกี่ยวข้องกับการแพร่ขยายอาวุธที่มีอานุภาพทำลายล้างสูง", "การแพร่ขยายอาวุธที่มีอานุภาพทำลายล้างสูง", "proliferation of weapons of mass destruction",)),
+    ("mediation", ("พระราชบัญญัติการไกล่เกลี่ยข้อพิพาท", "พ.ร.บ.การไกล่เกลี่ยข้อพิพาท", "dispute mediation act",)),
+    ("arbinstitute", ("พระราชบัญญัติสถาบันอนุญาโตตุลาการ", "พ.ร.บ.สถาบันอนุญาโตตุลาการ", "arbitration institute act",)),
     ("fiba", ("พระราชบัญญัติธุรกิจสถาบันการเงิน", "พ.ร.บ.ธุรกิจสถาบันการเงิน", "financial institutions businesses act",)),
     ("ukbribery", ("uk bribery act",)),
 )
@@ -335,6 +342,10 @@ def expand_section_token(token: str, statute: str | None = None) -> list[str]:
         return [token]
     # The Bankruptcy Act numbers its business-rehabilitation chapter 90/1 to 90/90 (มาตรา 90/41): one section each.
     if statute == "bankruptcy" and token.startswith("90/"):
+        return [token]
+    # The Air Navigation Act numbers its inserted sections a/b throughout (มาตรา 15/22, 41/114, 41/125, 60/12, 108/5;
+    # the chapters added by Act No. 14 B.E. 2562 and earlier amendments): bound to that Act, an a/b token is one section.
+    if statute == "airnav":
         return [token]
     parts = token.split("/")
     if len(parts) >= 2 and all(part.isdigit() and int(part) >= 10 for part in parts):
