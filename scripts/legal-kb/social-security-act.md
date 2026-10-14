@@ -15,3 +15,6 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 54
 - มาตรา 67
 - มาตรา 34
+- มาตรา 96
+- มาตรา 97
+- มาตรา 101

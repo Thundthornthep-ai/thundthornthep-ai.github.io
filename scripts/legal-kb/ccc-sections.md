@@ -781,6 +781,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 1151
 - มาตรา 1152
 - มาตรา 1153
+- มาตรา 1153/1
 - มาตรา 1154
 - มาตรา 1155
 - มาตรา 1156

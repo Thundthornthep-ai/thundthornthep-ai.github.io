@@ -15,6 +15,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 27
 - มาตรา 35
 - มาตรา 37
+- มาตรา 37 ทวิ
 - มาตรา 40
 - มาตรา 42
 - มาตรา 48
@@ -37,6 +38,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 83/8
 - มาตรา 83/9
 - มาตรา 85/15
+- มาตรา 90
 - มาตรา 118
 - มาตรา 77/1
 - มาตรา 77/2

@@ -10,8 +10,8 @@
   "resources": 18,
   "excluded": 21,
   "unlinked_items": 19,
-  "legal_reviewed": 268,
-  "source_tree": "76669ba484491641f3d3cd9e8e53b41100e446c2"
+  "legal_reviewed": 272,
+  "source_tree": "3734523b6e62958b8dda0980bddb1e44dca0a976"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -7652,6 +7652,94 @@
    "series_label": "LAS Up Deep Research · ตอนที่ 27"
   },
   {
+   "id": "blog/bkk-council/shareholding-article1",
+   "kind": "article",
+   "title": "ฝากหุ้นชื่อคนอื่น: ความเสี่ยงทางกฎหมายที่ผู้ประกอบการไทยต้องรู้",
+   "variants": [
+    {
+     "path": "blog/bkk-council/shareholding-article1.html",
+     "title": "ฝากหุ้นชื่อคนอื่น: ความเสี่ยงทางกฎหมายที่ผู้ประกอบการไทยต้องรู้",
+     "language": "th",
+     "sha256": "2634034548810e539a0a094d716b64738728d4d28e8eb265b7042e84d3978209",
+     "text_sha256": "6cc1d31ab451529400c4e8d127fd35eb91b56496b980afd06e79388066a53995",
+     "published": "2026-04-02",
+     "modified": "2026-10-14",
+     "url": "https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article1.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    },
+    {
+     "path": "en/blog/bkk-council/shareholding-article1.html",
+     "title": "Nominee Shareholding in Thailand: Legal Risks Every Business Owner Must Know",
+     "language": "en",
+     "sha256": "412dea115ec6f3c97d5ce790055ba89a9bed7a4a359e4d859feb479117b3e4d1",
+     "text_sha256": "ed513811445e1d9ec23d408263e0a323fd00dcf42f12de8428d43bdd97e9cc88",
+     "published": "2026-04-02",
+     "modified": "2026-10-14",
+     "url": "https://thundthornthep-ai.github.io/en/blog/bkk-council/shareholding-article1.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "corporate",
+    "investment",
+    "public"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "proposed",
+   "hub_linked": true,
+   "variant_relation": "same-route-family-not-semantic-parity-verified",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered"
+  },
+  {
+   "id": "blog/bkk-council/shareholding-article2",
+   "kind": "article",
+   "title": "ลงชื่อเป็นกรรมการ แค่ชื่อ: ความรับผิดที่ตามมาทั้งแพ่งและอาญา",
+   "variants": [
+    {
+     "path": "blog/bkk-council/shareholding-article2.html",
+     "title": "ลงชื่อเป็นกรรมการ แค่ชื่อ: ความรับผิดที่ตามมาทั้งแพ่งและอาญา",
+     "language": "th",
+     "sha256": "66d1140c22cb98036747d856d509b8fe7d926ea1896aacdccffda1a9b8a1c5af",
+     "text_sha256": "7ebcb8c962e05f22c254a0d047fc4f71412fbbe5d62853825d5fb3514780016f",
+     "published": "2026-04-02",
+     "modified": "2026-10-14",
+     "url": "https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article2.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    },
+    {
+     "path": "en/blog/bkk-council/shareholding-article2.html",
+     "title": "Nominee Directors in Thailand: Civil, Criminal and Tax Liability",
+     "language": "en",
+     "sha256": "ca5d7c1e10dfa9a9f7157d1ada6f4fe8a0a460d6dcb7b0293c5356d5bef2071c",
+     "text_sha256": "c52929f502ca3e52043db1dff19b9f14314e0047b3c5c756a5b42d9eb92beea7",
+     "published": "2026-04-02",
+     "modified": "2026-10-14",
+     "url": "https://thundthornthep-ai.github.io/en/blog/bkk-council/shareholding-article2.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ],
+   "tags": [
+    "contract",
+    "corporate",
+    "investment",
+    "public",
+    "tax"
+   ],
+   "series": null,
+   "legal_status": "reviewed",
+   "taxonomy_status": "proposed",
+   "hub_linked": true,
+   "variant_relation": "same-route-family-not-semantic-parity-verified",
+   "review_priority": "normal",
+   "review_reason": "legal-review-registered"
+  },
+  {
    "id": "blog/bkk-council/311-decision-report-v7",
    "kind": "resource",
    "title": "รายงานการตรวจสอบข้อบัญญัติกรุงเทพมหานคร ๓๑๑ ฉบับ — LAS",
@@ -8402,94 +8490,6 @@
    "taxonomy_status": "proposed",
    "hub_linked": false,
    "variant_relation": "single",
-   "review_priority": "normal",
-   "review_reason": "baseline-review-required"
-  },
-  {
-   "id": "blog/bkk-council/shareholding-article1",
-   "kind": "article",
-   "title": "ฝากหุ้นชื่อคนอื่น: ความเสี่ยงทางกฎหมายที่ผู้ประกอบการไทยต้องรู้",
-   "variants": [
-    {
-     "path": "blog/bkk-council/shareholding-article1.html",
-     "title": "ฝากหุ้นชื่อคนอื่น: ความเสี่ยงทางกฎหมายที่ผู้ประกอบการไทยต้องรู้",
-     "language": "th",
-     "sha256": "ce183024f7e8f04bbc5c922610190479e2c3c219ec555f7e4fce90c7f031333e",
-     "text_sha256": "b40b45cfc629378513a747791ee2831350dff4fd378916ac3484792abc53a511",
-     "published": "2026-04-02",
-     "modified": "2026-04-02",
-     "url": "https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article1.html",
-     "legal_status": "unreviewed",
-     "article_schema": true
-    },
-    {
-     "path": "en/blog/bkk-council/shareholding-article1.html",
-     "title": "Nominee Shareholding in Thailand: Legal Risks Every Business Owner Must Know",
-     "language": "en",
-     "sha256": "cc972b6ba751566777f690fed11925aa5050d94d4a28e101d8230b125dbcddb8",
-     "text_sha256": "2f1c07025538e3bf32e53908123f621dada9bf62c9dc02d1cb94c52c82769422",
-     "published": "2026-04-02",
-     "modified": "2026-04-03",
-     "url": "https://thundthornthep-ai.github.io/en/blog/bkk-council/shareholding-article1.html",
-     "legal_status": "unreviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "corporate",
-    "investment",
-    "public"
-   ],
-   "series": null,
-   "legal_status": "unreviewed",
-   "taxonomy_status": "proposed",
-   "hub_linked": true,
-   "variant_relation": "same-route-family-not-semantic-parity-verified",
-   "review_priority": "normal",
-   "review_reason": "baseline-review-required"
-  },
-  {
-   "id": "blog/bkk-council/shareholding-article2",
-   "kind": "article",
-   "title": "ลงชื่อเป็นกรรมการ แค่ชื่อ: ความรับผิดที่ตามมาทั้งแพ่งและอาญา",
-   "variants": [
-    {
-     "path": "blog/bkk-council/shareholding-article2.html",
-     "title": "ลงชื่อเป็นกรรมการ แค่ชื่อ: ความรับผิดที่ตามมาทั้งแพ่งและอาญา",
-     "language": "th",
-     "sha256": "77b97de7ed10d99629b912067d4c939efa9ee1232c5679681a4c2f8b16a5a772",
-     "text_sha256": "14a8cd3aadf2dc69179fc03857a4db1eff11af5fd7c48bdaca3f071801937009",
-     "published": "2026-04-02",
-     "modified": "2026-04-02",
-     "url": "https://thundthornthep-ai.github.io/blog/bkk-council/shareholding-article2.html",
-     "legal_status": "unreviewed",
-     "article_schema": true
-    },
-    {
-     "path": "en/blog/bkk-council/shareholding-article2.html",
-     "title": "Nominee Directors in Thailand: Civil, Criminal and Tax Liability",
-     "language": "en",
-     "sha256": "1431356f59bb52bfcf78929bda2fdff3aab287a014c0a75603784c86b40dfbb0",
-     "text_sha256": "4ba6a866807855efe88a305be8a0bfe9d9ffe39fed5fa60f135b4c515c1c7de9",
-     "published": "2026-04-02",
-     "modified": "2026-04-03",
-     "url": "https://thundthornthep-ai.github.io/en/blog/bkk-council/shareholding-article2.html",
-     "legal_status": "unreviewed",
-     "article_schema": true
-    }
-   ],
-   "tags": [
-    "contract",
-    "corporate",
-    "investment",
-    "public",
-    "tax"
-   ],
-   "series": null,
-   "legal_status": "unreviewed",
-   "taxonomy_status": "proposed",
-   "hub_linked": true,
-   "variant_relation": "same-route-family-not-semantic-parity-verified",
    "review_priority": "normal",
    "review_reason": "baseline-review-required"
   },
