@@ -704,6 +704,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 1002
 - มาตรา 1012
 - มาตรา 1015
+- มาตรา 1016
 - มาตรา 1021
 - มาตรา 1022
 - มาตรา 1023

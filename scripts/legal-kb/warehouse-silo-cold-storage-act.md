@@ -11,4 +11,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 3
 - มาตรา 18
 - มาตรา 26
+- มาตรา 28
 - มาตรา 36
+- มาตรา 38
+- มาตรา 39

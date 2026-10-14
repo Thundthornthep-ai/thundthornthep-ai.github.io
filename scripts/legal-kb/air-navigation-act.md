@@ -9,6 +9,15 @@ Official source: https://searchlaw.ocs.go.th/council-of-state/#/public/doc/ak4rS
 Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
 
+- มาตรา 22
 - มาตรา 24
+- มาตรา 31
+- มาตรา 41/113
+- มาตรา 41/114
+- มาตรา 41/120
+- มาตรา 41/121
+- มาตรา 41/125
+- มาตรา 41/127
+- มาตรา 41/129
 - มาตรา 67/20
 - มาตรา 78

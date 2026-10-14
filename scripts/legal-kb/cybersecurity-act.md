@@ -9,6 +9,7 @@ Official source: https://searchlaw.ocs.go.th/council-of-state/#/public/doc/SlUzL
 Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
 - มาตรา 13
+- มาตรา 44
 - มาตรา 45
 - มาตรา 46
 - มาตรา 49

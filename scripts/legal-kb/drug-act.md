@@ -9,9 +9,11 @@ Official source: https://searchlaw.ocs.go.th/council-of-state/#/public/doc/N0lPS
 Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
 - มาตรา 12
+- มาตรา 14
 - มาตรา 15
 - มาตรา 17
 - มาตรา 21
+- มาตรา 25
 - มาตรา 33
 - มาตรา 39
 - มาตรา 72

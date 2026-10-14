@@ -14,9 +14,11 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 49
 - มาตรา 51
 - มาตรา 54
+- มาตรา 55
 - มาตรา 56
 - มาตรา 64
 - มาตรา 65
+- มาตรา 68
 - มาตรา 81
 - มาตรา 82
 - มาตรา 83
@@ -24,6 +26,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 85
 - มาตรา 86
 - มาตรา 96
+- มาตรา 106
 - มาตรา 127
 - มาตรา 128
 - มาตรา 133
