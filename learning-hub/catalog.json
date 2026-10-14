@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "generated": "2026-10-13",
+ "generated": "2026-10-14",
  "generator": "scripts/knowledge-teaching/build-library-data.py (las-billing)",
  "scope": {
   "tracked_html": 320,
@@ -11,7 +11,7 @@
   "excluded": 21,
   "unlinked_items": 19,
   "legal_reviewed": 268,
-  "source_tree": "4c59ad1991e3ca3b503b6700c2ea5f11fa0b06a3"
+  "source_tree": "1cdbf319785b815cb7e1b6e376e507a0c422c2c8"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -5951,10 +5951,10 @@
      "path": "articles/digital-asset-exchange-service-agreement-thailand.html",
      "title": "ดักจุดตายสัญญาให้บริการแพลตฟอร์มสินทรัพย์ดิจิทัลและศูนย์ซื้อขายคริปโทเคอร์เรนซี (Digital Asset Exchange & Brokerage Master Services Agreement)",
      "language": "th",
-     "sha256": "c462f7799f9bac42efca291cc273d151605450e94307a1ef5b03af038bf53630",
-     "text_sha256": "dc91feeab25b0dd9f64674ad2088e04ab7500b6587d0dee883544d94b4bedea5",
+     "sha256": "daefed35841e585d8d1289ebbe9dec9d1be2747c88914713758256b3e09cce2e",
+     "text_sha256": "46648068d47448b1a98b69f8a8809145907b146bd1f0d50af6c058ed80363011",
      "published": "2026-10-05",
-     "modified": "2026-10-13",
+     "modified": "2026-10-14",
      "url": "https://thundthornthep-ai.github.io/articles/digital-asset-exchange-service-agreement-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -7499,10 +7499,10 @@
      "path": "articles/digital-asset-exchange-acquisition-due-diligence-thailand.html",
      "title": "ตรวจสอบสถานะความเสี่ยงด้านกฎหมายและใบอนุญาตในการเข้าซื้อกิจการศูนย์ซื้อขายและตัวแทนสินทรัพย์ดิจิทัลที่ได้รับใบอนุญาตภายใต้การกำกับของ ก.ล.ต. (Digital Asset Exchange & Broker M&A Due Diligence)",
      "language": "th",
-     "sha256": "0392c140bbbbc2a458de9e9fb2f4b3600b558ed1915a34d11c0c3d75581a9123",
-     "text_sha256": "e769821cbb9c821897336ba03ae9f0db48374e6c300171c87a5eb617207b3f65",
+     "sha256": "dcf303aac20823eb59d35afff3e5c36244b7adccf0f011a6de8c13fcd4f39104",
+     "text_sha256": "ae5b42d45ed9bf30566fa65cbba788fa5771cd9ddfea64f5bcd6120545e859b9",
      "published": "2026-10-13",
-     "modified": "2026-10-13",
+     "modified": "2026-10-14",
      "url": "https://thundthornthep-ai.github.io/articles/digital-asset-exchange-acquisition-due-diligence-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
