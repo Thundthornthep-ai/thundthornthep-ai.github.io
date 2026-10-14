@@ -231,6 +231,7 @@ STATUTE_ALIASES: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("tgo", ("พระราชกฤษฎีกาจัดตั้งองค์การบริหารจัดการก๊าซเรือนกระจก", "พ.ร.ฎ.จัดตั้งองค์การบริหารจัดการก๊าซเรือนกระจก",)),
     ("digitalasset", ("พระราชกำหนดการประกอบธุรกิจสินทรัพย์ดิจิทัล", "พ.ร.ก.การประกอบธุรกิจสินทรัพย์ดิจิทัล",
                       "emergency decree on digital asset businesses",)),
+    ("medicaldevice", ("พระราชบัญญัติเครื่องมือแพทย์", "พ.ร.บ.เครื่องมือแพทย์", "medical device act",)),
     ("fiba", ("พระราชบัญญัติธุรกิจสถาบันการเงิน", "พ.ร.บ.ธุรกิจสถาบันการเงิน", "financial institutions businesses act",)),
     ("ukbribery", ("uk bribery act",)),
 )
