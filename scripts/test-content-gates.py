@@ -351,6 +351,26 @@ class TemplateStructureTests(unittest.TestCase):
             self.assertIn(old, COMPLETE, marker)
             self.assertEqual(template.missing_markers(COMPLETE.replace(old, new)), [marker], marker)
 
+    def test_locked_order(self) -> None:
+        # Codex review of PR #80: every marker present but in the wrong order must fail
+        self.assertEqual(template.order_problems(COMPLETE), [])
+        quick = '<div class="quick-answer"><strong>คำตอบโดยย่อ</strong> ...</div>'
+        refs = '<div class="ref-section"><h2>แหล่งอ้างอิงทางกฎหมาย</h2></div>'
+        swapped = COMPLETE.replace(quick, "@@Q@@").replace(refs, quick).replace("@@Q@@", refs)
+        self.assertEqual(template.missing_markers(swapped), [])
+        self.assertIn("out of order: ref-section before quick-answer", template.order_problems(swapped))
+        with tempfile.TemporaryDirectory() as tmp:
+            root = make_site(Path(tmp), {"articles/swapped.html": swapped, "articles/full.html": COMPLETE})
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out), contextlib.redirect_stderr(out):
+                status = template.main(["--root", str(root), "--strict", "articles/swapped.html", "articles/full.html"])
+            self.assertEqual(status, 1)
+            self.assertIn("[FAIL] articles/swapped.html: out of order", out.getvalue())
+            self.assertNotIn("full.html", out.getvalue().split("[TEMPLATE]")[0])
+        # a body heading that mentions อ้างอิง before the FAQ does not move the closing references section
+        early = COMPLETE.replace(quick, quick + "<h3>ตารางสรุปมาตราที่อ้างอิง</h3>")
+        self.assertEqual(template.order_problems(early), [])
+
     def test_css_comments_and_prose_do_not_count(self) -> None:
         # the inline CSS of every page names .practice-note and .faq-item; prose "อีกฝ่ายหนึ่ง" is not a section
         page = COMPLETE.replace('<div class="practice-note tip"><span class="pn-label">LAS Practice Note</span></div>',

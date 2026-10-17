@@ -21,13 +21,16 @@ the headings and labels that the hand-built pages use for the same parts:
 Markers are searched with comments, scripts (JSON-LD included) and styles removed, because every page's inline CSS
 names ".practice-note" and ".faq-item" whether or not the page has those parts. Redirect stubs are skipped.
 
-Most pages published before the standard lack some parts, so the whole-site run only reports and exits 0. A new or
-rewritten page is named with --strict and must carry every marker.
+The six section markers (all but the table) must also stand in the locked order: quick-answer, practice-note,
+counterargument, faq, ref-section, disclaimer (the references and the disclaimer by their last occurrence, the others by
+their first). Most pages published before the standard lack some parts, so the whole-site run only reports and exits 0.
+A new or rewritten page is named with --strict and must carry every marker in that order.
 
 Usage
   python3 scripts/check-template-structure.py                       # report for every article page (exit 0)
   python3 scripts/check-template-structure.py FILE.html ...         # report for the named pages (exit 0)
-  python3 scripts/check-template-structure.py --strict FILE.html …  # exit 1 when a named page misses a marker
+  python3 scripts/check-template-structure.py --strict FILE.html …  # exit 1 when a named page misses a marker or
+                                                                    # breaks the order
   python3 scripts/check-template-structure.py --json                # machine-readable report on stdout
 
 Exit 0 when the report ran (and every --strict page is complete), 1 when a --strict page misses a marker or does not
@@ -110,6 +113,39 @@ def missing_markers(raw: str) -> list[str]:
     return missing
 
 
+# The locked order of the sections (ARTICLE-STANDARD section 2). Tables may stand anywhere, so they are not ordered.
+# The references and the disclaimer close the page: their last occurrence counts, so a heading such as
+# "ตารางสรุปมาตราที่อ้างอิง" in the body or a disclaimer quoted early does not move them; the others count from their
+# first occurrence.
+ORDER = ("quick-answer", "practice-note", "counterargument", "faq", "ref-section", "disclaimer")
+CLOSING = {"ref-section", "disclaimer"}
+TEXT_RUN = re.compile(r">([^<]+)<")
+
+
+def marker_positions(raw: str) -> dict[str, int]:
+    """Offset in the visible markup of each ordered section marker found on the page."""
+    body = body_markup(raw)
+    found: dict[str, int] = {}
+    for marker in ORDER:
+        hits = [match.start() for match in CLASS[marker].finditer(body)]
+        if marker in TEXT:
+            hits += [run.start() for run in TEXT_RUN.finditer(body) if TEXT[marker].search(htmllib.unescape(run.group(1)))]
+        if marker in HEAD:
+            hits += [match.start() for match in HEADING.finditer(body)
+                     if HEAD[marker].search(htmllib.unescape(TAG.sub(" ", match.group(2))))]
+        if hits:
+            found[marker] = max(hits) if marker in CLOSING else min(hits)
+    return found
+
+
+def order_problems(raw: str) -> list[str]:
+    """Pairs of sections that stand in the wrong order, e.g. "out of order: ref-section before quick-answer"."""
+    pos = marker_positions(raw)
+    present = [marker for marker in ORDER if marker in pos]
+    return [f"out of order: {later} before {earlier}" for i, earlier in enumerate(present)
+            for later in present[i + 1:] if pos[later] < pos[earlier]]
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("files", nargs="*", help="pages to report on (default: every article page)")
@@ -137,7 +173,7 @@ def main(argv: list[str] | None = None) -> int:
         if pages.is_redirect_stub(raw):
             continue
         checked += 1
-        missing = missing_markers(raw)
+        missing = missing_markers(raw) + order_problems(raw)
         if missing:
             report[rel] = missing
     failing = [rel for rel in strict if rel in report]
@@ -147,13 +183,16 @@ def main(argv: list[str] | None = None) -> int:
     else:
         for rel, missing in report.items():
             label = "FAIL" if rel in failing else "REPORT"
-            print(f"[{label}] {rel}: missing {', '.join(missing)}")
+            absent = [item for item in missing if item in MARKERS]
+            parts = ([f"missing {', '.join(absent)}"] if absent else []) + [item for item in missing if item not in MARKERS]
+            print(f"[{label}] {rel}: {'; '.join(parts)}")
         counts = {marker: sum(1 for missing in report.values() if marker in missing) for marker in MARKERS}
         summary = ", ".join(f"{marker} {count}" for marker, count in counts.items() if count)
         print(f"[TEMPLATE] pages checked={checked} incomplete={len(report)}" + (f" ({summary})" if summary else ""))
     if failing:
         if not args.json:
-            print(f"[TEMPLATE] FAIL — {len(failing)} --strict page(s) miss a locked template part", file=sys.stderr)
+            print(f"[TEMPLATE] FAIL — {len(failing)} --strict page(s) miss a locked template part or break its order",
+                  file=sys.stderr)
         return 1
     if not args.json:
         print("[TEMPLATE] report only — legacy pages are listed, not failed; name new pages with --strict")
