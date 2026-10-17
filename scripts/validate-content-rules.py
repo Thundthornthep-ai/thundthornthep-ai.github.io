@@ -66,8 +66,10 @@ DEKA_REGISTER = Path("scripts/legal-kb/supreme-court-verified.json")
 
 THAI_DIGITS = str.maketrans("๐๑๒๓๔๕๖๗๘๙", "0123456789")
 COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
-SCRIPT_NON_LD = re.compile(r"<script(?![^>]*ld\+json)[^>]*>.*?</script>", re.DOTALL | re.IGNORECASE)
-STYLE = re.compile(r"<style[^>]*>.*?</style>", re.DOTALL | re.IGNORECASE)
+# opening tags are read with quoted attribute values whole (pages.TAG_BODY): '<script data-note="1 > 0" …>'
+# a script element with its attributes (group 1) and body (group 2); JSON-LD is told apart by its attributes
+SCRIPT_ELEMENT = re.compile(r"<script\b(" + pages.TAG_BODY + r")>(.*?)</script>", re.DOTALL | re.IGNORECASE)
+STYLE = re.compile(r"<style\b" + pages.TAG_BODY + r">.*?</style>", re.DOTALL | re.IGNORECASE)
 TAG = re.compile(r"<[^\s>]" + pages.TAG_BODY + ">")  # quoted attribute values read whole
 META_KEYWORDS = re.compile(r"<meta[^>]+name\s*=\s*[\"']keywords[\"'][^>]*>", re.IGNORECASE)
 ALT_NAME = re.compile(r"\"(?:alternateName|keywords)\"\s*:\s*(?:\"[^\"]*\"|\[[^\]]*\])")
@@ -173,8 +175,7 @@ MONTH_ABBR = re.compile(
 )
 
 # FAQPage JSON-LD and what the reader sees (CR11, W11). Reader text drops every script, JSON-LD included.
-LD_JSON = re.compile(r"<script[^>]*ld\+json[^>]*>(.*?)</script>", re.DOTALL | re.IGNORECASE)
-ANY_SCRIPT = re.compile(r"<script\b[^>]*>.*?</script>", re.DOTALL | re.IGNORECASE)
+ANY_SCRIPT = re.compile(r"<script\b" + pages.TAG_BODY + r">.*?</script>", re.DOTALL | re.IGNORECASE)
 # a class token that starts with "faq" (faq-item; not data-class, not "no-faq")
 FAQ_CLASS = re.compile(r"(?<![\w-])class\s*=\s*(?:[\"'](?:[^\"']*\s)?)?faq", re.IGNORECASE)
 # a FAQ heading, read with inline tags removed ("<em>คำถาม</em>ที่พบบ่อย", "Frequently <em>Asked</em> Questions")
@@ -205,12 +206,31 @@ OFFICIAL_COMPANY_NAMES = frozenset({"Legal Advance Solution"})
 # it stands: an assignment, setAttribute, an object key, a conditional branch (Codex review of PR #80: reading only the
 # title forms missed one form after another). Regex literals (/ม\.?\s*291/) and comments are not strings.
 # an escape may be a line continuation (a backslash before a newline)
-JS_LITERAL = r"""(?:'(?:[^'\\\n]|\\[\s\S])*'|"(?:[^"\\\n]|\\[\s\S])*"|`(?:[^`\\]|\\[\s\S])*`)"""
+# a template literal may hold ${…} expressions with their own strings, nested template literals included
+JS_TEMPLATE_BODY = r"""(?:[^`\\$]|\\[\s\S]|\$(?!\{)|\$\{(?:[^{}`]|`(?:[^`\\]|\\[\s\S])*`|\{[^{}]*\})*\})*"""
+JS_LITERAL = r"""(?:'(?:[^'\\\n]|\\[\s\S])*'|"(?:[^"\\\n]|\\[\s\S])*"|`""" + JS_TEMPLATE_BODY + r"""`)"""
 JS_OPERAND = r"""[A-Za-z_$][\w$.]*(?:\[[^\]\n]*\]|\([^)\n]*\))*"""
 SCRIPT_STRING = re.compile(
     rf"""(?:{JS_OPERAND}\s*\+\s*)?{JS_LITERAL}(?:\s*\+\s*(?:{JS_LITERAL}|{JS_OPERAND}))*"""
 )
-SCRIPT_LITERAL = re.compile(r"""'((?:[^'\\\n]|\\[\s\S])*)'|"((?:[^"\\\n]|\\[\s\S])*)"|`((?:[^`\\]|\\[\s\S])*)`""")
+SCRIPT_LITERAL = re.compile(r"""'((?:[^'\\\n]|\\[\s\S])*)'|"((?:[^"\\\n]|\\[\s\S])*)"|`(""" + JS_TEMPLATE_BODY + r""")`""")
+def template_expressions(text: str) -> list[str]:
+    """The source of each ${…} expression of a template literal's body (nested braces included)."""
+    found: list[str] = []
+    i = 0
+    while i < len(text):
+        if text.startswith("${", i):
+            depth, j = 1, i + 2
+            while j < len(text) and depth:
+                depth += {"{": 1, "}": -1}.get(text[j], 0)
+                j += 1
+            found.append(text[i + 2:j - 1])
+            i = j
+        else:
+            i += 1
+    return found
+
+
 def template_static(text: str) -> str:
     """The static text of a template literal, each ${…} expression (nested braces included) read as a digit, so
     "ม.${n}" is the abbreviation it renders as."""
@@ -267,7 +287,7 @@ SITE_WIDE_RULES = ("CR2", "CR5")
 def visible_text(raw: str) -> str:
     """Text a reader or a search engine sees: no comments, no code or styles; JSON-LD stays."""
     text = COMMENT.sub(" ", raw)
-    text = SCRIPT_NON_LD.sub(" ", text)
+    text = SCRIPT_ELEMENT.sub(lambda m: m.group(0) if is_ld_json(m) else " ", text)
     text = STYLE.sub(" ", text)
     text = TAG.sub(" ", text)
     return htmllib.unescape(text).translate(THAI_DIGITS)
@@ -318,10 +338,14 @@ def _faq_pages(node):
             yield from _faq_pages(value)
 
 
+def is_ld_json(script: re.Match[str]) -> bool:
+    return "ld+json" in script.group(1).lower()
+
+
 def faq_objects(raw: str) -> list[dict]:
     """Every FAQPage object in the page's JSON-LD (a block that does not parse is skipped)."""
     found: list[dict] = []
-    for block in LD_JSON.findall(COMMENT.sub(" ", raw)):
+    for block in (m.group(2) for m in SCRIPT_ELEMENT.finditer(COMMENT.sub(" ", raw)) if is_ld_json(m)):
         try:
             data = json.loads(block)
         except ValueError:
@@ -442,6 +466,11 @@ def check_script(raw: str) -> list[tuple[str, str]]:
         title = concatenation_text(match.group(0))
         if SCRIPT_TITLE_BANNED.search(title):
             found.append(("CR14", title[:160]))
+        # the strings inside a template literal's expressions render too: `${`ม.118`}` (Codex review of PR #80)
+        for literal in SCRIPT_LITERAL.finditer(match.group(0)):
+            if literal.group(3) is not None:
+                for expression in template_expressions(literal.group(3)):
+                    found.extend(check_script(expression))
     return found
 
 

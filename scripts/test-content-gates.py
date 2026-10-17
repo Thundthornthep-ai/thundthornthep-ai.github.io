@@ -259,6 +259,9 @@ class ContentRuleTests(unittest.TestCase):
                          [])
         iri = '<script type="application/ld+json">{"@type":"https://schema.org/FAQPage","mainEntity":[{"@type":"Question","name":"Hidden?"}]}</script>'
         self.assertEqual(rule_ids(self.faq_page(ld=iri)), ["CR11"])
+        # a ">" in a quoted attribute of the JSON-LD tag does not hide the block (round 27)
+        quoted = '<script data-note="1 > 0" type="application/ld+json">{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Hidden?"}]}</script>'
+        self.assertEqual(rule_ids(self.faq_page(ld=quoted)), ["CR11"])
 
     def test_w11_faq_wording_drift_is_reported_not_failed(self) -> None:
         page = self.faq_page("<h3>What is a lease?</h3>")
@@ -356,6 +359,9 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(len(rules.check_script("link.title = thai ? 'ม.118' : 'Section 118';")), 1)
         # a line continuation inside a literal (round 26)
         self.assertEqual(len(rules.check_script("link.title = 'A vs\\\n B';")), 1)
+        # a nested template literal is read too (round 27)
+        self.assertEqual(len(rules.check_script("link.title = `${prefix} ${`ม.118`}`;")), 1)
+        self.assertEqual(rules.check_script("link.title = `${prefix} ${`มาตรา 118`}`;"), [])
         self.assertEqual(rules.check_script("var p = /มาตรา\\s*291|ม\\.?\\s*291/; // ม.291"), [])
         self.assertEqual(len(rules.check_script("a . title = 'A vs B';")), 1)
         with tempfile.TemporaryDirectory() as tmp:

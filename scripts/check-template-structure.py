@@ -55,7 +55,8 @@ ROOT = pages.ROOT
 
 # comments, scripts and styles are not rendered (nor are <template> contents and hidden elements:
 # pages.strip_unrendered)
-HIDDEN = re.compile(r"<!--.*?-->|<script\b[^>]*>.*?</script>|<style\b[^>]*>.*?</style>", re.DOTALL | re.IGNORECASE)
+HIDDEN = re.compile(r"<!--.*?-->|<script\b" + pages.TAG_BODY + r">.*?</script>|<style\b" + pages.TAG_BODY + r">.*?</style>",
+                    re.DOTALL | re.IGNORECASE)
 # the class attribute itself, not data-class or aria-class
 CLASS_ATTR = r"(?<![\w-])class\s*=\s*"
 # the start of a class token: after the opening quote or a space inside a quoted value, or an unquoted value
