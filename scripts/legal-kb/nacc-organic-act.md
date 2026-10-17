@@ -10,6 +10,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
 - มาตรา 36
 - มาตรา 73
+- มาตรา 81
 - มาตรา 102
 - มาตรา 103
 - มาตรา 105

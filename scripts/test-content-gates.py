@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Regression tests for the content-rules, internal-link and sitemap gates and their shared page scope."""
+"""Regression tests for the content-rules, template-structure, internal-link and sitemap gates and their shared page
+scope."""
 from __future__ import annotations
 
 import contextlib
@@ -26,6 +27,7 @@ def load(name: str):
 
 
 rules = load("validate-content-rules")
+template = load("check-template-structure")
 links = load("check-internal-links")
 sitemap = load("check-sitemap-coverage")
 
@@ -194,6 +196,274 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(rule_ids(GOOD.replace("</body>", "<p>15 ม.ค. 2569</p></body>")), ["CR10"])
         self.assertEqual(rule_ids(GOOD.replace("</body>", "<p>ระเบียบ ก.พ. ว่าด้วย</p></body>")), [])
 
+    FAQ_LD = ('<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":['
+              '{"@type":"Question","name":"สัญญาเช่าต้องจดทะเบียนเมื่อใด?","acceptedAnswer":{"@type":"Answer","text":"x"}},'
+              '{"@type":"Question","name":"What is a lease?","acceptedAnswer":{"@type":"Answer","text":"y"}}]}</script>')
+
+    def faq_page(self, body: str = "", ld: str | None = None) -> str:
+        return GOOD.replace("</head>", (self.FAQ_LD if ld is None else ld) + "</head>").replace("</body>", body + "</body>")
+
+    def test_cr11_faq_jsonld_without_a_visible_faq(self) -> None:
+        # TPL-05: FAQPage JSON-LD that the reader never sees, an HTML comment naming the FAQ does not count
+        self.assertEqual(rule_ids(self.faq_page("<!-- JSON-LD FAQPage Schema -->")), ["CR11"])
+        # the same block inside an @graph array
+        graph = ('<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article"},'
+                 '{"@type":"FAQPage","mainEntity":{"@type":"Question","name":"Hidden question?"}}]}</script>')
+        self.assertEqual(rule_ids(self.faq_page(ld=graph)), ["CR11"])
+        # a question shown word for word, or a visible FAQ section, is a visible FAQ
+        shown = self.faq_page("<h3>What is a lease?</h3><p>y</p>")
+        self.assertEqual(rule_ids(shown), [])
+        section = self.faq_page('<h2>คำถามที่พบบ่อย</h2><div class="faq-item"><div class="faq-q">Q1: เช่าเมื่อใด?</div></div>')
+        self.assertEqual(rule_ids(section), [])
+        # inline markup inside a shown question keeps it word for word (Codex review of PR #80)
+        inline = self.faq_page("<h3>What is a <em>lease</em>?</h3><p>y</p>")
+        self.assertEqual(rule_ids(inline), [])
+        self.assertEqual([detail for _, detail in rules.check_warnings(inline)], ["สัญญาเช่าต้องจดทะเบียนเมื่อใด?"])
+        # the JSON-LD text itself is not visible text
+        self.assertEqual(rules.check_faq(self.faq_page())[0][0][0], "CR11")
+        # inert <template> contents are not visible either (Codex review of PR #80, round 14)
+        self.assertEqual(rule_ids(self.faq_page("<template><h3>What is a lease?</h3></template>")), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<template><div class="faq-item">Q</div></template>')), ["CR11"])
+        # an <iframe> fallback body is raw text a browser does not show (Codex review of PR #80, round 38)
+        self.assertEqual(rule_ids(self.faq_page('<iframe src="x.html"><h2>คำถามที่พบบ่อย</h2><h3>What is a lease?</h3></iframe>')), ["CR11"])
+        # an empty FAQPage fails, and data-class is not a FAQ class (Codex review of PR #80, round 15)
+        empty = '<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}</script>'
+        self.assertEqual(rule_ids(self.faq_page(ld=empty)), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<div data-class="faq">not an FAQ</div>')), ["CR11"])
+        # each FAQPage object needs a question, and "no-faq" is not a FAQ class (Codex review of PR #80, round 17)
+        two = self.FAQ_LD + empty
+        self.assertEqual(rule_ids(self.faq_page("<h3>What is a lease?</h3>", ld=two)), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<div class="no-faq">x</div>')), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<div class="box faq-item">x</div>')), [])
+        self.assertEqual(rule_ids(self.faq_page("<div class=faq-item>x</div>")), [])
+        # a class written inside another attribute's value is no class; the word "hidden" in a title hides nothing
+        # (Codex review of PR #80, round 39)
+        self.assertEqual(rule_ids(self.faq_page('<div title="x class=faq-item">x</div>')), ["CR11"])
+        # a heading written as source in a <textarea> is no FAQ section; the JSON-LD type is read from the type
+        # attribute, decoded (Codex review of PR #80, round 43)
+        self.assertEqual(rule_ids(self.faq_page("<textarea><h2>FAQ</h2></textarea>")), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<input type="hidden" class="faq-item">')), ["CR11"])  # round 44
+        self.assertEqual(rule_ids(self.faq_page('<div title="HTML example: <h2>FAQ</h2>">x</div>')), ["CR11"])  # round 47
+        # "/>" does not close a <div>: the hidden div runs to its end tag (round 45); an SVG element's "/>" does close
+        self.assertEqual(rule_ids(self.faq_page('<div hidden/><h3>What is a lease?</h3></div>')), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<svg aria-hidden="true"/><h3>What is a lease?</h3>')), [])
+        # round 50: a custom element's "/>" does not close it, and the winning inline declaration decides visibility
+        self.assertEqual(rule_ids(self.faq_page('<article-shell hidden/><h3>What is a lease?</h3></article-shell>')),
+                         ["CR11"])
+        # round 51: any HTML element ignores "/>" (<search hidden/>); inside <svg> it closes
+        self.assertEqual(rule_ids(self.faq_page('<search hidden/><h3>What is a lease?</h3></search>')), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<svg><g aria-hidden="true"/></svg><h3>What is a lease?</h3>')), [])
+        # round 52: inside <foreignObject> the slash is HTML again; a <title> in the body renders nothing
+        self.assertEqual(rule_ids(self.faq_page(
+            '<svg><foreignObject><div hidden/><h3>What is a lease?</h3></div></foreignObject></svg>')), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<title><h2>FAQ</h2><h3>What is a lease?</h3></title>')), ["CR11"])
+        # an unclosed script runs to the end of the file (round 54)
+        self.assertEqual(rule_ids(self.faq_page().replace("</body>", "<script>const q = 'What is a lease?';")), ["CR11"])
+        # round 55: a "<!--" inside a script is no comment, so the FAQPage after it is still read; a CSS comment is
+        # whitespace in an inline style
+        marker = self.faq_page().replace("<head>", '<head><script>const marker = "<!--";</script>', 1)
+        self.assertEqual(rule_ids(marker), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<div style="display:/**/none"><h3>What is a lease?</h3></div>')), ["CR11"])
+        # an invalid later value does not override (round 56)
+        self.assertEqual(rule_ids(self.faq_page('<div style="display:none; display:bogus"><h3>What is a lease?</h3></div>')),
+                         ["CR11"])
+        # round 57: a var() value resolves from the same style; an HTML tag inside <svg> breaks out of foreign content
+        self.assertEqual(rule_ids(self.faq_page(
+            '<div style="display:block; --state:none; display:var(--state)"><h3>What is a lease?</h3></div>')), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page(
+            '<div style="display:none; display:var(--missing, block)"><h3>What is a lease?</h3></div>')), [])
+        self.assertEqual(rule_ids(self.faq_page('<svg><div hidden/><h3>What is a lease?</h3></div></svg>')), ["CR11"])
+        # round 58: custom property names keep their case; <font color> breaks out of <svg>
+        self.assertEqual(rule_ids(self.faq_page('<div style="--State:none; display:var(--State)"><h3>What is a lease?</h3></div>')),
+                         ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<svg><font color="red" hidden/><h3>What is a lease?</h3></font></svg>')),
+                         ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<div style="display:none; display:block flow"><h3>What is a lease?</h3></div>')),
+                         [])
+        self.assertEqual(rule_ids(self.faq_page('<div style="display:none; display:block"><h3>What is a lease?</h3></div>')), [])
+        self.assertEqual(rule_ids(self.faq_page(
+            '<div style="display:none !important; display:block"><h3>What is a lease?</h3></div>')), ["CR11"])
+        encoded = self.FAQ_LD.replace('type="application/ld+json"', 'type="application/ld&#43;json"')
+        self.assertEqual(rule_ids(self.faq_page(ld=encoded)), ["CR11"])
+        noted = GOOD.replace("</body>", '<script data-note="ld+json">const sample = "ม.118";</script></body>')
+        self.assertEqual(rule_ids(noted), [])
+        # a character reference in an attribute value is decoded as the browser does; a "<body>" in a head comment does
+        # not start the body (Codex review of PR #80, round 40)
+        self.assertEqual(rule_ids(self.faq_page('<div style="display&#58;none"><h3>What is a lease?</h3></div>')), ["CR11"])
+        titled = self.faq_page().replace("</head>", "<!-- <body> --><title>What is a lease?</title></head>", 1)
+        self.assertEqual(rule_ids(titled), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<div title="section hidden by default"><h3>What is a lease?</h3></div>')), [])
+        # a FAQ class outside the body is no FAQ section (Codex review of PR #80, round 35)
+        outside = self.faq_page().replace('<html lang="th">', '<html lang="th" class="faq-page">', 1)
+        self.assertIn('class="faq-page"', outside)
+        self.assertEqual(rule_ids(outside), ["CR11"])
+        # a FAQ heading with inline markup is a FAQ heading (Codex review of PR #80, round 18)
+        for heading in ("<h2>Frequently <em>Asked</em> Questions</h2>", "<h2><em>คำถาม</em>ที่พบบ่อย</h2>"):
+            self.assertEqual(rule_ids(self.faq_page(heading)), [], heading)
+        # a nested template does not end the outer one (Codex review of PR #80, round 16)
+        self.assertEqual(rule_ids(self.faq_page("<template><template></template><h3>What is a lease?</h3></template>")),
+                         ["CR11"])
+        # nor is text in a hidden element (Codex review of PR #80, round 20)
+        self.assertEqual(rule_ids(self.faq_page("<div hidden><div>x</div><h3>What is a lease?</h3></div>")), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<div aria-hidden="true"><h3>What is a lease?</h3></div>')), ["CR11"])
+        # a ">" inside a quoted attribute does not end the tag (round 25)
+        self.assertEqual(rule_ids(self.faq_page('<div data-note="1 > 0" hidden><h3>What is a lease?</h3></div>')), ["CR11"])
+        # a style may quote a value with the other quote type (Codex review of PR #80, round 26)
+        self.assertEqual(rule_ids(self.faq_page(
+            """<div style="font-family:'Arial'; display:none"><h3>What is a lease?</h3></div>""")), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<div data-hidden="no"><h3>What is a lease?</h3></div>')), [])
+        # inline display:none hides too, and FAQPage may be written as its full IRI (Codex review of PR #80, round 21)
+        self.assertEqual(rule_ids(self.faq_page('<div style="color:red; display: none"><h3>What is a lease?</h3></div>')),
+                         ["CR11"])
+        for style in ("style=display:none", "style=visibility:hidden"):
+            self.assertEqual(rule_ids(self.faq_page(f"<div {style}><h3>What is a lease?</h3></div>")), ["CR11"], style)
+        # an unquoted style ends at whitespace: a later attribute value does not hide the element (round 24)
+        self.assertEqual(rule_ids(self.faq_page("<div style=color:red data-note=display:none><h3>What is a lease?</h3></div>")),
+                         [])
+        iri = '<script type="application/ld+json">{"@type":"https://schema.org/FAQPage","mainEntity":[{"@type":"Question","name":"Hidden?"}]}</script>'
+        self.assertEqual(rule_ids(self.faq_page(ld=iri)), ["CR11"])
+        # a ">" in a quoted attribute of the JSON-LD tag does not hide the block (round 27)
+        quoted = '<script data-note="1 > 0" type="application/ld+json">{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Hidden?"}]}</script>'
+        self.assertEqual(rule_ids(self.faq_page(ld=quoted)), ["CR11"])
+        # a script end tag may hold whitespace (round 32)
+        spaced = self.FAQ_LD.replace("</script>", "</script >")
+        self.assertEqual(rule_ids(self.faq_page(ld=spaced)), ["CR11"])
+        # a <title> repeating a question is not a visible FAQ (round 31)
+        titled = self.faq_page().replace("<head>", "<head><title>What is a lease?</title>", 1)
+        self.assertNotEqual(titled, self.faq_page())
+        self.assertEqual(rule_ids(titled), ["CR11"])
+
+    def test_w11_faq_wording_drift_is_reported_not_failed(self) -> None:
+        page = self.faq_page("<h3>What is a lease?</h3>")
+        self.assertEqual(rule_ids(page), [])
+        self.assertEqual([(rule, detail) for rule, detail in rules.check_warnings(page)],
+                         [("W11", "สัญญาเช่าต้องจดทะเบียนเมื่อใด?")])
+        self.assertEqual(rules.check_warnings(GOOD), [])
+
+    def test_cr12_free_form_section_hedge(self) -> None:
+        # VF-3: the hedge on las-cc-06 that the corpus answers
+        bad = ("[ส่วนกฎที่ว่าการเลิกสัญญาไม่กระทบสิทธิเรียกค่าเสียหายนั้น ใกล้เคียงกับข้อความท้ายมาตรา 391 มากกว่า — "
+               "ต้องยืนยันมาตราที่ถูกต้องหากต้องการยืนยันกฎนี้]")
+        self.assertEqual(rule_ids(GOOD.replace("</body>", f"<p>{bad}</p></body>")), ["CR12"])
+        self.assertEqual(rule_ids(GOOD.replace("</body>", "<p>ซึ่งต้องยืนยันมาตราอีกครั้ง</p></body>")), ["CR12"])
+        for fine in ("[ต้องยืนยันมาตรา]", "[ต้องยืนยันมาตรา: ผลของนิติกรรม]", "[ ต้องยืนยันมาตรา]",
+                     "[ต้องยืนยันมาตรา — ตรวจสอบตัวเลขกับตัวบท]"):
+            self.assertEqual(rule_ids(GOOD.replace("</body>", f"<p>{fine}</p></body>")), [], fine)
+        # a bracketed free-form hedge is not the standard flag (Codex review of PR #80, round 32)
+        for bad in ("[ต้องยืนยันมาตราที่ถูกต้อง]", "[ต้องยืนยันมาตราอีกครั้ง]"):
+            self.assertEqual(rule_ids(GOOD.replace("</body>", f"<p>{bad}</p></body>")), ["CR12"], bad)
+
+    def test_w12_free_form_english_hedge_is_reported(self) -> None:
+        for bad in ("License (governing CCC provisions to be confirmed)", "S-Curve industries (number to be verified)",
+                    "the section number is still to be verified"):
+            page = GOOD.replace("</body>", f"<p>{bad}</p></body>")
+            self.assertEqual(rule_ids(page), [], bad)
+            self.assertEqual([rule for rule, _ in rules.check_warnings(page)], ["W12"], bad)
+        fine = GOOD.replace("</body>", "<p>Act B.E. 2561 [unconfirmed — paragraph to be verified against the official "
+                                       "text] and [must verify section number]</p></body>")
+        self.assertEqual(rules.check_warnings(fine), [])
+
+    def test_cr13_invented_company_names(self) -> None:
+        # TPL-06: names that read like real companies
+        for bad in ("บริษัท ก่อสร้างมั่นคง จำกัด", "บริษัท ก่อสร้างมั่นคง จำกัดฯ", "บริษัท โซลาร์ เพาเวอร์ จำกัด", "ในบริษัท โรงพยาบาลมิตรภาพการแพทย์ จำกัด ซึ่ง",
+                    "บริษัท Startup จำกัด มีทุน", "<strong>บริษัท ก่อสร้าง จำกัด</strong>",
+                    # names of more than three words (Codex review of PR #80)
+                    "บริษัท ไทย โซลาร์ กรีน เพาเวอร์ จำกัด", "บริษัท สยาม ดิจิทัล เทค โซลูชั่นส์ แอนด์ เซอร์วิส จำกัด",
+                    # a trading name that starts with ผู้ is not a party role (Codex review of PR #80, round 35)
+                    "บริษัท ผู้ชนะ จำกัด", "บริษัท ผู้มั่งคั่ง จำกัด",
+                    # a role is a placeholder only as the whole name (Codex review of PR #80, round 36)
+                    "บริษัท รุ่งเรือง ผู้รับเหมา จำกัด", "บริษัท สยาม มหาชน จำกัด"):
+            self.assertEqual(rule_ids(GOOD.replace("</body>", f"<p>{bad}</p></body>")), ["CR13"], bad)
+        for fine in ("บริษัท A จำกัด (ผู้รับเหมาก่อสร้าง)", "บริษัท B จำกัด", "ห้างหุ้นส่วนจำกัด D แปรสภาพเป็นบริษัท D จำกัด",
+                     "บริษัท ก จำกัด", "บริษัท เอบีซี จำกัด", "บริษัท โลจิสติกส์ เอ จำกัด", "บริษัท _________________ จำกัด",
+                     "บริษัท ผู้ว่าจ้าง จำกัด", "บริษัท ผู้ให้บริการ จำกัด", "บริษัท ผู้รับเหมาก่อสร้าง จำกัด", "บริษัท มหาชน จำกัด", "บริษัทจำกัดและบริษัทมหาชนจำกัด",
+                     "บริษัท จำกัด กับห้างหุ้นส่วน", "บริษัท Legal Advance Solution จำกัด",
+                     "เอกชน / บริษัท มหาชน จำกัด", "ข้อเท็จจริงสมมติ: บริษัท A จำกัด"):
+            self.assertEqual(rule_ids(GOOD.replace("</body>", f"<p>{fine}</p></body>")), [], fine)
+
+    def test_cr14_script_tooltip_titles(self) -> None:
+        # TPL-07: js/legal-links.js tooltip titles; regex patterns and comments are not titles
+        script = ("// ปพพ. ม.291 comment\nvar defined = [\n"
+                  "  { pattern: /มาตรา\\s*291|ม\\.?\\s*291/, url: '/a.html', title: 'LAS Share 09 — หนี้ร่วม vs หนี้ลำพัง (ม.291)' },\n"
+                  "  { pattern: /^x$/, url: '/b.html', title: \"LAS Share 04 — อายุความ (ม.193)\" },\n"
+                  "  { pattern: /^y$/, url: '/c.html', title: 'LAS Share 09 — หนี้ร่วมและหนี้ส่วนตัว (มาตรา 291)' }\n];")
+        found = rules.check_script(script)
+        self.assertEqual([rule for rule, _ in found], ["CR14", "CR14"])
+        self.assertEqual(rules.check_script("title: 'LAS Share 01 — จ้างทำของกับจ้างแรงงาน (มาตรา 575)'"), [])
+        self.assertEqual(len(rules.check_script("title: 'หนี้ลำพัง'")), 1)
+        # a regex literal after an expression keyword is no string (round 48)
+        for code in ('switch (x) { case /"A vs B"/: break; }', 'function* g() { yield /"A vs B"/; }',
+                     'throw /"A vs B"/;'):
+            self.assertEqual(rules.check_script(code), [], code)
+        # assignments, setAttribute and concatenations are titles too (Codex review of PR #80, round 10)
+        self.assertEqual(len(rules.check_script("a.title = 'ค่าชดเชย (ม.118)';")), 1)
+        self.assertEqual(len(rules.check_script("el.setAttribute('title', \"A vs B\");")), 1)
+        # whitespace before the call is still a call (Codex review of PR #80, round 19)
+        self.assertEqual(len(rules.check_script("link.setAttribute ('title', 'ม.118');")), 1)
+        self.assertEqual(len(rules.check_script("link.setAttribute\n  ('title', 'ม.118');")), 1)
+        # a parenthesized value is still the title (Codex review of PR #80, round 20)
+        self.assertEqual(len(rules.check_script("link.title = ('ม.118');")), 1)
+        self.assertEqual(len(rules.check_script("link.setAttribute('TITLE', 'ม.118');")), 1)
+        # a concatenation across lines is one title (Codex review of PR #80, round 22)
+        self.assertEqual(len(rules.check_script("link.title = 'ม.' +\n  '118';")), 1)
+        self.assertEqual(len(rules.check_script("link.title = 'A '\n  + 'vs B';")), 1)
+        # a non-literal operand reads as a digit (Codex review of PR #80, round 24)
+        self.assertEqual(len(rules.check_script("link.title = 'ม.' + section;")), 1)
+        self.assertEqual(len(rules.check_script("link.setAttribute('title', 'ม.' + n);")), 1)
+        self.assertEqual(len(rules.check_script("link.title = 'ส่วน ม.' + n + ' ของ';")), 1)
+        self.assertEqual(len(rules.check_script("link.SetAttribute('title', 'ม.118');")), 1)  # any string, round 25
+        self.assertEqual(len(rules.check_script("link.setAttribute('title', ('A vs B'));")), 1)
+        self.assertEqual(len(rules.check_script("a.title = 'คำพิพากษา ' + n + ' ม.5';")), 1)
+        self.assertEqual(rules.check_script("a.title = 'คำพิพากษาศาลฎีกาที่ ' + dm[1] + '/' + dm[2] + ' — Kelomn';"), [])
+        # since round 25 every string of a site script is read, whatever form uses it (Codex review of PR #80)
+        self.assertEqual(len(rules.check_script("if (a.title === 'ม.1') {}")), 1)
+        # bracket assignments are titles; comments are not, and a URL is not a comment (Codex review of PR #80, round 11)
+        self.assertEqual(len(rules.check_script("link['title'] = 'ค่าชดเชย (ม.118)';")), 1)
+        self.assertEqual(len(rules.check_script('link["title"]="A vs B";')), 1)
+        self.assertEqual(rules.check_script("// title: 'foo vs bar'\n/* a.title = 'x vs y' */"), [])
+        self.assertEqual(len(rules.check_script("{ url: 'https://x.y/z', title: 'ม.5' }")), 1)
+        # an interpolated template literal is checked on its static text (Codex review of PR #80, round 12)
+        self.assertEqual(len(rules.check_script("link.title = `ค่าชดเชย ${section} (ม.118)`;")), 1)
+        self.assertEqual(rules.check_script("link.title = `คำพิพากษาศาลฎีกาที่ ${n}/${y}`;"), [])
+        # an expression that completes the abbreviation is caught (Codex review of PR #80, round 15)
+        self.assertEqual(len(rules.check_script("link.title = `ม.${section}`;")), 1)
+        self.assertEqual(len(rules.check_script("link.title = `ม.${format({section: 118})}`;")), 1)
+        # escapes are read as the browser renders them (Codex review of PR #80, round 16)
+        for escaped in ("a.title = 'ม.\\x31';", "a.title = 'ม.\\u0031';", "a.title = `ม.\\u{31}`;", "a.title = 'A \\x76s B';"):
+            self.assertEqual(len(rules.check_script(escaped)), 1, escaped)
+        self.assertEqual(rules.check_script("a.title = 'it\\'s fine';"), [])
+        # a quoted key is a title property too (Codex review of PR #80, round 13)
+        self.assertEqual(len(rules.check_script('{"title": "ค่าชดเชย (ม.118)"}')), 1)
+        self.assertEqual(len(rules.check_script("{'title': 'A vs B'}")), 1)
+        # a variable or a destructuring default named title is not a tooltip (Codex review of PR #80, round 14)
+        self.assertEqual(len(rules.check_script("const title = 'A vs B'; function f({title = 'A vs B'}) {}")), 2)
+        # a conditional branch is a string too (round 25); regex literals and comments are not
+        self.assertEqual(len(rules.check_script("link.title = thai ? 'ม.118' : 'Section 118';")), 1)
+        # a line continuation inside a literal (round 26)
+        self.assertEqual(len(rules.check_script("link.title = 'A vs\\\n B';")), 1)
+        # a nested template literal is read too (round 27)
+        self.assertEqual(len(rules.check_script("link.title = `${prefix} ${`ม.118`}`;")), 1)
+        # "vs" followed by punctuation, but not inside a word (Codex review of PR #80, round 32)
+        for bad in ("t = 'Joint (vs.) Several';", "t = 'A vs/B';", "t = 'A vs.';"):
+            self.assertEqual(len(rules.check_script(bad)), 1, bad)
+        self.assertEqual(rules.check_script("t = 'canvas versus vsync';"), [])
+        self.assertEqual(rules.check_script("link.title = `${prefix} ${`มาตรา 118`}`;"), [])
+        # a parenthesized operand, and a regex literal is not a string (Codex review of PR #80, round 28)
+        self.assertEqual(len(rules.check_script("link.title = 'ม.' + (100 + 18);")), 1)
+        self.assertEqual(rules.check_script('const r = /"A vs B"/; const s = a / b / c;'), [])
+        self.assertEqual(rules.check_script("x = { pattern: /'ม.1'/i, url: '/a' };"), [])
+        self.assertEqual(len(rules.check_script("y = a / 2; t = 'ม.' + n;")), 1)
+        self.assertEqual(rules.check_script("var p = /มาตรา\\s*291|ม\\.?\\s*291/; // ม.291"), [])
+        self.assertEqual(len(rules.check_script("a . title = 'A vs B';")), 1)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = make_site(Path(tmp), {"articles/good.html": GOOD, "js/legal-links.js": script})
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out), contextlib.redirect_stderr(out):
+                status = rules.main(["--root", str(root)])
+            self.assertEqual(status, 1)
+            self.assertIn("[CR14] js/legal-links.js", out.getvalue())
+            self.assertNotIn("articles/good.html", out.getvalue())
+
     def test_comments_are_ignored(self) -> None:
         page = GOOD.replace("</body>", "<!-- ฎ. 1091/2519 [ต้องยืนยันฎีกา] ม.391 peeseri.com --></body>")
         self.assertEqual(rule_ids(page), [])
@@ -237,6 +507,279 @@ class ContentRuleTests(unittest.TestCase):
             (root / "scripts" / "legal-kb" / "supreme-court-verified.json").unlink()
             with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
                 self.assertEqual(rules.main(["--root", str(root)]), 3)
+
+
+COMPLETE = """<html><head><style>.practice-note{} .faq-item{} .quick-answer{}</style></head><body>
+<div class="quick-answer"><strong>คำตอบโดยย่อ</strong> ...</div>
+<table><tr><td>x</td></tr></table>
+<div class="practice-note tip"><span class="pn-label">LAS Practice Note</span></div>
+<h2 class="section-heading">ข้อต่อสู้ของผู้ขายกับผู้ซื้อ Devil's Advocate</h2>
+<h2>คำถามที่พบบ่อย</h2><div class="faq-item"><div class="faq-q">Q1</div></div>
+<div class="ref-section"><h2>แหล่งอ้างอิงทางกฎหมาย</h2></div>
+<div class="disclaimer">ข้อสงวนสิทธิ์</div>
+</body></html>"""
+
+
+class TemplateStructureTests(unittest.TestCase):
+    def test_complete_page_has_every_marker(self) -> None:
+        self.assertEqual(template.missing_markers(COMPLETE), [])
+
+    def test_each_missing_marker_is_reported(self) -> None:
+        cuts = {
+            "quick-answer": ('<div class="quick-answer"><strong>คำตอบโดยย่อ</strong> ...</div>', ""),
+            "table": ("<table><tr><td>x</td></tr></table>", ""),
+            "practice-note": ('<div class="practice-note tip"><span class="pn-label">LAS Practice Note</span></div>', ""),
+            "counterargument": ("<h2 class=\"section-heading\">ข้อต่อสู้ของผู้ขายกับผู้ซื้อ Devil's Advocate</h2>", ""),
+            "faq": ('<h2>คำถามที่พบบ่อย</h2><div class="faq-item"><div class="faq-q">Q1</div></div>', ""),
+            "ref-section": ('<div class="ref-section"><h2>แหล่งอ้างอิงทางกฎหมาย</h2></div>', ""),
+            "disclaimer": ('<div class="disclaimer">ข้อสงวนสิทธิ์</div>', ""),
+        }
+        for marker, (old, new) in cuts.items():
+            self.assertIn(old, COMPLETE, marker)
+            self.assertEqual(template.missing_markers(COMPLETE.replace(old, new)), [marker], marker)
+
+    def test_locked_order(self) -> None:
+        # Codex review of PR #80: every marker present but in the wrong order must fail
+        self.assertEqual(template.order_problems(COMPLETE), [])
+        quick = '<div class="quick-answer"><strong>คำตอบโดยย่อ</strong> ...</div>'
+        refs = '<div class="ref-section"><h2>แหล่งอ้างอิงทางกฎหมาย</h2></div>'
+        swapped = COMPLETE.replace(quick, "@@Q@@").replace(refs, quick).replace("@@Q@@", refs)
+        self.assertEqual(template.missing_markers(swapped), [])
+        self.assertIn("out of order: ref-section before quick-answer", template.order_problems(swapped))
+        with tempfile.TemporaryDirectory() as tmp:
+            root = make_site(Path(tmp), {"articles/swapped.html": swapped, "articles/full.html": COMPLETE})
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out), contextlib.redirect_stderr(out):
+                status = template.main(["--root", str(root), "--strict", "articles/swapped.html", "articles/full.html"])
+            self.assertEqual(status, 1)
+            self.assertIn("[FAIL] articles/swapped.html: out of order", out.getvalue())
+            self.assertNotIn("full.html", out.getvalue().split("[TEMPLATE]")[0])
+        # a label split across inline tags is found and ordered like any other marker (Codex review of PR #80)
+        split = COMPLETE.replace(quick, "").replace('<div class="disclaimer">ข้อสงวนสิทธิ์</div>',
+                                                    '<div class="disclaimer">ข้อสงวนสิทธิ์</div><div>Quick <em>Answer</em></div>')
+        self.assertEqual(template.missing_markers(split), [])
+        self.assertIn("out of order: disclaimer before quick-answer", template.order_problems(split))
+        # two labels in one text node keep their own offsets (Codex review of PR #80)
+        pn = '<div class="practice-note tip"><span class="pn-label">LAS Practice Note</span></div>'
+        one_node = COMPLETE.replace(quick, "").replace(pn, "<p>LAS Practice Note &amp; Quick Answer</p>")
+        self.assertEqual(template.missing_markers(one_node), [])
+        self.assertIn("out of order: practice-note before quick-answer", template.order_problems(one_node))
+        # several section classes on one element are not several sections (Codex review of PR #80)
+        wrapper = ('<html><body><h1>T</h1><div class="quick-answer practice-note counterargument faq ref-section disclaimer">'
+                   "x</div><table><tr><td>x</td></tr></table></body></html>")
+        self.assertEqual(template.missing_markers(wrapper), [])
+        self.assertTrue(any(p.startswith("one element for two sections") for p in template.order_problems(wrapper)))
+        # the same holds when the closing sections pick a later hit of their own (Codex review of PR #80, round 6)
+        closing = COMPLETE.replace('<div class="ref-section"><h2>แหล่งอ้างอิงทางกฎหมาย</h2></div>\n<div class="disclaimer">ข้อสงวนสิทธิ์</div>',
+                                   '<div class="ref-section disclaimer"><h2>References</h2><p>Disclaimer: not legal advice</p></div>')
+        self.assertNotEqual(closing, COMPLETE)
+        self.assertEqual(template.missing_markers(closing), [])
+        self.assertIn("one element for two sections: ref-section and disclaimer", template.order_problems(closing))
+        # a label in running text belongs to its element too (Codex review of PR #80, round 7)
+        labels = COMPLETE.replace(quick, '<div class="quick-answer">Quick Answer and Practice Note</div>').replace(pn, "")
+        self.assertEqual(template.missing_markers(labels), [])
+        self.assertIn("one element for two sections: quick-answer and practice-note", template.order_problems(labels))
+        self.assertEqual(template.order_problems(COMPLETE.replace(pn, "<p>LAS Practice Note</p>")), [])
+        # two labels in one plain heading are not a shared section ("Practice Note: … Disclaimer" names a clause)
+        clause = COMPLETE.replace(pn, pn + '<h2 class="section-heading">LAS Practice Note: Human-in-the-Loop Disclaimer</h2>')
+        self.assertEqual(template.order_problems(clause), [])
+        # two labels alone in one plain element are one section (Codex review of PR #80, round 8), but not in a link
+        plain = COMPLETE.replace(quick, "<div>Quick Answer Practice Note</div>").replace(pn, "")
+        self.assertIn("one element for two sections: quick-answer and practice-note", template.order_problems(plain))
+        toc = COMPLETE.replace(pn, pn + '<ul><li><a href="#s7">LAS Practice Note: Human-in-the-Loop Disclaimer</a></li></ul>')
+        self.assertEqual(template.order_problems(toc), [])
+        # a label in a link names a section and is not one (Codex review of PR #80, round 9)
+        nav = COMPLETE.replace(pn, '<nav><a href="#qa">Quick Answer</a> <a href="#pn"><em>Practice</em> Note</a></nav>')
+        self.assertEqual(template.missing_markers(nav), ["practice-note"])
+        # without the link, a sub-heading that names a table of claims and defences does not move the counterargument
+        ledger = COMPLETE.replace(quick, quick + '<h3 class="sub-heading">Claim Ledger (ตารางวิเคราะห์มูลกรณีและข้อต่อสู้ทางกฎหมาย)</h3>')
+        self.assertEqual(template.order_problems(ledger), [])
+        # a label nested anywhere inside another section is not a section of its own (Codex review of PR #80, round 10)
+        nested = COMPLETE.replace(quick, '<div class="quick-answer"><b>Quick Answer</b> <span>Practice Note</span></div>').replace(pn, "")
+        self.assertIn("one element for two sections: quick-answer and practice-note", template.order_problems(nested))
+        # but a section element nested in another keeps its own label (div.disclaimer inside div.ref-section)
+        inner = COMPLETE.replace('<div class="ref-section"><h2>แหล่งอ้างอิงทางกฎหมาย</h2></div>\n<div class="disclaimer">ข้อสงวนสิทธิ์</div>',
+                                 '<div class="ref-section"><h2>แหล่งอ้างอิงทางกฎหมาย</h2><div class="disclaimer"><strong>ข้อสงวนสิทธิ์:</strong> x</div></div>')
+        self.assertNotEqual(inner, COMPLETE)
+        self.assertEqual(template.order_problems(inner), [])
+        # inline formatting cannot make two sections of one block (Codex review of PR #80, round 11)
+        inline = COMPLETE.replace(quick, "<p><span>Quick Answer</span> <span>Practice Note</span></p>").replace(pn, "")
+        self.assertIn("one element for two sections: quick-answer and practice-note", template.order_problems(inline))
+        # data-class is not a class, and inert <template> contents are not rendered (Codex review of PR #80, round 13)
+        self.assertIn("practice-note", template.missing_markers(COMPLETE.replace(pn, '<div data-class="practice-note">x</div>')))
+        self.assertEqual(template.missing_markers(COMPLETE.replace(pn, '<template><div class="practice-note">x</div></template>')),
+                         ["practice-note"])
+        nested_tpl = COMPLETE.replace(pn, '<template><template></template><div class="practice-note">x</div></template>')
+        self.assertEqual(template.missing_markers(nested_tpl), ["practice-note"])
+        self.assertEqual(template.missing_markers(COMPLETE.replace(pn, '<div hidden><div class="practice-note">x</div></div>')),
+                         ["practice-note"])
+        self.assertEqual(template.missing_markers(COMPLETE.replace(
+            pn, '<div style="display:none"><div class="practice-note">x</div></div>')), ["practice-note"])
+        # <noscript> content is not shown to visitors with scripting on (Codex review of PR #80, round 29)
+        self.assertEqual(template.missing_markers(COMPLETE.replace(pn, '<noscript><div class="practice-note">x</div></noscript>')),
+                         ["practice-note"])
+        # a refresh tag in a comment does not make the page a redirect stub that strict mode skips (round 20)
+        stub = COMPLETE.replace("<body>", '<body><!-- <meta http-equiv="refresh" content="0;url=/x"> -->').replace(pn, "")
+        with tempfile.TemporaryDirectory() as tmp:
+            root = make_site(Path(tmp), {"articles/stub.html": stub})
+            with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                self.assertEqual(template.main(["--root", str(root), "--strict", "articles/stub.html"]), 1)
+        # a real refresh tag with a quoted ">" in another attribute is a redirect (Codex review of PR #80, round 33)
+        self.assertTrue(pages.is_redirect_stub('<meta data-note="1 > 0" http-equiv="refresh" content="0; url=/new">'))
+        self.assertFalse(pages.is_redirect_stub('<meta data-note="http-equiv=refresh" name="x">'))
+        # a refresh with no destination only reloads the page: the article is still checked (round 41)
+        for reload in ('<meta http-equiv="refresh" content="30">', '<meta http-equiv="refresh">',
+                       '<meta http-equiv="refresh" content="0; url=">'):
+            self.assertFalse(pages.is_redirect_stub(reload), reload)
+        self.assertTrue(pages.is_redirect_stub('<meta http-equiv="refresh" content="5, /b.html">'))
+        # a refresh inside an inert <template> redirects nothing (round 42)
+        self.assertFalse(pages.is_redirect_stub('<template><meta http-equiv="refresh" content="0;url=/new"></template>'))
+        # nor one written as source in a <textarea> (round 43)
+        self.assertFalse(pages.is_redirect_stub('<textarea><meta http-equiv="refresh" content="0;url=/new"></textarea>'))
+        self.assertFalse(pages.is_redirect_stub(  # nor in <title> text (round 46)
+            '<title>How to write <meta http-equiv="refresh" content="0;/new"></title>'))
+        # a "<textarea>" inside a textarea is text: the first end tag closes it, and a real refresh after it counts
+        self.assertTrue(pages.is_redirect_stub(
+            '<textarea><textarea></textarea><meta http-equiv="refresh" content="0;url=/new">'))  # round 48
+        self.assertFalse(pages.is_redirect_stub('<xmp><meta http-equiv="refresh" content="0;url=/new"></xmp>'))  # round 49
+        self.assertTrue(pages.is_redirect_stub(  # a "<!--" inside an iframe fallback is no comment (round 58)
+            '<iframe><!--</iframe><meta http-equiv="refresh" content="0;/new">'))
+        self.assertFalse(pages.is_redirect_stub(  # a custom element is no <meta> (round 51)
+            '<meta-refresh http-equiv="refresh" content="0;/new"></meta-refresh>'))
+        for unclosed in ('<script>const example = \'<meta http-equiv="refresh" content="0;/new">\';',  # round 53
+                         '<style>/* <meta http-equiv="refresh" content="0;/new"> */',
+                         '<title>Example <meta http-equiv="refresh" content="0;/new">',
+                         '<!-- <meta http-equiv="refresh" content="0;/new">'):
+            self.assertFalse(pages.is_redirect_stub(unclosed), unclosed)
+        # a "<body>" inside the raw <title> text does not start the body (round 48)
+        self.assertEqual(pages.page_body('<title>x <body> y</title></head><body><p>z</p>'), "<p>z</p>")
+        # markup inside a <textarea> is text, not elements (round 33)
+        self.assertEqual(template.missing_markers(COMPLETE.replace(pn, '<textarea><div class="practice-note">x</div></textarea>'),
+                                                  labels=False), ["practice-note"])
+        # nor does one inside a script string (round 30)
+        scripted = COMPLETE.replace("<body>", """<body><script>const s = '<meta http-equiv="refresh" content="0">';</script>""").replace(pn, "")
+        with tempfile.TemporaryDirectory() as tmp:
+            root = make_site(Path(tmp), {"articles/scripted.html": scripted})
+            with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                self.assertEqual(template.main(["--root", str(root), "--strict", "articles/scripted.html"]), 1)
+        # inline markup joins Thai text as the browser renders it (Codex review of PR #80, round 17)
+        thai = COMPLETE.replace(quick, "<h2><strong>คำตอบ</strong>โดยย่อ</h2>")
+        self.assertEqual(template.missing_markers(thai), [])
+        self.assertEqual(template.order_problems(thai), [])
+        heading = COMPLETE.replace('<h2>คำถามที่พบบ่อย</h2><div class="faq-item"><div class="faq-q">Q1</div></div>',
+                                   "<h2><em>คำถาม</em>ที่พบบ่อย</h2>")
+        self.assertEqual(template.missing_markers(heading), [])
+        # on a --strict page a label in prose is not a section: classes and headings only (Codex review of PR #80,
+        # round 18); the legacy report still accepts it
+        prose = COMPLETE.replace(pn, "<p>For details, read the Practice Note below.</p>")
+        self.assertEqual(template.missing_markers(prose), [])
+        self.assertEqual(template.missing_markers(prose, labels=False), ["practice-note"])
+        self.assertEqual(template.missing_markers(COMPLETE, labels=False), [])
+        with tempfile.TemporaryDirectory() as tmp:
+            root = make_site(Path(tmp), {"articles/prose.html": prose})
+            with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                self.assertEqual(template.main(["--root", str(root), "--strict", "articles/prose.html"]), 1)
+                self.assertEqual(template.main(["--root", str(root), "articles/prose.html"]), 0)
+        # unquoted classes count; Quick Answer and Disclaimer headings count when they open with the label
+        # (Codex review of PR #80, round 23)
+        unquoted = COMPLETE.replace('<div class="quick-answer">', "<div class=quick-answer>").replace(
+            '<div class="disclaimer">', "<div class=disclaimer>")
+        self.assertEqual(template.missing_markers(unquoted, labels=False), [])
+        headings = COMPLETE.replace(quick, "<h2>Quick Answer</h2><p>x</p>").replace(
+            '<div class="disclaimer">ข้อสงวนสิทธิ์</div>', "<h2>ข้อสงวนสิทธิ์</h2><p>x</p>")
+        self.assertEqual(template.missing_markers(headings, labels=False), [])
+        self.assertEqual(template.order_problems(headings, labels=False), [])
+        # a ">" inside a heading's attribute does not end its start tag (round 26)
+        fake = COMPLETE.replace(quick, '<h2 data-note=">Quick Answer">Nothing</h2>')
+        self.assertIn("quick-answer", template.missing_markers(fake, labels=False))
+        clause_head = COMPLETE.replace(pn, '<h2 class="section-heading">LAS Practice Note: Human-in-the-Loop Disclaimer</h2>')
+        self.assertEqual(template.order_problems(clause_head, labels=False), [])
+        # an end tag may carry whitespace before its ">" (round 36)
+        spaced = "<html><body><h2>Quick Answer</h2 ><p>x</p></body></html>"
+        self.assertNotIn("quick-answer", template.missing_markers(spaced, labels=False))
+        # a class inside another attribute's value marks nothing (round 39)
+        noted = ('<html><body>' + "".join(f'<div data-note="x class={c}">x</div>' for c in
+                 ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer")) + "</body></html>")
+        self.assertEqual(template.missing_markers(noted, labels=False), template.missing_markers(
+            "<html><body><p>text</p></body></html>", labels=False))
+        titled = COMPLETE.replace('<div class="quick-answer">', '<div class="quick-answer" title="shown, not hidden">')
+        self.assertEqual(template.missing_markers(titled, labels=False), [])
+        # a void element marks no section, whatever its class (round 44)
+        void = ('<html><body>' + "".join(f'<input type="hidden" class="{c}"><meta class="{c}">' for c in
+                ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer")) + "</body></html>")
+        self.assertEqual(template.missing_markers(void, labels=False), template.missing_markers(
+            "<html><body><p>text</p></body></html>", labels=False))
+        # headings and a table written inside an attribute value are no structure (round 47)
+        example = ('<html><body><div data-example="<h2>Quick Answer</h2><h2>Practice Note</h2><h2>Counterargument</h2>'
+                   '<h2>FAQ</h2><h2>References</h2><h2>Disclaimer</h2><table></table>">x</div></body></html>')
+        self.assertEqual(template.missing_markers(example, labels=False), template.missing_markers(
+            "<html><body><p>text</p></body></html>", labels=False))
+        # a custom <table-widget> is no table (round 51)
+        self.assertIn("table", template.missing_markers(COMPLETE.replace("<table><tr><td>x</td></tr></table>",
+                                                                         "<table-widget></table-widget>"), labels=False))
+        # markup in an unclosed script marks nothing (round 54)
+        unclosed = ('<html><body><script>/*' + "".join(f'<div class="{c}">x</div>' for c in
+                    ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer")) + "<table></table>")
+        self.assertEqual(template.missing_markers(unclosed, labels=False), template.missing_markers(
+            "<html><body><p>text</p></body></html>", labels=False))
+        # nothing after <plaintext> is markup (round 55)
+        plain = ('<html><body><plaintext>' + "".join(f'<div class="{c}">x</div>' for c in
+                 ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer")) + "<table></table>")
+        self.assertEqual(template.missing_markers(plain, labels=False), template.missing_markers(
+            "<html><body><p>text</p></body></html>", labels=False))
+        # an <xmp> example marks nothing (round 49)
+        xmp = ('<html><body><xmp>' + "".join(f'<div class="{c}">x</div>' for c in
+               ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer")) + "</xmp></body></html>")
+        self.assertEqual(template.missing_markers(xmp, labels=False), template.missing_markers(
+            "<html><body><p>text</p></body></html>", labels=False))
+        # an <iframe> fallback body marks nothing (round 38)
+        framed = ('<html><body><iframe src="x.html">' + "".join(f'<div class="{c}">x</div>' for c in
+                  ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer")) + "<table></table></iframe></body></html>")
+        self.assertEqual(len(template.missing_markers(framed, labels=False)), len(template.missing_markers(
+            "<html><body><p>text</p></body></html>", labels=False)))
+        # only the <body> counts: classes and a table in <head> mark nothing (round 34)
+        head_only = ('<html><head>' + "".join(f'<meta class="{c}">' for c in
+                     ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer"))
+                     + '<table></table><!-- <body> --></head><body><p>text</p></body></html>')
+        self.assertEqual(len(template.missing_markers(head_only, labels=False)), len(template.missing_markers(
+            "<html><body><p>text</p></body></html>", labels=False)))
+        self.assertTrue(template.missing_markers(head_only, labels=False))
+        # a class name counts only at the start of a class token
+        self.assertIn("faq", template.missing_markers(COMPLETE.replace(
+            '<h2>คำถามที่พบบ่อย</h2><div class="faq-item"><div class="faq-q">Q1</div></div>', '<div class="no-faq">x</div>')))
+        # a body heading that mentions อ้างอิง before the FAQ does not move the closing references section
+        early = COMPLETE.replace(quick, quick + "<h3>ตารางสรุปมาตราที่อ้างอิง</h3>")
+        self.assertEqual(template.order_problems(early), [])
+
+    def test_css_comments_and_prose_do_not_count(self) -> None:
+        # the inline CSS of every page names .practice-note and .faq-item; prose "อีกฝ่ายหนึ่ง" is not a section
+        page = COMPLETE.replace('<div class="practice-note tip"><span class="pn-label">LAS Practice Note</span></div>',
+                                "<!-- Practice Note --><p>คู่สัญญาอีกฝ่ายหนึ่ง</p>")
+        page = page.replace("<h2 class=\"section-heading\">ข้อต่อสู้ของผู้ขายกับผู้ซื้อ Devil's Advocate</h2>", "")
+        self.assertEqual(template.missing_markers(page), ["practice-note", "counterargument"])
+
+    def test_report_only_unless_strict(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = make_site(Path(tmp), {
+                "articles/full.html": COMPLETE,
+                "articles/legacy.html": "<p>old page</p>",
+                "articles/stub.html": '<meta http-equiv="refresh" content="0;url=x">',
+            })
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out), contextlib.redirect_stderr(out):
+                status = template.main(["--root", str(root)])
+            self.assertEqual(status, 0)
+            self.assertIn("[REPORT] articles/legacy.html: missing quick-answer", out.getvalue())
+            self.assertNotIn("full.html", out.getvalue())
+            self.assertNotIn("stub.html", out.getvalue())
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out), contextlib.redirect_stderr(out):
+                status = template.main(["--root", str(root), "--strict", "articles/legacy.html", "articles/full.html"])
+            self.assertEqual(status, 1)
+            self.assertIn("[FAIL] articles/legacy.html", out.getvalue())
+            with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                self.assertEqual(template.main(["--root", str(root), "--strict", "articles/full.html"]), 0)
+                self.assertEqual(template.main(["--root", str(root), "--strict", "articles/missing.html"]), 1)
 
 
 class InternalLinkTests(unittest.TestCase):

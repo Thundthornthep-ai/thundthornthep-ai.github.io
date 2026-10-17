@@ -8,6 +8,7 @@ Official source: https://www.ocs.go.th/searchlaw-law
 
 Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
+- มาตรา 2
 - มาตรา 39
 - มาตรา 49
 - มาตรา 52

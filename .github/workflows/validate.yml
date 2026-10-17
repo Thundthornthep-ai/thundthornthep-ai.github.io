@@ -19,6 +19,8 @@ on:
       - 'blog/**'
       - 'en/blog/**'
       - 'learning-hub/**'
+      # Tooltip titles in the site scripts are checked by the content rules (CR14).
+      - 'js/**'
       - 'scripts/validate-knowledge-hub.js'
       - 'scripts/validate-knowledge-slugs.js'
       - 'scripts/resolve-validate-range.sh'
@@ -28,6 +30,7 @@ on:
       - 'scripts/test-public-citation-firewall.py'
       - 'scripts/las_public_pages.py'
       - 'scripts/validate-content-rules.py'
+      - 'scripts/check-template-structure.py'
       - 'scripts/check-internal-links.py'
       - 'scripts/check-sitemap-coverage.py'
       - 'scripts/test-content-gates.py'
@@ -45,6 +48,8 @@ on:
       - 'blog/**'
       - 'en/blog/**'
       - 'learning-hub/**'
+      # Tooltip titles in the site scripts are checked by the content rules (CR14).
+      - 'js/**'
       - 'scripts/validate-knowledge-hub.js'
       - 'scripts/validate-knowledge-slugs.js'
       - 'scripts/resolve-validate-range.sh'
@@ -54,6 +59,7 @@ on:
       - 'scripts/test-public-citation-firewall.py'
       - 'scripts/las_public_pages.py'
       - 'scripts/validate-content-rules.py'
+      - 'scripts/check-template-structure.py'
       - 'scripts/check-internal-links.py'
       - 'scripts/check-sitemap-coverage.py'
       - 'scripts/test-content-gates.py'
@@ -115,6 +121,27 @@ jobs:
       - name: Run content rules (fail closed)
         if: success() || failure()
         run: python3 scripts/validate-content-rules.py
+
+      - name: Check locked template structure (new pages fail closed)
+        if: success() || failure()
+        shell: bash
+        # Lists the article pages that miss a locked template part (quick answer, Practice Note, counterargument, FAQ,
+        # references, disclaimer, table). Legacy pages are reported, not failed; an article page ADDED (or moved to a new
+        # slug, git status R) in the compared range is named with --strict and fails the build when a part is missing (gap round TPL-01).
+        env:
+          RANGE_BASE: ${{ steps.range.outputs.base }}
+          RANGE_TARGET: ${{ steps.range.outputs.target }}
+        run: |
+          set -euo pipefail
+          python3 scripts/check-template-structure.py
+          mapfile -t added < <(git diff --name-only --diff-filter=AR "$RANGE_BASE" "$RANGE_TARGET" -- \
+            'articles/*.html' 'en/articles/*.html')
+          if [ "${#added[@]}" -gt 0 ]; then
+            echo "New article pages in $RANGE_BASE..$RANGE_TARGET: ${added[*]}"
+            python3 scripts/check-template-structure.py --strict "${added[@]}"
+          else
+            echo "No article page added in $RANGE_BASE..$RANGE_TARGET"
+          fi
 
       - name: Run internal link check (fail closed)
         if: success() || failure()

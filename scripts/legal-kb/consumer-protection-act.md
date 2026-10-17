@@ -22,6 +22,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 35 ฉ
 - มาตรา 35 อัฏฐ
 - มาตรา 47
+- มาตรา 48
 - มาตรา 57
 - มาตรา 62
 - มาตรา 23
