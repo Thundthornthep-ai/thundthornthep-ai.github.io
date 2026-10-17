@@ -362,6 +362,11 @@ class ContentRuleTests(unittest.TestCase):
         # a nested template literal is read too (round 27)
         self.assertEqual(len(rules.check_script("link.title = `${prefix} ${`ม.118`}`;")), 1)
         self.assertEqual(rules.check_script("link.title = `${prefix} ${`มาตรา 118`}`;"), [])
+        # a parenthesized operand, and a regex literal is not a string (Codex review of PR #80, round 28)
+        self.assertEqual(len(rules.check_script("link.title = 'ม.' + (100 + 18);")), 1)
+        self.assertEqual(rules.check_script('const r = /"A vs B"/; const s = a / b / c;'), [])
+        self.assertEqual(rules.check_script("x = { pattern: /'ม.1'/i, url: '/a' };"), [])
+        self.assertEqual(len(rules.check_script("y = a / 2; t = 'ม.' + n;")), 1)
         self.assertEqual(rules.check_script("var p = /มาตรา\\s*291|ม\\.?\\s*291/; // ม.291"), [])
         self.assertEqual(len(rules.check_script("a . title = 'A vs B';")), 1)
         with tempfile.TemporaryDirectory() as tmp:

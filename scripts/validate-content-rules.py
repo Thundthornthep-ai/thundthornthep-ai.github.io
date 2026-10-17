@@ -209,7 +209,8 @@ OFFICIAL_COMPANY_NAMES = frozenset({"Legal Advance Solution"})
 # a template literal may hold ${…} expressions with their own strings, nested template literals included
 JS_TEMPLATE_BODY = r"""(?:[^`\\$]|\\[\s\S]|\$(?!\{)|\$\{(?:[^{}`]|`(?:[^`\\]|\\[\s\S])*`|\{[^{}]*\})*\})*"""
 JS_LITERAL = r"""(?:'(?:[^'\\\n]|\\[\s\S])*'|"(?:[^"\\\n]|\\[\s\S])*"|`""" + JS_TEMPLATE_BODY + r"""`)"""
-JS_OPERAND = r"""[A-Za-z_$][\w$.]*(?:\[[^\]\n]*\]|\([^)\n]*\))*"""
+# an operand: a name with its member and call suffixes, a number, or a parenthesized expression ('ม.' + (100 + 18))
+JS_OPERAND = r"""(?:[A-Za-z_$][\w$.]*(?:\[[^\]\n]*\]|\([^()\n]*(?:\([^()\n]*\)[^()\n]*)*\))*|\d[\w.]*|\([^()\n]*(?:\([^()\n]*\)[^()\n]*)*\))"""
 SCRIPT_STRING = re.compile(
     rf"""(?:{JS_OPERAND}\s*\+\s*)?{JS_LITERAL}(?:\s*\+\s*(?:{JS_LITERAL}|{JS_OPERAND}))*"""
 )
@@ -407,10 +408,41 @@ def check_warnings(raw: str) -> list[tuple[str, str]]:
     return warnings
 
 
+REGEX_PREFIX = re.compile(r"(?:^|[(,=:\[!&|?{};+\-*%~^<>]|\breturn|\btypeof)\s*$")
+
+
+def regex_may_start(before: str) -> bool:
+    return REGEX_PREFIX.search(before[-40:]) is not None
+
+
+def regex_end(raw: str, start: int) -> int:
+    """The end of the regex literal opening at `start` (its flags included), or 0 when it does not close on its line."""
+    j, in_class = start + 1, False
+    while j < len(raw):
+        c = raw[j]
+        if c == "\\":
+            j += 2
+            continue
+        if c == "\n":
+            return 0
+        if in_class:
+            in_class = c != "]"
+        elif c == "[":
+            in_class = True
+        elif c == "/":
+            j += 1
+            while j < len(raw) and raw[j].isalpha():
+                j += 1
+            return j
+        j += 1
+    return 0
+
+
 def strip_js_comments(raw: str) -> str:
-    """The script with its // and /* */ comments blanked, leaving string literals alone ('https://…' is not a
-    comment). Regex literals are not parsed: one that holds a quote leaves the rest of its line unstripped, so a
-    commented-out title there is still checked (fail closed)."""
+    """The script with its // and /* */ comments and its regex literals (/"A vs B"/, /มาตรา\\s*291/) blanked, leaving
+    string literals alone ('https://…' is neither). A "/" starts a regex where an expression may begin (after "(", ",",
+    "=", ":", an operator, a bracket or "return"); elsewhere it is division. A regex that does not close on its line is
+    left as it is (fail closed)."""
     out: list[str] = []
     i, n, quote = 0, len(raw), ""
     while i < n:
@@ -438,6 +470,13 @@ def strip_js_comments(raw: str) -> str:
             out.append("".join(c if c == "\n" else " " for c in raw[i:end]))
             i = end
             continue
+        elif ch == "/" and regex_may_start("".join(out)):
+            end = regex_end(raw, i)
+            if end:
+                out.append(" " * (end - i))
+                i = end
+                continue
+            out.append(ch)
         else:
             out.append(ch)
         i += 1
