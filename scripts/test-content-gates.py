@@ -262,6 +262,10 @@ class ContentRuleTests(unittest.TestCase):
         # a ">" in a quoted attribute of the JSON-LD tag does not hide the block (round 27)
         quoted = '<script data-note="1 > 0" type="application/ld+json">{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Hidden?"}]}</script>'
         self.assertEqual(rule_ids(self.faq_page(ld=quoted)), ["CR11"])
+        # a <title> repeating a question is not a visible FAQ (round 31)
+        titled = self.faq_page().replace("<head>", "<head><title>What is a lease?</title>", 1)
+        self.assertNotEqual(titled, self.faq_page())
+        self.assertEqual(rule_ids(titled), ["CR11"])
 
     def test_w11_faq_wording_drift_is_reported_not_failed(self) -> None:
         page = self.faq_page("<h3>What is a lease?</h3>")

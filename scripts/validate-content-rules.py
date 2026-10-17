@@ -339,6 +339,15 @@ def _faq_pages(node):
             yield from _faq_pages(value)
 
 
+BODY_START = re.compile(r"<body\b" + pages.TAG_BODY + ">", re.IGNORECASE)
+
+
+def page_body(raw: str) -> str:
+    """The markup after the <body> start tag (the whole page when it has none)."""
+    start = BODY_START.search(raw)
+    return raw[start.end():] if start else raw
+
+
 def is_ld_json(script: re.Match[str]) -> bool:
     return "ld+json" in script.group(1).lower()
 
@@ -380,7 +389,8 @@ def check_faq(raw: str) -> tuple[list[tuple[str, str]], list[tuple[str, str]]]:
     questions = faq_questions(raw, faqs)
     # whitespace is ignored on both sides: a tag inside a question ("What is a <em>lease</em>?") becomes a space in
     # the reader text, and Thai text has no word spaces to lose
-    shown = re.sub(r"\s+", "", reader_text(raw))
+    # only the page body is read: a <title> that repeats a question is not a FAQ (Codex review of PR #80)
+    shown = re.sub(r"\s+", "", reader_text(page_body(raw)))
     hidden = [question for question in questions if re.sub(r"\s+", "", question) not in shown]
     markup = pages.strip_unrendered(STYLE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw))))
     has_section = bool(FAQ_CLASS.search(markup) or any(
