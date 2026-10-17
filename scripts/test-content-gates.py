@@ -273,6 +273,11 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(rule_ids(self.faq_page(
             '<div style="display:none; display:var(--missing, block)"><h3>What is a lease?</h3></div>')), [])
         self.assertEqual(rule_ids(self.faq_page('<svg><div hidden/><h3>What is a lease?</h3></div></svg>')), ["CR11"])
+        # round 58: custom property names keep their case; <font color> breaks out of <svg>
+        self.assertEqual(rule_ids(self.faq_page('<div style="--State:none; display:var(--State)"><h3>What is a lease?</h3></div>')),
+                         ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<svg><font color="red" hidden/><h3>What is a lease?</h3></font></svg>')),
+                         ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<div style="display:none; display:block flow"><h3>What is a lease?</h3></div>')),
                          [])
         self.assertEqual(rule_ids(self.faq_page('<div style="display:none; display:block"><h3>What is a lease?</h3></div>')), [])
@@ -637,6 +642,8 @@ class TemplateStructureTests(unittest.TestCase):
         self.assertTrue(pages.is_redirect_stub(
             '<textarea><textarea></textarea><meta http-equiv="refresh" content="0;url=/new">'))  # round 48
         self.assertFalse(pages.is_redirect_stub('<xmp><meta http-equiv="refresh" content="0;url=/new"></xmp>'))  # round 49
+        self.assertTrue(pages.is_redirect_stub(  # a "<!--" inside an iframe fallback is no comment (round 58)
+            '<iframe><!--</iframe><meta http-equiv="refresh" content="0;/new">'))
         self.assertFalse(pages.is_redirect_stub(  # a custom element is no <meta> (round 51)
             '<meta-refresh http-equiv="refresh" content="0;/new"></meta-refresh>'))
         for unclosed in ('<script>const example = \'<meta http-equiv="refresh" content="0;/new">\';',  # round 53

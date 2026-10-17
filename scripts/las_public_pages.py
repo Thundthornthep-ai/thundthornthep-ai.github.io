@@ -121,10 +121,11 @@ VAR_CALL = re.compile(r"var\(\s*(--[\w-]+)\s*(?:,\s*([^()]*))?\)", re.IGNORECASE
 
 
 def resolve_vars(value: str, custom: dict[str, str]) -> str:
-    """`value` with each var(--name[, fallback]) replaced by the custom property set in the same style (lower-cased),
-    or by its fallback; nested var() calls are resolved up to five levels deep."""
+    """`value` with each var(--name[, fallback]) replaced by the custom property set in the same style, or by its
+    fallback; custom property names are case-sensitive (--State is not --state; Codex review of PR #80), and nested
+    var() calls are resolved up to five levels deep."""
     for _ in range(5):
-        resolved = VAR_CALL.sub(lambda call: custom.get(call.group(1), call.group(2) or "").lower(), value)
+        resolved = VAR_CALL.sub(lambda call: custom.get(call.group(1), call.group(2) or ""), value)
         if resolved == value:
             break
         value = resolved
@@ -144,21 +145,23 @@ def winning_declaration(style: str, prop: str) -> str:
         name, colon, value = declaration.partition(":")
         if not colon or name.strip().lower() != prop:
             continue
-        value = value.strip().lower()
-        is_important = value.endswith("!important")
+        value = value.strip()
+        is_important = value.lower().endswith("!important")
         if is_important:
             value = value[: -len("!important")].strip()
-        if "var(" in value:
+        if "var(" in value.lower():
             # a var() declaration is valid when parsed, so it always overrides; it takes the custom property's value
             # (or the fallback), and a value that is still not valid makes the property its initial value
             # (Codex review of PR #80)
-            value = resolve_vars(value, custom)
+            value = resolve_vars(value, custom).lower()
             if not valid_value(prop, value):
                 value = "inline" if prop == "display" else "visible"
         # an invalid value is dropped by the browser and does not override ("display:none; display:bogus" stays
         # hidden; Codex review of PR #80)
-        elif not valid_value(prop, value):
-            continue
+        else:
+            value = value.lower()
+            if not valid_value(prop, value):
+                continue
         if is_important:
             important = value
         else:
@@ -195,10 +198,11 @@ def mask_attribute_markup(html: str) -> str:
         return QUOTED_VALUE.sub(lambda value: value.group(0).replace("<", " ").replace(">", " "), match.group(0))
     return START_TAG.sub(tag, html)
 HTML_COMMENT = re.compile(r"<!--.*?(?:-->|\Z)", re.DOTALL)
-# comments and raw-text elements read left to right in one pass: a "<!--" inside a script, style, textarea, title or
-# xmp is that element's text, not a comment (const marker = "<!--"; Codex review of PR #80)
-COMMENT_OR_RAW_TEXT = re.compile(r"<!--.*?(?:-->|\Z)|<(script|style|textarea|title|xmp)(?=[\s/>])" + TAG_BODY
-                                 + r">.*?(?:</\1\s*>|\Z)", re.DOTALL | re.IGNORECASE)
+# comments and raw-text elements read left to right in one pass: a "<!--" inside a script, style, textarea, title,
+# xmp, iframe, noembed, noframes, noscript or plaintext is that element's text, not a comment (const marker = "<!--"; Codex review of PR #80)
+COMMENT_OR_RAW_TEXT = re.compile(r"<!--.*?(?:-->|\Z)|<plaintext(?=[\s/>])" + TAG_BODY + r">.*"
+                                 r"|<(script|style|textarea|title|xmp|iframe|noembed|noframes|noscript)(?=[\s/>])"
+                                 + TAG_BODY + r">.*?(?:</\1\s*>|\Z)", re.DOTALL | re.IGNORECASE)
 
 
 def strip_comments(html: str) -> str:
@@ -263,7 +267,8 @@ RAW_TEXT = {"textarea", "iframe", "noembed", "noframes", "noscript", "title", "x
 
 
 # HTML start tags that break out of SVG or MathML: the parser leaves foreign content and reads them as HTML, so their
-# slash does not close them (<svg><div hidden/>…; HTML Standard, "in foreign content"; Codex review of PR #80)
+# slash does not close them (<svg><div hidden/>…; HTML Standard, "in foreign content"; Codex review of PR #80); so does
+# <font> with a color, face or size attribute
 FOREIGN_BREAKOUT = {
     "b", "big", "blockquote", "body", "br", "center", "code", "dd", "div", "dl", "dt", "em", "embed", "h1", "h2", "h3",
     "h4", "h5", "h6", "head", "hr", "i", "img", "li", "listing", "menu", "meta", "nobr", "ol", "p", "pre", "ruby", "s",
@@ -274,8 +279,14 @@ FOREIGN_BREAKOUT = {
 def self_closing(name: str, tag: str, foreign: bool = False) -> bool:
     """Whether a start tag opens no subtree: a void element, or "/>" in foreign content (`foreign`: the tag is inside
     an <svg> or <math> element) or on <svg> or <math> itself."""
-    foreign = foreign and name not in FOREIGN_BREAKOUT
+    breakout = name in FOREIGN_BREAKOUT or (name == "font" and any(
+        attribute in attributes(tag[len(name) + 1:-1]) for attribute in ("color", "face", "size")))
+    foreign = foreign and not breakout
     return name in VOID_TAGS or (tag.endswith("/>") and (foreign or name in FOREIGN_ROOTS))
+
+
+# a start or end tag with a name: "<!--" is no tag, so "<!--</iframe>" still ends the iframe (Codex review of PR #80)
+NAMED_TAG = re.compile(r"<(/?)([A-Za-z][A-Za-z0-9-]*)(?=[\s/>])" + TAG_BODY + ">")
 
 
 def strip_unrendered(html: str) -> str:
@@ -286,8 +297,8 @@ def strip_unrendered(html: str) -> str:
     out: list[str] = []
     pos, skip, depth = 0, "", 0
     foreign = foreign_test(html)
-    for tag in ANY_TAG.finditer(html):
-        closing, name = tag.group(1) == "/", (tag.group(2) or "").lower()
+    for tag in NAMED_TAG.finditer(html):
+        closing, name = tag.group(1) == "/", tag.group(2).lower()
         if not name:
             continue
         if skip:
