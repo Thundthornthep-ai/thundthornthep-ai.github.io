@@ -156,6 +156,26 @@ class ContentRuleTests(unittest.TestCase):
         split = GOOD.replace("</body>", "<p><span>Dr.</span><span>Thundthornthep Yamoutai, Ph.D.</span></p></body>")
         self.assertIn(("CR2"), {rule for rule, _detail in rules.check_site_wide(split)})
 
+    def test_cr7_thai_number_first_citations(self) -> None:
+        no_court = GOOD.replace(" · คำพิพากษาศาลฎีกาที่ 4466/2553", "")
+        bad = no_court.replace("</body>", "<p>คำพิพากษาที่ 9999/2566 ของศาลฎีกาวางหลักไว้</p></body>")
+        self.assertEqual(rule_ids(bad), ["CR7"])
+        fine = no_court.replace("</body>", "<p>คำวินิจฉัยที่ 4/2562 ของศาลรัฐธรรมนูญ</p></body>")
+        self.assertEqual(rule_ids(fine), [])
+
+    def test_cr2_prefix_with_an_entity_between_elements(self) -> None:
+        split = GOOD.replace("</body>", "<p><span>Dr.&nbsp;</span><span>Thundthornthep Yamoutai, Ph.D.</span></p></body>")
+        self.assertIn("CR2", {rule for rule, _detail in rules.check_site_wide(split)})
+
+    def test_cr8_no9_of_another_statute_does_not_count(self) -> None:
+        page = GOOD.replace(
+            "<p>พระราชบัญญัติคุ้มครองแรงงาน (ฉบับที่ 9) พ.ศ. 2568 · เพดานเพิ่มโดยฉบับที่ 7 พ.ศ. 2562</p>",
+            "<p>Labour Protection Act Amendment No. 7. The Social Security Act Amendment No. 9.</p>",
+        )
+        self.assertEqual(rule_ids(page), ["CR8"])
+        named_after = page.replace("The Social Security Act Amendment No. 9.", "Amendment No. 9 of the Labour Protection Act.")
+        self.assertEqual(rule_ids(named_after), [])
+
     def test_cr8_amendment_numbers_bound_to_the_act(self) -> None:
         only7 = GOOD.replace("พระราชบัญญัติคุ้มครองแรงงาน (ฉบับที่ 9) พ.ศ. 2568 · ", "พระราชบัญญัติคุ้มครองแรงงาน ")
         # No. 7 named without its year

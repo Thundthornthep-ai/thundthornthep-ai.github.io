@@ -84,7 +84,9 @@ DEKA_NUMBER = re.compile(
 # "Judgment No. 1521/2566" with no court named: a Supreme Court number when the Supreme Court is named shortly before
 # or after it. The nouns are those DEKA_NUMBER accepts after "Supreme Court".
 BARE_JUDGMENT = re.compile(
-    r"\b(?:Judge?ment|Decision|Case|Ruling)\s*(?:No\.?|Number)?\s*(\d{1,5}/25\d\d)", re.IGNORECASE
+    r"(?:\b(?:Judge?ment|Decision|Case|Ruling)\s*(?:No\.?|Number)?|(?:คำพิพากษา|คำวินิจฉัย)\s*(?:ที่|เลขที่))"
+    r"\s*(\d{1,5}/25\d\d)",
+    re.IGNORECASE,
 )
 # The court that governs a bare "Judgment No. N/YYYY": one named right after it ("... of the Supreme Court"), else the
 # last court named before it, else the first court named after it. Any other court (Constitutional, Administrative,
@@ -97,7 +99,7 @@ OTHER_COURT = (
     r"ศาลแพ่ง|ศาลอาญา"
 )
 COURT_NAMED = re.compile(r"(?P<other>" + OTHER_COURT + r")|(?P<supreme>" + SUPREME_COURT + r")", re.IGNORECASE)
-COURT_RIGHT_AFTER = re.compile(r"^\s*,?\s*(?:of|by|from|ของ)\s+(?:the\s+)?(?=\S)", re.IGNORECASE)
+COURT_RIGHT_AFTER = re.compile(r"^\s*,?\s*(?:(?:of|by|from)\s+(?:the\s+)?|ของ\s*)(?=\S)", re.IGNORECASE)
 
 
 def governing_court(text: str, start: int, end: int) -> str | None:
@@ -127,9 +129,25 @@ LPA_CURRENT = re.compile(
     r"ฉบับล่าสุด|ฉบับปัจจุบัน|ที่ใช้บังคับในปัจจุบัน|latest\s+amendment|most\s+recent\s+amendment|current\s+version",
     re.IGNORECASE,
 )
+# The Act's name including a following "Act", so "Labour Protection Act Amendment No. 7" leaves no other "Act" between.
+LPA_TITLE = re.compile(r"คุ้มครองแรงงาน|labou?r\s+protection(?:\s+act)?|\bLPA\b", re.IGNORECASE)
+# Another statute named between the Act and the amendment number takes the number for itself.
+OTHER_STATUTE = re.compile(r"พระราชบัญญัติ|พ\.ร\.บ\.|พระราชกำหนด|ประมวล|\b(?:Act|Code|Decree)\b", re.IGNORECASE)
+LPA_AFTER = re.compile(
+    r"^\s*\)?\s*,?\s*(?:(?:of|to)\s+(?:the\s+)?|ของ\s*|แห่ง\s*)(?:(?:thai\s+)?(?:พระราชบัญญัติ|พ\.ร\.บ\.\s*)?)"
+    r"(?:คุ้มครองแรงงาน|labou?r\s+protection|LPA\b)",
+    re.IGNORECASE,
+)
+
+
 def lpa_context(text: str, start: int, end: int) -> bool:
-    """True when the Labour Protection Act is named within LPA_WINDOW characters of text[start:end]."""
-    return bool(LPA_NAMED.search(text[max(0, start - LPA_WINDOW) : end + LPA_WINDOW]))
+    """True when the amendment number at text[start:end] belongs to the Labour Protection Act: the Act is the last
+    statute named before it (within LPA_WINDOW characters), or the number is followed by "of the Act" / "ของ…"."""
+    before = text[max(0, start - LPA_WINDOW) : start]
+    named = list(LPA_TITLE.finditer(before))
+    if named and not OTHER_STATUTE.search(before[named[-1].end() :]):
+        return True
+    return bool(LPA_AFTER.match(text[end : end + LPA_WINDOW]))
 
 
 SECTION_ABBR = re.compile(r"(?<![ก-๎])ม\.\s?\d")
@@ -182,7 +200,7 @@ def check_site_wide(raw: str) -> list[tuple[str, str]]:
     # raw markup keeps metadata (meta, JSON-LD) covered; the tag-free text catches a prefix in its own element
     # ("<span>Dr.</span><span>Thundthornthep ...")
     spots = {snippet(no_comments, m.start(), m.end()) for m in DR_PREFIX.finditer(no_comments)}
-    shown = TAG.sub(" ", no_comments)
+    shown = htmllib.unescape(TAG.sub(" ", no_comments))
     if not spots and DR_PREFIX.search(shown):
         match = DR_PREFIX.search(shown)
         spots.add(snippet(shown, match.start(), match.end()))
