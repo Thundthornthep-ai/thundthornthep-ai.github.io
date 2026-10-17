@@ -247,6 +247,12 @@ class ContentRuleTests(unittest.TestCase):
         # "/>" does not close a <div>: the hidden div runs to its end tag (round 45); an SVG element's "/>" does close
         self.assertEqual(rule_ids(self.faq_page('<div hidden/><h3>What is a lease?</h3></div>')), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<svg aria-hidden="true"/><h3>What is a lease?</h3>')), [])
+        # round 50: a custom element's "/>" does not close it, and the winning inline declaration decides visibility
+        self.assertEqual(rule_ids(self.faq_page('<article-shell hidden/><h3>What is a lease?</h3></article-shell>')),
+                         ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<div style="display:none; display:block"><h3>What is a lease?</h3></div>')), [])
+        self.assertEqual(rule_ids(self.faq_page(
+            '<div style="display:none !important; display:block"><h3>What is a lease?</h3></div>')), ["CR11"])
         encoded = self.FAQ_LD.replace('type="application/ld+json"', 'type="application/ld&#43;json"')
         self.assertEqual(rule_ids(self.faq_page(ld=encoded)), ["CR11"])
         noted = GOOD.replace("</body>", '<script data-note="ld+json">const sample = "ม.118";</script></body>')

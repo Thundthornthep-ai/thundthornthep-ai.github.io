@@ -95,7 +95,20 @@ def untag(markup: str) -> str:
 
 
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
-HIDING_STYLE = re.compile(r"\b(?:display\s*:\s*none|visibility\s*:\s*hidden)", re.IGNORECASE)
+def winning_declaration(style: str, prop: str) -> str:
+    """The value of `prop` that an inline style applies: the last !important declaration if any, else the last one
+    ("display:none; display:block" shows the element; Codex review of PR #80)."""
+    normal = important = ""
+    for declaration in style.split(";"):
+        name, colon, value = declaration.partition(":")
+        if not colon or name.strip().lower() != prop:
+            continue
+        value = value.strip().lower()
+        if value.endswith("!important"):
+            important = value[: -len("!important")].strip()
+        else:
+            normal = value
+    return important or normal
 
 
 def is_hidden(tag_body: str) -> bool:
@@ -104,7 +117,8 @@ def is_hidden(tag_body: str) -> bool:
     value (title="section hidden by default") hides nothing (Codex review of PR #80)."""
     attrs = attributes(tag_body)
     return ("hidden" in attrs or attrs.get("aria-hidden", "").strip().lower() == "true"
-            or HIDING_STYLE.search(attrs.get("style", "")) is not None)
+            or winning_declaration(attrs.get("style", ""), "display") == "none"
+            or winning_declaration(attrs.get("style", ""), "visibility") == "hidden")
 
 
 def class_tokens(tag_body: str) -> list[str]:
@@ -155,7 +169,9 @@ RAW_TEXT = {"textarea", "iframe", "noembed", "noframes", "noscript", "title", "x
 
 def self_closing(name: str, tag: str) -> bool:
     """Whether a start tag opens no subtree: a void element, or "/>" on an element outside HTML_CONTAINERS."""
-    return name in VOID_TAGS or (tag.endswith("/>") and name not in HTML_CONTAINERS)
+    # a custom element (a name with a hyphen, <article-shell hidden/>) is HTML too, so its slash does not close it
+    # (Codex review of PR #80)
+    return name in VOID_TAGS or (tag.endswith("/>") and name not in HTML_CONTAINERS and "-" not in name)
 
 
 def strip_unrendered(html: str) -> str:
