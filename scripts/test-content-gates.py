@@ -250,6 +250,9 @@ class ContentRuleTests(unittest.TestCase):
         # round 50: a custom element's "/>" does not close it, and the winning inline declaration decides visibility
         self.assertEqual(rule_ids(self.faq_page('<article-shell hidden/><h3>What is a lease?</h3></article-shell>')),
                          ["CR11"])
+        # round 51: any HTML element ignores "/>" (<search hidden/>); inside <svg> it closes
+        self.assertEqual(rule_ids(self.faq_page('<search hidden/><h3>What is a lease?</h3></search>')), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<svg><g aria-hidden="true"/></svg><h3>What is a lease?</h3>')), [])
         self.assertEqual(rule_ids(self.faq_page('<div style="display:none; display:block"><h3>What is a lease?</h3></div>')), [])
         self.assertEqual(rule_ids(self.faq_page(
             '<div style="display:none !important; display:block"><h3>What is a lease?</h3></div>')), ["CR11"])
@@ -612,6 +615,8 @@ class TemplateStructureTests(unittest.TestCase):
         self.assertTrue(pages.is_redirect_stub(
             '<textarea><textarea></textarea><meta http-equiv="refresh" content="0;url=/new">'))  # round 48
         self.assertFalse(pages.is_redirect_stub('<xmp><meta http-equiv="refresh" content="0;url=/new"></xmp>'))  # round 49
+        self.assertFalse(pages.is_redirect_stub(  # a custom element is no <meta> (round 51)
+            '<meta-refresh http-equiv="refresh" content="0;/new"></meta-refresh>'))
         # a "<body>" inside the raw <title> text does not start the body (round 48)
         self.assertEqual(pages.page_body('<title>x <body> y</title></head><body><p>z</p>'), "<p>z</p>")
         # markup inside a <textarea> is text, not elements (round 33)
@@ -675,6 +680,9 @@ class TemplateStructureTests(unittest.TestCase):
                    '<h2>FAQ</h2><h2>References</h2><h2>Disclaimer</h2><table></table>">x</div></body></html>')
         self.assertEqual(template.missing_markers(example, labels=False), template.missing_markers(
             "<html><body><p>text</p></body></html>", labels=False))
+        # a custom <table-widget> is no table (round 51)
+        self.assertIn("table", template.missing_markers(COMPLETE.replace("<table><tr><td>x</td></tr></table>",
+                                                                         "<table-widget></table-widget>"), labels=False))
         # an <xmp> example marks nothing (round 49)
         xmp = ('<html><body><xmp>' + "".join(f'<div class="{c}">x</div>' for c in
                ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer")) + "</xmp></body></html>")

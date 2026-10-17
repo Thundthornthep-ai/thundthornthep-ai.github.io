@@ -149,29 +149,30 @@ INERT = {"template", "noscript", "iframe", "noembed", "noframes",
          "textarea", "xmp"}
 
 
-# HTML (not SVG or MathML) elements that a trailing "/" does not close: <div hidden/> starts a hidden div that runs to
-# its end tag (Codex review of PR #80); in foreign content (<svg>, <circle … />) and on a void element the slash closes
-HTML_CONTAINERS = {
-    "a", "abbr", "address", "article", "aside", "audio", "b", "bdi", "bdo", "blockquote", "body", "button", "canvas",
-    "caption", "cite", "code", "colgroup", "data", "datalist", "dd", "del", "details", "dfn", "dialog", "div", "dl",
-    "dt", "em", "fieldset", "figcaption", "figure", "font", "footer", "form", "h1", "h2", "h3", "h4", "h5", "h6",
-    "head", "header", "hgroup", "html", "i", "iframe", "ins", "kbd", "label", "legend", "li", "main", "map", "mark",
-    "menu", "meter", "nav", "noembed", "noframes", "noscript", "object", "ol", "optgroup", "option", "output", "p",
-    "picture", "pre", "progress", "q", "rp", "rt", "ruby", "s", "samp", "section", "select", "slot", "small", "span",
-    "strong", "sub", "summary", "sup", "table", "tbody", "td", "template", "textarea", "tfoot", "th", "thead", "time",
-    "tr", "u", "ul", "var", "video",
-}
+# a trailing "/" closes a start tag only in foreign content: on <svg> or <math> itself and on any element inside one
+# (<circle … />). On an HTML element, a custom element included, it does nothing: <div hidden/> and <search hidden/>
+# open a hidden element that runs to its end tag (HTML Standard, start tags; Codex review of PR #80)
+FOREIGN_ROOTS = ("svg", "math")
+FOREIGN_ELEMENT = re.compile(r"<(svg|math)(?=[\s/>])" + TAG_BODY + r">.*?</\1\s*>", re.DOTALL | re.IGNORECASE)
+
+
+def foreign_spans(html: str) -> list[tuple[int, int]]:
+    """The (start, end) offsets of every <svg> and <math> element (an unclosed one is not foreign content here)."""
+    return [(match.start(), match.end()) for match in FOREIGN_ELEMENT.finditer(html)]
+
+
+def in_spans(spans: list[tuple[int, int]], position: int) -> bool:
+    return any(start < position < end for start, end in spans)
 
 
 # elements whose content is raw text or text-only: nothing inside them nests
 RAW_TEXT = {"textarea", "iframe", "noembed", "noframes", "noscript", "title", "xmp"}
 
 
-def self_closing(name: str, tag: str) -> bool:
-    """Whether a start tag opens no subtree: a void element, or "/>" on an element outside HTML_CONTAINERS."""
-    # a custom element (a name with a hyphen, <article-shell hidden/>) is HTML too, so its slash does not close it
-    # (Codex review of PR #80)
-    return name in VOID_TAGS or (tag.endswith("/>") and name not in HTML_CONTAINERS and "-" not in name)
+def self_closing(name: str, tag: str, foreign: bool = False) -> bool:
+    """Whether a start tag opens no subtree: a void element, or "/>" in foreign content (`foreign`: the tag is inside
+    an <svg> or <math> element) or on <svg> or <math> itself."""
+    return name in VOID_TAGS or (tag.endswith("/>") and (foreign or name in FOREIGN_ROOTS))
 
 
 def strip_unrendered(html: str) -> str:
@@ -181,6 +182,7 @@ def strip_unrendered(html: str) -> str:
     end the outer element; an unclosed one runs to the end."""
     out: list[str] = []
     pos, skip, depth = 0, "", 0
+    foreign = foreign_spans(html)
     for tag in ANY_TAG.finditer(html):
         closing, name = tag.group(1) == "/", (tag.group(2) or "").lower()
         if not name:
@@ -192,12 +194,12 @@ def strip_unrendered(html: str) -> str:
                     # element (Codex review of PR #80)
                     depth = 0 if closing else depth
                 else:
-                    depth += -1 if closing else (0 if self_closing(name, tag.group(0)) else 1)
+                    depth += -1 if closing else (0 if self_closing(name, tag.group(0), in_spans(foreign, tag.start())) else 1)
                 if not depth:
                     out.append(" ")
                     pos, skip = tag.end(), ""
             continue
-        if closing or self_closing(name, tag.group(0)):
+        if closing or self_closing(name, tag.group(0), in_spans(foreign, tag.start())):
             continue
         if name in INERT or is_hidden(tag.group(0)[len(name) + 1:-1]):
             out.append(html[pos:tag.start()])
@@ -209,7 +211,7 @@ def strip_unrendered(html: str) -> str:
 
 strip_templates = strip_unrendered
 
-BODY_START = re.compile(r"<body\b" + TAG_BODY + ">", re.IGNORECASE)
+BODY_START = re.compile(r"<body(?=[\s/>])" + TAG_BODY + ">", re.IGNORECASE)
 
 
 def page_body(html: str) -> str:
@@ -219,7 +221,7 @@ def page_body(html: str) -> str:
     return html[start.end():] if start else html
 
 
-META_TAG = re.compile(r"<meta\b(" + TAG_BODY + ")>", re.IGNORECASE)
+META_TAG = re.compile(r"<meta(?=[\s/>])(" + TAG_BODY + ")>", re.IGNORECASE)
 # one attribute of a tag: its name and its value (quoted or not)
 ATTRIBUTE = re.compile(r"""([^\s"'>/=]+)(?:\s*=\s*("[^"]*"|'[^']*'|[^\s"'>]+))?""")
 
@@ -241,8 +243,8 @@ def refresh_target(content: str) -> str:
     return match.group(1).strip().strip("\"'").strip() if match else ""
 
 
-TITLE_ELEMENT = re.compile(r"<title\b" + TAG_BODY + r">.*?</title\s*>", re.DOTALL | re.IGNORECASE)
-SCRIPT_OR_STYLE = re.compile(r"<(script|style)\b" + TAG_BODY + r">.*?</\1\s*>", re.DOTALL | re.IGNORECASE)
+TITLE_ELEMENT = re.compile(r"<title(?=[\s/>])" + TAG_BODY + r">.*?</title\s*>", re.DOTALL | re.IGNORECASE)
+SCRIPT_OR_STYLE = re.compile(r"<(script|style)(?=[\s/>])" + TAG_BODY + r">.*?</\1\s*>", re.DOTALL | re.IGNORECASE)
 
 
 def is_redirect_stub(html: str) -> bool:

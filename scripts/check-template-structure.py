@@ -55,12 +55,12 @@ ROOT = pages.ROOT
 
 # comments, scripts and styles are not rendered (nor are <template> contents and hidden elements:
 # pages.strip_unrendered); a <textarea> shows its content as text, so markup inside it makes no element
-HIDDEN = re.compile(r"<!--.*?-->|<script\b" + pages.TAG_BODY + r">.*?</script\s*>|<style\b" + pages.TAG_BODY + r">.*?</style\s*>"
-                    r"|<textarea\b" + pages.TAG_BODY + r">.*?</textarea\s*>",
+HIDDEN = re.compile(r"<!--.*?-->|<script(?=[\s/>])" + pages.TAG_BODY + r">.*?</script\s*>|<style(?=[\s/>])" + pages.TAG_BODY + r">.*?</style\s*>"
+                    r"|<textarea(?=[\s/>])" + pages.TAG_BODY + r">.*?</textarea\s*>",
                     re.DOTALL | re.IGNORECASE)
 # tags are read with their quoted attribute values whole, so a ">" inside a value does not end them
 TAG = re.compile(r"<[^\s>]" + pages.TAG_BODY + ">")
-HEADING = re.compile(r"<h([2-4])\b" + pages.TAG_BODY + r">(.*?)</h\1\s*>", re.DOTALL | re.IGNORECASE)
+HEADING = re.compile(r"<h([2-4])(?=[\s/>])" + pages.TAG_BODY + r">(.*?)</h\1\s*>", re.DOTALL | re.IGNORECASE)
 ENTITY_OR_CHAR = re.compile(r"&(?:#\d+|#[xX][0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);|.", re.DOTALL)
 
 
@@ -111,7 +111,7 @@ HEAD = {
     "faq": re.compile(r"คำถามที่พบบ่อย|\bFAQs?\b|frequently\s+asked", re.IGNORECASE),
     "ref-section": re.compile(r"แหล่งอ้างอิง|เอกสารอ้างอิง|อ้างอิง|\breferences?\b|\bsources\b", re.IGNORECASE),
 }
-TABLE = re.compile(r"<table\b", re.IGNORECASE)
+TABLE = re.compile(r"<table(?=[\s/>])", re.IGNORECASE)
 
 
 def body_markup(raw: str) -> str:
@@ -186,7 +186,7 @@ def enclosing_elements(body: str, points: list[int]) -> dict[int, tuple[int, str
                 if stack[depth][0] == tagname:
                     del stack[depth:]
                     break
-        elif not pages.self_closing(tagname, tag.group(0)):
+        elif not pages.self_closing(tagname, tag.group(0), any(open_name in pages.FOREIGN_ROOTS for open_name, _ in stack)):
             stack.append((tagname, tag.start()))
     for point in wanted[i:]:
         result[point] = here()
