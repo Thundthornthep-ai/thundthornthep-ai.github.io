@@ -68,8 +68,8 @@ THAI_DIGITS = str.maketrans("๐๑๒๓๔๕๖๗๘๙", "0123456789")
 COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
 # opening tags are read with quoted attribute values whole (pages.TAG_BODY): '<script data-note="1 > 0" …>'
 # a script element with its attributes (group 1) and body (group 2); JSON-LD is told apart by its attributes
-SCRIPT_ELEMENT = re.compile(r"<script\b(" + pages.TAG_BODY + r")>(.*?)</script>", re.DOTALL | re.IGNORECASE)
-STYLE = re.compile(r"<style\b" + pages.TAG_BODY + r">.*?</style>", re.DOTALL | re.IGNORECASE)
+SCRIPT_ELEMENT = re.compile(r"<script\b(" + pages.TAG_BODY + r")>(.*?)</script\s*>", re.DOTALL | re.IGNORECASE)
+STYLE = re.compile(r"<style\b" + pages.TAG_BODY + r">.*?</style\s*>", re.DOTALL | re.IGNORECASE)
 TAG = re.compile(r"<[^\s>]" + pages.TAG_BODY + ">")  # quoted attribute values read whole
 META_KEYWORDS = re.compile(r"<meta[^>]+name\s*=\s*[\"']keywords[\"'][^>]*>", re.IGNORECASE)
 ALT_NAME = re.compile(r"\"(?:alternateName|keywords)\"\s*:\s*(?:\"[^\"]*\"|\[[^\]]*\])")
@@ -175,14 +175,17 @@ MONTH_ABBR = re.compile(
 )
 
 # FAQPage JSON-LD and what the reader sees (CR11, W11). Reader text drops every script, JSON-LD included.
-ANY_SCRIPT = re.compile(r"<script\b" + pages.TAG_BODY + r">.*?</script>", re.DOTALL | re.IGNORECASE)
+ANY_SCRIPT = re.compile(r"<script\b" + pages.TAG_BODY + r">.*?</script\s*>", re.DOTALL | re.IGNORECASE)
 # a class token that starts with "faq" (faq-item; not data-class, not "no-faq")
 FAQ_CLASS = re.compile(r"(?<![\w-])class\s*=\s*(?:[\"'](?:[^\"']*\s)?)?faq", re.IGNORECASE)
 # a FAQ heading, read with inline tags removed ("<em>คำถาม</em>ที่พบบ่อย", "Frequently <em>Asked</em> Questions")
 HEADING_ELEMENT = re.compile(r"<h([2-4])\b" + pages.TAG_BODY + r">(.*?)</h\1>", re.DOTALL | re.IGNORECASE)
 FAQ_HEADING_TEXT = re.compile(r"คำถามที่พบบ่อย|\bFAQs?\b|frequently\s+asked", re.IGNORECASE)
 # CR12: the standard flag opens a bracket with the words; anywhere else the words are a free-form hedge.
-FREE_HEDGE_TH = re.compile(r"(?<!\[)(?<!\[ )ต้องยืนยันมาตรา")
+FREE_HEDGE_TH = re.compile(r"ต้องยืนยันมาตรา")
+# the standard flag, removed before the search: "[ต้องยืนยันมาตรา]" or "[ต้องยืนยันมาตรา: …]" / "[ต้องยืนยันมาตรา — …]"; a
+# bracketed free-form hedge such as "[ต้องยืนยันมาตราที่ถูกต้อง]" is not the flag (Codex review of PR #80)
+STANDARD_FLAG_TH = re.compile(r"\[\s*ต้องยืนยันมาตรา(?:\s*[:：–—-][^\]]*)?\s*\]")
 STANDARD_FLAG_EN = re.compile(r"\[\s*(?:unconfirmed\b|must\s+verify\b)[^\[\]]*\]", re.IGNORECASE)
 FREE_HEDGE_EN = re.compile(
     r"\b(?:section|paragraph|sub-paragraph|provision|chapter|number)s?(?:\s+(?:number|numbering)s?)?\s+"
@@ -262,7 +265,8 @@ def js_unescape(text: str) -> str:
             return chr(value) if value <= 0x10FFFF else ""
         return JS_SIMPLE.get(match.group(4), match.group(4))
     return JS_ESCAPE.sub(one, text)
-SCRIPT_TITLE_BANNED = re.compile(r"(?<![ก-๎])ม\.\s?\d|\bvs\.?(?=\s)|หนี้ลำพัง")
+# "vs" as a word, whatever follows it ("vs ", "vs.", "(vs.)", "vs/B")
+SCRIPT_TITLE_BANNED = re.compile(r"(?<![ก-๎])ม\.\s?\d|(?<![A-Za-z])vs(?![A-Za-z])|หนี้ลำพัง", re.IGNORECASE)
 
 RULES = {
     "CR1": "disclaimer block missing",
@@ -600,7 +604,8 @@ def check_article(raw: str, verified: set[str]) -> list[tuple[str, str]]:
 
     found.extend(check_faq(raw)[0])
     shown = reader_text(raw)
-    for match in FREE_HEDGE_TH.finditer(shown):
+    unflagged = STANDARD_FLAG_TH.sub(lambda flag: " " * len(flag.group(0)), shown)
+    for match in FREE_HEDGE_TH.finditer(unflagged):
         found.append(("CR12", snippet(shown, match.start(), match.end(), pad=80)))
     for match in COMPANY_NAME.finditer(shown):
         if not company_name_allowed(match.group(1)):

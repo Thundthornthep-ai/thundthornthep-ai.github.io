@@ -55,7 +55,7 @@ ROOT = pages.ROOT
 
 # comments, scripts and styles are not rendered (nor are <template> contents and hidden elements:
 # pages.strip_unrendered)
-HIDDEN = re.compile(r"<!--.*?-->|<script\b" + pages.TAG_BODY + r">.*?</script>|<style\b" + pages.TAG_BODY + r">.*?</style>",
+HIDDEN = re.compile(r"<!--.*?-->|<script\b" + pages.TAG_BODY + r">.*?</script\s*>|<style\b" + pages.TAG_BODY + r">.*?</style\s*>",
                     re.DOTALL | re.IGNORECASE)
 # the class attribute itself, not data-class or aria-class
 CLASS_ATTR = r"(?<![\w-])class\s*=\s*"

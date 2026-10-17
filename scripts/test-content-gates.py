@@ -262,6 +262,9 @@ class ContentRuleTests(unittest.TestCase):
         # a ">" in a quoted attribute of the JSON-LD tag does not hide the block (round 27)
         quoted = '<script data-note="1 > 0" type="application/ld+json">{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Hidden?"}]}</script>'
         self.assertEqual(rule_ids(self.faq_page(ld=quoted)), ["CR11"])
+        # a script end tag may hold whitespace (round 32)
+        spaced = self.FAQ_LD.replace("</script>", "</script >")
+        self.assertEqual(rule_ids(self.faq_page(ld=spaced)), ["CR11"])
         # a <title> repeating a question is not a visible FAQ (round 31)
         titled = self.faq_page().replace("<head>", "<head><title>What is a lease?</title>", 1)
         self.assertNotEqual(titled, self.faq_page())
@@ -283,6 +286,9 @@ class ContentRuleTests(unittest.TestCase):
         for fine in ("[ต้องยืนยันมาตรา]", "[ต้องยืนยันมาตรา: ผลของนิติกรรม]", "[ ต้องยืนยันมาตรา]",
                      "[ต้องยืนยันมาตรา — ตรวจสอบตัวเลขกับตัวบท]"):
             self.assertEqual(rule_ids(GOOD.replace("</body>", f"<p>{fine}</p></body>")), [], fine)
+        # a bracketed free-form hedge is not the standard flag (Codex review of PR #80, round 32)
+        for bad in ("[ต้องยืนยันมาตราที่ถูกต้อง]", "[ต้องยืนยันมาตราอีกครั้ง]"):
+            self.assertEqual(rule_ids(GOOD.replace("</body>", f"<p>{bad}</p></body>")), ["CR12"], bad)
 
     def test_w12_free_form_english_hedge_is_reported(self) -> None:
         for bad in ("License (governing CCC provisions to be confirmed)", "S-Curve industries (number to be verified)",
@@ -365,6 +371,10 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(len(rules.check_script("link.title = 'A vs\\\n B';")), 1)
         # a nested template literal is read too (round 27)
         self.assertEqual(len(rules.check_script("link.title = `${prefix} ${`ม.118`}`;")), 1)
+        # "vs" followed by punctuation, but not inside a word (Codex review of PR #80, round 32)
+        for bad in ("t = 'Joint (vs.) Several';", "t = 'A vs/B';", "t = 'A vs.';"):
+            self.assertEqual(len(rules.check_script(bad)), 1, bad)
+        self.assertEqual(rules.check_script("t = 'canvas versus vsync';"), [])
         self.assertEqual(rules.check_script("link.title = `${prefix} ${`มาตรา 118`}`;"), [])
         # a parenthesized operand, and a regex literal is not a string (Codex review of PR #80, round 28)
         self.assertEqual(len(rules.check_script("link.title = 'ม.' + (100 + 18);")), 1)
