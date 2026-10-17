@@ -150,7 +150,6 @@ def flatten(body: str) -> tuple[str, list[int]]:
     return "".join(chars), offsets
 
 
-VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
 TAG_NAME = re.compile(r"<(/?)([A-Za-z][A-Za-z0-9-]*)")
 HEADINGS = {"h1", "h2", "h3", "h4", "h5", "h6"}
 NAMING = HEADINGS | {"a"}
@@ -187,7 +186,7 @@ def enclosing_elements(body: str, points: list[int]) -> dict[int, tuple[int, str
                 if stack[depth][0] == tagname:
                     del stack[depth:]
                     break
-        elif tagname not in VOID and not tag.group(0).endswith("/>"):
+        elif not pages.self_closing(tagname, tag.group(0)):
             stack.append((tagname, tag.start()))
     for point in wanted[i:]:
         result[point] = here()
