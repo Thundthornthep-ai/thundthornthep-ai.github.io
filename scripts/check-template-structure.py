@@ -118,7 +118,7 @@ def body_markup(raw: str) -> str:
     """Markup a reader sees: only the <body> (a class in <head> marks nothing, Codex review of PR #80), with no
     comments, scripts (JSON-LD included), styles or <template> contents; comments and scripts go first, so a "<body>"
     inside one does not count as the start of the body."""
-    return pages.strip_unrendered(pages.page_body(HIDDEN.sub(" ", raw)))
+    return pages.mask_attribute_markup(pages.strip_unrendered(pages.page_body(HIDDEN.sub(" ", raw))))
 
 
 untag = pages.untag

@@ -411,7 +411,9 @@ def check_faq(raw: str) -> tuple[list[tuple[str, str]], list[tuple[str, str]]]:
     shown = re.sub(r"\s+", "", reader_text(page_body(STYLE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw))))))
     hidden = [question for question in questions if re.sub(r"\s+", "", question) not in shown]
     # the FAQ section is looked for in the body only: <html class="faq-page"> is no FAQ section (Codex review of PR #80)
-    markup = pages.strip_unrendered(page_body(STYLE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw)))))
+    # markup written inside an attribute value (title="<h2>FAQ</h2>") is no heading
+    markup = pages.mask_attribute_markup(
+        pages.strip_unrendered(page_body(STYLE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw))))))
     # a FAQ class is a token of an element's own class attribute starting with "faq" ("faq-item", not "no-faq"), not
     # text inside another attribute's value (title="x class=faq-item"; Codex review of PR #80)
     # (a void element such as <input class="faq"> holds no section)

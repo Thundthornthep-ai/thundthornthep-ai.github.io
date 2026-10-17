@@ -115,6 +115,16 @@ def class_tokens(tag_body: str) -> list[str]:
 
 # a start tag: its name and its inside, quoted attribute values read whole
 START_TAG = re.compile(r"<([A-Za-z][A-Za-z0-9-]*)(" + TAG_BODY + ")>")
+QUOTED_VALUE = re.compile(r"\"[^\"]*\"|'[^']*'")
+
+
+def mask_attribute_markup(html: str) -> str:
+    """The markup with every "<" and ">" inside a quoted attribute value replaced by a space (same length, so offsets
+    hold): markup written in an attribute (title="<h2>FAQ</h2>", data-example="<table>") is text the browser never
+    parses, so no heading or table regex can find it there (Codex review of PR #80)."""
+    def tag(match: re.Match[str]) -> str:
+        return QUOTED_VALUE.sub(lambda value: value.group(0).replace("<", " ").replace(">", " "), match.group(0))
+    return START_TAG.sub(tag, html)
 HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
 # elements whose content visitors never see: <template> is inert, <noscript> shows only with scripting off, and the
 # fallback body of <iframe>, <noembed> and <noframes> is raw text a browser with those features never shows (Codex review

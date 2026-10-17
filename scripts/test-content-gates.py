@@ -243,6 +243,7 @@ class ContentRuleTests(unittest.TestCase):
         # attribute, decoded (Codex review of PR #80, round 43)
         self.assertEqual(rule_ids(self.faq_page("<textarea><h2>FAQ</h2></textarea>")), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<input type="hidden" class="faq-item">')), ["CR11"])  # round 44
+        self.assertEqual(rule_ids(self.faq_page('<div title="HTML example: <h2>FAQ</h2>">x</div>')), ["CR11"])  # round 47
         # "/>" does not close a <div>: the hidden div runs to its end tag (round 45); an SVG element's "/>" does close
         self.assertEqual(rule_ids(self.faq_page('<div hidden/><h3>What is a lease?</h3></div>')), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<svg aria-hidden="true"/><h3>What is a lease?</h3>')), [])
@@ -652,6 +653,11 @@ class TemplateStructureTests(unittest.TestCase):
         void = ('<html><body>' + "".join(f'<input type="hidden" class="{c}"><meta class="{c}">' for c in
                 ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer")) + "</body></html>")
         self.assertEqual(template.missing_markers(void, labels=False), template.missing_markers(
+            "<html><body><p>text</p></body></html>", labels=False))
+        # headings and a table written inside an attribute value are no structure (round 47)
+        example = ('<html><body><div data-example="<h2>Quick Answer</h2><h2>Practice Note</h2><h2>Counterargument</h2>'
+                   '<h2>FAQ</h2><h2>References</h2><h2>Disclaimer</h2><table></table>">x</div></body></html>')
+        self.assertEqual(template.missing_markers(example, labels=False), template.missing_markers(
             "<html><body><p>text</p></body></html>", labels=False))
         # an <iframe> fallback body marks nothing (round 38)
         framed = ('<html><body><iframe src="x.html">' + "".join(f'<div class="{c}">x</div>' for c in
