@@ -355,6 +355,10 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual([rule for rule, _ in found], ["CR14", "CR14"])
         self.assertEqual(rules.check_script("title: 'LAS Share 01 — จ้างทำของกับจ้างแรงงาน (มาตรา 575)'"), [])
         self.assertEqual(len(rules.check_script("title: 'หนี้ลำพัง'")), 1)
+        # a regex literal after an expression keyword is no string (round 48)
+        for code in ('switch (x) { case /"A vs B"/: break; }', 'function* g() { yield /"A vs B"/; }',
+                     'throw /"A vs B"/;'):
+            self.assertEqual(rules.check_script(code), [], code)
         # assignments, setAttribute and concatenations are titles too (Codex review of PR #80, round 10)
         self.assertEqual(len(rules.check_script("a.title = 'ค่าชดเชย (ม.118)';")), 1)
         self.assertEqual(len(rules.check_script("el.setAttribute('title', \"A vs B\");")), 1)
@@ -598,6 +602,11 @@ class TemplateStructureTests(unittest.TestCase):
         self.assertFalse(pages.is_redirect_stub('<textarea><meta http-equiv="refresh" content="0;url=/new"></textarea>'))
         self.assertFalse(pages.is_redirect_stub(  # nor in <title> text (round 46)
             '<title>How to write <meta http-equiv="refresh" content="0;/new"></title>'))
+        # a "<textarea>" inside a textarea is text: the first end tag closes it, and a real refresh after it counts
+        self.assertTrue(pages.is_redirect_stub(
+            '<textarea><textarea></textarea><meta http-equiv="refresh" content="0;url=/new">'))  # round 48
+        # a "<body>" inside the raw <title> text does not start the body (round 48)
+        self.assertEqual(pages.page_body('<title>x <body> y</title></head><body><p>z</p>'), "<p>z</p>")
         # markup inside a <textarea> is text, not elements (round 33)
         self.assertEqual(template.missing_markers(COMPLETE.replace(pn, '<textarea><div class="practice-note">x</div></textarea>'),
                                                   labels=False), ["practice-note"])

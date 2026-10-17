@@ -149,6 +149,10 @@ HTML_CONTAINERS = {
 }
 
 
+# elements whose content is raw text or text-only: nothing inside them nests
+RAW_TEXT = {"textarea", "iframe", "noembed", "noframes", "noscript", "title", "xmp"}
+
+
 def self_closing(name: str, tag: str) -> bool:
     """Whether a start tag opens no subtree: a void element, or "/>" on an element outside HTML_CONTAINERS."""
     return name in VOID_TAGS or (tag.endswith("/>") and name not in HTML_CONTAINERS)
@@ -167,7 +171,12 @@ def strip_unrendered(html: str) -> str:
             continue
         if skip:
             if name == skip:
-                depth += -1 if closing else (0 if self_closing(name, tag.group(0)) else 1)
+                if skip in RAW_TEXT:
+                    # raw text ends at its first end tag: a "<textarea>" inside it is characters, not a nested
+                    # element (Codex review of PR #80)
+                    depth = 0 if closing else depth
+                else:
+                    depth += -1 if closing else (0 if self_closing(name, tag.group(0)) else 1)
                 if not depth:
                     out.append(" ")
                     pos, skip = tag.end(), ""
@@ -188,8 +197,9 @@ BODY_START = re.compile(r"<body\b" + TAG_BODY + ">", re.IGNORECASE)
 
 
 def page_body(html: str) -> str:
-    """The markup after the <body> start tag (the whole page when it has none)."""
-    start = BODY_START.search(html)
+    """The markup after the <body> start tag (the whole page when it has none). A "<body>" inside the raw <title> text
+    is characters, so titles are blanked (same length) before the search (Codex review of PR #80)."""
+    start = BODY_START.search(TITLE_ELEMENT.sub(lambda title: " " * len(title.group(0)), html))
     return html[start.end():] if start else html
 
 

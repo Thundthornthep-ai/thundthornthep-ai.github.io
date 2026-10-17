@@ -449,7 +449,10 @@ def check_warnings(raw: str) -> list[tuple[str, str]]:
     return warnings
 
 
-REGEX_PREFIX = re.compile(r"(?:^|[(,=:\[!&|?{};+\-*%~^<>]|\breturn|\btypeof)\s*$")
+# a regex literal may follow an operator or punctuator, or any keyword that is followed by an expression ("case /x/:",
+# "yield /x/", "throw /x/"; Codex review of PR #80)
+REGEX_PREFIX = re.compile(r"(?:^|[(,=:\[!&|?{};+\-*%~^<>]|(?<![\w$.])(?:return|typeof|case|yield|throw|delete|void|in|of"
+                          r"|instanceof|new|else|do|await))\s*$")
 
 
 def regex_may_start(before: str) -> bool:
