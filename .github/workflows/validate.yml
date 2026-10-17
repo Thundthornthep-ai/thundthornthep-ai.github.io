@@ -1,18 +1,24 @@
 name: Validate LAS Knowledge publication gates
 
 # Fail-closed publication guard. Every article release must pass the citation
-# firewall, exact-slug/series registry checks, and the existing hub checks.
+# firewall, the content rules, the internal-link and sitemap checks, the
+# exact-slug/series registry checks, and the existing hub checks. Scope: articles/,
+# en/articles/ and the blog pages registered as legally reviewed in
+# learning-hub/legal-reviews.json (scripts/las_public_pages.py).
 
 on:
   push:
     branches: [main]
     paths:
-      - 'knowledge-hub.html'
-      - 'all-content.html'
+      - '*.html'
       - 'sitemap.xml'
-      - 'las-*.html'
       - 'articles/**'
       - 'en/articles/**'
+      # Reviewed legal blog pages (learning-hub/legal-reviews.json) are gated; the other blog pages trigger the
+      # site-wide content rules (U+FFFD, 'ดร.' prefix) only.
+      - 'blog/**'
+      - 'en/blog/**'
+      - 'learning-hub/**'
       - 'scripts/validate-knowledge-hub.js'
       - 'scripts/validate-knowledge-slugs.js'
       - 'scripts/resolve-validate-range.sh'
@@ -20,16 +26,25 @@ on:
       - 'scripts/verify-legal-citations.sh'
       - 'scripts/public-citation-firewall.py'
       - 'scripts/test-public-citation-firewall.py'
+      - 'scripts/las_public_pages.py'
+      - 'scripts/validate-content-rules.py'
+      - 'scripts/check-internal-links.py'
+      - 'scripts/check-sitemap-coverage.py'
+      - 'scripts/test-content-gates.py'
+      - 'scripts/validate-bkk-election.js'
       - 'scripts/legal-kb/**'
       - '.github/workflows/validate.yml'
   pull_request:
     paths:
-      - 'knowledge-hub.html'
-      - 'all-content.html'
+      - '*.html'
       - 'sitemap.xml'
-      - 'las-*.html'
       - 'articles/**'
       - 'en/articles/**'
+      # Reviewed legal blog pages (learning-hub/legal-reviews.json) are gated; the other blog pages trigger the
+      # site-wide content rules (U+FFFD, 'ดร.' prefix) only.
+      - 'blog/**'
+      - 'en/blog/**'
+      - 'learning-hub/**'
       - 'scripts/validate-knowledge-hub.js'
       - 'scripts/validate-knowledge-slugs.js'
       - 'scripts/resolve-validate-range.sh'
@@ -37,6 +52,12 @@ on:
       - 'scripts/verify-legal-citations.sh'
       - 'scripts/public-citation-firewall.py'
       - 'scripts/test-public-citation-firewall.py'
+      - 'scripts/las_public_pages.py'
+      - 'scripts/validate-content-rules.py'
+      - 'scripts/check-internal-links.py'
+      - 'scripts/check-sitemap-coverage.py'
+      - 'scripts/test-content-gates.py'
+      - 'scripts/validate-bkk-election.js'
       - 'scripts/legal-kb/**'
       - '.github/workflows/validate.yml'
   workflow_dispatch:
@@ -44,7 +65,7 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
@@ -79,15 +100,32 @@ jobs:
       - name: Run citation firewall unit tests
         run: python3 scripts/test-public-citation-firewall.py
 
+      - name: Run content-gate unit tests
+        run: python3 scripts/test-content-gates.py
+
       - name: Run citation firewall (fail closed)
         shell: bash
         run: |
           set -euo pipefail
           # Publication-wide: official PDF-box cites live across the set, so a
-          # registry or firewall change must re-check every tracked article.
+          # registry or firewall change must re-check every tracked article and
+          # every reviewed blog page. One firewall process loads the registry once.
           bash scripts/verify-legal-citations.sh --all
 
+      - name: Run content rules (fail closed)
+        if: success() || failure()
+        run: python3 scripts/validate-content-rules.py
+
+      - name: Run internal link check (fail closed)
+        if: success() || failure()
+        run: python3 scripts/check-internal-links.py
+
+      - name: Run sitemap coverage check (fail closed)
+        if: success() || failure()
+        run: python3 scripts/check-sitemap-coverage.py
+
       - name: Run exact slug and series validator
+        if: success() || failure()
         shell: bash
         run: |
           set -euo pipefail
@@ -103,11 +141,23 @@ jobs:
             node scripts/validate-knowledge-slugs.js --slug "${file#articles/}"
           done
 
+      - name: Run exact slug and series validator on the whole publication
+        if: success() || failure()
+        # Index, hub, all-content and sitemap routes are checked on every run, not only when a series file changes.
+        run: node scripts/validate-knowledge-slugs.js --all
+
       - name: Run knowledge-hub validator
+        if: success() || failure()
         run: node scripts/validate-knowledge-hub.js
+
+      - name: Run Bangkok council election page validator
+        if: success() || failure()
+        # The election campaign pages are outside the Knowledge Hub and the citation gate; this keeps their own
+        # structural checks (45 at the time of writing) running when blog/** changes.
+        run: node scripts/validate-bkk-election.js
 
       - name: Summary on failure
         if: failure()
         run: |
-          echo "::error::LAS Knowledge publication gate failed. Run the citation, exact-slug, and hub validators locally to see details."
+          echo "::error::LAS Knowledge publication gate failed. Run the citation, content-rules, link, sitemap, exact-slug and hub validators locally to see details."
           echo "See docs/BILINGUAL-CONVENTION.md for the bilingual class standard."

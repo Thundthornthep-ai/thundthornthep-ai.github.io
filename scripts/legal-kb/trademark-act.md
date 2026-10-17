@@ -21,6 +21,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 70
 - มาตรา 72
 - มาตรา 79
+- มาตรา 80
 - มาตรา 103
 - มาตรา 108
 - มาตรา 109

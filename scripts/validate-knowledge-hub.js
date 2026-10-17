@@ -13,11 +13,11 @@
  * Checks performed:
  *   C1  JS syntax of every non-JSON <script> block
  *   C2  No `event.target` in code called from inline onclick
- *   C3  Every filter button maps to existing content (no dead buttons)
- *   C4  Filter button label counts match actual data-category counts
+ *   C3  Every filter button maps to existing content (no dead buttons; zero buttons fails)
+ *   C4  Filter button label counts match actual data-category counts (zero buttons fails)
  *   C5  .lang-th / .lang-en span count balance
  *   C6  All .article-card have data-category
- *   C7  Filter buttons all use `this` parameter (no window.event reliance)
+ *   C7  Filter buttons are wired without window.event: data-filter + delegated listener, or inline `this`
  *   C8  No deprecated bilingual classes (.t-th, .t-en, .th-text, .en-text)
  *
  * Usage:
@@ -83,38 +83,65 @@ const pass = (id, msg) => results.push({ id, ok: true, msg });
 
   const allCats = new Set([...cardCats, ...seriesCats, ...fwCats, 'all']);
 
-  const btnWithThis = [...html.matchAll(/filterArticles\('([^']+)',\s*this\)/g)].map(m => m[1]);
-  const btnNoThis = [...html.matchAll(/filterArticles\('([^']+)'\)(?!\s*,\s*this)/g)].map(m => m[1]);
+  // Filter buttons: <button class="filter-btn" data-filter="x"> with a delegated click listener (current markup),
+  // or the older inline onclick="filterArticles('x', this)". Zero buttons is a failure, never a vacuous pass.
+  const buttonTags = [...html.matchAll(/<button\b[^>]*class="[^"]*\bfilter-btn\b[^"]*"[^>]*>([\s\S]*?)<\/button>/g)];
+  const buttons = buttonTags.map(m => {
+    const tag = m[0].slice(0, m[0].indexOf('>') + 1);
+    const data = /\sdata-filter="([^"]+)"/.exec(tag);
+    const inline = /filterArticles\('([^']+)'(\s*,\s*this)?\)/.exec(tag);
+    const th = /<span class="lang-th">([^<]+)<\/span>/.exec(m[1]);
+    const en = /<span class="lang-en">([^<]+)<\/span>/.exec(m[1]);
+    return {
+      cat: data ? data[1] : (inline ? inline[1] : null),
+      delegatedOnly: !!data && !inline,
+      inlineWithoutThis: !!inline && !inline[2],
+      th: th ? th[1] : null,
+      en: en ? en[1] : null,
+    };
+  });
+  const delegated = /closest\(\s*'\.filter-btn\[data-filter\]'\s*\)/.test(html);
 
-  if (btnNoThis.length > 0) {
-    fail('C7', btnNoThis.length + ' filter buttons still call filterArticles without `this`',
-      btnNoThis.join(', '));
+  // C7: every button is wired without window.event — a data-filter button needs the delegated listener, an inline
+  // call needs `this`.
+  const unwired = buttons.filter(b => !b.cat || b.inlineWithoutThis);
+  const needsListener = buttons.some(b => b.delegatedOnly) && !delegated;
+  if (buttons.length === 0) {
+    fail('C7', 'No filter buttons found (expected <button class="filter-btn" data-filter="...">)');
+  } else if (unwired.length > 0) {
+    fail('C7', unwired.length + ' filter button(s) have no data-filter or call filterArticles without `this`');
+  } else if (needsListener) {
+    fail('C7', 'data-filter buttons found but no delegated .filter-btn[data-filter] click listener');
   } else {
-    pass('C7', 'All filter buttons use `this` parameter (' + btnWithThis.length + ' buttons)');
+    pass('C7', 'All ' + buttons.length + ' filter buttons are wired (data-filter + delegated listener)');
   }
 
-  const dead = btnWithThis.filter(c => !allCats.has(c));
-  if (dead.length > 0) {
+  const dead = buttons.filter(b => b.cat && !allCats.has(b.cat)).map(b => b.cat);
+  if (buttons.length === 0) {
+    fail('C3', 'No filter buttons found — cannot check that they map to content');
+  } else if (dead.length > 0) {
     fail('C3', dead.length + ' dead filter button(s) map to missing content', dead.join(', '));
   } else {
-    pass('C3', 'All ' + btnWithThis.length + ' filter buttons map to existing content');
+    pass('C3', 'All ' + buttons.length + ' filter buttons map to existing content');
   }
 
-  const btnLabelRE = /filterArticles\('([^']+)',\s*this\)[^>]*>(<span class="lang-th">([^<]+)<\/span><span class="lang-en">([^<]+)<\/span>)/g;
-  const btns = [...html.matchAll(btnLabelRE)];
+  // C4: static labels match the card counts (the runtime recount covers JS readers; crawlers read the static label).
   const mismatches = [];
-  btns.forEach(([, cat, , th, en]) => {
-    if (cat === 'all' || cat.startsWith('las-') || cat === 'bkk') return;
-    const expected = cardCounts[cat] || 0;
-    const need = '(' + expected + ')';
-    if (!th.includes(need) || !en.includes(need)) {
+  let checked = 0;
+  buttons.forEach(({ cat, th, en }) => {
+    if (!cat || cat === 'all' || cat.startsWith('las-') || cat === 'bkk') return;
+    checked++;
+    const need = '(' + (cardCounts[cat] || 0) + ')';
+    if (!th || !en || !th.includes(need) || !en.includes(need)) {
       mismatches.push(cat + ': expected ' + need + ', got th="' + th + '" en="' + en + '"');
     }
   });
-  if (mismatches.length > 0) {
+  if (checked === 0) {
+    fail('C4', 'No category filter buttons with labels found — cannot check label counts');
+  } else if (mismatches.length > 0) {
     fail('C4', mismatches.length + ' label count mismatch(es)', mismatches.join('\n  '));
   } else {
-    pass('C4', 'All label counts match actual card counts (' + btns.length + ' buttons checked)');
+    pass('C4', 'All label counts match actual card counts (' + checked + ' buttons checked)');
   }
 }
 

@@ -26,6 +26,21 @@ names bind as named statutes (or ``unrecognized``), not bare numbers.
 Inserted sections (``41/1``, ``193/30``) stay one identifier. Securities
 ``89/*`` inserts stay compound only when the cite is bound as that Act.
 Lawquote boxes and lecture cites remain in scope.
+
+Hardening after the system audit of 17 ตุลาคม 2569 (findings G2, G7, F1):
+
+* Non-canonical forms parse like the canonical ones: ``มาตรา9999`` (no space), the abbreviation ``ม.9999``, and the
+  English ``Sec. N`` / ``Secs. N–M`` and lower-case ``s. N`` / ``ss. N–M``.
+* Comma / "and" lists (``Sections 1012, 1025 and 1064``, ``ss. 41, 71``) bound to a named statute are expanded and
+  checked against that statute; an unbound list is still not a registry citation, but it is printed as a REVIEW line.
+* Any other section-like text the parser cannot read is reported as UNPARSED and the file exits 4, which
+  verify-legal-citations.sh blocks. Exit 2 now means the page has no section-like text at all.
+* ``มาตรา N แห่ง / ของ / ตาม พระราชบัญญัติX`` binds X even when X's aliases carry the พระราชบัญญัติ / พ.ร.บ. prefix
+  (the longest alias wins, so สถาบันอนุญาโตตุลาการ beats อนุญาโตตุลาการ).
+* ``--input`` takes many files (``--batch``): the registry loads once and each file gets a [PASS] / [BLOCK] line.
+
+Exit codes: 0 pass · 1 citation not in the registry · 2 no section-like text · 3 input or registry error ·
+4 section-like text could not be parsed.
 """
 from __future__ import annotations
 
@@ -42,8 +57,14 @@ SIBLING_GAP = re.compile(
     re.IGNORECASE,
 )
 HARD_CUT = " ·|· "
-SECTION_LEAD = re.compile(r"^\s*(?:มาตรา|\bsections?\b)", re.IGNORECASE)
-SECTION_TOKEN_IN = re.compile(r"(?:มาตรา|\bsections?\b)", re.IGNORECASE)
+# ``ม.`` is the abbreviated มาตรา; a Thai letter before it is another word ("กม.01"), so it never starts a cite there.
+THAI_SECTION_ABBR = r"(?<![\u0E01-\u0E4E])ม\.(?=\s*\d)"
+SECTION_LEAD = re.compile(
+    r"^\s*(?:มาตรา|" + THAI_SECTION_ABBR + r"|\bsections?\b|\bsecs?\.|(?-i:\bss?\.)(?=\s*\d))", re.IGNORECASE
+)
+SECTION_TOKEN_IN = re.compile(
+    r"(?:มาตรา|" + THAI_SECTION_ABBR + r"|\bsections?\b|\bsecs?\.|(?-i:\bss?\.)(?=\s*\d))", re.IGNORECASE
+)
 HTML_ENTITY = re.compile(r"&(?:[a-zA-Z][a-zA-Z0-9]*|#\d+|#x[0-9a-fA-F]+);")
 HTML_ENTITIES = {
     "&amp;": "and",
@@ -67,10 +88,42 @@ HTML_ENTITIES = {
 THAI_SECTION_SUFFIX = (
     r"(?:\s*(?:ทวาทศ|เอกาทศ|จตุทศ|ปัณรส|โสฬส|สัตตรส|อัฏฐารส|เตรส|จัตวา|เบญจ|สัตต|อัฏฐ|ทวิ|ตรี|นว|ทศ|ฉ)(?![\u0E01-\u0E4E]))?"
 )
+# Non-canonical forms are parsed too, so the gate cannot fail open on them: ``มาตรา9999`` (no space), the abbreviation
+# ``ม.9999`` / ``ม. 40``, and the English ``Sec. N`` / ``Secs. N–M`` and lower-case ``s. N`` / ``ss. N–M`` forms. ``s.``
+# and ``ss.`` are case-sensitive so ``U.S. 5`` and sentence ends never read as a section.
 SECTION_RE = re.compile(
-    r"มาตรา\s+(\d+(?:\s*/\s*\d+)?" + THAI_SECTION_SUFFIX + r")"
-    r"|\bsections\s+(\d+\s*/\s*\d+(?:\s*/\s*\d+)*|\d+\s*[–—\-]\s*\d+)"
-    r"|\bsection\s+(\d+(?:\s*/\s*\d+)?)",
+    r"(?:มาตรา\s*|" + THAI_SECTION_ABBR + r"\s*)(\d+(?:\s*/\s*\d+)?" + THAI_SECTION_SUFFIX + r")"
+    r"|(?:\bsections\s+|\bsecs\.\s*|(?-i:\bss\.)\s*)(\d+\s*/\s*\d+(?:\s*/\s*\d+)*|\d+\s*[–—\-]\s*\d+)"
+    r"|(?:\bsection\s+|\bsec\.\s*|(?-i:\bs\.)\s*)(\d+(?:\s*/\s*\d+)?)",
+    re.IGNORECASE,
+)
+# Plural comma / "and" lists ("Sections 1012, 1025 and 1064", "ss. 5, 6"). A list bound to a named statute is expanded
+# and checked against that statute's registry; an unbound list is not a registry citation (``Sections 102, 105`` may
+# number anything) and is reported for review instead of passing silently.
+# An item may carry a subsection ("40(1)", "193/14(3)") or a Latin insert suffix ("35 bis"); only its section number is
+# checked, as for a singular "Section 35 bis". "A to B" is a range like "A–B"; "Sections 86 et seq." is one citation.
+LIST_ITEM = (
+    r"\d+(?:/\d+)?(?:\s*\(\d+\))*"
+    r"(?:\s+(?:bis|ter|quater|quinquies|sexies|septies|octies|novies|decies)\b)?"
+    r"(?:\s*\(\d+\))*(?:\s+para(?:graph)?\.?\s*\d+)?"
+)
+LIST_SEP = r"(?:\s*,\s*(?:and\s+|or\s+)?|\s+(?:and|or|&|to)\s+|\s*\+\s*|\s*[–—\-]\s*)"
+SECTION_LIST_RE = re.compile(
+    r"(?:\bsections\s+|\bsecs\.\s*|(?-i:\bss\.)\s*)"
+    r"(" + LIST_ITEM + r"(?:" + LIST_SEP + LIST_ITEM + r")+|" + LIST_ITEM + r"\s+et\s+seq\.?)",
+    re.IGNORECASE,
+)
+LIST_ITEM_RE = re.compile(
+    r"(\d+(?:/\d+)?)(?:\s*\(\d+\))*"
+    r"(?:\s+(?:bis|ter|quater|quinquies|sexies|septies|octies|novies|decies)\b)?"
+    r"(?:\s*\(\d+\))*(?:\s+para(?:graph)?\.?\s*\d+)?"
+    r"(\s+to\s+|\s*[–—\-]\s*)?",
+    re.IGNORECASE,
+)
+# Anything that looks like a section reference. A match that neither SECTION_RE nor SECTION_LIST_RE consumed is
+# "could not parse": the gate reports it and exits 4 instead of treating the page as citation-free.
+SECTION_LIKE_RE = re.compile(
+    r"มาตรา\s*\d|" + THAI_SECTION_ABBR + r"|\bsec(?:tion)?s?\.?\s*\d|(?-i:\bss?\.)\s*\d",
     re.IGNORECASE,
 )
 DASH_RANGE_RE = re.compile(r"^(\d+)\s*[–—\-]\s*(\d+)$")
@@ -498,8 +551,44 @@ def _trailing_rest(window: str) -> str:
     return window
 
 
+def _trailing_connective_rest(window: str) -> str:
+    """Drop only the of-the / แห่ง / ของ / ตาม connective, keeping a พระราชบัญญัติ / พ.ร.บ. prefix in place."""
+    intro = re.match(r"^\s*(?:of(?:\s+the)?|แห่ง|ของ|ตาม)", window, re.IGNORECASE)
+    if intro and not window[: intro.end()].isspace():
+        return window[intro.end() :]
+    return window
+
+
+ACT_PREFIX_SPACE = re.compile(r"(พ\.ร\.[บกฎ]\.)\s+")
+
+
+def _leading_alias(text: str) -> str | None:
+    """Key of the longest alias that starts the text (so สถาบันอนุญาโตตุลาการ beats อนุญาโตตุลาการ)."""
+    head = ACT_PREFIX_SPACE.sub(r"\1", text.lstrip()).lower()
+    best_key = None
+    best_len = 0
+    for key, aliases in STATUTE_ALIASES:
+        for alias in aliases:
+            if len(alias) > best_len and head.startswith(alias):
+                best_key = key
+                best_len = len(alias)
+    return best_key
+
+
 def trailing_statute(trailing: str) -> str | None:
-    rest = _trailing_rest(phrase_after(trailing))
+    after = phrase_after(trailing)
+    # ``มาตรา 5 แห่งพระราชบัญญัติการบัญชี`` / ``มาตรา 26 แห่ง พ.ร.บ.โรงแรม``: most aliases carry the พระราชบัญญัติ /
+    # พ.ร.บ. prefix, so match the window with the prefix kept first, then with it stripped (``คุ้มครองแรงงาน``).
+    # Only after an introducer: a bare following word ("มาตรา 150 อาคารชุดที่…") is prose, not the statute's name.
+    # A title right after the number with no introducer ("มาตรา 19 พ.ร.บ.การประกอบกิจการพลังงาน") is often the next
+    # item of a list, so only the unprefixed aliases bind there, as before.
+    for window in (_trailing_connective_rest(after), _trailing_rest(after)):
+        if window == after:
+            continue
+        key = _leading_alias(window)
+        if key is not None:
+            return key
+    rest = _trailing_rest(after)
     key = statute_in(rest)
     if key is not None:
         span = _alias_span(rest, key)
@@ -550,15 +639,90 @@ def attached_statute(prefix: str, trailing: str = "") -> str | None:
     return prefix_statute(prefix) or trailing_statute(trailing)
 
 
+class Scan:
+    """Everything the gate saw in one text: registry citations, unbound lists for review, unparsed tokens."""
+
+    def __init__(self) -> None:
+        self.citations: list[tuple[str | None, str]] = []
+        self.review_lists: list[str] = []
+        self.unparsed: list[str] = []
+
+
+def _snippet(prepared: str, start: int, end: int) -> str:
+    return re.sub(r"\s+", " ", prepared[max(0, start - 30) : end + 30]).strip()
+
+
+def _list_sections(body: str, statute: str) -> list[str]:
+    """Section identifiers of a bound list body; "A to B" / "A–B" between plain numbers expands like a dash range."""
+    items = list(LIST_ITEM_RE.finditer(body))
+    sections: list[str] = []
+    skip_next = False
+    for index, item in enumerate(items):
+        if skip_next:
+            skip_next = False
+            continue
+        number = item.group(1)
+        if item.group(2) and index + 1 < len(items):
+            end = items[index + 1].group(1)
+            if number.isdigit() and end.isdigit():
+                sections.extend(expand_section_token(f"{number}–{end}", statute))
+                skip_next = True
+                continue
+        sections.extend(expand_section_token(number, statute))
+    return sections
+
+
+def scan_text(text: str, *, insert_statute: str | None = None) -> Scan:
+    prepared = prepare_text(text)
+    result = Scan()
+    lists = [match for match in SECTION_LIST_RE.finditer(prepared)]
+    # A plural slash or dash head ("Sections 193/14(3), 295, 682") is only the start of a longer list: the list owns it.
+    owned = {match.start(): match.end() for match in lists}
+    result.citations = _extract_prepared(prepared, insert_statute=insert_statute, owned=owned)
+    covered = [
+        match.span() for match in SECTION_RE.finditer(prepared) if owned.get(match.start(), -1) <= match.end()
+    ]
+    for match in lists:
+        if any(start <= match.start() < end for start, end in covered):
+            continue
+        covered.append(match.span())
+        prefix = prepared[: match.start()]
+        trailing = prepared[match.end() : match.end() + TRAILING_LIMIT]
+        statute = attached_statute(prefix, trailing)
+        if statute is None and unrecognized_named_statute(prefix, trailing):
+            statute = UNRECOGNIZED
+        if statute is None:
+            result.review_lists.append(re.sub(r"\s+", " ", match.group(0)).strip())
+            continue
+        for section in _list_sections(match.group(1), statute):
+            result.citations.append((statute, section))
+    for match in SECTION_LIKE_RE.finditer(prepared):
+        if not any(start <= match.start() < end for start, end in covered):
+            result.unparsed.append(_snippet(prepared, match.start(), match.end()))
+    return result
+
+
 def extract_citations(
     text: str,
     *,
     insert_statute: str | None = None,
 ) -> list[tuple[str | None, str]]:
-    prepared = prepare_text(text)
+    """Registry citations, including comma / and lists bound to a named statute."""
+    return scan_text(text, insert_statute=insert_statute).citations
+
+
+def _extract_prepared(
+    prepared: str,
+    *,
+    insert_statute: str | None = None,
+    owned: dict[int, int] | None = None,
+) -> list[tuple[str | None, str]]:
     found: list[tuple[str | None, str]] = []
     last_statute: str | None = None
+    owned = owned or {}
     for match in SECTION_RE.finditer(prepared):
+        if owned.get(match.start(), -1) > match.end():
+            continue
         prefix = prepared[: match.start()]
         trailing = prepared[match.end() : match.end() + TRAILING_LIMIT]
         statute = attached_statute(prefix, trailing)
@@ -665,40 +829,116 @@ def _sort_missing(label: str) -> tuple[int, str]:
     return (int(number.group(1)) if number else 0, label)
 
 
+EXIT_PASS = 0
+EXIT_BLOCK = 1
+EXIT_NO_CITATION = 2
+EXIT_ERROR = 3
+# Section-like text ("Sec 5", a form the parser does not know) that was neither checked nor reported as a list. Never a
+# pass: verify-legal-citations.sh blocks it like a registry miss.
+EXIT_UNPARSED = 4
+
+
+def check_text(text: str, registry: dict[str, set[str]], out=None, err=None) -> int:
+    """Gate one page's text and print the per-citation report. Returns one of the EXIT_* codes."""
+    out = out or sys.stdout
+    err = err or sys.stderr
+    scan = scan_text(text)
+    for listed in scan.review_lists:
+        print(f"[PUBLIC-CITATION-GATE] REVIEW unbound section list (not registry-checked): {listed}", file=out)
+    for snippet in scan.unparsed:
+        print(f"[PUBLIC-CITATION-GATE] UNPARSED section-like text: {snippet}", file=err)
+    citations = scan.citations
+    if not citations:
+        if scan.unparsed:
+            print("[PUBLIC-CITATION-GATE] FAIL — section-like text could not be parsed", file=err)
+            return EXIT_UNPARSED
+        if scan.review_lists:
+            print(f"[PUBLIC-CITATION-GATE] No registry citations detected; {len(scan.review_lists)} unbound list(s) "
+                  "reported for review.", file=out)
+        else:
+            print("[PUBLIC-CITATION-GATE] No statutory citations detected.", file=out)
+        return EXIT_NO_CITATION
+    unique_sections = {section for _statute, section in citations}
+    missing = sorted(missing_citations(citations, registry), key=_sort_missing)
+    print(f"[PUBLIC-CITATION-GATE] citations={len(citations)} unique={len(unique_sections)}", file=out)
+    if missing:
+        for label in missing:
+            print(f"[PUBLIC-CITATION-GATE] BLOCK section {label}: not in official registry", file=err)
+        print("[PUBLIC-CITATION-GATE] FAIL — every citation must be registry-backed", file=err)
+        return EXIT_BLOCK
+    if scan.unparsed:
+        print("[PUBLIC-CITATION-GATE] FAIL — section-like text could not be parsed", file=err)
+        return EXIT_UNPARSED
+    print("[PUBLIC-CITATION-GATE] PASS — all citations are registry-backed", file=out)
+    return EXIT_PASS
+
+
+VERDICTS = {
+    EXIT_PASS: "citations verified",
+    EXIT_NO_CITATION: "no statutory citation detected",
+    EXIT_BLOCK: "firewall exit 1 (citation not in official registry)",
+    EXIT_ERROR: "firewall exit 3 (input missing or unreadable)",
+    EXIT_UNPARSED: "firewall exit 4 (section-like text could not be parsed)",
+}
+
+
+def run_batch(paths: list[str], registry: dict[str, set[str]]) -> int:
+    """Load the registry once and gate every file; print one [PASS]/[BLOCK] verdict per file.
+
+    Returns 0 when every file passes (or has no section-like text at all), otherwise the first failing code.
+    """
+    first_failure = EXIT_PASS
+    blocked = 0
+    for name in paths:
+        print(f"Checking: {name}", flush=True)
+        source = Path(name)
+        try:
+            text = source.read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError) as exc:
+            print(f"[PUBLIC-CITATION-GATE] ERROR: cannot read {source}: {exc}", file=sys.stderr)
+            status = EXIT_ERROR
+        else:
+            status = check_text(text, registry)
+        sys.stderr.flush()
+        if status in (EXIT_PASS, EXIT_NO_CITATION):
+            print(f"[PASS] {name} — {VERDICTS[status]}", flush=True)
+            continue
+        print(f"[BLOCK] {name} — {VERDICTS[status]}", file=sys.stderr, flush=True)
+        blocked += 1
+        if first_failure == EXIT_PASS:
+            first_failure = status
+    print(f"[PUBLIC-CITATION-GATE] files={len(paths)} blocked={blocked}", flush=True)
+    return first_failure
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", required=True)
+    parser.add_argument("--input", required=True, nargs="+", action="extend",
+                        help="one or more HTML files; with more than one (or --batch) the registry loads once")
     parser.add_argument("--kb", required=True)
     parser.add_argument("--mode", default="hard-gate")
     parser.add_argument("--no-pinecone", action="store_true")
+    parser.add_argument("--batch", action="store_true", help="print one [PASS]/[BLOCK] verdict line per file")
     args = parser.parse_args()
     if args.mode not in {"hard-gate", "soft-warn", "report"}:
         print(f"[PUBLIC-CITATION-GATE] invalid mode: {args.mode}", file=sys.stderr)
         return 1
-    source = Path(args.input)
-    if not source.is_file():
-        print(f"[PUBLIC-CITATION-GATE] input is missing: {source}", file=sys.stderr)
-        return 3
+    batch = args.batch or len(args.input) > 1
+    if not batch:
+        source = Path(args.input[0])
+        if not source.is_file():
+            print(f"[PUBLIC-CITATION-GATE] input is missing: {source}", file=sys.stderr)
+            return EXIT_ERROR
     try:
-        text = source.read_text(encoding="utf-8")
         registry = load_registry(Path(args.kb))
+        if not batch:
+            text = source.read_text(encoding="utf-8")
     except (OSError, RuntimeError) as exc:
         print(f"[PUBLIC-CITATION-GATE] ERROR: {exc}", file=sys.stderr)
-        return 3
-    citations = extract_citations(text)
-    if not citations:
-        print("[PUBLIC-CITATION-GATE] No statutory citations detected.")
-        return 2
-    unique_sections = {section for _statute, section in citations}
-    missing = sorted(missing_citations(citations, registry), key=_sort_missing)
-    print(f"[PUBLIC-CITATION-GATE] citations={len(citations)} unique={len(unique_sections)}")
-    if missing:
-        for label in missing:
-            print(f"[PUBLIC-CITATION-GATE] BLOCK section {label}: not in official registry", file=sys.stderr)
-        print("[PUBLIC-CITATION-GATE] FAIL — every citation must be registry-backed", file=sys.stderr)
-        return 1
-    print("[PUBLIC-CITATION-GATE] PASS — all citations are registry-backed")
-    return 0
+        return EXIT_ERROR
+    if batch:
+        return run_batch(args.input, registry)
+    return check_text(text, registry)
 
 
 if __name__ == "__main__":

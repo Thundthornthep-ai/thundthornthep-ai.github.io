@@ -10,6 +10,11 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
 - มาตรา 4
 - มาตรา 20
+- มาตรา 27
 - มาตรา 28
+- มาตรา 30
 - มาตรา 31
 - มาตรา 32
+- มาตรา 38
+- มาตรา 69
+- มาตรา 70
