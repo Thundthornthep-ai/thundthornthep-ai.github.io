@@ -139,7 +139,7 @@ def mask_attribute_markup(html: str) -> str:
     def tag(match: re.Match[str]) -> str:
         return QUOTED_VALUE.sub(lambda value: value.group(0).replace("<", " ").replace(">", " "), match.group(0))
     return START_TAG.sub(tag, html)
-HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
+HTML_COMMENT = re.compile(r"<!--.*?(?:-->|\Z)", re.DOTALL)
 # elements whose content visitors never see: <template> is inert, <noscript> shows only with scripting off, and the
 # fallback body of <iframe>, <noembed> and <noframes> is raw text a browser with those features never shows (Codex review
 # of PR #80)
@@ -271,8 +271,10 @@ def refresh_target(content: str) -> str:
     return match.group(1).strip().strip("\"'").strip() if match else ""
 
 
-TITLE_ELEMENT = re.compile(r"<title(?=[\s/>])" + TAG_BODY + r">.*?</title\s*>", re.DOTALL | re.IGNORECASE)
-SCRIPT_OR_STYLE = re.compile(r"<(script|style)(?=[\s/>])" + TAG_BODY + r">.*?</\1\s*>", re.DOTALL | re.IGNORECASE)
+# a raw-text element or comment with no end runs to the end of the file, as a browser reads it (Codex review of PR #80)
+TITLE_ELEMENT = re.compile(r"<title(?=[\s/>])" + TAG_BODY + r">.*?(?:</title\s*>|\Z)", re.DOTALL | re.IGNORECASE)
+SCRIPT_OR_STYLE = re.compile(r"<(script|style)(?=[\s/>])" + TAG_BODY + r">.*?(?:</\1\s*>|\Z)",
+                             re.DOTALL | re.IGNORECASE)
 
 
 def is_redirect_stub(html: str) -> bool:

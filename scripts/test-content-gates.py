@@ -621,6 +621,11 @@ class TemplateStructureTests(unittest.TestCase):
         self.assertFalse(pages.is_redirect_stub('<xmp><meta http-equiv="refresh" content="0;url=/new"></xmp>'))  # round 49
         self.assertFalse(pages.is_redirect_stub(  # a custom element is no <meta> (round 51)
             '<meta-refresh http-equiv="refresh" content="0;/new"></meta-refresh>'))
+        for unclosed in ('<script>const example = \'<meta http-equiv="refresh" content="0;/new">\';',  # round 53
+                         '<style>/* <meta http-equiv="refresh" content="0;/new"> */',
+                         '<title>Example <meta http-equiv="refresh" content="0;/new">',
+                         '<!-- <meta http-equiv="refresh" content="0;/new">'):
+            self.assertFalse(pages.is_redirect_stub(unclosed), unclosed)
         # a "<body>" inside the raw <title> text does not start the body (round 48)
         self.assertEqual(pages.page_body('<title>x <body> y</title></head><body><p>z</p>'), "<p>z</p>")
         # markup inside a <textarea> is text, not elements (round 33)
