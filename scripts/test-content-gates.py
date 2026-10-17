@@ -242,6 +242,7 @@ class ContentRuleTests(unittest.TestCase):
         # a heading written as source in a <textarea> is no FAQ section; the JSON-LD type is read from the type
         # attribute, decoded (Codex review of PR #80, round 43)
         self.assertEqual(rule_ids(self.faq_page("<textarea><h2>FAQ</h2></textarea>")), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<input type="hidden" class="faq-item">')), ["CR11"])  # round 44
         encoded = self.FAQ_LD.replace('type="application/ld+json"', 'type="application/ld&#43;json"')
         self.assertEqual(rule_ids(self.faq_page(ld=encoded)), ["CR11"])
         noted = GOOD.replace("</body>", '<script data-note="ld+json">const sample = "ม.118";</script></body>')
@@ -642,6 +643,11 @@ class TemplateStructureTests(unittest.TestCase):
             "<html><body><p>text</p></body></html>", labels=False))
         titled = COMPLETE.replace('<div class="quick-answer">', '<div class="quick-answer" title="shown, not hidden">')
         self.assertEqual(template.missing_markers(titled, labels=False), [])
+        # a void element marks no section, whatever its class (round 44)
+        void = ('<html><body>' + "".join(f'<input type="hidden" class="{c}"><meta class="{c}">' for c in
+                ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer")) + "</body></html>")
+        self.assertEqual(template.missing_markers(void, labels=False), template.missing_markers(
+            "<html><body><p>text</p></body></html>", labels=False))
         # an <iframe> fallback body marks nothing (round 38)
         framed = ('<html><body><iframe src="x.html">' + "".join(f'<div class="{c}">x</div>' for c in
                   ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer")) + "<table></table></iframe></body></html>")

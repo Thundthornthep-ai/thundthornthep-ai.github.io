@@ -220,7 +220,9 @@ def marker_hits(
     within: dict[str, set[int]] = {}
     for marker in ORDER:
         # a class marker sits at the start of its element, so two sections named in one element share that element
-        owned = [tag.start() for tag in pages.START_TAG.finditer(body) if has_class(marker, tag.group(2))]
+        # a void element (<input type="hidden">, <meta>, <br>) holds no section, whatever its class (Codex review of PR #80)
+        owned = [tag.start() for tag in pages.START_TAG.finditer(body)
+                 if tag.group(1).lower() not in pages.VOID_TAGS and has_class(marker, tag.group(2))]
         if marker in HEAD:
             # a pipeline sub-heading (h3 class "sub-heading", such as "Claim Ledger (… ข้อต่อสู้ทางกฎหมาย)") is a part
             # of another section, not a section of its own

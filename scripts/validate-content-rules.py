@@ -414,7 +414,9 @@ def check_faq(raw: str) -> tuple[list[tuple[str, str]], list[tuple[str, str]]]:
     markup = pages.strip_unrendered(page_body(STYLE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw)))))
     # a FAQ class is a token of an element's own class attribute starting with "faq" ("faq-item", not "no-faq"), not
     # text inside another attribute's value (title="x class=faq-item"; Codex review of PR #80)
+    # (a void element such as <input class="faq"> holds no section)
     has_section = bool(any(token.startswith("faq") for tag in pages.START_TAG.finditer(markup)
+                           if tag.group(1).lower() not in pages.VOID_TAGS
                            for token in pages.class_tokens(tag.group(2))) or any(
         FAQ_HEADING_TEXT.search(htmllib.unescape(pages.untag(heading.group(2))))
         for heading in HEADING_ELEMENT.finditer(markup)))
