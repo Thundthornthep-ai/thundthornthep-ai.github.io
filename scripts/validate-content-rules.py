@@ -81,9 +81,20 @@ DEKA_NUMBER = re.compile(
     r"\s*(?:No\.?|Number)?\s*(\d{1,5}/25\d\d)",
     re.IGNORECASE,
 )
-# "Judgment No. 1521/2566" with no court named: a Supreme Court number when the Supreme Court is named shortly before.
-BARE_JUDGMENT = re.compile(r"\bJudge?ment\s*(?:No\.?|Number)?\s*(\d{1,5}/25\d\d)", re.IGNORECASE)
+# "Judgment No. 1521/2566" with no court named: a Supreme Court number when the Supreme Court is named shortly before
+# or after it. The nouns are those DEKA_NUMBER accepts after "Supreme Court".
+BARE_JUDGMENT = re.compile(
+    r"\b(?:Judge?ment|Decision|Case|Ruling)\s*(?:No\.?|Number)?\s*(\d{1,5}/25\d\d)", re.IGNORECASE
+)
 SUPREME_NAMED = re.compile(r"supreme\s+court|\bdika\b|ศาลฎีกา", re.IGNORECASE)
+# A number that names another court right before its noun ("Constitutional Court Ruling No. 4/2562") is not the
+# Supreme Court's, whatever court the surrounding text mentions.
+OTHER_COURT_BEFORE = re.compile(
+    r"(?:(?:constitutional|administrative|appeals?|appellate|central|labou?r|tax|bankruptcy|juvenile|"
+    r"civil|criminal|provincial|district|military|arbitral)\s+court(?:'s)?|court\s+of\s+(?:appeals?|first\s+instance)"
+    r"|tribunal(?:'s)?)\s*$",
+    re.IGNORECASE,
+)
 LPA_NAMED = re.compile(r"คุ้มครองแรงงาน|labou?r\s+protection|\bLPA\b", re.IGNORECASE)
 # Amendment No. 7 named with or without its year (2562 / 2019); counted only near the Act's name (lpa_context).
 LPA_NO7 = re.compile(
@@ -196,6 +207,8 @@ def check_article(raw: str, verified: set[str]) -> list[tuple[str, str]]:
         if any(start <= match.start() < end for start, end in seen_spans):
             continue
         # the court may be named before the number or after it ("Judgment No. 9999/2566 of the Supreme Court")
+        if OTHER_COURT_BEFORE.search(text[max(0, match.start() - 60) : match.start()]):
+            continue
         context = text[max(0, match.start() - 400) : match.start()] + " " + text[match.end() : match.end() + 200]
         if SUPREME_NAMED.search(context) and match.group(1) not in verified:
             found.append(("CR7", f"{match.group(1)}: {snippet(text, match.start(), match.end())}"))

@@ -120,6 +120,25 @@ LIST_ITEM_RE = re.compile(
     r"(\s+to\s+|\s*[–—\-]\s*)?",
     re.IGNORECASE,
 )
+# A singular head followed by bare numbers ("มาตรา 150, 9999", "มาตรา 51 และ 54", "Section 27 or 28") is a list too:
+# every number after the head is checked. An item followed by a hyphen, letter or unit ("Section 183, 10-category",
+# "มาตรา 5 และ 2 ปี") is not a section and ends the list.
+SINGULAR_ID = r"\d+(?:\s*/\s*\d+)?" + THAI_SECTION_SUFFIX
+SINGULAR_ITEM = (
+    SINGULAR_ID + r"(?:\s+(?:bis|ter|quater|quinquies|sexies|septies|octies|novies|decies)\b)?(?:\s*\(\d+\))*"
+)
+SINGULAR_ITEM_END = (
+    r"(?![\d/\-]|[A-Za-z]|\s*(?:วัน|ปี|เดือน|บาท|คน|ครั้ง|ชั่วโมง|เท่า|%|ร้อยละ)"
+    r"|\s+(?:days?|weeks?|months?|years?|hours?|baht|percent|per\s+cent|times|categor(?:y|ies)|items?|persons?|people)\b)"
+)
+SINGULAR_SEP = r"(?:\s*,\s*(?:and\s+|or\s+|และ\s*|หรือ\s*)?|\s+(?:and|or|&)\s+|\s*(?:และ|หรือ)\s*)"
+SINGULAR_LIST_RE = re.compile(
+    r"(?:มาตรา\s*|" + THAI_SECTION_ABBR + r"\s*|\bsection\s+|\bsec\.\s*|(?-i:\bs\.)\s*)"
+    r"(" + SINGULAR_ITEM + r"(?:" + SINGULAR_SEP + SINGULAR_ITEM + SINGULAR_ITEM_END + r")+)",
+    re.IGNORECASE,
+)
+# the section identifier of one item: its number and Thai insert suffix, without subsections or Latin inserts
+SINGULAR_ITEM_RE = re.compile(r"(" + SINGULAR_ID + r")" + SINGULAR_ITEM[len(SINGULAR_ID) :], re.IGNORECASE)
 # Anything that looks like a section reference. A match that neither SECTION_RE nor SECTION_LIST_RE consumed is
 # "could not parse": the gate reports it and exits 4 instead of treating the page as citation-free.
 SECTION_LIKE_RE = re.compile(
@@ -741,6 +760,9 @@ def scan_text(text: str, *, insert_statute: str | None = None) -> Scan:
     prepared = prepare_text(text)
     result = Scan()
     lists = [match for match in SECTION_LIST_RE.finditer(prepared)]
+    plural = {match.start() for match in lists}
+    lists += [match for match in SINGULAR_LIST_RE.finditer(prepared) if match.start() not in plural]
+    lists.sort(key=lambda match: match.start())
     # A plural slash or dash head ("Sections 193/14(3), 295, 682") is only the start of a longer list: the list owns it.
     owned = {match.start(): match.end() for match in lists}
     result.citations, result.review_lists, covered = _extract_prepared(
@@ -807,6 +829,11 @@ def _extract_prepared(
                 statute = None
             for section in expand_section_token(section_token(match), statute or insert_statute):
                 found.append((statute, section))
+        elif match.re is SINGULAR_LIST_RE:
+            # each number is read as a singular citation would be: bound to the statute, or unbound like "มาตรา 51"
+            for item in SINGULAR_ITEM_RE.finditer(match.group(1)):
+                for section in expand_section_token(item.group(1), statute or insert_statute):
+                    found.append((statute, section))
         elif statute is None:
             review.append(re.sub(r"\s+", " ", match.group(0)).strip())
         else:

@@ -213,7 +213,7 @@
      "sha256": "29ec0037e087c2ce2cdae17aee6b59ac379b3baa59261106b3083cbee7dae323",
      "text_sha256": "4857ef0018f8742607c1a3d9081baa873d02a35213574641715691cdfb3e1baf",
      "published": "2026-04-03",
-     "modified": "2026-10-04",
+     "modified": "2026-10-17",
      "url": "https://thundthornthep-ai.github.io/articles/asset-declaration-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -471,7 +471,7 @@
      "sha256": "dcfa41bb4522cdc631803cb83c31fb16fb8a202dd63529fc9842775941859dc0",
      "text_sha256": "3570f3a0b1e5b89a66b7936bf789f784441b104ecf00cb026c4e113c895b35f2",
      "published": "2026-06-20",
-     "modified": "2026-10-04",
+     "modified": "2026-10-17",
      "url": "https://thundthornthep-ai.github.io/articles/company-registration-guide.html",
      "legal_status": "reviewed",
      "article_schema": false
@@ -813,10 +813,10 @@
      "path": "articles/eec-investment-thailand.html",
      "title": "ลงทุน EEC ไทย — สิทธิประโยชน์และขั้นตอนฉบับสมบูรณ์",
      "language": "th",
-     "sha256": "6fd67d1b4fb2ec27e9419dba367c5e247d36dc21188ad146616a9703bce0c8d9",
-     "text_sha256": "1d82148a55250480b5937d97b27155bd009f9b69f38d5768999f568e5e134e4c",
+     "sha256": "d41822766ae3f86064b4b8b4dd00ee2efdc6447f88b0d68fbf02df95cbc673bb",
+     "text_sha256": "8fb26a15066c0d5b3c4056b1daa305ad4a8af1d8d4ca9a04387b5dfa5f4a6a3a",
      "published": "2026-04-04",
-     "modified": "2026-10-04",
+     "modified": "2026-10-17",
      "url": "https://thundthornthep-ai.github.io/articles/eec-investment-thailand.html",
      "legal_status": "reviewed",
      "article_schema": false
@@ -1545,7 +1545,7 @@
      "sha256": "69d3fec593fe4027f0c89d3cd1eb4d67f6d5a81ecee7b5e0971bd59a4ff6bd87",
      "text_sha256": "05840f3a928fb6dc395d9a3d1b6f98a260e7f9b566d153a06a80133b5dd82ca4",
      "published": "2026-04-15",
-     "modified": "2026-10-04",
+     "modified": "2026-10-17",
      "url": "https://thundthornthep-ai.github.io/en/articles/las-invest-01.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -1589,7 +1589,7 @@
      "sha256": "f3ff848e0f8bbfd2ff74f0b0d3b8afbcc72927b04e26ac350ffc0560948ff674",
      "text_sha256": "de0d193e7ee10f2801e783561804beaed24048297b49d93f7f1b0b32fda9cd3e",
      "published": "2026-04-15",
-     "modified": "2026-10-04",
+     "modified": "2026-10-17",
      "url": "https://thundthornthep-ai.github.io/en/articles/las-invest-02.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -1654,7 +1654,7 @@
      "sha256": "229f0e47f8f51ae1af2db77d42d4cad106c7a4288488feac3d81cd5723f322e3",
      "text_sha256": "e60f82733cafb40cadd23bf507beb9ad8a508881aa378f1ccb3c21632518b97d",
      "published": "2026-04-03",
-     "modified": "2026-10-04",
+     "modified": "2026-10-17",
      "url": "https://thundthornthep-ai.github.io/articles/las-share-02.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -1686,7 +1686,7 @@
      "sha256": "dadce99f049ca614275e87ea0a2362a37221665f68ed07bb772ad5752b5522eb",
      "text_sha256": "d9e9e0fa093571257aeab48c3f9d051baeac23f717a13effd85af1526902f03e",
      "published": "2026-04-03",
-     "modified": "2026-10-04",
+     "modified": "2026-10-17",
      "url": "https://thundthornthep-ai.github.io/articles/las-share-03.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -1847,7 +1847,7 @@
      "sha256": "51fd2fd1409d60b13e462d773011bd26a9c56ae97869d364c5f24ddfa3fe4e4d",
      "text_sha256": "2fc43c0e997c1f932c57a150c5fad68ba1f076bf80fde49f76b1ceca85be39a3",
      "published": "2026-04-03",
-     "modified": "2026-10-04",
+     "modified": "2026-10-17",
      "url": "https://thundthornthep-ai.github.io/articles/las-share-09.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -1859,7 +1859,7 @@
      "sha256": "24424a41a440fd9060ce609b4671bc500737b5bd53dae3cce6e153e75e45fb92",
      "text_sha256": "522875eb43917a9ceea622e99b845a485a276ff116f6a7cb0abb232bf7ca25aa",
      "published": "2026-04-03",
-     "modified": "2026-10-04",
+     "modified": "2026-10-17",
      "url": "https://thundthornthep-ai.github.io/en/articles/las-share-09.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -1924,7 +1924,7 @@
      "sha256": "de1d0e3c9efab22bdd6f1048d2d61d4b2f3cae8942c77ebb867b53da675f0592",
      "text_sha256": "f5ac2b98510a0a5b7bf0d5ebb4e142cd8419ded317f83c483a9d9e38b7005557",
      "published": "2026-04-03",
-     "modified": "2026-10-04",
+     "modified": "2026-10-17",
      "url": "https://thundthornthep-ai.github.io/articles/las-shield-01.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -1956,7 +1956,7 @@
      "sha256": "2248e274264f75ac11789576403265b75b4b3c46df2c7345cfc1fa6b3608c14b",
      "text_sha256": "0cb091637032b7a42a50a713edf8ef30fea0784f766767c33dd13957588674ea",
      "published": "2026-04-03",
-     "modified": "2026-10-04",
+     "modified": "2026-10-17",
      "url": "https://thundthornthep-ai.github.io/articles/las-shield-02.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -2280,7 +2280,7 @@
      "sha256": "1d4df42b91e233e89bfc8cd8e1cf7c2a8938f378226108613a036f0a6e00274d",
      "text_sha256": "4081127f1002737d7cc4c7b14eda38fb7fac094f001af96f77a292daa9c141e8",
      "published": "2026-04-03",
-     "modified": "2026-10-03",
+     "modified": "2026-10-17",
      "url": "https://thundthornthep-ai.github.io/articles/las-upsize-01.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -2312,7 +2312,7 @@
      "sha256": "36dfe6e74c54ee092a0114f4b909a43ebb07c003bf6bdb979a7eff44cea3c1d6",
      "text_sha256": "d9acaa7f7d3ba16a0578ad06abb1fc160ad8832c3add87971a3c4f69ff54703b",
      "published": "2026-04-03",
-     "modified": "2026-10-04",
+     "modified": "2026-10-17",
      "url": "https://thundthornthep-ai.github.io/articles/las-upsize-02.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -2478,7 +2478,7 @@
      "sha256": "3ca7584273736d2e7aeb9370348e12761dbb1d5f9052dd8800f6f6d5f838ddab",
      "text_sha256": "e64833b3106f1eb03636cf07384a7d1f0eb40733818f95b3cd352de8f25fec01",
      "published": "2026-04-03",
-     "modified": "2026-10-04",
+     "modified": "2026-10-17",
      "url": "https://thundthornthep-ai.github.io/articles/las-upsize-06.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -2511,7 +2511,7 @@
      "sha256": "bd4e014c6d2066df7231606ee39ac756465ecaef2da9e0642c862fa7b009bf3e",
      "text_sha256": "70aaadf765227ef8da9f59df68082c7793f2f67909cb6033de0700b41e6a03b3",
      "published": "2026-04-03",
-     "modified": "2026-10-04",
+     "modified": "2026-10-17",
      "url": "https://thundthornthep-ai.github.io/articles/las-upsize-07.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -2544,7 +2544,7 @@
      "sha256": "9b2e037e32797d1ff4c58bdf5975b2d1c7f91e52cf3a3256b4baf214713b094e",
      "text_sha256": "6c27c57481de492b57608b7d54c2cfdc0f2851c7691e99a1c20bfbe543f9ff61",
      "published": "2026-04-03",
-     "modified": "2026-10-04",
+     "modified": "2026-10-17",
      "url": "https://thundthornthep-ai.github.io/articles/las-upsize-08.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -2576,7 +2576,7 @@
      "sha256": "0b8c23eadc850c16f43565ba2a04bd4642d975be848453fdb9c13de4050b2aae",
      "text_sha256": "672270c1355483032790afe2e8da07e33dfc27393335b702952e01eeed15ab2f",
      "published": "2026-04-03",
-     "modified": "2026-10-04",
+     "modified": "2026-10-17",
      "url": "https://thundthornthep-ai.github.io/articles/las-upsize-09.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -2741,7 +2741,7 @@
      "sha256": "5ed08ceaeeca650420e158e017de814e196a221ce54081aaaececfbe0d1ce8c7",
      "text_sha256": "1378af60420a7197034d548c3c77b7a7cbba6d0f81511b546da6040f230f1de7",
      "published": "2026-04-04",
-     "modified": "2026-10-04",
+     "modified": "2026-10-17",
      "url": "https://thundthornthep-ai.github.io/articles/mergers-acquisitions-thailand.html",
      "legal_status": "reviewed",
      "article_schema": true
@@ -3042,7 +3042,7 @@
      "sha256": "ee7fb79e38f4264c089acfd6074d41eaf4b1490a10d33e42ed74d15d471e3ea5",
      "text_sha256": "dcce979756f1cc3ff7267699d9c527af69c2809d7b46d1559777692d1014932c",
      "published": "2026-04-04",
-     "modified": "2026-10-04",
+     "modified": "2026-10-17",
      "url": "https://thundthornthep-ai.github.io/articles/transfer-pricing-thailand.html",
      "legal_status": "reviewed",
      "article_schema": false

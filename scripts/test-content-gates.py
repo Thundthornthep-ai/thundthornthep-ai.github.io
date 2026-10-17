@@ -120,6 +120,8 @@ class ContentRuleTests(unittest.TestCase):
                     "Supreme Court cases. Do not use Judgment No. 1521/2566 as authority"):
             self.assertEqual(rule_ids(GOOD.replace("</body>", f"<p>{bad}</p></body>")), ["CR7"], bad)
         for fine in ("พระราชกฤษฎีกาที่ 5/2560", "Constitutional Court Ruling No. 4/2562", "Notification No. 5/2567",
+                     "Administrative Court Case No. 12/2565", "Court of Appeal Decision No. 300/2560",
+                     "Supreme Administrative Court Judgment No. 7/2564",
                      "ฎ. 4466/2553", "Supreme Court Judgment 4466/2553"):
             self.assertEqual(rule_ids(GOOD.replace("</body>", f"<p>{fine}</p></body>")), [], fine)
 
@@ -138,8 +140,9 @@ class ContentRuleTests(unittest.TestCase):
         # no court named before the number, so only the words after it identify the Supreme Court
         no_court = GOOD.replace(" · คำพิพากษาศาลฎีกาที่ 4466/2553", "")
         self.assertEqual(rule_ids(no_court), [])
-        later = no_court.replace("</body>", "<p>Judgment No. 9999/2566 of the Supreme Court held otherwise.</p></body>")
-        self.assertEqual(rule_ids(later), ["CR7"])
+        for noun in ("Judgment", "Decision", "Case", "Ruling"):
+            later = no_court.replace("</body>", f"<p>{noun} No. 9999/2566 of the Supreme Court held otherwise.</p></body>")
+            self.assertEqual(rule_ids(later), ["CR7"], noun)
 
     def test_cr8_amendment_numbers_bound_to_the_act(self) -> None:
         only7 = GOOD.replace("พระราชบัญญัติคุ้มครองแรงงาน (ฉบับที่ 9) พ.ศ. 2568 · ", "พระราชบัญญัติคุ้มครองแรงงาน ")

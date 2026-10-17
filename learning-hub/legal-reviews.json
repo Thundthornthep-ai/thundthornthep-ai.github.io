@@ -1369,7 +1369,7 @@
       "scope": "article-legal-review",
       "reviewed_at": "2026-09-11",
       "reviewer": "LAS AI Legal Counsel — Tier 2/Tier 3 audit, corrections approved by the owner",
-      "sha256": "6fd67d1b4fb2ec27e9419dba367c5e247d36dc21188ad146616a9703bce0c8d9",
+      "sha256": "d41822766ae3f86064b4b8b4dd00ee2efdc6447f88b0d68fbf02df95cbc673bb",
       "source_commit": "f73643a9485eef86207734248231e2463c888275",
       "evidence": [
         "https://github.com/Thundthornthep-ai/thundthornthep-ai.github.io/blob/main/docs/legal-reviews/r1-single-source-20260928-1947.md",

@@ -1141,6 +1141,23 @@ class CodexFailOpenTests(unittest.TestCase):
             self.assertIn("ccc:9998", report)
             self.assertIn("ccc:9999", report)
 
+    def test_singular_head_lists_check_every_number(self) -> None:
+        for text in ("ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 150, 9999", "ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 150 และ 9999",
+                     "Civil and Commercial Code Section 150, 9999", "Civil and Commercial Code Section 150 or 9999"):
+            self.assertEqual(firewall.extract_citations(text), [("ccc", "150"), ("ccc", "9999")], text)
+            with tempfile.TemporaryDirectory() as tmp:
+                status, report = gate(f"<p>{text}</p>", write_kb(Path(tmp)))
+                self.assertEqual(status, firewall.EXIT_BLOCK, report)
+                self.assertIn("ccc:9999", report)
+        # a statute named after the list binds every item; Thai insert suffixes and Thai digits are kept
+        self.assertEqual(firewall.extract_citations("Section 27 or 28 of the Personal Data Protection Act"),
+                         [("pdpa", "27"), ("pdpa", "28")])
+        self.assertEqual(firewall.extract_citations("มาตรา ๗๑ ทวิ และ ๗๑ ตรี แห่งประมวลรัษฎากร"),
+                         [("revenue", "71 ทวิ"), ("revenue", "71 ตรี")])
+        # a number followed by a unit, hyphen or word is not a section
+        for text in ("Section 183, 10-category review", "Section 183, 10 categories", "มาตรา 5 และ 2 ปี"):
+            self.assertEqual(len(firewall.extract_citations(text)), 1, text)
+
     def test_statute_carries_between_singular_tokens_and_lists(self) -> None:
         self.assertIn(
             ("ccc", "9999"),
