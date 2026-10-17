@@ -94,7 +94,7 @@ def untag(markup: str) -> str:
 
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
 HIDDEN_ATTR = re.compile(r"\s(?:hidden|aria-hidden\s*=\s*[\"']?true[\"']?)(?=[\s/>=]|$)"
-                         r"|\sstyle\s*=\s*[\"'][^\"']*\b(?:display\s*:\s*none|visibility\s*:\s*hidden)", re.IGNORECASE)
+                         r"|\sstyle\s*=\s*[\"']?[^\"'>]*?\b(?:display\s*:\s*none|visibility\s*:\s*hidden)", re.IGNORECASE)
 HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
 
 

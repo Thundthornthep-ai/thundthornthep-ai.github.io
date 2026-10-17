@@ -207,7 +207,8 @@ JS_LITERAL = r"""(?:'(?:[^'\\\n]|\\.)*'|"(?:[^"\\\n]|\\.)*"|`(?:[^`\\]|\\.)*`)""
 SCRIPT_TITLE = re.compile(
     r"""(?:(?<![\w$.])title\s*:|\.\s*title\s*=(?!=)|(?<![\w$])['"]title['"]\s*:|\[\s*['"]title['"]\s*\]\s*=(?!=)"""
     r"""|\bsetAttribute\s*\(\s*['"](?i:title)['"]\s*,)[\s(]*"""  # a value may sit in parentheses: = ('…')
-    rf"""((?:[^;'"`\n]*?\+\s*)?{JS_LITERAL}(?:\s*\+[^;'"`\n]*?{JS_LITERAL})*)"""
+    # a concatenation may break lines around its "+" ('ม.' +\n '118')
+    rf"""((?:[^;'"`\n]*?\+\s*)?{JS_LITERAL}(?:\s*\+\s*[^;'"`\n]*?{JS_LITERAL})*)"""
 )
 SCRIPT_LITERAL = re.compile(r"""'((?:[^'\\\n]|\\.)*)'|"((?:[^"\\\n]|\\.)*)"|`((?:[^`\\]|\\.)*)`""")
 def template_static(text: str) -> str:

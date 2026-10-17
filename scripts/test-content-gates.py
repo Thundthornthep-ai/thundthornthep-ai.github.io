@@ -246,6 +246,8 @@ class ContentRuleTests(unittest.TestCase):
         # inline display:none hides too, and FAQPage may be written as its full IRI (Codex review of PR #80, round 21)
         self.assertEqual(rule_ids(self.faq_page('<div style="color:red; display: none"><h3>What is a lease?</h3></div>')),
                          ["CR11"])
+        for style in ("style=display:none", "style=visibility:hidden"):
+            self.assertEqual(rule_ids(self.faq_page(f"<div {style}><h3>What is a lease?</h3></div>")), ["CR11"], style)
         iri = '<script type="application/ld+json">{"@type":"https://schema.org/FAQPage","mainEntity":[{"@type":"Question","name":"Hidden?"}]}</script>'
         self.assertEqual(rule_ids(self.faq_page(ld=iri)), ["CR11"])
 
@@ -308,6 +310,9 @@ class ContentRuleTests(unittest.TestCase):
         # a parenthesized value is still the title (Codex review of PR #80, round 20)
         self.assertEqual(len(rules.check_script("link.title = ('ม.118');")), 1)
         self.assertEqual(len(rules.check_script("link.setAttribute('TITLE', 'ม.118');")), 1)
+        # a concatenation across lines is one title (Codex review of PR #80, round 22)
+        self.assertEqual(len(rules.check_script("link.title = 'ม.' +\n  '118';")), 1)
+        self.assertEqual(len(rules.check_script("link.title = 'A '\n  + 'vs B';")), 1)
         self.assertEqual(rules.check_script("link.SetAttribute('title', 'ม.118');"), [])
         self.assertEqual(len(rules.check_script("link.setAttribute('title', ('A vs B'));")), 1)
         self.assertEqual(len(rules.check_script("a.title = 'คำพิพากษา ' + n + ' ม.5';")), 1)
