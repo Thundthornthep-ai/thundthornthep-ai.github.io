@@ -239,6 +239,10 @@ class ContentRuleTests(unittest.TestCase):
         # a nested template does not end the outer one (Codex review of PR #80, round 16)
         self.assertEqual(rule_ids(self.faq_page("<template><template></template><h3>What is a lease?</h3></template>")),
                          ["CR11"])
+        # nor is text in a hidden element (Codex review of PR #80, round 20)
+        self.assertEqual(rule_ids(self.faq_page("<div hidden><div>x</div><h3>What is a lease?</h3></div>")), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<div aria-hidden="true"><h3>What is a lease?</h3></div>')), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<div data-hidden="no"><h3>What is a lease?</h3></div>')), [])
 
     def test_w11_faq_wording_drift_is_reported_not_failed(self) -> None:
         page = self.faq_page("<h3>What is a lease?</h3>")
@@ -296,6 +300,9 @@ class ContentRuleTests(unittest.TestCase):
         # whitespace before the call is still a call (Codex review of PR #80, round 19)
         self.assertEqual(len(rules.check_script("link.setAttribute ('title', 'ม.118');")), 1)
         self.assertEqual(len(rules.check_script("link.setAttribute\n  ('title', 'ม.118');")), 1)
+        # a parenthesized value is still the title (Codex review of PR #80, round 20)
+        self.assertEqual(len(rules.check_script("link.title = ('ม.118');")), 1)
+        self.assertEqual(len(rules.check_script("link.setAttribute('title', ('A vs B'));")), 1)
         self.assertEqual(len(rules.check_script("a.title = 'คำพิพากษา ' + n + ' ม.5';")), 1)
         self.assertEqual(rules.check_script("a.title = 'คำพิพากษาศาลฎีกาที่ ' + dm[1] + '/' + dm[2] + ' — Kelomn';"), [])
         self.assertEqual(rules.check_script("if (a.title === 'ม.1') {}"), [])
@@ -476,6 +483,14 @@ class TemplateStructureTests(unittest.TestCase):
                          ["practice-note"])
         nested_tpl = COMPLETE.replace(pn, '<template><template></template><div class="practice-note">x</div></template>')
         self.assertEqual(template.missing_markers(nested_tpl), ["practice-note"])
+        self.assertEqual(template.missing_markers(COMPLETE.replace(pn, '<div hidden><div class="practice-note">x</div></div>')),
+                         ["practice-note"])
+        # a refresh tag in a comment does not make the page a redirect stub that strict mode skips (round 20)
+        stub = COMPLETE.replace("<body>", '<body><!-- <meta http-equiv="refresh" content="0;url=/x"> -->').replace(pn, "")
+        with tempfile.TemporaryDirectory() as tmp:
+            root = make_site(Path(tmp), {"articles/stub.html": stub})
+            with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                self.assertEqual(template.main(["--root", str(root), "--strict", "articles/stub.html"]), 1)
         # inline markup joins Thai text as the browser renders it (Codex review of PR #80, round 17)
         thai = COMPLETE.replace(quick, "<h2><strong>คำตอบ</strong>โดยย่อ</h2>")
         self.assertEqual(template.missing_markers(thai), [])

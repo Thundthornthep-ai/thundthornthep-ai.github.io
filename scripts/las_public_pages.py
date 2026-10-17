@@ -92,32 +92,44 @@ def untag(markup: str) -> str:
     return ANY_TAG.sub(lambda tag: "" if (tag.group(2) or "").lower() in INLINE else " ", markup)
 
 
-TEMPLATE_TAG = re.compile(r"<(/?)template\b[^>]*>", re.IGNORECASE)
+VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
+HIDDEN_ATTR = re.compile(r"\s(?:hidden|aria-hidden\s*=\s*[\"']?true[\"']?)(?=[\s/>=]|$)", re.IGNORECASE)
+HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
 
 
-def strip_templates(html: str) -> str:
-    """The markup with every <template> subtree blanked, nesting included: template contents are inert and never
-    rendered, and an inner </template> does not end the outer one. An unclosed template runs to the end."""
+def strip_unrendered(html: str) -> str:
+    """The markup with every subtree a reader never sees blanked: <template> contents (inert) and elements with the
+    hidden attribute or aria-hidden="true". Nesting is counted by tag name, so an inner </template> or </div> does not
+    end the outer element; an unclosed one runs to the end."""
     out: list[str] = []
-    depth, pos = 0, 0
-    for tag in TEMPLATE_TAG.finditer(html):
-        if tag.group(1):
-            if depth:
-                depth -= 1
+    pos, skip, depth = 0, "", 0
+    for tag in ANY_TAG.finditer(html):
+        closing, name = tag.group(1) == "/", (tag.group(2) or "").lower()
+        if not name:
+            continue
+        if skip:
+            if name == skip:
+                depth += -1 if closing else (0 if tag.group(0).endswith("/>") else 1)
                 if not depth:
                     out.append(" ")
-                    pos = tag.end()
-        else:
-            if not depth:
-                out.append(html[pos:tag.start()])
-            depth += 1
-    if not depth:
+                    pos, skip = tag.end(), ""
+            continue
+        if closing or name in VOID_TAGS or tag.group(0).endswith("/>"):
+            continue
+        if name == "template" or HIDDEN_ATTR.search(tag.group(0)[len(name) + 1:]):
+            out.append(html[pos:tag.start()])
+            skip, depth = name, 1
+    if not skip:
         out.append(html[pos:])
     return "".join(out)
 
 
+strip_templates = strip_unrendered
+
+
 def is_redirect_stub(html: str) -> bool:
-    return META_REFRESH.search(html) is not None
+    # a refresh tag left in a comment does not redirect (Codex review of PR #80)
+    return META_REFRESH.search(HTML_COMMENT.sub(" ", html)) is not None
 
 
 def is_noindex(html: str) -> bool:

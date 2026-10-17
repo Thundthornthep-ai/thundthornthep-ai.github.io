@@ -206,7 +206,7 @@ OFFICIAL_COMPANY_NAMES = frozenset({"Legal Advance Solution"})
 JS_LITERAL = r"""(?:'(?:[^'\\\n]|\\.)*'|"(?:[^"\\\n]|\\.)*"|`(?:[^`\\]|\\.)*`)"""
 SCRIPT_TITLE = re.compile(
     r"""(?:(?<![\w$.])title\s*:|\.\s*title\s*=(?!=)|(?<![\w$])['"]title['"]\s*:|\[\s*['"]title['"]\s*\]\s*=(?!=)"""
-    r"""|\bsetAttribute\s*\(\s*['"]title['"]\s*,)\s*"""
+    r"""|\bsetAttribute\s*\(\s*['"]title['"]\s*,)[\s(]*"""  # a value may sit in parentheses: = ('…')
     rf"""((?:[^;'"`\n]*?\+\s*)?{JS_LITERAL}(?:\s*\+[^;'"`\n]*?{JS_LITERAL})*)"""
 )
 SCRIPT_LITERAL = re.compile(r"""'((?:[^'\\\n]|\\.)*)'|"((?:[^"\\\n]|\\.)*)"|`((?:[^`\\]|\\.)*)`""")
@@ -291,7 +291,7 @@ def reader_text(raw: str) -> str:
     """Text a reader sees on the page: no comments, no scripts (JSON-LD included), no styles, no <template> contents;
     whitespace collapsed."""
     # inert <template> contents are never rendered (they are left in the markup the citation rules read)
-    text = pages.strip_templates(ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw)))
+    text = pages.strip_unrendered(ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw)))
     text = TAG.sub(" ", STYLE.sub(" ", text))
     return re.sub(r"\s+", " ", htmllib.unescape(text).translate(THAI_DIGITS)).strip()
 
@@ -347,7 +347,7 @@ def check_faq(raw: str) -> tuple[list[tuple[str, str]], list[tuple[str, str]]]:
     # the reader text, and Thai text has no word spaces to lose
     shown = re.sub(r"\s+", "", reader_text(raw))
     hidden = [question for question in questions if re.sub(r"\s+", "", question) not in shown]
-    markup = pages.strip_templates(STYLE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw))))
+    markup = pages.strip_unrendered(STYLE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw))))
     has_section = bool(FAQ_CLASS.search(markup) or any(
         FAQ_HEADING_TEXT.search(htmllib.unescape(pages.untag(heading.group(2))))
         for heading in HEADING_ELEMENT.finditer(markup)))
