@@ -314,6 +314,8 @@ STATUTE_ALIASES: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("mediation", ("พระราชบัญญัติการไกล่เกลี่ยข้อพิพาท", "พ.ร.บ.การไกล่เกลี่ยข้อพิพาท", "dispute mediation act",)),
     ("arbinstitute", ("พระราชบัญญัติสถาบันอนุญาโตตุลาการ", "พ.ร.บ.สถาบันอนุญาโตตุลาการ", "arbitration institute act",)),
     ("fiba", ("พระราชบัญญัติธุรกิจสถาบันการเงิน", "พ.ร.บ.ธุรกิจสถาบันการเงิน", "financial institutions businesses act",)),
+    # round R70 (17 October 2026): Act imported into the statute corpus (las-billing ocs-sources.json, OCS doc 1605)
+    ("nationalhealth", ("พระราชบัญญัติสุขภาพแห่งชาติ", "พ.ร.บ.สุขภาพแห่งชาติ", "national health act",)),
     ("ukbribery", ("uk bribery act",)),
 )
 

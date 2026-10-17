@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Regression tests for the content-rules, internal-link and sitemap gates and their shared page scope."""
+"""Regression tests for the content-rules, template-structure, internal-link and sitemap gates and their shared page
+scope."""
 from __future__ import annotations
 
 import contextlib
@@ -26,6 +27,7 @@ def load(name: str):
 
 
 rules = load("validate-content-rules")
+template = load("check-template-structure")
 links = load("check-internal-links")
 sitemap = load("check-sitemap-coverage")
 
@@ -194,6 +196,85 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(rule_ids(GOOD.replace("</body>", "<p>15 ม.ค. 2569</p></body>")), ["CR10"])
         self.assertEqual(rule_ids(GOOD.replace("</body>", "<p>ระเบียบ ก.พ. ว่าด้วย</p></body>")), [])
 
+    FAQ_LD = ('<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":['
+              '{"@type":"Question","name":"สัญญาเช่าต้องจดทะเบียนเมื่อใด?","acceptedAnswer":{"@type":"Answer","text":"x"}},'
+              '{"@type":"Question","name":"What is a lease?","acceptedAnswer":{"@type":"Answer","text":"y"}}]}</script>')
+
+    def faq_page(self, body: str = "", ld: str | None = None) -> str:
+        return GOOD.replace("</head>", (self.FAQ_LD if ld is None else ld) + "</head>").replace("</body>", body + "</body>")
+
+    def test_cr11_faq_jsonld_without_a_visible_faq(self) -> None:
+        # TPL-05: FAQPage JSON-LD that the reader never sees, an HTML comment naming the FAQ does not count
+        self.assertEqual(rule_ids(self.faq_page("<!-- JSON-LD FAQPage Schema -->")), ["CR11"])
+        # the same block inside an @graph array
+        graph = ('<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article"},'
+                 '{"@type":"FAQPage","mainEntity":{"@type":"Question","name":"Hidden question?"}}]}</script>')
+        self.assertEqual(rule_ids(self.faq_page(ld=graph)), ["CR11"])
+        # a question shown word for word, or a visible FAQ section, is a visible FAQ
+        shown = self.faq_page("<h3>What is a lease?</h3><p>y</p>")
+        self.assertEqual(rule_ids(shown), [])
+        section = self.faq_page('<h2>คำถามที่พบบ่อย</h2><div class="faq-item"><div class="faq-q">Q1: เช่าเมื่อใด?</div></div>')
+        self.assertEqual(rule_ids(section), [])
+        # the JSON-LD text itself is not visible text
+        self.assertEqual(rules.check_faq(self.faq_page())[0][0][0], "CR11")
+
+    def test_w11_faq_wording_drift_is_reported_not_failed(self) -> None:
+        page = self.faq_page("<h3>What is a lease?</h3>")
+        self.assertEqual(rule_ids(page), [])
+        self.assertEqual([(rule, detail) for rule, detail in rules.check_warnings(page)],
+                         [("W11", "สัญญาเช่าต้องจดทะเบียนเมื่อใด?")])
+        self.assertEqual(rules.check_warnings(GOOD), [])
+
+    def test_cr12_free_form_section_hedge(self) -> None:
+        # VF-3: the hedge on las-cc-06 that the corpus answers
+        bad = ("[ส่วนกฎที่ว่าการเลิกสัญญาไม่กระทบสิทธิเรียกค่าเสียหายนั้น ใกล้เคียงกับข้อความท้ายมาตรา 391 มากกว่า — "
+               "ต้องยืนยันมาตราที่ถูกต้องหากต้องการยืนยันกฎนี้]")
+        self.assertEqual(rule_ids(GOOD.replace("</body>", f"<p>{bad}</p></body>")), ["CR12"])
+        self.assertEqual(rule_ids(GOOD.replace("</body>", "<p>ซึ่งต้องยืนยันมาตราอีกครั้ง</p></body>")), ["CR12"])
+        for fine in ("[ต้องยืนยันมาตรา]", "[ต้องยืนยันมาตรา: ผลของนิติกรรม]", "[ ต้องยืนยันมาตรา]",
+                     "[ต้องยืนยันมาตรา — ตรวจสอบตัวเลขกับตัวบท]"):
+            self.assertEqual(rule_ids(GOOD.replace("</body>", f"<p>{fine}</p></body>")), [], fine)
+
+    def test_w12_free_form_english_hedge_is_reported(self) -> None:
+        for bad in ("License (governing CCC provisions to be confirmed)", "S-Curve industries (number to be verified)",
+                    "the section number is still to be verified"):
+            page = GOOD.replace("</body>", f"<p>{bad}</p></body>")
+            self.assertEqual(rule_ids(page), [], bad)
+            self.assertEqual([rule for rule, _ in rules.check_warnings(page)], ["W12"], bad)
+        fine = GOOD.replace("</body>", "<p>Act B.E. 2561 [unconfirmed — paragraph to be verified against the official "
+                                       "text] and [must verify section number]</p></body>")
+        self.assertEqual(rules.check_warnings(fine), [])
+
+    def test_cr13_invented_company_names(self) -> None:
+        # TPL-06: names that read like real companies
+        for bad in ("บริษัท ก่อสร้างมั่นคง จำกัด", "บริษัท โซลาร์ เพาเวอร์ จำกัด", "ในบริษัท โรงพยาบาลมิตรภาพการแพทย์ จำกัด ซึ่ง",
+                    "บริษัท Startup จำกัด มีทุน", "<strong>บริษัท ก่อสร้าง จำกัด</strong>"):
+            self.assertEqual(rule_ids(GOOD.replace("</body>", f"<p>{bad}</p></body>")), ["CR13"], bad)
+        for fine in ("บริษัท A จำกัด (ผู้รับเหมาก่อสร้าง)", "บริษัท B จำกัด", "ห้างหุ้นส่วนจำกัด D แปรสภาพเป็นบริษัท D จำกัด",
+                     "บริษัท ก จำกัด", "บริษัท เอบีซี จำกัด", "บริษัท โลจิสติกส์ เอ จำกัด", "บริษัท _________________ จำกัด",
+                     "บริษัท ผู้ว่าจ้าง จำกัด", "บริษัท มหาชน จำกัด", "บริษัทจำกัดและบริษัทมหาชนจำกัด",
+                     "บริษัท จำกัด กับห้างหุ้นส่วน", "บริษัท Legal Advance Solution จำกัด"):
+            self.assertEqual(rule_ids(GOOD.replace("</body>", f"<p>{fine}</p></body>")), [], fine)
+
+    def test_cr14_script_tooltip_titles(self) -> None:
+        # TPL-07: js/legal-links.js tooltip titles; regex patterns and comments are not titles
+        script = ("// ปพพ. ม.291 comment\nvar defined = [\n"
+                  "  { pattern: /มาตรา\\s*291|ม\\.?\\s*291/, url: '/a.html', title: 'LAS Share 09 — หนี้ร่วม vs หนี้ลำพัง (ม.291)' },\n"
+                  "  { pattern: /^x$/, url: '/b.html', title: \"LAS Share 04 — อายุความ (ม.193)\" },\n"
+                  "  { pattern: /^y$/, url: '/c.html', title: 'LAS Share 09 — หนี้ร่วมและหนี้ส่วนตัว (มาตรา 291)' }\n];")
+        found = rules.check_script(script)
+        self.assertEqual([rule for rule, _ in found], ["CR14", "CR14"])
+        self.assertEqual(rules.check_script("title: 'LAS Share 01 — จ้างทำของกับจ้างแรงงาน (มาตรา 575)'"), [])
+        self.assertEqual(len(rules.check_script("title: 'หนี้ลำพัง'")), 1)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = make_site(Path(tmp), {"articles/good.html": GOOD, "js/legal-links.js": script})
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out), contextlib.redirect_stderr(out):
+                status = rules.main(["--root", str(root)])
+            self.assertEqual(status, 1)
+            self.assertIn("[CR14] js/legal-links.js", out.getvalue())
+            self.assertNotIn("articles/good.html", out.getvalue())
+
     def test_comments_are_ignored(self) -> None:
         page = GOOD.replace("</body>", "<!-- ฎ. 1091/2519 [ต้องยืนยันฎีกา] ม.391 peeseri.com --></body>")
         self.assertEqual(rule_ids(page), [])
@@ -237,6 +318,66 @@ class ContentRuleTests(unittest.TestCase):
             (root / "scripts" / "legal-kb" / "supreme-court-verified.json").unlink()
             with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
                 self.assertEqual(rules.main(["--root", str(root)]), 3)
+
+
+COMPLETE = """<html><head><style>.practice-note{} .faq-item{} .quick-answer{}</style></head><body>
+<div class="quick-answer"><strong>คำตอบโดยย่อ</strong> ...</div>
+<table><tr><td>x</td></tr></table>
+<div class="practice-note tip"><span class="pn-label">LAS Practice Note</span></div>
+<h2 class="section-heading">ข้อต่อสู้ของผู้ขายกับผู้ซื้อ Devil's Advocate</h2>
+<h2>คำถามที่พบบ่อย</h2><div class="faq-item"><div class="faq-q">Q1</div></div>
+<div class="ref-section"><h2>แหล่งอ้างอิงทางกฎหมาย</h2></div>
+<div class="disclaimer">ข้อสงวนสิทธิ์</div>
+</body></html>"""
+
+
+class TemplateStructureTests(unittest.TestCase):
+    def test_complete_page_has_every_marker(self) -> None:
+        self.assertEqual(template.missing_markers(COMPLETE), [])
+
+    def test_each_missing_marker_is_reported(self) -> None:
+        cuts = {
+            "quick-answer": ('<div class="quick-answer"><strong>คำตอบโดยย่อ</strong> ...</div>', ""),
+            "table": ("<table><tr><td>x</td></tr></table>", ""),
+            "practice-note": ('<div class="practice-note tip"><span class="pn-label">LAS Practice Note</span></div>', ""),
+            "counterargument": ("<h2 class=\"section-heading\">ข้อต่อสู้ของผู้ขายกับผู้ซื้อ Devil's Advocate</h2>", ""),
+            "faq": ('<h2>คำถามที่พบบ่อย</h2><div class="faq-item"><div class="faq-q">Q1</div></div>', ""),
+            "ref-section": ('<div class="ref-section"><h2>แหล่งอ้างอิงทางกฎหมาย</h2></div>', ""),
+            "disclaimer": ('<div class="disclaimer">ข้อสงวนสิทธิ์</div>', ""),
+        }
+        for marker, (old, new) in cuts.items():
+            self.assertIn(old, COMPLETE, marker)
+            self.assertEqual(template.missing_markers(COMPLETE.replace(old, new)), [marker], marker)
+
+    def test_css_comments_and_prose_do_not_count(self) -> None:
+        # the inline CSS of every page names .practice-note and .faq-item; prose "อีกฝ่ายหนึ่ง" is not a section
+        page = COMPLETE.replace('<div class="practice-note tip"><span class="pn-label">LAS Practice Note</span></div>',
+                                "<!-- Practice Note --><p>คู่สัญญาอีกฝ่ายหนึ่ง</p>")
+        page = page.replace("<h2 class=\"section-heading\">ข้อต่อสู้ของผู้ขายกับผู้ซื้อ Devil's Advocate</h2>", "")
+        self.assertEqual(template.missing_markers(page), ["practice-note", "counterargument"])
+
+    def test_report_only_unless_strict(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = make_site(Path(tmp), {
+                "articles/full.html": COMPLETE,
+                "articles/legacy.html": "<p>old page</p>",
+                "articles/stub.html": '<meta http-equiv="refresh" content="0;url=x">',
+            })
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out), contextlib.redirect_stderr(out):
+                status = template.main(["--root", str(root)])
+            self.assertEqual(status, 0)
+            self.assertIn("[REPORT] articles/legacy.html: missing quick-answer", out.getvalue())
+            self.assertNotIn("full.html", out.getvalue())
+            self.assertNotIn("stub.html", out.getvalue())
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out), contextlib.redirect_stderr(out):
+                status = template.main(["--root", str(root), "--strict", "articles/legacy.html", "articles/full.html"])
+            self.assertEqual(status, 1)
+            self.assertIn("[FAIL] articles/legacy.html", out.getvalue())
+            with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                self.assertEqual(template.main(["--root", str(root), "--strict", "articles/full.html"]), 0)
+                self.assertEqual(template.main(["--root", str(root), "--strict", "articles/missing.html"]), 1)
 
 
 class InternalLinkTests(unittest.TestCase):

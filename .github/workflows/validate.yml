@@ -19,6 +19,8 @@ on:
       - 'blog/**'
       - 'en/blog/**'
       - 'learning-hub/**'
+      # Tooltip titles in the site scripts are checked by the content rules (CR14).
+      - 'js/**'
       - 'scripts/validate-knowledge-hub.js'
       - 'scripts/validate-knowledge-slugs.js'
       - 'scripts/resolve-validate-range.sh'
@@ -28,6 +30,7 @@ on:
       - 'scripts/test-public-citation-firewall.py'
       - 'scripts/las_public_pages.py'
       - 'scripts/validate-content-rules.py'
+      - 'scripts/check-template-structure.py'
       - 'scripts/check-internal-links.py'
       - 'scripts/check-sitemap-coverage.py'
       - 'scripts/test-content-gates.py'
@@ -45,6 +48,8 @@ on:
       - 'blog/**'
       - 'en/blog/**'
       - 'learning-hub/**'
+      # Tooltip titles in the site scripts are checked by the content rules (CR14).
+      - 'js/**'
       - 'scripts/validate-knowledge-hub.js'
       - 'scripts/validate-knowledge-slugs.js'
       - 'scripts/resolve-validate-range.sh'
@@ -54,6 +59,7 @@ on:
       - 'scripts/test-public-citation-firewall.py'
       - 'scripts/las_public_pages.py'
       - 'scripts/validate-content-rules.py'
+      - 'scripts/check-template-structure.py'
       - 'scripts/check-internal-links.py'
       - 'scripts/check-sitemap-coverage.py'
       - 'scripts/test-content-gates.py'
@@ -115,6 +121,13 @@ jobs:
       - name: Run content rules (fail closed)
         if: success() || failure()
         run: python3 scripts/validate-content-rules.py
+
+      - name: Report locked template structure (report only)
+        if: success() || failure()
+        # Lists the article pages that miss a locked template part (quick answer, Practice Note, counterargument, FAQ,
+        # references, disclaimer, table). Legacy pages are reported, not failed; a new page is gated by naming it with
+        # --strict.
+        run: python3 scripts/check-template-structure.py
 
       - name: Run internal link check (fail closed)
         if: success() || failure()

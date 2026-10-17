@@ -2,10 +2,11 @@
 """LAS Knowledge Hub content-rules gate (fail closed).
 
 Enforces the owner's article standard where a machine check has no false positives on the published site (system
-audit of 17 ตุลาคม 2569, findings G4, CS-3, CS-4, CS-9 and AUTO-02). Scope comes from scripts/las_public_pages.py:
-every articles/*.html and en/articles/*.html page plus the blog pages registered as legally reviewed in
-learning-hub/legal-reviews.json. Redirect stubs (meta refresh) are skipped. Two rules (CR2, CR5) apply to every
-tracked HTML page of the site, because a wrong title or a broken character is wrong on any page.
+audit of 17 ตุลาคม 2569, findings G4, CS-3, CS-4, CS-9 and AUTO-02; R70 findings TPL-05, TPL-06, TPL-07 and VF-3).
+Scope comes from scripts/las_public_pages.py: every articles/*.html and en/articles/*.html page plus the blog pages
+registered as legally reviewed in learning-hub/legal-reviews.json. Redirect stubs (meta refresh) are skipped. Two rules
+(CR2, CR5) apply to every tracked HTML page of the site, because a wrong title or a broken character is wrong on any
+page. CR14 applies to the tracked js/*.js files, whose tooltip titles readers see on the article pages.
 
 Rules
   CR1  disclaimer        the page carries a disclaimer block (class *disclaimer* or ข้อสงวนสิทธิ์ / คำสงวนสิทธิ์ /
@@ -24,10 +25,25 @@ Rules
                          names that amendment also names No. 9 B.E. 2568, and never calls No. 7 the latest or current
   CR9  section-abbr      "มาตรา" is written in full, never "ม.<number>"
   CR10 month-abbr        Thai months are written in full, never "15 ม.ค. 2569"
+  CR11 faq-hidden        a page with FAQPage JSON-LD shows a FAQ: a visible FAQ section (class "faq…" or a heading
+                         คำถามที่พบบ่อย / FAQ / Frequently Asked) or at least one of the questions in the visible text
+                         (template v1.0.0 sections 7.1 and 7.17: FAQPage only for a FAQ the reader sees)
+  CR12 free-hedge        no free-form Thai section hedge ("… ต้องยืนยันมาตราที่ถูกต้อง …"): an unchecked section is marked
+                         only with the standard flag "[ต้องยืนยันมาตรา]" / "[ต้องยืนยันมาตรา: …]", and a section the corpus
+                         answers is looked up at once (owner rule, 13 ตุลาคม 2569)
+  CR13 company-name      worked examples name companies by role or letter ("บริษัท A จำกัด (ผู้รับเหมาก่อสร้าง)"), never
+                         an invented trading name that may match a real company ("บริษัท ก่อสร้างมั่นคง จำกัด")
+  CR14 script-title      tooltip titles in js/*.js write "มาตรา" in full and use neither "vs" nor the retired term
+                         "หนี้ลำพัง" (terminology.json: หนี้ส่วนตัว)
+
+Warnings (printed, never failing; promote to a rule once the pages are clean)
+  W11  faq-parity        a FAQPage question whose exact wording is not in the visible text of a page that has a FAQ
+  W12  free-hedge-en     a free-form English section hedge ("section to be verified", "provisions to be confirmed")
+                         outside the standard "[unconfirmed — …]" / "[must verify section number]" flag
 
 Usage
   python3 scripts/validate-content-rules.py                 # whole scope
-  python3 scripts/validate-content-rules.py FILE.html ...   # selected pages (all rules that apply to them)
+  python3 scripts/validate-content-rules.py FILE.html ...   # selected pages (all rules that apply to them); js/*.js: CR14
   python3 scripts/validate-content-rules.py --json          # machine-readable report on stdout
 
 Exit 0 when every page passes, 1 when any rule fails, 3 when the scope or the register cannot be read.
@@ -155,6 +171,35 @@ MONTH_ABBR = re.compile(
     r"\d{1,2}\s*(?:ม\.ค|ก\.พ|มี\.ค|เม\.ย|พ\.ค|มิ\.ย|ก\.ค|ส\.ค|ก\.ย|ต\.ค|พ\.ย|ธ\.ค)\.\s*\d{2,4}"
 )
 
+# FAQPage JSON-LD and what the reader sees (CR11, W11). Reader text drops every script, JSON-LD included.
+LD_JSON = re.compile(r"<script[^>]*ld\+json[^>]*>(.*?)</script>", re.DOTALL | re.IGNORECASE)
+ANY_SCRIPT = re.compile(r"<script\b[^>]*>.*?</script>", re.DOTALL | re.IGNORECASE)
+FAQ_CLASS = re.compile(r"class\s*=\s*[\"'][^\"']*\bfaq", re.IGNORECASE)
+FAQ_HEADING = re.compile(r"<h[2-4]\b[^>]*>(?:(?!</h[2-4]>).)*?(?:คำถามที่พบบ่อย|\bFAQs?\b|frequently\s+asked)",
+                         re.DOTALL | re.IGNORECASE)
+# CR12: the standard flag opens a bracket with the words; anywhere else the words are a free-form hedge.
+FREE_HEDGE_TH = re.compile(r"(?<!\[)(?<!\[ )ต้องยืนยันมาตรา")
+STANDARD_FLAG_EN = re.compile(r"\[\s*(?:unconfirmed\b|must\s+verify\b)[^\[\]]*\]", re.IGNORECASE)
+FREE_HEDGE_EN = re.compile(
+    r"\b(?:section|paragraph|sub-paragraph|provision|chapter|number)s?(?:\s+(?:number|numbering)s?)?\s+"
+    r"(?:is\s+|are\s+)?(?:still\s+)?(?:to\s+be|needs?\s+to\s+be|must\s+be)\s+(?:verified|confirmed)\b"
+    r"|\bverify\s+the\s+(?:correct|exact)\s+section",
+    re.IGNORECASE,
+)
+# CR13: "บริษัท <name> จำกัด" written with spaces, as a company name is. A name passes when its last word is a letter
+# placeholder (A, B, ก, เอ, เอบีซี …), a blank (____, ……), a role (ผู้ว่าจ้าง), "มหาชน", or an official name below.
+COMPANY_NAME = re.compile(
+    r"บริษัท\s+((?:[^\s<>\[\]]+\s+){0,2}[^\s<>\[\]]+)\s+จำกัด(?=$|[\s()<>,.;:!?\"'“”‘’—–-])"
+)
+NAME_PLACEHOLDER = re.compile(
+    r"^(?:[A-Z]\d{0,2}|[ก-ฮ]|เอ|บี|ซี|ดี|อี|เอฟ|เอกซ์|วาย|แซด|เอบีซี|มหาชน|\(มหาชน\)|ผู้\S+|[_.…·\-–—]+)$"
+)
+# the firm's own name and other real names a page may cite as such (add an official name here, with a test)
+OFFICIAL_COMPANY_NAMES = frozenset({"Legal Advance Solution"})
+# CR14: a quoted title: '…' / title: "…" property in a site script
+SCRIPT_TITLE = re.compile(r"\btitle\s*:\s*(?:'((?:[^'\\\n]|\\.)*)'|\"((?:[^\"\\\n]|\\.)*)\")")
+SCRIPT_TITLE_BANNED = re.compile(r"(?<![ก-๎])ม\.\s?\d|\bvs\.?(?=\s)|หนี้ลำพัง")
+
 RULES = {
     "CR1": "disclaimer block missing",
     "CR2": "'ดร.' / 'Dr.' before the owner's name",
@@ -166,6 +211,12 @@ RULES = {
     "CR8": "Labour Protection Act presented as amended only to No. 7 B.E. 2562",
     "CR9": "abbreviated 'ม.<number>' instead of 'มาตรา'",
     "CR10": "abbreviated Thai month",
+    "CR11": "FAQPage JSON-LD but no FAQ the reader can see (remove the block or show the FAQ word for word)",
+    "CR12": "free-form section hedge instead of a lookup or the standard flag '[ต้องยืนยันมาตรา]'",
+    "CR13": "invented company name in an example (use a role or A, B, C: 'บริษัท A จำกัด (ผู้รับเหมาก่อสร้าง)')",
+    "CR14": "tooltip title in a site script uses 'ม.<number>', 'vs' or 'หนี้ลำพัง'",
+    "W11": "FAQPage question not shown word for word on the page",
+    "W12": "free-form English section hedge outside the standard '[unconfirmed — …]' flag",
 }
 SITE_WIDE_RULES = ("CR2", "CR5")
 
@@ -192,6 +243,84 @@ def load_deka_register(root: Path = ROOT) -> set[str]:
     except (OSError, ValueError, KeyError, TypeError) as exc:
         raise RuntimeError(f"Supreme Court register is missing or malformed: {path}: {exc}") from exc
     return numbers
+
+
+def reader_text(raw: str) -> str:
+    """Text a reader sees on the page: no comments, no scripts (JSON-LD included), no styles; whitespace collapsed."""
+    text = ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw))
+    text = TAG.sub(" ", STYLE.sub(" ", text))
+    return re.sub(r"\s+", " ", htmllib.unescape(text).translate(THAI_DIGITS)).strip()
+
+
+def _faq_pages(node):
+    if isinstance(node, dict):
+        kind = node.get("@type")
+        if kind == "FAQPage" or (isinstance(kind, list) and "FAQPage" in kind):
+            yield node
+        for value in node.values():
+            yield from _faq_pages(value)
+    elif isinstance(node, list):
+        for value in node:
+            yield from _faq_pages(value)
+
+
+def faq_questions(raw: str) -> list[str]:
+    """Question names of every FAQPage object in the page's JSON-LD (a block that does not parse is skipped)."""
+    names: list[str] = []
+    for block in LD_JSON.findall(COMMENT.sub(" ", raw)):
+        try:
+            data = json.loads(block)
+        except ValueError:
+            continue
+        for faq in _faq_pages(data):
+            entities = faq.get("mainEntity") or []
+            for question in entities if isinstance(entities, list) else [entities]:
+                if isinstance(question, dict) and isinstance(question.get("name"), str):
+                    name = re.sub(r"\s+", " ", htmllib.unescape(question["name"]).translate(THAI_DIGITS)).strip()
+                    if name:
+                        names.append(name)
+    return names
+
+
+def check_faq(raw: str) -> tuple[list[tuple[str, str]], list[tuple[str, str]]]:
+    """(CR11 failures, W11 warnings) for the page's FAQPage JSON-LD."""
+    questions = faq_questions(raw)
+    if not questions:
+        return [], []
+    shown = reader_text(raw)
+    hidden = [question for question in questions if question not in shown]
+    markup = STYLE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw)))
+    has_section = bool(FAQ_CLASS.search(markup) or FAQ_HEADING.search(markup))
+    if len(hidden) == len(questions) and not has_section:
+        return [("CR11", f"{len(questions)} FAQPage question(s), none visible and no FAQ section: {questions[0][:80]}")], []
+    return [], [("W11", question[:120]) for question in hidden]
+
+
+def company_name_allowed(name: str) -> bool:
+    if name in OFFICIAL_COMPANY_NAMES:
+        return True
+    return NAME_PLACEHOLDER.match(name.split()[-1]) is not None
+
+
+def check_warnings(raw: str) -> list[tuple[str, str]]:
+    """Report-only findings (W11, W12) for an article page."""
+    warnings = check_faq(raw)[1]
+    shown = reader_text(raw)
+    flags = [match.span() for match in STANDARD_FLAG_EN.finditer(shown)]
+    for match in FREE_HEDGE_EN.finditer(shown):
+        if not any(start <= match.start() < end for start, end in flags):
+            warnings.append(("W12", snippet(shown, match.start(), match.end())))
+    return warnings
+
+
+def check_script(raw: str) -> list[tuple[str, str]]:
+    """CR14 for a site script: banned forms in its title strings (patterns and comments are not titles)."""
+    found: list[tuple[str, str]] = []
+    for match in SCRIPT_TITLE.finditer(raw):
+        title = match.group(1) if match.group(1) is not None else match.group(2)
+        if SCRIPT_TITLE_BANNED.search(title):
+            found.append(("CR14", title[:160]))
+    return found
 
 
 def check_site_wide(raw: str) -> list[tuple[str, str]]:
@@ -268,14 +397,29 @@ def check_article(raw: str, verified: set[str]) -> list[tuple[str, str]]:
         found.append(("CR9", snippet(text, match.start(), match.end())))
     for match in MONTH_ABBR.finditer(text):
         found.append(("CR10", snippet(text, match.start(), match.end())))
+
+    found.extend(check_faq(raw)[0])
+    shown = reader_text(raw)
+    for match in FREE_HEDGE_TH.finditer(shown):
+        found.append(("CR12", snippet(shown, match.start(), match.end(), pad=80)))
+    for match in COMPANY_NAME.finditer(shown):
+        if not company_name_allowed(match.group(1)):
+            found.append(("CR13", f"{match.group(0)}: {snippet(shown, match.start(), match.end(), pad=30)}"))
     return found
 
 
-def check_page(rel: str, root: Path, verified: set[str], article: bool) -> list[tuple[str, str]]:
+def check_page(rel: str, root: Path, verified: set[str], article: bool,
+               warnings: dict[str, list[tuple[str, str]]] | None = None) -> list[tuple[str, str]]:
     raw = (root / rel).read_text(encoding="utf-8", errors="replace")
+    if rel.endswith(".js"):
+        return check_script(raw)
     found = check_site_wide(raw)
     if article and not pages.is_redirect_stub(raw):
         found.extend(check_article(raw, verified))
+        if warnings is not None:
+            noted = check_warnings(raw)
+            if noted:
+                warnings[rel] = noted
     return found
 
 
@@ -289,24 +433,34 @@ def main(argv: list[str] | None = None) -> int:
     try:
         verified = load_deka_register(root)
         scope = set(pages.citation_scope(root))
-        site = set(pages.tracked(root, "*.html")) if not args.files else set()
+        site = set(pages.tracked(root, "*.html", "js/*.js")) if not args.files else set()
     except RuntimeError as exc:
         print(f"[CONTENT-RULES] ERROR: {exc}", file=sys.stderr)
         return 3
     targets = sorted({Path(rel).as_posix() for rel in args.files} or (scope | site))
     report: dict[str, list[tuple[str, str]]] = {}
+    warnings: dict[str, list[tuple[str, str]]] = {}
     for rel in targets:
         if not (root / rel).is_file():
             report[rel] = [("CR0", "file does not exist")]
             continue
         # a named file is classified by its path, so a new untracked article still gets the article rules
-        found = check_page(rel, root, verified, article=rel in scope or pages.in_citation_scope(rel, root))
+        found = check_page(rel, root, verified, article=rel in scope or pages.in_citation_scope(rel, root),
+                           warnings=warnings)
         if found:
             report[rel] = found
     if args.json:
         print(json.dumps({page: [{"rule": rule, "detail": detail} for rule, detail in items]
                           for page, items in report.items()}, ensure_ascii=False, indent=1))
     else:
+        for page, items in warnings.items():
+            for rule, detail in items:
+                print(f"[WARN {rule}] {page}: {RULES[rule]} — {detail}")
+        if warnings:
+            noted = {rule for items in warnings.values() for rule, _detail in items}
+            print(f"[CONTENT-RULES] warnings (report only): "
+                  + ", ".join(f"{rule} {sum(1 for items in warnings.values() if any(r == rule for r, _ in items))} pages"
+                              for rule in sorted(noted)))
         for page, items in report.items():
             for rule, detail in items:
                 print(f"[{rule}] {page}: {RULES.get(rule, 'missing file')} — {detail}")

@@ -42,6 +42,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 155
 - มาตรา 156
 - มาตรา 202
+- มาตรา 236
 - มาตรา 242
 - มาตรา 243
 - มาตรา 244
