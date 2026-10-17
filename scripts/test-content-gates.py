@@ -596,6 +596,13 @@ class TemplateStructureTests(unittest.TestCase):
         self.assertIn("quick-answer", template.missing_markers(fake, labels=False))
         clause_head = COMPLETE.replace(pn, '<h2 class="section-heading">LAS Practice Note: Human-in-the-Loop Disclaimer</h2>')
         self.assertEqual(template.order_problems(clause_head, labels=False), [])
+        # only the <body> counts: classes and a table in <head> mark nothing (round 34)
+        head_only = ('<html><head>' + "".join(f'<meta class="{c}">' for c in
+                     ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer"))
+                     + '<table></table><!-- <body> --></head><body><p>text</p></body></html>')
+        self.assertEqual(len(template.missing_markers(head_only, labels=False)), len(template.missing_markers(
+            "<html><body><p>text</p></body></html>", labels=False)))
+        self.assertTrue(template.missing_markers(head_only, labels=False))
         # a class name counts only at the start of a class token
         self.assertIn("faq", template.missing_markers(COMPLETE.replace(
             '<h2>คำถามที่พบบ่อย</h2><div class="faq-item"><div class="faq-q">Q1</div></div>', '<div class="no-faq">x</div>')))

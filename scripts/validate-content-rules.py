@@ -343,13 +343,7 @@ def _faq_pages(node):
             yield from _faq_pages(value)
 
 
-BODY_START = re.compile(r"<body\b" + pages.TAG_BODY + ">", re.IGNORECASE)
-
-
-def page_body(raw: str) -> str:
-    """The markup after the <body> start tag (the whole page when it has none)."""
-    start = BODY_START.search(raw)
-    return raw[start.end():] if start else raw
+page_body = pages.page_body
 
 
 def is_ld_json(script: re.Match[str]) -> bool:

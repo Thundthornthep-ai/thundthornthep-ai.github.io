@@ -133,6 +133,14 @@ def strip_unrendered(html: str) -> str:
 
 strip_templates = strip_unrendered
 
+BODY_START = re.compile(r"<body\b" + TAG_BODY + ">", re.IGNORECASE)
+
+
+def page_body(html: str) -> str:
+    """The markup after the <body> start tag (the whole page when it has none)."""
+    start = BODY_START.search(html)
+    return html[start.end():] if start else html
+
 
 META_TAG = re.compile(r"<meta\b(" + TAG_BODY + ")>", re.IGNORECASE)
 # one attribute of a tag: its name and its value (quoted or not)
