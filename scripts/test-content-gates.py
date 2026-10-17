@@ -248,7 +248,9 @@ class ContentRuleTests(unittest.TestCase):
     def test_cr13_invented_company_names(self) -> None:
         # TPL-06: names that read like real companies
         for bad in ("บริษัท ก่อสร้างมั่นคง จำกัด", "บริษัท โซลาร์ เพาเวอร์ จำกัด", "ในบริษัท โรงพยาบาลมิตรภาพการแพทย์ จำกัด ซึ่ง",
-                    "บริษัท Startup จำกัด มีทุน", "<strong>บริษัท ก่อสร้าง จำกัด</strong>"):
+                    "บริษัท Startup จำกัด มีทุน", "<strong>บริษัท ก่อสร้าง จำกัด</strong>",
+                    # names of more than three words (Codex review of PR #80)
+                    "บริษัท ไทย โซลาร์ กรีน เพาเวอร์ จำกัด", "บริษัท สยาม ดิจิทัล เทค โซลูชั่นส์ แอนด์ เซอร์วิส จำกัด"):
             self.assertEqual(rule_ids(GOOD.replace("</body>", f"<p>{bad}</p></body>")), ["CR13"], bad)
         for fine in ("บริษัท A จำกัด (ผู้รับเหมาก่อสร้าง)", "บริษัท B จำกัด", "ห้างหุ้นส่วนจำกัด D แปรสภาพเป็นบริษัท D จำกัด",
                      "บริษัท ก จำกัด", "บริษัท เอบีซี จำกัด", "บริษัท โลจิสติกส์ เอ จำกัด", "บริษัท _________________ จำกัด",

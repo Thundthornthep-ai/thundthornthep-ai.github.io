@@ -186,10 +186,11 @@ FREE_HEDGE_EN = re.compile(
     r"|\bverify\s+the\s+(?:correct|exact)\s+section",
     re.IGNORECASE,
 )
-# CR13: "บริษัท <name> จำกัด" written with spaces, as a company name is. A name passes when its last word is a letter
+# CR13: "บริษัท <name> จำกัด" written with spaces, as a company name is (a name of up to ten words: the check reads the
+# page as plain text, so an unbounded name would run on across sentences to a later "จำกัด"). A name passes when its last word is a letter
 # placeholder (A, B, ก, เอ, เอบีซี …), a blank (____, ……), a role (ผู้ว่าจ้าง), "มหาชน", or an official name below.
 COMPANY_NAME = re.compile(
-    r"บริษัท\s+((?:[^\s<>\[\]]+\s+){0,2}[^\s<>\[\]]+)\s+จำกัด(?=$|[\s()<>,.;:!?\"'“”‘’—–-])"
+    r"บริษัท\s+((?:[^\s<>\[\]]+\s+){0,9}?[^\s<>\[\]]+)\s+จำกัด(?=$|[\s()<>,.;:!?\"'“”‘’—–-])"
 )
 NAME_PLACEHOLDER = re.compile(
     r"^(?:[A-Z]\d{0,2}|[ก-ฮ]|เอ|บี|ซี|ดี|อี|เอฟ|เอกซ์|วาย|แซด|เอบีซี|มหาชน|\(มหาชน\)|ผู้\S+|[_.…·\-–—]+)$"
