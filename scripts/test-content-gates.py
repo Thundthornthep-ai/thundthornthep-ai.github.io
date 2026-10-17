@@ -605,6 +605,7 @@ class TemplateStructureTests(unittest.TestCase):
         # a "<textarea>" inside a textarea is text: the first end tag closes it, and a real refresh after it counts
         self.assertTrue(pages.is_redirect_stub(
             '<textarea><textarea></textarea><meta http-equiv="refresh" content="0;url=/new">'))  # round 48
+        self.assertFalse(pages.is_redirect_stub('<xmp><meta http-equiv="refresh" content="0;url=/new"></xmp>'))  # round 49
         # a "<body>" inside the raw <title> text does not start the body (round 48)
         self.assertEqual(pages.page_body('<title>x <body> y</title></head><body><p>z</p>'), "<p>z</p>")
         # markup inside a <textarea> is text, not elements (round 33)
@@ -667,6 +668,11 @@ class TemplateStructureTests(unittest.TestCase):
         example = ('<html><body><div data-example="<h2>Quick Answer</h2><h2>Practice Note</h2><h2>Counterargument</h2>'
                    '<h2>FAQ</h2><h2>References</h2><h2>Disclaimer</h2><table></table>">x</div></body></html>')
         self.assertEqual(template.missing_markers(example, labels=False), template.missing_markers(
+            "<html><body><p>text</p></body></html>", labels=False))
+        # an <xmp> example marks nothing (round 49)
+        xmp = ('<html><body><xmp>' + "".join(f'<div class="{c}">x</div>' for c in
+               ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer")) + "</xmp></body></html>")
+        self.assertEqual(template.missing_markers(xmp, labels=False), template.missing_markers(
             "<html><body><p>text</p></body></html>", labels=False))
         # an <iframe> fallback body marks nothing (round 38)
         framed = ('<html><body><iframe src="x.html">' + "".join(f'<div class="{c}">x</div>' for c in

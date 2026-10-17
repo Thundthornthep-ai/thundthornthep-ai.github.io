@@ -132,7 +132,7 @@ HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
 INERT = {"template", "noscript", "iframe", "noembed", "noframes",
          # and <textarea> holds raw text: markup inside it is shown as characters, never as elements (Codex review of
          # PR #80), so a heading or a refresh tag written there is no heading and no redirect
-         "textarea"}
+         "textarea", "xmp"}
 
 
 # HTML (not SVG or MathML) elements that a trailing "/" does not close: <div hidden/> starts a hidden div that runs to
