@@ -176,7 +176,7 @@ MONTH_ABBR = re.compile(
 # FAQPage JSON-LD and what the reader sees (CR11, W11). Reader text drops every script, JSON-LD included.
 LD_JSON = re.compile(r"<script[^>]*ld\+json[^>]*>(.*?)</script>", re.DOTALL | re.IGNORECASE)
 ANY_SCRIPT = re.compile(r"<script\b[^>]*>.*?</script>", re.DOTALL | re.IGNORECASE)
-FAQ_CLASS = re.compile(r"class\s*=\s*[\"'][^\"']*\bfaq", re.IGNORECASE)
+FAQ_CLASS = re.compile(r"(?<![\w-])class\s*=\s*[\"'][^\"']*\bfaq", re.IGNORECASE)  # not data-class
 FAQ_HEADING = re.compile(r"<h[2-4]\b[^>]*>(?:(?!</h[2-4]>).)*?(?:คำถามที่พบบ่อย|\bFAQs?\b|frequently\s+asked)",
                          re.DOTALL | re.IGNORECASE)
 # CR12: the standard flag opens a bracket with the words; anywhere else the words are a free-form hedge.
@@ -210,7 +210,7 @@ SCRIPT_TITLE = re.compile(
     rf"""((?:[^;'"`\n]*?\+\s*)?{JS_LITERAL}(?:\s*\+[^;'"`\n]*?{JS_LITERAL})*)"""
 )
 SCRIPT_LITERAL = re.compile(r"""'((?:[^'\\\n]|\\.)*)'|"((?:[^"\\\n]|\\.)*)"|`((?:[^`\\]|\\.)*)`""")
-# the static text of a template literal: each ${…} expression reads as a space
+# the static text of a template literal: each ${…} expression reads as a digit
 TEMPLATE_EXPR = re.compile(r"\$\{[^{}]*\}")
 SCRIPT_TITLE_BANNED = re.compile(r"(?<![ก-๎])ม\.\s?\d|\bvs\.?(?=\s)|หนี้ลำพัง")
 
@@ -279,29 +279,40 @@ def _faq_pages(node):
             yield from _faq_pages(value)
 
 
-def faq_questions(raw: str) -> list[str]:
-    """Question names of every FAQPage object in the page's JSON-LD (a block that does not parse is skipped)."""
-    names: list[str] = []
+def faq_objects(raw: str) -> list[dict]:
+    """Every FAQPage object in the page's JSON-LD (a block that does not parse is skipped)."""
+    found: list[dict] = []
     for block in LD_JSON.findall(COMMENT.sub(" ", raw)):
         try:
             data = json.loads(block)
         except ValueError:
             continue
-        for faq in _faq_pages(data):
-            entities = faq.get("mainEntity") or []
-            for question in entities if isinstance(entities, list) else [entities]:
-                if isinstance(question, dict) and isinstance(question.get("name"), str):
-                    name = re.sub(r"\s+", " ", htmllib.unescape(question["name"]).translate(THAI_DIGITS)).strip()
-                    if name:
-                        names.append(name)
+        found.extend(_faq_pages(data))
+    return found
+
+
+def faq_questions(raw: str, faqs: list[dict] | None = None) -> list[str]:
+    """Question names of every FAQPage object in the page's JSON-LD."""
+    names: list[str] = []
+    for faq in faq_objects(raw) if faqs is None else faqs:
+        entities = faq.get("mainEntity") or []
+        for question in entities if isinstance(entities, list) else [entities]:
+            if isinstance(question, dict) and isinstance(question.get("name"), str):
+                name = re.sub(r"\s+", " ", htmllib.unescape(question["name"]).translate(THAI_DIGITS)).strip()
+                if name:
+                    names.append(name)
     return names
 
 
 def check_faq(raw: str) -> tuple[list[tuple[str, str]], list[tuple[str, str]]]:
     """(CR11 failures, W11 warnings) for the page's FAQPage JSON-LD."""
-    questions = faq_questions(raw)
-    if not questions:
+    faqs = faq_objects(raw)
+    if not faqs:
         return [], []
+    questions = faq_questions(raw, faqs)
+    if not questions:
+        # an FAQPage with no named question is never a FAQ the reader sees (Codex review of PR #80)
+        return [("CR11", "FAQPage JSON-LD with no named question")], []
     # whitespace is ignored on both sides: a tag inside a question ("What is a <em>lease</em>?") becomes a space in
     # the reader text, and Thai text has no word spaces to lose
     shown = re.sub(r"\s+", "", reader_text(raw))
@@ -371,7 +382,8 @@ def check_script(raw: str) -> list[tuple[str, str]]:
     """CR14 for a site script: banned forms in its title strings (patterns and comments are not titles)."""
     found: list[tuple[str, str]] = []
     for match in SCRIPT_TITLE.finditer(strip_js_comments(raw)):
-        title = "".join(TEMPLATE_EXPR.sub(" ", next(part for part in literal.groups() if part is not None))
+        # an expression reads as a digit, so "ม.${n}" is the abbreviation it renders as
+        title = "".join(TEMPLATE_EXPR.sub("0", next(part for part in literal.groups() if part is not None))
                         for literal in SCRIPT_LITERAL.finditer(match.group(1)))
         if SCRIPT_TITLE_BANNED.search(title):
             found.append(("CR14", title[:160]))

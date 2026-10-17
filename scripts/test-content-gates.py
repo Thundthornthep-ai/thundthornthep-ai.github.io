@@ -224,6 +224,10 @@ class ContentRuleTests(unittest.TestCase):
         # inert <template> contents are not visible either (Codex review of PR #80, round 14)
         self.assertEqual(rule_ids(self.faq_page("<template><h3>What is a lease?</h3></template>")), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<template><div class="faq-item">Q</div></template>')), ["CR11"])
+        # an empty FAQPage fails, and data-class is not a FAQ class (Codex review of PR #80, round 15)
+        empty = '<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}</script>'
+        self.assertEqual(rule_ids(self.faq_page(ld=empty)), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<div data-class="faq">not an FAQ</div>')), ["CR11"])
 
     def test_w11_faq_wording_drift_is_reported_not_failed(self) -> None:
         page = self.faq_page("<h3>What is a lease?</h3>")
@@ -289,6 +293,8 @@ class ContentRuleTests(unittest.TestCase):
         # an interpolated template literal is checked on its static text (Codex review of PR #80, round 12)
         self.assertEqual(len(rules.check_script("link.title = `ค่าชดเชย ${section} (ม.118)`;")), 1)
         self.assertEqual(rules.check_script("link.title = `คำพิพากษาศาลฎีกาที่ ${n}/${y}`;"), [])
+        # an expression that completes the abbreviation is caught (Codex review of PR #80, round 15)
+        self.assertEqual(len(rules.check_script("link.title = `ม.${section}`;")), 1)
         # a quoted key is a title property too (Codex review of PR #80, round 13)
         self.assertEqual(len(rules.check_script('{"title": "ค่าชดเชย (ม.118)"}')), 1)
         self.assertEqual(len(rules.check_script("{'title': 'A vs B'}")), 1)
