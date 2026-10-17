@@ -1158,6 +1158,13 @@ class CodexFailOpenTests(unittest.TestCase):
         for text in ("Section 183, 10-category review", "Section 183, 10 categories", "มาตรา 5 และ 2 ปี"):
             self.assertEqual(len(firewall.extract_citations(text)), 1, text)
 
+    def test_statute_carries_across_a_bare_comma_between_singular_tokens(self) -> None:
+        for text in ("Civil and Commercial Code Section 150, Section 9", "ประมวลกฎหมายแพ่งและพาณิชย์ มาตรา 150, มาตรา 9"):
+            self.assertEqual(firewall.extract_citations(text), [("ccc", "150"), ("ccc", "9")], text)
+        # a full stop is not coordination: the next citation binds to its own statute
+        self.assertEqual(firewall.extract_citations("Civil and Commercial Code Section 150. Section 9 of the PDPA"),
+                         [("ccc", "150"), ("pdpa", "9")])
+
     def test_statute_carries_between_singular_tokens_and_lists(self) -> None:
         self.assertIn(
             ("ccc", "9999"),

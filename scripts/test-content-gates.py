@@ -144,6 +144,18 @@ class ContentRuleTests(unittest.TestCase):
             later = no_court.replace("</body>", f"<p>{noun} No. 9999/2566 of the Supreme Court held otherwise.</p></body>")
             self.assertEqual(rule_ids(later), ["CR7"], noun)
 
+    def test_cr7_number_belongs_to_the_court_that_governs_it(self) -> None:
+        # the last court named before the number governs, so an earlier Supreme Court mention does not capture it
+        other = "<p>The Supreme Court discussed an earlier matter. The Constitutional Court issued Decision No. 4/2562.</p>"
+        self.assertEqual(rule_ids(GOOD.replace("</body>", other + "</body>")), [])
+        # a court named right after the number wins over one named before it
+        after = "<p>The Constitutional Court agreed with Judgment No. 9999/2566 of the Supreme Court.</p>"
+        self.assertEqual(rule_ids(GOOD.replace("</body>", after + "</body>")), ["CR7"])
+
+    def test_cr2_prefix_in_its_own_element(self) -> None:
+        split = GOOD.replace("</body>", "<p><span>Dr.</span><span>Thundthornthep Yamoutai, Ph.D.</span></p></body>")
+        self.assertIn(("CR2"), {rule for rule, _detail in rules.check_site_wide(split)})
+
     def test_cr8_amendment_numbers_bound_to_the_act(self) -> None:
         only7 = GOOD.replace("พระราชบัญญัติคุ้มครองแรงงาน (ฉบับที่ 9) พ.ศ. 2568 · ", "พระราชบัญญัติคุ้มครองแรงงาน ")
         # No. 7 named without its year

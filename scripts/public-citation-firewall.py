@@ -816,10 +816,10 @@ def _extract_prepared(
         trailing = prepared[match.end() : match.end() + TRAILING_LIMIT]
         statute = attached_statute(prefix, trailing)
         if statute is None and last_end:
-            if kind == "single" and last_kind == "single":
+            # "and", "or", "และ", "หรือ", "ประกอบ" or a bare comma between two tokens keeps the statute
+            coordinated = LIST_COORDINATION.match(prepared[last_end : match.start()])
+            if not coordinated and kind == "single" and last_kind == "single":
                 coordinated = COORDINATION.match(phrase_before(prefix))
-            else:
-                coordinated = LIST_COORDINATION.match(prepared[last_end : match.start()])
             if coordinated:
                 statute = last_statute
         if statute is None and unrecognized_named_statute(prefix, trailing):

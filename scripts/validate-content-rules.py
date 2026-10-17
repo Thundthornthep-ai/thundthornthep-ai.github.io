@@ -86,15 +86,33 @@ DEKA_NUMBER = re.compile(
 BARE_JUDGMENT = re.compile(
     r"\b(?:Judge?ment|Decision|Case|Ruling)\s*(?:No\.?|Number)?\s*(\d{1,5}/25\d\d)", re.IGNORECASE
 )
-SUPREME_NAMED = re.compile(r"supreme\s+court|\bdika\b|ศาลฎีกา", re.IGNORECASE)
-# A number that names another court right before its noun ("Constitutional Court Ruling No. 4/2562") is not the
-# Supreme Court's, whatever court the surrounding text mentions.
-OTHER_COURT_BEFORE = re.compile(
-    r"(?:(?:constitutional|administrative|appeals?|appellate|central|labou?r|tax|bankruptcy|juvenile|"
-    r"civil|criminal|provincial|district|military|arbitral)\s+court(?:'s)?|court\s+of\s+(?:appeals?|first\s+instance)"
-    r"|tribunal(?:'s)?)\s*$",
-    re.IGNORECASE,
+# The court that governs a bare "Judgment No. N/YYYY": one named right after it ("... of the Supreme Court"), else the
+# last court named before it, else the first court named after it. Any other court (Constitutional, Administrative,
+# Supreme Administrative, Court of Appeal ...) means the number is not the Supreme Court's.
+SUPREME_COURT = r"supreme\s+court|\bdika\b|ศาลฎีกา"
+OTHER_COURT = (
+    r"(?:constitutional|administrative|appeals?|appellate|central|labou?r|tax|bankruptcy|juvenile|civil|criminal|"
+    r"provincial|district|military|arbitral)\s+court|court\s+of\s+(?:appeals?|first\s+instance)|tribunal|"
+    r"ศาลรัฐธรรมนูญ|ศาลปกครอง|ศาลอุทธรณ์|ศาลแรงงาน|ศาลภาษีอากร|ศาลล้มละลาย|ศาลทรัพย์สินทางปัญญา|ศาลชั้นต้น|"
+    r"ศาลแพ่ง|ศาลอาญา"
 )
+COURT_NAMED = re.compile(r"(?P<other>" + OTHER_COURT + r")|(?P<supreme>" + SUPREME_COURT + r")", re.IGNORECASE)
+COURT_RIGHT_AFTER = re.compile(r"^\s*,?\s*(?:of|by|from|ของ)\s+(?:the\s+)?(?=\S)", re.IGNORECASE)
+
+
+def governing_court(text: str, start: int, end: int) -> str | None:
+    """'supreme', 'other' or None for the judgment number at text[start:end]."""
+    after = text[end : end + 200]
+    lead = COURT_RIGHT_AFTER.match(after)
+    if lead:
+        named = COURT_NAMED.match(after, lead.end())
+        if named:
+            return named.lastgroup
+    before = list(COURT_NAMED.finditer(text[max(0, start - 400) : start]))
+    if before:
+        return before[-1].lastgroup
+    named = COURT_NAMED.search(after)
+    return named.lastgroup if named else None
 LPA_NAMED = re.compile(r"คุ้มครองแรงงาน|labou?r\s+protection|\bLPA\b", re.IGNORECASE)
 # Amendment No. 7 named with or without its year (2562 / 2019); counted only near the Act's name (lpa_context).
 LPA_NO7 = re.compile(
@@ -161,8 +179,15 @@ def load_deka_register(root: Path = ROOT) -> set[str]:
 def check_site_wide(raw: str) -> list[tuple[str, str]]:
     found: list[tuple[str, str]] = []
     no_comments = COMMENT.sub(" ", raw)
-    for match in DR_PREFIX.finditer(no_comments):
-        found.append(("CR2", snippet(no_comments, match.start(), match.end())))
+    # raw markup keeps metadata (meta, JSON-LD) covered; the tag-free text catches a prefix in its own element
+    # ("<span>Dr.</span><span>Thundthornthep ...")
+    spots = {snippet(no_comments, m.start(), m.end()) for m in DR_PREFIX.finditer(no_comments)}
+    shown = TAG.sub(" ", no_comments)
+    if not spots and DR_PREFIX.search(shown):
+        match = DR_PREFIX.search(shown)
+        spots.add(snippet(shown, match.start(), match.end()))
+    for spot in sorted(spots):
+        found.append(("CR2", spot))
     at = raw.find(REPLACEMENT)
     while at >= 0:
         found.append(("CR5", snippet(raw, at, at + 1)))
@@ -206,11 +231,7 @@ def check_article(raw: str, verified: set[str]) -> list[tuple[str, str]]:
     for match in BARE_JUDGMENT.finditer(text):
         if any(start <= match.start() < end for start, end in seen_spans):
             continue
-        # the court may be named before the number or after it ("Judgment No. 9999/2566 of the Supreme Court")
-        if OTHER_COURT_BEFORE.search(text[max(0, match.start() - 60) : match.start()]):
-            continue
-        context = text[max(0, match.start() - 400) : match.start()] + " " + text[match.end() : match.end() + 200]
-        if SUPREME_NAMED.search(context) and match.group(1) not in verified:
+        if governing_court(text, match.start(), match.end()) == "supreme" and match.group(1) not in verified:
             found.append(("CR7", f"{match.group(1)}: {snippet(text, match.start(), match.end())}"))
 
     if LPA_NAMED.search(text):
