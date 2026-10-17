@@ -58,10 +58,6 @@ ROOT = pages.ROOT
 HIDDEN = re.compile(r"<!--.*?-->|<script\b" + pages.TAG_BODY + r">.*?</script\s*>|<style\b" + pages.TAG_BODY + r">.*?</style\s*>"
                     r"|<textarea\b" + pages.TAG_BODY + r">.*?</textarea\s*>",
                     re.DOTALL | re.IGNORECASE)
-# the class attribute itself, not data-class or aria-class
-CLASS_ATTR = r"(?<![\w-])class\s*=\s*"
-# the start of a class token: after the opening quote or a space inside a quoted value, or an unquoted value
-CLASS_TOKEN = CLASS_ATTR + r"(?:[\"'](?:[^\"']*\s)?)?"
 # tags are read with their quoted attribute values whole, so a ">" inside a value does not end them
 TAG = re.compile(r"<[^\s>]" + pages.TAG_BODY + ">")
 HEADING = re.compile(r"<h([2-4])\b" + pages.TAG_BODY + r">(.*?)</h\1\s*>", re.DOTALL | re.IGNORECASE)
@@ -70,19 +66,28 @@ ENTITY_OR_CHAR = re.compile(r"&(?:#\d+|#[xX][0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);|
 
 def class_has(pattern: str) -> re.Pattern[str]:
     # the name starts a class token ("faq-item", not "no-faq")
-    return re.compile(CLASS_TOKEN + r"(?:" + pattern + r")", re.IGNORECASE)
+    return re.compile(r"(?:" + pattern + r")", re.IGNORECASE)
 
 
 MARKERS = ("quick-answer", "practice-note", "counterargument", "faq", "ref-section", "disclaimer", "table")
+# read against the tokens of an element's own class attribute (pages.class_tokens), so a class written inside another
+# attribute's value (data-note="x class=quick-answer") marks nothing (Codex review of PR #80)
 CLASS = {
     "quick-answer": class_has(r"quick-answer|short-answer|answer-box"),
     "practice-note": class_has(r"practice-note"),
     "counterargument": class_has(r"counter-?argument|devil|other-side"),
     "faq": class_has(r"faq"),
     "ref-section": class_has(r"ref-section"),
-    # any class containing "disclaimer" (las-disclaimer too), quoted or unquoted, as content rule CR1 reads it
-    "disclaimer": re.compile(CLASS_ATTR + r"(?:[\"'][^\"']*|[^\"'\s>]*)disclaimer", re.IGNORECASE),
 }
+
+
+def has_class(marker: str, tag_body: str) -> bool:
+    tokens = pages.class_tokens(tag_body)
+    if marker == "disclaimer":  # any class containing "disclaimer" (las-disclaimer too), as content rule CR1 reads it
+        return any("disclaimer" in token for token in tokens)
+    return any(CLASS[marker].match(token) for token in tokens)
+
+
 # label text anywhere in the visible body
 TEXT = {
     "quick-answer": re.compile(r"คำตอบโดยย่อ|คำตอบสั้น|\bquick\s+answer\b|\bshort\s+answer\b", re.IGNORECASE),
@@ -107,7 +112,6 @@ HEAD = {
     "ref-section": re.compile(r"แหล่งอ้างอิง|เอกสารอ้างอิง|อ้างอิง|\breferences?\b|\bsources\b", re.IGNORECASE),
 }
 TABLE = re.compile(r"<table\b", re.IGNORECASE)
-SUB_HEADING = re.compile(CLASS_TOKEN + r"sub-heading\b", re.IGNORECASE)
 
 
 def body_markup(raw: str) -> str:
@@ -216,13 +220,14 @@ def marker_hits(
     within: dict[str, set[int]] = {}
     for marker in ORDER:
         # a class marker sits at the start of its element, so two sections named in one element share that element
-        owned = [body.rfind("<", 0, match.start()) for match in CLASS[marker].finditer(body)]
+        owned = [tag.start() for tag in pages.START_TAG.finditer(body) if has_class(marker, tag.group(2))]
         if marker in HEAD:
             # a pipeline sub-heading (h3 class "sub-heading", such as "Claim Ledger (… ข้อต่อสู้ทางกฎหมาย)") is a part
             # of another section, not a section of its own
             owned += [match.start() for match in HEADING.finditer(body)
                       if HEAD[marker].search(htmllib.unescape(untag(match.group(2))))
-                      and not SUB_HEADING.search(body, match.start(), body.find(">", match.start()) + 1)]
+                      and not any(token.startswith("sub-heading")
+                                  for token in pages.class_tokens(pages.START_TAG.match(body, match.start()).group(2)))]
         hits = list(owned)
         if marker in TEXT and labels:
             found_labels = [offsets[match.start()] for match in TEXT[marker].finditer(text)]

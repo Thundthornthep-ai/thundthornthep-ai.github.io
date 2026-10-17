@@ -236,6 +236,10 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(rule_ids(self.faq_page('<div class="no-faq">x</div>')), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<div class="box faq-item">x</div>')), [])
         self.assertEqual(rule_ids(self.faq_page("<div class=faq-item>x</div>")), [])
+        # a class written inside another attribute's value is no class; the word "hidden" in a title hides nothing
+        # (Codex review of PR #80, round 39)
+        self.assertEqual(rule_ids(self.faq_page('<div title="x class=faq-item">x</div>')), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<div title="section hidden by default"><h3>What is a lease?</h3></div>')), [])
         # a FAQ class outside the body is no FAQ section (Codex review of PR #80, round 35)
         outside = self.faq_page().replace('<html lang="th">', '<html lang="th" class="faq-page">', 1)
         self.assertIn('class="faq-page"', outside)
@@ -610,6 +614,13 @@ class TemplateStructureTests(unittest.TestCase):
         # an end tag may carry whitespace before its ">" (round 36)
         spaced = "<html><body><h2>Quick Answer</h2 ><p>x</p></body></html>"
         self.assertNotIn("quick-answer", template.missing_markers(spaced, labels=False))
+        # a class inside another attribute's value marks nothing (round 39)
+        noted = ('<html><body>' + "".join(f'<div data-note="x class={c}">x</div>' for c in
+                 ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer")) + "</body></html>")
+        self.assertEqual(template.missing_markers(noted, labels=False), template.missing_markers(
+            "<html><body><p>text</p></body></html>", labels=False))
+        titled = COMPLETE.replace('<div class="quick-answer">', '<div class="quick-answer" title="shown, not hidden">')
+        self.assertEqual(template.missing_markers(titled, labels=False), [])
         # an <iframe> fallback body marks nothing (round 38)
         framed = ('<html><body><iframe src="x.html">' + "".join(f'<div class="{c}">x</div>' for c in
                   ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer")) + "<table></table></iframe></body></html>")

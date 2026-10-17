@@ -94,10 +94,26 @@ def untag(markup: str) -> str:
 
 
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
-HIDDEN_ATTR = re.compile(r"\s(?:hidden|aria-hidden\s*=\s*[\"']?true[\"']?)(?=[\s/>=]|$)"
-                         # a quoted style value, or an unquoted one up to the next whitespace
-                         r"|\sstyle\s*=\s*(?:\"[^\"]*?|'[^']*?|[^\"'\s>]*?)\b(?:display\s*:\s*none|visibility\s*:\s*hidden)",
-                         re.IGNORECASE)
+HIDING_STYLE = re.compile(r"\b(?:display\s*:\s*none|visibility\s*:\s*hidden)", re.IGNORECASE)
+
+
+def is_hidden(tag_body: str) -> bool:
+    """A start tag (its inside) that hides its element: the hidden attribute, aria-hidden="true" or an inline style
+    with display:none or visibility:hidden. The attributes are parsed, so the word "hidden" inside another attribute's
+    value (title="section hidden by default") hides nothing (Codex review of PR #80)."""
+    attrs = attributes(tag_body)
+    return ("hidden" in attrs or attrs.get("aria-hidden", "").strip().lower() == "true"
+            or HIDING_STYLE.search(attrs.get("style", "")) is not None)
+
+
+def class_tokens(tag_body: str) -> list[str]:
+    """The tokens of a start tag's own class attribute, lower-cased; text inside another attribute's value
+    (data-note="x class=faq") is not a class (Codex review of PR #80)."""
+    return attributes(tag_body).get("class", "").lower().split()
+
+
+# a start tag: its name and its inside, quoted attribute values read whole
+START_TAG = re.compile(r"<([A-Za-z][A-Za-z0-9-]*)(" + TAG_BODY + ")>")
 HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
 # elements whose content visitors never see: <template> is inert, <noscript> shows only with scripting off, and the
 # fallback body of <iframe>, <noembed> and <noframes> is raw text a browser with those features never shows (Codex review
@@ -125,7 +141,7 @@ def strip_unrendered(html: str) -> str:
             continue
         if closing or name in VOID_TAGS or tag.group(0).endswith("/>"):
             continue
-        if name in INERT or HIDDEN_ATTR.search(tag.group(0)[len(name) + 1:]):
+        if name in INERT or is_hidden(tag.group(0)[len(name) + 1:-1]):
             out.append(html[pos:tag.start()])
             skip, depth = name, 1
     if not skip:

@@ -177,7 +177,6 @@ MONTH_ABBR = re.compile(
 # FAQPage JSON-LD and what the reader sees (CR11, W11). Reader text drops every script, JSON-LD included.
 ANY_SCRIPT = re.compile(r"<script\b" + pages.TAG_BODY + r">.*?</script\s*>", re.DOTALL | re.IGNORECASE)
 # a class token that starts with "faq" (faq-item; not data-class, not "no-faq")
-FAQ_CLASS = re.compile(r"(?<![\w-])class\s*=\s*(?:[\"'](?:[^\"']*\s)?)?faq", re.IGNORECASE)
 # a FAQ heading, read with inline tags removed ("<em>คำถาม</em>ที่พบบ่อย", "Frequently <em>Asked</em> Questions")
 HEADING_ELEMENT = re.compile(r"<h([2-4])\b" + pages.TAG_BODY + r">(.*?)</h\1\s*>", re.DOTALL | re.IGNORECASE)
 FAQ_HEADING_TEXT = re.compile(r"คำถามที่พบบ่อย|\bFAQs?\b|frequently\s+asked", re.IGNORECASE)
@@ -409,7 +408,10 @@ def check_faq(raw: str) -> tuple[list[tuple[str, str]], list[tuple[str, str]]]:
     hidden = [question for question in questions if re.sub(r"\s+", "", question) not in shown]
     # the FAQ section is looked for in the body only: <html class="faq-page"> is no FAQ section (Codex review of PR #80)
     markup = pages.strip_unrendered(page_body(STYLE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw)))))
-    has_section = bool(FAQ_CLASS.search(markup) or any(
+    # a FAQ class is a token of an element's own class attribute starting with "faq" ("faq-item", not "no-faq"), not
+    # text inside another attribute's value (title="x class=faq-item"; Codex review of PR #80)
+    has_section = bool(any(token.startswith("faq") for tag in pages.START_TAG.finditer(markup)
+                           for token in pages.class_tokens(tag.group(2))) or any(
         FAQ_HEADING_TEXT.search(htmllib.unescape(pages.untag(heading.group(2))))
         for heading in HEADING_ELEMENT.finditer(markup)))
     if len(hidden) == len(questions) and not has_section:
