@@ -405,6 +405,12 @@ class TemplateStructureTests(unittest.TestCase):
         self.assertIn("one element for two sections: quick-answer and practice-note", template.order_problems(plain))
         toc = COMPLETE.replace(pn, pn + '<ul><li><a href="#s7">LAS Practice Note: Human-in-the-Loop Disclaimer</a></li></ul>')
         self.assertEqual(template.order_problems(toc), [])
+        # a label in a link names a section and is not one (Codex review of PR #80, round 9)
+        nav = COMPLETE.replace(pn, '<nav><a href="#qa">Quick Answer</a> <a href="#pn"><em>Practice</em> Note</a></nav>')
+        self.assertEqual(template.missing_markers(nav), ["practice-note"])
+        # without the link, a sub-heading that names a table of claims and defences does not move the counterargument
+        ledger = COMPLETE.replace(quick, quick + '<h3 class="sub-heading">Claim Ledger (ตารางวิเคราะห์มูลกรณีและข้อต่อสู้ทางกฎหมาย)</h3>')
+        self.assertEqual(template.order_problems(ledger), [])
         # a body heading that mentions อ้างอิง before the FAQ does not move the closing references section
         early = COMPLETE.replace(quick, quick + "<h3>ตารางสรุปมาตราที่อ้างอิง</h3>")
         self.assertEqual(template.order_problems(early), [])

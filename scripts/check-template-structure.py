@@ -19,7 +19,9 @@ the headings and labels that the hand-built pages use for the same parts:
   table            at least one <table>
 
 Markers are searched with comments, scripts (JSON-LD included) and styles removed, because every page's inline CSS
-names ".practice-note" and ".faq-item" whether or not the page has those parts. Redirect stubs are skipped.
+names ".practice-note" and ".faq-item" whether or not the page has those parts. A label inside a link (a table of
+contents) and a heading of class "sub-heading" name or subdivide a section and do not count as one; one element cannot
+count as two sections. Redirect stubs are skipped.
 
 The six section markers (all but the table) must also stand in the locked order: quick-answer, practice-note,
 counterargument, faq, ref-section, disclaimer (the references and the disclaimer by their last occurrence, the others by
@@ -88,6 +90,7 @@ HEAD = {
     "ref-section": re.compile(r"แหล่งอ้างอิง|เอกสารอ้างอิง|อ้างอิง|\breferences?\b|\bsources\b", re.IGNORECASE),
 }
 TABLE = re.compile(r"<table\b", re.IGNORECASE)
+SUB_HEADING = re.compile(r"class\s*=\s*[\"'][^\"']*\bsub-heading\b", re.IGNORECASE)
 
 
 def body_markup(raw: str) -> str:
@@ -123,16 +126,22 @@ TAG_NAME = re.compile(r"<(/?)([A-Za-z][A-Za-z0-9-]*)")
 NAMING = {"h1", "h2", "h3", "h4", "h5", "h6", "a"}
 
 
-def enclosing_elements(body: str, points: list[int]) -> dict[int, tuple[int, str]]:
+def enclosing_elements(body: str, points: list[int]) -> dict[int, tuple[int, str, bool]]:
     """For each offset in `points`, the start and tag name of the innermost element of `body` that contains it (-1 and
-    "" at top level), so a label in running text belongs to an element just as a class does."""
+    "" at top level), so a label in running text belongs to an element just as a class does, and whether any element
+    around it is a link."""
     wanted = sorted(set(points))
-    result: dict[int, tuple[int, str]] = {}
+    result: dict[int, tuple[int, str, bool]] = {}
+
+    def here() -> tuple[int, str, bool]:
+        in_link = any(name == "a" for name, _ in stack)
+        return (stack[-1][1], stack[-1][0], in_link) if stack else (-1, "", False)
+
     stack: list[tuple[str, int]] = []
     i = 0
     for tag in TAG.finditer(body):
         while i < len(wanted) and wanted[i] < tag.start():
-            result[wanted[i]] = (stack[-1][1], stack[-1][0]) if stack else (-1, "")
+            result[wanted[i]] = here()
             i += 1
         name = TAG_NAME.match(tag.group(0))
         if not name:
@@ -146,7 +155,7 @@ def enclosing_elements(body: str, points: list[int]) -> dict[int, tuple[int, str
         elif tagname not in VOID and not tag.group(0).endswith("/>"):
             stack.append((tagname, tag.start()))
     for point in wanted[i:]:
-        result[point] = (stack[-1][1], stack[-1][0]) if stack else (-1, "")
+        result[point] = here()
     return result
 
 
@@ -161,8 +170,8 @@ CLOSING = {"ref-section", "disclaimer"}
 def marker_hits(raw: str) -> tuple[dict[str, int], dict[str, set[int]], dict[str, set[tuple[int, str]]]]:
     """For each section marker found on the page, its offset in the visible markup (the first hit, or the last for the
     closing sections), the start of every element that is that section by its class or heading, and the start of the
-    innermost element (start and tag name) around each of its text labels. Presence, order and the one-element rule all come from here, so
-    every marker that counts as present also takes part in the order check."""
+    innermost element (start and tag name) around each of its text labels outside links. Presence, order and the
+    one-element rule all come from here, so every marker that counts as present also takes part in the order check."""
     body = body_markup(raw)
     text, offsets = flatten(body)
     found: dict[str, int] = {}
@@ -172,16 +181,21 @@ def marker_hits(raw: str) -> tuple[dict[str, int], dict[str, set[int]], dict[str
         # a class marker sits at the start of its element, so two sections named in one element share that element
         owned = [body.rfind("<", 0, match.start()) for match in CLASS[marker].finditer(body)]
         if marker in HEAD:
+            # a pipeline sub-heading (h3 class "sub-heading", such as "Claim Ledger (… ข้อต่อสู้ทางกฎหมาย)") is a part
+            # of another section, not a section of its own
             owned += [match.start() for match in HEADING.finditer(body)
-                      if HEAD[marker].search(htmllib.unescape(TAG.sub(" ", match.group(2))))]
+                      if HEAD[marker].search(htmllib.unescape(TAG.sub(" ", match.group(2))))
+                      and not SUB_HEADING.search(body, match.start(), body.find(">", match.start()) + 1)]
         hits = list(owned)
         if marker in TEXT:
             labels = [offsets[match.start()] for match in TEXT[marker].finditer(text)]
+            inside = enclosing_elements(body, labels)
+            # link text only names a section (a table of contents), so it is neither presence nor position
+            labels = [label for label in labels if not inside[label][2]]
             hits += labels
             # a label belongs to the innermost element around it (Codex review of PR #80: "Quick Answer and Practice
             # Note" in one element is still one section)
-            inside = enclosing_elements(body, labels)
-            around[marker] = {inside[label] for label in labels if inside[label][0] >= 0}
+            around[marker] = {inside[label][:2] for label in labels if inside[label][0] >= 0}
         if hits:
             found[marker] = max(hits) if marker in CLOSING else min(hits)
             elements[marker] = set(owned)
