@@ -243,6 +243,8 @@ class ContentRuleTests(unittest.TestCase):
         # nor is text in a hidden element (Codex review of PR #80, round 20)
         self.assertEqual(rule_ids(self.faq_page("<div hidden><div>x</div><h3>What is a lease?</h3></div>")), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<div aria-hidden="true"><h3>What is a lease?</h3></div>')), ["CR11"])
+        # a ">" inside a quoted attribute does not end the tag (round 25)
+        self.assertEqual(rule_ids(self.faq_page('<div data-note="1 > 0" hidden><h3>What is a lease?</h3></div>')), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<div data-hidden="no"><h3>What is a lease?</h3></div>')), [])
         # inline display:none hides too, and FAQPage may be written as its full IRI (Codex review of PR #80, round 21)
         self.assertEqual(rule_ids(self.faq_page('<div style="color:red; display: none"><h3>What is a lease?</h3></div>')),
@@ -321,11 +323,12 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(len(rules.check_script("link.title = 'ม.' + section;")), 1)
         self.assertEqual(len(rules.check_script("link.setAttribute('title', 'ม.' + n);")), 1)
         self.assertEqual(len(rules.check_script("link.title = 'ส่วน ม.' + n + ' ของ';")), 1)
-        self.assertEqual(rules.check_script("link.SetAttribute('title', 'ม.118');"), [])
+        self.assertEqual(len(rules.check_script("link.SetAttribute('title', 'ม.118');")), 1)  # any string, round 25
         self.assertEqual(len(rules.check_script("link.setAttribute('title', ('A vs B'));")), 1)
         self.assertEqual(len(rules.check_script("a.title = 'คำพิพากษา ' + n + ' ม.5';")), 1)
         self.assertEqual(rules.check_script("a.title = 'คำพิพากษาศาลฎีกาที่ ' + dm[1] + '/' + dm[2] + ' — Kelomn';"), [])
-        self.assertEqual(rules.check_script("if (a.title === 'ม.1') {}"), [])
+        # since round 25 every string of a site script is read, whatever form uses it (Codex review of PR #80)
+        self.assertEqual(len(rules.check_script("if (a.title === 'ม.1') {}")), 1)
         # bracket assignments are titles; comments are not, and a URL is not a comment (Codex review of PR #80, round 11)
         self.assertEqual(len(rules.check_script("link['title'] = 'ค่าชดเชย (ม.118)';")), 1)
         self.assertEqual(len(rules.check_script('link["title"]="A vs B";')), 1)
@@ -345,7 +348,10 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(len(rules.check_script('{"title": "ค่าชดเชย (ม.118)"}')), 1)
         self.assertEqual(len(rules.check_script("{'title': 'A vs B'}")), 1)
         # a variable or a destructuring default named title is not a tooltip (Codex review of PR #80, round 14)
-        self.assertEqual(rules.check_script("const title = 'A vs B'; function f({title = 'A vs B'}) {}"), [])
+        self.assertEqual(len(rules.check_script("const title = 'A vs B'; function f({title = 'A vs B'}) {}")), 2)
+        # a conditional branch is a string too (round 25); regex literals and comments are not
+        self.assertEqual(len(rules.check_script("link.title = thai ? 'ม.118' : 'Section 118';")), 1)
+        self.assertEqual(rules.check_script("var p = /มาตรา\\s*291|ม\\.?\\s*291/; // ม.291"), [])
         self.assertEqual(len(rules.check_script("a . title = 'A vs B';")), 1)
         with tempfile.TemporaryDirectory() as tmp:
             root = make_site(Path(tmp), {"articles/good.html": GOOD, "js/legal-links.js": script})

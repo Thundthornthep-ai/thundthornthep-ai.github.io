@@ -84,7 +84,8 @@ def in_citation_scope(path: str, root: Path = ROOT) -> bool:
 # inline formatting joins its text with the text around it, as the browser renders it
 INLINE = {"a", "abbr", "b", "bdi", "bdo", "cite", "code", "del", "dfn", "em", "font", "i", "ins", "kbd", "label", "mark",
           "q", "s", "samp", "small", "span", "strong", "sub", "sup", "time", "u", "var"}
-ANY_TAG = re.compile(r"<(/?)([A-Za-z][A-Za-z0-9-]*)?[^>]*>")
+# a tag, reading quoted attribute values whole ('<div data-note="1 > 0" hidden>' is one tag)
+ANY_TAG = re.compile(r"""<(/?)([A-Za-z][A-Za-z0-9-]*)?(?:[^>"']|"[^"]*"|'[^']*')*>""")
 
 
 def untag(markup: str) -> str:

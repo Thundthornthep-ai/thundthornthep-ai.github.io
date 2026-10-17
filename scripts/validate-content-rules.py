@@ -33,7 +33,8 @@ Rules
                          answers is looked up at once (owner rule, 13 ตุลาคม 2569)
   CR13 company-name      worked examples name companies by role or letter ("บริษัท A จำกัด (ผู้รับเหมาก่อสร้าง)"), never
                          an invented trading name that may match a real company ("บริษัท ก่อสร้างมั่นคง จำกัด")
-  CR14 script-title      tooltip titles in js/*.js (title: '…', x.title = '…', setAttribute('title', '…')) write "มาตรา" in full and use neither "vs" nor the retired term
+  CR14 script-title      the strings of js/*.js (tooltip titles and any other text, each concatenation as rendered)
+                         write "มาตรา" in full and use neither "vs" nor the retired term
                          "หนี้ลำพัง" (terminology.json: หนี้ส่วนตัว)
 
 Warnings (printed, never failing; promote to a rule once the pages are clean)
@@ -200,15 +201,13 @@ NAME_PLACEHOLDER = re.compile(
 # the firm's own name and other real names a page may cite as such (add an official name here, with a test)
 OFFICIAL_COMPANY_NAMES = frozenset({"Legal Advance Solution"})
 # CR14: a quoted title: '…' / title: "…" property in a site script
-# a title literal as an object property (title: '…', "title": '…'), an assignment (a.title = '…', a['title'] = '…') or
-# setAttribute('title', '…'); a
-# concatenated title ('… ' + x + ' …') is checked on its literals joined
+# CR14 reads every string literal of a site script, with the concatenation it belongs to ('… ' + x + ' …'), wherever
+# it stands: an assignment, setAttribute, an object key, a conditional branch (Codex review of PR #80: reading only the
+# title forms missed one form after another). Regex literals (/ม\.?\s*291/) and comments are not strings.
 JS_LITERAL = r"""(?:'(?:[^'\\\n]|\\.)*'|"(?:[^"\\\n]|\\.)*"|`(?:[^`\\]|\\.)*`)"""
-SCRIPT_TITLE = re.compile(
-    r"""(?:(?<![\w$.])title\s*:|\.\s*title\s*=(?!=)|(?<![\w$])['"]title['"]\s*:|\[\s*['"]title['"]\s*\]\s*=(?!=)"""
-    r"""|\bsetAttribute\s*\(\s*['"](?i:title)['"]\s*,)[\s(]*"""  # a value may sit in parentheses: = ('…')
-    # a concatenation may break lines around its "+" ('ม.' +\n '118')
-    rf"""((?:[^;'"`\n]*?\+\s*)?{JS_LITERAL}(?:\s*\+\s*[^;'"`\n]*?{JS_LITERAL})*(?:\s*\+\s*[^;'"`\n,)}}]+)?)"""
+JS_OPERAND = r"""[A-Za-z_$][\w$.]*(?:\[[^\]\n]*\]|\([^)\n]*\))*"""
+SCRIPT_STRING = re.compile(
+    rf"""(?:{JS_OPERAND}\s*\+\s*)?{JS_LITERAL}(?:\s*\+\s*(?:{JS_LITERAL}|{JS_OPERAND}))*"""
 )
 SCRIPT_LITERAL = re.compile(r"""'((?:[^'\\\n]|\\.)*)'|"((?:[^"\\\n]|\\.)*)"|`((?:[^`\\]|\\.)*)`""")
 def template_static(text: str) -> str:
@@ -436,10 +435,10 @@ def concatenation_text(value: str) -> str:
 
 
 def check_script(raw: str) -> list[tuple[str, str]]:
-    """CR14 for a site script: banned forms in its title strings (patterns and comments are not titles)."""
+    """CR14 for a site script: banned forms in its strings, as rendered (regex patterns and comments are not strings)."""
     found: list[tuple[str, str]] = []
-    for match in SCRIPT_TITLE.finditer(strip_js_comments(raw)):
-        title = concatenation_text(match.group(1))
+    for match in SCRIPT_STRING.finditer(strip_js_comments(raw)):
+        title = concatenation_text(match.group(0))
         if SCRIPT_TITLE_BANNED.search(title):
             found.append(("CR14", title[:160]))
     return found
