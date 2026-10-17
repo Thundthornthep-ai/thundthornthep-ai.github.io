@@ -9,6 +9,7 @@ Official source: https://searchlaw.ocs.go.th/council-of-state/#/public/doc/ak4rS
 Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 
 
+- มาตรา 15/22
 - มาตรา 22
 - มาตรา 24
 - มาตรา 31

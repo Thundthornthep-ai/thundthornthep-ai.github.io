@@ -1,0 +1,63 @@
+{
+ "description": "Supreme Court (ฎีกา) judgment numbers that may appear on public LAS Knowledge Hub pages. Decision R7 (29 September 2026): unverified numbers are removed before publication; only numbers recorded as verified may stay. Read by scripts/validate-content-rules.py (rule CR7). Add a number only with a las-billing audit record whose deka status is 'verified'.",
+ "source": "Seeded on 17 October 2026 from every las-billing docs/legal-kb/knowledge-hub findings record whose deka entries for the number are all status 'verified' (the records cite the secondary sources used, for example deka.in.th).",
+ "judgments": [
+  {
+   "number": "5444/2537",
+   "status": "verified",
+   "records": [
+    "las-billing/docs/legal-kb/knowledge-hub/audit-2026-09-28/findings/las-share-09.json"
+   ]
+  },
+  {
+   "number": "6405/2538",
+   "status": "verified",
+   "records": [
+    "las-billing/docs/legal-kb/knowledge-hub/audit-2026-09-28/findings/las-shield-06.json"
+   ]
+  },
+  {
+   "number": "3325/2548",
+   "status": "verified",
+   "records": [
+    "las-billing/docs/legal-kb/knowledge-hub/audit-2026-09-28/findings/las-upsize-03.json"
+   ]
+  },
+  {
+   "number": "4466/2553",
+   "status": "verified",
+   "records": [
+    "las-billing/docs/legal-kb/knowledge-hub/audit-2026-09-28/findings/las-upsize-05.json",
+    "las-billing/docs/legal-kb/knowledge-hub/audit-2026-09-28/findings/las-upsize-10.json"
+   ]
+  },
+  {
+   "number": "12384/2558",
+   "status": "verified",
+   "records": [
+    "las-billing/docs/legal-kb/knowledge-hub/audit-2026-09-28/findings/las-share-09.json"
+   ]
+  },
+  {
+   "number": "6403/2561",
+   "status": "verified",
+   "records": [
+    "las-billing/docs/legal-kb/knowledge-hub/audit-2026-09-28/findings/las-share-09.json"
+   ]
+  },
+  {
+   "number": "3192/2564",
+   "status": "verified",
+   "records": [
+    "las-billing/docs/legal-kb/knowledge-hub/audit-2026-09-28/findings/las-upsize-10.json"
+   ]
+  },
+  {
+   "number": "1674/2565",
+   "status": "verified",
+   "records": [
+    "las-billing/docs/legal-kb/knowledge-hub/audit-2026-09-28/findings/las-upsize-04.json"
+   ]
+  }
+ ]
+}
