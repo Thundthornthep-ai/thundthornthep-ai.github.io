@@ -81,6 +81,17 @@ def in_citation_scope(path: str, root: Path = ROOT) -> bool:
     return path in reviewed_blog_pages(root)
 
 
+# inline formatting joins its text with the text around it, as the browser renders it
+INLINE = {"a", "abbr", "b", "bdi", "bdo", "cite", "code", "del", "dfn", "em", "font", "i", "ins", "kbd", "label", "mark",
+          "q", "s", "samp", "small", "span", "strong", "sub", "sup", "time", "u", "var"}
+ANY_TAG = re.compile(r"<(/?)([A-Za-z][A-Za-z0-9-]*)?[^>]*>")
+
+
+def untag(markup: str) -> str:
+    """Text of `markup` with block tags as spaces and inline tags removed ("<em>คำถาม</em>ที่พบบ่อย" is one word)."""
+    return ANY_TAG.sub(lambda tag: "" if (tag.group(2) or "").lower() in INLINE else " ", markup)
+
+
 TEMPLATE_TAG = re.compile(r"<(/?)template\b[^>]*>", re.IGNORECASE)
 
 

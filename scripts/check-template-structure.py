@@ -9,7 +9,7 @@ the headings and labels that the hand-built pages use for the same parts:
 
   quick-answer     class "quick-answer" (or short-answer / answer-box), or the label คำตอบโดยย่อ / คำตอบสั้น /
                    Quick Answer / Short Answer
-  practice-note    class "practice-note", or the label "Practice Note"
+  practice-note    class "practice-note", a heading "… Practice Note …", or the label "Practice Note"
   counterargument  a heading (h2 to h4) or class for the other side's best case: ข้อโต้แย้ง, ข้อต่อสู้, อีกฝ่าย,
                    ฝ่ายตรงข้าม, Counterargument, Counter-Argument, Devil's Advocate, Other Side, Opposing
   faq              class "faq…" (faq-item, faq-section …), or a heading คำถามที่พบบ่อย / FAQ / Frequently Asked
@@ -26,7 +26,8 @@ count as two sections. Redirect stubs are skipped.
 The six section markers (all but the table) must also stand in the locked order: quick-answer, practice-note,
 counterargument, faq, ref-section, disclaimer (the references and the disclaimer by their last occurrence, the others by
 their first). Most pages published before the standard lack some parts, so the whole-site run only reports and exits 0.
-A new or rewritten page is named with --strict and must carry every marker in that order.
+A new or rewritten page is named with --strict and must carry every marker in that order, each by its class or
+heading (text labels are accepted only in the report on legacy pages).
 
 Usage
   python3 scripts/check-template-structure.py                       # report for every article page (exit 0)
@@ -86,6 +87,7 @@ TEXT = {
 }
 # heading text (h2 to h4): words in running prose ("อีกฝ่ายหนึ่ง" in quoted statute text) do not make a section
 HEAD = {
+    "practice-note": re.compile(r"\bpractice\s+note\b", re.IGNORECASE),
     "counterargument": re.compile(
         r"ข้อโต้แย้ง|ข้อต่อสู้|อีกฝ่าย|ฝ่ายตรงข้าม|counter-?\s?arguments?|devil'?s\s+advocate|other\s+side|opposing",
         re.IGNORECASE,
@@ -102,10 +104,7 @@ def body_markup(raw: str) -> str:
     return pages.strip_templates(HIDDEN.sub(" ", raw))
 
 
-def untag(markup: str) -> str:
-    """Text of `markup` with block tags as spaces and inline tags removed, as the browser joins them."""
-    return TAG.sub(lambda tag: "" if (name := TAG_NAME.match(tag.group(0))) and name.group(2).lower() in INLINE else " ",
-                   markup)
+untag = pages.untag
 
 
 def flatten(body: str) -> tuple[str, list[int]]:
@@ -136,10 +135,10 @@ def flatten(body: str) -> tuple[str, list[int]]:
 
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
 TAG_NAME = re.compile(r"<(/?)([A-Za-z][A-Za-z0-9-]*)")
-NAMING = {"h1", "h2", "h3", "h4", "h5", "h6", "a"}
+HEADINGS = {"h1", "h2", "h3", "h4", "h5", "h6"}
+NAMING = HEADINGS | {"a"}
 # inline formatting does not make an element of its own: a label belongs to the nearest block around it
-INLINE = {"a", "abbr", "b", "bdi", "bdo", "cite", "code", "del", "dfn", "em", "font", "i", "ins", "kbd", "label", "mark",
-          "q", "s", "samp", "small", "span", "strong", "sub", "sup", "time", "u", "var"}
+INLINE = pages.INLINE
 
 
 def enclosing_elements(body: str, points: list[int]) -> dict[int, tuple[int, str, bool, frozenset[int]]]:
@@ -187,13 +186,15 @@ CLOSING = {"ref-section", "disclaimer"}
 
 
 def marker_hits(
-    raw: str,
+    raw: str, labels: bool = True,
 ) -> tuple[dict[str, int], dict[str, set[int]], dict[str, set[tuple[int, str]]], dict[str, set[int]]]:
     """For each section marker found on the page, its offset in the visible markup (the first hit, or the last for the
     closing sections), the start of every element that is that section by its class or heading, and the start of the
     innermost element (start and tag name) around each of its text labels outside links, and the starts of every
-    element around those labels. Presence, order and the
-    one-element rule all come from here, so every marker that counts as present also takes part in the order check."""
+    element around those labels. Presence, order and the one-element rule all come from here, so every marker that
+    counts as present also takes part in the order check. With labels=False (a --strict page) only classes and
+    headings count: a label in prose ("read the Practice Note below") names a section without being one, and the Drive
+    pipeline gives every locked section its class or heading."""
     body = body_markup(raw)
     text, offsets = flatten(body)
     found: dict[str, int] = {}
@@ -210,37 +211,39 @@ def marker_hits(
                       if HEAD[marker].search(htmllib.unescape(untag(match.group(2))))
                       and not SUB_HEADING.search(body, match.start(), body.find(">", match.start()) + 1)]
         hits = list(owned)
-        if marker in TEXT:
-            labels = [offsets[match.start()] for match in TEXT[marker].finditer(text)]
-            inside = enclosing_elements(body, labels)
+        if marker in TEXT and labels:
+            found_labels = [offsets[match.start()] for match in TEXT[marker].finditer(text)]
+            inside = enclosing_elements(body, found_labels)
             # link text only names a section (a table of contents), so it is neither presence nor position
-            labels = [label for label in labels if not inside[label][2]]
-            hits += labels
+            found_labels = [label for label in found_labels if not inside[label][2]]
+            hits += found_labels
             # a label belongs to the innermost element around it (Codex review of PR #80: "Quick Answer and Practice
             # Note" in one element is still one section)
-            around[marker] = {inside[label][:2] for label in labels if inside[label][0] >= 0}
-            # a label inside an element of its own section (div.disclaimer nested in div.ref-section) belongs to it
-            within[marker] = set().union(*(inside[label][3] for label in labels if not inside[label][3] & set(owned)))
+            around[marker] = {inside[label][:2] for label in found_labels if inside[label][0] >= 0}
+            # a label inside an element of its own section (div.disclaimer nested in div.ref-section) belongs to it,
+            # and a label in a heading names something ("LAS Practice Note: … Disclaimer และ DPA" names a clause)
+            within[marker] = set().union(*(inside[label][3] for label in found_labels
+                                           if not inside[label][3] & set(owned) and inside[label][1] not in HEADINGS))
         if hits:
             found[marker] = max(hits) if marker in CLOSING else min(hits)
             elements[marker] = set(owned)
     return found, elements, around, within
 
 
-def marker_positions(raw: str) -> dict[str, int]:
+def marker_positions(raw: str, labels: bool = True) -> dict[str, int]:
     """Offset in the visible markup of each section marker found on the page."""
-    return marker_hits(raw)[0]
+    return marker_hits(raw, labels)[0]
 
 
-def missing_markers(raw: str) -> list[str]:
-    found = marker_positions(raw)
+def missing_markers(raw: str, labels: bool = True) -> list[str]:
+    found = marker_positions(raw, labels)
     table = TABLE.search(body_markup(raw)) is not None
     return [marker for marker in MARKERS if not (table if marker == "table" else marker in found)]
 
 
-def order_problems(raw: str) -> list[str]:
+def order_problems(raw: str, labels: bool = True) -> list[str]:
     """Pairs of sections that stand in the wrong order, e.g. "out of order: ref-section before quick-answer"."""
-    pos, elements, around, within = marker_hits(raw)
+    pos, elements, around, within = marker_hits(raw, labels)
     present = [marker for marker in ORDER if marker in pos]
     problems = [f"out of order: {later} before {earlier}" for i, earlier in enumerate(present)
                 for later in present[i + 1:] if pos[later] < pos[earlier]]
@@ -292,7 +295,9 @@ def main(argv: list[str] | None = None) -> int:
         if pages.is_redirect_stub(raw):
             continue
         checked += 1
-        missing = missing_markers(raw) + order_problems(raw)
+        # a --strict page must show every section by its class or heading; legacy pages are reported with labels
+        labels = rel not in strict
+        missing = missing_markers(raw, labels) + order_problems(raw, labels)
         if missing:
             report[rel] = missing
     failing = [rel for rel in strict if rel in report]

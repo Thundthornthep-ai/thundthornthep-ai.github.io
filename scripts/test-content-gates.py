@@ -233,6 +233,9 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(rule_ids(self.faq_page("<h3>What is a lease?</h3>", ld=two)), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<div class="no-faq">x</div>')), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<div class="box faq-item">x</div>')), [])
+        # a FAQ heading with inline markup is a FAQ heading (Codex review of PR #80, round 18)
+        for heading in ("<h2>Frequently <em>Asked</em> Questions</h2>", "<h2><em>คำถาม</em>ที่พบบ่อย</h2>"):
+            self.assertEqual(rule_ids(self.faq_page(heading)), [], heading)
         # a nested template does not end the outer one (Codex review of PR #80, round 16)
         self.assertEqual(rule_ids(self.faq_page("<template><template></template><h3>What is a lease?</h3></template>")),
                          ["CR11"])
@@ -477,6 +480,17 @@ class TemplateStructureTests(unittest.TestCase):
         heading = COMPLETE.replace('<h2>คำถามที่พบบ่อย</h2><div class="faq-item"><div class="faq-q">Q1</div></div>',
                                    "<h2><em>คำถาม</em>ที่พบบ่อย</h2>")
         self.assertEqual(template.missing_markers(heading), [])
+        # on a --strict page a label in prose is not a section: classes and headings only (Codex review of PR #80,
+        # round 18); the legacy report still accepts it
+        prose = COMPLETE.replace(pn, "<p>For details, read the Practice Note below.</p>")
+        self.assertEqual(template.missing_markers(prose), [])
+        self.assertEqual(template.missing_markers(prose, labels=False), ["practice-note"])
+        self.assertEqual(template.missing_markers(COMPLETE, labels=False), [])
+        with tempfile.TemporaryDirectory() as tmp:
+            root = make_site(Path(tmp), {"articles/prose.html": prose})
+            with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                self.assertEqual(template.main(["--root", str(root), "--strict", "articles/prose.html"]), 1)
+                self.assertEqual(template.main(["--root", str(root), "articles/prose.html"]), 0)
         # a class name counts only at the start of a class token
         self.assertIn("faq", template.missing_markers(COMPLETE.replace(
             '<h2>คำถามที่พบบ่อย</h2><div class="faq-item"><div class="faq-q">Q1</div></div>', '<div class="no-faq">x</div>')))

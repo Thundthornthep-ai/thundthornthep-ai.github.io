@@ -176,8 +176,9 @@ LD_JSON = re.compile(r"<script[^>]*ld\+json[^>]*>(.*?)</script>", re.DOTALL | re
 ANY_SCRIPT = re.compile(r"<script\b[^>]*>.*?</script>", re.DOTALL | re.IGNORECASE)
 # a class token that starts with "faq" (faq-item; not data-class, not "no-faq")
 FAQ_CLASS = re.compile(r"(?<![\w-])class\s*=\s*[\"'](?:[^\"']*\s)?faq", re.IGNORECASE)
-FAQ_HEADING = re.compile(r"<h[2-4]\b[^>]*>(?:(?!</h[2-4]>).)*?(?:คำถามที่พบบ่อย|\bFAQs?\b|frequently\s+asked)",
-                         re.DOTALL | re.IGNORECASE)
+# a FAQ heading, read with inline tags removed ("<em>คำถาม</em>ที่พบบ่อย", "Frequently <em>Asked</em> Questions")
+HEADING_ELEMENT = re.compile(r"<h([2-4])\b[^>]*>(.*?)</h\1>", re.DOTALL | re.IGNORECASE)
+FAQ_HEADING_TEXT = re.compile(r"คำถามที่พบบ่อย|\bFAQs?\b|frequently\s+asked", re.IGNORECASE)
 # CR12: the standard flag opens a bracket with the words; anywhere else the words are a free-form hedge.
 FREE_HEDGE_TH = re.compile(r"(?<!\[)(?<!\[ )ต้องยืนยันมาตรา")
 STANDARD_FLAG_EN = re.compile(r"\[\s*(?:unconfirmed\b|must\s+verify\b)[^\[\]]*\]", re.IGNORECASE)
@@ -347,7 +348,9 @@ def check_faq(raw: str) -> tuple[list[tuple[str, str]], list[tuple[str, str]]]:
     shown = re.sub(r"\s+", "", reader_text(raw))
     hidden = [question for question in questions if re.sub(r"\s+", "", question) not in shown]
     markup = pages.strip_templates(STYLE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw))))
-    has_section = bool(FAQ_CLASS.search(markup) or FAQ_HEADING.search(markup))
+    has_section = bool(FAQ_CLASS.search(markup) or any(
+        FAQ_HEADING_TEXT.search(htmllib.unescape(pages.untag(heading.group(2))))
+        for heading in HEADING_ELEMENT.finditer(markup)))
     if len(hidden) == len(questions) and not has_section:
         return [("CR11", f"{len(questions)} FAQPage question(s), none visible and no FAQ section: {questions[0][:80]}")], []
     return [], [("W11", question[:120]) for question in hidden]
