@@ -243,6 +243,11 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(rule_ids(self.faq_page("<div hidden><div>x</div><h3>What is a lease?</h3></div>")), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<div aria-hidden="true"><h3>What is a lease?</h3></div>')), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<div data-hidden="no"><h3>What is a lease?</h3></div>')), [])
+        # inline display:none hides too, and FAQPage may be written as its full IRI (Codex review of PR #80, round 21)
+        self.assertEqual(rule_ids(self.faq_page('<div style="color:red; display: none"><h3>What is a lease?</h3></div>')),
+                         ["CR11"])
+        iri = '<script type="application/ld+json">{"@type":"https://schema.org/FAQPage","mainEntity":[{"@type":"Question","name":"Hidden?"}]}</script>'
+        self.assertEqual(rule_ids(self.faq_page(ld=iri)), ["CR11"])
 
     def test_w11_faq_wording_drift_is_reported_not_failed(self) -> None:
         page = self.faq_page("<h3>What is a lease?</h3>")
@@ -302,6 +307,8 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(len(rules.check_script("link.setAttribute\n  ('title', 'ม.118');")), 1)
         # a parenthesized value is still the title (Codex review of PR #80, round 20)
         self.assertEqual(len(rules.check_script("link.title = ('ม.118');")), 1)
+        self.assertEqual(len(rules.check_script("link.setAttribute('TITLE', 'ม.118');")), 1)
+        self.assertEqual(rules.check_script("link.SetAttribute('title', 'ม.118');"), [])
         self.assertEqual(len(rules.check_script("link.setAttribute('title', ('A vs B'));")), 1)
         self.assertEqual(len(rules.check_script("a.title = 'คำพิพากษา ' + n + ' ม.5';")), 1)
         self.assertEqual(rules.check_script("a.title = 'คำพิพากษาศาลฎีกาที่ ' + dm[1] + '/' + dm[2] + ' — Kelomn';"), [])
@@ -485,6 +492,8 @@ class TemplateStructureTests(unittest.TestCase):
         self.assertEqual(template.missing_markers(nested_tpl), ["practice-note"])
         self.assertEqual(template.missing_markers(COMPLETE.replace(pn, '<div hidden><div class="practice-note">x</div></div>')),
                          ["practice-note"])
+        self.assertEqual(template.missing_markers(COMPLETE.replace(
+            pn, '<div style="display:none"><div class="practice-note">x</div></div>')), ["practice-note"])
         # a refresh tag in a comment does not make the page a redirect stub that strict mode skips (round 20)
         stub = COMPLETE.replace("<body>", '<body><!-- <meta http-equiv="refresh" content="0;url=/x"> -->').replace(pn, "")
         with tempfile.TemporaryDirectory() as tmp:

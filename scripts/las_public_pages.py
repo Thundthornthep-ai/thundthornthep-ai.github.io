@@ -93,13 +93,14 @@ def untag(markup: str) -> str:
 
 
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
-HIDDEN_ATTR = re.compile(r"\s(?:hidden|aria-hidden\s*=\s*[\"']?true[\"']?)(?=[\s/>=]|$)", re.IGNORECASE)
+HIDDEN_ATTR = re.compile(r"\s(?:hidden|aria-hidden\s*=\s*[\"']?true[\"']?)(?=[\s/>=]|$)"
+                         r"|\sstyle\s*=\s*[\"'][^\"']*\b(?:display\s*:\s*none|visibility\s*:\s*hidden)", re.IGNORECASE)
 HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
 
 
 def strip_unrendered(html: str) -> str:
     """The markup with every subtree a reader never sees blanked: <template> contents (inert) and elements with the
-    hidden attribute or aria-hidden="true". Nesting is counted by tag name, so an inner </template> or </div> does not
+    hidden attribute, aria-hidden="true" or an inline display:none / visibility:hidden style. Nesting is counted by tag name, so an inner </template> or </div> does not
     end the outer element; an unclosed one runs to the end."""
     out: list[str] = []
     pos, skip, depth = 0, "", 0

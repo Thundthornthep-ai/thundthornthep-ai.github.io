@@ -206,7 +206,7 @@ OFFICIAL_COMPANY_NAMES = frozenset({"Legal Advance Solution"})
 JS_LITERAL = r"""(?:'(?:[^'\\\n]|\\.)*'|"(?:[^"\\\n]|\\.)*"|`(?:[^`\\]|\\.)*`)"""
 SCRIPT_TITLE = re.compile(
     r"""(?:(?<![\w$.])title\s*:|\.\s*title\s*=(?!=)|(?<![\w$])['"]title['"]\s*:|\[\s*['"]title['"]\s*\]\s*=(?!=)"""
-    r"""|\bsetAttribute\s*\(\s*['"]title['"]\s*,)[\s(]*"""  # a value may sit in parentheses: = ('…')
+    r"""|\bsetAttribute\s*\(\s*['"](?i:title)['"]\s*,)[\s(]*"""  # a value may sit in parentheses: = ('…')
     rf"""((?:[^;'"`\n]*?\+\s*)?{JS_LITERAL}(?:\s*\+[^;'"`\n]*?{JS_LITERAL})*)"""
 )
 SCRIPT_LITERAL = re.compile(r"""'((?:[^'\\\n]|\\.)*)'|"((?:[^"\\\n]|\\.)*)"|`((?:[^`\\]|\\.)*)`""")
@@ -296,10 +296,19 @@ def reader_text(raw: str) -> str:
     return re.sub(r"\s+", " ", htmllib.unescape(text).translate(THAI_DIGITS)).strip()
 
 
+FAQ_TYPE = re.compile(r"(?:https?://schema\.org/|schema:)?FAQPage")
+
+
+def is_faq_type(kind) -> bool:
+    """FAQPage as a compact term or its full IRI ("https://schema.org/FAQPage", "schema:FAQPage")."""
+    return isinstance(kind, str) and FAQ_TYPE.fullmatch(kind.strip()) is not None
+
+
 def _faq_pages(node):
     if isinstance(node, dict):
         kind = node.get("@type")
-        if kind == "FAQPage" or (isinstance(kind, list) and "FAQPage" in kind):
+        kinds = kind if isinstance(kind, list) else [kind]
+        if any(is_faq_type(item) for item in kinds):
             yield node
         for value in node.values():
             yield from _faq_pages(value)
