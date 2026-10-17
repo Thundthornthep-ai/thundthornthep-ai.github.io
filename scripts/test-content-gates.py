@@ -595,6 +595,8 @@ class TemplateStructureTests(unittest.TestCase):
         self.assertFalse(pages.is_redirect_stub('<template><meta http-equiv="refresh" content="0;url=/new"></template>'))
         # nor one written as source in a <textarea> (round 43)
         self.assertFalse(pages.is_redirect_stub('<textarea><meta http-equiv="refresh" content="0;url=/new"></textarea>'))
+        self.assertFalse(pages.is_redirect_stub(  # nor in <title> text (round 46)
+            '<title>How to write <meta http-equiv="refresh" content="0;/new"></title>'))
         # markup inside a <textarea> is text, not elements (round 33)
         self.assertEqual(template.missing_markers(COMPLETE.replace(pn, '<textarea><div class="practice-note">x</div></textarea>'),
                                                   labels=False), ["practice-note"])

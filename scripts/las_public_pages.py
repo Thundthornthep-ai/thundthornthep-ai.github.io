@@ -205,6 +205,7 @@ def refresh_target(content: str) -> str:
     return match.group(1).strip().strip("\"'").strip() if match else ""
 
 
+TITLE_ELEMENT = re.compile(r"<title\b" + TAG_BODY + r">.*?</title\s*>", re.DOTALL | re.IGNORECASE)
 SCRIPT_OR_STYLE = re.compile(r"<(script|style)\b" + TAG_BODY + r">.*?</\1\s*>", re.DOTALL | re.IGNORECASE)
 
 
@@ -214,7 +215,8 @@ def is_redirect_stub(html: str) -> bool:
     # a refresh without a destination (content="30", or no content) only reloads the page and is no redirect stub, so
     # an ordinary article with one is still checked (Codex review of PR #80)
     # nor does one in an inert subtree (<template>, <iframe> fallback, a hidden element): such a page is still checked
-    markup = strip_unrendered(SCRIPT_OR_STYLE.sub(" ", HTML_COMMENT.sub(" ", html)))
+    # and <title> text is raw text: a refresh tag written there is characters (Codex review of PR #80)
+    markup = strip_unrendered(TITLE_ELEMENT.sub(" ", SCRIPT_OR_STYLE.sub(" ", HTML_COMMENT.sub(" ", html))))
     for tag in META_TAG.finditer(markup):
         attrs = attributes(tag.group(1))
         if attrs.get("http-equiv", "").strip().lower() == "refresh" and refresh_target(attrs.get("content", "")):
