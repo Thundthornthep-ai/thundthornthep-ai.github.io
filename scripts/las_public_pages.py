@@ -100,10 +100,13 @@ HIDDEN_ATTR = re.compile(r"\s(?:hidden|aria-hidden\s*=\s*[\"']?true[\"']?)(?=[\s
                          r"|\sstyle\s*=\s*(?:\"[^\"]*?|'[^']*?|[^\"'\s>]*?)\b(?:display\s*:\s*none|visibility\s*:\s*hidden)",
                          re.IGNORECASE)
 HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
+# elements whose content visitors never see: <template> is inert, <noscript> shows only with scripting off
+INERT = {"template", "noscript"}
 
 
 def strip_unrendered(html: str) -> str:
-    """The markup with every subtree a reader never sees blanked: <template> contents (inert) and elements with the
+    """The markup with every subtree a reader never sees blanked: <template> contents (inert), <noscript> contents
+    (shown only with scripting off) and elements with the
     hidden attribute, aria-hidden="true" or an inline display:none / visibility:hidden style. Nesting is counted by tag name, so an inner </template> or </div> does not
     end the outer element; an unclosed one runs to the end."""
     out: list[str] = []
@@ -121,7 +124,7 @@ def strip_unrendered(html: str) -> str:
             continue
         if closing or name in VOID_TAGS or tag.group(0).endswith("/>"):
             continue
-        if name == "template" or HIDDEN_ATTR.search(tag.group(0)[len(name) + 1:]):
+        if name in INERT or HIDDEN_ATTR.search(tag.group(0)[len(name) + 1:]):
             out.append(html[pos:tag.start()])
             skip, depth = name, 1
     if not skip:

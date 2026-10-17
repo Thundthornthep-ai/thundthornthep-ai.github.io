@@ -529,6 +529,9 @@ class TemplateStructureTests(unittest.TestCase):
                          ["practice-note"])
         self.assertEqual(template.missing_markers(COMPLETE.replace(
             pn, '<div style="display:none"><div class="practice-note">x</div></div>')), ["practice-note"])
+        # <noscript> content is not shown to visitors with scripting on (Codex review of PR #80, round 29)
+        self.assertEqual(template.missing_markers(COMPLETE.replace(pn, '<noscript><div class="practice-note">x</div></noscript>')),
+                         ["practice-note"])
         # a refresh tag in a comment does not make the page a redirect stub that strict mode skips (round 20)
         stub = COMPLETE.replace("<body>", '<body><!-- <meta http-equiv="refresh" content="0;url=/x"> -->').replace(pn, "")
         with tempfile.TemporaryDirectory() as tmp:
