@@ -161,8 +161,34 @@ def foreign_spans(html: str) -> list[tuple[int, int]]:
     return [(match.start(), match.end()) for match in FOREIGN_ELEMENT.finditer(html)]
 
 
+# HTML integration points: inside <foreignObject>, <desc> or <title> of an SVG, and <annotation-xml> of MathML, the
+# content is parsed as HTML again, so "<div hidden/>" there opens a hidden div (Codex review of PR #80)
+INTEGRATION_POINTS = ("foreignobject", "desc", "title", "annotation-xml")
+INTEGRATION_ELEMENT = re.compile(r"<(foreignObject|desc|title|annotation-xml)(?=[\s/>])" + TAG_BODY + r">.*?</\1\s*>",
+                                 re.DOTALL | re.IGNORECASE)
+
+
+def foreign_test(html: str):
+    """A test of whether an offset of `html` is in foreign content: inside an <svg> or <math> element and not inside
+    one of its HTML integration points."""
+    foreign = foreign_spans(html)
+    integration = [(match.start(), match.end()) for match in INTEGRATION_ELEMENT.finditer(html)
+                   if in_spans(foreign, match.start())]
+    return lambda position: in_spans(foreign, position) and not in_spans(integration, position)
+
+
 def in_spans(spans: list[tuple[int, int]], position: int) -> bool:
     return any(start < position < end for start, end in spans)
+
+
+def stack_is_foreign(open_names: list[str]) -> bool:
+    """Whether the innermost of the open elements (outermost first) puts its content in foreign content."""
+    for name in reversed(open_names):
+        if name in INTEGRATION_POINTS:
+            return False
+        if name in FOREIGN_ROOTS:
+            return True
+    return False
 
 
 # elements whose content is raw text or text-only: nothing inside them nests
@@ -182,7 +208,7 @@ def strip_unrendered(html: str) -> str:
     end the outer element; an unclosed one runs to the end."""
     out: list[str] = []
     pos, skip, depth = 0, "", 0
-    foreign = foreign_spans(html)
+    foreign = foreign_test(html)
     for tag in ANY_TAG.finditer(html):
         closing, name = tag.group(1) == "/", (tag.group(2) or "").lower()
         if not name:
@@ -194,12 +220,12 @@ def strip_unrendered(html: str) -> str:
                     # element (Codex review of PR #80)
                     depth = 0 if closing else depth
                 else:
-                    depth += -1 if closing else (0 if self_closing(name, tag.group(0), in_spans(foreign, tag.start())) else 1)
+                    depth += -1 if closing else (0 if self_closing(name, tag.group(0), foreign(tag.start())) else 1)
                 if not depth:
                     out.append(" ")
                     pos, skip = tag.end(), ""
             continue
-        if closing or self_closing(name, tag.group(0), in_spans(foreign, tag.start())):
+        if closing or self_closing(name, tag.group(0), foreign(tag.start())):
             continue
         if name in INERT or is_hidden(tag.group(0)[len(name) + 1:-1]):
             out.append(html[pos:tag.start()])
@@ -217,8 +243,10 @@ BODY_START = re.compile(r"<body(?=[\s/>])" + TAG_BODY + ">", re.IGNORECASE)
 def page_body(html: str) -> str:
     """The markup after the <body> start tag (the whole page when it has none). A "<body>" inside the raw <title> text
     is characters, so titles are blanked (same length) before the search (Codex review of PR #80)."""
-    start = BODY_START.search(TITLE_ELEMENT.sub(lambda title: " " * len(title.group(0)), html))
-    return html[start.end():] if start else html
+    blank = lambda title: " " * len(title.group(0))  # noqa: E731
+    start = BODY_START.search(TITLE_ELEMENT.sub(blank, html))
+    # a <title> after the body start is raw text too and renders nothing in the page (Codex review of PR #80)
+    return TITLE_ELEMENT.sub(blank, html[start.end():] if start else html)
 
 
 META_TAG = re.compile(r"<meta(?=[\s/>])(" + TAG_BODY + ")>", re.IGNORECASE)

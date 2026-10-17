@@ -186,7 +186,7 @@ def enclosing_elements(body: str, points: list[int]) -> dict[int, tuple[int, str
                 if stack[depth][0] == tagname:
                     del stack[depth:]
                     break
-        elif not pages.self_closing(tagname, tag.group(0), any(open_name in pages.FOREIGN_ROOTS for open_name, _ in stack)):
+        elif not pages.self_closing(tagname, tag.group(0), pages.stack_is_foreign([open_name for open_name, _ in stack])):
             stack.append((tagname, tag.start()))
     for point in wanted[i:]:
         result[point] = here()

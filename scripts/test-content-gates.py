@@ -253,6 +253,10 @@ class ContentRuleTests(unittest.TestCase):
         # round 51: any HTML element ignores "/>" (<search hidden/>); inside <svg> it closes
         self.assertEqual(rule_ids(self.faq_page('<search hidden/><h3>What is a lease?</h3></search>')), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<svg><g aria-hidden="true"/></svg><h3>What is a lease?</h3>')), [])
+        # round 52: inside <foreignObject> the slash is HTML again; a <title> in the body renders nothing
+        self.assertEqual(rule_ids(self.faq_page(
+            '<svg><foreignObject><div hidden/><h3>What is a lease?</h3></div></foreignObject></svg>')), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<title><h2>FAQ</h2><h3>What is a lease?</h3></title>')), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<div style="display:none; display:block"><h3>What is a lease?</h3></div>')), [])
         self.assertEqual(rule_ids(self.faq_page(
             '<div style="display:none !important; display:block"><h3>What is a lease?</h3></div>')), ["CR11"])
