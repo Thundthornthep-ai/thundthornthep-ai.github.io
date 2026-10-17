@@ -215,6 +215,10 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(rule_ids(shown), [])
         section = self.faq_page('<h2>คำถามที่พบบ่อย</h2><div class="faq-item"><div class="faq-q">Q1: เช่าเมื่อใด?</div></div>')
         self.assertEqual(rule_ids(section), [])
+        # inline markup inside a shown question keeps it word for word (Codex review of PR #80)
+        inline = self.faq_page("<h3>What is a <em>lease</em>?</h3><p>y</p>")
+        self.assertEqual(rule_ids(inline), [])
+        self.assertEqual([detail for _, detail in rules.check_warnings(inline)], ["สัญญาเช่าต้องจดทะเบียนเมื่อใด?"])
         # the JSON-LD text itself is not visible text
         self.assertEqual(rules.check_faq(self.faq_page())[0][0][0], "CR11")
 
@@ -372,6 +376,11 @@ class TemplateStructureTests(unittest.TestCase):
                                                     '<div class="disclaimer">ข้อสงวนสิทธิ์</div><div>Quick <em>Answer</em></div>')
         self.assertEqual(template.missing_markers(split), [])
         self.assertIn("out of order: disclaimer before quick-answer", template.order_problems(split))
+        # two labels in one text node keep their own offsets (Codex review of PR #80)
+        pn = '<div class="practice-note tip"><span class="pn-label">LAS Practice Note</span></div>'
+        one_node = COMPLETE.replace(quick, "").replace(pn, "<p>LAS Practice Note &amp; Quick Answer</p>")
+        self.assertEqual(template.missing_markers(one_node), [])
+        self.assertIn("out of order: practice-note before quick-answer", template.order_problems(one_node))
         # a body heading that mentions อ้างอิง before the FAQ does not move the closing references section
         early = COMPLETE.replace(quick, quick + "<h3>ตารางสรุปมาตราที่อ้างอิง</h3>")
         self.assertEqual(template.order_problems(early), [])

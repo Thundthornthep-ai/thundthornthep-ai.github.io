@@ -288,8 +288,10 @@ def check_faq(raw: str) -> tuple[list[tuple[str, str]], list[tuple[str, str]]]:
     questions = faq_questions(raw)
     if not questions:
         return [], []
-    shown = reader_text(raw)
-    hidden = [question for question in questions if question not in shown]
+    # whitespace is ignored on both sides: a tag inside a question ("What is a <em>lease</em>?") becomes a space in
+    # the reader text, and Thai text has no word spaces to lose
+    shown = re.sub(r"\s+", "", reader_text(raw))
+    hidden = [question for question in questions if re.sub(r"\s+", "", question) not in shown]
     markup = STYLE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw)))
     has_section = bool(FAQ_CLASS.search(markup) or FAQ_HEADING.search(markup))
     if len(hidden) == len(questions) and not has_section:

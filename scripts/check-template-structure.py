@@ -53,6 +53,7 @@ ROOT = pages.ROOT
 HIDDEN = re.compile(r"<!--.*?-->|<script\b[^>]*>.*?</script>|<style\b[^>]*>.*?</style>", re.DOTALL | re.IGNORECASE)
 TAG = re.compile(r"<[^>]+>")
 HEADING = re.compile(r"<h([2-4])\b[^>]*>(.*?)</h\1>", re.DOTALL | re.IGNORECASE)
+ENTITY_OR_CHAR = re.compile(r"&(?:#\d+|#[xX][0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);|.", re.DOTALL)
 
 
 def class_has(pattern: str) -> re.Pattern[str]:
@@ -99,17 +100,21 @@ def flatten(body: str) -> tuple[str, list[int]]:
     `body`, so a label found in the text ("Quick <em>Answer</em>") has the same position as a class or heading."""
     chars: list[str] = []
     offsets: list[int] = []
+
+    def run(start: int, end: int) -> None:
+        # every character keeps its own offset; a decoded entity ("&amp;") maps to where the entity starts
+        for unit in ENTITY_OR_CHAR.finditer(body, start, end):
+            text = htmllib.unescape(unit.group(0))
+            chars.append(text)
+            offsets.extend([unit.start()] * len(text))
+
     pos = 0
     for tag in TAG.finditer(body):
-        piece = htmllib.unescape(body[pos:tag.start()])
-        chars.append(piece)
-        offsets += [pos] * len(piece)
+        run(pos, tag.start())
         chars.append(" ")
         offsets.append(tag.start())
         pos = tag.end()
-    piece = htmllib.unescape(body[pos:])
-    chars.append(piece)
-    offsets += [pos] * len(piece)
+    run(pos, len(body))
     return "".join(chars), offsets
 
 
