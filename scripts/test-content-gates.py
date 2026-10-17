@@ -400,6 +400,11 @@ class TemplateStructureTests(unittest.TestCase):
         # two labels in one plain heading are not a shared section ("Practice Note: … Disclaimer" names a clause)
         clause = COMPLETE.replace(pn, pn + '<h2 class="section-heading">LAS Practice Note: Human-in-the-Loop Disclaimer</h2>')
         self.assertEqual(template.order_problems(clause), [])
+        # two labels alone in one plain element are one section (Codex review of PR #80, round 8), but not in a link
+        plain = COMPLETE.replace(quick, "<div>Quick Answer Practice Note</div>").replace(pn, "")
+        self.assertIn("one element for two sections: quick-answer and practice-note", template.order_problems(plain))
+        toc = COMPLETE.replace(pn, pn + '<ul><li><a href="#s7">LAS Practice Note: Human-in-the-Loop Disclaimer</a></li></ul>')
+        self.assertEqual(template.order_problems(toc), [])
         # a body heading that mentions อ้างอิง before the FAQ does not move the closing references section
         early = COMPLETE.replace(quick, quick + "<h3>ตารางสรุปมาตราที่อ้างอิง</h3>")
         self.assertEqual(template.order_problems(early), [])

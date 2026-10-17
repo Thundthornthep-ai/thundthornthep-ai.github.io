@@ -120,18 +120,19 @@ def flatten(body: str) -> tuple[str, list[int]]:
 
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
 TAG_NAME = re.compile(r"<(/?)([A-Za-z][A-Za-z0-9-]*)")
+NAMING = {"h1", "h2", "h3", "h4", "h5", "h6", "a"}
 
 
-def enclosing_elements(body: str, points: list[int]) -> dict[int, int]:
-    """For each offset in `points`, the start of the innermost element of `body` that contains it (-1 at top level), so
-    a label in running text belongs to an element just as a class does."""
+def enclosing_elements(body: str, points: list[int]) -> dict[int, tuple[int, str]]:
+    """For each offset in `points`, the start and tag name of the innermost element of `body` that contains it (-1 and
+    "" at top level), so a label in running text belongs to an element just as a class does."""
     wanted = sorted(set(points))
-    result: dict[int, int] = {}
+    result: dict[int, tuple[int, str]] = {}
     stack: list[tuple[str, int]] = []
     i = 0
     for tag in TAG.finditer(body):
         while i < len(wanted) and wanted[i] < tag.start():
-            result[wanted[i]] = stack[-1][1] if stack else -1
+            result[wanted[i]] = (stack[-1][1], stack[-1][0]) if stack else (-1, "")
             i += 1
         name = TAG_NAME.match(tag.group(0))
         if not name:
@@ -145,7 +146,7 @@ def enclosing_elements(body: str, points: list[int]) -> dict[int, int]:
         elif tagname not in VOID and not tag.group(0).endswith("/>"):
             stack.append((tagname, tag.start()))
     for point in wanted[i:]:
-        result[point] = stack[-1][1] if stack else -1
+        result[point] = (stack[-1][1], stack[-1][0]) if stack else (-1, "")
     return result
 
 
@@ -157,16 +158,16 @@ ORDER = ("quick-answer", "practice-note", "counterargument", "faq", "ref-section
 CLOSING = {"ref-section", "disclaimer"}
 
 
-def marker_hits(raw: str) -> tuple[dict[str, int], dict[str, set[int]], dict[str, set[int]]]:
+def marker_hits(raw: str) -> tuple[dict[str, int], dict[str, set[int]], dict[str, set[tuple[int, str]]]]:
     """For each section marker found on the page, its offset in the visible markup (the first hit, or the last for the
     closing sections), the start of every element that is that section by its class or heading, and the start of the
-    innermost element around each of its text labels. Presence, order and the one-element rule all come from here, so
+    innermost element (start and tag name) around each of its text labels. Presence, order and the one-element rule all come from here, so
     every marker that counts as present also takes part in the order check."""
     body = body_markup(raw)
     text, offsets = flatten(body)
     found: dict[str, int] = {}
     elements: dict[str, set[int]] = {}
-    around: dict[str, set[int]] = {}
+    around: dict[str, set[tuple[int, str]]] = {}
     for marker in ORDER:
         # a class marker sits at the start of its element, so two sections named in one element share that element
         owned = [body.rfind("<", 0, match.start()) for match in CLASS[marker].finditer(body)]
@@ -180,7 +181,7 @@ def marker_hits(raw: str) -> tuple[dict[str, int], dict[str, set[int]], dict[str
             # a label belongs to the innermost element around it (Codex review of PR #80: "Quick Answer and Practice
             # Note" in one element is still one section)
             inside = enclosing_elements(body, labels)
-            around[marker] = {inside[label] for label in labels if inside[label] >= 0}
+            around[marker] = {inside[label] for label in labels if inside[label][0] >= 0}
         if hits:
             found[marker] = max(hits) if marker in CLOSING else min(hits)
             elements[marker] = set(owned)
@@ -208,8 +209,16 @@ def order_problems(raw: str) -> list[str]:
     # the order, because class="ref-section disclaimer" shares an element while the two closing offsets may differ. A
     # label counts against an element that is another section by class or heading (<div class="quick-answer">Quick
     # Answer and Practice Note</div>); two labels in one heading do not ("LAS Practice Note: … Disclaimer clause").
+    # Two labels in one element are one section too (<div>Quick Answer Practice Note</div>), except in a heading or a
+    # link, which name sections rather than being them (a table of contents, "LAS Practice Note: … Disclaimer" naming a
+    # clause).
+    def starts(items: set[tuple[int, str]], prose: bool = True) -> set[int]:
+        return {start for start, name in items if prose or name not in NAMING}
+
     def shared(a: str, b: str) -> bool:
-        return bool(elements[a] & (elements[b] | around.get(b, set())) or around.get(a, set()) & elements[b])
+        la, lb = around.get(a, set()), around.get(b, set())
+        return bool(elements[a] & (elements[b] | starts(lb)) or starts(la) & elements[b]
+                    or starts(la, prose=False) & starts(lb, prose=False))
 
     problems += [f"one element for two sections: {earlier} and {later}" for i, earlier in enumerate(present)
                  for later in present[i + 1:] if pos[later] == pos[earlier] or shared(earlier, later)]
