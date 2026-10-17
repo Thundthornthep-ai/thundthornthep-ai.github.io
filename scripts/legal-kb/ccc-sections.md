@@ -710,6 +710,7 @@ Section identifiers (Arabic form; Thai-numeral recitations normalize to these):
 - มาตรา 1023
 - มาตรา 1025
 - มาตรา 1038
+- มาตรา 1050
 - มาตรา 1051
 - มาตรา 1054
 - มาตรา 1055

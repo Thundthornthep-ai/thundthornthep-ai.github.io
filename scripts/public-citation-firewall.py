@@ -219,7 +219,7 @@ STATUTE_ALIASES: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("bankruptcy", ("พระราชบัญญัติล้มละลาย", "bankruptcy act")),
     ("trademark", ("เครื่องหมายการค้า", "trademark act")),
     ("consumer", ("คุ้มครองผู้บริโภค", "consumer protection act")),
-    ("ccc", ("ประมวลกฎหมายแพ่งและพาณิชย์", "ประมวลกฎหมายแพ่ง", "ป.พ.พ.", "ปพพ.", "tccc", "civil and commercial code", "thai civil code", "civil code")),
+    ("ccc", ("ประมวลกฎหมายแพ่งและพาณิชย์", "ประมวลกฎหมายแพ่ง", "ป.พ.พ.", "ปพพ.", "tccc", "ccc", "civil and commercial code", "thai civil code", "civil code")),
     ("criminal", ("ประมวลกฎหมายอาญา", "criminal code")),
     ("constitution", ("รัฐธรรมนูญแห่งราชอาณาจักรไทย", "constitution of the kingdom of thailand")),
     ("landcode", ("ประมวลกฎหมายที่ดิน", "land code")),
@@ -427,13 +427,28 @@ def expand_section_token(token: str, statute: str | None = None) -> list[str]:
     return [token]
 
 
+_ALIAS_PATTERNS: dict[str, re.Pattern[str]] = {}
+
+
+def alias_spans(text: str, alias: str) -> list[tuple[int, int]]:
+    """Where ``alias`` occurs in lower-cased ``text``. An alias that begins or ends with a Latin letter or digit must
+    not continue a longer word there, so "ccc" does not match inside "accc" and "lpa" not inside "alpaca"."""
+    pattern = _ALIAS_PATTERNS.get(alias)
+    if pattern is None:
+        lead = r"(?<![a-z0-9])" if alias[:1].isascii() and alias[:1].isalnum() else ""
+        tail = r"(?![a-z0-9])" if alias[-1:].isascii() and alias[-1:].isalnum() else ""
+        pattern = _ALIAS_PATTERNS[alias] = re.compile(lead + re.escape(alias) + tail)
+    return [(match.start(), match.end()) for match in pattern.finditer(text)]
+
+
 def statute_in(window: str) -> str | None:
     text = window.lower()
     best_key = None
     best_at = -1
     for key, aliases in STATUTE_ALIASES:
         for alias in aliases:
-            found = text.rfind(alias)
+            spans = alias_spans(text, alias)
+            found = spans[-1][0] if spans else -1
             if found > best_at:
                 best_at = found
                 best_key = key
@@ -495,13 +510,8 @@ def _named_candidates(window: str) -> list[tuple[int, int, str | None]]:
     text = window.lower()
     for key, aliases in STATUTE_ALIASES:
         for alias in aliases:
-            start = 0
-            while True:
-                at = text.find(alias, start)
-                if at < 0:
-                    break
-                found.append((at, at + len(alias), key))
-                start = at + 1
+            for at, end in alias_spans(text, alias):
+                found.append((at, end, key))
     for match in EN_NAMED_STATUTE.finditer(window):
         words = match.group(1).split()
         while words and words[0].lower() in SKIP_NAMED_HEADS:

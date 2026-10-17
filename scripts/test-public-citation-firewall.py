@@ -1165,6 +1165,16 @@ class CodexFailOpenTests(unittest.TestCase):
         self.assertEqual(firewall.extract_citations("Civil and Commercial Code Section 150. Section 9 of the PDPA"),
                          [("ccc", "150"), ("pdpa", "9")])
 
+    def test_ccc_abbreviation_binds_and_latin_aliases_respect_word_boundaries(self) -> None:
+        self.assertEqual(firewall.extract_citations("CCC Sections 797 and 9999"), [("ccc", "797"), ("ccc", "9999")])
+        self.assertEqual(scan("CCC Sections 797 and 9999").review_lists, [])
+        with tempfile.TemporaryDirectory() as tmp:
+            status, report = gate("<p>(CCC Sections 797 and 9999)</p>", write_kb(Path(tmp)))
+            self.assertEqual(status, firewall.EXIT_BLOCK, report)
+            self.assertIn("ccc:9999", report)
+        # an alias inside a longer Latin word is not that statute ("ACCC" is not the CCC)
+        self.assertEqual(firewall.extract_citations("ACCC Section 4"), [(None, "4")])
+
     def test_statute_carries_between_singular_tokens_and_lists(self) -> None:
         self.assertIn(
             ("ccc", "9999"),
