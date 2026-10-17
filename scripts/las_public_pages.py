@@ -117,12 +117,29 @@ def valid_value(prop: str, value: str) -> bool:
         "none" not in words or len(words) == 1)
 
 
+VAR_CALL = re.compile(r"var\(\s*(--[\w-]+)\s*(?:,\s*([^()]*))?\)", re.IGNORECASE)
+
+
+def resolve_vars(value: str, custom: dict[str, str]) -> str:
+    """`value` with each var(--name[, fallback]) replaced by the custom property set in the same style (lower-cased),
+    or by its fallback; nested var() calls are resolved up to five levels deep."""
+    for _ in range(5):
+        resolved = VAR_CALL.sub(lambda call: custom.get(call.group(1), call.group(2) or "").lower(), value)
+        if resolved == value:
+            break
+        value = resolved
+    return value.strip()
+
+
 def winning_declaration(style: str, prop: str) -> str:
     """The value of `prop` that an inline style applies: the last !important declaration if any, else the last one
     ("display:none; display:block" shows the element; Codex review of PR #80)."""
     normal = important = ""
     # a CSS comment is whitespace to the cascade: "display:/**/none" hides the element (Codex review of PR #80)
     style = CSS_COMMENT.sub(" ", style)
+    # custom properties set in the same style, the last one winning (--state:none; display:var(--state))
+    custom = {name.strip(): value.strip() for name, colon, value in (d.partition(":") for d in style.split(";"))
+              if colon and name.strip().startswith("--")}
     for declaration in style.split(";"):
         name, colon, value = declaration.partition(":")
         if not colon or name.strip().lower() != prop:
@@ -131,9 +148,16 @@ def winning_declaration(style: str, prop: str) -> str:
         is_important = value.endswith("!important")
         if is_important:
             value = value[: -len("!important")].strip()
+        if "var(" in value:
+            # a var() declaration is valid when parsed, so it always overrides; it takes the custom property's value
+            # (or the fallback), and a value that is still not valid makes the property its initial value
+            # (Codex review of PR #80)
+            value = resolve_vars(value, custom)
+            if not valid_value(prop, value):
+                value = "inline" if prop == "display" else "visible"
         # an invalid value is dropped by the browser and does not override ("display:none; display:bogus" stays
         # hidden; Codex review of PR #80)
-        if not valid_value(prop, value):
+        elif not valid_value(prop, value):
             continue
         if is_important:
             important = value
@@ -238,9 +262,19 @@ def stack_is_foreign(open_names: list[str]) -> bool:
 RAW_TEXT = {"textarea", "iframe", "noembed", "noframes", "noscript", "title", "xmp", "plaintext"}
 
 
+# HTML start tags that break out of SVG or MathML: the parser leaves foreign content and reads them as HTML, so their
+# slash does not close them (<svg><div hidden/>…; HTML Standard, "in foreign content"; Codex review of PR #80)
+FOREIGN_BREAKOUT = {
+    "b", "big", "blockquote", "body", "br", "center", "code", "dd", "div", "dl", "dt", "em", "embed", "h1", "h2", "h3",
+    "h4", "h5", "h6", "head", "hr", "i", "img", "li", "listing", "menu", "meta", "nobr", "ol", "p", "pre", "ruby", "s",
+    "small", "span", "strong", "strike", "sub", "sup", "table", "tt", "u", "ul", "var",
+}
+
+
 def self_closing(name: str, tag: str, foreign: bool = False) -> bool:
     """Whether a start tag opens no subtree: a void element, or "/>" in foreign content (`foreign`: the tag is inside
     an <svg> or <math> element) or on <svg> or <math> itself."""
+    foreign = foreign and name not in FOREIGN_BREAKOUT
     return name in VOID_TAGS or (tag.endswith("/>") and (foreign or name in FOREIGN_ROOTS))
 
 

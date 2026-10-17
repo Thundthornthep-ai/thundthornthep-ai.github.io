@@ -267,6 +267,12 @@ class ContentRuleTests(unittest.TestCase):
         # an invalid later value does not override (round 56)
         self.assertEqual(rule_ids(self.faq_page('<div style="display:none; display:bogus"><h3>What is a lease?</h3></div>')),
                          ["CR11"])
+        # round 57: a var() value resolves from the same style; an HTML tag inside <svg> breaks out of foreign content
+        self.assertEqual(rule_ids(self.faq_page(
+            '<div style="display:block; --state:none; display:var(--state)"><h3>What is a lease?</h3></div>')), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page(
+            '<div style="display:none; display:var(--missing, block)"><h3>What is a lease?</h3></div>')), [])
+        self.assertEqual(rule_ids(self.faq_page('<svg><div hidden/><h3>What is a lease?</h3></div></svg>')), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<div style="display:none; display:block flow"><h3>What is a lease?</h3></div>')),
                          [])
         self.assertEqual(rule_ids(self.faq_page('<div style="display:none; display:block"><h3>What is a lease?</h3></div>')), [])
