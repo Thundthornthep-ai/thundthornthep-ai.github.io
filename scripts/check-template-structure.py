@@ -118,6 +118,37 @@ def flatten(body: str) -> tuple[str, list[int]]:
     return "".join(chars), offsets
 
 
+VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
+TAG_NAME = re.compile(r"<(/?)([A-Za-z][A-Za-z0-9-]*)")
+
+
+def enclosing_elements(body: str, points: list[int]) -> dict[int, int]:
+    """For each offset in `points`, the start of the innermost element of `body` that contains it (-1 at top level), so
+    a label in running text belongs to an element just as a class does."""
+    wanted = sorted(set(points))
+    result: dict[int, int] = {}
+    stack: list[tuple[str, int]] = []
+    i = 0
+    for tag in TAG.finditer(body):
+        while i < len(wanted) and wanted[i] < tag.start():
+            result[wanted[i]] = stack[-1][1] if stack else -1
+            i += 1
+        name = TAG_NAME.match(tag.group(0))
+        if not name:
+            continue
+        closing, tagname = name.group(1) == "/", name.group(2).lower()
+        if closing:
+            for depth in range(len(stack) - 1, -1, -1):
+                if stack[depth][0] == tagname:
+                    del stack[depth:]
+                    break
+        elif tagname not in VOID and not tag.group(0).endswith("/>"):
+            stack.append((tagname, tag.start()))
+    for point in wanted[i:]:
+        result[point] = stack[-1][1] if stack else -1
+    return result
+
+
 # The locked order of the sections (ARTICLE-STANDARD section 2). Tables may stand anywhere, so they are not ordered.
 # The references and the disclaimer close the page: their last occurrence counts, so a heading such as
 # "ตารางสรุปมาตราที่อ้างอิง" in the body or a disclaimer quoted early does not move them; the others count from their
@@ -126,14 +157,16 @@ ORDER = ("quick-answer", "practice-note", "counterargument", "faq", "ref-section
 CLOSING = {"ref-section", "disclaimer"}
 
 
-def marker_hits(raw: str) -> tuple[dict[str, int], dict[str, set[int]]]:
+def marker_hits(raw: str) -> tuple[dict[str, int], dict[str, set[int]], dict[str, set[int]]]:
     """For each section marker found on the page, its offset in the visible markup (the first hit, or the last for the
-    closing sections) and the start of every element that carries it (a class or a heading). Presence, order and the
-    one-element rule all come from here, so every marker that counts as present also takes part in the order check."""
+    closing sections), the start of every element that is that section by its class or heading, and the start of the
+    innermost element around each of its text labels. Presence, order and the one-element rule all come from here, so
+    every marker that counts as present also takes part in the order check."""
     body = body_markup(raw)
     text, offsets = flatten(body)
     found: dict[str, int] = {}
     elements: dict[str, set[int]] = {}
+    around: dict[str, set[int]] = {}
     for marker in ORDER:
         # a class marker sits at the start of its element, so two sections named in one element share that element
         owned = [body.rfind("<", 0, match.start()) for match in CLASS[marker].finditer(body)]
@@ -142,11 +175,16 @@ def marker_hits(raw: str) -> tuple[dict[str, int], dict[str, set[int]]]:
                       if HEAD[marker].search(htmllib.unescape(TAG.sub(" ", match.group(2))))]
         hits = list(owned)
         if marker in TEXT:
-            hits += [offsets[match.start()] for match in TEXT[marker].finditer(text)]
+            labels = [offsets[match.start()] for match in TEXT[marker].finditer(text)]
+            hits += labels
+            # a label belongs to the innermost element around it (Codex review of PR #80: "Quick Answer and Practice
+            # Note" in one element is still one section)
+            inside = enclosing_elements(body, labels)
+            around[marker] = {inside[label] for label in labels if inside[label] >= 0}
         if hits:
             found[marker] = max(hits) if marker in CLOSING else min(hits)
             elements[marker] = set(owned)
-    return found, elements
+    return found, elements, around
 
 
 def marker_positions(raw: str) -> dict[str, int]:
@@ -162,15 +200,19 @@ def missing_markers(raw: str) -> list[str]:
 
 def order_problems(raw: str) -> list[str]:
     """Pairs of sections that stand in the wrong order, e.g. "out of order: ref-section before quick-answer"."""
-    pos, elements = marker_hits(raw)
+    pos, elements, around = marker_hits(raw)
     present = [marker for marker in ORDER if marker in pos]
     problems = [f"out of order: {later} before {earlier}" for i, earlier in enumerate(present)
                 for later in present[i + 1:] if pos[later] < pos[earlier]]
     # one element cannot be two sections (Codex review of PR #80): compared by element, not by the offset chosen for
-    # the order, because class="ref-section disclaimer" shares an element while the two closing offsets may differ
+    # the order, because class="ref-section disclaimer" shares an element while the two closing offsets may differ. A
+    # label counts against an element that is another section by class or heading (<div class="quick-answer">Quick
+    # Answer and Practice Note</div>); two labels in one heading do not ("LAS Practice Note: … Disclaimer clause").
+    def shared(a: str, b: str) -> bool:
+        return bool(elements[a] & (elements[b] | around.get(b, set())) or around.get(a, set()) & elements[b])
+
     problems += [f"one element for two sections: {earlier} and {later}" for i, earlier in enumerate(present)
-                 for later in present[i + 1:]
-                 if pos[later] == pos[earlier] or elements[earlier] & elements[later]]
+                 for later in present[i + 1:] if pos[later] == pos[earlier] or shared(earlier, later)]
     return problems
 
 
