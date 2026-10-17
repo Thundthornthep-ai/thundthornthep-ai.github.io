@@ -134,6 +134,23 @@ class ContentRuleTests(unittest.TestCase):
         only7_dated = only7.replace("</body>", "<p>ปรับปรุงเมื่อวันที่ 17 ตุลาคม 2568</p></body>")
         self.assertEqual(rule_ids(only7_dated), ["CR8"])
 
+    def test_cr7_court_named_after_the_number(self) -> None:
+        # no court named before the number, so only the words after it identify the Supreme Court
+        no_court = GOOD.replace(" · คำพิพากษาศาลฎีกาที่ 4466/2553", "")
+        self.assertEqual(rule_ids(no_court), [])
+        later = no_court.replace("</body>", "<p>Judgment No. 9999/2566 of the Supreme Court held otherwise.</p></body>")
+        self.assertEqual(rule_ids(later), ["CR7"])
+
+    def test_cr8_amendment_numbers_bound_to_the_act(self) -> None:
+        only7 = GOOD.replace("พระราชบัญญัติคุ้มครองแรงงาน (ฉบับที่ 9) พ.ศ. 2568 · ", "พระราชบัญญัติคุ้มครองแรงงาน ")
+        # No. 7 named without its year
+        no_year = only7.replace("ฉบับที่ 7 พ.ศ. 2562", "ฉบับที่ 7")
+        self.assertEqual(rule_ids(no_year), ["CR8"])
+        # an unrelated statute's No. 9 far from the Act's name does not satisfy the rule
+        filler = "ข้อความอื่น " * 40
+        other9 = only7.replace("</body>", f"<p>{filler}ประมวลรัษฎากร ฉบับที่ 9</p></body>")
+        self.assertEqual(rule_ids(other9), ["CR8"])
+
     def test_cr9_section_abbreviation(self) -> None:
         for bad in ("ป.พ.พ. ม.391", "ป.พ.พ. — ม.391, 1167–1168", "ตาม ม. 1270"):
             self.assertEqual(rule_ids(GOOD.replace("</body>", f"<p>{bad}</p></body>")), ["CR9"], bad)

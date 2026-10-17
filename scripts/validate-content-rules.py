@@ -85,16 +85,24 @@ DEKA_NUMBER = re.compile(
 BARE_JUDGMENT = re.compile(r"\bJudge?ment\s*(?:No\.?|Number)?\s*(\d{1,5}/25\d\d)", re.IGNORECASE)
 SUPREME_NAMED = re.compile(r"supreme\s+court|\bdika\b|ศาลฎีกา", re.IGNORECASE)
 LPA_NAMED = re.compile(r"คุ้มครองแรงงาน|labou?r\s+protection|\bLPA\b", re.IGNORECASE)
+# Amendment No. 7 named with or without its year (2562 / 2019); counted only near the Act's name (lpa_context).
 LPA_NO7 = re.compile(
-    r"ฉบับที่\s*7\s*\)?\s*(?:พ\.ศ\.\s*)?2562|No\.\s*7\s*\)?\s*,?\s*(?:B\.E\.\s*)?(?:2562|\(?2019)",
+    r"ฉบับที่\s*7\b(?:\s*\)?\s*(?:พ\.ศ\.\s*)?2562)?|No\.\s*7\b(?:\s*\)?\s*,?\s*(?:B\.E\.\s*)?(?:2562|\(?2019))?",
     re.IGNORECASE,
 )
+# How far from the Act's name an amendment number may stand and still be read as an amendment of that Act.
+LPA_WINDOW = 160
 # No. 9 must be named as such: a bare 2568 elsewhere on the page (a date) is not evidence of the amendment.
 LPA_NO9 = re.compile(r"ฉบับที่\s*9|No\.\s*9\b", re.IGNORECASE)
 LPA_CURRENT = re.compile(
     r"ฉบับล่าสุด|ฉบับปัจจุบัน|ที่ใช้บังคับในปัจจุบัน|latest\s+amendment|most\s+recent\s+amendment|current\s+version",
     re.IGNORECASE,
 )
+def lpa_context(text: str, start: int, end: int) -> bool:
+    """True when the Labour Protection Act is named within LPA_WINDOW characters of text[start:end]."""
+    return bool(LPA_NAMED.search(text[max(0, start - LPA_WINDOW) : end + LPA_WINDOW]))
+
+
 SECTION_ABBR = re.compile(r"(?<![ก-๎])ม\.\s?\d")
 MONTH_ABBR = re.compile(
     r"\d{1,2}\s*(?:ม\.ค|ก\.พ|มี\.ค|เม\.ย|พ\.ค|มิ\.ย|ก\.ค|ส\.ค|ก\.ย|ต\.ค|พ\.ย|ธ\.ค)\.\s*\d{2,4}"
@@ -187,12 +195,17 @@ def check_article(raw: str, verified: set[str]) -> list[tuple[str, str]]:
     for match in BARE_JUDGMENT.finditer(text):
         if any(start <= match.start() < end for start, end in seen_spans):
             continue
-        if SUPREME_NAMED.search(text[max(0, match.start() - 400) : match.start()]) and match.group(1) not in verified:
+        # the court may be named before the number or after it ("Judgment No. 9999/2566 of the Supreme Court")
+        context = text[max(0, match.start() - 400) : match.start()] + " " + text[match.end() : match.end() + 200]
+        if SUPREME_NAMED.search(context) and match.group(1) not in verified:
             found.append(("CR7", f"{match.group(1)}: {snippet(text, match.start(), match.end())}"))
 
     if LPA_NAMED.search(text):
-        mentions = list(LPA_NO7.finditer(text))
-        if mentions and not LPA_NO9.search(text):
+        # amendment numbers count only when they stand near the Act's name, so an unrelated statute's
+        # "No. 7" or "No. 9" elsewhere on the page neither triggers nor satisfies the rule
+        mentions = [m for m in LPA_NO7.finditer(text) if lpa_context(text, m.start(), m.end())]
+        has_no9 = any(lpa_context(text, m.start(), m.end()) for m in LPA_NO9.finditer(text))
+        if mentions and not has_no9:
             found.append(("CR8", f"names No. 7 but never No. 9: {snippet(text, mentions[0].start(), mentions[0].end())}"))
         for match in mentions:
             window = text[max(0, match.start() - 40) : match.end() + 40]
