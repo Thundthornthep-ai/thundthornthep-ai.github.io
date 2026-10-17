@@ -10,8 +10,8 @@
   "resources": 18,
   "excluded": 23,
   "unlinked_items": 19,
-  "legal_reviewed": 282,
-  "source_tree": "bfc24293c8e93ca4facb651db0e5a02d43512536"
+  "legal_reviewed": 284,
+  "source_tree": "89061f8ba02c48b9fb4109e081aae29d7fc56272"
  },
  "categories": {
   "corporate": "บริษัทและธรรมาภิบาล",
@@ -57,7 +57,21 @@
    "review_priority": "normal",
    "review_reason": "legal-review-registered",
    "module": "M00",
-   "level": "L1"
+   "level": "L1",
+   "folded_variants": [
+    {
+     "path": "articles/ai-legal-tech-thailand.html",
+     "title": "AI Legal Technology in Thailand: How Thundthornthep Yamoutai, Ph.D. is Pioneering Legal Innovation",
+     "language": "en",
+     "sha256": "bd5056cee216a66000d5b98436f47777d065f464af2364cd7938235d25e33289",
+     "text_sha256": "997ab0d5f2f129b57f09d12fb0db5ef5059eef970eaa750b25a0787f75a46e7f",
+     "published": "2026-04-01",
+     "modified": "2026-04-01",
+     "url": "https://thundthornthep-ai.github.io/articles/ai-legal-tech-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ]
   },
   {
    "id": "articles/ai-replacing-lawyers",
@@ -2875,7 +2889,21 @@
    "review_priority": "high",
    "review_reason": "legal-review-registered",
    "module": "M08",
-   "level": "L2"
+   "level": "L2",
+   "folded_variants": [
+    {
+     "path": "articles/pdpa-compliance-guide-thailand.html",
+     "title": "Complete Guide to PDPA Compliance in Thailand | Personal Data Protection Act B.E. 2562",
+     "language": "en",
+     "sha256": "6a76ae5de076856e641a1a6e0a027340fffb6f3915d4c3dc291f838785040473",
+     "text_sha256": "e8b91d134f4d4656c71d28740a47bf7927491472b0ad9cced566aea26c341244",
+     "published": "2026-04-01",
+     "modified": "2026-09-29",
+     "url": "https://thundthornthep-ai.github.io/articles/pdpa-compliance-guide-thailand.html",
+     "legal_status": "reviewed",
+     "article_schema": true
+    }
+   ]
   },
   {
    "id": "articles/pdpa-essentials-entrepreneurs",
@@ -8885,5 +8913,5 @@
    "review_reason": "baseline-review-required"
   }
  ],
- "coverage_boundary": "Every article page under articles/, en/articles/ and blog/ of the github.io checkout at source_tree is listed; redirect stubs, series index pages, .bak copies and an English copy under articles/ whose English edition is also under en/articles/ are excluded. legal_reviewed counts the language variants registered in legal-reviews.json: the exact published file that went through the LAS audit pipeline, with the review date shown on the page. A listed page is not a legal opinion; other variants remain unreviewed."
+ "coverage_boundary": "Every article page under articles/, en/articles/ and blog/ of the github.io checkout at source_tree is listed; redirect stubs, series index pages and .bak copies are excluded, and an English copy under articles/ whose English edition is also under en/articles/ is listed under its item's folded_variants rather than as a card variant. legal_reviewed counts the language variants registered in legal-reviews.json: the exact published file that went through the LAS audit pipeline, with the review date shown on the page. A listed page is not a legal opinion; other variants remain unreviewed."
 }
