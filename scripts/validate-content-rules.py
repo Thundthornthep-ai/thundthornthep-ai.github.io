@@ -67,6 +67,8 @@ THAI_DIGITS = str.maketrans("๐๑๒๓๔๕๖๗๘๙", "0123456789")
 COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
 SCRIPT_NON_LD = re.compile(r"<script(?![^>]*ld\+json)[^>]*>.*?</script>", re.DOTALL | re.IGNORECASE)
 STYLE = re.compile(r"<style[^>]*>.*?</style>", re.DOTALL | re.IGNORECASE)
+# inert <template> contents are never rendered (they are left in the markup the citation rules read)
+TEMPLATE = re.compile(r"<template\b[^>]*>.*?</template>", re.DOTALL | re.IGNORECASE)
 TAG = re.compile(r"<[^>]+>")
 META_KEYWORDS = re.compile(r"<meta[^>]+name\s*=\s*[\"']keywords[\"'][^>]*>", re.IGNORECASE)
 ALT_NAME = re.compile(r"\"(?:alternateName|keywords)\"\s*:\s*(?:\"[^\"]*\"|\[[^\]]*\])")
@@ -203,7 +205,7 @@ OFFICIAL_COMPANY_NAMES = frozenset({"Legal Advance Solution"})
 # concatenated title ('… ' + x + ' …') is checked on its literals joined
 JS_LITERAL = r"""(?:'(?:[^'\\\n]|\\.)*'|"(?:[^"\\\n]|\\.)*"|`(?:[^`\\]|\\.)*`)"""
 SCRIPT_TITLE = re.compile(
-    r"""(?:\btitle\s*(?::|=(?!=))|(?<![\w$])['"]title['"]\s*:|\[\s*['"]title['"]\s*\]\s*=(?!=)"""
+    r"""(?:(?<![\w$.])title\s*:|\.\s*title\s*=(?!=)|(?<![\w$])['"]title['"]\s*:|\[\s*['"]title['"]\s*\]\s*=(?!=)"""
     r"""|\bsetAttribute\(\s*['"]title['"]\s*,)\s*"""
     rf"""((?:[^;'"`\n]*?\+\s*)?{JS_LITERAL}(?:\s*\+[^;'"`\n]*?{JS_LITERAL})*)"""
 )
@@ -258,8 +260,9 @@ def load_deka_register(root: Path = ROOT) -> set[str]:
 
 
 def reader_text(raw: str) -> str:
-    """Text a reader sees on the page: no comments, no scripts (JSON-LD included), no styles; whitespace collapsed."""
-    text = ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw))
+    """Text a reader sees on the page: no comments, no scripts (JSON-LD included), no styles, no <template> contents;
+    whitespace collapsed."""
+    text = TEMPLATE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw)))
     text = TAG.sub(" ", STYLE.sub(" ", text))
     return re.sub(r"\s+", " ", htmllib.unescape(text).translate(THAI_DIGITS)).strip()
 
@@ -303,7 +306,7 @@ def check_faq(raw: str) -> tuple[list[tuple[str, str]], list[tuple[str, str]]]:
     # the reader text, and Thai text has no word spaces to lose
     shown = re.sub(r"\s+", "", reader_text(raw))
     hidden = [question for question in questions if re.sub(r"\s+", "", question) not in shown]
-    markup = STYLE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw)))
+    markup = TEMPLATE.sub(" ", STYLE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw))))
     has_section = bool(FAQ_CLASS.search(markup) or FAQ_HEADING.search(markup))
     if len(hidden) == len(questions) and not has_section:
         return [("CR11", f"{len(questions)} FAQPage question(s), none visible and no FAQ section: {questions[0][:80]}")], []

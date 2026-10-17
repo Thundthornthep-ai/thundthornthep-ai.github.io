@@ -221,6 +221,9 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual([detail for _, detail in rules.check_warnings(inline)], ["สัญญาเช่าต้องจดทะเบียนเมื่อใด?"])
         # the JSON-LD text itself is not visible text
         self.assertEqual(rules.check_faq(self.faq_page())[0][0][0], "CR11")
+        # inert <template> contents are not visible either (Codex review of PR #80, round 14)
+        self.assertEqual(rule_ids(self.faq_page("<template><h3>What is a lease?</h3></template>")), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<template><div class="faq-item">Q</div></template>')), ["CR11"])
 
     def test_w11_faq_wording_drift_is_reported_not_failed(self) -> None:
         page = self.faq_page("<h3>What is a lease?</h3>")
@@ -289,6 +292,9 @@ class ContentRuleTests(unittest.TestCase):
         # a quoted key is a title property too (Codex review of PR #80, round 13)
         self.assertEqual(len(rules.check_script('{"title": "ค่าชดเชย (ม.118)"}')), 1)
         self.assertEqual(len(rules.check_script("{'title': 'A vs B'}")), 1)
+        # a variable or a destructuring default named title is not a tooltip (Codex review of PR #80, round 14)
+        self.assertEqual(rules.check_script("const title = 'A vs B'; function f({title = 'A vs B'}) {}"), [])
+        self.assertEqual(len(rules.check_script("a . title = 'A vs B';")), 1)
         with tempfile.TemporaryDirectory() as tmp:
             root = make_site(Path(tmp), {"articles/good.html": GOOD, "js/legal-links.js": script})
             out = io.StringIO()
