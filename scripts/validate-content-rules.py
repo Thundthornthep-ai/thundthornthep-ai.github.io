@@ -175,7 +175,7 @@ MONTH_ABBR = re.compile(
 LD_JSON = re.compile(r"<script[^>]*ld\+json[^>]*>(.*?)</script>", re.DOTALL | re.IGNORECASE)
 ANY_SCRIPT = re.compile(r"<script\b[^>]*>.*?</script>", re.DOTALL | re.IGNORECASE)
 # a class token that starts with "faq" (faq-item; not data-class, not "no-faq")
-FAQ_CLASS = re.compile(r"(?<![\w-])class\s*=\s*[\"'](?:[^\"']*\s)?faq", re.IGNORECASE)
+FAQ_CLASS = re.compile(r"(?<![\w-])class\s*=\s*(?:[\"'](?:[^\"']*\s)?)?faq", re.IGNORECASE)
 # a FAQ heading, read with inline tags removed ("<em>คำถาม</em>ที่พบบ่อย", "Frequently <em>Asked</em> Questions")
 HEADING_ELEMENT = re.compile(r"<h([2-4])\b[^>]*>(.*?)</h\1>", re.DOTALL | re.IGNORECASE)
 FAQ_HEADING_TEXT = re.compile(r"คำถามที่พบบ่อย|\bFAQs?\b|frequently\s+asked", re.IGNORECASE)
@@ -192,7 +192,7 @@ FREE_HEDGE_EN = re.compile(
 # page as plain text, so an unbounded name would run on across sentences to a later "จำกัด"). A name passes when its last word is a letter
 # placeholder (A, B, ก, เอ, เอบีซี …), a blank (____, ……), a role (ผู้ว่าจ้าง), "มหาชน", or an official name below.
 COMPANY_NAME = re.compile(
-    r"บริษัท\s+((?:[^\s<>\[\]]+\s+){0,9}?[^\s<>\[\]]+)\s+จำกัด(?=$|[\s()<>,.;:!?\"'“”‘’—–-])"
+    r"บริษัท\s+((?:[^\s<>\[\]]+\s+){0,9}?[^\s<>\[\]]+)\s+จำกัด(?=$|[\s()<>,.;:!?\"'“”‘’—–\-ฯ])"
 )
 NAME_PLACEHOLDER = re.compile(
     r"^(?:[A-Z]\d{0,2}|[ก-ฮ]|เอ|บี|ซี|ดี|อี|เอฟ|เอกซ์|วาย|แซด|เอบีซี|มหาชน|\(มหาชน\)|ผู้\S+|[_.…·\-–—]+)$"

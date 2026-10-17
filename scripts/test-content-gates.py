@@ -233,6 +233,7 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(rule_ids(self.faq_page("<h3>What is a lease?</h3>", ld=two)), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<div class="no-faq">x</div>')), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<div class="box faq-item">x</div>')), [])
+        self.assertEqual(rule_ids(self.faq_page("<div class=faq-item>x</div>")), [])
         # a FAQ heading with inline markup is a FAQ heading (Codex review of PR #80, round 18)
         for heading in ("<h2>Frequently <em>Asked</em> Questions</h2>", "<h2><em>คำถาม</em>ที่พบบ่อย</h2>"):
             self.assertEqual(rule_ids(self.faq_page(heading)), [], heading)
@@ -280,7 +281,7 @@ class ContentRuleTests(unittest.TestCase):
 
     def test_cr13_invented_company_names(self) -> None:
         # TPL-06: names that read like real companies
-        for bad in ("บริษัท ก่อสร้างมั่นคง จำกัด", "บริษัท โซลาร์ เพาเวอร์ จำกัด", "ในบริษัท โรงพยาบาลมิตรภาพการแพทย์ จำกัด ซึ่ง",
+        for bad in ("บริษัท ก่อสร้างมั่นคง จำกัด", "บริษัท ก่อสร้างมั่นคง จำกัดฯ", "บริษัท โซลาร์ เพาเวอร์ จำกัด", "ในบริษัท โรงพยาบาลมิตรภาพการแพทย์ จำกัด ซึ่ง",
                     "บริษัท Startup จำกัด มีทุน", "<strong>บริษัท ก่อสร้าง จำกัด</strong>",
                     # names of more than three words (Codex review of PR #80)
                     "บริษัท ไทย โซลาร์ กรีน เพาเวอร์ จำกัด", "บริษัท สยาม ดิจิทัล เทค โซลูชั่นส์ แอนด์ เซอร์วิส จำกัด"):
@@ -523,6 +524,17 @@ class TemplateStructureTests(unittest.TestCase):
             with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
                 self.assertEqual(template.main(["--root", str(root), "--strict", "articles/prose.html"]), 1)
                 self.assertEqual(template.main(["--root", str(root), "articles/prose.html"]), 0)
+        # unquoted classes count; Quick Answer and Disclaimer headings count when they open with the label
+        # (Codex review of PR #80, round 23)
+        unquoted = COMPLETE.replace('<div class="quick-answer">', "<div class=quick-answer>").replace(
+            '<div class="disclaimer">', "<div class=disclaimer>")
+        self.assertEqual(template.missing_markers(unquoted, labels=False), [])
+        headings = COMPLETE.replace(quick, "<h2>Quick Answer</h2><p>x</p>").replace(
+            '<div class="disclaimer">ข้อสงวนสิทธิ์</div>', "<h2>ข้อสงวนสิทธิ์</h2><p>x</p>")
+        self.assertEqual(template.missing_markers(headings, labels=False), [])
+        self.assertEqual(template.order_problems(headings, labels=False), [])
+        clause_head = COMPLETE.replace(pn, '<h2 class="section-heading">LAS Practice Note: Human-in-the-Loop Disclaimer</h2>')
+        self.assertEqual(template.order_problems(clause_head, labels=False), [])
         # a class name counts only at the start of a class token
         self.assertIn("faq", template.missing_markers(COMPLETE.replace(
             '<h2>คำถามที่พบบ่อย</h2><div class="faq-item"><div class="faq-q">Q1</div></div>', '<div class="no-faq">x</div>')))

@@ -57,7 +57,9 @@ ROOT = pages.ROOT
 # pages.strip_unrendered)
 HIDDEN = re.compile(r"<!--.*?-->|<script\b[^>]*>.*?</script>|<style\b[^>]*>.*?</style>", re.DOTALL | re.IGNORECASE)
 # the class attribute itself, not data-class or aria-class
-CLASS_ATTR = r"(?<![\w-])class\s*=\s*[\"']"
+CLASS_ATTR = r"(?<![\w-])class\s*=\s*"
+# the start of a class token: after the opening quote or a space inside a quoted value, or an unquoted value
+CLASS_TOKEN = CLASS_ATTR + r"(?:[\"'](?:[^\"']*\s)?)?"
 TAG = re.compile(r"<[^>]+>")
 HEADING = re.compile(r"<h([2-4])\b[^>]*>(.*?)</h\1>", re.DOTALL | re.IGNORECASE)
 ENTITY_OR_CHAR = re.compile(r"&(?:#\d+|#[xX][0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);|.", re.DOTALL)
@@ -65,7 +67,7 @@ ENTITY_OR_CHAR = re.compile(r"&(?:#\d+|#[xX][0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);|
 
 def class_has(pattern: str) -> re.Pattern[str]:
     # the name starts a class token ("faq-item", not "no-faq")
-    return re.compile(CLASS_ATTR + r"(?:[^\"']*\s)?(?:" + pattern + r")", re.IGNORECASE)
+    return re.compile(CLASS_TOKEN + r"(?:" + pattern + r")", re.IGNORECASE)
 
 
 MARKERS = ("quick-answer", "practice-note", "counterargument", "faq", "ref-section", "disclaimer", "table")
@@ -75,7 +77,8 @@ CLASS = {
     "counterargument": class_has(r"counter-?argument|devil|other-side"),
     "faq": class_has(r"faq"),
     "ref-section": class_has(r"ref-section"),
-    "disclaimer": re.compile(CLASS_ATTR + r"[^\"']*disclaimer", re.IGNORECASE),
+    # any class containing "disclaimer" (las-disclaimer too), quoted or unquoted, as content rule CR1 reads it
+    "disclaimer": re.compile(CLASS_ATTR + r"(?:[\"'][^\"']*|[^\"'\s>]*)disclaimer", re.IGNORECASE),
 }
 # label text anywhere in the visible body
 TEXT = {
@@ -88,6 +91,10 @@ TEXT = {
 }
 # heading text (h2 to h4): words in running prose ("อีกฝ่ายหนึ่ง" in quoted statute text) do not make a section
 HEAD = {
+    # a heading that opens with the label ("Quick Answer", "ข้อสงวนสิทธิ์"); one that only mentions it later, such as
+    # "LAS Practice Note: … Human-in-the-Loop Disclaimer", is not that section
+    "quick-answer": re.compile(r"^\W*(?:คำตอบโดยย่อ|คำตอบสั้น|quick\s+answer\b|short\s+answer\b)", re.IGNORECASE),
+    "disclaimer": re.compile(r"^\W*(?:ข้อสงวนสิทธิ์|คำสงวนสิทธิ์|disclaimer\b)", re.IGNORECASE),
     "practice-note": re.compile(r"\bpractice\s+note\b", re.IGNORECASE),
     "counterargument": re.compile(
         r"ข้อโต้แย้ง|ข้อต่อสู้|อีกฝ่าย|ฝ่ายตรงข้าม|counter-?\s?arguments?|devil'?s\s+advocate|other\s+side|opposing",
@@ -97,7 +104,7 @@ HEAD = {
     "ref-section": re.compile(r"แหล่งอ้างอิง|เอกสารอ้างอิง|อ้างอิง|\breferences?\b|\bsources\b", re.IGNORECASE),
 }
 TABLE = re.compile(r"<table\b", re.IGNORECASE)
-SUB_HEADING = re.compile(CLASS_ATTR + r"[^\"']*\bsub-heading\b", re.IGNORECASE)
+SUB_HEADING = re.compile(CLASS_TOKEN + r"sub-heading\b", re.IGNORECASE)
 
 
 def body_markup(raw: str) -> str:
