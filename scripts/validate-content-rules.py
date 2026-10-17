@@ -65,8 +65,8 @@ ROOT = pages.ROOT
 DEKA_REGISTER = Path("scripts/legal-kb/supreme-court-verified.json")
 
 THAI_DIGITS = str.maketrans("๐๑๒๓๔๕๖๗๘๙", "0123456789")
-# a comment, script or style with no end runs to the end of the file, as a browser reads it (Codex review of PR #80)
-COMMENT = re.compile(r"<!--.*?(?:-->|\Z)", re.DOTALL)
+# a script or style with no end runs to the end of the file, as a browser reads it; comments go through
+# pages.strip_comments(), which leaves a "<!--" inside a script alone (Codex review of PR #80)
 # opening tags are read with quoted attribute values whole (pages.TAG_BODY): '<script data-note="1 > 0" …>'
 # a script element with its attributes (group 1) and body (group 2); JSON-LD is told apart by its attributes
 SCRIPT_ELEMENT = re.compile(r"<script(?=[\s/>])(" + pages.TAG_BODY + r")>(.*?)(?:</script\s*>|\Z)", re.DOTALL | re.IGNORECASE)
@@ -308,7 +308,7 @@ SITE_WIDE_RULES = ("CR2", "CR5")
 
 def visible_text(raw: str) -> str:
     """Text a reader or a search engine sees: no comments, no code or styles; JSON-LD stays."""
-    text = COMMENT.sub(" ", raw)
+    text = pages.strip_comments(raw)
     text = SCRIPT_ELEMENT.sub(lambda m: m.group(0) if is_ld_json(m) else " ", text)
     text = STYLE.sub(" ", text)
     text = TAG.sub(" ", text)
@@ -334,7 +334,7 @@ def reader_text(raw: str) -> str:
     """Text a reader sees on the page: no comments, no scripts (JSON-LD included), no styles, no <template> contents;
     whitespace collapsed."""
     # inert <template> contents are never rendered (they are left in the markup the citation rules read)
-    text = pages.strip_unrendered(ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw)))
+    text = pages.strip_unrendered(ANY_SCRIPT.sub(" ", pages.strip_comments(raw)))
     text = TAG.sub(" ", STYLE.sub(" ", text))
     return re.sub(r"\s+", " ", htmllib.unescape(text).translate(THAI_DIGITS)).strip()
 
@@ -372,7 +372,7 @@ def is_ld_json(script: re.Match[str]) -> bool:
 def faq_objects(raw: str) -> list[dict]:
     """Every FAQPage object in the page's JSON-LD (a block that does not parse is skipped)."""
     found: list[dict] = []
-    for block in (m.group(2) for m in SCRIPT_ELEMENT.finditer(COMMENT.sub(" ", raw)) if is_ld_json(m)):
+    for block in (m.group(2) for m in SCRIPT_ELEMENT.finditer(pages.strip_comments(raw)) if is_ld_json(m)):
         try:
             data = json.loads(block)
         except ValueError:
@@ -409,12 +409,12 @@ def check_faq(raw: str) -> tuple[list[tuple[str, str]], list[tuple[str, str]]]:
     # only the page body is read: a <title> that repeats a question is not a FAQ (Codex review of PR #80)
     # comments, scripts and styles go before the body start is looked for, so a "<body>" in a head comment does not
     # start the body (Codex review of PR #80)
-    shown = re.sub(r"\s+", "", reader_text(page_body(STYLE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw))))))
+    shown = re.sub(r"\s+", "", reader_text(page_body(STYLE.sub(" ", ANY_SCRIPT.sub(" ", pages.strip_comments(raw))))))
     hidden = [question for question in questions if re.sub(r"\s+", "", question) not in shown]
     # the FAQ section is looked for in the body only: <html class="faq-page"> is no FAQ section (Codex review of PR #80)
     # markup written inside an attribute value (title="<h2>FAQ</h2>") is no heading
     markup = pages.mask_attribute_markup(
-        pages.strip_unrendered(page_body(STYLE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw))))))
+        pages.strip_unrendered(page_body(STYLE.sub(" ", ANY_SCRIPT.sub(" ", pages.strip_comments(raw))))))
     # a FAQ class is a token of an element's own class attribute starting with "faq" ("faq-item", not "no-faq"), not
     # text inside another attribute's value (title="x class=faq-item"; Codex review of PR #80)
     # (a void element such as <input class="faq"> holds no section)
@@ -560,7 +560,7 @@ def check_script(raw: str) -> list[tuple[str, str]]:
 
 def check_site_wide(raw: str) -> list[tuple[str, str]]:
     found: list[tuple[str, str]] = []
-    no_comments = COMMENT.sub(" ", raw)
+    no_comments = pages.strip_comments(raw)
     # raw markup keeps metadata (meta, JSON-LD) covered; the tag-free text catches a prefix in its own element
     # ("<span>Dr.</span><span>Thundthornthep ...")
     spots = {snippet(no_comments, m.start(), m.end()) for m in DR_PREFIX.finditer(no_comments)}
@@ -580,7 +580,7 @@ def check_site_wide(raw: str) -> list[tuple[str, str]]:
 def check_article(raw: str, verified: set[str]) -> list[tuple[str, str]]:
     found: list[tuple[str, str]] = []
     text = visible_text(raw)
-    no_comments = COMMENT.sub(" ", raw)
+    no_comments = pages.strip_comments(raw)
 
     if not DISCLAIMER_CLASS.search(no_comments) and not DISCLAIMER_TEXT.search(text):
         found.append(("CR1", "no element with a disclaimer class and no disclaimer text"))

@@ -259,6 +259,11 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(rule_ids(self.faq_page('<title><h2>FAQ</h2><h3>What is a lease?</h3></title>')), ["CR11"])
         # an unclosed script runs to the end of the file (round 54)
         self.assertEqual(rule_ids(self.faq_page().replace("</body>", "<script>const q = 'What is a lease?';")), ["CR11"])
+        # round 55: a "<!--" inside a script is no comment, so the FAQPage after it is still read; a CSS comment is
+        # whitespace in an inline style
+        marker = self.faq_page().replace("<head>", '<head><script>const marker = "<!--";</script>', 1)
+        self.assertEqual(rule_ids(marker), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<div style="display:/**/none"><h3>What is a lease?</h3></div>')), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<div style="display:none; display:block"><h3>What is a lease?</h3></div>')), [])
         self.assertEqual(rule_ids(self.faq_page(
             '<div style="display:none !important; display:block"><h3>What is a lease?</h3></div>')), ["CR11"])
@@ -698,6 +703,11 @@ class TemplateStructureTests(unittest.TestCase):
         unclosed = ('<html><body><script>/*' + "".join(f'<div class="{c}">x</div>' for c in
                     ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer")) + "<table></table>")
         self.assertEqual(template.missing_markers(unclosed, labels=False), template.missing_markers(
+            "<html><body><p>text</p></body></html>", labels=False))
+        # nothing after <plaintext> is markup (round 55)
+        plain = ('<html><body><plaintext>' + "".join(f'<div class="{c}">x</div>' for c in
+                 ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer")) + "<table></table>")
+        self.assertEqual(template.missing_markers(plain, labels=False), template.missing_markers(
             "<html><body><p>text</p></body></html>", labels=False))
         # an <xmp> example marks nothing (round 49)
         xmp = ('<html><body><xmp>' + "".join(f'<div class="{c}">x</div>' for c in

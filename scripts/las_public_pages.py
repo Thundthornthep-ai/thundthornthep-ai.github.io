@@ -95,10 +95,15 @@ def untag(markup: str) -> str:
 
 
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
+CSS_COMMENT = re.compile(r"/\*.*?(?:\*/|\Z)", re.DOTALL)
+
+
 def winning_declaration(style: str, prop: str) -> str:
     """The value of `prop` that an inline style applies: the last !important declaration if any, else the last one
     ("display:none; display:block" shows the element; Codex review of PR #80)."""
     normal = important = ""
+    # a CSS comment is whitespace to the cascade: "display:/**/none" hides the element (Codex review of PR #80)
+    style = CSS_COMMENT.sub(" ", style)
     for declaration in style.split(";"):
         name, colon, value = declaration.partition(":")
         if not colon or name.strip().lower() != prop:
@@ -140,13 +145,25 @@ def mask_attribute_markup(html: str) -> str:
         return QUOTED_VALUE.sub(lambda value: value.group(0).replace("<", " ").replace(">", " "), match.group(0))
     return START_TAG.sub(tag, html)
 HTML_COMMENT = re.compile(r"<!--.*?(?:-->|\Z)", re.DOTALL)
+# comments and raw-text elements read left to right in one pass: a "<!--" inside a script, style, textarea, title or
+# xmp is that element's text, not a comment (const marker = "<!--"; Codex review of PR #80)
+COMMENT_OR_RAW_TEXT = re.compile(r"<!--.*?(?:-->|\Z)|<(script|style|textarea|title|xmp)(?=[\s/>])" + TAG_BODY
+                                 + r">.*?(?:</\1\s*>|\Z)", re.DOTALL | re.IGNORECASE)
+
+
+def strip_comments(html: str) -> str:
+    """The markup with its HTML comments blanked and every raw-text element left as it is."""
+    return COMMENT_OR_RAW_TEXT.sub(lambda match: " " if match.group(0).startswith("<!--") else match.group(0), html)
+
 # elements whose content visitors never see: <template> is inert, <noscript> shows only with scripting off, and the
 # fallback body of <iframe>, <noembed> and <noframes> is raw text a browser with those features never shows (Codex review
 # of PR #80)
 INERT = {"template", "noscript", "iframe", "noembed", "noframes",
          # and <textarea> holds raw text: markup inside it is shown as characters, never as elements (Codex review of
          # PR #80), so a heading or a refresh tag written there is no heading and no redirect
-         "textarea", "xmp"}
+         "textarea", "xmp",
+         # <plaintext> has no end: everything after it is text, so it is blanked to the end of the file
+         "plaintext"}
 
 
 # a trailing "/" closes a start tag only in foreign content: on <svg> or <math> itself and on any element inside one
@@ -192,7 +209,7 @@ def stack_is_foreign(open_names: list[str]) -> bool:
 
 
 # elements whose content is raw text or text-only: nothing inside them nests
-RAW_TEXT = {"textarea", "iframe", "noembed", "noframes", "noscript", "title", "xmp"}
+RAW_TEXT = {"textarea", "iframe", "noembed", "noframes", "noscript", "title", "xmp", "plaintext"}
 
 
 def self_closing(name: str, tag: str, foreign: bool = False) -> bool:
@@ -284,7 +301,7 @@ def is_redirect_stub(html: str) -> bool:
     # an ordinary article with one is still checked (Codex review of PR #80)
     # nor does one in an inert subtree (<template>, <iframe> fallback, a hidden element): such a page is still checked
     # and <title> text is raw text: a refresh tag written there is characters (Codex review of PR #80)
-    markup = strip_unrendered(TITLE_ELEMENT.sub(" ", SCRIPT_OR_STYLE.sub(" ", HTML_COMMENT.sub(" ", html))))
+    markup = strip_unrendered(TITLE_ELEMENT.sub(" ", SCRIPT_OR_STYLE.sub(" ", strip_comments(html))))
     for tag in META_TAG.finditer(markup):
         attrs = attributes(tag.group(1))
         if attrs.get("http-equiv", "").strip().lower() == "refresh" and refresh_target(attrs.get("content", "")):
