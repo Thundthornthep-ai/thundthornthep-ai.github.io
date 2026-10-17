@@ -239,6 +239,11 @@ class ContentRuleTests(unittest.TestCase):
         # a class written inside another attribute's value is no class; the word "hidden" in a title hides nothing
         # (Codex review of PR #80, round 39)
         self.assertEqual(rule_ids(self.faq_page('<div title="x class=faq-item">x</div>')), ["CR11"])
+        # a character reference in an attribute value is decoded as the browser does; a "<body>" in a head comment does
+        # not start the body (Codex review of PR #80, round 40)
+        self.assertEqual(rule_ids(self.faq_page('<div style="display&#58;none"><h3>What is a lease?</h3></div>')), ["CR11"])
+        titled = self.faq_page().replace("</head>", "<!-- <body> --><title>What is a lease?</title></head>", 1)
+        self.assertEqual(rule_ids(titled), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<div title="section hidden by default"><h3>What is a lease?</h3></div>')), [])
         # a FAQ class outside the body is no FAQ section (Codex review of PR #80, round 35)
         outside = self.faq_page().replace('<html lang="th">', '<html lang="th" class="faq-page">', 1)

@@ -404,7 +404,9 @@ def check_faq(raw: str) -> tuple[list[tuple[str, str]], list[tuple[str, str]]]:
     # whitespace is ignored on both sides: a tag inside a question ("What is a <em>lease</em>?") becomes a space in
     # the reader text, and Thai text has no word spaces to lose
     # only the page body is read: a <title> that repeats a question is not a FAQ (Codex review of PR #80)
-    shown = re.sub(r"\s+", "", reader_text(page_body(raw)))
+    # comments, scripts and styles go before the body start is looked for, so a "<body>" in a head comment does not
+    # start the body (Codex review of PR #80)
+    shown = re.sub(r"\s+", "", reader_text(page_body(STYLE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw))))))
     hidden = [question for question in questions if re.sub(r"\s+", "", question) not in shown]
     # the FAQ section is looked for in the body only: <html class="faq-page"> is no FAQ section (Codex review of PR #80)
     markup = pages.strip_unrendered(page_body(STYLE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw)))))

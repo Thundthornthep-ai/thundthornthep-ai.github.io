@@ -18,6 +18,7 @@ CLI (used by the shell gate):
 """
 from __future__ import annotations
 
+import html
 import json
 import re
 import subprocess
@@ -166,10 +167,11 @@ ATTRIBUTE = re.compile(r"""([^\s"'>/=]+)(?:\s*=\s*("[^"]*"|'[^']*'|[^\s"'>]+))?"
 
 
 def attributes(tag_body: str) -> dict[str, str]:
-    """The attributes of a start tag's inside, names lower-cased, values unquoted (the first of a repeated name)."""
+    """The attributes of a start tag's inside, names lower-cased, values unquoted and with character references decoded
+    as a browser applies them (style="display&#58;none"; Codex review of PR #80), the first of a repeated name."""
     found: dict[str, str] = {}
     for name, value in ATTRIBUTE.findall(tag_body):
-        found.setdefault(name.lower(), value[1:-1] if value[:1] in "\"'" and value else value)
+        found.setdefault(name.lower(), html.unescape(value[1:-1] if value[:1] in "\"'" and value else value))
     return found
 SCRIPT_OR_STYLE = re.compile(r"<(script|style)\b" + TAG_BODY + r">.*?</\1\s*>", re.DOTALL | re.IGNORECASE)
 
