@@ -199,8 +199,20 @@ FREE_HEDGE_EN = re.compile(
 COMPANY_NAME = re.compile(
     r"บริษัท\s+((?:[^\s<>\[\]]+\s+){0,9}?[^\s<>\[\]]+)\s+จำกัด(?=$|[\s()<>,.;:!?\"'“”‘’—–\-ฯ])"
 )
+# a role is one of the party roles below, not any word starting with ผู้: "บริษัท ผู้ชนะ จำกัด" is an invented trading
+# name (Codex review of PR #80)
+PARTY_ROLES = (
+    "ผู้ว่าจ้าง", "ผู้รับจ้าง", "ผู้ให้บริการ", "ผู้รับบริการ", "ผู้ซื้อ", "ผู้ขาย", "ผู้จะซื้อ", "ผู้จะขาย",
+    "ผู้ให้เช่า", "ผู้เช่า", "ผู้ให้เช่าซื้อ", "ผู้เช่าซื้อ", "ผู้ให้กู้", "ผู้กู้", "ผู้ค้ำประกัน", "ผู้รับเหมา",
+    "ผู้รับเหมาก่อสร้าง", "ผู้รับเหมาช่วง", "ผู้ลงทุน", "ผู้ร่วมทุน", "ผู้ถือหุ้น", "ผู้ให้อนุญาต", "ผู้รับอนุญาต",
+    "ผู้จัดจำหน่าย", "ผู้ผลิต", "ผู้ประกอบการ", "ผู้รับประกันภัย", "ผู้เอาประกันภัย", "ผู้ควบคุมข้อมูลส่วนบุคคล",
+    "ผู้ประมวลผลข้อมูลส่วนบุคคล", "ผู้โอน", "ผู้รับโอน", "ผู้จำนอง", "ผู้รับจำนอง", "ผู้จำนำ", "ผู้รับจำนำ",
+    "ผู้ให้สิทธิ", "ผู้รับสิทธิ", "ผู้ให้แฟรนไชส์", "ผู้รับแฟรนไชส์", "ผู้พัฒนาโครงการ", "ผู้บริหารโครงการ",
+    "ผู้ขนส่ง", "ผู้ส่งสินค้า", "ผู้รับสินค้า", "ผู้นำเข้า", "ผู้ส่งออก", "ผู้ให้สัมปทาน", "ผู้รับสัมปทาน",
+)
 NAME_PLACEHOLDER = re.compile(
-    r"^(?:[A-Z]\d{0,2}|[ก-ฮ]|เอ|บี|ซี|ดี|อี|เอฟ|เอกซ์|วาย|แซด|เอบีซี|มหาชน|\(มหาชน\)|ผู้\S+|[_.…·\-–—]+)$"
+    r"^(?:[A-Z]\d{0,2}|[ก-ฮ]|เอ|บี|ซี|ดี|อี|เอฟ|เอกซ์|วาย|แซด|เอบีซี|มหาชน|\(มหาชน\)|"
+    + "|".join(sorted(PARTY_ROLES, key=len, reverse=True)) + r"|[_.…·\-–—]+)$"
 )
 # the firm's own name and other real names a page may cite as such (add an official name here, with a test)
 OFFICIAL_COMPANY_NAMES = frozenset({"Legal Advance Solution"})
@@ -390,7 +402,8 @@ def check_faq(raw: str) -> tuple[list[tuple[str, str]], list[tuple[str, str]]]:
     # only the page body is read: a <title> that repeats a question is not a FAQ (Codex review of PR #80)
     shown = re.sub(r"\s+", "", reader_text(page_body(raw)))
     hidden = [question for question in questions if re.sub(r"\s+", "", question) not in shown]
-    markup = pages.strip_unrendered(STYLE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw))))
+    # the FAQ section is looked for in the body only: <html class="faq-page"> is no FAQ section (Codex review of PR #80)
+    markup = pages.strip_unrendered(page_body(STYLE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw)))))
     has_section = bool(FAQ_CLASS.search(markup) or any(
         FAQ_HEADING_TEXT.search(htmllib.unescape(pages.untag(heading.group(2))))
         for heading in HEADING_ELEMENT.finditer(markup)))

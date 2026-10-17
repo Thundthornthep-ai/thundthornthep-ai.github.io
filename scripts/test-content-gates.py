@@ -234,6 +234,10 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(rule_ids(self.faq_page('<div class="no-faq">x</div>')), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<div class="box faq-item">x</div>')), [])
         self.assertEqual(rule_ids(self.faq_page("<div class=faq-item>x</div>")), [])
+        # a FAQ class outside the body is no FAQ section (Codex review of PR #80, round 35)
+        outside = self.faq_page().replace('<html lang="th">', '<html lang="th" class="faq-page">', 1)
+        self.assertIn('class="faq-page"', outside)
+        self.assertEqual(rule_ids(outside), ["CR11"])
         # a FAQ heading with inline markup is a FAQ heading (Codex review of PR #80, round 18)
         for heading in ("<h2>Frequently <em>Asked</em> Questions</h2>", "<h2><em>คำถาม</em>ที่พบบ่อย</h2>"):
             self.assertEqual(rule_ids(self.faq_page(heading)), [], heading)
@@ -305,11 +309,13 @@ class ContentRuleTests(unittest.TestCase):
         for bad in ("บริษัท ก่อสร้างมั่นคง จำกัด", "บริษัท ก่อสร้างมั่นคง จำกัดฯ", "บริษัท โซลาร์ เพาเวอร์ จำกัด", "ในบริษัท โรงพยาบาลมิตรภาพการแพทย์ จำกัด ซึ่ง",
                     "บริษัท Startup จำกัด มีทุน", "<strong>บริษัท ก่อสร้าง จำกัด</strong>",
                     # names of more than three words (Codex review of PR #80)
-                    "บริษัท ไทย โซลาร์ กรีน เพาเวอร์ จำกัด", "บริษัท สยาม ดิจิทัล เทค โซลูชั่นส์ แอนด์ เซอร์วิส จำกัด"):
+                    "บริษัท ไทย โซลาร์ กรีน เพาเวอร์ จำกัด", "บริษัท สยาม ดิจิทัล เทค โซลูชั่นส์ แอนด์ เซอร์วิส จำกัด",
+                    # a trading name that starts with ผู้ is not a party role (Codex review of PR #80, round 35)
+                    "บริษัท ผู้ชนะ จำกัด", "บริษัท ผู้มั่งคั่ง จำกัด"):
             self.assertEqual(rule_ids(GOOD.replace("</body>", f"<p>{bad}</p></body>")), ["CR13"], bad)
         for fine in ("บริษัท A จำกัด (ผู้รับเหมาก่อสร้าง)", "บริษัท B จำกัด", "ห้างหุ้นส่วนจำกัด D แปรสภาพเป็นบริษัท D จำกัด",
                      "บริษัท ก จำกัด", "บริษัท เอบีซี จำกัด", "บริษัท โลจิสติกส์ เอ จำกัด", "บริษัท _________________ จำกัด",
-                     "บริษัท ผู้ว่าจ้าง จำกัด", "บริษัท มหาชน จำกัด", "บริษัทจำกัดและบริษัทมหาชนจำกัด",
+                     "บริษัท ผู้ว่าจ้าง จำกัด", "บริษัท ผู้ให้บริการ จำกัด", "บริษัท ผู้รับเหมาก่อสร้าง จำกัด", "บริษัท มหาชน จำกัด", "บริษัทจำกัดและบริษัทมหาชนจำกัด",
                      "บริษัท จำกัด กับห้างหุ้นส่วน", "บริษัท Legal Advance Solution จำกัด"):
             self.assertEqual(rule_ids(GOOD.replace("</body>", f"<p>{fine}</p></body>")), [], fine)
 
