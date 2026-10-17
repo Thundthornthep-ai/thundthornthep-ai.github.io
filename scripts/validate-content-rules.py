@@ -174,7 +174,8 @@ MONTH_ABBR = re.compile(
 # FAQPage JSON-LD and what the reader sees (CR11, W11). Reader text drops every script, JSON-LD included.
 LD_JSON = re.compile(r"<script[^>]*ld\+json[^>]*>(.*?)</script>", re.DOTALL | re.IGNORECASE)
 ANY_SCRIPT = re.compile(r"<script\b[^>]*>.*?</script>", re.DOTALL | re.IGNORECASE)
-FAQ_CLASS = re.compile(r"(?<![\w-])class\s*=\s*[\"'][^\"']*\bfaq", re.IGNORECASE)  # not data-class
+# a class token that starts with "faq" (faq-item; not data-class, not "no-faq")
+FAQ_CLASS = re.compile(r"(?<![\w-])class\s*=\s*[\"'](?:[^\"']*\s)?faq", re.IGNORECASE)
 FAQ_HEADING = re.compile(r"<h[2-4]\b[^>]*>(?:(?!</h[2-4]>).)*?(?:คำถามที่พบบ่อย|\bFAQs?\b|frequently\s+asked)",
                          re.DOTALL | re.IGNORECASE)
 # CR12: the standard flag opens a bracket with the words; anywhere else the words are a free-form hedge.
@@ -208,8 +209,23 @@ SCRIPT_TITLE = re.compile(
     rf"""((?:[^;'"`\n]*?\+\s*)?{JS_LITERAL}(?:\s*\+[^;'"`\n]*?{JS_LITERAL})*)"""
 )
 SCRIPT_LITERAL = re.compile(r"""'((?:[^'\\\n]|\\.)*)'|"((?:[^"\\\n]|\\.)*)"|`((?:[^`\\]|\\.)*)`""")
-# the static text of a template literal: each ${…} expression reads as a digit
-TEMPLATE_EXPR = re.compile(r"\$\{[^{}]*\}")
+def template_static(text: str) -> str:
+    """The static text of a template literal, each ${…} expression (nested braces included) read as a digit, so
+    "ม.${n}" is the abbreviation it renders as."""
+    out: list[str] = []
+    i = 0
+    while i < len(text):
+        if text.startswith("${", i):
+            depth, j = 1, i + 2
+            while j < len(text) and depth:
+                depth += {"{": 1, "}": -1}.get(text[j], 0)
+                j += 1
+            out.append("0")
+            i = j
+        else:
+            out.append(text[i])
+            i += 1
+    return "".join(out)
 # JavaScript string escapes, decoded as the browser renders them ('ม.\x31' is "ม.1")
 JS_ESCAPE = re.compile(r"\\(?:x([0-9A-Fa-f]{2})|u([0-9A-Fa-f]{4})|u\{([0-9A-Fa-f]{1,6})\}|(.))", re.DOTALL)
 JS_SIMPLE = {"n": "\n", "t": "\t", "r": "\r", "b": "\b", "f": "\f", "v": "\v", "0": "\0", "\n": ""}
@@ -321,10 +337,11 @@ def check_faq(raw: str) -> tuple[list[tuple[str, str]], list[tuple[str, str]]]:
     faqs = faq_objects(raw)
     if not faqs:
         return [], []
-    questions = faq_questions(raw, faqs)
-    if not questions:
-        # an FAQPage with no named question is never a FAQ the reader sees (Codex review of PR #80)
+    # an FAQPage with no named question is never a FAQ the reader sees, whatever other FAQPage objects hold
+    # (Codex review of PR #80)
+    if any(not faq_questions(raw, [faq]) for faq in faqs):
         return [("CR11", "FAQPage JSON-LD with no named question")], []
+    questions = faq_questions(raw, faqs)
     # whitespace is ignored on both sides: a tag inside a question ("What is a <em>lease</em>?") becomes a space in
     # the reader text, and Thai text has no word spaces to lose
     shown = re.sub(r"\s+", "", reader_text(raw))
@@ -394,8 +411,7 @@ def check_script(raw: str) -> list[tuple[str, str]]:
     """CR14 for a site script: banned forms in its title strings (patterns and comments are not titles)."""
     found: list[tuple[str, str]] = []
     for match in SCRIPT_TITLE.finditer(strip_js_comments(raw)):
-        # an expression reads as a digit, so "ม.${n}" is the abbreviation it renders as
-        title = "".join(js_unescape(TEMPLATE_EXPR.sub("0", next(part for part in literal.groups() if part is not None)))
+        title = "".join(js_unescape(template_static(next(part for part in literal.groups() if part is not None)))
                         for literal in SCRIPT_LITERAL.finditer(match.group(1)))
         if SCRIPT_TITLE_BANNED.search(title):
             found.append(("CR14", title[:160]))

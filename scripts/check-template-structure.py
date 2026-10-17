@@ -62,7 +62,8 @@ ENTITY_OR_CHAR = re.compile(r"&(?:#\d+|#[xX][0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);|
 
 
 def class_has(pattern: str) -> re.Pattern[str]:
-    return re.compile(CLASS_ATTR + r"[^\"']*\b(?:" + pattern + r")", re.IGNORECASE)
+    # the name starts a class token ("faq-item", not "no-faq")
+    return re.compile(CLASS_ATTR + r"(?:[^\"']*\s)?(?:" + pattern + r")", re.IGNORECASE)
 
 
 MARKERS = ("quick-answer", "practice-note", "counterargument", "faq", "ref-section", "disclaimer", "table")
@@ -101,9 +102,16 @@ def body_markup(raw: str) -> str:
     return pages.strip_templates(HIDDEN.sub(" ", raw))
 
 
+def untag(markup: str) -> str:
+    """Text of `markup` with block tags as spaces and inline tags removed, as the browser joins them."""
+    return TAG.sub(lambda tag: "" if (name := TAG_NAME.match(tag.group(0))) and name.group(2).lower() in INLINE else " ",
+                   markup)
+
+
 def flatten(body: str) -> tuple[str, list[int]]:
-    """The visible text of `body` (tags become spaces, entities decoded) and, for every character of it, its offset in
-    `body`, so a label found in the text ("Quick <em>Answer</em>") has the same position as a class or heading."""
+    """The visible text of `body` (block tags become spaces, inline tags such as <strong> join their text as the
+    browser renders it, entities decoded) and, for every character of it, its offset in `body`, so a label found in the
+    text ("Quick <em>Answer</em>", "<strong>คำตอบ</strong>โดยย่อ") has the same position as a class or heading."""
     chars: list[str] = []
     offsets: list[int] = []
 
@@ -117,8 +125,10 @@ def flatten(body: str) -> tuple[str, list[int]]:
     pos = 0
     for tag in TAG.finditer(body):
         run(pos, tag.start())
-        chars.append(" ")
-        offsets.append(tag.start())
+        name = TAG_NAME.match(tag.group(0))
+        if not (name and name.group(2).lower() in INLINE):
+            chars.append(" ")
+            offsets.append(tag.start())
         pos = tag.end()
     run(pos, len(body))
     return "".join(chars), offsets
@@ -197,7 +207,7 @@ def marker_hits(
             # a pipeline sub-heading (h3 class "sub-heading", such as "Claim Ledger (… ข้อต่อสู้ทางกฎหมาย)") is a part
             # of another section, not a section of its own
             owned += [match.start() for match in HEADING.finditer(body)
-                      if HEAD[marker].search(htmllib.unescape(TAG.sub(" ", match.group(2))))
+                      if HEAD[marker].search(htmllib.unescape(untag(match.group(2))))
                       and not SUB_HEADING.search(body, match.start(), body.find(">", match.start()) + 1)]
         hits = list(owned)
         if marker in TEXT:
