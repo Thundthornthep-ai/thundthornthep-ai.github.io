@@ -84,8 +84,9 @@ def in_citation_scope(path: str, root: Path = ROOT) -> bool:
 # inline formatting joins its text with the text around it, as the browser renders it
 INLINE = {"a", "abbr", "b", "bdi", "bdo", "cite", "code", "del", "dfn", "em", "font", "i", "ins", "kbd", "label", "mark",
           "q", "s", "samp", "small", "span", "strong", "sub", "sup", "time", "u", "var"}
-# a tag, reading quoted attribute values whole ('<div data-note="1 > 0" hidden>' is one tag)
-ANY_TAG = re.compile(r"""<(/?)([A-Za-z][A-Za-z0-9-]*)?(?:[^>"']|"[^"]*"|'[^']*')*>""")
+# the inside of a start or end tag, reading quoted attribute values whole ('<div data-note="1 > 0" hidden>' is one tag)
+TAG_BODY = r"""(?:[^>"']|"[^"]*"|'[^']*')*"""
+ANY_TAG = re.compile(r"<(/?)([A-Za-z][A-Za-z0-9-]*)?" + TAG_BODY + ">")
 
 
 def untag(markup: str) -> str:
@@ -96,7 +97,7 @@ def untag(markup: str) -> str:
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
 HIDDEN_ATTR = re.compile(r"\s(?:hidden|aria-hidden\s*=\s*[\"']?true[\"']?)(?=[\s/>=]|$)"
                          # a quoted style value, or an unquoted one up to the next whitespace
-                         r"|\sstyle\s*=\s*(?:[\"'][^\"']*?|[^\"'\s>]*?)\b(?:display\s*:\s*none|visibility\s*:\s*hidden)",
+                         r"|\sstyle\s*=\s*(?:\"[^\"]*?|'[^']*?|[^\"'\s>]*?)\b(?:display\s*:\s*none|visibility\s*:\s*hidden)",
                          re.IGNORECASE)
 HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
 

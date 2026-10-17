@@ -245,6 +245,9 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(rule_ids(self.faq_page('<div aria-hidden="true"><h3>What is a lease?</h3></div>')), ["CR11"])
         # a ">" inside a quoted attribute does not end the tag (round 25)
         self.assertEqual(rule_ids(self.faq_page('<div data-note="1 > 0" hidden><h3>What is a lease?</h3></div>')), ["CR11"])
+        # a style may quote a value with the other quote type (Codex review of PR #80, round 26)
+        self.assertEqual(rule_ids(self.faq_page(
+            """<div style="font-family:'Arial'; display:none"><h3>What is a lease?</h3></div>""")), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<div data-hidden="no"><h3>What is a lease?</h3></div>')), [])
         # inline display:none hides too, and FAQPage may be written as its full IRI (Codex review of PR #80, round 21)
         self.assertEqual(rule_ids(self.faq_page('<div style="color:red; display: none"><h3>What is a lease?</h3></div>')),
@@ -351,6 +354,8 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(len(rules.check_script("const title = 'A vs B'; function f({title = 'A vs B'}) {}")), 2)
         # a conditional branch is a string too (round 25); regex literals and comments are not
         self.assertEqual(len(rules.check_script("link.title = thai ? 'ม.118' : 'Section 118';")), 1)
+        # a line continuation inside a literal (round 26)
+        self.assertEqual(len(rules.check_script("link.title = 'A vs\\\n B';")), 1)
         self.assertEqual(rules.check_script("var p = /มาตรา\\s*291|ม\\.?\\s*291/; // ม.291"), [])
         self.assertEqual(len(rules.check_script("a . title = 'A vs B';")), 1)
         with tempfile.TemporaryDirectory() as tmp:
@@ -546,6 +551,9 @@ class TemplateStructureTests(unittest.TestCase):
             '<div class="disclaimer">ข้อสงวนสิทธิ์</div>', "<h2>ข้อสงวนสิทธิ์</h2><p>x</p>")
         self.assertEqual(template.missing_markers(headings, labels=False), [])
         self.assertEqual(template.order_problems(headings, labels=False), [])
+        # a ">" inside a heading's attribute does not end its start tag (round 26)
+        fake = COMPLETE.replace(quick, '<h2 data-note=">Quick Answer">Nothing</h2>')
+        self.assertIn("quick-answer", template.missing_markers(fake, labels=False))
         clause_head = COMPLETE.replace(pn, '<h2 class="section-heading">LAS Practice Note: Human-in-the-Loop Disclaimer</h2>')
         self.assertEqual(template.order_problems(clause_head, labels=False), [])
         # a class name counts only at the start of a class token

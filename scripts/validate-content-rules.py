@@ -68,7 +68,7 @@ THAI_DIGITS = str.maketrans("๐๑๒๓๔๕๖๗๘๙", "0123456789")
 COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
 SCRIPT_NON_LD = re.compile(r"<script(?![^>]*ld\+json)[^>]*>.*?</script>", re.DOTALL | re.IGNORECASE)
 STYLE = re.compile(r"<style[^>]*>.*?</style>", re.DOTALL | re.IGNORECASE)
-TAG = re.compile(r"<[^>]+>")
+TAG = re.compile(r"<[^\s>]" + pages.TAG_BODY + ">")  # quoted attribute values read whole
 META_KEYWORDS = re.compile(r"<meta[^>]+name\s*=\s*[\"']keywords[\"'][^>]*>", re.IGNORECASE)
 ALT_NAME = re.compile(r"\"(?:alternateName|keywords)\"\s*:\s*(?:\"[^\"]*\"|\[[^\]]*\])")
 
@@ -178,7 +178,7 @@ ANY_SCRIPT = re.compile(r"<script\b[^>]*>.*?</script>", re.DOTALL | re.IGNORECAS
 # a class token that starts with "faq" (faq-item; not data-class, not "no-faq")
 FAQ_CLASS = re.compile(r"(?<![\w-])class\s*=\s*(?:[\"'](?:[^\"']*\s)?)?faq", re.IGNORECASE)
 # a FAQ heading, read with inline tags removed ("<em>คำถาม</em>ที่พบบ่อย", "Frequently <em>Asked</em> Questions")
-HEADING_ELEMENT = re.compile(r"<h([2-4])\b[^>]*>(.*?)</h\1>", re.DOTALL | re.IGNORECASE)
+HEADING_ELEMENT = re.compile(r"<h([2-4])\b" + pages.TAG_BODY + r">(.*?)</h\1>", re.DOTALL | re.IGNORECASE)
 FAQ_HEADING_TEXT = re.compile(r"คำถามที่พบบ่อย|\bFAQs?\b|frequently\s+asked", re.IGNORECASE)
 # CR12: the standard flag opens a bracket with the words; anywhere else the words are a free-form hedge.
 FREE_HEDGE_TH = re.compile(r"(?<!\[)(?<!\[ )ต้องยืนยันมาตรา")
@@ -204,12 +204,13 @@ OFFICIAL_COMPANY_NAMES = frozenset({"Legal Advance Solution"})
 # CR14 reads every string literal of a site script, with the concatenation it belongs to ('… ' + x + ' …'), wherever
 # it stands: an assignment, setAttribute, an object key, a conditional branch (Codex review of PR #80: reading only the
 # title forms missed one form after another). Regex literals (/ม\.?\s*291/) and comments are not strings.
-JS_LITERAL = r"""(?:'(?:[^'\\\n]|\\.)*'|"(?:[^"\\\n]|\\.)*"|`(?:[^`\\]|\\.)*`)"""
+# an escape may be a line continuation (a backslash before a newline)
+JS_LITERAL = r"""(?:'(?:[^'\\\n]|\\[\s\S])*'|"(?:[^"\\\n]|\\[\s\S])*"|`(?:[^`\\]|\\[\s\S])*`)"""
 JS_OPERAND = r"""[A-Za-z_$][\w$.]*(?:\[[^\]\n]*\]|\([^)\n]*\))*"""
 SCRIPT_STRING = re.compile(
     rf"""(?:{JS_OPERAND}\s*\+\s*)?{JS_LITERAL}(?:\s*\+\s*(?:{JS_LITERAL}|{JS_OPERAND}))*"""
 )
-SCRIPT_LITERAL = re.compile(r"""'((?:[^'\\\n]|\\.)*)'|"((?:[^"\\\n]|\\.)*)"|`((?:[^`\\]|\\.)*)`""")
+SCRIPT_LITERAL = re.compile(r"""'((?:[^'\\\n]|\\[\s\S])*)'|"((?:[^"\\\n]|\\[\s\S])*)"|`((?:[^`\\]|\\[\s\S])*)`""")
 def template_static(text: str) -> str:
     """The static text of a template literal, each ${…} expression (nested braces included) read as a digit, so
     "ม.${n}" is the abbreviation it renders as."""

@@ -60,8 +60,9 @@ HIDDEN = re.compile(r"<!--.*?-->|<script\b[^>]*>.*?</script>|<style\b[^>]*>.*?</
 CLASS_ATTR = r"(?<![\w-])class\s*=\s*"
 # the start of a class token: after the opening quote or a space inside a quoted value, or an unquoted value
 CLASS_TOKEN = CLASS_ATTR + r"(?:[\"'](?:[^\"']*\s)?)?"
-TAG = re.compile(r"<[^>]+>")
-HEADING = re.compile(r"<h([2-4])\b[^>]*>(.*?)</h\1>", re.DOTALL | re.IGNORECASE)
+# tags are read with their quoted attribute values whole, so a ">" inside a value does not end them
+TAG = re.compile(r"<[^\s>]" + pages.TAG_BODY + ">")
+HEADING = re.compile(r"<h([2-4])\b" + pages.TAG_BODY + r">(.*?)</h\1>", re.DOTALL | re.IGNORECASE)
 ENTITY_OR_CHAR = re.compile(r"&(?:#\d+|#[xX][0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);|.", re.DOTALL)
 
 
