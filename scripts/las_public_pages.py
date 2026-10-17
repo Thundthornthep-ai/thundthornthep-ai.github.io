@@ -135,9 +135,12 @@ def strip_unrendered(html: str) -> str:
 strip_templates = strip_unrendered
 
 
+SCRIPT_OR_STYLE = re.compile(r"<(script|style)\b" + TAG_BODY + r">.*?</\1\s*>", re.DOTALL | re.IGNORECASE)
+
+
 def is_redirect_stub(html: str) -> bool:
-    # a refresh tag left in a comment does not redirect (Codex review of PR #80)
-    return META_REFRESH.search(HTML_COMMENT.sub(" ", html)) is not None
+    # a refresh tag in a comment, a script string or a style does not redirect (Codex review of PR #80)
+    return META_REFRESH.search(SCRIPT_OR_STYLE.sub(" ", HTML_COMMENT.sub(" ", html))) is not None
 
 
 def is_noindex(html: str) -> bool:

@@ -538,6 +538,12 @@ class TemplateStructureTests(unittest.TestCase):
             root = make_site(Path(tmp), {"articles/stub.html": stub})
             with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
                 self.assertEqual(template.main(["--root", str(root), "--strict", "articles/stub.html"]), 1)
+        # nor does one inside a script string (round 30)
+        scripted = COMPLETE.replace("<body>", """<body><script>const s = '<meta http-equiv="refresh" content="0">';</script>""").replace(pn, "")
+        with tempfile.TemporaryDirectory() as tmp:
+            root = make_site(Path(tmp), {"articles/scripted.html": scripted})
+            with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                self.assertEqual(template.main(["--root", str(root), "--strict", "articles/scripted.html"]), 1)
         # inline markup joins Thai text as the browser renders it (Codex review of PR #80, round 17)
         thai = COMPLETE.replace(quick, "<h2><strong>คำตอบ</strong>โดยย่อ</h2>")
         self.assertEqual(template.missing_markers(thai), [])
