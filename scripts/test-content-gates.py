@@ -257,6 +257,8 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(rule_ids(self.faq_page(
             '<svg><foreignObject><div hidden/><h3>What is a lease?</h3></div></foreignObject></svg>')), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<title><h2>FAQ</h2><h3>What is a lease?</h3></title>')), ["CR11"])
+        # an unclosed script runs to the end of the file (round 54)
+        self.assertEqual(rule_ids(self.faq_page().replace("</body>", "<script>const q = 'What is a lease?';")), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<div style="display:none; display:block"><h3>What is a lease?</h3></div>')), [])
         self.assertEqual(rule_ids(self.faq_page(
             '<div style="display:none !important; display:block"><h3>What is a lease?</h3></div>')), ["CR11"])
@@ -692,6 +694,11 @@ class TemplateStructureTests(unittest.TestCase):
         # a custom <table-widget> is no table (round 51)
         self.assertIn("table", template.missing_markers(COMPLETE.replace("<table><tr><td>x</td></tr></table>",
                                                                          "<table-widget></table-widget>"), labels=False))
+        # markup in an unclosed script marks nothing (round 54)
+        unclosed = ('<html><body><script>/*' + "".join(f'<div class="{c}">x</div>' for c in
+                    ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer")) + "<table></table>")
+        self.assertEqual(template.missing_markers(unclosed, labels=False), template.missing_markers(
+            "<html><body><p>text</p></body></html>", labels=False))
         # an <xmp> example marks nothing (round 49)
         xmp = ('<html><body><xmp>' + "".join(f'<div class="{c}">x</div>' for c in
                ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer")) + "</xmp></body></html>")

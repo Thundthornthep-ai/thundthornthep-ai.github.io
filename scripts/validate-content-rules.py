@@ -65,11 +65,12 @@ ROOT = pages.ROOT
 DEKA_REGISTER = Path("scripts/legal-kb/supreme-court-verified.json")
 
 THAI_DIGITS = str.maketrans("๐๑๒๓๔๕๖๗๘๙", "0123456789")
-COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
+# a comment, script or style with no end runs to the end of the file, as a browser reads it (Codex review of PR #80)
+COMMENT = re.compile(r"<!--.*?(?:-->|\Z)", re.DOTALL)
 # opening tags are read with quoted attribute values whole (pages.TAG_BODY): '<script data-note="1 > 0" …>'
 # a script element with its attributes (group 1) and body (group 2); JSON-LD is told apart by its attributes
-SCRIPT_ELEMENT = re.compile(r"<script(?=[\s/>])(" + pages.TAG_BODY + r")>(.*?)</script\s*>", re.DOTALL | re.IGNORECASE)
-STYLE = re.compile(r"<style(?=[\s/>])" + pages.TAG_BODY + r">.*?</style\s*>", re.DOTALL | re.IGNORECASE)
+SCRIPT_ELEMENT = re.compile(r"<script(?=[\s/>])(" + pages.TAG_BODY + r")>(.*?)(?:</script\s*>|\Z)", re.DOTALL | re.IGNORECASE)
+STYLE = re.compile(r"<style(?=[\s/>])" + pages.TAG_BODY + r">.*?(?:</style\s*>|\Z)", re.DOTALL | re.IGNORECASE)
 TAG = re.compile(r"<[^\s>]" + pages.TAG_BODY + ">")  # quoted attribute values read whole
 META_KEYWORDS = re.compile(r"<meta[^>]+name\s*=\s*[\"']keywords[\"'][^>]*>", re.IGNORECASE)
 ALT_NAME = re.compile(r"\"(?:alternateName|keywords)\"\s*:\s*(?:\"[^\"]*\"|\[[^\]]*\])")
@@ -175,7 +176,7 @@ MONTH_ABBR = re.compile(
 )
 
 # FAQPage JSON-LD and what the reader sees (CR11, W11). Reader text drops every script, JSON-LD included.
-ANY_SCRIPT = re.compile(r"<script(?=[\s/>])" + pages.TAG_BODY + r">.*?</script\s*>", re.DOTALL | re.IGNORECASE)
+ANY_SCRIPT = re.compile(r"<script(?=[\s/>])" + pages.TAG_BODY + r">.*?(?:</script\s*>|\Z)", re.DOTALL | re.IGNORECASE)
 # a class token that starts with "faq" (faq-item; not data-class, not "no-faq")
 # a FAQ heading, read with inline tags removed ("<em>คำถาม</em>ที่พบบ่อย", "Frequently <em>Asked</em> Questions")
 HEADING_ELEMENT = re.compile(r"<h([2-4])(?=[\s/>])" + pages.TAG_BODY + r">(.*?)</h\1\s*>", re.DOTALL | re.IGNORECASE)

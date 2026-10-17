@@ -55,8 +55,8 @@ ROOT = pages.ROOT
 
 # comments, scripts and styles are not rendered (nor are <template> contents and hidden elements:
 # pages.strip_unrendered); a <textarea> shows its content as text, so markup inside it makes no element
-HIDDEN = re.compile(r"<!--.*?-->|<script(?=[\s/>])" + pages.TAG_BODY + r">.*?</script\s*>|<style(?=[\s/>])" + pages.TAG_BODY + r">.*?</style\s*>"
-                    r"|<textarea(?=[\s/>])" + pages.TAG_BODY + r">.*?</textarea\s*>",
+HIDDEN = re.compile(r"<!--.*?(?:-->|\Z)|<script(?=[\s/>])" + pages.TAG_BODY + r">.*?(?:</script\s*>|\Z)|<style(?=[\s/>])" + pages.TAG_BODY + r">.*?(?:</style\s*>|\Z)"
+                    r"|<textarea(?=[\s/>])" + pages.TAG_BODY + r">.*?(?:</textarea\s*>|\Z)",
                     re.DOTALL | re.IGNORECASE)
 # tags are read with their quoted attribute values whole, so a ">" inside a value does not end them
 TAG = re.compile(r"<[^\s>]" + pages.TAG_BODY + ">")
