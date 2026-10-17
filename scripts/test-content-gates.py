@@ -575,6 +575,11 @@ class TemplateStructureTests(unittest.TestCase):
         # a real refresh tag with a quoted ">" in another attribute is a redirect (Codex review of PR #80, round 33)
         self.assertTrue(pages.is_redirect_stub('<meta data-note="1 > 0" http-equiv="refresh" content="0; url=/new">'))
         self.assertFalse(pages.is_redirect_stub('<meta data-note="http-equiv=refresh" name="x">'))
+        # a refresh with no destination only reloads the page: the article is still checked (round 41)
+        for reload in ('<meta http-equiv="refresh" content="30">', '<meta http-equiv="refresh">',
+                       '<meta http-equiv="refresh" content="0; url=">'):
+            self.assertFalse(pages.is_redirect_stub(reload), reload)
+        self.assertTrue(pages.is_redirect_stub('<meta http-equiv="refresh" content="5, /b.html">'))
         # markup inside a <textarea> is text, not elements (round 33)
         self.assertEqual(template.missing_markers(COMPLETE.replace(pn, '<textarea><div class="practice-note">x</div></textarea>'),
                                                   labels=False), ["practice-note"])

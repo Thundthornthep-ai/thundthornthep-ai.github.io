@@ -173,15 +173,30 @@ def attributes(tag_body: str) -> dict[str, str]:
     for name, value in ATTRIBUTE.findall(tag_body):
         found.setdefault(name.lower(), html.unescape(value[1:-1] if value[:1] in "\"'" and value else value))
     return found
+# the content of a refresh: a delay, then ";" or "," and the destination, with or without "url="
+REFRESH_CONTENT = re.compile(r"\s*\d+(?:\.\d*)?\s*[;,]\s*(?:url\s*=\s*)?(.*)", re.IGNORECASE | re.DOTALL)
+
+
+def refresh_target(content: str) -> str:
+    """The destination a refresh content names ("0;url=https://…", "0; '/a.html'"); "" for a plain reload ("30")."""
+    match = REFRESH_CONTENT.match(content)
+    return match.group(1).strip().strip("\"'").strip() if match else ""
+
+
 SCRIPT_OR_STYLE = re.compile(r"<(script|style)\b" + TAG_BODY + r">.*?</\1\s*>", re.DOTALL | re.IGNORECASE)
 
 
 def is_redirect_stub(html: str) -> bool:
     # a refresh tag in a comment, a script string or a style does not redirect (Codex review of PR #80)
     # each <meta> tag is read with its quoted attribute values whole ('<meta data-note="1 > 0" http-equiv="refresh">')
+    # a refresh without a destination (content="30", or no content) only reloads the page and is no redirect stub, so
+    # an ordinary article with one is still checked (Codex review of PR #80)
     markup = SCRIPT_OR_STYLE.sub(" ", HTML_COMMENT.sub(" ", html))
-    return any(attributes(tag.group(1)).get("http-equiv", "").strip().lower() == "refresh"
-               for tag in META_TAG.finditer(markup))
+    for tag in META_TAG.finditer(markup):
+        attrs = attributes(tag.group(1))
+        if attrs.get("http-equiv", "").strip().lower() == "refresh" and refresh_target(attrs.get("content", "")):
+            return True
+    return False
 
 
 def is_noindex(html: str) -> bool:
