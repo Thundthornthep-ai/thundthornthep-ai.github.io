@@ -224,6 +224,8 @@ class ContentRuleTests(unittest.TestCase):
         # inert <template> contents are not visible either (Codex review of PR #80, round 14)
         self.assertEqual(rule_ids(self.faq_page("<template><h3>What is a lease?</h3></template>")), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<template><div class="faq-item">Q</div></template>')), ["CR11"])
+        # an <iframe> fallback body is raw text a browser does not show (Codex review of PR #80, round 38)
+        self.assertEqual(rule_ids(self.faq_page('<iframe src="x.html"><h2>คำถามที่พบบ่อย</h2><h3>What is a lease?</h3></iframe>')), ["CR11"])
         # an empty FAQPage fails, and data-class is not a FAQ class (Codex review of PR #80, round 15)
         empty = '<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}</script>'
         self.assertEqual(rule_ids(self.faq_page(ld=empty)), ["CR11"])
@@ -608,6 +610,11 @@ class TemplateStructureTests(unittest.TestCase):
         # an end tag may carry whitespace before its ">" (round 36)
         spaced = "<html><body><h2>Quick Answer</h2 ><p>x</p></body></html>"
         self.assertNotIn("quick-answer", template.missing_markers(spaced, labels=False))
+        # an <iframe> fallback body marks nothing (round 38)
+        framed = ('<html><body><iframe src="x.html">' + "".join(f'<div class="{c}">x</div>' for c in
+                  ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer")) + "<table></table></iframe></body></html>")
+        self.assertEqual(len(template.missing_markers(framed, labels=False)), len(template.missing_markers(
+            "<html><body><p>text</p></body></html>", labels=False)))
         # only the <body> counts: classes and a table in <head> mark nothing (round 34)
         head_only = ('<html><head>' + "".join(f'<meta class="{c}">' for c in
                      ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer"))

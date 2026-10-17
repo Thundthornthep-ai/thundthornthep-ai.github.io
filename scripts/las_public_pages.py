@@ -99,13 +99,15 @@ HIDDEN_ATTR = re.compile(r"\s(?:hidden|aria-hidden\s*=\s*[\"']?true[\"']?)(?=[\s
                          r"|\sstyle\s*=\s*(?:\"[^\"]*?|'[^']*?|[^\"'\s>]*?)\b(?:display\s*:\s*none|visibility\s*:\s*hidden)",
                          re.IGNORECASE)
 HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
-# elements whose content visitors never see: <template> is inert, <noscript> shows only with scripting off
-INERT = {"template", "noscript"}
+# elements whose content visitors never see: <template> is inert, <noscript> shows only with scripting off, and the
+# fallback body of <iframe>, <noembed> and <noframes> is raw text a browser with those features never shows (Codex review
+# of PR #80)
+INERT = {"template", "noscript", "iframe", "noembed", "noframes"}
 
 
 def strip_unrendered(html: str) -> str:
     """The markup with every subtree a reader never sees blanked: <template> contents (inert), <noscript> contents
-    (shown only with scripting off) and elements with the
+    (shown only with scripting off), <iframe>, <noembed> and <noframes> fallback bodies, and elements with the
     hidden attribute, aria-hidden="true" or an inline display:none / visibility:hidden style. Nesting is counted by tag name, so an inner </template> or </div> does not
     end the outer element; an unclosed one runs to the end."""
     out: list[str] = []
