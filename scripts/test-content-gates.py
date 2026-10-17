@@ -184,6 +184,18 @@ class ContentRuleTests(unittest.TestCase):
             self.assertNotIn("campaign.html", report)
             self.assertNotIn("articles/good.html", report)
 
+    def test_named_untracked_article_gets_the_article_rules(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = make_site(Path(tmp), {"articles/good.html": GOOD})
+            # written after make_site's "git add", so it is not in the tracked-file scope
+            (root / "articles" / "new.html").write_text(GOOD.replace("ข้อสงวนสิทธิ์", "ข้อความ").replace("disclaimer", "note"),
+                                                       encoding="utf-8")
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out), contextlib.redirect_stderr(out):
+                status = rules.main(["--root", str(root), "articles/new.html"])
+            self.assertEqual(status, 1)
+            self.assertIn("[CR1] articles/new.html", out.getvalue())
+
     def test_missing_register_is_an_error(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = make_site(Path(tmp), {"articles/good.html": GOOD})

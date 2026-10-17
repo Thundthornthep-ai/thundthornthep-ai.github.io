@@ -241,13 +241,14 @@ def main(argv: list[str] | None = None) -> int:
     except RuntimeError as exc:
         print(f"[CONTENT-RULES] ERROR: {exc}", file=sys.stderr)
         return 3
-    targets = sorted(set(args.files) or (scope | site))
+    targets = sorted({Path(rel).as_posix() for rel in args.files} or (scope | site))
     report: dict[str, list[tuple[str, str]]] = {}
     for rel in targets:
         if not (root / rel).is_file():
             report[rel] = [("CR0", "file does not exist")]
             continue
-        found = check_page(rel, root, verified, article=rel in scope)
+        # a named file is classified by its path, so a new untracked article still gets the article rules
+        found = check_page(rel, root, verified, article=rel in scope or pages.in_citation_scope(rel, root))
         if found:
             report[rel] = found
     if args.json:
