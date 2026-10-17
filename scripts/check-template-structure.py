@@ -64,7 +64,7 @@ CLASS_ATTR = r"(?<![\w-])class\s*=\s*"
 CLASS_TOKEN = CLASS_ATTR + r"(?:[\"'](?:[^\"']*\s)?)?"
 # tags are read with their quoted attribute values whole, so a ">" inside a value does not end them
 TAG = re.compile(r"<[^\s>]" + pages.TAG_BODY + ">")
-HEADING = re.compile(r"<h([2-4])\b" + pages.TAG_BODY + r">(.*?)</h\1>", re.DOTALL | re.IGNORECASE)
+HEADING = re.compile(r"<h([2-4])\b" + pages.TAG_BODY + r">(.*?)</h\1\s*>", re.DOTALL | re.IGNORECASE)
 ENTITY_OR_CHAR = re.compile(r"&(?:#\d+|#[xX][0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);|.", re.DOTALL)
 
 

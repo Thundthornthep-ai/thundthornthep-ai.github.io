@@ -311,12 +311,15 @@ class ContentRuleTests(unittest.TestCase):
                     # names of more than three words (Codex review of PR #80)
                     "บริษัท ไทย โซลาร์ กรีน เพาเวอร์ จำกัด", "บริษัท สยาม ดิจิทัล เทค โซลูชั่นส์ แอนด์ เซอร์วิส จำกัด",
                     # a trading name that starts with ผู้ is not a party role (Codex review of PR #80, round 35)
-                    "บริษัท ผู้ชนะ จำกัด", "บริษัท ผู้มั่งคั่ง จำกัด"):
+                    "บริษัท ผู้ชนะ จำกัด", "บริษัท ผู้มั่งคั่ง จำกัด",
+                    # a role is a placeholder only as the whole name (Codex review of PR #80, round 36)
+                    "บริษัท รุ่งเรือง ผู้รับเหมา จำกัด", "บริษัท สยาม มหาชน จำกัด"):
             self.assertEqual(rule_ids(GOOD.replace("</body>", f"<p>{bad}</p></body>")), ["CR13"], bad)
         for fine in ("บริษัท A จำกัด (ผู้รับเหมาก่อสร้าง)", "บริษัท B จำกัด", "ห้างหุ้นส่วนจำกัด D แปรสภาพเป็นบริษัท D จำกัด",
                      "บริษัท ก จำกัด", "บริษัท เอบีซี จำกัด", "บริษัท โลจิสติกส์ เอ จำกัด", "บริษัท _________________ จำกัด",
                      "บริษัท ผู้ว่าจ้าง จำกัด", "บริษัท ผู้ให้บริการ จำกัด", "บริษัท ผู้รับเหมาก่อสร้าง จำกัด", "บริษัท มหาชน จำกัด", "บริษัทจำกัดและบริษัทมหาชนจำกัด",
-                     "บริษัท จำกัด กับห้างหุ้นส่วน", "บริษัท Legal Advance Solution จำกัด"):
+                     "บริษัท จำกัด กับห้างหุ้นส่วน", "บริษัท Legal Advance Solution จำกัด",
+                     "เอกชน / บริษัท มหาชน จำกัด", "ข้อเท็จจริงสมมติ: บริษัท A จำกัด"):
             self.assertEqual(rule_ids(GOOD.replace("</body>", f"<p>{fine}</p></body>")), [], fine)
 
     def test_cr14_script_tooltip_titles(self) -> None:
@@ -602,6 +605,9 @@ class TemplateStructureTests(unittest.TestCase):
         self.assertIn("quick-answer", template.missing_markers(fake, labels=False))
         clause_head = COMPLETE.replace(pn, '<h2 class="section-heading">LAS Practice Note: Human-in-the-Loop Disclaimer</h2>')
         self.assertEqual(template.order_problems(clause_head, labels=False), [])
+        # an end tag may carry whitespace before its ">" (round 36)
+        spaced = "<html><body><h2>Quick Answer</h2 ><p>x</p></body></html>"
+        self.assertNotIn("quick-answer", template.missing_markers(spaced, labels=False))
         # only the <body> counts: classes and a table in <head> mark nothing (round 34)
         head_only = ('<html><head>' + "".join(f'<meta class="{c}">' for c in
                      ("quick-answer", "practice-note", "faq", "ref-section", "disclaimer"))

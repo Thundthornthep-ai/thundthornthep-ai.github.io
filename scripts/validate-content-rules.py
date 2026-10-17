@@ -179,7 +179,7 @@ ANY_SCRIPT = re.compile(r"<script\b" + pages.TAG_BODY + r">.*?</script\s*>", re.
 # a class token that starts with "faq" (faq-item; not data-class, not "no-faq")
 FAQ_CLASS = re.compile(r"(?<![\w-])class\s*=\s*(?:[\"'](?:[^\"']*\s)?)?faq", re.IGNORECASE)
 # a FAQ heading, read with inline tags removed ("<em>คำถาม</em>ที่พบบ่อย", "Frequently <em>Asked</em> Questions")
-HEADING_ELEMENT = re.compile(r"<h([2-4])\b" + pages.TAG_BODY + r">(.*?)</h\1>", re.DOTALL | re.IGNORECASE)
+HEADING_ELEMENT = re.compile(r"<h([2-4])\b" + pages.TAG_BODY + r">(.*?)</h\1\s*>", re.DOTALL | re.IGNORECASE)
 FAQ_HEADING_TEXT = re.compile(r"คำถามที่พบบ่อย|\bFAQs?\b|frequently\s+asked", re.IGNORECASE)
 # CR12: the standard flag opens a bracket with the words; anywhere else the words are a free-form hedge.
 FREE_HEDGE_TH = re.compile(r"ต้องยืนยันมาตรา")
@@ -210,8 +210,13 @@ PARTY_ROLES = (
     "ผู้ให้สิทธิ", "ผู้รับสิทธิ", "ผู้ให้แฟรนไชส์", "ผู้รับแฟรนไชส์", "ผู้พัฒนาโครงการ", "ผู้บริหารโครงการ",
     "ผู้ขนส่ง", "ผู้ส่งสินค้า", "ผู้รับสินค้า", "ผู้นำเข้า", "ผู้ส่งออก", "ผู้ให้สัมปทาน", "ผู้รับสัมปทาน",
 )
-NAME_PLACEHOLDER = re.compile(
-    r"^(?:[A-Z]\d{0,2}|[ก-ฮ]|เอ|บี|ซี|ดี|อี|เอฟ|เอกซ์|วาย|แซด|เอบีซี|มหาชน|\(มหาชน\)|"
+LETTER_PLACEHOLDER = r"[A-Z]\d{0,2}|[ก-ฮ]|เอ|บี|ซี|ดี|อี|เอฟ|เอกซ์|วาย|แซด|เอบีซี"
+# a name ending in a letter placeholder may carry a descriptive word before it ("บริษัท โลจิสติกส์ เอ จำกัด"); a role,
+# "มหาชน" or a blank must be the whole name: "บริษัท รุ่งเรือง ผู้รับเหมา จำกัด" is an invented name (Codex review of
+# PR #80, round 36)
+LETTER_LAST = re.compile(r"^(?:" + LETTER_PLACEHOLDER + r")$")
+WHOLE_PLACEHOLDER = re.compile(
+    r"^(?:" + LETTER_PLACEHOLDER + r"|มหาชน|\(มหาชน\)|"
     + "|".join(sorted(PARTY_ROLES, key=len, reverse=True)) + r"|[_.…·\-–—]+)$"
 )
 # the firm's own name and other real names a page may cite as such (add an official name here, with a test)
@@ -413,9 +418,14 @@ def check_faq(raw: str) -> tuple[list[tuple[str, str]], list[tuple[str, str]]]:
 
 
 def company_name_allowed(name: str) -> bool:
-    if name in OFFICIAL_COMPANY_NAMES:
+    # the name is what follows the last "บริษัท" of the match: "เอกชน / บริษัท มหาชน" and "ข้อเท็จจริงสมมติ: บริษัท A"
+    # (a match that starts at an earlier "บริษัท" with no "จำกัด" of its own) name "มหาชน" and "A"
+    name = name.rsplit("บริษัท", 1)[-1].strip()
+    if not name:
+        return False
+    if name in OFFICIAL_COMPANY_NAMES or WHOLE_PLACEHOLDER.match(name):
         return True
-    return NAME_PLACEHOLDER.match(name.split()[-1]) is not None
+    return LETTER_LAST.match(name.split()[-1]) is not None
 
 
 def check_warnings(raw: str) -> list[tuple[str, str]]:
