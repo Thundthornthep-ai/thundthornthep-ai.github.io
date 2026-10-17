@@ -263,7 +263,9 @@ STATUTE_ALIASES: tuple[tuple[str, tuple[str, ...]], ...] = (
     # The full title runs past the 100-character window before "มาตรา", so the title's own ending binds too
     # ("ความผิดเกี่ยวกับห้างหุ้นส่วนจดทะเบียน … และมูลนิธิ"); the bare list of entity types does not.
     ("partnershipoffences", ("พระราชบัญญัติกำหนดความผิดเกี่ยวกับห้างหุ้นส่วน", "พ.ร.บ.กำหนดความผิดเกี่ยวกับห้างหุ้นส่วน",
-                             "ความผิดเกี่ยวกับห้างหุ้นส่วนจดทะเบียน ห้างหุ้นส่วนจำกัด บริษัทจำกัด สมาคม และมูลนิธิ")),
+                             "ความผิดเกี่ยวกับห้างหุ้นส่วนจดทะเบียน ห้างหุ้นส่วนจำกัด บริษัทจำกัด สมาคม และมูลนิธิ",
+                             "พระราชบัญญัติกำหนดความผิดเกี่ยวกับห้างหุ้นส่วนจดทะเบียน ห้างหุ้นส่วนจำกัด บริษัทจำกัด สมาคม และมูลนิธิ",
+                             "พ.ร.บ.กำหนดความผิดเกี่ยวกับห้างหุ้นส่วนจดทะเบียน ห้างหุ้นส่วนจำกัด บริษัทจำกัด สมาคม และมูลนิธิ")),
     ("debtcollection", ("พระราชบัญญัติการทวงถามหนี้", "พ.ร.บ.การทวงถามหนี้", "debt collection act",)),
     ("bizsecurity", ("พระราชบัญญัติหลักประกันทางธุรกิจ", "พ.ร.บ.หลักประกันทางธุรกิจ", "business security act",)),
     ("fiinterest", ("พระราชบัญญัติดอกเบี้ยเงินให้กู้ยืมของสถาบันการเงิน", "พ.ร.บ.ดอกเบี้ยเงินให้กู้ยืมของสถาบันการเงิน",)),
@@ -562,17 +564,62 @@ def _trailing_connective_rest(window: str) -> str:
 ACT_PREFIX_SPACE = re.compile(r"(พ\.ร\.[บกฎ]\.)\s+")
 
 
-def _leading_alias(text: str) -> str | None:
-    """Key of the longest alias that starts the text (so สถาบันอนุญาโตตุลาการ beats อนุญาโตตุลาการ)."""
+# "พระราชบัญญัตินี้ / ดังกล่าว / เดียวกัน / นั้น" refer back to an Act already named: not a title to match.
+ACT_TITLE_LEAD = re.compile(
+    r"^\s*(?:พระราชบัญญัติ|พ\.ร\.บ\.|พระราชกำหนด|พ\.ร\.ก\.|พระราชกฤษฎีกา|พ\.ร\.ฎ\.)\s*"
+    r"(?!(?:ประกอบรัฐธรรมนูญ\s*)?(?:นี้|ดังกล่าว|เดียวกัน|นั้น))"
+)
+# The descriptive heads of a Thai Act title before its subject: "พระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรม",
+# "พระราชบัญญัติการแข่งขันทางการค้า", "พระราชบัญญัติประกอบรัฐธรรมนูญว่าด้วยการป้องกันและปราบปรามการทุจริต".
+TITLE_SUBJECT_HEAD = re.compile(r"^(?:ประกอบรัฐธรรมนูญ\s*)?(?:ว่าด้วย\s*)?(?:การ(?!นิคม))?")
+# What may follow a complete Act title: the end of the phrase, a space, punctuation or a closing bracket, a year, the
+# "(ฉบับที่ …)" / พ.ศ. / B.E. glue, the ประกอบ coordination, or one of the few Thai prose words that run on without a
+# space and never begin an Act's name ("…ข้อสัญญาที่ไม่เป็นธรรมเป็นหลัก"). Any other letter means the title goes on — a
+# different, unrecognised Act ("พระราชบัญญัติลิขสิทธิ์ดิจิทัล", "พระราชบัญญัติคุ้มครองแรงงานทางทะเล").
+TITLE_END = re.compile(
+    r"(?:$|[\s.,;:()\[\]{}<>'\"“”‘’/\-–—·|…!?]|\d|พ\.?\s?ศ|b\.?\s?e\.|ประกอบ|ฉบับ|เป็น|ซึ่ง|จึง|โดย)",
+    re.IGNORECASE,
+)
+
+
+MIN_TRUNCATED_TITLE = 12
+
+
+def _leading_alias(text: str, *, whole_title: bool = False) -> str | None:
+    """Key of the longest alias that starts the text (so สถาบันอนุญาโตตุลาการ beats อนุญาโตตุลาการ).
+
+    With ``whole_title`` (the text is an Act title: พระราชบัญญัติ / พ.ร.บ. …) the alias must end the title — see
+    TITLE_END — unless the whole text is the start of an alias (the trailing window is 60 characters, shorter than
+    some full titles).
+    """
     head = ACT_PREFIX_SPACE.sub(r"\1", text.lstrip()).lower()
     best_key = None
     best_len = 0
     for key, aliases in STATUTE_ALIASES:
         for alias in aliases:
-            if len(alias) > best_len and head.startswith(alias):
-                best_key = key
-                best_len = len(alias)
+            if len(alias) <= best_len or not head.startswith(alias):
+                continue
+            if whole_title and not TITLE_END.match(head, len(alias)):
+                continue
+            best_key = key
+            best_len = len(alias)
+    if best_key is None and whole_title:
+        # The 60-character window can stop inside a long title: the whole remaining text is the start of one alias.
+        stem = head.rstrip()
+        if len(stem) >= MIN_TRUNCATED_TITLE:
+            for key, aliases in STATUTE_ALIASES:
+                if any(alias.startswith(stem) for alias in aliases):
+                    return key
     return best_key
+
+
+def _trailing_act_title(after: str) -> str | None:
+    """The Act title after an of / แห่ง / ของ / ตาม introducer, or right after the number; None when there is none."""
+    window = _trailing_connective_rest(after)
+    if window != after and ACT_TITLE_LEAD.match(window):
+        return window
+    return None
+
 
 
 def trailing_statute(trailing: str) -> str | None:
@@ -582,6 +629,20 @@ def trailing_statute(trailing: str) -> str | None:
     # Only after an introducer: a bare following word ("มาตรา 150 อาคารชุดที่…") is prose, not the statute's name.
     # A title right after the number with no introducer ("มาตรา 19 พ.ร.บ.การประกอบกิจการพลังงาน") is often the next
     # item of a list, so only the unprefixed aliases bind there, as before.
+    title = _trailing_act_title(after)
+    if title is not None:
+        # An Act title: the alias must be the whole title. The prefix-stripped form is tried too (``แห่งพระราชบัญญัติ
+        # คุ้มครองแรงงาน`` binds through the bare ``คุ้มครองแรงงาน`` alias), under the same end-of-title rule, and an
+        # Act title that matches no alias never falls through to the looser substring match below.
+        key = _leading_alias(title, whole_title=True)
+        if key is None:
+            stripped = ACT_TITLE_LEAD.sub("", title, count=1)
+            key = _leading_alias(stripped, whole_title=True)
+            if key is None:
+                head = TITLE_SUBJECT_HEAD.match(stripped)
+                if head and head.end():
+                    key = _leading_alias(stripped[head.end() :], whole_title=True)
+        return key
     for window in (_trailing_connective_rest(after), _trailing_rest(after)):
         if window == after:
             continue
@@ -620,6 +681,10 @@ def unrecognized_named_statute(prefix: str, trailing: str = "") -> bool:
     if _has_unknown_named_statute(before):
         return True
     after = phrase_after(trailing)
+    # ``มาตรา 44 แห่งพระราชบัญญัติลิขสิทธิ์ดิจิทัล``: an Act title after the number that no alias matches as a whole.
+    title = _trailing_act_title(after)
+    if title is not None and _trailing_rest(after) != after and trailing_statute(trailing) is None:
+        return True
     rest = _trailing_rest(after)
     if rest == after:
         return False
@@ -678,24 +743,9 @@ def scan_text(text: str, *, insert_statute: str | None = None) -> Scan:
     lists = [match for match in SECTION_LIST_RE.finditer(prepared)]
     # A plural slash or dash head ("Sections 193/14(3), 295, 682") is only the start of a longer list: the list owns it.
     owned = {match.start(): match.end() for match in lists}
-    result.citations = _extract_prepared(prepared, insert_statute=insert_statute, owned=owned)
-    covered = [
-        match.span() for match in SECTION_RE.finditer(prepared) if owned.get(match.start(), -1) <= match.end()
-    ]
-    for match in lists:
-        if any(start <= match.start() < end for start, end in covered):
-            continue
-        covered.append(match.span())
-        prefix = prepared[: match.start()]
-        trailing = prepared[match.end() : match.end() + TRAILING_LIMIT]
-        statute = attached_statute(prefix, trailing)
-        if statute is None and unrecognized_named_statute(prefix, trailing):
-            statute = UNRECOGNIZED
-        if statute is None:
-            result.review_lists.append(re.sub(r"\s+", " ", match.group(0)).strip())
-            continue
-        for section in _list_sections(match.group(1), statute):
-            result.citations.append((statute, section))
+    result.citations, result.review_lists, covered = _extract_prepared(
+        prepared, insert_statute=insert_statute, owned=owned, lists=lists
+    )
     for match in SECTION_LIKE_RE.finditer(prepared):
         if not any(start <= match.start() < end for start, end in covered):
             result.unparsed.append(_snippet(prepared, match.start(), match.end()))
@@ -711,32 +761,61 @@ def extract_citations(
     return scan_text(text, insert_statute=insert_statute).citations
 
 
+# Between two citation tokens: "and", "or", "และ", "หรือ", "ประกอบ" or a bare comma keeps the statute of the previous
+# token — for singular tokens ("Section 36 and Section 37") and for lists ("Sections 213, 41/1 and Sections 9998, 9999").
+LIST_COORDINATION = re.compile(r"^\s*(?:,\s*)?(?:and|or|และ|หรือ|ประกอบ|,)\s*$", re.IGNORECASE)
+
+
 def _extract_prepared(
     prepared: str,
     *,
     insert_statute: str | None = None,
     owned: dict[int, int] | None = None,
-) -> list[tuple[str | None, str]]:
+    lists: list[re.Match[str]] | None = None,
+) -> tuple[list[tuple[str | None, str]], list[str], list[tuple[int, int]]]:
+    """Citations, unbound lists for review and the spans consumed, from singular tokens and lists in text order."""
     found: list[tuple[str | None, str]] = []
-    last_statute: str | None = None
+    review: list[str] = []
     owned = owned or {}
-    for match in SECTION_RE.finditer(prepared):
-        if owned.get(match.start(), -1) > match.end():
+    singles = [match for match in SECTION_RE.finditer(prepared) if owned.get(match.start(), -1) <= match.end()]
+    covered = [match.span() for match in singles]
+    events: list[tuple[int, str, re.Match[str]]] = [(match.start(), "single", match) for match in singles]
+    for match in lists or []:
+        if any(start <= match.start() < end for start, end in covered):
             continue
+        covered.append(match.span())
+        events.append((match.start(), "list", match))
+    events.sort(key=lambda event: event[0])
+    last_statute: str | None = None
+    last_end = 0
+    last_kind = ""
+    for _start, kind, match in events:
         prefix = prepared[: match.start()]
         trailing = prepared[match.end() : match.end() + TRAILING_LIMIT]
         statute = attached_statute(prefix, trailing)
-        if statute is None and COORDINATION.match(phrase_before(prefix)):
-            statute = last_statute
+        if statute is None and last_end:
+            if kind == "single" and last_kind == "single":
+                coordinated = COORDINATION.match(phrase_before(prefix))
+            else:
+                coordinated = LIST_COORDINATION.match(prepared[last_end : match.start()])
+            if coordinated:
+                statute = last_statute
         if statute is None and unrecognized_named_statute(prefix, trailing):
             statute = UNRECOGNIZED
-        if statute == "bankruptcy" and "ไม่ใช่บทล้มละลาย" in trailing:
-            statute = None
-        token = section_token(match)
-        for section in expand_section_token(token, statute or insert_statute):
-            found.append((statute, section))
-            last_statute = statute
-    return found
+        if kind == "single":
+            if statute == "bankruptcy" and "ไม่ใช่บทล้มละลาย" in trailing:
+                statute = None
+            for section in expand_section_token(section_token(match), statute or insert_statute):
+                found.append((statute, section))
+        elif statute is None:
+            review.append(re.sub(r"\s+", " ", match.group(0)).strip())
+        else:
+            for section in _list_sections(match.group(1), statute):
+                found.append((statute, section))
+        last_statute = statute
+        last_end = match.end()
+        last_kind = kind
+    return found, review, covered
 
 
 def cited_sections(text: str) -> list[str]:

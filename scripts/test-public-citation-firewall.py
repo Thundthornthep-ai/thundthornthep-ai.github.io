@@ -1075,5 +1075,85 @@ class VerifyScriptTests(unittest.TestCase):
         self.assertIn("not an article or reviewed blog HTML path", result.stderr)
 
 
+class CodexFailOpenTests(unittest.TestCase):
+    """PR #79 review: two fail-open paths found by Codex (17 ตุลาคม 2569)."""
+
+    def kb_with_copyright_44(self, root: Path) -> Path:
+        write_kb(root)
+        (root / "copyright.md").write_text(
+            "statute: copyright\nOfficial source: https://www.ocs.go.th/searchlaw-law\n- มาตรา 44\n",
+            encoding="utf-8",
+        )
+        return root
+
+    def test_extended_act_title_does_not_bind_a_registered_prefix_alias(self) -> None:
+        for text in (
+            "มาตรา 44 แห่งพระราชบัญญัติลิขสิทธิ์ดิจิทัล",
+            "มาตรา 44 แห่ง พ.ร.บ.ลิขสิทธิ์ดิจิทัล พ.ศ. 2570",
+            "มาตรา 5 แห่งพระราชบัญญัติคุ้มครองแรงงานทางทะเล พ.ศ. 2558",
+        ):
+            cites = firewall.extract_citations(text)
+            self.assertNotIn(("copyright", "44"), cites, text)
+            self.assertNotIn(("lpa", "5"), cites, text)
+            self.assertEqual({statute for statute, _section in cites}, {firewall.UNRECOGNIZED}, text)
+        self.assert_complete_titles_still_bind()
+
+    def test_extended_act_title_blocks_even_when_the_number_is_registered(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            kb = self.kb_with_copyright_44(Path(tmp))
+            status, report = gate("<p>มาตรา 44 แห่งพระราชบัญญัติลิขสิทธิ์ดิจิทัล</p>", kb)
+            self.assertEqual(status, firewall.EXIT_BLOCK, report)
+            self.assertEqual(gate("<p>มาตรา 44 แห่งพระราชบัญญัติลิขสิทธิ์ พ.ศ. 2537</p>", kb)[0], firewall.EXIT_PASS)
+
+    def assert_complete_titles_still_bind(self) -> None:
+        cases = {
+            "มาตรา 44 แห่งพระราชบัญญัติลิขสิทธิ์ พ.ศ. 2537": "copyright",
+            "มาตรา 44 แห่งพระราชบัญญัติลิขสิทธิ์": "copyright",
+            "มาตรา 44 แห่งพระราชบัญญัติลิขสิทธิ์, มาตรา 45": "copyright",
+            "(มาตรา 44 แห่งพระราชบัญญัติลิขสิทธิ์)": "copyright",
+            "มาตรา 44 แห่งพระราชบัญญัติลิขสิทธิ์ประกอบกฎกระทรวง": "copyright",
+            "มาตรา 26 แห่ง พ.ร.บ.โรงแรม2547": "hotel",
+            "มาตรา 4 แห่งพระราชบัญญัติว่าด้วยข้อสัญญาที่ไม่เป็นธรรมเป็นหลัก": "ucta",
+            "มาตรา 5 แห่ง พ.ร.บ.การแข่งขันทางการค้า พ.ศ. 2560": "competition",
+            "มาตรา 36 ของพระราชบัญญัติประกอบรัฐธรรมนูญว่าด้วยการป้องกันและปราบปรามการทุจริต พ.ศ. 2561": "nacc",
+            "มาตรา 42 แห่งพระราชบัญญัติกำหนดความผิดเกี่ยวกับห้างหุ้นส่วนจดทะเบียน ห้างหุ้นส่วนจำกัด "
+            "บริษัทจำกัด สมาคม และมูลนิธิ พ.ศ. 2499": "partnershipoffences",
+            "มาตรา 5 แห่งพระราชบัญญัติสถาบันอนุญาโตตุลาการ พ.ศ. 2550": "arbinstitute",
+        }
+        for text, key in cases.items():
+            self.assertEqual(firewall.extract_citations(text)[0][0], key, text)
+        # "พระราชบัญญัติเดียวกัน / นี้ / ประกอบรัฐธรรมนูญนี้" refer back: unbound, not unrecognised.
+        for text in ("มาตรา 9 แห่งพระราชบัญญัติเดียวกัน", "มาตรา 9 แห่งพระราชบัญญัติประกอบรัฐธรรมนูญนี้"):
+            self.assertEqual(firewall.extract_citations(text), [(None, "9")], text)
+        # A Code name is complete; Thai prose may follow it directly.
+        self.assertEqual(
+            firewall.extract_citations("มาตรา 150 แห่งประมวลกฎหมายแพ่งและพาณิชย์ไม่ได้กำหนดไว้"), [("ccc", "150")]
+        )
+
+    def test_statute_carries_across_coordinated_plural_lists(self) -> None:
+        cites = firewall.extract_citations("Civil and Commercial Code Sections 213, 41/1 and Sections 9998, 9999")
+        self.assertEqual(cites, [("ccc", "213"), ("ccc", "41/1"), ("ccc", "9998"), ("ccc", "9999")])
+        self.assertEqual(scan("Civil and Commercial Code Sections 213, 41/1 and Sections 9998, 9999").review_lists, [])
+        with tempfile.TemporaryDirectory() as tmp:
+            kb = write_kb(Path(tmp))
+            status, report = gate("<p>Civil and Commercial Code Sections 213, 41/1 and Sections 9998, 9999</p>", kb)
+            self.assertEqual(status, firewall.EXIT_BLOCK, report)
+            self.assertIn("ccc:9998", report)
+            self.assertIn("ccc:9999", report)
+
+    def test_statute_carries_between_singular_tokens_and_lists(self) -> None:
+        self.assertIn(
+            ("ccc", "9999"),
+            firewall.extract_citations("Civil and Commercial Code Section 213 and Sections 9998, 9999"),
+        )
+        self.assertIn(
+            ("ccc", "9999"),
+            firewall.extract_citations("Civil and Commercial Code Sections 213, 41/1 and Section 9999"),
+        )
+        # No coordination, no carry: a later unrelated list stays a review item.
+        result = scan("Civil and Commercial Code Sections 213, 41/1. The guide's Sections 3, 4 explain this.")
+        self.assertEqual(result.review_lists, ["Sections 3, 4"])
+
+
 if __name__ == "__main__":
     unittest.main()
