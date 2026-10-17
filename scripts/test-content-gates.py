@@ -228,6 +228,9 @@ class ContentRuleTests(unittest.TestCase):
         empty = '<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}</script>'
         self.assertEqual(rule_ids(self.faq_page(ld=empty)), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<div data-class="faq">not an FAQ</div>')), ["CR11"])
+        # a nested template does not end the outer one (Codex review of PR #80, round 16)
+        self.assertEqual(rule_ids(self.faq_page("<template><template></template><h3>What is a lease?</h3></template>")),
+                         ["CR11"])
 
     def test_w11_faq_wording_drift_is_reported_not_failed(self) -> None:
         page = self.faq_page("<h3>What is a lease?</h3>")
@@ -295,6 +298,10 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(rules.check_script("link.title = `คำพิพากษาศาลฎีกาที่ ${n}/${y}`;"), [])
         # an expression that completes the abbreviation is caught (Codex review of PR #80, round 15)
         self.assertEqual(len(rules.check_script("link.title = `ม.${section}`;")), 1)
+        # escapes are read as the browser renders them (Codex review of PR #80, round 16)
+        for escaped in ("a.title = 'ม.\\x31';", "a.title = 'ม.\\u0031';", "a.title = `ม.\\u{31}`;", "a.title = 'A \\x76s B';"):
+            self.assertEqual(len(rules.check_script(escaped)), 1, escaped)
+        self.assertEqual(rules.check_script("a.title = 'it\\'s fine';"), [])
         # a quoted key is a title property too (Codex review of PR #80, round 13)
         self.assertEqual(len(rules.check_script('{"title": "ค่าชดเชย (ม.118)"}')), 1)
         self.assertEqual(len(rules.check_script("{'title': 'A vs B'}")), 1)
@@ -455,6 +462,8 @@ class TemplateStructureTests(unittest.TestCase):
         self.assertIn("practice-note", template.missing_markers(COMPLETE.replace(pn, '<div data-class="practice-note">x</div>')))
         self.assertEqual(template.missing_markers(COMPLETE.replace(pn, '<template><div class="practice-note">x</div></template>')),
                          ["practice-note"])
+        nested_tpl = COMPLETE.replace(pn, '<template><template></template><div class="practice-note">x</div></template>')
+        self.assertEqual(template.missing_markers(nested_tpl), ["practice-note"])
         # a body heading that mentions อ้างอิง before the FAQ does not move the closing references section
         early = COMPLETE.replace(quick, quick + "<h3>ตารางสรุปมาตราที่อ้างอิง</h3>")
         self.assertEqual(template.order_problems(early), [])

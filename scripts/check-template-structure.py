@@ -52,9 +52,8 @@ import las_public_pages as pages  # noqa: E402
 
 ROOT = pages.ROOT
 
-# comments, scripts, styles and inert <template> contents are not rendered
-HIDDEN = re.compile(r"<!--.*?-->|<script\b[^>]*>.*?</script>|<style\b[^>]*>.*?</style>|<template\b[^>]*>.*?</template>",
-                    re.DOTALL | re.IGNORECASE)
+# comments, scripts and styles are not rendered (nor are <template> contents: pages.strip_templates)
+HIDDEN = re.compile(r"<!--.*?-->|<script\b[^>]*>.*?</script>|<style\b[^>]*>.*?</style>", re.DOTALL | re.IGNORECASE)
 # the class attribute itself, not data-class or aria-class
 CLASS_ATTR = r"(?<![\w-])class\s*=\s*[\"']"
 TAG = re.compile(r"<[^>]+>")
@@ -98,8 +97,8 @@ SUB_HEADING = re.compile(CLASS_ATTR + r"[^\"']*\bsub-heading\b", re.IGNORECASE)
 
 
 def body_markup(raw: str) -> str:
-    """Markup a reader sees: no comments, scripts (JSON-LD included) or styles."""
-    return HIDDEN.sub(" ", raw)
+    """Markup a reader sees: no comments, scripts (JSON-LD included), styles or <template> contents."""
+    return pages.strip_templates(HIDDEN.sub(" ", raw))
 
 
 def flatten(body: str) -> tuple[str, list[int]]:

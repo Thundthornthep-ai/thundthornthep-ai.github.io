@@ -67,8 +67,6 @@ THAI_DIGITS = str.maketrans("๐๑๒๓๔๕๖๗๘๙", "0123456789")
 COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
 SCRIPT_NON_LD = re.compile(r"<script(?![^>]*ld\+json)[^>]*>.*?</script>", re.DOTALL | re.IGNORECASE)
 STYLE = re.compile(r"<style[^>]*>.*?</style>", re.DOTALL | re.IGNORECASE)
-# inert <template> contents are never rendered (they are left in the markup the citation rules read)
-TEMPLATE = re.compile(r"<template\b[^>]*>.*?</template>", re.DOTALL | re.IGNORECASE)
 TAG = re.compile(r"<[^>]+>")
 META_KEYWORDS = re.compile(r"<meta[^>]+name\s*=\s*[\"']keywords[\"'][^>]*>", re.IGNORECASE)
 ALT_NAME = re.compile(r"\"(?:alternateName|keywords)\"\s*:\s*(?:\"[^\"]*\"|\[[^\]]*\])")
@@ -212,6 +210,19 @@ SCRIPT_TITLE = re.compile(
 SCRIPT_LITERAL = re.compile(r"""'((?:[^'\\\n]|\\.)*)'|"((?:[^"\\\n]|\\.)*)"|`((?:[^`\\]|\\.)*)`""")
 # the static text of a template literal: each ${…} expression reads as a digit
 TEMPLATE_EXPR = re.compile(r"\$\{[^{}]*\}")
+# JavaScript string escapes, decoded as the browser renders them ('ม.\x31' is "ม.1")
+JS_ESCAPE = re.compile(r"\\(?:x([0-9A-Fa-f]{2})|u([0-9A-Fa-f]{4})|u\{([0-9A-Fa-f]{1,6})\}|(.))", re.DOTALL)
+JS_SIMPLE = {"n": "\n", "t": "\t", "r": "\r", "b": "\b", "f": "\f", "v": "\v", "0": "\0", "\n": ""}
+
+
+def js_unescape(text: str) -> str:
+    def one(match: re.Match[str]) -> str:
+        code = match.group(1) or match.group(2) or match.group(3)
+        if code:
+            value = int(code, 16)
+            return chr(value) if value <= 0x10FFFF else ""
+        return JS_SIMPLE.get(match.group(4), match.group(4))
+    return JS_ESCAPE.sub(one, text)
 SCRIPT_TITLE_BANNED = re.compile(r"(?<![ก-๎])ม\.\s?\d|\bvs\.?(?=\s)|หนี้ลำพัง")
 
 RULES = {
@@ -262,7 +273,8 @@ def load_deka_register(root: Path = ROOT) -> set[str]:
 def reader_text(raw: str) -> str:
     """Text a reader sees on the page: no comments, no scripts (JSON-LD included), no styles, no <template> contents;
     whitespace collapsed."""
-    text = TEMPLATE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw)))
+    # inert <template> contents are never rendered (they are left in the markup the citation rules read)
+    text = pages.strip_templates(ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw)))
     text = TAG.sub(" ", STYLE.sub(" ", text))
     return re.sub(r"\s+", " ", htmllib.unescape(text).translate(THAI_DIGITS)).strip()
 
@@ -317,7 +329,7 @@ def check_faq(raw: str) -> tuple[list[tuple[str, str]], list[tuple[str, str]]]:
     # the reader text, and Thai text has no word spaces to lose
     shown = re.sub(r"\s+", "", reader_text(raw))
     hidden = [question for question in questions if re.sub(r"\s+", "", question) not in shown]
-    markup = TEMPLATE.sub(" ", STYLE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw))))
+    markup = pages.strip_templates(STYLE.sub(" ", ANY_SCRIPT.sub(" ", COMMENT.sub(" ", raw))))
     has_section = bool(FAQ_CLASS.search(markup) or FAQ_HEADING.search(markup))
     if len(hidden) == len(questions) and not has_section:
         return [("CR11", f"{len(questions)} FAQPage question(s), none visible and no FAQ section: {questions[0][:80]}")], []
@@ -383,7 +395,7 @@ def check_script(raw: str) -> list[tuple[str, str]]:
     found: list[tuple[str, str]] = []
     for match in SCRIPT_TITLE.finditer(strip_js_comments(raw)):
         # an expression reads as a digit, so "ม.${n}" is the abbreviation it renders as
-        title = "".join(TEMPLATE_EXPR.sub("0", next(part for part in literal.groups() if part is not None))
+        title = "".join(js_unescape(TEMPLATE_EXPR.sub("0", next(part for part in literal.groups() if part is not None)))
                         for literal in SCRIPT_LITERAL.finditer(match.group(1)))
         if SCRIPT_TITLE_BANNED.search(title):
             found.append(("CR14", title[:160]))

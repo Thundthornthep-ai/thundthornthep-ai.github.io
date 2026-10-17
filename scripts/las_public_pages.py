@@ -81,6 +81,30 @@ def in_citation_scope(path: str, root: Path = ROOT) -> bool:
     return path in reviewed_blog_pages(root)
 
 
+TEMPLATE_TAG = re.compile(r"<(/?)template\b[^>]*>", re.IGNORECASE)
+
+
+def strip_templates(html: str) -> str:
+    """The markup with every <template> subtree blanked, nesting included: template contents are inert and never
+    rendered, and an inner </template> does not end the outer one. An unclosed template runs to the end."""
+    out: list[str] = []
+    depth, pos = 0, 0
+    for tag in TEMPLATE_TAG.finditer(html):
+        if tag.group(1):
+            if depth:
+                depth -= 1
+                if not depth:
+                    out.append(" ")
+                    pos = tag.end()
+        else:
+            if not depth:
+                out.append(html[pos:tag.start()])
+            depth += 1
+    if not depth:
+        out.append(html[pos:])
+    return "".join(out)
+
+
 def is_redirect_stub(html: str) -> bool:
     return META_REFRESH.search(html) is not None
 
