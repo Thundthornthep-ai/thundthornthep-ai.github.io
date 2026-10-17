@@ -94,23 +94,23 @@ def body_markup(raw: str) -> str:
     return HIDDEN.sub(" ", raw)
 
 
-def missing_markers(raw: str) -> list[str]:
-    body = body_markup(raw)
-    text = htmllib.unescape(TAG.sub(" ", body))
-    headings = [htmllib.unescape(TAG.sub(" ", match.group(2))) for match in HEADING.finditer(body)]
-    missing: list[str] = []
-    for marker in MARKERS:
-        if marker == "table":
-            found = TABLE.search(body) is not None
-        else:
-            found = bool(CLASS[marker].search(body))
-            if not found and marker in TEXT:
-                found = TEXT[marker].search(text) is not None
-            if not found and marker in HEAD:
-                found = any(HEAD[marker].search(heading) for heading in headings)
-        if not found:
-            missing.append(marker)
-    return missing
+def flatten(body: str) -> tuple[str, list[int]]:
+    """The visible text of `body` (tags become spaces, entities decoded) and, for every character of it, its offset in
+    `body`, so a label found in the text ("Quick <em>Answer</em>") has the same position as a class or heading."""
+    chars: list[str] = []
+    offsets: list[int] = []
+    pos = 0
+    for tag in TAG.finditer(body):
+        piece = htmllib.unescape(body[pos:tag.start()])
+        chars.append(piece)
+        offsets += [pos] * len(piece)
+        chars.append(" ")
+        offsets.append(tag.start())
+        pos = tag.end()
+    piece = htmllib.unescape(body[pos:])
+    chars.append(piece)
+    offsets += [pos] * len(piece)
+    return "".join(chars), offsets
 
 
 # The locked order of the sections (ARTICLE-STANDARD section 2). Tables may stand anywhere, so they are not ordered.
@@ -119,23 +119,30 @@ def missing_markers(raw: str) -> list[str]:
 # first occurrence.
 ORDER = ("quick-answer", "practice-note", "counterargument", "faq", "ref-section", "disclaimer")
 CLOSING = {"ref-section", "disclaimer"}
-TEXT_RUN = re.compile(r">([^<]+)<")
 
 
 def marker_positions(raw: str) -> dict[str, int]:
-    """Offset in the visible markup of each ordered section marker found on the page."""
+    """Offset in the visible markup of each section marker found on the page. Presence and order both come from here,
+    so every marker that counts as present also takes part in the order check."""
     body = body_markup(raw)
+    text, offsets = flatten(body)
     found: dict[str, int] = {}
     for marker in ORDER:
         hits = [match.start() for match in CLASS[marker].finditer(body)]
         if marker in TEXT:
-            hits += [run.start() for run in TEXT_RUN.finditer(body) if TEXT[marker].search(htmllib.unescape(run.group(1)))]
+            hits += [offsets[match.start()] for match in TEXT[marker].finditer(text)]
         if marker in HEAD:
             hits += [match.start() for match in HEADING.finditer(body)
                      if HEAD[marker].search(htmllib.unescape(TAG.sub(" ", match.group(2))))]
         if hits:
             found[marker] = max(hits) if marker in CLOSING else min(hits)
     return found
+
+
+def missing_markers(raw: str) -> list[str]:
+    found = marker_positions(raw)
+    table = TABLE.search(body_markup(raw)) is not None
+    return [marker for marker in MARKERS if not (table if marker == "table" else marker in found)]
 
 
 def order_problems(raw: str) -> list[str]:

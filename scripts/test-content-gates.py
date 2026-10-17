@@ -367,6 +367,11 @@ class TemplateStructureTests(unittest.TestCase):
             self.assertEqual(status, 1)
             self.assertIn("[FAIL] articles/swapped.html: out of order", out.getvalue())
             self.assertNotIn("full.html", out.getvalue().split("[TEMPLATE]")[0])
+        # a label split across inline tags is found and ordered like any other marker (Codex review of PR #80)
+        split = COMPLETE.replace(quick, "").replace('<div class="disclaimer">ข้อสงวนสิทธิ์</div>',
+                                                    '<div class="disclaimer">ข้อสงวนสิทธิ์</div><div>Quick <em>Answer</em></div>')
+        self.assertEqual(template.missing_markers(split), [])
+        self.assertIn("out of order: disclaimer before quick-answer", template.order_problems(split))
         # a body heading that mentions อ้างอิง before the FAQ does not move the closing references section
         early = COMPLETE.replace(quick, quick + "<h3>ตารางสรุปมาตราที่อ้างอิง</h3>")
         self.assertEqual(template.order_problems(early), [])
