@@ -201,12 +201,14 @@ OFFICIAL_COMPANY_NAMES = frozenset({"Legal Advance Solution"})
 # a title literal as an object property (title: '…'), an assignment (a.title = '…', a['title'] = '…') or
 # setAttribute('title', '…'); a
 # concatenated title ('… ' + x + ' …') is checked on its literals joined
-JS_LITERAL = r"""(?:'(?:[^'\\\n]|\\.)*'|"(?:[^"\\\n]|\\.)*"|`[^`$]*`)"""
+JS_LITERAL = r"""(?:'(?:[^'\\\n]|\\.)*'|"(?:[^"\\\n]|\\.)*"|`(?:[^`\\]|\\.)*`)"""
 SCRIPT_TITLE = re.compile(
     r"""(?:\btitle\s*(?::|=(?!=))|\[\s*['"]title['"]\s*\]\s*=(?!=)|\bsetAttribute\(\s*['"]title['"]\s*,)\s*"""
     rf"""((?:[^;'"`\n]*?\+\s*)?{JS_LITERAL}(?:\s*\+[^;'"`\n]*?{JS_LITERAL})*)"""
 )
-SCRIPT_LITERAL = re.compile(r"""'((?:[^'\\\n]|\\.)*)'|"((?:[^"\\\n]|\\.)*)"|`([^`$]*)`""")
+SCRIPT_LITERAL = re.compile(r"""'((?:[^'\\\n]|\\.)*)'|"((?:[^"\\\n]|\\.)*)"|`((?:[^`\\]|\\.)*)`""")
+# the static text of a template literal: each ${…} expression reads as a space
+TEMPLATE_EXPR = re.compile(r"\$\{[^{}]*\}")
 SCRIPT_TITLE_BANNED = re.compile(r"(?<![ก-๎])ม\.\s?\d|\bvs\.?(?=\s)|หนี้ลำพัง")
 
 RULES = {
@@ -365,7 +367,7 @@ def check_script(raw: str) -> list[tuple[str, str]]:
     """CR14 for a site script: banned forms in its title strings (patterns and comments are not titles)."""
     found: list[tuple[str, str]] = []
     for match in SCRIPT_TITLE.finditer(strip_js_comments(raw)):
-        title = "".join(next(part for part in literal.groups() if part is not None)
+        title = "".join(TEMPLATE_EXPR.sub(" ", next(part for part in literal.groups() if part is not None))
                         for literal in SCRIPT_LITERAL.finditer(match.group(1)))
         if SCRIPT_TITLE_BANNED.search(title):
             found.append(("CR14", title[:160]))

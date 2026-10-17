@@ -283,6 +283,9 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(len(rules.check_script('link["title"]="A vs B";')), 1)
         self.assertEqual(rules.check_script("// title: 'foo vs bar'\n/* a.title = 'x vs y' */"), [])
         self.assertEqual(len(rules.check_script("{ url: 'https://x.y/z', title: 'ม.5' }")), 1)
+        # an interpolated template literal is checked on its static text (Codex review of PR #80, round 12)
+        self.assertEqual(len(rules.check_script("link.title = `ค่าชดเชย ${section} (ม.118)`;")), 1)
+        self.assertEqual(rules.check_script("link.title = `คำพิพากษาศาลฎีกาที่ ${n}/${y}`;"), [])
         with tempfile.TemporaryDirectory() as tmp:
             root = make_site(Path(tmp), {"articles/good.html": GOOD, "js/legal-links.js": script})
             out = io.StringIO()
