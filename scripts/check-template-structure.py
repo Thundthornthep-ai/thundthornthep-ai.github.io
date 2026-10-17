@@ -124,19 +124,24 @@ def flatten(body: str) -> tuple[str, list[int]]:
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
 TAG_NAME = re.compile(r"<(/?)([A-Za-z][A-Za-z0-9-]*)")
 NAMING = {"h1", "h2", "h3", "h4", "h5", "h6", "a"}
+# inline formatting does not make an element of its own: a label belongs to the nearest block around it
+INLINE = {"a", "abbr", "b", "bdi", "bdo", "cite", "code", "del", "dfn", "em", "font", "i", "ins", "kbd", "label", "mark",
+          "q", "s", "samp", "small", "span", "strong", "sub", "sup", "time", "u", "var"}
 
 
 def enclosing_elements(body: str, points: list[int]) -> dict[int, tuple[int, str, bool, frozenset[int]]]:
-    """For each offset in `points`, the start and tag name of the innermost element of `body` that contains it (-1 and
-    "" at top level), so a label in running text belongs to an element just as a class does; whether any element
-    around it is a link; and the starts of every element around it."""
+    """For each offset in `points`, the start and tag name of the innermost block element of `body` that contains it
+    (-1 and "" at top level; inline formatting such as <span> or <strong> is passed over), so a label in running text
+    belongs to an element just as a class does; whether any element around it is a link; and the starts of every
+    element around it."""
     wanted = sorted(set(points))
     result: dict[int, tuple[int, str, bool, frozenset[int]]] = {}
 
     def here() -> tuple[int, str, bool, frozenset[int]]:
         in_link = any(name == "a" for name, _ in stack)
         ancestors = frozenset(start for _, start in stack)
-        return (stack[-1][1], stack[-1][0], in_link, ancestors) if stack else (-1, "", False, ancestors)
+        block = next(((name, start) for name, start in reversed(stack) if name not in INLINE), None)
+        return (block[1], block[0], in_link, ancestors) if block else (-1, "", in_link, ancestors)
 
     stack: list[tuple[str, int]] = []
     i = 0

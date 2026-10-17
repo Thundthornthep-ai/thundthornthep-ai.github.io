@@ -198,11 +198,12 @@ NAME_PLACEHOLDER = re.compile(
 # the firm's own name and other real names a page may cite as such (add an official name here, with a test)
 OFFICIAL_COMPANY_NAMES = frozenset({"Legal Advance Solution"})
 # CR14: a quoted title: '…' / title: "…" property in a site script
-# a title literal as an object property (title: '…'), an assignment (a.title = '…') or setAttribute('title', '…'); a
+# a title literal as an object property (title: '…'), an assignment (a.title = '…', a['title'] = '…') or
+# setAttribute('title', '…'); a
 # concatenated title ('… ' + x + ' …') is checked on its literals joined
 JS_LITERAL = r"""(?:'(?:[^'\\\n]|\\.)*'|"(?:[^"\\\n]|\\.)*"|`[^`$]*`)"""
 SCRIPT_TITLE = re.compile(
-    r"""(?:\btitle\s*(?::|=(?!=))|\bsetAttribute\(\s*['"]title['"]\s*,)\s*"""
+    r"""(?:\btitle\s*(?::|=(?!=))|\[\s*['"]title['"]\s*\]\s*=(?!=)|\bsetAttribute\(\s*['"]title['"]\s*,)\s*"""
     rf"""((?:[^;'"`\n]*?\+\s*)?{JS_LITERAL}(?:\s*\+[^;'"`\n]*?{JS_LITERAL})*)"""
 )
 SCRIPT_LITERAL = re.compile(r"""'((?:[^'\\\n]|\\.)*)'|"((?:[^"\\\n]|\\.)*)"|`([^`$]*)`""")
@@ -323,10 +324,47 @@ def check_warnings(raw: str) -> list[tuple[str, str]]:
     return warnings
 
 
+def strip_js_comments(raw: str) -> str:
+    """The script with its // and /* */ comments blanked, leaving string literals alone ('https://…' is not a
+    comment). Regex literals are not parsed: one that holds a quote leaves the rest of its line unstripped, so a
+    commented-out title there is still checked (fail closed)."""
+    out: list[str] = []
+    i, n, quote = 0, len(raw), ""
+    while i < n:
+        ch = raw[i]
+        if quote:
+            out.append(ch)
+            if ch == "\\" and i + 1 < n:
+                out.append(raw[i + 1])
+                i += 2
+                continue
+            if ch == quote or (ch == "\n" and quote != "`"):
+                quote = ""
+        elif ch in "'\"`":
+            quote = ch
+            out.append(ch)
+        elif raw.startswith("//", i) and (i == 0 or raw[i - 1] != "\\"):
+            end = raw.find("\n", i)
+            end = n if end < 0 else end
+            out.append(" " * (end - i))
+            i = end
+            continue
+        elif raw.startswith("/*", i):
+            end = raw.find("*/", i + 2)
+            end = n if end < 0 else end + 2
+            out.append("".join(c if c == "\n" else " " for c in raw[i:end]))
+            i = end
+            continue
+        else:
+            out.append(ch)
+        i += 1
+    return "".join(out)
+
+
 def check_script(raw: str) -> list[tuple[str, str]]:
     """CR14 for a site script: banned forms in its title strings (patterns and comments are not titles)."""
     found: list[tuple[str, str]] = []
-    for match in SCRIPT_TITLE.finditer(raw):
+    for match in SCRIPT_TITLE.finditer(strip_js_comments(raw)):
         title = "".join(next(part for part in literal.groups() if part is not None)
                         for literal in SCRIPT_LITERAL.finditer(match.group(1)))
         if SCRIPT_TITLE_BANNED.search(title):

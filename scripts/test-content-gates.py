@@ -278,6 +278,11 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(len(rules.check_script("a.title = 'คำพิพากษา ' + n + ' ม.5';")), 1)
         self.assertEqual(rules.check_script("a.title = 'คำพิพากษาศาลฎีกาที่ ' + dm[1] + '/' + dm[2] + ' — Kelomn';"), [])
         self.assertEqual(rules.check_script("if (a.title === 'ม.1') {}"), [])
+        # bracket assignments are titles; comments are not, and a URL is not a comment (Codex review of PR #80, round 11)
+        self.assertEqual(len(rules.check_script("link['title'] = 'ค่าชดเชย (ม.118)';")), 1)
+        self.assertEqual(len(rules.check_script('link["title"]="A vs B";')), 1)
+        self.assertEqual(rules.check_script("// title: 'foo vs bar'\n/* a.title = 'x vs y' */"), [])
+        self.assertEqual(len(rules.check_script("{ url: 'https://x.y/z', title: 'ม.5' }")), 1)
         with tempfile.TemporaryDirectory() as tmp:
             root = make_site(Path(tmp), {"articles/good.html": GOOD, "js/legal-links.js": script})
             out = io.StringIO()
@@ -425,6 +430,9 @@ class TemplateStructureTests(unittest.TestCase):
                                  '<div class="ref-section"><h2>แหล่งอ้างอิงทางกฎหมาย</h2><div class="disclaimer"><strong>ข้อสงวนสิทธิ์:</strong> x</div></div>')
         self.assertNotEqual(inner, COMPLETE)
         self.assertEqual(template.order_problems(inner), [])
+        # inline formatting cannot make two sections of one block (Codex review of PR #80, round 11)
+        inline = COMPLETE.replace(quick, "<p><span>Quick Answer</span><span>Practice Note</span></p>").replace(pn, "")
+        self.assertIn("one element for two sections: quick-answer and practice-note", template.order_problems(inline))
         # a body heading that mentions อ้างอิง before the FAQ does not move the closing references section
         early = COMPLETE.replace(quick, quick + "<h3>ตารางสรุปมาตราที่อ้างอิง</h3>")
         self.assertEqual(template.order_problems(early), [])
