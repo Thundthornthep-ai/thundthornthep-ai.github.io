@@ -249,6 +249,9 @@ class ContentRuleTests(unittest.TestCase):
                          ["CR11"])
         for style in ("style=display:none", "style=visibility:hidden"):
             self.assertEqual(rule_ids(self.faq_page(f"<div {style}><h3>What is a lease?</h3></div>")), ["CR11"], style)
+        # an unquoted style ends at whitespace: a later attribute value does not hide the element (round 24)
+        self.assertEqual(rule_ids(self.faq_page("<div style=color:red data-note=display:none><h3>What is a lease?</h3></div>")),
+                         [])
         iri = '<script type="application/ld+json">{"@type":"https://schema.org/FAQPage","mainEntity":[{"@type":"Question","name":"Hidden?"}]}</script>'
         self.assertEqual(rule_ids(self.faq_page(ld=iri)), ["CR11"])
 
@@ -314,6 +317,10 @@ class ContentRuleTests(unittest.TestCase):
         # a concatenation across lines is one title (Codex review of PR #80, round 22)
         self.assertEqual(len(rules.check_script("link.title = 'ม.' +\n  '118';")), 1)
         self.assertEqual(len(rules.check_script("link.title = 'A '\n  + 'vs B';")), 1)
+        # a non-literal operand reads as a digit (Codex review of PR #80, round 24)
+        self.assertEqual(len(rules.check_script("link.title = 'ม.' + section;")), 1)
+        self.assertEqual(len(rules.check_script("link.setAttribute('title', 'ม.' + n);")), 1)
+        self.assertEqual(len(rules.check_script("link.title = 'ส่วน ม.' + n + ' ของ';")), 1)
         self.assertEqual(rules.check_script("link.SetAttribute('title', 'ม.118');"), [])
         self.assertEqual(len(rules.check_script("link.setAttribute('title', ('A vs B'));")), 1)
         self.assertEqual(len(rules.check_script("a.title = 'คำพิพากษา ' + n + ' ม.5';")), 1)

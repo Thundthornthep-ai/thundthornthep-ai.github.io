@@ -208,7 +208,7 @@ SCRIPT_TITLE = re.compile(
     r"""(?:(?<![\w$.])title\s*:|\.\s*title\s*=(?!=)|(?<![\w$])['"]title['"]\s*:|\[\s*['"]title['"]\s*\]\s*=(?!=)"""
     r"""|\bsetAttribute\s*\(\s*['"](?i:title)['"]\s*,)[\s(]*"""  # a value may sit in parentheses: = ('…')
     # a concatenation may break lines around its "+" ('ม.' +\n '118')
-    rf"""((?:[^;'"`\n]*?\+\s*)?{JS_LITERAL}(?:\s*\+\s*[^;'"`\n]*?{JS_LITERAL})*)"""
+    rf"""((?:[^;'"`\n]*?\+\s*)?{JS_LITERAL}(?:\s*\+\s*[^;'"`\n]*?{JS_LITERAL})*(?:\s*\+\s*[^;'"`\n,)}}]+)?)"""
 )
 SCRIPT_LITERAL = re.compile(r"""'((?:[^'\\\n]|\\.)*)'|"((?:[^"\\\n]|\\.)*)"|`((?:[^`\\]|\\.)*)`""")
 def template_static(text: str) -> str:
@@ -420,12 +420,26 @@ def strip_js_comments(raw: str) -> str:
     return "".join(out)
 
 
+def concatenation_text(value: str) -> str:
+    """The text a concatenated title renders: each literal's static text, and each non-literal operand ('ม.' + n)
+    read as a digit, as a ${…} expression is."""
+    pieces: list[str] = []
+    pos = 0
+    for literal in SCRIPT_LITERAL.finditer(value):
+        if re.sub(r"[\s+()]", "", value[pos:literal.start()]):
+            pieces.append("0")
+        pieces.append(js_unescape(template_static(next(part for part in literal.groups() if part is not None))))
+        pos = literal.end()
+    if re.sub(r"[\s+()]", "", value[pos:]):
+        pieces.append("0")
+    return "".join(pieces)
+
+
 def check_script(raw: str) -> list[tuple[str, str]]:
     """CR14 for a site script: banned forms in its title strings (patterns and comments are not titles)."""
     found: list[tuple[str, str]] = []
     for match in SCRIPT_TITLE.finditer(strip_js_comments(raw)):
-        title = "".join(js_unescape(template_static(next(part for part in literal.groups() if part is not None)))
-                        for literal in SCRIPT_LITERAL.finditer(match.group(1)))
+        title = concatenation_text(match.group(1))
         if SCRIPT_TITLE_BANNED.search(title):
             found.append(("CR14", title[:160]))
     return found
