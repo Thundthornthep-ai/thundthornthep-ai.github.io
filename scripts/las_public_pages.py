@@ -29,7 +29,6 @@ REVIEWS = Path("learning-hub/legal-reviews.json")
 ARTICLE_GLOBS = ("articles/*.html", "en/articles/*.html")
 INDEX_PAGES = ("index.html", "knowledge-hub.html", "all-content.html")
 
-META_REFRESH = re.compile(r"<meta[^>]+http-equiv\s*=\s*[\"']?refresh", re.IGNORECASE)
 META_ROBOTS = re.compile(r"<meta[^>]+name\s*=\s*[\"']robots[\"'][^>]*>", re.IGNORECASE)
 
 
@@ -135,12 +134,26 @@ def strip_unrendered(html: str) -> str:
 strip_templates = strip_unrendered
 
 
+META_TAG = re.compile(r"<meta\b(" + TAG_BODY + ")>", re.IGNORECASE)
+# one attribute of a tag: its name and its value (quoted or not)
+ATTRIBUTE = re.compile(r"""([^\s"'>/=]+)(?:\s*=\s*("[^"]*"|'[^']*'|[^\s"'>]+))?""")
+
+
+def attributes(tag_body: str) -> dict[str, str]:
+    """The attributes of a start tag's inside, names lower-cased, values unquoted (the first of a repeated name)."""
+    found: dict[str, str] = {}
+    for name, value in ATTRIBUTE.findall(tag_body):
+        found.setdefault(name.lower(), value[1:-1] if value[:1] in "\"'" and value else value)
+    return found
 SCRIPT_OR_STYLE = re.compile(r"<(script|style)\b" + TAG_BODY + r">.*?</\1\s*>", re.DOTALL | re.IGNORECASE)
 
 
 def is_redirect_stub(html: str) -> bool:
     # a refresh tag in a comment, a script string or a style does not redirect (Codex review of PR #80)
-    return META_REFRESH.search(SCRIPT_OR_STYLE.sub(" ", HTML_COMMENT.sub(" ", html))) is not None
+    # each <meta> tag is read with its quoted attribute values whole ('<meta data-note="1 > 0" http-equiv="refresh">')
+    markup = SCRIPT_OR_STYLE.sub(" ", HTML_COMMENT.sub(" ", html))
+    return any(attributes(tag.group(1)).get("http-equiv", "").strip().lower() == "refresh"
+               for tag in META_TAG.finditer(markup))
 
 
 def is_noindex(html: str) -> bool:

@@ -54,8 +54,9 @@ import las_public_pages as pages  # noqa: E402
 ROOT = pages.ROOT
 
 # comments, scripts and styles are not rendered (nor are <template> contents and hidden elements:
-# pages.strip_unrendered)
-HIDDEN = re.compile(r"<!--.*?-->|<script\b" + pages.TAG_BODY + r">.*?</script\s*>|<style\b" + pages.TAG_BODY + r">.*?</style\s*>",
+# pages.strip_unrendered); a <textarea> shows its content as text, so markup inside it makes no element
+HIDDEN = re.compile(r"<!--.*?-->|<script\b" + pages.TAG_BODY + r">.*?</script\s*>|<style\b" + pages.TAG_BODY + r">.*?</style\s*>"
+                    r"|<textarea\b" + pages.TAG_BODY + r">.*?</textarea\s*>",
                     re.DOTALL | re.IGNORECASE)
 # the class attribute itself, not data-class or aria-class
 CLASS_ATTR = r"(?<![\w-])class\s*=\s*"

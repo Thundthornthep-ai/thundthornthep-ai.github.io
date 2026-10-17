@@ -552,6 +552,12 @@ class TemplateStructureTests(unittest.TestCase):
             root = make_site(Path(tmp), {"articles/stub.html": stub})
             with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
                 self.assertEqual(template.main(["--root", str(root), "--strict", "articles/stub.html"]), 1)
+        # a real refresh tag with a quoted ">" in another attribute is a redirect (Codex review of PR #80, round 33)
+        self.assertTrue(pages.is_redirect_stub('<meta data-note="1 > 0" http-equiv="refresh" content="0; url=/new">'))
+        self.assertFalse(pages.is_redirect_stub('<meta data-note="http-equiv=refresh" name="x">'))
+        # markup inside a <textarea> is text, not elements (round 33)
+        self.assertEqual(template.missing_markers(COMPLETE.replace(pn, '<textarea><div class="practice-note">x</div></textarea>'),
+                                                  labels=False), ["practice-note"])
         # nor does one inside a script string (round 30)
         scripted = COMPLETE.replace("<body>", """<body><script>const s = '<meta http-equiv="refresh" content="0">';</script>""").replace(pn, "")
         with tempfile.TemporaryDirectory() as tmp:
