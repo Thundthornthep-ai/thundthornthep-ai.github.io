@@ -126,23 +126,32 @@ ORDER = ("quick-answer", "practice-note", "counterargument", "faq", "ref-section
 CLOSING = {"ref-section", "disclaimer"}
 
 
-def marker_positions(raw: str) -> dict[str, int]:
-    """Offset in the visible markup of each section marker found on the page. Presence and order both come from here,
-    so every marker that counts as present also takes part in the order check."""
+def marker_hits(raw: str) -> tuple[dict[str, int], dict[str, set[int]]]:
+    """For each section marker found on the page, its offset in the visible markup (the first hit, or the last for the
+    closing sections) and the start of every element that carries it (a class or a heading). Presence, order and the
+    one-element rule all come from here, so every marker that counts as present also takes part in the order check."""
     body = body_markup(raw)
     text, offsets = flatten(body)
     found: dict[str, int] = {}
+    elements: dict[str, set[int]] = {}
     for marker in ORDER:
-        # a class marker sits at the start of its element, so two sections named in one element share a position
-        hits = [body.rfind("<", 0, match.start()) for match in CLASS[marker].finditer(body)]
+        # a class marker sits at the start of its element, so two sections named in one element share that element
+        owned = [body.rfind("<", 0, match.start()) for match in CLASS[marker].finditer(body)]
+        if marker in HEAD:
+            owned += [match.start() for match in HEADING.finditer(body)
+                      if HEAD[marker].search(htmllib.unescape(TAG.sub(" ", match.group(2))))]
+        hits = list(owned)
         if marker in TEXT:
             hits += [offsets[match.start()] for match in TEXT[marker].finditer(text)]
-        if marker in HEAD:
-            hits += [match.start() for match in HEADING.finditer(body)
-                     if HEAD[marker].search(htmllib.unescape(TAG.sub(" ", match.group(2))))]
         if hits:
             found[marker] = max(hits) if marker in CLOSING else min(hits)
-    return found
+            elements[marker] = set(owned)
+    return found, elements
+
+
+def marker_positions(raw: str) -> dict[str, int]:
+    """Offset in the visible markup of each section marker found on the page."""
+    return marker_hits(raw)[0]
 
 
 def missing_markers(raw: str) -> list[str]:
@@ -153,13 +162,15 @@ def missing_markers(raw: str) -> list[str]:
 
 def order_problems(raw: str) -> list[str]:
     """Pairs of sections that stand in the wrong order, e.g. "out of order: ref-section before quick-answer"."""
-    pos = marker_positions(raw)
+    pos, elements = marker_hits(raw)
     present = [marker for marker in ORDER if marker in pos]
     problems = [f"out of order: {later} before {earlier}" for i, earlier in enumerate(present)
                 for later in present[i + 1:] if pos[later] < pos[earlier]]
-    # one element cannot be two sections (Codex review of PR #80: class="quick-answer practice-note …")
+    # one element cannot be two sections (Codex review of PR #80): compared by element, not by the offset chosen for
+    # the order, because class="ref-section disclaimer" shares an element while the two closing offsets may differ
     problems += [f"one element for two sections: {earlier} and {later}" for i, earlier in enumerate(present)
-                 for later in present[i + 1:] if pos[later] == pos[earlier]]
+                 for later in present[i + 1:]
+                 if pos[later] == pos[earlier] or elements[earlier] & elements[later]]
     return problems
 
 

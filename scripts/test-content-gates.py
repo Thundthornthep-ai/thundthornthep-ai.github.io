@@ -386,6 +386,12 @@ class TemplateStructureTests(unittest.TestCase):
                    "x</div><table><tr><td>x</td></tr></table></body></html>")
         self.assertEqual(template.missing_markers(wrapper), [])
         self.assertTrue(any(p.startswith("one element for two sections") for p in template.order_problems(wrapper)))
+        # the same holds when the closing sections pick a later hit of their own (Codex review of PR #80, round 6)
+        closing = COMPLETE.replace('<div class="ref-section"><h2>แหล่งอ้างอิงทางกฎหมาย</h2></div>\n<div class="disclaimer">ข้อสงวนสิทธิ์</div>',
+                                   '<div class="ref-section disclaimer"><h2>References</h2><p>Disclaimer: not legal advice</p></div>')
+        self.assertNotEqual(closing, COMPLETE)
+        self.assertEqual(template.missing_markers(closing), [])
+        self.assertIn("one element for two sections: ref-section and disclaimer", template.order_problems(closing))
         # a body heading that mentions อ้างอิง before the FAQ does not move the closing references section
         early = COMPLETE.replace(quick, quick + "<h3>ตารางสรุปมาตราที่อ้างอิง</h3>")
         self.assertEqual(template.order_problems(early), [])
