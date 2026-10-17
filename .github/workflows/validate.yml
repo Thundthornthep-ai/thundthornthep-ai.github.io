@@ -10,7 +10,7 @@ on:
   push:
     branches: [main]
     paths:
-      - '*.html'
+      - '**/*.html'
       - 'sitemap.xml'
       - 'articles/**'
       - 'en/articles/**'
@@ -36,7 +36,7 @@ on:
       - '.github/workflows/validate.yml'
   pull_request:
     paths:
-      - '*.html'
+      - '**/*.html'
       - 'sitemap.xml'
       - 'articles/**'
       - 'en/articles/**'

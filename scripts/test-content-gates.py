@@ -130,6 +130,9 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual(rule_ids(latest), ["CR8"])
         english = GOOD.replace("</body>", "<p>LPA Amendment No. 7, B.E. 2562, the latest amendment</p></body>")
         self.assertEqual(rule_ids(english), ["CR8"])
+        # an unrelated 2568 date elsewhere on the page is not a reference to amendment No. 9
+        only7_dated = only7.replace("</body>", "<p>ปรับปรุงเมื่อวันที่ 17 ตุลาคม 2568</p></body>")
+        self.assertEqual(rule_ids(only7_dated), ["CR8"])
 
     def test_cr9_section_abbreviation(self) -> None:
         for bad in ("ป.พ.พ. ม.391", "ป.พ.พ. — ม.391, 1167–1168", "ตาม ม. 1270"):

@@ -89,7 +89,8 @@ LPA_NO7 = re.compile(
     r"ฉบับที่\s*7\s*\)?\s*(?:พ\.ศ\.\s*)?2562|No\.\s*7\s*\)?\s*,?\s*(?:B\.E\.\s*)?(?:2562|\(?2019)",
     re.IGNORECASE,
 )
-LPA_NO9 = re.compile(r"ฉบับที่\s*9|No\.\s*9\b|2568", re.IGNORECASE)
+# No. 9 must be named as such: a bare 2568 elsewhere on the page (a date) is not evidence of the amendment.
+LPA_NO9 = re.compile(r"ฉบับที่\s*9|No\.\s*9\b", re.IGNORECASE)
 LPA_CURRENT = re.compile(
     r"ฉบับล่าสุด|ฉบับปัจจุบัน|ที่ใช้บังคับในปัจจุบัน|latest\s+amendment|most\s+recent\s+amendment|current\s+version",
     re.IGNORECASE,
