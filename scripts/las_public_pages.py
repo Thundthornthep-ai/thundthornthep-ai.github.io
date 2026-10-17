@@ -96,6 +96,25 @@ def untag(markup: str) -> str:
 
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
 CSS_COMMENT = re.compile(r"/\*.*?(?:\*/|\Z)", re.DOTALL)
+CSS_WIDE = {"inherit", "initial", "unset", "revert", "revert-layer"}
+DISPLAY_KEYWORDS = {
+    "none", "contents", "block", "inline", "run-in", "flow", "flow-root", "table", "flex", "grid", "ruby", "math",
+    "list-item", "inline-block", "inline-table", "inline-flex", "inline-grid", "table-row-group",
+    "table-header-group", "table-footer-group", "table-row", "table-cell", "table-column-group", "table-column",
+    "table-caption", "ruby-base", "ruby-text", "ruby-base-container", "ruby-text-container", "inline-list-item",
+}
+VISIBILITY_KEYWORDS = {"visible", "hidden", "collapse"}
+
+
+def valid_value(prop: str, value: str) -> bool:
+    """Whether a display or visibility value is one a browser accepts (a CSS-wide keyword included)."""
+    if value in CSS_WIDE:
+        return True
+    if prop == "visibility":
+        return value in VISIBILITY_KEYWORDS
+    words = value.split()
+    return bool(words) and len(words) <= 3 and all(word in DISPLAY_KEYWORDS for word in words) and (
+        "none" not in words or len(words) == 1)
 
 
 def winning_declaration(style: str, prop: str) -> str:
@@ -109,8 +128,15 @@ def winning_declaration(style: str, prop: str) -> str:
         if not colon or name.strip().lower() != prop:
             continue
         value = value.strip().lower()
-        if value.endswith("!important"):
-            important = value[: -len("!important")].strip()
+        is_important = value.endswith("!important")
+        if is_important:
+            value = value[: -len("!important")].strip()
+        # an invalid value is dropped by the browser and does not override ("display:none; display:bogus" stays
+        # hidden; Codex review of PR #80)
+        if not valid_value(prop, value):
+            continue
+        if is_important:
+            important = value
         else:
             normal = value
     return important or normal

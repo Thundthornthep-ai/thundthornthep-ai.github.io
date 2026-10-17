@@ -264,6 +264,11 @@ class ContentRuleTests(unittest.TestCase):
         marker = self.faq_page().replace("<head>", '<head><script>const marker = "<!--";</script>', 1)
         self.assertEqual(rule_ids(marker), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<div style="display:/**/none"><h3>What is a lease?</h3></div>')), ["CR11"])
+        # an invalid later value does not override (round 56)
+        self.assertEqual(rule_ids(self.faq_page('<div style="display:none; display:bogus"><h3>What is a lease?</h3></div>')),
+                         ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<div style="display:none; display:block flow"><h3>What is a lease?</h3></div>')),
+                         [])
         self.assertEqual(rule_ids(self.faq_page('<div style="display:none; display:block"><h3>What is a lease?</h3></div>')), [])
         self.assertEqual(rule_ids(self.faq_page(
             '<div style="display:none !important; display:block"><h3>What is a lease?</h3></div>')), ["CR11"])
