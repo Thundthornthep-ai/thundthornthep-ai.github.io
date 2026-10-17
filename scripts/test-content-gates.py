@@ -381,6 +381,11 @@ class TemplateStructureTests(unittest.TestCase):
         one_node = COMPLETE.replace(quick, "").replace(pn, "<p>LAS Practice Note &amp; Quick Answer</p>")
         self.assertEqual(template.missing_markers(one_node), [])
         self.assertIn("out of order: practice-note before quick-answer", template.order_problems(one_node))
+        # several section classes on one element are not several sections (Codex review of PR #80)
+        wrapper = ('<html><body><h1>T</h1><div class="quick-answer practice-note counterargument faq ref-section disclaimer">'
+                   "x</div><table><tr><td>x</td></tr></table></body></html>")
+        self.assertEqual(template.missing_markers(wrapper), [])
+        self.assertTrue(any(p.startswith("one element for two sections") for p in template.order_problems(wrapper)))
         # a body heading that mentions อ้างอิง before the FAQ does not move the closing references section
         early = COMPLETE.replace(quick, quick + "<h3>ตารางสรุปมาตราที่อ้างอิง</h3>")
         self.assertEqual(template.order_problems(early), [])

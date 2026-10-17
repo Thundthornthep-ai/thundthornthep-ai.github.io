@@ -133,7 +133,8 @@ def marker_positions(raw: str) -> dict[str, int]:
     text, offsets = flatten(body)
     found: dict[str, int] = {}
     for marker in ORDER:
-        hits = [match.start() for match in CLASS[marker].finditer(body)]
+        # a class marker sits at the start of its element, so two sections named in one element share a position
+        hits = [body.rfind("<", 0, match.start()) for match in CLASS[marker].finditer(body)]
         if marker in TEXT:
             hits += [offsets[match.start()] for match in TEXT[marker].finditer(text)]
         if marker in HEAD:
@@ -154,8 +155,12 @@ def order_problems(raw: str) -> list[str]:
     """Pairs of sections that stand in the wrong order, e.g. "out of order: ref-section before quick-answer"."""
     pos = marker_positions(raw)
     present = [marker for marker in ORDER if marker in pos]
-    return [f"out of order: {later} before {earlier}" for i, earlier in enumerate(present)
-            for later in present[i + 1:] if pos[later] < pos[earlier]]
+    problems = [f"out of order: {later} before {earlier}" for i, earlier in enumerate(present)
+                for later in present[i + 1:] if pos[later] < pos[earlier]]
+    # one element cannot be two sections (Codex review of PR #80: class="quick-answer practice-note …")
+    problems += [f"one element for two sections: {earlier} and {later}" for i, earlier in enumerate(present)
+                 for later in present[i + 1:] if pos[later] == pos[earlier]]
+    return problems
 
 
 def main(argv: list[str] | None = None) -> int:
