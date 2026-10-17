@@ -119,7 +119,10 @@ HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
 # elements whose content visitors never see: <template> is inert, <noscript> shows only with scripting off, and the
 # fallback body of <iframe>, <noembed> and <noframes> is raw text a browser with those features never shows (Codex review
 # of PR #80)
-INERT = {"template", "noscript", "iframe", "noembed", "noframes"}
+INERT = {"template", "noscript", "iframe", "noembed", "noframes",
+         # and <textarea> holds raw text: markup inside it is shown as characters, never as elements (Codex review of
+         # PR #80), so a heading or a refresh tag written there is no heading and no redirect
+         "textarea"}
 
 
 def strip_unrendered(html: str) -> str:

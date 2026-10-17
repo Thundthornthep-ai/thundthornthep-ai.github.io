@@ -239,6 +239,13 @@ class ContentRuleTests(unittest.TestCase):
         # a class written inside another attribute's value is no class; the word "hidden" in a title hides nothing
         # (Codex review of PR #80, round 39)
         self.assertEqual(rule_ids(self.faq_page('<div title="x class=faq-item">x</div>')), ["CR11"])
+        # a heading written as source in a <textarea> is no FAQ section; the JSON-LD type is read from the type
+        # attribute, decoded (Codex review of PR #80, round 43)
+        self.assertEqual(rule_ids(self.faq_page("<textarea><h2>FAQ</h2></textarea>")), ["CR11"])
+        encoded = self.FAQ_LD.replace('type="application/ld+json"', 'type="application/ld&#43;json"')
+        self.assertEqual(rule_ids(self.faq_page(ld=encoded)), ["CR11"])
+        noted = GOOD.replace("</body>", '<script data-note="ld+json">const sample = "ม.118";</script></body>')
+        self.assertEqual(rule_ids(noted), [])
         # a character reference in an attribute value is decoded as the browser does; a "<body>" in a head comment does
         # not start the body (Codex review of PR #80, round 40)
         self.assertEqual(rule_ids(self.faq_page('<div style="display&#58;none"><h3>What is a lease?</h3></div>')), ["CR11"])
@@ -582,6 +589,8 @@ class TemplateStructureTests(unittest.TestCase):
         self.assertTrue(pages.is_redirect_stub('<meta http-equiv="refresh" content="5, /b.html">'))
         # a refresh inside an inert <template> redirects nothing (round 42)
         self.assertFalse(pages.is_redirect_stub('<template><meta http-equiv="refresh" content="0;url=/new"></template>'))
+        # nor one written as source in a <textarea> (round 43)
+        self.assertFalse(pages.is_redirect_stub('<textarea><meta http-equiv="refresh" content="0;url=/new"></textarea>'))
         # markup inside a <textarea> is text, not elements (round 33)
         self.assertEqual(template.missing_markers(COMPLETE.replace(pn, '<textarea><div class="practice-note">x</div></textarea>'),
                                                   labels=False), ["practice-note"])

@@ -363,7 +363,9 @@ page_body = pages.page_body
 
 
 def is_ld_json(script: re.Match[str]) -> bool:
-    return "ld+json" in script.group(1).lower()
+    # the script's own decoded type attribute, not "ld+json" anywhere in the tag (data-note="ld+json"), and
+    # type="application/ld&#43;json" counts (Codex review of PR #80)
+    return pages.attributes(script.group(1)).get("type", "").strip().lower() == "application/ld+json"
 
 
 def faq_objects(raw: str) -> list[dict]:
