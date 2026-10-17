@@ -272,6 +272,12 @@ class ContentRuleTests(unittest.TestCase):
         self.assertEqual([rule for rule, _ in found], ["CR14", "CR14"])
         self.assertEqual(rules.check_script("title: 'LAS Share 01 — จ้างทำของกับจ้างแรงงาน (มาตรา 575)'"), [])
         self.assertEqual(len(rules.check_script("title: 'หนี้ลำพัง'")), 1)
+        # assignments, setAttribute and concatenations are titles too (Codex review of PR #80, round 10)
+        self.assertEqual(len(rules.check_script("a.title = 'ค่าชดเชย (ม.118)';")), 1)
+        self.assertEqual(len(rules.check_script("el.setAttribute('title', \"A vs B\");")), 1)
+        self.assertEqual(len(rules.check_script("a.title = 'คำพิพากษา ' + n + ' ม.5';")), 1)
+        self.assertEqual(rules.check_script("a.title = 'คำพิพากษาศาลฎีกาที่ ' + dm[1] + '/' + dm[2] + ' — Kelomn';"), [])
+        self.assertEqual(rules.check_script("if (a.title === 'ม.1') {}"), [])
         with tempfile.TemporaryDirectory() as tmp:
             root = make_site(Path(tmp), {"articles/good.html": GOOD, "js/legal-links.js": script})
             out = io.StringIO()
@@ -411,6 +417,14 @@ class TemplateStructureTests(unittest.TestCase):
         # without the link, a sub-heading that names a table of claims and defences does not move the counterargument
         ledger = COMPLETE.replace(quick, quick + '<h3 class="sub-heading">Claim Ledger (ตารางวิเคราะห์มูลกรณีและข้อต่อสู้ทางกฎหมาย)</h3>')
         self.assertEqual(template.order_problems(ledger), [])
+        # a label nested anywhere inside another section is not a section of its own (Codex review of PR #80, round 10)
+        nested = COMPLETE.replace(quick, '<div class="quick-answer"><b>Quick Answer</b><span>Practice Note</span></div>').replace(pn, "")
+        self.assertIn("one element for two sections: quick-answer and practice-note", template.order_problems(nested))
+        # but a section element nested in another keeps its own label (div.disclaimer inside div.ref-section)
+        inner = COMPLETE.replace('<div class="ref-section"><h2>แหล่งอ้างอิงทางกฎหมาย</h2></div>\n<div class="disclaimer">ข้อสงวนสิทธิ์</div>',
+                                 '<div class="ref-section"><h2>แหล่งอ้างอิงทางกฎหมาย</h2><div class="disclaimer"><strong>ข้อสงวนสิทธิ์:</strong> x</div></div>')
+        self.assertNotEqual(inner, COMPLETE)
+        self.assertEqual(template.order_problems(inner), [])
         # a body heading that mentions อ้างอิง before the FAQ does not move the closing references section
         early = COMPLETE.replace(quick, quick + "<h3>ตารางสรุปมาตราที่อ้างอิง</h3>")
         self.assertEqual(template.order_problems(early), [])

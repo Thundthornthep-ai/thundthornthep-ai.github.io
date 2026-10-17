@@ -126,16 +126,17 @@ TAG_NAME = re.compile(r"<(/?)([A-Za-z][A-Za-z0-9-]*)")
 NAMING = {"h1", "h2", "h3", "h4", "h5", "h6", "a"}
 
 
-def enclosing_elements(body: str, points: list[int]) -> dict[int, tuple[int, str, bool]]:
+def enclosing_elements(body: str, points: list[int]) -> dict[int, tuple[int, str, bool, frozenset[int]]]:
     """For each offset in `points`, the start and tag name of the innermost element of `body` that contains it (-1 and
-    "" at top level), so a label in running text belongs to an element just as a class does, and whether any element
-    around it is a link."""
+    "" at top level), so a label in running text belongs to an element just as a class does; whether any element
+    around it is a link; and the starts of every element around it."""
     wanted = sorted(set(points))
-    result: dict[int, tuple[int, str, bool]] = {}
+    result: dict[int, tuple[int, str, bool, frozenset[int]]] = {}
 
-    def here() -> tuple[int, str, bool]:
+    def here() -> tuple[int, str, bool, frozenset[int]]:
         in_link = any(name == "a" for name, _ in stack)
-        return (stack[-1][1], stack[-1][0], in_link) if stack else (-1, "", False)
+        ancestors = frozenset(start for _, start in stack)
+        return (stack[-1][1], stack[-1][0], in_link, ancestors) if stack else (-1, "", False, ancestors)
 
     stack: list[tuple[str, int]] = []
     i = 0
@@ -167,16 +168,20 @@ ORDER = ("quick-answer", "practice-note", "counterargument", "faq", "ref-section
 CLOSING = {"ref-section", "disclaimer"}
 
 
-def marker_hits(raw: str) -> tuple[dict[str, int], dict[str, set[int]], dict[str, set[tuple[int, str]]]]:
+def marker_hits(
+    raw: str,
+) -> tuple[dict[str, int], dict[str, set[int]], dict[str, set[tuple[int, str]]], dict[str, set[int]]]:
     """For each section marker found on the page, its offset in the visible markup (the first hit, or the last for the
     closing sections), the start of every element that is that section by its class or heading, and the start of the
-    innermost element (start and tag name) around each of its text labels outside links. Presence, order and the
+    innermost element (start and tag name) around each of its text labels outside links, and the starts of every
+    element around those labels. Presence, order and the
     one-element rule all come from here, so every marker that counts as present also takes part in the order check."""
     body = body_markup(raw)
     text, offsets = flatten(body)
     found: dict[str, int] = {}
     elements: dict[str, set[int]] = {}
     around: dict[str, set[tuple[int, str]]] = {}
+    within: dict[str, set[int]] = {}
     for marker in ORDER:
         # a class marker sits at the start of its element, so two sections named in one element share that element
         owned = [body.rfind("<", 0, match.start()) for match in CLASS[marker].finditer(body)]
@@ -196,10 +201,12 @@ def marker_hits(raw: str) -> tuple[dict[str, int], dict[str, set[int]], dict[str
             # a label belongs to the innermost element around it (Codex review of PR #80: "Quick Answer and Practice
             # Note" in one element is still one section)
             around[marker] = {inside[label][:2] for label in labels if inside[label][0] >= 0}
+            # a label inside an element of its own section (div.disclaimer nested in div.ref-section) belongs to it
+            within[marker] = set().union(*(inside[label][3] for label in labels if not inside[label][3] & set(owned)))
         if hits:
             found[marker] = max(hits) if marker in CLOSING else min(hits)
             elements[marker] = set(owned)
-    return found, elements, around
+    return found, elements, around, within
 
 
 def marker_positions(raw: str) -> dict[str, int]:
@@ -215,14 +222,15 @@ def missing_markers(raw: str) -> list[str]:
 
 def order_problems(raw: str) -> list[str]:
     """Pairs of sections that stand in the wrong order, e.g. "out of order: ref-section before quick-answer"."""
-    pos, elements, around = marker_hits(raw)
+    pos, elements, around, within = marker_hits(raw)
     present = [marker for marker in ORDER if marker in pos]
     problems = [f"out of order: {later} before {earlier}" for i, earlier in enumerate(present)
                 for later in present[i + 1:] if pos[later] < pos[earlier]]
     # one element cannot be two sections (Codex review of PR #80): compared by element, not by the offset chosen for
     # the order, because class="ref-section disclaimer" shares an element while the two closing offsets may differ. A
-    # label counts against an element that is another section by class or heading (<div class="quick-answer">Quick
-    # Answer and Practice Note</div>); two labels in one heading do not ("LAS Practice Note: … Disclaimer clause").
+    # label counts against an element that is another section by class or heading when it stands anywhere inside it
+    # (<div class="quick-answer"><b>Quick Answer</b><span>Practice Note</span></div>); two labels in one heading do not
+    # ("LAS Practice Note: … Disclaimer clause").
     # Two labels in one element are one section too (<div>Quick Answer Practice Note</div>), except in a heading or a
     # link, which name sections rather than being them (a table of contents, "LAS Practice Note: … Disclaimer" naming a
     # clause).
@@ -231,7 +239,7 @@ def order_problems(raw: str) -> list[str]:
 
     def shared(a: str, b: str) -> bool:
         la, lb = around.get(a, set()), around.get(b, set())
-        return bool(elements[a] & (elements[b] | starts(lb)) or starts(la) & elements[b]
+        return bool(elements[a] & (elements[b] | within.get(b, set())) or within.get(a, set()) & elements[b]
                     or starts(la, prose=False) & starts(lb, prose=False))
 
     problems += [f"one element for two sections: {earlier} and {later}" for i, earlier in enumerate(present)

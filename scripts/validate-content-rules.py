@@ -33,7 +33,7 @@ Rules
                          answers is looked up at once (owner rule, 13 ตุลาคม 2569)
   CR13 company-name      worked examples name companies by role or letter ("บริษัท A จำกัด (ผู้รับเหมาก่อสร้าง)"), never
                          an invented trading name that may match a real company ("บริษัท ก่อสร้างมั่นคง จำกัด")
-  CR14 script-title      tooltip titles in js/*.js write "มาตรา" in full and use neither "vs" nor the retired term
+  CR14 script-title      tooltip titles in js/*.js (title: '…', x.title = '…', setAttribute('title', '…')) write "มาตรา" in full and use neither "vs" nor the retired term
                          "หนี้ลำพัง" (terminology.json: หนี้ส่วนตัว)
 
 Warnings (printed, never failing; promote to a rule once the pages are clean)
@@ -198,7 +198,14 @@ NAME_PLACEHOLDER = re.compile(
 # the firm's own name and other real names a page may cite as such (add an official name here, with a test)
 OFFICIAL_COMPANY_NAMES = frozenset({"Legal Advance Solution"})
 # CR14: a quoted title: '…' / title: "…" property in a site script
-SCRIPT_TITLE = re.compile(r"\btitle\s*:\s*(?:'((?:[^'\\\n]|\\.)*)'|\"((?:[^\"\\\n]|\\.)*)\")")
+# a title literal as an object property (title: '…'), an assignment (a.title = '…') or setAttribute('title', '…'); a
+# concatenated title ('… ' + x + ' …') is checked on its literals joined
+JS_LITERAL = r"""(?:'(?:[^'\\\n]|\\.)*'|"(?:[^"\\\n]|\\.)*"|`[^`$]*`)"""
+SCRIPT_TITLE = re.compile(
+    r"""(?:\btitle\s*(?::|=(?!=))|\bsetAttribute\(\s*['"]title['"]\s*,)\s*"""
+    rf"""((?:[^;'"`\n]*?\+\s*)?{JS_LITERAL}(?:\s*\+[^;'"`\n]*?{JS_LITERAL})*)"""
+)
+SCRIPT_LITERAL = re.compile(r"""'((?:[^'\\\n]|\\.)*)'|"((?:[^"\\\n]|\\.)*)"|`([^`$]*)`""")
 SCRIPT_TITLE_BANNED = re.compile(r"(?<![ก-๎])ม\.\s?\d|\bvs\.?(?=\s)|หนี้ลำพัง")
 
 RULES = {
@@ -320,7 +327,8 @@ def check_script(raw: str) -> list[tuple[str, str]]:
     """CR14 for a site script: banned forms in its title strings (patterns and comments are not titles)."""
     found: list[tuple[str, str]] = []
     for match in SCRIPT_TITLE.finditer(raw):
-        title = match.group(1) if match.group(1) is not None else match.group(2)
+        title = "".join(next(part for part in literal.groups() if part is not None)
+                        for literal in SCRIPT_LITERAL.finditer(match.group(1)))
         if SCRIPT_TITLE_BANNED.search(title):
             found.append(("CR14", title[:160]))
     return found
