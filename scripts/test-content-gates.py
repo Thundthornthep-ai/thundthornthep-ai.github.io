@@ -243,6 +243,9 @@ class ContentRuleTests(unittest.TestCase):
         # attribute, decoded (Codex review of PR #80, round 43)
         self.assertEqual(rule_ids(self.faq_page("<textarea><h2>FAQ</h2></textarea>")), ["CR11"])
         self.assertEqual(rule_ids(self.faq_page('<input type="hidden" class="faq-item">')), ["CR11"])  # round 44
+        # "/>" does not close a <div>: the hidden div runs to its end tag (round 45); an SVG element's "/>" does close
+        self.assertEqual(rule_ids(self.faq_page('<div hidden/><h3>What is a lease?</h3></div>')), ["CR11"])
+        self.assertEqual(rule_ids(self.faq_page('<svg aria-hidden="true"/><h3>What is a lease?</h3>')), [])
         encoded = self.FAQ_LD.replace('type="application/ld+json"', 'type="application/ld&#43;json"')
         self.assertEqual(rule_ids(self.faq_page(ld=encoded)), ["CR11"])
         noted = GOOD.replace("</body>", '<script data-note="ld+json">const sample = "ม.118";</script></body>')

@@ -125,6 +125,25 @@ INERT = {"template", "noscript", "iframe", "noembed", "noframes",
          "textarea"}
 
 
+# HTML (not SVG or MathML) elements that a trailing "/" does not close: <div hidden/> starts a hidden div that runs to
+# its end tag (Codex review of PR #80); in foreign content (<svg>, <circle … />) and on a void element the slash closes
+HTML_CONTAINERS = {
+    "a", "abbr", "address", "article", "aside", "audio", "b", "bdi", "bdo", "blockquote", "body", "button", "canvas",
+    "caption", "cite", "code", "colgroup", "data", "datalist", "dd", "del", "details", "dfn", "dialog", "div", "dl",
+    "dt", "em", "fieldset", "figcaption", "figure", "font", "footer", "form", "h1", "h2", "h3", "h4", "h5", "h6",
+    "head", "header", "hgroup", "html", "i", "iframe", "ins", "kbd", "label", "legend", "li", "main", "map", "mark",
+    "menu", "meter", "nav", "noembed", "noframes", "noscript", "object", "ol", "optgroup", "option", "output", "p",
+    "picture", "pre", "progress", "q", "rp", "rt", "ruby", "s", "samp", "section", "select", "slot", "small", "span",
+    "strong", "sub", "summary", "sup", "table", "tbody", "td", "template", "textarea", "tfoot", "th", "thead", "time",
+    "tr", "u", "ul", "var", "video",
+}
+
+
+def self_closing(name: str, tag: str) -> bool:
+    """Whether a start tag opens no subtree: a void element, or "/>" on an element outside HTML_CONTAINERS."""
+    return name in VOID_TAGS or (tag.endswith("/>") and name not in HTML_CONTAINERS)
+
+
 def strip_unrendered(html: str) -> str:
     """The markup with every subtree a reader never sees blanked: <template> contents (inert), <noscript> contents
     (shown only with scripting off), <iframe>, <noembed> and <noframes> fallback bodies, and elements with the
@@ -138,12 +157,12 @@ def strip_unrendered(html: str) -> str:
             continue
         if skip:
             if name == skip:
-                depth += -1 if closing else (0 if tag.group(0).endswith("/>") else 1)
+                depth += -1 if closing else (0 if self_closing(name, tag.group(0)) else 1)
                 if not depth:
                     out.append(" ")
                     pos, skip = tag.end(), ""
             continue
-        if closing or name in VOID_TAGS or tag.group(0).endswith("/>"):
+        if closing or self_closing(name, tag.group(0)):
             continue
         if name in INERT or is_hidden(tag.group(0)[len(name) + 1:-1]):
             out.append(html[pos:tag.start()])
