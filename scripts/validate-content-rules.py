@@ -206,7 +206,7 @@ OFFICIAL_COMPANY_NAMES = frozenset({"Legal Advance Solution"})
 JS_LITERAL = r"""(?:'(?:[^'\\\n]|\\.)*'|"(?:[^"\\\n]|\\.)*"|`(?:[^`\\]|\\.)*`)"""
 SCRIPT_TITLE = re.compile(
     r"""(?:(?<![\w$.])title\s*:|\.\s*title\s*=(?!=)|(?<![\w$])['"]title['"]\s*:|\[\s*['"]title['"]\s*\]\s*=(?!=)"""
-    r"""|\bsetAttribute\(\s*['"]title['"]\s*,)\s*"""
+    r"""|\bsetAttribute\s*\(\s*['"]title['"]\s*,)\s*"""
     rf"""((?:[^;'"`\n]*?\+\s*)?{JS_LITERAL}(?:\s*\+[^;'"`\n]*?{JS_LITERAL})*)"""
 )
 SCRIPT_LITERAL = re.compile(r"""'((?:[^'\\\n]|\\.)*)'|"((?:[^"\\\n]|\\.)*)"|`((?:[^`\\]|\\.)*)`""")
