@@ -286,6 +286,9 @@ class ContentRuleTests(unittest.TestCase):
         # an interpolated template literal is checked on its static text (Codex review of PR #80, round 12)
         self.assertEqual(len(rules.check_script("link.title = `ค่าชดเชย ${section} (ม.118)`;")), 1)
         self.assertEqual(rules.check_script("link.title = `คำพิพากษาศาลฎีกาที่ ${n}/${y}`;"), [])
+        # a quoted key is a title property too (Codex review of PR #80, round 13)
+        self.assertEqual(len(rules.check_script('{"title": "ค่าชดเชย (ม.118)"}')), 1)
+        self.assertEqual(len(rules.check_script("{'title': 'A vs B'}")), 1)
         with tempfile.TemporaryDirectory() as tmp:
             root = make_site(Path(tmp), {"articles/good.html": GOOD, "js/legal-links.js": script})
             out = io.StringIO()
@@ -436,6 +439,10 @@ class TemplateStructureTests(unittest.TestCase):
         # inline formatting cannot make two sections of one block (Codex review of PR #80, round 11)
         inline = COMPLETE.replace(quick, "<p><span>Quick Answer</span><span>Practice Note</span></p>").replace(pn, "")
         self.assertIn("one element for two sections: quick-answer and practice-note", template.order_problems(inline))
+        # data-class is not a class, and inert <template> contents are not rendered (Codex review of PR #80, round 13)
+        self.assertIn("practice-note", template.missing_markers(COMPLETE.replace(pn, '<div data-class="practice-note">x</div>')))
+        self.assertEqual(template.missing_markers(COMPLETE.replace(pn, '<template><div class="practice-note">x</div></template>')),
+                         ["practice-note"])
         # a body heading that mentions อ้างอิง before the FAQ does not move the closing references section
         early = COMPLETE.replace(quick, quick + "<h3>ตารางสรุปมาตราที่อ้างอิง</h3>")
         self.assertEqual(template.order_problems(early), [])

@@ -18,7 +18,7 @@ the headings and labels that the hand-built pages use for the same parts:
                    (the same test as content rule CR1)
   table            at least one <table>
 
-Markers are searched with comments, scripts (JSON-LD included) and styles removed, because every page's inline CSS
+Markers are searched with comments, scripts (JSON-LD included), styles and <template> contents removed, because every page's inline CSS
 names ".practice-note" and ".faq-item" whether or not the page has those parts. A label inside a link (a table of
 contents) and a heading of class "sub-heading" name or subdivide a section and do not count as one; one element cannot
 count as two sections. Redirect stubs are skipped.
@@ -52,14 +52,18 @@ import las_public_pages as pages  # noqa: E402
 
 ROOT = pages.ROOT
 
-HIDDEN = re.compile(r"<!--.*?-->|<script\b[^>]*>.*?</script>|<style\b[^>]*>.*?</style>", re.DOTALL | re.IGNORECASE)
+# comments, scripts, styles and inert <template> contents are not rendered
+HIDDEN = re.compile(r"<!--.*?-->|<script\b[^>]*>.*?</script>|<style\b[^>]*>.*?</style>|<template\b[^>]*>.*?</template>",
+                    re.DOTALL | re.IGNORECASE)
+# the class attribute itself, not data-class or aria-class
+CLASS_ATTR = r"(?<![\w-])class\s*=\s*[\"']"
 TAG = re.compile(r"<[^>]+>")
 HEADING = re.compile(r"<h([2-4])\b[^>]*>(.*?)</h\1>", re.DOTALL | re.IGNORECASE)
 ENTITY_OR_CHAR = re.compile(r"&(?:#\d+|#[xX][0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);|.", re.DOTALL)
 
 
 def class_has(pattern: str) -> re.Pattern[str]:
-    return re.compile(r"class\s*=\s*[\"'][^\"']*\b(?:" + pattern + r")", re.IGNORECASE)
+    return re.compile(CLASS_ATTR + r"[^\"']*\b(?:" + pattern + r")", re.IGNORECASE)
 
 
 MARKERS = ("quick-answer", "practice-note", "counterargument", "faq", "ref-section", "disclaimer", "table")
@@ -69,7 +73,7 @@ CLASS = {
     "counterargument": class_has(r"counter-?argument|devil|other-side"),
     "faq": class_has(r"faq"),
     "ref-section": class_has(r"ref-section"),
-    "disclaimer": re.compile(r"class\s*=\s*[\"'][^\"']*disclaimer", re.IGNORECASE),
+    "disclaimer": re.compile(CLASS_ATTR + r"[^\"']*disclaimer", re.IGNORECASE),
 }
 # label text anywhere in the visible body
 TEXT = {
@@ -90,7 +94,7 @@ HEAD = {
     "ref-section": re.compile(r"แหล่งอ้างอิง|เอกสารอ้างอิง|อ้างอิง|\breferences?\b|\bsources\b", re.IGNORECASE),
 }
 TABLE = re.compile(r"<table\b", re.IGNORECASE)
-SUB_HEADING = re.compile(r"class\s*=\s*[\"'][^\"']*\bsub-heading\b", re.IGNORECASE)
+SUB_HEADING = re.compile(CLASS_ATTR + r"[^\"']*\bsub-heading\b", re.IGNORECASE)
 
 
 def body_markup(raw: str) -> str:

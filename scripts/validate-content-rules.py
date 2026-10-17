@@ -198,12 +198,13 @@ NAME_PLACEHOLDER = re.compile(
 # the firm's own name and other real names a page may cite as such (add an official name here, with a test)
 OFFICIAL_COMPANY_NAMES = frozenset({"Legal Advance Solution"})
 # CR14: a quoted title: '…' / title: "…" property in a site script
-# a title literal as an object property (title: '…'), an assignment (a.title = '…', a['title'] = '…') or
+# a title literal as an object property (title: '…', "title": '…'), an assignment (a.title = '…', a['title'] = '…') or
 # setAttribute('title', '…'); a
 # concatenated title ('… ' + x + ' …') is checked on its literals joined
 JS_LITERAL = r"""(?:'(?:[^'\\\n]|\\.)*'|"(?:[^"\\\n]|\\.)*"|`(?:[^`\\]|\\.)*`)"""
 SCRIPT_TITLE = re.compile(
-    r"""(?:\btitle\s*(?::|=(?!=))|\[\s*['"]title['"]\s*\]\s*=(?!=)|\bsetAttribute\(\s*['"]title['"]\s*,)\s*"""
+    r"""(?:\btitle\s*(?::|=(?!=))|(?<![\w$])['"]title['"]\s*:|\[\s*['"]title['"]\s*\]\s*=(?!=)"""
+    r"""|\bsetAttribute\(\s*['"]title['"]\s*,)\s*"""
     rf"""((?:[^;'"`\n]*?\+\s*)?{JS_LITERAL}(?:\s*\+[^;'"`\n]*?{JS_LITERAL})*)"""
 )
 SCRIPT_LITERAL = re.compile(r"""'((?:[^'\\\n]|\\.)*)'|"((?:[^"\\\n]|\\.)*)"|`((?:[^`\\]|\\.)*)`""")
