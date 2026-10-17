@@ -580,6 +580,8 @@ class TemplateStructureTests(unittest.TestCase):
                        '<meta http-equiv="refresh" content="0; url=">'):
             self.assertFalse(pages.is_redirect_stub(reload), reload)
         self.assertTrue(pages.is_redirect_stub('<meta http-equiv="refresh" content="5, /b.html">'))
+        # a refresh inside an inert <template> redirects nothing (round 42)
+        self.assertFalse(pages.is_redirect_stub('<template><meta http-equiv="refresh" content="0;url=/new"></template>'))
         # markup inside a <textarea> is text, not elements (round 33)
         self.assertEqual(template.missing_markers(COMPLETE.replace(pn, '<textarea><div class="practice-note">x</div></textarea>'),
                                                   labels=False), ["practice-note"])

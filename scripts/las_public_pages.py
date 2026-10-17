@@ -191,7 +191,8 @@ def is_redirect_stub(html: str) -> bool:
     # each <meta> tag is read with its quoted attribute values whole ('<meta data-note="1 > 0" http-equiv="refresh">')
     # a refresh without a destination (content="30", or no content) only reloads the page and is no redirect stub, so
     # an ordinary article with one is still checked (Codex review of PR #80)
-    markup = SCRIPT_OR_STYLE.sub(" ", HTML_COMMENT.sub(" ", html))
+    # nor does one in an inert subtree (<template>, <iframe> fallback, a hidden element): such a page is still checked
+    markup = strip_unrendered(SCRIPT_OR_STYLE.sub(" ", HTML_COMMENT.sub(" ", html)))
     for tag in META_TAG.finditer(markup):
         attrs = attributes(tag.group(1))
         if attrs.get("http-equiv", "").strip().lower() == "refresh" and refresh_target(attrs.get("content", "")):
